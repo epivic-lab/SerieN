@@ -1,33 +1,37 @@
 # SerieN · Autumn Railways
 
-Simulatore ferroviario web indipendente dal progetto **First**.
+Gioco ferroviario web per il plastico Kato Unitrack scala N dell'utente, sviluppato come progetto autonomo. **Non modifica e non dipende da [First](https://github.com/epivic-lab/first).**
 
-**Apri il gioco:** https://epivic-lab.github.io/SerieN/
+**[▶ Apri SerieN](https://epivic-lab.github.io/SerieN/)**
 
-## Versione 0.1 — prototipo isometrico
+## v0.2 — Ricostruzione tridimensionale
 
-- Vista isometrica illustrata del plastico autunnale in scala N, 150 × 70 cm.
-- Tre anelli ispirati ai raggi Kato R249, R282, R315.
-- Tre locomotive selezionabili: BR 055, BR 216, BR 260.
-- Consolle con velocità indipendenti, direzione, stop e luci simulate.
-- Scambi cliccabili, inclusi due WX310 e deviatoi del fascio.
-- Carri agganciabili/sganciabili in modo semplificato e quattro missioni.
-- Giorno, tramonto e notte.
-- Solo HTML/CSS/JavaScript: nessuna libreria o build necessaria.
+- Vista 3D volumetrica con telecamera orbitale, paesaggio autunnale, alberi, edifici, massicciata, traverse, rotaie, treni e luce regolabile.
+- Interfaccia di guida **orizzontale sotto il plastico**: selezione BR 055, BR 216 e BR 260, velocità indipendente, direzione, stop, luci e composizione dei carri.
+- Tre anelli con raggi nominali R249, R282 e R315.
+- Quattro tronchini (tre sul lato sinistro, uno a destra) e **runaround lungo**, composto da **due percorsi raccordati alle estremità**, con punti di instradamento.
+- Due WX310 e comandi degli scambi del fascio merci, azionabili sia dalla mappa 3D sia dalla barra laterale.
+- Quattro missioni introduttive, tra cui una dedicata al runaround.
+- Gioco statico pubblicabile su GitHub Pages, senza backend.
 
-### Stato della fedeltà al tracciato
+## Limiti e prossimi passi
 
-Questa **non è ancora una replica geometrica esatta** del file RailModeller: l'organizzazione del fascio merci, le connessioni degli scambi, i punti di fermata e la fisica degli agganci sono approssimati. Il gioco è una prima base di sviluppo visuale e funzionale, non un emulatore ferroviario certificato. I movimenti non comandano la Z21 reale.
+**La geometria 3D e l'instradamento dei binari di manovra sono approssimazioni del layout originale, non ancora una conversione CAD esatta del file RailModeller.** In particolare, il runaround è ora presente con entrambi i raccordi ma tutti gli itinerari, gli incroci e la logica di aggancio ferroviaria restano da validare contro la planimetria. Non dichiarare simulazione 1:1.
 
-### Pubblicazione
+La resa grafica è una base procedurale Three.js, **non ancora paragonabile per ricchezza a un titolo commerciale come Train Station 3**. Per avvicinarla all'obiettivo servono modelli e texture 3D dedicati, illuminazione/ombre curate, animazioni e una rete topologica tratta dal layout reale.
 
-GitHub Pages via workflow in `.github/workflows/pages.yml`. Per la prima attivazione, in **Settings → Pages → Build and deployment → Source**, selezionare **GitHub Actions**.
+Le risorse Three.js sono caricate da jsDelivr quando il browser è connesso a Internet.
 
-## Prossimi miglioramenti
+## Vedere la precedente versione
 
-1. Importazione topologica verificata del file RailModeller `.layout`, con lunghezze e scambi reali.
-2. Supporto a instradamento completo dei quattro tronchini e runaround.
-3. Movimento realistico dei carri con aggancio su estremità e controllo di occupazione.
-4. Vista 3D/isometrica più ricca, dettagli e animazioni alla Train Station 3.
+[Prototipo originale v0.1](./legacy-v0.1.html) (salvato prima della revisione).
 
-© progetto amatoriale originale. Non affiliato a Roco, Kato o agli editori dei giochi citati.
+## Deploy
+
+Il workflow GitHub Actions distribuisce automaticamente il branch \`main\` su GitHub Pages. Non è necessario compilare nulla.
+
+## Indipendenza da Z21
+
+Non si collega né invia comandi alla Z21 fisica. È una simulazione per sperimentare la guida e immaginare le missioni.
+
+© Progetto amatoriale indipendente, senza affiliazione a Kato, Roco o ai titoli videoludici citati come riferimenti stilistici.
