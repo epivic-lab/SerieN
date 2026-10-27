@@ -1,222 +1,42 @@
-<!doctype html>
-<html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#172323">
-<title>SerieN — Autumn Railways</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
-:root{--bg:#101a19;--panel:#1c2926;--panel2:#273932;--border:#405349;--text:#e8eee8;--muted:#a4b9ab;--amber:#e6bb6f;--mint:#8bca9d;--red:#db765e}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:13px 'DM Sans',system-ui,sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:10px 22px;background:#182725;border-bottom:1px solid #3e5349;gap:18px}.branding{display:flex;gap:13px;align-items:center}.logo{background:#efc17c;color:#24312a;font:bold 21px Outfit;padding:9px;border-radius:11px}.branding h1{font:700 22px Outfit;margin:0}.branding p{margin:1px 0 0;color:#9daf9e;font-size:11px}header nav{display:flex;align-items:center;gap:10px}.status{font-size:10px;color:#a5cda9;letter-spacing:1px}button{border:none;border-radius:8px;padding:9px 12px;background:#374e3f;color:#eaf0e5}button:hover{filter:brightness(1.14)}.outline{background:transparent;border:1px solid #597166}.layout{display:grid;grid-template-columns:minmax(0,1fr) 357px;height:calc(100vh - 72px);min-height:700px}.scene{position:relative;min-height:610px;background:radial-gradient(ellipse at 50% 40%,#758978,#354b42 74%);overflow:hidden}canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}.titlecard{position:absolute;top:19px;left:22px;pointer-events:none;text-shadow:0 2px 16px #243522bd}.eyebrow{display:block;font-size:9px;letter-spacing:1.35px;font-weight:700;color:#edcf9c;text-transform:uppercase}.titlecard h2{font:700 clamp(17px,2.1vw,26px) Outfit;margin:6px 0 0}.scenefoot{position:absolute;left:18px;right:18px;bottom:15px;display:flex;justify-content:space-between;gap:15px;align-items:end;pointer-events:none}.chips{display:flex;gap:7px;flex-wrap:wrap}.chips span{background:#172922de;color:#edf2e9;border:1px solid #728c7255;border-radius:8px;padding:8px 10px;font-size:10px}.chips b{display:inline-block;height:8px;width:14px;margin-right:6px;border-radius:2px}.hint{background:#14241bc4;color:#d3dfd3;padding:7px 9px;border-radius:6px;font-size:10px}.zooms{position:absolute;right:15px;top:20px;display:grid;gap:5px}.zooms button{width:35px;height:35px;padding:0;font-size:20px;background:#20342bd9;border:1px solid #8daa9170}.zooms .active{background:var(--amber);color:#1d3027}.sidebar{overflow-y:auto;background:linear-gradient(#1c2b26,#15221e);border-left:1px solid #415246;padding:16px;scrollbar-width:thin}.panehead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.panehead h2{font:700 23px Outfit;margin:5px 0 0}.sim{background:#e4ba74;color:#18291f;border-radius:4px;padding:2px 5px;font-size:9px;vertical-align:5px}.clock{font-weight:700;color:#e7c58b;border:1px solid #536b55;padding:7px 9px;border-radius:7px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:12px}.tab{padding:9px 3px;background:#2b3d33;border:1px solid #475f4b;font-size:10px}.tab b{display:block;font:700 15px Outfit}.tab.active{border-color:var(--amber);background:#46513a;box-shadow:inset 0 -3px var(--amber)}.card{background:#24352f;border:1px solid #3e5647;border-radius:11px;padding:14px;margin-bottom:11px;box-shadow:0 5px 18px #0002}.ident{display:flex;align-items:center;gap:10px;margin-bottom:13px}.trainicon{width:62px;height:52px;background:#3e5441;border-radius:9px;display:grid;place-items:center;font-size:30px}.ident h3{margin:5px 0 2px;font:700 19px Outfit}.ident p{margin:0;color:#adbcad;font-size:10px}.speedbox{background:#192921;padding:11px;border-radius:7px;margin-bottom:12px}.speedtop{display:flex;justify-content:space-between;align-items:center;color:#a7baa8;font-size:10px;letter-spacing:1px}.speedtop b{font:700 23px Outfit;color:#f0d9a9}.ticks{display:flex;justify-content:space-between;color:#91a295;font-size:10px}.sidebar input[type=range]{accent-color:#e3bc7d;width:100%;margin:13px 0 8px}.btnrow{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px}.btnrow button{padding:10px 4px;font-size:12px;border:1px solid #637767}.btnrow small{display:block;font-size:9px}.danger{background:#624038!important;border-color:#975a4f!important}.on{background:#646a3c!important;border-color:#c8b86d!important}.coupling{border-top:1px solid #456050;padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}.coupling p{font-size:10px;color:#d5e0d5;margin:4px 0 0}.coupling .buttons{display:flex;gap:5px}.coupling button{padding:8px 7px;font-size:11px}.heading{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:9px}.heading h3{font:700 15px Outfit;margin:4px 0 0}.pill{font-size:10px;background:#44563f;border-radius:5px;padding:5px;color:#f0da9e}.switchgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.sw{background:#314639;text-align:left;border:1px solid #57705c;padding:7px 9px;font-size:10px}.sw b{font-weight:700;display:block;color:#fff0cf}.sw small{font-size:9px;color:#a8c1ad}.sw.on{background:#66613d;border-color:#ecc57e}.sw i{display:inline-block;height:7px;width:7px;border-radius:50%;background:#e5ad53;margin-right:6px}.note{font-size:10px;line-height:1.45;color:#95ad9b;margin:9px 0 0}.missionTitle{font:700 16px Outfit;color:#f6ddad}.missionText{color:#d0dcd0;line-height:1.55;font-size:11px}.progress{background:#344c3c;border-radius:6px;padding:7px;color:#ddc58a;margin:9px 0;font-size:10px}.primary{background:#e6bd77;color:#243328;font-weight:700;width:100%}.footactions{display:flex;gap:8px}.footactions button{flex:1}.log{color:#c3d9c3;background:#1a2e23;border:1px solid #364f3d;padding:11px;border-radius:8px;margin-top:12px;font-size:11px;min-height:35px}.tiny{color:#82a390;font-size:10px;text-align:center;margin-top:12px}.modal{position:fixed;inset:0;background:#07110bdc;display:grid;place-items:center;padding:16px;z-index:20}.hidden{display:none!important}.dialog{width:min(930px,94vw);max-height:94vh;overflow:auto;background:#1a2c24;border:1px solid #718370;border-radius:15px;padding:21px}.dialoghead{display:flex;justify-content:space-between;align-items:center}.dialog h2{font:700 21px Outfit;margin:0 0 12px}.dialog p{color:#cad8c9;line-height:1.6}.diagram{width:100%;height:400px;background:#d8dfd0;border-radius:7px;cursor:default}.svgthumb{font-size:11px}.twilight{font-size:10px;color:#a5c3af}
-@media(max-width:1020px){.layout{grid-template-columns:minmax(0,1fr) 325px}.sidebar{padding:11px}.scene{min-height:570px}}@media(max-width:800px){.layout{display:block;height:auto}.scene{height:62vh;min-height:440px}.sidebar{height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.panehead,.tabs,.footactions,.log,.tiny{grid-column:1/-1}.card{margin:0}}@media(max-width:550px){header{height:auto;min-height:68px;padding:8px}.branding h1{font-size:16px}.branding p{font-size:9px}.branding .logo{font-size:17px}header .status{display:none}header nav{gap:4px}header nav button{padding:7px;font-size:11px}.scene{height:55vh;min-height:380px}.scenefoot .hint{display:none}.sidebar{display:block}.card{margin-bottom:10px}.titlecard{left:12px;top:12px}.titlecard h2{font-size:16px}.diagram{height:260px}}
-</style></head><body>
-<header><div class="branding"><div class="logo">N<small>160</small></div><div><h1>SerieN · Autumn Railways</h1><p>Il tuo plastico Kato · 3 anelli · 4 tronchini · 150 × 70 cm</p></div></div><nav><span class="status">● SIMULAZIONE OFFLINE</span><button class="outline" id="mapBtn">◫ Tracciato</button><button class="outline" id="helpBtn">? Guida</button></nav></header>
-<main class="layout"><section class="scene" id="scene"><canvas id="world" aria-label="Plastico ferroviario isometrico interattivo"></canvas><div class="titlecard"><span class="eyebrow">AUTUMN VALLEY · EP. III–IV</span><h2>Tre anelli. Un piccolo mondo.</h2></div><div class="zooms"><button id="zoomIn" title="Avvicina">＋</button><button id="zoomOut" title="Allontana">－</button><button id="resetView" title="Centra">◎</button><button id="labelBtn" class="active" title="Etichette">◇</button></div><div class="scenefoot"><div class="chips"><span><b style="background:#252b2a;border:1px solid #f7a569"></b>BR 055</span><span><b style="background:#c33e32"></b>BR 216</span><span><b style="background:#d0a05c"></b>BR 260</span></div><div class="hint">Trascina · zoom · clic sugli scambi e sui treni</div></div></section>
-<aside class="sidebar"><div class="panehead"><div><span class="eyebrow">CENTRALE DIGITALE · DEMO</span><h2>Cabina Z21 <span class="sim">SIM</span></h2></div><span class="clock" id="clock">16:45</span></div>
-<div class="tabs" id="tabs"></div><section class="card"><div class="ident"><div class="trainicon" id="trainIcon">🚂</div><div><span class="eyebrow">LOCOMOTIVA SELEZIONATA</span><h3 id="name">BR 055</h3><p id="detail">Vapore DB · Epoca III</p></div></div><div class="speedbox"><div class="speedtop"><span>VELOCITÀ</span><b id="speedLabel">0 %</b></div><input id="speed" type="range" min="0" max="100" value="0"><div class="ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100%</span></div></div><div class="btnrow"><button id="reverse">⇄ <small>Direzione</small></button><button id="stop" class="danger">■ <small>Ferma</small></button><button id="lights">◉ <small>Luci</small></button></div><div class="coupling"><div><span class="eyebrow">COMPOSIZIONE</span><p id="coupled">3 carri</p></div><div class="buttons"><button id="uncouple">− Sgancia</button><button id="couple">+ Aggancia</button></div></div></section>
-<section class="card"><div class="heading"><div><span class="eyebrow">INSTRADAMENTO</span><h3>Scambi e crossover</h3></div><span class="pill" id="counter">0 / 8</span></div><div id="switches" class="switchgrid"></div><p class="note">I due WX310 consentono il trasferimento tra anelli. I deviatoi del fascio selezionano i tronchini del deposito industriale; alcuni collegamenti di manovra sono ancora semplificati.</p></section>
-<section class="card"><div class="heading"><div><span class="eyebrow">SCENOGRAFIA</span><h3>Luce e atmosfera</h3></div><span id="sunIcon">☀</span></div><input id="day" type="range" min="0" max="100" value="53"><div class="ticks"><span>Giorno</span><span>Tramonto</span><span>Notte</span></div></section>
-<section class="card"><div class="heading"><div><span class="eyebrow">MISSIONI</span><h3 id="mcount">Missione 01/04</h3></div><span class="pill">OPERAZIONI</span></div><div id="missionTitle" class="missionTitle"></div><p id="missionText" class="missionText"></p><div class="progress" id="missionProgress"></div><button id="nextMission" class="primary">Prossima missione ↗</button></section>
-<div class="footactions"><button id="pauseAll">Ⅱ Pausa generale</button><button class="outline" id="resetAll">↺ Ripristina</button></div><div id="log" class="log">Benvenuto in SerieN. Seleziona una locomotiva e porta la velocità sopra zero.</div><p class="tiny">Gioco indipendente · non collegato fisicamente alla Z21 · salvataggio automatico non attivo</p></aside></main>
-<div class="modal hidden" id="mapModal"><div class="dialog"><div class="dialoghead"><h2>Schema del nostro tracciato Kato</h2><button id="closeMap">Chiudi ×</button></div><canvas class="diagram" id="schematic"></canvas><p>Tre anelli R249 / R282 / R315, due WX310 in alto e comparto merci con quattro tronchini e raccordo di manovra. La rappresentazione è una ricostruzione geometrica semplificata della nostra planimetria RailModeller, non una conversione CAD esatta.</p></div></div>
-<div class="modal hidden" id="helpModal"><div class="dialog"><div class="dialoghead"><h2>Come giocare</h2><button id="closeHelp">Chiudi ×</button></div><p><b>Circolazione:</b> seleziona BR 055, BR 216 o BR 260 e regola la velocità. Ogni convoglio è indipendente; inverti la marcia con «Direzione». Non vengono comandati treni reali.</p><p><b>Scambi:</b> clic sul segnale luminoso della scena o nella consolle. I crossover WX-A e WX-B deviano i treni sui binari adiacenti quando sono predisposti; la deviazione avviene attraversando la zona di crossover. La selezione dei quattro tronchini è introduttiva.</p><p><b>Manovre:</b> un treno fermo può sganciare l'ultimo carro; per riagganciarlo torna vicino al carro sul medesimo binario e clicca «Aggancia». Il gioco usa una distanza semplificata, non riproduce ancora tutti i ganci reali.</p><p><b>Missioni:</b> sono quattro prove di esercizio che registrano progressi nella sessione. L'area merci e il runaround saranno perfezionati nelle successive versioni.</p><p><b>Vista:</b> trascina per spostarti, usa la rotellina o i pulsanti per ingrandire. La luce delle case cambia con il cursore del crepuscolo.</p></div></div>
-<script>
-'use strict';
-(function(){
-const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d'),scene=$('scene');
-let W=1100,H=700,scale=1,panX=0,panY=0,zoom=1,mouse=null,hover=null,labels=true,last=0,pause=false;
-const WORLDW=1400,WORLDH=660,PALETTE=['#daa45a','#c66b42','#e6bc60','#547b5c','#a55537','#b7a65f'];
-const rand=(function(){let s=832712;return()=>{s=(1664525*s+1013904223)>>>0;return s/4294967296}})();
-const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),mod=(x,n=1)=>(x%n+n)%n;
-function xy(x,y,z=0){return {x:(x-y)*.69,y:(x+y)*.335-z*.9}}
-function pathPoly(ps){ctx.beginPath();ps.forEach((p,i)=>{let q=xy(p[0],p[1],p[2]||0);i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y)});ctx.closePath()}
-function polygon(ps,c,stroke){pathPoly(ps);ctx.fillStyle=c;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1.5;ctx.stroke()}}
-function line(ps,color,w=1){ctx.beginPath();ps.forEach((p,i)=>{let q=xy(p[0],p[1],p[2]||0);i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y)});ctx.strokeStyle=color;ctx.lineWidth=w;ctx.lineJoin='round';ctx.lineCap='round';ctx.stroke()}
-function text(s,x,y,c='#f6e7bd',size=13){let p=xy(x,y);ctx.font='700 '+size+'px Outfit, sans-serif';ctx.fillStyle=c;ctx.textAlign='center';ctx.shadowColor='#101b14';ctx.shadowBlur=5;ctx.fillText(s,p.x,p.y);ctx.shadowBlur=0}
-function makeLoop(n){let L=[83,50,17][n],R=[1317,1350,1383][n],T=[96,63,30][n],B=[564,597,630][n],rx=[250,267,284][n],ry=[223,240,257][n],p=[];
- const add=(x,y)=>p.push({x,y});add(L+rx,T);for(let x=L+rx+7;x<R-rx;x+=7)add(x,T);add(R-rx,T);
- const arc=(cx,cy,rx,ry,from,to)=>{for(let j=1;j<=68;j++){let a=from+(to-from)*j/68;add(cx+rx*Math.cos(a),cy+ry*Math.sin(a))}};
- arc(R-rx,T+ry,rx,ry,-Math.PI/2,0);
- for(let y=T+ry+7;y<B-ry;y+=7)add(R,y);
- arc(R-rx,B-ry,rx,ry,0,Math.PI/2);
- for(let x=R-rx-7;x>L+rx;x-=7)add(x,B);
- arc(L+rx,B-ry,rx,ry,Math.PI/2,Math.PI);
- for(let y=B-ry-7;y>T+ry;y-=7)add(L,y);
- arc(L+rx,T+ry,rx,ry,Math.PI,1.5*Math.PI);
- let d=[0],total=0;for(let i=1;i<p.length;i++){total+=Math.hypot(p[i].x-p[i-1].x,p[i].y-p[i-1].y);d.push(total)}return{p,d,total};
-}
-const loops=[makeLoop(0),makeLoop(1),makeLoop(2)];
-function byDistance(path,u){let target=mod(u)*path.total,a=0,b=path.d.length-1;while(b-a>1){let m=(a+b)>>1;if(path.d[m]<target)a=m;else b=m}let t=(target-path.d[a])/(path.d[b]-path.d[a]||1),A=path.p[a],B=path.p[b];return{x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t,dx:B.x-A.x,dy:B.y-A.y}}
-function percentTop(n,x){let loop=loops[n],i=0,best=1e8;for(let j=0;j<loop.p.length;j++){let p=loop.p[j],d=Math.abs(p.x-x)+Math.abs(p.y-[96,63,30][n])*6;if(d<best){i=j;best=d}}return loop.d[i]/loop.total}
-const SWITCHES=[
- {id:'WX-A',label:'WX310 · sinistro',x:475,y:78,on:false,kind:'cross',lanes:[0,1]},
- {id:'WX-B',label:'WX310 · destro',x:930,y:48,on:false,kind:'cross',lanes:[1,2]},
- {id:'Y1',label:'Accesso merci',x:805,y:105,on:false,kind:'yard'},
- {id:'Y2',label:'Bivio superiore',x:610,y:190,on:false,kind:'yard'},
- {id:'Y3',label:'Binario basso',x:495,y:265,on:false,kind:'yard'},
- {id:'Y4',label:'Binario alto',x:350,y:207,on:false,kind:'yard'},
- {id:'Y5',label:'Runaround',x:720,y:238,on:false,kind:'yard'},
- {id:'Y6',label:'Tronchino est',x:925,y:110,on:false,kind:'yard'}
-];
-const yardPaths=[
- [[810,98],[765,125],[690,163],[610,197],[515,207],[340,216],[220,230]],
- [[810,98],[763,135],[660,202],[540,238],[410,260],[180,290]],
- [[810,98],[765,137],[660,203],[610,226],[720,237],[1050,237],[1190,237]],
- [[810,98],[765,136],[660,205],[580,248],[430,285],[270,310],[160,321]]
-];
-function makePolyline(ar){let d=[0],total=0,p=ar.map(q=>({x:q[0],y:q[1]}));for(let i=1;i<p.length;i++){total+=Math.hypot(p[i].x-p[i-1].x,p[i].y-p[i-1].y);d.push(total)}return {p,d,total}}
-const yards=yardPaths.map(makePolyline);
-const trains=[
- {id:0,name:'BR 055',sub:'Vapore DB · Epoca III',icon:'🚂',color:'#343636',highlight:'#b67c59',lane:2,p:.13,speed:0,dir:1,cars:3,lights:true,laps:0,cool:0,mode:'loop'},
- {id:1,name:'BR 216',sub:'Diesel DB · Epoca IV',icon:'🚆',color:'#bb4b3e',highlight:'#f2d7b0',lane:1,p:.56,speed:0,dir:1,cars:2,lights:false,laps:0,cool:0,mode:'loop'},
- {id:2,name:'BR 260',sub:'Diesel manovra DB',icon:'🚉',color:'#c7a160',highlight:'#f5e3ad',lane:0,p:.78,speed:0,dir:1,cars:2,lights:false,laps:0,cool:0,mode:'loop'}
-],loose=[];
-let selected=0,day=53,mission=0,changes=0,switchedLane=false,visitedYard=false,uncoupled=false,recoupled=false;
-const missions=[
- ['Prima circolazione','Fai completare un giro alla BR 055: selezionala e porta la velocità sopra zero.',()=>trains[0].laps>=1,()=>('Giri BR 055: '+trains[0].laps+' / 1')],
- ['Scambio di linea','Aziona un WX310 e fai cambiare anello a un convoglio mentre circola.',()=>switchedLane,()=>switchedLane?'Trasferimento completato':'Nessun trasferimento effettuato'],
- ['Servizio merci','Con la BR 260 entra nel comparto merci, instradandola tramite Y1.',()=>visitedYard,()=>visitedYard?'BR 260 entrata nel fascio':'Attiva Y1 e fai transitare la BR 260'],
- ['Preparare i carri','Ferma un convoglio, sgancia l’ultimo carro e poi riaggancialo.',()=>uncoupled&&recoupled,()=>('Sgancio '+(uncoupled?'✓':'○')+' · Riaggancio '+(recoupled?'✓':'○'))]
-];
-function log(s){$('log').textContent=s}
-function pointTrain(t){return t.mode==='yard'?byDistance(yards[t.yard||0],t.yardU||0):byDistance(loops[t.lane],t.p)}
-function setSelected(i){selected=i;updateUI()}
-function updateUI(){let t=trains[selected],tabs=$('tabs');tabs.innerHTML='';
- trains.forEach((r,i)=>{let b=document.createElement('button');b.className='tab'+(selected===i?' active':'');b.innerHTML='<b>'+r.name+'</b>'+(r.mode==='yard'?'DEPOSITO':'ANELLO '+(r.lane+1));b.onclick=()=>setSelected(i);tabs.appendChild(b)});
- $('name').textContent=t.name;$('detail').textContent=t.sub;$('trainIcon').textContent=t.icon;$('speed').value=t.speed;$('speedLabel').textContent=t.speed+' %';$('coupled').textContent=t.cars+' carri agganciati';
- $('lights').className=t.lights?'on':'';$('lights').innerHTML=t.lights?'◉ <small>Luci ON</small>':'◎ <small>Luci OFF</small>';
- $('counter').textContent=SWITCHES.filter(s=>s.on).length+' / '+SWITCHES.length;
- let root=$('switches');root.innerHTML='';SWITCHES.forEach((s,i)=>{let b=document.createElement('button');b.className='sw'+(s.on?' on':'');b.innerHTML='<b><i></i>'+s.id+'</b><small>'+s.label+'</small>';b.onclick=()=>toggleSwitch(i);root.appendChild(b)});
- $('missionTitle').textContent=missions[mission][0];$('missionText').textContent=missions[mission][1];$('mcount').textContent='Missione 0'+(mission+1)+'/04';$('missionProgress').textContent=missions[mission][3]();
-}
-function toggleSwitch(i){let s=SWITCHES[i];s.on=!s.on;changes++;log(s.label+': '+(s.on?'deviata':'diritta'));updateUI()}
-function uncouple(){let t=trains[selected];if(t.speed>0){log('Ferma prima il treno per sganciare.');return}if(t.cars<1){log('Nessun carro rimasto da sganciare.');return}
- let p=t.mode==='yard'?(t.yardU||0):t.p,track=t.mode==='yard'?t.yard:t.lane;
- loose.push({mode:t.mode,track,p:p,color:['#8b674c','#8a8a6c','#8b4e3a'][t.cars%3],origin:t.name});
- t.cars--;uncoupled=true;log('Carro sganciato dalla '+t.name+'. Rimane sul binario.');updateUI()}
-function couplingDistance(t,c){if(c.mode!==t.mode)return Infinity;if(c.track!==(t.mode==='yard'?t.yard:t.lane))return Infinity;let pos=t.mode==='yard'?(t.yardU||0):t.p,dist=Math.abs(pos-c.p);return t.mode==='loop'?Math.min(dist,1-dist):dist}
-function couple(){let t=trains[selected];if(t.speed>0){log('Ferma la locomotiva prima dell’aggancio.');return}let ix=-1,near=Infinity;
- loose.forEach((c,i)=>{let d=couplingDistance(t,c);if(d<near){near=d;ix=i}});
- if(ix<0||near>.047){log('Nessun carro sganciato abbastanza vicino sullo stesso binario.');return}
- loose.splice(ix,1);t.cars++;recoupled=true;log('Carro riagganciato alla '+t.name+'.');updateUI()}
-function crossed(a,b,k,dir){return dir>0?mod(b-a)<.15&&mod(k-a)<=mod(b-a):mod(a-b)<.15&&mod(a-k)<=mod(a-b)}
-function advance(t,dt){if(t.speed===0)return;let movement=dt*t.speed*.000275*t.dir;
- if(t.cool>0)t.cool-=dt;
- if(t.mode==='loop'){let before=t.p,next=mod(t.p+movement);
- if(t.cool<=0){
-  for(let s of SWITCHES.filter(z=>z.kind==='cross'&&z.on)){if(!s.lanes.includes(t.lane))continue;let pp=percentTop(t.lane,s.x);
-   if(crossed(before,next,pp,t.dir)){let target=s.lanes[0]===t.lane?s.lanes[1]:s.lanes[0];t.lane=target;next=mod(percentTop(target,s.x)+movement*.3);t.cool=2.2;switchedLane=true;log(t.name+' ha attraversato '+s.id+' → anello '+(target+1));updateUI();break}
-  }
-  if(t.id===2&&t.lane===0&&SWITCHES[2].on&&crossed(before,next,percentTop(0,805),t.dir)){
-   t.mode='yard';t.yard=(SWITCHES[3].on?1:0)+(SWITCHES[4].on?2:0);t.yardU=0;t.cool=2;visitedYard=true;log('BR 260 instradata nel tronchino '+(t.yard+1));updateUI();return;
-  }
- }
- if(t.dir>0&&next<before||t.dir<0&&next>before)t.laps++;
- t.p=next;
- }else{t.yardU=(t.yardU||0)+movement*1.35;if(t.yardU>=.992){t.yardU=.992;t.speed=0;log(t.name+' è arrivata al termine del tronchino. Inverti la direzione per uscire.');updateUI()}if(t.yardU<0){t.mode='loop';t.lane=0;t.p=percentTop(0,805);t.cool=2;log(t.name+' è rientrata sull’anello interno.');updateUI()}}
-}
-function collisionCheck(){for(let i=0;i<trains.length;i++)for(let j=i+1;j<trains.length;j++){let a=trains[i],b=trains[j];if(a.speed===0&&b.speed===0)continue;if(a.mode!==b.mode)continue;
- if(a.mode==='loop'&&a.lane===b.lane){let d=Math.abs(a.p-b.p);d=Math.min(d,1-d);if(d<.015){a.speed=b.speed=0;log('SICUREZZA: due convogli sullo stesso tratto. Arresto automatico.');updateUI()}}
- if(a.mode==='yard'&&a.yard===b.yard&&Math.abs(a.yardU-b.yardU)<.035){a.speed=b.speed=0;log('SICUREZZA: occupazione del tronchino.');updateUI()}}}
-function fitCanvas(){let dpr=Math.min(devicePixelRatio||1,2);W=scene.clientWidth;H=scene.clientHeight;canvas.width=Math.ceil(W*dpr);canvas.height=Math.ceil(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);return dpr}
-function setView(){let s=Math.min((W-50)/1480,(H-95)/750)*zoom;scale=s;ctx.translate(W/2+panX,H/2+panY);ctx.scale(s,s);let c=xy(700,330);ctx.translate(-c.x,-c.y)}
-function drawGround(){let p=[[0,0,0],[1400,0,0],[1400,660,0],[0,660,0]];
- polygon([[0,660,0],[1400,660,0],[1400,660,-40],[0,660,-40]],'#947555','#5c4c32');
- polygon([[1400,0,0],[1400,660,0],[1400,660,-40],[1400,0,-40]],'#695642','#5c4c32');
- polygon(p,'#778f5f','#cad2a7');polygon([[25,25,1],[1375,25,1],[1375,635,1],[25,635,1]],'#7b9363');
- for(let i=0;i<130;i++){let x=(i*731+33)%1350+25,y=(i*311+90)%620+15;polygon([[x,y],[x+5,y+4],[x+16,y+3],[x+12,y-4]],i%3?'#839a68':'#6a8259')}
-}
-function drawRoad(){polygon([[130,405,2],[1265,405,2],[1265,445,2],[130,445,2]],'#666861');line([[145,426,2],[1240,426,2]],'#b1a995',2);for(let x=170;x<1240;x+=72)line([[x,425,3],[x+38,425,3]],'#c8b59c',2)}
-function drawRails(ps,dim=14){line(ps,'#817f73',dim+11);line(ps,'#aeaca0',dim+3);
- for(let i=1;i<ps.length-1;i+=3){let p=ps[i-1],q=ps[i+1],c=ps[i],dx=q[0]-p[0],dy=q[1]-p[1],m=Math.hypot(dx,dy)||1,nx=-dy/m*8,ny=dx/m*8;line([[c[0]-nx,c[1]-ny,2],[c[0]+nx,c[1]+ny,2]],'#4d473f',3)}
- const offsets=[-4,4];for(let off of offsets){let shifted=ps.map((p,i)=>{let a=ps[Math.max(0,i-1)],b=ps[Math.min(ps.length-1,i+1)],dx=b[0]-a[0],dy=b[1]-a[1],m=Math.hypot(dx,dy)||1;return[p[0]-dy/m*off,p[1]+dx/m*off,3]});line(shifted,'#2c3433',3);line(shifted,'#d7d8d2',1.5)}}
-function drawTrackSystem(){loops.forEach((a,i)=>drawRails(a.p.filter((_,k)=>k%4===0).map(p=>[p.x,p.y]),12));
- const yardSegments=[
- [[810,96],[750,130],[620,204],[465,237],[220,232]],
- [[810,96],[765,142],[630,219],[440,263],[145,305]],
- [[810,96],[758,146],[630,221],[710,240],[1210,240]],
- [[810,96],[754,144],[620,232],[470,286],[180,332]],
- [[160,303],[260,284],[480,253],[650,244],[910,241]]
- ];
- yardSegments.forEach(p=>drawRails(p,11));
- const joins=[{x:475,a:0,b:1},{x:930,a:1,b:2}];joins.forEach((c,i)=>{let y1=[96,63,30][c.a],y2=[96,63,30][c.b];let on=SWITCHES[i].on;line([[c.x-55,y1,5],[c.x+55,y2,5]],on?'#dec070':'#929a89',6);line([[c.x-55,y2,5],[c.x+55,y1,5]],on?'#dec070':'#929a89',6);line([[c.x-55,y1,6],[c.x+55,y2,6]],'#e8e4ce',1.5);line([[c.x-55,y2,6],[c.x+55,y1,6]],'#e8e4ce',1.5)});
-}
-function bush(x,y,sz,color){let q=xy(x,y,4);ctx.beginPath();ctx.ellipse(q.x,q.y,sz,sz*.46,0,0,Math.PI*2);ctx.fillStyle=color;ctx.fill()}
-function tree(x,y,s,type){let P=xy(x,y,1);ctx.strokeStyle='#5d4932';ctx.lineWidth=s*.1;ctx.beginPath();ctx.moveTo(P.x,P.y);ctx.lineTo(P.x,P.y-s*.7);ctx.stroke();
- if(type==='pine'){for(let j=0;j<3;j++){let h=s*(.4+j*.21);polygon([[x-15*s/40,y,2+h*.08],[x,y,s*.95],[x+15*s/40,y,2+h*.08]],['#375d43','#477047','#55764a'][j])}}
- else{ctx.fillStyle='#5a673d';ctx.beginPath();ctx.ellipse(P.x+2,P.y-s*.46,s*.45,s*.33,0,0,Math.PI*2);ctx.fill();for(let k=0;k<4;k++){ctx.fillStyle=['#c46f34','#d99f42','#a45334','#e1b95b'][type%4];ctx.beginPath();ctx.ellipse(P.x+Math.sin(k*2)*s*.19,P.y-s*(.55+Math.cos(k*3)*.12),s*.3,s*.28,0,0,Math.PI*2);ctx.fill()}}}
-function house(x,y,w,d,h,wall,roof){let a=[x,y,0],b=[x+w,y,0],c=[x+w,y+d,0],e=[x,y+d,0],at=[x,y,h],bt=[x+w,y,h],ct=[x+w,y+d,h],et=[x,y+d,h];
- polygon([e,c,ct,et],wall);polygon([b,c,ct,bt],shade(wall,-23));polygon([at,bt,[x+w/2,y,h+25]],roof);polygon([[x+w/2,y,h+25],bt,ct,[x+w/2,y+d,h+25]],shade(roof,-20));polygon([at,[x+w/2,y,h+25],[x+w/2,y+d,h+25],et],roof);
- let lit=day>37,cwin=lit?'#f8d78b':'#657d81';for(let i=1;i<=2;i++)polygon([[x+i*w/3-7,y+d+.3,h*.43],[x+i*w/3+7,y+d+.3,h*.43],[x+i*w/3+7,y+d+.3,h*.66],[x+i*w/3-7,y+d+.3,h*.66]],cwin,'#493c31');
- if(labels&&w>90)text(' ',x,y)}
-function shade(hex,n){let z=hex.slice(1),r=clamp(parseInt(z.slice(0,2),16)+n,0,255),g=clamp(parseInt(z.slice(2,4),16)+n,0,255),b=clamp(parseInt(z.slice(4,6),16)+n,0,255);return'#'+[r,g,b].map(k=>Math.round(k).toString(16).padStart(2,'0')).join('')}
-function drawVillage(){let houses=[[215,365,78,70,60,'#c9b897','#645f50'],[340,360,77,63,75,'#d2af92','#874c3d'],[459,361,70,70,65,'#b7b0a0','#4f605b'],[568,355,70,56,66,'#d8c19c','#7b493a'],[710,360,68,58,57,'#dec6a1','#685950']];
- houses.forEach(a=>house(...a));house(990,300,135,102,70,'#ad785c','#754d3b');house(1020,175,140,98,75,'#ad977b','#655746');house(650,455,110,65,50,'#dbd0b4','#6f594a');
- if(labels){text('BORGO AUTUNNALE',415,460,'#f4dfb6',14);text('SEGHERIA',1065,309,'#f3e4bb',14);text('STAZIONE',695,516,'#f3e4bb',14)}
-}
-const shrubs=Array.from({length:130},(_,i)=>({x:(i*731+33)%1350+25,y:(i*311+90)%620+15}));
-const sceneryBushes=Array.from({length:85},(_,i)=>({x:165+rand()*1070,y:170+rand()*365,size:4+rand()*8,color:['#6d8350','#8da568','#a7a05c'][i%3]}));
-const foliage=[];for(let i=0;i<128;i++){let x=rand()*1400,y=rand()*660;if(x<145||x>1260||y<140||y>500||x>770&&y>160&&y<360||x<750&&y>190&&y<355||y>360&&y<490&&x<850)continue;foliage.push([x,y,13+rand()*20,rand()>.38?'broad':'pine',i%4])}
-foliage.sort((a,b)=>(a[0]+a[1])-(b[0]+b[1]));
-const rocks=Array.from({length:12},(_,i)=>({x:1210+rand()*90,y:212+rand()*135,i}));
-function drawScenery(){drawGround();drawRoad();
- sceneryBushes.forEach(({x,y,size,color})=>{if(y>285&&y<340||x>780&&x<1250&&y>170&&y<305||x>200&&x<800&&y>190&&y<280)return;bush(x,y,size,color)});
- foliage.forEach(p=>tree(p[0],p[1],p[2],p[3]==='pine'?'pine':p[4]));
- drawTrackSystem();drawVillage();
- // Tettoie e materiale da lavorare nel deposito merci
- for(let i=0;i<9;i++)line([[990+i*8,342,5],[1033+i*8,342,5]],'#8c6c4e',4);
- // Rocce e portale di galleria presso la curva destra
- rocks.forEach(({x,y,i})=>polygon([[x-15,y-13,0],[x+13,y-16,0],[x+22,y+10,17],[x,y+22,37],[x-25,y+11,15]],['#727d65','#6d7168','#95998b'][i%3]))
- // Piccolo ponte in muratura, settore anello interno
- polygon([[620,558,0],[705,558,0],[705,576,-10],[620,576,-10]],'#a6aa99','#717a70');
- // Lampioni
- [[690,495],[735,496],[645,496],[1050,325],[1104,323]].forEach(([x,y])=>{line([[x,y,0],[x,y,40]],'#454e43',2);let p=xy(x,y,42);ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fillStyle=day>40?'#ffe4a0':'#ced8b0';ctx.shadowBlur=day>40?15:0;ctx.shadowColor='#f7c87a';ctx.fill();ctx.shadowBlur=0});
-}
-function locoAt(p,distance){return {x:p.x+distance*p.dx/(Math.hypot(p.dx,p.dy)||1),y:p.y+distance*p.dy/(Math.hypot(p.dx,p.dy)||1)}}
-function drawVehicle(x,y,dx,dy,kind,color,length,accent,selectedVehicle){let o=xy(x,y,11),a=xy(x+dx*.5,y+dy*.5),b=xy(x-dx*.5,y-dy*.5);let ang=Math.atan2(a.y-b.y,a.x-b.x);ctx.save();ctx.translate(o.x,o.y);ctx.rotate(ang);ctx.fillStyle='#1c2621';ctx.fillRect(-length/2-2,-8,length+4,16);
- ctx.fillStyle=color;ctx.fillRect(-length/2,-11,length,16);ctx.fillStyle=accent;ctx.fillRect(-length/2+5,-11,length-10,3);
- if(kind==='steam'){ctx.fillStyle='#1b1b1a';ctx.fillRect(-length/2+8,-15,length*.44,10);ctx.fillStyle='#bd9a58';ctx.fillRect(-length/2+6,-15,6,5);ctx.fillStyle='#eee2bb';ctx.fillRect(length/2-14,-7,9,4)}
- else{ctx.fillStyle='#c0d0c5';ctx.fillRect(-length/2+7,-10,10,6);ctx.fillRect(length/2-18,-10,10,6)}
- if(selectedVehicle){ctx.strokeStyle='#f7d593';ctx.lineWidth=2;ctx.strokeRect(-length/2-4,-16,length+8,25)}ctx.restore()}
-function trainPos(t,off=0){let path=t.mode==='yard'?yards[t.yard||0]:loops[t.lane],u=t.mode==='yard'?(t.yardU||0):t.p,delta=off/path.total*(t.dir>=0?-1:1);if(t.mode==='yard')u=clamp(u+delta,0,.9999);else u=mod(u+delta);return byDistance(path,u)}
-function drawTrain(t){for(let c=t.cars;c>=0;c--){let q=trainPos(t,(c+1)*65);drawVehicle(q.x,q.y,q.dx,q.dy,'car',['#ab6944','#747d65','#bd835b'][c%3],42,'#d6c5a6',false)}
- let p=pointTrain(t);drawVehicle(p.x,p.y,p.dx,p.dy,t.id===0?'steam':'diesel',t.color,t.id===0?62:57,t.highlight,t.id===selected);
- if(labels){let q=xy(p.x,p.y,30);ctx.textAlign='center';ctx.fillStyle='#fff5dc';ctx.font='700 13px Outfit';ctx.shadowColor='#152b1e';ctx.shadowBlur=6;ctx.fillText(t.name,q.x,q.y-6);ctx.shadowBlur=0}}
-function drawSwitches(){SWITCHES.forEach((s,i)=>{let p=xy(s.x,s.y,15);ctx.beginPath();ctx.arc(p.x,p.y,10,0,Math.PI*2);ctx.fillStyle=s.on?'#e1bd62':'#284e42';ctx.strokeStyle='#f8efd6';ctx.lineWidth=1.7;ctx.fill();ctx.stroke();ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='700 8px Outfit';ctx.fillStyle=s.on?'#2d3529':'#d1ead5';ctx.fillText(i<2?'WX':String(i-1),p.x,p.y);if(labels){ctx.textBaseline='alphabetic';ctx.fillStyle='#fff3d6';ctx.font='700 11px Outfit';ctx.shadowColor='#14271d';ctx.shadowBlur=4;ctx.fillText(s.id,p.x,p.y-16);ctx.shadowBlur=0}})}
-function drawLoose(){loose.forEach(c=>{let p=byDistance(c.mode==='yard'?yards[c.track]:loops[c.track],c.p);drawVehicle(p.x,p.y,p.dx,p.dy,'car',c.color,42,'#c9b9a6',false)})}
-function render(time){let dt=Math.min(.05,(time-last)/1000||0);last=time;if(!pause){trains.forEach(t=>advance(t,dt));collisionCheck()}
- ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.setTransform(devicePixelRatio||1,0,0,devicePixelRatio||1,0,0);
- let bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#98adad');bg.addColorStop(1,'#273b35');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
- ctx.save();setView();drawScenery();drawLoose();trains.forEach(drawTrain);drawSwitches();ctx.restore();
- if(day>0){ctx.fillStyle='rgba(8,22,36,'+(day*.0053)+')';ctx.fillRect(0,0,W,H)}
- if(missions[mission][2]()){$('missionProgress').textContent='✓ Obiettivo completato!'}else if(Math.floor(time/500)%4===0){$('missionProgress').textContent=missions[mission][3]()}
- requestAnimationFrame(render)}
-function screenPoint(x,y,z=0){let c=xy(700,330),p=xy(x,y,z);return{x:W/2+panX+(p.x-c.x)*scale,y:H/2+panY+(p.y-c.y)*scale}}
-function hitTest(sx,sy){for(let i=0;i<SWITCHES.length;i++){let p=screenPoint(SWITCHES[i].x,SWITCHES[i].y,15);if(Math.hypot(sx-p.x,sy-p.y)<20)return{type:'switch',i}}
- for(let i=0;i<trains.length;i++){let t=pointTrain(trains[i]),p=screenPoint(t.x,t.y,11);if(Math.hypot(sx-p.x,sy-p.y)<26)return{type:'train',i}}return null}
-canvas.addEventListener('pointerdown',e=>{mouse={x:e.clientX,y:e.clientY,panX,panY,moved:false};canvas.setPointerCapture(e.pointerId)});
-canvas.addEventListener('pointermove',e=>{if(!mouse)return;let dx=e.clientX-mouse.x,dy=e.clientY-mouse.y;if(Math.hypot(dx,dy)>7)mouse.moved=true;if(mouse.moved){panX=mouse.panX+dx;panY=mouse.panY+dy}});
-canvas.addEventListener('pointerup',e=>{if(mouse&&!mouse.moved){let r=canvas.getBoundingClientRect(),hit=hitTest(e.clientX-r.left,e.clientY-r.top);if(hit){if(hit.type==='switch')toggleSwitch(hit.i);else setSelected(hit.i)}}mouse=null});
-canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=clamp(zoom*(e.deltaY>0?.9:1.1),.6,2.7)},{passive:false});
-$('zoomIn').onclick=()=>zoom=clamp(zoom*1.15,.6,2.7);$('zoomOut').onclick=()=>zoom=clamp(zoom/1.15,.6,2.7);$('resetView').onclick=()=>{zoom=1;panX=panY=0};
-$('labelBtn').onclick=()=>{labels=!labels;$('labelBtn').className=labels?'active':''};
-$('speed').oninput=e=>{trains[selected].speed=+e.target.value;$('speedLabel').textContent=e.target.value+' %'};
-$('reverse').onclick=()=>{let t=trains[selected];t.dir*=-1;log(t.name+': marcia '+(t.dir>0?'avanti':'indietro'))};
-$('stop').onclick=()=>{trains[selected].speed=0;log(trains[selected].name+': arresto.');updateUI()};
-$('lights').onclick=()=>{let t=trains[selected];t.lights=!t.lights;updateUI();log(t.name+': luci '+(t.lights?'accese':'spente'))};
-$('uncouple').onclick=uncouple;$('couple').onclick=couple;$('day').oninput=e=>{day=+e.target.value;$('sunIcon').textContent=day<35?'☀':day<72?'☽':'☾'};
-$('nextMission').onclick=()=>{mission=(mission+1)%missions.length;updateUI()};
-$('pauseAll').onclick=()=>{pause=!pause;$('pauseAll').textContent=pause?'▶ Riprendi':'Ⅱ Pausa generale';log(pause?'Circolazione sospesa.':'Circolazione ripresa.')};
-$('resetAll').onclick=()=>{if(!confirm('Ripristinare tutte le locomotive, gli scambi e le missioni?'))return;trains.forEach((t,i)=>{t.p=[.13,.56,.78][i];t.lane=[2,1,0][i];t.cars=[3,2,2][i];t.speed=0;t.dir=1;t.cool=0;t.laps=0;t.mode='loop';t.yardU=0});SWITCHES.forEach(s=>s.on=false);loose.length=0;mission=0;pause=false;uncoupled=recoupled=switchedLane=visitedYard=false;updateUI();log('Impianto ripristinato.')};
-function openM(id){$(id).classList.remove('hidden')}function closeM(id){$(id).classList.add('hidden')}
-$('mapBtn').onclick=()=>{openM('mapModal');drawSchematic()};$('helpBtn').onclick=()=>openM('helpModal');$('closeMap').onclick=()=>closeM('mapModal');$('closeHelp').onclick=()=>closeM('helpModal');
-['mapModal','helpModal'].forEach(id=>$(id).onclick=e=>{if(e.target===$(id))closeM(id)});
-window.addEventListener('keydown',e=>{if(e.key==='Escape'){$('mapModal').classList.add('hidden');$('helpModal').classList.add('hidden')}});
-function drawSchematic(){let cv=$('schematic'),r=cv.getBoundingClientRect(),ratio=Math.min(devicePixelRatio||1,2);cv.width=r.width*ratio;cv.height=r.height*ratio;let c=cv.getContext('2d');c.scale(ratio,ratio);c.fillStyle='#e0e4d8';c.fillRect(0,0,r.width,r.height);
- let s=Math.min((r.width-20)/1420,(r.height-22)/670),x0=(r.width-1400*s)/2,y0=(r.height-660*s)/2;
- c.save();c.translate(x0,y0);c.scale(s,s);
- loops.forEach((a,i)=>{c.beginPath();a.p.forEach((p,j)=>j?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y));c.strokeStyle=['#c7a443','#767d79','#c5a34c'][i];c.lineWidth=13;c.stroke();c.strokeStyle='#283c42';c.lineWidth=2;c.stroke()});
- yardPaths.forEach(ar=>{c.beginPath();ar.forEach((p,j)=>j?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]));c.strokeStyle='#434c4a';c.lineWidth=5;c.stroke()});
- [[475,0,1],[930,1,2]].forEach(e=>{c.strokeStyle='#775c38';c.lineWidth=6;c.beginPath();c.moveTo(e[0]-50,[96,63,30][e[1]]);c.lineTo(e[0]+50,[96,63,30][e[2]]);c.moveTo(e[0]-50,[96,63,30][e[2]]);c.lineTo(e[0]+50,[96,63,30][e[1]]);c.stroke()});
- c.font='700 22px sans-serif';c.fillStyle='#28583e';c.fillText('R249 · R282 · R315',300,410);c.fillText('FASCIO MERCI',390,340);c.restore()}
-function resize(){fitCanvas()}window.addEventListener('resize',resize);resize();updateUI();requestAnimationFrame(render);
-})();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#16241d">
+<title>SerieN · Autumn Railways</title><link rel="stylesheet" href="./style.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"}}</script>
+</head><body>
+<div class="app">
+<header class="top">
+<div class="brand"><div class="mark">N<small>160</small></div><div><b>SerieN <i>Autumn Railways</i></b><span>IL NOSTRO PLASTICO · SCALA N · 150 × 70 CM</span></div></div>
+<nav><span class="online">● SIMULAZIONE WEB</span><button id="homeView" class="secondary">⌖ Inquadra</button><button id="planBtn" class="secondary">▦ Planimetria</button><button id="helpBtn" class="secondary">? Guida</button></nav>
+</header>
+<div class="middle"><main id="view3d" class="world">
+<div class="titleScene"><span class="eyebrow">AUTUMN VALLEY · DB · EPOCA III/IV</span><h1>Tre anelli. Un piccolo mondo.</h1><p>Tre convogli, quattro tronchini, un lungo runaround.</p></div>
+<div id="loadMsg" class="load">Preparazione del mondo 3D…</div>
+<div class="instructions">Trascina per ruotare · Rotellina per zoom · Tocca uno scambio per azionarlo</div>
+<div class="scenePills"><span id="sceneInfo">3 ANELLI · R249 / R282 / R315</span><span id="fps">Vista 3D · v0.2</span></div>
+</main>
+<aside class="sidebar">
+<div class="sectionHeader"><div><span class="eyebrow">CONTROLLO INFRASTRUTTURA</span><h2>Scambi</h2></div><span id="switchCount" class="pill">0 / 8</span></div>
+<div id="switchList" class="switchList"></div>
+<p class="note">Due WX310, sei comandi nel fascio merci. Il percorso di sorpasso lungo è rappresentato con due rami raccordati.</p>
+<hr>
+<div class="sectionHeader"><div><span class="eyebrow">SCENOGRAFIA</span><h2>Luce del giorno</h2></div><span id="sun">☀</span></div>
+<input id="day" type="range" min="0" max="100" value="48"><div class="ticks"><span>Giorno</span><span>Tramonto</span><span>Notte</span></div>
+<hr>
+<div class="sectionHeader"><div><span class="eyebrow">ESERCIZIO FERROVIARIO</span><h2>Missioni</h2></div><span id="missionIndex" class="pill">1 / 4</span></div>
+<h3 id="missionName" class="missionName"></h3><p id="missionText" class="note missionText"></p><div id="missionStatus" class="missionStatus"></div>
+<button id="nextMission" class="accent wide">Prossima missione ↗</button>
+<div class="activity"><span class="eyebrow">REGISTRO OPERATIVO</span><p id="log">Seleziona la locomotiva e avvia la circolazione.</p></div>
+</aside></div>
+<section class="console">
+<div class="consoleHead"><div class="consoleHeading"><span class="eyebrow">CENTRALE Z21 · SIMULAZIONE</span><h2>Cabina di guida</h2></div><div id="tabs" class="trainTabs"></div><div class="allButtons"><button id="pause" class="secondary">Ⅱ Pausa</button><button id="reset" class="secondary">↺ Reset</button></div></div>
+<div class="drive">
+<div class="driver"><div id="trainIcon" class="locoIcon">🚂</div><div><h3 id="trainName">BR 055</h3><span id="trainDescription">Vapore · DB · Epoca III</span><strong id="trainRoute">ANELLO ESTERNO</strong></div></div>
+<div class="speed"><div class="speedTop"><b>VELOCITÀ</b><strong id="speedNumber">0%</strong></div><input type="range" id="speed" min="0" max="100" value="0"><div class="ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div></div>
+<div class="driveButtons"><button id="reverse">⇄ <small>Direzione</small></button><button id="stop" class="stop">■ <small>Arresta</small></button><button id="lights">☼ <small>Luci</small></button></div>
+<div class="coupling"><span class="eyebrow">COMPOSIZIONE</span><b id="cars">3 carri</b><div class="coupleButtons"><button id="uncouple" class="secondary">− Sgancia</button><button id="couple" class="secondary">+ Aggancia</button></div></div>
+</div></section>
+</div>
+<div id="planModal" class="modal" hidden><div class="dialog"><div class="dialogHead"><div><span class="eyebrow">PIANO DI RIFERIMENTO</span><h2>Il tracciato Kato originale</h2></div><button data-close="planModal">✕ Chiudi</button></div><img class="planImage" src="./assets/layout-originale.png" alt="Planimetria dei tre anelli, quattro tronchini e lungo runaround"><p>La vista 3D segue la disposizione generale della planimetria. I collegamenti del gruppo manovre non sono ancora una conversione millimetrica del file RailModeller.</p></div></div>
+<div id="helpModal" class="modal" hidden><div class="dialog guide"><div class="dialogHead"><h2>Come funziona SerieN</h2><button data-close="helpModal">✕ Chiudi</button></div><p><b>Vista 3D:</b> trascina per ruotare il plastico; usa la rotellina per lo zoom; un clic seleziona il treno oppure cambia uno scambio.</p><p><b>Guida:</b> seleziona una delle tre locomotive dalla barra orizzontale. Ogni treno ha velocità, direzione e luci autonome.</p><p><b>Scambi:</b> i crossover WX310 scambiano anello nel tratto superiore; gli scambi merci includono i due estremi del lungo runaround, quattro tronchini e un accesso. La topologia è in via di perfezionamento.</p><p><b>Aggancio:</b> ferma la locomotiva, sgancia un carro; accostati sullo stesso binario per riagganciarlo. È un modello operativo semplificato, non una fisica completa dei ganci.</p><p><b>Importante:</b> questa è una simulazione indipendente. Non trasmette comandi alla tua centralina Z21 reale.</p></div></div>
+<script type="module" src="./app.js"></script>
+</body></html>
