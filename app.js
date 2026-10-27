@@ -48,7 +48,13 @@ ballastLayer.castShadow=false;
 const ground=box(1498,3,698,mat('#799461'),scene,750,-1.3,350);
 ground.castShadow=false;
 function ellipse(x,z,rx,rz,y,color){const o=new THREE.Mesh(new THREE.SphereGeometry(1,14,9),color);o.scale.set(rx,y,rz);o.position.set(x,-4,z);o.castShadow=true;o.receiveShadow=true;scene.add(o);return o}
-for(let i=0;i<1050;i++){const x=25+rnd()*1450,z=20+rnd()*660;const p=new THREE.Mesh(new THREE.PlaneGeometry(2+rnd()*6,2+rnd()*7),grassMaterials[i%grassMaterials.length]);p.rotation.x=-PI/2;p.rotation.z=rnd()*PI;p.position.set(x,.4,z);scene.add(p)}
+// Instancing avoids a thousand individual draw calls for grass.
+const grassGeo=new THREE.PlaneGeometry(1,1),dummy=new THREE.Object3D();
+for(let kind=0;kind<grassMaterials.length;kind++){
+ const n=255,inst=new THREE.InstancedMesh(grassGeo,grassMaterials[kind],n);
+ for(let i=0;i<n;i++){dummy.position.set(25+rnd()*1450,.4+rnd()*.2,20+rnd()*660);dummy.rotation.set(-PI/2,0,rnd()*PI);dummy.scale.set(2+rnd()*7,2+rnd()*7,1);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix)}
+ inst.instanceMatrix.needsUpdate=true;scene.add(inst)
+}
 // Terrain hills beyond the lines of running, avoiding the operational yard.
 ellipse(1250,398,115,94,50,mat('#789063'));
 ellipse(1150,465,120,94,44,mat('#798f62'));
@@ -372,16 +378,20 @@ function advance(t,dt){
   }
   const y=switchBy('lead');
   if(y.on&&t.id===2&&t.loop===0&&crossed(before,after,lineFraction(loops[0],810,101),t.dir)){
-   ensureYard(t,'lead');ui();return
+   ensureYard(t,switchBy('upper').on?'upper':'lead');ui();return
   }
  }
  if(t.dir>0&&after<before||t.dir<0&&after>before)t.laps++;
  t.p=after;
  } else {
+ if(t.dir<0&&t.s>=.999&&(t.section==='runMain'||t.section==='runAround')&&t.cool<=0){
+   const desired=switchSpecs.find(s=>s.id==='Y-R2').on?'runAround':'runMain';
+   if(t.section!==desired){t.section=desired;t.cool=1;log('Runaround est: instradamento sul binario '+(desired==='runAround'?'alternativo':'principale'));ui()}
+  }
  const path=yard[t.section],next=t.s+t.dir*delta/path.length;
  if(next>=1){
    if(t.section==='lead'){
-    if(switchBy('west').on){ensureYard(t,'middle');}
+    if(switchBy('west').on){ensureYard(t,switchBy('passing').on?'lower':'middle');}
     else{ensureYard(t,switchBy('passing').on?'runAround':'runMain');visitedRunaround=true;log('BR 260 percorre il runaround lungo.')}
    }else if(t.section==='runMain'||t.section==='runAround'){
      if(switchBy('right').on){ensureYard(t,'right');}
@@ -392,7 +402,7 @@ function advance(t,dt){
  if(next<0){
    if(t.section==='lead'){t.mode='loop';t.loop=0;t.p=lineFraction(loops[0],812,101);t.cool=2;log('BR 260 torna sull’anello interno')}
    else if(t.section==='runMain'||t.section==='runAround'||t.section==='middle'||t.section==='lower'){t.section='lead';t.s=.998}
-   else if(t.section==='right'){t.section='runMain';t.s=.998}
+   else if(t.section==='right'){t.section=switchSpecs.find(s=>s.id==='Y-R2').on?'runAround':'runMain';t.s=.998}
    else {t.s=0;t.speed=0}ui();return
  }
  t.s=clamp(next,0,1);
