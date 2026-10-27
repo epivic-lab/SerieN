@@ -81,3 +81,14 @@ test("perspective camera supports all presets and follow with finite projections
   }
   nav.dispose();
 });
+test("minimap focus centres once on the clicked locomotive and preserves manual control",()=>{
+  const {camera,controls,nav}=setup();
+  assert.equal(nav.focus({x:420,z:284,angle:.3}),true);
+  for(let i=0;i<240;i++)nav.update(1/60,{x:1200,z:600,angle:0});
+  assert.equal(nav.preset,"manual");
+  assert.ok(Math.abs(controls.target.x-420)<.01);
+  assert.ok(Math.abs(controls.target.z-284)<.01);
+  assert.equal(nav.focus({x:NaN,z:200}),false);
+  assert.ok(camera.position.toArray().every(Number.isFinite));
+  nav.dispose();
+});

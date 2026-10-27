@@ -1,5 +1,7 @@
+import { mountTrainDeck } from "./src/train-deck.js";
+import { captureLocomotiveThumbnail } from "./src/locomotive-thumbnails.js";
 import { createSwitchTopology, traceJourney, occupiedRanges, siteSafety } from "./src/next-switch.js";
-import { mountNextSwitchHUD, createRouteHighlight } from "./src/next-switch-view.js";
+import { mountNextSwitchHUD } from "./src/next-switch-view.js";
 import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
 import { couplingDistance, consistLayout } from "./src/consist.js";
@@ -16,7 +18,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 const $ = (id) => document.getElementById(id);
 const host = $("view3d");
-let nextSwitchHUD = null;
+let nextSwitchHUD = null, trainDeck = null;
 importedTrains($("rollingModels").value === "kenney");
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("#9fbcc5");
@@ -328,9 +330,9 @@ function freightWagon(i) {
   attachTrainAsset(g, ["lumber", "tank", "box"][i % 3]);
   return g;
 }
-function locoModel(id) {
+function locoModel(id,trainId=id) {
   const g = new THREE.Group();
-  g.userData.trainId = id;
+  g.userData.trainId = trainId;
   if (id === 0) {
     box(62, 3.6, 13, chassisRed, g, 2, 9, 0);
     wheelSet(g, 58);
@@ -341,7 +343,7 @@ function locoModel(id) {
     box(18, 16, 12, locoBlack, g, -38, 17, 0);
     for (let p of [16, 26]) cylinder(2, 2, 8, locoBlack, g, p, 29, 0);
     const cap = cylinder(4, 4, 2, locoBlack, g, 27, 33, 0);
-    cap.userData.trainId = id;
+    cap.userData.trainId = trainId;
     box(50, 1, 1, steel, g, 0, 8.5, -8);
     box(50, 1, 1, steel, g, 0, 8.5, 8);
   } else {
@@ -363,7 +365,7 @@ function locoModel(id) {
   const headMaterial = new THREE.MeshStandardMaterial({ color: "#faf0cb", emissive: "#ffe6a2", emissiveIntensity: 0.05 });
   for (const side of [-1, 1]) {
     const p = sphere(2, headMaterial, g, id === 0 ? 32 : id === 1 ? 31 : 24, id === 0 ? 18 : 24, side * 4);
-    p.userData.trainId = id;
+    p.userData.trainId = trainId;
   }
   const beam = new THREE.SpotLight("#ffe4a2", 2, 320, 0.38, 0.65, 0);
   beam.position.set(32, 18, 0);
@@ -372,7 +374,7 @@ function locoModel(id) {
   g.userData.beam = beam;
   g.userData.headMaterial = headMaterial;
   g.traverse((o) => {
-    if (o.isMesh) o.userData.trainId = id;
+    if (o.isMesh) o.userData.trainId = trainId;
   });
   locomotiveDetails(g, id);
   scene.add(g);
@@ -391,12 +393,14 @@ for (let t of trains) {
   }
 }
 trains.forEach((t) => {
+  t.modelKey = ["steam", "diesel", "shunter"][t.id];
+  t.initial = {loop:t.loop,cars:t.cars,fraction:[.22,.65,.45][t.id]};
   t.nativeName = t.name;
   t.nativeDescription = t.desc;
 });
 const kenneyNames = ["Vapore K1", "Diesel K2", "Manovra K3"];
 let rollingModelMode = $("rollingModels").value;
-const assetReady = Promise.all(trains.map((t) => attachTrainAsset(t.group, ["steam", "diesel", "shunter"][t.id], true)));
+const assetReady = Promise.all(trains.map((t) => attachTrainAsset(t.group, t.modelKey, true)));
 assetReady.then((loaded) => {
   trains.forEach((t, i) => t.assetLoaded = loaded[i]);
   updateModels();
@@ -412,7 +416,7 @@ function updateModels() {
   }
   rollingModelMode = $("rollingModels").value;
   for (const t of trains) {
-    t.name = active && t.assetLoaded ? kenneyNames[t.id] : t.nativeName;
+    t.name = active && t.assetLoaded ? kenneyNames[["steam","diesel","shunter"].indexOf(t.modelKey)] : t.nativeName;
     t.desc = active && t.assetLoaded ? "Kenney Train Kit \xB7 modello stilizzato" : t.nativeDescription;
   }
   ui();
@@ -436,17 +440,7 @@ function switchBy(kind) {
   return switchSpecs.find((s) => s.kind === kind);
 }
 function ui() {
-  $("tabs").innerHTML = trains.map((t2) => '<button class="tab ' + (t2.id === selected ? "active" : "") + '" data-train="' + t2.id + '"><span class="symbol">' + t2.icon + "</span><span><strong>" + t2.name + "</strong><small>" + (t2.mode === "loop" ? "ANELLO " + (t2.loop + 1) : "FASCIO MERCI") + "</small></span></button>").join("");
-  $("tabs").querySelectorAll("button").forEach((b) => b.onclick = () => select(+b.dataset.train));
-  const t = trains[selected];
-  $("trainIcon").textContent = t.icon;
-  $("trainName").textContent = t.name;
-  $("trainDescription").textContent = t.desc;
-  $("trainRoute").textContent = t.mode === "loop" ? "ANELLO " + (t.loop + 1) : t.section === "runAround" ? "RUNAROUND LUNGO" : "COMPARTO MERCI";
-  $("speed").value = t.speed;
-  $("speedNumber").textContent = t.speed + "%";
-  $("cars").textContent = t.cars + " carri";
-  $("lights").classList.toggle("active", t.lights);
+  trainDeck?.sync();
   $("switchCount").textContent = switchSpecs.filter((s) => s.on).length + " / " + switchSpecs.length;
   $("switchList").innerHTML = switchSpecs.map((s, i) => '<button class="sw ' + (s.on ? "active" : "") + '" data-switch="' + i + '"><b>' + s.id + "</b><small>" + s.name + "</small></button>").join("");
   $("switchList").querySelectorAll("button").forEach((b) => b.onclick = () => toggle(+b.dataset.switch));
@@ -460,7 +454,9 @@ function missionUI() {
   $("missionStatus").textContent = statuses[mission].done() ? "\u2713 Obiettivo completato" : statuses[mission].detail();
 }
 function select(id) {
+  if(!trains[id])return;
   selected = id;
+  trainDeck?.select(id);
   ui();
 }
 function toggle(index) {
@@ -543,7 +539,7 @@ function switchHUDState() {
 }
 function initializeJourney(t) {
   const edge = "L" + t.loop + "-return";
-  t.journey = new Journey(network, edge, network.edges[edge].length * [0.22, 0.65, 0.45][t.id]);
+  t.journey = new Journey(network, edge, network.edges[edge].length * (t.initial?.fraction ?? .45));
   t.velocity = 0;
   t.odometer = 0;
   t.previousLane = t.loop;
@@ -694,7 +690,7 @@ function reset() {
   trains.forEach((t, i) => {
     t.carObjs.forEach(removeWagon);
     t.carObjs = [];
-    Object.assign(t, { loop: [2, 1, 0][i], speed: 0, dir: 1, cars: [3, 2, 2][i], laps: 0, mode: "loop" });
+    Object.assign(t, { loop: t.initial.loop, speed: 0, dir: 1, cars: t.initial.cars, laps: 0, mode: "loop" });
     for (let j = 0; j < t.cars; j++) {
       const o = freightWagon(j + i);
       scene.add(o);
@@ -709,28 +705,22 @@ function reset() {
   ui();
   log("Ripristino completato.");
 }
-$("speed").oninput = (e) => {
-  trains[selected].speed = +e.target.value;
-  $("speedNumber").textContent = e.target.value + "%";
-};
-$("reverse").onclick = () => {
-  const t = trains[selected];
-  t.dir *= -1;
-  log(t.name + " ha invertito direzione");
-  nextSwitchHUD?.refresh(true);
-};
-$("stop").onclick = () => {
-  trains[selected].speed = 0;
-  trains[selected].velocity = 0;
-  ui();
-  log(trains[selected].name + " ferma");
-};
-$("lights").onclick = () => {
-  trains[selected].lights = !trains[selected].lights;
-  ui();
-};
-$("uncouple").onclick = uncouple;
-$("couple").onclick = couple;
+function setTrainSpeed(id,value) {
+  const t=trains[id];if(!t)return;
+  t.speed=clamp(value,0,100);trainDeck?.sync();
+}
+function reverseTrain(id) {
+  const t=trains[id];if(!t)return;
+  t.dir*=-1;log(t.name+" ha invertito direzione");trainDeck?.sync();nextSwitchHUD?.refresh(true);
+}
+function stopTrain(id) {
+  const t=trains[id];if(!t)return;
+  t.speed=t.velocity=0;ui();log(t.name+" ferma");
+}
+function toggleTrainLights(id) {
+  const t=trains[id];if(!t)return;
+  t.lights=!t.lights;ui();
+}
 $("day").oninput = (e) => {
   day = +e.target.value;
   $("sun").textContent = day < 42 ? "\u2600" : day < 72 ? "\u25D0" : "\u263E";
@@ -743,6 +733,7 @@ $("pause").onclick = () => {
   paused = !paused;
   $("pause").textContent = paused ? "\u25B6 Riprendi" : "\u2161 Pausa";
   log(paused ? "Simulazione sospesa." : "Simulazione ripresa.");
+  trainDeck?.update();
 };
 $("reset").onclick = reset;
 $("homeView").onclick = () => {
@@ -796,8 +787,11 @@ const nav = navigation(camera, controls, { height: scenic.cameraHeight, building
 const views = mountViewControls({ camera, controls, navigation: nav, host: $("viewControls"), onViewChange: (preset) => {
   $("cameraView").value = preset;
 } });
-const routeHighlight = createRouteHighlight(scene);
-nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState,highlight:routeHighlight});
+trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains:()=>trains,getSelected:()=>selected,isPaused:()=>paused,
+  onSelect:select,onSpeed:setTrainSpeed,onReverse:reverseTrain,onStop:stopTrain,onLights:toggleTrainLights,onUncouple:uncouple,onCouple:couple,
+  onFocus:(id)=>{nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
+});
+nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState});
 const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
 function applyQuality(profile) {
   $("quality").querySelector("[value=auto]").textContent = "Automatica \xB7 " + (profile === "low" ? "Leggera" : "Alta");
@@ -838,6 +832,7 @@ window.addEventListener("pagehide", (e) => {
   controls.dispose();
   views.dispose();
   nextSwitchHUD?.dispose();
+  trainDeck?.dispose();
   nav.dispose();
   effects.dispose();
   disposeTrainAssets();
@@ -869,6 +864,7 @@ function tick(now) {
   }
   frame++;
   renderVehicles();
+  trainDeck?.update();
   const night = clamp((day - 35) / 65, 0, 1);
   sun.intensity = lerp(3.1, 0.25, night);
   sun.color.set(day > 40 ? "#e8b87d" : "#ffe9c7");
@@ -910,6 +906,17 @@ ui();
 $("loadMsg").hidden = true;
 animationHandle = requestAnimationFrame(tick);
 if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = {
+  captureThumbnail(id) {
+    const t=trains[id];if(!t)throw new RangeError("Unknown locomotive");
+    return captureLocomotiveThumbnail(renderer,t.group,scene.environment);
+  },
+  addTrain() {
+    const id=trains.length;
+    const t={id,name:`BR 216 · ${id+1}`,nativeName:`BR 216 · ${id+1}`,desc:"Diesel DB · convoglio di collaudo",nativeDescription:"Diesel DB · convoglio di collaudo",modelKey:"diesel",initial:{loop:2,cars:0,fraction:.6},loop:2,speed:0,dir:1,cars:0,lights:false,laps:0,mode:"loop",group:locoModel(1,id),carObjs:[]};
+    trains.push(t);initializeJourney(t);
+    attachTrainAsset(t.group,"diesel",true).then((loaded)=>{t.assetLoaded=loaded;updateModels();});
+    renderVehicles();ui();return id;
+  },
   placeTrain(id, edge, s, direction=1) {
     const t=trains[id], track=network.edges[edge];
     if(!t || !track || !Number.isFinite(s) || s<0 || s>track.length || ![1,-1].includes(direction)) throw new RangeError("Invalid diagnostic train placement");
@@ -927,6 +934,7 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
       updateTrainStatus(dt);
     }
     renderVehicles();
+    trainDeck?.update();
     nextSwitchHUD?.refresh(true);
   },
   snapshot() {
@@ -951,5 +959,5 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   };
   const assistance = getSwitchAssistance();
   const next = assistance.preview.next;
-  return { nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray() }, render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
+  return { consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:false, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray() }, render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
 } };

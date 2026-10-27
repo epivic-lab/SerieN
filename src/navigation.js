@@ -69,6 +69,14 @@ function navigation(camera, controls, options = {}) {
       if (preset === "follow") goal = null;
       else setGoal(CAMERA_PRESETS[preset]);
     },
+    focus(pose) {
+      if(disposed)return false;
+      const view=followingView(pose);
+      if(!view)return false;
+      mode="manual";
+      setGoal({position:[view.position.x,view.position.y,view.position.z],target:[view.target.x,view.target.y,view.target.z],zoom:view.zoom});
+      return true;
+    },
     update(dt, trainPose) {
       if (disposed) return;
       const elapsed = clamp(finite(dt, 0), 0, 0.2);
@@ -90,6 +98,10 @@ function navigation(camera, controls, options = {}) {
           camera.updateProjectionMatrix();
         }
         if (mode !== "follow" && camera.position.distanceToSquared(goal.position) < 0.01 && controls.target.distanceToSquared(goal.target) < 0.01 && Math.abs(camera.zoom - goal.zoom) < 1e-4) {
+          camera.position.copy(goal.position);
+          controls.target.copy(goal.target);
+          camera.zoom=goal.zoom;
+          camera.updateProjectionMatrix();
           goal = null;
         }
       }

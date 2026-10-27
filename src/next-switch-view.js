@@ -51,22 +51,20 @@ function schemaSVG(network,preview) {
   const line=(points)=>points.map((p)=>`${(16+(p.x-b.xmin)/dx*200).toFixed(2)},${(14+(p.z-b.zmin)/dz*64).toFixed(2)}`).join(" ");
   return `<svg viewBox="0 0 232 92" role="img" aria-label="Connessioni reali; itinerario previsto rosso, altri rami grigi"><defs><marker id="nextSwitchArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#ff5668"/></marker></defs>${data.base.map((p)=>`<polyline points="${line(p.points)}" fill="none" stroke="#829792" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`).join("")}${data.selected.map((p)=>`<polyline points="${line(p.points)}" fill="none" stroke="#ff5668" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#nextSwitchArrow)"/>`).join("")}</svg>`;
 }
-function mountNextSwitchHUD({host,network,getState,highlight,now=()=>performance.now()}) {
+function mountNextSwitchHUD({host,network,getState,now=()=>performance.now()}) {
   const panel=document.createElement("section");panel.className="nextSwitchHUD";panel.id="nextSwitchHUD";panel.setAttribute("aria-label","Next Switch HUD");
-  panel.innerHTML=`<header class="nextSwitchHead"><span>⌁ NEXT SWITCH</span><span class="nextSwitchCompact"></span><button type="button" class="nextSwitchMinimize" aria-expanded="true" aria-controls="nextSwitchBody" aria-label="Minimizza assistente scambi">−</button></header><div id="nextSwitchBody"><div class="nextSwitchTrain"></div><h2 class="nextSwitchName" aria-live="polite"></h2><div class="nextSwitchDistance"></div><div class="nextSwitchScheme"></div><div class="nextSwitchPosition"></div><p class="nextSwitchDestination"></p><p class="nextSwitchWarning" role="status"></p><button type="button" class="nextSwitchPreview" aria-pressed="false">Evidenzia itinerario</button><p class="nextSwitchLegend">Rosso = previsto, grigio = altri rami.<br>L’itinerario non è un’autorizzazione di via libera.</p></div>`;
+  panel.innerHTML=`<header class="nextSwitchHead"><span>⌁ NEXT SWITCH</span><span class="nextSwitchCompact"></span><button type="button" class="nextSwitchMinimize" aria-expanded="true" aria-controls="nextSwitchBody" aria-label="Minimizza assistente scambi">−</button></header><div id="nextSwitchBody"><div class="nextSwitchTrain"></div><h2 class="nextSwitchName" aria-live="polite"></h2><div class="nextSwitchDistance"></div><div class="nextSwitchScheme"></div><div class="nextSwitchPosition"></div><p class="nextSwitchDestination"></p><p class="nextSwitchWarning" role="status"></p></div>`;
   host.append(panel);
   const find=(cls)=>panel.querySelector(`.${cls}`),set=(cls,value)=>{const e=find(cls);if(e.textContent!==value)e.textContent=value;};
-  const body=panel.querySelector("#nextSwitchBody"),minimize=find("nextSwitchMinimize"),button=find("nextSwitchPreview");
+  const body=panel.querySelector("#nextSwitchBody"),minimize=find("nextSwitchMinimize");
   find("nextSwitchDistance").title="Distanza dal centro del veicolo di testa nel verso di marcia, in millimetri del plastico";
-  let minimized=host.clientWidth<600,enabled=false,until=0,last=0,disposed=false,lastSchema="",latest=null;
+  let minimized=host.clientWidth<600,last=0,disposed=false,lastSchema="",latest=null;
   const renderMinimized=()=>{body.hidden=minimized;panel.classList.toggle("is-minimized",minimized);minimize.textContent=minimized?"＋":"−";minimize.setAttribute("aria-expanded",String(!minimized));minimize.setAttribute("aria-label",minimized?"Espandi assistente scambi":"Minimizza assistente scambi");};
   const onMinimize=()=>{minimized=!minimized;renderMinimized();};
-  const onPreview=()=>{enabled=!enabled;until=enabled?now()+15000:0;refresh(true);};
-  minimize.addEventListener("click",onMinimize);button.addEventListener("click",onPreview);renderMinimized();
+  minimize.addEventListener("click",onMinimize);renderMinimized();
   function refresh(force=false) {
     if(disposed)return;
     const time=now();
-    if(enabled && time>=until)enabled=false;
     if(!force && time-last<200)return;
     last=time;latest=getState();
     const {preview,safety,trainName,inverting,controls}=latest;
@@ -87,13 +85,9 @@ function mountNextSwitchHUD({host,network,getState,highlight,now=()=>performance
     panel.classList.toggle("has-warning",warnings.length>0);
     const svg=schemaSVG(network,preview);
     if(svg!==lastSchema){find("nextSwitchScheme").innerHTML=svg;lastSchema=svg;}
-    button.disabled=preview.ranges.length===0;
-    if(button.disabled)enabled=false;
-    button.textContent=enabled?"Nascondi itinerario":"Evidenzia itinerario · 15 s";
-    button.setAttribute("aria-pressed",String(enabled));
-    highlight.update(enabled?previewPoints(network,preview):[],enabled);
+
   }
   refresh(true);
-  return {panel,refresh,dispose(){disposed=true;minimize.removeEventListener("click",onMinimize);button.removeEventListener("click",onPreview);panel.remove();highlight.dispose();},get snapshot(){return latest;}};
+  return {panel,refresh,dispose(){disposed=true;minimize.removeEventListener("click",onMinimize);panel.remove();},get snapshot(){return latest;}};
 }
 export { distanceLabel, routeRibbonGeometry, previewPoints, schemaSVG, createRouteHighlight, mountNextSwitchHUD };

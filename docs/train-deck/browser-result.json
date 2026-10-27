@@ -1,0 +1,104 @@
+{
+  "nativeThumbnailKeys": [
+    "native-steam",
+    "native-diesel",
+    "native-shunter"
+  ],
+  "background": "linear-gradient(145deg, rgba(8, 39, 43, 0.64), rgba(9, 35, 39, 0.54))",
+  "webglContexts": 1,
+  "kenneyThumbnailKeys": [
+    "kenney-steam",
+    "kenney-diesel",
+    "kenney-shunter"
+  ],
+  "fourTrainScenario": {
+    "visible": [
+      3,
+      0,
+      2
+    ],
+    "recent": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "hiddenTrainAdvanced": true
+  },
+  "minimapFocus": true,
+  "desktop": {
+    "overflow": false,
+    "cards": [
+      {
+        "width": 464.65625,
+        "height": 309
+      },
+      {
+        "width": 464.671875,
+        "height": 309
+      },
+      {
+        "width": 464.65625,
+        "height": 309
+      }
+    ],
+    "contexts": 1
+  },
+  "tablet": {
+    "overflow": false,
+    "cards": [
+      {
+        "width": 326,
+        "height": 309
+      },
+      {
+        "width": 326,
+        "height": 309
+      },
+      {
+        "width": 326,
+        "height": 309
+      }
+    ],
+    "contexts": 1
+  },
+  "tablet-portrait": {
+    "overflow": false,
+    "cards": [
+      {
+        "width": 240.65625,
+        "height": 319
+      },
+      {
+        "width": 240.671875,
+        "height": 319
+      },
+      {
+        "width": 240.671875,
+        "height": 319
+      }
+    ],
+    "contexts": 1
+  },
+  "mobile": {
+    "overflow": false,
+    "cards": [
+      {
+        "width": 320,
+        "height": 314
+      },
+      {
+        "width": 320,
+        "height": 314
+      },
+      {
+        "width": 320,
+        "height": 314
+      }
+    ],
+    "contexts": 1
+  },
+  "errors": [],
+  "result": "PASS",
+  "performanceNote": "Chromium software renderer; desktop/tablet viewport checks, not certification on physical iPad hardware."
+}
