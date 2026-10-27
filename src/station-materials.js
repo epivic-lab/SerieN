@@ -148,7 +148,7 @@ function createStationMaterials(renderer) {
     textureCount: textures.size,
     update(night) {
       const n = clamp(Number.isFinite(night) ? night : 0);
-      interior.emissiveIntensity = 0.01 + n * 0.28;
+      interior.emissiveIntensity = 0.01 + n * 0.85;
       lights.emissiveIntensity = 0.03 + n * 1.9;
     },
     dispose() {
