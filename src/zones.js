@@ -160,75 +160,7 @@ function buildZones(scene, network, { mask, wood }) {
   const warmWindows = new THREE.MeshStandardMaterial({ color: "#43524f", emissive: "#ffd491", emissiveIntensity: 0.02, roughness: 0.75 });
   const farm = smallBuilding(scene, FARM, warmWindows, wood, true), office = smallBuilding(scene, GOODS_OFFICE, warmWindows, wood);
   const iron = mat("#37443f", 0.75, 0.35), stone = mat("#a79d86"), roof = mat("#656454", 0.8, 0.2), pots = mat("#955b41");
-  const canopy = new THREE.Group();
-  canopy.name = "station-canopy";
-  groups.add(canopy);
-  for (const x of [630, 666, 834, 870]) {
-    cylinder(0.65, 25, iron, canopy, x, 17, 550);
-    rod([x, 25, 550], [x + 7, 29, 550], 0.4, iron, canopy);
-    rod([x, 25, 550], [x - 7, 29, 550], 0.4, iron, canopy);
-  }
-  box(258, 1.8, 10, roof, canopy, 750, 30, 550);
-  box(258, 1, 1.4, iron, canopy, 750, 29, 555);
-  box(258, 1, 1.4, iron, canopy, 750, 29, 545);
-  rod([660, 30, 554], [660, 27, 557.5], 0.3, iron, canopy);
-  const clockMap = canvasMap(128, 128, (ctx) => {
-    ctx.fillStyle = "#ded6bf";
-    ctx.beginPath();
-    ctx.arc(64, 64, 60, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.strokeStyle = "#263630";
-    ctx.lineWidth = 5;
-    ctx.stroke();
-    for (let i = 0; i < 12; i++) {
-      const a = i * Math.PI / 6;
-      ctx.beginPath();
-      ctx.moveTo(64 + Math.sin(a) * 47, 64 - Math.cos(a) * 47);
-      ctx.lineTo(64 + Math.sin(a) * 54, 64 - Math.cos(a) * 54);
-      ctx.stroke();
-    }
-    ctx.lineWidth = 4;
-    ctx.beginPath();
-    ctx.moveTo(64, 64);
-    ctx.lineTo(64, 27);
-    ctx.moveTo(64, 64);
-    ctx.lineTo(91, 77);
-    ctx.stroke();
-  });
-  const clockBody = cylinder(3.65, 1.1, iron, groups, 660, 24, 557.2, 24);
-  clockBody.rotation.x = Math.PI / 2;
-  const clock = mesh(new THREE.CircleGeometry(3.4, 32), new THREE.MeshStandardMaterial({ map: clockMap, roughness: 0.8, side: THREE.DoubleSide }), groups, 660, 24, 557.8);
-  sign("AUTUMN VALLEY", groups, 837, 23, 557.8, 27, 4);
-  for (const x of [620, 680, 820, 880]) {
-    box(7, 3.5, 4, pots, groups, x, 6.2, 551);
-    box(6.2, 0.6, 3.2, mat("#596b41"), groups, x, 8.2, 551);
-    for (let k = 0; k < 7; k++) mesh(new THREE.SphereGeometry(0.55, 5, 4), mat(k % 2 ? "#d69c43" : "#b36755"), groups, x - 2.3 + k % 4 * 1.5, 9 + k % 2 * 0.5, 550.1 + Math.floor(k / 4) * 1.3);
-  }
-  for (const p of layout.people) person(groups, p);
-  for (const p of layout.luggage) {
-    box(3.2, 2.5, 1.7, mat("#65513c"), groups, p.x, 5.8, p.z);
-    const handle = new THREE.Mesh(new THREE.TorusGeometry(0.65, 0.12, 4, 10, Math.PI), iron);
-    handle.position.set(p.x, 7.4, p.z);
-    groups.add(handle);
-  }
-  for (const x of [648, 852]) {
-    cylinder(1.5, 3.6, iron, groups, x, 6.2, 546);
-    cylinder(1.8, 0.5, stone, groups, x, 8.3, 546);
-  }
-  const lights = [], bulbs = [];
-  const lampGlow = new THREE.MeshStandardMaterial({ color: "#eee0ba", emissive: "#ffd28a", emissiveIntensity: 0.08, roughness: 0.5 });
-  for (const x of [618, 690, 810, 882]) {
-    cylinder(0.65, 24, iron, groups, x, 16, 553);
-    box(4, 1, 3, iron, groups, x, 28, 553);
-    mesh(new THREE.SphereGeometry(1.6, 8, 6), lampGlow, groups, x, 26.5, 553);
-    bulbs.push({ x, y: 26.5, z: 553 });
-  }
-  for (const x of [652, 848]) {
-    const light = new THREE.PointLight("#ffd59a", 0, 145, 0);
-    light.position.set(x, 23, 548);
-    scene.add(light);
-    lights.push(light);
-  }
+  const lights = [];
   for (const p of layout.cargo) cargo(groups, p, wood);
   for (const p of layout.stops) bufferStop(groups, p);
   const apron = new THREE.Mesh(new THREE.PlaneGeometry(140, 47, 1, 1), mat("#90866d"));
@@ -266,7 +198,6 @@ function buildZones(scene, network, { mask, wood }) {
   rod([-4, 3, 0], [-10, 2, 0], 0.4, wood, cart);
   return { lights, pendingStops: layout.pendingStops, footprints: layout.footprints, scenicBuildings: [FARM, GOODS_OFFICE].map((b) => ({ ...b })), update(night, dt) {
     warmWindows.emissiveIntensity = 0.02 + night * 1.7;
-    lampGlow.emissiveIntensity = 0.08 + night * 2.6;
     for (const l of lights) l.intensity = night * 0.8;
   }, groups, farm, office, layout };
 }

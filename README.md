@@ -1,4 +1,4 @@
-# SerieN · Autumn Railways v0.5
+# SerieN · Autumn Railways v0.6
 
 Simulatore ferroviario web indipendente in scala N. [Gioca](https://epivic-lab.github.io/SerieN/).
 Non dipende dal repository `first` e non invia comandi alla centralina Z21 reale.
@@ -158,3 +158,25 @@ fra veicoli resta 64 mm. Con i Kenney proporzionati questo può lasciare spazi
 visibili nella composizione. La protezione camera riguarda l'occhio e le impronte,
 non il volume continuo dell'obiettivo. Il ponte può mostrare una piccola cucitura
 sul bordo del terreno triangolato; non cambia il percorso ferroviario.
+
+## Stazione e navigazione v0.6
+
+La stazione è ora un edificio originale articolato in corpo centrale a due piani
+con due ali più basse. Ha aperture reali, infissi e vani arretrati, soglie, cornici,
+plinti in pietra, tetti a tegole tridimensionali istanziate, gronde, pluviali e camini.
+Undici texture condivise originali gestiscono albedo, bump e rugosità; la scala UV
+è espressa in millimetri del plastico. Non sono stati acquistati o importati nuovi
+asset esterni. La stazione è un modello originale di ambientazione, non la replica
+certificata di un fabbricato reale.
+
+La banchina è stata sostituita con lastre smussate, bordo consumato, pensilina a
+struttura metallica, panchine a doghe, orologio bifacciale, insegna, fioriere,
+bagagli e personaggi arrotondati. Le due luci locali illuminano la banchina di notte.
+I vecchi elementi della stazione sono rimossi per evitare duplicazioni.
+
+Nel riquadro Vista sono disponibili sei comandi da almeno44px: Zoom+/−,
+Trascina, Ruota, Standard e Segui. Trascina usa mouse sinistro/un dito per il pan;
+Ruota ripristina l'orbita; restano rotellina e pinch. Standard ripristina il panorama,
+Segui insegue il treno selezionato. Un gesto manuale interrompe l'inseguimento.
+La strada di servizio arretra localmente dietro la stazione; binari e logica
+ferroviaria non cambiano.

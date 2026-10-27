@@ -1,3 +1,4 @@
+import { mountViewControls } from "./src/view-controls.js";
 import { tunnelAt } from "./src/structure-layout.js";
 import { railGeometry } from "./src/rail-profile.js";
 import { navigation } from "./src/navigation.js";
@@ -232,7 +233,6 @@ function buildHouse(x, z, w, d, h, wall, roof, type = "house", orientation = 0) 
 const hstyle = mat("#d8c4a6"), hbrick = mat("#b68d77"), hboard = mat("#98735b");
 buildHouse(280, 455, 75, 54, 48, hstyle, roofRed);
 buildHouse(583, 449, 80, 57, 62, hbrick, roofRed);
-const station = buildHouse(750, 525, 135, 40, 48, hbrick, roofGray);
 buildHouse(1033, 333, 125, 80, 52, hboard, roofRed, "factory");
 buildHouse(1165, 338, 77, 58, 45, cream, roofGray, "factory");
 buildHouse(250, 195, 120, 68, 51, hboard, roofGray, "factory");
@@ -253,10 +253,14 @@ for (let j = 0; j < 4; j++) {
 const round = mat("#9c8c72");
 cylinder(7, 7, 2, round, scene, 915, 78, 331, 10);
 const roadMat = mat("#686c61"), curb = mat("#aaa99a");
-box(1010, 1.2, 34, roadMat, scene, 650, 1.1, 500);
+box(535, 1.2, 34, roadMat, scene, 412.5, 1.1, 500);
+box(335, 1.2, 34, roadMat, scene, 987.5, 1.1, 500);
+box(140, 1.2, 18, roadMat, scene, 750, 1.1, 489);
 box(1008, 1, 2.5, curb, scene, 650, 1.8, 481);
-box(1008, 1, 2.5, curb, scene, 650, 1.8, 519);
-for (let x = 198; x < 1110; x += 70) box(30, 0.5, 1.2, mat("#d2c8a5"), scene, x, 2, 500);
+box(535, 1, 2.5, curb, scene, 412.5, 1.8, 519);
+box(335, 1, 2.5, curb, scene, 987.5, 1.8, 519);
+box(140, 1, 2.5, curb, scene, 750, 1.8, 499);
+for (let x = 198; x < 1110; x += 70) box(30, 0.5, 1.2, mat("#d2c8a5"), scene, x, 2, x > 680 && x < 820 ? 489 : 500);
 const glow = new THREE.MeshStandardMaterial({ color: "#ead4a3", emissive: "#edb768", emissiveIntensity: 0.6 });
 const lamps = [];
 for (let x = 520; x <= 915; x += 78) {
@@ -732,6 +736,9 @@ trains.forEach((t) => {
 selectRing.userData.dynamic = true;
 const scenic = enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials: [roofRed, roofGray], wallMaterials: [hstyle, hbrick, hboard, cream], foundation: ballastLayer });
 const nav = navigation(camera, controls, { height: scenic.cameraHeight, buildings: scenic.buildings });
+const views = mountViewControls({ camera, controls, navigation: nav, host: $("viewControls"), onViewChange: (preset) => {
+  $("cameraView").value = preset;
+} });
 const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
 function applyQuality(profile) {
   $("quality").querySelector("[value=auto]").textContent = "Automatica \xB7 " + (profile === "low" ? "Leggera" : "Alta");
@@ -770,6 +777,7 @@ window.addEventListener("pagehide", (e) => {
   cancelAnimationFrame(animationHandle);
   observer.disconnect();
   controls.dispose();
+  views.dispose();
   nav.dispose();
   effects.dispose();
   disposeTrainAssets();
@@ -819,16 +827,18 @@ function tick(now) {
   glow.emissiveIntensity = lerp(0.4, 2.8, night);
   controls.update();
   nav.update(realDt, trains[selected].journey.locate());
+  views.update();
   if ($("cameraView").value !== nav.preset && nav.preset === "manual") $("cameraView").value = "manual";
   document.querySelector(".titleScene").hidden = nav.preset !== "overview" && nav.preset !== "manual" || camera.zoom > 1.4;
   const nextQuality = quality.update(realDt, !document.hidden);
   if (nextQuality) applyQuality(nextQuality);
   scenic.zones.update(night, dt);
+  scenic.station.update(night, dt);
   scenic.update(paused ? 0 : dt, camera);
   smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2 && !tunnelAt(trains[0].group.position.x, trains[0].group.position.z), quality.profile === "low");
   effects.render(quality.profile === "cinema");
   if (frame % 35 === 0) {
-    $("fps").textContent = Math.round(1 / (realDt || 1 / 60)) + " FPS \xB7 v0.5";
+    $("fps").textContent = Math.round(1 / (realDt || 1 / 60)) + " FPS \xB7 v0.6";
     missionUI();
     $("sceneInfo").textContent = trains.filter((t) => t.speed > 0).length + " CONVOGLI IN MARCIA \xB7 4 TRONCHINI \xB7 RUNAROUND LUNGO";
   }

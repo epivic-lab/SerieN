@@ -21,3 +21,5 @@ h1,h2,h3,p{margin-top:0}.eyebrow{font:700 10px system-ui,sans-serif;letter-spaci
 .rollingLabel{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:16px;font-size:11px;color:#c4d0bb}.rollingLabel select{max-width:175px}
 
 .cameraToolbar{position:absolute;left:17px;bottom:63px;display:flex;align-items:center;gap:8px;background:#1a3026dd;border:1px solid #57775a;border-radius:7px;padding:6px 9px;z-index:3;font-size:11px}.cameraToolbar select{max-width:160px}@media(max-width:600px){.cameraToolbar{left:10px;bottom:65px}}
+
+.cameraToolbar{max-width:calc(100% - 34px);flex-wrap:wrap;padding:7px;gap:6px}.viewControls{display:flex;gap:4px}.viewControls button{min-width:44px;min-height:44px;padding:4px 6px;font-size:19px}.viewControls small{display:block;font-size:8px;line-height:11px}.viewControls button.active{background:#706448;border-color:#e4bd7c}.cameraToolbar select{max-width:150px}@media(max-width:600px){.cameraToolbar{max-width:calc(100% - 20px);bottom:62px;gap:4px}.viewControls{flex-basis:100%}.viewControls button{flex:1;min-width:44px}.cameraToolbar select{flex:1;max-width:none}.cameraToolbar label{font-size:10px}}

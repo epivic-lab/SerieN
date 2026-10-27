@@ -1,3 +1,6 @@
+import { createStationMaterials } from "./station-materials.js";
+import { buildStationBuilding } from "./station-building.js";
+import { buildStationPlatform } from "./station-platform.js";
 import { buildZones } from "./zones.js";
 import { clearance } from "./landscape.js";
 import { diorama, roofTexture, wallTexture } from "./diorama.js";
@@ -74,24 +77,13 @@ function enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials
   stones.count = i;
   stones.castShadow = stones.receiveShadow = true;
   scene.add(stones);
-  const platform = new THREE.Mesh(new THREE.BoxGeometry(270, 4, 18), new THREE.MeshStandardMaterial({ color: "#b6ac92", roughness: 0.95 }));
-  platform.position.set(750, 2, 550);
-  platform.receiveShadow = true;
-  scene.add(platform);
-  const trim = new THREE.Mesh(new THREE.BoxGeometry(270, 0.5, 1.8), new THREE.MeshStandardMaterial({ color: "#eddfb8" }));
-  trim.position.set(750, 4.4, 559);
-  scene.add(trim);
-  for (let x = 635; x < 880; x += 39) {
-    const bench = new THREE.Mesh(new THREE.BoxGeometry(14, 1.5, 4), wood);
-    bench.position.set(x, 8, 546);
-    bench.castShadow = true;
-    scene.add(bench);
-    for (const dx of [-5, 5]) {
-      const leg = new THREE.Mesh(new THREE.BoxGeometry(1, 5, 3), m);
-      leg.position.set(x + dx, 5, 546);
-      scene.add(leg);
-    }
-  }
+  const stationMaterials = createStationMaterials(renderer);
+  const stationBuilding = buildStationBuilding(scene, { materials: stationMaterials });
+  const stationPlatform = buildStationPlatform(scene, { materials: { stationIron: stationMaterials.metal, stationWood: stationMaterials.wood, canopyZinc: stationMaterials.roofDark, platformCurb: stationMaterials.stone } });
+  const station = { building: stationBuilding, platform: stationPlatform, materials: stationMaterials, update(night) {
+    stationMaterials.update(night);
+    stationPlatform.update(night);
+  } };
   ground.visible = false;
   const initialBuildings = scene.children.filter((o) => o.userData.building).map((o) => ({ x: o.position.x, z: o.position.z, ...o.userData.building }));
   const zones = buildZones(scene, network, { wood, mask: clearance(network, initialBuildings) });
@@ -126,7 +118,7 @@ function enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials
     });
     b.geometries.forEach((g) => g.dispose());
   }
-  return { environment: env, ...scenic, zones };
+  return { environment: env, ...scenic, zones, station };
 }
 export {
   enrich,

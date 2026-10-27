@@ -216,20 +216,6 @@ function diorama(scene, renderer, network, wood, { foundation, reserved = () => 
   contact.rotation.x = -Math.PI / 2;
   contact.position.set(750, -31.7, 350);
   scene.add(contact);
-  const sign = canvasTexture(512, 96, (ctx, w, h) => {
-    ctx.fillStyle = "#173a42";
-    ctx.fillRect(0, 0, w, h);
-    ctx.strokeStyle = "#ddd8bf";
-    ctx.lineWidth = 5;
-    ctx.strokeRect(5, 5, w - 10, h - 10);
-    ctx.fillStyle = "#f6edcf";
-    ctx.font = "600 44px sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillText("AUTUMN VALLEY", w / 2, 63);
-  });
-  const panel = new THREE.Mesh(new THREE.PlaneGeometry(62, 12), new THREE.MeshStandardMaterial({ map: sign, roughness: 0.7, side: THREE.DoubleSide }));
-  panel.position.set(750, 32, 546);
-  scene.add(panel);
   const fence = [];
   for (let x = 180; x < 1180; x += 16) if (mask.track(x, 575) > 20 && !mask.building(x, 575, 4)) {
     fence.push({ x, y: 5, z: 575, sx: 1, sy: 9, sz: 1 });
