@@ -152,15 +152,19 @@ function drawVillage(){let houses=[[215,365,78,70,60,'#c9b897','#645f50'],[340,3
  houses.forEach(a=>house(...a));house(990,300,135,102,70,'#ad785c','#754d3b');house(1020,175,140,98,75,'#ad977b','#655746');house(650,455,110,65,50,'#dbd0b4','#6f594a');
  if(labels){text('BORGO AUTUNNALE',415,460,'#f4dfb6',14);text('SEGHERIA',1065,309,'#f3e4bb',14);text('STAZIONE',695,516,'#f3e4bb',14)}
 }
+const shrubs=Array.from({length:130},(_,i)=>({x:(i*731+33)%1350+25,y:(i*311+90)%620+15}));
+const sceneryBushes=Array.from({length:85},(_,i)=>({x:165+rand()*1070,y:170+rand()*365,size:4+rand()*8,color:['#6d8350','#8da568','#a7a05c'][i%3]}));
+const foliage=[];for(let i=0;i<128;i++){let x=rand()*1400,y=rand()*660;if(x<145||x>1260||y<140||y>500||x>770&&y>160&&y<360||x<750&&y>190&&y<355||y>360&&y<490&&x<850)continue;foliage.push([x,y,13+rand()*20,rand()>.38?'broad':'pine',i%4])}
+foliage.sort((a,b)=>(a[0]+a[1])-(b[0]+b[1]));
+const rocks=Array.from({length:12},(_,i)=>({x:1210+rand()*90,y:212+rand()*135,i}));
 function drawScenery(){drawGround();drawRoad();
- for(let i=0;i<85;i++){let x=165+rand()*1070,y=170+rand()*365;if(y>285&&y<340||x>780&&x<1250&&y>170&&y<305||x>200&&x<800&&y>190&&y<280)continue; bush(x,y,4+rand()*8,['#6d8350','#8da568','#a7a05c'][i%3])}
- const positions=[];for(let i=0;i<128;i++){let x=rand()*1400,y=rand()*660;if(x<145||x>1260||y<140||y>500||x>770&&y>160&&y<360||x<750&&y>190&&y<355||y>360&&y<490&&x<850)continue;positions.push([x,y,13+rand()*20,rand()>.38?'broad':'pine',i%4])}
- positions.sort((a,b)=>(a[0]+a[1])-(b[0]+b[1]));positions.forEach(p=>tree(p[0],p[1],p[2],p[3]==='pine'?'pine':p[4]));
+ sceneryBushes.forEach(({x,y,size,color})=>{if(y>285&&y<340||x>780&&x<1250&&y>170&&y<305||x>200&&x<800&&y>190&&y<280)return;bush(x,y,size,color)});
+ foliage.forEach(p=>tree(p[0],p[1],p[2],p[3]==='pine'?'pine':p[4]));
  drawTrackSystem();drawVillage();
  // Tettoie e materiale da lavorare nel deposito merci
  for(let i=0;i<9;i++)line([[990+i*8,342,5],[1033+i*8,342,5]],'#8c6c4e',4);
  // Rocce e portale di galleria presso la curva destra
- for(let i=0;i<12;i++){let x=1210+rand()*90,y=212+rand()*135;polygon([[x-15,y-13,0],[x+13,y-16,0],[x+22,y+10,17],[x,y+22,37],[x-25,y+11,15]],['#727d65','#6d7168','#95998b'][i%3])}
+ rocks.forEach(({x,y,i})=>polygon([[x-15,y-13,0],[x+13,y-16,0],[x+22,y+10,17],[x,y+22,37],[x-25,y+11,15]],['#727d65','#6d7168','#95998b'][i%3]))
  // Piccolo ponte in muratura, settore anello interno
  polygon([[620,558,0],[705,558,0],[705,576,-10],[620,576,-10]],'#a6aa99','#717a70');
  // Lampioni
