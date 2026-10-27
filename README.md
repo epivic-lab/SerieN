@@ -1,37 +1,80 @@
-# SerieN · Autumn Railways
+# SerieN · Autumn Railways v0.3
 
-Gioco ferroviario web per il plastico Kato Unitrack scala N dell'utente, sviluppato come progetto autonomo. **Non modifica e non dipende da [First](https://github.com/epivic-lab/first).**
+Simulatore ferroviario web indipendente in scala N. [Gioca](https://epivic-lab.github.io/SerieN/).
+Non dipende dal repository `first` e non invia comandi alla centralina Z21 reale.
 
-**[▶ Apri SerieN](https://epivic-lab.github.io/SerieN/)**
+## Gioco
 
-## v0.2 — Ricostruzione tridimensionale
+Tre locomotive indipendenti (BR 055, BR 216, BR 260), tre circuiti R249/R282/R315,
+quattro tronchini, due crossover e un runaround con due rami. Comandi di marcia,
+retromarcia, arresto, luci, aggancio e sgancio; quattro missioni introduttive.
+Camera orbitale, pianta generata dal tracciato 3D, ciclo giorno/notte,
+fari direzionali e profilo grafico leggero per mobile. Spazio arresta il treno
+selezionato quando il focus non è su un controllo. La retromarcia include frenata
+prima del cambio di verso; aggancio e sgancio richiedono un convoglio fermo.
 
-- Vista 3D volumetrica con telecamera orbitale, paesaggio autunnale, alberi, edifici, massicciata, traverse, rotaie, treni e luce regolabile.
-- Interfaccia di guida **orizzontale sotto il plastico**: selezione BR 055, BR 216 e BR 260, velocità indipendente, direzione, stop, luci e composizione dei carri.
-- Tre anelli con raggi nominali R249, R282 e R315.
-- Quattro tronchini (tre sul lato sinistro, uno a destra) e **runaround lungo**, composto da **due percorsi raccordati alle estremità**, con punti di instradamento.
-- Due WX310 e comandi degli scambi del fascio merci, azionabili sia dalla mappa 3D sia dalla barra laterale.
-- Quattro missioni introduttive, tra cui una dedicata al runaround.
-- Gioco statico pubblicabile su GitHub Pages, senza backend.
+## Avvio e verifiche
 
-## Limiti e prossimi passi
+Richiede Node.js 22 o successivo e Python 3 per il server di sviluppo:
 
-**La geometria 3D e l'instradamento dei binari di manovra sono approssimazioni del layout originale, non ancora una conversione CAD esatta del file RailModeller.** In particolare, il runaround è ora presente con entrambi i raccordi ma tutti gli itinerari, gli incroci e la logica di aggancio ferroviaria restano da validare contro la planimetria. Non dichiarare simulazione 1:1.
+```sh
+npm ci
+npm test
+npm start
+```
 
-La resa grafica è una base procedurale Three.js, **non ancora paragonabile per ricchezza a un titolo commerciale come Train Station 3**. Per avvicinarla all'obiettivo servono modelli e texture 3D dedicati, illuminazione/ombre curate, animazioni e una rete topologica tratta dal layout reale.
+Aprire http://localhost:8000. `npm start` compila il bundle e serve i file statici.
+Non aprire direttamente `index.html` tramite `file://`.
 
-Le risorse Three.js sono caricate da jsDelivr quando il browser è connesso a Internet.
+`npm run build` genera `dist/game.js`, comprendente Three.js 0.163.0 e gli addon
+usati. Il gioco corrente non richiede CDN, font remoti, account o un backend.
+Esbuild e dipendenze sono fissati nel lockfile. Il prototipo `legacy-v0.1.html`
+resta conservato e può avere requisiti differenti.
 
-## Vedere la precedente versione
+## Architettura
 
-[Prototipo originale v0.1](./legacy-v0.1.html) (salvato prima della revisione).
+- `src/network.js`: geometria misurata, nodi, archi e campionamento comune.
+- `src/simulation.js`: itinerari, storia del percorso della composizione e clock
+  a passo fisso di 1/60 s; indipendente da Three.js e dal DOM.
+- `src/scenery.js`: materiali originali procedurali, ambiente, dettagli e batching
+  degli oggetti statici per materiale.
+- `app.js`: scena WebGL, rotabili procedurali, interazione, protezione e missioni.
+- `index.html` / `style.css`: interfaccia responsive e messaggio di errore iniziale.
+- `tests/network.test.js`: continuità dei crossover, reversibilità, chiusura dei
+  circuiti, quattro terminazioni e indipendenza della simulazione dagli FPS.
 
-## Deploy
+La pianta nel gioco deriva dalle stesse polilinee dei binari; il precedente SVG
+negli asset è conservato solo come documento storico. Lo stato non viene salvato:
+ricaricare la pagina riavvia la sessione.
 
-Il workflow GitHub Actions distribuisce automaticamente il branch \`main\` su GitHub Pages. Non è necessario compilare nulla.
+## Precisione e qualità visiva
 
-## Indipendenza da Z21
+Il riferimento ferroviario è il PDF «3 anelli 4 tronchini 1 run around» fornito
+dall'utente; il riferimento artistico è `plasticoEx.png`. Il PDF Fleischmann
+precedentemente fornito per errore è escluso.
 
-Non si collega né invia comandi alla Z21 fisica. È una simulazione per sperimentare la guida e immaginare le missioni.
+Sono rappresentati raggi nominali, crossover e disassamento inferiore dell'anello
+interno. Il fascio e le geometrie interne degli scambi sono ancora ricostruzioni
+tramite curve: **non è una conversione CAD millimetrica certificata dei pezzi Kato**.
+Occorrono verifica delle geometrie di catalogo e confronto con il file RailModeller.
+La protezione considera vicinanza dei veicoli e blocca scambi prossimi ai convogli;
+non costituisce un sistema completo di interblocco o di dinamica ferroviaria.
+Le ruote sono animate; carrelli, bielle, fumo e ganci fisici non sono simulati in dettaglio.
 
-© Progetto amatoriale indipendente, senza affiliazione a Kato, Roco o ai titoli videoludici citati come riferimenti stilistici.
+I modelli e i materiali del gioco sono procedurali originali. Nessun asset è stato
+scaricato da Sketchfab, Free3D, CGTrader o Meshy: l'accesso è bloccato e le licenze
+non sono state verificate. **La qualità non equivale a Train Station 3 o al rendering
+artistico di riferimento**. Servono asset dedicati, ulteriore lavoro artistico e
+misure su dispositivi reali. Il profilo leggero riduce risoluzione e ombre; i test
+headless con renderer software non sono benchmark di una GPU desktop o mobile.
+
+## Pubblicazione
+
+Il workflow `.github/workflows/pages.yml` esegue `npm ci`, test, build e prepara
+`_site` includendo solo pagina, CSS, bundle, asset e prototipo precedente. Non
+pubblica `node_modules`, documenti di lavoro o l'immagine di ispirazione.
+Un push su `main` avvia GitHub Pages. La versione precedente è recuperabile dal
+commit `40b1fdd` (codice del gioco al commit `d3c3801`).
+
+Three.js e addon: licenza MIT, mantenuta nel bundle generato. Il progetto è
+amatoriale, senza affiliazione a Kato, Roco o ai titoli citati come riferimento.
