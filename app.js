@@ -1,4 +1,8 @@
-import { attachTrainAsset, importedTrains } from "./src/train-assets.js";
+import { tunnelAt } from "./src/structure-layout.js";
+import { railGeometry } from "./src/rail-profile.js";
+import { navigation } from "./src/navigation.js";
+import { QualityController } from "./src/quality.js";
+import { attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets } from "./src/train-assets.js";
 import { locomotiveDetails, wagonDetails, steam } from "./src/rolling-stock-art.js";
 import { presentation } from "./src/presentation.js";
 import { enrich } from "./src/scenery.js";
@@ -8,10 +12,11 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 const $ = (id) => document.getElementById(id);
 const host = $("view3d");
+importedTrains($("rollingModels").value === "kenney");
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("#9fbcc5");
 scene.fog = new THREE.Fog("#b8c3af", 1900, 3700);
-const camera = new THREE.OrthographicCamera(-1100, 1100, 650, -650, 1, 6500);
+const camera = new THREE.PerspectiveCamera(35, 1, 1, 6500);
 camera.position.set(1580, 1150, 1570);
 camera.lookAt(750, 0, 350);
 const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
@@ -30,6 +35,8 @@ controls.dampingFactor = 0.065;
 controls.minPolarAngle = 0.25;
 controls.maxPolarAngle = 1.38;
 controls.minZoom = 0.65;
+controls.minDistance = 250;
+controls.maxDistance = 3600;
 controls.maxZoom = 3.4;
 controls.enablePan = true;
 controls.update();
@@ -158,13 +165,7 @@ function addRail(path, label) {
   bedMesh.receiveShadow = true;
   scene.add(bedMesh);
   for (const signed of [-1, 1]) {
-    const railPts = [], steps = Math.max(2, Math.ceil(path.length / 5));
-    for (let i = 0; i <= steps; i++) {
-      const u = i / steps, p = at(path, u), tan = tangent(path, u), side = new THREE.Vector3(-tan.z, 0, tan.x).multiplyScalar(signed * 4.5);
-      railPts.push(new THREE.Vector3(p.x + side.x, 5.15, p.z + side.z));
-    }
-    const railCurve = new THREE.CatmullRomCurve3(railPts, false, "centripetal");
-    const mesh = new THREE.Mesh(new THREE.TubeGeometry(railCurve, Math.max(80, railPts.length * 2), 0.8, 5, false), steel);
+    const mesh = new THREE.Mesh(railGeometry(path, signed), steel);
     mesh.castShadow = true;
     scene.add(mesh);
   }
@@ -184,7 +185,6 @@ function addRail(path, label) {
 }
 Object.values(railPaths).forEach((p) => addRail(p, p.id));
 const windowDay = mat("#3f5d62"), windowNight = new THREE.MeshStandardMaterial({ color: "#ebc174", emissive: "#ffbb58", emissiveIntensity: 0.2, roughness: 0.9 });
-const windows = [];
 function buildHouse(x, z, w, d, h, wall, roof, type = "house", orientation = 0) {
   const g = new THREE.Group();
   g.position.set(x, 1.5, z);
@@ -209,7 +209,6 @@ function buildHouse(x, z, w, d, h, wall, roof, type = "house", orientation = 0) 
     for (let i = -1; i <= 1; i++) {
       const pane = box(10, 13, 1, windowDay, g, i * w * 0.27, h * 0.52, side * (d / 2 + 0.8));
       const bright = box(8, 11, 1.5, windowNight, g, i * w * 0.27, h * 0.52, side * (d / 2 + 1.2));
-      windows.push(bright);
       const trim = mat("#e1ceb0");
       box(12, 1.4, 2, trim, g, i * w * 0.27, h * 0.52 + 7, side * (d / 2 + 1.9));
       box(12, 1.4, 3, trim, g, i * w * 0.27, h * 0.52 - 7, side * (d / 2 + 1.9));
@@ -232,12 +231,7 @@ function buildHouse(x, z, w, d, h, wall, roof, type = "house", orientation = 0) 
 }
 const hstyle = mat("#d8c4a6"), hbrick = mat("#b68d77"), hboard = mat("#98735b");
 buildHouse(280, 455, 75, 54, 48, hstyle, roofRed);
-buildHouse(385, 456, 78, 61, 60, hbrick, roofGray);
-buildHouse(490, 480, 65, 53, 48, hstyle, roofRed);
 buildHouse(583, 449, 80, 57, 62, hbrick, roofRed);
-buildHouse(711, 473, 77, 58, 50, hstyle, roofGray);
-buildHouse(814, 465, 94, 60, 46, hbrick, roofRed);
-buildHouse(945, 459, 83, 50, 51, hstyle, roofGray);
 const station = buildHouse(750, 525, 135, 40, 48, hbrick, roofGray);
 buildHouse(1033, 333, 125, 80, 52, hboard, roofRed, "factory");
 buildHouse(1165, 338, 77, 58, 45, cream, roofGray, "factory");
@@ -539,7 +533,7 @@ function advance(t, dt) {
   }
   t.odometer += t.velocity * dt;
   const previousRoute = t.mode + "/" + t.loop + "/" + t.section;
-  const location = t.journey.locate(), edge = network.edges[location.edge];
+  const location2 = t.journey.locate(), edge = network.edges[location2.edge];
   if (edge.lane !== void 0) {
     if (edge.lane !== t.previousLane) {
       transferred = true;
@@ -620,16 +614,25 @@ function couple() {
   ui();
   log("Carro agganciato.");
 }
+function removeWagon(group) {
+  releaseTrainAsset(group);
+  const geometries = /* @__PURE__ */ new Set();
+  group.traverse((o) => {
+    if (o.isMesh) geometries.add(o.geometry);
+  });
+  geometries.forEach((g) => g.dispose());
+  scene.remove(group);
+}
 function reset() {
   if (!confirm("Riportare a zero locomotive, scambi e missioni?")) return;
-  for (const d of detached) scene.remove(d.group);
+  for (const d of detached) removeWagon(d.group);
   detached.length = 0;
   switchSpecs.forEach((s) => {
     s.on = false;
     s.bulb.material = signalGreen;
   });
   trains.forEach((t, i) => {
-    t.carObjs.forEach((o) => scene.remove(o));
+    t.carObjs.forEach(removeWagon);
     t.carObjs = [];
     Object.assign(t, { loop: [2, 1, 0][i], speed: 0, dir: 1, cars: [3, 2, 2][i], laps: 0, mode: "loop" });
     for (let j = 0; j < t.cars; j++) {
@@ -682,13 +685,10 @@ $("pause").onclick = () => {
 };
 $("reset").onclick = reset;
 $("homeView").onclick = () => {
-  camera.position.set(1580, 1150, 1570);
-  controls.target.set(750, 0, 350);
-  camera.zoom = 1;
-  camera.updateProjectionMatrix();
-  controls.update();
-  resize();
+  nav.select("overview");
+  $("cameraView").value = "overview";
 };
+$("cameraView").onchange = (e) => nav.select(e.target.value);
 $("planBtn").onclick = () => {
   const paths = Object.values(network.edges).map((p) => '<polyline points="' + p.points.map((v) => v.x + "," + v.z).join(" ") + '" fill="none" stroke="' + (p.lane === void 0 ? "#a65c2e" : "#35483c") + '" stroke-width="4"/>').join("");
   const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 700"><rect width="1500" height="700" fill="#e4e7d9"/>' + paths + "</svg>";
@@ -730,18 +730,22 @@ trains.forEach((t) => {
   t.carObjs.forEach((o) => o.userData.dynamic = true);
 });
 selectRing.userData.dynamic = true;
-const scenic = enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials: [roofRed, roofGray], wallMaterials: [hstyle, hbrick, hboard, cream] });
-$("quality").onchange = (e) => {
-  const high = e.target.value !== "low";
-  renderer.setPixelRatio(high ? Math.min(devicePixelRatio || 1, 2) : 1);
-  renderer.shadowMap.enabled = high;
+const scenic = enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials: [roofRed, roofGray], wallMaterials: [hstyle, hbrick, hboard, cream], foundation: ballastLayer });
+const nav = navigation(camera, controls, { height: scenic.cameraHeight, buildings: scenic.buildings });
+const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
+function applyQuality(profile) {
+  $("quality").querySelector("[value=auto]").textContent = "Automatica \xB7 " + (profile === "low" ? "Leggera" : "Alta");
+  renderer.setPixelRatio(profile === "low" ? 1 : Math.min(devicePixelRatio || 1, 1.5));
+  renderer.shadowMap.enabled = profile !== "low";
+  scenic.setQuality(profile);
   resize();
-};
-if (innerWidth < 700) {
-  $("quality").value = "low";
-  renderer.setPixelRatio(1);
-  renderer.shadowMap.enabled = false;
 }
+$("quality").onchange = (e) => applyQuality(quality.setMode(e.target.value));
+quality.setMode("auto");
+applyQuality(quality.profile);
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) quality.update(0, false);
+});
 window.addEventListener("keydown", (e) => {
   if (e.code === "Space" && !["INPUT", "SELECT", "BUTTON"].includes(e.target.tagName)) {
     e.preventDefault();
@@ -755,18 +759,39 @@ function resize() {
   if (!w || !h) return;
   renderer.setSize(w, h, false);
   effects.resize(w, h);
-  const aspect = w / h, span = Math.max(1020, 1650 / aspect);
-  camera.left = -span * aspect / 2;
-  camera.right = span * aspect / 2;
-  camera.top = span / 2;
-  camera.bottom = -span / 2;
+  camera.aspect = w / h;
+  camera.fov = Math.max(35, Math.min(65, 49 / camera.aspect));
   camera.updateProjectionMatrix();
 }
 const smoke = steam(scene);
+let animationHandle = 0;
+window.addEventListener("pagehide", (e) => {
+  if (e.persisted) return;
+  cancelAnimationFrame(animationHandle);
+  observer.disconnect();
+  controls.dispose();
+  nav.dispose();
+  effects.dispose();
+  disposeTrainAssets();
+  const gs = /* @__PURE__ */ new Set(), ms = /* @__PURE__ */ new Set(), ts = /* @__PURE__ */ new Set();
+  scene.traverse((o) => {
+    if (o.geometry) gs.add(o.geometry);
+    for (const m of Array.isArray(o.material) ? o.material : [o.material]) if (m) {
+      ms.add(m);
+      for (const value of Object.values(m)) if (value?.isTexture) ts.add(value);
+    }
+  });
+  gs.forEach((g) => g.dispose());
+  ms.forEach((m) => m.dispose());
+  ts.forEach((t) => t.dispose());
+  scenic.environment.dispose();
+  renderer.dispose();
+});
 const clock = new FixedClock();
 let last = performance.now(), frame = 0;
 function tick(now) {
-  const dt = Math.min(0.2, (now - last) / 1e3);
+  const realDt = Math.max(0, (now - last) / 1e3);
+  const dt = Math.min(0.2, realDt);
   last = now;
   if (!paused) {
     clock.update(dt, (step) => {
@@ -793,17 +818,45 @@ function tick(now) {
   windowNight.color.setRGB(lerp(0.15, 0.8, night), lerp(0.22, 0.56, night), lerp(0.24, 0.23, night));
   glow.emissiveIntensity = lerp(0.4, 2.8, night);
   controls.update();
-  scenic.update(paused ? 0 : dt);
-  smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2, $("quality").value === "low");
-  effects.render($("quality").value === "cinema");
+  nav.update(realDt, trains[selected].journey.locate());
+  if ($("cameraView").value !== nav.preset && nav.preset === "manual") $("cameraView").value = "manual";
+  document.querySelector(".titleScene").hidden = nav.preset !== "overview" && nav.preset !== "manual" || camera.zoom > 1.4;
+  const nextQuality = quality.update(realDt, !document.hidden);
+  if (nextQuality) applyQuality(nextQuality);
+  scenic.zones.update(night, dt);
+  scenic.update(paused ? 0 : dt, camera);
+  smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2 && !tunnelAt(trains[0].group.position.x, trains[0].group.position.z), quality.profile === "low");
+  effects.render(quality.profile === "cinema");
   if (frame % 35 === 0) {
-    $("fps").textContent = Math.round(1 / (dt || 1 / 60)) + " FPS \xB7 v0.4";
+    $("fps").textContent = Math.round(1 / (realDt || 1 / 60)) + " FPS \xB7 v0.5";
     missionUI();
     $("sceneInfo").textContent = trains.filter((t) => t.speed > 0).length + " CONVOGLI IN MARCIA \xB7 4 TRONCHINI \xB7 RUNAROUND LUNGO";
   }
-  requestAnimationFrame(tick);
+  animationHandle = requestAnimationFrame(tick);
 }
 resize();
 ui();
 $("loadMsg").hidden = true;
-requestAnimationFrame(tick);
+animationHandle = requestAnimationFrame(tick);
+if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = { snapshot() {
+  const hull = (group) => {
+    group.updateWorldMatrix(true, true);
+    const inverse = group.matrixWorld.clone().invert(), out = [];
+    group.traverse((o) => {
+      if (!o.isMesh) return;
+      let a = o;
+      while (a && a !== group) {
+        if (!a.visible) return;
+        a = a.parent;
+      }
+      if (!o.geometry.boundingBox) o.geometry.computeBoundingBox();
+      const b = o.geometry.boundingBox, m = inverse.clone().multiply(o.matrixWorld);
+      for (const x of [b.min.x, b.max.x]) for (const y of [b.min.y, b.max.y]) for (const z of [b.min.z, b.max.z]) {
+        const p = new THREE.Vector3(x, y, z).applyMatrix4(m);
+        out.push({ x: p.x, y: p.y + group.position.y, z: p.z });
+      }
+    });
+    return out;
+  };
+  return { quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray() }, render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, hull: hull(t.group), cars: t.carObjs.map(hull) })), pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
+} };

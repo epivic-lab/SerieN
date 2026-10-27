@@ -1,3 +1,5 @@
+import { railwayWorks } from "./railway-works.js";
+import { bridgeAt } from "./structure-layout.js";
 import * as THREE from "three";
 import { seeded, clearance, forestSites } from "./landscape.js";
 function canvasTexture(w, h, draw) {
@@ -98,9 +100,11 @@ function instance(geometry, material, items, scene) {
   scene.add(mesh);
   return mesh;
 }
-function diorama(scene, renderer, network, wood) {
+function diorama(scene, renderer, network, wood, { foundation, reserved = () => false } = {}) {
   const buildings = scene.children.filter((o) => o.userData.building).map((o) => ({ x: o.position.x, z: o.position.z, ...o.userData.building }));
   const mask = clearance(network, buildings), rnd = seeded(814);
+  const works = railwayWorks(scene, network, mask, foundation);
+  mask.reserved = (x, z) => reserved(x, z) || works.reserved(x, z);
   wood.map = grainTexture();
   wood.color.set("#d4b08a");
   wood.map.wrapS = wood.map.wrapT = THREE.RepeatWrapping;
@@ -116,6 +120,12 @@ function diorama(scene, renderer, network, wood) {
     const c = new THREE.Color().setHSL(0.19 + 0.025 * Math.sin(x * 0.014 + z * 0.01), 0.23, 0.29 + h * 1e-3 + 0.022 * Math.sin(x * 0.04) * Math.sin(z * 0.08)).convertSRGBToLinear();
     colors.push(c.r, c.g, c.b);
   }
+  const ix = geo.index.array, kept = [];
+  for (let i = 0; i < ix.length; i += 3) {
+    const x = (positions.getX(ix[i]) + positions.getX(ix[i + 1]) + positions.getX(ix[i + 2])) / 3 + 750, z = (positions.getZ(ix[i]) + positions.getZ(ix[i + 1]) + positions.getZ(ix[i + 2])) / 3 + 350;
+    if (!bridgeAt(x, z)) kept.push(ix[i], ix[i + 1], ix[i + 2]);
+  }
+  geo.setIndex(kept);
   geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
   geo.computeVertexNormals();
   const terrain = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 1 }));
@@ -124,7 +134,7 @@ function diorama(scene, renderer, network, wood) {
   scene.add(terrain);
   const trees = forestSites(mask), trunks = [], branches = [], crowns = [], pines = [];
   for (const t of trees) {
-    trunks.push({ x: t.x, y: t.y + t.h * 0.3, z: t.z, sx: t.h * 0.023, sy: t.h * 0.6, sz: t.h * 0.023 });
+    trunks.push({ color: t.species === "birch" ? "#c4c6b8" : "#64513d", x: t.x, y: t.y + t.h * 0.3, z: t.z, sx: t.h * 0.023, sy: t.h * 0.6, sz: t.h * 0.023 });
     if (t.pine) {
       for (let j = 0; j < 3; j++) pines.push({ x: t.x, y: t.y + t.h * 0.55, z: t.z, sx: t.h * 0.65, sy: t.h, sz: 1, ry: j * Math.PI / 3, color: "#58724b" });
     } else {
@@ -137,7 +147,8 @@ function diorama(scene, renderer, network, wood) {
       }
     }
   }
-  const bark = new THREE.MeshStandardMaterial({ color: "#5e4935", roughness: 1 });
+  branches.forEach((b) => b.color = "#64513d");
+  const bark = new THREE.MeshStandardMaterial({ color: "#ffffff", roughness: 1 });
   instance(new THREE.CylinderGeometry(0.65, 1, 1, 6), bark, [...trunks, ...branches], scene);
   const windTime = { value: 0 };
   const foliage = new THREE.MeshStandardMaterial({ map: foliageTexture(), alphaTest: 0.48, side: THREE.DoubleSide, roughness: 1 });
@@ -150,10 +161,21 @@ function diorama(scene, renderer, network, wood) {
   leaves.userData.foliage = true;
   const evergreen = instance(new THREE.PlaneGeometry(1, 1), new THREE.MeshStandardMaterial({ map: foliageTexture(true), alphaTest: 0.48, side: THREE.DoubleSide, roughness: 1 }), pines, scene);
   evergreen.userData.foliage = true;
+  const volume = [];
+  for (const t of trees.filter((t2) => !t2.pine)) {
+    const col = new THREE.Color(["#c88f39", "#b16a39", "#b8a15a", "#bf772e"][Math.floor(t.hue * 4)]);
+    for (let j = 0; j < 7; j++) {
+      const a = j * 2.399 + t.rotation, r = t.h * 0.14 * (j ? 1 : 0);
+      volume.push({ x: t.x + Math.cos(a) * r, y: t.y + t.h * (0.64 + j % 3 * 0.075), z: t.z + Math.sin(a) * r, sx: t.h * (0.12 + j % 3 * 0.02), sy: t.h * (0.15 + j % 2 * 0.025), sz: t.h * 0.13, rx: 0.2 * Math.sin(a), ry: a, rz: 0.2 * Math.cos(a), color: col });
+    }
+  }
+  const canopy = instance(new THREE.SphereGeometry(1, 10, 7), new THREE.MeshStandardMaterial({ roughness: 0.96 }), volume, scene);
+  canopy.userData.foliage = true;
+  let profile = "high";
   const shrubs = [], grass = [], litter = [];
   for (let i = 0; i < 5e3; i++) {
     const x = 12 + rnd() * 1476, z = 12 + rnd() * 676, d = mask.track(x, z);
-    if (d < 17 || mask.building(x, z, 5) || mask.road(x, z)) continue;
+    if (mask.reserved(x, z) || d < 17 || mask.building(x, z, 5) || mask.road(x, z)) continue;
     const y = mask.height(x, z);
     if (i < 700 && d > 23) shrubs.push({ x, y: y + 2 + rnd() * 2, z, sx: 3 + rnd() * 6, sy: 2 + rnd() * 3, sz: 3 + rnd() * 5, color: new THREE.Color().setHSL(0.12 + rnd() * 0.13, 0.35, 0.25 + rnd() * 0.1).convertSRGBToLinear() });
     grass.push({ x, y: y + 1.8, z, sx: 1 + rnd() * 2, sy: 2 + rnd() * 3, sz: 1, ry: rnd() * Math.PI, color: new THREE.Color().setHSL(0.13 + rnd() * 0.09, 0.32, 0.3 + rnd() * 0.15).convertSRGBToLinear() });
@@ -171,7 +193,7 @@ function diorama(scene, renderer, network, wood) {
   const rocks = [];
   for (let i = 0; i < 180; i++) {
     const x = 140 + rnd() * 1210, z = 335 + rnd() * 130;
-    if (mask.track(x, z) < 28 || mask.building(x, z, 15) || mask.road(x, z)) continue;
+    if (mask.reserved(x, z) || mask.track(x, z) < 28 || mask.building(x, z, 15) || mask.road(x, z)) continue;
     const y = mask.height(x, z);
     if (y < 5) continue;
     rocks.push({ x, y: y - 2, z, sx: 5 + rnd() * 11, sy: 4 + rnd() * 10, sz: 4 + rnd() * 9, ry: rnd() * 6, color: new THREE.Color().setHSL(0.1, 0.07, 0.36 + rnd() * 0.16) });
@@ -214,9 +236,26 @@ function diorama(scene, renderer, network, wood) {
     if (x < 1164) for (const y of [3, 7]) fence.push({ x: x + 8, y, z: 575, sx: 16, sy: 0.8, sz: 0.7 });
   }
   instance(new THREE.BoxGeometry(1, 1, 1), wood, fence, scene);
-  return { trees: trees.length, foliage: leaves, evergreen, grass: blades, litter: fallen, update(dt) {
-    windTime.value += dt;
-  } };
+  return {
+    trees: trees.length,
+    foliage: leaves,
+    evergreen,
+    grass: blades,
+    litter: fallen,
+    canopy,
+    cameraHeight: works.cameraHeight,
+    buildings,
+    works,
+    setQuality(value) {
+      profile = value;
+    },
+    update(dt, camera) {
+      const detailed = profile !== "low" && (!camera || camera.zoom > 0.75);
+      canopy.visible = detailed;
+      leaves.visible = true;
+      windTime.value += dt;
+    }
+  };
 }
 export {
   diorama,

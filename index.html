@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#16241d">
-<title>SerieN · Autumn Railways</title><link rel="stylesheet" href="./style.css?v=0.4.0">
+<title>SerieN · Autumn Railways</title><link rel="stylesheet" href="./style.css?v=0.5.0">
 
 </head><body>
 <div class="app">
 <header class="top">
 <div class="brand"><div class="mark">N<small>160</small></div><div><b>SerieN <i>Autumn Railways</i></b><span>IL NOSTRO PLASTICO · SCALA N · 150 × 70 CM</span></div></div>
-<nav><label class="qualityLabel">Qualità <select id="quality" aria-label="Qualità grafica"><option value="high">Alta</option><option value="cinema">Cinema</option><option value="low">Leggera</option></select></label><span class="online">● SIMULAZIONE WEB</span><button id="homeView" class="secondary">⌖ Inquadra</button><button id="planBtn" class="secondary">▦ Planimetria</button><button id="helpBtn" class="secondary">? Guida</button></nav>
+<nav><label class="qualityLabel">Qualità <select id="quality" aria-label="Qualità grafica"><option value="auto">Automatica</option><option value="high">Alta</option><option value="cinema">Cinema</option><option value="low">Leggera</option></select></label><span class="online">● SIMULAZIONE WEB</span><button id="homeView" class="secondary">⌖ Inquadra</button><button id="planBtn" class="secondary">▦ Planimetria</button><button id="helpBtn" class="secondary">? Guida</button></nav>
 </header>
 <div class="middle"><main id="view3d" class="world">
 <div class="titleScene"><span class="eyebrow">AUTUMN VALLEY · DB · EPOCA III/IV</span><h1>Tre anelli. Un piccolo mondo.</h1><p>Tre convogli, quattro tronchini, un lungo runaround.</p></div>
 <div id="loadMsg" class="load">Preparazione del mondo 3D…</div>
 <div class="instructions">Trascina per ruotare · Rotellina per zoom · Tocca uno scambio per azionarlo</div>
-<div class="scenePills"><span id="sceneInfo">3 ANELLI · R249 / R282 / R315</span><span id="fps">Vista 3D · v0.4</span></div>
+<div class="cameraToolbar"><label for="cameraView">Vista</label><select id="cameraView"><option value="overview">Panorama</option><option value="station">Stazione</option><option value="yard">Scalo merci</option><option value="follow">Segui convoglio</option><option value="manual" hidden>Libera</option></select></div><div class="scenePills"><span id="sceneInfo">3 ANELLI · R249 / R282 / R315</span><span id="fps">Vista 3D · v0.5</span></div>
 </main>
 <aside class="sidebar">
 <div class="sectionHeader"><div><span class="eyebrow">CONTROLLO INFRASTRUTTURA</span><h2>Scambi</h2></div><span id="switchCount" class="pill">0 / 8</span></div>
@@ -21,7 +21,7 @@
 <hr>
 <div class="sectionHeader"><div><span class="eyebrow">SCENOGRAFIA</span><h2>Luce del giorno</h2></div><span id="sun">☀</span></div>
 <input id="day" type="range" min="0" max="100" value="48"><div class="ticks"><span>Giorno</span><span>Tramonto</span><span>Notte</span></div>
-<label class="rollingLabel" for="rollingModels">Rotabili <select id="rollingModels"><option value="kenney">Kenney · stilizzati</option><option value="native">Originali · DB</option></select></label>
+<label class="rollingLabel" for="rollingModels">Rotabili <select id="rollingModels"><option value="native">DB · prototipi</option><option value="kenney">Kenney · CC0</option></select></label>
 <hr>
 <div class="sectionHeader"><div><span class="eyebrow">ESERCIZIO FERROVIARIO</span><h2>Missioni</h2></div><span id="missionIndex" class="pill">1 / 4</span></div>
 <h3 id="missionName" class="missionName"></h3><p id="missionText" class="note missionText"></p><div id="missionStatus" class="missionStatus"></div>
@@ -38,9 +38,9 @@
 </div></section>
 </div>
 <div id="planModal" class="modal" hidden><div class="dialog"><div class="dialogHead"><div><span class="eyebrow">PIANO DI RIFERIMENTO</span><h2>Pianta del tracciato simulato</h2></div><button data-close="planModal">✕ Chiudi</button></div><img class="planImage" src="./assets/schema-ricostruito.svg" alt="Planimetria dei tre anelli, quattro tronchini e lungo runaround"><p>Pianta e vista 3D usano la stessa geometria. Ricostruzione dal PDF Kato: le dimensioni dei singoli scambi richiedono ancora verifica di catalogo.</p></div></div>
-<div id="helpModal" class="modal" hidden><div class="dialog guide"><div class="dialogHead"><h2>Come funziona SerieN</h2><button data-close="helpModal">✕ Chiudi</button></div><p><b>Vista 3D:</b> trascina per ruotare il plastico; usa la rotellina per lo zoom; un clic seleziona il treno oppure cambia uno scambio.</p><p><b>Guida:</b> seleziona una delle tre locomotive dalla barra orizzontale. Ogni treno ha velocità, direzione e luci autonome.</p><p><b>Scambi:</b> i crossover WX310 scambiano anello nel tratto superiore; gli scambi merci includono i due estremi del lungo runaround, quattro tronchini e un accesso. I raccordi sono percorsi continui. Gli scambi vicini ai convogli sono bloccati.</p><p><b>Aggancio:</b> ferma la locomotiva, sgancia un carro; accostati sullo stesso binario per riagganciarlo. Accelerazione e frenatura sono graduate; invertire la marcia mantiene l’ordine dei carri.</p><p>Modelli Kenney Train Kit 1.1 · CC0 · Kenney, Guus Vermeulen e Tony Schaer. I rotabili Kenney sono stilizzati e non riproducono locomotive DB specifiche.</p><p><b>Importante:</b> questa è una simulazione indipendente. Non trasmette comandi alla tua centralina Z21 reale.</p></div></div>
+<div id="helpModal" class="modal" hidden><div class="dialog guide"><div class="dialogHead"><h2>Come funziona SerieN</h2><button data-close="helpModal">✕ Chiudi</button></div><p><b>Viste:</b> scegli Panorama, Stazione, Scalo merci o Segui convoglio. Un gesto manuale interrompe l’inseguimento. Automatica adatta la qualità; Cinema attiva anche l’occlusione ambientale.</p><p><b>Vista 3D:</b> trascina per ruotare il plastico; usa la rotellina per lo zoom; un clic seleziona il treno oppure cambia uno scambio.</p><p><b>Guida:</b> seleziona una delle tre locomotive dalla barra orizzontale. Ogni treno ha velocità, direzione e luci autonome.</p><p><b>Scambi:</b> i crossover WX310 scambiano anello nel tratto superiore; gli scambi merci includono i due estremi del lungo runaround, quattro tronchini e un accesso. I raccordi sono percorsi continui. Gli scambi vicini ai convogli sono bloccati.</p><p><b>Aggancio:</b> ferma la locomotiva, sgancia un carro; accostati sullo stesso binario per riagganciarlo. Accelerazione e frenatura sono graduate; invertire la marcia mantiene l’ordine dei carri.</p><p>Modelli Kenney Train Kit 1.1 · CC0 · Kenney, Guus Vermeulen e Tony Schaer. I rotabili Kenney sono stilizzati e non riproducono locomotive DB specifiche.</p><p><b>Importante:</b> questa è una simulazione indipendente. Non trasmette comandi alla tua centralina Z21 reale.</p></div></div>
 <script>
 window.addEventListener('error',()=>{const e=document.getElementById('loadMsg');if(e&&!e.hidden)e.textContent='Avvio non riuscito. Verifica il supporto WebGL del browser e ricarica la pagina.';});
 window.addEventListener('unhandledrejection',()=>{const e=document.getElementById('loadMsg');if(e&&!e.hidden)e.textContent='Impossibile caricare il gioco. Ricarica la pagina.';});
-</script><script type="module" src="./dist/game.js?v=0.4.0"></script>
+</script><script type="module" src="./dist/game.js?v=0.5.0"></script>
 </body></html>

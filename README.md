@@ -1,4 +1,4 @@
-# SerieN · Autumn Railways v0.4
+# SerieN · Autumn Railways v0.5
 
 Simulatore ferroviario web indipendente in scala N. [Gioca](https://epivic-lab.github.io/SerieN/).
 Non dipende dal repository `first` e non invia comandi alla centralina Z21 reale.
@@ -8,8 +8,8 @@ Non dipende dal repository `first` e non invia comandi alla centralina Z21 reale
 Tre locomotive indipendenti (BR 055, BR 216, BR 260), tre circuiti R249/R282/R315,
 quattro tronchini, due crossover e un runaround con due rami. Comandi di marcia,
 retromarcia, arresto, luci, aggancio e sgancio; quattro missioni introduttive.
-Camera orbitale, pianta generata dal tracciato 3D, ciclo giorno/notte,
-fari direzionali e profilo grafico leggero per mobile. Il profilo Cinema aggiunge bloom selettivo e vignettatura. Spazio arresta il treno
+Camera prospettica orbitale, pianta generata dal tracciato 3D, ciclo giorno/notte,
+fari direzionali e profilo grafico leggero per mobile. Il profilo Cinema aggiunge occlusione ambientale, bloom selettivo e vignettatura. Spazio arresta il treno
 selezionato quando il focus non è su un controllo. La retromarcia include frenata
 prima del cambio di verso; aggancio e sgancio richiedono un convoglio fermo.
 
@@ -94,3 +94,67 @@ del gioco è conservata al commit `d3c3801`.
 
 Three.js e addon: licenza MIT, mantenuta nel bundle generato. Il progetto è
 amatoriale, senza affiliazione a Kato, Roco o ai titoli citati come riferimento.
+
+## Revisione del brief in cinque zone (v0.5)
+
+L'audit prodotto prima delle modifiche e la sequenza concreta sono in
+[docs/RENDERING-BRIEF-AUDIT.md](docs/RENDERING-BRIEF-AUDIT.md).
+Il riferimento `SerieN_reference_render.jpg` non è presente nel repository;
+resta disponibile `plasticoEx.png`.
+
+- Stazione: pensilina, orologio, persone statiche in scala, bagagli e lampioni
+  con due luci reali, oltre all'edificio 3D esistente.
+- Scalo: ufficio merci, piazzale e carichi disposti fuori dall'ingombro ferroviario.
+- Bosco: macchie forestali e radure, specie/rotazioni differenti e chiome volumetriche
+  nei profili superiori; chiome alpha come livello leggero.
+- Opere: due brevi gallerie curve seguono gli anelli interno e centrale; il terzo
+  resta scoperto. Il piccolo ponte ha un vero avvallamento sotto il binario.
+  Nessuna quota, connessione o percorso ferroviario è stato modificato.
+- Campagna: cascina e vigneto; ridotta la precedente fila urbana di abitazioni.
+
+Vista Panorama/Stazione/Scalo/Segui convoglio; il primo gesto manuale interrompe
+l'inseguimento. La camera rimane sopra un inviluppo conservativo di terreno ed
+edifici: non è un sistema di collisioni poligonali completo. Automatica riduce la
+qualità dopo finestre di frame lente e la ripristina con isteresi; Alta, Leggera e
+Cinema restano selezionabili manualmente. Il contatore FPS usa il tempo reale,
+indipendente dal clock della simulazione.
+
+La nuova rotaia ha una sezione sagomata sul percorso misurato, senza una seconda
+spline decorativa. Ganci dei modelli, scala uniforme e dimensioni effettive sono
+registrati nei metadati; mantenere le proporzioni Kenney entro il limite di
+larghezza produce locomotive stilizzate più corte. I Kenney e i modelli originali
+restano **fallback/prototipi**, non rotabili tedeschi realistici validati.
+
+### Eccezioni ancora aperte
+
+- I respingenti su `middle` e `lower` sono esclusi: il loro ingombro finirebbe sugli
+  anelli adiacenti. Il motore corrente arresta il centro del rotabile all'endpoint;
+  un arresto basato sull'ingombro frontale richiede una correzione operativa dedicata.
+  Sono visibili soltanto i due respingenti per cui la verifica volumetrica passa.
+- Ponte e gallerie sono collocazioni scenografiche reversibili, non opere quotate
+  nella planimetria originale. Per certificarne la posizione fisica serve un riferimento
+  misurato. Non sono state introdotte pendenze o nuove connessioni.
+- Mancano asset realistici con licenza per soddisfare interamente l'obiettivo
+  fotografico del brief. Il risultato resta procedurale: non è fotorealismo certificato.
+- Texture KTX2/Draco e verifica su iPad reale restano da affrontare con gli asset
+  definitivi e i dispositivi disponibili; nessun test headless certifica 60 FPS.
+
+### Collaudo riproducibile
+
+`npm test` include controlli su rete, terreno, layout delle zone, corridoi delle
+opere, raycast sulle aperture reali, camera, isteresi e lifecycle degli asset.
+Per il collaudo browser opzionale installare Python Playwright e Chromium, avviare
+`npm start`, poi eseguire `python3 tests/browser-smoke.py`. `CHROMIUM_PATH` e
+`SERIEN_URL` permettono di scegliere browser/server. Il flag `?diagnostics=1`
+espone soltanto diagnostica per i test, senza aggiungere controlli tecnici al gioco.
+
+Esito nella sessione di sviluppo: i volumi dei rotabili originali superano il
+controllo dei due fornici; 20 reset mantengono 286 geometrie GPU → 286 sul profilo
+Leggera testato; preset, Cinema/AO, notte e layout mobile non producono errori
+JavaScript. Compatibilità Safari/iPad e prestazioni GPU reali non sono certificate.
+
+I punti gancio sono metadati per una successiva integrazione: il passo operativo
+fra veicoli resta 64 mm. Con i Kenney proporzionati questo può lasciare spazi
+visibili nella composizione. La protezione camera riguarda l'occhio e le impronte,
+non il volume continuo dell'obiettivo. Il ponte può mostrare una piccola cucitura
+sul bordo del terreno triangolato; non cambia il percorso ferroviario.

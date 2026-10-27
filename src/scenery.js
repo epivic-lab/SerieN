@@ -1,3 +1,5 @@
+import { buildZones } from "./zones.js";
+import { clearance } from "./landscape.js";
 import { diorama, roofTexture, wallTexture } from "./diorama.js";
 import * as THREE from "three";
 import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
@@ -22,7 +24,7 @@ function surface(colors, seed = 27) {
   t.colorSpace = THREE.SRGBColorSpace;
   return t;
 }
-function enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials, wallMaterials }) {
+function enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials, wallMaterials, foundation }) {
   const pmrem = new THREE.PMREMGenerator(renderer), room = new RoomEnvironment();
   const env = pmrem.fromScene(room, 0.04);
   scene.environment = env.texture;
@@ -90,7 +92,11 @@ function enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials
       scene.add(leg);
     }
   }
-  const scenic = diorama(scene, renderer, network, wood);
+  ground.visible = false;
+  const initialBuildings = scene.children.filter((o) => o.userData.building).map((o) => ({ x: o.position.x, z: o.position.z, ...o.userData.building }));
+  const zones = buildZones(scene, network, { wood, mask: clearance(network, initialBuildings) });
+  const reserved = (x, z) => zones.footprints.some((f) => f.kind === "reserve" && Math.abs(x - f.x) <= f.w / 2 && Math.abs(z - f.z) <= f.d / 2);
+  const scenic = diorama(scene, renderer, network, wood, { foundation, reserved });
   scene.updateMatrixWorld(true);
   const batches = /* @__PURE__ */ new Map();
   scene.traverse((o) => {
@@ -113,10 +119,14 @@ function enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials
     mesh.castShadow = b.cast;
     mesh.receiveShadow = b.receive;
     scene.add(mesh);
-    b.originals.forEach((o) => o.visible = false);
+    b.originals.forEach((o) => {
+      o.visible = false;
+      o.geometry.dispose();
+      o.parent?.remove(o);
+    });
     b.geometries.forEach((g) => g.dispose());
   }
-  return { environment: env, ...scenic };
+  return { environment: env, ...scenic, zones };
 }
 export {
   enrich,

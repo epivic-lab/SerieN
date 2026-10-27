@@ -27,11 +27,14 @@ function clearance(network, buildings = []) {
 }
 function forestSites(mask) {
   const rnd = seeded(), trees = [];
-  for (let i = 0; i < 2400 && trees.length < 160; i++) {
+  const clusters = [[230, 380, 110, 65], [730, 370, 135, 60], [1220, 445, 120, 100], [1200, 165, 100, 90], [250, 165, 90, 80], [800, 20, 260, 28]];
+  for (let i = 0; i < 6e3 && trees.length < 155; i++) {
     const x = 18 + rnd() * 1464, z = 15 + rnd() * 670;
-    if (!(z < 165 || z > 335 || x < 200 || x > 1200) || mask.track(x, z) < 27 || mask.building(x, z, 24) || mask.road(x, z) || x > 600 && x < 905 && z > 520) continue;
+    const density = clusters.reduce((m, [cx, cz, rx, rz]) => Math.max(m, Math.exp(-(((x - cx) / rx) ** 2 + ((z - cz) / rz) ** 2))), 0.07);
+    const clearing = Math.hypot((x - 600) / 110, (z - 370) / 65) < 1;
+    if (rnd() > density || clearing || mask.reserved?.(x, z) || mask.track(x, z) < 28 || mask.building(x, z, 24) || mask.road(x, z) || x > 600 && x < 905 && z > 520) continue;
     if (trees.some((t) => Math.hypot(t.x - x, t.z - z) < 19)) continue;
-    trees.push({ x, z, y: mask.height(x, z), h: 38 + rnd() * 35, pine: rnd() < 0.23, hue: rnd() });
+    trees.push({ x, z, y: mask.height(x, z), h: 38 + rnd() * 35, pine: rnd() < 0.23, hue: rnd(), rotation: rnd() * Math.PI * 2, species: ["maple", "beech", "oak", "birch"][Math.floor(rnd() * 4)] });
   }
   return trees;
 }

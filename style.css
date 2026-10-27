@@ -19,3 +19,5 @@ h1,h2,h3,p{margin-top:0}.eyebrow{font:700 10px system-ui,sans-serif;letter-spaci
 @media(max-width:930px){.middle{display:contents}.world{order:1}.console{order:2}.sidebar{order:3}}
 
 .rollingLabel{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:16px;font-size:11px;color:#c4d0bb}.rollingLabel select{max-width:175px}
+
+.cameraToolbar{position:absolute;left:17px;bottom:63px;display:flex;align-items:center;gap:8px;background:#1a3026dd;border:1px solid #57775a;border-radius:7px;padding:6px 9px;z-index:3;font-size:11px}.cameraToolbar select{max-width:160px}@media(max-width:600px){.cameraToolbar{left:10px;bottom:65px}}
