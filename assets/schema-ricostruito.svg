@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 700">
+<defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#adb9ac" stroke-width=".7"/></pattern>
+<marker id="end" viewBox="-4 -4 8 8" markerWidth="5" markerHeight="5" refX="0" refY="0"><circle r="3" fill="#3e4141" stroke="#f4ece0"/></marker></defs>
+<rect width="1500" height="700" fill="#e7ebe3"/><rect width="1500" height="700" fill="url(#grid)"/>
+<g fill="none" stroke-linejoin="round" stroke-linecap="round">
+<path d="M360 35 H1140 A315 315 0 0 1 1140 665 H360 A315 315 0 0 1 360 35" stroke="#b4a16b" stroke-width="19"/>
+<path d="M360 68 H1140 A282 282 0 0 1 1140 632 H360 A282 282 0 0 1 360 68" stroke="#aba8a0" stroke-width="19"/>
+<path d="M360 101 H1140 A249 249 0 0 1 1140 599 H360 A249 249 0 0 1 360 101" stroke="#b4a16b" stroke-width="19"/>
+<g stroke="#2e3533" stroke-width="3.5">
+<path d="M360 35 H1140 A315 315 0 0 1 1140 665 H360 A315 315 0 0 1 360 35"/>
+<path d="M360 68 H1140 A282 282 0 0 1 1140 632 H360 A282 282 0 0 1 360 68"/>
+<path d="M360 101 H1140 A249 249 0 0 1 1140 599 H360 A249 249 0 0 1 360 101"/>
+</g>
+<g stroke="#8e8b7c" stroke-width="17">
+<path d="M812 101 Q720 153 626 211 Q530 263 410 284"/>
+<path d="M812 101 Q666 132 516 181 L243 231"/>
+<path d="M410 284 Q311 270 177 292"/>
+<path d="M410 284 Q290 322 122 362"/>
+<path d="M410 284 Q591 213 825 247"/>
+<path d="M410 284 Q560 322 680 286 Q765 270 825 247"/>
+<path d="M825 247 L1250 247"/>
+</g>
+<g stroke="#333b37" stroke-width="3">
+<path d="M812 101 Q720 153 626 211 Q530 263 410 284"/>
+<path d="M812 101 Q666 132 516 181 L243 231"/>
+<path d="M410 284 Q311 270 177 292"/>
+<path d="M410 284 Q290 322 122 362"/>
+<path d="M410 284 Q591 213 825 247"/>
+<path d="M410 284 Q560 322 680 286 Q765 270 825 247"/>
+<path d="M825 247 L1250 247"/>
+</g>
+<g stroke="#8b6743" stroke-width="8">
+<path d="M447 101 L544 68 M447 68 L544 101"/>
+<path d="M868 68 L969 35 M868 35 L969 68"/>
+</g>
+</g>
+<g font-family="Arial,sans-serif" fill="#31453a">
+<text x="94" y="46" font-size="21" font-weight="700">SERIE N · TRACCIATO</text>
+<text x="95" y="67" font-size="13">Schema indicativo · 150 × 70 cm</text>
+<text x="1365" y="55" font-size="13" text-anchor="end">3 ANELLI KATO</text>
+<text x="570" y="25" font-size="16">R315 / R282 / R249</text>
+<g font-size="15" font-weight="700"><text x="200" y="211">T1</text><text x="136" y="274">T2</text><text x="77" y="349">T3</text><text x="1264" y="251">T4</text></g>
+<text x="560" y="322" font-size="20" font-weight="700" fill="#9b593e">RUNAROUND LUNGO</text>
+<text x="551" y="343" font-size="13">due rami collegati alle estremità</text>
+<text x="970" y="490" font-size="20" fill="#63805e">BOSCO E COLLINA</text>
+<text x="305" y="460" font-size="20" fill="#63805e">VILLAGGIO</text>
+<text x="820" y="571" font-size="18">STAZIONE</text>
+<text x="1000" y="228" font-size="17">SEGHERIA</text>
+<text x="510" y="56" font-size="15">WX-A</text><text x="890" y="23" font-size="15">WX-B</text>
+<text x="120" y="673" font-size="12" fill="#805c48">Vista ricostruita per il simulatore: non sostituisce il file RailModeller originale.</text>
+</g></svg>
