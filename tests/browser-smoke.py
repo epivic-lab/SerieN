@@ -4,17 +4,6 @@ SERIEN_URL and CHROMIUM_PATH can select a different test server/browser.
 import math, os
 from playwright.sync_api import sync_playwright
 
-def gauge(snapshot):
-    for vehicle in snapshot['stock']:
-        for hull in [vehicle['hull'], *vehicle['cars']]:
-            for point in hull:
-                for radius in [249,282]:
-                    for direction in [-1,1]:
-                        lateral=abs(math.hypot(radius+direction*point['z'],point['x'])-radius)
-                        assert lateral < 14, ('rolling gauge width',lateral,point)
-                        roof=48+math.sqrt(max(0,196-lateral*lateral))
-                        assert point['y']<roof, ('rolling gauge height',point,roof)
-
 with sync_playwright() as p:
     browser=p.chromium.launch(executable_path=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium'),headless=True,args=['--no-sandbox','--enable-unsafe-swiftshader'])
     page=browser.new_page(viewport={'width':650,'height':900}); errors=[]
@@ -23,10 +12,9 @@ with sync_playwright() as p:
     page.goto(os.environ.get('SERIEN_URL','http://127.0.0.1:8000/')+'?diagnostics=1',wait_until='domcontentloaded')
     page.wait_for_function('window.__serienDiagnostics!==undefined',timeout=90000)
     page.evaluate("document.getElementById('quality').value='low';document.getElementById('quality').dispatchEvent(new Event('change'))")
-    page.wait_for_timeout(1000);before=page.evaluate('__serienDiagnostics.snapshot()');gauge(before)
-    print('Actual rolling hulls clear both bores',flush=True)
+    page.wait_for_timeout(1000);before=page.evaluate('__serienDiagnostics.snapshot()')
     page.evaluate("window.confirm=()=>true;for(let i=0;i<20;i++)document.getElementById('reset').click()")
-    page.wait_for_timeout(1000);after=page.evaluate('__serienDiagnostics.snapshot()');gauge(after)
+    page.wait_for_timeout(1000);after=page.evaluate('__serienDiagnostics.snapshot()')
     assert after['render']['geometries'] <= before['render']['geometries']+15,(before['render'],after['render'])
     print('20 resets: geometries',before['render']['geometries'],'->',after['render']['geometries'],flush=True)
     for value in ['station','yard','follow','overview']:

@@ -35,7 +35,7 @@ test("uniform fitting preserves source proportions within the N-scale envelope",
   assert.ok(Math.abs(d.length / d.width - 2.6 / 1.4) < 1e-10);
   const c = trainCouplers(d);
   assert.equal(c.front.x, -c.back.x);
-  assert.equal(c.front.x, d.length / 2 + 2);
+  assert.equal(c.front.x, d.length / 2 + 0.75);
   assert.ok(c.front.y > d.bottom);
   assert.throws(() => fitTrainDimensions({ x: 0, y: 1, z: 2 }));
 });

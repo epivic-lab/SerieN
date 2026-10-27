@@ -1,0 +1,94 @@
+{
+  "commit": "54f8284646476b6932205a080af3871f1447f043",
+  "browser": "154.0.8037.57",
+  "viewport": [
+    960,
+    820
+  ],
+  "dpr": 1,
+  "quality": "low",
+  "day": 48,
+  "motion": "paused; initial train positions",
+  "renderer": "Chromium headless / SwiftShader (software)",
+  "timingNote": "Short idle sample, includes frame scheduling; not a hardware FPS certification.",
+  "views": {
+    "overview": {
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1580,
+          1150,
+          1570
+        ],
+        "target": [
+          750,
+          0,
+          350
+        ]
+      },
+      "render": {
+        "calls": 312,
+        "triangles": 457261,
+        "geometries": 307,
+        "textures": 37
+      },
+      "samples": 8,
+      "medianFrameMs": 1641.6,
+      "p95FrameMs": 1866.5,
+      "averageFps": 0.59
+    },
+    "station": {
+      "camera": {
+        "preset": "station",
+        "position": [
+          990.0267859585599,
+          650.0226999648812,
+          1040.024061962774
+        ],
+        "target": [
+          750,
+          19.99909200140475,
+          524.9920550122914
+        ]
+      },
+      "render": {
+        "calls": 128,
+        "triangles": 417443,
+        "geometries": 307,
+        "textures": 37
+      },
+      "samples": 8,
+      "medianFrameMs": 1858.2,
+      "p95FrameMs": 2016.7,
+      "averageFps": 0.53
+    },
+    "yard": {
+      "camera": {
+        "preset": "yard",
+        "position": [
+          955.004322648793,
+          719.9913641151121,
+          1010.0037052636048
+        ],
+        "target": [
+          690.0074045882452,
+          12.000987166376767,
+          245.03455376465487
+        ]
+      },
+      "render": {
+        "calls": 131,
+        "triangles": 396471,
+        "geometries": 307,
+        "textures": 37
+      },
+      "samples": 8,
+      "medianFrameMs": 1516.6,
+      "p95FrameMs": 2249.9,
+      "averageFps": 0.52
+    }
+  },
+  "errors": [],
+  "appVersion": "0.6.0",
+  "sourceNote": "Baseline at 54f8284, captured before rebuilding v0.6.1."
+}

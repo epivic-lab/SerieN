@@ -1,5 +1,6 @@
+import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
-import { tunnelAt } from "./src/structure-layout.js";
+import { couplingDistance, consistLayout } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
 import { navigation } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
@@ -231,12 +232,10 @@ function buildHouse(x, z, w, d, h, wall, roof, type = "house", orientation = 0) 
   return g;
 }
 const hstyle = mat("#d8c4a6"), hbrick = mat("#b68d77"), hboard = mat("#98735b");
-buildHouse(280, 455, 75, 54, 48, hstyle, roofRed);
-buildHouse(583, 449, 80, 57, 62, hbrick, roofRed);
-buildHouse(1033, 333, 125, 80, 52, hboard, roofRed, "factory");
-buildHouse(1165, 338, 77, 58, 45, cream, roofGray, "factory");
-buildHouse(250, 195, 120, 68, 51, hboard, roofGray, "factory");
-buildHouse(430, 168, 80, 55, 43, hboard, roofRed, "factory");
+for (const b of LEGACY_BUILDINGS) {
+  const building = buildHouse(b.x, b.z, b.w, b.d, b.h, [hstyle, hbrick, hboard, cream][b.style], [roofRed, roofGray][b.roof], b.type);
+  building.name = b.id;
+}
 const logmat = mat("#7f6749");
 for (let i = 0; i < 38; i++) {
   const x = 1070 + i % 10 * 8, z = 294 + Math.floor(i / 10) * 7;
@@ -392,6 +391,7 @@ trains.forEach((t) => {
   t.nativeDescription = t.desc;
 });
 const kenneyNames = ["Vapore K1", "Diesel K2", "Manovra K3"];
+let rollingModelMode = $("rollingModels").value;
 const assetReady = Promise.all(trains.map((t) => attachTrainAsset(t.group, ["steam", "diesel", "shunter"][t.id], true)));
 assetReady.then((loaded) => {
   trains.forEach((t, i) => t.assetLoaded = loaded[i]);
@@ -400,6 +400,13 @@ assetReady.then((loaded) => {
 function updateModels() {
   const active = $("rollingModels").value === "kenney";
   importedTrains(active);
+  if (trains.some((t) => t.journey && !t.journey.ensure(t.journey.position - layoutFor(t).tail, route))) {
+    importedTrains(rollingModelMode === "kenney");
+    $("rollingModels").value = rollingModelMode;
+    log("Spazio insufficiente per i rotabili più lunghi: sposta prima il convoglio.");
+    return;
+  }
+  rollingModelMode = $("rollingModels").value;
   for (const t of trains) {
     t.name = active && t.assetLoaded ? kenneyNames[t.id] : t.nativeName;
     t.desc = active && t.assetLoaded ? "Kenney Train Kit \xB7 modello stilizzato" : t.nativeDescription;
@@ -453,8 +460,7 @@ function select(id) {
 }
 function toggle(index) {
   const s = switchSpecs[index];
-  if (trains.some((t) => [t, ...t.carObjs].some((_, i) => {
-    const p = t.journey.locate(t.journey.position - 64 * i);
+  if (trains.some((t) => vehiclePositions(t).some((p) => {
     return Math.hypot(p.x - s.x, p.z - s.z) < 85;
   }))) {
     log("Scambio occupato: attendi il passaggio del convoglio.");
@@ -486,13 +492,21 @@ function crossed(before, after, needle, sign) {
   return sign > 0 ? mod(needle - a) < mod(b - a) : mod(a - needle) < mod(a - b);
 }
 const route = routing(network, (id) => switchSpecs.find((s) => s.id === id)?.on || false);
+function layoutFor(t, extra = []) {
+  return consistLayout([t.group, ...t.carObjs, ...extra].map((o) => o.userData));
+}
+function vehiclePositions(t) {
+  return layoutFor(t).offsets.map((offset, i) => ({
+    train: t, vehicle: [t.group, ...t.carObjs][i], ...t.journey.locate(t.journey.position - offset)
+  }));
+}
 function initializeJourney(t) {
   const edge = "L" + t.loop + "-return";
   t.journey = new Journey(network, edge, network.edges[edge].length * [0.22, 0.65, 0.45][t.id]);
   t.velocity = 0;
   t.odometer = 0;
   t.previousLane = t.loop;
-  t.journey.ensure(t.journey.position - 64 * t.cars, route);
+  t.journey.ensure(t.journey.position - layoutFor(t).tail, route);
 }
 trains.forEach(initializeJourney);
 function vehicleLocation(t, behind = 0) {
@@ -501,12 +515,14 @@ function vehicleLocation(t, behind = 0) {
 }
 function renderVehicles() {
   for (const t of trains) {
+    const layout = layoutFor(t);
+    t.journey.ensure(t.journey.position - layout.tail, route);
     const pos = vehicleLocation(t);
     t.group.position.copy(pos.point).add(new THREE.Vector3(0, 3.6, 0));
     t.group.rotation.y = pos.angle;
     t.carObjs.forEach((o, i) => {
       o.visible = true;
-      const q = vehicleLocation(t, 64 * (i + 1));
+      const q = vehicleLocation(t, layout.offsets[i + 1]);
       o.position.copy(q.point);
       o.rotation.y = q.angle;
     });
@@ -528,7 +544,7 @@ function advance(t, dt) {
   const acceleration = Math.abs(desired) < Math.abs(t.velocity) ? 100 : 45;
   t.velocity += clamp(desired - t.velocity, -acceleration * dt, acceleration * dt);
   if (Math.abs(t.velocity) < 1e-3) return;
-  if (!t.journey.move(t.velocity * dt, 64 * t.cars + 38, route)) {
+  if (!t.journey.move(t.velocity * dt, layoutFor(t).tail, route)) {
     t.speed = 0;
     t.velocity = 0;
     log(t.name + ": fine binario, inverti la marcia.");
@@ -558,9 +574,9 @@ function updateTrainStatus(dt) {
   protectionTimer -= dt;
   if (protectionTimer > 0) return;
   protectionTimer = 0.08;
-  const occupied = trains.map((t) => [t, ...t.carObjs].map((_, i) => ({ train: t, ...t.journey.locate(t.journey.position - 64 * i) })));
+  const occupied = trains.map((t) => vehiclePositions(t));
   for (let a = 0; a < occupied.length; a++) for (let b = a + 1; b < occupied.length; b++) {
-    if (occupied[a].some((u) => occupied[b].some((v) => u.edge === v.edge ? Math.abs(u.s - v.s) < 58 : Math.hypot(u.x - v.x, u.z - v.z) < 17))) {
+    if (occupied[a].some((u) => occupied[b].some((v) => u.edge === v.edge ? Math.abs(u.s - v.s) < (u.vehicle.userData.assetDimensions || v.vehicle.userData.assetDimensions ? Math.max(couplingDistance(u.vehicle.userData, v.vehicle.userData), couplingDistance(v.vehicle.userData, u.vehicle.userData)) : 58) : Math.hypot(u.x - v.x, u.z - v.z) < 17))) {
       const u = trains[a], v = trains[b];
       if (u.speed || v.speed || u.velocity || v.velocity) {
         u.speed = v.speed = u.velocity = v.velocity = 0;
@@ -569,9 +585,8 @@ function updateTrainStatus(dt) {
       }
     }
   }
-  for (const t of trains) if (detached.some((d) => [t, ...t.carObjs].some((_, i) => {
-    const p = t.journey.locate(t.journey.position - 64 * i);
-    return Math.hypot(p.x - d.point.x, p.z - d.point.z) < 48;
+  for (const t of trains) if (detached.some((d) => vehiclePositions(t).some((p) => {
+    return Math.hypot(p.x - d.point.x, p.z - d.point.z) < (p.vehicle.userData.assetDimensions || d.group.userData.assetDimensions ? couplingDistance(p.vehicle.userData, d.group.userData) + 4 : 48);
   })) && t.velocity) {
     t.speed = t.velocity = 0;
     log("Carro fermo davanti al convoglio: arresto per aggancio.");
@@ -585,7 +600,7 @@ function uncouple() {
     return;
   }
   if (!t.cars) return;
-  const point = t.journey.locate(t.journey.position - t.cars * 64), group = t.carObjs.pop();
+  const point = t.journey.locate(t.journey.position - layoutFor(t).offsets.at(-1)), group = t.carObjs.pop();
   detached.push({ point, group });
   t.cars = t.carObjs.length;
   didDetach = true;
@@ -602,13 +617,13 @@ function couple() {
     log("Lunghezza massima: cinque carri.");
     return;
   }
-  const tail = t.journey.locate(t.journey.position - t.cars * 64);
+  const tail = t.journey.locate(t.journey.position - layoutFor(t).offsets.at(-1));
   const i = detached.findIndex((d) => d.point.edge === tail.edge && Math.hypot(d.point.x - tail.x, d.point.z - tail.z) < 115);
   if (i < 0) {
     log("Nessun carro vicino alla coda sullo stesso binario.");
     return;
   }
-  if (!t.journey.ensure(t.journey.position - (t.cars + 1) * 64, route)) {
+  if (!t.journey.ensure(t.journey.position - layoutFor(t, [detached[i].group]).tail, route)) {
     log("Spazio insufficiente.");
     return;
   }
@@ -835,10 +850,10 @@ function tick(now) {
   scenic.zones.update(night, dt);
   scenic.station.update(night, dt);
   scenic.update(paused ? 0 : dt, camera);
-  smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2 && !tunnelAt(trains[0].group.position.x, trains[0].group.position.z), quality.profile === "low");
+  smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2, quality.profile === "low");
   effects.render(quality.profile === "cinema");
   if (frame % 35 === 0) {
-    $("fps").textContent = Math.round(1 / (realDt || 1 / 60)) + " FPS \xB7 v0.6";
+    $("fps").textContent = Math.round(1 / (realDt || 1 / 60)) + " FPS \xB7 v0.6.1";
     missionUI();
     $("sceneInfo").textContent = trains.filter((t) => t.speed > 0).length + " CONVOGLI IN MARCIA \xB7 4 TRONCHINI \xB7 RUNAROUND LUNGO";
   }
@@ -848,7 +863,17 @@ resize();
 ui();
 $("loadMsg").hidden = true;
 animationHandle = requestAnimationFrame(tick);
-if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = { snapshot() {
+if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = {
+  step(seconds) {
+    if (!Number.isFinite(seconds) || seconds < 0 || seconds > 120) throw new RangeError("Diagnostic step: 0…120 seconds");
+    for (let remaining = seconds; remaining > 1e-9; remaining -= 1/60) {
+      const dt = Math.min(1/60, remaining);
+      trains.forEach((t) => advance(t, dt));
+      updateTrainStatus(dt);
+    }
+    renderVehicles();
+  },
+  snapshot() {
   const hull = (group) => {
     group.updateWorldMatrix(true, true);
     const inverse = group.matrixWorld.clone().invert(), out = [];
@@ -868,5 +893,5 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
     });
     return out;
   };
-  return { quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray() }, render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, hull: hull(t.group), cars: t.carObjs.map(hull) })), pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
+  return { quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray() }, render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
 } };

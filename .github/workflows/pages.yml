@@ -31,6 +31,8 @@ jobs:
           mkdir -p _site
           cp index.html style.css legacy-v0.1.html .nojekyll _site/
           cp -R dist assets _site/
+          mkdir -p _site/docs
+          cp -R docs/phase-0 _site/docs/phase-0
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

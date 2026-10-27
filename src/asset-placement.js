@@ -16,8 +16,9 @@ function fitTrainDimensions(size, locomotive = false) {
 function trainCouplers(dimensions) {
   const y = dimensions.bottom + Math.min(7, dimensions.height * 0.25);
   return {
-    front: { x: dimensions.length / 2 + 2, y, z: 0 },
-    back: { x: -dimensions.length / 2 - 2, y, z: 0 }
+    // Leave only 1.5mm between measured model envelopes; couplers meet on the path.
+    front: { x: dimensions.length / 2 + 0.75, y, z: 0 },
+    back: { x: -dimensions.length / 2 - 0.75, y, z: 0 }
   };
 }
 export {

@@ -1,0 +1,109 @@
+{
+  "commit": "54f8284646476b6932205a080af3871f1447f043",
+  "appVersion": "0.6.1",
+  "bundleSha256": "0830e3400d47a17bcfa1ad3220c106cc43dac304c6c5dc61445ce62ee071ee0c",
+  "workingTreeChanges": [
+    ".github/workflows/pages.yml",
+    "README.md",
+    "app.js",
+    "index.html",
+    "package-lock.json",
+    "package.json",
+    "src/asset-placement.js",
+    "src/railway-works.js",
+    "src/structure-layout.js",
+    "tests/browser-smoke.py",
+    "tests/structure-mesh.test.js",
+    "tests/structures.test.js",
+    "tests/train-assets.test.js"
+  ],
+  "browser": "154.0.8037.57",
+  "viewport": [
+    960,
+    820
+  ],
+  "dpr": 1,
+  "quality": "low",
+  "day": 48,
+  "motion": "paused; initial train positions",
+  "renderer": "Chromium headless / SwiftShader (software)",
+  "timingNote": "Short idle sample, includes frame scheduling; not a hardware FPS certification.",
+  "views": {
+    "overview": {
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1580,
+          1150,
+          1570
+        ],
+        "target": [
+          750,
+          0,
+          350
+        ]
+      },
+      "render": {
+        "calls": 307,
+        "triangles": 445997,
+        "geometries": 302,
+        "textures": 37
+      },
+      "samples": 8,
+      "medianFrameMs": 3191.6,
+      "p95FrameMs": 3566.4,
+      "averageFps": 0.32
+    },
+    "station": {
+      "camera": {
+        "preset": "station",
+        "position": [
+          990.0267859585598,
+          650.0226999648812,
+          1040.024061962774
+        ],
+        "target": [
+          750,
+          19.99909200140475,
+          524.9920550122915
+        ]
+      },
+      "render": {
+        "calls": 127,
+        "triangles": 414955,
+        "geometries": 302,
+        "textures": 37
+      },
+      "samples": 8,
+      "medianFrameMs": 3833.15,
+      "p95FrameMs": 4733.2,
+      "averageFps": 0.26
+    },
+    "yard": {
+      "camera": {
+        "preset": "yard",
+        "position": [
+          955.004322648793,
+          719.9913641151121,
+          1010.0037052636048
+        ],
+        "target": [
+          690.0074045882452,
+          12.000987166376767,
+          245.03455376465487
+        ]
+      },
+      "render": {
+        "calls": 131,
+        "triangles": 394007,
+        "geometries": 302,
+        "textures": 37
+      },
+      "samples": 8,
+      "medianFrameMs": 1391.6,
+      "p95FrameMs": 1483.2,
+      "averageFps": 0.7
+    }
+  },
+  "errors": []
+}

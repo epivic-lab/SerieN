@@ -3,7 +3,6 @@ import assert from "node:assert/strict";
 import * as THREE from "three";
 import { createNetwork } from "../src/network.js";
 import { railwayWorks } from "../src/railway-works.js";
-import { TUNNEL } from "../src/structure-layout.js";
 import { railGeometry, RAIL_PROFILE } from "../src/rail-profile.js";
 const network = createNetwork();
 function works() {
@@ -13,13 +12,15 @@ function works() {
   scene.updateMatrixWorld(true);
   return w;
 }
-test("actual portal meshes leave clear body-sized openings in both directions", () => {
+test("right curves have no tunnel walls, roof or camera obstruction", () => {
   const w = works();
-  for (const radius of [249, 282]) for (const angle of [TUNNEL.start, TUNNEL.end]) for (const lateral of [-9, 0, 9]) for (const y of [8, 30, 50]) {
+  for (const radius of [249, 282, 315]) for (const angle of [0.45, 0.75, 1.05]) for (const lateral of [-9, 0, 9]) for (const y of [8, 30, 50]) {
     const tangent = new THREE.Vector3(Math.cos(angle), 0, Math.sin(angle)), p = new THREE.Vector3(1122 + (radius + lateral) * Math.sin(angle), y, 350 - (radius + lateral) * Math.cos(angle));
-    const direction = angle === TUNNEL.start ? tangent : tangent.clone().negate(), origin = p.clone().addScaledVector(direction, -5);
+    const direction = tangent, origin = p.clone().addScaledVector(direction, -5);
+    assert.equal(w.reserved(p.x,p.z), false);
+    assert.equal(w.cameraHeight(p.x,p.z), .35);
     const ray = new THREE.Raycaster(origin, direction, 0, 10);
-    assert.equal(ray.intersectObject(w.root, true).length, 0, `Portal obstruction at radius${radius}, y${y}, lateral${lateral}`);
+    assert.equal(ray.intersectObject(w.root, true).length, 0, `Curve obstruction at radius${radius}, y${y}, lateral${lateral}`);
   }
 });
 test("bridge spans an open space below deck, not a hidden solid foundation", () => {

@@ -1,4 +1,4 @@
-# SerieN · Autumn Railways v0.6
+# SerieN · Autumn Railways v0.6.1
 
 Simulatore ferroviario web indipendente in scala N. [Gioca](https://epivic-lab.github.io/SerieN/).
 Non dipende dal repository `first` e non invia comandi alla centralina Z21 reale.
@@ -141,8 +141,8 @@ restano **fallback/prototipi**, non rotabili tedeschi realistici validati.
 
 ### Collaudo riproducibile
 
-`npm test` include controlli su rete, terreno, layout delle zone, corridoi delle
-opere, raycast sulle aperture reali, camera, isteresi e lifecycle degli asset.
+`npm test` include controlli su rete, terreno, layout delle zone, ponte, curve
+scoperte, camera, isteresi e lifecycle degli asset.
 Per il collaudo browser opzionale installare Python Playwright e Chromium, avviare
 `npm start`, poi eseguire `python3 tests/browser-smoke.py`. `CHROMIUM_PATH` e
 `SERIEN_URL` permettono di scegliere browser/server. Il flag `?diagnostics=1`
@@ -153,9 +153,8 @@ controllo dei due fornici; 20 reset mantengono 286 geometrie GPU → 286 sul pro
 Leggera testato; preset, Cinema/AO, notte e layout mobile non producono errori
 JavaScript. Compatibilità Safari/iPad e prestazioni GPU reali non sono certificate.
 
-I punti gancio sono metadati per una successiva integrazione: il passo operativo
-fra veicoli resta 64 mm. Con i Kenney proporzionati questo può lasciare spazi
-visibili nella composizione. La protezione camera riguarda l'occhio e le impronte,
+Dalla v0.6.1 i convogli Kenney usano i punti gancio derivati dalle dimensioni
+dei singoli modelli; le coppie originali mantengono il passo storico di 64 mm. La protezione camera riguarda l'occhio e le impronte,
 non il volume continuo dell'obiettivo. Il ponte può mostrare una piccola cucitura
 sul bordo del terreno triangolato; non cambia il percorso ferroviario.
 
@@ -180,3 +179,44 @@ Ruota ripristina l'orbita; restano rotellina e pinch. Standard ripristina il pan
 Segui insegue il treno selezionato. Un gesto manuale interrompe l'inseguimento.
 La strada di servizio arretra localmente dietro la stazione; binari e logica
 ferroviaria non cambiano.
+
+
+## Fase 0 e rotabili v0.6.1
+
+La galleria è rimossa integralmente: portali, pareti, copertura, riserva scenica,
+vincolo camera e soppressione del fumo. Le tre curve restano scoperte, con il terreno
+ordinario; il ponte resta. Network e simulazione non cambiano.
+
+[Mappa, inventario e dati della fase0](docs/phase-0/README.md): 33archi, tre anelli,
+due crossover, quattro tronchini e runaround, cinque regioni scenografiche con ID
+stabili, catalogo e centri candidati per piccoli arredi. Gli edifici precedenti
+condividono le definizioni con la mappa senza spostamenti. Cascina e vigneto sono
+ancora nelle posizioni attuali; la loro futura collocazione sul retro è segnalata.
+La mappa è disponibile anche su Pages in `docs/phase-0/`, accessibile da Planimetria.
+
+Le distanze Kenney sono calcolate per ogni coppia dagli ingombri del modello
+visibile e dai punti gancio, lasciando1.5mm complessivi fra gli ingombri misurati.
+Locomotive e carri si compattano anche quando i GLB finiscono di caricarsi;
+rendering, coda del convoglio, scambi occupati, protezione, sgancio e riaggancio
+usano gli stessi offset lungo la Journey. Il passo originale resta64mm quando
+entrambi i veicoli sono procedurali. Un cambio a modelli più lunghi viene rifiutato
+se la coda non trova spazio sul percorso. I carrelli restano rigidi: questa fase
+non introduce biellismi o articolazione indipendente.
+
+Per rigenerare la mappa: `node scripts/phase-zero.mjs`. Un lock SHA-256 e i test
+rilevano cambiamenti alla rete o al motore di simulazione. Screenshot e misure
+riproducibili sono in `docs/phase-0/before` e `after`; vedere lo script
+`tests/capture-baseline.py`. Sono misure di un renderer software, non benchmark
+di una GPU desktop o di un iPad.
+
+Esito fase 0: 15 file di test automatici superati; browser con GLB effettivi,
+passaggio fra modelli, sgancio/riaggancio, avanzamento e retromarcia, reset riusciti.
+Il convoglio vapore passa da offset `[0,64,128,192]` a circa
+`[0,31.10,61.21,90.00]` mm. Gli screenshot della fase 0 usano la stessa build
+verificata, identificata dal relativo SHA-256 nel JSON delle misure finali.
+L'audit segnala impronte conservative di `factory-west`, `factory-north` e stazione
+vicine al corridoio ferroviario: da verificare sui volumi reali nelle fasi seguenti.
+
+La distinta Kato fornita dall'utente è conservata nella fase0: 17codici, 61pezzi,
+con audit di corrispondenza. Conferma raggi principali, due WX310 e sei deviatoi
+singoli; indica tre respingenti per quattro terminali, associazione da chiarire.

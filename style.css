@@ -25,3 +25,5 @@ h1,h2,h3,p{margin-top:0}.eyebrow{font:700 10px system-ui,sans-serif;letter-spaci
 .cameraToolbar{max-width:calc(100% - 34px);flex-wrap:wrap;padding:7px;gap:6px}.viewControls{display:flex;gap:4px}.viewControls button{min-width:44px;min-height:44px;padding:4px 6px;font-size:19px}.viewControls small{display:block;font-size:8px;line-height:11px}.viewControls button.active{background:#706448;border-color:#e4bd7c}.cameraToolbar select{max-width:150px}@media(max-width:600px){.cameraToolbar{max-width:calc(100% - 20px);bottom:62px;gap:4px}.viewControls{flex-basis:100%}.viewControls button{flex:1;min-width:44px}.cameraToolbar select{flex:1;max-width:none}.cameraToolbar label{font-size:10px}}
 
 @media(max-width:800px){.top nav .qualityLabel{display:none}}
+
+.scenicMapLink{color:var(--gold);text-underline-offset:3px}
