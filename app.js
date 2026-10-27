@@ -56,10 +56,10 @@ for(let kind=0;kind<grassMaterials.length;kind++){
  inst.instanceMatrix.needsUpdate=true;scene.add(inst)
 }
 // Terrain hills beyond the lines of running, avoiding the operational yard.
-ellipse(1250,398,115,94,50,mat('#789063'));
-ellipse(1150,465,120,94,44,mat('#798f62'));
+ellipse(1115,399,115,84,42,mat('#789063'));
+ellipse(1105,459,108,87,39,mat('#798f62'));
 ellipse(235,460,105,82,28,mat('#819763'));
-ellipse(1355,480,54,70,25,mat('#879c70'));
+ellipse(1015,447,57,60,19,mat('#879c70'));
 // The shelf edge is clad in dark timber for the eventual premium display frame.
 box(1510,22,8,wood,scene,750,-16,702);
 box(8,22,706,wood,scene,-5,-16,350);
@@ -97,6 +97,7 @@ function pine(x,z,h,c){
  scene.add(g);return g;
 }
 // Keep track and building clearances. Place forest in the village/sawmill gap.
+function safeFromLoop(x,z){const dx=x<360?x-360:x>1140?x-1140:0;const radial=Math.hypot(dx,z-350);return Math.min(...[249,282,315].map(r=>Math.abs(radial-r)))>24;}
 for(let i=0;i<165;i++){
  const x=30+rnd()*1440,z=18+rnd()*664;
  const onPerimeter=(x<175||x>1320||z<135||z>570);
@@ -104,11 +105,11 @@ for(let i=0;i<165;i++){
  const corner=(x<400&&z>320&&z<570);
  const protectedTracks=(z<160&&x>300&&x<1200)||(x>155&&x<1100&&z>160&&z<320)||(z>575&&x>290&&x<1200);
  const village=(z>330&&z<570&&x>240&&x<950);
- if(!((onPerimeter||woodland||corner)&&!protectedTracks&&!village))continue;
+ if(!((onPerimeter||woodland||corner)&&!protectedTracks&&!village&&safeFromLoop(x,z)))continue;
  const h=23+rnd()*37;
  if(rnd()>.32)broadleaf(x,z,h,Math.floor(rnd()*leafMats.length));else pine(x,z,h,Math.floor(rnd()*3));
 }
-for(let i=0;i<70;i++){const x=1100+rnd()*260,z=335+rnd()*260;if(rnd()>.25)broadleaf(x,z,22+rnd()*25,Math.floor(rnd()*8));else pine(x,z,24+rnd()*26,0)}
+for(let i=0;i<70;i++){const x=1100+rnd()*260,z=335+rnd()*260;if(!safeFromLoop(x,z)||x<1270&&z<403||z>560&&x<1190)continue;if(rnd()>.25)broadleaf(x,z,22+rnd()*25,Math.floor(rnd()*8));else pine(x,z,24+rnd()*26,0)}
 
 // A path representation with exact model-space X/Z control points and measured lengths.
 const pt=(x,z)=>new THREE.Vector3(x,3.5,z);
@@ -158,7 +159,7 @@ function addRail(path,label){
  // Railheads + web are separate metallic 3D objects.
  for(const signed of [-1,1]){
   const railPts=[];for(let i=0;i<points.length;i+=3){const p=points[i],tan=tangent(path,i/(points.length-1)),side=new THREE.Vector3(-tan.z,0,tan.x).multiplyScalar(signed*4.5);railPts.push(new THREE.Vector3(p.x+side.x,5.15,p.z+side.z))}
-  railPts.push(railPts[0].distanceTo(railPts[railPts.length-1])<10?railPts[0].clone():railPts[railPts.length-1].clone());
+  // Avoid duplicate spline knots at the end of rails.
   const railCurve=new THREE.CatmullRomCurve3(railPts,false,'centripetal');
   const mesh=new THREE.Mesh(new THREE.TubeGeometry(railCurve,Math.max(80,railPts.length*2),.8,5,false),steel);
   mesh.castShadow=true;scene.add(mesh);
@@ -205,7 +206,7 @@ buildHouse(583,449,80,57,62,hbrick,roofRed);
 buildHouse(711,473,77,58,50,hstyle,roofGray);
 buildHouse(814,465,94,60,46,hbrick,roofRed);
 buildHouse(945,459,83,50,51,hstyle,roofGray);
-const station=buildHouse(750,565,135,63,56,hbrick,roofGray);
+const station=buildHouse(750,550,135,63,56,hbrick,roofGray);
 buildHouse(1033,333,125,80,52,hboard,roofRed,'factory');
 buildHouse(1165,338,77,58,45,cream,roofGray,'factory');
 buildHouse(250,195,120,68,51,hboard,roofGray,'factory');
@@ -223,13 +224,13 @@ const round=mat('#9c8c72');cylinder(7,7,2,round,scene,915,78,331,10);
 
 // Extra landscaping along the front village road; retain the required 100 mm max scenic impression.
 const roadMat=mat('#686c61'),curb=mat('#aaa99a');
-box(1010,1.2,34,roadMat,scene,650,1.1,535);
-box(1008,1,2.5,curb,scene,650,1.8,516);
-box(1008,1,2.5,curb,scene,650,1.8,553);
-for(let x=198;x<1110;x+=70)box(30,.5,1.2,mat('#d2c8a5'),scene,x,2,535);
+box(1010,1.2,34,roadMat,scene,650,1.1,500);
+box(1008,1,2.5,curb,scene,650,1.8,481);
+box(1008,1,2.5,curb,scene,650,1.8,519);
+for(let x=198;x<1110;x+=70)box(30,.5,1.2,mat('#d2c8a5'),scene,x,2,500);
 const glow=new THREE.MeshStandardMaterial({color:'#ead4a3',emissive:'#edb768',emissiveIntensity:.6});
 const lamps=[];
-for(let x=520;x<=915;x+=78){const pole=cylinder(.7,.8,27,tower,scene,x,14,513,6);const ball=sphere(2.3,glow,scene,x,29,513);lamps.push(ball)}
+for(let x=520;x<=915;x+=78){const pole=cylinder(.7,.8,27,tower,scene,x,14,522,6);const ball=sphere(2.3,glow,scene,x,29,522);lamps.push(ball)}
 
 // Mountains behind the board. They are separate stage elements, not part of the 17 cm physical clearance.
 const mountain=mat('#7e8e83');
@@ -296,6 +297,9 @@ function locoModel(id){
   else{box(18,8,15,locoBlack,g,0,31,0);box(16,3,16,locoBlack,g,0,37,0)}
   for(let x of [-13,0,13]){box(7,3,.5,mat('#e8c6aa'),g,x,28,-7.6)}
  }
+ const headMaterial=new THREE.MeshStandardMaterial({color:'#faf0cb',emissive:'#ffe6a2',emissiveIntensity:.05});
+ for(const side of [-1,1]){const p=sphere(2,headMaterial,g,id===0?32:id===1?31:24,id===0?18:24,side*4);p.userData.trainId=id}
+ g.userData.headMaterial=headMaterial;
  g.traverse(o=>{if(o.isMesh)o.userData.trainId=id});
  scene.add(g);return g;
 }
@@ -356,7 +360,7 @@ function renderVehicles(){
  t.carObjs.forEach((o,i)=>{o.visible=i<t.cars;if(!o.visible)return;const q=vehicleLocation(t,64*(i+1));o.position.copy(q.point);o.rotation.y=-Math.atan2(q.direction.z,q.direction.x)});
  }
  const s=trains[selected];selectRing.position.copy(vehicleLocation(s).point);selectRing.position.y=5.2;
- for(const d of detached){let p=at(d.mode==='loop'?loops[d.loop]:yard[d.section],d.u);d.group.position.copy(p)}
+ for(const d of detached){let p=at(d.mode==='loop'?loops[d.loop]:yard[d.section],d.u);d.group.visible=true;d.group.position.copy(p)}
 }
 function ensureYard(t,section,u=.001){t.mode='yard';t.section=section;t.s=u;t.cool=1;log(t.name+' → '+section)}
 function advance(t,dt){
@@ -482,6 +486,7 @@ function tick(now){
  sun.intensity=lerp(2.4,.38,night);
  sun.color.set(day>40?'#e8b87d':'#ffe9c7');
  renderer.toneMappingExposure=lerp(1.24,.75,night);
+ trains.forEach(t=>t.group.userData.headMaterial.emissiveIntensity=t.lights?lerp(.5,3,night):0);
  scene.background.set(night>.6?'#354d60':'#a1bec6');
  scene.fog.color.copy(scene.background);
  windowNight.emissiveIntensity=lerp(.25,2.4,night);
