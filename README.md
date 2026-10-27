@@ -1,4 +1,4 @@
-# SerieN · Autumn Railways v0.6.1
+# SerieN · Autumn Railways v0.7
 
 Simulatore ferroviario web indipendente in scala N. [Gioca](https://epivic-lab.github.io/SerieN/).
 Non dipende dal repository `first` e non invia comandi alla centralina Z21 reale.
@@ -220,3 +220,36 @@ vicine al corridoio ferroviario: da verificare sui volumi reali nelle fasi segue
 La distinta Kato fornita dall'utente è conservata nella fase0: 17codici, 61pezzi,
 con audit di corrispondenza. Conferma raggi principali, due WX310 e sei deviatoi
 singoli; indica tre respingenti per quattro terminali, associazione da chiarire.
+
+
+## Next Switch HUD v0.7
+
+Assistente olografico nell'angolo destro del solo viewport3D, minimizzabile e
+informativo. Mostra prossimo scambio/gruppo, distanza lungo i binari, schema delle
+connessioni, posizione corrente, uscita prevista e blocchi di manovra. Il rosso è
+l'itinerario previsto, gli altri rami sono grigi; non è un consenso di via libera.
+Il pulsante evidenzia il percorso sul plastico per15secondi, senza spostare rotaie
+o alterare la centerline. La linea termina prima di un punto non determinabile.
+
+La ricerca legge la stessa Journey e lo stesso router della simulazione, senza
+modificarli. Da fermo usa la direzione impostata; durante un'inversione in frenata
+mostra il verso effettivo e lo segnala. In retromarcia la distanza parte dal centro
+dell'ultimo carro, con la spaziatura effettiva anche per i Kenney.
+
+Il registro aggiuntivo associa otto comandi a sei gruppi topologici. I WX310 hanno
+quattro porti; il nodo ovest ha cinque rami reali. Y-3/Y-R1 e Y-R2/Y-4 sono
+rappresentati come gruppi perché il grafo attuale li accorpa: nessun ordine fisico
+inventato. Gli otto comandi restano e condividono un controllo di occupazione e
+avvicinamento con l'HUD. I clic sullo schema non azionano nulla.
+
+[Analisi del grafo, scelte e collaudo](docs/NEXT-SWITCH-AUDIT.md).
+La rete e il motore restano identici al lock della fase0. Per il controllo browser
+eseguire `python3 tests/browser-next-switch.py` con server locale, Playwright e
+Chromium; screenshot e risultato sono in `docs/next-switch/`.
+
+Esito v0.7: 16 file di test automatici superati, integrazione browser dei tre
+anelli avanti/indietro, quattro terminali, runaround e scalo, selezione dei treni,
+origine Kenney in retromarcia, guardia degli azionamenti e scadenza dell'overlay.
+Il test browser finale verifica anche gli ingombri mobili e la mappa interattiva
+con distinta Kato. Screenshot e resoconto sono consultabili in
+[Next Switch HUD](docs/next-switch/index.html).

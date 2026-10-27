@@ -33,6 +33,7 @@ jobs:
           cp -R dist assets _site/
           mkdir -p _site/docs
           cp -R docs/phase-0 _site/docs/phase-0
+          cp -R docs/next-switch _site/docs/next-switch
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

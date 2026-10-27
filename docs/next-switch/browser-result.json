@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "errors": [],
+  "loops": [
+    {
+      "lane": 0,
+      "forward": 52,
+      "reverse": 2441.2637931946306
+    },
+    {
+      "lane": 1,
+      "forward": 52,
+      "reverse": 2345.785392773375
+    },
+    {
+      "lane": 2,
+      "forward": 412,
+      "reverse": 2553.1219812894124
+    }
+  ],
+  "nativeReverseDistance": 108,
+  "kenneyReverseDistance": 209.99877749371421,
+  "cases": [
+    "all three loops forward/reverse",
+    "selection",
+    "four sidings",
+    "runaround",
+    "compound schematic",
+    "shared safety guard",
+    "WX310 actual selection",
+    "Kenney reverse origin",
+    "highlight toggle and expiry",
+    "desktop and mobile bounds"
+  ]
+}

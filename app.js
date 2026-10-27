@@ -1,3 +1,5 @@
+import { createSwitchTopology, traceJourney, occupiedRanges, siteSafety } from "./src/next-switch.js";
+import { mountNextSwitchHUD, createRouteHighlight } from "./src/next-switch-view.js";
 import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
 import { couplingDistance, consistLayout } from "./src/consist.js";
@@ -14,6 +16,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 const $ = (id) => document.getElementById(id);
 const host = $("view3d");
+let nextSwitchHUD = null;
 importedTrains($("rollingModels").value === "kenney");
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("#9fbcc5");
@@ -279,6 +282,7 @@ const switchSpecs = [
   { id: "Y-R2", name: "Runaround est", x: 825, z: 247, kind: "passing", on: false },
   { id: "Y-4", name: "Tronchino est", x: 880, z: 247, kind: "right", on: false }
 ];
+const switchTopology = createSwitchTopology(network, switchSpecs);
 const switchHandles = [];
 function makeSwitch(s) {
   const group = new THREE.Group();
@@ -450,6 +454,7 @@ function ui() {
   $("missionName").textContent = statuses[mission].title;
   $("missionText").textContent = statuses[mission].body;
   missionUI();
+  nextSwitchHUD?.refresh(true);
 }
 function missionUI() {
   $("missionStatus").textContent = statuses[mission].done() ? "\u2713 Obiettivo completato" : statuses[mission].detail();
@@ -460,10 +465,10 @@ function select(id) {
 }
 function toggle(index) {
   const s = switchSpecs[index];
-  if (trains.some((t) => vehiclePositions(t).some((p) => {
-    return Math.hypot(p.x - s.x, p.z - s.z) < 85;
-  }))) {
-    log("Scambio occupato: attendi il passaggio del convoglio.");
+  const status = getSwitchAssistance().safetyByControl.get(s.id);
+  if (!status || status.blocked) {
+    log(status?.message ?? "Dati di sicurezza insufficienti: manovra bloccata.");
+    nextSwitchHUD?.refresh(true);
     return;
   }
   s.on = !s.on;
@@ -499,6 +504,42 @@ function vehiclePositions(t) {
   return layoutFor(t).offsets.map((offset, i) => ({
     train: t, vehicle: [t.group, ...t.carObjs][i], ...t.journey.locate(t.journey.position - offset)
   }));
+}
+function getSwitchAssistance() {
+  const occupied = [], moving = [];
+  for (const t of trains) {
+    const vehicles = [t.group, ...t.carObjs], layout = layoutFor(t);
+    const direction = Math.abs(t.velocity) > .1 ? Math.sign(t.velocity) : t.dir;
+    const index = direction < 0 ? vehicles.length - 1 : 0;
+    const leading = vehicles[index].userData.couplers;
+    const preview = traceJourney(network, switchTopology, t.journey, direction, layout.offsets[index], route);
+    moving.push({ preview, velocity:t.velocity, leadingExtent: direction < 0 ? -(leading?.back?.x ?? -48) : leading?.front?.x ?? 48 });
+    vehicles.forEach((o,i)=>occupied.push(...occupiedRanges(network,t.journey,layout.offsets[i],o.userData.couplers)));
+  }
+  for (const d of detached) {
+    const edge = network.edges[d.point.edge];
+    if (!edge) continue;
+    const c = d.group.userData.couplers, extent = Math.max(c?.front?.x ?? 48,-(c?.back?.x ?? -48));
+    occupied.push({edge:edge.id,min:Math.max(0,d.point.s-extent),max:Math.min(edge.length,d.point.s+extent)});
+  }
+  const safetyByControl = new Map();
+  for (const site of switchTopology.sites) {
+    const safety = siteSafety(site, occupied, moving);
+    for (const id of site.controls) safetyByControl.set(id,safety);
+  }
+  const preview = moving[selected].preview;
+  return { preview, safety:preview.next?safetyByControl.get(preview.next.site.controls[0]):null,
+    safetyByControl, trainName:trains[selected].name, controls:switchSpecs,
+    inverting:Math.abs(trains[selected].velocity)>.1 && Math.sign(trains[selected].velocity)!==trains[selected].dir };
+}
+function switchHUDState() {
+  const state = getSwitchAssistance();
+  document.querySelectorAll("[data-switch]").forEach((b)=>{
+    const sw=switchSpecs[Number(b.dataset.switch)], safety=state.safetyByControl.get(sw.id);
+    b.disabled=!safety || safety.blocked;
+    b.title=!safety?"Dati di sicurezza insufficienti":safety.blocked?safety.message:"Cambia posizione dello scambio";
+  });
+  return state;
 }
 function initializeJourney(t) {
   const edge = "L" + t.loop + "-return";
@@ -676,6 +717,7 @@ $("reverse").onclick = () => {
   const t = trains[selected];
   t.dir *= -1;
   log(t.name + " ha invertito direzione");
+  nextSwitchHUD?.refresh(true);
 };
 $("stop").onclick = () => {
   trains[selected].speed = 0;
@@ -754,6 +796,8 @@ const nav = navigation(camera, controls, { height: scenic.cameraHeight, building
 const views = mountViewControls({ camera, controls, navigation: nav, host: $("viewControls"), onViewChange: (preset) => {
   $("cameraView").value = preset;
 } });
+const routeHighlight = createRouteHighlight(scene);
+nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState,highlight:routeHighlight});
 const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
 function applyQuality(profile) {
   $("quality").querySelector("[value=auto]").textContent = "Automatica \xB7 " + (profile === "low" ? "Leggera" : "Alta");
@@ -793,6 +837,7 @@ window.addEventListener("pagehide", (e) => {
   observer.disconnect();
   controls.dispose();
   views.dispose();
+  nextSwitchHUD?.dispose();
   nav.dispose();
   effects.dispose();
   disposeTrainAssets();
@@ -843,6 +888,7 @@ function tick(now) {
   controls.update();
   nav.update(realDt, trains[selected].journey.locate());
   views.update();
+  nextSwitchHUD?.refresh();
   if ($("cameraView").value !== nav.preset && nav.preset === "manual") $("cameraView").value = "manual";
   document.querySelector(".titleScene").hidden = nav.preset !== "overview" && nav.preset !== "manual" || camera.zoom > 1.4;
   const nextQuality = quality.update(realDt, !document.hidden);
@@ -853,7 +899,7 @@ function tick(now) {
   smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2, quality.profile === "low");
   effects.render(quality.profile === "cinema");
   if (frame % 35 === 0) {
-    $("fps").textContent = Math.round(1 / (realDt || 1 / 60)) + " FPS \xB7 v0.6.1";
+    $("fps").textContent = Math.round(1 / (realDt || 1 / 60)) + " FPS \xB7 v0.7.0";
     missionUI();
     $("sceneInfo").textContent = trains.filter((t) => t.speed > 0).length + " CONVOGLI IN MARCIA \xB7 4 TRONCHINI \xB7 RUNAROUND LUNGO";
   }
@@ -864,6 +910,15 @@ ui();
 $("loadMsg").hidden = true;
 animationHandle = requestAnimationFrame(tick);
 if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = {
+  placeTrain(id, edge, s, direction=1) {
+    const t=trains[id], track=network.edges[edge];
+    if(!t || !track || !Number.isFinite(s) || s<0 || s>track.length || ![1,-1].includes(direction)) throw new RangeError("Invalid diagnostic train placement");
+    t.journey=new Journey(network,edge,s);
+    t.dir=direction;t.speed=t.velocity=0;
+    if(!t.journey.ensure(t.journey.position-layoutFor(t).tail,route)) throw new RangeError("Diagnostic consist does not fit");
+    if(track.lane!==undefined){t.loop=track.lane;t.previousLane=track.lane;t.mode="loop";}else{t.mode="yard";t.section=edge;}
+    renderVehicles();ui();
+  },
   step(seconds) {
     if (!Number.isFinite(seconds) || seconds < 0 || seconds > 120) throw new RangeError("Diagnostic step: 0…120 seconds");
     for (let remaining = seconds; remaining > 1e-9; remaining -= 1/60) {
@@ -872,6 +927,7 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
       updateTrainStatus(dt);
     }
     renderVehicles();
+    nextSwitchHUD?.refresh(true);
   },
   snapshot() {
   const hull = (group) => {
@@ -893,5 +949,7 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
     });
     return out;
   };
-  return { quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray() }, render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
+  const assistance = getSwitchAssistance();
+  const next = assistance.preview.next;
+  return { nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray() }, render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
 } };
