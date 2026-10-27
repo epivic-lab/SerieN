@@ -1,3 +1,6 @@
+import { attachTrainAsset, importedTrains } from "./src/train-assets.js";
+import { locomotiveDetails, wagonDetails, steam } from "./src/rolling-stock-art.js";
+import { presentation } from "./src/presentation.js";
 import { enrich } from "./src/scenery.js";
 import { createNetwork, validateNetwork } from "./src/network.js";
 import { Journey, routing, FixedClock } from "./src/simulation.js";
@@ -19,6 +22,7 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.23;
 host.prepend(renderer.domElement);
+const effects = presentation(renderer, scene, camera);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target.set(750, 0, 350);
 controls.enableDamping = true;
@@ -70,7 +74,7 @@ const rnd = () => {
 const val = (v) => typeof v === "number" ? v : 0;
 const topLights = [];
 const sun = new THREE.DirectionalLight("#ffe7c7", 2.45);
-sun.position.set(-480, 1200, -650);
+sun.position.set(-280, 1e3, 150);
 sun.target.position.set(750, 0, 350);
 scene.add(sun.target);
 sun.castShadow = true;
@@ -81,7 +85,8 @@ sun.shadow.camera.top = 950;
 sun.shadow.camera.bottom = -950;
 sun.shadow.camera.near = 1;
 sun.shadow.camera.far = 3e3;
-sun.shadow.bias = -35e-5;
+sun.shadow.bias = -15e-5;
+sun.shadow.normalBias = 0.8;
 scene.add(sun);
 const skyLight = new THREE.HemisphereLight("#e5eff2", "#506344", 1.2);
 scene.add(skyLight);
@@ -101,87 +106,10 @@ function ellipse(x, z, rx, rz, y, color) {
   scene.add(o);
   return o;
 }
-const grassGeo = new THREE.PlaneGeometry(1, 1), dummy = new THREE.Object3D();
-for (let kind = 0; kind < grassMaterials.length; kind++) {
-  const n = 255, inst = new THREE.InstancedMesh(grassGeo, grassMaterials[kind], n);
-  for (let i = 0; i < n; i++) {
-    dummy.position.set(25 + rnd() * 1450, 0.4 + rnd() * 0.2, 20 + rnd() * 660);
-    dummy.rotation.set(-PI / 2, 0, rnd() * PI);
-    dummy.scale.set(2 + rnd() * 7, 2 + rnd() * 7, 1);
-    dummy.updateMatrix();
-    inst.setMatrixAt(i, dummy.matrix);
-  }
-  inst.instanceMatrix.needsUpdate = true;
-  scene.add(inst);
-}
-ellipse(1115, 399, 115, 84, 42, mat("#789063"));
-ellipse(1105, 459, 108, 87, 39, mat("#798f62"));
-ellipse(235, 460, 105, 82, 28, mat("#819763"));
-ellipse(1015, 447, 57, 60, 19, mat("#879c70"));
-box(1510, 22, 8, wood, scene, 750, -16, 702);
-box(8, 22, 706, wood, scene, -5, -16, 350);
-box(8, 22, 706, wood, scene, 1505, -16, 350);
-const pebbleColors = ["#958b76", "#6f7164", "#aaa58d", "#555f54"];
-for (let i = 0; i < 300; i++) {
-  const x = rnd() * 1480 + 10, z = rnd() * 685 + 8;
-  const m = mat(pebbleColors[i % 4]), p = sphere(1.5 + rnd() * 3, m, scene, x, 0.8, z);
-  p.scale.set(1.5, 0.32, 0.8);
-}
-const bark = mat("#574736");
-const leafColors = ["#c88835", "#dcad50", "#b86535", "#d19b40", "#a65f39", "#7e995c", "#c2a44e", "#d5b06f", "#58794f"];
-const leafMats = leafColors.map((c) => mat(c));
-const pineMats = [mat("#446849"), mat("#547650"), mat("#3b5746")];
-const trunkGeometry = new THREE.CylinderGeometry(1, 1, 1, 7);
-function broadleaf(x, z, h, color) {
-  const g = new THREE.Group();
-  g.position.set(x, 0, z);
-  cylinder(h * 0.052, h * 0.065, h * 0.7, bark, g, 0, h * 0.35, 0, 7);
-  const leaf = leafMats[color % leafMats.length], leaf2 = leafMats[(color + 2) % leafMats.length];
-  sphere(h * 0.26, leaf, g, -h * 0.15, h * 0.67, 0).scale.set(1, 0.95, 1.04);
-  sphere(h * 0.27, leaf2, g, h * 0.13, h * 0.75, -h * 0.08).scale.set(1, 0.9, 0.9);
-  sphere(h * 0.29, leaf, g, 0, h * 0.87, h * 0.13).scale.set(0.95, 1.05, 1);
-  sphere(h * 0.21, leaf2, g, -h * 0.05, h * 0.97, -h * 0.1);
-  scene.add(g);
-  return g;
-}
-function pine(x, z, h, c) {
-  const g = new THREE.Group();
-  g.position.set(x, 0, z);
-  cylinder(1.8, 2.6, h * 0.75, bark, g, 0, h * 0.37, 0, 6);
-  for (let i = 0; i < 4; i++) {
-    const hh = h * (0.51 + i * 0.13), r = h * (0.29 - i * 0.053);
-    const o = new THREE.Mesh(new THREE.ConeGeometry(r, hh, 8), pineMats[(c + i) % 3]);
-    o.position.y = h * (0.37 + i * 0.165);
-    o.castShadow = true;
-    o.receiveShadow = true;
-    g.add(o);
-  }
-  scene.add(g);
-  return g;
-}
-function safeFromLoop(x, z) {
-  const dx = x < 360 ? x - 360 : x > 1140 ? x - 1140 : 0;
-  const radial = Math.hypot(dx, z - 350);
-  return Math.min(...[249, 282, 315].map((r) => Math.abs(radial - r))) > 24;
-}
-for (let i = 0; i < 165; i++) {
-  const x = 30 + rnd() * 1440, z = 18 + rnd() * 664;
-  const onPerimeter = x < 175 || x > 1320 || z < 135 || z > 570;
-  const woodland = x > 1e3 && x < 1340 && z > 315 && z < 585;
-  const corner = x < 400 && z > 320 && z < 570;
-  const protectedTracks = z < 160 && x > 300 && x < 1200 || x > 155 && x < 1100 && z > 160 && z < 320 || z > 575 && x > 290 && x < 1200;
-  const village = z > 330 && z < 570 && x > 240 && x < 950;
-  if (!((onPerimeter || woodland || corner) && !protectedTracks && !village && safeFromLoop(x, z))) continue;
-  const h = 23 + rnd() * 37;
-  if (rnd() > 0.32) broadleaf(x, z, h, Math.floor(rnd() * leafMats.length));
-  else pine(x, z, h, Math.floor(rnd() * 3));
-}
-for (let i = 0; i < 70; i++) {
-  const x = 1100 + rnd() * 260, z = 335 + rnd() * 260;
-  if (!safeFromLoop(x, z) || x < 1270 && z < 403 || z > 560 && x < 1190) continue;
-  if (rnd() > 0.25) broadleaf(x, z, 22 + rnd() * 25, Math.floor(rnd() * 8));
-  else pine(x, z, 24 + rnd() * 26, 0);
-}
+box(1510, 30, 8, wood, scene, 750, -16, 702);
+box(1510, 30, 8, wood, scene, 750, -16, -2);
+box(8, 30, 706, wood, scene, -5, -16, 350);
+box(8, 30, 706, wood, scene, 1505, -16, 350);
 const network = createNetwork();
 validateNetwork(network);
 const toPath = (p) => ({ ...p, points: p.points.map((v) => new THREE.Vector3(v.x, 3.5, v.z)) });
@@ -216,7 +144,7 @@ function addRail(path, label) {
   for (let i = 0; i < points.length; i++) {
     const p = points[i], t = tangent(path, path.distance[i] / path.length), side = new THREE.Vector3(-t.z, 0, t.x).multiplyScalar(12.3);
     verts.push(p.x - side.x, 1.3, p.z - side.z, p.x + side.x, 1.3, p.z + side.z);
-    uv.push(0, i * 0.07, 1, i * 0.07);
+    uv.push(0, path.distance[i] / 18, 1, path.distance[i] / 18);
     if (i) {
       const k = i * 2;
       indices.push(k - 2, k - 1, k, k - 1, k + 1, k);
@@ -260,24 +188,45 @@ const windows = [];
 function buildHouse(x, z, w, d, h, wall, roof, type = "house", orientation = 0) {
   const g = new THREE.Group();
   g.position.set(x, 1.5, z);
+  g.userData.building = { w, d, h };
   g.rotation.y = orientation;
   scene.add(g);
   const base = box(w, h, d, wall, g, 0, h / 2, 0);
   const pitch = type === "factory" ? 0.19 : 0.36, roofHeight = w * pitch * 0.5;
   const roofA = box(Math.hypot(w * 0.5, roofHeight) + 7, 3, d + 10, roof, g, -w * 0.25, h + roofHeight * 0.54, 0);
-  roofA.rotation.z = -Math.atan2(roofHeight, w * 0.5);
+  roofA.rotation.z = Math.atan2(roofHeight, w * 0.5);
   const roofB = box(Math.hypot(w * 0.5, roofHeight) + 7, 3, d + 10, roof, g, w * 0.25, h + roofHeight * 0.54, 0);
-  roofB.rotation.z = Math.atan2(roofHeight, w * 0.5);
+  roofB.rotation.z = -Math.atan2(roofHeight, w * 0.5);
+  const gable = new THREE.BufferGeometry();
+  gable.setAttribute("position", new THREE.Float32BufferAttribute([-w / 2, h, d / 2, w / 2, h, d / 2, 0, h + roofHeight, d / 2, w / 2, h, -d / 2, -w / 2, h, -d / 2, 0, h + roofHeight, -d / 2], 3));
+  gable.setAttribute("uv", new THREE.Float32BufferAttribute([0, 0, 1, 0, 0.5, 0.5, 1, 0, 0, 0, 0.5, 0.5], 2));
+  gable.computeVertexNormals();
+  const gableMesh = new THREE.Mesh(gable, wall);
+  gableMesh.castShadow = true;
+  gableMesh.receiveShadow = true;
+  g.add(gableMesh);
   for (let side of [-1, 1]) {
     for (let i = -1; i <= 1; i++) {
       const pane = box(10, 13, 1, windowDay, g, i * w * 0.27, h * 0.52, side * (d / 2 + 0.8));
       const bright = box(8, 11, 1.5, windowNight, g, i * w * 0.27, h * 0.52, side * (d / 2 + 1.2));
       windows.push(bright);
+      const trim = mat("#e1ceb0");
+      box(12, 1.4, 2, trim, g, i * w * 0.27, h * 0.52 + 7, side * (d / 2 + 1.9));
+      box(12, 1.4, 3, trim, g, i * w * 0.27, h * 0.52 - 7, side * (d / 2 + 1.9));
+      box(0.7, 12, 2, trim, g, i * w * 0.27, h * 0.52, side * (d / 2 + 2));
+      for (const dx of [-7, 7]) box(3.5, 14, 1.3, roofGray, g, i * w * 0.27 + dx, h * 0.52, side * (d / 2 + 1.2));
     }
   }
   box(15, 24, 1.2, roofRed, g, -w * 0.33, 12, d / 2 + 1);
   if (type === "factory") {
     box(8, h * 0.72, 8, mat("#996958"), g, w * 0.29, h * 0.99, -d * 0.3);
+  }
+  box(w + 8, 2, 2, mat("#534b40"), g, 0, h, d / 2 + 4);
+  box(2, h, 2, mat("#645c4b"), g, w / 2 - 3, h / 2, d / 2 + 2);
+  if (type !== "factory") {
+    box(6, 14, 6, brick, g, w * 0.28, h + 10, -d * 0.22);
+    box(8, 2, 8, mat("#6d6354"), g, w * 0.28, h + 18, -d * 0.22);
+    box(20, 2, 7, mat("#a3977e"), g, -w * 0.33, 1, d / 2 + 4);
   }
   return g;
 }
@@ -321,15 +270,6 @@ for (let x = 520; x <= 915; x += 78) {
   const ball = sphere(2.3, glow, scene, x, 29, 522);
   lamps.push(ball);
 }
-const mountain = mat("#7e8e83");
-for (let i = 0; i < 13; i++) {
-  const x = -100 + i * 160 + rnd() * 80;
-  const z = -360 - rnd() * 120;
-  const m = sphere(145 + rnd() * 90, mountain, scene, x, -19, z);
-  m.scale.set(1.6, 0.65, 0.62);
-  m.castShadow = false;
-}
-for (let i = 0; i < 25; i++) pine(i * 66 + rnd() * 25, -170 - rnd() * 80, 48 + rnd() * 70, i % 3);
 const signalGreen = new THREE.MeshStandardMaterial({ color: "#55b98a", emissive: "#259e58", emissiveIntensity: 0.4 });
 const signalGold = new THREE.MeshStandardMaterial({ color: "#f0bd64", emissive: "#aa7724", emissiveIntensity: 0.6 });
 const switchSpecs = [
@@ -383,6 +323,8 @@ function freightWagon(i) {
   } else {
     box(43, 2, 12, mat("#625a48"), g, 0, 20, 0);
   }
+  wagonDetails(g);
+  attachTrainAsset(g, ["lumber", "tank", "box"][i % 3]);
   return g;
 }
 function locoModel(id) {
@@ -431,6 +373,7 @@ function locoModel(id) {
   g.traverse((o) => {
     if (o.isMesh) o.userData.trainId = id;
   });
+  locomotiveDetails(g, id);
   scene.add(g);
   return g;
 }
@@ -446,15 +389,35 @@ for (let t of trains) {
     t.carObjs.push(g);
   }
 }
+trains.forEach((t) => {
+  t.nativeName = t.name;
+  t.nativeDescription = t.desc;
+});
+const kenneyNames = ["Vapore K1", "Diesel K2", "Manovra K3"];
+const assetReady = Promise.all(trains.map((t) => attachTrainAsset(t.group, ["steam", "diesel", "shunter"][t.id], true)));
+assetReady.then((loaded) => {
+  trains.forEach((t, i) => t.assetLoaded = loaded[i]);
+  updateModels();
+});
+function updateModels() {
+  const active = $("rollingModels").value === "kenney";
+  importedTrains(active);
+  for (const t of trains) {
+    t.name = active && t.assetLoaded ? kenneyNames[t.id] : t.nativeName;
+    t.desc = active && t.assetLoaded ? "Kenney Train Kit \xB7 modello stilizzato" : t.nativeDescription;
+  }
+  ui();
+}
+$("rollingModels").onchange = updateModels;
 const detached = [];
 const selectRing = new THREE.Mesh(new THREE.TorusGeometry(25, 1.5, 5, 34), new THREE.MeshBasicMaterial({ color: "#efdc9d" }));
 selectRing.rotation.x = PI / 2;
 scene.add(selectRing);
 let selected = 0, paused = false, day = 48, changes = 0, transferred = false, visitedRunaround = false, didDetach = false, didAttach = false, mission = 0;
 const statuses = [
-  { title: "Primo giro", body: "Fai completare un giro alla BR 055 sul suo anello.", done: () => trains[0].laps >= 1, detail: () => "Giri completati: " + trains[0].laps + " / 1" },
+  { title: "Primo giro", body: "Fai completare un giro alla locomotiva a vapore sul suo anello.", done: () => trains[0].laps >= 1, detail: () => "Giri completati: " + trains[0].laps + " / 1" },
   { title: "Cambiare binario", body: "Attiva WX-A o WX-B e fai transitare una locomotiva da un anello all\u2019altro.", done: () => transferred, detail: () => transferred ? "Trasferimento riuscito" : "Nessun trasferimento" },
-  { title: "Il lungo runaround", body: "Predisponi il gruppo manovra e percorri con la BR 260 uno dei due rami del runaround lungo.", done: () => visitedRunaround, detail: () => visitedRunaround ? "Runaround percorso" : "In attesa della BR 260" },
+  { title: "Il lungo runaround", body: "Predisponi il gruppo manovra e percorri con la locomotiva da manovra uno dei due rami del runaround lungo.", done: () => visitedRunaround, detail: () => visitedRunaround ? "Runaround percorso" : "In attesa della locomotiva da manovra" },
   { title: "Composizione merci", body: "Sgancia un carro a treno fermo e poi riaggancialo sullo stesso binario.", done: () => didDetach && didAttach, detail: () => "Sgancio " + (didDetach ? "\u2713" : "\u25CB") + " \xB7 Aggancio " + (didAttach ? "\u2713" : "\u25CB") }
 ];
 function log(s) {
@@ -551,6 +514,7 @@ function renderVehicles() {
     });
     for (const group of [t.group, ...t.carObjs]) group.traverse((o) => {
       if (o.userData.wheel) o.rotation.z = -t.odometer / 4.2;
+      if (o.userData.importedWheel) o.rotation.x = -t.odometer / o.userData.wheelRadius;
     });
   }
   selectRing.position.copy(vehicleLocation(trains[selected]).point);
@@ -766,9 +730,9 @@ trains.forEach((t) => {
   t.carObjs.forEach((o) => o.userData.dynamic = true);
 });
 selectRing.userData.dynamic = true;
-enrich(scene, renderer, { ballast, ground, wood });
+const scenic = enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials: [roofRed, roofGray], wallMaterials: [hstyle, hbrick, hboard, cream] });
 $("quality").onchange = (e) => {
-  const high = e.target.value === "high";
+  const high = e.target.value !== "low";
   renderer.setPixelRatio(high ? Math.min(devicePixelRatio || 1, 2) : 1);
   renderer.shadowMap.enabled = high;
   resize();
@@ -790,6 +754,7 @@ function resize() {
   const w = host.clientWidth, h = host.clientHeight;
   if (!w || !h) return;
   renderer.setSize(w, h, false);
+  effects.resize(w, h);
   const aspect = w / h, span = Math.max(1020, 1650 / aspect);
   camera.left = -span * aspect / 2;
   camera.right = span * aspect / 2;
@@ -797,6 +762,7 @@ function resize() {
   camera.bottom = -span / 2;
   camera.updateProjectionMatrix();
 }
+const smoke = steam(scene);
 const clock = new FixedClock();
 let last = performance.now(), frame = 0;
 function tick(now) {
@@ -811,24 +777,27 @@ function tick(now) {
   frame++;
   renderVehicles();
   const night = clamp((day - 35) / 65, 0, 1);
-  sun.intensity = lerp(2.4, 0.38, night);
+  sun.intensity = lerp(3.1, 0.25, night);
   sun.color.set(day > 40 ? "#e8b87d" : "#ffe9c7");
-  renderer.toneMappingExposure = lerp(1.24, 0.75, night);
-  skyLight.intensity = lerp(1.2, 0.18, night);
+  renderer.toneMappingExposure = lerp(1.12, 0.85, night);
+  skyLight.intensity = lerp(0.85, 0.22, night);
   fill.intensity = lerp(0.65, 0.1, night);
-  scene.environmentIntensity = lerp(0.35, 0.05, night);
+  scene.environmentIntensity = lerp(0.25, 0.07, night);
   trains.forEach((t) => {
     t.group.userData.headMaterial.emissiveIntensity = t.lights ? lerp(0.5, 3, night) : 0;
     t.group.userData.beam.visible = t.lights && night > 0.3;
   });
-  scene.background.set(night > 0.6 ? "#354d60" : "#a1bec6");
+  scene.background.copy(new THREE.Color("#c5b79f").lerp(new THREE.Color("#202d3a"), night));
   scene.fog.color.copy(scene.background);
-  windowNight.emissiveIntensity = lerp(0.25, 2.4, night);
+  windowNight.emissiveIntensity = lerp(0.02, 2.4, night);
+  windowNight.color.setRGB(lerp(0.15, 0.8, night), lerp(0.22, 0.56, night), lerp(0.24, 0.23, night));
   glow.emissiveIntensity = lerp(0.4, 2.8, night);
   controls.update();
-  renderer.render(scene, camera);
+  scenic.update(paused ? 0 : dt);
+  smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2, $("quality").value === "low");
+  effects.render($("quality").value === "cinema");
   if (frame % 35 === 0) {
-    $("fps").textContent = Math.round(1 / (dt || 1 / 60)) + " FPS \xB7 v0.3";
+    $("fps").textContent = Math.round(1 / (dt || 1 / 60)) + " FPS \xB7 v0.4";
     missionUI();
     $("sceneInfo").textContent = trains.filter((t) => t.speed > 0).length + " CONVOGLI IN MARCIA \xB7 4 TRONCHINI \xB7 RUNAROUND LUNGO";
   }

@@ -17,3 +17,5 @@ h1,h2,h3,p{margin-top:0}.eyebrow{font:700 10px system-ui,sans-serif;letter-spaci
 .qualityLabel{display:flex;align-items:center;gap:5px;font-size:10px;color:#c4d0bb}select{background:#273b31;color:#eaf0e9;border:1px solid #54705c;border-radius:6px;padding:6px}.titleScene{opacity:.88}.world{background:#9fbcc5}@media(max-width:600px){.qualityLabel{display:none}}
 
 @media(max-width:930px){.middle{display:contents}.world{order:1}.console{order:2}.sidebar{order:3}}
+
+.rollingLabel{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:16px;font-size:11px;color:#c4d0bb}.rollingLabel select{max-width:175px}

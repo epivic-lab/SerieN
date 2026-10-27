@@ -1,4 +1,4 @@
-# SerieN · Autumn Railways v0.3
+# SerieN · Autumn Railways v0.4
 
 Simulatore ferroviario web indipendente in scala N. [Gioca](https://epivic-lab.github.io/SerieN/).
 Non dipende dal repository `first` e non invia comandi alla centralina Z21 reale.
@@ -9,7 +9,7 @@ Tre locomotive indipendenti (BR 055, BR 216, BR 260), tre circuiti R249/R282/R31
 quattro tronchini, due crossover e un runaround con due rami. Comandi di marcia,
 retromarcia, arresto, luci, aggancio e sgancio; quattro missioni introduttive.
 Camera orbitale, pianta generata dal tracciato 3D, ciclo giorno/notte,
-fari direzionali e profilo grafico leggero per mobile. Spazio arresta il treno
+fari direzionali e profilo grafico leggero per mobile. Il profilo Cinema aggiunge bloom selettivo e vignettatura. Spazio arresta il treno
 selezionato quando il focus non è su un controllo. La retromarcia include frenata
 prima del cambio di verso; aggancio e sgancio richiedono un convoglio fermo.
 
@@ -36,8 +36,13 @@ resta conservato e può avere requisiti differenti.
 - `src/network.js`: geometria misurata, nodi, archi e campionamento comune.
 - `src/simulation.js`: itinerari, storia del percorso della composizione e clock
   a passo fisso di 1/60 s; indipendente da Three.js e dal DOM.
-- `src/scenery.js`: materiali originali procedurali, ambiente, dettagli e batching
-  degli oggetti statici per materiale.
+- `src/scenery.js`: materiali, ambiente e batching degli oggetti statici.
+- `src/diorama.js` / `src/landscape.js`: terreno, vegetazione con maschere alpha,
+  sottobosco e rocce con distanze di rispetto da binari ed edifici; regole deterministiche.
+- `src/presentation.js`: postproduzione opzionale del profilo Cinema.
+- `src/train-assets.js`: caricamento locale dei GLB Kenney, scala e scelta dei modelli,
+  con ripiego automatico sugli originali in caso di errore.
+- `src/rolling-stock-art.js`: dettagli aggiuntivi dei rotabili originali e vapore animato.
 - `app.js`: scena WebGL, rotabili procedurali, interazione, protezione e missioni.
 - `index.html` / `style.css`: interfaccia responsive e messaggio di errore iniziale.
 - `tests/network.test.js`: continuità dei crossover, reversibilità, chiusura dei
@@ -59,22 +64,33 @@ tramite curve: **non è una conversione CAD millimetrica certificata dei pezzi K
 Occorrono verifica delle geometrie di catalogo e confronto con il file RailModeller.
 La protezione considera vicinanza dei veicoli e blocca scambi prossimi ai convogli;
 non costituisce un sistema completo di interblocco o di dinamica ferroviaria.
-Le ruote sono animate; carrelli, bielle, fumo e ganci fisici non sono simulati in dettaglio.
+Le ruote originali e le ruote individuali della locomotiva Kenney sono animate; il vapore è un effetto a particelle. I carrelli Kenney rimangono rigidi; bielle e ganci non hanno una simulazione fisica dettagliata.
 
-I modelli e i materiali del gioco sono procedurali originali. Nessun asset è stato
-scaricato da Sketchfab, Free3D, CGTrader o Meshy: l'accesso è bloccato e le licenze
-non sono state verificate. **La qualità non equivale a Train Station 3 o al rendering
-artistico di riferimento**. Servono asset dedicati, ulteriore lavoro artistico e
-misure su dispositivi reali. Il profilo leggero riduce risoluzione e ombre; i test
-headless con renderer software non sono benchmark di una GPU desktop o mobile.
+Il gioco include **sei modelli Kenney Train Kit 1.1, CC0**, con texture condivisa,
+licenza e provenienza in `assets/kenney`. L'archivio originale fornito dall'utente
+rimane nel repository; il deploy distribuisce soltanto i modelli selezionati.
+Kenney, Guus Vermeulen e Tony Schaer sono accreditati anche nella guida.
+I modelli sono stilizzati: il selettore «Rotabili» li distingue dagli originali
+DB, senza presentarli come repliche delle BR 055/216/260. L'asset geometrico si
+adatta all'ingombro ferroviario tramite trasformazioni in fase di caricamento.
+I binari Kenney non sostituiscono la geometria del tracciato esistente.
+
+La scenografia usa texture originali generate localmente, terreno modellato,
+vegetazione istanziata con silhouette alpha e lieve vento, rocce, sottobosco,
+recinzioni e dettagli della stazione. Le ombre sono disponibili nei profili Alta
+e Cinema; Leggera riduce risoluzione e ombre. Cinema aggiunge bloom e vignettatura
+senza imporre il costo della postproduzione al profilo mobile.
+**Non è rendering fotorealistico né equivalente a Train Station 3.** I test browser
+con renderer software verificano avvio e comportamento; non sono benchmark di
+una GPU desktop o mobile.
 
 ## Pubblicazione
 
 Il workflow `.github/workflows/pages.yml` esegue `npm ci`, test, build e prepara
 `_site` includendo solo pagina, CSS, bundle, asset e prototipo precedente. Non
 pubblica `node_modules`, documenti di lavoro o l'immagine di ispirazione.
-Un push su `main` avvia GitHub Pages. La versione precedente è recuperabile dal
-commit `40b1fdd` (codice del gioco al commit `d3c3801`).
+Un push su `main` avvia GitHub Pages. La versione v0.3 è recuperabile dal commit `6e050e9`; la versione iniziale
+del gioco è conservata al commit `d3c3801`.
 
 Three.js e addon: licenza MIT, mantenuta nel bundle generato. Il progetto è
 amatoriale, senza affiliazione a Kato, Roco o ai titoli citati come riferimento.
