@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet xml-stylesheet href="/xml/XSLT/panelfile-4-19-2.xsl" type="text/xsl"?>
+<layout-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/layout-4-19-2.xsd">
+    <jmriversion>
+        <major>4</major>
+        <minor>26</minor>
+        <test>0</test>
+        <modifier/>
+    </jmriversion>
+    <blocks class="jmri.configurexml.BlockManagerXml">
+        <defaultspeed>Normal</defaultspeed>
+        <block systemName="IB0" length="0.0" curve="0" userName="RM Block">
+            <systemName>IB0</systemName>
+            <userName>RM Block</userName>
+            <permissive>no</permissive>
+        </block>
+    </blocks>
+    <layoutblocks class="jmri.jmrit.display.layoutEditor.configurexml.LayoutBlockManagerXml">
+        <layoutblock trackcolor="black" systemName="IB0" occupiedsense="2" extracolor="orange" occupiedcolor="red" userName="RM Block">
+            <systemName>IB0</systemName>
+            <userName>RM Block</userName>
+        </layoutblock>
+    </layoutblocks>
+    <signalmastlogics class="jmri.managers.configurexml.DefaultSignalMastLogicManagerXml">
+        <logicDelay>500</logicDelay>
+    </signalmastlogics>
+    <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" x="0" y="0" windowheight="800" windowwidth="1000" panelheight="312" panelwidth="312" sliders="no" scrollable="none" editable="yes" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="no" snaponadd="no" snaponmove="no" antialiasing="no" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="2" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="1" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="no" name="3 anelli 4 tronchini 1 run around">
+        <positionablepoint y="134.3" ident="A0" connect1name="T0" type="ANCHOR" x="170.7" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="154.3" ident="A1" connect1name="T0" type="ANCHOR" x="162.4" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="162.5" ident="A2" connect1name="T1" type="ANCHOR" x="142.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="162.5" ident="A3" connect1name="T2" type="ANCHOR" x="68.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="154.3" ident="A4" connect1name="T2" type="ANCHOR" x="48.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="134.3" ident="A5" connect1name="T3" type="ANCHOR" x="39.9" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="114.4" ident="A6" connect1name="T4" type="ANCHOR" x="48.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="106.1" ident="A7" connect1name="T5" type="ANCHOR" x="68.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="109.4" ident="A8" connect1name="T6" type="ANCHOR" x="99.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="109.4" ident="A9" connect1name="T6" type="ANCHOR" x="105.3" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="165.8" ident="A10" connect1name="T7" type="ANCHOR" x="92.9" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="165.8" ident="A11" connect1name="T7" type="ANCHOR" x="68.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="112.1" ident="A12" connect1name="T8" type="ANCHOR" x="45.8" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="102.8" ident="A13" connect1name="T8" type="ANCHOR" x="68.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="134.3" ident="A14" connect1name="T9" type="ANCHOR" x="36.6" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="156.6" ident="A15" connect1name="T10" type="ANCHOR" x="45.8" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="134.3" ident="A16" connect1name="T12" type="ANCHOR" x="174.0" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="156.6" ident="A17" connect1name="T12" type="ANCHOR" x="164.7" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="165.8" ident="A18" connect1name="T13" type="ANCHOR" x="142.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="102.8" ident="A19" connect1name="T14" type="ANCHOR" x="92.9" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="165.8" ident="A20" connect1name="T15" type="ANCHOR" x="117.7" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="134.3" ident="A21" connect1name="T16" type="ANCHOR" x="167.4" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="151.9" ident="A22" connect1name="T16" type="ANCHOR" x="160.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="159.2" ident="A23" connect1name="T17" type="ANCHOR" x="142.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="116.7" ident="A24" connect1name="T18" type="ANCHOR" x="50.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="109.4" ident="A25" connect1name="T18" type="ANCHOR" x="68.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="134.3" ident="A26" connect1name="T19" type="ANCHOR" x="43.2" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="151.9" ident="A27" connect1name="T20" type="ANCHOR" x="50.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="159.2" ident="A28" connect1name="T21" type="ANCHOR" x="68.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="102.8" ident="A29" connect1name="T22" type="ANCHOR" x="105.3" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="102.8" ident="A30" connect1name="T23" type="ANCHOR" x="142.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="112.1" ident="A31" connect1name="T23" type="ANCHOR" x="164.7" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="106.1" ident="A32" connect1name="T25" type="ANCHOR" x="142.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="114.4" ident="A33" connect1name="T25" type="ANCHOR" x="162.4" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="116.7" ident="A35" connect1name="T27" type="ANCHOR" x="160.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="123.1" ident="A37" connect1name="T29" type="ANCHOR" x="69.4" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="126.3" ident="A38" connect1name="T30" type="ANCHOR" x="57.4" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="127.9" ident="EB39" connect1name="T30" type="END_BUMPER" x="51.4" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="102.8" ident="A40" connect1name="T31" type="ANCHOR" x="111.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="106.1" ident="A41" connect1name="T32" type="ANCHOR" x="105.3" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="106.1" ident="A42" connect1name="T32" type="ANCHOR" x="111.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="106.1" ident="A43" connect1name="T33" type="ANCHOR" x="99.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="155.9" ident="A44" connect1name="T34" type="ANCHOR" x="99.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="155.9" ident="A45" connect1name="T34" type="ANCHOR" x="111.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="162.5" ident="A46" connect1name="T35" type="ANCHOR" x="99.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="162.5" ident="A47" connect1name="T35" type="ANCHOR" x="111.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="132.0" ident="A48" connect1name="T37" type="ANCHOR" x="51.8" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="133.6" ident="EB49" connect1name="T37" type="END_BUMPER" x="45.8" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="124.7" ident="A51" connect1name="T39" type="ANCHOR" x="150.9" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="124.7" ident="EB52" connect1name="T39" type="END_BUMPER" x="157.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="120.7" ident="A54" connect1name="T40" type="ANCHOR" x="93.9" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="109.4" ident="A55" connect1name="T41" type="ANCHOR" x="111.5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="122.3" ident="A60" connect1name="T44" type="ANCHOR" x="100.8" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="124.7" ident="A63" connect1name="T46" type="ANCHOR" x="126.1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="116.0" ident="A65" connect1name="T49" type="ANCHOR" x="80.3" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <positionablepoint y="122.4" ident="A67" connect1name="T50" type="ANCHOR" x="56.3" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A1" type2="POS_POINT" arc="yes" connect1name="A0" ident="T0" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A2" type2="POS_POINT" arc="yes" connect1name="A1" ident="T1" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A4" type2="POS_POINT" arc="yes" connect1name="A3" ident="T2" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A5" type2="POS_POINT" arc="yes" connect1name="A4" ident="T3" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A6" type2="POS_POINT" arc="yes" connect1name="A5" ident="T4" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A7" type2="POS_POINT" arc="yes" connect1name="A6" ident="T5" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A8" connect2name="A9" ident="T6" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A10" connect2name="A11" ident="T7" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A13" type2="POS_POINT" arc="yes" connect1name="A12" ident="T8" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A12" type2="POS_POINT" arc="yes" connect1name="A14" ident="T9" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A14" type2="POS_POINT" arc="yes" connect1name="A15" ident="T10" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A15" type2="POS_POINT" arc="yes" connect1name="A11" ident="T11" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A17" type2="POS_POINT" arc="yes" connect1name="A16" ident="T12" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A18" type2="POS_POINT" arc="yes" connect1name="A17" ident="T13" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A13" connect2name="A19" ident="T14" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A18" connect2name="A20" ident="T15" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A22" type2="POS_POINT" arc="yes" connect1name="A21" ident="T16" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A23" type2="POS_POINT" arc="yes" connect1name="A22" ident="T17" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A25" type2="POS_POINT" arc="yes" connect1name="A24" ident="T18" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A24" type2="POS_POINT" arc="yes" connect1name="A26" ident="T19" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A26" type2="POS_POINT" arc="yes" connect1name="A27" ident="T20" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A27" type2="POS_POINT" arc="yes" connect1name="A28" ident="T21" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A19" connect2name="A29" ident="T22" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A31" type2="POS_POINT" arc="yes" connect1name="A30" ident="T23" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A16" type2="POS_POINT" arc="yes" connect1name="A31" ident="T24" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A33" type2="POS_POINT" arc="yes" connect1name="A32" ident="T25" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A0" type2="POS_POINT" arc="yes" connect1name="A33" ident="T26" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="TURNOUT_A" blockname="RM Block" angle="45.0" connect2name="A35" type2="POS_POINT" arc="yes" connect1name="TO3" ident="T27" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="45.0" connect2name="A21" type2="POS_POINT" arc="yes" connect1name="A35" ident="T28" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="TO5" connect2name="A37" ident="T29" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="TURNOUT_B" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A38" connect2name="EB39" ident="T30" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A29" connect2name="A40" ident="T31" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A41" connect2name="A42" ident="T32" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A43" connect2name="A41" ident="T33" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A44" connect2name="A45" ident="T34" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A46" connect2name="A47" ident="T35" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A20" connect2name="A10" ident="T36" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A48" connect2name="EB49" ident="T37" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="TURNOUT_A" connect1name="A48" connect2name="TO1" ident="T38" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A51" connect2name="EB52" ident="T39" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="TO1" connect2name="A54" ident="T40" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="TURNOUT_B" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A9" connect2name="A55" ident="T41" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="TO2" connect2name="A54" ident="T42" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="TURNOUT_B" blockname="RM Block" mainline="yes"/>
+        <tracksegment flip="no" type1="TURNOUT_A" blockname="RM Block" angle="15.0" connect2name="TO1" type2="TURNOUT_C" arc="yes" connect1name="TO4" ident="T43" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment flip="no" type1="TURNOUT_C" blockname="RM Block" angle="15.0" connect2name="A60" type2="POS_POINT" arc="yes" connect1name="TO2" ident="T44" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment hidden="no" dashed="no" type2="TURNOUT_C" connect1name="TO2" connect2name="TO3" ident="T45" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="TURNOUT_A" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A63" connect2name="A51" ident="T46" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="TO4" connect2name="A63" ident="T47" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="TURNOUT_C" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A38" connect2name="A37" ident="T48" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment flip="no" type1="POS_POINT" blockname="RM Block" angle="15.0" connect2name="TO5" type2="TURNOUT_C" arc="yes" connect1name="A65" ident="T49" hidden="no" hideConLines="yes" mainline="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" circle="yes" dashed="no"/>
+        <tracksegment hidden="no" dashed="no" type2="POS_POINT" connect1name="A67" connect2name="A65" ident="T50" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="POS_POINT" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="TURNOUT_B" connect1name="TO0" connect2name="TO3" ident="T51" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="TURNOUT_A" blockname="RM Block" mainline="yes"/>
+        <tracksegment hidden="no" dashed="no" type2="TURNOUT_A" connect1name="TO0" connect2name="TO5" ident="T52" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" hideConLines="yes" type1="TURNOUT_C" blockname="RM Block" mainline="yes"/>
+        <layoutturnout ycen="109.4" xd="120.6" continuing="2" connectaname="T51" ya="109.4" blockname="RM Block" xa="129.9" type="2" disabled="no" yb="109.4" disableWhenOccupied="no" xb="111.3" ident="TO0" xcen="120.6" yc="111.9" xc="111.3" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTurnoutXml" connectcname="T52" yd="109.4"/>
+        <layoutturnout yd="128.8" connectbname="T40" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTurnoutXml" ident="TO1" xa="57.8" xb="69.9" connectcname="T43" type="1" xc="70.2" continuing="2" blockname="RM Block" connectaname="T38" ya="130.4" ycen="128.8" xd="63.9" disabled="no" yb="127.2" xcen="63.9" yc="128.8" disableWhenOccupied="no"/>
+        <layoutturnout yd="114.3" connectbname="T42" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTurnoutXml" ident="TO2" xa="124.0" xb="111.9" connectcname="T44" type="2" xc="112.4" continuing="2" blockname="RM Block" connectaname="T45" ya="112.7" ycen="114.3" xd="117.9" disabled="no" yb="115.9" xcen="117.9" yc="117.5" disableWhenOccupied="no"/>
+        <layoutturnout yd="109.4" connectbname="T51" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTurnoutXml" ident="TO3" xa="142.5" xb="129.9" connectcname="T45" type="2" xc="130.0" continuing="2" blockname="RM Block" connectaname="T27" ya="109.4" ycen="109.4" xd="136.2" disabled="no" yb="109.4" xcen="136.2" yc="111.1" disableWhenOccupied="no"/>
+        <layoutturnout ycen="124.7" xd="91.7" continuing="2" connectaname="T43" ya="127.2" blockname="RM Block" xa="82.7" type="1" disabled="no" yb="122.3" disableWhenOccupied="no" xb="100.6" ident="TO4" xcen="91.7" yc="124.7" xc="101.3" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTurnoutXml" connectcname="T47" yd="124.7"/>
+        <layoutturnout yd="114.3" connectbname="T29" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTurnoutXml" ident="TO5" xa="111.3" xb="93.3" connectcname="T49" type="1" xc="92.7" continuing="2" blockname="RM Block" connectaname="T52" ya="111.9" ycen="114.3" xd="102.3" disabled="no" yb="116.7" xcen="102.3" yc="114.3" disableWhenOccupied="no"/>
+    </LayoutEditor>
+    <!--Written by JMRI version 4.26+R381c8dfc32 on Thu Jul 13 20:24:56 CEST 2023-->
+    <!-- Exported by RailModeller Pro on Tue Oct 27 22:45:59 CET 2026 -->
+</layout-config>

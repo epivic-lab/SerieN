@@ -1,0 +1,4368 @@
+{
+  "source": "3 anelli 4 tronchini 1 run around.xml",
+  "sourceSha256": "30790d01c370217acc70906cf8887df9038faa5bca149383634cbaeaba590d9e",
+  "sourceCounts": {
+    "trackSegments": 53,
+    "points": 56,
+    "turnouts": 6,
+    "explicitBumpers": 3
+  },
+  "coordinateTransform": {
+    "scaleMmPerXmlUnit": 10.0,
+    "originXml": [
+      30.3,
+      99.3
+    ],
+    "world": "x=10*(xml.x-30.3); z=10*(xml.y-99.3); y=rail grade from the simulator",
+    "svgViewBox": "0 0 1500 700",
+    "minimap": "SVG x = world.x; SVG y = world.z; preserveAspectRatio=xMidYMid meet",
+    "baseFrameIsAdopted": true,
+    "sourceCoordinateResolutionMm": 1
+  },
+  "rawGraph": {
+    "vertexCount": 74,
+    "edgeCount": 65,
+    "componentCount": 9,
+    "cycleRank": 0,
+    "components": [
+      {
+        "id": 1,
+        "nodes": [
+          "A0",
+          "A1",
+          "A2",
+          "A32",
+          "A33"
+        ],
+        "edges": [
+          "T0",
+          "T1",
+          "T25",
+          "T26"
+        ]
+      },
+      {
+        "id": 2,
+        "nodes": [
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7"
+        ],
+        "edges": [
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ]
+      },
+      {
+        "id": 3,
+        "nodes": [
+          "A55",
+          "A8",
+          "A9"
+        ],
+        "edges": [
+          "T41",
+          "T6"
+        ]
+      },
+      {
+        "id": 4,
+        "nodes": [
+          "A10",
+          "A11",
+          "A12",
+          "A13",
+          "A14",
+          "A15",
+          "A16",
+          "A17",
+          "A18",
+          "A19",
+          "A20",
+          "A29",
+          "A30",
+          "A31",
+          "A40"
+        ],
+        "edges": [
+          "T10",
+          "T11",
+          "T12",
+          "T13",
+          "T14",
+          "T15",
+          "T22",
+          "T23",
+          "T24",
+          "T31",
+          "T36",
+          "T7",
+          "T8",
+          "T9"
+        ]
+      },
+      {
+        "id": 5,
+        "nodes": [
+          "A21",
+          "A22",
+          "A23",
+          "A35",
+          "A37",
+          "A38",
+          "A48",
+          "A51",
+          "A54",
+          "A60",
+          "A63",
+          "A65",
+          "A67",
+          "EB39",
+          "EB49",
+          "EB52",
+          "TO0:A",
+          "TO0:B",
+          "TO0:C",
+          "TO1:A",
+          "TO1:B",
+          "TO1:C",
+          "TO2:A",
+          "TO2:B",
+          "TO2:C",
+          "TO3:A",
+          "TO3:B",
+          "TO3:C",
+          "TO4:A",
+          "TO4:B",
+          "TO4:C",
+          "TO5:A",
+          "TO5:B",
+          "TO5:C"
+        ],
+        "edges": [
+          "T16",
+          "T17",
+          "T27",
+          "T28",
+          "T29",
+          "T30",
+          "T37",
+          "T38",
+          "T39",
+          "T40",
+          "T42",
+          "T43",
+          "T44",
+          "T45",
+          "T46",
+          "T47",
+          "T48",
+          "T49",
+          "T50",
+          "T51",
+          "T52",
+          "TO0:AB",
+          "TO0:AC",
+          "TO1:AB",
+          "TO1:AC",
+          "TO2:AB",
+          "TO2:AC",
+          "TO3:AB",
+          "TO3:AC",
+          "TO4:AB",
+          "TO4:AC",
+          "TO5:AB",
+          "TO5:AC"
+        ]
+      },
+      {
+        "id": 6,
+        "nodes": [
+          "A24",
+          "A25",
+          "A26",
+          "A27",
+          "A28"
+        ],
+        "edges": [
+          "T18",
+          "T19",
+          "T20",
+          "T21"
+        ]
+      },
+      {
+        "id": 7,
+        "nodes": [
+          "A41",
+          "A42",
+          "A43"
+        ],
+        "edges": [
+          "T32",
+          "T33"
+        ]
+      },
+      {
+        "id": 8,
+        "nodes": [
+          "A44",
+          "A45"
+        ],
+        "edges": [
+          "T34"
+        ]
+      },
+      {
+        "id": 9,
+        "nodes": [
+          "A46",
+          "A47"
+        ],
+        "edges": [
+          "T35"
+        ]
+      }
+    ],
+    "openEnds": [
+      "A2",
+      "A3",
+      "A7",
+      "A8",
+      "A23",
+      "A25",
+      "A28",
+      "A30",
+      "A32",
+      "EB39",
+      "A40",
+      "A42",
+      "A43",
+      "A44",
+      "A45",
+      "A46",
+      "A47",
+      "EB49",
+      "EB52",
+      "A55",
+      "A60",
+      "A67",
+      "TO0:B",
+      "TO4:B"
+    ],
+    "isolatedNodes": [],
+    "edges": [
+      {
+        "id": "TO0:AB",
+        "from": "TO0:A",
+        "to": "TO0:B",
+        "kind": "turnout-internal",
+        "turnout": "TO0",
+        "route": "normal"
+      },
+      {
+        "id": "TO0:AC",
+        "from": "TO0:A",
+        "to": "TO0:C",
+        "kind": "turnout-internal",
+        "turnout": "TO0",
+        "route": "diverging"
+      },
+      {
+        "id": "TO1:AB",
+        "from": "TO1:A",
+        "to": "TO1:B",
+        "kind": "turnout-internal",
+        "turnout": "TO1",
+        "route": "normal"
+      },
+      {
+        "id": "TO1:AC",
+        "from": "TO1:A",
+        "to": "TO1:C",
+        "kind": "turnout-internal",
+        "turnout": "TO1",
+        "route": "diverging"
+      },
+      {
+        "id": "TO2:AB",
+        "from": "TO2:A",
+        "to": "TO2:B",
+        "kind": "turnout-internal",
+        "turnout": "TO2",
+        "route": "normal"
+      },
+      {
+        "id": "TO2:AC",
+        "from": "TO2:A",
+        "to": "TO2:C",
+        "kind": "turnout-internal",
+        "turnout": "TO2",
+        "route": "diverging"
+      },
+      {
+        "id": "TO3:AB",
+        "from": "TO3:A",
+        "to": "TO3:B",
+        "kind": "turnout-internal",
+        "turnout": "TO3",
+        "route": "normal"
+      },
+      {
+        "id": "TO3:AC",
+        "from": "TO3:A",
+        "to": "TO3:C",
+        "kind": "turnout-internal",
+        "turnout": "TO3",
+        "route": "diverging"
+      },
+      {
+        "id": "TO4:AB",
+        "from": "TO4:A",
+        "to": "TO4:B",
+        "kind": "turnout-internal",
+        "turnout": "TO4",
+        "route": "normal"
+      },
+      {
+        "id": "TO4:AC",
+        "from": "TO4:A",
+        "to": "TO4:C",
+        "kind": "turnout-internal",
+        "turnout": "TO4",
+        "route": "diverging"
+      },
+      {
+        "id": "TO5:AB",
+        "from": "TO5:A",
+        "to": "TO5:B",
+        "kind": "turnout-internal",
+        "turnout": "TO5",
+        "route": "normal"
+      },
+      {
+        "id": "TO5:AC",
+        "from": "TO5:A",
+        "to": "TO5:C",
+        "kind": "turnout-internal",
+        "turnout": "TO5",
+        "route": "diverging"
+      },
+      {
+        "id": "T0",
+        "from": "A0",
+        "to": "A1",
+        "kind": "track",
+        "length": 222.20596360971416
+      },
+      {
+        "id": "T1",
+        "from": "A1",
+        "to": "A2",
+        "kind": "track",
+        "length": 220.8655286493254
+      },
+      {
+        "id": "T2",
+        "from": "A3",
+        "to": "A4",
+        "kind": "track",
+        "length": 221.81465332857653
+      },
+      {
+        "id": "T3",
+        "from": "A4",
+        "to": "A5",
+        "kind": "track",
+        "length": 221.81465332857667
+      },
+      {
+        "id": "T4",
+        "from": "A5",
+        "to": "A6",
+        "kind": "track",
+        "length": 220.86552864932546
+      },
+      {
+        "id": "T5",
+        "from": "A6",
+        "to": "A7",
+        "kind": "track",
+        "length": 222.20596360971416
+      },
+      {
+        "id": "T6",
+        "from": "A8",
+        "to": "A9",
+        "kind": "track",
+        "length": 62.00000000000003
+      },
+      {
+        "id": "T7",
+        "from": "A10",
+        "to": "A11",
+        "kind": "track",
+        "length": 248.0000000000001
+      },
+      {
+        "id": "T8",
+        "from": "A12",
+        "to": "A13",
+        "kind": "track",
+        "length": 247.9389919886181
+      },
+      {
+        "id": "T9",
+        "from": "A14",
+        "to": "A12",
+        "kind": "track",
+        "length": 246.59751681064927
+      },
+      {
+        "id": "T10",
+        "from": "A15",
+        "to": "A14",
+        "kind": "track",
+        "length": 247.54582066788373
+      },
+      {
+        "id": "T11",
+        "from": "A11",
+        "to": "A15",
+        "kind": "track",
+        "length": 247.5458206678839
+      },
+      {
+        "id": "T12",
+        "from": "A16",
+        "to": "A17",
+        "kind": "track",
+        "length": 247.93899198861803
+      },
+      {
+        "id": "T13",
+        "from": "A17",
+        "to": "A18",
+        "kind": "track",
+        "length": 246.5975168106491
+      },
+      {
+        "id": "T14",
+        "from": "A13",
+        "to": "A19",
+        "kind": "track",
+        "length": 248.0000000000001
+      },
+      {
+        "id": "T15",
+        "from": "A18",
+        "to": "A20",
+        "kind": "track",
+        "length": 247.99999999999997
+      },
+      {
+        "id": "T16",
+        "from": "A21",
+        "to": "A22",
+        "kind": "track",
+        "length": 195.5255182433738
+      },
+      {
+        "id": "T17",
+        "from": "A22",
+        "to": "A23",
+        "kind": "track",
+        "length": 195.52551824337368
+      },
+      {
+        "id": "T18",
+        "from": "A24",
+        "to": "A25",
+        "kind": "track",
+        "length": 195.5255182433738
+      },
+      {
+        "id": "T19",
+        "from": "A26",
+        "to": "A24",
+        "kind": "track",
+        "length": 195.5255182433739
+      },
+      {
+        "id": "T20",
+        "from": "A27",
+        "to": "A26",
+        "kind": "track",
+        "length": 195.5255182433738
+      },
+      {
+        "id": "T21",
+        "from": "A28",
+        "to": "A27",
+        "kind": "track",
+        "length": 195.52551824337368
+      },
+      {
+        "id": "T22",
+        "from": "A19",
+        "to": "A29",
+        "kind": "track",
+        "length": 123.99999999999991
+      },
+      {
+        "id": "T23",
+        "from": "A30",
+        "to": "A31",
+        "kind": "track",
+        "length": 246.99219768117018
+      },
+      {
+        "id": "T24",
+        "from": "A31",
+        "to": "A16",
+        "kind": "track",
+        "length": 246.99219768117052
+      },
+      {
+        "id": "T25",
+        "from": "A32",
+        "to": "A33",
+        "kind": "track",
+        "length": 221.25851752642433
+      },
+      {
+        "id": "T26",
+        "from": "A33",
+        "to": "A0",
+        "kind": "track",
+        "length": 221.25851752642424
+      },
+      {
+        "id": "T27",
+        "from": "TO3:A",
+        "to": "A35",
+        "kind": "track",
+        "length": 195.5255182433738
+      },
+      {
+        "id": "T28",
+        "from": "A35",
+        "to": "A21",
+        "kind": "track",
+        "length": 195.52551824337397
+      },
+      {
+        "id": "T29",
+        "from": "TO5:B",
+        "to": "A37",
+        "kind": "track",
+        "length": 247.4206943648812
+      },
+      {
+        "id": "T30",
+        "from": "A38",
+        "to": "EB39",
+        "kind": "track",
+        "length": 62.09669878504012
+      },
+      {
+        "id": "T31",
+        "from": "A29",
+        "to": "A40",
+        "kind": "track",
+        "length": 62.00000000000003
+      },
+      {
+        "id": "T32",
+        "from": "A41",
+        "to": "A42",
+        "kind": "track",
+        "length": 62.00000000000003
+      },
+      {
+        "id": "T33",
+        "from": "A43",
+        "to": "A41",
+        "kind": "track",
+        "length": 62.00000000000003
+      },
+      {
+        "id": "T34",
+        "from": "A44",
+        "to": "A45",
+        "kind": "track",
+        "length": 124.00000000000006
+      },
+      {
+        "id": "T35",
+        "from": "A46",
+        "to": "A47",
+        "kind": "track",
+        "length": 124.00000000000006
+      },
+      {
+        "id": "T36",
+        "from": "A20",
+        "to": "A10",
+        "kind": "track",
+        "length": 247.99999999999997
+      },
+      {
+        "id": "T37",
+        "from": "A48",
+        "to": "EB49",
+        "kind": "track",
+        "length": 62.09669878504008
+      },
+      {
+        "id": "T38",
+        "from": "A48",
+        "to": "TO1:A",
+        "kind": "track",
+        "length": 62.09669878504008
+      },
+      {
+        "id": "T39",
+        "from": "A51",
+        "to": "EB52",
+        "kind": "track",
+        "length": 61.999999999999886
+      },
+      {
+        "id": "T40",
+        "from": "TO1:B",
+        "to": "A54",
+        "kind": "track",
+        "length": 248.64633518312712
+      },
+      {
+        "id": "T41",
+        "from": "A9",
+        "to": "A55",
+        "kind": "track",
+        "length": 62.00000000000003
+      },
+      {
+        "id": "T42",
+        "from": "TO2:B",
+        "to": "A54",
+        "kind": "track",
+        "length": 186.29009635512028
+      },
+      {
+        "id": "T43",
+        "from": "TO4:A",
+        "to": "TO1:C",
+        "kind": "track",
+        "length": 126.38044642583971
+      },
+      {
+        "id": "T44",
+        "from": "TO2:C",
+        "to": "A60",
+        "kind": "track",
+        "length": 125.89806894151097
+      },
+      {
+        "id": "T45",
+        "from": "TO2:A",
+        "to": "TO3:C",
+        "kind": "track",
+        "length": 62.09669878504012
+      },
+      {
+        "id": "T46",
+        "from": "A63",
+        "to": "A51",
+        "kind": "track",
+        "length": 248.0000000000001
+      },
+      {
+        "id": "T47",
+        "from": "TO4:C",
+        "to": "A63",
+        "kind": "track",
+        "length": 247.99999999999997
+      },
+      {
+        "id": "T48",
+        "from": "A38",
+        "to": "A37",
+        "kind": "track",
+        "length": 124.19339757008026
+      },
+      {
+        "id": "T49",
+        "from": "A65",
+        "to": "TO5:C",
+        "kind": "track",
+        "length": 125.51804371839457
+      },
+      {
+        "id": "T50",
+        "from": "A67",
+        "to": "A65",
+        "kind": "track",
+        "length": 248.3867951401604
+      },
+      {
+        "id": "T51",
+        "from": "TO0:A",
+        "to": "TO3:B",
+        "kind": "track",
+        "length": 0.0
+      },
+      {
+        "id": "T52",
+        "from": "TO0:C",
+        "to": "TO5:A",
+        "kind": "track",
+        "length": 0.0
+      }
+    ]
+  },
+  "normalizedGraph": {
+    "vertexCount": 70,
+    "edgeCount": 63,
+    "componentCount": 8,
+    "cycleRank": 1,
+    "components": [
+      {
+        "id": 1,
+        "nodes": [
+          "A0",
+          "A1",
+          "A2",
+          "A32",
+          "A33"
+        ],
+        "edges": [
+          "T0",
+          "T1",
+          "T25",
+          "T26"
+        ]
+      },
+      {
+        "id": 2,
+        "nodes": [
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7"
+        ],
+        "edges": [
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ]
+      },
+      {
+        "id": 3,
+        "nodes": [
+          "A21",
+          "A22",
+          "A23",
+          "A35",
+          "A37",
+          "A38",
+          "A48",
+          "A51",
+          "A54",
+          "A63",
+          "A65",
+          "A67",
+          "A8",
+          "A9",
+          "EB39",
+          "EB49",
+          "EB52",
+          "TO0:A",
+          "TO0:B",
+          "TO0:C",
+          "TO1:A",
+          "TO1:B",
+          "TO1:C",
+          "TO2:A",
+          "TO2:B",
+          "TO2:C",
+          "TO3:A",
+          "TO3:C",
+          "TO4:A",
+          "TO4:B",
+          "TO4:C",
+          "TO5:B",
+          "TO5:C"
+        ],
+        "edges": [
+          "T16",
+          "T17",
+          "T27",
+          "T28",
+          "T29",
+          "T30",
+          "T37",
+          "T38",
+          "T39",
+          "T40",
+          "T41",
+          "T42",
+          "T43",
+          "T44",
+          "T45",
+          "T46",
+          "T47",
+          "T48",
+          "T49",
+          "T50",
+          "T6",
+          "TO0:AB",
+          "TO0:AC",
+          "TO1:AB",
+          "TO1:AC",
+          "TO2:AB",
+          "TO2:AC",
+          "TO3:AB",
+          "TO3:AC",
+          "TO4:AB",
+          "TO4:AC",
+          "TO5:AB",
+          "TO5:AC"
+        ]
+      },
+      {
+        "id": 4,
+        "nodes": [
+          "A10",
+          "A11",
+          "A12",
+          "A13",
+          "A14",
+          "A15",
+          "A16",
+          "A17",
+          "A18",
+          "A19",
+          "A20",
+          "A29",
+          "A30",
+          "A31",
+          "A40"
+        ],
+        "edges": [
+          "T10",
+          "T11",
+          "T12",
+          "T13",
+          "T14",
+          "T15",
+          "T22",
+          "T23",
+          "T24",
+          "T31",
+          "T36",
+          "T7",
+          "T8",
+          "T9"
+        ]
+      },
+      {
+        "id": 5,
+        "nodes": [
+          "A24",
+          "A25",
+          "A26",
+          "A27",
+          "A28"
+        ],
+        "edges": [
+          "T18",
+          "T19",
+          "T20",
+          "T21"
+        ]
+      },
+      {
+        "id": 6,
+        "nodes": [
+          "A41",
+          "A42",
+          "A43"
+        ],
+        "edges": [
+          "T32",
+          "T33"
+        ]
+      },
+      {
+        "id": 7,
+        "nodes": [
+          "A44",
+          "A45"
+        ],
+        "edges": [
+          "T34"
+        ]
+      },
+      {
+        "id": 8,
+        "nodes": [
+          "A46",
+          "A47"
+        ],
+        "edges": [
+          "T35"
+        ]
+      }
+    ],
+    "openEnds": [
+      "A2",
+      "A3",
+      "A7",
+      "A8",
+      "A23",
+      "A25",
+      "A28",
+      "A30",
+      "A32",
+      "EB39",
+      "A40",
+      "A42",
+      "A43",
+      "A44",
+      "A45",
+      "A46",
+      "A47",
+      "EB49",
+      "EB52",
+      "A67"
+    ],
+    "isolatedNodes": [],
+    "edges": [
+      {
+        "id": "TO0:AB",
+        "from": "TO0:A",
+        "to": "TO0:B",
+        "kind": "turnout-internal",
+        "turnout": "TO0",
+        "route": "normal",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO0:AC",
+        "from": "TO0:A",
+        "to": "TO0:C",
+        "kind": "turnout-internal",
+        "turnout": "TO0",
+        "route": "diverging",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO1:AB",
+        "from": "TO1:A",
+        "to": "TO1:B",
+        "kind": "turnout-internal",
+        "turnout": "TO1",
+        "route": "normal",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO1:AC",
+        "from": "TO1:A",
+        "to": "TO1:C",
+        "kind": "turnout-internal",
+        "turnout": "TO1",
+        "route": "diverging",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO2:AB",
+        "from": "TO2:A",
+        "to": "TO2:B",
+        "kind": "turnout-internal",
+        "turnout": "TO2",
+        "route": "normal",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO2:AC",
+        "from": "TO2:A",
+        "to": "TO2:C",
+        "kind": "turnout-internal",
+        "turnout": "TO2",
+        "route": "diverging",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO3:AB",
+        "from": "TO3:A",
+        "to": "TO0:A",
+        "kind": "turnout-internal",
+        "turnout": "TO3",
+        "route": "normal",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO3:AC",
+        "from": "TO3:A",
+        "to": "TO3:C",
+        "kind": "turnout-internal",
+        "turnout": "TO3",
+        "route": "diverging",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO4:AB",
+        "from": "TO4:A",
+        "to": "TO4:B",
+        "kind": "turnout-internal",
+        "turnout": "TO4",
+        "route": "normal",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO4:AC",
+        "from": "TO4:A",
+        "to": "TO4:C",
+        "kind": "turnout-internal",
+        "turnout": "TO4",
+        "route": "diverging",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO5:AB",
+        "from": "TO0:C",
+        "to": "TO5:B",
+        "kind": "turnout-internal",
+        "turnout": "TO5",
+        "route": "normal",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "TO5:AC",
+        "from": "TO0:C",
+        "to": "TO5:C",
+        "kind": "turnout-internal",
+        "turnout": "TO5",
+        "route": "diverging",
+        "geometryConfidence": "connectivity only; schematic internal turnout path"
+      },
+      {
+        "id": "T0",
+        "from": "A0",
+        "to": "A1",
+        "kind": "track",
+        "length": 222.20596360971416,
+        "sourceLength": 222.20596360971416,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 282.9214199438706,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 222.20596360971416,
+          "svg": "M 1404.000000000,350.000000000 A 282.921419944,282.921419944 0 0 1 1321.000000000,550.000000000"
+        }
+      },
+      {
+        "id": "T1",
+        "from": "A1",
+        "to": "A2",
+        "kind": "track",
+        "length": 220.8655286493254,
+        "sourceLength": 220.8655286493254,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 281.2147251451581,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 220.8655286493254,
+          "svg": "M 1321.000000000,550.000000000 A 281.214725145,281.214725145 0 0 1 1122.000000000,632.000000000"
+        }
+      },
+      {
+        "id": "T2",
+        "from": "A3",
+        "to": "A4",
+        "kind": "track",
+        "length": 221.81465332857653,
+        "sourceLength": 221.81465332857653,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 282.4231882196647,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 221.81465332857653,
+          "svg": "M 378.000000000,632.000000000 A 282.423188220,282.423188220 0 0 1 178.000000000,550.000000000"
+        }
+      },
+      {
+        "id": "T3",
+        "from": "A4",
+        "to": "A5",
+        "kind": "track",
+        "length": 221.81465332857667,
+        "sourceLength": 221.81465332857667,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 282.4231882196649,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 221.81465332857667,
+          "svg": "M 178.000000000,550.000000000 A 282.423188220,282.423188220 0 0 1 96.000000000,350.000000000"
+        }
+      },
+      {
+        "id": "T4",
+        "from": "A5",
+        "to": "A6",
+        "kind": "track",
+        "length": 220.86552864932546,
+        "sourceLength": 220.86552864932546,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 281.2147251451582,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 220.86552864932546,
+          "svg": "M 96.000000000,350.000000000 A 281.214725145,281.214725145 0 0 1 178.000000000,151.000000000"
+        }
+      },
+      {
+        "id": "T5",
+        "from": "A6",
+        "to": "A7",
+        "kind": "track",
+        "length": 222.20596360971416,
+        "sourceLength": 222.20596360971416,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 282.9214199438706,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 222.20596360971416,
+          "svg": "M 178.000000000,151.000000000 A 282.921419944,282.921419944 0 0 1 378.000000000,68.000000000"
+        }
+      },
+      {
+        "id": "T6",
+        "from": "A8",
+        "to": "A9",
+        "kind": "track",
+        "length": 62.00000000000003,
+        "sourceLength": 62.00000000000003,
+        "geometry": {
+          "kind": "line",
+          "length": 62.00000000000003,
+          "svg": "M 688.000000000,101.000000000 L 750.000000000,101.000000000"
+        }
+      },
+      {
+        "id": "T7",
+        "from": "A10",
+        "to": "A11",
+        "kind": "track",
+        "length": 248.0000000000001,
+        "sourceLength": 248.0000000000001,
+        "geometry": {
+          "kind": "line",
+          "length": 248.0000000000001,
+          "svg": "M 626.000000000,665.000000000 L 378.000000000,665.000000000"
+        }
+      },
+      {
+        "id": "T8",
+        "from": "A12",
+        "to": "A13",
+        "kind": "track",
+        "length": 247.9389919886181,
+        "sourceLength": 247.9389919886181,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 315.6857292816833,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 247.9389919886181,
+          "svg": "M 155.000000000,128.000000000 A 315.685729282,315.685729282 0 0 1 378.000000000,35.000000000"
+        }
+      },
+      {
+        "id": "T9",
+        "from": "A14",
+        "to": "A12",
+        "kind": "track",
+        "length": 246.59751681064927,
+        "sourceLength": 246.59751681064927,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 313.9777100368127,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 246.59751681064927,
+          "svg": "M 63.000000000,350.000000000 A 313.977710037,313.977710037 0 0 1 155.000000000,128.000000000"
+        }
+      },
+      {
+        "id": "T10",
+        "from": "A15",
+        "to": "A14",
+        "kind": "track",
+        "length": 247.54582066788373,
+        "sourceLength": 247.54582066788373,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 315.1851280082685,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 247.54582066788373,
+          "svg": "M 155.000000000,573.000000000 A 315.185128008,315.185128008 0 0 1 63.000000000,350.000000000"
+        }
+      },
+      {
+        "id": "T11",
+        "from": "A11",
+        "to": "A15",
+        "kind": "track",
+        "length": 247.5458206678839,
+        "sourceLength": 247.5458206678839,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 315.18512800826875,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 247.5458206678839,
+          "svg": "M 378.000000000,665.000000000 A 315.185128008,315.185128008 0 0 1 155.000000000,573.000000000"
+        }
+      },
+      {
+        "id": "T12",
+        "from": "A16",
+        "to": "A17",
+        "kind": "track",
+        "length": 247.93899198861803,
+        "sourceLength": 247.93899198861803,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 315.68572928168317,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 247.93899198861803,
+          "svg": "M 1437.000000000,350.000000000 A 315.685729282,315.685729282 0 0 1 1344.000000000,573.000000000"
+        }
+      },
+      {
+        "id": "T13",
+        "from": "A17",
+        "to": "A18",
+        "kind": "track",
+        "length": 246.5975168106491,
+        "sourceLength": 246.5975168106491,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 313.9777100368125,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 246.5975168106491,
+          "svg": "M 1344.000000000,573.000000000 A 313.977710037,313.977710037 0 0 1 1122.000000000,665.000000000"
+        }
+      },
+      {
+        "id": "T14",
+        "from": "A13",
+        "to": "A19",
+        "kind": "track",
+        "length": 248.0000000000001,
+        "sourceLength": 248.0000000000001,
+        "geometry": {
+          "kind": "line",
+          "length": 248.0000000000001,
+          "svg": "M 378.000000000,35.000000000 L 626.000000000,35.000000000"
+        }
+      },
+      {
+        "id": "T15",
+        "from": "A18",
+        "to": "A20",
+        "kind": "track",
+        "length": 247.99999999999997,
+        "sourceLength": 247.99999999999997,
+        "geometry": {
+          "kind": "line",
+          "length": 247.99999999999997,
+          "svg": "M 1122.000000000,665.000000000 L 874.000000000,665.000000000"
+        }
+      },
+      {
+        "id": "T16",
+        "from": "A21",
+        "to": "A22",
+        "kind": "track",
+        "length": 195.5255182433738,
+        "sourceLength": 195.5255182433738,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 248.95082183230002,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 195.5255182433738,
+          "svg": "M 1371.000000000,350.000000000 A 248.950821832,248.950821832 0 0 1 1298.000000000,526.000000000"
+        }
+      },
+      {
+        "id": "T17",
+        "from": "A22",
+        "to": "A23",
+        "kind": "track",
+        "length": 195.52551824337368,
+        "sourceLength": 195.52551824337368,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 248.95082183229988,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 195.52551824337368,
+          "svg": "M 1298.000000000,526.000000000 A 248.950821832,248.950821832 0 0 1 1122.000000000,599.000000000"
+        }
+      },
+      {
+        "id": "T18",
+        "from": "A24",
+        "to": "A25",
+        "kind": "track",
+        "length": 195.5255182433738,
+        "sourceLength": 195.5255182433738,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 248.9508218323,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 195.5255182433738,
+          "svg": "M 202.000000000,174.000000000 A 248.950821832,248.950821832 0 0 1 378.000000000,101.000000000"
+        }
+      },
+      {
+        "id": "T19",
+        "from": "A26",
+        "to": "A24",
+        "kind": "track",
+        "length": 195.5255182433739,
+        "sourceLength": 195.5255182433739,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 248.95082183230014,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 195.5255182433739,
+          "svg": "M 129.000000000,350.000000000 A 248.950821832,248.950821832 0 0 1 202.000000000,174.000000000"
+        }
+      },
+      {
+        "id": "T20",
+        "from": "A27",
+        "to": "A26",
+        "kind": "track",
+        "length": 195.5255182433738,
+        "sourceLength": 195.5255182433738,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 248.9508218323,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 195.5255182433738,
+          "svg": "M 202.000000000,526.000000000 A 248.950821832,248.950821832 0 0 1 129.000000000,350.000000000"
+        }
+      },
+      {
+        "id": "T21",
+        "from": "A28",
+        "to": "A27",
+        "kind": "track",
+        "length": 195.52551824337368,
+        "sourceLength": 195.52551824337368,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 248.95082183229988,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 195.52551824337368,
+          "svg": "M 378.000000000,599.000000000 A 248.950821832,248.950821832 0 0 1 202.000000000,526.000000000"
+        }
+      },
+      {
+        "id": "T22",
+        "from": "A19",
+        "to": "A29",
+        "kind": "track",
+        "length": 123.99999999999991,
+        "sourceLength": 123.99999999999991,
+        "geometry": {
+          "kind": "line",
+          "length": 123.99999999999991,
+          "svg": "M 626.000000000,35.000000000 L 750.000000000,35.000000000"
+        }
+      },
+      {
+        "id": "T23",
+        "from": "A30",
+        "to": "A31",
+        "kind": "track",
+        "length": 246.99219768117018,
+        "sourceLength": 246.99219768117018,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 314.4802333287104,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 246.99219768117018,
+          "svg": "M 1122.000000000,35.000000000 A 314.480233329,314.480233329 0 0 1 1344.000000000,128.000000000"
+        }
+      },
+      {
+        "id": "T24",
+        "from": "A31",
+        "to": "A16",
+        "kind": "track",
+        "length": 246.99219768117052,
+        "sourceLength": 246.99219768117052,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 314.4802333287109,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 246.99219768117052,
+          "svg": "M 1344.000000000,128.000000000 A 314.480233329,314.480233329 0 0 1 1437.000000000,350.000000000"
+        }
+      },
+      {
+        "id": "T25",
+        "from": "A32",
+        "to": "A33",
+        "kind": "track",
+        "length": 221.25851752642433,
+        "sourceLength": 221.25851752642433,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 281.71509412412155,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 221.25851752642433,
+          "svg": "M 1122.000000000,68.000000000 A 281.715094124,281.715094124 0 0 1 1321.000000000,151.000000000"
+        }
+      },
+      {
+        "id": "T26",
+        "from": "A33",
+        "to": "A0",
+        "kind": "track",
+        "length": 221.25851752642424,
+        "sourceLength": 221.25851752642424,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 281.71509412412144,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 221.25851752642424,
+          "svg": "M 1321.000000000,151.000000000 A 281.715094124,281.715094124 0 0 1 1404.000000000,350.000000000"
+        }
+      },
+      {
+        "id": "T27",
+        "from": "TO3:A",
+        "to": "A35",
+        "kind": "track",
+        "length": 195.5255182433738,
+        "sourceLength": 195.5255182433738,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 248.9508218323,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 195.5255182433738,
+          "svg": "M 1122.000000000,101.000000000 A 248.950821832,248.950821832 0 0 1 1298.000000000,174.000000000"
+        }
+      },
+      {
+        "id": "T28",
+        "from": "A35",
+        "to": "A21",
+        "kind": "track",
+        "length": 195.52551824337397,
+        "sourceLength": 195.52551824337397,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 248.95082183230022,
+          "angle": 45.0,
+          "sweep": 1,
+          "length": 195.52551824337397,
+          "svg": "M 1298.000000000,174.000000000 A 248.950821832,248.950821832 0 0 1 1371.000000000,350.000000000"
+        }
+      },
+      {
+        "id": "T29",
+        "from": "TO5:B",
+        "to": "A37",
+        "kind": "track",
+        "length": 247.4206943648812,
+        "sourceLength": 247.4206943648812,
+        "geometry": {
+          "kind": "line",
+          "length": 247.4206943648812,
+          "svg": "M 630.000000000,174.000000000 L 391.000000000,238.000000000"
+        }
+      },
+      {
+        "id": "T30",
+        "from": "A38",
+        "to": "EB39",
+        "kind": "track",
+        "length": 62.09669878504012,
+        "sourceLength": 62.09669878504012,
+        "geometry": {
+          "kind": "line",
+          "length": 62.09669878504012,
+          "svg": "M 271.000000000,270.000000000 L 211.000000000,286.000000000"
+        }
+      },
+      {
+        "id": "T31",
+        "from": "A29",
+        "to": "A40",
+        "kind": "track",
+        "length": 62.00000000000003,
+        "sourceLength": 62.00000000000003,
+        "geometry": {
+          "kind": "line",
+          "length": 62.00000000000003,
+          "svg": "M 750.000000000,35.000000000 L 812.000000000,35.000000000"
+        }
+      },
+      {
+        "id": "T32",
+        "from": "A41",
+        "to": "A42",
+        "kind": "track",
+        "length": 62.00000000000003,
+        "sourceLength": 62.00000000000003,
+        "geometry": {
+          "kind": "line",
+          "length": 62.00000000000003,
+          "svg": "M 750.000000000,68.000000000 L 812.000000000,68.000000000"
+        }
+      },
+      {
+        "id": "T33",
+        "from": "A43",
+        "to": "A41",
+        "kind": "track",
+        "length": 62.00000000000003,
+        "sourceLength": 62.00000000000003,
+        "geometry": {
+          "kind": "line",
+          "length": 62.00000000000003,
+          "svg": "M 688.000000000,68.000000000 L 750.000000000,68.000000000"
+        }
+      },
+      {
+        "id": "T34",
+        "from": "A44",
+        "to": "A45",
+        "kind": "track",
+        "length": 124.00000000000006,
+        "sourceLength": 124.00000000000006,
+        "geometry": {
+          "kind": "line",
+          "length": 124.00000000000006,
+          "svg": "M 688.000000000,566.000000000 L 812.000000000,566.000000000"
+        }
+      },
+      {
+        "id": "T35",
+        "from": "A46",
+        "to": "A47",
+        "kind": "track",
+        "length": 124.00000000000006,
+        "sourceLength": 124.00000000000006,
+        "geometry": {
+          "kind": "line",
+          "length": 124.00000000000006,
+          "svg": "M 688.000000000,632.000000000 L 812.000000000,632.000000000"
+        }
+      },
+      {
+        "id": "T36",
+        "from": "A20",
+        "to": "A10",
+        "kind": "track",
+        "length": 247.99999999999997,
+        "sourceLength": 247.99999999999997,
+        "geometry": {
+          "kind": "line",
+          "length": 247.99999999999997,
+          "svg": "M 874.000000000,665.000000000 L 626.000000000,665.000000000"
+        }
+      },
+      {
+        "id": "T37",
+        "from": "A48",
+        "to": "EB49",
+        "kind": "track",
+        "length": 62.09669878504008,
+        "sourceLength": 62.09669878504008,
+        "geometry": {
+          "kind": "line",
+          "length": 62.09669878504008,
+          "svg": "M 215.000000000,327.000000000 L 155.000000000,343.000000000"
+        }
+      },
+      {
+        "id": "T38",
+        "from": "A48",
+        "to": "TO1:A",
+        "kind": "track",
+        "length": 62.09669878504008,
+        "sourceLength": 62.09669878504008,
+        "geometry": {
+          "kind": "line",
+          "length": 62.09669878504008,
+          "svg": "M 215.000000000,327.000000000 L 275.000000000,311.000000000"
+        }
+      },
+      {
+        "id": "T39",
+        "from": "A51",
+        "to": "EB52",
+        "kind": "track",
+        "length": 61.999999999999886,
+        "sourceLength": 61.999999999999886,
+        "geometry": {
+          "kind": "line",
+          "length": 61.999999999999886,
+          "svg": "M 1206.000000000,254.000000000 L 1268.000000000,254.000000000"
+        }
+      },
+      {
+        "id": "T40",
+        "from": "TO1:B",
+        "to": "A54",
+        "kind": "track",
+        "length": 248.64633518312712,
+        "sourceLength": 248.64633518312712,
+        "geometry": {
+          "kind": "line",
+          "length": 248.64633518312712,
+          "svg": "M 396.000000000,279.000000000 L 636.000000000,214.000000000"
+        }
+      },
+      {
+        "id": "T41",
+        "from": "A9",
+        "to": "TO0:B",
+        "kind": "track",
+        "length": 60.0,
+        "sourceLength": 62.00000000000003,
+        "geometry": {
+          "kind": "line",
+          "length": 60.0,
+          "svg": "M 750.000000000,101.000000000 L 810.000000000,101.000000000"
+        }
+      },
+      {
+        "id": "T42",
+        "from": "TO2:B",
+        "to": "A54",
+        "kind": "track",
+        "length": 186.29009635512028,
+        "sourceLength": 186.29009635512028,
+        "geometry": {
+          "kind": "line",
+          "length": 186.29009635512028,
+          "svg": "M 816.000000000,166.000000000 L 636.000000000,214.000000000"
+        }
+      },
+      {
+        "id": "T43",
+        "from": "TO4:A",
+        "to": "TO1:C",
+        "kind": "track",
+        "length": 126.38044642583971,
+        "sourceLength": 126.38044642583971,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 482.73774621198834,
+          "angle": 15.0,
+          "sweep": 1,
+          "length": 126.38044642583971,
+          "svg": "M 524.000000000,279.000000000 A 482.737746212,482.737746212 0 0 1 399.000000000,295.000000000"
+        }
+      },
+      {
+        "id": "T44",
+        "from": "TO2:C",
+        "to": "TO4:B",
+        "kind": "track",
+        "length": 127.75369257411663,
+        "sourceLength": 125.89806894151097,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 487.9831601139126,
+          "angle": 15.0,
+          "sweep": 1,
+          "length": 127.75369257411663,
+          "svg": "M 821.000000000,182.000000000 A 487.983160114,487.983160114 0 0 1 703.000000000,230.000000000"
+        }
+      },
+      {
+        "id": "T45",
+        "from": "TO2:A",
+        "to": "TO3:C",
+        "kind": "track",
+        "length": 62.09669878504012,
+        "sourceLength": 62.09669878504012,
+        "geometry": {
+          "kind": "line",
+          "length": 62.09669878504012,
+          "svg": "M 937.000000000,134.000000000 L 997.000000000,118.000000000"
+        }
+      },
+      {
+        "id": "T46",
+        "from": "A63",
+        "to": "A51",
+        "kind": "track",
+        "length": 248.0000000000001,
+        "sourceLength": 248.0000000000001,
+        "geometry": {
+          "kind": "line",
+          "length": 248.0000000000001,
+          "svg": "M 958.000000000,254.000000000 L 1206.000000000,254.000000000"
+        }
+      },
+      {
+        "id": "T47",
+        "from": "TO4:C",
+        "to": "A63",
+        "kind": "track",
+        "length": 247.99999999999997,
+        "sourceLength": 247.99999999999997,
+        "geometry": {
+          "kind": "line",
+          "length": 247.99999999999997,
+          "svg": "M 710.000000000,254.000000000 L 958.000000000,254.000000000"
+        }
+      },
+      {
+        "id": "T48",
+        "from": "A38",
+        "to": "A37",
+        "kind": "track",
+        "length": 124.19339757008026,
+        "sourceLength": 124.19339757008026,
+        "geometry": {
+          "kind": "line",
+          "length": 124.19339757008026,
+          "svg": "M 271.000000000,270.000000000 L 391.000000000,238.000000000"
+        }
+      },
+      {
+        "id": "T49",
+        "from": "A65",
+        "to": "TO5:C",
+        "kind": "track",
+        "length": 125.51804371839457,
+        "sourceLength": 125.51804371839457,
+        "geometry": {
+          "kind": "circular-arc",
+          "radius": 479.44361052017086,
+          "angle": 15.0,
+          "sweep": 1,
+          "length": 125.51804371839457,
+          "svg": "M 500.000000000,167.000000000 A 479.443610520,479.443610520 0 0 1 624.000000000,150.000000000"
+        }
+      },
+      {
+        "id": "T50",
+        "from": "A67",
+        "to": "A65",
+        "kind": "track",
+        "length": 248.3867951401604,
+        "sourceLength": 248.3867951401604,
+        "geometry": {
+          "kind": "line",
+          "length": 248.3867951401604,
+          "svg": "M 260.000000000,231.000000000 L 500.000000000,167.000000000"
+        }
+      }
+    ],
+    "nodes": [
+      {
+        "id": "A0",
+        "x": 170.7,
+        "y": 134.3,
+        "type": "ANCHOR",
+        "declaredConnection": "T0",
+        "aliases": [
+          "A0"
+        ],
+        "world": {
+          "x": 1403.9999999999998,
+          "z": 350.0000000000001
+        }
+      },
+      {
+        "id": "A1",
+        "x": 162.4,
+        "y": 154.3,
+        "type": "ANCHOR",
+        "declaredConnection": "T0",
+        "aliases": [
+          "A1"
+        ],
+        "world": {
+          "x": 1321.0,
+          "z": 550.0000000000001
+        }
+      },
+      {
+        "id": "A2",
+        "x": 142.5,
+        "y": 162.5,
+        "type": "ANCHOR",
+        "declaredConnection": "T1",
+        "aliases": [
+          "A2"
+        ],
+        "world": {
+          "x": 1122.0,
+          "z": 632.0
+        }
+      },
+      {
+        "id": "A3",
+        "x": 68.1,
+        "y": 162.5,
+        "type": "ANCHOR",
+        "declaredConnection": "T2",
+        "aliases": [
+          "A3"
+        ],
+        "world": {
+          "x": 378.0,
+          "z": 632.0
+        }
+      },
+      {
+        "id": "A4",
+        "x": 48.1,
+        "y": 154.3,
+        "type": "ANCHOR",
+        "declaredConnection": "T2",
+        "aliases": [
+          "A4"
+        ],
+        "world": {
+          "x": 178.0,
+          "z": 550.0000000000001
+        }
+      },
+      {
+        "id": "A5",
+        "x": 39.9,
+        "y": 134.3,
+        "type": "ANCHOR",
+        "declaredConnection": "T3",
+        "aliases": [
+          "A5"
+        ],
+        "world": {
+          "x": 95.99999999999997,
+          "z": 350.0000000000001
+        }
+      },
+      {
+        "id": "A6",
+        "x": 48.1,
+        "y": 114.4,
+        "type": "ANCHOR",
+        "declaredConnection": "T4",
+        "aliases": [
+          "A6"
+        ],
+        "world": {
+          "x": 178.0,
+          "z": 151.00000000000009
+        }
+      },
+      {
+        "id": "A7",
+        "x": 68.1,
+        "y": 106.1,
+        "type": "ANCHOR",
+        "declaredConnection": "T5",
+        "aliases": [
+          "A7"
+        ],
+        "world": {
+          "x": 378.0,
+          "z": 67.99999999999997
+        }
+      },
+      {
+        "id": "A8",
+        "x": 99.1,
+        "y": 109.4,
+        "type": "ANCHOR",
+        "declaredConnection": "T6",
+        "aliases": [
+          "A8"
+        ],
+        "world": {
+          "x": 688.0,
+          "z": 101.00000000000009
+        }
+      },
+      {
+        "id": "A9",
+        "x": 105.3,
+        "y": 109.4,
+        "type": "ANCHOR",
+        "declaredConnection": "T6",
+        "aliases": [
+          "A9"
+        ],
+        "world": {
+          "x": 750.0,
+          "z": 101.00000000000009
+        }
+      },
+      {
+        "id": "A10",
+        "x": 92.9,
+        "y": 165.8,
+        "type": "ANCHOR",
+        "declaredConnection": "T7",
+        "aliases": [
+          "A10"
+        ],
+        "world": {
+          "x": 626.0000000000001,
+          "z": 665.0000000000001
+        }
+      },
+      {
+        "id": "A11",
+        "x": 68.1,
+        "y": 165.8,
+        "type": "ANCHOR",
+        "declaredConnection": "T7",
+        "aliases": [
+          "A11"
+        ],
+        "world": {
+          "x": 378.0,
+          "z": 665.0000000000001
+        }
+      },
+      {
+        "id": "A12",
+        "x": 45.8,
+        "y": 112.1,
+        "type": "ANCHOR",
+        "declaredConnection": "T8",
+        "aliases": [
+          "A12"
+        ],
+        "world": {
+          "x": 154.99999999999997,
+          "z": 127.99999999999997
+        }
+      },
+      {
+        "id": "A13",
+        "x": 68.1,
+        "y": 102.8,
+        "type": "ANCHOR",
+        "declaredConnection": "T8",
+        "aliases": [
+          "A13"
+        ],
+        "world": {
+          "x": 378.0,
+          "z": 35.0
+        }
+      },
+      {
+        "id": "A14",
+        "x": 36.6,
+        "y": 134.3,
+        "type": "ANCHOR",
+        "declaredConnection": "T9",
+        "aliases": [
+          "A14"
+        ],
+        "world": {
+          "x": 63.00000000000001,
+          "z": 350.0000000000001
+        }
+      },
+      {
+        "id": "A15",
+        "x": 45.8,
+        "y": 156.6,
+        "type": "ANCHOR",
+        "declaredConnection": "T10",
+        "aliases": [
+          "A15"
+        ],
+        "world": {
+          "x": 154.99999999999997,
+          "z": 573.0
+        }
+      },
+      {
+        "id": "A16",
+        "x": 174.0,
+        "y": 134.3,
+        "type": "ANCHOR",
+        "declaredConnection": "T12",
+        "aliases": [
+          "A16"
+        ],
+        "world": {
+          "x": 1437.0,
+          "z": 350.0000000000001
+        }
+      },
+      {
+        "id": "A17",
+        "x": 164.7,
+        "y": 156.6,
+        "type": "ANCHOR",
+        "declaredConnection": "T12",
+        "aliases": [
+          "A17"
+        ],
+        "world": {
+          "x": 1343.9999999999998,
+          "z": 573.0
+        }
+      },
+      {
+        "id": "A18",
+        "x": 142.5,
+        "y": 165.8,
+        "type": "ANCHOR",
+        "declaredConnection": "T13",
+        "aliases": [
+          "A18"
+        ],
+        "world": {
+          "x": 1122.0,
+          "z": 665.0000000000001
+        }
+      },
+      {
+        "id": "A19",
+        "x": 92.9,
+        "y": 102.8,
+        "type": "ANCHOR",
+        "declaredConnection": "T14",
+        "aliases": [
+          "A19"
+        ],
+        "world": {
+          "x": 626.0000000000001,
+          "z": 35.0
+        }
+      },
+      {
+        "id": "A20",
+        "x": 117.7,
+        "y": 165.8,
+        "type": "ANCHOR",
+        "declaredConnection": "T15",
+        "aliases": [
+          "A20"
+        ],
+        "world": {
+          "x": 874.0,
+          "z": 665.0000000000001
+        }
+      },
+      {
+        "id": "A21",
+        "x": 167.4,
+        "y": 134.3,
+        "type": "ANCHOR",
+        "declaredConnection": "T16",
+        "aliases": [
+          "A21"
+        ],
+        "world": {
+          "x": 1371.0,
+          "z": 350.0000000000001
+        }
+      },
+      {
+        "id": "A22",
+        "x": 160.1,
+        "y": 151.9,
+        "type": "ANCHOR",
+        "declaredConnection": "T16",
+        "aliases": [
+          "A22"
+        ],
+        "world": {
+          "x": 1297.9999999999998,
+          "z": 526.0000000000001
+        }
+      },
+      {
+        "id": "A23",
+        "x": 142.5,
+        "y": 159.2,
+        "type": "ANCHOR",
+        "declaredConnection": "T17",
+        "aliases": [
+          "A23"
+        ],
+        "world": {
+          "x": 1122.0,
+          "z": 598.9999999999999
+        }
+      },
+      {
+        "id": "A24",
+        "x": 50.5,
+        "y": 116.7,
+        "type": "ANCHOR",
+        "declaredConnection": "T18",
+        "aliases": [
+          "A24"
+        ],
+        "world": {
+          "x": 202.0,
+          "z": 174.00000000000006
+        }
+      },
+      {
+        "id": "A25",
+        "x": 68.1,
+        "y": 109.4,
+        "type": "ANCHOR",
+        "declaredConnection": "T18",
+        "aliases": [
+          "A25"
+        ],
+        "world": {
+          "x": 378.0,
+          "z": 101.00000000000009
+        }
+      },
+      {
+        "id": "A26",
+        "x": 43.2,
+        "y": 134.3,
+        "type": "ANCHOR",
+        "declaredConnection": "T19",
+        "aliases": [
+          "A26"
+        ],
+        "world": {
+          "x": 129.00000000000003,
+          "z": 350.0000000000001
+        }
+      },
+      {
+        "id": "A27",
+        "x": 50.5,
+        "y": 151.9,
+        "type": "ANCHOR",
+        "declaredConnection": "T20",
+        "aliases": [
+          "A27"
+        ],
+        "world": {
+          "x": 202.0,
+          "z": 526.0000000000001
+        }
+      },
+      {
+        "id": "A28",
+        "x": 68.1,
+        "y": 159.2,
+        "type": "ANCHOR",
+        "declaredConnection": "T21",
+        "aliases": [
+          "A28"
+        ],
+        "world": {
+          "x": 378.0,
+          "z": 598.9999999999999
+        }
+      },
+      {
+        "id": "A29",
+        "x": 105.3,
+        "y": 102.8,
+        "type": "ANCHOR",
+        "declaredConnection": "T22",
+        "aliases": [
+          "A29"
+        ],
+        "world": {
+          "x": 750.0,
+          "z": 35.0
+        }
+      },
+      {
+        "id": "A30",
+        "x": 142.5,
+        "y": 102.8,
+        "type": "ANCHOR",
+        "declaredConnection": "T23",
+        "aliases": [
+          "A30"
+        ],
+        "world": {
+          "x": 1122.0,
+          "z": 35.0
+        }
+      },
+      {
+        "id": "A31",
+        "x": 164.7,
+        "y": 112.1,
+        "type": "ANCHOR",
+        "declaredConnection": "T23",
+        "aliases": [
+          "A31"
+        ],
+        "world": {
+          "x": 1343.9999999999998,
+          "z": 127.99999999999997
+        }
+      },
+      {
+        "id": "A32",
+        "x": 142.5,
+        "y": 106.1,
+        "type": "ANCHOR",
+        "declaredConnection": "T25",
+        "aliases": [
+          "A32"
+        ],
+        "world": {
+          "x": 1122.0,
+          "z": 67.99999999999997
+        }
+      },
+      {
+        "id": "A33",
+        "x": 162.4,
+        "y": 114.4,
+        "type": "ANCHOR",
+        "declaredConnection": "T25",
+        "aliases": [
+          "A33"
+        ],
+        "world": {
+          "x": 1321.0,
+          "z": 151.00000000000009
+        }
+      },
+      {
+        "id": "A35",
+        "x": 160.1,
+        "y": 116.7,
+        "type": "ANCHOR",
+        "declaredConnection": "T27",
+        "aliases": [
+          "A35"
+        ],
+        "world": {
+          "x": 1297.9999999999998,
+          "z": 174.00000000000006
+        }
+      },
+      {
+        "id": "A37",
+        "x": 69.4,
+        "y": 123.1,
+        "type": "ANCHOR",
+        "declaredConnection": "T29",
+        "aliases": [
+          "A37"
+        ],
+        "world": {
+          "x": 391.0000000000001,
+          "z": 237.99999999999997
+        }
+      },
+      {
+        "id": "A38",
+        "x": 57.4,
+        "y": 126.3,
+        "type": "ANCHOR",
+        "declaredConnection": "T30",
+        "aliases": [
+          "A38"
+        ],
+        "world": {
+          "x": 271.0,
+          "z": 270.0
+        }
+      },
+      {
+        "id": "EB39",
+        "x": 51.4,
+        "y": 127.9,
+        "type": "END_BUMPER",
+        "declaredConnection": "T30",
+        "aliases": [
+          "EB39"
+        ],
+        "world": {
+          "x": 210.99999999999997,
+          "z": 286.0000000000001
+        }
+      },
+      {
+        "id": "A40",
+        "x": 111.5,
+        "y": 102.8,
+        "type": "ANCHOR",
+        "declaredConnection": "T31",
+        "aliases": [
+          "A40"
+        ],
+        "world": {
+          "x": 812.0,
+          "z": 35.0
+        }
+      },
+      {
+        "id": "A41",
+        "x": 105.3,
+        "y": 106.1,
+        "type": "ANCHOR",
+        "declaredConnection": "T32",
+        "aliases": [
+          "A41"
+        ],
+        "world": {
+          "x": 750.0,
+          "z": 67.99999999999997
+        }
+      },
+      {
+        "id": "A42",
+        "x": 111.5,
+        "y": 106.1,
+        "type": "ANCHOR",
+        "declaredConnection": "T32",
+        "aliases": [
+          "A42"
+        ],
+        "world": {
+          "x": 812.0,
+          "z": 67.99999999999997
+        }
+      },
+      {
+        "id": "A43",
+        "x": 99.1,
+        "y": 106.1,
+        "type": "ANCHOR",
+        "declaredConnection": "T33",
+        "aliases": [
+          "A43"
+        ],
+        "world": {
+          "x": 688.0,
+          "z": 67.99999999999997
+        }
+      },
+      {
+        "id": "A44",
+        "x": 99.1,
+        "y": 155.9,
+        "type": "ANCHOR",
+        "declaredConnection": "T34",
+        "aliases": [
+          "A44"
+        ],
+        "world": {
+          "x": 688.0,
+          "z": 566.0000000000001
+        }
+      },
+      {
+        "id": "A45",
+        "x": 111.5,
+        "y": 155.9,
+        "type": "ANCHOR",
+        "declaredConnection": "T34",
+        "aliases": [
+          "A45"
+        ],
+        "world": {
+          "x": 812.0,
+          "z": 566.0000000000001
+        }
+      },
+      {
+        "id": "A46",
+        "x": 99.1,
+        "y": 162.5,
+        "type": "ANCHOR",
+        "declaredConnection": "T35",
+        "aliases": [
+          "A46"
+        ],
+        "world": {
+          "x": 688.0,
+          "z": 632.0
+        }
+      },
+      {
+        "id": "A47",
+        "x": 111.5,
+        "y": 162.5,
+        "type": "ANCHOR",
+        "declaredConnection": "T35",
+        "aliases": [
+          "A47"
+        ],
+        "world": {
+          "x": 812.0,
+          "z": 632.0
+        }
+      },
+      {
+        "id": "A48",
+        "x": 51.8,
+        "y": 132.0,
+        "type": "ANCHOR",
+        "declaredConnection": "T37",
+        "aliases": [
+          "A48"
+        ],
+        "world": {
+          "x": 214.99999999999997,
+          "z": 327.0
+        }
+      },
+      {
+        "id": "EB49",
+        "x": 45.8,
+        "y": 133.6,
+        "type": "END_BUMPER",
+        "declaredConnection": "T37",
+        "aliases": [
+          "EB49"
+        ],
+        "world": {
+          "x": 154.99999999999997,
+          "z": 343.0
+        }
+      },
+      {
+        "id": "A51",
+        "x": 150.9,
+        "y": 124.7,
+        "type": "ANCHOR",
+        "declaredConnection": "T39",
+        "aliases": [
+          "A51"
+        ],
+        "world": {
+          "x": 1206.0,
+          "z": 254.00000000000006
+        }
+      },
+      {
+        "id": "EB52",
+        "x": 157.1,
+        "y": 124.7,
+        "type": "END_BUMPER",
+        "declaredConnection": "T39",
+        "aliases": [
+          "EB52"
+        ],
+        "world": {
+          "x": 1268.0,
+          "z": 254.00000000000006
+        }
+      },
+      {
+        "id": "A54",
+        "x": 93.9,
+        "y": 120.7,
+        "type": "ANCHOR",
+        "declaredConnection": "T40",
+        "aliases": [
+          "A54"
+        ],
+        "world": {
+          "x": 636.0000000000001,
+          "z": 214.00000000000006
+        }
+      },
+      {
+        "id": "TO0:B",
+        "x": 111.3,
+        "y": 109.4,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "A55",
+          "TO0:B"
+        ],
+        "world": {
+          "x": 810.0,
+          "z": 101.00000000000009
+        }
+      },
+      {
+        "id": "TO4:B",
+        "x": 100.6,
+        "y": 122.3,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "A60",
+          "TO4:B"
+        ],
+        "world": {
+          "x": 703.0,
+          "z": 230.0
+        }
+      },
+      {
+        "id": "A63",
+        "x": 126.1,
+        "y": 124.7,
+        "type": "ANCHOR",
+        "declaredConnection": "T46",
+        "aliases": [
+          "A63"
+        ],
+        "world": {
+          "x": 958.0,
+          "z": 254.00000000000006
+        }
+      },
+      {
+        "id": "A65",
+        "x": 80.3,
+        "y": 116.0,
+        "type": "ANCHOR",
+        "declaredConnection": "T49",
+        "aliases": [
+          "A65"
+        ],
+        "world": {
+          "x": 500.0,
+          "z": 167.00000000000003
+        }
+      },
+      {
+        "id": "A67",
+        "x": 56.3,
+        "y": 122.4,
+        "type": "END_BUMPER",
+        "declaredConnection": "T50",
+        "aliases": [
+          "A67"
+        ],
+        "world": {
+          "x": 259.99999999999994,
+          "z": 231.00000000000009
+        },
+        "sourceType": "ANCHOR"
+      },
+      {
+        "id": "TO0:A",
+        "x": 129.9,
+        "y": 109.4,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO0:A",
+          "TO3:B"
+        ],
+        "world": {
+          "x": 996.0000000000001,
+          "z": 101.00000000000009
+        }
+      },
+      {
+        "id": "TO0:C",
+        "x": 111.3,
+        "y": 111.9,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO0:C",
+          "TO5:A"
+        ],
+        "world": {
+          "x": 810.0,
+          "z": 126.00000000000009
+        }
+      },
+      {
+        "id": "TO1:A",
+        "x": 57.8,
+        "y": 130.4,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO1:A"
+        ],
+        "world": {
+          "x": 274.99999999999994,
+          "z": 311.0000000000001
+        }
+      },
+      {
+        "id": "TO1:B",
+        "x": 69.9,
+        "y": 127.2,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO1:B"
+        ],
+        "world": {
+          "x": 396.0000000000001,
+          "z": 279.00000000000006
+        }
+      },
+      {
+        "id": "TO1:C",
+        "x": 70.2,
+        "y": 128.8,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO1:C"
+        ],
+        "world": {
+          "x": 399.00000000000006,
+          "z": 295.0000000000001
+        }
+      },
+      {
+        "id": "TO2:A",
+        "x": 124.0,
+        "y": 112.7,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO2:A"
+        ],
+        "world": {
+          "x": 937.0,
+          "z": 134.00000000000006
+        }
+      },
+      {
+        "id": "TO2:B",
+        "x": 111.9,
+        "y": 115.9,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO2:B"
+        ],
+        "world": {
+          "x": 816.0000000000001,
+          "z": 166.00000000000009
+        }
+      },
+      {
+        "id": "TO2:C",
+        "x": 112.4,
+        "y": 117.5,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO2:C"
+        ],
+        "world": {
+          "x": 821.0000000000001,
+          "z": 182.00000000000003
+        }
+      },
+      {
+        "id": "TO3:A",
+        "x": 142.5,
+        "y": 109.4,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO3:A"
+        ],
+        "world": {
+          "x": 1122.0,
+          "z": 101.00000000000009
+        }
+      },
+      {
+        "id": "TO3:C",
+        "x": 130.0,
+        "y": 111.1,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO3:C"
+        ],
+        "world": {
+          "x": 997.0,
+          "z": 117.99999999999997
+        }
+      },
+      {
+        "id": "TO4:A",
+        "x": 82.7,
+        "y": 127.2,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO4:A"
+        ],
+        "world": {
+          "x": 524.0,
+          "z": 279.00000000000006
+        }
+      },
+      {
+        "id": "TO4:C",
+        "x": 101.3,
+        "y": 124.7,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO4:C"
+        ],
+        "world": {
+          "x": 710.0,
+          "z": 254.00000000000006
+        }
+      },
+      {
+        "id": "TO5:B",
+        "x": 93.3,
+        "y": 116.7,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO5:B"
+        ],
+        "world": {
+          "x": 630.0,
+          "z": 174.00000000000006
+        }
+      },
+      {
+        "id": "TO5:C",
+        "x": 92.7,
+        "y": 114.3,
+        "type": "TURNOUT_PORT",
+        "aliases": [
+          "TO5:C"
+        ],
+        "world": {
+          "x": 624.0,
+          "z": 150.0
+        }
+      }
+    ]
+  },
+  "points": [
+    {
+      "id": "A0",
+      "x": 170.7,
+      "y": 134.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T0"
+    },
+    {
+      "id": "A1",
+      "x": 162.4,
+      "y": 154.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T0"
+    },
+    {
+      "id": "A2",
+      "x": 142.5,
+      "y": 162.5,
+      "type": "ANCHOR",
+      "declaredConnection": "T1"
+    },
+    {
+      "id": "A3",
+      "x": 68.1,
+      "y": 162.5,
+      "type": "ANCHOR",
+      "declaredConnection": "T2"
+    },
+    {
+      "id": "A4",
+      "x": 48.1,
+      "y": 154.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T2"
+    },
+    {
+      "id": "A5",
+      "x": 39.9,
+      "y": 134.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T3"
+    },
+    {
+      "id": "A6",
+      "x": 48.1,
+      "y": 114.4,
+      "type": "ANCHOR",
+      "declaredConnection": "T4"
+    },
+    {
+      "id": "A7",
+      "x": 68.1,
+      "y": 106.1,
+      "type": "ANCHOR",
+      "declaredConnection": "T5"
+    },
+    {
+      "id": "A8",
+      "x": 99.1,
+      "y": 109.4,
+      "type": "ANCHOR",
+      "declaredConnection": "T6"
+    },
+    {
+      "id": "A9",
+      "x": 105.3,
+      "y": 109.4,
+      "type": "ANCHOR",
+      "declaredConnection": "T6"
+    },
+    {
+      "id": "A10",
+      "x": 92.9,
+      "y": 165.8,
+      "type": "ANCHOR",
+      "declaredConnection": "T7"
+    },
+    {
+      "id": "A11",
+      "x": 68.1,
+      "y": 165.8,
+      "type": "ANCHOR",
+      "declaredConnection": "T7"
+    },
+    {
+      "id": "A12",
+      "x": 45.8,
+      "y": 112.1,
+      "type": "ANCHOR",
+      "declaredConnection": "T8"
+    },
+    {
+      "id": "A13",
+      "x": 68.1,
+      "y": 102.8,
+      "type": "ANCHOR",
+      "declaredConnection": "T8"
+    },
+    {
+      "id": "A14",
+      "x": 36.6,
+      "y": 134.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T9"
+    },
+    {
+      "id": "A15",
+      "x": 45.8,
+      "y": 156.6,
+      "type": "ANCHOR",
+      "declaredConnection": "T10"
+    },
+    {
+      "id": "A16",
+      "x": 174.0,
+      "y": 134.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T12"
+    },
+    {
+      "id": "A17",
+      "x": 164.7,
+      "y": 156.6,
+      "type": "ANCHOR",
+      "declaredConnection": "T12"
+    },
+    {
+      "id": "A18",
+      "x": 142.5,
+      "y": 165.8,
+      "type": "ANCHOR",
+      "declaredConnection": "T13"
+    },
+    {
+      "id": "A19",
+      "x": 92.9,
+      "y": 102.8,
+      "type": "ANCHOR",
+      "declaredConnection": "T14"
+    },
+    {
+      "id": "A20",
+      "x": 117.7,
+      "y": 165.8,
+      "type": "ANCHOR",
+      "declaredConnection": "T15"
+    },
+    {
+      "id": "A21",
+      "x": 167.4,
+      "y": 134.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T16"
+    },
+    {
+      "id": "A22",
+      "x": 160.1,
+      "y": 151.9,
+      "type": "ANCHOR",
+      "declaredConnection": "T16"
+    },
+    {
+      "id": "A23",
+      "x": 142.5,
+      "y": 159.2,
+      "type": "ANCHOR",
+      "declaredConnection": "T17"
+    },
+    {
+      "id": "A24",
+      "x": 50.5,
+      "y": 116.7,
+      "type": "ANCHOR",
+      "declaredConnection": "T18"
+    },
+    {
+      "id": "A25",
+      "x": 68.1,
+      "y": 109.4,
+      "type": "ANCHOR",
+      "declaredConnection": "T18"
+    },
+    {
+      "id": "A26",
+      "x": 43.2,
+      "y": 134.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T19"
+    },
+    {
+      "id": "A27",
+      "x": 50.5,
+      "y": 151.9,
+      "type": "ANCHOR",
+      "declaredConnection": "T20"
+    },
+    {
+      "id": "A28",
+      "x": 68.1,
+      "y": 159.2,
+      "type": "ANCHOR",
+      "declaredConnection": "T21"
+    },
+    {
+      "id": "A29",
+      "x": 105.3,
+      "y": 102.8,
+      "type": "ANCHOR",
+      "declaredConnection": "T22"
+    },
+    {
+      "id": "A30",
+      "x": 142.5,
+      "y": 102.8,
+      "type": "ANCHOR",
+      "declaredConnection": "T23"
+    },
+    {
+      "id": "A31",
+      "x": 164.7,
+      "y": 112.1,
+      "type": "ANCHOR",
+      "declaredConnection": "T23"
+    },
+    {
+      "id": "A32",
+      "x": 142.5,
+      "y": 106.1,
+      "type": "ANCHOR",
+      "declaredConnection": "T25"
+    },
+    {
+      "id": "A33",
+      "x": 162.4,
+      "y": 114.4,
+      "type": "ANCHOR",
+      "declaredConnection": "T25"
+    },
+    {
+      "id": "A35",
+      "x": 160.1,
+      "y": 116.7,
+      "type": "ANCHOR",
+      "declaredConnection": "T27"
+    },
+    {
+      "id": "A37",
+      "x": 69.4,
+      "y": 123.1,
+      "type": "ANCHOR",
+      "declaredConnection": "T29"
+    },
+    {
+      "id": "A38",
+      "x": 57.4,
+      "y": 126.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T30"
+    },
+    {
+      "id": "EB39",
+      "x": 51.4,
+      "y": 127.9,
+      "type": "END_BUMPER",
+      "declaredConnection": "T30"
+    },
+    {
+      "id": "A40",
+      "x": 111.5,
+      "y": 102.8,
+      "type": "ANCHOR",
+      "declaredConnection": "T31"
+    },
+    {
+      "id": "A41",
+      "x": 105.3,
+      "y": 106.1,
+      "type": "ANCHOR",
+      "declaredConnection": "T32"
+    },
+    {
+      "id": "A42",
+      "x": 111.5,
+      "y": 106.1,
+      "type": "ANCHOR",
+      "declaredConnection": "T32"
+    },
+    {
+      "id": "A43",
+      "x": 99.1,
+      "y": 106.1,
+      "type": "ANCHOR",
+      "declaredConnection": "T33"
+    },
+    {
+      "id": "A44",
+      "x": 99.1,
+      "y": 155.9,
+      "type": "ANCHOR",
+      "declaredConnection": "T34"
+    },
+    {
+      "id": "A45",
+      "x": 111.5,
+      "y": 155.9,
+      "type": "ANCHOR",
+      "declaredConnection": "T34"
+    },
+    {
+      "id": "A46",
+      "x": 99.1,
+      "y": 162.5,
+      "type": "ANCHOR",
+      "declaredConnection": "T35"
+    },
+    {
+      "id": "A47",
+      "x": 111.5,
+      "y": 162.5,
+      "type": "ANCHOR",
+      "declaredConnection": "T35"
+    },
+    {
+      "id": "A48",
+      "x": 51.8,
+      "y": 132.0,
+      "type": "ANCHOR",
+      "declaredConnection": "T37"
+    },
+    {
+      "id": "EB49",
+      "x": 45.8,
+      "y": 133.6,
+      "type": "END_BUMPER",
+      "declaredConnection": "T37"
+    },
+    {
+      "id": "A51",
+      "x": 150.9,
+      "y": 124.7,
+      "type": "ANCHOR",
+      "declaredConnection": "T39"
+    },
+    {
+      "id": "EB52",
+      "x": 157.1,
+      "y": 124.7,
+      "type": "END_BUMPER",
+      "declaredConnection": "T39"
+    },
+    {
+      "id": "A54",
+      "x": 93.9,
+      "y": 120.7,
+      "type": "ANCHOR",
+      "declaredConnection": "T40"
+    },
+    {
+      "id": "A55",
+      "x": 111.5,
+      "y": 109.4,
+      "type": "ANCHOR",
+      "declaredConnection": "T41"
+    },
+    {
+      "id": "A60",
+      "x": 100.8,
+      "y": 122.3,
+      "type": "ANCHOR",
+      "declaredConnection": "T44"
+    },
+    {
+      "id": "A63",
+      "x": 126.1,
+      "y": 124.7,
+      "type": "ANCHOR",
+      "declaredConnection": "T46"
+    },
+    {
+      "id": "A65",
+      "x": 80.3,
+      "y": 116.0,
+      "type": "ANCHOR",
+      "declaredConnection": "T49"
+    },
+    {
+      "id": "A67",
+      "x": 56.3,
+      "y": 122.4,
+      "type": "ANCHOR",
+      "declaredConnection": "T50"
+    }
+  ],
+  "turnouts": [
+    {
+      "id": "TO0",
+      "typeCode": 2,
+      "hand": "left",
+      "continuing": "2",
+      "center": {
+        "x": 120.6,
+        "y": 109.4
+      },
+      "ports": {
+        "A": "TO0:A",
+        "B": "TO0:B",
+        "C": "TO0:C"
+      },
+      "declaredConnections": {
+        "A": "T51",
+        "B": null,
+        "C": "T52"
+      },
+      "forbiddenTransition": [
+        "B",
+        "C"
+      ],
+      "straightLength": 186.00000000000009,
+      "catalogFamily": "#6 R718",
+      "suggestedKatoCode": "20-202"
+    },
+    {
+      "id": "TO1",
+      "typeCode": 1,
+      "hand": "right",
+      "continuing": "2",
+      "center": {
+        "x": 63.9,
+        "y": 128.8
+      },
+      "ports": {
+        "A": "TO1:A",
+        "B": "TO1:B",
+        "C": "TO1:C"
+      },
+      "declaredConnections": {
+        "A": "T38",
+        "B": "T40",
+        "C": "T43"
+      },
+      "forbiddenTransition": [
+        "B",
+        "C"
+      ],
+      "straightLength": 125.15989773086275,
+      "catalogFamily": "#4 R481",
+      "suggestedKatoCode": "20-221"
+    },
+    {
+      "id": "TO2",
+      "typeCode": 2,
+      "hand": "left",
+      "continuing": "2",
+      "center": {
+        "x": 117.9,
+        "y": 114.3
+      },
+      "ports": {
+        "A": "TO2:A",
+        "B": "TO2:B",
+        "C": "TO2:C"
+      },
+      "declaredConnections": {
+        "A": "T45",
+        "B": "T42",
+        "C": "T44"
+      },
+      "forbiddenTransition": [
+        "B",
+        "C"
+      ],
+      "straightLength": 125.15989773086261,
+      "catalogFamily": "#4 R481",
+      "suggestedKatoCode": "20-220"
+    },
+    {
+      "id": "TO3",
+      "typeCode": 2,
+      "hand": "left",
+      "continuing": "2",
+      "center": {
+        "x": 136.2,
+        "y": 109.4
+      },
+      "ports": {
+        "A": "TO3:A",
+        "B": "TO3:B",
+        "C": "TO3:C"
+      },
+      "declaredConnections": {
+        "A": "T27",
+        "B": "T51",
+        "C": "T45"
+      },
+      "forbiddenTransition": [
+        "B",
+        "C"
+      ],
+      "straightLength": 125.99999999999994,
+      "catalogFamily": "#4 R481",
+      "suggestedKatoCode": "20-220"
+    },
+    {
+      "id": "TO4",
+      "typeCode": 1,
+      "hand": "right",
+      "continuing": "2",
+      "center": {
+        "x": 91.7,
+        "y": 124.7
+      },
+      "ports": {
+        "A": "TO4:A",
+        "B": "TO4:B",
+        "C": "TO4:C"
+      },
+      "declaredConnections": {
+        "A": "T43",
+        "B": null,
+        "C": "T47"
+      },
+      "forbiddenTransition": [
+        "B",
+        "C"
+      ],
+      "straightLength": 185.5855597830822,
+      "catalogFamily": "#6 R718",
+      "suggestedKatoCode": "20-203"
+    },
+    {
+      "id": "TO5",
+      "typeCode": 1,
+      "hand": "right",
+      "continuing": "2",
+      "center": {
+        "x": 102.3,
+        "y": 114.3
+      },
+      "ports": {
+        "A": "TO5:A",
+        "B": "TO5:B",
+        "C": "TO5:C"
+      },
+      "declaredConnections": {
+        "A": "T52",
+        "B": "T29",
+        "C": "T49"
+      },
+      "forbiddenTransition": [
+        "B",
+        "C"
+      ],
+      "straightLength": 186.29009635512028,
+      "catalogFamily": "#6 R718",
+      "suggestedKatoCode": "20-203"
+    }
+  ],
+  "segments": [
+    {
+      "id": "T0",
+      "from": "A0",
+      "to": "A1",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 282.9214199438706,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 222.20596360971416,
+        "svg": "M 1404.000000000,350.000000000 A 282.921419944,282.921419944 0 0 1 1321.000000000,550.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T1",
+      "from": "A1",
+      "to": "A2",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 281.2147251451581,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 220.8655286493254,
+        "svg": "M 1321.000000000,550.000000000 A 281.214725145,281.214725145 0 0 1 1122.000000000,632.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T2",
+      "from": "A3",
+      "to": "A4",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 282.4231882196647,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 221.81465332857653,
+        "svg": "M 378.000000000,632.000000000 A 282.423188220,282.423188220 0 0 1 178.000000000,550.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T3",
+      "from": "A4",
+      "to": "A5",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 282.4231882196649,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 221.81465332857667,
+        "svg": "M 178.000000000,550.000000000 A 282.423188220,282.423188220 0 0 1 96.000000000,350.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T4",
+      "from": "A5",
+      "to": "A6",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 281.2147251451582,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 220.86552864932546,
+        "svg": "M 96.000000000,350.000000000 A 281.214725145,281.214725145 0 0 1 178.000000000,151.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T5",
+      "from": "A6",
+      "to": "A7",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 282.9214199438706,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 222.20596360971416,
+        "svg": "M 178.000000000,151.000000000 A 282.921419944,282.921419944 0 0 1 378.000000000,68.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T6",
+      "from": "A8",
+      "to": "A9",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 62.00000000000003,
+        "svg": "M 688.000000000,101.000000000 L 750.000000000,101.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T7",
+      "from": "A10",
+      "to": "A11",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 248.0000000000001,
+        "svg": "M 626.000000000,665.000000000 L 378.000000000,665.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T8",
+      "from": "A12",
+      "to": "A13",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 315.6857292816833,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 247.9389919886181,
+        "svg": "M 155.000000000,128.000000000 A 315.685729282,315.685729282 0 0 1 378.000000000,35.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T9",
+      "from": "A14",
+      "to": "A12",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 313.9777100368127,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 246.59751681064927,
+        "svg": "M 63.000000000,350.000000000 A 313.977710037,313.977710037 0 0 1 155.000000000,128.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T10",
+      "from": "A15",
+      "to": "A14",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 315.1851280082685,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 247.54582066788373,
+        "svg": "M 155.000000000,573.000000000 A 315.185128008,315.185128008 0 0 1 63.000000000,350.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T11",
+      "from": "A11",
+      "to": "A15",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 315.18512800826875,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 247.5458206678839,
+        "svg": "M 378.000000000,665.000000000 A 315.185128008,315.185128008 0 0 1 155.000000000,573.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T12",
+      "from": "A16",
+      "to": "A17",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 315.68572928168317,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 247.93899198861803,
+        "svg": "M 1437.000000000,350.000000000 A 315.685729282,315.685729282 0 0 1 1344.000000000,573.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T13",
+      "from": "A17",
+      "to": "A18",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 313.9777100368125,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 246.5975168106491,
+        "svg": "M 1344.000000000,573.000000000 A 313.977710037,313.977710037 0 0 1 1122.000000000,665.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T14",
+      "from": "A13",
+      "to": "A19",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 248.0000000000001,
+        "svg": "M 378.000000000,35.000000000 L 626.000000000,35.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T15",
+      "from": "A18",
+      "to": "A20",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 247.99999999999997,
+        "svg": "M 1122.000000000,665.000000000 L 874.000000000,665.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T16",
+      "from": "A21",
+      "to": "A22",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 248.95082183230002,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 195.5255182433738,
+        "svg": "M 1371.000000000,350.000000000 A 248.950821832,248.950821832 0 0 1 1298.000000000,526.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T17",
+      "from": "A22",
+      "to": "A23",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 248.95082183229988,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 195.52551824337368,
+        "svg": "M 1298.000000000,526.000000000 A 248.950821832,248.950821832 0 0 1 1122.000000000,599.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T18",
+      "from": "A24",
+      "to": "A25",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 248.9508218323,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 195.5255182433738,
+        "svg": "M 202.000000000,174.000000000 A 248.950821832,248.950821832 0 0 1 378.000000000,101.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T19",
+      "from": "A26",
+      "to": "A24",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 248.95082183230014,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 195.5255182433739,
+        "svg": "M 129.000000000,350.000000000 A 248.950821832,248.950821832 0 0 1 202.000000000,174.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T20",
+      "from": "A27",
+      "to": "A26",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 248.9508218323,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 195.5255182433738,
+        "svg": "M 202.000000000,526.000000000 A 248.950821832,248.950821832 0 0 1 129.000000000,350.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T21",
+      "from": "A28",
+      "to": "A27",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 248.95082183229988,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 195.52551824337368,
+        "svg": "M 378.000000000,599.000000000 A 248.950821832,248.950821832 0 0 1 202.000000000,526.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T22",
+      "from": "A19",
+      "to": "A29",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 123.99999999999991,
+        "svg": "M 626.000000000,35.000000000 L 750.000000000,35.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T23",
+      "from": "A30",
+      "to": "A31",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 314.4802333287104,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 246.99219768117018,
+        "svg": "M 1122.000000000,35.000000000 A 314.480233329,314.480233329 0 0 1 1344.000000000,128.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T24",
+      "from": "A31",
+      "to": "A16",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 314.4802333287109,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 246.99219768117052,
+        "svg": "M 1344.000000000,128.000000000 A 314.480233329,314.480233329 0 0 1 1437.000000000,350.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T25",
+      "from": "A32",
+      "to": "A33",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 281.71509412412155,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 221.25851752642433,
+        "svg": "M 1122.000000000,68.000000000 A 281.715094124,281.715094124 0 0 1 1321.000000000,151.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T26",
+      "from": "A33",
+      "to": "A0",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 281.71509412412144,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 221.25851752642424,
+        "svg": "M 1321.000000000,151.000000000 A 281.715094124,281.715094124 0 0 1 1404.000000000,350.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T27",
+      "from": "TO3:A",
+      "to": "A35",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 248.9508218323,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 195.5255182433738,
+        "svg": "M 1122.000000000,101.000000000 A 248.950821832,248.950821832 0 0 1 1298.000000000,174.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T28",
+      "from": "A35",
+      "to": "A21",
+      "angle": 45.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 248.95082183230022,
+        "angle": 45.0,
+        "sweep": 1,
+        "length": 195.52551824337397,
+        "svg": "M 1298.000000000,174.000000000 A 248.950821832,248.950821832 0 0 1 1371.000000000,350.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T29",
+      "from": "TO5:B",
+      "to": "A37",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 247.4206943648812,
+        "svg": "M 630.000000000,174.000000000 L 391.000000000,238.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T30",
+      "from": "A38",
+      "to": "EB39",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 62.09669878504012,
+        "svg": "M 271.000000000,270.000000000 L 211.000000000,286.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T31",
+      "from": "A29",
+      "to": "A40",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 62.00000000000003,
+        "svg": "M 750.000000000,35.000000000 L 812.000000000,35.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T32",
+      "from": "A41",
+      "to": "A42",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 62.00000000000003,
+        "svg": "M 750.000000000,68.000000000 L 812.000000000,68.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T33",
+      "from": "A43",
+      "to": "A41",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 62.00000000000003,
+        "svg": "M 688.000000000,68.000000000 L 750.000000000,68.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T34",
+      "from": "A44",
+      "to": "A45",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 124.00000000000006,
+        "svg": "M 688.000000000,566.000000000 L 812.000000000,566.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T35",
+      "from": "A46",
+      "to": "A47",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 124.00000000000006,
+        "svg": "M 688.000000000,632.000000000 L 812.000000000,632.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T36",
+      "from": "A20",
+      "to": "A10",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 247.99999999999997,
+        "svg": "M 874.000000000,665.000000000 L 626.000000000,665.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T37",
+      "from": "A48",
+      "to": "EB49",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 62.09669878504008,
+        "svg": "M 215.000000000,327.000000000 L 155.000000000,343.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T38",
+      "from": "A48",
+      "to": "TO1:A",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 62.09669878504008,
+        "svg": "M 215.000000000,327.000000000 L 275.000000000,311.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T39",
+      "from": "A51",
+      "to": "EB52",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 61.999999999999886,
+        "svg": "M 1206.000000000,254.000000000 L 1268.000000000,254.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T40",
+      "from": "TO1:B",
+      "to": "A54",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 248.64633518312712,
+        "svg": "M 396.000000000,279.000000000 L 636.000000000,214.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T41",
+      "from": "A9",
+      "to": "A55",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 62.00000000000003,
+        "svg": "M 750.000000000,101.000000000 L 812.000000000,101.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T42",
+      "from": "TO2:B",
+      "to": "A54",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 186.29009635512028,
+        "svg": "M 816.000000000,166.000000000 L 636.000000000,214.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T43",
+      "from": "TO4:A",
+      "to": "TO1:C",
+      "angle": 15.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 482.73774621198834,
+        "angle": 15.0,
+        "sweep": 1,
+        "length": 126.38044642583971,
+        "svg": "M 524.000000000,279.000000000 A 482.737746212,482.737746212 0 0 1 399.000000000,295.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T44",
+      "from": "TO2:C",
+      "to": "A60",
+      "angle": 15.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 480.8951999463767,
+        "angle": 15.0,
+        "sweep": 1,
+        "length": 125.89806894151097,
+        "svg": "M 821.000000000,182.000000000 A 480.895199946,480.895199946 0 0 1 705.000000000,230.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T45",
+      "from": "TO2:A",
+      "to": "TO3:C",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 62.09669878504012,
+        "svg": "M 937.000000000,134.000000000 L 997.000000000,118.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T46",
+      "from": "A63",
+      "to": "A51",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 248.0000000000001,
+        "svg": "M 958.000000000,254.000000000 L 1206.000000000,254.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T47",
+      "from": "TO4:C",
+      "to": "A63",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 247.99999999999997,
+        "svg": "M 710.000000000,254.000000000 L 958.000000000,254.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T48",
+      "from": "A38",
+      "to": "A37",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 124.19339757008026,
+        "svg": "M 271.000000000,270.000000000 L 391.000000000,238.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T49",
+      "from": "A65",
+      "to": "TO5:C",
+      "angle": 15.0,
+      "flip": false,
+      "geometry": {
+        "kind": "circular-arc",
+        "radius": 479.44361052017086,
+        "angle": 15.0,
+        "sweep": 1,
+        "length": 125.51804371839457,
+        "svg": "M 500.000000000,167.000000000 A 479.443610520,479.443610520 0 0 1 624.000000000,150.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T50",
+      "from": "A67",
+      "to": "A65",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 248.3867951401604,
+        "svg": "M 260.000000000,231.000000000 L 500.000000000,167.000000000"
+      },
+      "zeroLength": false
+    },
+    {
+      "id": "T51",
+      "from": "TO0:A",
+      "to": "TO3:B",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 0.0,
+        "svg": "M 996.000000000,101.000000000 L 996.000000000,101.000000000"
+      },
+      "zeroLength": true
+    },
+    {
+      "id": "T52",
+      "from": "TO0:C",
+      "to": "TO5:A",
+      "angle": null,
+      "flip": false,
+      "geometry": {
+        "kind": "line",
+        "length": 0.0,
+        "svg": "M 810.000000000,126.000000000 L 810.000000000,126.000000000"
+      },
+      "zeroLength": true
+    }
+  ],
+  "catalogCounts": {
+    "curve-R282": 8,
+    "straight-62": 10,
+    "straight-248": 9,
+    "curve-R315": 8,
+    "curve-R249": 8,
+    "straight-124": 4,
+    "straight-186": 1,
+    "curve-R481": 3,
+    "zero-length-connectors": 2
+  },
+  "arcRadiiMm": {
+    "282": [
+      282.9214199438706,
+      281.2147251451581,
+      282.4231882196647,
+      282.4231882196649,
+      281.2147251451582,
+      282.9214199438706,
+      281.71509412412155,
+      281.71509412412144
+    ],
+    "315": [
+      315.6857292816833,
+      313.9777100368127,
+      315.1851280082685,
+      315.18512800826875,
+      315.68572928168317,
+      313.9777100368125,
+      314.4802333287104,
+      314.4802333287109
+    ],
+    "249": [
+      248.95082183230002,
+      248.95082183229988,
+      248.9508218323,
+      248.95082183230014,
+      248.9508218323,
+      248.95082183229988,
+      248.9508218323,
+      248.95082183230022
+    ],
+    "481": [
+      482.73774621198834,
+      480.8951999463767,
+      479.44361052017086
+    ]
+  },
+  "openModuleEndpoints": [
+    "A2",
+    "A23",
+    "A25",
+    "A28",
+    "A3",
+    "A30",
+    "A32",
+    "A40",
+    "A42",
+    "A43",
+    "A44",
+    "A45",
+    "A46",
+    "A47",
+    "A7",
+    "A8"
+  ],
+  "unresolvedReferences": [],
+  "reciprocalErrors": [],
+  "amendments": {
+    "buffer": {
+      "point": "A67",
+      "from": "ANCHOR",
+      "to": "END_BUMPER",
+      "positionUnchanged": true,
+      "trackExtended": false
+    },
+    "joins": [
+      {
+        "a": "A55",
+        "b": "TO0:B",
+        "distanceMm": 2.0000000000000284,
+        "tangentMismatchDegrees": 0.0,
+        "canonical": "TO0:B"
+      },
+      {
+        "a": "A60",
+        "b": "TO4:B",
+        "distanceMm": 2.0000000000000284,
+        "tangentMismatchDegrees": 0.3298390908801423,
+        "canonical": "TO4:B"
+      }
+    ],
+    "zeroLengthConnectors": [
+      "T51",
+      "T52"
+    ],
+    "missingModulesNotInserted": [
+      {
+        "id": "WX-A",
+        "code": "20-210",
+        "label": "WX310 ovest",
+        "ports": [
+          "A7",
+          "A43",
+          "A25",
+          "A8"
+        ],
+        "box": [
+          68.1,
+          102.1,
+          99.1,
+          113.4
+        ],
+        "physicalRegion": [
+          68.1,
+          106.1,
+          99.1,
+          109.4
+        ]
+      },
+      {
+        "id": "WX-B",
+        "code": "20-210",
+        "label": "WX310 est",
+        "ports": [
+          "A40",
+          "A30",
+          "A42",
+          "A32"
+        ],
+        "box": [
+          111.5,
+          98.8,
+          142.5,
+          110.1
+        ],
+        "physicalRegion": [
+          111.5,
+          102.8,
+          142.5,
+          106.1
+        ]
+      },
+      {
+        "id": "WIDEN-L",
+        "code": "20-051",
+        "label": "Allargamento sinistro",
+        "ports": [
+          "A28",
+          "A44",
+          "A3",
+          "A46"
+        ],
+        "box": [
+          68.1,
+          152.9,
+          99.1,
+          165.5
+        ],
+        "physicalRegion": [
+          68.1,
+          155.9,
+          99.1,
+          162.5
+        ]
+      },
+      {
+        "id": "WIDEN-R",
+        "code": "20-052",
+        "label": "Allargamento destro",
+        "ports": [
+          "A45",
+          "A23",
+          "A47",
+          "A2"
+        ],
+        "box": [
+          111.5,
+          152.9,
+          142.5,
+          165.5
+        ],
+        "physicalRegion": [
+          111.5,
+          155.9,
+          142.5,
+          162.5
+        ]
+      }
+    ]
+  },
+  "allBlocks": [
+    "RM Block"
+  ],
+  "noTunnels": true,
+  "controlMappingApplied": false,
+  "proposedControlMapping": [
+    {
+      "control": "WX-A",
+      "xmlTurnout": null,
+      "catalogCode": "20-210",
+      "status": "missing from XML; documented western crossover"
+    },
+    {
+      "control": "WX-B",
+      "xmlTurnout": null,
+      "catalogCode": "20-210",
+      "status": "missing from XML; documented eastern crossover"
+    },
+    {
+      "control": "Y-IN",
+      "xmlTurnout": "TO0",
+      "role": "Accesso merci ovest",
+      "status": "proposed; update port geometry"
+    },
+    {
+      "control": "Y-2",
+      "xmlTurnout": "TO5",
+      "role": "Bivio tronchini ovest",
+      "status": "proposed; clarify current northern siding label"
+    },
+    {
+      "control": "Y-3",
+      "xmlTurnout": "TO3",
+      "role": "Accesso merci est",
+      "status": "no direct current equivalence; explicit reassignment and rename needed"
+    },
+    {
+      "control": "Y-R1",
+      "xmlTurnout": "TO1",
+      "role": "Runaround ovest",
+      "status": "role consistent"
+    },
+    {
+      "control": "Y-R2",
+      "xmlTurnout": "TO2",
+      "role": "Runaround est",
+      "status": "role consistent"
+    },
+    {
+      "control": "Y-4",
+      "xmlTurnout": "TO4",
+      "role": "Tronchino est",
+      "status": "role consistent"
+    }
+  ],
+  "simulatorIntegrated": false,
+  "sourceNotes": {
+    "pointConnect2Missing": "Positionable points declare only connect1name; connectivity rebuilt from both ends of tracksegment records.",
+    "turnoutInternalGeometry": "schematic from A/B/C and center; not a physical Kato mesh",
+    "coordinateFrame": "adopted to align the 1500x700mm base; not an XML panel physical dimension"
+  },
+  "catalogReconciliation": {
+    "bomTotalPieces": 61,
+    "nonzeroTrackSegments": 51,
+    "singleTurnouts": 6,
+    "representedPhysicalPieces": 57,
+    "missingPhysicalPieces": 4,
+    "missingCodes": {
+      "20-210": 2,
+      "20-051": 1,
+      "20-052": 1
+    },
+    "sourceCsvSha256": "f8dd51f47f4a09d360234c97a7f2f915582ff4e8ef82a99a65c9a8c840e5b1e6"
+  }
+}
