@@ -21,7 +21,11 @@ function clearance(network, buildings = []) {
     const d = track(x, z), fade = Math.max(0, Math.min(1, (d - 19) / 35));
     const bump = (cx, cz, rx, rz) => Math.exp(-(((x - cx) / rx) ** 2 + ((z - cz) / rz) ** 2));
     const h = 30 * bump(1100, 438, 130, 95) + 22 * bump(245, 394, 105, 72) + 15 * bump(720, 372, 150, 48);
-    return 0.35 + h * fade * fade * (3 - 2 * fade);
+    // Broad intersecting ridges keep the hills continuous while avoiding
+    // identical smooth mounds. Fade remains exactly zero at railway edges.
+    const ridges=2.2*Math.sin(x*.018+Math.sin(z*.022))*Math.cos(z*.027)+1.1*Math.sin(x*.041-z*.016);
+    const relief=Math.max(0,h*(.94+.07*Math.sin(x*.011+z*.014))+ridges);
+    return 0.35 + relief * fade * fade * (3 - 2 * fade);
   };
   return { track, building, road, height };
 }

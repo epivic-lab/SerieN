@@ -1,3 +1,5 @@
+import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
+import {createSwitchFeedback} from "./src/switch-feedback.js";
 import {controlMarkers} from "./src/zone-layout.js";
 import { mountTrainDeck } from "./src/train-deck.js";
 import { captureLocomotiveThumbnail } from "./src/locomotive-thumbnails.js";
@@ -7,7 +9,7 @@ import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
 import { couplingDistance, consistLayout } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
-import { navigation } from "./src/navigation.js";
+import { navigation, CAMERA_PRESETS } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
 import { attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets } from "./src/train-assets.js";
 import { locomotiveDetails, wagonDetails, steam } from "./src/rolling-stock-art.js";
@@ -26,8 +28,8 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color("#9fbcc5");
 scene.fog = new THREE.Fog("#b8c3af", 1900, 3700);
 const camera = new THREE.PerspectiveCamera(35, 1, 1, 6500);
-camera.position.set(1580, 1150, 1570);
-camera.lookAt(750, 0, 350);
+camera.position.fromArray(CAMERA_PRESETS.overview.position);
+camera.lookAt(new THREE.Vector3(...CAMERA_PRESETS.overview.target));
 const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 renderer.shadowMap.enabled = true;
@@ -38,7 +40,7 @@ renderer.toneMappingExposure = 1.23;
 host.prepend(renderer.domElement);
 const effects = presentation(renderer, scene, camera);
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.target.set(750, 0, 350);
+controls.target.fromArray(CAMERA_PRESETS.overview.target);
 controls.enableDamping = true;
 controls.dampingFactor = 0.065;
 controls.minPolarAngle = 0.25;
@@ -56,6 +58,7 @@ const mat = (hex, rough = 1, metal = 0) => {
   return materialCache.get(key);
 };
 const wood = mat("#876d4f"), earth = mat("#8d785f"), ballast = mat("#8c8476"), sleepers = mat("#50453b"), steel = mat("#889698", 0.46, 0.58);
+const runningRailSteel=createRailMaterial();
 const cream = mat("#cfbda3"), brick = mat("#a56b51"), roofRed = mat("#744a3f"), roofGray = mat("#5d655e"), gravel = mat("#9c9985");
 const grassMaterials = [mat("#809767"), mat("#839b6b"), mat("#71895a"), mat("#91a470")];
 const shadowCast = (o) => {
@@ -95,14 +98,7 @@ sun.target.position.set(750, 0, 350);
 scene.add(sun.target);
 sun.castShadow = true;
 sun.shadow.mapSize.set(2048, 2048);
-sun.shadow.camera.left = -1150;
-sun.shadow.camera.right = 1150;
-sun.shadow.camera.top = 950;
-sun.shadow.camera.bottom = -950;
-sun.shadow.camera.near = 1;
-sun.shadow.camera.far = 3e3;
-sun.shadow.bias = -15e-5;
-sun.shadow.normalBias = 0.8;
+fitSunShadow(sun);
 scene.add(sun);
 const skyLight = new THREE.HemisphereLight("#e5eff2", "#506344", 1.2);
 scene.add(skyLight);
@@ -168,7 +164,7 @@ function addRail(path, label) {
   bedMesh.receiveShadow = true;
   scene.add(bedMesh);
   for (const signed of [-1, 1]) {
-    const mesh = new THREE.Mesh(railGeometry(path, signed), steel);
+    const mesh = new THREE.Mesh(railGeometry(path, signed), runningRailSteel);
     mesh.castShadow = true;
     scene.add(mesh);
   }
@@ -270,6 +266,7 @@ for (let x = 520; x <= 915; x += 78) {
 }
 const signalGreen = new THREE.MeshStandardMaterial({ color: "#55b98a", emissive: "#259e58", emissiveIntensity: 0.4 });
 const signalGold = new THREE.MeshStandardMaterial({ color: "#f0bd64", emissive: "#aa7724", emissiveIntensity: 0.6 });
+const signalHover=new THREE.MeshBasicMaterial({color:"#ff8b16",toneMapped:false});
 const controlOrder=["WX-A","WX-B","Y-IN","Y-2","Y-3","Y-R1","Y-R2","Y-4"];
 const switchSpecs=controlOrder.map((id)=>({...network.controllers.find((c)=>c.id===id),on:false}));
 const switchTopology = createSwitchTopology(network, switchSpecs);
@@ -291,6 +288,9 @@ function makeSwitch(s) {
   switchHandles.push(group);
 }
 switchSpecs.forEach(makeSwitch);
+const switchFeedback=createSwitchFeedback(switchSpecs,{normal:signalGreen,diverging:signalGold,highlight:signalHover});
+window.addEventListener("blur",()=>switchFeedback.hover(null));
+function switchIndicatorState(){return {active:switchFeedback.active,states:switchSpecs.map(s=>({id:s.id,on:s.on,orange:s.bulb.material===signalHover,color:s.bulb.material.color.getHexString(),position:s.group.position.toArray()}))};}
 const railWheel = mat("#292c2a", 0.8), chassisRed = mat("#9a3a30");
 const locoBlack = mat("#323736", 0.62, 0.16), locoCrimson = mat("#b94334"), locoCream = mat("#d8c49a");
 const wagonColors = ["#8f5c43", "#71826f", "#a27e50", "#7f6e5d"];
@@ -430,8 +430,15 @@ function log(s) {
 function ui() {
   trainDeck?.sync();
   $("switchCount").textContent = switchSpecs.filter((s) => s.on).length + " / " + switchSpecs.length;
-  $("switchList").innerHTML = switchSpecs.map((s, i) => '<button class="sw ' + (s.on ? "active" : "") + '" data-switch="' + i + '"><b>' + s.id + "</b><small>" + s.name + "</small></button>").join("");
-  $("switchList").querySelectorAll("button").forEach((b) => b.onclick = () => toggle(+b.dataset.switch));
+  if(!$("switchList").children.length){
+    $("switchList").innerHTML=switchSpecs.map((s,i)=>`<div class="switchCell" data-switch-hover="${i}"><button class="sw" data-switch="${i}"><b>${s.id}</b><small>${s.name}</small></button></div>`).join("");
+    $("switchList").querySelectorAll(".switchCell").forEach((cell,i)=>{
+      cell.onpointerenter=(e)=>{if(e.pointerType!=="touch")switchFeedback.hover(switchSpecs[i].id);};
+      cell.onpointerleave=()=>switchFeedback.hover(null);
+      cell.querySelector("button").onclick=()=>toggle(i);
+    });
+  }
+  $("switchList").querySelectorAll("button").forEach((b,i)=>b.classList.toggle("active",switchSpecs[i].on));
   $("missionIndex").textContent = mission + 1 + " / 4";
   $("missionName").textContent = statuses[mission].title;
   $("missionText").textContent = statuses[mission].body;
@@ -503,7 +510,9 @@ function switchHUDState() {
   document.querySelectorAll("[data-switch]").forEach((b)=>{
     const sw=switchSpecs[Number(b.dataset.switch)], safety=state.safetyByControl.get(sw.id);
     b.disabled=!safety || safety.blocked;
+    b.parentElement.classList.toggle("is-disabled",b.disabled);
     b.title=!safety?"Insufficient safety data":safety.blocked?safety.message:"Change switch position";
+    b.parentElement.title=b.title;
   });
   return state;
 }
@@ -810,7 +819,7 @@ $("quality").onchange = (e) => applyQuality(quality.setMode(e.target.value));
 quality.setMode("auto");
 applyQuality(quality.profile);
 document.addEventListener("visibilitychange", () => {
-  if (document.hidden) quality.update(0, false);
+  if (document.hidden){quality.update(0, false);switchFeedback.hover(null); }
 });
 window.addEventListener("keydown", (e) => {
   if (e.code === "Space" && !["INPUT", "SELECT", "BUTTON"].includes(e.target.tagName)) {
@@ -839,11 +848,12 @@ window.addEventListener("pagehide", (e) => {
   views.dispose();
   nextSwitchHUD?.dispose();
   routeHighlight.dispose();
+  switchFeedback.dispose();
   trainDeck?.dispose();
   nav.dispose();
   effects.dispose();
   disposeTrainAssets();
-  const gs = /* @__PURE__ */ new Set(), ms = /* @__PURE__ */ new Set(), ts = /* @__PURE__ */ new Set();
+  const gs = /* @__PURE__ */ new Set(), ms = /* @__PURE__ */ new Set([signalGreen,signalGold,signalHover]), ts = /* @__PURE__ */ new Set();
   scene.traverse((o) => {
     if (o.geometry) gs.add(o.geometry);
     for (const m of Array.isArray(o.material) ? o.material : [o.material]) if (m) {
@@ -873,17 +883,17 @@ function tick(now) {
   renderVehicles();
   trainDeck?.update();
   const night = clamp((day - 35) / 65, 0, 1);
-  sun.intensity = lerp(3.1, 0.25, night);
-  sun.color.set(day > 40 ? "#e8b87d" : "#ffe9c7");
-  renderer.toneMappingExposure = lerp(1.12, 0.85, night);
-  skyLight.intensity = lerp(0.85, 0.22, night);
-  fill.intensity = lerp(0.65, 0.1, night);
-  scene.environmentIntensity = lerp(0.25, 0.07, night);
+  sun.intensity = lerp(2.65, 0.16, night);
+  sun.color.copy(new THREE.Color(day>40?"#f4cd9d":"#fff0d5").lerp(new THREE.Color("#a9bee4"),night));
+  renderer.toneMappingExposure = lerp(1.08, 0.89, night);
+  skyLight.intensity = lerp(1.0, 0.22, night);
+  fill.intensity = lerp(0.35, 0.07, night);
+  scene.environmentIntensity = lerp(0.38, 0.07, night);
   trains.forEach((t) => {
     t.group.userData.headMaterial.emissiveIntensity = t.lights ? lerp(0.5, 3, night) : 0;
     t.group.userData.beam.visible = t.lights && night > 0.3;
   });
-  scene.background.copy(new THREE.Color("#c5b79f").lerp(new THREE.Color("#202d3a"), night));
+  scene.background.copy(new THREE.Color("#d0c3ac").lerp(new THREE.Color("#192737"), night));
   scene.fog.color.copy(scene.background);
   windowNight.emissiveIntensity = lerp(0.02, 2.4, night);
   windowNight.color.setRGB(lerp(0.15, 0.8, night), lerp(0.22, 0.56, night), lerp(0.24, 0.23, night));
@@ -891,6 +901,7 @@ function tick(now) {
   controls.update();
   nav.update(realDt, trains[selected].journey.locate());
   views.update();
+  switchFeedback.update(now);
   nextSwitchHUD?.refresh();
   updateRouteHighlight();
   if ($("cameraView").value !== nav.preset && nav.preset === "manual") $("cameraView").value = "manual";
@@ -911,6 +922,7 @@ ui();
 $("loadMsg").hidden = true;
 animationHandle = requestAnimationFrame(tick);
 if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = {
+  indicatorState:switchIndicatorState,
   captureThumbnail(id) {
     const t=trains[id];if(!t)throw new RangeError("Unknown locomotive");
     return captureLocomotiveThumbnail(renderer,t.group,scene.environment);
@@ -964,5 +976,5 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   };
   const assistance = getSwitchAssistance();
   const next = assistance.preview.next;
-  return { consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray() }, render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, journey:{position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments.map(p=>({...p}))}, hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
+  return { consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray(),fov:camera.fov,aspect:camera.aspect,projectedBase:[-10,1510].flatMap(x=>[-34,0].flatMap(y=>[-10,710].map(z=>new THREE.Vector3(x,y,z).project(camera).toArray()))) },switchIndicators:switchIndicatorState(), render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, journey:{position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments.map(p=>({...p}))}, hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
 } };

@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { EventDispatcher, PerspectiveCamera, OrthographicCamera, Vector3, MOUSE, TOUCH } from "three";
 import { createViewControls, mountViewControls } from "../src/view-controls.js";
-import { navigation } from "../src/navigation.js";
+import { navigation, CAMERA_PRESETS } from "../src/navigation.js";
 class Controls extends EventDispatcher {
   constructor() {
     super();
@@ -47,8 +47,8 @@ test("zoom cancels follow while home and follow use the existing navigation pres
   views.home();
   assert.equal(nav.preset, "overview");
   for (let i = 0; i < 200; i++) nav.update(1 / 60);
-  assert.ok(camera.position.distanceTo(new Vector3(1580, 1150, 1570)) < 0.2);
-  assert.ok(controls.target.distanceTo(new Vector3(750, 0, 350)) < 0.2);
+  assert.ok(camera.position.distanceTo(new Vector3(...CAMERA_PRESETS.overview.position)) < 0.2);
+  assert.ok(controls.target.distanceTo(new Vector3(...CAMERA_PRESETS.overview.target)) < 0.2);
   views.dispose();
   nav.dispose();
 });

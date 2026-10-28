@@ -2,7 +2,7 @@ import { Vector3 } from "three";
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 const finite = (value, fallback) => Number.isFinite(value) ? value : fallback;
 const CAMERA_PRESETS = Object.freeze({
-  overview: { position: [1580, 1150, 1570], target: [750, 0, 350], zoom: 1 },
+  overview: { position: [1664, 1150, 1694], target: [834, 0, 474], zoom: 1 },
   station: { position: [990, 650, 1040], target: [750, 20, 525], zoom: 2.8 },
   yard: { position: [955, 720, 1010], target: [690, 12, 245], zoom: 2.2 }
 });

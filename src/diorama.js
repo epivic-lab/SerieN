@@ -2,6 +2,7 @@ import { railwayWorks } from "./railway-works.js";
 import { bridgeAt } from "./structure-layout.js";
 import * as THREE from "three";
 import { seeded, clearance, forestSites } from "./landscape.js";
+import {surfaceMaps} from "./graphic-foundations.js";
 function canvasTexture(w, h, draw) {
   const c = document.createElement("canvas");
   c.width = w;
@@ -117,7 +118,8 @@ function diorama(scene, renderer, network, wood, { foundation, reserved = () => 
   for (let i = 0; i < positions.count; i++) {
     const x = positions.getX(i) + 750, z = positions.getZ(i) + 350, h = mask.height(x, z);
     positions.setY(i, h);
-    const c = new THREE.Color().setHSL(0.19 + 0.025 * Math.sin(x * 0.014 + z * 0.01), 0.23, 0.29 + h * 1e-3 + 0.022 * Math.sin(x * 0.04) * Math.sin(z * 0.08)).convertSRGBToLinear();
+    const patch=.28+.17*Math.sin(x*.012+Math.sin(z*.014))*Math.cos(z*.019);
+    const c = new THREE.Color('#727e54').lerp(new THREE.Color('#a08c66'),patch).multiplyScalar(1+Math.min(h,30)*.002);
     colors.push(c.r, c.g, c.b);
   }
   const ix = geo.index.array, kept = [];
@@ -128,7 +130,10 @@ function diorama(scene, renderer, network, wood, { foundation, reserved = () => 
   geo.setIndex(kept);
   geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
   geo.computeVertexNormals();
-  const terrain = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 1 }));
+  const detail=surfaceMaps('terrain');
+  for(const map of Object.values(detail)){map.repeat.set(1496/128,696/128);map.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());}
+  const terrain = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 1,map:detail.albedo,bumpMap:detail.detail,roughnessMap:detail.detail,bumpScale:.16 }));
+  terrain.name='Terrain · continuous relief and multiscale surface';
   terrain.position.set(750, 0, 350);
   terrain.receiveShadow = true;
   scene.add(terrain);
@@ -199,7 +204,7 @@ function diorama(scene, renderer, network, wood, { foundation, reserved = () => 
     rocks.push({ x, y: y - 2, z, sx: 5 + rnd() * 11, sy: 4 + rnd() * 10, sz: 4 + rnd() * 9, ry: rnd() * 6, color: new THREE.Color().setHSL(0.1, 0.07, 0.36 + rnd() * 0.16) });
   }
   instance(new THREE.DodecahedronGeometry(1, 0), new THREE.MeshStandardMaterial({ roughness: 1 }), rocks, scene);
-  const floor = new THREE.Mesh(new THREE.PlaneGeometry(14e3, 14e3), new THREE.MeshStandardMaterial({ color: "#b7a58d", roughness: 0.93 }));
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(14e3, 14e3), new THREE.MeshStandardMaterial({ color: "#c0b6a1", roughness: 0.96 }));
   floor.rotation.x = -Math.PI / 2;
   floor.position.set(750, -32, 350);
   floor.receiveShadow = true;

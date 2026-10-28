@@ -63,7 +63,7 @@ with sync_playwright() as p:
             if w>930:assert size['world']>=baseline[key]['world']+(old-size['console'])-2,(key,size)
             for visual in size['visuals']:
                 assert visual['image']['right']<=visual['map']['left']+1,(key,visual)
-                assert abs(visual['image']['top']-visual['map']['top'])<1,(key,visual)
+                assert abs((visual['image']['top']+visual['image']['height']/2)-(visual['map']['top']+visual['map']['height']/2))<1,(key,visual)
                 assert all(b['height']>=30 and b['width']>=26 for b in visual['buttons']),(key,visual)
             measurements[key]=size
             if fleet==3:page.screenshot(path=str(out/(label+'.png')),timeout=90000)

@@ -1,8 +1,10 @@
-# SerieN · Autumn Railways v0.9
+# SerieN · Autumn Railways v0.10
 
-Simulatore ferroviario web in scala N su base 150×70 cm. [Gioca](https://epivic-lab.github.io/SerieN/?v=0.9.0) · [Planimetria tecnica](docs/jmri-layout/layout-canonical.svg) · [Grafo completo](docs/jmri-layout/canonical-graph.json) · [Report Fase 0](docs/consolidation/README.md).
+Simulatore ferroviario web in scala N su base 150×70 cm. [Gioca](https://epivic-lab.github.io/SerieN/?v=0.10.0) · [Planimetria tecnica](docs/jmri-layout/layout-canonical.svg) · [Grafo completo](docs/jmri-layout/canonical-graph.json) · [Report Fase 0](docs/consolidation/README.md).
 
 Tre anelli R249/R282/R315, due WX310, quattro tronchini, runaround e fascio merci diagonale. La Fase 0 è chiusa e accettata sulla baseline v0.8 (`d118de0`). La Fase 1 introduce la plancia con altezza più che dimezzata, miniature affiancate e interfaccia inglese: [misure e collaudo](docs/phase-1/README.md). Il simulatore integra l'export JMRI nel motore e nel rendering: **la topologia è operativa e collaudata; i profili interni WX310 e le quote utili del plastico fisico richiedono ancora verifica**. Non è una dima esecutiva certificata. Nessuna galleria. Progetto indipendente: non invia comandi Z21 reali e non dipende da altri repository.
+
+La v0.10 introduce la **Fase 2 — Fondamenta grafiche**: terreno, luce, materiali ferroviari, ombre e camera. La vista Home contiene l'intero tavolato; la plancia mantiene l'altezza della v0.9 con nome, locomotiva, mappa e stato sulla stessa riga e minimappe più grandi. Passando il mouse sui comandi scambi lampeggia in arancione il rispettivo indicatore 3D, anche quando il comando è protetto per occupazione. [Confronto visivo e verifiche](docs/phase-2/README.md).
 
 ## Avvio
 
@@ -40,6 +42,7 @@ I rotabili Kenney si selezionano a lato: hanno spaziatura calcolata dai rispetti
 | `src/train-deck*.js`, `src/next-switch-view.js` | Presentazione e comandi; nessuna copia autonoma dello stato ferroviario |
 | `src/locomotive-thumbnails.js` | Sei immagini in cache e acquisizione diagnostica tramite il renderer esistente |
 | `src/navigation.js`, `src/view-controls.js` | Camera, focus, inseguimento e gesti |
+| `src/graphic-foundations.js`, `src/switch-feedback.js` | Superfici PBR originali, inquadratura ombre e feedback visivo senza mutare gli scambi |
 | `src/scenery.js`, `src/landscape.js`, componenti stazione/opere | Ambientazione e distanze dai binari canonici |
 | `app.js` | Unico stato della sessione, scena WebGL, comandi, protezione, missioni e singolo ciclo principale |
 
@@ -57,6 +60,7 @@ npm run build
 Per i test browser opzionali servono Python Playwright, Chromium e il server locale attivo:
 
 ```sh
+python3 tests/browser-phase-two.py
 python3 tests/browser-phase-one.py
 python3 tests/browser-phase-zero.py
 python3 tests/browser-train-deck.py

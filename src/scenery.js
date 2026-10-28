@@ -7,26 +7,7 @@ import { diorama, roofTexture, wallTexture } from "./diorama.js";
 import * as THREE from "three";
 import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
-function surface(colors, seed = 27) {
-  const canvas = document.createElement("canvas");
-  canvas.width = canvas.height = 256;
-  const ctx = canvas.getContext("2d");
-  ctx.fillStyle = colors[0];
-  ctx.fillRect(0, 0, 256, 256);
-  const random = () => {
-    seed = seed * 1664525 + 1013904223 >>> 0;
-    return seed / 4294967296;
-  };
-  for (let i = 0; i < 16e3; i++) {
-    ctx.fillStyle = colors[Math.floor(random() * colors.length)];
-    const r = 0.3 + random() * 2;
-    ctx.fillRect(random() * 256, random() * 256, r, r);
-  }
-  const t = new THREE.CanvasTexture(canvas);
-  t.wrapS = t.wrapT = THREE.RepeatWrapping;
-  t.colorSpace = THREE.SRGBColorSpace;
-  return t;
-}
+import {surfaceMaps} from "./graphic-foundations.js";
 function enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials, wallMaterials, foundation }) {
   const pmrem = new THREE.PMREMGenerator(renderer), room = new RoomEnvironment();
   const env = pmrem.fromScene(room, 0.04);
@@ -34,16 +15,12 @@ function enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials
   scene.environmentIntensity = 0.35;
   room.dispose();
   pmrem.dispose();
-  ballast.map = surface(["#8d8676", "#aea48d", "#6b685f", "#b7aa91", "#575b53"]);
-  ballast.map.repeat.set(2, 1);
-  ballast.bumpMap = ballast.map;
-  ballast.bumpScale = 0.65;
+  const trackBed=surfaceMaps('ballast');
+  ballast.color.set('#ffffff');ballast.map=trackBed.albedo;
+  ballast.bumpMap=ballast.roughnessMap=trackBed.detail;
+  ballast.roughness=1;ballast.bumpScale=.22;
+  for(const map of Object.values(trackBed))map.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());
   ballast.needsUpdate = true;
-  ground.material.map = surface(["#7e8955", "#8d975c", "#6b7749", "#a29667", "#747849"]);
-  ground.material.map.repeat.set(26, 13);
-  ground.material.bumpMap = ground.material.map;
-  ground.material.bumpScale = 0.5;
-  ground.material.needsUpdate = true;
   for (const material of roofMaterials) {
     material.map = roofTexture();
     material.map.wrapS = material.map.wrapT = THREE.RepeatWrapping;
@@ -120,7 +97,4 @@ function enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials
   }
   return { environment: env, ...scenic, zones, station };
 }
-export {
-  enrich,
-  surface
-};
+export {enrich};
