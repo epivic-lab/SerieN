@@ -1,11 +1,11 @@
 import { MOUSE, TOUCH } from "three";
 const BUTTONS = {
-  viewZoomIn: ["zoomIn", "Avvicina il plastico"],
-  viewZoomOut: ["zoomOut", "Allontana il plastico"],
-  viewHome: ["home", "Ripristina la vista standard"],
-  viewFollow: ["follow", "Segui il treno selezionato"],
-  viewPan: ["pan", "Trascina per spostare il plastico"],
-  viewOrbit: ["orbit", "Trascina per ruotare il plastico"]
+  viewZoomIn: ["zoomIn", "Zoom in on the layout"],
+  viewZoomOut: ["zoomOut", "Zoom out from the layout"],
+  viewHome: ["home", "Restore the standard view"],
+  viewFollow: ["follow", "Follow the selected train"],
+  viewPan: ["pan", "Drag to pan the layout"],
+  viewOrbit: ["orbit", "Drag to orbit the layout"]
 };
 const finite = (value, fallback) => Number.isFinite(value) ? value : fallback;
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));

@@ -115,12 +115,12 @@ def build(tolerance_mm=2.5):
                 if any(abs(a['z']-v)<1e-5 for v in levels):lane=i
         meta={'source':'XML','sourceIds':[e['id']],'confidence':'explicit','role':'yard'}
         if lane is not None:meta.update(lane=lane,role='mainline')
-        if e['id'] in ['T40','T42']:meta.update(role='runaround-main',destination='Runaround · ramo principale')
-        if e['id'] in ['T43','T44']:meta.update(role='runaround-alternate',destination='Runaround · aggiramento')
+        if e['id'] in ['T40','T42']:meta.update(role='runaround-main',destination='Runaround · main route')
+        if e['id'] in ['T43','T44']:meta.update(role='runaround-alternate',destination='Runaround · passing route')
         terminal=next((n for n in [e['from'],e['to']] if nodes[n]['terminal']),None)
-        if terminal:meta.update(terminal=terminal,destination={'A67':'Tronchino ovest alto','EB39':'Tronchino ovest centrale','EB49':'Tronchino ovest basso','EB52':'Tronchino est'}[terminal])
+        if terminal:meta.update(terminal=terminal,destination={'A67':'West upper siding','EB39':'West middle siding','EB49':'West lower siding','EB52':'East siding'}[terminal])
         add(e['id'],e['from'],e['to'],points,shape,**meta)
-    mapping={'TO0':('Y-IN','Accesso merci ovest'),'TO1':('Y-R1','Runaround ovest'),'TO2':('Y-R2','Runaround est'),'TO3':('Y-3','Accesso merci est'),'TO4':('Y-4','Tronchino est'),'TO5':('Y-2','Bivio tronchini ovest')}
+    mapping={'TO0':('Y-IN','West yard entrance'),'TO1':('Y-R1','West runaround switch'),'TO2':('Y-R2','East runaround switch'),'TO3':('Y-3','East yard entrance'),'TO4':('Y-4','East siding'),'TO5':('Y-2','West siding junction')}
     for t in d['turnouts']:
         sw,name=mapping[t['id']];a,b,c=({k:nodes[aliases[t['ports'][p]]][k] for k in ['x','z']} for p in 'ABC')
         heading=math.atan2(b['z']-a['z'],b['x']-a['x']);dx,dz=c['x']-a['x'],c['z']-a['z']
@@ -149,7 +149,7 @@ def build(tolerance_mm=2.5):
             points,shape=s_curve(pa,pb,583.184,None,center=17.924)
             eid=id+':'+label;internal.append(eid)
             add(eid,a,b,points,shape,source='documented secondary Kato profile fitted to XML mouths',sourceIds=[a,b],confidence='inferred-profile-unverified',unit=id,switchId=id,requiredState=True,fromLane=sourceLane,toLane=targetLane,role='crossover')
-        controllers.append({'id':id,'sourceId':None,'code':'20-210','name':'WX310 '+('ovest' if id=='WX-A' else 'est'),'ports':{'UL':upperLeft,'UR':upperRight,'LL':lowerLeft,'LR':lowerRight},'internal':internal,'x':(nodes[upperLeft]['x']+nodes[upperRight]['x'])/2,'z':(nodes[upperLeft]['z']+nodes[lowerLeft]['z'])/2,'kind':'cross'})
+        controllers.append({'id':id,'sourceId':None,'code':'20-210','name':'WX310 '+('west' if id=='WX-A' else 'east'),'ports':{'UL':upperLeft,'UR':upperRight,'LL':lowerLeft,'LR':lowerRight},'internal':internal,'x':(nodes[upperLeft]['x']+nodes[upperRight]['x'])/2,'z':(nodes[upperLeft]['z']+nodes[lowerLeft]['z'])/2,'kind':'cross'})
     for id,a,b,c,e in [('WIDEN-L','A28','A44','A3','A46'),('WIDEN-R','A45','A23','A47','A2')]:
         pa,pb=({k:nodes[n][k] for k in ['x','z']} for n in [a,b])
         # PDF library shape: 42mm lead, R481/15deg reverse curves, 20mm exit.
@@ -213,9 +213,9 @@ def build(tolerance_mm=2.5):
                 label=html.escape(' / '.join(node['aliases']))
                 fragments.append(f'<circle cx="{node["x"]}" cy="{node["z"]}" r="2.5" fill="#80c8d9"/><text x="{node["x"]+4}" y="{node["z"]+12}" fill="#80c8d9">{label}</text>')
             fragments.append('</g>')
-            fragments.append('<text x="1000" y="85">T51 / T52: giunti a lunghezza zero, contratti</text>')
+            fragments.append('<text x="1000" y="85">T51 / T52: zero-length joins, contracted</text>')
             for c in controllers:fragments.append(f'<text class="control" x="{c["x"]}" y="{c["z"]-19}">{c["id"]} · {c["sourceId"] or c["code"]}</text>')
-            fragments+=['<text x="20" y="685">Bianco: XML · Ambra: connessioni ricostruite · Rosa: profili da verificare e 4 terminali</text>','<text x="800" y="525">Anello interno · R249 / allargamenti</text>','<text x="800" y="610">Anello centrale · R282</text>','<text x="800" y="652">Anello esterno · R315</text>','<text x="540" y="316">Runaround: T40/T42 + T43/TO4:AB/T44</text>']
+            fragments+=['<text x="20" y="685">White: XML · Amber: reconstructed connections · Pink: unverified profiles and 4 terminals</text>','<text x="800" y="525">Inner loop · R249 / widening tracks</text>','<text x="800" y="610">Middle loop · R282</text>','<text x="800" y="652">Outer loop · R315</text>','<text x="540" y="316">Runaround: T40/T42 + T43/TO4:AB/T44</text>']
         svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 700"><style>text{font:10px sans-serif;fill:#f2f0d5;paint-order:stroke;stroke:#102a27;stroke-width:3px}.control{font-size:13px;font-weight:bold}</style>'+''.join(fragments)+'</svg>'
         (ROOT/'docs/jmri-layout'/('layout-canonical.svg' if annotated else 'minimap-canonical.svg')).write_text(svg)
     print(json.dumps(result['statistics']))

@@ -371,9 +371,9 @@ function locoModel(id,trainId=id) {
   return g;
 }
 const trains = [
-  { id: 0, name: "BR 055", desc: "Vapore DB \xB7 Epoca III", loop: 2, speed: 0, dir: 1, cars: 3, lights: true, laps: 0, mode: "loop", group: locoModel(0), carObjs: [] },
-  { id: 1, name: "BR 216", desc: "Diesel DB \xB7 Epoca IV", loop: 1, speed: 0, dir: 1, cars: 2, lights: false, laps: 0, mode: "loop", group: locoModel(1), carObjs: [] },
-  { id: 2, name: "BR 260", desc: "Diesel da manovra DB", loop: 0, speed: 0, dir: 1, cars: 2, lights: false, laps: 0, mode: "loop", group: locoModel(2), carObjs: [] }
+  { id: 0, name: "BR 055", desc: "Steam DB \xB7 Era III", loop: 2, speed: 0, dir: 1, cars: 3, lights: true, laps: 0, mode: "loop", group: locoModel(0), carObjs: [] },
+  { id: 1, name: "BR 216", desc: "Diesel DB \xB7 Era IV", loop: 1, speed: 0, dir: 1, cars: 2, lights: false, laps: 0, mode: "loop", group: locoModel(1), carObjs: [] },
+  { id: 2, name: "BR 260", desc: "DB shunter", loop: 0, speed: 0, dir: 1, cars: 2, lights: false, laps: 0, mode: "loop", group: locoModel(2), carObjs: [] }
 ];
 for (let t of trains) {
   for (let i = 0; i < t.cars; i++) {
@@ -388,7 +388,7 @@ trains.forEach((t) => {
   t.nativeName = t.name;
   t.nativeDescription = t.desc;
 });
-const kenneyNames = ["Vapore K1", "Diesel K2", "Manovra K3"];
+const kenneyNames = ["Steam K1", "Diesel K2", "Shunter K3"];
 let rollingModelMode = $("rollingModels").value;
 const startupTrains = [...trains];
 const assetReady = Promise.all(startupTrains.map((t) => attachTrainAsset(t.group, t.modelKey, true)));
@@ -402,13 +402,13 @@ function updateModels() {
   if (trains.some((t) => t.journey && (!t.journey.ensure(t.journey.position - layoutFor(t).tail, route) || !t.journey.ensure(t.journey.position+(t.group.userData.couplers?.front?.x??48),route)))) {
     importedTrains(rollingModelMode === "kenney");
     $("rollingModels").value = rollingModelMode;
-    log("Spazio insufficiente per i rotabili più lunghi: sposta prima il convoglio.");
+    log("Not enough room for longer rolling stock. Move the train first.");
     return;
   }
   rollingModelMode = $("rollingModels").value;
   for (const t of trains) {
-    t.name = active && t.assetLoaded ? kenneyNames[["steam","diesel","shunter"].indexOf(t.modelKey)] : t.nativeName;
-    t.desc = active && t.assetLoaded ? "Kenney Train Kit \xB7 modello stilizzato" : t.nativeDescription;
+    t.name = active && t.assetLoaded ? kenneyNames[["steam","diesel","shunter"].indexOf(t.modelKey)]+(t.id>=3?` · ${t.id+1}`:"") : t.nativeName;
+    t.desc = active && t.assetLoaded ? "Kenney Train Kit \xB7 stylized model" : t.nativeDescription;
   }
   ui();
 }
@@ -419,10 +419,10 @@ selectRing.rotation.x = PI / 2;
 scene.add(selectRing);
 let selected = 0, paused = false, day = 48, changes = 0, transferred = false, visitedRunaround = false, didDetach = false, didAttach = false, mission = 0;
 const statuses = [
-  { title: "Primo giro", body: "Fai completare un giro alla locomotiva a vapore sul suo anello.", done: () => trains[0].laps >= 1, detail: () => "Giri completati: " + trains[0].laps + " / 1" },
-  { title: "Cambiare binario", body: "Attiva WX-A o WX-B e fai transitare una locomotiva da un anello all\u2019altro.", done: () => transferred, detail: () => transferred ? "Trasferimento riuscito" : "Nessun trasferimento" },
-  { title: "Il lungo runaround", body: "Predisponi il gruppo manovra e percorri con la locomotiva da manovra uno dei due rami del runaround lungo.", done: () => visitedRunaround, detail: () => visitedRunaround ? "Runaround percorso" : "In attesa della locomotiva da manovra" },
-  { title: "Composizione merci", body: "Sgancia un carro a treno fermo e poi riaggancialo sullo stesso binario.", done: () => didDetach && didAttach, detail: () => "Sgancio " + (didDetach ? "\u2713" : "\u25CB") + " \xB7 Aggancio " + (didAttach ? "\u2713" : "\u25CB") }
+  { title: "First lap", body: "Complete one lap of the steam locomotive’s loop.", done: () => trains[0].laps >= 1, detail: () => "Completed laps: " + trains[0].laps + " / 1" },
+  { title: "Change tracks", body: "Set WX-A or WX-B and drive a locomotive from one loop to another.", done: () => transferred, detail: () => transferred ? "Transfer completed" : "No transfer yet" },
+  { title: "The long runaround", body: "Set the yard switches and drive the shunter along either runaround route.", done: () => visitedRunaround, detail: () => visitedRunaround ? "Runaround completed" : "Waiting for the shunter" },
+  { title: "Build a freight train", body: "Uncouple a wagon while stopped, then couple it again on the same track.", done: () => didDetach && didAttach, detail: () => "Uncouple " + (didDetach ? "\u2713" : "\u25CB") + " \xB7 Couple " + (didAttach ? "\u2713" : "\u25CB") }
 ];
 function log(s) {
   $("log").textContent = s;
@@ -439,7 +439,7 @@ function ui() {
   nextSwitchHUD?.refresh(true);
 }
 function missionUI() {
-  $("missionStatus").textContent = statuses[mission].done() ? "\u2713 Obiettivo completato" : statuses[mission].detail();
+  $("missionStatus").textContent = statuses[mission].done() ? "\u2713 Mission completed" : statuses[mission].detail();
 }
 function select(id) {
   if(!trains[id])return;
@@ -451,7 +451,7 @@ function toggle(index) {
   const s = switchSpecs[index];
   const status = getSwitchAssistance().safetyByControl.get(s.id);
   if (!status || status.blocked) {
-    log(status?.message ?? "Dati di sicurezza insufficienti: manovra bloccata.");
+    log(status?.message ?? "Insufficient safety data: switch operation blocked.");
     nextSwitchHUD?.refresh(true);
     return;
   }
@@ -459,7 +459,7 @@ function toggle(index) {
   for(const t of trains)t.journey.reconcile(layoutFor(t).tail,t.group.userData.couplers?.front?.x??48,route);
   s.bulb.material = s.on ? signalGold : signalGreen;
   changes++;
-  log(s.name + ": " + (s.on ? "deviato" : "diritto"));
+  log(s.name + ": " + (s.on ? "diverging" : "straight"));
   ui();
 }
 const route = routing(network, (id) => switchSpecs.find((s) => s.id === id)?.on || false);
@@ -503,7 +503,7 @@ function switchHUDState() {
   document.querySelectorAll("[data-switch]").forEach((b)=>{
     const sw=switchSpecs[Number(b.dataset.switch)], safety=state.safetyByControl.get(sw.id);
     b.disabled=!safety || safety.blocked;
-    b.title=!safety?"Dati di sicurezza insufficienti":safety.blocked?safety.message:"Cambia posizione dello scambio";
+    b.title=!safety?"Insufficient safety data":safety.blocked?safety.message:"Change switch position";
   });
   return state;
 }
@@ -558,7 +558,7 @@ function advance(t, dt) {
   if (!t.journey.move(t.velocity * dt, layoutFor(t).tail, route, t.group.userData.couplers?.front?.x ?? 48)) {
     t.speed = 0;
     t.velocity = 0;
-    log(t.name + (t.journey.lastBlock?.reason==="terminal"?": fine binario, inverti la marcia.":": percorso interrotto, verifica l’allineamento degli scambi."));
+    log(t.name + (t.journey.lastBlock?.reason==="terminal"?": end of track. Reverse direction.":": route blocked. Check switch alignment."));
     ui();
     return;
   }
@@ -593,7 +593,7 @@ function updateTrainStatus(dt) {
       const u = trains[a], v = trains[b];
       if (u.speed || v.speed || u.velocity || v.velocity) {
         u.speed = v.speed = u.velocity = v.velocity = 0;
-        log("Protezione: convogli troppo vicini, arresto automatico.");
+        log("Protection: trains too close. Automatic stop.");
         ui();
       }
     }
@@ -602,14 +602,14 @@ function updateTrainStatus(dt) {
     return Math.hypot(p.x - d.point.x, p.z - d.point.z) < (p.vehicle.userData.assetDimensions || d.group.userData.assetDimensions ? couplingDistance(p.vehicle.userData, d.group.userData) + 4 : 48);
   })) && t.velocity) {
     t.speed = t.velocity = 0;
-    log("Carro fermo davanti al convoglio: arresto per aggancio.");
+    log("Stationary wagon ahead. Stopped for coupling.");
     ui();
   }
 }
 function uncouple() {
   const t = trains[selected];
   if (Math.abs(t.velocity) > 0.1 || t.speed) {
-    log("Ferma il convoglio prima di sganciare.");
+    log("Stop the train before uncoupling.");
     return;
   }
   if (!t.cars) return;
@@ -618,33 +618,33 @@ function uncouple() {
   t.cars = t.carObjs.length;
   didDetach = true;
   ui();
-  log("Carro sganciato e lasciato sul binario.");
+  log("Wagon uncoupled and left on the track.");
 }
 function couple() {
   const t = trains[selected];
   if (t.speed || Math.abs(t.velocity) > 0.1) {
-    log("Ferma il convoglio prima di agganciare.");
+    log("Stop the train before coupling.");
     return;
   }
   if (t.cars >= 5) {
-    log("Lunghezza massima: cinque carri.");
+    log("Maximum train length: five wagons.");
     return;
   }
   const tail = t.journey.locate(t.journey.position - layoutFor(t).offsets.at(-1));
   const i = detached.findIndex((d) => d.point.edge === tail.edge && Math.hypot(d.point.x - tail.x, d.point.z - tail.z) < 115);
   if (i < 0) {
-    log("Nessun carro vicino alla coda sullo stesso binario.");
+    log("No wagon near the rear of this train on the same track.");
     return;
   }
   if (!t.journey.ensure(t.journey.position - layoutFor(t, [detached[i].group]).tail, route)) {
-    log("Spazio insufficiente.");
+    log("Not enough room.");
     return;
   }
   t.carObjs.push(detached.splice(i, 1)[0].group);
   t.cars = t.carObjs.length;
   didAttach = true;
   ui();
-  log("Carro agganciato.");
+  log("Wagon coupled.");
 }
 function removeWagon(group) {
   releaseTrainAsset(group);
@@ -656,7 +656,7 @@ function removeWagon(group) {
   scene.remove(group);
 }
 function reset() {
-  if (!confirm("Riportare a zero locomotive, scambi e missioni?")) return;
+  if (!confirm("Reset locomotives, switches and missions?")) return;
   for (const d of detached) removeWagon(d.group);
   detached.length = 0;
   switchSpecs.forEach((s) => {
@@ -677,9 +677,9 @@ function reset() {
   paused = false;
   mission = 0;
   transferred = visitedRunaround = didDetach = didAttach = false;
-  $("pause").textContent = "\u2161 Pausa";
+  $("pause").textContent = "\u2161 Pause";
   ui();
-  log("Ripristino completato.");
+  log("Reset completed.");
 }
 function setTrainSpeed(id,value) {
   const t=trains[id];if(!t)return;
@@ -687,23 +687,23 @@ function setTrainSpeed(id,value) {
 }
 function reverseTrain(id) {
   const t=trains[id];if(!t)return;
-  t.dir*=-1;log(t.name+" ha invertito direzione");trainDeck?.sync();nextSwitchHUD?.refresh(true);
+  t.dir*=-1;log(t.name+" reversed direction");trainDeck?.sync();nextSwitchHUD?.refresh(true);
 }
 function stopTrain(id) {
   const t=trains[id];if(!t)return;
-  t.speed=t.velocity=0;ui();log(t.name+" ferma");
+  t.speed=t.velocity=0;ui();log(t.name+" stopped");
 }
 function stopAllTrains() {
   for(const t of trains)t.speed=t.velocity=0;
-  ui();log("STOP TUTTI · ogni convoglio arrestato");
+  ui();log("STOP ALL · every train stopped");
 }
 function addTrain() {
-  if(trains.length>=4){log("Massimo quattro convogli nella sessione.");return null;}
+  if(trains.length>=4){log("A session supports up to four trains.");return null;}
   if(trains.some(t=>vehiclePositions(t).some(p=>p.edge==="T47"&&Math.abs(p.s-80)<120))||detached.some(d=>d.point.edge==="T47"&&Math.abs(d.point.s-80)<120)){
-    log("Libera prima il punto di inserimento nel tronchino est.");return null;
+    log("Clear the insertion point in the east siding first.");return null;
   }
   const id=trains.length;
-  const t={id,name:`BR 216 · ${id+1}`,nativeName:`BR 216 · ${id+1}`,desc:"Diesel DB · locomotiva aggiuntiva",nativeDescription:"Diesel DB · locomotiva aggiuntiva",modelKey:"diesel",initial:{loop:2,cars:0,edge:"T47",s:80},loop:2,speed:0,dir:1,cars:0,lights:false,laps:0,mode:"loop",group:locoModel(1,id),carObjs:[]};
+  const t={id,name:`BR 216 · ${id+1}`,nativeName:`BR 216 · ${id+1}`,desc:"Diesel DB · additional locomotive",nativeDescription:"Diesel DB · additional locomotive",modelKey:"diesel",initial:{loop:2,cars:0,edge:"T47",s:80},loop:2,speed:0,dir:1,cars:0,lights:false,laps:0,mode:"loop",group:locoModel(1,id),carObjs:[]};
   trains.push(t);initializeJourney(t);
   $("addTrain").disabled=trains.length>=4;
   attachTrainAsset(t.group,"diesel",true).then((loaded)=>{t.assetLoaded=loaded;updateModels();});
@@ -737,8 +737,8 @@ $("nextMission").onclick = () => {
 };
 $("pause").onclick = () => {
   paused = !paused;
-  $("pause").textContent = paused ? "\u25B6 Riprendi" : "\u2161 Pausa";
-  log(paused ? "Simulazione sospesa." : "Simulazione ripresa.");
+  $("pause").textContent = paused ? "\u25B6 Resume" : "\u2161 Pause";
+  log(paused ? "Simulation paused." : "Simulation resumed.");
   trainDeck?.update();
 };
 $("reset").onclick = reset;
@@ -800,7 +800,7 @@ trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains
 nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState});
 const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
 function applyQuality(profile) {
-  $("quality").querySelector("[value=auto]").textContent = "Automatica \xB7 " + (profile === "low" ? "Leggera" : "Alta");
+  $("quality").querySelector("[value=auto]").textContent = "Auto \xB7 " + (profile === "low" ? "Low" : "High");
   renderer.setPixelRatio(profile === "low" ? 1 : Math.min(devicePixelRatio || 1, 1.5));
   renderer.shadowMap.enabled = profile !== "low";
   scenic.setQuality(profile);
@@ -894,7 +894,6 @@ function tick(now) {
   nextSwitchHUD?.refresh();
   updateRouteHighlight();
   if ($("cameraView").value !== nav.preset && nav.preset === "manual") $("cameraView").value = "manual";
-  document.querySelector(".titleScene").hidden = nav.preset !== "overview" && nav.preset !== "manual" || camera.zoom > 1.4;
   const nextQuality = quality.update(realDt, !document.hidden);
   if (nextQuality) applyQuality(nextQuality);
   scenic.zones.update(night, dt);
@@ -903,9 +902,7 @@ function tick(now) {
   smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2, quality.profile === "low");
   effects.render(quality.profile === "cinema");
   if (frame % 35 === 0) {
-    $("fps").textContent = Math.round(1 / (realDt || 1 / 60)) + " FPS \xB7 v0.8.0";
     missionUI();
-    $("sceneInfo").textContent = trains.filter((t) => t.speed > 0).length + " CONVOGLI IN MARCIA \xB7 4 TRONCHINI \xB7 RUNAROUND LUNGO";
   }
   animationHandle = requestAnimationFrame(tick);
 }

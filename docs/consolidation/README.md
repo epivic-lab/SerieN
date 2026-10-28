@@ -6,7 +6,7 @@ La rete ferroviaria operativa deriva dall'XML originale, dal PDF RailModeller e 
 
 [Planimetria tecnica SVG](../jmri-layout/layout-canonical.svg) · [Grafo completo JSON](../jmri-layout/canonical-graph.json) · [XML originale](../jmri-layout/source.xml) · [PDF originale](../jmri-layout/railmodeller-original.pdf) · [Dossier REV A](SerieN_Dossier_Tecnico_Codex_REV_A.pdf) · [Audit della ripresa](INTAKE.md) · [Collaudo browser](browser-result.json)
 
-**La circolazione è verificata; la certificazione geometrica del plastico fisico resta aperta.** Il grafo non contiene collegamenti topologici irrisolti, ma l'export non descrive i profili interni dei moduli omessi. Questa versione non va qualificata come dima costruttiva o Fase 0 completamente accettata sul piano metrologico.
+**La circolazione è verificata; la certificazione geometrica del plastico fisico resta aperta.** Il grafo non contiene collegamenti topologici irrisolti, ma l'export non descrive i profili interni dei moduli omessi. La baseline software è accettata; la versione non è una dima costruttiva certificata e i riscontri metrologici restano attività successive.
 
 ## Geometria e fonti
 

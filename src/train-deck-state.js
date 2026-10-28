@@ -38,8 +38,8 @@ function locomotivePoint(train) {
   return {x:p.x,z:p.z,edge:p.edge,s:p.s};
 }
 function operatingState(train,paused=false) {
-  if(paused)return "In pausa";
-  if(Math.abs(train.velocity??0)>.1)return train.dir<0?"In marcia · retromarcia":"In marcia";
-  return train.speed>0?"In avvio":"Fermo";
+  if(paused)return "Paused";
+  if(Math.abs(train.velocity??0)>.1)return train.dir<0?"Moving · reverse":"Moving";
+  return train.speed>0?"Starting":"Stopped";
 }
 export { RecentConsoles, MAP_VIEWBOX, railwayMapPath, locomotivePoint, operatingState };

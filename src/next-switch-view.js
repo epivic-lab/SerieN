@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { schematicPaths, pathSection } from "./next-switch.js";
 
 function distanceLabel(mm) {
-  return mm >= 1000 ? `${(mm/1000).toLocaleString("it-IT",{maximumFractionDigits:2})} m` : `${Math.max(0,Math.round(mm))} mm`;
+  return mm >= 1000 ? `${(mm/1000).toLocaleString("en-GB",{maximumFractionDigits:2})} m` : `${Math.max(0,Math.round(mm))} mm`;
 }
 function routeRibbonGeometry(points, width, height=8.4) {
   const vertices=[];
@@ -49,17 +49,17 @@ function schemaSVG(network,preview) {
   if(!data.bounds)return "";
   const b=data.bounds, dx=Math.max(1,b.xmax-b.xmin),dz=Math.max(1,b.zmax-b.zmin);
   const line=(points)=>points.map((p)=>`${(16+(p.x-b.xmin)/dx*200).toFixed(2)},${(14+(p.z-b.zmin)/dz*64).toFixed(2)}`).join(" ");
-  return `<svg viewBox="0 0 232 92" role="img" aria-label="Connessioni reali; itinerario previsto rosso, altri rami grigi"><defs><marker id="nextSwitchArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#ff5668"/></marker></defs>${data.base.map((p)=>`<polyline points="${line(p.points)}" fill="none" stroke="#829792" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`).join("")}${data.selected.map((p)=>`<polyline points="${line(p.points)}" fill="none" stroke="#ff5668" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#nextSwitchArrow)"/>`).join("")}</svg>`;
+  return `<svg viewBox="0 0 232 92" role="img" aria-label="Actual connections; predicted route red, other routes grey"><defs><marker id="nextSwitchArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#ff5668"/></marker></defs>${data.base.map((p)=>`<polyline points="${line(p.points)}" fill="none" stroke="#829792" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`).join("")}${data.selected.map((p)=>`<polyline points="${line(p.points)}" fill="none" stroke="#ff5668" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#nextSwitchArrow)"/>`).join("")}</svg>`;
 }
 function mountNextSwitchHUD({host,network,getState,now=()=>performance.now()}) {
   const panel=document.createElement("section");panel.className="nextSwitchHUD";panel.id="nextSwitchHUD";panel.setAttribute("aria-label","Next Switch HUD");
-  panel.innerHTML=`<header class="nextSwitchHead"><span>⌁ NEXT SWITCH</span><span class="nextSwitchCompact"></span><button type="button" class="nextSwitchMinimize" aria-expanded="true" aria-controls="nextSwitchBody" aria-label="Minimizza assistente scambi">−</button></header><div id="nextSwitchBody"><div class="nextSwitchTrain"></div><h2 class="nextSwitchName" aria-live="polite"></h2><div class="nextSwitchDistance"></div><div class="nextSwitchScheme"></div><div class="nextSwitchPosition"></div><p class="nextSwitchDestination"></p><p class="nextSwitchWarning" role="status"></p></div>`;
+  panel.innerHTML=`<header class="nextSwitchHead"><span>⌁ NEXT SWITCH</span><span class="nextSwitchCompact"></span><button type="button" class="nextSwitchMinimize" aria-expanded="true" aria-controls="nextSwitchBody" aria-label="Minimize switch assistant">−</button></header><div id="nextSwitchBody"><div class="nextSwitchTrain"></div><h2 class="nextSwitchName" aria-live="polite"></h2><div class="nextSwitchDistance"></div><div class="nextSwitchScheme"></div><div class="nextSwitchPosition"></div><p class="nextSwitchDestination"></p><p class="nextSwitchWarning" role="status"></p></div>`;
   host.append(panel);
   const find=(cls)=>panel.querySelector(`.${cls}`),set=(cls,value)=>{const e=find(cls);if(e.textContent!==value)e.textContent=value;};
   const body=panel.querySelector("#nextSwitchBody"),minimize=find("nextSwitchMinimize");
-  find("nextSwitchDistance").title="Distanza dal centro del veicolo di testa nel verso di marcia, in millimetri del plastico";
+  find("nextSwitchDistance").title="Distance from the leading vehicle center in the direction of travel, in layout millimetres";
   let minimized=host.clientWidth<600,last=0,disposed=false,lastSchema="",latest=null;
-  const renderMinimized=()=>{body.hidden=minimized;panel.classList.toggle("is-minimized",minimized);minimize.textContent=minimized?"＋":"−";minimize.setAttribute("aria-expanded",String(!minimized));minimize.setAttribute("aria-label",minimized?"Espandi assistente scambi":"Minimizza assistente scambi");};
+  const renderMinimized=()=>{body.hidden=minimized;panel.classList.toggle("is-minimized",minimized);minimize.textContent=minimized?"＋":"−";minimize.setAttribute("aria-expanded",String(!minimized));minimize.setAttribute("aria-label",minimized?"Expand switch assistant":"Minimize switch assistant");};
   const onMinimize=()=>{minimized=!minimized;renderMinimized();};
   minimize.addEventListener("click",onMinimize);renderMinimized();
   function refresh(force=false) {
@@ -70,17 +70,17 @@ function mountNextSwitchHUD({host,network,getState,now=()=>performance.now()}) {
     const {preview,safety,trainName,inverting,controls}=latest;
     const next=preview.next,uncertain=preview.uncertain || preview.stop==="invalid" || !next && preview.stop==="limit";
     set("nextSwitchTrain",trainName);
-    set("nextSwitchName",next?next.site.name:uncertain?"Percorso non determinabile":"Percorso libero da deviatoi");
-    find("nextSwitchName").title=next?.site.controls.length>1?"Due comandi condividono questo punto nel tracciato simulato":"";
+    set("nextSwitchName",next?next.site.name:uncertain?"Route unknown":"No switches ahead");
+    find("nextSwitchName").title=next?.site.controls.length>1?"Two controls share this point on the simulated track":"";
     set("nextSwitchCompact",next?distanceLabel(next.distance):uncertain?"?":"—");
-    set("nextSwitchDistance",next?`${distanceLabel(next.distance)} · lungo binario` : preview.stop==="terminal"?`Fine binario a ${distanceLabel(preview.distance)}`:"");
-    set("nextSwitchPosition",next?next.site.controls.map((id)=>`${id}: ${controls.find((s)=>s.id===id)?.on?"deviato":"diritto"}`).join(" · "):"");
-    set("nextSwitchDestination",next?.destination?`Uscita prevista: ${next.destination}`:"Destinazione non determinata");
+    set("nextSwitchDistance",next?`${distanceLabel(next.distance)} · along track` : preview.stop==="terminal"?`End of track in ${distanceLabel(preview.distance)}`:"");
+    set("nextSwitchPosition",next?next.site.controls.map((id)=>`${id}: ${controls.find((s)=>s.id===id)?.on?"diverging":"straight"}`).join(" · "):"");
+    set("nextSwitchDestination",next?.destination?`Expected exit: ${next.destination}`:"Destination unknown");
     const warnings=[];
     if(safety?.blocked)warnings.push(safety.message);
-    if(preview.stop==="misaligned")warnings.push("Scambio non allineato: percorso interrotto");
-    if(uncertain)warnings.push(preview.stop==="history-conflict"?"Percorso memorizzato diverso dallo scambio: anteprima interrotta":"Dati insufficienti: anteprima interrotta");
-    if(inverting)warnings.push("Frenata per inversione: mostrato il verso effettivo");
+    if(preview.stop==="misaligned")warnings.push("Switch misaligned: route blocked");
+    if(uncertain)warnings.push(preview.stop==="history-conflict"?"Cached route differs from switch selection: preview stopped":"Insufficient data: preview stopped");
+    if(inverting)warnings.push("Braking to reverse: showing actual travel direction");
     set("nextSwitchWarning",warnings.join(". "));
     find("nextSwitchWarning").hidden=!warnings.length;
     panel.classList.toggle("has-warning",warnings.length>0);

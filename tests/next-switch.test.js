@@ -23,7 +23,7 @@ test('every WX entrance uses the real selection in both states, with exact five 
   for(const id of ['WX-A','WX-B']){const site=topology.byControl.get(id);
     for(const node of site.nodes)for(const port of n.nodes[node].filter(p=>!site.internal.includes(p.edge)))for(const on of [[],[id]]){
       const edge=n.edges[port.edge],p=preview(edge.id,port.end?edge.length-5:5,port.end?1:-1,on);
-      assert.equal(p.next.site.id,id);assert.ok(Math.abs(p.next.distance-5)<1e-7);assert.ok(p.next.destination.startsWith('Anello'));
+      assert.equal(p.next.site.id,id);assert.ok(Math.abs(p.next.distance-5)<1e-7);assert.ok(['Inner loop','Middle loop','Outer loop'].includes(p.next.destination));
       const outgoing=n.edges[p.next.outgoing.edge];assert.equal(outgoing.requiredState,on.length===1);
     }
   }
@@ -64,5 +64,5 @@ test('schematic and temporary red ribbon derive exactly from canonical paths wit
   const before=JSON.stringify(n),p=preview('T33',10,-1,['WX-A']),schema=schematicPaths(n,p);assert.equal(schema.base.length,4);assert.ok(schema.selected.some(s=>s.edge==='WX-A:up'));
   const points=previewPoints(n,p,500),g=routeRibbonGeometry(points,2);assert.ok(g.attributes.position.array.every(Number.isFinite));assert.equal(g.attributes.position.getY(0),Math.fround(8.4));g.dispose();
   const scene=new THREE.Scene(),highlight=createRouteHighlight(scene);highlight.update(points,true);assert.equal(highlight.root.visible,true);highlight.update([],false);assert.equal(highlight.root.visible,false);highlight.dispose();assert.equal(scene.children.length,0);
-  assert.equal(JSON.stringify(n),before);assert.equal(distanceLabel(1250),'1,25 m');
+  assert.equal(JSON.stringify(n),before);assert.equal(distanceLabel(1250),'1.25 m');
 });

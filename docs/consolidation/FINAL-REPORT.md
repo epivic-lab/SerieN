@@ -30,8 +30,8 @@ Codice applicativo verificato: **`f3cf1b6179f70cf8b02fc17c446a0eb4a4c04987`**. B
 
 Risoluzioni browser: 1440×1000, 1024×900, 768×1024 e 390×844. Un solo contesto WebGL. Venti reset: geometrie 344→344. Nessun errore JavaScript bloccante. Chromium/SwiftShader non certifica prestazioni GPU o gesti su tablet fisico.
 
-## Accettazione ancora aperta
+## Verifiche fisiche trasferite ad attività successive
 
-La circolazione e l'interfaccia sono operative. **Non è dichiarata la validazione metrologica completa della Fase 0.** Mancano riscontri fisici o CAD autorevoli per il profilo interno dei WX310, l'accettazione dei piccoli fit angolari dei pezzi speciali, l'origine effettiva sul tavolato e i punti di fouling/lunghezze utili. Questi limiti non vengono coperti con connessioni o misure inventate. Occorre inoltre un collaudo touch e prestazionale sui tablet reali di destinazione.
+La Fase 0 software è chiusa e accettata dall’utente. **La baseline non costituisce una certificazione metrologica del plastico fisico.** Mancano riscontri fisici o CAD autorevoli per il profilo interno dei WX310, l'accettazione dei piccoli fit angolari dei pezzi speciali, l'origine effettiva sul tavolato e i punti di fouling/lunghezze utili. Questi limiti non vengono coperti con connessioni o misure inventate. Occorre inoltre un collaudo touch e prestazionale sui tablet reali di destinazione.
 
 Il workflow Pages comprende controllo di rigenerazione, test parser, test Node, build e distribuzione di asset e documentazione; il suo esito e il commit finale pubblicato sono indicati nella consegna in chat e consultabili nel link al workflow sopra.

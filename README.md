@@ -1,8 +1,8 @@
-# SerieN · Autumn Railways v0.8
+# SerieN · Autumn Railways v0.9
 
-Simulatore ferroviario web in scala N su base 150×70 cm. [Gioca](https://epivic-lab.github.io/SerieN/?v=0.8.0) · [Planimetria tecnica](docs/jmri-layout/layout-canonical.svg) · [Grafo completo](docs/jmri-layout/canonical-graph.json) · [Report Fase 0](docs/consolidation/README.md).
+Simulatore ferroviario web in scala N su base 150×70 cm. [Gioca](https://epivic-lab.github.io/SerieN/?v=0.9.0) · [Planimetria tecnica](docs/jmri-layout/layout-canonical.svg) · [Grafo completo](docs/jmri-layout/canonical-graph.json) · [Report Fase 0](docs/consolidation/README.md).
 
-Tre anelli R249/R282/R315, due WX310, quattro tronchini, runaround e fascio merci diagonale. La versione 0.8 integra l'export JMRI nel motore e nel rendering: **la topologia è operativa e collaudata; i profili interni WX310 e le quote utili del plastico fisico richiedono ancora verifica**. Non è una dima esecutiva certificata. Nessuna galleria. Progetto indipendente: non invia comandi Z21 reali e non dipende da altri repository.
+Tre anelli R249/R282/R315, due WX310, quattro tronchini, runaround e fascio merci diagonale. La Fase 0 è chiusa e accettata sulla baseline v0.8 (`d118de0`). La Fase 1 introduce la plancia con altezza più che dimezzata, miniature affiancate e interfaccia inglese: [misure e collaudo](docs/phase-1/README.md). Il simulatore integra l'export JMRI nel motore e nel rendering: **la topologia è operativa e collaudata; i profili interni WX310 e le quote utili del plastico fisico richiedono ancora verifica**. Non è una dima esecutiva certificata. Nessuna galleria. Progetto indipendente: non invia comandi Z21 reali e non dipende da altri repository.
 
 ## Avvio
 
@@ -18,12 +18,12 @@ Aprire `http://localhost:8000`. `npm start` compila `dist/game.js` e serve il si
 
 ## Comandi
 
-- Ogni consolle ha velocità, direzione, arresto, luci, aggancio e sgancio indipendenti. Le tre consolle seguono la recenza di selezione; `＋ Convoglio` aggiunge una quarta locomotiva ferma nel tronchino est. Un convoglio nascosto continua la simulazione. Bordo ambra per quello selezionato.
-- **STOP TUTTI** arresta tutti i convogli, inclusi quelli nascosti. Spazio arresta il selezionato quando il focus non è su un controllo. Pausa sospende la simulazione; Reset ripristina la sessione.
+- Ogni consolle ha velocità, direzione, arresto, luci, aggancio e sgancio indipendenti. Le tre consolle seguono la recenza di selezione; `＋ Add train` aggiunge una quarta locomotiva ferma nel tronchino est. Un convoglio nascosto continua la simulazione. Bordo ambra per quello selezionato.
+- **STOP ALL** arresta tutti i convogli, inclusi quelli nascosti. Spazio arresta il selezionato quando il focus non è su un controllo. Pausa sospende la simulazione; Reset ripristina la sessione.
 - Le miniature sono PNG ricavati dai modelli realmente utilizzati. Le minimappe condividono il tracciato canonico e mostrano il centro della rispettiva locomotiva; un clic centra la camera.
 - Otto comandi scambi, con protezione per occupazione e avvicinamento. Le manovre nel runaround richiedono inversioni reali sui rami comuni; i convogli troppo lunghi non entrano nel breve tronchino ovest.
-- Next Switch HUD minimizzabile: scambio successivo, distanza lungo i binari, schema reale, stato e destinazione quando determinabile. Il pulsante **Itinerario** nella barra camera mostra per 15 secondi il percorso previsto; un secondo clic lo spegne. Il rosso non indica via libera.
-- Mouse/touch per ruotare o trascinare, rotellina/pinch e +/− per zoom; Standard ripristina il panorama, Segui insegue la locomotiva selezionata. Un gesto manuale interrompe l'inseguimento.
+- Next Switch HUD minimizzabile: scambio successivo, distanza lungo i binari, schema reale, stato e destinazione quando determinabile. Il pulsante **Route** nella barra camera mostra per 15 secondi il percorso previsto; un secondo clic lo spegne. Il rosso non indica via libera.
+- Mouse/touch per ruotare o trascinare, rotellina/pinch e +/− per zoom; Home ripristina il panorama, Follow insegue la locomotiva selezionata. Un gesto manuale interrompe l'inseguimento.
 
 I rotabili Kenney si selezionano a lato: hanno spaziatura calcolata dai rispettivi ganci e dimensioni, non dal passo dei modelli DB. Il cambio di modelli viene rifiutato quando i veicoli più lunghi non entrano nel percorso disponibile. Giorno/notte, missioni, stazione e campagna autunnale sono conservati. I profili Alta/Cinema aggiungono ombre e postproduzione; Leggera riduce il costo grafico.
 
@@ -57,6 +57,7 @@ npm run build
 Per i test browser opzionali servono Python Playwright, Chromium e il server locale attivo:
 
 ```sh
+python3 tests/browser-phase-one.py
 python3 tests/browser-phase-zero.py
 python3 tests/browser-train-deck.py
 python3 tests/browser-consist.py
@@ -65,13 +66,13 @@ python3 tests/browser-smoke.py
 
 `SERIEN_URL` e `CHROMIUM_PATH` permettono server/browser diversi. La diagnostica esiste soltanto con `?diagnostics=1`; usa gli stessi treni e lo stesso motore dell'applicazione. Il test Fase 0 avanza deterministicamente la simulazione reale e verifica i tre anelli nei due sensi, comandi, quarto convoglio, minimappe, HUD, manovra sul runaround, arresti, modelli e risoluzioni responsive. I test aggiuntivi verificano fallback immagini, accoppiamento, reset e strumenti camera. Risultati e schermate: [consolidamento](docs/consolidation/README.md), [plancia](docs/train-deck/browser-result.json).
 
-I test software non certificano FPS su GPU desktop/tablet né gesti su un dispositivo touch reale. Il [report tecnico](docs/consolidation/README.md) distingue le verifiche eseguite dai punti ancora manuali: profilo dei WX310, piccoli fit dei pezzi speciali, origine sul tavolato, punti di fouling e lunghezze utili. La chiusura metrologica della Fase 0 resta subordinata a questi riscontri.
+I test software non certificano FPS su GPU desktop/tablet né gesti su un dispositivo touch reale. Il [report tecnico](docs/consolidation/README.md) distingue le verifiche eseguite dai punti ancora manuali: profilo dei WX310, piccoli fit dei pezzi speciali, origine sul tavolato, punti di fouling e lunghezze utili. Questi riscontri restano limiti noti per attività successive; la chiusura software della Fase 0 è stata accettata dall’utente.
 
 ## Pubblicazione e ripristino
 
 Il workflow `.github/workflows/pages.yml`, attivato da push su `main`, verifica la rigenerazione deterministica del grafo, parser, test Node e build; pubblica pagina, CSS, bundle, asset e documentazione tramite GitHub Pages. I sorgenti e l'archivio ZIP originale Kenney non vengono distribuiti nel bundle del gioco. I test browser richiedono l'ambiente di collaudo descritto sopra e sono eseguiti separatamente.
 
-Versione pubblicata precedente: `408cc5f` (v0.7). Punto di ripristino della ripresa: `b7de605`, branch `restore/phase-zero-intake`. Stato iniziale e pulizia: [audit](docs/consolidation/INTAKE.md). Ricaricare la pagina riavvia la sessione; non esiste persistenza dello stato dei convogli.
+Baseline Fase 0 pubblicata e accettata: `d118de0` (v0.8). Punto di ripristino della ripresa: `b7de605`, branch `restore/phase-zero-intake`. Stato iniziale e pulizia: [audit](docs/consolidation/INTAKE.md). Ricaricare la pagina riavvia la sessione; non esiste persistenza dello stato dei convogli.
 
 ## Asset e limiti visivi
 

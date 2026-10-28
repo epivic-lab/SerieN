@@ -13,21 +13,21 @@ function mountTrainDeck({host,tabs,network,getTrains,getSelected,isPaused,onSele
   function setThumbnail(img,train) {
     const key=thumbnailKey(train);
     if(img.dataset.thumbnailKey!==key){img.dataset.thumbnailKey=key;img.dataset.fallback="false";img.src=thumbnailURL(train);}
-    img.alt=img.dataset.fallback==="true"?`Miniatura di ${train.name} non disponibile`:`Locomotiva ${train.name}, vista a tre quarti`;
+    img.alt=img.dataset.fallback==="true"?`Thumbnail unavailable for ${train.name}`:`Locomotive ${train.name}, three-quarter view`;
   }
   function prepareImage(img) {
     img.decoding="async";img.width=320;img.height=160;
-    img.onerror=()=>{if(img.dataset.fallback!=="true"){img.dataset.fallback="true";img.src=THUMBNAIL_FALLBACK;img.alt="Miniatura del locomotore non disponibile";}};
+    img.onerror=()=>{if(img.dataset.fallback!=="true"){img.dataset.fallback="true";img.src=THUMBNAIL_FALLBACK;img.alt="Locomotive thumbnail unavailable";}};
   }
   function makeCard(train) {
-    const root=document.createElement("article");root.className="trainConsole";root.dataset.consoleTrain=train.id;root.setAttribute("aria-label",`Consolle ${train.name}`);
-    root.innerHTML=`<header class="trainConsoleHeading"><button type="button" class="trainConsoleSelect"><strong class="trainConsoleName"></strong></button><span class="trainConsoleState"></span></header><span class="trainConsoleDescription"></span><img class="locomotiveThumbnail" draggable="false"><button type="button" class="railwayMiniMap"><svg viewBox="${MAP_VIEWBOX}" preserveAspectRatio="xMidYMid meet" role="img"><use href="#${symbolId}"/><circle class="trainMapGlow" r="34"/><circle class="trainMapMarker" r="17"/></svg><span>Centra sul treno ↗</span></button><div class="trainConsoleSpeed"><label>Velocità <output></output><input type="range" min="0" max="100" step="1"></label></div><div class="trainConsoleCommands"><button type="button" data-command="reverse">⇄ <span>Direzione</span></button><button type="button" data-command="stop">■ <span>Arresta</span></button><button type="button" data-command="lights">☼ <span>Luci</span></button></div><footer class="trainConsoleCoupling"><span class="trainConsoleCars"></span><button type="button" data-command="uncouple">− Sgancia</button><button type="button" data-command="couple">+ Aggancia</button></footer><span class="trainConsoleRoute" hidden></span>`;
+    const root=document.createElement("article");root.className="trainConsole";root.dataset.consoleTrain=train.id;root.setAttribute("aria-label",`Controls for ${train.name}`);
+    root.innerHTML=`<header class="trainConsoleHeading"><button type="button" class="trainConsoleSelect"><strong class="trainConsoleName"></strong><span class="trainConsoleDescription"></span></button><div class="trainConsoleStatus"><span class="trainConsoleState"></span><span class="trainConsoleCars"></span></div></header><div class="trainConsoleVisuals"><img class="locomotiveThumbnail" draggable="false"><button type="button" class="railwayMiniMap"><svg viewBox="${MAP_VIEWBOX}" preserveAspectRatio="xMidYMid meet" role="img"><use href="#${symbolId}"/><circle class="trainMapGlow" r="34"/><circle class="trainMapMarker" r="17"/></svg></button></div><div class="trainConsoleSpeed"><label><span>Speed</span><input type="range" min="0" max="100" step="1"><output></output></label></div><div class="trainConsoleCommands"><button type="button" data-command="reverse" title="Reverse direction" aria-label="Reverse direction">⇄ <span>Reverse</span></button><button type="button" data-command="stop" title="Stop this train" aria-label="Stop this train">■ <span>Stop</span></button><button type="button" data-command="lights" title="Toggle headlights" aria-label="Toggle headlights">☼ <span>Lights</span></button><button type="button" data-command="uncouple" title="Uncouple the last wagon" aria-label="Uncouple the last wagon"><svg viewBox="0 0 28 18" aria-hidden="true"><path d="M9 12H6a4 4 0 010-8h5m8 0h3a4 4 0 010 8h-5M10 8h8M11 16h6"/></svg><span>Uncouple</span></button><button type="button" data-command="couple" title="Couple the nearest wagon" aria-label="Couple the nearest wagon"><svg viewBox="0 0 28 18" aria-hidden="true"><path d="M9 12H6a4 4 0 010-8h5m8 0h3a4 4 0 010 8h-5M10 8h8M11 16h6m-3-3v6"/></svg><span>Couple</span></button></div><span class="trainConsoleRoute" hidden></span>`;
     const find=(s)=>root.querySelector(s),img=find("img"),slider=find("input"),map=find(".railwayMiniMap"),marker=find(".trainMapMarker"),glow=find(".trainMapGlow");
     prepareImage(img);
     const select=()=>onSelect(train.id);
     find(".trainConsoleSelect").onclick=select;
     img.onclick=select;
-    slider.setAttribute("aria-label",`Velocità ${train.name}`);
+    slider.setAttribute("aria-label",`Speed of ${train.name}`);
     slider.onpointerdown=select;
     slider.oninput=()=>{const value=Number(slider.value);onSelect(train.id);onSpeed(train.id,value);};
     for(const [action,callback] of Object.entries({reverse:onReverse,stop:onStop,lights:onLights,uncouple:onUncouple,couple:onCouple}))find(`[data-command="${action}"]`).onclick=()=>{onSelect(train.id);callback(train.id);};
@@ -51,15 +51,15 @@ function mountTrainDeck({host,tabs,network,getTrains,getSelected,isPaused,onSele
         selector.innerHTML='<img draggable="false" alt=""><span><strong></strong><small></small></span>';
         prepareImage(selector.querySelector("img"));selector.onclick=()=>onSelect(train.id);selectors.set(train.id,selector);tabs.append(selector);
       }
-      selector.classList.toggle("active",train.id===active);selector.setAttribute("aria-pressed",String(train.id===active));setThumbnail(selector.querySelector("img"),train);setText(selector.querySelector("strong"),train.name);setText(selector.querySelector("small"),train.mode==="loop"?`ANELLO ${train.loop+1}`:"FASCIO MERCI");
+      selector.classList.toggle("active",train.id===active);selector.setAttribute("aria-pressed",String(train.id===active));setThumbnail(selector.querySelector("img"),train);setText(selector.querySelector("strong"),train.name);setText(selector.querySelector("small"),train.mode==="loop"?`LOOP ${train.loop+1}`:"FREIGHT YARD");
       const card=cards.get(train.id);if(!card)continue;
       const selected=train.id===active;
-      card.root.classList.toggle("is-active",selected);card.root.setAttribute("aria-label",`Consolle ${train.name}`);
-      setThumbnail(card.img,train);setText(card.name,train.name);setText(card.description,train.desc);setText(card.route,train.mode==="loop"?`ANELLO ${train.loop+1}`:network.edges[train.section]?.role?.startsWith("runaround")?"RUNAROUND LUNGO":"COMPARTO MERCI");
-      card.map.setAttribute("aria-label",`Centra la camera su ${train.name}`);card.map.querySelector("svg").setAttribute("aria-label",`Posizione della locomotiva ${train.name} sul tracciato`);
-      card.slider.setAttribute("aria-label",`Velocità ${train.name}`);
+      card.root.classList.toggle("is-active",selected);card.root.setAttribute("aria-label",`Controls for ${train.name}`);
+      setThumbnail(card.img,train);setText(card.name,train.name);setText(card.description,train.desc);card.description.title=train.desc;setText(card.route,train.mode==="loop"?`LOOP ${train.loop+1}`:network.edges[train.section]?.role?.startsWith("runaround")?"RUNAROUND":"FREIGHT YARD");
+      card.map.setAttribute("aria-label",`Focus camera on ${train.name}`);card.map.title=`Focus camera on ${train.name}`;card.map.querySelector("svg").setAttribute("aria-label",`Position of locomotive ${train.name} on the track plan`);
+      card.slider.setAttribute("aria-label",`Speed of ${train.name}`);
       if(Number(card.slider.value)!==train.speed)card.slider.value=String(train.speed);
-      setText(card.output,`${train.speed}%`);setText(card.cars,`${train.cars} carri`);
+      setText(card.output,`${train.speed}%`);setText(card.cars,`${train.cars} ${train.cars===1?"wagon":"wagons"}`);
       card.commands.lights.classList.toggle("active",train.lights);card.commands.lights.setAttribute("aria-pressed",String(train.lights));
       card.commands.reverse.classList.toggle("active",train.dir<0);card.commands.reverse.setAttribute("aria-pressed",String(train.dir<0));
       if(selected){

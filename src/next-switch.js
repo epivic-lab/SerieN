@@ -44,8 +44,8 @@ function destinationFor(network, port) {
   const edge = network.edges[port.edge];
   if (!edge) return null;
   if (network.canonical) {
-    if(edge.lane!==undefined)return ["Anello interno","Anello centrale","Anello esterno"][edge.lane];
-    if(edge.role==="crossover")return ["Anello interno","Anello centrale","Anello esterno"][port.end?edge.fromLane:edge.toLane];
+    if(edge.lane!==undefined)return ["Inner loop","Middle loop","Outer loop"][edge.lane];
+    if(edge.role==="crossover")return ["Inner loop","Middle loop","Outer loop"][port.end?edge.fromLane:edge.toLane];
     return edge.destination??null;
   }
   return null;
@@ -128,19 +128,19 @@ function occupiedRanges(network, journey, offset, couplers = null) {
 }
 
 function siteSafety(site, occupied, moving) {
-  if (!site) return { blocked: true, kind: "unknown", message: "Dati di sicurezza insufficienti" };
+  if (!site) return { blocked: true, kind: "unknown", message: "Insufficient safety data" };
   if (site.protectedRanges.some((a) => occupied.some((b) => a.edge === b.edge && a.min <= b.max + EPS && b.min <= a.max + EPS))) {
-    return { blocked: true, kind: "occupied", message: "Zona scambio occupata · manovra bloccata" };
+    return { blocked: true, kind: "occupied", message: "Switch area occupied · operation blocked" };
   }
   for (const train of moving) {
     if (Math.abs(train.velocity) <= 0.1) continue;
     const encounter = train.preview.encounters.find((e) => e.site.id === site.id);
     const speed = Math.abs(train.velocity);
     const margin = (train.leadingExtent ?? 48) + 20 + speed * 0.6 + speed * speed / 200;
-    if (train.preview.uncertain && train.preview.distance <= margin) return { blocked:true, kind:"unknown", message:"Itinerario in avvicinamento non determinabile · manovra bloccata" };
-    if (encounter && encounter.distance <= margin) return { blocked: true, kind: "approaching", message: "Convoglio in avvicinamento · manovra bloccata" };
+    if (train.preview.uncertain && train.preview.distance <= margin) return { blocked:true, kind:"unknown", message:"Approach route unknown · operation blocked" };
+    if (encounter && encounter.distance <= margin) return { blocked: true, kind: "approaching", message: "Train approaching · operation blocked" };
   }
-  return { blocked: false, kind: "unlocked", message: "Nessun blocco di manovra rilevato" };
+  return { blocked: false, kind: "unlocked", message: "No switch operation lock detected" };
 }
 
 function schematicPaths(network, preview) {

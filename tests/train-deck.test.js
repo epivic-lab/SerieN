@@ -76,8 +76,8 @@ test("thumbnail identity follows the actual visible model, including fallback af
   assert.equal(thumbnailURL(t),"./assets/locomotive-thumbnails/kenney-diesel.png");
   delete t.group.userData.assetDimensions;
   assert.equal(thumbnailKey(t),"native-diesel");
-  assert.equal(operatingState({velocity:0,speed:0}),"Fermo");
-  assert.equal(operatingState({velocity:20,dir:-1}),"In marcia · retromarcia");
+  assert.equal(operatingState({velocity:0,speed:0}),"Stopped");
+  assert.equal(operatingState({velocity:20,dir:-1}),"Moving · reverse");
 });
 test("six distinct transparent thumbnails are tied to their real model sources",()=>{
   const root=new URL("../assets/locomotive-thumbnails/",import.meta.url);
