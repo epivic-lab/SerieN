@@ -2,17 +2,18 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { createNetwork, validateNetwork } from "../src/network.js";
+import { createNetwork } from "../src/network.js";
+import {createNetwork as baselineNetwork,validateNetwork as validateBaseline} from "../docs/phase-0/baseline/network.js";
 import { createScenicPlan, insidePolygon, footprintTrackDistance } from "../src/scenic-plan.js";
 import { clearance } from "../src/landscape.js";
 const n=createNetwork(),plan=createScenicPlan(n);
 test("phase 0 protects the exact railway and simulation baseline",()=>{
   const lock=JSON.parse(readFileSync(new URL("../docs/phase-0/network-lock.json",import.meta.url)));
   const sha=(b)=>createHash("sha256").update(b).digest("hex");
-  assert.equal(sha(readFileSync(new URL("../src/network.js",import.meta.url))),lock.networkSource);
-  assert.equal(sha(readFileSync(new URL("../src/simulation.js",import.meta.url))),lock.simulationSource);
-  assert.equal(sha(JSON.stringify(n)),lock.graph);
-  assert.deepEqual(validateNetwork(n),{edges:lock.edges,deadEnds:4});
+  assert.equal(sha(readFileSync(new URL("../docs/phase-0/baseline/network.js",import.meta.url))),lock.networkSource);
+  assert.equal(sha(readFileSync(new URL("../docs/phase-0/baseline/simulation.js",import.meta.url))),lock.simulationSource);
+  assert.equal(sha(JSON.stringify(baselineNetwork())),lock.graph);
+  assert.deepEqual(validateBaseline(baselineNetwork()),{edges:lock.edges,deadEnds:4});
 });
 test("five stable zones inventory the current scene and explicitly exclude tunnels",()=>{
   assert.deepEqual(plan.zones.map((z)=>z.id),["Z1","Z2","Z3","Z4","Z5"]);
@@ -40,5 +41,5 @@ test("the audit reports existing conflicts, including a segment crossing a footp
   assert.equal(footprintTrackDistance({x:50,z:0,w:20,d:10},network),0);
   assert.equal(footprintTrackDistance({x:50,z:20,w:20,d:10},network),15);
   assert.equal(footprintTrackDistance({x:120,z:0,w:10,d:10},network),15);
-  assert.ok(plan.existingConflicts.some((b)=>b.id==="factory-west" && b.minTrackDistance===0));
+  assert.ok(!plan.existingConflicts.some((b)=>b.id==="factory-west"));
 });

@@ -66,11 +66,26 @@ def s_curve(a,b,radius,first,last=None,center=0):
     points[-1]=b.copy()
     return points,{'kind':'tangent-double-arc','radius':radius,'angle':math.degrees(theta),'lead':first,'trailing':last,'centerStraight':center,'profileCertified':False}
 
-def build():
+def build(tolerance_mm=2.5):
     with tempfile.TemporaryDirectory() as temp,contextlib.redirect_stdout(io.StringIO()):
-        d=audit.audit(ROOT/'docs/jmri-layout/source.xml',Path(temp))
+        d=audit.audit(ROOT/'docs/jmri-layout/source.xml',Path(temp),tolerance_mm)
     source_nodes=d['normalizedGraph']['nodes'];nodes={n['id']:{'id':n['id'],**n['world'],'aliases':n['aliases'],'terminal':n['type']=='END_BUMPER'} for n in source_nodes}
     aliases={alias:n['id'] for n in source_nodes for alias in n['aliases']}
+    # JMRI rounds to 1mm. The original PDF explicitly names R249/282/315,
+    # with 45-degree pieces. Recover those nominal axes, recording every
+    # submillimetre change rather than retaining slightly eccentric circles.
+    rounding_fits=[]
+    for n in nodes.values():
+        incident=[s for s in d['segments'] if s['angle']==45 and n['id'] in [aliases[s['from']],aliases[s['to']]]]
+        if not incident:continue
+        radius=min([249,282,315],key=lambda r:abs(r-incident[0]['geometry']['radius']))
+        cx=378 if n['x']<750 else 1122
+        angle=round(math.atan2(n['z']-350,n['x']-cx)/(math.pi/4))*math.pi/4
+        x,z=cx+radius*math.cos(angle),350+radius*math.sin(angle)
+        change=math.hypot(x-n['x'],z-n['z'])
+        if change>1.1:raise ValueError('Nominal Kato fit exceeds export rounding '+n['id'])
+        if change>1e-8:rounding_fits.append({'node':n['id'],'original':{'x':n['x'],'z':n['z']},'fitted':{'x':x,'z':z},'distanceMm':change,'reason':'PDF nominal radius and 45-degree Kato piece; XML coordinate rounding'})
+        n['x'],n['z']=x,z
     edges=[];controllers=[]
     def add(id,a,b,points=None,shape=None,**meta):
         a,b=aliases.get(a,a),aliases.get(b,b)
@@ -84,7 +99,15 @@ def build():
     for e in d['normalizedGraph']['edges']:
         if e['kind']!='track':continue
         s=originals[e['id']];a,b=({k:nodes[n][k] for k in ['x','z']} for n in [e['from'],e['to']])
-        points,shape=arc(a,b,s['angle'],s['flip']) if s['angle'] else ([a,b],{'kind':'line'})
+        if s['angle']:
+            angle=s['angle']
+            if angle==15:
+                chord=math.hypot(b['x']-a['x'],b['z']-a['z'])
+                angle=math.degrees(2*math.asin(chord/(2*481)))
+            points,shape=arc(a,b,angle,s['flip'])
+            shape['sourceAngle']=s['angle']
+            if s['angle']==15:shape['nominalRadius']=481;shape['nominalAngle']=15
+        else:points,shape=[a,b],{'kind':'line'}
         lane=None
         if s['angle']==45:lane=min(range(3),key=lambda i:abs([249,282,315][i]-shape['radius']))
         elif abs(a['z']-b['z'])<1e-6:
@@ -102,8 +125,10 @@ def build():
         sw,name=mapping[t['id']];a,b,c=({k:nodes[aliases[t['ports'][p]]][k] for k in ['x','z']} for p in 'ABC')
         heading=math.atan2(b['z']-a['z'],b['x']-a['x']);dx,dz=c['x']-a['x'],c['z']-a['z']
         x=dx*math.cos(heading)+dz*math.sin(heading);y=-dx*math.sin(heading)+dz*math.cos(heading)
-        theta=2*math.atan2(abs(y),x)
+        nominal_radius=718 if t['straightLength']>180 else 481
+        theta=2*math.asin(math.hypot(dx,dz)/(2*nominal_radius))
         points,shape=arc(a,c,math.degrees(theta),y<0)
+        shape['nominalRadius']=nominal_radius;shape['nominalAngle']=15
         for port,pts,sh in [('B',[a,b],{'kind':'line'}),('C',points,shape)]:
             meta={'source':'JMRI ports + tangent circle fit','sourceIds':[t['id']],'confidence':'fitted-internal','unit':t['id'],'switchId':sw,'requiredState':port=='C','role':'yard'}
             if t['id'] in ['TO0','TO3'] and port=='B':meta.update(lane=0,role='mainline')
@@ -128,14 +153,15 @@ def build():
     for id,a,b,c,e in [('WIDEN-L','A28','A44','A3','A46'),('WIDEN-R','A45','A23','A47','A2')]:
         pa,pb=({k:nodes[n][k] for k in ['x','z']} for n in [a,b])
         # PDF library shape: 42mm lead, R481/15deg reverse curves, 20mm exit.
-        # Rounded XML has 33mm rise instead of 32.779mm; retain 15deg, fit
-        # radius (+3.24mm) and the short exit, and record both explicitly.
-        radius=abs(pb['z']-pa['z'])/(2*(1-math.cos(math.pi/12)))
+        # Rounded XML has 33mm rise instead of 32.779mm. Keep R481; fit
+        # sweep (~15.05deg) and the exit length, recording the profile limits.
+        radius=481
         points,shape=s_curve(pa,pb,radius,42)
         if id=='WIDEN-R':
             # Mirror the complete left unit, not merely its vertical offset.
             points=[{'x':pa['x']+pb['x']-p['x'],'z':pa['z']+pb['z']-p['z']} for p in s_curve(pa,pb,radius,42)[0][::-1]]
             shape['lead'],shape['trailing']=shape['trailing'],shape['lead']
+        shape['nominalRadius']=481;shape['nominalAngle']=15
         add(id+':offset',a,b,points,shape,source='PDF 20-051/052 + BOM + XML mouths; documented rounding fit',sourceIds=[a,b],confidence='inferred-profile-unverified',lane=0,role='mainline')
         add(id+':straight',c,e,source='PDF + BOM + XML mouths',sourceIds=[c,e],confidence='inferred-validated-ports',lane=1,role='mainline')
     adjacency={id:[] for id in nodes}
@@ -150,24 +176,47 @@ def build():
             e=next(e for e in edges if e['id']==port['edge']);todo.append(e['to'] if port['end']==0 else e['from'])
     assert len(seen)==len(nodes)
     assert {id for id,ports in adjacency.items() if len(ports)==1}=={'A67','EB39','EB49','EB52'}
-    result={'version':1,'sourceSha256':d['sourceSha256'],'transform':d['coordinateTransform'],'reconciliation':{'toleranceMm':2.5,'maximumTangentMismatchDegrees':5,'joins':d['amendments']['joins'],'zeroLengthAliases':[s for s in d['segments'] if s['zeroLength']],'fourthBuffer':'A67','parallelSeparationMm':33},'nodes':nodes,'aliases':aliases,'edges':edges,'controllers':controllers,'statistics':{'nodes':len(nodes),'edges':len(edges),'components':1,'cycleRank':len(edges)-len(nodes)+1,'terminals':4},'limitations':['XML does not encode the internal physical geometry of six single turnouts or the four missing double-track modules.','Turnout internals are tangent circles constrained by original A/B/C ports; rounded source coordinates prevent manufacturer-exact radii.','WX310 diagonal profiles use a documented secondary catalog fit; physical profile is not certified.','20-051/052 use PDF-derived 15-degree reverse arcs fitted to rounded XML mouths.','Topological validation and physical manufacturing-profile certification are distinct.']}
+    result={'version':1,'sourceSha256':d['sourceSha256'],'transform':d['coordinateTransform'],'reconciliation':{'toleranceMm':tolerance_mm,'maximumTangentMismatchDegrees':5,'joins':d['amendments']['joins'],'nominalRadiusFits':rounding_fits,'zeroLengthAliases':[s for s in d['segments'] if s['zeroLength']],'fourthBuffer':'A67','parallelSeparationMm':33},'nodes':nodes,'aliases':aliases,'edges':edges,'controllers':controllers,'statistics':{'nodes':len(nodes),'edges':len(edges),'components':1,'cycleRank':len(edges)-len(nodes)+1,'terminals':4},'limitations':['XML does not encode the internal physical geometry of six single turnouts or the four missing double-track modules.','Turnout internals keep nominal R481/R718 and original A/B/C ports; small angle/tangent differences follow rounded source endpoints.','WX310 diagonal profiles use a documented secondary catalog fit; physical profile is not certified.','20-051/052 keep nominal R481; the small sweep/exit-length fit to rounded XML mouths is explicitly recorded.','Topological validation and physical manufacturing-profile certification are distinct.']}
+    terminal_specs=[
+        ('A67',['T50','T49'],'TO5:C',['S248','R481-15'],'TO5:AC'),
+        ('EB39',['T30','T48','T29'],'TO5:B',['S62B-A','S124','S248'],'TO5:AB'),
+        ('EB49',['T37','T38'],'TO1:A',['S62B-A','S62'],None),
+        ('EB52',['T39','T46','T47'],'TO4:C',['S62B-A','S248','S248'],'TO4:AC')]
+    by_id={e['id']:e for e in edges}
+    result['terminals']=[]
+    for terminal,chain,port,pieces,internal in terminal_specs:
+        length=sum(by_id[id]['length'] for id in chain)
+        result['terminals'].append({'id':terminal,'chainFromBuffer':chain,'pieceLabelsFromPdf':pieces,'firstTurnoutPort':port,'axisLengthToPortMm':length,'axisLengthToToeMm':length+(by_id[internal]['length'] if internal else 0),'foulingPoint':'not physically established; requires actual vehicle clearance envelope','simulationBudgetMm':max(0,length-30-10),'budgetAssumptions':{'setbackFromTurnoutPortMm':30,'bufferMarginMm':10},'physicalUsefulLengthCertified':False,'terminalConfidence':'inferred endpoint, confirmed by PDF branch' if terminal=='A67' else 'explicit END_BUMPER XML'})
+    result['mainLoops']=[{'lane':lane,'edges':[e['id'] for e in edges if e.get('lane')==lane and not e.get('requiredState')],'length':sum(e['length'] for e in edges if e.get('lane')==lane and not e.get('requiredState'))} for lane in range(3)]
+    result['sources']={'xml':'docs/jmri-layout/source.xml','pdf':'docs/jmri-layout/railmodeller-original.pdf','pdfSha256':hashlib.sha256((ROOT/'docs/jmri-layout/railmodeller-original.pdf').read_bytes()).hexdigest(),'dossier':'docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf','dossierSha256':hashlib.sha256((ROOT/'docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf').read_bytes()).hexdigest(),'partsList':'docs/phase-0/kato-parts.csv','secondaryWxProfile':{'url':'https://github.com/sharkcz/xtrkcad/blob/hg/app/lib/params/kato-n.xtp','warning':'Catalog explicitly describes adjusted geometry; numerical design facts only, not manufacturer certification','radiusInches':22.960,'centralStraightMm':17.924}}
     destination=ROOT/'src/canonical-layout.json';destination.write_text(json.dumps(result,separators=(',',':'))+'\n')
-    (ROOT/'docs/jmri-layout/canonical-graph.json').write_text(json.dumps({**result,'edges':[{k:v for k,v in e.items() if k!='points'} for e in edges]},indent=2)+'\n')
+    (ROOT/'docs/jmri-layout/canonical-graph.json').write_text(json.dumps(result,separators=(',',':'))+'\n')
     for annotated in [True,False]:
         fragments=['<rect width="1500" height="700" fill="#102a27"/>']
-        for e in edges:
+        active_layer=None
+        for e in sorted(edges,key=lambda e:0 if e['confidence']=='explicit' else 2 if 'unverified' in e['confidence'] else 1):
+            layer='explicit' if e['confidence']=='explicit' else 'profile-review' if 'unverified' in e['confidence'] else 'inferred'
+            if layer!=active_layer:
+                if active_layer:fragments.append('</g>')
+                fragments.append(f'<g id="{layer}">');active_layer=layer
             path='M'+' L'.join(f'{p["x"]:.6f},{p["z"]:.6f}' for p in e['points'])
-            color='#d3e4df' if e['confidence']=='explicit' else '#ecb765'
+            color='#d3e4df' if e['confidence']=='explicit' else '#e78ba9' if 'unverified' in e['confidence'] else '#ecb765'
             fragments.append(f'<path id="{html.escape(e["id"])}" d="{path}" fill="none" stroke="{color}" stroke-width="2.5"><title>{html.escape(e["id"]+": "+e["confidence"])}</title></path>')
             if annotated:
                 p=e['points'][len(e['points'])//2];fragments.append(f'<text x="{p["x"]+3:.2f}" y="{p["z"]-5:.2f}">{html.escape(e["id"])}</text>')
+        fragments.append('</g><g id="unresolved"/>')
         for id,n in nodes.items():
             if n['terminal']:fragments.append(f'<circle cx="{n["x"]}" cy="{n["z"]}" r="7" fill="#e47792"/><text x="{n["x"]+10}" y="{n["z"]+17}">{id}</text>')
         if annotated:
+            fragments.append('<text x="1000" y="85">T51 / T52: giunti a lunghezza zero, contratti</text>')
             for c in controllers:fragments.append(f'<text class="control" x="{c["x"]}" y="{c["z"]-19}">{c["id"]} · {c["sourceId"] or c["code"]}</text>')
-            fragments+=['<text x="20" y="685">Bianco: segmenti XML · Ambra: interni e moduli ricostruiti · Rosa: 4 terminali</text>','<text x="800" y="525">Anello interno · R249 / allargamenti</text>','<text x="800" y="610">Anello centrale · R282</text>','<text x="800" y="652">Anello esterno · R315</text>','<text x="540" y="316">Runaround: T40/T42 + T43/TO4:AB/T44</text>']
+            fragments+=['<text x="20" y="685">Bianco: XML · Ambra: connessioni ricostruite · Rosa: profili da verificare e 4 terminali</text>','<text x="800" y="525">Anello interno · R249 / allargamenti</text>','<text x="800" y="610">Anello centrale · R282</text>','<text x="800" y="652">Anello esterno · R315</text>','<text x="540" y="316">Runaround: T40/T42 + T43/TO4:AB/T44</text>']
         svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 700"><style>text{font:10px sans-serif;fill:#f2f0d5;paint-order:stroke;stroke:#102a27;stroke-width:3px}.control{font-size:13px;font-weight:bold}</style>'+''.join(fragments)+'</svg>'
         (ROOT/'docs/jmri-layout'/('layout-canonical.svg' if annotated else 'minimap-canonical.svg')).write_text(svg)
     print(json.dumps(result['statistics']))
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--tolerance-mm',type=float,default=2.5)
+    args=parser.parse_args();build(args.tolerance_mm)

@@ -34,15 +34,10 @@ test("vineyard follows existing hills without invading railway or roads", () => 
     assert.ok(Math.abs(p.z - VINEYARD.z) <= VINEYARD.d / 2);
   }
 });
-test("buffer stops are shown only where their full offset geometry clears other tracks", () => {
-  assert.equal(layout.stops.length + layout.pendingStops.length, 4);
-  assert.deepEqual(layout.stops.map((s) => s.edge).sort(), ["right", "upper"]);
-  assert.deepEqual(layout.pendingStops.map((s) => s.edge).sort(), ["lower", "middle"]);
-  for (const s of layout.stops) {
-    assert.ok(s.minClearance >= 12);
-    assert.equal(s.beamOffset, 34);
-    assert.ok(Math.abs(Math.hypot(s.dx, s.dz) - 1) < 1e-9);
-  }
+test("all four buffers coincide with real canonical terminals without invented extensions",()=>{
+  assert.equal(layout.pendingStops.length,0);assert.equal(layout.stops.length,4);
+  assert.deepEqual(layout.stops.map(s=>s.node).sort(),["A67","EB39","EB49","EB52"]);
+  for(const stop of layout.stops){const node=network.metadata.nodes[stop.node];assert.equal(stop.x,node.x);assert.equal(stop.z,node.z);assert.equal(stop.beamOffset,0);}
 });
 test("passengers remain N-scale and on the reserved passenger platform", () => {
   for (const p of layout.people) {

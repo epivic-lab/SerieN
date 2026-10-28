@@ -25,7 +25,7 @@ test("partial loading and switching back use active metadata without a fixed imp
   assert.throws(()=>couplingDistance({assetDimensions:{},couplers:{back:{x:NaN}}},imported),/Invalid/);
 });
 test("compact consists stay on the route across crossovers and reverse to the same positions",()=>{
-  const n=createNetwork(),route=routing(n,(id)=>id==="WX-A"),j=new Journey(n,"L0-0",35);
+  const n=createNetwork(),route=routing(n,(id)=>id==="WX-A"),j=new Journey(n,"T18",100);
   const {offsets,tail}=consistLayout([stock(40),stock(27),stock(32),stock(25)]);
   assert.ok(j.ensure(j.position-tail,route));
   const initial=offsets.map((d)=>j.locate(j.position-d));
@@ -34,7 +34,7 @@ test("compact consists stay on the route across crossovers and reverse to the sa
     assert.ok(j.move(1,tail,route));
     for(const d of offsets) {
       const p=j.locate(j.position-d);
-      crossed ||= p.edge.startsWith("XA");
+      crossed ||= p.edge.startsWith("WX-A:");
       assert.ok(Number.isFinite(p.x+p.z));
     }
   }
@@ -43,7 +43,7 @@ test("compact consists stay on the route across crossovers and reverse to the sa
   offsets.forEach((d,i)=>assert.deepEqual(j.locate(j.position-d),initial[i]));
 });
 test("detach and immediate recouple preserve the compact wagon position",()=>{
-  const n=createNetwork(),j=new Journey(n,"L1-return",700),route=routing(n,()=>false);
+  const n=createNetwork(),j=new Journey(n,"T0",100),route=routing(n,()=>false);
   const vehicles=[stock(40),stock(27),stock(32)],before=consistLayout(vehicles);
   assert.ok(j.ensure(j.position-before.tail,route));
   const detached=j.locate(j.position-before.offsets.at(-1)),last=vehicles.pop();

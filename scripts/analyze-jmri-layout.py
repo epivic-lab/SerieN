@@ -59,7 +59,8 @@ def graph(nodes,edges,union=None):
         components.append({'id':len(components)+1,'nodes':sorted(members),'edges':sorted(edgeids)})
     return {'vertexCount':len(adjacency),'edgeCount':len(retained),'componentCount':len(components),'cycleRank':len(retained)-len(adjacency)+len(components),'components':components,'openEnds':[id for id,inc in adjacency.items() if len(inc)==1],'isolatedNodes':[id for id,inc in adjacency.items() if not inc],'edges':retained},adjacency
 
-def audit(source,destination):
+def audit(source,destination,tolerance_mm=TOLERANCE_MM):
+    if not 0<tolerance_mm<10:raise ValueError("Endpoint tolerance must be below 10mm; 33mm identifies separate parallel tracks")
     destination.mkdir(parents=True,exist_ok=True)
     original=source.read_bytes()
     if b'<!DOCTYPE' in original:raise ValueError('External DTDs are not used for this audit')
@@ -108,7 +109,7 @@ def audit(source,destination):
     pairs=[]
     for a in raw['openEnds']:
         nearest=sorted((distance(nodes[a],nodes[b]),b) for b in raw['openEnds'] if b!=a)
-        if nearest and nearest[0][0]<=TOLERANCE_MM:
+        if nearest and nearest[0][0]<=tolerance_mm:
             d,b=nearest[0]
             reverse=min((distance(nodes[b],nodes[c]),c) for c in raw['openEnds'] if c!=b)
             if reverse[1]==a and a<b:pairs.append({'a':a,'b':b,'distanceMm':d})

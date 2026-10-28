@@ -1,3 +1,4 @@
+import canonical from "./canonical-layout.json" with {type:"json"};
 import { clearance, forestSites } from "./landscape.js";
 import { buildZoneLayout, FARM, GOODS_OFFICE, VINEYARD } from "./zone-layout.js";
 import { STATION_SPEC } from "./station-building.js";
@@ -19,10 +20,7 @@ const ZONES = [
   { id: "Z4", name: "Ponte e margine destro (senza galleria)", color: "#7c899e", polygons: [[[1260,100],[1480,100],[1480,550],[1240,550],[1190,390]],[[385,45],[448,45],[448,100],[385,100]]] },
   { id: "Z5", name: "Campagna futura sul retro", color: "#9a9d4b", polygons: [[[500,5],[1160,5],[1240,195],[900,230],[600,155]]] }
 ];
-const SWITCH_LANDMARKS = [
-  ["WX-A",595,84],["WX-B",955,51],["Y-IN",812,101],["Y-2",665,168],
-  ["Y-3",410,284],["Y-R1",410,310],["Y-R2",825,247],["Y-4",880,247]
-].map(([id,x,z]) => ({id,x,z,radius:40}));
+const SWITCH_LANDMARKS=canonical.controllers.map(({id,x,z})=>({id,x,z,radius:40}));
 const EXISTING_PROP_GROUPS = [
   {id:"timber-stack",zone:"Z2",x:1106,z:304,w:120,d:30,h:20},
   {id:"water-tower",zone:"Z2",x:915,z:331,w:38,d:38,h:80},
@@ -81,8 +79,7 @@ function createScenicPlan(network) {
     object("Z5.02","Z5",{x:VINEYARD.x,z:VINEYARD.z},{w:VINEYARD.w,d:VINEYARD.d},{status:"existing; position differs from rear countryside target"}),
     ...layout.cargo.map((p) => object(`Z2.cargo.${p.id}`,"Z2",{x:p.x,z:p.z},{w:16,d:16},{rotation:p.rotation,materialVariant:p.type})),
     ...trees.map((t,i) => object(`Z3.tree.${i}`,"Z3",{x:t.x,z:t.z},{w:t.h*.8,d:t.h*.8,h:t.h},{rotation:t.rotation,materialVariant:t.pine?"conifer":t.species,lodPolicy:"instanced; volumetric crown high/cinema"})),
-    ...["upper","middle","lower","right"].map((id) => object(`Z2.track.${id}`,"Z2",{edge:id},null,{status:"existing railway; protected",clearance:"entire edge and connected switches"})),
-    ...["runMain","runAround"].map((id) => object(`Z2.track.${id}`,"Z2",{edge:id},null,{status:"existing railway; protected",clearance:"entire edge and connected switches"})),
+    ...Object.values(network.edges).filter(e=>e.role?.startsWith("runaround")||e.terminal).map(e=>object(`Z2.track.${e.id}`,"Z2",{edge:e.id},null,{status:"canonical railway; protected",clearance:"entire edge and connected switches"})),
     object("Z4.01","Z4",null,null,{status:"excluded by user: no tunnel",lodPolicy:null})
   ];
   // Indicative free centres for small props with radius <=5mm; NOT building lots.
@@ -102,10 +99,10 @@ function createScenicPlan(network) {
     zones:ZONES,switches:SWITCH_LANDMARKS,buildings,trees,catalog,freeCells,existingConflicts,
     freeCellRule:{step:10,maxPropRadius:5,minTrackDistance:24,switchRadius:45,note:"Candidate centres only; polygons are artistic regions, not buildable boundaries. Verify full swept stock, object footprint, small rocks/shrubs and pedestrian access locally."},
     pendingStops:layout.pendingStops,knownGaps:[
-      "Manca l'export RailModeller definitivo: le curve dello scalo sono ricostruite, non certificate CAD Kato.",
+      "Export JMRI integrato: profili interni dei WX310 ricostruiti con provenienza documentata, da verificare sul pezzo fisico.",
       "Cascina e vigneto sono nella metà anteriore; la campagna sul retro resta un obiettivo, senza spostamenti in fase 0.",
-      "Due respingenti (middle/lower) interferirebbero con i binari vicini; nessuna prolunga inventata.",
-      "I fabbricati industriali precedenti restano in posizione; ruolo e accessi richiedono una fase compositiva successiva.",
+      "Quattro terminali riconciliati: i respingenti sono sugli estremi reali, senza prolunghe. Lunghezze utili e fouling richiedono collaudo fisico.",
+      "Il fabbricato ovest è stato spostato per liberare i binari del nuovo grafo; ruolo e accessi restano scenografici.",
       "Posizione del ponte e accesso al sottopasso sono scenografici e richiedono un riferimento misurato del plastico."
     ]};
 }

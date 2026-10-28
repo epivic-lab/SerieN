@@ -21,7 +21,7 @@ class Journey {
     const node = end ? p.to : p.from;
     const choices = this.network.nodes[node].filter((c) => c.edge !== seg.id);
     const next = choose(seg.id, choices, forward);
-    if (!next) return false;
+    if (!next) {this.lastBlock={edge:seg.id,node,reason:choices.length?(choose.reason?.(seg.id,choices)??"undetermined"):"terminal"};return false;}
     const q = this.network.edges[next.edge], sign = forward ? next.end === 0 ? 1 : -1 : next.end === 0 ? -1 : 1;
     this.segments[forward ? "push" : "unshift"]({ id: next.edge, sign, start: forward ? seg.end : seg.start - q.length, end: forward ? seg.end + q.length : seg.start });
     return true;
@@ -53,18 +53,26 @@ class Journey {
   }
 }
 function routing(network,state) {
-  return (current,choices) => {
+  const eligible=(incoming,choices)=>choices.filter((p)=>{
+    const edge=network.edges[p.edge];
+    return !(edge.unit&&edge.unit===incoming.unit) && (!edge.switchId||Boolean(state(edge.switchId))===edge.requiredState);
+  });
+  const choose=(current,choices) => {
     const incoming=network.edges[current];
     if(!incoming)return null;
     if(incoming.switchId && Boolean(state(incoming.switchId))!==incoming.requiredState)return null;
-    const valid=choices.filter((p)=>{
-      const edge=network.edges[p.edge];
-      if(edge.unit && edge.unit===incoming.unit)return false;
-      return !edge.switchId || Boolean(state(edge.switchId))===edge.requiredState;
-    });
+    const valid=eligible(incoming,choices);
     // Never create crossing junctions or B-A-C reversals inside a turnout.
     return valid.length===1?valid[0]:null;
   };
+  choose.reason=(current,choices)=>{
+    const incoming=network.edges[current];
+    if(!choices.length)return "terminal";
+    if(incoming?.switchId&&Boolean(state(incoming.switchId))!==incoming.requiredState)return "misaligned";
+    if(incoming&&eligible(incoming,choices).length>1)return "ambiguous";
+    return choices.some(p=>network.edges[p.edge].switchId)?"misaligned":"no-route";
+  };
+  return choose;
 }
 class FixedClock {
   constructor(step = 1 / 60) {

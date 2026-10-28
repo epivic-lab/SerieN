@@ -1,4 +1,6 @@
-# SerieN — diagnosi dell’export RailModeller Pro / JMRI
+# SerieN — diagnosi iniziale dell’export RailModeller Pro / JMRI
+
+**Documento storico precedente all’integrazione.** La rete attuale e gli esiti sono in [Consolidamento Fase 0](../consolidation/README.md). [SVG canonico](layout-canonical.svg) · [Grafo operativo completo](canonical-graph.json). Le conclusioni qui sotto descrivono la lettura letterale del solo XML, non lo stato attuale del simulatore.
 
 **Esito: l’export è coerente per i pezzi singoli, ma incompleto per quattro moduli multibinario. Non è ancora un grafo utilizzabile per far circolare i treni sui tre anelli.** Nessun aggiornamento del simulatore o del rendering è stato applicato con questa analisi; nessuna galleria prevista.
 

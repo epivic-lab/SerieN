@@ -1,3 +1,5 @@
+> Archivio della baseline v0.7: rete precedente alla migrazione XML. Per il tracciato corrente vedere [consolidamento](../consolidation/README.md) e [SVG canonico](../jmri-layout/layout-canonical.svg). Il lock storico resta verificato sui sorgenti conservati in `baseline/`.
+
 # Fase 0 — inventario e topologia congelata
 
 Fonte: codice attuale, non geometria dell'immagine artistica. Galleria esclusa su richiesta dell'utente.

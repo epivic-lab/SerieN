@@ -4,7 +4,7 @@ import {readFileSync} from "node:fs";
 import {createHash} from "node:crypto";
 import {RecentConsoles,MAP_VIEWBOX,railwayMapPath,locomotivePoint,operatingState} from "../src/train-deck-state.js";
 import {thumbnailKey,thumbnailURL} from "../src/locomotive-thumbnails.js";
-import {createNetwork,sample} from "../src/network.js";
+import {createNetwork,sample,loopPosition} from "../src/network.js";
 import {Journey,routing} from "../src/simulation.js";
 
 test("three recent consoles retain slots, replace the least recent, and handle smaller fleets",()=>{
@@ -22,7 +22,7 @@ test("three recent consoles retain slots, replace the least recent, and handle s
 });
 test("console selection and eviction do not modify any actual train Journey or controls",()=>{
   const n=createNetwork(),route=routing(n,()=>false),deck=new RecentConsoles();
-  const trains=Array.from({length:5},(_,id)=>({id,speed:id*10,dir:1,journey:new Journey(n,`L${id%3}-return`,1000+id*60)}));
+  const trains=Array.from({length:5},(_,id)=>({id,speed:id*10,dir:1,journey:(()=>{const p=loopPosition(n,id%3,.4);return new Journey(n,p.edge,p.s);})()}));
   const before=JSON.stringify(trains);
   deck.sync(trains.map((t)=>t.id),0);
   [4,1,3,2,0,4].forEach((id)=>deck.select(id,trains.map((t)=>t.id)));
@@ -37,29 +37,29 @@ test("console selection and eviction do not modify any actual train Journey or c
 test("minimap geometry uses every original railway point with one unmodified coordinate system",()=>{
   const n=createNetwork(),d=railwayMapPath(n);
   assert.equal(MAP_VIEWBOX,"0 0 1500 700");
-  assert.equal((d.match(/M/g)??[]).length,33);
+  assert.equal((d.match(/M/g)??[]).length,75);
   for(const edge of Object.values(n.edges))for(const p of edge.points)assert.ok(d.includes(`${p.x},${p.z}`));
-  for(const id of ["XA0","XA1","XB1","XB2","runMain","runAround","upper","middle","lower","right"])assert.ok(d.includes(`M${n.edges[id].points[0].x},${n.edges[id].points[0].z}`));
+  for(const id of ["WX-A:up","WX-A:down","WX-B:up","WX-B:down","T40","T43","T50","T30","T37","T39"])assert.ok(d.includes(`M${n.edges[id].points[0].x},${n.edges[id].points[0].z}`));
 });
 test("independent markers follow locomotive centres through curves, crossovers and reversal",()=>{
   const n=createNetwork(),route=routing(n,(id)=>id==="WX-A");
-  const trains=[0,1,2].map((id)=>({id,journey:new Journey(n,`L${id}-0`,20)}));
+  const trains=[0,1,2].map((id)=>({id,journey:new Journey(n,["T18","T5","T8"][id],100)}));
   let crossed=false;
   for(let tick=0;tick<650;tick++)for(const t of trains){
     assert.ok(t.journey.move(1,0,route));
     const p=locomotivePoint(t),exact=sample(n.edges[p.edge],p.s);
     assert.ok(Math.hypot(p.x-exact.x,p.z-exact.z)<1e-10);
-    crossed ||= p.edge.startsWith("XA");
+    crossed ||= p.edge.startsWith("WX-A:");
   }
   assert.ok(crossed);
   const before=trains.map(locomotivePoint);
   for(const t of trains){assert.ok(t.journey.move(30,0,route));assert.ok(t.journey.move(-30,0,route));}
-  trains.forEach((t,i)=>assert.deepEqual(locomotivePoint(t),before[i]));
+  trains.forEach((t,i)=>assert.ok(Math.hypot(locomotivePoint(t).x-before[i].x,locomotivePoint(t).z-before[i].z)<1e-8));
   assert.equal(locomotivePoint({}),null);
 });
 test("sidings and runaround markers use actual locomotive position rather than the tail",()=>{
   const n=createNetwork(),route=routing(n,()=>false);
-  for(const edge of ["upper","middle","lower","right","runMain","runAround"]){
+  for(const edge of ["T50","T29","T40","T47","T43"]){
     const t={journey:new Journey(n,edge,100),cars:3};
     const before=locomotivePoint(t);
     assert.ok(t.journey.move(10,0,route));

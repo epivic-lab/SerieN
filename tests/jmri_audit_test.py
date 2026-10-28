@@ -74,9 +74,35 @@ class AuditTests(unittest.TestCase):
         self.assertAlmostEqual(module.world({'x':56.3,'y':122.4})['x'],260)
         self.assertAlmostEqual(module.world({'x':56.3,'y':122.4})['z'],231)
         self.assertTrue(self.data['noTunnels'])
-    def test_railway_source_files_still_match_the_existing_lock(self):
+    def test_preserved_legacy_sources_match_the_historical_lock(self):
         lock=json.loads((ROOT/'docs/phase-0/network-lock.json').read_text())
         for file,key in [('network.js','networkSource'),('simulation.js','simulationSource')]:
-            self.assertEqual(hashlib.sha256((ROOT/'src'/file).read_bytes()).hexdigest(),lock[key])
+            self.assertEqual(hashlib.sha256((ROOT/'docs/phase-0/baseline'/file).read_bytes()).hexdigest(),lock[key])
+
+    def test_parser_rejects_invalid_source_references_and_duplicate_identifiers(self):
+        for kind in ['reference','duplicate','turnout','dtd']:
+            tree=ET.parse(self.source);editor=tree.getroot().find('LayoutEditor')
+            if kind=='reference':editor.find('tracksegment').set('connect1name','UNKNOWN')
+            if kind=='duplicate':editor.append(ET.fromstring(ET.tostring(editor.find('positionablepoint'))))
+            if kind=='turnout':editor.find('layoutturnout').set('type','8')
+            path=self.out/('bad-'+kind+'.xml');tree.write(path)
+            if kind=='dtd':path.write_text('<!DOCTYPE layout-config SYSTEM "https://invalid.example/test.dtd">'+path.read_text())
+            with self.assertRaises(ValueError):module.audit(path,self.out/('bad-output-'+kind))
+        with self.assertRaises(ValueError):module.audit(self.source,self.out/'bad-tolerance',33)
+    def test_canonical_artifact_is_the_exact_runtime_graph_and_all_sources_are_traceable(self):
+        runtime=(ROOT/'src/canonical-layout.json').read_bytes()
+        self.assertEqual(runtime,(ROOT/'docs/jmri-layout/canonical-graph.json').read_bytes())
+        graph=json.loads(runtime)
+        self.assertEqual(graph['statistics'],{'nodes':70,'edges':75,'components':1,'cycleRank':6,'terminals':4})
+        self.assertEqual({t['id'] for t in graph['terminals']},{'A67','EB39','EB49','EB52'})
+        self.assertTrue(all(not t['physicalUsefulLengthCertified'] for t in graph['terminals']))
+        for key,hashkey in [('pdf','pdfSha256'),('dossier','dossierSha256')]:
+            self.assertEqual(hashlib.sha256((ROOT/graph['sources'][key]).read_bytes()).hexdigest(),graph['sources'][hashkey])
+        ns={'s':'http://www.w3.org/2000/svg'}
+        svg=ET.parse(ROOT/'docs/jmri-layout/layout-canonical.svg').getroot()
+        ids={path.attrib['id'] for path in svg.findall('.//s:path',ns)}
+        self.assertEqual(ids,{e['id'] for e in graph['edges']})
+        self.assertEqual(len(svg.find('s:g[@id="unresolved"]',ns)),0)
+        self.assertIsNotNone(svg.find('s:g[@id="profile-review"]',ns))
 
 if __name__=='__main__':unittest.main()

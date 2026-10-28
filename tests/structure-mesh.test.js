@@ -24,15 +24,15 @@ test("right curves have no tunnel walls, roof or camera obstruction", () => {
   }
 });
 test("bridge spans an open space below deck, not a hidden solid foundation", () => {
-  const w = works(), ray = new THREE.Raycaster(new THREE.Vector3(416, -2, 68), new THREE.Vector3(0, -1, 0), 0, 8);
+  const w = works(), ray = new THREE.Raycaster(new THREE.Vector3(750, -2, 665), new THREE.Vector3(0, -1, 0), 0, 8);
   assert.equal(ray.intersectObject(w.root, true).length, 0);
 });
 test("rail profile rests on sleepers and preserves original railhead height", () => {
   assert.equal(Math.min(...RAIL_PROFILE.map((p2) => p2[1])), 3.55);
   assert.equal(Math.max(...RAIL_PROFILE.map((p2) => p2[1])), 5.95);
-  const p = network.edges["L1-0"], g = railGeometry(p, 1);
+  const p = network.edges.T36, g = railGeometry(p, 1);
   g.computeBoundingBox();
-  assert.ok(g.boundingBox.min.z > 70);
+  assert.ok(g.boundingBox.min.z > 659);
   assert.ok(g.attributes.position.array.every(Number.isFinite));
   g.dispose();
 });

@@ -36,60 +36,7 @@ function createSwitchTopology(network, specs) {
     }
     return {sites,byNode,byControl};
   }
-  const protect = (site, port, budget) => {
-    let current = port;
-    for (let i=0;i<64 && budget>EPS;i++) {
-      const edge=network.edges[current.edge],length=Math.min(budget,edge.length);
-      site.protectedRanges.push({edge:edge.id,min:current.end?edge.length-length:0,max:current.end?edge.length:length});
-      budget-=length;
-      const node=current.end?edge.from:edge.to,choices=network.nodes[node].filter((p)=>p.edge!==edge.id);
-      if(choices.length!==1)break;
-      current=choices[0];
-    }
-  };
-  const add = (id, controls, nodes, internal = []) => {
-    const site = { id, controls, nodes: [...new Set(nodes)], internal, paths: [], protectedRanges: [] };
-    site.name = controls.length === 1 ? specs.find((s) => s.id === controls[0])?.name ?? id : id === "yard-west" ? "Gruppo ovest" : "Gruppo est";
-    for (const control of controls) byControl.set(control, site);
-    for (const node of site.nodes) {
-      if (!network.nodes[node]) throw Error(`Missing switch node: ${node}`);
-      byNode.set(node, site);
-      for (const port of network.nodes[node]) {
-        const edge = network.edges[port.edge], length = Math.min(90, edge.length);
-        const from = port.end ? edge.length : 0, to = port.end ? edge.length - length : length;
-        if (!internal.includes(edge.id)) site.paths.push({ edge: edge.id, from, to, points: pathSection(edge, from, to) });
-        // Protect the complete nominal longest single turnout (186mm) on
-        // incident routes; double crossovers additionally protect their body.
-        protect(site, port, internal.length ? 30 : 186);
-      }
-    }
-    for (const id of internal) {
-      const edge = network.edges[id];
-      site.paths.push({ edge: id, from: 0, to: edge.length, points: edge.points });
-      site.protectedRanges.push({ edge: id, min: 0, max: edge.length });
-    }
-    sites.push(site);
-  };
-  for (const id of ["WX-A", "WX-B"]) {
-    const diagonals = Object.values(network.edges).filter((e) => e.switchId === id);
-    if (!diagonals.length) continue;
-    const nodes = diagonals.flatMap((e) => [e.from, e.to]);
-    const ports = diagonals.flatMap((e) => [e.points[0], e.points.at(-1)]);
-    const xmin = Math.min(...ports.map((p) => p.x)), xmax = Math.max(...ports.map((p) => p.x));
-    const zmin = Math.min(...ports.map((p) => p.z)), zmax = Math.max(...ports.map((p) => p.z));
-    const internal = Object.values(network.edges).filter((e) => e.switchId === id || e.lane !== undefined && e.points.every((p) => p.x >= xmin - EPS && p.x <= xmax + EPS && p.z >= zmin - EPS && p.z <= zmax + EPS)).map((e) => e.id);
-    add(id, [id], nodes, internal);
-    // A double crossover has four real ports. Draw the entire unit, without
-    // external stubs which would distort its schematic bounds.
-    sites.at(-1).paths = sites.at(-1).paths.filter((p) => internal.includes(p.edge));
-  }
-  if (network.edges.lead) {
-    add("yard-entry", ["Y-IN"], [network.edges.lead.from]);
-    add("yard-north", ["Y-2"], [network.edges.lead.to]);
-  }
-  if (network.edges.approach) add("yard-west", ["Y-3", "Y-R1"], [network.edges.approach.to]);
-  if (network.edges.right) add("yard-east", ["Y-R2", "Y-4"], [network.edges.right.from]);
-  return { sites, byNode, byControl };
+  throw new Error("Switch topology requires the canonical railway model");
 }
 
 function destinationFor(network, port) {
@@ -101,13 +48,7 @@ function destinationFor(network, port) {
     if(edge.role==="crossover")return ["Anello interno","Anello centrale","Anello esterno"][port.end?edge.fromLane:edge.toLane];
     return edge.destination??null;
   }
-  if (edge.lane !== undefined) return ["Anello interno", "Anello centrale", "Anello esterno"][edge.lane];
-  if (edge.switchId?.startsWith("WX")) {
-    const node = port.end ? edge.from : edge.to;
-    const lanes = [...new Set(network.nodes[node].map((p) => network.edges[p.edge].lane).filter((v) => v !== undefined))];
-    return lanes.length === 1 ? ["Anello interno", "Anello centrale", "Anello esterno"][lanes[0]] : null;
-  }
-  return { lead: "Accesso merci", approach: "Fascio merci", upper: "Tronchino nord", middle: "Tronchino ovest centrale", lower: "Tronchino ovest basso", right: "Tronchino est", runMain: "Runaround · ramo principale", runAround: "Runaround · aggiramento" }[edge.id] ?? null;
+  return null;
 }
 
 // Read-only traversal of the actual Journey ribbon. At its ends consult exactly
@@ -138,7 +79,7 @@ function traceJourney(network, topology, journey, direction, offset, choose, max
     if (!ports) { result.stop = "missing-node"; result.uncertain = true; return result; }
     const choices = ports.filter((p) => p.edge !== edge.id);
     const members = topology.byNode.get(node);
-    let site = Array.isArray(members) ? members.find((s)=>!s.internal.includes(edge.id)) : members;
+    let site = Array.isArray(members) ? (members.find((s)=>!s.internal.includes(edge.id))??members[0]) : members;
     if (!choices.length) { result.stop = "terminal"; return result; }
     if (choices.length > 1 && !site) { result.stop = "unmapped-junction"; result.uncertain = true; return result; }
     const wanted = choose(edge.id, choices, direction > 0);
@@ -150,7 +91,7 @@ function traceJourney(network, topology, journey, direction, offset, choose, max
       result.encounters.push(encounter);
       result.next ??= encounter;
     }
-    if (!valid) { result.stop = "undetermined"; result.uncertain = true; return result; }
+    if (!valid) { result.stop = choose.reason?.(edge.id,choices)??"undetermined"; result.uncertain = !["misaligned","no-route"].includes(result.stop); return result; }
     const historyNext = historyIndex === null ? null : journey.segments[historyIndex + direction];
     if (historyNext) {
       const entry = direction > 0 ? historyNext.sign > 0 ? 0 : 1 : historyNext.sign > 0 ? 1 : 0;
