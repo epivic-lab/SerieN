@@ -16,7 +16,7 @@ with sync_playwright() as p:
     page.wait_for_function('window.__serienDiagnostics!==undefined',timeout=90000)
     page.evaluate("document.getElementById('quality').value='low';document.getElementById('quality').dispatchEvent(new Event('change'));document.getElementById('pause').click()")
     page.wait_for_function("[...document.querySelectorAll('.locomotiveThumbnail')].every(i=>i.complete&&i.naturalWidth===320&&i.dataset.fallback==='false')",timeout=30000)
-    lengths={e['id']:e['length'] for e in page.request.get(base+'docs/phase-0/layout.json').json()['network']['edges']}
+    lengths={e['id']:e['length'] for e in page.request.get(base+'docs/jmri-layout/canonical-graph.json').json()['edges']}
     result=page.evaluate('''lengths=>{
       const api=__serienDiagnostics,$=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)],check=(ok,message)=>{if(!ok)throw Error(message)};
       const markers=()=>{const s=api.snapshot();for(const card of all('.trainConsole')){const t=s.stock[Number(card.dataset.consoleTrain)],m=card.querySelector('.trainMapMarker');check(Math.abs(Number(m.getAttribute('cx'))-t.vehicles[0].x)<1e-8,'map X '+t.id);check(Math.abs(Number(m.getAttribute('cy'))-t.vehicles[0].z)<1e-8,'map Z '+t.id);}};
@@ -38,8 +38,8 @@ with sync_playwright() as p:
       command(1,'reverse');speed(1,30);api.step(1);markers();command(1,'stop');
       command(2,'lights');s=api.snapshot();check(s.stock[2].lights&&s.stock[0].lights,'independent headlights');
       command(1,'uncouple');check(api.snapshot().stock[1].cars.length===1,'wagon detach from correct train');command(1,'couple');check(api.snapshot().stock[1].cars.length===2,'wagon recouple');
-      for(const [edge,direction] of [['L0-0',1],['XA0',1],['XA0',-1],['XB1',1],['lead',1],['runMain',1],['runAround',-1],['upper',1],['middle',-1],['lower',1],['right',-1]]){api.placeTrain(0,edge,Math.min(200,lengths[edge]-10),direction);markers();}
-      command(0,'stop');api.placeTrain(0,'L2-return',600,1);
+      for(const edge of ['T0','T18','T33']){api.placeTrain(0,edge,Math.min(100,lengths[edge]/2),1);markers();}
+      command(0,'stop');api.placeTrain(0,'T0',100,1);
       check(window.__webglContexts.size===1,'one WebGL context');
       return {nativeThumbnailKeys:keys,background,webglContexts:window.__webglContexts.size};
     }''',lengths)

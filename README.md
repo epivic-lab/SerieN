@@ -1,21 +1,12 @@
-# SerieN · Autumn Railways v0.7
+# SerieN · Autumn Railways v0.8
 
-Simulatore ferroviario web indipendente in scala N. [Gioca](https://epivic-lab.github.io/SerieN/).
-Non dipende dal repository `first` e non invia comandi alla centralina Z21 reale.
+Simulatore ferroviario web in scala N su base 150×70 cm. [Gioca](https://epivic-lab.github.io/SerieN/?v=0.8.0) · [Planimetria tecnica](docs/jmri-layout/layout-canonical.svg) · [Grafo completo](docs/jmri-layout/canonical-graph.json) · [Report Fase 0](docs/consolidation/README.md).
 
-## Gioco
+Tre anelli R249/R282/R315, due WX310, quattro tronchini, runaround e fascio merci diagonale. La versione 0.8 integra l'export JMRI nel motore e nel rendering: **la topologia è operativa e collaudata; i profili interni WX310 e le quote utili del plastico fisico richiedono ancora verifica**. Non è una dima esecutiva certificata. Nessuna galleria. Progetto indipendente: non invia comandi Z21 reali e non dipende da altri repository.
 
-Tre locomotive indipendenti (BR 055, BR 216, BR 260), tre circuiti R249/R282/R315,
-quattro tronchini, due crossover e un runaround con due rami. Comandi di marcia,
-retromarcia, arresto, luci, aggancio e sgancio; quattro missioni introduttive.
-Camera prospettica orbitale, pianta generata dal tracciato 3D, ciclo giorno/notte,
-fari direzionali e profilo grafico leggero per mobile. Il profilo Cinema aggiunge occlusione ambientale, bloom selettivo e vignettatura. Spazio arresta il treno
-selezionato quando il focus non è su un controllo. La retromarcia include frenata
-prima del cambio di verso; aggancio e sgancio richiedono un convoglio fermo.
+## Avvio
 
-## Avvio e verifiche
-
-Richiede Node.js 22 o successivo e Python 3 per il server di sviluppo:
+Node.js 22+ e Python 3:
 
 ```sh
 npm ci
@@ -23,233 +14,67 @@ npm test
 npm start
 ```
 
-Aprire http://localhost:8000. `npm start` compila il bundle e serve i file statici.
-Non aprire direttamente `index.html` tramite `file://`.
+Aprire `http://localhost:8000`. `npm start` compila `dist/game.js` e serve il sito; non usare `file://`. Three.js 0.163.0 ed esbuild 0.25.12 sono fissati nel lockfile; il gioco non richiede backend, account, CDN o font remoti.
 
-`npm run build` genera `dist/game.js`, comprendente Three.js 0.163.0 e gli addon
-usati. Il gioco corrente non richiede CDN, font remoti, account o un backend.
-Esbuild e dipendenze sono fissati nel lockfile. Il prototipo `legacy-v0.1.html`
-resta conservato e può avere requisiti differenti.
+## Comandi
+
+- Ogni consolle ha velocità, direzione, arresto, luci, aggancio e sgancio indipendenti. Le tre consolle seguono la recenza di selezione; `＋ Convoglio` aggiunge una quarta locomotiva ferma nel tronchino est. Un convoglio nascosto continua la simulazione. Bordo ambra per quello selezionato.
+- **STOP TUTTI** arresta tutti i convogli, inclusi quelli nascosti. Spazio arresta il selezionato quando il focus non è su un controllo. Pausa sospende la simulazione; Reset ripristina la sessione.
+- Le miniature sono PNG ricavati dai modelli realmente utilizzati. Le minimappe condividono il tracciato canonico e mostrano il centro della rispettiva locomotiva; un clic centra la camera.
+- Otto comandi scambi, con protezione per occupazione e avvicinamento. Le manovre nel runaround richiedono inversioni reali sui rami comuni; i convogli troppo lunghi non entrano nel breve tronchino ovest.
+- Next Switch HUD minimizzabile: scambio successivo, distanza lungo i binari, schema reale, stato e destinazione quando determinabile. Il pulsante **Itinerario** nella barra camera mostra per 15 secondi il percorso previsto; un secondo clic lo spegne. Il rosso non indica via libera.
+- Mouse/touch per ruotare o trascinare, rotellina/pinch e +/− per zoom; Standard ripristina il panorama, Segui insegue la locomotiva selezionata. Un gesto manuale interrompe l'inseguimento.
+
+I rotabili Kenney si selezionano a lato: hanno spaziatura calcolata dai rispettivi ganci e dimensioni, non dal passo dei modelli DB. Il cambio di modelli viene rifiutato quando i veicoli più lunghi non entrano nel percorso disponibile. Giorno/notte, missioni, stazione e campagna autunnale sono conservati. I profili Alta/Cinema aggiungono ombre e postproduzione; Leggera riduce il costo grafico.
 
 ## Architettura
 
-- `src/network.js`: geometria misurata, nodi, archi e campionamento comune.
-- `src/simulation.js`: itinerari, storia del percorso della composizione e clock
-  a passo fisso di 1/60 s; indipendente da Three.js e dal DOM.
-- `src/scenery.js`: materiali, ambiente e batching degli oggetti statici.
-- `src/diorama.js` / `src/landscape.js`: terreno, vegetazione con maschere alpha,
-  sottobosco e rocce con distanze di rispetto da binari ed edifici; regole deterministiche.
-- `src/presentation.js`: postproduzione opzionale del profilo Cinema.
-- `src/train-assets.js`: caricamento locale dei GLB Kenney, scala e scelta dei modelli,
-  con ripiego automatico sugli originali in caso di errore.
-- `src/rolling-stock-art.js`: dettagli aggiuntivi dei rotabili originali e vapore animato.
-- `app.js`: scena WebGL, rotabili procedurali, interazione, protezione e missioni.
-- `index.html` / `style.css`: interfaccia responsive e messaggio di errore iniziale.
-- `tests/network.test.js`: continuità dei crossover, reversibilità, chiusura dei
-  circuiti, quattro terminazioni e indipendenza della simulazione dagli FPS.
+| Componente | Responsabilità |
+|---|---|
+| `docs/jmri-layout/source.xml`, PDF RailModeller e distinta | Fonti originali e calibrazione; il PDF Fleischmann ricevuto per errore è escluso |
+| `scripts/analyze-jmri-layout.py` | Parser/audit XML, riferimenti, porte, archi, giunzioni compatibili, diagnostica senza modificare il sorgente |
+| `scripts/build-canonical-layout.py` | Rete generata con ID originali, geometria analitica, provenienza, connessioni inferite, SVG e limiti fisici espliciti |
+| `src/canonical-layout.json`, `src/network.js` | Unica geometria operativa, adiacenze, campionamento e tre circuiti principali |
+| `src/simulation.js`, `src/consist.js` | Journey dei convogli e carri, router bidirezionale, clock fisso 1/60 s, ingombri e accoppiamenti; nessun DOM/Three.js |
+| `src/next-switch.js` | Visita dello stesso grafo/router, distanza ferroviaria, schemi e protezione degli otto scambi |
+| `src/train-deck*.js`, `src/next-switch-view.js` | Presentazione e comandi; nessuna copia autonoma dello stato ferroviario |
+| `src/locomotive-thumbnails.js` | Sei immagini in cache e acquisizione diagnostica tramite il renderer esistente |
+| `src/navigation.js`, `src/view-controls.js` | Camera, focus, inseguimento e gesti |
+| `src/scenery.js`, `src/landscape.js`, componenti stazione/opere | Ambientazione e distanze dai binari canonici |
+| `app.js` | Unico stato della sessione, scena WebGL, comandi, protezione, missioni e singolo ciclo principale |
 
-La pianta nel gioco deriva dalle stesse polilinee dei binari; il precedente SVG
-negli asset è conservato solo come documento storico. Lo stato non viene salvato:
-ricaricare la pagina riavvia la sessione.
+La vecchia rete a 33 archi è conservata soltanto come baseline storica in `docs/phase-0/baseline` e verificata contro il lock originale. Non è usata nel gioco. I report precedenti sono contrassegnati come archivi.
 
-## Precisione e qualità visiva
+## Verifiche
 
-Il riferimento ferroviario è il PDF «3 anelli 4 tronchini 1 run around» fornito
-dall'utente; il riferimento artistico è `plasticoEx.png`. Il PDF Fleischmann
-precedentemente fornito per errore è escluso.
+```sh
+python3 scripts/build-canonical-layout.py
+python3 -m unittest discover -s tests -p 'jmri_audit_test.py'
+npm test
+npm run build
+```
 
-Sono rappresentati raggi nominali, crossover e disassamento inferiore dell'anello
-interno. Il fascio e le geometrie interne degli scambi sono ancora ricostruzioni
-tramite curve: **non è una conversione CAD millimetrica certificata dei pezzi Kato**.
-Occorrono verifica delle geometrie di catalogo e confronto con il file RailModeller.
-La protezione considera vicinanza dei veicoli e blocca scambi prossimi ai convogli;
-non costituisce un sistema completo di interblocco o di dinamica ferroviaria.
-Le ruote originali e le ruote individuali della locomotiva Kenney sono animate; il vapore è un effetto a particelle. I carrelli Kenney rimangono rigidi; bielle e ganci non hanno una simulazione fisica dettagliata.
+Per i test browser opzionali servono Python Playwright, Chromium e il server locale attivo:
 
-Il gioco include **sei modelli Kenney Train Kit 1.1, CC0**, con texture condivisa,
-licenza e provenienza in `assets/kenney`. L'archivio originale fornito dall'utente
-rimane nel repository; il deploy distribuisce soltanto i modelli selezionati.
-Kenney, Guus Vermeulen e Tony Schaer sono accreditati anche nella guida.
-I modelli sono stilizzati: il selettore «Rotabili» li distingue dagli originali
-DB, senza presentarli come repliche delle BR 055/216/260. L'asset geometrico si
-adatta all'ingombro ferroviario tramite trasformazioni in fase di caricamento.
-I binari Kenney non sostituiscono la geometria del tracciato esistente.
+```sh
+python3 tests/browser-phase-zero.py
+python3 tests/browser-train-deck.py
+python3 tests/browser-consist.py
+python3 tests/browser-smoke.py
+```
 
-La scenografia usa texture originali generate localmente, terreno modellato,
-vegetazione istanziata con silhouette alpha e lieve vento, rocce, sottobosco,
-recinzioni e dettagli della stazione. Le ombre sono disponibili nei profili Alta
-e Cinema; Leggera riduce risoluzione e ombre. Cinema aggiunge bloom e vignettatura
-senza imporre il costo della postproduzione al profilo mobile.
-**Non è rendering fotorealistico né equivalente a Train Station 3.** I test browser
-con renderer software verificano avvio e comportamento; non sono benchmark di
-una GPU desktop o mobile.
+`SERIEN_URL` e `CHROMIUM_PATH` permettono server/browser diversi. La diagnostica esiste soltanto con `?diagnostics=1`; usa gli stessi treni e lo stesso motore dell'applicazione. Il test Fase 0 avanza deterministicamente la simulazione reale e verifica i tre anelli nei due sensi, comandi, quarto convoglio, minimappe, HUD, manovra sul runaround, arresti, modelli e risoluzioni responsive. I test aggiuntivi verificano fallback immagini, accoppiamento, reset e strumenti camera. Risultati e schermate: [consolidamento](docs/consolidation/README.md), [plancia](docs/train-deck/browser-result.json).
 
-## Pubblicazione
+I test software non certificano FPS su GPU desktop/tablet né gesti su un dispositivo touch reale. Il [report tecnico](docs/consolidation/README.md) distingue le verifiche eseguite dai punti ancora manuali: profilo dei WX310, piccoli fit dei pezzi speciali, origine sul tavolato, punti di fouling e lunghezze utili. La chiusura metrologica della Fase 0 resta subordinata a questi riscontri.
 
-Il workflow `.github/workflows/pages.yml` esegue `npm ci`, test, build e prepara
-`_site` includendo solo pagina, CSS, bundle, asset e prototipo precedente. Non
-pubblica `node_modules`, documenti di lavoro o l'immagine di ispirazione.
-Un push su `main` avvia GitHub Pages. La versione v0.3 è recuperabile dal commit `6e050e9`; la versione iniziale
-del gioco è conservata al commit `d3c3801`.
+## Pubblicazione e ripristino
 
-Three.js e addon: licenza MIT, mantenuta nel bundle generato. Il progetto è
-amatoriale, senza affiliazione a Kato, Roco o ai titoli citati come riferimento.
+Il workflow `.github/workflows/pages.yml`, attivato da push su `main`, verifica la rigenerazione deterministica del grafo, parser, test Node e build; pubblica pagina, CSS, bundle, asset e documentazione tramite GitHub Pages. I sorgenti e l'archivio ZIP originale Kenney non vengono distribuiti nel bundle del gioco. I test browser richiedono l'ambiente di collaudo descritto sopra e sono eseguiti separatamente.
 
-## Revisione del brief in cinque zone (v0.5)
+Versione pubblicata precedente: `408cc5f` (v0.7). Punto di ripristino della ripresa: `b7de605`, branch `restore/phase-zero-intake`. Stato iniziale e pulizia: [audit](docs/consolidation/INTAKE.md). Ricaricare la pagina riavvia la sessione; non esiste persistenza dello stato dei convogli.
 
-L'audit prodotto prima delle modifiche e la sequenza concreta sono in
-[docs/RENDERING-BRIEF-AUDIT.md](docs/RENDERING-BRIEF-AUDIT.md).
-Il riferimento `SerieN_reference_render.jpg` non è presente nel repository;
-resta disponibile `plasticoEx.png`.
+## Asset e limiti visivi
 
-- Stazione: pensilina, orologio, persone statiche in scala, bagagli e lampioni
-  con due luci reali, oltre all'edificio 3D esistente.
-- Scalo: ufficio merci, piazzale e carichi disposti fuori dall'ingombro ferroviario.
-- Bosco: macchie forestali e radure, specie/rotazioni differenti e chiome volumetriche
-  nei profili superiori; chiome alpha come livello leggero.
-- Opere: due brevi gallerie curve seguono gli anelli interno e centrale; il terzo
-  resta scoperto. Il piccolo ponte ha un vero avvallamento sotto il binario.
-  Nessuna quota, connessione o percorso ferroviario è stato modificato.
-- Campagna: cascina e vigneto; ridotta la precedente fila urbana di abitazioni.
+Sei modelli locali **Kenney Train Kit 1.1, CC0**, di Kenney, Guus Vermeulen e Tony Schaer; licenza/provenienza in `assets/kenney`. Sono stilizzati e non repliche delle locomotive DB. I modelli procedurali originali hanno proprie miniature e geometrie. Non sono stati scaricati asset senza licenza dai portali commerciali citati nella discussione.
 
-Vista Panorama/Stazione/Scalo/Segui convoglio; il primo gesto manuale interrompe
-l'inseguimento. La camera rimane sopra un inviluppo conservativo di terreno ed
-edifici: non è un sistema di collisioni poligonali completo. Automatica riduce la
-qualità dopo finestre di frame lente e la ripristina con isteresi; Alta, Leggera e
-Cinema restano selezionabili manualmente. Il contatore FPS usa il tempo reale,
-indipendente dal clock della simulazione.
-
-La nuova rotaia ha una sezione sagomata sul percorso misurato, senza una seconda
-spline decorativa. Ganci dei modelli, scala uniforme e dimensioni effettive sono
-registrati nei metadati; mantenere le proporzioni Kenney entro il limite di
-larghezza produce locomotive stilizzate più corte. I Kenney e i modelli originali
-restano **fallback/prototipi**, non rotabili tedeschi realistici validati.
-
-### Eccezioni ancora aperte
-
-- I respingenti su `middle` e `lower` sono esclusi: il loro ingombro finirebbe sugli
-  anelli adiacenti. Il motore corrente arresta il centro del rotabile all'endpoint;
-  un arresto basato sull'ingombro frontale richiede una correzione operativa dedicata.
-  Sono visibili soltanto i due respingenti per cui la verifica volumetrica passa.
-- Ponte e gallerie sono collocazioni scenografiche reversibili, non opere quotate
-  nella planimetria originale. Per certificarne la posizione fisica serve un riferimento
-  misurato. Non sono state introdotte pendenze o nuove connessioni.
-- Mancano asset realistici con licenza per soddisfare interamente l'obiettivo
-  fotografico del brief. Il risultato resta procedurale: non è fotorealismo certificato.
-- Texture KTX2/Draco e verifica su iPad reale restano da affrontare con gli asset
-  definitivi e i dispositivi disponibili; nessun test headless certifica 60 FPS.
-
-### Collaudo riproducibile
-
-`npm test` include controlli su rete, terreno, layout delle zone, ponte, curve
-scoperte, camera, isteresi e lifecycle degli asset.
-Per il collaudo browser opzionale installare Python Playwright e Chromium, avviare
-`npm start`, poi eseguire `python3 tests/browser-smoke.py`. `CHROMIUM_PATH` e
-`SERIEN_URL` permettono di scegliere browser/server. Il flag `?diagnostics=1`
-espone soltanto diagnostica per i test, senza aggiungere controlli tecnici al gioco.
-
-Esito nella sessione di sviluppo: i volumi dei rotabili originali superano il
-controllo dei due fornici; 20 reset mantengono 286 geometrie GPU → 286 sul profilo
-Leggera testato; preset, Cinema/AO, notte e layout mobile non producono errori
-JavaScript. Compatibilità Safari/iPad e prestazioni GPU reali non sono certificate.
-
-Dalla v0.6.1 i convogli Kenney usano i punti gancio derivati dalle dimensioni
-dei singoli modelli; le coppie originali mantengono il passo storico di 64 mm. La protezione camera riguarda l'occhio e le impronte,
-non il volume continuo dell'obiettivo. Il ponte può mostrare una piccola cucitura
-sul bordo del terreno triangolato; non cambia il percorso ferroviario.
-
-## Stazione e navigazione v0.6
-
-La stazione è ora un edificio originale articolato in corpo centrale a due piani
-con due ali più basse. Ha aperture reali, infissi e vani arretrati, soglie, cornici,
-plinti in pietra, tetti a tegole tridimensionali istanziate, gronde, pluviali e camini.
-Undici texture condivise originali gestiscono albedo, bump e rugosità; la scala UV
-è espressa in millimetri del plastico. Non sono stati acquistati o importati nuovi
-asset esterni. La stazione è un modello originale di ambientazione, non la replica
-certificata di un fabbricato reale.
-
-La banchina è stata sostituita con lastre smussate, bordo consumato, pensilina a
-struttura metallica, panchine a doghe, orologio bifacciale, insegna, fioriere,
-bagagli e personaggi arrotondati. Le due luci locali illuminano la banchina di notte.
-I vecchi elementi della stazione sono rimossi per evitare duplicazioni.
-
-Nel riquadro Vista sono disponibili sei comandi da almeno44px: Zoom+/−,
-Trascina, Ruota, Standard e Segui. Trascina usa mouse sinistro/un dito per il pan;
-Ruota ripristina l'orbita; restano rotellina e pinch. Standard ripristina il panorama,
-Segui insegue il treno selezionato. Un gesto manuale interrompe l'inseguimento.
-La strada di servizio arretra localmente dietro la stazione; binari e logica
-ferroviaria non cambiano.
-
-
-## Fase 0 e rotabili v0.6.1
-
-La galleria è rimossa integralmente: portali, pareti, copertura, riserva scenica,
-vincolo camera e soppressione del fumo. Le tre curve restano scoperte, con il terreno
-ordinario; il ponte resta. Network e simulazione non cambiano.
-
-[Mappa, inventario e dati della fase0](docs/phase-0/README.md): 33archi, tre anelli,
-due crossover, quattro tronchini e runaround, cinque regioni scenografiche con ID
-stabili, catalogo e centri candidati per piccoli arredi. Gli edifici precedenti
-condividono le definizioni con la mappa senza spostamenti. Cascina e vigneto sono
-ancora nelle posizioni attuali; la loro futura collocazione sul retro è segnalata.
-La mappa è disponibile anche su Pages in `docs/phase-0/`, accessibile da Planimetria.
-
-Le distanze Kenney sono calcolate per ogni coppia dagli ingombri del modello
-visibile e dai punti gancio, lasciando1.5mm complessivi fra gli ingombri misurati.
-Locomotive e carri si compattano anche quando i GLB finiscono di caricarsi;
-rendering, coda del convoglio, scambi occupati, protezione, sgancio e riaggancio
-usano gli stessi offset lungo la Journey. Il passo originale resta64mm quando
-entrambi i veicoli sono procedurali. Un cambio a modelli più lunghi viene rifiutato
-se la coda non trova spazio sul percorso. I carrelli restano rigidi: questa fase
-non introduce biellismi o articolazione indipendente.
-
-Per rigenerare la mappa: `node scripts/phase-zero.mjs`. Un lock SHA-256 e i test
-rilevano cambiamenti alla rete o al motore di simulazione. Screenshot e misure
-riproducibili sono in `docs/phase-0/before` e `after`; vedere lo script
-`tests/capture-baseline.py`. Sono misure di un renderer software, non benchmark
-di una GPU desktop o di un iPad.
-
-Esito fase 0: 15 file di test automatici superati; browser con GLB effettivi,
-passaggio fra modelli, sgancio/riaggancio, avanzamento e retromarcia, reset riusciti.
-Il convoglio vapore passa da offset `[0,64,128,192]` a circa
-`[0,31.10,61.21,90.00]` mm. Gli screenshot della fase 0 usano la stessa build
-verificata, identificata dal relativo SHA-256 nel JSON delle misure finali.
-L'audit segnala impronte conservative di `factory-west`, `factory-north` e stazione
-vicine al corridoio ferroviario: da verificare sui volumi reali nelle fasi seguenti.
-
-La distinta Kato fornita dall'utente è conservata nella fase0: 17codici, 61pezzi,
-con audit di corrispondenza. Conferma raggi principali, due WX310 e sei deviatoi
-singoli; indica tre respingenti per quattro terminali, associazione da chiarire.
-
-
-## Next Switch HUD v0.7
-
-Assistente olografico nell'angolo destro del solo viewport3D, minimizzabile e
-informativo. Mostra prossimo scambio/gruppo, distanza lungo i binari, schema delle
-connessioni, posizione corrente, uscita prevista e blocchi di manovra. Il rosso è
-l'itinerario previsto, gli altri rami sono grigi; non è un consenso di via libera.
-Il pulsante evidenzia il percorso sul plastico per15secondi, senza spostare rotaie
-o alterare la centerline. La linea termina prima di un punto non determinabile.
-
-La ricerca legge la stessa Journey e lo stesso router della simulazione, senza
-modificarli. Da fermo usa la direzione impostata; durante un'inversione in frenata
-mostra il verso effettivo e lo segnala. In retromarcia la distanza parte dal centro
-dell'ultimo carro, con la spaziatura effettiva anche per i Kenney.
-
-Il registro aggiuntivo associa otto comandi a sei gruppi topologici. I WX310 hanno
-quattro porti; il nodo ovest ha cinque rami reali. Y-3/Y-R1 e Y-R2/Y-4 sono
-rappresentati come gruppi perché il grafo attuale li accorpa: nessun ordine fisico
-inventato. Gli otto comandi restano e condividono un controllo di occupazione e
-avvicinamento con l'HUD. I clic sullo schema non azionano nulla.
-
-[Analisi del grafo, scelte e collaudo](docs/NEXT-SWITCH-AUDIT.md).
-La rete e il motore restano identici al lock della fase0. Per il controllo browser
-eseguire `python3 tests/browser-next-switch.py` con server locale, Playwright e
-Chromium; screenshot e risultato sono in `docs/next-switch/`.
-
-Esito v0.7: 16 file di test automatici superati, integrazione browser dei tre
-anelli avanti/indietro, quattro terminali, runaround e scalo, selezione dei treni,
-origine Kenney in retromarcia, guardia degli azionamenti e scadenza dell'overlay.
-Il test browser finale verifica anche gli ingombri mobili e la mappa interattiva
-con distinta Kato. Screenshot e resoconto sono consultabili in
-[Next Switch HUD](docs/next-switch/index.html).
+Terreno, vegetazione istanziata, texture originali e illuminazione mantengono il diorama autunnale. Il rendering non è fotorealistico né equivalente a Train Station 3. Carrelli, bielle e ganci non hanno una simulazione meccanica completa. Il simulatore non è un interblocco di sicurezza per un impianto reale.

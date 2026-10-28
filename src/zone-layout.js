@@ -1,9 +1,23 @@
-import { seeded } from "./landscape.js";
+import { seeded, clearance } from "./landscape.js";
 const FARM = Object.freeze({ id: "farmhouse", kind: "building", x: 1020, z: 430, w: 76, d: 46, h: 34 });
 const GOODS_OFFICE = Object.freeze({ id: "goods-office", kind: "building", x: 520, z: 355, w: 58, d: 34, h: 26 });
 const VINEYARD = Object.freeze({ id: "vineyard", kind: "reserve", x: 1160, z: 442.5, w: 140, d: 65 });
 import canonical from "./canonical-layout.json" with {type:"json"};
 const switchPoints=canonical.controllers.map((c)=>[c.x,c.z]);
+function controlMarkers(network, buildings = []) {
+  const mask=clearance(network,buildings), markers=[];
+  for(const control of network.controllers) {
+    let found=null;
+    for(let radius=30;radius<=180&&!found;radius+=5)for(let i=0;i<32;i++) {
+      const angle=Math.PI*2*i/32,x=control.x+radius*Math.cos(angle),z=control.z+radius*Math.sin(angle);
+      if(x<8||x>1492||z<8||z>692||mask.track(x,z)<25||mask.building(x,z,10)||markers.some(p=>Math.hypot(p.x-x,p.z-z)<20))continue;
+      found={id:control.id,x,z};break;
+    }
+    if(!found)throw Error("No clear switch-marker position for "+control.id);
+    markers.push(found);
+  }
+  return markers;
+}
 function safeScenicPosition(mask, x, z, radius = 0, extraBuildings = []) {
   return mask.track(x, z) >= 18 + radius && !mask.building(x, z, radius + 4) && !mask.road(x, z) && !extraBuildings.some((b) => Math.abs(x - b.x) < b.w / 2 + radius + 5 && Math.abs(z - b.z) < b.d / 2 + radius + 5) && switchPoints.every(([sx, sz]) => Math.hypot(x - sx, z - sz) >= 40 + radius);
 }
@@ -37,6 +51,7 @@ export {
   FARM,
   GOODS_OFFICE,
   VINEYARD,
+  controlMarkers,
   buildZoneLayout,
   safeScenicPosition
 };

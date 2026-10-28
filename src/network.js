@@ -15,15 +15,6 @@ function sample(path, s) {
   const a = path.points[lo], b = path.points[hi], q = (s - path.distance[lo]) / (path.distance[hi] - path.distance[lo] || 1);
   return { x: a.x + (b.x - a.x) * q, z: a.z + (b.z - a.z) * q };
 }
-function line(a, b, n = 1) {
-  return Array.from({ length: n + 1 }, (_, i) => ({ x: a[0] + (b[0] - a[0]) * i / n, z: a[1] + (b[1] - a[1]) * i / n }));
-}
-function bezier(a, b, c, d, n = 80) {
-  return Array.from({ length: n + 1 }, (_, i) => {
-    const t = i / n, u = 1 - t;
-    return { x: u * u * u * a[0] + 3 * u * u * t * b[0] + 3 * u * t * t * c[0] + t * t * t * d[0], z: u * u * u * a[1] + 3 * u * u * t * b[1] + 3 * u * t * t * c[1] + t * t * t * d[1] };
-  });
-}
 function createNetwork() {
   const edges = {}, nodes = {};
   for (const source of canonical.edges) {
@@ -74,4 +65,4 @@ function validateNetwork(network) {
   }
   return {edges:Object.keys(network.edges).length,deadEnds:Object.values(network.nodes).filter((v)=>v.length===1).length};
 }
-export {bezier,createNetwork,line,measured,sample,loopPosition,validateNetwork};
+export {createNetwork,measured,sample,loopPosition,validateNetwork};

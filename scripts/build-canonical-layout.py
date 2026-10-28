@@ -208,6 +208,11 @@ def build(tolerance_mm=2.5):
         for id,n in nodes.items():
             if n['terminal']:fragments.append(f'<circle cx="{n["x"]}" cy="{n["z"]}" r="7" fill="#e47792"/><text x="{n["x"]+10}" y="{n["z"]+17}">{id}</text>')
         if annotated:
+            fragments.append('<g id="point-labels" style="display:none">')
+            for node in nodes.values():
+                label=html.escape(' / '.join(node['aliases']))
+                fragments.append(f'<circle cx="{node["x"]}" cy="{node["z"]}" r="2.5" fill="#80c8d9"/><text x="{node["x"]+4}" y="{node["z"]+12}" fill="#80c8d9">{label}</text>')
+            fragments.append('</g>')
             fragments.append('<text x="1000" y="85">T51 / T52: giunti a lunghezza zero, contratti</text>')
             for c in controllers:fragments.append(f'<text class="control" x="{c["x"]}" y="{c["z"]-19}">{c["id"]} · {c["sourceId"] or c["code"]}</text>')
             fragments+=['<text x="20" y="685">Bianco: XML · Ambra: connessioni ricostruite · Rosa: profili da verificare e 4 terminali</text>','<text x="800" y="525">Anello interno · R249 / allargamenti</text>','<text x="800" y="610">Anello centrale · R282</text>','<text x="800" y="652">Anello esterno · R315</text>','<text x="540" y="316">Runaround: T40/T42 + T43/TO4:AB/T44</text>']

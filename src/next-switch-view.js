@@ -78,6 +78,7 @@ function mountNextSwitchHUD({host,network,getState,now=()=>performance.now()}) {
     set("nextSwitchDestination",next?.destination?`Uscita prevista: ${next.destination}`:"Destinazione non determinata");
     const warnings=[];
     if(safety?.blocked)warnings.push(safety.message);
+    if(preview.stop==="misaligned")warnings.push("Scambio non allineato: percorso interrotto");
     if(uncertain)warnings.push(preview.stop==="history-conflict"?"Percorso memorizzato diverso dallo scambio: anteprima interrotta":"Dati insufficienti: anteprima interrotta");
     if(inverting)warnings.push("Frenata per inversione: mostrato il verso effettivo");
     set("nextSwitchWarning",warnings.join(". "));

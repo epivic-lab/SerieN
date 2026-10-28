@@ -67,9 +67,9 @@ with sync_playwright() as p:
     check(page.evaluate('__serienDiagnostics.snapshot()'),True)
     page.evaluate("document.getElementById('viewFollow').click()")
     page.wait_for_timeout(3000)
-    Path('docs/phase-0/after').mkdir(parents=True,exist_ok=True)
-    page.screenshot(path='docs/phase-0/after/kenney-follow.png',timeout=60000)
+    Path('docs/consolidation/consist').mkdir(parents=True,exist_ok=True)
+    page.screenshot(path='docs/consolidation/consist/kenney-follow.png',timeout=60000)
     assert not errors,errors
-    Path('docs/phase-0/after/consist-check.json').write_text(json.dumps({'result':'PASS','errors':errors,'nativeOffsets':[t['layout'] for t in native['stock']],'kenneyOffsets':[t['layout'] for t in compact['stock']]},indent=2)+'\n')
+    Path('docs/consolidation/consist/consist-check.json').write_text(json.dumps({'result':'PASS','errors':errors,'nativeOffsets':[t['layout'] for t in native['stock']],'kenneyOffsets':[t['layout'] for t in compact['stock']]},indent=2)+'\n')
     browser.close()
     print('PASS: native restore, reset and Kenney reload; no JavaScript errors',flush=True)

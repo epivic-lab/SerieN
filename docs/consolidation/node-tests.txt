@@ -1,0 +1,29 @@
+
+> serien@0.8.0 test
+> node --test tests/*.test.js
+
+✔ tests/assets.test.js (11099.162004ms)
+✔ tests/consist.test.js (42145.396822ms)
+✔ tests/landscape.test.js (81830.786563ms)
+✔ tests/navigation.test.js (33676.234441ms)
+✔ tests/network.test.js (38092.261108ms)
+✔ tests/next-switch.test.js (33501.604374ms)
+✔ tests/quality.test.js (144.451781ms)
+✔ tests/scenic-plan.test.js (12754.536671ms)
+✔ tests/station-building.test.js (2238.849306ms)
+✔ tests/station-materials.test.js (3471.778067ms)
+✔ tests/station-platform.test.js (789.195537ms)
+✔ tests/structure-mesh.test.js (240.552422ms)
+✔ tests/structures.test.js (162.004486ms)
+✔ tests/train-assets.test.js (171.533816ms)
+✔ tests/train-deck.test.js (461.493187ms)
+✔ tests/view-controls.test.js (125.734338ms)
+✔ tests/zones.test.js (575.359824ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 92147.76684

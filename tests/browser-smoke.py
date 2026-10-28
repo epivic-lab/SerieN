@@ -17,11 +17,31 @@ with sync_playwright() as p:
     page.wait_for_timeout(1000);after=page.evaluate('__serienDiagnostics.snapshot()')
     assert after['render']['geometries'] <= before['render']['geometries']+15,(before['render'],after['render'])
     print('20 resets: geometries',before['render']['geometries'],'->',after['render']['geometries'],flush=True)
+    fourth=page.evaluate('''()=>{
+      const api=__serienDiagnostics,check=(ok,msg)=>{if(!ok)throw Error(msg)};
+      const e=document.getElementById('pause');e.click();
+      for(let i=0;i<3;i++)document.getElementById('uncouple').click();
+      api.placeTrain(0,'T47',80,1);document.getElementById('addTrain').click();check(api.snapshot().stock.length===3,'occupied insertion refused');
+      document.getElementById('reset').click();document.getElementById('pause').click();
+      document.getElementById('addTrain').click();let s=api.snapshot();check(s.stock.length===4,'real fourth train added');const before=s.stock[3].vehicles[0];
+      document.getElementById('reset').click();document.getElementById('pause').click();s=api.snapshot();const after=s.stock[3].vehicles[0];
+      check(before.edge==='T47'&&after.edge==='T47'&&before.x===after.x&&before.z===after.z,'fourth reset retains initial parked location');
+      return {occupiedInsertionRefused:true,fourthResetParked:true};
+    }''')
+    print('PASS: occupied insertion refused; fourth locomotive reset returns to the actual siding',flush=True)
     for value in ['station','yard','follow','overview']:
         page.evaluate("v=>{const e=document.getElementById('cameraView');e.value=v;e.dispatchEvent(new Event('change'));}",value)
         page.wait_for_timeout(300)
         snap=page.evaluate('__serienDiagnostics.snapshot()');assert all(math.isfinite(v) for v in snap['camera']['position']);assert snap['camera']['preset']==value
     page.set_viewport_size({'width':390,'height':844});assert not page.evaluate('document.documentElement.scrollWidth>innerWidth')
-    assert sorted(after['pendingStops'])==['lower','middle']
+    assert after['pendingStops']==[]
     assert not errors,errors
+    report=browser.new_page();assert report.goto(os.environ.get('SERIEN_URL','http://127.0.0.1:8000/')+'docs/consolidation/index.html').status==200
+    report.wait_for_selector('#terminals tr');assert report.locator('#terminals tr').count()==4
+    report.wait_for_function("Boolean(document.getElementById('plan').contentDocument?.getElementById('profile-review'))")
+    report.locator('[data-layer="profile-review"]').uncheck();assert report.evaluate("document.getElementById('plan').contentDocument.getElementById('profile-review').style.display")=="none"
+    assert not errors,errors
+    import json
+    from pathlib import Path
+    Path('docs/consolidation/smoke-result.json').write_text(json.dumps({'result':'PASS','twentyResets':{'before':before['render']['geometries'],'after':after['render']['geometries']},'fourthTrain':fourth,'cameraPresets':['station','yard','follow','overview'],'mobileNoOverflow':True,'interactiveReport':True,'errors':errors},indent=2)+'\n')
     browser.close();print('Browser regression PASS',flush=True)
