@@ -1,3 +1,5 @@
+> **Fase 0 chiusa su richiesta dell’utente.** Accettata la baseline software pubblicata al commit `d118de0`. I riscontri fisici ancora documentati sono mantenuti come limiti noti e attività successive; non sono presentati come verifiche eseguite. La [Fase 1](../phase-1/README.md) prosegue su questa base.
+
 # Consegna v0.8 · 28 ottobre 2026
 
 Codice applicativo verificato: **`f3cf1b6179f70cf8b02fc17c446a0eb4a4c04987`**. Branch di lavoro `work`, destinazione di pubblicazione `main`. Ripristino della ripresa: `b7de605`, branch `restore/phase-zero-intake`; versione pubblicata precedente `408cc5f`.

@@ -1,3 +1,5 @@
+> **Fase 0 chiusa su richiesta dell’utente.** Accettata la baseline software pubblicata al commit `d118de0`. I riscontri fisici ancora documentati sono mantenuti come limiti noti e attività successive; non sono presentati come verifiche eseguite. La [Fase 1](../phase-1/README.md) prosegue su questa base.
+
 # SerieN · consolidamento funzionale Fase 0
 
 La rete ferroviaria operativa deriva dall'XML originale, dal PDF RailModeller e dalla distinta Kato. Rendering, guida dei convogli, planimetria, tre minimappe, scambi e HUD leggono lo stesso modello canonico. Nessuna galleria.
