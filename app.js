@@ -12,7 +12,7 @@ import { attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets
 import { locomotiveDetails, wagonDetails, steam } from "./src/rolling-stock-art.js";
 import { presentation } from "./src/presentation.js";
 import { enrich } from "./src/scenery.js";
-import { createNetwork, validateNetwork } from "./src/network.js";
+import { createNetwork, validateNetwork, loopPosition } from "./src/network.js";
 import { Journey, routing, FixedClock } from "./src/simulation.js";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
@@ -128,10 +128,7 @@ const network = createNetwork();
 validateNetwork(network);
 const toPath = (p) => ({ ...p, points: p.points.map((v) => new THREE.Vector3(v.x, 3.5, v.z)) });
 const railPaths = Object.fromEntries(Object.entries(network.edges).map(([id, p]) => [id, toPath(p)]));
-const loops = [0, 1, 2].map((lane) => {
-  const parts = Object.values(railPaths).filter((p) => p.lane === lane);
-  return { length: parts.reduce((n, p) => n + p.length, 0) };
-});
+const loops = network.mainLoops;
 const yard = railPaths;
 function at(path, u) {
   const target = clamp(u, 0, 1) * path.length, ds = path.distance;
@@ -274,16 +271,8 @@ for (let x = 520; x <= 915; x += 78) {
 }
 const signalGreen = new THREE.MeshStandardMaterial({ color: "#55b98a", emissive: "#259e58", emissiveIntensity: 0.4 });
 const signalGold = new THREE.MeshStandardMaterial({ color: "#f0bd64", emissive: "#aa7724", emissiveIntensity: 0.6 });
-const switchSpecs = [
-  { id: "WX-A", name: "WX310 ovest", x: 595, z: 84, kind: "cross", lanes: [0, 1], on: false },
-  { id: "WX-B", name: "WX310 est", x: 955, z: 51, kind: "cross", lanes: [1, 2], on: false },
-  { id: "Y-IN", name: "Accesso merci", x: 812, z: 101, kind: "lead", on: false },
-  { id: "Y-2", name: "Tronchino nord", x: 665, z: 168, kind: "upper", on: false },
-  { id: "Y-3", name: "Tronchini ovest", x: 410, z: 284, kind: "west", on: false },
-  { id: "Y-R1", name: "Runaround ovest", x: 410, z: 310, kind: "passing", on: false },
-  { id: "Y-R2", name: "Runaround est", x: 825, z: 247, kind: "passing", on: false },
-  { id: "Y-4", name: "Tronchino est", x: 880, z: 247, kind: "right", on: false }
-];
+const controlOrder=["WX-A","WX-B","Y-IN","Y-2","Y-3","Y-R1","Y-R2","Y-4"];
+const switchSpecs=controlOrder.map((id)=>({...network.controllers.find((c)=>c.id===id),on:false}));
 const switchTopology = createSwitchTopology(network, switchSpecs);
 const switchHandles = [];
 function makeSwitch(s) {
@@ -400,9 +389,10 @@ trains.forEach((t) => {
 });
 const kenneyNames = ["Vapore K1", "Diesel K2", "Manovra K3"];
 let rollingModelMode = $("rollingModels").value;
-const assetReady = Promise.all(trains.map((t) => attachTrainAsset(t.group, t.modelKey, true)));
+const startupTrains = [...trains];
+const assetReady = Promise.all(startupTrains.map((t) => attachTrainAsset(t.group, t.modelKey, true)));
 assetReady.then((loaded) => {
-  trains.forEach((t, i) => t.assetLoaded = loaded[i]);
+  startupTrains.forEach((t, i) => t.assetLoaded = loaded[i]);
   updateModels();
 });
 function updateModels() {
@@ -468,6 +458,7 @@ function toggle(index) {
     return;
   }
   s.on = !s.on;
+  for(const t of trains)t.journey.reconcile(layoutFor(t).tail,t.group.userData.couplers?.front?.x??48,route);
   s.bulb.material = s.on ? signalGold : signalGreen;
   changes++;
   log(s.name + ": " + (s.on ? "deviato" : "diritto"));
@@ -538,8 +529,11 @@ function switchHUDState() {
   return state;
 }
 function initializeJourney(t) {
-  const edge = "L" + t.loop + "-return";
-  t.journey = new Journey(network, edge, network.edges[edge].length * (t.initial?.fraction ?? .45));
+  const start=loopPosition(network,t.loop,t.initial?.fraction??.45);
+  t.journey = new Journey(network,start.edge,start.s);
+  // Journey coordinates increase in the chosen circuit direction, regardless
+  // of the source segment's endpoint order.
+  if(start.sign<0){t.journey.segments[0].sign=-1;t.journey.position=network.edges[start.edge].length-start.s;}
   t.velocity = 0;
   t.odometer = 0;
   t.previousLane = t.loop;
@@ -581,7 +575,7 @@ function advance(t, dt) {
   const acceleration = Math.abs(desired) < Math.abs(t.velocity) ? 100 : 45;
   t.velocity += clamp(desired - t.velocity, -acceleration * dt, acceleration * dt);
   if (Math.abs(t.velocity) < 1e-3) return;
-  if (!t.journey.move(t.velocity * dt, layoutFor(t).tail, route)) {
+  if (!t.journey.move(t.velocity * dt, layoutFor(t).tail, route, t.group.userData.couplers?.front?.x ?? 48)) {
     t.speed = 0;
     t.velocity = 0;
     log(t.name + ": fine binario, inverti la marcia.");
@@ -598,10 +592,12 @@ function advance(t, dt) {
     }
     t.loop = edge.lane;
     t.mode = "loop";
+  } else if(edge.role==="crossover") {
+    t.mode="loop";
   } else {
     t.mode = "yard";
     t.section = edge.id;
-    if (edge.id === "runMain" || edge.id === "runAround") visitedRunaround = true;
+    if (edge.role?.startsWith("runaround")) visitedRunaround = true;
   }
   t.laps = Math.floor(t.journey.travel / loops[t.loop].length);
   if (previousRoute !== t.mode + "/" + t.loop + "/" + t.section) ui();

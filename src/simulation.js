@@ -36,9 +36,15 @@ class Journey {
     }
     return false;
   }
-  move(delta, tail, choose) {
+  reconcile(tail, front, choose) {
+    const lo=this.position-tail, hi=this.position+front;
+    while(this.segments.length>1 && this.segments[0].end<lo-1e-6)this.segments.shift();
+    while(this.segments.length>1 && this.segments.at(-1).start>hi+1e-6)this.segments.pop();
+    return this.ensure(lo,choose) && this.ensure(hi,choose);
+  }
+  move(delta, tail, choose, front = 0) {
     const target = this.position + delta;
-    if (!this.ensure(target, choose) || !this.ensure(target - tail, choose)) return false;
+    if (!this.ensure(target + front, choose) || !this.ensure(target - tail, choose)) return false;
     this.position = target;
     this.travel += Math.abs(delta);
     while (this.segments.length > 2 && this.segments[1].end < this.position - tail - 500) this.segments.shift();
@@ -46,39 +52,18 @@ class Journey {
     return true;
   }
 }
-function routing(network, state) {
-  return (current, choices) => {
-    if (!choices.length) return null;
-    const incoming = network.edges[current];
-    const endpoint = network.edges[choices[0].edge].points[choices[0].end ? network.edges[choices[0].edge].points.length - 1 : 0];
-    const atEnd = Math.hypot(endpoint.x - incoming.points.at(-1).x, endpoint.z - incoming.points.at(-1).z) < 0.01;
-    const p = atEnd ? incoming.points.at(-1) : incoming.points[0], q = atEnd ? incoming.points.at(-2) : incoming.points[1];
-    const aligned = (c) => {
-      const e = network.edges[c.edge], a = c.end ? e.points.at(-1) : e.points[0], b = c.end ? e.points.at(-2) : e.points[1];
-      return (p.x - q.x) * (b.x - a.x) + (p.z - q.z) * (b.z - a.z) > 0;
-    };
-    if ((current === "runMain" || current === "runAround") && choices.some((c) => c.edge === "right")) return choices.find((c) => c.edge === (state("Y-4") ? "right" : current === "runMain" ? "runAround" : "runMain"));
-    const junctions = [
-      { common: "lead", main: "approach", branch: "upper", sw: "Y-2" },
-      { common: "approach", main: "runMain", branch: state("Y-3") ? "middle" : state("Y-R1") ? "lower" : "runAround", sw: "Y-R1" },
-      { common: "right", main: "runMain", branch: "runAround", sw: "Y-R2" }
-    ];
-    for (const j of junctions) {
-      const names = new Set(choices.map((c) => c.edge));
-      if (current === j.common && names.has(j.main) && names.has(j.branch)) {
-        const target = state(j.sw) || j.common === "approach" && state("Y-3") ? j.branch : j.main;
-        return choices.find((c) => c.edge === target);
-      }
-      if ((current === j.main || current === j.branch) && names.has(j.common)) return choices.find((c) => c.edge === j.common);
-    }
-    if (incoming.lane !== void 0) {
-      const branch = choices.find((c) => network.edges[c.edge].switchId && state(network.edges[c.edge].switchId) && aligned(c));
-      if (branch) return branch;
-      return choices.find((c) => network.edges[c.edge].lane === incoming.lane) || null;
-    }
-    if (incoming.switchId?.startsWith("WX")) return choices.find((c) => network.edges[c.edge].lane !== void 0 && aligned(c)) || choices[0];
-    if (current === "lead") return choices.find((c) => network.edges[c.edge].lane === 0 && c.end === 1) || choices[0];
-    return choices.find((c) => !network.edges[c.edge].switchId || state(network.edges[c.edge].switchId)) || choices[0];
+function routing(network,state) {
+  return (current,choices) => {
+    const incoming=network.edges[current];
+    if(!incoming)return null;
+    if(incoming.switchId && Boolean(state(incoming.switchId))!==incoming.requiredState)return null;
+    const valid=choices.filter((p)=>{
+      const edge=network.edges[p.edge];
+      if(edge.unit && edge.unit===incoming.unit)return false;
+      return !edge.switchId || Boolean(state(edge.switchId))===edge.requiredState;
+    });
+    // Never create crossing junctions or B-A-C reversals inside a turnout.
+    return valid.length===1?valid[0]:null;
   };
 }
 class FixedClock {

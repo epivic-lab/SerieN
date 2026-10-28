@@ -1,4 +1,4 @@
-const BRIDGE = { x: 416, z: 68, width: 38, depth: 28, bottom: -16, deckY: 0.15 };
+const BRIDGE = { x: 750, z: 665, width: 38, depth: 28, bottom: -16, deckY: 0.15 };
 function bridgeAt(x, z) {
   return Math.abs(x - BRIDGE.x) < BRIDGE.width / 2 && Math.abs(z - BRIDGE.z) < BRIDGE.depth / 2;
 }

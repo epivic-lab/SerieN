@@ -9,7 +9,7 @@ const LEGACY_BUILDINGS = [
   { id: "house-central", x: 583, z: 449, w: 80, d: 57, h: 62, style: 1, roof: 0 },
   { id: "factory-east", x: 1033, z: 333, w: 125, d: 80, h: 52, style: 2, roof: 0, type: "factory" },
   { id: "factory-east-small", x: 1165, z: 338, w: 77, d: 58, h: 45, style: 3, roof: 1, type: "factory" },
-  { id: "factory-west", x: 250, z: 195, w: 120, d: 68, h: 51, style: 2, roof: 1, type: "factory" },
+  { id: "factory-west", x: 360, z: 390, w: 120, d: 68, h: 51, style: 2, roof: 1, type: "factory" },
   { id: "factory-north", x: 430, z: 168, w: 80, d: 55, h: 43, style: 2, roof: 0, type: "factory" }
 ];
 const ZONES = [

@@ -1,3 +1,4 @@
+import canonical from "./canonical-layout.json" with { type: "json" };
 function measured(points, meta = {}) {
   const distance = [0];
   for (let i = 1; i < points.length; i++) distance.push(distance[i - 1] + Math.hypot(points[i].x - points[i - 1].x, points[i].z - points[i - 1].z));
@@ -25,59 +26,52 @@ function bezier(a, b, c, d, n = 80) {
 }
 function createNetwork() {
   const edges = {}, nodes = {};
-  function edge(id, points, meta = {}) {
-    const p = measured(points, { id, ...meta });
-    edges[id] = p;
-    for (const [end, pt] of [[0, points[0]], [1, points.at(-1)]]) {
-      const key = pt.x.toFixed(3) + "," + pt.z.toFixed(3);
-      p[end ? "to" : "from"] = key;
-      (nodes[key] ??= []).push({ edge: id, end });
-    }
-    return p;
+  for (const source of canonical.edges) {
+    const edge = measured(source.points.map((p) => ({...p})), {...source});
+    edges[edge.id] = edge;
+    (nodes[edge.from] ??= []).push({edge:edge.id,end:0});
+    (nodes[edge.to] ??= []).push({edge:edge.id,end:1});
   }
-  const cuts = [378, 440, 750, 800, 812, 1110, 1122];
-  for (let lane = 0; lane < 3; lane++) {
-    const r = [249, 282, 315][lane], z = 350 - r;
-    for (let i = 0; i < cuts.length - 1; i++) edge(`L${lane}-${i}`, line([cuts[i], z], [cuts[i + 1], z]), { lane });
-    const points = [];
-    for (let i = 0; i <= 100; i++) {
-      const a = -Math.PI / 2 + Math.PI * i / 100;
-      points.push({ x: 1122 + r * Math.cos(a), z: 350 + r * Math.sin(a) });
+  const network = {edges,nodes,canonical:true,metadata:canonical,controllers:canonical.controllers};
+  network.mainLoops = [0,1,2].map((lane) => {
+    const members = Object.values(edges).filter((e) => e.lane === lane && !e.requiredState);
+    if (!members.length) throw Error("Missing mainline "+lane);
+    const first = members[0], route = [], visited = new Set();
+    let edge=first,end=0;
+    for (let i=0;i<200;i++) {
+      const key=edge.id+":"+end;
+      if (visited.has(key)) {
+        if (key !== first.id+":0") throw Error("Mainline does not close "+lane);
+        return {lane,segments:route,length:route.reduce((sum,p)=>sum+edges[p.id].length,0)};
+      }
+      visited.add(key);route.push({id:edge.id,sign:end===0?1:-1});
+      const node=end===0?edge.to:edge.from;
+      const next=nodes[node].filter((p)=>p.edge!==edge.id && members.includes(edges[p.edge]));
+      if(next.length!==1)throw Error("Ambiguous/open mainline "+lane+" at "+node);
+      edge=edges[next[0].edge];end=next[0].end;
     }
-    if (lane === 0) {
-      points.push(...bezier([1122, 599], [1e3, 599], [980, 566], [812, 566]), ...line([812, 566], [688, 566]), ...bezier([688, 566], [520, 566], [500, 599], [378, 599]));
-    } else points.push({ x: 378, z: 350 + r });
-    for (let i = 1; i <= 100; i++) {
-      const a = Math.PI / 2 + Math.PI * i / 100;
-      points.push({ x: 378 + r * Math.cos(a), z: 350 + r * Math.sin(a) });
-    }
-    points.push({ x: 378, z });
-    edge(`L${lane}-return`, points, { lane });
+    throw Error("Mainline iteration limit");
+  });
+  return network;
+}
+function loopPosition(network,lane,fraction) {
+  const loop=network.mainLoops[lane];
+  let distance=((fraction%1)+1)%1*loop.length;
+  for(const part of loop.segments) {
+    const edge=network.edges[part.id];
+    if(distance<=edge.length)return {edge:edge.id,s:part.sign>0?distance:edge.length-distance,sign:part.sign};
+    distance-=edge.length;
   }
-  for (const [id, a, b, x, sw] of [["XA", 0, 1, 440, "WX-A"], ["XB", 1, 2, 800, "WX-B"]]) {
-    for (const [j, k] of [[a, b], [b, a]]) edge(`${id}${j}`, bezier([x, 350 - [249, 282, 315][j]], [x + 115, 350 - [249, 282, 315][j]], [x + 195, 350 - [249, 282, 315][k]], [x + 310, 350 - [249, 282, 315][k]]), { switchId: sw });
-  }
-  const access = measured(bezier([812, 101], [730, 101], [565, 245], [410, 284]));
-  const mid = sample(access, access.length * 0.42);
-  edge("lead", bezier([812, 101], [740, 101], [mid.x + 50, mid.z - 30], [mid.x, mid.z]), { switchId: "Y-IN" });
-  edge("approach", bezier([mid.x, mid.z], [mid.x - 60, mid.z + 36], [485, 267], [410, 284]));
-  edge("upper", bezier([mid.x, mid.z], [mid.x - 100, mid.z + 18], [365, 235], [243, 231]), { switchId: "Y-2" });
-  edge("middle", bezier([410, 284], [330, 266], [250, 276], [177, 292]), { switchId: "Y-3" });
-  edge("lower", bezier([410, 284], [325, 305], [220, 335], [122, 362]), { switchId: "Y-R1" });
-  edge("runMain", bezier([410, 284], [550, 250], [685, 247], [825, 247]));
-  edge("runAround", bezier([410, 284], [550, 330], [700, 275], [825, 247]), { switchId: "Y-R2" });
-  edge("right", line([825, 247], [1250, 247]), { switchId: "Y-4" });
-  return { edges, nodes };
+  throw Error("Invalid loop distance");
 }
 function validateNetwork(network) {
-  for (const p of Object.values(network.edges)) if (!(p.length > 0) || p.points.some((v) => !Number.isFinite(v.x + v.z))) throw Error("Invalid edge " + p.id);
-  return { edges: Object.keys(network.edges).length, deadEnds: Object.values(network.nodes).filter((v) => v.length === 1).length };
+  for (const p of Object.values(network.edges)) {
+    if (!(p.length > 0) || p.points.some((v) => !Number.isFinite(v.x + v.z))) throw Error("Invalid edge " + p.id);
+    for(const [node,point] of [[p.from,p.points[0]],[p.to,p.points.at(-1)]]) {
+      const expected=network.metadata.nodes[node];
+      if(Math.hypot(point.x-expected.x,point.z-expected.z)>1e-7)throw Error("Disconnected geometry "+p.id);
+    }
+  }
+  return {edges:Object.keys(network.edges).length,deadEnds:Object.values(network.nodes).filter((v)=>v.length===1).length};
 }
-export {
-  bezier,
-  createNetwork,
-  line,
-  measured,
-  sample,
-  validateNetwork
-};
+export {bezier,createNetwork,line,measured,sample,loopPosition,validateNetwork};

@@ -13,6 +13,29 @@ function pathSection(edge, from, to) {
 
 function createSwitchTopology(network, specs) {
   const sites = [], byNode = new Map(), byControl = new Map();
+  if (network.canonical) {
+    for (const unit of network.controllers) {
+      const site={id:unit.id,name:unit.name,controls:[unit.id],nodes:[...new Set(Object.values(unit.ports))],internal:unit.internal,paths:[],protectedRanges:[]};
+      for(const id of unit.internal) {
+        const edge=network.edges[id];
+        site.paths.push({edge:id,from:0,to:edge.length,points:edge.points});
+        site.protectedRanges.push({edge:id,min:0,max:edge.length});
+      }
+      sites.push(site);byControl.set(unit.id,site);
+      // At directly touching switches a node belongs to both units. Resolve
+      // the encounter using the actual outgoing/internal route below.
+      for(const node of site.nodes) {
+        const members=byNode.get(node)??[];members.push(site);byNode.set(node,members);
+        for(const port of network.nodes[node]) {
+          const edge=network.edges[port.edge];
+          if(unit.internal.includes(edge.id))continue;
+          const length=Math.min(30,edge.length);
+          site.protectedRanges.push({edge:edge.id,min:port.end?edge.length-length:0,max:port.end?edge.length:length});
+        }
+      }
+    }
+    return {sites,byNode,byControl};
+  }
   const protect = (site, port, budget) => {
     let current = port;
     for (let i=0;i<64 && budget>EPS;i++) {
@@ -73,6 +96,11 @@ function destinationFor(network, port) {
   if (!port) return null;
   const edge = network.edges[port.edge];
   if (!edge) return null;
+  if (network.canonical) {
+    if(edge.lane!==undefined)return ["Anello interno","Anello centrale","Anello esterno"][edge.lane];
+    if(edge.role==="crossover")return ["Anello interno","Anello centrale","Anello esterno"][port.end?edge.fromLane:edge.toLane];
+    return edge.destination??null;
+  }
   if (edge.lane !== undefined) return ["Anello interno", "Anello centrale", "Anello esterno"][edge.lane];
   if (edge.switchId?.startsWith("WX")) {
     const node = port.end ? edge.from : edge.to;
@@ -109,10 +137,12 @@ function traceJourney(network, topology, journey, direction, offset, choose, max
     const node = sign > 0 ? edge.to : edge.from, ports = network.nodes[node];
     if (!ports) { result.stop = "missing-node"; result.uncertain = true; return result; }
     const choices = ports.filter((p) => p.edge !== edge.id);
-    const site = topology.byNode.get(node);
+    const members = topology.byNode.get(node);
+    let site = Array.isArray(members) ? members.find((s)=>!s.internal.includes(edge.id)) : members;
     if (!choices.length) { result.stop = "terminal"; return result; }
     if (choices.length > 1 && !site) { result.stop = "unmapped-junction"; result.uncertain = true; return result; }
     const wanted = choose(edge.id, choices, direction > 0);
+    if(Array.isArray(members))site=members.find((s)=>wanted&&s.internal.includes(wanted.edge))??members.find((s)=>s.internal.includes(edge.id))??site;
     const valid = wanted && choices.some((p) => p.edge === wanted.edge && p.end === wanted.end);
     if (site && !seenSites.has(site.id)) {
       const encounter = { site, node, distance: result.distance, incoming: edge.id, outgoing: valid ? wanted : null, destination: valid ? destinationFor(network, wanted) : null };

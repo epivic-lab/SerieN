@@ -1,0 +1,2344 @@
+{
+  "version": 1,
+  "sourceSha256": "30790d01c370217acc70906cf8887df9038faa5bca149383634cbaeaba590d9e",
+  "transform": {
+    "scaleMmPerXmlUnit": 10.0,
+    "originXml": [
+      30.3,
+      99.3
+    ],
+    "world": "x=10*(xml.x-30.3); z=10*(xml.y-99.3); y=rail grade from the simulator",
+    "svgViewBox": "0 0 1500 700",
+    "minimap": "SVG x = world.x; SVG y = world.z; preserveAspectRatio=xMidYMid meet",
+    "baseFrameIsAdopted": true,
+    "sourceCoordinateResolutionMm": 1
+  },
+  "reconciliation": {
+    "toleranceMm": 2.5,
+    "maximumTangentMismatchDegrees": 5,
+    "joins": [
+      {
+        "a": "A55",
+        "b": "TO0:B",
+        "distanceMm": 2.0000000000000284,
+        "tangentMismatchDegrees": 0.0,
+        "canonical": "TO0:B"
+      },
+      {
+        "a": "A60",
+        "b": "TO4:B",
+        "distanceMm": 2.0000000000000284,
+        "tangentMismatchDegrees": 0.3298390908801423,
+        "canonical": "TO4:B"
+      }
+    ],
+    "zeroLengthAliases": [
+      {
+        "id": "T51",
+        "from": "TO0:A",
+        "to": "TO3:B",
+        "angle": null,
+        "flip": false,
+        "geometry": {
+          "kind": "line",
+          "length": 0.0,
+          "svg": "M 996.000000000,101.000000000 L 996.000000000,101.000000000"
+        },
+        "zeroLength": true
+      },
+      {
+        "id": "T52",
+        "from": "TO0:C",
+        "to": "TO5:A",
+        "angle": null,
+        "flip": false,
+        "geometry": {
+          "kind": "line",
+          "length": 0.0,
+          "svg": "M 810.000000000,126.000000000 L 810.000000000,126.000000000"
+        },
+        "zeroLength": true
+      }
+    ],
+    "fourthBuffer": "A67",
+    "parallelSeparationMm": 33
+  },
+  "nodes": {
+    "A0": {
+      "id": "A0",
+      "x": 1403.9999999999998,
+      "z": 350.0000000000001,
+      "aliases": [
+        "A0"
+      ],
+      "terminal": false
+    },
+    "A1": {
+      "id": "A1",
+      "x": 1321.0,
+      "z": 550.0000000000001,
+      "aliases": [
+        "A1"
+      ],
+      "terminal": false
+    },
+    "A2": {
+      "id": "A2",
+      "x": 1122.0,
+      "z": 632.0,
+      "aliases": [
+        "A2"
+      ],
+      "terminal": false
+    },
+    "A3": {
+      "id": "A3",
+      "x": 378.0,
+      "z": 632.0,
+      "aliases": [
+        "A3"
+      ],
+      "terminal": false
+    },
+    "A4": {
+      "id": "A4",
+      "x": 178.0,
+      "z": 550.0000000000001,
+      "aliases": [
+        "A4"
+      ],
+      "terminal": false
+    },
+    "A5": {
+      "id": "A5",
+      "x": 95.99999999999997,
+      "z": 350.0000000000001,
+      "aliases": [
+        "A5"
+      ],
+      "terminal": false
+    },
+    "A6": {
+      "id": "A6",
+      "x": 178.0,
+      "z": 151.00000000000009,
+      "aliases": [
+        "A6"
+      ],
+      "terminal": false
+    },
+    "A7": {
+      "id": "A7",
+      "x": 378.0,
+      "z": 67.99999999999997,
+      "aliases": [
+        "A7"
+      ],
+      "terminal": false
+    },
+    "A8": {
+      "id": "A8",
+      "x": 688.0,
+      "z": 101.00000000000009,
+      "aliases": [
+        "A8"
+      ],
+      "terminal": false
+    },
+    "A9": {
+      "id": "A9",
+      "x": 750.0,
+      "z": 101.00000000000009,
+      "aliases": [
+        "A9"
+      ],
+      "terminal": false
+    },
+    "A10": {
+      "id": "A10",
+      "x": 626.0000000000001,
+      "z": 665.0000000000001,
+      "aliases": [
+        "A10"
+      ],
+      "terminal": false
+    },
+    "A11": {
+      "id": "A11",
+      "x": 378.0,
+      "z": 665.0000000000001,
+      "aliases": [
+        "A11"
+      ],
+      "terminal": false
+    },
+    "A12": {
+      "id": "A12",
+      "x": 154.99999999999997,
+      "z": 127.99999999999997,
+      "aliases": [
+        "A12"
+      ],
+      "terminal": false
+    },
+    "A13": {
+      "id": "A13",
+      "x": 378.0,
+      "z": 35.0,
+      "aliases": [
+        "A13"
+      ],
+      "terminal": false
+    },
+    "A14": {
+      "id": "A14",
+      "x": 63.00000000000001,
+      "z": 350.0000000000001,
+      "aliases": [
+        "A14"
+      ],
+      "terminal": false
+    },
+    "A15": {
+      "id": "A15",
+      "x": 154.99999999999997,
+      "z": 573.0,
+      "aliases": [
+        "A15"
+      ],
+      "terminal": false
+    },
+    "A16": {
+      "id": "A16",
+      "x": 1437.0,
+      "z": 350.0000000000001,
+      "aliases": [
+        "A16"
+      ],
+      "terminal": false
+    },
+    "A17": {
+      "id": "A17",
+      "x": 1343.9999999999998,
+      "z": 573.0,
+      "aliases": [
+        "A17"
+      ],
+      "terminal": false
+    },
+    "A18": {
+      "id": "A18",
+      "x": 1122.0,
+      "z": 665.0000000000001,
+      "aliases": [
+        "A18"
+      ],
+      "terminal": false
+    },
+    "A19": {
+      "id": "A19",
+      "x": 626.0000000000001,
+      "z": 35.0,
+      "aliases": [
+        "A19"
+      ],
+      "terminal": false
+    },
+    "A20": {
+      "id": "A20",
+      "x": 874.0,
+      "z": 665.0000000000001,
+      "aliases": [
+        "A20"
+      ],
+      "terminal": false
+    },
+    "A21": {
+      "id": "A21",
+      "x": 1371.0,
+      "z": 350.0000000000001,
+      "aliases": [
+        "A21"
+      ],
+      "terminal": false
+    },
+    "A22": {
+      "id": "A22",
+      "x": 1297.9999999999998,
+      "z": 526.0000000000001,
+      "aliases": [
+        "A22"
+      ],
+      "terminal": false
+    },
+    "A23": {
+      "id": "A23",
+      "x": 1122.0,
+      "z": 598.9999999999999,
+      "aliases": [
+        "A23"
+      ],
+      "terminal": false
+    },
+    "A24": {
+      "id": "A24",
+      "x": 202.0,
+      "z": 174.00000000000006,
+      "aliases": [
+        "A24"
+      ],
+      "terminal": false
+    },
+    "A25": {
+      "id": "A25",
+      "x": 378.0,
+      "z": 101.00000000000009,
+      "aliases": [
+        "A25"
+      ],
+      "terminal": false
+    },
+    "A26": {
+      "id": "A26",
+      "x": 129.00000000000003,
+      "z": 350.0000000000001,
+      "aliases": [
+        "A26"
+      ],
+      "terminal": false
+    },
+    "A27": {
+      "id": "A27",
+      "x": 202.0,
+      "z": 526.0000000000001,
+      "aliases": [
+        "A27"
+      ],
+      "terminal": false
+    },
+    "A28": {
+      "id": "A28",
+      "x": 378.0,
+      "z": 598.9999999999999,
+      "aliases": [
+        "A28"
+      ],
+      "terminal": false
+    },
+    "A29": {
+      "id": "A29",
+      "x": 750.0,
+      "z": 35.0,
+      "aliases": [
+        "A29"
+      ],
+      "terminal": false
+    },
+    "A30": {
+      "id": "A30",
+      "x": 1122.0,
+      "z": 35.0,
+      "aliases": [
+        "A30"
+      ],
+      "terminal": false
+    },
+    "A31": {
+      "id": "A31",
+      "x": 1343.9999999999998,
+      "z": 127.99999999999997,
+      "aliases": [
+        "A31"
+      ],
+      "terminal": false
+    },
+    "A32": {
+      "id": "A32",
+      "x": 1122.0,
+      "z": 67.99999999999997,
+      "aliases": [
+        "A32"
+      ],
+      "terminal": false
+    },
+    "A33": {
+      "id": "A33",
+      "x": 1321.0,
+      "z": 151.00000000000009,
+      "aliases": [
+        "A33"
+      ],
+      "terminal": false
+    },
+    "A35": {
+      "id": "A35",
+      "x": 1297.9999999999998,
+      "z": 174.00000000000006,
+      "aliases": [
+        "A35"
+      ],
+      "terminal": false
+    },
+    "A37": {
+      "id": "A37",
+      "x": 391.0000000000001,
+      "z": 237.99999999999997,
+      "aliases": [
+        "A37"
+      ],
+      "terminal": false
+    },
+    "A38": {
+      "id": "A38",
+      "x": 271.0,
+      "z": 270.0,
+      "aliases": [
+        "A38"
+      ],
+      "terminal": false
+    },
+    "EB39": {
+      "id": "EB39",
+      "x": 210.99999999999997,
+      "z": 286.0000000000001,
+      "aliases": [
+        "EB39"
+      ],
+      "terminal": true
+    },
+    "A40": {
+      "id": "A40",
+      "x": 812.0,
+      "z": 35.0,
+      "aliases": [
+        "A40"
+      ],
+      "terminal": false
+    },
+    "A41": {
+      "id": "A41",
+      "x": 750.0,
+      "z": 67.99999999999997,
+      "aliases": [
+        "A41"
+      ],
+      "terminal": false
+    },
+    "A42": {
+      "id": "A42",
+      "x": 812.0,
+      "z": 67.99999999999997,
+      "aliases": [
+        "A42"
+      ],
+      "terminal": false
+    },
+    "A43": {
+      "id": "A43",
+      "x": 688.0,
+      "z": 67.99999999999997,
+      "aliases": [
+        "A43"
+      ],
+      "terminal": false
+    },
+    "A44": {
+      "id": "A44",
+      "x": 688.0,
+      "z": 566.0000000000001,
+      "aliases": [
+        "A44"
+      ],
+      "terminal": false
+    },
+    "A45": {
+      "id": "A45",
+      "x": 812.0,
+      "z": 566.0000000000001,
+      "aliases": [
+        "A45"
+      ],
+      "terminal": false
+    },
+    "A46": {
+      "id": "A46",
+      "x": 688.0,
+      "z": 632.0,
+      "aliases": [
+        "A46"
+      ],
+      "terminal": false
+    },
+    "A47": {
+      "id": "A47",
+      "x": 812.0,
+      "z": 632.0,
+      "aliases": [
+        "A47"
+      ],
+      "terminal": false
+    },
+    "A48": {
+      "id": "A48",
+      "x": 214.99999999999997,
+      "z": 327.0,
+      "aliases": [
+        "A48"
+      ],
+      "terminal": false
+    },
+    "EB49": {
+      "id": "EB49",
+      "x": 154.99999999999997,
+      "z": 343.0,
+      "aliases": [
+        "EB49"
+      ],
+      "terminal": true
+    },
+    "A51": {
+      "id": "A51",
+      "x": 1206.0,
+      "z": 254.00000000000006,
+      "aliases": [
+        "A51"
+      ],
+      "terminal": false
+    },
+    "EB52": {
+      "id": "EB52",
+      "x": 1268.0,
+      "z": 254.00000000000006,
+      "aliases": [
+        "EB52"
+      ],
+      "terminal": true
+    },
+    "A54": {
+      "id": "A54",
+      "x": 636.0000000000001,
+      "z": 214.00000000000006,
+      "aliases": [
+        "A54"
+      ],
+      "terminal": false
+    },
+    "TO0:B": {
+      "id": "TO0:B",
+      "x": 810.0,
+      "z": 101.00000000000009,
+      "aliases": [
+        "A55",
+        "TO0:B"
+      ],
+      "terminal": false
+    },
+    "TO4:B": {
+      "id": "TO4:B",
+      "x": 703.0,
+      "z": 230.0,
+      "aliases": [
+        "A60",
+        "TO4:B"
+      ],
+      "terminal": false
+    },
+    "A63": {
+      "id": "A63",
+      "x": 958.0,
+      "z": 254.00000000000006,
+      "aliases": [
+        "A63"
+      ],
+      "terminal": false
+    },
+    "A65": {
+      "id": "A65",
+      "x": 500.0,
+      "z": 167.00000000000003,
+      "aliases": [
+        "A65"
+      ],
+      "terminal": false
+    },
+    "A67": {
+      "id": "A67",
+      "x": 259.99999999999994,
+      "z": 231.00000000000009,
+      "aliases": [
+        "A67"
+      ],
+      "terminal": true
+    },
+    "TO0:A": {
+      "id": "TO0:A",
+      "x": 996.0000000000001,
+      "z": 101.00000000000009,
+      "aliases": [
+        "TO0:A",
+        "TO3:B"
+      ],
+      "terminal": false
+    },
+    "TO0:C": {
+      "id": "TO0:C",
+      "x": 810.0,
+      "z": 126.00000000000009,
+      "aliases": [
+        "TO0:C",
+        "TO5:A"
+      ],
+      "terminal": false
+    },
+    "TO1:A": {
+      "id": "TO1:A",
+      "x": 274.99999999999994,
+      "z": 311.0000000000001,
+      "aliases": [
+        "TO1:A"
+      ],
+      "terminal": false
+    },
+    "TO1:B": {
+      "id": "TO1:B",
+      "x": 396.0000000000001,
+      "z": 279.00000000000006,
+      "aliases": [
+        "TO1:B"
+      ],
+      "terminal": false
+    },
+    "TO1:C": {
+      "id": "TO1:C",
+      "x": 399.00000000000006,
+      "z": 295.0000000000001,
+      "aliases": [
+        "TO1:C"
+      ],
+      "terminal": false
+    },
+    "TO2:A": {
+      "id": "TO2:A",
+      "x": 937.0,
+      "z": 134.00000000000006,
+      "aliases": [
+        "TO2:A"
+      ],
+      "terminal": false
+    },
+    "TO2:B": {
+      "id": "TO2:B",
+      "x": 816.0000000000001,
+      "z": 166.00000000000009,
+      "aliases": [
+        "TO2:B"
+      ],
+      "terminal": false
+    },
+    "TO2:C": {
+      "id": "TO2:C",
+      "x": 821.0000000000001,
+      "z": 182.00000000000003,
+      "aliases": [
+        "TO2:C"
+      ],
+      "terminal": false
+    },
+    "TO3:A": {
+      "id": "TO3:A",
+      "x": 1122.0,
+      "z": 101.00000000000009,
+      "aliases": [
+        "TO3:A"
+      ],
+      "terminal": false
+    },
+    "TO3:C": {
+      "id": "TO3:C",
+      "x": 997.0,
+      "z": 117.99999999999997,
+      "aliases": [
+        "TO3:C"
+      ],
+      "terminal": false
+    },
+    "TO4:A": {
+      "id": "TO4:A",
+      "x": 524.0,
+      "z": 279.00000000000006,
+      "aliases": [
+        "TO4:A"
+      ],
+      "terminal": false
+    },
+    "TO4:C": {
+      "id": "TO4:C",
+      "x": 710.0,
+      "z": 254.00000000000006,
+      "aliases": [
+        "TO4:C"
+      ],
+      "terminal": false
+    },
+    "TO5:B": {
+      "id": "TO5:B",
+      "x": 630.0,
+      "z": 174.00000000000006,
+      "aliases": [
+        "TO5:B"
+      ],
+      "terminal": false
+    },
+    "TO5:C": {
+      "id": "TO5:C",
+      "x": 624.0,
+      "z": 150.0,
+      "aliases": [
+        "TO5:C"
+      ],
+      "terminal": false
+    }
+  },
+  "aliases": {
+    "A0": "A0",
+    "A1": "A1",
+    "A2": "A2",
+    "A3": "A3",
+    "A4": "A4",
+    "A5": "A5",
+    "A6": "A6",
+    "A7": "A7",
+    "A8": "A8",
+    "A9": "A9",
+    "A10": "A10",
+    "A11": "A11",
+    "A12": "A12",
+    "A13": "A13",
+    "A14": "A14",
+    "A15": "A15",
+    "A16": "A16",
+    "A17": "A17",
+    "A18": "A18",
+    "A19": "A19",
+    "A20": "A20",
+    "A21": "A21",
+    "A22": "A22",
+    "A23": "A23",
+    "A24": "A24",
+    "A25": "A25",
+    "A26": "A26",
+    "A27": "A27",
+    "A28": "A28",
+    "A29": "A29",
+    "A30": "A30",
+    "A31": "A31",
+    "A32": "A32",
+    "A33": "A33",
+    "A35": "A35",
+    "A37": "A37",
+    "A38": "A38",
+    "EB39": "EB39",
+    "A40": "A40",
+    "A41": "A41",
+    "A42": "A42",
+    "A43": "A43",
+    "A44": "A44",
+    "A45": "A45",
+    "A46": "A46",
+    "A47": "A47",
+    "A48": "A48",
+    "EB49": "EB49",
+    "A51": "A51",
+    "EB52": "EB52",
+    "A54": "A54",
+    "A55": "TO0:B",
+    "TO0:B": "TO0:B",
+    "A60": "TO4:B",
+    "TO4:B": "TO4:B",
+    "A63": "A63",
+    "A65": "A65",
+    "A67": "A67",
+    "TO0:A": "TO0:A",
+    "TO3:B": "TO0:A",
+    "TO0:C": "TO0:C",
+    "TO5:A": "TO0:C",
+    "TO1:A": "TO1:A",
+    "TO1:B": "TO1:B",
+    "TO1:C": "TO1:C",
+    "TO2:A": "TO2:A",
+    "TO2:B": "TO2:B",
+    "TO2:C": "TO2:C",
+    "TO3:A": "TO3:A",
+    "TO3:C": "TO3:C",
+    "TO4:A": "TO4:A",
+    "TO4:C": "TO4:C",
+    "TO5:B": "TO5:B",
+    "TO5:C": "TO5:C"
+  },
+  "edges": [
+    {
+      "id": "T0",
+      "from": "A0",
+      "to": "A1",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 282.9214199438706,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 222.20550831991594,
+      "source": "XML",
+      "sourceIds": [
+        "T0"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T1",
+      "from": "A1",
+      "to": "A2",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 281.214725145158,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 220.8650679153588,
+      "source": "XML",
+      "sourceIds": [
+        "T1"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T2",
+      "from": "A3",
+      "to": "A4",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 282.42318821966484,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 221.81419061469956,
+      "source": "XML",
+      "sourceIds": [
+        "T2"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T3",
+      "from": "A4",
+      "to": "A5",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 282.4231882196649,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 221.81419061469964,
+      "source": "XML",
+      "sourceIds": [
+        "T3"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T4",
+      "from": "A5",
+      "to": "A6",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 281.2147251451581,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 220.8650679153589,
+      "source": "XML",
+      "sourceIds": [
+        "T4"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T5",
+      "from": "A6",
+      "to": "A7",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 282.9214199438707,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 222.20550831991596,
+      "source": "XML",
+      "sourceIds": [
+        "T5"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T6",
+      "from": "A8",
+      "to": "A9",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 62.0,
+      "source": "XML",
+      "sourceIds": [
+        "T6"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T7",
+      "from": "A10",
+      "to": "A11",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 248.0000000000001,
+      "source": "XML",
+      "sourceIds": [
+        "T7"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T8",
+      "from": "A12",
+      "to": "A13",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 315.6857292816834,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 247.9385775408893,
+      "source": "XML",
+      "sourceIds": [
+        "T8"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T9",
+      "from": "A14",
+      "to": "A12",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 313.9777100368127,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 246.5971046052919,
+      "source": "XML",
+      "sourceIds": [
+        "T9"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T10",
+      "from": "A15",
+      "to": "A14",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 315.1851280082686,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 247.54540687736878,
+      "source": "XML",
+      "sourceIds": [
+        "T10"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T11",
+      "from": "A11",
+      "to": "A15",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 315.18512800826886,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 247.545406877369,
+      "source": "XML",
+      "sourceIds": [
+        "T11"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T12",
+      "from": "A16",
+      "to": "A17",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 315.68572928168334,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 247.93857754088938,
+      "source": "XML",
+      "sourceIds": [
+        "T12"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T13",
+      "from": "A17",
+      "to": "A18",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 313.97771003681237,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 246.59710460529166,
+      "source": "XML",
+      "sourceIds": [
+        "T13"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T14",
+      "from": "A13",
+      "to": "A19",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 248.0000000000001,
+      "source": "XML",
+      "sourceIds": [
+        "T14"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T15",
+      "from": "A18",
+      "to": "A20",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 248.0,
+      "source": "XML",
+      "sourceIds": [
+        "T15"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T16",
+      "from": "A21",
+      "to": "A22",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 248.9508218323002,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 195.5249949810489,
+      "source": "XML",
+      "sourceIds": [
+        "T16"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T17",
+      "from": "A22",
+      "to": "A23",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 248.95082183229965,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 195.5249949810485,
+      "source": "XML",
+      "sourceIds": [
+        "T17"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T18",
+      "from": "A24",
+      "to": "A25",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 248.95082183230002,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 195.52499498104876,
+      "source": "XML",
+      "sourceIds": [
+        "T18"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T19",
+      "from": "A26",
+      "to": "A24",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 248.9508218323001,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 195.5249949810488,
+      "source": "XML",
+      "sourceIds": [
+        "T19"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T20",
+      "from": "A27",
+      "to": "A26",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 248.95082183230002,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 195.52499498104876,
+      "source": "XML",
+      "sourceIds": [
+        "T20"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T21",
+      "from": "A28",
+      "to": "A27",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 248.95082183229997,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 195.5249949810487,
+      "source": "XML",
+      "sourceIds": [
+        "T21"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T22",
+      "from": "A19",
+      "to": "A29",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 123.99999999999989,
+      "source": "XML",
+      "sourceIds": [
+        "T22"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T23",
+      "from": "A30",
+      "to": "A31",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 314.48023332871026,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 246.9917848160754,
+      "source": "XML",
+      "sourceIds": [
+        "T23"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T24",
+      "from": "A31",
+      "to": "A16",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 314.4802333287109,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 246.99178481607603,
+      "source": "XML",
+      "sourceIds": [
+        "T24"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T25",
+      "from": "A32",
+      "to": "A33",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 281.7150941241215,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 221.25805597266788,
+      "source": "XML",
+      "sourceIds": [
+        "T25"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T26",
+      "from": "A33",
+      "to": "A0",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 281.7150941241213,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 221.2580559726678,
+      "source": "XML",
+      "sourceIds": [
+        "T26"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T27",
+      "from": "TO3:A",
+      "to": "A35",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 248.95082183229977,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 195.52499498104856,
+      "source": "XML",
+      "sourceIds": [
+        "T27"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T28",
+      "from": "A35",
+      "to": "A21",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 248.95082183230022,
+        "angle": 45.0,
+        "flip": false
+      },
+      "length": 195.52499498104896,
+      "source": "XML",
+      "sourceIds": [
+        "T28"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T29",
+      "from": "TO5:B",
+      "to": "A37",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 247.42069436488117,
+      "source": "XML",
+      "sourceIds": [
+        "T29"
+      ],
+      "confidence": "explicit",
+      "role": "yard"
+    },
+    {
+      "id": "T30",
+      "from": "A38",
+      "to": "EB39",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 62.096698785040154,
+      "source": "XML",
+      "sourceIds": [
+        "T30"
+      ],
+      "confidence": "explicit",
+      "role": "yard",
+      "terminal": "EB39",
+      "destination": "Tronchino ovest centrale"
+    },
+    {
+      "id": "T31",
+      "from": "A29",
+      "to": "A40",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 62.0,
+      "source": "XML",
+      "sourceIds": [
+        "T31"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T32",
+      "from": "A41",
+      "to": "A42",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 62.0,
+      "source": "XML",
+      "sourceIds": [
+        "T32"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T33",
+      "from": "A43",
+      "to": "A41",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 62.0,
+      "source": "XML",
+      "sourceIds": [
+        "T33"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T34",
+      "from": "A44",
+      "to": "A45",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 124.0,
+      "source": "XML",
+      "sourceIds": [
+        "T34"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T35",
+      "from": "A46",
+      "to": "A47",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 124.0,
+      "source": "XML",
+      "sourceIds": [
+        "T35"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 1
+    },
+    {
+      "id": "T36",
+      "from": "A20",
+      "to": "A10",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 247.9999999999999,
+      "source": "XML",
+      "sourceIds": [
+        "T36"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 2
+    },
+    {
+      "id": "T37",
+      "from": "A48",
+      "to": "EB49",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 62.0966987850401,
+      "source": "XML",
+      "sourceIds": [
+        "T37"
+      ],
+      "confidence": "explicit",
+      "role": "yard",
+      "terminal": "EB49",
+      "destination": "Tronchino ovest basso"
+    },
+    {
+      "id": "T38",
+      "from": "A48",
+      "to": "TO1:A",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 62.09669878504004,
+      "source": "XML",
+      "sourceIds": [
+        "T38"
+      ],
+      "confidence": "explicit",
+      "role": "yard"
+    },
+    {
+      "id": "T39",
+      "from": "A51",
+      "to": "EB52",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 62.0,
+      "source": "XML",
+      "sourceIds": [
+        "T39"
+      ],
+      "confidence": "explicit",
+      "role": "yard",
+      "terminal": "EB52",
+      "destination": "Tronchino est"
+    },
+    {
+      "id": "T40",
+      "from": "TO1:B",
+      "to": "A54",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 248.64633518312712,
+      "source": "XML",
+      "sourceIds": [
+        "T40"
+      ],
+      "confidence": "explicit",
+      "role": "runaround-main",
+      "destination": "Runaround \u00b7 ramo principale"
+    },
+    {
+      "id": "T41",
+      "from": "A9",
+      "to": "TO0:B",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 60.0,
+      "source": "XML",
+      "sourceIds": [
+        "T41"
+      ],
+      "confidence": "explicit",
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "T42",
+      "from": "TO2:B",
+      "to": "A54",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 186.29009635512028,
+      "source": "XML",
+      "sourceIds": [
+        "T42"
+      ],
+      "confidence": "explicit",
+      "role": "runaround-main",
+      "destination": "Runaround \u00b7 ramo principale"
+    },
+    {
+      "id": "T43",
+      "from": "TO4:A",
+      "to": "TO1:C",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 482.7377462119881,
+        "angle": 15.0,
+        "flip": false
+      },
+      "length": 126.3803583116487,
+      "source": "XML",
+      "sourceIds": [
+        "T43"
+      ],
+      "confidence": "explicit",
+      "role": "runaround-alternate",
+      "destination": "Runaround \u00b7 aggiramento"
+    },
+    {
+      "id": "T44",
+      "from": "TO2:C",
+      "to": "TO4:B",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 487.9831601139126,
+        "angle": 15.0,
+        "flip": false
+      },
+      "length": 127.7536035024795,
+      "source": "XML",
+      "sourceIds": [
+        "T44"
+      ],
+      "confidence": "explicit",
+      "role": "runaround-alternate",
+      "destination": "Runaround \u00b7 aggiramento"
+    },
+    {
+      "id": "T45",
+      "from": "TO2:A",
+      "to": "TO3:C",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 62.09669878504012,
+      "source": "XML",
+      "sourceIds": [
+        "T45"
+      ],
+      "confidence": "explicit",
+      "role": "yard"
+    },
+    {
+      "id": "T46",
+      "from": "A63",
+      "to": "A51",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 248.0,
+      "source": "XML",
+      "sourceIds": [
+        "T46"
+      ],
+      "confidence": "explicit",
+      "role": "yard"
+    },
+    {
+      "id": "T47",
+      "from": "TO4:C",
+      "to": "A63",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 248.0,
+      "source": "XML",
+      "sourceIds": [
+        "T47"
+      ],
+      "confidence": "explicit",
+      "role": "yard"
+    },
+    {
+      "id": "T48",
+      "from": "A38",
+      "to": "A37",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 124.19339757008031,
+      "source": "XML",
+      "sourceIds": [
+        "T48"
+      ],
+      "confidence": "explicit",
+      "role": "yard"
+    },
+    {
+      "id": "T49",
+      "from": "A65",
+      "to": "TO5:C",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 479.44361052017064,
+        "angle": 15.0,
+        "flip": false
+      },
+      "length": 125.51795340524646,
+      "source": "XML",
+      "sourceIds": [
+        "T49"
+      ],
+      "confidence": "explicit",
+      "role": "yard"
+    },
+    {
+      "id": "T50",
+      "from": "A67",
+      "to": "A65",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 248.38679514016044,
+      "source": "XML",
+      "sourceIds": [
+        "T50"
+      ],
+      "confidence": "explicit",
+      "role": "yard",
+      "terminal": "A67",
+      "destination": "Tronchino ovest alto"
+    },
+    {
+      "id": "TO0:AB",
+      "from": "TO0:A",
+      "to": "TO0:B",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 186.0000000000001,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO0"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO0",
+      "switchId": "Y-IN",
+      "requiredState": false,
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "TO0:AC",
+      "from": "TO0:A",
+      "to": "TO0:C",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 704.4200000000014,
+        "angle": 15.310334113665819,
+        "flip": true
+      },
+      "length": 188.2320494224111,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO0"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO0",
+      "switchId": "Y-IN",
+      "requiredState": true,
+      "role": "yard"
+    },
+    {
+      "id": "TO1:AB",
+      "from": "TO1:A",
+      "to": "TO1:B",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 125.15989773086284,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO1"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO1",
+      "switchId": "Y-R1",
+      "requiredState": false,
+      "role": "runaround"
+    },
+    {
+      "id": "TO1:AC",
+      "from": "TO1:A",
+      "to": "TO1:C",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 481.4221263112314,
+        "angle": 14.92216951782464,
+        "flip": false
+      },
+      "length": 125.3819657231932,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO1"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO1",
+      "switchId": "Y-R1",
+      "requiredState": true,
+      "role": "runaround"
+    },
+    {
+      "id": "TO2:AB",
+      "from": "TO2:A",
+      "to": "TO2:B",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 125.15989773086255,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO2"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO2",
+      "switchId": "Y-R2",
+      "requiredState": false,
+      "role": "runaround"
+    },
+    {
+      "id": "TO2:AC",
+      "from": "TO2:A",
+      "to": "TO2:C",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 470.543890324045,
+        "angle": 15.331940556596862,
+        "flip": true
+      },
+      "length": 125.91408291937776,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO2"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO2",
+      "switchId": "Y-R2",
+      "requiredState": true,
+      "role": "runaround"
+    },
+    {
+      "id": "TO3:AB",
+      "from": "TO3:A",
+      "to": "TO0:A",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 125.99999999999989,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO3"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO3",
+      "switchId": "Y-3",
+      "requiredState": false,
+      "role": "mainline",
+      "lane": 0
+    },
+    {
+      "id": "TO3:AC",
+      "from": "TO3:A",
+      "to": "TO3:C",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 468.05882352941524,
+        "angle": 15.489421092845713,
+        "flip": true
+      },
+      "length": 126.53558229721365,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO3"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO3",
+      "switchId": "Y-3",
+      "requiredState": true,
+      "role": "yard"
+    },
+    {
+      "id": "TO4:AB",
+      "from": "TO4:A",
+      "to": "TO4:B",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 185.5855597830823,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO4"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO4",
+      "switchId": "Y-4",
+      "requiredState": false,
+      "role": "runaround"
+    },
+    {
+      "id": "TO4:AC",
+      "from": "TO4:A",
+      "to": "TO4:C",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 704.5170296529343,
+        "angle": 15.308212862300573,
+        "flip": false
+      },
+      "length": 188.23189408256454,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO4"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO4",
+      "switchId": "Y-4",
+      "requiredState": true,
+      "role": "yard"
+    },
+    {
+      "id": "TO5:AB",
+      "from": "TO0:C",
+      "to": "TO5:B",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 186.29009635512028,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO5"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO5",
+      "switchId": "Y-2",
+      "requiredState": false,
+      "role": "yard"
+    },
+    {
+      "id": "TO5:AC",
+      "from": "TO0:C",
+      "to": "TO5:C",
+      "shape": {
+        "kind": "circular-arc",
+        "radius": 710.9586880427814,
+        "angle": 15.158075636490425,
+        "flip": false
+      },
+      "length": 188.08998109465708,
+      "source": "JMRI ports + tangent circle fit",
+      "sourceIds": [
+        "TO5"
+      ],
+      "confidence": "fitted-internal",
+      "unit": "TO5",
+      "switchId": "Y-2",
+      "requiredState": true,
+      "role": "yard"
+    },
+    {
+      "id": "WX-A:upper",
+      "from": "A7",
+      "to": "A43",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 310.0,
+      "source": "PDF + BOM 20-210 + XML mouths",
+      "sourceIds": [
+        "A7",
+        "A43"
+      ],
+      "confidence": "inferred-validated-ports",
+      "unit": "WX-A",
+      "switchId": "WX-A",
+      "requiredState": false,
+      "lane": 1,
+      "role": "mainline"
+    },
+    {
+      "id": "WX-A:lower",
+      "from": "A25",
+      "to": "A8",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 310.0,
+      "source": "PDF + BOM 20-210 + XML mouths",
+      "sourceIds": [
+        "A25",
+        "A8"
+      ],
+      "confidence": "inferred-validated-ports",
+      "unit": "WX-A",
+      "switchId": "WX-A",
+      "requiredState": false,
+      "lane": 0,
+      "role": "mainline"
+    },
+    {
+      "id": "WX-A:down",
+      "from": "A7",
+      "to": "A8",
+      "shape": {
+        "kind": "tangent-double-arc",
+        "radius": 583.184,
+        "angle": 12.809128015818624,
+        "lead": 16.96689004445318,
+        "trailing": 16.96689004445318,
+        "centerStraight": 17.924,
+        "profileCertified": false
+      },
+      "length": 312.6125862897636,
+      "source": "documented secondary Kato profile fitted to XML mouths",
+      "sourceIds": [
+        "A7",
+        "A8"
+      ],
+      "confidence": "inferred-profile-unverified",
+      "unit": "WX-A",
+      "switchId": "WX-A",
+      "requiredState": true,
+      "fromLane": 1,
+      "toLane": 0,
+      "role": "crossover"
+    },
+    {
+      "id": "WX-A:up",
+      "from": "A25",
+      "to": "A43",
+      "shape": {
+        "kind": "tangent-double-arc",
+        "radius": 583.184,
+        "angle": 12.809128015818624,
+        "lead": 16.96689004445318,
+        "trailing": 16.96689004445318,
+        "centerStraight": 17.924,
+        "profileCertified": false
+      },
+      "length": 312.6125862897636,
+      "source": "documented secondary Kato profile fitted to XML mouths",
+      "sourceIds": [
+        "A25",
+        "A43"
+      ],
+      "confidence": "inferred-profile-unverified",
+      "unit": "WX-A",
+      "switchId": "WX-A",
+      "requiredState": true,
+      "fromLane": 0,
+      "toLane": 1,
+      "role": "crossover"
+    },
+    {
+      "id": "WX-B:upper",
+      "from": "A40",
+      "to": "A30",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 310.0,
+      "source": "PDF + BOM 20-210 + XML mouths",
+      "sourceIds": [
+        "A40",
+        "A30"
+      ],
+      "confidence": "inferred-validated-ports",
+      "unit": "WX-B",
+      "switchId": "WX-B",
+      "requiredState": false,
+      "lane": 2,
+      "role": "mainline"
+    },
+    {
+      "id": "WX-B:lower",
+      "from": "A42",
+      "to": "A32",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 310.0,
+      "source": "PDF + BOM 20-210 + XML mouths",
+      "sourceIds": [
+        "A42",
+        "A32"
+      ],
+      "confidence": "inferred-validated-ports",
+      "unit": "WX-B",
+      "switchId": "WX-B",
+      "requiredState": false,
+      "lane": 1,
+      "role": "mainline"
+    },
+    {
+      "id": "WX-B:down",
+      "from": "A40",
+      "to": "A32",
+      "shape": {
+        "kind": "tangent-double-arc",
+        "radius": 583.184,
+        "angle": 12.809128015818596,
+        "lead": 16.966890044453464,
+        "trailing": 16.966890044453464,
+        "centerStraight": 17.924,
+        "profileCertified": false
+      },
+      "length": 312.6125862897636,
+      "source": "documented secondary Kato profile fitted to XML mouths",
+      "sourceIds": [
+        "A40",
+        "A32"
+      ],
+      "confidence": "inferred-profile-unverified",
+      "unit": "WX-B",
+      "switchId": "WX-B",
+      "requiredState": true,
+      "fromLane": 2,
+      "toLane": 1,
+      "role": "crossover"
+    },
+    {
+      "id": "WX-B:up",
+      "from": "A42",
+      "to": "A30",
+      "shape": {
+        "kind": "tangent-double-arc",
+        "radius": 583.184,
+        "angle": 12.809128015818596,
+        "lead": 16.966890044453464,
+        "trailing": 16.966890044453464,
+        "centerStraight": 17.924,
+        "profileCertified": false
+      },
+      "length": 312.6125862897636,
+      "source": "documented secondary Kato profile fitted to XML mouths",
+      "sourceIds": [
+        "A42",
+        "A30"
+      ],
+      "confidence": "inferred-profile-unverified",
+      "unit": "WX-B",
+      "switchId": "WX-B",
+      "requiredState": true,
+      "fromLane": 1,
+      "toLane": 2,
+      "role": "crossover"
+    },
+    {
+      "id": "WIDEN-L:offset",
+      "from": "A28",
+      "to": "A44",
+      "shape": {
+        "kind": "tangent-double-arc",
+        "radius": 484.2377144630906,
+        "angle": 14.999999999999982,
+        "lead": 42,
+        "trailing": 17.340114280071873,
+        "centerStraight": 0,
+        "profileCertified": false
+      },
+      "length": 312.8862118955037,
+      "source": "PDF 20-051/052 + BOM + XML mouths; documented rounding fit",
+      "sourceIds": [
+        "A28",
+        "A44"
+      ],
+      "confidence": "inferred-profile-unverified",
+      "lane": 0,
+      "role": "mainline"
+    },
+    {
+      "id": "WIDEN-L:straight",
+      "from": "A3",
+      "to": "A46",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 310.0,
+      "source": "PDF + BOM + XML mouths",
+      "sourceIds": [
+        "A3",
+        "A46"
+      ],
+      "confidence": "inferred-validated-ports",
+      "lane": 1,
+      "role": "mainline"
+    },
+    {
+      "id": "WIDEN-R:offset",
+      "from": "A45",
+      "to": "A23",
+      "shape": {
+        "kind": "tangent-double-arc",
+        "radius": 484.2377144630906,
+        "angle": 14.999999999999982,
+        "lead": 17.340114280071873,
+        "trailing": 42,
+        "centerStraight": 0,
+        "profileCertified": false
+      },
+      "length": 312.8862118955037,
+      "source": "PDF 20-051/052 + BOM + XML mouths; documented rounding fit",
+      "sourceIds": [
+        "A45",
+        "A23"
+      ],
+      "confidence": "inferred-profile-unverified",
+      "lane": 0,
+      "role": "mainline"
+    },
+    {
+      "id": "WIDEN-R:straight",
+      "from": "A47",
+      "to": "A2",
+      "shape": {
+        "kind": "line"
+      },
+      "length": 310.0,
+      "source": "PDF + BOM + XML mouths",
+      "sourceIds": [
+        "A47",
+        "A2"
+      ],
+      "confidence": "inferred-validated-ports",
+      "lane": 1,
+      "role": "mainline"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "Y-IN",
+      "sourceId": "TO0",
+      "code": "20-202",
+      "name": "Accesso merci ovest",
+      "ports": {
+        "A": "TO0:A",
+        "B": "TO0:B",
+        "C": "TO0:C"
+      },
+      "internal": [
+        "TO0:AB",
+        "TO0:AC"
+      ],
+      "x": 903.0,
+      "z": 101.00000000000009,
+      "kind": "single"
+    },
+    {
+      "id": "Y-R1",
+      "sourceId": "TO1",
+      "code": "20-221",
+      "name": "Runaround ovest",
+      "ports": {
+        "A": "TO1:A",
+        "B": "TO1:B",
+        "C": "TO1:C"
+      },
+      "internal": [
+        "TO1:AB",
+        "TO1:AC"
+      ],
+      "x": 335.5,
+      "z": 295.0000000000001,
+      "kind": "single"
+    },
+    {
+      "id": "Y-R2",
+      "sourceId": "TO2",
+      "code": "20-220",
+      "name": "Runaround est",
+      "ports": {
+        "A": "TO2:A",
+        "B": "TO2:B",
+        "C": "TO2:C"
+      },
+      "internal": [
+        "TO2:AB",
+        "TO2:AC"
+      ],
+      "x": 876.5,
+      "z": 150.00000000000006,
+      "kind": "single"
+    },
+    {
+      "id": "Y-3",
+      "sourceId": "TO3",
+      "code": "20-220",
+      "name": "Accesso merci est",
+      "ports": {
+        "A": "TO3:A",
+        "B": "TO0:A",
+        "C": "TO3:C"
+      },
+      "internal": [
+        "TO3:AB",
+        "TO3:AC"
+      ],
+      "x": 1059.0,
+      "z": 101.00000000000009,
+      "kind": "single"
+    },
+    {
+      "id": "Y-4",
+      "sourceId": "TO4",
+      "code": "20-203",
+      "name": "Tronchino est",
+      "ports": {
+        "A": "TO4:A",
+        "B": "TO4:B",
+        "C": "TO4:C"
+      },
+      "internal": [
+        "TO4:AB",
+        "TO4:AC"
+      ],
+      "x": 613.5,
+      "z": 254.50000000000003,
+      "kind": "single"
+    },
+    {
+      "id": "Y-2",
+      "sourceId": "TO5",
+      "code": "20-203",
+      "name": "Bivio tronchini ovest",
+      "ports": {
+        "A": "TO0:C",
+        "B": "TO5:B",
+        "C": "TO5:C"
+      },
+      "internal": [
+        "TO5:AB",
+        "TO5:AC"
+      ],
+      "x": 720.0,
+      "z": 150.00000000000006,
+      "kind": "single"
+    },
+    {
+      "id": "WX-A",
+      "sourceId": null,
+      "code": "20-210",
+      "name": "WX310 ovest",
+      "ports": {
+        "UL": "A7",
+        "UR": "A43",
+        "LL": "A25",
+        "LR": "A8"
+      },
+      "internal": [
+        "WX-A:upper",
+        "WX-A:lower",
+        "WX-A:down",
+        "WX-A:up"
+      ],
+      "x": 533.0,
+      "z": 84.50000000000003,
+      "kind": "cross"
+    },
+    {
+      "id": "WX-B",
+      "sourceId": null,
+      "code": "20-210",
+      "name": "WX310 est",
+      "ports": {
+        "UL": "A40",
+        "UR": "A30",
+        "LL": "A42",
+        "LR": "A32"
+      },
+      "internal": [
+        "WX-B:upper",
+        "WX-B:lower",
+        "WX-B:down",
+        "WX-B:up"
+      ],
+      "x": 967.0,
+      "z": 51.499999999999986,
+      "kind": "cross"
+    }
+  ],
+  "statistics": {
+    "nodes": 70,
+    "edges": 75,
+    "components": 1,
+    "cycleRank": 6,
+    "terminals": 4
+  },
+  "limitations": [
+    "XML does not encode the internal physical geometry of six single turnouts or the four missing double-track modules.",
+    "Turnout internals are tangent circles constrained by original A/B/C ports; rounded source coordinates prevent manufacturer-exact radii.",
+    "WX310 diagonal profiles use a documented secondary catalog fit; physical profile is not certified.",
+    "20-051/052 use PDF-derived 15-degree reverse arcs fitted to rounded XML mouths.",
+    "Topological validation and physical manufacturing-profile certification are distinct."
+  ]
+}
