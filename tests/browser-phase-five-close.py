@@ -30,7 +30,16 @@ with sync_playwright() as p:
   const t=s.stock[+card.dataset.consoleTrain],marker=card.querySelector('.trainMapMarker'),v=t.vehicles[0];
   check(Math.abs(+marker.getAttribute('cx')-v.x)<1e-8&&Math.abs(+marker.getAttribute('cy')-v.z)<1e-8,'SVG/engine sync');
   check(+card.querySelector('input').value===t.speed,'console speed sync');
- }for(const t of s.stock)for(const v of t.vehicles)check(Math.hypot(v.x-v.rendered.x,v.z-v.rendered.z)<1e-8,'mesh/engine sync');};
+ }for(const t of s.stock)for(const v of t.vehicles)check(Math.hypot(v.x-v.rendered.x,v.z-v.rendered.z)<1e-8,'mesh/engine sync');
+ check($('.nextSwitchTrain').textContent===s.stock[s.consoles.active].name,'actual HUD train identity');
+ if(s.nextSwitch.site){
+  check($('.nextSwitchName').textContent===s.nextSwitch.name,'actual HUD switch name');
+  const label=$('.nextSwitchDistance').textContent.match(/^([0-9.]+) (mm|m)/);check(label,'actual HUD distance label');
+  const mm=+label[1]*(label[2]==='m'?1000:1);check(Math.abs(mm-s.nextSwitch.distance)<(label[2]==='m'?5.00001:.50001),'actual HUD graph distance');
+  if(s.nextSwitch.destination)check($('.nextSwitchDestination').textContent.includes(s.nextSwitch.destination),'actual HUD outgoing destination');
+ }
+ if(s.nextSwitch.safety?.blocked)check($('.nextSwitchWarning').textContent.includes(s.nextSwitch.safety.message),'actual HUD safety warning');
+ };
  window.__closeHelpers={api,$,all,check,snap,select,speed,command,reset,bare,straightGap,sync};
  }''')
  # Separate evaluate calls allow evidence to be saved even if a later case fails.
@@ -100,6 +109,7 @@ with sync_playwright() as p:
  # already-separated compact locomotives into overlapping native envelopes.
  page.evaluate("__closeHelpers.reset();__closeHelpers.bare(0);__closeHelpers.bare(2);document.getElementById('rollingModels').value='kenney';document.getElementById('rollingModels').dispatchEvent(new Event('change'))")
  page.wait_for_function('__serienDiagnostics.snapshot().stock.every(t=>t.vehicles.every(v=>v.dimensions))',timeout=90000)
+ assert page.locator('#rollingModels').input_value()=='kenney','Unchanged dropped coupler contacts must not block compact mode'
  results['model']=exercise('model-clearance','''
  api.placeTrain(0,'T47',200,1);api.placeTrain(2,'T46',12,-1);api.step(0);const before=snap(),identities=api.railwayState().identities;check(straightGap(before.stock[0],before.stock[2])>0,'compact models initially separate');
  $('#rollingModels').value='native';$('#rollingModels').dispatchEvent(new Event('change'));const after=snap();check($('#rollingModels').value==='kenney','expansion into another train must be rejected');

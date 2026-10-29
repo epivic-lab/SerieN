@@ -7,8 +7,13 @@ function copyJourney(journey) {
   });
 }
 
-// A synchronous fleet transaction. No DOM, mission or rendering side effects
-// happen until all candidate movements have been checked against each other.
+/** A synchronous fleet transaction, with no DOM, mission or rendering effects.
+ * Candidates share immutable network/vehicle references, never mutable history.
+ * @param {{trains:import('./railway-types.js').Train[],
+ * detached:import('./railway-types.js').DetachedVehicle[],route:Function}} context
+ * @param {number} dt Positive elapsed time, at most one 1/60 s railway step.
+ * @returns {Array<{train:import('./railway-types.js').Train,moved:boolean,kind:string|null,notify:boolean}>}
+ */
 export function stepRailway({trains, detached, route}, dt) {
   if (!Number.isFinite(dt) || dt <= 0 || dt > 1 / 60 + 1e-9) throw new RangeError('Invalid railway step');
   const proposals = trains.map(train => {

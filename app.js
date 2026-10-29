@@ -1,5 +1,5 @@
 import {stepRailway} from './src/railway-step.js';
-import {vehiclesConflict} from './src/railway-conflicts.js';
+import {vehiclesConflict,envelopeGap} from './src/railway-conflicts.js';
 import {createFleetCommands} from './src/fleet-commands.js';
 import {layoutFor,vehiclePositions,deriveSwitchAssistance,collectRailwayState} from './src/railway-state.js';
 import {buildStock,animateStock} from './src/rolling-stock.js';
@@ -382,6 +382,12 @@ assetReady.then((loaded) => {
 function updateModels() {
   const active = $("rollingModels").value === "kenney";
   const histories=trains.filter(t=>t.journey).map(t=>({journey:t.journey,segments:[...t.journey.segments],lastBlock:t.journey.lastBlock}));
+  const clearances=()=>{
+    const bodies=[...trains.filter(t=>t.journey).map(vehiclePositions),...detached.map(d=>[{...d.point,vehicle:d.group}])],pairs=new Map();
+    bodies.forEach((a,i)=>bodies.slice(i+1).forEach(b=>a.forEach(p=>b.forEach(q=>pairs.set(p.vehicle.uuid+'/'+q.vehicle.uuid,{conflict:vehiclesConflict(p,q),gap:envelopeGap(p,q)})))));
+    return pairs;
+  };
+  const previousClearances=clearances();
   importedTrains(active);
   const noRoom=trains.some((t) => t.journey && (!t.journey.ensure(t.journey.position - layoutFor(t).tail, route) || !t.journey.ensure(t.journey.position+(t.group.userData.couplers?.front?.x??48),route))) || detached.some(d=>{
     // A stationary vehicle may grow only inside its known route history;
@@ -389,8 +395,12 @@ function updateModels() {
     const j=d.journey,c=d.group.userData.couplers;
     return j&&(j.position+(c?.back?.x??-48)<j.segments[0].start||j.position+(c?.front?.x??48)>j.segments.at(-1).end);
   });
-  const bodies=[...trains.filter(t=>t.journey).map(vehiclePositions),...detached.map(d=>[{...d.point,vehicle:d.group}])];
-  const conflict=bodies.some((a,i)=>bodies.slice(i+1).some(b=>a.some(p=>b.some(q=>vehiclesConflict(p,q)))));
+  // Existing coupler contact between dropped wagons may stay unchanged or
+  // improve. Reject every new conflict, and every worsening existing one.
+  const conflict=[...clearances()].some(([key,next])=>{
+    const previous=previousClearances.get(key);
+    return next.conflict&&(!previous?.conflict||next.gap<previous.gap-1e-7);
+  });
   if (noRoom || conflict) {
     for(const h of histories){h.journey.segments.splice(0,h.journey.segments.length,...h.segments);if(h.lastBlock===undefined)delete h.journey.lastBlock;else h.journey.lastBlock=h.lastBlock;}
     importedTrains(rollingModelMode === "kenney");
