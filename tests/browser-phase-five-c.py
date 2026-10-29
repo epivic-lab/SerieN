@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--enable-unsafe-swiftshader'])
  page=b.new_page(viewport={'width':650,'height':760});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto('http://127.0.0.1:8000/?diagnostics=1');page.wait_for_function('window.__serienDiagnostics!==undefined',timeout=120000)
+ page.goto('http://127.0.0.1:8000/?diagnostics=1',wait_until='domcontentloaded',timeout=120000);page.wait_for_function('window.__serienDiagnostics!==undefined',timeout=120000)
  page.evaluate("document.getElementById('pause').click();document.getElementById('quality').value='low';document.getElementById('quality').dispatchEvent(new Event('change'));document.getElementById('rollingModels').value='kenney';document.getElementById('rollingModels').dispatchEvent(new Event('change'));document.getElementById('addTrain').click()")
  page.wait_for_function('__serienDiagnostics.snapshot().stock.every(t=>t.vehicles.every(v=>v.dimensions))',timeout=90000)
  result=page.evaluate('''()=>{

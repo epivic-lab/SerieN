@@ -383,11 +383,19 @@ function updateModels() {
   const active = $("rollingModels").value === "kenney";
   const histories=trains.filter(t=>t.journey).map(t=>({journey:t.journey,segments:[...t.journey.segments],lastBlock:t.journey.lastBlock}));
   importedTrains(active);
-  if (trains.some((t) => t.journey && (!t.journey.ensure(t.journey.position - layoutFor(t).tail, route) || !t.journey.ensure(t.journey.position+(t.group.userData.couplers?.front?.x??48),route)))) {
+  const noRoom=trains.some((t) => t.journey && (!t.journey.ensure(t.journey.position - layoutFor(t).tail, route) || !t.journey.ensure(t.journey.position+(t.group.userData.couplers?.front?.x??48),route))) || detached.some(d=>{
+    // A stationary vehicle may grow only inside its known route history;
+    // never invent the missing branch of a frozen detached Journey.
+    const j=d.journey,c=d.group.userData.couplers;
+    return j&&(j.position+(c?.back?.x??-48)<j.segments[0].start||j.position+(c?.front?.x??48)>j.segments.at(-1).end);
+  });
+  const bodies=[...trains.filter(t=>t.journey).map(vehiclePositions),...detached.map(d=>[{...d.point,vehicle:d.group}])];
+  const conflict=bodies.some((a,i)=>bodies.slice(i+1).some(b=>a.some(p=>b.some(q=>vehiclesConflict(p,q)))));
+  if (noRoom || conflict) {
     for(const h of histories){h.journey.segments.splice(0,h.journey.segments.length,...h.segments);if(h.lastBlock===undefined)delete h.journey.lastBlock;else h.journey.lastBlock=h.lastBlock;}
     importedTrains(rollingModelMode === "kenney");
     $("rollingModels").value = rollingModelMode;
-    log("Not enough room for longer rolling stock. Move the train first.");
+    log(conflict?"Rolling stock change blocked: another vehicle occupies the required clearance.":"Not enough room for longer rolling stock. Move the train first.");
     return;
   }
   rollingModelMode = $("rollingModels").value;
@@ -395,7 +403,7 @@ function updateModels() {
     t.name = active && t.assetLoaded ? kenneyNames[["steam","diesel","shunter"].indexOf(t.modelKey)]+(t.id>=3?` · ${t.id+1}`:"") : t.nativeName;
     t.desc = active && t.assetLoaded ? "Kenney Train Kit \xB7 stylized model" : t.nativeDescription;
   }
-  ui();
+  renderVehicles();ui();
 }
 $("rollingModels").onchange = updateModels;
 const detached = [];
@@ -601,7 +609,8 @@ function stopAllTrains() {
 }
 function addTrain() {
   if(trains.length>=4){log("A session supports up to four trains.");return null;}
-  if(trains.some(t=>vehiclePositions(t).some(p=>p.edge==="T47"&&Math.abs(p.s-80)<120))||detached.some(d=>d.point.edge==="T47"&&Math.abs(d.point.s-80)<120)){
+  const insertion={...new Journey(network,'T47',80).locate(),vehicle:{userData:{}}};
+  if(trains.some(t=>vehiclePositions(t).some(p=>(p.edge==="T47"&&Math.abs(p.s-80)<120)||vehiclesConflict(insertion,p)))||detached.some(d=>(d.point.edge==="T47"&&Math.abs(d.point.s-80)<120)||vehiclesConflict(insertion,{...d.point,vehicle:d.group}))){
     log("Clear the insertion point in the east siding first.");return null;
   }
   const id=trains.length;

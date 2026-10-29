@@ -20,6 +20,7 @@ Rieseguite suite Node/Python/build e browser pertinenti, con prove nuove in `doc
 
 ## Chiusura 5C — checkpoint applicativo in corso
 
+- Checkpoint movimento atomico: `5580799`.
 - Movimento candidato di tutta la flotta prima del commit, inviluppi swept e ricontrollo degli arresti a catena. Velocità/accelerazioni, Journey e topologia conservati; side effect UI/missioni soltanto dopo l’accettazione.
 - Frontale A1 nel browser corretto: margine minimo +1 mm, entrambe le locomotive ferme. Nuove prove Node su frontali/inseguimenti/composizioni, curve, terminali, WX, frame rate e rollback.
 - Rilevato e corretto anche l’ingrandimento Kenney→nativo che introduceva 23,85 mm di sovrapposizione; guardia per inserimento del quarto convoglio quando un corpo arriva da un edge adiacente.
