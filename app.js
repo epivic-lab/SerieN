@@ -1,3 +1,4 @@
+import {vehiclesConflict} from './src/railway-conflicts.js';
 import {createFleetCommands} from './src/fleet-commands.js';
 import {layoutFor,vehiclePositions,deriveSwitchAssistance} from './src/railway-state.js';
 import {buildStock,animateStock} from './src/rolling-stock.js';
@@ -379,8 +380,10 @@ assetReady.then((loaded) => {
 });
 function updateModels() {
   const active = $("rollingModels").value === "kenney";
+  const histories=trains.filter(t=>t.journey).map(t=>({journey:t.journey,segments:[...t.journey.segments],lastBlock:t.journey.lastBlock}));
   importedTrains(active);
   if (trains.some((t) => t.journey && (!t.journey.ensure(t.journey.position - layoutFor(t).tail, route) || !t.journey.ensure(t.journey.position+(t.group.userData.couplers?.front?.x??48),route)))) {
+    for(const h of histories){h.journey.segments.splice(0,h.journey.segments.length,...h.segments);if(h.lastBlock===undefined)delete h.journey.lastBlock;else h.journey.lastBlock=h.lastBlock;}
     importedTrains(rollingModelMode === "kenney");
     $("rollingModels").value = rollingModelMode;
     log("Not enough room for longer rolling stock. Move the train first.");
@@ -549,7 +552,7 @@ function updateTrainStatus(dt) {
   protectionTimer = 0.08;
   const occupied = trains.map((t) => vehiclePositions(t));
   for (let a = 0; a < occupied.length; a++) for (let b = a + 1; b < occupied.length; b++) {
-    if (occupied[a].some((u) => occupied[b].some((v) => u.edge === v.edge ? Math.abs(u.s - v.s) < (u.vehicle.userData.assetDimensions || u.vehicle.userData.stock || v.vehicle.userData.assetDimensions || v.vehicle.userData.stock ? Math.max(couplingDistance(u.vehicle.userData, v.vehicle.userData), couplingDistance(v.vehicle.userData, u.vehicle.userData)) : 58) : Math.hypot(u.x - v.x, u.z - v.z) < 17))) {
+    if (occupied[a].some(u=>occupied[b].some(v=>vehiclesConflict(u,v)))) {
       const u = trains[a], v = trains[b];
       if (u.speed || v.speed || u.velocity || v.velocity) {
         u.speed = v.speed = u.velocity = v.velocity = 0;
@@ -560,7 +563,7 @@ function updateTrainStatus(dt) {
   }
   for (const t of trains) if (detached.some((d) => vehiclePositions(t).some((p) => {
     const toward=(d.point.x-p.x)*Math.cos(p.angle)-(d.point.z-p.z)*Math.sin(p.angle);
-    return toward*t.velocity>0 && Math.hypot(p.x - d.point.x, p.z - d.point.z) < (p.vehicle.userData.assetDimensions || p.vehicle.userData.stock || d.group.userData.assetDimensions || d.group.userData.stock ? couplingDistance(p.vehicle.userData, d.group.userData) + 1 : 48);
+    return toward*t.velocity>0 && vehiclesConflict(p,{...d.point,vehicle:d.group});
   })) && t.velocity) {
     t.speed = t.velocity = 0;
     log("Stationary wagon ahead. Stopped for coupling.");
@@ -571,7 +574,7 @@ function applyConsistCommand(result) {
   if (!result.changed) {if(result.message)log(result.message);return;}
   if(result.kind==='uncoupled')didDetach=true;
   if(result.kind==='coupled')didAttach=true;
-  ui();log(result.message);
+  renderVehicles();ui();log(result.message);
 }
 function uncouple() {applyConsistCommand(fleetCommands.uncouple(selected));}
 function couple() {applyConsistCommand(fleetCommands.couple(selected));}
@@ -848,9 +851,9 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   placeTrain(id, edge, s, direction=1) {
     const t=trains[id], track=network.edges[edge];
     if(!t || !track || !Number.isFinite(s) || s<0 || s>track.length || ![1,-1].includes(direction)) throw new RangeError("Invalid diagnostic train placement");
-    t.journey=new Journey(network,edge,s);
-    t.dir=direction;t.speed=t.velocity=0;
-    if(!t.journey.ensure(t.journey.position-layoutFor(t).tail,route)) throw new RangeError("Diagnostic consist does not fit");
+    const candidate=new Journey(network,edge,s);
+    if(!candidate.ensure(candidate.position-layoutFor(t).tail,route)||!candidate.ensure(candidate.position+(t.group.userData.couplers?.front?.x??48),route)) throw new RangeError("Diagnostic consist does not fit");
+    t.journey=candidate;t.dir=direction;t.speed=t.velocity=0;
     if(track.lane!==undefined){t.loop=track.lane;t.previousLane=track.lane;t.mode="loop";}else{t.mode="yard";t.section=edge;}
     renderVehicles();ui();
   },

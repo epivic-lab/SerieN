@@ -7,7 +7,7 @@ import {layoutFor} from './railway-state.js';
 export function createFleetCommands({trains,detached,route}) {
   function setSpeed(id,value) {
     const train=trains[id];if(!train)return;
-    // Preserve the existing numeric contract, including R03 for the 5C review.
+    if(!Number.isFinite(value))throw new RangeError("Speed must be finite");
     train.speed=Math.max(0,Math.min(100,value));return train;
   }
   function reverse(id) {
@@ -28,8 +28,11 @@ export function createFleetCommands({trains,detached,route}) {
     const train=trains[id];
     if(Math.abs(train.velocity)>.1||train.speed)return {changed:false,message:'Stop the train before uncoupling.'};
     if(!train.cars)return {changed:false};
-    const point=train.journey.locate(train.journey.position-layoutFor(train).offsets.at(-1)),group=train.carObjs.pop();
-    detached.push({point,group});train.cars=train.carObjs.length;
+    const coordinate=train.journey.position-layoutFor(train).offsets.at(-1);
+    const point=train.journey.locate(coordinate),group=train.carObjs.pop();
+    const journey=Object.create(Object.getPrototypeOf(train.journey));
+    Object.assign(journey,train.journey,{segments:train.journey.segments.map(s=>({...s})),position:coordinate});
+    detached.push({point,group,journey});train.cars=train.carObjs.length;
     return {changed:true,kind:'uncoupled',group,message:'Wagon uncoupled and left on the track.'};
   }
   /** @returns {import('./railway-types.js').ConsistCommandResult} */
@@ -43,7 +46,10 @@ export function createFleetCommands({trains,detached,route}) {
       return couplingMatch(expected,vehicle.point);
     });
     if(index<0)return {changed:false,message:'No wagon near the rear of this train on the same track.'};
-    if(!train.journey.ensure(train.journey.position-layoutFor(train,[detached[index].group]).tail,route))return {changed:false,message:'Not enough room.'};
+    const segments=[...train.journey.segments],lastBlock=train.journey.lastBlock;
+    if(!train.journey.ensure(train.journey.position-layoutFor(train,[detached[index].group]).tail,route)){train.journey.segments.splice(0,train.journey.segments.length,...segments);
+      if(lastBlock===undefined)delete train.journey.lastBlock;else train.journey.lastBlock=lastBlock;
+      return {changed:false,message:'Not enough room.'};}
     const group=detached.splice(index,1)[0].group;
     train.carObjs.push(group);train.cars=train.carObjs.length;
     return {changed:true,kind:'coupled',group,message:'Wagon coupled.'};

@@ -9,7 +9,7 @@
  * @typedef {import('./simulation.js').Journey} Journey
  * @typedef {{id:number,name:string,group:Vehicle,carObjs:Vehicle[],cars:number,
  * journey:Journey,velocity:number,dir:number,speed:number,lights:boolean}} Train
- * @typedef {{point:RailwayPoint,group:Vehicle}} DetachedVehicle
+ * @typedef {{point:RailwayPoint,group:Vehicle,journey?:Journey}} DetachedVehicle
  * @typedef {{edge:string,min:number,max:number}} OccupiedRange
  * @typedef {{offsets:number[],tail:number}} ConsistLayout
  * @typedef {{blocked:boolean,kind:string,message:string}} SwitchSafety

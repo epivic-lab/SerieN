@@ -2,7 +2,7 @@
 
 ## Fase corrente
 
-**5B conclusa: refactoring architetturale mirato e verificato. 5C non iniziata.**
+**5C in corso: correzioni R01–R03 implementate; regressioni browser in verifica.**
 
 La richiesta esplicita «esegui 5b» ha autorizzato questa sottofase. La [roadmap ufficiale](docs/ROADMAP_PHASE5.md) richiede una nuova istruzione per iniziare 5C, 5D o 5E. Nessun push/deployment o intervento su `first`, `SerieN Control` e altri repository è autorizzato dal lavoro corrente.
 
@@ -16,6 +16,10 @@ La richiesta esplicita «esegui 5b» ha autorizzato questa sottofase. La [roadma
 - Checkpoint conclusivo: commit che introduce `docs/REFACTORING_PHASE5B.md` e aggiorna questo file; identificarlo con `git log -1 --format='%H %s' -- PROGRESS.md`.
 
 Commit soltanto locali: nessun push, nuovo rilascio o deployment; `main` remoto non modificato. Una nuova sessione con lo stesso checkout può riprendere dal branch. La perdita completa della macchina richiede backup/esportazione o push autorizzato del branch: l'hash nella chat non trasferisce gli oggetti Git.
+
+## Checkpoint 5C
+
+Branch `reliability/phase-5c`, da `954461e`. Nuovo predicato di conflitto per inviluppi sul piano; sgancio con copia indipendente del Journey; validazione numerica di Journey/clock/velocità; posizionamento diagnostico e aggancio fallito senza sostituire stato valido. Nessun cambio al grafo o alle missioni. Test mirati R01–R03 passano; proseguire collaudi browser e report prima di chiudere 5C. Non iniziare 5D.
 
 ## Ultima attività completata
 

@@ -31,9 +31,13 @@ export function collectRailwayState({network,switchTopology,trains,detached,rout
     moving.push({preview,velocity:train.velocity,leadingExtent:direction < 0 ? -(leading?.back?.x ?? -48) : leading?.front?.x ?? 48});
     vehicles.forEach((o,i)=>occupied.push(...occupiedRanges(network,train.journey,layout.offsets[i],o.userData.couplers)));
   }
-  // Known defect R02: v0.12 clips detached occupation to the centre segment.
-  // Kept visible and unchanged during extraction; correction is scoped to 5C.
+  // Detached vehicles retain their frozen Journey so their whole body spans joints.
   for (const detachedVehicle of detached) {
+    if(detachedVehicle.journey){
+      occupied.push(...occupiedRanges(network,detachedVehicle.journey,0,detachedVehicle.group.userData.couplers));
+      continue;
+    }
+    // Legacy fixtures without history retain the historical single-edge fallback.
     const edge = network.edges[detachedVehicle.point.edge];
     if (!edge) continue;
     const c=detachedVehicle.group.userData.couplers,extent=Math.max(c?.front?.x ?? 48,-(c?.back?.x ?? -48));
