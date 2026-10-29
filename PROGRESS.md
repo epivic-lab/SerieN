@@ -1,8 +1,8 @@
 # SerieN — Stato e ripresa
 
-**5C conclusa nei limiti documentati dei casi collaudati. 5D e 5E non iniziate.**
+**5C implementata; verifica indipendente: gate completo non ancora dimostrato. 5D e 5E non iniziate.**
 
-Autorizzazione corrente: richiesta «5c». Occorre nuova istruzione esplicita per 5D/5E. Nessun push, deployment o intervento su `first`, `SerieN Control` e altri repository.
+Autorizzazione corrente: verifica indipendente conclusiva della 5C, senza implementare automaticamente correzioni. Occorre nuova istruzione esplicita per 5D/5E. Nessun push, deployment o intervento su `first`, `SerieN Control` e altri repository.
 
 ## Checkpoint
 
@@ -13,6 +13,10 @@ Autorizzazione corrente: richiesta «5c». Occorre nuova istruzione esplicita pe
 - Chiusura documentale: commit che introduce `docs/RELIABILITY_PHASE5C.md`; risolvere con `git log -1 --format='%H %s' -- PROGRESS.md`.
 
 Tutti i commit sono locali. La perdita della macchina richiede backup/esportazione o push autorizzato del branch: l'hash nella chat non trasferisce gli oggetti Git. Non fare reset distruttivi del lavoro esistente.
+
+## Verifica indipendente richiesta dall’utente
+
+Rieseguite suite Node/Python/build e browser pertinenti, con prove nuove in `docs/phase-5c-review/`. La prova frontale aggiuntiva riproduce un arresto dopo sovrapposizione degli inviluppi di 2,875 mm; la matrice della roadmap resta incompleta: vedere [rapporto](docs/PHASE5C_FINAL_REVIEW.md). Nessuna correzione applicativa è autorizzata da questa revisione: proporre interventi circoscritti e attendere istruzioni. Nessun push o pubblicazione.
 
 ## Ultimo blocco completato
 

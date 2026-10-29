@@ -1,0 +1,27 @@
+{
+  "baseline": "2a78abcfcbf12bdc0c95d21c00a8f5fa1f2689e4",
+  "cwd": "/workspace/SerieN",
+  "node": {
+    "command": "node --test --test-isolation=none tests/*.test.js",
+    "exitCode": 0,
+    "passed": 109
+  },
+  "python": {
+    "command": "python3 -m unittest discover -s tests -p jmri_audit_test.py",
+    "exitCode": 0,
+    "passed": 9
+  },
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0
+  },
+  "browserCwd": "/tmp/serien-5c-review",
+  "browserBase": "http://127.0.0.1:8000/",
+  "browserPassed": [
+    "tests/browser-phase-zero.py",
+    "tests/browser-phase-four.py",
+    "tests/browser-phase-five-c.py",
+    "tests/browser-consist.py"
+  ],
+  "probe": "head-on-probe.py records a defect; successful execution is not a passing prevention assertion"
+}
