@@ -4,7 +4,7 @@ Fonte: [Master Plan 1.0 dell'utente](phase-5a/REQUEST.md). Baseline applicativa:
 
 ## Governance
 
-Ordine vincolante: **5A → 5B → 5C → 5D → 5E**. Ogni passaggio richiede una nuova istruzione esplicita dell'utente. 5A e 5B sono concluse; 5C è stata implementata e riesaminata su richiesta dell’utente, con gate di accettazione ancora da completare. Non iniziare 5D dalla lettura di questo documento.
+Ordine vincolante: **5A → 5B → 5C → 5D → 5E**. Ogni passaggio richiede una nuova istruzione esplicita dell'utente. 5A, 5B e 5C sono concluse; la chiusura della 5C comprende correzioni autorizzate e matrice di accettazione eseguita. Non iniziare 5D dalla lettura di questo documento.
 
 Solo repository `epivic-lab/SerieN`; mai modificare `first`, `SerieN Control` o altri repository. Conservare geometria RailModeller/Kato, topologia, scambi, missioni e contratti. Niente gallerie, integrazioni con hardware o nuove funzionalità non richieste. Nessuna riscrittura generalizzata né dipendenza aggiunta senza motivazione. Nessuna scansione offensiva di servizi esterni.
 
@@ -16,7 +16,7 @@ Ogni intervento applicativo futuro deve riportare motivazione, impatto, rischio 
 |---|---|---|
 | 5A — Audit tecnico e Security Assessment | Completata; risultati e limiti in ENGINEERING_AUDIT.md | Sola analisi, test non distruttivi e documentazione |
 | 5B — Refactoring architetturale | Completata; [report](REFACTORING_PHASE5B.md) | Commit di estrazione e comandi, caratterizzazione e regressioni browser |
-| 5C — Affidabilità ferroviaria | Implementazione conclusa; gate completo non ancora dimostrato: [verifica indipendente](PHASE5C_FINAL_REVIEW.md) | Suite mirate verdi; lacune operative da chiudere prima dell’accettazione |
+| 5C — Affidabilità ferroviaria | Chiusa; [rapporto conclusivo](PHASE5C_CLOSURE.md) | 125 Node, 9 Python, build e cinque suite browser verdi; gate superati nelle condizioni documentate |
 | 5D — Performance Optimization | Non iniziata | 5C accettata e nuova istruzione |
 | 5E — Cybersecurity Hardening e stabilizzazione | Non iniziata | 5D accettata e nuova istruzione; possibili urgenze documentate separatamente |
 

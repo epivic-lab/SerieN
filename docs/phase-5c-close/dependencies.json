@@ -1,0 +1,349 @@
+{
+  "head": "8cacb187564876a85f0bdee03eb6c9d7e5e81700",
+  "scope": "static relative ESM imports in app.js and src/*.js; excludes dynamic loaders and third-party internals",
+  "graph": {
+    "app.js": [
+      "src/railway-step.js",
+      "src/railway-conflicts.js",
+      "src/fleet-commands.js",
+      "src/railway-state.js",
+      "src/rolling-stock.js",
+      "src/graphic-foundations.js",
+      "src/switch-feedback.js",
+      "src/zone-layout.js",
+      "src/train-deck.js",
+      "src/locomotive-thumbnails.js",
+      "src/next-switch.js",
+      "src/next-switch-view.js",
+      "src/scenic-plan.js",
+      "src/view-controls.js",
+      "src/consist.js",
+      "src/rail-profile.js",
+      "src/navigation.js",
+      "src/quality.js",
+      "src/train-assets.js",
+      "src/rolling-stock-art.js",
+      "src/presentation.js",
+      "src/scenery.js",
+      "src/network.js",
+      "src/simulation.js"
+    ],
+    "src/asset-placement.js": [],
+    "src/consist.js": [],
+    "src/diorama.js": [
+      "src/railway-works.js",
+      "src/structure-layout.js",
+      "src/landscape.js",
+      "src/graphic-foundations.js"
+    ],
+    "src/fleet-commands.js": [
+      "src/consist.js",
+      "src/railway-state.js"
+    ],
+    "src/graphic-foundations.js": [],
+    "src/landscape.js": [
+      "src/canonical-layout.json"
+    ],
+    "src/locomotive-thumbnails.js": [],
+    "src/navigation.js": [],
+    "src/network.js": [
+      "src/canonical-layout.json"
+    ],
+    "src/next-switch-view.js": [
+      "src/next-switch.js"
+    ],
+    "src/next-switch.js": [
+      "src/network.js"
+    ],
+    "src/presentation.js": [],
+    "src/quality.js": [],
+    "src/rail-profile.js": [
+      "src/graphic-foundations.js"
+    ],
+    "src/railway-conflicts.js": [
+      "src/consist.js"
+    ],
+    "src/railway-state.js": [
+      "src/consist.js",
+      "src/next-switch.js"
+    ],
+    "src/railway-step.js": [
+      "src/railway-state.js",
+      "src/railway-conflicts.js"
+    ],
+    "src/railway-types.js": [],
+    "src/railway-works.js": [
+      "src/structure-layout.js"
+    ],
+    "src/rolling-stock-art.js": [],
+    "src/rolling-stock.js": [],
+    "src/scenery.js": [
+      "src/station-materials.js",
+      "src/station-building.js",
+      "src/station-platform.js",
+      "src/zones.js",
+      "src/landscape.js",
+      "src/diorama.js",
+      "src/graphic-foundations.js"
+    ],
+    "src/scenic-plan.js": [
+      "src/canonical-layout.json",
+      "src/landscape.js",
+      "src/zone-layout.js",
+      "src/station-building.js",
+      "src/structure-layout.js"
+    ],
+    "src/simulation.js": [
+      "src/network.js"
+    ],
+    "src/station-building.js": [],
+    "src/station-materials.js": [],
+    "src/station-platform.js": [],
+    "src/structure-layout.js": [],
+    "src/switch-feedback.js": [],
+    "src/train-assets.js": [
+      "src/asset-placement.js"
+    ],
+    "src/train-deck-state.js": [],
+    "src/train-deck.js": [
+      "src/consist.js",
+      "src/train-deck-state.js",
+      "src/locomotive-thumbnails.js"
+    ],
+    "src/view-controls.js": [],
+    "src/zone-layout.js": [
+      "src/landscape.js",
+      "src/canonical-layout.json"
+    ],
+    "src/zones.js": [
+      "src/zone-layout.js",
+      "src/landscape.js"
+    ]
+  },
+  "cycles": [],
+  "modules": {
+    "app.js": {
+      "lines": 904,
+      "bytes": 45230,
+      "imports": 26,
+      "longestLine": 2026
+    },
+    "src/asset-placement.js": {
+      "lines": 27,
+      "bytes": 928,
+      "imports": 0,
+      "longestLine": 108
+    },
+    "src/consist.js": {
+      "lines": 22,
+      "bytes": 1196,
+      "imports": 0,
+      "longestLine": 121
+    },
+    "src/diorama.js": {
+      "lines": 272,
+      "bytes": 14018,
+      "imports": 5,
+      "longestLine": 325
+    },
+    "src/fleet-commands.js": {
+      "lines": 62,
+      "bytes": 3507,
+      "imports": 2,
+      "longestLine": 158
+    },
+    "src/graphic-foundations.js": {
+      "lines": 61,
+      "bytes": 3730,
+      "imports": 1,
+      "longestLine": 181
+    },
+    "src/landscape.js": {
+      "lines": 68,
+      "bytes": 3715,
+      "imports": 1,
+      "longestLine": 189
+    },
+    "src/locomotive-thumbnails.js": {
+      "lines": 61,
+      "bytes": 4649,
+      "imports": 1,
+      "longestLine": 377
+    },
+    "src/navigation.js": {
+      "lines": 127,
+      "bytes": 4929,
+      "imports": 1,
+      "longestLine": 192
+    },
+    "src/network.js": {
+      "lines": 68,
+      "bytes": 3210,
+      "imports": 1,
+      "longestLine": 148
+    },
+    "src/next-switch-view.js": {
+      "lines": 94,
+      "bytes": 7158,
+      "imports": 2,
+      "longestLine": 690
+    },
+    "src/next-switch.js": {
+      "lines": 167,
+      "bytes": 9339,
+      "imports": 1,
+      "longestLine": 212
+    },
+    "src/presentation.js": {
+      "lines": 68,
+      "bytes": 2592,
+      "imports": 7,
+      "longestLine": 430
+    },
+    "src/quality.js": {
+      "lines": 63,
+      "bytes": 2563,
+      "imports": 0,
+      "longestLine": 201
+    },
+    "src/rail-profile.js": {
+      "lines": 43,
+      "bytes": 2070,
+      "imports": 2,
+      "longestLine": 215
+    },
+    "src/railway-conflicts.js": {
+      "lines": 55,
+      "bytes": 3045,
+      "imports": 1,
+      "longestLine": 201
+    },
+    "src/railway-state.js": {
+      "lines": 62,
+      "bytes": 3415,
+      "imports": 2,
+      "longestLine": 138
+    },
+    "src/railway-step.js": {
+      "lines": 87,
+      "bytes": 4678,
+      "imports": 2,
+      "longestLine": 166
+    },
+    "src/railway-types.js": {
+      "lines": 26,
+      "bytes": 1778,
+      "imports": 0,
+      "longestLine": 111
+    },
+    "src/railway-works.js": {
+      "lines": 69,
+      "bytes": 2944,
+      "imports": 2,
+      "longestLine": 198
+    },
+    "src/rolling-stock-art.js": {
+      "lines": 132,
+      "bytes": 6127,
+      "imports": 2,
+      "longestLine": 177
+    },
+    "src/rolling-stock.js": {
+      "lines": 84,
+      "bytes": 8536,
+      "imports": 2,
+      "longestLine": 306
+    },
+    "src/scenery.js": {
+      "lines": 100,
+      "bytes": 5069,
+      "imports": 10,
+      "longestLine": 223
+    },
+    "src/scenic-plan.js": {
+      "lines": 108,
+      "bytes": 7859,
+      "imports": 5,
+      "longestLine": 260
+    },
+    "src/simulation.js": {
+      "lines": 101,
+      "bytes": 4871,
+      "imports": 1,
+      "longestLine": 169
+    },
+    "src/station-building.js": {
+      "lines": 190,
+      "bytes": 10065,
+      "imports": 1,
+      "longestLine": 232
+    },
+    "src/station-materials.js": {
+      "lines": 166,
+      "bytes": 8606,
+      "imports": 1,
+      "longestLine": 239
+    },
+    "src/station-platform.js": {
+      "lines": 261,
+      "bytes": 13597,
+      "imports": 2,
+      "longestLine": 531
+    },
+    "src/structure-layout.js": {
+      "lines": 10,
+      "bytes": 477,
+      "imports": 0,
+      "longestLine": 96
+    },
+    "src/switch-feedback.js": {
+      "lines": 20,
+      "bytes": 770,
+      "imports": 0,
+      "longestLine": 132
+    },
+    "src/train-assets.js": {
+      "lines": 183,
+      "bytes": 7171,
+      "imports": 3,
+      "longestLine": 169
+    },
+    "src/train-deck-state.js": {
+      "lines": 45,
+      "bytes": 1862,
+      "imports": 0,
+      "longestLine": 117
+    },
+    "src/train-deck.js": {
+      "lines": 91,
+      "bytes": 10548,
+      "imports": 3,
+      "longestLine": 1814
+    },
+    "src/view-controls.js": {
+      "lines": 135,
+      "bytes": 5052,
+      "imports": 1,
+      "longestLine": 132
+    },
+    "src/zone-layout.js": {
+      "lines": 60,
+      "bytes": 3893,
+      "imports": 2,
+      "longestLine": 293
+    },
+    "src/zones.js": {
+      "lines": 273,
+      "bytes": 12857,
+      "imports": 3,
+      "longestLine": 185
+    }
+  },
+  "lineCounts": {
+    "CI": 51,
+    "app": 4463,
+    "historical/documentation": 626,
+    "scripts": 557,
+    "tests": 2755
+  }
+}

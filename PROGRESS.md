@@ -1,60 +1,42 @@
 # SerieN — Stato e ripresa
 
-**Chiusura 5C in corso su autorizzazione esplicita: correzioni applicate, validazione finale in esecuzione. 5D e 5E non iniziate.**
+**Fase 5C chiusa: correzioni e matrice di accettazione superate nelle condizioni documentate. 5D e 5E non iniziate.**
 
-Autorizzazione corrente: «esegui tutte le operazioni di validazione, implementazione e test e chiudi la 5C». Occorre nuova istruzione esplicita per 5D/5E. Nessun push, deployment o intervento su `first`, `SerieN Control` e altri repository.
+Autorizzazione completata: «esegui tutte le operazioni di validazione, implementazione e test e chiudi la 5C». La 5D richiede una nuova istruzione esplicita. Nessun push, deployment o intervento su `first`, `SerieN Control` o altri repository.
 
-## Checkpoint
+## Rapporti e checkpoint
 
-- Baseline applicativa v0.12: `618f538`; audit 5A: `b819864`.
+- [Chiusura 5C](docs/PHASE5C_CLOSURE.md): requisiti, correzioni, prove, rischi residui e rollback.
+- [Roadmap](docs/ROADMAP_PHASE5.md): gate delle sottofasi e governance.
+- Baseline pubblicata v0.12: `618f538`; audit 5A: `b819864`.
 - 5B: `5a551f7`, `afd50db`, conclusione `954461e`.
-- Branch corrente: `reliability/phase-5c`, creato da working tree pulito.
-- Correzioni 5C: `d85892f`.
-- Chiusura documentale: commit che introduce `docs/RELIABILITY_PHASE5C.md`; risolvere con `git log -1 --format='%H %s' -- PROGRESS.md`.
+- Prima implementazione 5C: `d85892f`, rapporto `2a78abc`.
+- Verifica indipendente: `5060221`, con gate ancora aperto a quella baseline.
+- Chiusura applicativa: `5580799` (passo candidato della flotta), `79247d3` (guardie su modelli/inserimento), `b6ec62d` (contatti invariati), `13ebb2b` (storia sganciata coerente con lo scambio attuale), `8cacb18` (riaggancio al giunto con storia ricostruita).
+- Checkpoint documentale finale: commit che aggiorna questo file e introduce `docs/PHASE5C_CLOSURE.md`; risolvere con `git log -1 --format='%H %s' -- PROGRESS.md`.
 
-Tutti i commit sono locali. La perdita della macchina richiede backup/esportazione o push autorizzato del branch: l'hash nella chat non trasferisce gli oggetti Git. Non fare reset distruttivi del lavoro esistente.
+Branch: `reliability/phase-5c`. Tutti i commit sono locali. Il recupero fuori da questa macchina richiede backup/esportazione o push autorizzato; l’hash nella chat non trasferisce gli oggetti Git. Non fare reset distruttivi del lavoro esistente.
 
-## Verifica indipendente richiesta dall’utente
+## Esito tecnico
 
-Rieseguite suite Node/Python/build e browser pertinenti, con prove nuove in `docs/phase-5c-review/`. La prova frontale aggiuntiva riproduce un arresto dopo sovrapposizione degli inviluppi di 2,875 mm; la matrice della roadmap resta incompleta: vedere [rapporto](docs/PHASE5C_FINAL_REVIEW.md). La revisione iniziale non autorizzava correzioni; la successiva istruzione dell’utente autorizza ora implementazione, test e chiusura della sola 5C. Nessun push o pubblicazione.
+Il movimento viene verificato prima del commit del passo, con inviluppi durante il movimento e ricontrollo degli arresti a catena. Posizioni, storia e odometri rifiutati restano conservati. Frontale originario: margine minimo +1 mm, entrambe le locomotive ferme. Inserimento del quarto convoglio e crescita dei modelli non possono introdurre nuovi conflitti; i contatti esistenti possono restare invariati o migliorare. La crescita di uno sganciato non inventa occupazione su un vecchio ramo dopo una commutazione lecita. Il riaggancio attraverso il giunto ricostruisce una candidata tramite il router reale prima del matching e conferma soltanto dopo verifica dello spazio completo.
 
-## Chiusura 5C — checkpoint applicativo in corso
+Geometria canonica, router, Journey/clock, missioni, HUD, plancia, costruttori dei rotabili, asset, dipendenze e workflow conservati. Nessuna galleria. Le modifiche applicative sono confinate a `app.js`, conflitti, coordinamento del passo, comandi flotta e contratti JSDoc. [Confronti](docs/phase-5c-close/preservation.json).
 
-- Checkpoint movimento atomico: `5580799`.
-- Movimento candidato di tutta la flotta prima del commit, inviluppi swept e ricontrollo degli arresti a catena. Velocità/accelerazioni, Journey e topologia conservati; side effect UI/missioni soltanto dopo l’accettazione.
-- Frontale A1 nel browser corretto: margine minimo +1 mm, entrambe le locomotive ferme. Nuove prove Node su frontali/inseguimenti/composizioni, curve, terminali, WX, frame rate e rollback.
-- Rilevato e corretto anche l’ingrandimento Kenney→nativo che introduceva 23,85 mm di sovrapposizione; guardia per inserimento del quarto convoglio quando un corpo arriva da un edge adiacente.
-- Guardia modelli affinata per consentire contatti preesistenti invariati/in miglioramento; prova isolata con carri già sganciati e confronto del testo reale HUD superati.
-- Controllo aggiunto per la crescita di un carro su una storia superata da commutazione lecita: rifiuto senza inventare occupazione sul vecchio ramo.
-- Riaggancio al giunto corretto quando la storia del convoglio non comprende più il centro del carro; candidato esteso con il router reale e rifiuto atomico se disallineato.
-- 125 test Node e 9 Python verdi; undici scenari della matrice browser 5C completi verdi anche dopo l’affinamento. Regressione browser finale in corso; non dichiarare ancora chiusa la fase da questo checkpoint.
-- Nessun cambio a geometria/asset/dipendenze/deployment. Nessun push. Salvare report finale e prove in `docs/phase-5c-close/` prima della chiusura documentale.
+## Verifiche finali
 
-## Ultimo blocco completato
+- **125 test Node**, zero fallimenti o test saltati; **9 Python JMRI**; build riuscita.
+- **Cinque suite browser verdi**: matrice conclusiva 5C (undici scenari), operazioni Fase 0, rendering/operazioni Fase 4, composizioni GLB reali, rollback atomico 5C.
+- Tutti gli ingressi degli otto controlli verificati con oracle esplicito e attraversamento completo; quattro terminali con convogli corti e cinque carri; entrambi i rami del runaround; frontali/inseguimenti/WX; carro sganciato su giunto; scambio in avvicinamento; aggancio in curva e al giunto con identità conservate.
+- 20/60/120 Hz e frame irregolari con uguale fase iniziale e tempo accettato: stessi stati ferroviari, occupazione, HUD e testo delle consolle. Marker e mesh coerenti; testo reale dell’HUD verificato.
+- Schermate Low/High e responsive ispezionate; nessun errore JavaScript o richiesta fallita nelle suite browser riuscite. 36 moduli applicativi, zero cicli ESM statici.
 
-R01: inviluppi orientati anche su edge diversi e medesimo predicato per carri fermi; rispetto del verso di avvicinamento. R02: sgancio con copia indipendente del Journey e occupazione su tutti i segmenti attraversati. R03: input numerici invalidi rifiutati prima della corruzione di stato. Posizionamento diagnostico e cambio modello senza spazio non sostituiscono lo stato valido. Aggancio fallito ripristina la ribbon; riaggancio riuscito aggiorna immediatamente le mesh prima della UI.
+Prove e comandi: [phase-5c-close](docs/phase-5c-close/). Codice applicativo finale verificato: `8cacb18`. Gli output sono locali, contro la build locale; gli script hanno scritto in cwd temporanea e non hanno sovrascritto i report storici.
 
-File principali: `app.js`, `src/railway-conflicts.js`, `src/railway-state.js`, `src/fleet-commands.js`, `src/simulation.js`, contratti JSDoc e test dedicati. Geometria, topologia, missioni, asset, dipendenze e workflow conservati. [Verifica](docs/phase-5c/preservation.json).
+## Limiti e ripresa
 
-## Verifiche effettive
+Validazione della simulazione nelle condizioni della matrice: inviluppi sul piano e passo massimo 1/60 s, non certificazione delle mesh articolate o di un impianto reale. La diagnostica può ancora imporre sovrapposizioni per riprodurre difetti; non è una riparazione automatica di stati iniziali invalidi. Restano i limiti metrologici su WX310 e rotabili.
 
-- 109 test Node passati (106 precedenti + tre regressioni R01–R03).
-- 9 test Python JMRI passati; build riuscita.
-- Browser operativo: circuiti bidirezionali, scambi/crossover, quarto convoglio/MRU, protezioni, HUD, runaround e STOP ALL.
-- Browser Fase 4: movimenti simultanei, animazione, inversione, aggancio/sgancio, quattro terminali, Low/High e responsive.
-- Browser R01: entrambe le locomotive del caso T47/T46 ferme dopo il controllo.
-- Browser atomico: cambio Kenney→nativo impossibile a T39 e posizionamento oltre il terminale rifiutati conservando i Journey precedenti.
+Chromium/SwiftShader non certifica GPU fisiche. La 5D dovrà misurare i costi, inclusi quelli della nuova previsione; non è stata avviata alcuna ottimizzazione. CSP, supply-chain, CI e recovery restano alla 5E. Il limite del clock di 0,2 s per aggiornamento è conservato e testato.
 
-Log e risultati: `docs/phase-5c/`. Report: [RELIABILITY_PHASE5C.md](docs/RELIABILITY_PHASE5C.md). Nessuna immagine o vecchio report sovrascritto: gli script browser ordinari hanno scritto in copia temporanea.
-
-## Limiti e prossimi passi
-
-Gli inviluppi sono rettangoli orientati sul piano, non mesh fisiche esatte; la protezione usa il campionamento temporale esistente. I casi verificati non certificano ogni composizione/manovra o la sicurezza di impianti reali. I veicoli legacy artificiali senza storia usano il fallback single-edge; gli sganciati creati dal runtime conservano sempre la storia. Restano i limiti metrologici di WX310, fouling e rotabili.
-
-Non sono state misurate GPU fisiche né ottimizzazioni: questo appartiene alla 5D. CSP, supply-chain, CI e recovery robusto appartengono alla 5E. Prima della 5D attendere l'utente e impostare benchmark ripetibili; non trattare i timing SwiftShader come FPS desktop.
-
-## Ripresa
-
-Leggere questo file, `docs/ROADMAP_PHASE5.md` e il report 5C. Controllare `git status --short --branch` e `git log -4 --oneline`. Nel checkpoint finale nessun cambiamento tracked resta non committato. Non eliminare modifiche successive/altrui.
-
-Usare `/workspace/SerieN`, senza worktree aggiuntivi salvo richiesta. Tool osservati: Node 24, Python 3.12, Chromium/SwiftShader e Python Playwright; CI usa Node 22. Usare proxy e CA ereditati. Eseguire `node --test --test-isolation=none tests/*.test.js`, unittest JMRI e build per i controlli ordinari; i browser/generatori scrivono report, quindi usare working directory temporanee. Nessuna nuova sottofase parte automaticamente.
+Alla ripresa leggere rapporto e roadmap, verificare branch/HEAD/working tree e conservare modifiche successive. Usare il checkout esistente `/workspace/SerieN`, senza nuovi worktree salvo richiesta. Ambiente verificato: Node 24.19.0, Python 3.12.14, Chromium/Playwright. Proxy e CA ereditati. Comandi riproducibili in `docs/phase-5c-close/commands.json`.

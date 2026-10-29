@@ -1,0 +1,69 @@
+{
+  "recordedAt": "2026-10-29T17:11:39+01:00",
+  "sourceCommit": "8cacb187564876a85f0bdee03eb6c9d7e5e81700",
+  "baseline": "5060221",
+  "node": "v24.19.0",
+  "python": "Python 3.12.14",
+  "applicationCwd": "/workspace/SerieN",
+  "browserCwd": "/tmp/serien-5c-close",
+  "browserBase": "http://127.0.0.1:8000/",
+  "renderer": "Chromium/SwiftShader",
+  "checks": [
+    {
+      "command": "node --test --test-isolation=none tests/*.test.js",
+      "exitCode": 0,
+      "passed": 125
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p jmri_audit_test.py",
+      "exitCode": 0,
+      "passed": 9
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0
+    },
+    {
+      "command": "python3 /workspace/SerieN/tests/browser-phase-five-close.py",
+      "exitCode": 0
+    },
+    {
+      "command": "python3 /workspace/SerieN/tests/browser-phase-zero.py",
+      "exitCode": 0
+    },
+    {
+      "command": "python3 /workspace/SerieN/tests/browser-phase-four.py",
+      "exitCode": 0
+    },
+    {
+      "command": "python3 /workspace/SerieN/tests/browser-consist.py",
+      "exitCode": 0
+    },
+    {
+      "command": "python3 /workspace/SerieN/tests/browser-phase-five-c.py",
+      "exitCode": 0
+    }
+  ],
+  "bundleSha256": "7d57164d1ba543140b958ef67ce8fabc8747310e83e5753ed6a610e3c1ddd960",
+  "acceptanceCases": [
+    "frontals",
+    "long",
+    "switch",
+    "insertion",
+    "approach",
+    "curve",
+    "frames",
+    "mixed",
+    "model",
+    "history",
+    "joint"
+  ],
+  "logNormalization": "Trailing whitespace removed; assertions and diagnostic messages preserved",
+  "publication": false,
+  "preFixEvidence": {
+    "model-growth-before.json": "Original model expansion behavior, before the clearance guard",
+    "history-before.json": "b6ec62d: frozen detached route before current-switch validation",
+    "coupling-before.txt": "13ebb2b: new regression executed before the cross-joint matching fix",
+    "acceptance-contact-regression.log": "79247d3 guard before unchanged-contact handling"
+  }
+}

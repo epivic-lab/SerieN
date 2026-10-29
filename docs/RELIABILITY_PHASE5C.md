@@ -1,5 +1,7 @@
 # Fase 5C — Affidabilità ferroviaria
 
+> Stato attuale: **5C chiusa** dopo la verifica indipendente e le successive correzioni. [Rapporto conclusivo](PHASE5C_CLOSURE.md). Questo documento conserva il primo blocco R01–R03 e le sue prove storiche.
+
 Baseline: `954461e` (5B), branch `reliability/phase-5c`. Correzioni motivate dall'audit 5A, non da nuove funzionalità. Nessuna modifica alla geometria, alla topologia Kato/RailModeller, alle missioni o al deployment. Nessuna galleria.
 
 ## Correzioni

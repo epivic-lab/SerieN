@@ -2,7 +2,9 @@
 
 Data: 29 ottobre 2026. Baseline verificata: `2a78abcfcbf12bdc0c95d21c00a8f5fa1f2689e4`, branch `reliability/phase-5c`, working tree iniziale pulito. Requisiti: sezione 5C di [ROADMAP_PHASE5.md](ROADMAP_PHASE5.md). Questa revisione non ripete l’implementazione e non autorizza la 5D.
 
-**Esito: la 5C non supera ancora il gate completo della roadmap.** Le suite esistenti pertinenti passano, ma una prova frontale indipendente riproduce un arresto successivo alla sovrapposizione degli inviluppi; restano anche lacune operative. Non procedere alla 5D prima di una chiusura esplicita di questi punti.
+> Aggiornamento: questa verifica riguarda la baseline precedente alle correzioni. I rilievi sono stati affrontati su successiva autorizzazione: vedere [chiusura 5C](PHASE5C_CLOSURE.md), con prove nuove e gate superati. Il rapporto storico resta conservato.
+
+**Esito alla baseline verificata: la 5C non supera ancora il gate completo della roadmap.** Le suite esistenti pertinenti passano, ma una prova frontale indipendente riproduce un arresto successivo alla sovrapposizione degli inviluppi; restano anche lacune operative. Non procedere alla 5D prima di una chiusura esplicita di questi punti.
 
 ## Copertura rispetto ai requisiti
 
