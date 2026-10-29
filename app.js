@@ -8,7 +8,7 @@ import {createSwitchFeedback} from "./src/switch-feedback.js";
 import {controlMarkers} from "./src/zone-layout.js";
 import { mountTrainDeck } from "./src/train-deck.js";
 import { captureLocomotiveThumbnail } from "./src/locomotive-thumbnails.js";
-import { createSwitchTopology } from "./src/next-switch.js";
+import { createSwitchTopology, traceJourney } from "./src/next-switch.js";
 import { mountNextSwitchHUD, createRouteHighlight, previewPoints } from "./src/next-switch-view.js";
 import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
@@ -393,7 +393,12 @@ function updateModels() {
     // A stationary vehicle may grow only inside its known route history;
     // never invent the missing branch of a frozen detached Journey.
     const j=d.journey,c=d.group.userData.couplers;
-    return j&&(j.position+(c?.back?.x??-48)<j.segments[0].start||j.position+(c?.front?.x??48)>j.segments.at(-1).end);
+    return j&&(j.position+(c?.back?.x??-48)<j.segments[0].start||j.position+(c?.front?.x??48)>j.segments.at(-1).end||[[-1,-(c?.back?.x??-48)],[1,c?.front?.x??48]].some(([direction,extent])=>{
+      // Cached unoccupied history may predate a legal switch change. New
+      // body occupation must still agree with today's actual selected route.
+      const preview=traceJourney(network,switchTopology,j,direction,0,route,extent);
+      return preview.uncertain||preview.stop!=="limit";
+    }));
   });
   // Existing coupler contact between dropped wagons may stay unchanged or
   // improve. Reject every new conflict, and every worsening existing one.

@@ -116,6 +116,17 @@ with sync_playwright() as p:
  check(JSON.stringify(before.stock.map(t=>t.journey))===JSON.stringify(after.stock.map(t=>t.journey)),'model refusal restores all histories');check(JSON.stringify(identities)===JSON.stringify(api.railwayState().identities),'model refusal preserves groups');check(straightGap(after.stock[0],after.stock[2])>0,'rollback remains separate');sync();
  return {rejected:true,priorJourneysAndIdentities:true,minimumGapMm:straightGap(after.stock[0],after.stock[2])};
  ''')
+ page.evaluate('__closeHelpers.reset()')
+ page.wait_for_function('__serienDiagnostics.snapshot().stock.every(t=>t.vehicles.every(v=>v.dimensions))',timeout=90000)
+ results['history']=exercise('detached-history','''
+ api.setSwitches(['Y-4']);const offset=snap().stock[1].layout.offsets.at(-1);api.placeTrain(1,'T47',offset+5,1);speed(1,35);api.step(2);command(1,'stop');command(1,'uncouple');api.placeTrain(1,'T0',150,1);api.step(0);
+ const button=$('[data-switch="7"]');check(!button.disabled,'compact coach clear of turnout');button.click();check(!snap().switchIndicators.states.find(s=>s.id==='Y-4').on,'legal switch change');
+ const before=api.railwayState(),journeys=snap().stock.map(t=>t.journey);check(!before.occupied.some(r=>r.edge==='TO4:AC'),'compact body not on turnout');
+ $('#rollingModels').value='native';$('#rollingModels').dispatchEvent(new Event('change'));
+ check($('#rollingModels').value==='kenney','stale detached branch cannot be occupied by growing stock');check(JSON.stringify(journeys)===JSON.stringify(snap().stock.map(t=>t.journey)),'history refusal is atomic');
+ check(!api.railwayState().occupied.some(r=>r.edge==='TO4:AC'),'no invented occupation on old branch');check(JSON.stringify(before.identities)===JSON.stringify(api.railwayState().identities),'history refusal preserves groups');sync();
+ return {rejected:true,legalSwitchChange:true,noInventedOccupation:true,identitiesAndJourneysPreserved:true};
+ ''')
  assert not errors,errors
  assert not failed,failed
  result={'result':'PASS','cases':list(results),'errors':errors,'failedRequests':failed,'renderer':'Chromium/SwiftShader; simulated railway envelopes only'}

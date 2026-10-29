@@ -6,7 +6,7 @@ import {stepRailway} from '../src/railway-step.js';
 import {vehiclePositions,layoutFor,deriveSwitchAssistance} from '../src/railway-state.js';
 import {envelopeGap,sweptVehiclesConflict,vehiclesConflict} from '../src/railway-conflicts.js';
 import {createFleetCommands} from '../src/fleet-commands.js';
-import {createSwitchTopology} from '../src/next-switch.js';
+import {createSwitchTopology,traceJourney,occupiedRanges} from '../src/next-switch.js';
 const n=createNetwork(),route=routing(n,()=>false),topology=createSwitchTopology(n,n.controllers);
 const vehicle=(front=32.65,rear=32.65)=>({userData:{stock:{length:front+rear,width:19.4},couplers:{front:{x:front+1.6},back:{x:-rear-1.6}}}});
 function train(id,edge,s,dir=1,cars=0){
@@ -139,4 +139,15 @@ test('elapsed-time cap and invalid step inputs have explicit, atomic semantics',
  const t=train(0,'T0',100),before={position:t.journey.position,travel:t.journey.travel,velocity:t.velocity};
  for(const dt of [NaN,Infinity,-1,0,.2])assert.throws(()=>stepRailway({trains:[t],detached:[],route},dt),RangeError);
  assert.deepEqual({position:t.journey.position,travel:t.journey.travel,velocity:t.velocity},before);
+});
+
+
+test('growth of a frozen detached body cannot claim an old branch after a legal turnout change',()=>{
+ const aligned=routing(n,id=>id==='Y-4'),j=new Journey(n,'T47',5);assert.ok(j.ensure(-9,aligned));assert.ok(j.move(75,14,aligned,14));
+ const compact={front:{x:14},back:{x:-14}},native={front:{x:84.1},back:{x:-84.1}};
+ assert.ok(occupiedRanges(n,j,0,compact).every(r=>r.edge==='T47'));
+ assert.ok(occupiedRanges(n,j,0,native).some(r=>r.edge==='TO4:AC'));
+ const before=JSON.stringify(j.segments),preview=traceJourney(n,topology,j,-1,0,route,84.1);
+ assert.equal(preview.stop,'misaligned');assert.equal(preview.distance,80);assert.equal(JSON.stringify(j.segments),before);
+ assert.equal(traceJourney(n,topology,j,-1,0,aligned,84.1).stop,'limit');
 });
