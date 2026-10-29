@@ -2,9 +2,9 @@
 
 ## Fase corrente
 
-**5A conclusa: audit tecnico e security assessment. 5B non iniziata.**
+**5B in corso, autorizzata dall’utente. Primo blocco: estrazione delle viste ferroviarie pure.**
 
-La [roadmap ufficiale](docs/ROADMAP_PHASE5.md) impone nuova istruzione esplicita dell'utente per ogni sottofase. Non interpretare questo file come autorizzazione a procedere alla 5B. Vietati interventi su `first`, `SerieN Control` e altri repository; nessuna pubblicazione o modifica al deployment autorizzata in 5A.
+La [roadmap ufficiale](docs/ROADMAP_PHASE5.md) impone nuova istruzione esplicita dell'utente per ogni sottofase. 5B è autorizzata; 5C–5E non lo sono. Vietati interventi su `first`, `SerieN Control` e altri repository; nessuna pubblicazione o modifica al deployment autorizzata in 5A.
 
 ## Riferimenti Git
 
@@ -14,6 +14,10 @@ La [roadmap ufficiale](docs/ROADMAP_PHASE5.md) impone nuova istruzione esplicita
 - Nessun push e nessun deployment in 5A. `main` remoto non modificato da questa attività.
 
 Un commit locale non sopravvive automaticamente alla perdita completa della macchina. Per ripresa fuori dal checkout occorre esportazione/backup o push del branch documentale autorizzato. Non promettere recupero remoto sulla sola base dell'hash. Il branch corrente consente recupero locale senza sovrascrivere lo stato applicativo stabile.
+
+## Checkpoint 5B in corso
+
+Branch `refactor/phase-5b`, da audit `b819864`. Estratti `layoutFor`, `vehiclePositions`, raccolta occupazione e assistenza scambi in `src/railway-state.js`; contratti JSDoc in `src/railway-types.js`. Confronto differenziale con oracle storico v0.12 su 180 stati, senza mutare Journey; build riuscita. R01/R02/R03 restano aperti per 5C. Nessun push o deployment. Prossimo blocco: separazione dei comandi della flotta, mantenendo eventi UI e missioni nel bootstrap.
 
 ## Ultima attività completata
 
