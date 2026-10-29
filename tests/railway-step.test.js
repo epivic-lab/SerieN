@@ -151,3 +151,21 @@ test('growth of a frozen detached body cannot claim an old branch after a legal 
  assert.equal(preview.stop,'misaligned');assert.equal(preview.distance,80);assert.equal(JSON.stringify(j.segments),before);
  assert.equal(traceJourney(n,topology,j,-1,0,aligned,84.1).stop,'limit');
 });
+
+test('recoupling across a joint extends the candidate centre before matching, even after old train history was pruned',()=>{
+ const localRoute=routing(n,id=>id==='Y-4'),t=train(0,'T47',60.85),car=vehicle(30,30);
+ const frozen=new Journey(n,'T47',5);assert.ok(frozen.ensure(-50,localRoute));frozen.position=-5;
+ const point=frozen.locate(),detached=[{point,group:car,journey:frozen}],segments=t.journey.segments;
+ assert.equal(point.edge,'TO4:AC');assert.equal(t.journey.segments.length,1);
+ const commands=createFleetCommands({trains:[t],detached,route:localRoute}),result=commands.couple(0);
+ assert.equal(result.changed,true,result.message);assert.equal(t.carObjs[0],car);assert.equal(detached.length,0);assert.equal(t.journey.segments,segments);
+ const actual=vehiclePositions(t).at(-1);assert.equal(actual.edge,point.edge);assert.ok(Math.hypot(actual.x-point.x,actual.z-point.z)<1e-7);
+});
+
+test('a misaligned joint cannot be invented to recouple; rejected candidate leaves the real Journey unchanged',()=>{
+ const t=train(0,'T47',60.85),car=vehicle(30,30),frozen=new Journey(n,'T47',5),aligned=routing(n,id=>id==='Y-4');assert.ok(frozen.ensure(-50,aligned));frozen.position=-5;
+ const detached=[{point:frozen.locate(),group:car,journey:frozen}],commands=createFleetCommands({trains:[t],detached,route});
+ const before={position:t.journey.position,travel:t.journey.travel,segments:structuredClone(t.journey.segments),lastBlock:t.journey.lastBlock};
+ assert.equal(commands.couple(0).changed,false);assert.deepEqual({position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments,lastBlock:t.journey.lastBlock},before);
+ assert.equal(detached[0].group,car);assert.equal(t.carObjs.length,0);
+});

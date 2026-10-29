@@ -127,6 +127,14 @@ with sync_playwright() as p:
  check(!api.railwayState().occupied.some(r=>r.edge==='TO4:AC'),'no invented occupation on old branch');check(JSON.stringify(before.identities)===JSON.stringify(api.railwayState().identities),'history refusal preserves groups');sync();
  return {rejected:true,legalSwitchChange:true,noInventedOccupation:true,identitiesAndJourneysPreserved:true};
  ''')
+ results['joint']=exercise('joint-recoupling','''
+ reset();$('#rollingModels').value='native';$('#rollingModels').dispatchEvent(new Event('change'));api.setSwitches(['Y-4']);const offset=snap().stock[1].layout.offsets.at(-1);api.placeTrain(1,'T47',offset-5,1);
+ const before=api.railwayState().identities,position=snap().stock[1].journey.position;command(1,'uncouple');check(snap().detached[0].edge==='TO4:AC','coach centre across joint');
+ api.placeTrain(1,'T47',position,1);check(snap().stock[1].journey.segments.length===1,'train old history deliberately absent');command(1,'couple');
+ check(snap().detached.length===0,'actual coach recoupled across joint');check(JSON.stringify(before)===JSON.stringify(api.railwayState().identities),'joint recoupling preserves every group and order');
+ check(snap().stock[1].journey.segments.some(s=>s.id==='TO4:AC'),'candidate uses actual aligned route');sync();
+ return {recoupled:true,missingHistoryRebuilt:true,actualRoute:true,identitiesAndOrder:true,sync:true};
+ ''')
  assert not errors,errors
  assert not failed,failed
  result={'result':'PASS','cases':list(results),'errors':errors,'failedRequests':failed,'renderer':'Chromium/SwiftShader; simulated railway envelopes only'}

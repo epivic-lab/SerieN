@@ -40,16 +40,20 @@ export function createFleetCommands({trains,detached,route}) {
     const train=trains[id];
     if(train.speed||Math.abs(train.velocity)>.1)return {changed:false,message:'Stop the train before coupling.'};
     if(train.cars>=5)return {changed:false,message:'Maximum train length: five wagons.'};
+    let candidateJourney;
     const index=detached.findIndex(vehicle=>{
       const candidate=layoutFor(train,[vehicle.group]);
-      const expected=train.journey.locate(train.journey.position-candidate.offsets.at(-1));
-      return couplingMatch(expected,vehicle.point);
+      const journey=Object.assign(Object.create(Object.getPrototypeOf(train.journey)),train.journey,{segments:train.journey.segments.map(s=>({...s}))});
+      const at=journey.position-candidate.offsets.at(-1);
+      // locate() clamps outside known history. Extend a disposable candidate
+      // through the real router before matching a car on the adjoining edge.
+      if((at<journey.segments[0].start||at>journey.segments.at(-1).end)&&!journey.ensure(at,route))return false;
+      if(!couplingMatch(journey.locate(at),vehicle.point))return false;
+      candidateJourney=journey;return true;
     });
     if(index<0)return {changed:false,message:'No wagon near the rear of this train on the same track.'};
-    const segments=[...train.journey.segments],lastBlock=train.journey.lastBlock;
-    if(!train.journey.ensure(train.journey.position-layoutFor(train,[detached[index].group]).tail,route)){train.journey.segments.splice(0,train.journey.segments.length,...segments);
-      if(lastBlock===undefined)delete train.journey.lastBlock;else train.journey.lastBlock=lastBlock;
-      return {changed:false,message:'Not enough room.'};}
+    if(!candidateJourney.ensure(train.journey.position-layoutFor(train,[detached[index].group]).tail,route))return {changed:false,message:'Not enough room.'};
+    train.journey.segments.splice(0,train.journey.segments.length,...candidateJourney.segments);
     const group=detached.splice(index,1)[0].group;
     train.carObjs.push(group);train.cars=train.carObjs.length;
     return {changed:true,kind:'coupled',group,message:'Wagon coupled.'};

@@ -26,7 +26,8 @@ Rieseguite suite Node/Python/build e browser pertinenti, con prove nuove in `doc
 - Rilevato e corretto anche l’ingrandimento Kenney→nativo che introduceva 23,85 mm di sovrapposizione; guardia per inserimento del quarto convoglio quando un corpo arriva da un edge adiacente.
 - Guardia modelli affinata per consentire contatti preesistenti invariati/in miglioramento; prova isolata con carri già sganciati e confronto del testo reale HUD superati.
 - Controllo aggiunto per la crescita di un carro su una storia superata da commutazione lecita: rifiuto senza inventare occupazione sul vecchio ramo.
-- 123 test Node e 9 Python verdi; dieci scenari della matrice browser 5C completi verdi anche dopo l’affinamento. Regressione browser finale in corso; non dichiarare ancora chiusa la fase da questo checkpoint.
+- Riaggancio al giunto corretto quando la storia del convoglio non comprende più il centro del carro; candidato esteso con il router reale e rifiuto atomico se disallineato.
+- 125 test Node e 9 Python verdi; undici scenari della matrice browser 5C completi verdi anche dopo l’affinamento. Regressione browser finale in corso; non dichiarare ancora chiusa la fase da questo checkpoint.
 - Nessun cambio a geometria/asset/dipendenze/deployment. Nessun push. Salvare report finale e prove in `docs/phase-5c-close/` prima della chiusura documentale.
 
 ## Ultimo blocco completato
