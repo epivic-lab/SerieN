@@ -17,7 +17,7 @@ Un commit locale non sopravvive automaticamente alla perdita completa della macc
 
 ## Checkpoint 5B in corso
 
-Branch `refactor/phase-5b`, da audit `b819864`. Estratti `layoutFor`, `vehiclePositions`, raccolta occupazione e assistenza scambi in `src/railway-state.js`; contratti JSDoc in `src/railway-types.js`. Confronto differenziale con oracle storico v0.12 su 180 stati, senza mutare Journey; build riuscita. R01/R02/R03 restano aperti per 5C. Nessun push o deployment. Prossimo blocco: separazione dei comandi della flotta, mantenendo eventi UI e missioni nel bootstrap.
+Branch `refactor/phase-5b`, da audit `b819864`. Estratti `layoutFor`, `vehiclePositions`, raccolta occupazione e assistenza scambi in `src/railway-state.js`; contratti JSDoc in `src/railway-types.js`. Confronto differenziale con oracle storico v0.12 su 180 stati, senza mutare Journey; build riuscita. R01/R02/R03 restano aperti per 5C. Nessun push o deployment. Checkpoint viste: `5a551f7`. Secondo blocco completato: comandi puri rispetto alla presentazione in `src/fleet-commands.js`, risultati espliciti per i fallimenti e test differenziali/identità dei carri. Eventi UI e missioni restano nel bootstrap; rimossi import/materiali inutilizzati, builder e PNG dimostrati invariati. Prossima attività: regressioni browser e documentazione finale 5B.
 
 ## Ultima attività completata
 
@@ -56,9 +56,9 @@ Coverage Node: 91,28% linee / 89,71% branch / 94,77% funzioni **solo dei moduli 
 
 Nessuna vulnerabilità critica confermata richiede una modifica applicativa urgente fuori ambito. La fedeltà metrologica dei WX310 e dei rotabili non è stata certificata dall'audit.
 
-## Prossima attività raccomandata — NON eseguita
+## Prossima attività raccomandata — checkpoint 5B
 
-Attendere la nuova istruzione dell'utente per **5B**. Primo intervento: estrarre layout/posizioni/occupazione e raccolta stato dell'assistenza scambi da `app.js` in un servizio puro con rete/flotta/sganciati/router passati esplicitamente, aggiungendo test di caratterizzazione. Non correggere silenziosamente la semantica ferroviaria durante l'estrazione e non trasformare R01/R02 in requisiti corretti.
+Completare le regressioni browser e il report di refactoring 5B; non iniziare 5C. I nuovi servizi sono stati verificati con test di confronto della baseline. Nessuna correzione R01/R02/R03 è stata introdotta.
 
 ## Riprendere in una sessione nuova
 

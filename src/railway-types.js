@@ -20,6 +20,7 @@
  * @typedef {{id:string,on:boolean}} SwitchControl
  * @typedef {{network:RailwayNetwork,switchTopology:SwitchTopology,trains:Train[],
  * detached:DetachedVehicle[],selected:number,switchSpecs:SwitchControl[],route:Function}} AssistanceContext
+ * @typedef {{changed:boolean,kind?:'coupled'|'uncoupled',message?:string,group?:Vehicle}} ConsistCommandResult
  * selected is the fleet array index, as in the v0.12 contract; IDs are not remapped.
  */
 export {};

@@ -1,3 +1,4 @@
+import {createFleetCommands} from './src/fleet-commands.js';
 import {layoutFor,vehiclePositions,deriveSwitchAssistance} from './src/railway-state.js';
 import {buildStock,animateStock} from './src/rolling-stock.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
@@ -9,12 +10,12 @@ import { createSwitchTopology } from "./src/next-switch.js";
 import { mountNextSwitchHUD, createRouteHighlight, previewPoints } from "./src/next-switch-view.js";
 import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
-import { couplingDistance, couplingMatch } from "./src/consist.js";
+import { couplingDistance } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
 import { navigation, CAMERA_PRESETS } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
 import { attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets } from "./src/train-assets.js";
-import { locomotiveDetails, wagonDetails, steam } from "./src/rolling-stock-art.js";
+import { locomotiveDetails, steam } from "./src/rolling-stock-art.js";
 import { presentation } from "./src/presentation.js";
 import { enrich } from "./src/scenery.js";
 import { createNetwork, validateNetwork, loopPosition } from "./src/network.js";
@@ -295,8 +296,6 @@ window.addEventListener("blur",()=>switchFeedback.hover(null));
 function switchIndicatorState(){return {active:switchFeedback.active,states:switchSpecs.map(s=>({id:s.id,on:s.on,orange:s.bulb.material===signalHover,color:s.bulb.material.color.getHexString(),position:s.group.position.toArray()}))};}
 const railWheel = mat("#292c2a", 0.8), chassisRed = mat("#9a3a30");
 const locoBlack = mat("#323736", 0.62, 0.16), locoCrimson = mat("#b94334"), locoCream = mat("#d8c49a");
-const wagonColors = ["#8f5c43", "#71826f", "#a27e50", "#7f6e5d"];
-const wagonMats = wagonColors.map((c) => mat(c));
 function wheelSet(group, len) {
   for (let a of [-len * 0.31, len * 0.31]) for (let side of [-6, 6]) {
     const o = cylinder(4.2, 4.2, 2, railWheel, group, a, 3.7, side, 12);
@@ -452,6 +451,7 @@ function toggle(index) {
   ui();
 }
 const route = routing(network, (id) => switchSpecs.find((s) => s.id === id)?.on || false);
+const fleetCommands=createFleetCommands({trains,detached,route});
 function getSwitchAssistance() {
   return deriveSwitchAssistance({network,switchTopology,trains,detached,selected,switchSpecs,route});
 }
@@ -567,50 +567,14 @@ function updateTrainStatus(dt) {
     ui();
   }
 }
-function uncouple() {
-  const t = trains[selected];
-  if (Math.abs(t.velocity) > 0.1 || t.speed) {
-    log("Stop the train before uncoupling.");
-    return;
-  }
-  if (!t.cars) return;
-  const point = t.journey.locate(t.journey.position - layoutFor(t).offsets.at(-1)), group = t.carObjs.pop();
-  detached.push({ point, group });
-  t.cars = t.carObjs.length;
-  didDetach = true;
-  ui();
-  log("Wagon uncoupled and left on the track.");
+function applyConsistCommand(result) {
+  if (!result.changed) {if(result.message)log(result.message);return;}
+  if(result.kind==='uncoupled')didDetach=true;
+  if(result.kind==='coupled')didAttach=true;
+  ui();log(result.message);
 }
-function couple() {
-  const t = trains[selected];
-  if (t.speed || Math.abs(t.velocity) > 0.1) {
-    log("Stop the train before coupling.");
-    return;
-  }
-  if (t.cars >= 5) {
-    log("Maximum train length: five wagons.");
-    return;
-  }
-  const tail = t.journey.locate(t.journey.position - layoutFor(t).offsets.at(-1));
-  const i = detached.findIndex(d=>{
-    const candidate=layoutFor(t,[d.group]);
-    const expected=t.journey.locate(t.journey.position-candidate.offsets.at(-1));
-    return couplingMatch(expected,d.point);
-  });
-  if (i < 0) {
-    log("No wagon near the rear of this train on the same track.");
-    return;
-  }
-  if (!t.journey.ensure(t.journey.position - layoutFor(t, [detached[i].group]).tail, route)) {
-    log("Not enough room.");
-    return;
-  }
-  t.carObjs.push(detached.splice(i, 1)[0].group);
-  t.cars = t.carObjs.length;
-  didAttach = true;
-  ui();
-  log("Wagon coupled.");
-}
+function uncouple() {applyConsistCommand(fleetCommands.uncouple(selected));}
+function couple() {applyConsistCommand(fleetCommands.couple(selected));}
 function removeWagon(group) {
   releaseTrainAsset(group);
   const geometries = /* @__PURE__ */ new Set();
@@ -647,20 +611,18 @@ function reset() {
   log("Reset completed.");
 }
 function setTrainSpeed(id,value) {
-  const t=trains[id];if(!t)return;
-  t.speed=clamp(value,0,100);trainDeck?.sync();
+  if(fleetCommands.setSpeed(id,value))trainDeck?.sync();
 }
 function reverseTrain(id) {
-  const t=trains[id];if(!t)return;
-  t.dir*=-1;log(t.name+" reversed direction");trainDeck?.sync();nextSwitchHUD?.refresh(true);
+  const train=fleetCommands.reverse(id);if(!train)return;
+  log(train.name+" reversed direction");trainDeck?.sync();nextSwitchHUD?.refresh(true);
 }
 function stopTrain(id) {
-  const t=trains[id];if(!t)return;
-  t.speed=t.velocity=0;ui();log(t.name+" stopped");
+  const train=fleetCommands.stop(id);if(!train)return;
+  ui();log(train.name+" stopped");
 }
 function stopAllTrains() {
-  for(const t of trains)t.speed=t.velocity=0;
-  ui();log("STOP ALL · every train stopped");
+  fleetCommands.stopAll();ui();log("STOP ALL · every train stopped");
 }
 function addTrain() {
   if(trains.length>=4){log("A session supports up to four trains.");return null;}
@@ -689,8 +651,7 @@ function updateRouteHighlight(force=false) {
   routeHighlight.update(previewPoints(network,getSwitchAssistance().preview,1800),true);
 }
 function toggleTrainLights(id) {
-  const t=trains[id];if(!t)return;
-  t.lights=!t.lights;ui();
+  if(fleetCommands.toggleLights(id))ui();
 }
 $("day").oninput = (e) => {
   day = +e.target.value;
