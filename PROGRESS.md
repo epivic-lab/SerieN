@@ -4,6 +4,8 @@
 
 Autorizzazione corrente: richiesta completa Fase 5D in `docs/phase-5d/REQUEST.md`. Baseline recuperabile `303525c`; working tree iniziale pulito; 125 Node, 9 Python e build iniziali passati. La 5E richiede una nuova istruzione esplicita. Nessun push, deployment o intervento su `first`, `SerieN Control` o altri repository.
 
+5D.1: harness leggero CDP/RAF e baseline in `docs/phase-5d/before`; tabelle iniziali parziali in `docs/phase-5d/INITIAL_TABLES.md`. Profilazione componenti completa; acquisizione grafica ripresa dai JSON dopo interruzione della sessione. Ottimizzazioni candidate non ancora accettate: confronto quantitativo e regressioni in corso.
+
 ## Rapporti e checkpoint
 
 - [Chiusura 5C](docs/PHASE5C_CLOSURE.md): requisiti, correzioni, prove, rischi residui e rollback.
