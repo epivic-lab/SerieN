@@ -1,6 +1,7 @@
+import {stepRailway} from './src/railway-step.js';
 import {vehiclesConflict} from './src/railway-conflicts.js';
 import {createFleetCommands} from './src/fleet-commands.js';
-import {layoutFor,vehiclePositions,deriveSwitchAssistance} from './src/railway-state.js';
+import {layoutFor,vehiclePositions,deriveSwitchAssistance,collectRailwayState} from './src/railway-state.js';
 import {buildStock,animateStock} from './src/rolling-stock.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
 import {createSwitchFeedback} from "./src/switch-feedback.js";
@@ -513,61 +514,32 @@ function renderVehicles() {
     d.group.rotation.y = d.point.angle;
   }
 }
-function advance(t, dt) {
-  const desired = t.dir * (t.speed / 100) * 150;
-  const acceleration = Math.abs(desired) < Math.abs(t.velocity) ? 100 : 45;
-  t.velocity += clamp(desired - t.velocity, -acceleration * dt, acceleration * dt);
-  if (Math.abs(t.velocity) < 1e-3) return;
-  if (!t.journey.move(t.velocity * dt, layoutFor(t).tail, route, t.group.userData.couplers?.front?.x ?? 48)) {
-    t.speed = 0;
-    t.velocity = 0;
-    log(t.name + (t.journey.lastBlock?.reason==="terminal"?": end of track. Reverse direction.":": route blocked. Check switch alignment."));
-    ui();
-    return;
-  }
-  t.odometer += t.velocity * dt;
-  const previousRoute = t.mode + "/" + t.loop + "/" + t.section;
-  const location2 = t.journey.locate(), edge = network.edges[location2.edge];
-  if (edge.lane !== void 0) {
-    if (edge.lane !== t.previousLane) {
-      transferred = true;
-      t.previousLane = edge.lane;
+function advanceFleet(dt) {
+  for (const result of stepRailway({trains,detached,route},dt)) {
+    const t=result.train;
+    if(result.notify){
+      log(result.kind==='train'?"Protection: trains too close. Automatic stop.":result.kind==='wagon'?"Stationary wagon ahead. Stopped for coupling.":t.name+(result.kind==='terminal'?": end of track. Reverse direction.":": route blocked. Check switch alignment."));
+      ui();
     }
-    t.loop = edge.lane;
-    t.mode = "loop";
-  } else if(edge.role==="crossover") {
-    t.mode="loop";
-  } else {
-    t.mode = "yard";
-    t.section = edge.id;
-    if (edge.role?.startsWith("runaround")) visitedRunaround = true;
-  }
-  t.laps = Math.floor(t.journey.travel / loops[t.loop].length);
-  if (previousRoute !== t.mode + "/" + t.loop + "/" + t.section) ui();
-}
-let protectionTimer = 0;
-function updateTrainStatus(dt) {
-  protectionTimer -= dt;
-  if (protectionTimer > 0) return;
-  protectionTimer = 0.08;
-  const occupied = trains.map((t) => vehiclePositions(t));
-  for (let a = 0; a < occupied.length; a++) for (let b = a + 1; b < occupied.length; b++) {
-    if (occupied[a].some(u=>occupied[b].some(v=>vehiclesConflict(u,v)))) {
-      const u = trains[a], v = trains[b];
-      if (u.speed || v.speed || u.velocity || v.velocity) {
-        u.speed = v.speed = u.velocity = v.velocity = 0;
-        log("Protection: trains too close. Automatic stop.");
-        ui();
+    if(!result.moved)continue;
+    const previousRoute = t.mode + "/" + t.loop + "/" + t.section;
+    const location2 = t.journey.locate(), edge = network.edges[location2.edge];
+    if (edge.lane !== void 0) {
+      if (edge.lane !== t.previousLane) {
+        transferred = true;
+        t.previousLane = edge.lane;
       }
+      t.loop = edge.lane;
+      t.mode = "loop";
+    } else if(edge.role==="crossover") {
+      t.mode="loop";
+    } else {
+      t.mode = "yard";
+      t.section = edge.id;
+      if (edge.role?.startsWith("runaround")) visitedRunaround = true;
     }
-  }
-  for (const t of trains) if (detached.some((d) => vehiclePositions(t).some((p) => {
-    const toward=(d.point.x-p.x)*Math.cos(p.angle)-(d.point.z-p.z)*Math.sin(p.angle);
-    return toward*t.velocity>0 && vehiclesConflict(p,{...d.point,vehicle:d.group});
-  })) && t.velocity) {
-    t.speed = t.velocity = 0;
-    log("Stationary wagon ahead. Stopped for coupling.");
-    ui();
+    t.laps = Math.floor(t.journey.travel / loops[t.loop].length);
+    if (previousRoute !== t.mode + "/" + t.loop + "/" + t.section) ui();
   }
 }
 function applyConsistCommand(result) {
@@ -795,8 +767,7 @@ function tick(now) {
   last = now;
   if (!paused) {
     clock.update(dt, (step) => {
-      trains.forEach((t) => advance(t, step));
-      updateTrainStatus(step);
+      advanceFleet(step);
     });
   }
   frame++;
@@ -861,18 +832,27 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
     if (!Number.isFinite(seconds) || seconds < 0 || seconds > 120) throw new RangeError("Diagnostic step: 0…120 seconds");
     for (let remaining = seconds; remaining > 1e-9; remaining -= 1/60) {
       const dt = Math.min(1/60, remaining);
-      trains.forEach((t) => advance(t, dt));
-      updateTrainStatus(dt);
+      advanceFleet(dt);
     }
     renderVehicles();
     trainDeck?.update();
     nextSwitchHUD?.refresh(true);
     updateRouteHighlight(true);
   },
+  frames(intervals) {
+    if(!Array.isArray(intervals)||intervals.length>10000||intervals.some(dt=>!Number.isFinite(dt)||dt<0))throw new RangeError("Invalid diagnostic frames");
+    const frameClock=new FixedClock();
+    for(const elapsed of intervals)frameClock.update(elapsed,advanceFleet);
+    renderVehicles();trainDeck?.update();nextSwitchHUD?.refresh(true);updateRouteHighlight(true);
+  },
   setSwitches(on) {
     if(!Array.isArray(on)||on.some((id)=>!switchSpecs.some((s)=>s.id===id)))throw new RangeError("Unknown diagnostic control");
     switchSpecs.forEach((s)=>{s.on=on.includes(s.id);s.bulb.material=s.on?signalGold:signalGreen;});
     trains.forEach((t)=>t.journey.reconcile(layoutFor(t).tail,t.group.userData.couplers?.front?.x??48,route));ui();
+  },
+  railwayState() {
+    return {occupied:collectRailwayState({network,switchTopology,trains,detached,route}).occupied,
+      identities:{trains:trains.map(t=>[t.group,...t.carObjs].map(v=>v.uuid)),detached:detached.map(d=>d.group.uuid)}};
   },
   snapshot() {
   const hull = (group) => {

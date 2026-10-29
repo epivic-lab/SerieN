@@ -1,8 +1,8 @@
 # SerieN — Stato e ripresa
 
-**5C implementata; verifica indipendente: gate completo non ancora dimostrato. 5D e 5E non iniziate.**
+**Chiusura 5C in corso su autorizzazione esplicita: correzioni applicate, validazione finale in esecuzione. 5D e 5E non iniziate.**
 
-Autorizzazione corrente: verifica indipendente conclusiva della 5C, senza implementare automaticamente correzioni. Occorre nuova istruzione esplicita per 5D/5E. Nessun push, deployment o intervento su `first`, `SerieN Control` e altri repository.
+Autorizzazione corrente: «esegui tutte le operazioni di validazione, implementazione e test e chiudi la 5C». Occorre nuova istruzione esplicita per 5D/5E. Nessun push, deployment o intervento su `first`, `SerieN Control` e altri repository.
 
 ## Checkpoint
 
@@ -16,7 +16,15 @@ Tutti i commit sono locali. La perdita della macchina richiede backup/esportazio
 
 ## Verifica indipendente richiesta dall’utente
 
-Rieseguite suite Node/Python/build e browser pertinenti, con prove nuove in `docs/phase-5c-review/`. La prova frontale aggiuntiva riproduce un arresto dopo sovrapposizione degli inviluppi di 2,875 mm; la matrice della roadmap resta incompleta: vedere [rapporto](docs/PHASE5C_FINAL_REVIEW.md). Nessuna correzione applicativa è autorizzata da questa revisione: proporre interventi circoscritti e attendere istruzioni. Nessun push o pubblicazione.
+Rieseguite suite Node/Python/build e browser pertinenti, con prove nuove in `docs/phase-5c-review/`. La prova frontale aggiuntiva riproduce un arresto dopo sovrapposizione degli inviluppi di 2,875 mm; la matrice della roadmap resta incompleta: vedere [rapporto](docs/PHASE5C_FINAL_REVIEW.md). La revisione iniziale non autorizzava correzioni; la successiva istruzione dell’utente autorizza ora implementazione, test e chiusura della sola 5C. Nessun push o pubblicazione.
+
+## Chiusura 5C — checkpoint applicativo in corso
+
+- Movimento candidato di tutta la flotta prima del commit, inviluppi swept e ricontrollo degli arresti a catena. Velocità/accelerazioni, Journey e topologia conservati; side effect UI/missioni soltanto dopo l’accettazione.
+- Frontale A1 nel browser corretto: margine minimo +1 mm, entrambe le locomotive ferme. Nuove prove Node su frontali/inseguimenti/composizioni, curve, terminali, WX, frame rate e rollback.
+- Rilevato e corretto anche l’ingrandimento Kenney→nativo che introduceva 23,85 mm di sovrapposizione; guardia per inserimento del quarto convoglio quando un corpo arriva da un edge adiacente.
+- 122 test Node e 9 Python verdi; matrice browser 5C verde nella prima esecuzione. Regressione browser finale in corso; non dichiarare ancora chiusa la fase da questo checkpoint.
+- Nessun cambio a geometria/asset/dipendenze/deployment. Nessun push. Salvare report finale e prove in `docs/phase-5c-close/` prima della chiusura documentale.
 
 ## Ultimo blocco completato
 
