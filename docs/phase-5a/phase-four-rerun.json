@@ -1,0 +1,70 @@
+{
+  "threeMovingTrains": true,
+  "signedWheelAnimation": true,
+  "rods": true,
+  "freeze": true,
+  "reverse": true,
+  "nearCoupling": true,
+  "distantCouplingRejected": true,
+  "consoleLengths": true,
+  "canonicalPositions": true,
+  "terminalManoeuvres": [
+    {
+      "edge": "T30",
+      "direction": 1,
+      "remainingMm": 48.0875,
+      "stopped": true
+    },
+    {
+      "edge": "T37",
+      "direction": 1,
+      "remainingMm": 48.0875,
+      "stopped": true
+    },
+    {
+      "edge": "T39",
+      "direction": 1,
+      "remainingMm": 48.0875,
+      "stopped": true
+    },
+    {
+      "edge": "T50",
+      "direction": -1,
+      "remainingMm": 38.175,
+      "stopped": true
+    }
+  ],
+  "softwareFrameIntervalsMs": [
+    -5.700000000048021,
+    966.7000000000044,
+    966.6999999999971,
+    933.1999999999971,
+    900,
+    933.3000000000029,
+    950,
+    949.8999999999942,
+    933.3000000000029,
+    933.3000000000029,
+    949.8999999999942,
+    1033.4000000000087,
+    966.5999999999913,
+    933.3000000000029,
+    899.9000000000087,
+    900,
+    916.6999999999971,
+    899.8999999999942,
+    916.6000000000058,
+    933.3999999999942
+  ],
+  "render": {
+    "calls": 101,
+    "triangles": 282482,
+    "geometries": 382,
+    "textures": 45
+  },
+  "result": "PASS",
+  "errors": [],
+  "failedRequests": [],
+  "performanceNote": "Chromium/SwiftShader. Physical desktop GPU performance untested.",
+  "source": "Fresh run of tests/browser-phase-four.py on unchanged 618f538; outputs isolated outside checkout"
+}
