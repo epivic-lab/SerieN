@@ -1,3 +1,4 @@
+import {animateAuxiliaryWheels} from './src/rolling-stock-animation.js';
 import {stepRailway} from './src/railway-step.js';
 import {vehiclesConflict,envelopeGap} from './src/railway-conflicts.js';
 import {createFleetCommands} from './src/fleet-commands.js';
@@ -480,7 +481,7 @@ function toggle(index) {
 const route = routing(network, (id) => switchSpecs.find((s) => s.id === id)?.on || false);
 const fleetCommands=createFleetCommands({trains,detached,route});
 function getSwitchAssistance() {
-  return deriveSwitchAssistance({network,switchTopology,trains,detached,selected,switchSpecs,route});
+  return deriveSwitchAssistance({network,switchTopology,trains,detached,selected,switchSpecs,route,tracePoints:false});
 }
 function switchHUDState() {
   const state = getSwitchAssistance();
@@ -507,30 +508,24 @@ function initializeJourney(t) {
 }
 trains.forEach(initializeJourney);
 function vehicleLocation(t, behind = 0) {
-  const p = t.journey.locate(t.journey.position - behind);
-  return { point: new THREE.Vector3(p.x, 3.5, p.z), angle: p.angle };
+  return t.journey.locate(t.journey.position - behind);
 }
 function renderVehicles() {
   for (const t of trains) {
     const layout = layoutFor(t);
     t.journey.ensure(t.journey.position - layout.tail, route);
-    const pos = vehicleLocation(t);
-    t.group.position.copy(pos.point).add(new THREE.Vector3(0,t.group.stockRig&&!t.group.userData.assetDimensions?0:3.6,0));
-    t.group.rotation.y = pos.angle;
-    t.carObjs.forEach((o, i) => {
-      o.visible = true;
-      const q = vehicleLocation(t, layout.offsets[i + 1]);
-      o.position.copy(q.point);
-      o.rotation.y = q.angle;
-    });
-    [t.group,...t.carObjs].forEach((group,i)=>animateStock(group,t.journey,t.journey.position-layout.offsets[i],t.odometer));
-    for (const group of [t.group, ...t.carObjs]) group.traverse((o) => {
-      if (o.userData.wheel) o.quaternion.setFromAxisAngle(new THREE.Vector3(0,0,1),-t.odometer/4.2).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),PI/2));
-      if (o.userData.importedWheel) o.rotation.x = -t.odometer / o.userData.wheelRadius;
-    });
+    const vehicles=[t.group,...t.carObjs];
+    for(let i=0;i<vehicles.length;i++) {
+      const group=vehicles[i],coordinate=t.journey.position-layout.offsets[i],pose=vehicleLocation(t,layout.offsets[i]);
+      if(i)group.visible=true;
+      group.position.set(pose.x,3.5+(i?0:group.stockRig&&!group.userData.assetDimensions?0:3.6),pose.z);
+      group.rotation.y=pose.angle;
+      animateStock(group,t.journey,coordinate,t.odometer,pose);
+      animateAuxiliaryWheels(group,t.odometer);
+    }
   }
-  selectRing.position.copy(vehicleLocation(trains[selected]).point);
-  selectRing.position.y = 5.2;
+  const selectedPoint=vehicleLocation(trains[selected]);
+  selectRing.position.set(selectedPoint.x,5.2,selectedPoint.z);
   for (const d of detached) {
     d.group.visible = true;
     d.group.position.set(d.point.x, 3.5, d.point.z);

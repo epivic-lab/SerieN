@@ -17,7 +17,7 @@ Ogni intervento applicativo futuro deve riportare motivazione, impatto, rischio 
 | 5A — Audit tecnico e Security Assessment | Completata; risultati e limiti in ENGINEERING_AUDIT.md | Sola analisi, test non distruttivi e documentazione |
 | 5B — Refactoring architetturale | Completata; [report](REFACTORING_PHASE5B.md) | Commit di estrazione e comandi, caratterizzazione e regressioni browser |
 | 5C — Affidabilità ferroviaria | Chiusa; [rapporto conclusivo](PHASE5C_CLOSURE.md) | 125 Node, 9 Python, build e cinque suite browser verdi; gate superati nelle condizioni documentate |
-| 5D — Performance Optimization | Non iniziata | 5C accettata e nuova istruzione |
+| 5D — Performance Optimization | Avviata, sospesa con checkpoint WIP | Regressioni e confronto frame/memoria finali da completare |
 | 5E — Cybersecurity Hardening e stabilizzazione | Non iniziata | 5D accettata e nuova istruzione; possibili urgenze documentate separatamente |
 
 ## 5A — Audit tecnico e Security Assessment

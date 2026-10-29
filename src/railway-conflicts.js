@@ -40,16 +40,32 @@ export function envelopeGap(a,b) {return polygonGap(corners(a),corners(b));}
 // Convex swept envelopes cover intermediate translation as well as endpoints.
 // Midpoint samples and a rotational/centre-arc allowance avoid treating a yaw
 // change as a straight chord. Used only over the bounded 1/60 s railway step.
-export function sweptVehiclesConflict(a,b) {
- const sweep=poses=>{
-  let padding=0;
-  for(let i=1;i<poses.length;i++){
-   const p=poses[i-1],q=poses[i],angle=Math.abs(Math.atan2(Math.sin(q.angle-p.angle),Math.cos(q.angle-p.angle)));
-   const radius=Math.max(...corners(p).map(v=>Math.hypot(v[0]-p.x,v[1]-p.z)));
-   padding=Math.max(padding,radius*(1-Math.cos(angle/2))+Math.hypot(q.x-p.x,q.z-p.z)*Math.sin(angle/2)/4);
-  }
-  return {polygon:hull(poses.flatMap(corners)),padding};
- };
- const p=sweep(a),q=sweep(b);
+export function prepareSweptEnvelope(poses) {
+ let padding=0;
+ for(let i=1;i<poses.length;i++){
+  const p=poses[i-1],q=poses[i],angle=Math.abs(Math.atan2(Math.sin(q.angle-p.angle),Math.cos(q.angle-p.angle)));
+  const radius=Math.max(...corners(p).map(v=>Math.hypot(v[0]-p.x,v[1]-p.z)));
+  padding=Math.max(padding,radius*(1-Math.cos(angle/2))+Math.hypot(q.x-p.x,q.z-p.z)*Math.sin(angle/2)/4);
+ }
+ const polygon=hull(poses.flatMap(corners));
+ // Offset support planes by padding. The largest miter bounds the expanded
+ // polygon, including sharp corners; padding alone is not a safe AABB margin.
+ let expansion=padding+1e-7;
+ for(let i=0;i<polygon.length;i++){
+  const a=polygon[(i+polygon.length-1)%polygon.length],b=polygon[i],c=polygon[(i+1)%polygon.length];
+  const ux=b[0]-a[0],uz=b[1]-a[1],vx=c[0]-b[0],vz=c[1]-b[1];
+  const cosine=(ux*vx+uz*vz)/(Math.hypot(ux,uz)*Math.hypot(vx,vz));
+  expansion=Math.max(expansion,(padding+1e-7)/Math.sqrt(Math.max(0,(1+cosine)/2)));
+ }
+ return {polygon,padding,minX:Math.min(...polygon.map(p=>p[0]))-expansion,maxX:Math.max(...polygon.map(p=>p[0]))+expansion,
+  minZ:Math.min(...polygon.map(p=>p[1]))-expansion,maxZ:Math.max(...polygon.map(p=>p[1]))+expansion};
+}
+export function preparedSweepsConflict(p,q) {
+ // Only reject impossible pairs here. The original SAT threshold below is
+ // authoritative; no railway distance, route or protection rule is replaced.
+ if(p.maxX<q.minX||q.maxX<p.minX||p.maxZ<q.minZ||q.maxZ<p.minZ)return false;
  return polygonGap(p.polygon,q.polygon)<=p.padding+q.padding+1e-8;
+}
+export function sweptVehiclesConflict(a,b) {
+ return preparedSweepsConflict(prepareSweptEnvelope(a),prepareSweptEnvelope(b));
 }

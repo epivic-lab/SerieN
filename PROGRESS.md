@@ -1,10 +1,10 @@
 # SerieN — Stato e ripresa
 
-**5C chiusa. 5D autorizzata e in corso: raccolta baseline prima di ogni ottimizzazione. 5E non iniziata.**
+**5C chiusa. 5D sospesa su richiesta dell’utente per fine sessione; checkpoint WIP recuperabile. 5E non iniziata.**
 
 Autorizzazione corrente: richiesta completa Fase 5D in `docs/phase-5d/REQUEST.md`. Baseline recuperabile `303525c`; working tree iniziale pulito; 125 Node, 9 Python e build iniziali passati. La 5E richiede una nuova istruzione esplicita. Nessun push, deployment o intervento su `first`, `SerieN Control` o altri repository.
 
-5D.1: harness leggero CDP/RAF e baseline in `docs/phase-5d/before`; tabelle iniziali parziali in `docs/phase-5d/INITIAL_TABLES.md`. Profilazione componenti completa; acquisizione grafica ripresa dai JSON dopo interruzione della sessione. Ottimizzazioni candidate non ancora accettate: confronto quantitativo e regressioni in corso.
+5D: baseline CPU e profili A–D completi; baseline frame normale parziale (26 celle); confronto CPU candidato e contatori completi in `docs/phase-5d/after/profile`. Miglioramenti CPU candidati misurati, ancora da accettare con tutte le regressioni. Tutto il codice e le prove disponibili salvati nel checkpoint WIP di fine sessione. Vedere `docs/phase-5d/RESUME.md` e `docs/PERFORMANCE_AUDIT_5D.md`. Non dichiarare chiusa la 5D; non avviare 5E.
 
 ## Rapporti e checkpoint
 

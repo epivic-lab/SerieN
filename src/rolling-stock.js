@@ -69,13 +69,13 @@ export function buildStock(kind){const spec=STOCK[kind];if(!spec)throw Error('Un
  const rods=new Set([...rig.rods,...rig.pistons].map(r=>r.node));for(const o of rods)body.remove(o);batch(body);for(const o of rods)body.add(o);
  return root;
 }
-export function animateStock(root,journey,coordinate,distance){const rig=root.stockRig;if(!rig||root.userData.assetDimensions)return;
+export function animateStock(root,journey,coordinate,distance,pose=null){const rig=root.stockRig;if(!rig||root.userData.assetDimensions)return;
  for(const w of rig.wheels)w.node.rotation.z=-distance/w.radius;
  for(const r of rig.rods){const a=-distance/r.radius+(r.side<0?Math.PI/2:0);r.node.position.set(r.baseX+Math.cos(a)*1.3,2.45+r.radius+Math.sin(a)*1.3,r.side*6);}
  for(const p of rig.pistons){const a=-distance/4.22+(p.side<0?Math.PI/2:0),x=17+Math.cos(a)*1.3,y=6.67+Math.sin(a)*1.3;
   const dx=Math.sqrt(9*9-(y-6.67)**2),dy=6.67-y;p.node.position.set(x+dx/2,(y+6.67)/2,p.side*6);p.node.scale.x=9;p.node.rotation.z=Math.atan2(dy,dx);
  }
- const base=journey.locate(coordinate);
+ const base=rig.bogies.length?(pose??journey.locate(coordinate)):null;
  for(const b of rig.bogies){const p=journey.locate(coordinate+b.offset),front=journey.locate(coordinate+b.offset+b.wheelbase/2),rear=journey.locate(coordinate+b.offset-b.wheelbase/2);
   // Root yaw uses -atan2(dz,dx); convert the chord heading to local yaw.
   const angle=-Math.atan2(front.z-rear.z,front.x-rear.x);b.node.rotation.y=angle-base.angle;

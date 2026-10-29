@@ -1,0 +1,15 @@
+# Ripresa dopo lo stop richiesto dall’utente
+
+Checkpoint WIP, **5D non conclusa**. Non riprendere senza nuove indicazioni. Nessun push, merge o deployment effettuato. Non modificati `first`, `SerieN Control` o altri repository.
+
+- Branch locale: `performance/phase-5d`; include tutta la storia locale 5A, 5B e 5C. Baseline immutabile 5C: `303525c`.
+- Checkpoint iniziali: `0775039`, `8292945`. Il checkpoint serale include tutti i prototipi, prove disponibili e istruzioni di ripresa; non costituisce accettazione delle ottimizzazioni.
+- Il 30 ottobre 2026 (data client) `git ls-remote --heads origin` ha rilevato `main` remoto a `f57f0f1ce54be4b807cbde86e7aea624671e302b`; nessun branch locale di fase presente sul remoto. Il vecchio `origin/main` locale è obsoleto. Non assumere che il remoto sia fermo a v0.12; prima di qualsiasi futura integrazione confrontare entrambe le storie senza sovrascrivere nulla.
+- Acquisizione baseline di produzione interrotta: 26 celle persistite. Modalità `--resume` evita di sovrascriverle. Profili CPU A–D baseline e candidato completi, contatori Low/High/Cinema e scena statica completi; errori del profiling candidato assenti.
+- Prototipi in `IMPLEMENTATION.md`; confronto numerico parziale in `COMPARISON_PARTIAL.md/json`. Nessun miglioramento FPS desktop o GPU fisica dimostrato.
+- Test iniziali: 125 Node, 9 Python e build passati, log preservati. Test differenziali mirati eseguiti durante l’implementazione; log conflitti e tracce preservati. Dopo quei log sono stati ampliati i casi (contatto ai vertici e quattro composizioni lunghe): rieseguire tutta la suite sul checkpoint corrente. Build candidata eseguita; nessuna dichiarazione di suite finale completa.
+- In sospeso: intera suite candidata, cinque suite browser della 5C, esecuzione del nuovo confronto pixel e trasformazioni in movimento, matrice normale prima/dopo completa, sessioni F e cicli reset/qualità. Lo script visuale nuovo non è stato eseguito. Non dichiararlo superato.
+- `checkpoint-evidence/planned-run-rest.py` è una sequenza **preparata, mai avviata**: contiene percorsi temporanei da ricreare. Non farla partire automaticamente.
+- Se `/tmp/serien-5d` è perduto: ricreare baseline con `git archive 303525c`, usare le dipendenze già installate dopo verifica, compilare in quella directory; generare i bundle di profiling con `scripts/performance/build-profile.mjs`. I bundle strumentati non vanno in `dist` né pubblicati. Raw e profili compressi necessari sono nel repository; log dei server e bundle temporanei sono rigenerabili.
+- Servire baseline/candidato su porte locali distinte; eseguire un browser alla volta per evitare contesa. Il test `browser-phase-five-c.py` ora accetta `SERIEN_URL`, come le altre suite; eseguire le suite da una directory temporanea per non sovrascrivere le prove storiche.
+- Una volta validate, separare eventualmente le ottimizzazioni in commit di accettazione, aggiornare i rapporti e confrontare il remoto prima di proporre integrazioni. Qualunque prova fallita richiede correzione circoscritta o rimozione della relativa ottimizzazione, conservando il checkpoint serale.

@@ -17,17 +17,17 @@ export function vehiclePositions(train) {
   }));
 }
 
-/** Fresh read-only view, deliberately uncached (invalidations belong to 5D).
+/** Fresh read-only view; consumers of ranges may omit unused trace polylines.
  * @param {import('./railway-types.js').AssistanceContext} context
  * @returns {import('./railway-types.js').RailwaySnapshot} */
-export function collectRailwayState({network,switchTopology,trains,detached,route}) {
+export function collectRailwayState({network,switchTopology,trains,detached,route,tracePoints=true}) {
   const occupied = [], moving = [];
   for (const train of trains) {
     const vehicles = [train.group, ...train.carObjs], layout = layoutFor(train);
     const direction = Math.abs(train.velocity) > .1 ? Math.sign(train.velocity) : train.dir;
     const index = direction < 0 ? vehicles.length - 1 : 0;
     const leading = vehicles[index].userData.couplers;
-    const preview = traceJourney(network,switchTopology,train.journey,direction,layout.offsets[index],route);
+    const preview = traceJourney(network,switchTopology,train.journey,direction,layout.offsets[index],route,12000,tracePoints);
     moving.push({preview,velocity:train.velocity,leadingExtent:direction < 0 ? -(leading?.back?.x ?? -48) : leading?.front?.x ?? 48});
     vehicles.forEach((o,i)=>occupied.push(...occupiedRanges(network,train.journey,layout.offsets[i],o.userData.couplers)));
   }

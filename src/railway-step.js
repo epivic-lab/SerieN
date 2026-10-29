@@ -1,5 +1,5 @@
 import {layoutFor, vehiclePositions} from './railway-state.js';
-import {envelopeGap, sweptVehiclesConflict, vehiclesConflict} from './railway-conflicts.js';
+import {envelopeGap, prepareSweptEnvelope, preparedSweepsConflict, vehiclesConflict} from './railway-conflicts.js';
 
 function copyJourney(journey) {
   return Object.assign(Object.create(Object.getPrototypeOf(journey)), journey, {
@@ -16,6 +16,7 @@ function copyJourney(journey) {
  */
 export function stepRailway({trains, detached, route}, dt) {
   if (!Number.isFinite(dt) || dt <= 0 || dt > 1 / 60 + 1e-9) throw new RangeError('Invalid railway step');
+  const parkedSweeps=new Map();
   const proposals = trains.map(train => {
     const desired = train.dir * train.speed * 1.5;
     const acceleration = Math.abs(desired) < Math.abs(train.velocity) ? 100 : 45;
@@ -35,9 +36,13 @@ export function stepRailway({trains, detached, route}, dt) {
     proposal.kind = kind;
     proposal.after = proposal.middle = proposal.before;
     proposal.delta = 0;
+    proposal.swept = null;
     return true;
   };
-  const sweeps = (proposal, i) => [proposal.before[i], proposal.middle[i], proposal.after[i]];
+  const sweep = (proposal, i) => {
+    proposal.swept??=[];
+    return proposal.swept[i]??=prepareSweptEnvelope([proposal.before[i],proposal.middle[i],proposal.after[i]]);
+  };
   // Recheck after rejecting a candidate: a following train must also see the
   // stopped position, not the rejected future position of the train ahead.
   let changed;
@@ -48,7 +53,7 @@ export function stepRailway({trains, detached, route}, dt) {
       const p = proposals[a], q = proposals[b];
       if (!p.delta && !q.delta && !p.train.speed && !q.train.speed) continue;
       if (p.before.some((u, i) => q.before.some((v, k) =>
-        vehiclesConflict(p.after[i], q.after[k]) || sweptVehiclesConflict(sweeps(p, i), sweeps(q, k))))) {
+        vehiclesConflict(p.after[i], q.after[k]) || preparedSweepsConflict(sweep(p,i),sweep(q,k))))) {
         rejected.set(p, 'train');
         rejected.set(q, 'train');
       }
@@ -61,7 +66,7 @@ export function stepRailway({trains, detached, route}, dt) {
         // overlap slightly in a curve). Permit departure, never deeper entry.
         const receding = Math.hypot(after.x - parked.x, after.z - parked.z) > Math.hypot(before.x - parked.x, before.z - parked.z) + 1e-8;
         if (vehiclesConflict(before, parked) && receding && envelopeGap(after, parked) >= envelopeGap(before, parked) - 1e-8) return false;
-        return vehiclesConflict(after, parked) || sweptVehiclesConflict(sweeps(p, i), [parked]);
+        return vehiclesConflict(after, parked) || preparedSweepsConflict(sweep(p,i),parkedSweeps.get(d)??(parkedSweeps.set(d,prepareSweptEnvelope([parked])),parkedSweeps.get(d)));
       }))) rejected.set(p, 'wagon');
     }
     for (const [proposal, kind] of rejected) changed = stop(proposal, kind) || changed;
