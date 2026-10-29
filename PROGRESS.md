@@ -1,8 +1,8 @@
 # SerieN — Stato e ripresa
 
-**Fase 5C chiusa: correzioni e matrice di accettazione superate nelle condizioni documentate. 5D e 5E non iniziate.**
+**5C chiusa. 5D autorizzata e in corso: raccolta baseline prima di ogni ottimizzazione. 5E non iniziata.**
 
-Autorizzazione completata: «esegui tutte le operazioni di validazione, implementazione e test e chiudi la 5C». La 5D richiede una nuova istruzione esplicita. Nessun push, deployment o intervento su `first`, `SerieN Control` o altri repository.
+Autorizzazione corrente: richiesta completa Fase 5D in `docs/phase-5d/REQUEST.md`. Baseline recuperabile `303525c`; working tree iniziale pulito; 125 Node, 9 Python e build iniziali passati. La 5E richiede una nuova istruzione esplicita. Nessun push, deployment o intervento su `first`, `SerieN Control` o altri repository.
 
 ## Rapporti e checkpoint
 
@@ -15,7 +15,7 @@ Autorizzazione completata: «esegui tutte le operazioni di validazione, implemen
 - Chiusura applicativa: `5580799` (passo candidato della flotta), `79247d3` (guardie su modelli/inserimento), `b6ec62d` (contatti invariati), `13ebb2b` (storia sganciata coerente con lo scambio attuale), `8cacb18` (riaggancio al giunto con storia ricostruita).
 - Checkpoint documentale finale: commit che aggiorna questo file e introduce `docs/PHASE5C_CLOSURE.md`; risolvere con `git log -1 --format='%H %s' -- PROGRESS.md`.
 
-Branch: `reliability/phase-5c`. Tutti i commit sono locali. Il recupero fuori da questa macchina richiede backup/esportazione o push autorizzato; l’hash nella chat non trasferisce gli oggetti Git. Non fare reset distruttivi del lavoro esistente.
+Branch: `performance/phase-5d`, derivato da `303525c`. Tutti i commit sono locali. Il recupero fuori da questa macchina richiede backup/esportazione o push autorizzato; l’hash nella chat non trasferisce gli oggetti Git. Non fare reset distruttivi del lavoro esistente.
 
 ## Esito tecnico
 

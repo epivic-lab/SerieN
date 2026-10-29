@@ -1,0 +1,11 @@
+# Protocollo 5D.1
+
+Baseline applicativa immutabile: `303525c` (5C chiusa), compilata da archivio Git in cartella temporanea, senza worktree aggiuntivo. Nessun cambiamento applicativo prima delle misure. Browser Chromium, backend SwiftShader, viewport 650×760, DPR 1, qualità esplicita; nessuna estrapolazione a GPU fisiche.
+
+Tre ripetizioni indipendenti per scenario; warmup e campioni registrati nei JSON. Rendering normale A idle/B singolo/C tre/D quattro con interazioni; E High/Cinema giorno/notte e camera overview/follow; F sessione prolungata, reset e cambio qualità. L’osservatore RAF registra tempi reali senza cambiare clock, velocità o rendering. La diagnostica legge contatori fuori dalle finestre misurate. Percorsi/stati iniziali sono identici; posizioni finali vengono registrate poiché il clock reale conserva il limite 0,2 s/frame.
+
+Separatamente: profilo CPU CDP, benchmark delle componenti sincrone a renderer fermato, heap dopo GC esplicita e scena statica senza rotabili in harness temporaneo. Il bundle strumentato è solo per attribuzione CPU/scene/componenti; i frame del benchmark principale usano il bundle di produzione. Contatori WebGL non sono byte GPU. Heap CDP non è memoria nativa/GPU. Sessione estesa documentata con durata reale, non equivalenza a ore.
+
+Budget prima/dopo: un intervento è mantenuto con riduzione mediana ripetuta ≥10% sul costo CPU bersaglio e nessuna differenza nello stato ferroviario o nelle immagini statiche. Per frame software GPU-dominati: segnalare regressioni >10% nella mediana o >15% nel p95, verificandole con ripetizione mirata prima di attribuire una causa. Risorse: nessuna crescita monotona residua dopo warmup/GC nei cicli verificati; non equivale a prova universale di assenza di leak.
+
+Per ogni ottimizzazione: misura → modifica piccola → confronto → regressioni → checkpoint. Nessuna modifica a qualità, geometria, cinematica, funzioni UI, dipendenze o deployment per ottenere risultati migliori. Le aree senza beneficio dimostrabile vengono documentate e lasciate invariate.
