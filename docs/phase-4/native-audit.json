@@ -1,0 +1,169 @@
+{
+  "steam": {
+    "id": "db-055-study",
+    "name": "BR 055 · study",
+    "length": 114.3,
+    "front": 48,
+    "width": 18.5,
+    "prototypeMm": 18285,
+    "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+    "triangles": 4796,
+    "meshes": 24,
+    "straightBounds": [
+      117.5,
+      30.55000009536743,
+      21.5
+    ],
+    "format": "procedural Three.js",
+    "textures": [],
+    "license": "original project geometry",
+    "animations": {
+      "axles": 7,
+      "articulatedBodies": 1,
+      "couplingRods": 2,
+      "pistonRods": 2
+    },
+    "orientation": "+X forward, Y up, wheels on 5.95mm rail head"
+  },
+  "shunter": {
+    "id": "db-v60-study",
+    "name": "BR 260 · study",
+    "length": 65.3,
+    "front": 32.65,
+    "width": 19.4,
+    "prototypeMm": 10450,
+    "description": "DB era IV V60, three coupled axles; original dimensional study",
+    "triangles": 2244,
+    "meshes": 14,
+    "straightBounds": [
+      68.5,
+      30.500000848770142,
+      21
+    ],
+    "format": "procedural Three.js",
+    "textures": [],
+    "license": "original project geometry",
+    "animations": {
+      "axles": 3,
+      "articulatedBodies": 0,
+      "couplingRods": 2,
+      "pistonRods": 0
+    },
+    "orientation": "+X forward, Y up, wheels on 5.95mm rail head"
+  },
+  "closed": {
+    "id": "db-era-closed",
+    "length": 62.5,
+    "width": 18,
+    "description": "Generic DB-era two-axle covered wagon; 10m design length",
+    "triangles": 1612,
+    "meshes": 9,
+    "straightBounds": [
+      65.69999694824219,
+      26.55000009536743,
+      18.600000381469727
+    ],
+    "format": "procedural Three.js",
+    "textures": [],
+    "license": "original project geometry",
+    "animations": {
+      "axles": 2,
+      "articulatedBodies": 0,
+      "couplingRods": 0,
+      "pistonRods": 0
+    },
+    "orientation": "+X forward, Y up, wheels on 5.95mm rail head"
+  },
+  "open": {
+    "id": "db-era-open",
+    "length": 62.5,
+    "width": 18,
+    "description": "Generic DB-era open wagon; 10m design length",
+    "triangles": 1576,
+    "meshes": 8,
+    "straightBounds": [
+      65.69999694824219,
+      17.05000009536743,
+      18
+    ],
+    "format": "procedural Three.js",
+    "textures": [],
+    "license": "original project geometry",
+    "animations": {
+      "axles": 2,
+      "articulatedBodies": 0,
+      "couplingRods": 0,
+      "pistonRods": 0
+    },
+    "orientation": "+X forward, Y up, wheels on 5.95mm rail head"
+  },
+  "tank": {
+    "id": "db-era-tank",
+    "length": 62.5,
+    "width": 18,
+    "description": "Generic DB-era tank wagon; 10m design length",
+    "triangles": 1500,
+    "meshes": 7,
+    "straightBounds": [
+      65.69999694824219,
+      25.55000009536743,
+      18
+    ],
+    "format": "procedural Three.js",
+    "textures": [],
+    "license": "original project geometry",
+    "animations": {
+      "axles": 2,
+      "articulatedBodies": 0,
+      "couplingRods": 0,
+      "pistonRods": 0
+    },
+    "orientation": "+X forward, Y up, wheels on 5.95mm rail head"
+  },
+  "flat": {
+    "id": "db-era-flat",
+    "length": 81.25,
+    "width": 18,
+    "description": "Generic DB-era bogie flat wagon; 13m design length",
+    "triangles": 2352,
+    "meshes": 13,
+    "straightBounds": [
+      84.44999694824219,
+      16.55000009536743,
+      18
+    ],
+    "format": "procedural Three.js",
+    "textures": [],
+    "license": "original project geometry",
+    "animations": {
+      "axles": 4,
+      "articulatedBodies": 2,
+      "couplingRods": 0,
+      "pistonRods": 0
+    },
+    "orientation": "+X forward, Y up, wheels on 5.95mm rail head"
+  },
+  "coach": {
+    "id": "db-era-coach",
+    "length": 165,
+    "width": 17.7,
+    "description": "Generic DB-era bogie passenger coach; 26.4m design length",
+    "triangles": 2916,
+    "meshes": 16,
+    "straightBounds": [
+      168.1999969482422,
+      26.750000858306883,
+      18.399999618530273
+    ],
+    "format": "procedural Three.js",
+    "textures": [],
+    "license": "original project geometry",
+    "animations": {
+      "axles": 4,
+      "articulatedBodies": 2,
+      "couplingRods": 0,
+      "pistonRods": 0
+    },
+    "orientation": "+X forward, Y up, wheels on 5.95mm rail head"
+  }
+}

@@ -21,7 +21,9 @@ def check(snapshot, imported):
                 assert offsets[i]-offsets[i-1]<64
                 assert abs(expected-(a['dimensions']['length']+v['dimensions']['length'])/2-1.5)<1e-8
             else:
-                assert offsets[i]-offsets[i-1]==64
+                a=train['vehicles'][i-1]
+                expected=-(a.get('couplers') or {'back':{'x':-32}})['back']['x']+(v.get('couplers') or {'front':{'x':32}})['front']['x'] if a.get('stock') or v.get('stock') else 64
+                assert abs(offsets[i]-offsets[i-1]-expected)<1e-8
 
 with sync_playwright() as p:
     browser=p.chromium.launch(executable_path=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium'),headless=True,args=['--no-sandbox','--enable-unsafe-swiftshader'])

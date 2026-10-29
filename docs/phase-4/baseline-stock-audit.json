@@ -1,0 +1,92 @@
+{
+  "method": "offscreen capture of visible scene models, shared main renderer; transparent RGBA; three-quarter orthographic camera",
+  "captures": {
+    "native-steam": {
+      "bounds": {
+        "length": 84.5,
+        "height": 37.999999809265134,
+        "width": 21
+      },
+      "width": 320,
+      "height": 160,
+      "modelKind": "steam",
+      "variant": "native",
+      "imageSha256": "0c841f6353f561e4fc1c9768348644e96862010666184e798c418b3eb0300034",
+      "source": "src/rolling-stock-art.js",
+      "sourceSha256": "15e1ab227ff9d6546d683ebc02abc9a5a8788a8cfd2f0b0b57e30d19be1f9314",
+      "nativeModelSha256": "07a41174c4ef391b6a2039da7d646c27371849efe29439be74f425873433811d"
+    },
+    "native-diesel": {
+      "bounds": {
+        "length": 72,
+        "height": 38.249999809265134,
+        "width": 21
+      },
+      "width": 320,
+      "height": 160,
+      "modelKind": "diesel",
+      "variant": "native",
+      "imageSha256": "a7bc1e8ab129fcba83d189345c217d8dca87b2c8db294f552793d22c164a3fd0",
+      "source": "src/rolling-stock-art.js",
+      "sourceSha256": "15e1ab227ff9d6546d683ebc02abc9a5a8788a8cfd2f0b0b57e30d19be1f9314",
+      "nativeModelSha256": "07a41174c4ef391b6a2039da7d646c27371849efe29439be74f425873433811d"
+    },
+    "native-shunter": {
+      "bounds": {
+        "length": 58,
+        "height": 38.999999809265134,
+        "width": 21
+      },
+      "width": 320,
+      "height": 160,
+      "modelKind": "shunter",
+      "variant": "native",
+      "imageSha256": "49cdf24745a49b8fc0cd2885f9473690290933d86bf9a15ce1caa687033c5359",
+      "source": "src/rolling-stock-art.js",
+      "sourceSha256": "15e1ab227ff9d6546d683ebc02abc9a5a8788a8cfd2f0b0b57e30d19be1f9314",
+      "nativeModelSha256": "07a41174c4ef391b6a2039da7d646c27371849efe29439be74f425873433811d"
+    },
+    "kenney-steam": {
+      "bounds": {
+        "length": 27.28546527096082,
+        "height": 17.415465749176388,
+        "width": 15.000000000000005
+      },
+      "width": 320,
+      "height": 160,
+      "modelKind": "steam",
+      "variant": "kenney",
+      "imageSha256": "c03b56393471ab347d86516e3e1057dd8b9cf3eab298b003ff091e8a417000bb",
+      "source": "assets/kenney/train-locomotive-a.glb",
+      "sourceSha256": "8dfe9d20667c1534652286149fb0e1639ff48975a4187d3ad2fd956add0bba2a"
+    },
+    "kenney-diesel": {
+      "bounds": {
+        "length": 30,
+        "height": 19.96249030296952,
+        "width": 15.000000000000005
+      },
+      "width": 320,
+      "height": 160,
+      "modelKind": "diesel",
+      "variant": "kenney",
+      "imageSha256": "e100927f73a3a5c381a18d5bb4fe4f2be31563633c512a3ceffd70a42626df5c",
+      "source": "assets/kenney/train-diesel-a.glb",
+      "sourceSha256": "20c6c7c23c005e8cda1c1e922473c0fc9c93fc7c1d1bc5a637d640424f811cc3"
+    },
+    "kenney-shunter": {
+      "bounds": {
+        "length": 29.146926418111477,
+        "height": 18.607255819995316,
+        "width": 15.000000000000007
+      },
+      "width": 320,
+      "height": 160,
+      "modelKind": "shunter",
+      "variant": "kenney",
+      "imageSha256": "93a0a78ca8677ee9d7196262c766bae7fe0c0d91185e2ceb0f3ae1e73f58b6c6",
+      "source": "assets/kenney/train-diesel-box-a.glb",
+      "sourceSha256": "396a7d723d748efb249f16083e9ec5bf9a017a4eab3ed16a30facd3faea8d4b1"
+    }
+  }
+}

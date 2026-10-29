@@ -1,3 +1,4 @@
+import {consistLayout} from './consist.js';
 import {RecentConsoles,MAP_VIEWBOX,railwayMapPath,locomotivePoint,operatingState} from "./train-deck-state.js";
 import {thumbnailKey,thumbnailURL,THUMBNAIL_FALLBACK} from "./locomotive-thumbnails.js";
 
@@ -21,7 +22,7 @@ function mountTrainDeck({host,tabs,network,getTrains,getSelected,isPaused,onSele
   }
   function makeCard(train) {
     const root=document.createElement("article");root.className="trainConsole";root.dataset.consoleTrain=train.id;root.setAttribute("aria-label",`Controls for ${train.name}`);
-    root.innerHTML=`<header class="trainConsoleHeading"><button type="button" class="trainConsoleSelect"><strong class="trainConsoleName"></strong><span class="trainConsoleDescription"></span></button><img class="locomotiveThumbnail" draggable="false"><button type="button" class="railwayMiniMap"><svg viewBox="${MAP_VIEWBOX}" preserveAspectRatio="xMidYMid meet" role="img"><use href="#${symbolId}"/><circle class="trainMapGlow" r="34"/><circle class="trainMapMarker" r="17"/></svg></button><div class="trainConsoleStatus"><span class="trainConsoleState"></span><span class="trainConsoleCars"></span></div></header><div class="trainConsoleSpeed"><label><span>Speed</span><input type="range" min="0" max="100" step="1"><output></output></label></div><div class="trainConsoleCommands"><button type="button" data-command="reverse" title="Reverse direction" aria-label="Reverse direction">⇄ <span>Reverse</span></button><button type="button" data-command="stop" title="Stop this train" aria-label="Stop this train">■ <span>Stop</span></button><button type="button" data-command="lights" title="Toggle headlights" aria-label="Toggle headlights">☼ <span>Lights</span></button><button type="button" data-command="uncouple" title="Uncouple the last wagon" aria-label="Uncouple the last wagon"><svg viewBox="0 0 28 18" aria-hidden="true"><path d="M9 12H6a4 4 0 010-8h5m8 0h3a4 4 0 010 8h-5M10 8h8M11 16h6"/></svg><span>Uncouple</span></button><button type="button" data-command="couple" title="Couple the nearest wagon" aria-label="Couple the nearest wagon"><svg viewBox="0 0 28 18" aria-hidden="true"><path d="M9 12H6a4 4 0 010-8h5m8 0h3a4 4 0 010 8h-5M10 8h8M11 16h6m-3-3v6"/></svg><span>Couple</span></button></div><span class="trainConsoleRoute" hidden></span>`;
+    root.innerHTML=`<header class="trainConsoleHeading"><button type="button" class="trainConsoleSelect"><strong class="trainConsoleName"></strong><span class="trainConsoleDescription"></span></button><img class="locomotiveThumbnail" draggable="false"><button type="button" class="railwayMiniMap"><svg viewBox="${MAP_VIEWBOX}" preserveAspectRatio="xMidYMid meet" role="img"><use href="#${symbolId}"/><circle class="trainMapGlow" r="34"/><circle class="trainMapMarker" r="17"/></svg></button><div class="trainConsoleStatus"><span class="trainConsoleState"></span><span class="trainConsoleCars"></span><span class="trainConsoleCars trainConsoleLength"></span></div></header><div class="trainConsoleSpeed"><label><span>Speed</span><input type="range" min="0" max="100" step="1"><output></output></label></div><div class="trainConsoleCommands"><button type="button" data-command="reverse" title="Reverse direction" aria-label="Reverse direction">⇄ <span>Reverse</span></button><button type="button" data-command="stop" title="Stop this train" aria-label="Stop this train">■ <span>Stop</span></button><button type="button" data-command="lights" title="Toggle headlights" aria-label="Toggle headlights">☼ <span>Lights</span></button><button type="button" data-command="uncouple" title="Uncouple the last wagon" aria-label="Uncouple the last wagon"><svg viewBox="0 0 28 18" aria-hidden="true"><path d="M9 12H6a4 4 0 010-8h5m8 0h3a4 4 0 010 8h-5M10 8h8M11 16h6"/></svg><span>Uncouple</span></button><button type="button" data-command="couple" title="Couple the nearest wagon" aria-label="Couple the nearest wagon"><svg viewBox="0 0 28 18" aria-hidden="true"><path d="M9 12H6a4 4 0 010-8h5m8 0h3a4 4 0 010 8h-5M10 8h8M11 16h6m-3-3v6"/></svg><span>Couple</span></button></div><span class="trainConsoleRoute" hidden></span>`;
     const find=(s)=>root.querySelector(s),img=find("img"),slider=find("input"),map=find(".railwayMiniMap"),marker=find(".trainMapMarker"),glow=find(".trainMapGlow");
     prepareImage(img);
     const select=()=>onSelect(train.id);
@@ -32,7 +33,7 @@ function mountTrainDeck({host,tabs,network,getTrains,getSelected,isPaused,onSele
     slider.oninput=()=>{const value=Number(slider.value);onSelect(train.id);onSpeed(train.id,value);};
     for(const [action,callback] of Object.entries({reverse:onReverse,stop:onStop,lights:onLights,uncouple:onUncouple,couple:onCouple}))find(`[data-command="${action}"]`).onclick=()=>{onSelect(train.id);callback(train.id);};
     map.onclick=()=>{onSelect(train.id);onFocus(train.id);};
-    return {root,img,slider,map,marker,glow,name:find(".trainConsoleName"),state:find(".trainConsoleState"),output:find("output"),cars:find(".trainConsoleCars"),description:find(".trainConsoleDescription"),route:find(".trainConsoleRoute"),commands:Object.fromEntries([...root.querySelectorAll("[data-command]")].map((b)=>[b.dataset.command,b]))};
+    return {root,img,slider,map,marker,glow,name:find(".trainConsoleName"),state:find(".trainConsoleState"),output:find("output"),cars:find(".trainConsoleCars"),length:find(".trainConsoleLength"),description:find(".trainConsoleDescription"),route:find(".trainConsoleRoute"),commands:Object.fromEntries([...root.querySelectorAll("[data-command]")].map((b)=>[b.dataset.command,b]))};
   }
   function sync() {
     if(disposed)return;
@@ -60,6 +61,11 @@ function mountTrainDeck({host,tabs,network,getTrains,getSelected,isPaused,onSele
       card.slider.setAttribute("aria-label",`Speed of ${train.name}`);
       if(Number(card.slider.value)!==train.speed)card.slider.value=String(train.speed);
       setText(card.output,`${train.speed}%`);setText(card.cars,`${train.cars} ${train.cars===1?"wagon":"wagons"}`);
+      const vehicles=[train.group,...(train.carObjs??[])].filter(Boolean).map(o=>o.userData);
+      const layout=consistLayout(vehicles),length=layout.tail+(vehicles[0]?.couplers?.front?.x??38);
+      card.cars.title=`${train.cars} trailing vehicles · ${length.toFixed(1)} mm (1:160)`;
+      card.cars.setAttribute('aria-label',card.cars.title);
+      setText(card.length,`${length.toFixed(0)} mm`);card.length.title=card.cars.title;
       card.commands.lights.classList.toggle("active",train.lights);card.commands.lights.setAttribute("aria-pressed",String(train.lights));
       card.commands.reverse.classList.toggle("active",train.dir<0);card.commands.reverse.setAttribute("aria-pressed",String(train.dir<0));
       if(selected){

@@ -1,3 +1,4 @@
+import {buildStock,animateStock} from './src/rolling-stock.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
 import {createSwitchFeedback} from "./src/switch-feedback.js";
 import {controlMarkers} from "./src/zone-layout.js";
@@ -7,7 +8,7 @@ import { createSwitchTopology, traceJourney, occupiedRanges, siteSafety } from "
 import { mountNextSwitchHUD, createRouteHighlight, previewPoints } from "./src/next-switch-view.js";
 import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
-import { couplingDistance, consistLayout } from "./src/consist.js";
+import { couplingDistance, consistLayout, couplingMatch } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
 import { navigation, CAMERA_PRESETS } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
@@ -303,41 +304,16 @@ function wheelSet(group, len) {
   }
 }
 function freightWagon(i) {
-  const g = new THREE.Group();
-  g.userData.dynamic = true;
-  box(50, 3, 13, mat("#4b4640"), g, 0, 6, 0);
-  wheelSet(g, 43);
-  box(44, 11, 12, wagonMats[i % wagonMats.length], g, 0, 14, 0);
-  if (i % 3 === 0) {
-    for (let j = -2; j <= 2; j++) {
-      const log2 = cylinder(2.4, 2.4, 42, logmat, g, j * 0.2, 21, j * 2.2);
-      log2.rotation.z = PI / 2;
-    }
-  } else {
-    box(43, 2, 12, mat("#625a48"), g, 0, 20, 0);
-  }
-  wagonDetails(g);
-  attachTrainAsset(g, ["lumber", "tank", "box"][i % 3]);
+  const kind=['closed','open','tank','flat','coach'][i%5];
+  const g=buildStock(kind);
+  attachTrainAsset(g, ['box','lumber','tank','lumber','box'][i%5]);
   return g;
 }
 function locoModel(id,trainId=id) {
-  const g = new THREE.Group();
+  const g = id===0||id===2 ? buildStock(id===0?'steam':'shunter') : new THREE.Group();
   g.userData.trainId = trainId;
-  if (id === 0) {
-    box(62, 3.6, 13, chassisRed, g, 2, 9, 0);
-    wheelSet(g, 58);
-    const boiler = cylinder(8, 8, 43, locoBlack, g, 7, 20, 0, 14);
-    boiler.rotation.z = PI / 2;
-    box(20, 22, 14, locoBlack, g, -24, 22, 0);
-    box(17, 3, 17, locoBlack, g, -24, 36, 0);
-    box(18, 16, 12, locoBlack, g, -38, 17, 0);
-    for (let p of [16, 26]) cylinder(2, 2, 8, locoBlack, g, p, 29, 0);
-    const cap = cylinder(4, 4, 2, locoBlack, g, 27, 33, 0);
-    cap.userData.trainId = trainId;
-    box(50, 1, 1, steel, g, 0, 8.5, -8);
-    box(50, 1, 1, steel, g, 0, 8.5, 8);
-  } else {
-    const long = id === 1 ? 61 : 47;
+  if(id===1) {
+    const long = 61;
     box(long, 4, 15, chassisRed, g, 0, 8, 0);
     wheelSet(g, long * 0.85);
     box(long - 6, id === 1 ? 19 : 16, 14, id === 1 ? locoCrimson : locoCrimson, g, 0, id === 1 ? 22 : 21, 0);
@@ -354,7 +330,12 @@ function locoModel(id,trainId=id) {
   }
   const headMaterial = new THREE.MeshStandardMaterial({ color: "#faf0cb", emissive: "#ffe6a2", emissiveIntensity: 0.05 });
   for (const side of [-1, 1]) {
-    const p = sphere(2, headMaterial, g, id === 0 ? 32 : id === 1 ? 31 : 24, id === 0 ? 18 : 24, side * 4);
+    const lampX=id===0?43:id===1?31:28,lampY=id===0?18:id===1?24:17;
+    if(id!==1){
+      const housing=cylinder(1.5,1.5,1.4,locoBlack,g,lampX-.8,lampY,side*4,12);housing.rotation.z=PI/2;
+      if(id===0)cylinder(.6,.6,8,locoBlack,g,lampX-1,14,side*4,8);
+    }
+    const p = sphere(id===1?2:1.2, headMaterial, g, lampX, lampY, side * 4);
     p.userData.trainId = trainId;
   }
   const beam = new THREE.SpotLight("#ffe4a2", 2, 320, 0.38, 0.65, 0);
@@ -366,18 +347,18 @@ function locoModel(id,trainId=id) {
   g.traverse((o) => {
     if (o.isMesh) o.userData.trainId = trainId;
   });
-  locomotiveDetails(g, id);
+  if(id===1)locomotiveDetails(g, id);
   scene.add(g);
   return g;
 }
 const trains = [
-  { id: 0, name: "BR 055", desc: "Steam DB \xB7 Era III", loop: 2, speed: 0, dir: 1, cars: 3, lights: true, laps: 0, mode: "loop", group: locoModel(0), carObjs: [] },
+  { id: 0, name: "BR 055", desc: "DB era III · dimensional study", loop: 2, speed: 0, dir: 1, cars: 3, lights: true, laps: 0, mode: "loop", group: locoModel(0), carObjs: [] },
   { id: 1, name: "BR 216", desc: "Diesel DB \xB7 Era IV", loop: 1, speed: 0, dir: 1, cars: 2, lights: false, laps: 0, mode: "loop", group: locoModel(1), carObjs: [] },
-  { id: 2, name: "BR 260", desc: "DB shunter", loop: 0, speed: 0, dir: 1, cars: 2, lights: false, laps: 0, mode: "loop", group: locoModel(2), carObjs: [] }
+  { id: 2, name: "BR 260", desc: "DB era IV · V60 dimensional study", loop: 0, speed: 0, dir: 1, cars: 2, lights: false, laps: 0, mode: "loop", group: locoModel(2), carObjs: [] }
 ];
 for (let t of trains) {
   for (let i = 0; i < t.cars; i++) {
-    let g = freightWagon(i + t.id);
+    let g = freightWagon(t.id===1?i+3:i+t.id);
     scene.add(g);
     t.carObjs.push(g);
   }
@@ -538,7 +519,7 @@ function renderVehicles() {
     const layout = layoutFor(t);
     t.journey.ensure(t.journey.position - layout.tail, route);
     const pos = vehicleLocation(t);
-    t.group.position.copy(pos.point).add(new THREE.Vector3(0, 3.6, 0));
+    t.group.position.copy(pos.point).add(new THREE.Vector3(0,t.group.stockRig&&!t.group.userData.assetDimensions?0:3.6,0));
     t.group.rotation.y = pos.angle;
     t.carObjs.forEach((o, i) => {
       o.visible = true;
@@ -546,8 +527,9 @@ function renderVehicles() {
       o.position.copy(q.point);
       o.rotation.y = q.angle;
     });
+    [t.group,...t.carObjs].forEach((group,i)=>animateStock(group,t.journey,t.journey.position-layout.offsets[i],t.odometer));
     for (const group of [t.group, ...t.carObjs]) group.traverse((o) => {
-      if (o.userData.wheel) o.rotation.z = -t.odometer / 4.2;
+      if (o.userData.wheel) o.quaternion.setFromAxisAngle(new THREE.Vector3(0,0,1),-t.odometer/4.2).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),PI/2));
       if (o.userData.importedWheel) o.rotation.x = -t.odometer / o.userData.wheelRadius;
     });
   }
@@ -598,7 +580,7 @@ function updateTrainStatus(dt) {
   protectionTimer = 0.08;
   const occupied = trains.map((t) => vehiclePositions(t));
   for (let a = 0; a < occupied.length; a++) for (let b = a + 1; b < occupied.length; b++) {
-    if (occupied[a].some((u) => occupied[b].some((v) => u.edge === v.edge ? Math.abs(u.s - v.s) < (u.vehicle.userData.assetDimensions || v.vehicle.userData.assetDimensions ? Math.max(couplingDistance(u.vehicle.userData, v.vehicle.userData), couplingDistance(v.vehicle.userData, u.vehicle.userData)) : 58) : Math.hypot(u.x - v.x, u.z - v.z) < 17))) {
+    if (occupied[a].some((u) => occupied[b].some((v) => u.edge === v.edge ? Math.abs(u.s - v.s) < (u.vehicle.userData.assetDimensions || u.vehicle.userData.stock || v.vehicle.userData.assetDimensions || v.vehicle.userData.stock ? Math.max(couplingDistance(u.vehicle.userData, v.vehicle.userData), couplingDistance(v.vehicle.userData, u.vehicle.userData)) : 58) : Math.hypot(u.x - v.x, u.z - v.z) < 17))) {
       const u = trains[a], v = trains[b];
       if (u.speed || v.speed || u.velocity || v.velocity) {
         u.speed = v.speed = u.velocity = v.velocity = 0;
@@ -608,7 +590,8 @@ function updateTrainStatus(dt) {
     }
   }
   for (const t of trains) if (detached.some((d) => vehiclePositions(t).some((p) => {
-    return Math.hypot(p.x - d.point.x, p.z - d.point.z) < (p.vehicle.userData.assetDimensions || d.group.userData.assetDimensions ? couplingDistance(p.vehicle.userData, d.group.userData) + 4 : 48);
+    const toward=(d.point.x-p.x)*Math.cos(p.angle)-(d.point.z-p.z)*Math.sin(p.angle);
+    return toward*t.velocity>0 && Math.hypot(p.x - d.point.x, p.z - d.point.z) < (p.vehicle.userData.assetDimensions || p.vehicle.userData.stock || d.group.userData.assetDimensions || d.group.userData.stock ? couplingDistance(p.vehicle.userData, d.group.userData) + 1 : 48);
   })) && t.velocity) {
     t.speed = t.velocity = 0;
     log("Stationary wagon ahead. Stopped for coupling.");
@@ -640,7 +623,11 @@ function couple() {
     return;
   }
   const tail = t.journey.locate(t.journey.position - layoutFor(t).offsets.at(-1));
-  const i = detached.findIndex((d) => d.point.edge === tail.edge && Math.hypot(d.point.x - tail.x, d.point.z - tail.z) < 115);
+  const i = detached.findIndex(d=>{
+    const candidate=layoutFor(t,[d.group]);
+    const expected=t.journey.locate(t.journey.position-candidate.offsets.at(-1));
+    return couplingMatch(expected,d.point);
+  });
   if (i < 0) {
     log("No wagon near the rear of this train on the same track.");
     return;
@@ -677,7 +664,7 @@ function reset() {
     t.carObjs = [];
     Object.assign(t, { loop: t.initial.loop, speed: 0, dir: 1, cars: t.initial.cars, laps: 0, mode: "loop" });
     for (let j = 0; j < t.cars; j++) {
-      const o = freightWagon(j + i);
+      const o = freightWagon(i===1?j+3:j+i);
       scene.add(o);
       t.carObjs.push(o);
     }
@@ -976,5 +963,5 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   };
   const assistance = getSwitchAssistance();
   const next = assistance.preview.next;
-  return { consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray(),fov:camera.fov,aspect:camera.aspect,projectedBase:[-10,1510].flatMap(x=>[-34,0].flatMap(y=>[-10,710].map(z=>new THREE.Vector3(x,y,z).project(camera).toArray()))) },switchIndicators:switchIndicatorState(), render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, journey:{position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments.map(p=>({...p}))}, hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
+  return { consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray(),fov:camera.fov,aspect:camera.aspect,projectedBase:[-10,1510].flatMap(x=>[-34,0].flatMap(y=>[-10,710].map(z=>new THREE.Vector3(x,y,z).project(camera).toArray()))) },switchIndicators:switchIndicatorState(), render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, journey:{position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments.map(p=>({...p}))}, odometer:t.odometer,animation:t.group.stockRig?{wheels:t.group.stockRig.wheels.map(w=>({angle:w.node.rotation.z,radius:w.radius})),rods:t.group.stockRig.rods.map(r=>r.node.position.toArray()),bogies:t.group.stockRig.bogies.map(b=>b.node.rotation.y)}:null,hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, stock:p.vehicle.userData.stock??null, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
 } };

@@ -31,7 +31,7 @@ with sync_playwright() as p:
             manifest['captures'][key]={**capture,'modelKind':kind,'variant':variant,'imageSha256':hashlib.sha256(png).hexdigest(),'source':str(source),'sourceSha256':hashlib.sha256(source.read_bytes()).hexdigest()}
             if variant=='native':
                 app=Path('app.js').read_text();native=app[app.index('const railWheel ='):app.index('const trains =')]
-                manifest['captures'][key]['nativeModelSha256']=hashlib.sha256(native.encode()+Path('src/rolling-stock-art.js').read_bytes()).hexdigest()
+                manifest['captures'][key]['nativeModelSha256']=hashlib.sha256(native.encode()+Path('src/rolling-stock-art.js').read_bytes()+Path('src/rolling-stock.js').read_bytes()).hexdigest()
             print(key,capture['bounds'],len(png),'bytes',flush=True)
     assert not errors,errors
     assert page.locator('#view3d canvas').count()==1

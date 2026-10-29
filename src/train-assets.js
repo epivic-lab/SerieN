@@ -103,7 +103,7 @@ function createTrainAssetManager({
     const record = {
       target,
       native: children.map((o) => [o, o.visible]),
-      nativeCouplers: nativeCouplers(target, children),
+      nativeCouplers: target.userData.stock ? structuredClone(target.userData.couplers) : nativeCouplers(target, children),
       model: null,
       dimensions: null,
       released: false,
