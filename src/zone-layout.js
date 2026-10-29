@@ -1,7 +1,7 @@
-import { seeded, clearance } from "./landscape.js";
-const FARM = Object.freeze({ id: "farmhouse", kind: "building", x: 1020, z: 430, w: 76, d: 46, h: 34 });
+import { seeded, clearance, HARDSTANDING } from "./landscape.js";
+const FARM = Object.freeze({ id: "farmhouse", kind: "building", x: 1174, z: 183, w: 76, d: 46, h: 34 });
 const GOODS_OFFICE = Object.freeze({ id: "goods-office", kind: "building", x: 520, z: 355, w: 58, d: 34, h: 26 });
-const VINEYARD = Object.freeze({ id: "vineyard", kind: "reserve", x: 1160, z: 442.5, w: 140, d: 65 });
+const VINEYARD = Object.freeze({ id: "vineyard", kind: "reserve", x: 1050, z: 186, w: 140, d: 56 });
 import canonical from "./canonical-layout.json" with {type:"json"};
 const switchPoints=canonical.controllers.map((c)=>[c.x,c.z]);
 function controlMarkers(network, buildings = []) {
@@ -24,15 +24,18 @@ function safeScenicPosition(mask, x, z, radius = 0, extraBuildings = []) {
 function buildZoneLayout(network, mask) {
   const buildings = [FARM, GOODS_OFFICE].map((b) => ({ ...b }));
   const random = seeded(40852), cargo = [];
-  for (let i = 0; i < 600 && cargo.length < 34; i++) {
-    const x = 290 + random() * 640, z = 320 + random() * 74, radius = 6;
-    if (!safeScenicPosition(mask, x, z, radius, buildings) || cargo.some((p) => Math.hypot(p.x - x, p.z - z) < 17)) continue;
-    cargo.push({ id: `cargo-${cargo.length}`, x, z, y: mask.height(x, z), radius, type: ["crates", "barrels", "pallets", "rails"][cargo.length % 4], rotation: (random() - 0.5) * 0.4 });
+  // Two loading rows leave a continuous 16mm working aisle on the main apron.
+  const cargoSites=[...Array.from({length:18},(_,i)=>[595+i%9*15,340+Math.floor(i/9)*30]),
+    ...Array.from({length:5},(_,i)=>[422+i*14,335])];
+  for (const [x,z] of cargoSites) {
+    const radius = 7;
+    if (!safeScenicPosition(mask, x, z, radius, buildings) || cargo.some((p) => Math.hypot(p.x - x, p.z - z) < 13)) continue;
+    cargo.push({ id: `cargo-${cargo.length}`, x, z, y: mask.height(x, z), radius, type: ["crates", "barrels", "pallets", "rails"][cargo.length % 4], rotation: (random() - 0.5) * 0.12 });
   }
   const vineyard = [];
-  for (let x = 1092; x <= 1228; x += 15) for (let z = 414; z <= 470; z += 10) {
-    if (!safeScenicPosition(mask, x, z, 2, buildings)) continue;
-    vineyard.push({ x, z, y: mask.height(x, z), row: Math.round((x - 1092) / 15), post: (z - 414) % 30 === 0 });
+  for (let x = 984; x <= 1119; x += 15) for (let z = 161; z <= 211; z += 10) {
+    if (!safeScenicPosition(mask, x, z, 4, buildings)) continue;
+    vineyard.push({ x, z, y: mask.height(x, z), row: Math.round((x - 984) / 15), post: (z - 161) % 30 === 0 });
   }
   const stops = [], pendingStops = [];
   for (const edge of Object.values(network.edges)) for (const [end, key] of [[0, edge.from], [1, edge.to]]) {
@@ -45,7 +48,7 @@ function buildZoneLayout(network, mask) {
   }
   const people = [640, 670, 812, 850].map((x, i) => ({ x, z: 550 + i % 2 * 2, y: 4.5, h: 9.6 + i % 3 * 0.45, color: ["#5f6551", "#6b4c3b", "#476277", "#7b4740"][i] }));
   const luggage = [{ x: 652, z: 553 }, { x: 824, z: 551 }];
-  return { buildings, cargo, vineyard, stops, pendingStops, people, luggage, footprints: [...buildings, { ...VINEYARD }, { id: "goods-apron", kind: "reserve", x: 655, z: 355, w: 140, d: 47 }, ...cargo.map((p) => ({ id: p.id, kind: "reserve", x: p.x, z: p.z, w: 16, d: 16 }))] };
+  return { buildings, cargo, vineyard, stops, pendingStops, people, luggage, footprints: [...buildings, { ...VINEYARD }, ...HARDSTANDING.map(p=>({...p,kind:'reserve'})), ...cargo.map((p) => ({ id: p.id, kind: "reserve", x: p.x, z: p.z, w: 16, d: 16 }))] };
 }
 export {
   FARM,

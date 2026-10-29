@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { buildZoneLayout, FARM, GOODS_OFFICE } from "./zone-layout.js";
+import { HARDSTANDING } from "./landscape.js";
 const materials = /* @__PURE__ */ new Map();
 function mat(color, roughness = 0.86, metalness = 0) {
   const k = [color, roughness, metalness].join("/");
@@ -163,12 +164,62 @@ function buildZones(scene, network, { mask, wood }) {
   const lights = [];
   for (const p of layout.cargo) cargo(groups, p, wood);
   for (const p of layout.stops) bufferStop(groups, p);
-  const apron = new THREE.Mesh(new THREE.PlaneGeometry(140, 47, 1, 1), mat("#90866d"));
-  apron.rotation.x = -Math.PI / 2;
-  apron.position.set(655, 0.46, 355);
-  apron.receiveShadow = true;
-  groups.add(apron);
+  for(const p of HARDSTANDING) {
+    const apron = new THREE.Mesh(new THREE.PlaneGeometry(p.w,p.d),mat(p.id==='farm-lane'?'#a2926c':'#90866d'));
+    apron.name=p.id;apron.rotation.x=-Math.PI/2;apron.position.set(p.x,.46,p.z);
+    apron.receiveShadow=true;groups.add(apron);
+  }
+  // Covered goods platform and ramp beside the office; the loading aisle stays open.
+  box(30,3,28,stone,groups,565,1.85,355);
+  for(const x of [552,578])for(const z of [343,367])box(.9,22,.9,iron,groups,x,14.3,z);
+  const shelter=box(34,1.2,32,roof,groups,565,26,355);shelter.rotation.z=-.055;
+  for(let x=550;x<=580;x+=5)box(.18,.35,32,iron,groups,x,26.7,355);
+  for(const z of [344,366])rod([552,18,z],[559,25,z],.25,iron,groups);
+  const ramp=box(12,1,12,stone,groups,585,1.9,355);ramp.rotation.z=-.22;
+  sign('GOODS',groups,565,21,371.1,18,4);
+  const lampGlow=new THREE.MeshStandardMaterial({color:'#e0d3ad',emissive:'#ffce87',emissiveIntensity:.05,roughness:.5});
+  for(const [x,z] of [[590,333],[721,377],[448,322]]) {
+    cylinder(.55,29,iron,groups,x,14.85,z);
+    rod([x,29,z],[x+5,29,z],.3,iron,groups);
+    box(4.5,1.1,2.8,roof,groups,x+5,29,z);
+    box(3.8,.3,2.2,lampGlow,groups,x+5,28.3,z);
+    box(2,1.3,2,stone,groups,x,1,z);
+  }
+  for(const p of [{x:608,z:355,color:'#53665d'},{x:700,z:355,color:'#9a7347'}])
+    person(groups,{...p,y:.5,h:10.5});
+  // Passenger information sits outside the station footprint and the running gauge.
+  for(const x of [657,843]) {
+    for(const dx of [-3,3])box(.45,13,.45,iron,groups,x+dx,11,541);
+    box(8,8,.7,iron,groups,x,15,541);
+    sign('DEPARTURES',groups,x,17,541.4,7,1.6);
+    for(let row=0;row<4;row++)box(5.8,.22,.08,stone,groups,x,15.2-row,541.4);
+  }
+  // Cycle stand on the forecourt: paired rims, frame and saddle, all N scale.
+  for(let i=0;i<3;i++) {
+    const x=701+i*8,z=489;
+    for(const dx of [-3,3]) {
+      const rim=mesh(new THREE.TorusGeometry(2.4,.16,5,14),iron,groups,x+dx,2.95,z);
+      rod([x+dx,2.95,z],[x,5,z],.13,iron,groups);
+    }
+    rod([x-3,2.95,z],[x+1,3,z],.13,iron,groups);
+    rod([x,5,z],[x+1,3,z],.13,iron,groups);
+    box(2,.5,1,wood,groups,x-.6,5.4,z);
+    rod([x+3,2.95,z],[x+2,6,z],.12,iron,groups);
+    rod([x+2,6,z-1],[x+2,6,z+1],.12,iron,groups);
+  }
   const leaf = mat("#9b873f"), vine = mat("#695639"), fruit = mat("#655450");
+  const soil=mat('#79634b'),straw=mat('#b8a06b');
+  // Cultivated soil follows the same height field as the vines at every vertex.
+  for(let row=0;row<10;row++) {
+    const posts=layout.vineyard.filter(p=>p.row===row).sort((a,b)=>a.z-b.z);
+    for(let i=1;i<posts.length;i++) {
+      const a=posts[i-1],b=posts[i];if(b.z-a.z>11)continue;
+      const geo=new THREE.PlaneGeometry(8,b.z-a.z,2,4);geo.rotateX(-Math.PI/2);
+      const pos=geo.attributes.position;
+      for(let j=0;j<pos.count;j++)pos.setY(j,mask.height(a.x+pos.getX(j),(a.z+b.z)/2+pos.getZ(j))+.08);
+      geo.computeVertexNormals();const strip=mesh(geo,soil,groups,a.x,0,(a.z+b.z)/2);strip.castShadow=false;
+    }
+  }
   for (const p of layout.vineyard) {
     cylinder(0.22, 6.5, vine, groups, p.x, p.y + 3.25, p.z, 5);
     for (const side of [-1, 1]) {
@@ -187,7 +238,7 @@ function buildZones(scene, network, { mask, wood }) {
     }
   }
   const cart = new THREE.Group();
-  cart.position.set(1066, 0.35, 443);
+  cart.position.set(FARM.x+48, 0.35, FARM.z+31);
   groups.add(cart);
   box(10, 1, 7, wood, cart, 0, 3.5, 0);
   for (const side of [-1, 1]) {
@@ -196,8 +247,24 @@ function buildZones(scene, network, { mask, wood }) {
     box(10, 3, 0.7, wood, cart, 0, 5, side * 3.5);
   }
   rod([-4, 3, 0], [-10, 2, 0], 0.4, wood, cart);
+  for(let i=0;i<3;i++) {
+    const bale=cylinder(3,6,straw,groups,FARM.x+47+i*7,3.5,FARM.z+13,12);
+    bale.rotation.z=Math.PI/2;
+    for(const dx of [-2,2]) {
+      const band=mesh(new THREE.TorusGeometry(3.05,.12,4,14),vine,groups,FARM.x+47+i*7+dx,3.5,FARM.z+13);
+      band.rotation.y=Math.PI/2;
+    }
+  }
+  // Short farm fence ends before the access lane; it never extends across rails.
+  for(let x=1134;x<=1209;x+=15) {
+    if(mask.track(x,211)<24)continue;
+    if(Math.abs(x-FARM.x)<9)continue;
+    box(.8,7,.8,wood,groups,x,3.85,211);
+    if(x<1209&&Math.abs(x+7.5-FARM.x)>13)for(const y of [3,6])box(15,.65,.65,wood,groups,x+7.5,y,211);
+  }
   return { lights, pendingStops: layout.pendingStops, footprints: layout.footprints, scenicBuildings: [FARM, GOODS_OFFICE].map((b) => ({ ...b })), update(night, dt) {
     warmWindows.emissiveIntensity = 0.02 + night * 1.7;
+    lampGlow.emissiveIntensity=.05+night*2.8;
     for (const l of lights) l.intensity = night * 0.8;
   }, groups, farm, office, layout };
 }

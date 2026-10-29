@@ -137,14 +137,17 @@ function diorama(scene, renderer, network, wood, { foundation, reserved = () => 
   terrain.position.set(750, 0, 350);
   terrain.receiveShadow = true;
   scene.add(terrain);
-  const trees = forestSites(mask), trunks = [], branches = [], crowns = [], pines = [];
+  const trees = forestSites(mask), trunks = [], branches = [], crowns = [], pines = [], pineVolume = [];
   for (const t of trees) {
     trunks.push({ color: t.species === "birch" ? "#c4c6b8" : "#64513d", x: t.x, y: t.y + t.h * 0.3, z: t.z, sx: t.h * 0.023, sy: t.h * 0.6, sz: t.h * 0.023 });
     if (t.pine) {
       for (let j = 0; j < 3; j++) pines.push({ x: t.x, y: t.y + t.h * 0.55, z: t.z, sx: t.h * 0.65, sy: t.h, sz: 1, ry: j * Math.PI / 3, color: "#58724b" });
+      for(let j=0;j<4;j++) pineVolume.push({x:t.x,y:t.y+t.h*(.36+j*.15),z:t.z,
+        sx:t.h*(.29-j*.052),sy:t.h*.38,sz:t.h*(.29-j*.052),ry:t.rotation+j*.7,
+        color:new THREE.Color(j%2?'#4b6042':'#586e49')});
     } else {
       const palette = ["#d98a24", "#e5ab38", "#b95424", "#af9946", "#cc7332", "#dfb64c"];
-      const color = new THREE.Color(palette[Math.floor(t.hue * palette.length)]);
+      const color = new THREE.Color(t.species==='birch'?'#c5b754':palette[Math.floor(t.hue * palette.length)]);
       for (let j = 0; j < 5; j++) {
         const a = j * 2.4, r = t.h * 0.16 * (j ? 1 : 0), cx = t.x + Math.cos(a) * r, cz = t.z + Math.sin(a) * r, cy = t.y + t.h * (0.62 + j % 3 * 0.09);
         branches.push({ x: (t.x + cx) / 2, y: t.y + t.h * 0.46, z: (t.z + cz) / 2, sx: 0.6, sy: t.h * 0.28, sz: 0.6, rz: Math.cos(a) * 0.55, rx: Math.sin(a) * 0.55 });
@@ -166,15 +169,26 @@ function diorama(scene, renderer, network, wood, { foundation, reserved = () => 
   leaves.userData.foliage = true;
   const evergreen = instance(new THREE.PlaneGeometry(1, 1), new THREE.MeshStandardMaterial({ map: foliageTexture(true), alphaTest: 0.48, side: THREE.DoubleSide, roughness: 1 }), pines, scene);
   evergreen.userData.foliage = true;
+  const conifers=instance(new THREE.ConeGeometry(1,1,9),new THREE.MeshStandardMaterial({roughness:1}),pineVolume,scene);
+  conifers.name='Layered conifers';conifers.userData.foliage=true;
   const volume = [];
   for (const t of trees.filter((t2) => !t2.pine)) {
     const col = new THREE.Color(["#c88f39", "#b16a39", "#b8a15a", "#bf772e"][Math.floor(t.hue * 4)]);
     for (let j = 0; j < 7; j++) {
       const a = j * 2.399 + t.rotation, r = t.h * 0.14 * (j ? 1 : 0);
-      volume.push({ x: t.x + Math.cos(a) * r, y: t.y + t.h * (0.64 + j % 3 * 0.075), z: t.z + Math.sin(a) * r, sx: t.h * (0.12 + j % 3 * 0.02), sy: t.h * (0.15 + j % 2 * 0.025), sz: t.h * 0.13, rx: 0.2 * Math.sin(a), ry: a, rz: 0.2 * Math.cos(a), color: col });
+      const narrow=t.species==='birch'?.83:1;
+      volume.push({ x: t.x + Math.cos(a) * r, y: t.y + t.h * (0.64 + j % 3 * 0.075), z: t.z + Math.sin(a) * r, sx: t.h * (0.12 + j % 3 * 0.02)*narrow, sy: t.h * (t.species==='birch'?.17:.13+j%2*.02), sz: t.h * .13*narrow, rx: 0.2 * Math.sin(a), ry: a, rz: 0.2 * Math.cos(a), color: col.clone().multiplyScalar(.88+j%3*.08) });
     }
   }
-  const canopy = instance(new THREE.SphereGeometry(1, 10, 7), new THREE.MeshStandardMaterial({ roughness: 0.96 }), volume, scene);
+  // Uneven lobes break the smooth ellipsoid silhouette without adding draw calls.
+  const crownGeometry=new THREE.IcosahedronGeometry(1,2), crownVertices=crownGeometry.attributes.position;
+  for(let i=0;i<crownVertices.count;i++) {
+    const x=crownVertices.getX(i),y=crownVertices.getY(i),z=crownVertices.getZ(i);
+    const r=1+.07*Math.sin(x*19+y*11)*Math.cos(z*17-x*7);
+    crownVertices.setXYZ(i,x*r,y*r,z*r);
+  }
+  crownGeometry.computeVertexNormals();
+  const canopy = instance(crownGeometry, new THREE.MeshStandardMaterial({ roughness: 0.96 }), volume, scene);
   canopy.userData.foliage = true;
   let profile = "high";
   const shrubs = [], grass = [], litter = [];
@@ -182,9 +196,10 @@ function diorama(scene, renderer, network, wood, { foundation, reserved = () => 
     const x = 12 + rnd() * 1476, z = 12 + rnd() * 676, d = mask.track(x, z);
     if (mask.reserved(x, z) || d < 17 || mask.building(x, z, 5) || mask.road(x, z)) continue;
     const y = mask.height(x, z);
-    if (i < 700 && d > 23) shrubs.push({ x, y: y + 2 + rnd() * 2, z, sx: 3 + rnd() * 6, sy: 2 + rnd() * 3, sz: 3 + rnd() * 5, color: new THREE.Color().setHSL(0.12 + rnd() * 0.13, 0.35, 0.25 + rnd() * 0.1).convertSRGBToLinear() });
+    const woodland=trees.some(t=>Math.hypot(t.x-x,t.z-z)<t.radius+12);
+    if (i < 900 && d > 29 && woodland && !mask.building(x,z,10)) shrubs.push({ x, y: y + 2 + rnd() * 2, z, sx: 3 + rnd() * 6, sy: 2 + rnd() * 3, sz: 3 + rnd() * 5, color: new THREE.Color().setHSL(0.12 + rnd() * 0.13, 0.35, 0.25 + rnd() * 0.1).convertSRGBToLinear() });
     grass.push({ x, y: y + 1.8, z, sx: 1 + rnd() * 2, sy: 2 + rnd() * 3, sz: 1, ry: rnd() * Math.PI, color: new THREE.Color().setHSL(0.13 + rnd() * 0.09, 0.32, 0.3 + rnd() * 0.15).convertSRGBToLinear() });
-    if (rnd() > 0.4) litter.push({ x, y: y + 0.12, z, sx: 0.7 + rnd() * 1.5, sy: 0.4 + rnd(), sz: 1, rx: -Math.PI / 2, rz: rnd() * 6, color: new THREE.Color().setHSL(0.06 + rnd() * 0.08, 0.58, 0.34 + rnd() * 0.12).convertSRGBToLinear() });
+    if (woodland && rnd() > 0.2) litter.push({ x, y: y + 0.12, z, sx: 0.7 + rnd() * 1.5, sy: 0.4 + rnd(), sz: 1, rx: -Math.PI / 2, rz: rnd() * 6, color: new THREE.Color().setHSL(0.06 + rnd() * 0.08, 0.58, 0.34 + rnd() * 0.12).convertSRGBToLinear() });
   }
   const shrubsMesh = instance(new THREE.IcosahedronGeometry(1, 1), new THREE.MeshStandardMaterial({ roughness: 1 }), shrubs, scene);
   shrubsMesh.castShadow = false;
@@ -198,10 +213,10 @@ function diorama(scene, renderer, network, wood, { foundation, reserved = () => 
   const rocks = [];
   for (let i = 0; i < 180; i++) {
     const x = 140 + rnd() * 1210, z = 335 + rnd() * 130;
-    if (mask.reserved(x, z) || mask.track(x, z) < 28 || mask.building(x, z, 15) || mask.road(x, z)) continue;
+    if (mask.reserved(x, z) || mask.track(x, z) < 40 || mask.building(x, z, 20) || mask.road(x, z)) continue;
     const y = mask.height(x, z);
     if (y < 5) continue;
-    rocks.push({ x, y: y - 2, z, sx: 5 + rnd() * 11, sy: 4 + rnd() * 10, sz: 4 + rnd() * 9, ry: rnd() * 6, color: new THREE.Color().setHSL(0.1, 0.07, 0.36 + rnd() * 0.16) });
+    rocks.push({ x, y: y - 2, z, sx: 5 + rnd() * 11, sy: 3 + rnd() * 7, sz: 4 + rnd() * 9, ry: rnd() * 6, color: new THREE.Color().setHSL(0.1, 0.10, 0.35 + rnd() * 0.12,THREE.SRGBColorSpace) });
   }
   instance(new THREE.DodecahedronGeometry(1, 0), new THREE.MeshStandardMaterial({ roughness: 1 }), rocks, scene);
   const floor = new THREE.Mesh(new THREE.PlaneGeometry(14e3, 14e3), new THREE.MeshStandardMaterial({ color: "#c0b6a1", roughness: 0.96 }));
@@ -243,6 +258,7 @@ function diorama(scene, renderer, network, wood, { foundation, reserved = () => 
     update(dt, camera) {
       const detailed = profile !== "low" && (!camera || camera.zoom > 0.75);
       canopy.visible = detailed;
+      conifers.visible=detailed;evergreen.visible=!detailed;
       leaves.visible = true;
       windTime.value += dt;
     }

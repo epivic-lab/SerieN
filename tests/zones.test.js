@@ -19,7 +19,9 @@ test("farmhouse and goods office footprints have full railway clearance", () => 
   }
 });
 test("yard props respect running tracks, moving switches and building footprints", () => {
-  assert.ok(layout.cargo.length >= 25);
+  assert.ok(layout.cargo.length >= 18);
+  // The phase 3 loading aisle must stay free of the full cargo envelope.
+  assert.ok(layout.cargo.every(p=>p.x<585||Math.abs(p.z-355)>=14));
   for (const p of layout.cargo) {
     assert.ok(safeScenicPosition(mask, p.x, p.z, p.radius, layout.buildings));
     assert.equal(p.y, mask.height(p.x, p.z));

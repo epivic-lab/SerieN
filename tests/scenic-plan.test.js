@@ -20,7 +20,7 @@ test("five stable zones inventory the current scene and explicitly exclude tunne
   assert.equal(plan.tunnel,false);
   assert.equal(new Set(plan.catalog.map((o)=>o.id)).size,plan.catalog.length);
   assert.match(plan.catalog.find((o)=>o.id==="Z4.01").status,/excluded/);
-  assert.deepEqual(plan.buildings.find((b)=>b.id==="farmhouse"),{id:"farmhouse",kind:"building",x:1020,z:430,w:76,d:46,h:34});
+  assert.deepEqual(plan.buildings.find((b)=>b.id==="farmhouse"),{id:"farmhouse",kind:"building",x:1174,z:183,w:76,d:46,h:34});
   assert.equal(insidePolygon(100,100,[[0,0],[200,0],[200,200],[0,200]]),true);
   assert.equal(insidePolygon(300,100,[[0,0],[200,0],[200,200],[0,200]]),false);
 });
