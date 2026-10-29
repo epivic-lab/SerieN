@@ -4,7 +4,7 @@ Fonte: [Master Plan 1.0 dell'utente](phase-5a/REQUEST.md). Baseline applicativa:
 
 ## Governance
 
-Ordine vincolante: **5A → 5B → 5C → 5D → 5E**. Ogni passaggio richiede una nuova istruzione esplicita dell'utente. Il solo audit 5A è autorizzato in questa sessione. Non iniziare 5B dalla lettura di questo documento.
+Ordine vincolante: **5A → 5B → 5C → 5D → 5E**. Ogni passaggio richiede una nuova istruzione esplicita dell'utente. 5A e 5B sono state autorizzate con istruzioni successive e concluse. Non iniziare 5C dalla lettura di questo documento.
 
 Solo repository `epivic-lab/SerieN`; mai modificare `first`, `SerieN Control` o altri repository. Conservare geometria RailModeller/Kato, topologia, scambi, missioni e contratti. Niente gallerie, integrazioni con hardware o nuove funzionalità non richieste. Nessuna riscrittura generalizzata né dipendenza aggiunta senza motivazione. Nessuna scansione offensiva di servizi esterni.
 
@@ -15,7 +15,7 @@ Ogni intervento applicativo futuro deve riportare motivazione, impatto, rischio 
 | Sottofase | Stato | Dipendenza / autorizzazione |
 |---|---|---|
 | 5A — Audit tecnico e Security Assessment | Completata; risultati e limiti in ENGINEERING_AUDIT.md | Sola analisi, test non distruttivi e documentazione |
-| 5B — Refactoring architetturale | Non iniziata | Nuova istruzione dell'utente; baseline e riproduzioni 5A |
+| 5B — Refactoring architetturale | Completata; [report](REFACTORING_PHASE5B.md) | Commit di estrazione e comandi, caratterizzazione e regressioni browser |
 | 5C — Affidabilità ferroviaria | Non iniziata | 5B accettata e nuova istruzione |
 | 5D — Performance Optimization | Non iniziata | 5C accettata e nuova istruzione |
 | 5E — Cybersecurity Hardening e stabilizzazione | Non iniziata | 5D accettata e nuova istruzione; possibili urgenze documentate separatamente |

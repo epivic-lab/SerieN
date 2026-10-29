@@ -2,70 +2,71 @@
 
 ## Fase corrente
 
-**5B in corso, autorizzata dall’utente. Primo blocco: estrazione delle viste ferroviarie pure.**
+**5B conclusa: refactoring architetturale mirato e verificato. 5C non iniziata.**
 
-La [roadmap ufficiale](docs/ROADMAP_PHASE5.md) impone nuova istruzione esplicita dell'utente per ogni sottofase. 5B è autorizzata; 5C–5E non lo sono. Vietati interventi su `first`, `SerieN Control` e altri repository; nessuna pubblicazione o modifica al deployment autorizzata in 5A.
+La richiesta esplicita «esegui 5b» ha autorizzato questa sottofase. La [roadmap ufficiale](docs/ROADMAP_PHASE5.md) richiede una nuova istruzione per iniziare 5C, 5D o 5E. Nessun push/deployment o intervento su `first`, `SerieN Control` e altri repository è autorizzato dal lavoro corrente.
 
-## Riferimenti Git
+## Riferimenti Git e recuperabilità
 
-- Baseline applicativa stabile sottoposta ad audit: `618f538563aa7bd6497f6de3fba9744287b7ebb0`, v0.12.
-- Branch iniziale: `work`, pulito. Branch di audit: `audit/phase-5a`.
-- Checkpoint documentale 5A: il commit che introduce questo file insieme ad audit e roadmap. Identificarlo senza dipendere dalla chat: `git log -1 --format='%H %s' -- PROGRESS.md`.
-- Nessun push e nessun deployment in 5A. `main` remoto non modificato da questa attività.
+- Baseline applicativa stabile confrontata: `618f538563aa7bd6497f6de3fba9744287b7ebb0`, v0.12.
+- Audit 5A: `b819864`, conservato nel branch `audit/phase-5a`.
+- Branch corrente: **`refactor/phase-5b`**, creato da working tree pulito.
+- Primo checkpoint: **`5a551f7`**, viste ferroviarie pure e caratterizzazione.
+- Secondo checkpoint: **`afd50db`**, comandi della flotta, separazione degli effetti UI e pulizia mirata.
+- Checkpoint conclusivo: commit che introduce `docs/REFACTORING_PHASE5B.md` e aggiorna questo file; identificarlo con `git log -1 --format='%H %s' -- PROGRESS.md`.
 
-Un commit locale non sopravvive automaticamente alla perdita completa della macchina. Per ripresa fuori dal checkout occorre esportazione/backup o push del branch documentale autorizzato. Non promettere recupero remoto sulla sola base dell'hash. Il branch corrente consente recupero locale senza sovrascrivere lo stato applicativo stabile.
-
-## Checkpoint 5B in corso
-
-Branch `refactor/phase-5b`, da audit `b819864`. Estratti `layoutFor`, `vehiclePositions`, raccolta occupazione e assistenza scambi in `src/railway-state.js`; contratti JSDoc in `src/railway-types.js`. Confronto differenziale con oracle storico v0.12 su 180 stati, senza mutare Journey; build riuscita. R01/R02/R03 restano aperti per 5C. Nessun push o deployment. Checkpoint viste: `5a551f7`. Secondo blocco completato: comandi puri rispetto alla presentazione in `src/fleet-commands.js`, risultati espliciti per i fallimenti e test differenziali/identità dei carri. Eventi UI e missioni restano nel bootstrap; rimossi import/materiali inutilizzati, builder e PNG dimostrati invariati. Prossima attività: regressioni browser e documentazione finale 5B.
+Commit soltanto locali: nessun push, nuovo rilascio o deployment; `main` remoto non modificato. Una nuova sessione con lo stesso checkout può riprendere dal branch. La perdita completa della macchina richiede backup/esportazione o push autorizzato del branch: l'hash nella chat non trasferisce gli oggetti Git.
 
 ## Ultima attività completata
 
-Audit della baseline con esecuzione di test e riproduzione non distruttiva di condizioni limite. Report: [ENGINEERING_AUDIT.md](docs/ENGINEERING_AUDIT.md).
+Estrazione da `app.js` di:
 
-File aggiunti nel checkpoint:
+- `src/railway-state.js`: layout, posizioni, raccolta occupazione e derivazione assistenza scambi; lettura senza DOM/renderer o mutazioni di Journey, nessuna cache nuova.
+- `src/fleet-commands.js`: velocità, inversione, stop, luci e aggancio/sgancio; mutazioni degli oggetti esistenti e risultati espliciti. UI, messaggi e missioni sono adattati dall'entrypoint nello stesso ordine precedente.
+- `src/railway-types.js`: contratti strutturali JSDoc. Nessuna dipendenza o type checker aggiunto.
 
-- `PROGRESS.md`.
-- `docs/ROADMAP_PHASE5.md`.
-- `docs/ENGINEERING_AUDIT.md`.
-- `docs/phase-5a/`: richiesta originale, evidenze JSON/log e harness di audit Python/Node. Gli harness sono documentazione/test non distruttivi, non codice applicativo.
+Rimossi import/materiali inutilizzati. La regione sorgente dei builder è identica alla baseline dopo la sola rimozione di due dichiarazioni morte: PNG e modelli conservati; aggiornato solo il digest di provenienza nel manifest miniature. `app.js`: 967 → 897 righe, senza riscrittura generalizzata.
 
-Nessun file applicativo, test preesistente, asset, lockfile o workflow modificato: [96 file non documentali confrontati byte per byte](docs/phase-5a/preservation.json). Build in `dist/` e bytecode Python sono output locali ignorati. Test browser e rigenerazione del grafo sono stati eseguiti su copia temporanea per conservare i vecchi report.
+Documentazione: [report 5B](docs/REFACTORING_PHASE5B.md), [roadmap](docs/ROADMAP_PHASE5.md), [audit storico 5A](docs/ENGINEERING_AUDIT.md). Evidenze in `docs/phase-5b/`; fixture storiche test-only in `tests/fixtures/*-v012.js`.
 
-## Test effettivamente eseguiti
+## Test realmente eseguiti
 
-- 100 test Node passati; anche la ripetizione strumentata per coverage passa.
-- 9 test Python JMRI passati.
-- `npm run build` riuscita; quattro file canonici rigenerati fuori checkout e identici.
-- Browser Fase 4 locale: PASS, inclusi animazioni, agganci, quattro terminali e viste responsive/High.
-- Browser operativo Fase 0 locale: PASS per anelli bidirezionali, quarto treno/MRU, scambi/HUD, entrambi i rami runaround e arresti.
-- Sito pubblico v0.12: HTTP 200, caricamento miniature e GLB Kenney senza errori di pagina o richieste fallite. Il precedente blocco di rete Pages non sussiste nel runtime pubblicato. Non è stata eseguita qui l'intera suite operativa sul sito remoto.
-- `npm audit`: zero vulnerabilità note. Scanner offline limitato della storia: 310 blob testuali, zero pattern di credenziali trovati; nessuna garanzia universale.
-- Probe locali: R01/R02/R03 riprodotti; dieci reset con contatori stabili (402 geometrie, 50 texture), senza prova generale di assenza di leak.
+- **106 test Node passati**: 100 precedenti + sei nuovi. Confronti di stato/message/identità e 180 combinazioni delle viste ferroviarie; Journey congelati non mutati.
+- **9 test Python JMRI passati**.
+- Build riuscita; nessun cambio a manifest delle dipendenze, lockfile o workflow.
+- **Confronto browser v0.12/5B PASS:** sei snapshot identici per stock/hull, Journey, animazione, composizioni, HUD, consolle, messaggi e missioni.
+- **Browser Fase 4 PASS:** tre convogli, fasi delle ruote/bielle, inversione, sgancio/ritorno/riaggancio, quattro terminali, UI e rendering responsive/High.
+- **Browser operativo PASS:** tre circuiti nei due sensi, quarto convoglio/MRU, scambi protetti, HUD, runaround e STOP ALL.
+- **Browser Kenney PASS:** spaziatura, cambio modelli, sgancio/riaggancio, inversione, reset e ripristino nativi.
+- Confronto dei file protetti e del builder; zero cicli nel grafo statico aggiornato. Nessuna misura di prestazioni o GPU fisica rivendicata.
 
-Coverage Node: 91,28% linee / 89,71% branch / 94,77% funzioni **solo dei moduli importati dalla suite**; non include entrypoint e vari moduli browser. GPU desktop/tablet reali non verificate. Nessun benchmark prima/dopo o ottimizzazione eseguiti.
+Gli script browser hanno scritto in copie temporanee. Le immagini/report precedenti non sono stati sovrascritti. Non è stato ricontrollato qui il deployment pubblico: non è cambiato perché non è stato pubblicato nulla.
 
-## Problemi aperti e priorità
+## File modificati / conservati
 
-1. **R01 / P1:** conflitto tra mezzi lunghi con centri su segmenti adiacenti: la soglia cross-edge di 17 mm non copre l'ingombro. Browser diagnostico T47/T46: centri a 20 mm, entrambi ancora in moto. Stato limite costruito per la prova, non incidente d'uso ordinario. Da correggere in 5C.
-2. **R02 / P1:** l'occupazione del carro sganciato viene tagliata al segmento del centro; manca l'adiacente pur attraversato dal corpo. Incompletezza dimostrata con moduli originali; non tutte le conseguenze sugli scambi sono state riprodotte. 5C.
-3. **R03 / P2:** NaN accettato da Journey/FixedClock può corrompere lo stato interno. Non dimostrato come ingresso remoto sfruttabile. 5C.
-4. **A01/A02 / P2:** stato e responsabilità accoppiati in `app.js`, contratti impliciti; prima estrazione pura in 5B.
-5. **P01/P02 / P2:** allocazioni e calcoli ripetuti da profilare. SwiftShader lento nel campione; non estrapolare FPS desktop. 5D.
-6. **S01/S02 / P2:** action a tag mobili, permessi workflow da restringere per job, CSP assente. Rischi preventivi, non compromissioni confermate. 5E.
+Applicazione: `app.js` e tre moduli nuovi. Manifest miniature: solo hash di provenienza. Aggiunti test, fixture storiche, confronto browser e documentazione. Rete, grafo canonico, Journey/clock/router, rotaie, Next Switch HUD, plancia, rotabili, asset manager, scenografia, camera, CSS/index, dipendenze e CI sono identici alla baseline: [preservazione](docs/phase-5b/preservation.json).
 
-Nessuna vulnerabilità critica confermata richiede una modifica applicativa urgente fuori ambito. La fedeltà metrologica dei WX310 e dei rotabili non è stata certificata dall'audit.
+Non esiste un secondo store: array e veicoli mantengono le identità. `cars` e l'indicizzazione per ID restano contratti legacy esplicitati, non trasformati in accessor che romperebbero il reset. Lifecycle e recovery globale del renderer rimangono quelli esaminati in 5A.
 
-## Prossima attività raccomandata — checkpoint 5B
+Nel checkpoint finale non restano modifiche tracked non committate; controllare comunque `git status --short`. `dist/`, cache Python e file in `/tmp` sono output locali, non modifiche da applicare o pubblicare.
 
-Completare le regressioni browser e il report di refactoring 5B; non iniziare 5C. I nuovi servizi sono stati verificati con test di confronto della baseline. Nessuna correzione R01/R02/R03 è stata introdotta.
+## Problemi aperti: riservati alle fasi successive
 
-## Riprendere in una sessione nuova
+- **R01 / P1 (5C):** soglia cross-edge 17 mm insufficiente per i corpi lunghi. Funzione collisioni identica alla baseline; nessuna correzione introdotta durante l'estrazione.
+- **R02 / P1 (5C):** occupazione dei carri sganciati tagliata all'edge del centro, ora isolata e commentata nel servizio. Ancora riprodotta, non approvata come requisito corretto.
+- **R03 / P2 (5C):** Journey/FixedClock accettano NaN nei casi dell'audit; sorgenti invariati.
+- Profiler/allocazioni e benchmark hardware: 5D. CSP, action/permessi CI e recovery robusto: 5E. Nessuna nuova vulnerabilità critica rilevata durante questo refactoring, che non sostituisce un nuovo security assessment.
 
-1. Leggere questo file, roadmap e audit, poi le istruzioni correnti dell'utente; l'ultima autorizzazione prevale.
-2. Controllare `git status --short --branch`, `git log -3 --oneline` e ref di provenienza. Non resettare o cancellare modifiche preesistenti.
-3. Usare `/workspace/SerieN`, checkout esistente: la task cloud è già isolata; nessun worktree salvo richiesta esplicita.
-4. Nel checkpoint non restano modifiche tracked non committate. Verificare sempre; eventuali nuovi cambiamenti appartengono alla sessione corrente, non vanno rimossi automaticamente.
-5. Ambiente osservato: Node 24.19, Python 3.12.14, Chromium 154 e Python Playwright 1.62; CI usa Node 22/Python 3.12. Seguire proxy e CA ereditati, mai esporre segreti o disabilitare verifiche TLS.
-6. Per ripetere controlli usare i comandi dell'audit. Non lanciare generatori, screenshot o script di cattura miniature nel checkout senza controllarne gli output: alcuni modificano file tracked. Usare copia temporanea per i report browser esistenti. Gli script `docs/phase-5a/*` scrivono soltanto evidenze documentali e non correggono i problemi.
-7. Prima di ogni blocco futuro: motivazione, rischio, test, rollback; poi verifica e commit piccolo. Non iniziare una sottofase successiva automaticamente.
+## Prossima attività raccomandata — NON eseguita
+
+Attendere istruzione per **5C**. Iniziare dalle regressioni R01 e R02 che dimostrino la protezione desiderata, quindi correggere gli inviluppi cross-edge e conservare il percorso dei carri sganciati attraverso i giunti. Usare i servizi ora testabili; non introdurre nuove topologie o modifiche alle missioni senza necessità verificata.
+
+## Ripresa in una nuova sessione
+
+1. Leggere questo file, la roadmap e il report 5B; l'ultima istruzione esplicita dell'utente prevale.
+2. Controllare branch, `git status --short --branch` e `git log -4 --oneline`; non resettare o eliminare lavoro esistente.
+3. Usare il checkout `/workspace/SerieN`: le task cloud sono già isolate, nessun worktree salvo richiesta.
+4. Tool osservati: Node 24.19, Python 3.12.14, Chromium 154 e Playwright Python 1.62. CI: Node 22/Python 3.12. Usare proxy/CA ereditati; mai estrarre segreti o disabilitare TLS.
+5. Node: `node --test --test-isolation=none tests/*.test.js`; Python: audit unittest; build: `npm run build`. I browser e i generatori scrivono report tracked: eseguirli con working directory temporanea. Il confronto `tests/browser-phase-five-b.py` richiede anche la build v0.12 a porta 8001 e candidato a porta 8000; non pubblica siti.
+6. Per ripristino, revert dei singoli commit 5B in ordine inverso su branch dedicato e working tree verificato. Non mascherare R01/R02/R03 come comportamento corretto per mantenere verdi i test.
+7. Non iniziare 5C automaticamente. Ogni blocco futuro richiede motivazione, rischio, verifica, rollback e commit piccolo.
