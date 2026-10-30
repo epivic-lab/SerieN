@@ -1,0 +1,36 @@
+{
+  "baseline": "99b143c918e016f7e744217aa4c760fc9987deb9",
+  "lockedSourcesUnchanged": [
+    "src/canonical-layout.json",
+    "src/network.js",
+    "src/simulation.js",
+    "src/next-switch.js",
+    "src/next-switch-view.js",
+    "src/railway-state.js",
+    "src/railway-step.js",
+    "src/railway-conflicts.js",
+    "src/rail-profile.js",
+    "src/graphic-foundations.js",
+    "src/scenery.js",
+    "src/diorama.js",
+    "src/railway-works.js",
+    "src/turnout-routes.js",
+    "src/turnout-commands.js",
+    "package.json",
+    "package-lock.json",
+    ".github/workflows/pages.yml"
+  ],
+  "sameRailwayFunctions": {
+    "advanceFleet": true,
+    "renderVehicles": true,
+    "getSwitchAssistance": true,
+    "switchHUDStateRailwayLogic": true
+  },
+  "tickChange": "only obsolete switch-feedback update removed",
+  "canonicalSha256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+  "baselineBundleBytes": 989196,
+  "bundleBytes": 993237,
+  "bundleSha256": "8e82e6457ac5245e37181e9beaaf1a488508ca9f5e29e6499669fd30ef6787be",
+  "newDependencies": false,
+  "backendChanges": false
+}

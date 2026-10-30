@@ -1,0 +1,508 @@
+{
+  "before": {
+    "errors": [],
+    "failedRequests": [],
+    "views": {
+      "overview-48": {
+        "camera": [
+          1580,
+          1150,
+          1570
+        ],
+        "target": [
+          750,
+          0,
+          350
+        ],
+        "day": 48,
+        "quality": "low",
+        "render": {
+          "calls": 367,
+          "triangles": 468812,
+          "geometries": 364,
+          "textures": 45
+        }
+      },
+      "overview-95": {
+        "camera": [
+          1580,
+          1150,
+          1570
+        ],
+        "target": [
+          750,
+          0,
+          350
+        ],
+        "day": 95,
+        "quality": "low",
+        "render": {
+          "calls": 367,
+          "triangles": 468812,
+          "geometries": 364,
+          "textures": 45
+        }
+      },
+      "Y-IN-48": {
+        "camera": [
+          1093,
+          340,
+          371
+        ],
+        "target": [
+          903,
+          0,
+          101.00000000000009
+        ],
+        "day": 48,
+        "quality": "low",
+        "render": {
+          "calls": 101,
+          "triangles": 305156,
+          "geometries": 364,
+          "textures": 45
+        }
+      },
+      "Y-IN-95": {
+        "camera": [
+          1093,
+          340,
+          371
+        ],
+        "target": [
+          903,
+          0,
+          101.00000000000009
+        ],
+        "day": 95,
+        "quality": "low",
+        "render": {
+          "calls": 101,
+          "triangles": 305156,
+          "geometries": 364,
+          "textures": 45
+        }
+      },
+      "WX-A-48": {
+        "camera": [
+          723,
+          340,
+          354.49999999999994
+        ],
+        "target": [
+          533,
+          0,
+          84.5
+        ],
+        "day": 48,
+        "quality": "low",
+        "render": {
+          "calls": 123,
+          "triangles": 305866,
+          "geometries": 364,
+          "textures": 45
+        }
+      },
+      "WX-A-95": {
+        "camera": [
+          723,
+          340,
+          354.49999999999994
+        ],
+        "target": [
+          533,
+          0,
+          84.5
+        ],
+        "day": 95,
+        "quality": "low",
+        "render": {
+          "calls": 123,
+          "triangles": 305866,
+          "geometries": 364,
+          "textures": 45
+        }
+      },
+      "WX-B-48": {
+        "camera": [
+          1157,
+          340,
+          321.49999999999994
+        ],
+        "target": [
+          967,
+          0,
+          51.499999999999986
+        ],
+        "day": 48,
+        "quality": "low",
+        "render": {
+          "calls": 92,
+          "triangles": 304268,
+          "geometries": 364,
+          "textures": 45
+        }
+      },
+      "WX-B-95": {
+        "camera": [
+          1157,
+          340,
+          321.49999999999994
+        ],
+        "target": [
+          967,
+          0,
+          51.499999999999986
+        ],
+        "day": 95,
+        "quality": "low",
+        "render": {
+          "calls": 92,
+          "triangles": 304268,
+          "geometries": 364,
+          "textures": 45
+        }
+      }
+    },
+    "timing": {
+      "samplesMs": [
+        1983.300000000003,
+        1933.199999999997,
+        1966.5999999999913,
+        1933.300000000003,
+        1916.6000000000058,
+        1983.199999999997,
+        1966.6000000000058,
+        1916.5999999999913,
+        1983.199999999997,
+        1933.300000000003,
+        1966.6000000000058,
+        1916.5999999999913
+      ],
+      "samples": 12,
+      "p50Ms": 1949.949999999997,
+      "p95NearestRankMs": 1983.300000000003,
+      "render": {
+        "calls": 367,
+        "triangles": 468812,
+        "geometries": 364,
+        "textures": 45
+      },
+      "viewport": [
+        650,
+        760
+      ],
+      "note": "12 paused-idle RAF samples after 3 warmup; Low/day48/fixed overview, instrumented SwiftShader. Not full 5D benchmark or hardware FPS."
+    },
+    "railMaterials": [
+      {
+        "name": "",
+        "type": "MeshStandardMaterial",
+        "color": [
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metalness": 0,
+        "bumpScale": 0.22,
+        "vertexColors": false,
+        "textures": {
+          "map": {
+            "width": 256,
+            "height": 256,
+            "sha256": "7b7863d668a2d24e5a3fd7c5151079eb12202b07f8dd867eca59726f066acb0a"
+          },
+          "bumpMap": {
+            "width": 256,
+            "height": 256,
+            "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+          },
+          "roughnessMap": {
+            "width": 256,
+            "height": 256,
+            "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+          }
+        }
+      },
+      {
+        "name": "Weathered rail web / polished running head",
+        "type": "MeshStandardMaterial",
+        "color": [
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metalness": 1,
+        "bumpScale": 1,
+        "vertexColors": true,
+        "textures": {
+          "roughnessMap": {
+            "width": 128,
+            "height": 128,
+            "sha256": "1cc2de02d21d2cbcb12beeba65c4c91a1de5f88f1034f60bdce553555c39edab"
+          },
+          "metalnessMap": {
+            "width": 128,
+            "height": 128,
+            "sha256": "1cc2de02d21d2cbcb12beeba65c4c91a1de5f88f1034f60bdce553555c39edab"
+          }
+        }
+      }
+    ]
+  },
+  "after": {
+    "errors": [],
+    "failedRequests": [],
+    "views": {
+      "overview-48": {
+        "camera": [
+          1580,
+          1150,
+          1570
+        ],
+        "target": [
+          750,
+          0,
+          350
+        ],
+        "day": 48,
+        "quality": "low",
+        "render": {
+          "calls": 343,
+          "triangles": 467756,
+          "geometries": 340,
+          "textures": 45
+        }
+      },
+      "overview-95": {
+        "camera": [
+          1580,
+          1150,
+          1570
+        ],
+        "target": [
+          750,
+          0,
+          350
+        ],
+        "day": 95,
+        "quality": "low",
+        "render": {
+          "calls": 343,
+          "triangles": 467756,
+          "geometries": 340,
+          "textures": 45
+        }
+      },
+      "Y-IN-48": {
+        "camera": [
+          1093,
+          340,
+          371
+        ],
+        "target": [
+          903,
+          0,
+          101.00000000000009
+        ],
+        "day": 48,
+        "quality": "low",
+        "render": {
+          "calls": 86,
+          "triangles": 304496,
+          "geometries": 340,
+          "textures": 45
+        }
+      },
+      "Y-IN-95": {
+        "camera": [
+          1093,
+          340,
+          371
+        ],
+        "target": [
+          903,
+          0,
+          101.00000000000009
+        ],
+        "day": 95,
+        "quality": "low",
+        "render": {
+          "calls": 86,
+          "triangles": 304496,
+          "geometries": 340,
+          "textures": 45
+        }
+      },
+      "WX-A-48": {
+        "camera": [
+          723,
+          340,
+          354.49999999999994
+        ],
+        "target": [
+          533,
+          0,
+          84.5
+        ],
+        "day": 48,
+        "quality": "low",
+        "render": {
+          "calls": 120,
+          "triangles": 305734,
+          "geometries": 340,
+          "textures": 45
+        }
+      },
+      "WX-A-95": {
+        "camera": [
+          723,
+          340,
+          354.49999999999994
+        ],
+        "target": [
+          533,
+          0,
+          84.5
+        ],
+        "day": 95,
+        "quality": "low",
+        "render": {
+          "calls": 120,
+          "triangles": 305734,
+          "geometries": 340,
+          "textures": 45
+        }
+      },
+      "WX-B-48": {
+        "camera": [
+          1157,
+          340,
+          321.49999999999994
+        ],
+        "target": [
+          967,
+          0,
+          51.499999999999986
+        ],
+        "day": 48,
+        "quality": "low",
+        "render": {
+          "calls": 80,
+          "triangles": 303740,
+          "geometries": 340,
+          "textures": 45
+        }
+      },
+      "WX-B-95": {
+        "camera": [
+          1157,
+          340,
+          321.49999999999994
+        ],
+        "target": [
+          967,
+          0,
+          51.499999999999986
+        ],
+        "day": 95,
+        "quality": "low",
+        "render": {
+          "calls": 80,
+          "triangles": 303740,
+          "geometries": 340,
+          "textures": 45
+        }
+      }
+    },
+    "timing": {
+      "samplesMs": [
+        2016.5,
+        1966.5999999999913,
+        1983.300000000003,
+        1949.800000000003,
+        1966.699999999997,
+        1983.199999999997,
+        1933.2000000000116,
+        1916.699999999997,
+        1966.5,
+        1933.300000000003,
+        1966.5999999999913,
+        1933.199999999997
+      ],
+      "samples": 12,
+      "p50Ms": 1966.5499999999956,
+      "p95NearestRankMs": 2016.5,
+      "render": {
+        "calls": 343,
+        "triangles": 467756,
+        "geometries": 340,
+        "textures": 45
+      },
+      "viewport": [
+        650,
+        760
+      ],
+      "note": "12 paused-idle RAF samples after 3 warmup; Low/day48/fixed overview, instrumented SwiftShader. Not full 5D benchmark or hardware FPS."
+    },
+    "railMaterials": [
+      {
+        "name": "",
+        "type": "MeshStandardMaterial",
+        "color": [
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metalness": 0,
+        "bumpScale": 0.22,
+        "vertexColors": false,
+        "textures": {
+          "map": {
+            "width": 256,
+            "height": 256,
+            "sha256": "7b7863d668a2d24e5a3fd7c5151079eb12202b07f8dd867eca59726f066acb0a"
+          },
+          "bumpMap": {
+            "width": 256,
+            "height": 256,
+            "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+          },
+          "roughnessMap": {
+            "width": 256,
+            "height": 256,
+            "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+          }
+        }
+      },
+      {
+        "name": "Weathered rail web / polished running head",
+        "type": "MeshStandardMaterial",
+        "color": [
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metalness": 1,
+        "bumpScale": 1,
+        "vertexColors": true,
+        "textures": {
+          "roughnessMap": {
+            "width": 128,
+            "height": 128,
+            "sha256": "1cc2de02d21d2cbcb12beeba65c4c91a1de5f88f1034f60bdce553555c39edab"
+          },
+          "metalnessMap": {
+            "width": 128,
+            "height": 128,
+            "sha256": "1cc2de02d21d2cbcb12beeba65c4c91a1de5f88f1034f60bdce553555c39edab"
+          }
+        }
+      }
+    ]
+  }
+}

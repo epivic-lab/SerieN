@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-30",
+  "branch": "feature/turnouts",
+  "baselineCommit": "99b143c918e016f7e744217aa4c760fc9987deb9",
+  "originMainBefore": "6487f61612818c8cd46d882741cfa1ca96ac5a16",
+  "baseline": [
+    "git status --short --branch",
+    "git fetch origin refs/heads/feature/turnouts:refs/remotes/origin/feature/turnouts",
+    "git merge-base --is-ancestor 1071789 origin/feature/turnouts",
+    "git merge-base --is-ancestor 99b143c origin/feature/turnouts",
+    "npm test",
+    "npm run build"
+  ],
+  "finalChecks": [
+    "npm test",
+    "python3 -m unittest discover -s tests -p '*_test.py'",
+    "npm run build",
+    "python3 scripts/build-canonical-layout.py",
+    "git diff --exit-code -- src/canonical-layout.json docs/jmri-layout",
+    "git diff --check"
+  ],
+  "browserCommands": [
+    {
+      "suite": "tests/browser-turnout-contract.py",
+      "cwd": "/workspace/SerieN",
+      "environment": {
+        "SERIEN_URL": "http://127.0.0.1:8002/",
+        "S1_BUNDLE": "/workspace/work/s2/s2-observer.js",
+        "S1_OUTPUT": "/workspace/work/s2/contract-final"
+      },
+      "exitCode": 0
+    },
+    {
+      "suite": "tests/browser-turnout-interaction.py",
+      "cwd": "/workspace/SerieN",
+      "environment": {
+        "SERIEN_URL": "http://127.0.0.1:8002/",
+        "S2_BUNDLE": "/workspace/work/s2/s2-profile.js",
+        "S2_OUTPUT": "/workspace/work/s2/browser"
+      },
+      "exitCode": 0
+    },
+    {
+      "suite": "tests/browser-phase-five-close.py",
+      "cwd": "/workspace/work/s2/close",
+      "SERIEN_URL": "http://127.0.0.1:8002/",
+      "exitCode": 0
+    },
+    {
+      "suite": "tests/browser-phase-zero.py",
+      "cwd": "/workspace/work/s2/zero",
+      "SERIEN_URL": "http://127.0.0.1:8002/",
+      "exitCode": 0
+    },
+    {
+      "suite": "tests/browser-phase-two.py",
+      "cwd": "/workspace/work/s2/phase-two",
+      "SERIEN_URL": "http://127.0.0.1:8002/",
+      "SERIEN_CAPTURE": "0",
+      "prerequisite": "copy historic docs/phase-1/browser-result.json into temporary cwd docs/phase-1 before running",
+      "exitCode": 0
+    }
+  ],
+  "visualCapture": {
+    "script": "tests/capture-turnout-baseline.py",
+    "SERIEN_URL": "http://127.0.0.1:8002/",
+    "S2_BEFORE_BUNDLE": "/workspace/work/s2/s1-profile.js",
+    "S2_AFTER_BUNDLE": "/workspace/work/s2/s2-profile.js",
+    "S2_OUTPUT": "/workspace/work/s2/visual",
+    "readback": "same evaluate turn as render; lighting warmup 95 then 48",
+    "finalComparisonExitCode": 0,
+    "finalComparison": "8 exact marker-only WebGL pairs, rail material/map signatures identical",
+    "iterations": [
+      "full capture/timing; corrected asynchronous reference readback with S2_REFERENCE_ONLY=1",
+      "recaptured overview daylight on BOTH revisions with S2_VIEWS=overview S2_DAYS=48 after lighting warmup; combined final comparison passed all 8",
+      "initial invalid capture logs retained as visual-initial-attempt.txt and visual-reference-attempt.txt; final pass log visual-final-compare.txt"
+    ],
+    "timing": "final repeat sequential without concurrent tests; 12 RAF samples per side after 3 warmup; earlier concurrent-CPU sample not used"
+  },
+  "temporaryBundleSha256": {
+    "s1-game.js": "0aebd3b2757791db8f078c32157c3ed1b31456eca16432f19baf4369f16c7cec",
+    "s1-profile.js": "d6faedfe5dc1727dc32b7ba7073b27088c8cca6e7b825727b7a6a2f12fc07a50",
+    "s2-profile.js": "d1cc0dbf340e29d5c9376e7f3c5ee552cb027f2436958d5ee301527b3ad2b55a",
+    "s2-observer.js": "9e30f7835f4ce1554375dc402aa8145a55670877f5eb74744d83030b7e1f7410"
+  },
+  "observerRecipe": "S1 bundles were generated before edits using existing scripts/performance/build-profile.mjs and S0 build-observer.mjs. S2 temporary hooks additionally expose picking/interaction/THREE for tests. No observer/profile bundle in dist or commit.",
+  "remoteCheckpointProtocol": [
+    "verify current branch is feature/turnouts",
+    "fetch destination and require remote tip ancestor of local HEAD",
+    "commit atomically",
+    "git push origin refs/heads/feature/turnouts:refs/heads/feature/turnouts",
+    "git ls-remote --heads origin refs/heads/feature/turnouts refs/heads/main",
+    "fetch dedicated branch and verify local SHA and S0/S1/S2 ancestry",
+    "git status --short --branch; working tree must be clean"
+  ],
+  "finalRemoteProof": "actual S2 SHA and remote equality verified after committing/pushing and reported in user handoff; origin/main not a push target"
+}

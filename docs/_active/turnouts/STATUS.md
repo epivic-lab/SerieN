@@ -1,11 +1,11 @@
-# Turnouts — ACTIVE SPEC / S1 PASS / WAIT FOR S2 APPROVAL
+# Turnouts — ACTIVE SPEC / S2 PASS / WAIT FOR S3 APPROVAL
 
-Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-30. **S0 approved; S1 completed: PASS on 2026-10-30. S2 NOT STARTED; explicit approval pending.**
+Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-30. **S0/S1 approved; S2 completed: PASS on 2026-10-30. S3 NOT STARTED; explicit approval pending.**
 
 - Active text: `docs/_active/turnouts/SPEC_v3.md`. Read Shared Gates + the one authorized step; do not load unrelated docs.
 - Visual companion: `SPEC_v3.pdf`, copied from the supplied `SerieN_Scambi_Master_Specifica_v3.pdf` during S0: 27 A4 pages; SHA-256 `2face5b2eb8b02419b4da92efbfdb5d25ad0adf1dafac95721d6e46e65a9b89d` verified. Temporary active copy, to retire only at approved S7 closure.
 - Execution gate: **5D completed and published on main at commit `58bbe62bffb37f19125ddb38513502b5ca306821`** (see `docs/PERFORMANCE_AUDIT_5D.md`). Codex must STILL verify its local checkout, baseline tests/build and working tree before S0. If local 5D is missing or uncommitted: BLOCKED.
-- NEXT: await explicit user approval for S2. S0 approved and S1 exclusively authorized by the user in the next request. No S2 implementation.
+- NEXT: await explicit user approval for S3. The premature S3 request was corrected by the user; only S2 was authorized and implemented.
 - Changes to the specification require user approval; annotate deviations in the phase report rather than silently editing the reference.
 - After every S: status, evidence, commit SHA, tests, updated `PROGRESS.md`, explicit confirmation request.
 - Final S7, after user approval: preserve `docs/turnouts/FINAL_REPORT.md`, retire `SPEC_v3.md`, `SPEC_v3.pdf` (if staged), and this STATUS file. Do not rewrite older phase reports or pretend deletion removes git history.
@@ -14,8 +14,8 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 | S | Status | Commit | User next-phase approval |
 |---|---|---|---|
 | S0 | PASS / APPROVED | `107178921bbc8049d855c0221b799444231120bb` | S1 explicitly approved |
-| S1 | PASS | commit introducing `evidence/S1/REPORT.md` (see git log) | S2 pending |
-| S2 | NOT STARTED | — | pending |
+| S1 | PASS / APPROVED | `99b143c918e016f7e744217aa4c760fc9987deb9` | S2 explicitly approved |
+| S2 | PASS | commit introducing `evidence/S2/REPORT.md` (see git log) | S3 pending |
 | S3 | NOT STARTED | — | visual signoff required |
 | S4 | NOT STARTED | — | visual signoff required |
 | S5 | NOT STARTED | — | pending |
@@ -44,4 +44,14 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 - **148 Node + 9 Python + build PASS**; 7.168 entries across all 256 controller configurations; 16 actual panel/marker pairs, occupied and invalid rejection. Browser 5C 11 cases and production circuit/HUD/four-viewport responsive suite PASS.
 - **150 rails + 75 beds match full S0 fingerprints**; canonical regeneration unchanged. Eight visual pairs pixel-identical; native and GLB motion/state/transforms equal in both directions. Hot simulation/renderer/Next Switch functions unchanged. No per-frame new view work, no dependencies/backend/permission changes.
 - Security minima PASS within S1 scope. Hardware GPU, physical touch and full repeated 5D benchmarks NOT VERIFIED in S1; no claimed FPS improvement. No known blocker.
-- **STOP: await S2 approval**. Next authorized proposal only: remove artificial markers and derive invisible canonical-path hit regions, keeping shared dispatcher and invariants. S2 has not started; no glow/arrows/STOP implemented.
+- S1 subsequently approved; S0/S1 remote checkpoint verified at `99b143c` on `feature/turnouts`. S2 subsequently authorized/completed below; no S3 implementation.
+
+## S2 evidence and handoff (2026-10-30)
+
+- Branch `feature/turnouts`, clean initial baseline `99b143c`; remote checkpoint S0/S1 verified before edits. [Report](evidence/S2/REPORT.md), [interaction contract](S2_INTERACTION.md), [before/after gallery](evidence/S2/visual/GALLERY.md), [commands](evidence/S2/commands.json).
+- Removed only artificial base/stalk/bulbs and obsolete materials/feedback. Eight off-scene CPU-only canonical-path hit regions; geometry-based occlusion, stable ties, same S1 command boundary. Shared read-only identity for panel/device/keyboard; no visible 3D replacement, glow/arrows/STOP/audio.
+- **161 Node, 9 Python, build PASS**. All eight controls, twenty branches, two zooms, 16 actual panel/device pairs; protected rejection, no hover mutation, real mouse gestures and CDP touch, keyboard, scenery occlusion, locomotive selection, resource/listener teardown.
+- **150 rails + 75 beds exactly match S0**; canonical regeneration unchanged, material/texture signatures identical. Eight WebGL views equal the S1 reference with only old markers hidden. Railway/safety/5D sources unchanged. Small paired RAF sample within budgets; draw calls 367→343, GPU geometry count 364→340; no physical FPS claim.
+- 5C eleven-scenario browser suite, production circuit/HUD/responsive suite and adapted Phase 2 acceptance (five viewports, occupied hover, High day/night) PASS. GPU/physical touch/full repeated 5D benchmark NOT VERIFIED in S2. Conservative geometric occlusion for alpha-masked foliage; no known blocker for S3.
+- Permanent checkpoint protocol now in `AGENTS.md`. Resolve actual S2 SHA with `git log -1 --format=%H -- docs/_active/turnouts/evidence/S2/REPORT.md`; local SHA and verified remote SHA supplied after the final commit/push. Checkpoint only `feature/turnouts`; origin/main unchanged, no integration/deployment authorized.
+- **STOP: wait for explicit S3 authorization.** Two blue-glow variants and aesthetic signoff belong to S3; none has been implemented here.

@@ -5,10 +5,10 @@ import {createFleetCommands} from './src/fleet-commands.js';
 import {layoutFor,vehiclePositions,deriveSwitchAssistance,collectRailwayState} from './src/railway-state.js';
 import {buildStock,animateStock} from './src/rolling-stock.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
-import {createSwitchFeedback} from "./src/switch-feedback.js";
+import {createTurnoutPicking} from "./src/turnout-picking.js";
+import {mountTurnoutInteraction} from "./src/turnout-interaction.js";
 import {createTurnoutModel} from "./src/turnout-routes.js";
 import {createTurnoutCommands} from "./src/turnout-commands.js";
-import {controlMarkers} from "./src/zone-layout.js";
 import { mountTrainDeck } from "./src/train-deck.js";
 import { captureLocomotiveThumbnail } from "./src/locomotive-thumbnails.js";
 import { createSwitchTopology, traceJourney } from "./src/next-switch.js";
@@ -272,34 +272,13 @@ for (let x = 520; x <= 915; x += 78) {
   const ball = sphere(2.3, glow, scene, x, 29, 522);
   lamps.push(ball);
 }
-const signalGreen = new THREE.MeshStandardMaterial({ color: "#55b98a", emissive: "#259e58", emissiveIntensity: 0.4 });
-const signalGold = new THREE.MeshStandardMaterial({ color: "#f0bd64", emissive: "#aa7724", emissiveIntensity: 0.6 });
-const signalHover=new THREE.MeshBasicMaterial({color:"#ff8b16",toneMapped:false});
 const controlOrder=["WX-A","WX-B","Y-IN","Y-2","Y-3","Y-R1","Y-R2","Y-4"];
 const switchSpecs=controlOrder.map((id)=>({...network.controllers.find((c)=>c.id===id),on:false}));
 const turnoutModel=createTurnoutModel(network);
 const switchTopology = createSwitchTopology(network, switchSpecs);
-const switchHandles = [];
-const markerPositions=controlMarkers(network,LEGACY_BUILDINGS);
-function makeSwitch(s) {
-  const group = new THREE.Group();
-  const marker=markerPositions.find(p=>p.id===s.id);
-  group.position.set(marker.x, 0, marker.z);
-  box(12, 2, 12, mat("#34473e"), group, 0, 6, 0);
-  const bulb = sphere(6, signalGreen, group, 0, 14, 0);
-  bulb.userData.switchId = s.id;
-  group.userData.switchId = s.id;
-  const stalk = cylinder(1.1, 1.1, 9, mat("#5b6d5a"), group, 0, 9, 0);
-  stalk.userData.switchId = s.id;
-  scene.add(group);
-  s.group = group;
-  s.bulb = bulb;
-  switchHandles.push(group);
-}
-switchSpecs.forEach(makeSwitch);
-const switchFeedback=createSwitchFeedback(switchSpecs,{normal:signalGreen,diverging:signalGold,highlight:signalHover});
-window.addEventListener("blur",()=>switchFeedback.hover(null));
-function switchIndicatorState(){return {active:switchFeedback.active,states:switchSpecs.map(s=>({id:s.id,on:s.on,orange:s.bulb.material===signalHover,color:s.bulb.material.color.getHexString(),position:s.group.position.toArray()}))};}
+// Compatibility snapshot for existing railway diagnostics; no indicator meshes.
+function switchIndicatorState(){return {active:turnoutInteraction.active,source:turnoutInteraction.source,markers:0,
+  states:switchSpecs.map(s=>({id:s.id,on:s.on,position:[s.x,6.08,s.z]}))};}
 const railWheel = mat("#292c2a", 0.8), chassisRed = mat("#9a3a30");
 const locoBlack = mat("#323736", 0.62, 0.16), locoCrimson = mat("#b94334"), locoCream = mat("#d8c49a");
 function wheelSet(group, len) {
@@ -445,8 +424,6 @@ function ui() {
   if(!$("switchList").children.length){
     $("switchList").innerHTML=switchSpecs.map((s,i)=>`<div class="switchCell" data-switch-hover="${i}"><button class="sw" data-switch="${i}"><b>${s.id}</b><small>${s.name}</small></button></div>`).join("");
     $("switchList").querySelectorAll(".switchCell").forEach((cell,i)=>{
-      cell.onpointerenter=(e)=>{if(e.pointerType!=="touch")switchFeedback.hover(switchSpecs[i].id);};
-      cell.onpointerleave=()=>switchFeedback.hover(null);
       cell.querySelector("button").onclick=()=>requestToggle(switchSpecs[i].id,"panel");
     });
   }
@@ -474,7 +451,6 @@ function requestToggle(controlId,origin) {
     return result;
   }
   const s = switchSpecs.find(s => s.id === controlId);
-  s.bulb.material = s.on ? signalGold : signalGreen;
   changes++;
   log(s.name + ": " + (s.on ? "diverging" : "straight"));
   ui();
@@ -492,6 +468,7 @@ function switchHUDState() {
   document.querySelectorAll("[data-switch]").forEach((b)=>{
     const sw=switchSpecs[Number(b.dataset.switch)], safety=state.safetyByControl.get(sw.id);
     b.disabled=!safety || safety.blocked;
+    b.parentElement.tabIndex=b.disabled?0:-1;
     b.parentElement.classList.toggle("is-disabled",b.disabled);
     b.title=!safety?"Insufficient safety data":safety.blocked?safety.message:"Change switch position";
     b.parentElement.title=b.title;
@@ -587,7 +564,6 @@ function reset() {
   detached.length = 0;
   switchSpecs.forEach((s) => {
     s.on = false;
-    s.bulb.material = signalGreen;
   });
   trains.forEach((t, i) => {
     t.carObjs.forEach(removeWagon);
@@ -688,29 +664,13 @@ document.querySelectorAll(".modal").forEach((el) => el.onclick = (e) => {
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") document.querySelectorAll(".modal").forEach((e2) => e2.hidden = true);
 });
-const raycaster = new THREE.Raycaster(), pointer = new THREE.Vector2();
-let down = null;
-renderer.domElement.addEventListener("pointerdown", (e) => down = { x: e.clientX, y: e.clientY });
-renderer.domElement.addEventListener("pointerup", (e) => {
-  if (!down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 7) return;
-  const rect = renderer.domElement.getBoundingClientRect();
-  pointer.set((e.clientX - rect.left) / rect.width * 2 - 1, -(e.clientY - rect.top) / rect.height * 2 + 1);
-  raycaster.setFromCamera(pointer, camera);
-  const hit = raycaster.intersectObjects([...switchHandles, ...trains.map((t) => t.group)], true);
-  if (hit.length) {
-    let node = hit[0].object;
-    while (node && !node.userData.switchId && node.userData.trainId === void 0) node = node.parent;
-    if (node?.userData.switchId) {
-      requestToggle(node.userData.switchId,"device");
-    } else if (node?.userData.trainId !== void 0) select(node.userData.trainId);
-  }
-  down = null;
-});
 trains.forEach((t) => {
   t.group.userData.dynamic = true;
   t.carObjs.forEach((o) => o.userData.dynamic = true);
 });
 selectRing.userData.dynamic = true;
+selectRing.userData.pickThrough = true;
+routeHighlight.root.userData.pickThrough = true;
 const scenic = enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials: [roofRed, roofGray], wallMaterials: [hstyle, hbrick, hboard, cream], foundation: ballastLayer });
 const nav = navigation(camera, controls, { height: scenic.cameraHeight, buildings: scenic.buildings });
 const views = mountViewControls({ camera, controls, navigation: nav, host: $("viewControls"), onViewChange: (preset) => {
@@ -733,7 +693,7 @@ $("quality").onchange = (e) => applyQuality(quality.setMode(e.target.value));
 quality.setMode("auto");
 applyQuality(quality.profile);
 document.addEventListener("visibilitychange", () => {
-  if (document.hidden){quality.update(0, false);switchFeedback.hover(null); }
+  if (document.hidden){quality.update(0, false);turnoutInteraction.clear(); }
 });
 window.addEventListener("keydown", (e) => {
   if (e.code === "Space" && !["INPUT", "SELECT", "BUTTON"].includes(e.target.tagName)) {
@@ -762,12 +722,13 @@ window.addEventListener("pagehide", (e) => {
   views.dispose();
   nextSwitchHUD?.dispose();
   routeHighlight.dispose();
-  switchFeedback.dispose();
+  turnoutInteraction.dispose();
+  turnoutPicking.dispose();
   trainDeck?.dispose();
   nav.dispose();
   effects.dispose();
   disposeTrainAssets();
-  const gs = /* @__PURE__ */ new Set(), ms = /* @__PURE__ */ new Set([signalGreen,signalGold,signalHover]), ts = /* @__PURE__ */ new Set();
+  const gs = /* @__PURE__ */ new Set(), ms = /* @__PURE__ */ new Set(), ts = /* @__PURE__ */ new Set();
   scene.traverse((o) => {
     if (o.geometry) gs.add(o.geometry);
     for (const m of Array.isArray(o.material) ? o.material : [o.material]) if (m) {
@@ -814,7 +775,6 @@ function tick(now) {
   controls.update();
   nav.update(realDt, trains[selected].journey.locate());
   views.update();
-  switchFeedback.update(now);
   nextSwitchHUD?.refresh();
   updateRouteHighlight();
   if ($("cameraView").value !== nav.preset && nav.preset === "manual") $("cameraView").value = "manual";
@@ -832,10 +792,14 @@ function tick(now) {
 }
 resize();
 ui();
+const turnoutPicking=createTurnoutPicking(turnoutModel);
+const turnoutInteraction=mountTurnoutInteraction({canvas:renderer.domElement,camera,scene,controls,
+  picker:turnoutPicking,panel:$("switchList"),controlIds:controlOrder,requestToggle,selectTrain:select});
 $("loadMsg").hidden = true;
 animationHandle = requestAnimationFrame(tick);
 if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = {
   indicatorState:switchIndicatorState,
+  turnoutInteractionState:()=>({active:turnoutInteraction.active,source:turnoutInteraction.source,regions:turnoutPicking.root.children.length,rendered:turnoutPicking.root.parent!==null}),
   requestToggle,
   turnoutView(controlId,options={}) {
     const on=switchSpecs.find(s=>s.id===controlId)?.on;
@@ -875,7 +839,7 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   },
   setSwitches(on) {
     if(!Array.isArray(on)||on.some((id)=>!switchSpecs.some((s)=>s.id===id)))throw new RangeError("Unknown diagnostic control");
-    switchSpecs.forEach((s)=>{s.on=on.includes(s.id);s.bulb.material=s.on?signalGold:signalGreen;});
+    switchSpecs.forEach((s)=>{s.on=on.includes(s.id);});
     trains.forEach((t)=>t.journey.reconcile(layoutFor(t).tail,t.group.userData.couplers?.front?.x??48,route));ui();
   },
   railwayState() {

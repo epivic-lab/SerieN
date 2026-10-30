@@ -42,10 +42,10 @@ with sync_playwright() as pw:
       const api=__serienDiagnostics;
       window.__s1Setup=(id,on)=>{api.setSwitches(on?[id]:[]);['T12','T0','T16'].forEach((e,i)=>api.placeTrain(i,e,150));api.step(0);};
       window.__s1State=()=>{const s=api.snapshot();return {states:s.switchIndicators.states.map(c=>[c.id,c.on]),stock:s.stock.map(t=>({journey:t.journey,speed:t.speed,velocity:t.velocity,dir:t.dir,odometer:t.odometer})),occupied:api.railwayState().occupied};};
-      window.__s1Marker=id=>{const p=__serienProfile,c=api.indicatorState().states.find(c=>c.id===id),[x,,z]=c.position;
-        p.controls.enableDamping=false;p.controls.target.set(x,14,z);p.camera.position.set(x+100,274,z+150);p.controls.update();p.camera.updateMatrixWorld();
+      window.__s1Marker=id=>{const p=__serienProfile,path=api.turnoutView(id).paths[0].points,a=path[0],b=path.at(-1),x=(a.x+b.x)/2,z=(a.z+b.z)/2;
+        p.controls.enableDamping=false;p.controls.target.set(x,6.08,z);p.camera.position.set(x+100,274,z+150);p.controls.update();p.camera.updateMatrixWorld();
         p.effects.render(false);p.renderer.getContext().finish();
-        const v=p.camera.position.clone().set(x,14,z).project(p.camera),r=p.renderer.domElement.getBoundingClientRect();
+        const v=p.camera.position.clone().set(x,6.08,z).project(p.camera),r=p.renderer.domElement.getBoundingClientRect();
         return {x:r.left+(v.x+1)/2*r.width,y:r.top+(1-v.y)/2*r.height};};
     }''')
     controls = page.evaluate('__serienDiagnostics.indicatorState().states.map(c=>c.id)')

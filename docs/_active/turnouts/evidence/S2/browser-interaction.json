@@ -1,0 +1,204 @@
+{
+  "result": "PASS",
+  "hoverBidirectional": [
+    "WX-A",
+    "WX-B",
+    "Y-IN",
+    "Y-2",
+    "Y-3",
+    "Y-R1",
+    "Y-R2",
+    "Y-4"
+  ],
+  "zoomClicks": [
+    [
+      "WX-A",
+      0.8
+    ],
+    [
+      "WX-A",
+      1.6
+    ],
+    [
+      "WX-B",
+      0.8
+    ],
+    [
+      "WX-B",
+      1.6
+    ],
+    [
+      "Y-IN",
+      0.8
+    ],
+    [
+      "Y-IN",
+      1.6
+    ],
+    [
+      "Y-2",
+      0.8
+    ],
+    [
+      "Y-2",
+      1.6
+    ],
+    [
+      "Y-3",
+      0.8
+    ],
+    [
+      "Y-3",
+      1.6
+    ],
+    [
+      "Y-R1",
+      0.8
+    ],
+    [
+      "Y-R1",
+      1.6
+    ],
+    [
+      "Y-R2",
+      0.8
+    ],
+    [
+      "Y-R2",
+      1.6
+    ],
+    [
+      "Y-4",
+      0.8
+    ],
+    [
+      "Y-4",
+      1.6
+    ]
+  ],
+  "physicalBranches": [
+    [
+      "WX-A",
+      0
+    ],
+    [
+      "WX-A",
+      1
+    ],
+    [
+      "WX-A",
+      2
+    ],
+    [
+      "WX-A",
+      3
+    ],
+    [
+      "WX-B",
+      0
+    ],
+    [
+      "WX-B",
+      1
+    ],
+    [
+      "WX-B",
+      2
+    ],
+    [
+      "WX-B",
+      3
+    ],
+    [
+      "Y-IN",
+      0
+    ],
+    [
+      "Y-IN",
+      1
+    ],
+    [
+      "Y-2",
+      0
+    ],
+    [
+      "Y-2",
+      1
+    ],
+    [
+      "Y-3",
+      0
+    ],
+    [
+      "Y-3",
+      1
+    ],
+    [
+      "Y-R1",
+      0
+    ],
+    [
+      "Y-R1",
+      1
+    ],
+    [
+      "Y-R2",
+      0
+    ],
+    [
+      "Y-R2",
+      1
+    ],
+    [
+      "Y-4",
+      0
+    ],
+    [
+      "Y-4",
+      1
+    ]
+  ],
+  "rejectedMouseGestures": [
+    "drag-return",
+    "cancel",
+    "lost-capture",
+    "blur",
+    "wheel"
+  ],
+  "touchCDP": [
+    "tap",
+    "swipe-return",
+    "pinch"
+  ],
+  "keyboard": [
+    "WX-A",
+    "WX-B",
+    "Y-IN",
+    "Y-2",
+    "Y-3",
+    "Y-R1",
+    "Y-R2",
+    "Y-4"
+  ],
+  "occlusion": true,
+  "locomotiveSelection": true,
+  "resources": {
+    "before": {
+      "regions": 8,
+      "parent": true,
+      "render": {
+        "calls": 189,
+        "triangles": 423538,
+        "geometries": 339,
+        "textures": 44
+      }
+    },
+    "geometries": 8,
+    "materials": 1,
+    "remaining": 0,
+    "active": null
+  },
+  "errors": [],
+  "failedRequests": [],
+  "hardwareTouch": "NOT VERIFIED; Chromium touch emulation"
+}

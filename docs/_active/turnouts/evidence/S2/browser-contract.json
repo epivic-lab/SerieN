@@ -1,0 +1,163 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "id": "WX-A",
+      "before": false,
+      "after": true,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "WX-A:down",
+        "WX-A:up"
+      ]
+    },
+    {
+      "id": "WX-A",
+      "before": true,
+      "after": false,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "WX-A:upper",
+        "WX-A:lower"
+      ]
+    },
+    {
+      "id": "WX-B",
+      "before": false,
+      "after": true,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "WX-B:down",
+        "WX-B:up"
+      ]
+    },
+    {
+      "id": "WX-B",
+      "before": true,
+      "after": false,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "WX-B:upper",
+        "WX-B:lower"
+      ]
+    },
+    {
+      "id": "Y-IN",
+      "before": false,
+      "after": true,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO0:AC"
+      ]
+    },
+    {
+      "id": "Y-IN",
+      "before": true,
+      "after": false,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO0:AB"
+      ]
+    },
+    {
+      "id": "Y-2",
+      "before": false,
+      "after": true,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO5:AC"
+      ]
+    },
+    {
+      "id": "Y-2",
+      "before": true,
+      "after": false,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO5:AB"
+      ]
+    },
+    {
+      "id": "Y-3",
+      "before": false,
+      "after": true,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO3:AC"
+      ]
+    },
+    {
+      "id": "Y-3",
+      "before": true,
+      "after": false,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO3:AB"
+      ]
+    },
+    {
+      "id": "Y-R1",
+      "before": false,
+      "after": true,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO1:AC"
+      ]
+    },
+    {
+      "id": "Y-R1",
+      "before": true,
+      "after": false,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO1:AB"
+      ]
+    },
+    {
+      "id": "Y-R2",
+      "before": false,
+      "after": true,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO2:AC"
+      ]
+    },
+    {
+      "id": "Y-R2",
+      "before": true,
+      "after": false,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO2:AB"
+      ]
+    },
+    {
+      "id": "Y-4",
+      "before": false,
+      "after": true,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO4:AC"
+      ]
+    },
+    {
+      "id": "Y-4",
+      "before": true,
+      "after": false,
+      "samePanelDeviceState": true,
+      "activePaths": [
+        "TO4:AB"
+      ]
+    }
+  ],
+  "actualPanelAndMarkerPairs": 16,
+  "occupiedRejectedBothSurfaces": true,
+  "invalidIdsRejected": true,
+  "geometryIdenticalToS0": true,
+  "railMeshes": 150,
+  "trackBeds": 75,
+  "errors": [],
+  "failedRequests": [],
+  "browser": "154.0.8037.57",
+  "note": "Temporary observer, actual DOM and marker clicks; physical touch/GPU not certified"
+}
