@@ -54,8 +54,19 @@ Alla ripresa leggere rapporto e roadmap, verificare branch/HEAD/working tree e c
 
 La **Fase 5D è conclusa e pubblicata su main** con commit `58bbe62bffb37f19125ddb38513502b5ca306821`. La pubblicazione è descritta sopra e nei report 5D, che rimangono la fonte principale dei risultati e delle prove.
 
-**Prossima macrofase: Scambi S0–S7. Stato: S0 NON INIZIATA.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
+**Macrofase Scambi S0–S7: S0 COMPLETATA (PASS), S1 NON INIZIATA; attesa autorizzazione esplicita.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
 
 **Guardrail:** 150 rail mesh, geometria canonica e massicciata intatte; nessuna modifica alla plancia, ai permessi Supabase o al backend durante gli scambi. Il PDF illustrato v3 può essere copiato temporaneamente nella directory attiva solo se effettivamente disponibile; alla chiusura S7 vanno ritirate le specifiche attive e mantenuto `docs/turnouts/FINAL_REPORT.md`.
 
 **Sequenza dopo S7:** completamento Supabase/backend 6A.3–6A.6, Train Management 6B–6E, poi audit finale cybersecurity 5E. Le protezioni minime di sicurezza restano obbligatorie fin da subito.
+
+## Interactive Turnouts — baseline S0 (2026-10-30)
+
+Baseline acquisita sul branch aggiornato `main`, HEAD iniziale `6487f61612818c8cd46d882741cfa1ca96ac5a16` (PR #1 integrata). Verificata l'ascendenza della pubblicazione 5D `58bbe62` e del codice finale `e8d81d3`. Runtime, asset, UI, dipendenze e workflow byte-identici alla 5D pubblicata; bundle locale e live SHA-256 `147b28274fe42d72c916494e3f80c516b0bc206ec98fce505f34bee457f69653`.
+
+- **131 test Node, 9 Python, build e suite browser 5C (11 scenari): PASS**. Suite di produzione per circuiti/manovre/HUD e responsive: evidenze nel rapporto S0.
+- Grafo rigenerato senza differenze: 70 nodi, 75 archi, quattro terminali. Hash canonico `e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc`. Manifest di **150 rotaie e 75 letti** prima del batching statico.
+- Otto riferimenti giorno/notte, semplice e due WX310; camera/seed registrati. PDF originale acquisito e hash verificato. Benchmark 5D conservati con provenienza; nuovo breve campione RAF separato, non confronto equivalente. GPU e touch fisici NOT VERIFIED.
+- [Rapporto S0](docs/_active/turnouts/evidence/S0/REPORT.md), [stato](docs/_active/turnouts/STATUS.md), [baseline e verifiche](docs/_active/turnouts/evidence/S0/baseline.json). Commit S0 recuperabile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S0/REPORT.md`.
+
+**Unica prossima azione: attendere approvazione S1** (contratto puro router e dispatcher validato comune). Nessun effetto, modifica ferroviaria o backend implementato. Nessun push/deployment S0; 5E non iniziata.
