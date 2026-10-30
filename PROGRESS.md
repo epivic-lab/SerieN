@@ -54,7 +54,7 @@ Alla ripresa leggere rapporto e roadmap, verificare branch/HEAD/working tree e c
 
 La **Fase 5D è conclusa e pubblicata su main** con commit `58bbe62bffb37f19125ddb38513502b5ca306821`. La pubblicazione è descritta sopra e nei report 5D, che rimangono la fonte principale dei risultati e delle prove.
 
-**Macrofase Scambi S0–S7: S0/S1/S2 APPROVATE; S3 PASS tecnico, scelta estetica A/B PENDING; S4 NON INIZIATA.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
+**Macrofase Scambi S0–S7: S0/S1/S2/S3 APPROVATE (glow B); S4 PAUSA / CHECKPOINT INTERMEDIO; S5 NON INIZIATA.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
 
 **Guardrail:** 150 rail mesh, geometria canonica e massicciata intatte; nessuna modifica alla plancia, ai permessi Supabase o al backend durante gli scambi. Il PDF illustrato v3 può essere copiato temporaneamente nella directory attiva solo se effettivamente disponibile; alla chiusura S7 vanno ritirate le specifiche attive e mantenuto `docs/turnouts/FINAL_REPORT.md`.
 
@@ -106,3 +106,16 @@ S1 approvata nella richiesta S2. S0/S1 successivamente salvate sul checkpoint re
 - [Rapporto](docs/_active/turnouts/evidence/S3/REPORT.md), [galleria comparativa e pulsazione](docs/_active/turnouts/evidence/S3/visual/GALLERY.md), [pagina HTML](docs/_active/turnouts/evidence/S3/visual/index.html), [provenienza](docs/_active/turnouts/evidence/S3/commands.json). Commit atomico: quello che introduce il rapporto S3, risolvibile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S3/REPORT.md`. SHA e checkpoint remoto verificati nella consegna finale.
 
 **Unica prossima azione: attendere scelta visiva A/B, eventuali rifiniture e autorizzazione esplicita S4.** Nessuna approvazione estetica dedotta dai test. GPU/touch fisici e matrice completa 5D NOT VERIFIED; A più discreta alle distanze elevate e viste radenti. Protocollo remoto AGENTS già presente, invariato; solo checkpoint fast-forward `feature/turnouts`, nessun push main o deployment.
+
+
+## Interactive Turnouts — S4 checkpoint intermedio (2026-10-30)
+
+**PAUSA esplicitamente richiesta dall'utente; riprendere S4 domani. S4 NON conclusa; S5 NON iniziata.** S3 B approvata nella richiesta S4 e impostata come default senza cambiarne shader/parametri. Baseline pulita e remoto S0–S3 verificati a `fd32b43fe9438980bde798fd76773f8af2f3f5fc` su `feature/turnouts`.
+
+Salvati tre moduli per proiezione pura S1, osservazione Journey e overlay rosso: percorsi canonici, due percorsi per WX, punte bidirezionali senza approccio, orientamento dalla velocità reale quando noto, UNKNOWN conservativo, comparsa 340 ms e idle fermo. Picking, dispatcher, dinamica e sicurezza non modificati.
+
+- **PASS:** 194 Node, 9 Python, build; canonico rigenerato senza diff; 64 file bloccati e cinque funzioni applicative identiche a S3. Tutti8/due stati/giorno-notte acquisiti; B pixel-identica in sei confronti isolati; WX in versi opposti; tre frame reali di comparsa distinti.
+- **PENDENTI / NOT VERIFIED:** suite browser funzionale S4 interrotta su richiesta, regressioni S1/S2/5C/Phase0, materiali/cleanup GPU runtime, confronto prestazionale 5D/S3. Driver terminato con figli prima di qualsiasi esito di suite. Non dichiarare PASS questi controlli.
+- [RIPRESA OBBLIGATORIA](docs/_active/turnouts/evidence/S4/RESUME.md), [rapporto intermedio](docs/_active/turnouts/evidence/S4/REPORT.md), [contratto](docs/_active/turnouts/S4_ROUTES.md), [galleria](docs/_active/turnouts/evidence/S4/visual/GALLERY.md). Script/ricette salvati nel repository, metadati e screenshot definitivi conservati. Le evidenze S3 restano intatte.
+
+**Prossima azione unica:** verificare checkout/checkpoint e completare prima la suite browser S4, poi regressioni e performance come da RESUME. Solo dopo chiusura S4 e nuova approvazione umana si potrà considerare S5. Commit attuale intermedio: quello che introduce RESUME S4; SHA locale/remoto forniti nella consegna. Checkpoint solo `feature/turnouts`, origin/main invariato.

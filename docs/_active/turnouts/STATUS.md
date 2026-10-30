@@ -1,11 +1,11 @@
-# Turnouts — ACTIVE SPEC / S3 TECHNICAL PASS / WAIT FOR A/B VISUAL APPROVAL
+# Turnouts — ACTIVE SPEC / S3 B APPROVED / S4 PAUSED / INTERMEDIATE CHECKPOINT
 
-Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-30. **S0/S1/S2 approved; S3 technical PASS on 2026-10-30, A/B aesthetic approval PENDING. S4 NOT STARTED.**
+Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-30. **S0–S3 approved; S3 B officially selected by user. Only S4 authorized, now PAUSED by user before completion; S5 NOT STARTED.**
 
 - Active text: `docs/_active/turnouts/SPEC_v3.md`. Read Shared Gates + the one authorized step; do not load unrelated docs.
 - Visual companion: `SPEC_v3.pdf`, copied from the supplied `SerieN_Scambi_Master_Specifica_v3.pdf` during S0: 27 A4 pages; SHA-256 `2face5b2eb8b02419b4da92efbfdb5d25ad0adf1dafac95721d6e46e65a9b89d` verified. Temporary active copy, to retire only at approved S7 closure.
 - Execution gate: **5D completed and published on main at commit `58bbe62bffb37f19125ddb38513502b5ca306821`** (see `docs/PERFORMANCE_AUDIT_5D.md`). Codex must STILL verify its local checkout, baseline tests/build and working tree before S0. If local 5D is missing or uncommitted: BLOCKED.
-- NEXT: await explicit visual choice A/B, any refinements and authorization for S4. The latest request approved S2 and authorized only S3. No S4 work.
+- NEXT: resume S4 using [RESUME](evidence/S4/RESUME.md): functional browser first, then regressions and isolated performance. User requested an intermediate commit and pause; S4 not complete. No S5 authorization.
 - Changes to the specification require user approval; annotate deviations in the phase report rather than silently editing the reference.
 - After every S: status, evidence, commit SHA, tests, updated `PROGRESS.md`, explicit confirmation request.
 - Final S7, after user approval: preserve `docs/turnouts/FINAL_REPORT.md`, retire `SPEC_v3.md`, `SPEC_v3.pdf` (if staged), and this STATUS file. Do not rewrite older phase reports or pretend deletion removes git history.
@@ -16,8 +16,8 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 | S0 | PASS / APPROVED | `107178921bbc8049d855c0221b799444231120bb` | S1 explicitly approved |
 | S1 | PASS / APPROVED | `99b143c918e016f7e744217aa4c760fc9987deb9` | S2 explicitly approved |
 | S2 | PASS / APPROVED | `6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b` | S3 explicitly approved |
-| S3 | TECHNICAL PASS / AESTHETIC PENDING | commit introducing `evidence/S3/REPORT.md` (see git log) | A/B visual signoff and S4 authorization required |
-| S4 | NOT STARTED | — | visual signoff required |
+| S3 | PASS / APPROVED B | `fd32b43fe9438980bde798fd76773f8af2f3f5fc` | S4 explicitly authorized |
+| S4 | PAUSED / INCOMPLETE | commit introducing `evidence/S4/RESUME.md` | resume S4; visual signoff still required |
 | S5 | NOT STARTED | — | pending |
 | S6 | NOT STARTED | — | pending |
 | S7 | NOT STARTED | — | final signoff |
@@ -66,3 +66,14 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 - GPU/physical touch NOT VERIFIED; inherited conservative alpha-foliage picking. A is subtler at distance/raking views. No known technical blocker; aesthetic approval deliberately pending. No S4 arrows, STOP/audio, backend, dependencies, layout/material changes or deployment.
 - Resolve S3 SHA with `git log -1 --format=%H -- docs/_active/turnouts/evidence/S3/REPORT.md`; actual local/remote SHA, ancestry and clean tree verified in final handoff. Permanent checkpoint rule already in AGENTS and unchanged here. Only fast-forward `feature/turnouts`, origin/main untouched.
 - **STOP: explicit A/B visual approval, any refinements and S4 authorization required.**
+
+
+## S4 intermediate checkpoint — user-requested pause
+
+S3 B officially approved; current runtime uses B by default with original geometry/shader/style unchanged. [Resume instructions](evidence/S4/RESUME.md), [intermediate report](evidence/S4/REPORT.md), [contract](S4_ROUTES.md), [gallery](evidence/S4/visual/GALLERY.md).
+
+194 Node + 9 Python + build PASS. Canonical regeneration unchanged, 64 locked source/asset/dependency files and five hot functions unchanged. Capture set all8/two states/day-night PASS, B isolated renders exact to S3, WX same-path reverse examples and three reveal phases PASS. Original geometry/material construction sources intact.
+
+**NOT VERIFIED / pending:** new S4 functional browser was interrupted by explicit user request before completion; S1/S2/5C/Phase0 regressions, runtime material/GPU checks and 5D/S3 performance still to run. No complete browser suite result from the interrupted driver. No S4 aesthetic signoff, no S5, no engine STOP/audio/backend work. Resume only S4 tomorrow; tests → final S4 commit → remote checkpoint → aesthetic approval remains the final gate.
+
+Intermediate commit introducing RESUME, actual SHA/local-remote equality and clean tree in handoff. Permanent AGENTS protocol unchanged, checkpoint only feature/turnouts; main untouched. Prior historical S3 pending-signoff entries are superseded by the user's official B approval recorded here.

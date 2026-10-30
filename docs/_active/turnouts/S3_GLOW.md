@@ -1,6 +1,6 @@
 # S3 — Identità blu conformale
 
-S3 implementa due proposte estetiche, ancora da approvare. S4 non iniziata.
+S3 implementa due proposte estetiche. **B approvata ufficialmente nella richiesta S4 e consolidata come default dell’app**, senza cambiare geometria, shader o parametri B. Le evidenze comparative S3 restano storiche e immutate. La successiva rappresentazione degli itinerari è documentata in [S4](S4_ROUTES.md).
 
 `src/turnout-glow.js` dipende solo da Three e dal contratto puro S1. Legge tutti i percorsi canonici di ciascuno degli otto dispositivi, indipendentemente dallo stato impostato. Il blu identifica il dispositivo completo: non mostra l'itinerario selezionato, non concede transito e non decide la sicurezza.
 
@@ -12,7 +12,7 @@ Un unico ShaderMaterial condiviso, senza luci aggiunte, texture, bloom globale o
 
 ## Configurazione di revisione
 
-Aprire l'app con `?turnoutGlow=A` oppure `?turnoutGlow=B`. A è solo il default provvisorio per la revisione, non una scelta estetica approvata. Nessun controllo permanente aggiunto alla plancia.
+Aprire l'app con `?turnoutGlow=A` oppure `?turnoutGlow=B`. B è il default ufficiale approvato. A resta disponibile soltanto su richiesta esplicita per riprodurre i confronti storici. Nessun controllo permanente aggiunto alla plancia.
 
 | Parametro | Comune / A | B |
 |---|---|---|
