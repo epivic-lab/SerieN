@@ -1,5 +1,7 @@
 # 5D.6 — Gate funzionali e visuali completati
 
+> Checkpoint storico. La 5D è ora conclusa: stato corrente, prove finali e provenienza in [PERFORMANCE_AUDIT_5D.md](../PERFORMANCE_AUDIT_5D.md).
+
 30 ottobre 2026. Applicazione candidata del checkpoint `5ae8ee9`; nessuna modifica applicativa dopo tale checkpoint. Documentazione e harness aggiornati nei commit seguenti. Codice di produzione compilato: SHA-256 `b6d2f21c18d936330e84a6886abd001488063f811c5a84b03f9e7fd24dd778f9`.
 
 | Verifica realmente eseguita | Esito |

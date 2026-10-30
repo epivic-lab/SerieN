@@ -1,5 +1,7 @@
 # 5D.3 e 5D.4 — Simulazione e assistenza
 
+> Checkpoint storico. La 5D è ora conclusa: stato corrente, prove finali e provenienza in [PERFORMANCE_AUDIT_5D.md](../PERFORMANCE_AUDIT_5D.md).
+
 Codice candidato del checkpoint `5ae8ee9`; prove completate il 30 ottobre 2026. Questi risultati accettano l’equivalenza delle ottimizzazioni nei casi verificati, senza sostituire i gate finali frame/memoria della fase.
 
 ## Costo misurato

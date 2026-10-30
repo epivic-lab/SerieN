@@ -4,7 +4,7 @@ Fonte: [Master Plan 1.0 dell'utente](phase-5a/REQUEST.md). Baseline applicativa:
 
 ## Governance
 
-Ordine vincolante: **5A → 5B → 5C → 5D → 5E**. Ogni passaggio richiede una nuova istruzione esplicita dell'utente. 5A, 5B e 5C sono concluse; la chiusura della 5C comprende correzioni autorizzate e matrice di accettazione eseguita. Non iniziare 5D dalla lettura di questo documento.
+Ordine vincolante: **5A → 5B → 5C → 5D → 5E**. Ogni passaggio richiede una nuova istruzione esplicita dell'utente. 5A, 5B, 5C e 5D sono concluse; le rispettive chiusure comprendono correzioni e verifiche documentate. Non iniziare 5E dalla sola lettura di questo documento.
 
 Solo repository `epivic-lab/SerieN`; mai modificare `first`, `SerieN Control` o altri repository. Conservare geometria RailModeller/Kato, topologia, scambi, missioni e contratti. Niente gallerie, integrazioni con hardware o nuove funzionalità non richieste. Nessuna riscrittura generalizzata né dipendenza aggiunta senza motivazione. Nessuna scansione offensiva di servizi esterni.
 
@@ -17,7 +17,7 @@ Ogni intervento applicativo futuro deve riportare motivazione, impatto, rischio 
 | 5A — Audit tecnico e Security Assessment | Completata; risultati e limiti in ENGINEERING_AUDIT.md | Sola analisi, test non distruttivi e documentazione |
 | 5B — Refactoring architetturale | Completata; [report](REFACTORING_PHASE5B.md) | Commit di estrazione e comandi, caratterizzazione e regressioni browser |
 | 5C — Affidabilità ferroviaria | Chiusa; [rapporto conclusivo](PHASE5C_CLOSURE.md) | 125 Node, 9 Python, build e cinque suite browser verdi; gate superati nelle condizioni documentate |
-| 5D — Performance Optimization | Avviata, sospesa con checkpoint WIP | Regressioni e confronto frame/memoria finali da completare |
+| 5D — Performance Optimization | Chiusa; [rapporto](PERFORMANCE_AUDIT_5D.md) | Benefici CPU misurati; 131 Node, 9 Python, cinque browser, pixel/regressioni/frame/memoria passati; Bloom corretto; GPU fisica non certificata |
 | 5E — Cybersecurity Hardening e stabilizzazione | Non iniziata | 5D accettata e nuova istruzione; possibili urgenze documentate separatamente |
 
 ## 5A — Audit tecnico e Security Assessment
@@ -55,6 +55,8 @@ Priorità:
 Deliverable: suite operativa con casi limite, correzioni documentate e commit recuperabile. Gate: nessuna compenetrazione nota nei casi riprodotti; nessuna falsa connessione al diamante; scambi protetti anche dai corpi sganciati; zero vagoni duplicati/persi; risultati indipendenti dal frame rate nelle condizioni definite. Le dimensioni fisiche del plastico restano da certificare separatamente. Rischio alto per la simulazione: correzioni piccole, fixture prima della modifica, revert per singolo difetto.
 
 ## 5D — Performance Optimization
+
+**Conclusa il 30 ottobre 2026**, su richiesta esplicita, dal checkpoint `5ae8ee9`. Codice finale `e8d81d3`, misure, provenienza e limiti in [PERFORMANCE_AUDIT_5D.md](PERFORMANCE_AUDIT_5D.md). Nessun merge/deployment; 5E non iniziata.
 
 Obiettivo: misurare prima, poi ridurre costi CPU/GPU/allocazioni e aggiornamenti superflui, senza peggiorare sicurezza ferroviaria o qualità non concordata.
 

@@ -1,5 +1,7 @@
 # 5D.2 — Rendering e animazioni: verifica del prototipo
 
+> Checkpoint storico. La 5D è ora conclusa: stato corrente, prove finali e provenienza in [PERFORMANCE_AUDIT_5D.md](../PERFORMANCE_AUDIT_5D.md).
+
 30 ottobre 2026. Codice del checkpoint `5ae8ee9`, baseline `303525c`.
 
 Il benchmark CPU completo già salvato mostra riduzioni sul componente `renderVehicles` da 18,9% a 55,9% nei carichi in movimento B–D, mediana di tre batch. Nel carico D (quattro composizioni da cinque carri) 0,229 → 0,101 ms/chiamata. Non è un dato di frame rate né di GPU.

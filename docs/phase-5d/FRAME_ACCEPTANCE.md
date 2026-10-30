@@ -1,5 +1,7 @@
 # 5D.6 — Confronto frame completo
 
+> Checkpoint storico. La 5D è ora conclusa: stato corrente, prove finali e provenienza in [PERFORMANCE_AUDIT_5D.md](../PERFORMANCE_AUDIT_5D.md).
+
 39 acquisizioni per revisione, 744 frame ciascuna (24 Low, 16 High/Cinema per run, tre ripetizioni, tre warmup). Totale 1.488 frame misurati. Stesso browser/backend software, viewport 650×760, DPR 1, clock e rendering normali, qualità esplicita. Errori JavaScript e richieste fallite: zero su entrambe le revisioni.
 
 | Scenario/qualità/giorno/camera | Prima ms/frame | Dopo ms/frame | Variazione mediana | Variazione p95 |

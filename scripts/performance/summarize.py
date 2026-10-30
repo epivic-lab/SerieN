@@ -74,7 +74,7 @@ for label,r in [('Before',before),('After',after)]:
 print('\n| Scenario | Median change | P95 change | Repeat required |\n|---|---:|---:|---|')
 for name,v in result['frameDeltas'].items():print(f"| {name} | {v['medianChangePercent']:+.1f}% | {v['p95ChangePercent']:+.1f}% | {v['repeatRequired']} |")
 print('\nNegative frame change is faster; positive is slower. A flag requires a matched repetition, not automatic attribution to code.')
-print('\n| Revision/session | Real seconds | GC heap first → last MiB | Backing first → last MiB | Geometries | Textures |\n|---|---:|---:|---:|---|---|')
+print('\n| Revision/session | Last window end, real seconds | GC heap first → last MiB | Backing first → last MiB | Geometries | Textures |\n|---|---:|---:|---:|---|---|')
 def mib(value):return f'{value/1048576:.2f}' if value is not None else 'unavailable'
 for label,r in [('Before',before),('After',after)]:
  if not r:continue

@@ -1,5 +1,7 @@
 # Confronto di produzione Low — checkpoint parziale
 
+> Checkpoint storico. La 5D è ora conclusa: stato corrente, prove finali e provenienza in [PERFORMANCE_AUDIT_5D.md](../PERFORMANCE_AUDIT_5D.md).
+
 Tre ripetizioni × 24 frame per condizione; viewport 650×760, DPR 1, Chromium/SwiftShader. Nessun override del clock o cambio dei dettagli. Valori mediani delle tre statistiche per run. Nessuna soglia superata; non attribuire i cambiamenti di tempi software alla sola CPU ottimizzata. High/Cinema e F ancora da completare.
 
 | Scenario | Prima ms/frame | Dopo ms/frame | Mediana | P95 |
