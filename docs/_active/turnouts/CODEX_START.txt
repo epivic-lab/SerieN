@@ -1,0 +1,33 @@
+# SerieN — PROMPT DI AVVIO CODEX / MACROFASE SCAMBI S0–S7
+# Consigliato: GPT-6.1 Medium. Eseguire solo S0 in questa sessione.
+
+Lavora ESCLUSIVAMENTE sul repository epivic-lab/SerieN. Non toccare altri repository, codice Z21 o Supabase.
+
+PREREQUISITO: Codex deve aver concluso, testato, documentato e COMMlTTATO la Fase 5D. Controlla il checkout reale (git status, branch, HEAD e commit locali): non dedurlo dalla cronologia delle chat o dal messaggio "commit finale" remoto.
+
+La nuova infrastruttura è stata preparata nella PR #1:
+https://github.com/epivic-lab/SerieN/pull/1
+Branch: docs/turnouts-handoff-v3.
+Quando l'utente ha concluso 5D, le istruzioni della PR devono essere integrate nel branch su cui inizierai gli scambi. NON fare merge, rebase, pull o deploy autonomi senza autorizzazione. Se AGENTS.md, PROGRESS.md e docs/_active/turnouts/SPEC_v3.md non sono presenti nel checkout, segnala BLOCKED e chiedi di integrare la PR. Non procedere creando surrogati.
+
+LEGGI per iniziare, in quest'ordine:
+1. AGENTS.md: regole permanenti e sicurezza minima.
+2. PROGRESS.md: stato effettivo, da verificare e aggiornare.
+3. docs/_active/turnouts/STATUS.md: gate e approvazioni.
+4. docs/_active/turnouts/SPEC_v3.md: vincoli comuni, art direction e SOLTANTO microfase S0.
+Per le figure originali, usa il PDF "SerieN_Scambi_Master_Specifica_v3.pdf" se allegato. Se disponibile, durante S0 copialo temporaneamente in docs/_active/turnouts/SPEC_v3.pdf e verifica SHA-256:
+2face5b2eb8b02419b4da92efbfdb5d25ad0adf1dafac95721d6e46e65a9b89d.
+Se il PDF non è disponibile, non inventarne il contenuto: la specifica MD contiene comunque i requisiti testuali e visivi.
+
+CONTRATTO DI QUALITÀ: 150 rail mesh, grafo canonico, scambi e massicciata Kato IDENTICI. Niente stilizzazione, nuove curve o modifica locale del ballast. Glow blu pulsante CONFORMALE alla geometria reale, frecce rosse belle e aderenti ai PERCORSI REALI, WX310 corretti. Il glow non maschera le rotaie; la freccia rossa significa "itinerario impostato", non "via libera". La protezione del treno è nel motore, PRIMA di cartello STOP e campanello. Stesse dimensioni della plancia. Niente segreti, API, RLS o permission Supabase.
+
+ORA ESEGUI ESCLUSIVAMENTE S0, SE E SOLO SE 5D È VERIFICATA:
+- Registra baseline 5D con branch, commit, test e performance misurate o NOT VERIFIED.
+- Esegui npm test e npm run build (e browser smoke se disponibile).
+- Registra impronta del layout canonico e dei 150 rail mesh, matrice degli otto scambi e indicatori attuali; nessuna modifica funzionale o visiva.
+- Prepara screenshot baseline ripetibili (Home / zoom scambio singolo / WX-A / WX-B, giorno/notte) quando l'ambiente lo consente.
+- Aggiorna PROGRESS.md, STATUS.md e documentazione S0. Esegui SOLO un commit atomico per S0 e registra il vero SHA.
+- Non iniziare S1.
+
+REPORT FINALE S0 IN ITALIANO: stato PASS/BLOCKED, verifiche ed evidenze, file cambiati, differenze invarianti, sicurezza base, commit SHA e git status. Ferma l'esecuzione e chiedi testualmente: "Approvi il passaggio a S1?".
+In ogni turno successivo esegui soltanto UNA sottofase esplicitamente approvata; dopo S3 e S4 attesa OBBLIGATORIA di approvazione estetica sulle evidenze visive.
