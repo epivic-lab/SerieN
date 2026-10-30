@@ -1,10 +1,10 @@
 # SerieN — Stato e ripresa
 
-**5C chiusa. 5D sospesa su richiesta dell’utente per fine sessione; checkpoint WIP recuperabile. 5E non iniziata.**
+**5C chiusa. 5D ripresa su richiesta dell’utente: regressioni e benchmark finali in corso. 5E non iniziata.**
 
 Autorizzazione corrente: richiesta completa Fase 5D in `docs/phase-5d/REQUEST.md`. Baseline recuperabile `303525c`; working tree iniziale pulito; 125 Node, 9 Python e build iniziali passati. La 5E richiede una nuova istruzione esplicita. Nessun push, deployment o intervento su `first`, `SerieN Control` o altri repository.
 
-5D: baseline CPU e profili A–D completi; baseline frame normale parziale (26 celle); confronto CPU candidato e contatori completi in `docs/phase-5d/after/profile`. Miglioramenti CPU candidati misurati, ancora da accettare con tutte le regressioni. Tutto il codice e le prove disponibili salvati nel checkpoint WIP di fine sessione. Vedere `docs/phase-5d/RESUME.md` e `docs/PERFORMANCE_AUDIT_5D.md`. Non dichiarare chiusa la 5D; non avviare 5E.
+5D: ripresa dal checkpoint pulito `5ae8ee9`. Verificato `origin/main` a `f582b12`: due commit remoti aggiungono solo asset-library e file .DS_Store, preservati senza merge/deployment. Build, 9 Python e 130 casi Node passati; confronto esatto di 8 coppie di immagini Low/High/Cinema giorno/notte e trasformazioni/stato in moto nei due versi nativo/Kenney passato. Prove in `docs/phase-5d/regression`. Cinque suite browser, matrice frame completa e sessioni F in corso; 5D non ancora chiusa.
 
 ## Rapporti e checkpoint
 

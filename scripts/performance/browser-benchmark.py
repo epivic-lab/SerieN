@@ -1,7 +1,7 @@
 """Production RAF benchmark. Profiling uses a separate, explicitly labelled bundle.
 No clock override, asset downgrade or source mutation. Outputs outside old reports.
 """
-import argparse,json,math,platform,time,statistics
+import argparse,json,math,platform,time,statistics,datetime
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 p=argparse.ArgumentParser();p.add_argument('--base',required=True);p.add_argument('--output',required=True);p.add_argument('--profile-bundle');p.add_argument('--repeats',type=int,default=3);p.add_argument('--frames',type=int,default=24);p.add_argument('--mode',choices=['normal','profile','extended'],default='normal');p.add_argument('--session-seconds',type=int,default=120);p.add_argument('--resume',action='store_true');p.add_argument('--case-filter',default='');p.add_argument('--graphics-frames',type=int,default=16);p.add_argument('--cycles',type=int,default=12);args=p.parse_args()
@@ -27,7 +27,9 @@ with sync_playwright() as pw:
  cdp=page.context.new_cdp_session(page);cdp.send('Performance.enable');cdp.send('HeapProfiler.enable')
  env=page.evaluate('''()=>{const canvas=document.querySelector('canvas'),gl=canvas.getContext('webgl2'),ext=gl.getExtension('WEBGL_debug_renderer_info');return {userAgent:navigator.userAgent,dpr:devicePixelRatio,viewport:[innerWidth,innerHeight],gpu:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):null,gpuTimerQuery:gl.getSupportedExtensions().includes('EXT_disjoint_timer_query_webgl2'),navigation:performance.getEntriesByType('navigation')[0].toJSON(),resources:performance.getEntriesByType('resource').map(e=>({name:e.name,duration:e.duration,transfer:e.transferSize,encoded:e.encodedBodySize,decoded:e.decodedBodySize}))};}''')
  env.update(os=platform.platform(),browser=browser.version,firstReadyWallSeconds=first_ready,mode=args.mode)
- (out/'environment.json').write_text(json.dumps(env,indent=2)+'\n')
+ env_file=out/'environment.json'
+ if env_file.exists() and args.resume:env_file=out/('environment-resume-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'.json')
+ env_file.write_text(json.dumps(env,indent=2)+'\n')
  def prepare(scenario,quality='low',day=48,camera='overview'):
   return page.evaluate('''({scenario,quality,day,camera})=>{
  const $=id=>document.getElementById(id),api=__serienDiagnostics;$('reset').click();$('pause').click();
