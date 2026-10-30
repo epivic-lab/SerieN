@@ -1,0 +1,7 @@
+{
+  "renderMethodByteIdentical": true,
+  "renderMethodSha256": "2d27f36048285f92115d530b1ade9e7db8825973cf88401162da15d58c3cacfc",
+  "finalBundleSha256": "147b28274fe42d72c916494e3f80c516b0bc206ec98fce505f34bee457f69653",
+  "finalBundleBytes": 985297,
+  "sourceChange": "Only presentation pass disposal helper and Bloom ownership cleanup since measured CPU/frame candidate 5ae8ee9. Normal matrix visits Low/High before Cinema and does not leave Cinema in timed windows. Explicit cleanup retested separately."
+}

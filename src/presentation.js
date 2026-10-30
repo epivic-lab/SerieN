@@ -5,14 +5,19 @@ import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
 import { SSAOPass } from "three/addons/postprocessing/SSAOPass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 import { Vector2 } from "three";
+function disposePresentationPass(pass) {
+  pass.dispose?.();
+  pass.ssaoMaterial?.dispose();
+  pass.noiseTexture?.dispose();
+  // Three r163 leaves this Bloom material registered in WebGLShaderCache.
+  pass.materialHighPassFilter?.dispose();
+}
 function presentation(renderer, scene, camera) {
   let composer = null;
   function dispose() {
     if (!composer) return;
     for (const pass of composer.passes) {
-      pass.dispose?.();
-      pass.ssaoMaterial?.dispose();
-      pass.noiseTexture?.dispose();
+      disposePresentationPass(pass);
     }
     composer.dispose();
     composer = null;
@@ -64,5 +69,6 @@ function presentation(renderer, scene, camera) {
   };
 }
 export {
-  presentation
+  presentation,
+  disposePresentationPass
 };
