@@ -143,3 +143,17 @@ Salvati tre moduli per proiezione pura S1, osservazione Journey e overlay rosso:
 - Commit della rifinitura risolvibile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S4/refinement/REPORT.md`; SHA e checkpoint remoto verificati nella consegna. Solo feature/turnouts, main invariato, nessun merge/rebase/reset/force/deployment. Evidenze storiche preservate.
 
 **Unica prossima azione: attendere approvazione esplicita grafica/funzionale delle frecce rosse ed eventuali rifiniture. Non iniziare S5 senza nuova autorizzazione.**
+
+
+## S5 — guardia ferroviaria e arresto deterministico (2026-10-30)
+
+**S4 esplicitamente APPROVATA dall’utente (B e frecce340ms); S5 COMPLETATA tecnicamente, in attesa di revisione. S6/S7 NON iniziate.** Baseline pulita locale/remota `a3ace86c0b8e2fe792bbc8dd4499c65d8237eafc`; checkpoint precedenti preservati e main6487f61 invariato.
+
+- Guardia readonly nel core prima dell’integrazione: distanze Journey e ingombri reali, SAFE/UNSAFE/UNKNOWN distinti da GUARDED_STOP, frenata numerica5C e clamp rigido al primo limite. Scelta router e Journey invariati; accessor grezzo per UNKNOWN. Riusa area protetta30mm per consentire la correzione dei punti senza indebolire lock. Nessun routing duplicato o centro WX inventato.
+- Riprodotto il vecchio attraversamento da storia stale (+2,49mm oltre una porta incompatibile); nuovo core delta0 a150mm/s e0,01mm residui. Nativo train2: frenata a30,3708mm prima della porta Y-4 C; pannello corregge e nessun riavvio automatico. Occupazione mantiene il rischio finché persiste, ma i probe readonly non prenotano spazio contro chi può allontanarsi. Stop e STOP ALL autoritativi; dopo stop automatico completo serve riarmo esplicito.
+- **217Node,9Python/JMRI,build PASS**;40test mirati inclusi22S5,104casi porta/stato/assi,78UNKNOWNraw. Cinque suite browser finali S4/S1/S2/5C11casi/Fase0 PASS; ulteriori6casi S5 con rotabili/controlli reali, lifecycle Chromium frozen/active e rilascio occupazione PASS. Router/Journey e5funzioni calde,65file bloccati,150rotaie/75letti, canonico e paesaggio/asset intatti. B e frecce340ms byte-identici; nessun nuovo STOP/audio/S6, UI, dipendenza o backend.
+- Benchmark attivo isolato5D/S4/S5 entro soglie. S4→S5 p50 1983,20→1999,90ms,p95 2016,60→2166,50ms; CPU flotta3treni0.1000→0.1690ms/passo. Stesse353draw call/348geometrie/44texture nel benchmark. SwiftShader, campione breve: non FPS hardware o matrice completa5D. GPU/touch fisici NOT VERIFIED.
+- [Contratto](docs/_active/turnouts/S5_GUARD.md), [rapporto/matrice e limiti](docs/_active/turnouts/evidence/S5/REPORT.md), [telemetria](docs/_active/turnouts/evidence/S5/browser/browser.json), [grafico](docs/_active/turnouts/evidence/S5/plots/braking.png), [provenienza](docs/_active/turnouts/evidence/S5/commands.json). SHA del commit locale nella consegna e risolvibile dal log del rapporto.
+- **Per istruzione esplicita di questa richiesta: nessun push senza nuova autorizzazione**, prevale sul protocollo remoto generale AGENTS. Finale solo commit locale `feat(safety): prevent invalid turnout traversals`; working tree pulito e remoto S4 invariato verificati nella consegna. Nessun merge/rebase/reset/deployment.
+
+**Unica prossima azione: attendere revisione S5 e autorizzazione esplicita S6 — Cartello STOP scenico e campanello. Non iniziare S6.**

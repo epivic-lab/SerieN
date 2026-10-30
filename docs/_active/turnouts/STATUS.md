@@ -1,11 +1,11 @@
-# Turnouts — ACTIVE SPEC / S3 B APPROVED / S4 REFINEMENT TECHNICAL PASS / VISUAL APPROVAL PENDING
+# Turnouts — ACTIVE SPEC / S0–S4 APPROVED / S5 TECHNICAL PASS / S6 PENDING
 
-Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-30. **S0–S3 approved; S3 B officially selected by user. S4 verification complete: technical PASS, visual/functional approval PENDING; S5 NOT STARTED.**
+Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-30. **S0–S3 approved; S3 B officially selected by user. S4 explicitly approved in the S5 request; S5 technically complete; S6 requires explicit review/authorization.**
 
 - Active text: `docs/_active/turnouts/SPEC_v3.md`. Read Shared Gates + the one authorized step; do not load unrelated docs.
 - Visual companion: `SPEC_v3.pdf`, copied from the supplied `SerieN_Scambi_Master_Specifica_v3.pdf` during S0: 27 A4 pages; SHA-256 `2face5b2eb8b02419b4da92efbfdb5d25ad0adf1dafac95721d6e46e65a9b89d` verified. Temporary active copy, to retire only at approved S7 closure.
 - Execution gate: **5D completed and published on main at commit `58bbe62bffb37f19125ddb38513502b5ca306821`** (see `docs/PERFORMANCE_AUDIT_5D.md`). Codex must STILL verify its local checkout, baseline tests/build and working tree before S0. If local 5D is missing or uncommitted: BLOCKED.
-- NEXT: await explicit S4 visual/functional approval or refinements; [handoff](evidence/S4/RESUME.md). All previously pending S4 checks completed. No S5 authorization.
+- NEXT: await explicit S5 review and S6 authorization; do not start S6. Current user request requires a local commit and forbids push without further explicit authorization, superseding AGENTS remote protocol for this turn.
 - Changes to the specification require user approval; annotate deviations in the phase report rather than silently editing the reference.
 - After every S: status, evidence, commit SHA, tests, updated `PROGRESS.md`, explicit confirmation request.
 - Final S7, after user approval: preserve `docs/turnouts/FINAL_REPORT.md`, retire `SPEC_v3.md`, `SPEC_v3.pdf` (if staged), and this STATUS file. Do not rewrite older phase reports or pretend deletion removes git history.
@@ -17,8 +17,8 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 | S1 | PASS / APPROVED | `99b143c918e016f7e744217aa4c760fc9987deb9` | S2 explicitly approved |
 | S2 | PASS / APPROVED | `6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b` | S3 explicitly approved |
 | S3 | PASS / APPROVED B | `fd32b43fe9438980bde798fd76773f8af2f3f5fc` | S4 explicitly authorized |
-| S4 | TECHNICAL PASS / VISUAL PENDING | latest commit updating `evidence/S4/refinement/REPORT.md`, after `48a89d1` | visual/functional signoff and S5 authorization required |
-| S5 | NOT STARTED | — | pending |
+| S4 | PASS / APPROVED | `a3ace86c0b8e2fe792bbc8dd4499c65d8237eafc` | S5 explicitly authorized |
+| S5 | TECHNICAL PASS / AWAITING REVIEW | commit introducing `evidence/S5/REPORT.md` (local only) | S6 not authorized |
 | S6 | NOT STARTED | — | pending |
 | S7 | NOT STARTED | — | final signoff |
 
@@ -95,3 +95,14 @@ Fresh review from clean local/remote `48a89d1`, with requested `c54c8c1` ancesto
 **195 Node +9 Python/JMRI +build, five fresh browser regression suites and additional stress/camera review PASS.** 1,616 guarded rapid commands, all20geometry/material identities stable, no ghost routes/residual animation; GPU360/45/47 stable. Dispose20geometries/8materials/1program checked separately. Twenty-four opposite/low-angle zoomed poses idle-pixel-exact, real orbit/wheel and three resizes PASS. New73captures validate all8/bothstates/daynight, WX opposite directions,340ms reveal and six B-only comparisons pixel-exact toS3. Fresh isolated5D/S3/S4 comparison within gates; full5D/hardware GPU/touch NOT VERIFIED.
 
 [Current report](evidence/S4/refinement/REPORT.md), [new gallery](evidence/S4/refinement/visual/GALLERY.md), [camera review](evidence/S4/refinement/review/GALLERY.md), [provenance](evidence/S4/refinement/commands.json). Previous report/images preserved as history. Current final commit is the latest affecting refinement/REPORT.md; actual SHA, verified remote feature/turnouts equality and clean tree in handoff. Main unchanged; no merge/rebase/reset/force/deploy. **STOP for user's red-arrow visual/functional approval and explicit S5 authorization.**
+
+
+## S5 — technical closure, local checkpoint only
+
+S4 explicitly approved by current request, including B and340ms arrows. Baseline clean local/remotea3ace86, c54c8c1 ancestor verified. **S5 technically complete; all7gates PASS within verified scope.** Authoritative direction/coupler-aware admission before motion, existing braking plus hard clamp; SAFE/UNSAFE/UNKNOWN and GUARDED_STOP separated. No new router, fictitious WX node, rendering authority or weakened occupancy locks.
+
+**217Node+9Python+build PASS; five final browser regressions and six integrated S5 cases PASS.** Covers104port/state/Journey-axis cases,78raw unknown states, cached illegal route, high speed/tiny gap, elapsed60s, actual Chromium lifecycle500ms, correction/reverse/rearm, retained occupation and compatible departure, manual stop/STOP ALL. Old cached crossing+2.49mm prevented; native train2 stops30.3708mm before Y4C and panel correction succeeds.150original rails/75beds and canonical hash unchanged,65locked files, router/Journey bodies and5hot functions exact toS4. Approved graphic modules untouched.
+
+Active isolated5D/S4/S5 performance within gates; absolute CPU increment0.0690ms per three-train step, no GPU resource addition and same S4 render counters. Full5D/hardware GPU/touch NOT VERIFIED; numerical physics and explicit rearm limits documented. No known unresolved technical blocker.
+
+[Report and matrix](evidence/S5/REPORT.md), [contract](S5_GUARD.md), [telemetry](evidence/S5/browser/browser.json), [plot](evidence/S5/plots/braking.png), [commands](evidence/S5/commands.json), [handoff](evidence/S5/RESUME.md). Atomic local commit requested: `feat(safety): prevent invalid turnout traversals`; actual SHA and clean tree in handoff. **User explicitly forbids push without further authorization, overriding AGENTS remote gate for this turn.** Remote S4 preserved, main unchanged. No merge/rebase/reset/deploy. **STOP; S6/S7 not started.**

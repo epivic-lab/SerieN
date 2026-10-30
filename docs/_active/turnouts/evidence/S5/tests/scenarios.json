@@ -1,0 +1,4580 @@
+{
+  "note": "Observations; suite outcome is in the test runner log.",
+  "scenarios": [
+    {
+      "scenario": "Y-IN/false/C/false",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO5:AB",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 802.7532379529906,
+        "z": 127.93246987920257,
+        "angle": -2.880990261842461,
+        "edge": "TO5:AB",
+        "s": 7.5,
+        "coordinate": 7.5
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": -0.5,
+      "moved": true
+    },
+    {
+      "scenario": "Y-IN/false/C/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO5:AB",
+        "coordinate": 1.7500000000000018
+      },
+      "after": {
+        "x": 808.3090888556978,
+        "z": 126.45090963848067,
+        "angle": -2.880990261842461,
+        "edge": "TO5:AB",
+        "s": 1.7500000000000018,
+        "coordinate": 1.7500000000000018
+      },
+      "distanceRemaining": 0.7499980000000018,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-IN/false/C/true",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO5:AB",
+        "coordinate": 178.29009635512028
+      },
+      "after": {
+        "x": 802.7532379529906,
+        "z": 127.93246987920257,
+        "angle": 0.2606023917473318,
+        "edge": "TO5:AB",
+        "s": 7.5,
+        "coordinate": 178.79009635512028
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0.5,
+      "moved": true
+    },
+    {
+      "scenario": "Y-IN/false/C/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO5:AB",
+        "coordinate": 184.54009635512028
+      },
+      "after": {
+        "x": 808.3090888556978,
+        "z": 126.45090963848067,
+        "angle": 0.2606023917473318,
+        "edge": "TO5:AB",
+        "s": 1.75,
+        "coordinate": 184.54009635512028
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-IN/true/B/false",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T41",
+        "coordinate": 52
+      },
+      "after": {
+        "x": 802,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "T41",
+        "s": 52,
+        "coordinate": 52
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-IN/true/B/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T41",
+        "coordinate": 52
+      },
+      "after": {
+        "x": 802,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "T41",
+        "s": 52,
+        "coordinate": 52
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-IN/true/B/true",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T41",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 802,
+        "z": 101.00000000000009,
+        "angle": 3.141592653589793,
+        "edge": "T41",
+        "s": 52,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-IN/true/B/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T41",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 802,
+        "z": 101.00000000000009,
+        "angle": 3.141592653589793,
+        "edge": "T41",
+        "s": 52,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R1/false/C/false",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 118.3829883756171
+      },
+      "after": {
+        "x": 406.9998385003034,
+        "z": 294.96581632174707,
+        "angle": -3.1288234207161096,
+        "edge": "T43",
+        "s": 118.3829883756171,
+        "coordinate": 118.3829883756171
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R1/false/C/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 118.3829883756171
+      },
+      "after": {
+        "x": 406.9998385003034,
+        "z": 294.96581632174707,
+        "angle": -3.1288234207161096,
+        "edge": "T43",
+        "s": 118.3829883756171,
+        "coordinate": 118.3829883756171
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R1/false/C/true",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 406.9998385003034,
+        "z": 294.96581632174707,
+        "angle": 0.012769232873683402,
+        "edge": "T43",
+        "s": 118.3829883756171,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R1/false/C/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 406.9998385003034,
+        "z": 294.96581632174707,
+        "angle": 0.012769232873683402,
+        "edge": "T43",
+        "s": 118.3829883756171,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R1/true/B/false",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T40",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 403.7218109753597,
+        "z": 276.9086761941735,
+        "angle": 0.2644883825492177,
+        "edge": "T40",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R1/true/B/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T40",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 403.7218109753597,
+        "z": 276.9086761941735,
+        "angle": 0.2644883825492177,
+        "edge": "T40",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R1/true/B/true",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T40",
+        "coordinate": 240.64633518312712
+      },
+      "after": {
+        "x": 403.7218109753597,
+        "z": 276.9086761941735,
+        "angle": -2.8771042710405754,
+        "edge": "T40",
+        "s": 8,
+        "coordinate": 240.64633518312712
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R1/true/B/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T40",
+        "coordinate": 240.64633518312712
+      },
+      "after": {
+        "x": 403.7218109753597,
+        "z": 276.9086761941735,
+        "angle": -2.8771042710405754,
+        "edge": "T40",
+        "s": 8,
+        "coordinate": 240.64633518312712
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R2/false/C/false",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 814.0213583438887,
+        "z": 185.91115999273623,
+        "angle": -2.639106707717788,
+        "edge": "T44",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R2/false/C/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 814.0213583438887,
+        "z": 185.91115999273623,
+        "angle": -2.639106707717788,
+        "edge": "T44",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R2/false/C/true",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 119.76434728764636
+      },
+      "after": {
+        "x": 814.0213583438887,
+        "z": 185.91115999273623,
+        "angle": 0.5024859458720055,
+        "edge": "T44",
+        "s": 8,
+        "coordinate": 119.76434728764636
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R2/false/C/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 119.76434728764636
+      },
+      "after": {
+        "x": 814.0213583438887,
+        "z": 185.91115999273623,
+        "angle": 0.5024859458720055,
+        "edge": "T44",
+        "s": 8,
+        "coordinate": 119.76434728764636
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R2/true/B/false",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T42",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 808.2701204831901,
+        "z": 168.06130120448273,
+        "angle": -2.880990261842461,
+        "edge": "T42",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R2/true/B/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T42",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 808.2701204831901,
+        "z": 168.06130120448273,
+        "angle": -2.880990261842461,
+        "edge": "T42",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R2/true/B/true",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T42",
+        "coordinate": 178.29009635512028
+      },
+      "after": {
+        "x": 808.2701204831901,
+        "z": 168.06130120448273,
+        "angle": 0.2606023917473318,
+        "edge": "T42",
+        "s": 8,
+        "coordinate": 178.29009635512028
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-R2/true/B/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T42",
+        "coordinate": 178.29009635512028
+      },
+      "after": {
+        "x": 808.2701204831901,
+        "z": 168.06130120448273,
+        "angle": 0.2606023917473318,
+        "edge": "T42",
+        "s": 8,
+        "coordinate": 178.29009635512028
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-3/false/C/false",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 54.09669878504012
+      },
+      "after": {
+        "x": 989.27012048319,
+        "z": 120.06130120448265,
+        "angle": 0.26060239174734556,
+        "edge": "T45",
+        "s": 54.09669878504012,
+        "coordinate": 54.09669878504012
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-3/false/C/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 54.09669878504012
+      },
+      "after": {
+        "x": 989.27012048319,
+        "z": 120.06130120448265,
+        "angle": 0.26060239174734556,
+        "edge": "T45",
+        "s": 54.09669878504012,
+        "coordinate": 54.09669878504012
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-3/false/C/true",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 989.27012048319,
+        "z": 120.06130120448265,
+        "angle": -2.880990261842448,
+        "edge": "T45",
+        "s": 54.09669878504012,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-3/false/C/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 989.27012048319,
+        "z": 120.06130120448265,
+        "angle": -2.880990261842448,
+        "edge": "T45",
+        "s": 54.09669878504012,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-3/true/B/false",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO0:AB",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 988.5000000000001,
+        "z": 101.00000000000009,
+        "angle": -3.141592653589793,
+        "edge": "TO0:AB",
+        "s": 7.5,
+        "coordinate": 7.5
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": -0.5,
+      "moved": true
+    },
+    {
+      "scenario": "Y-3/true/B/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO0:AB",
+        "coordinate": 1.7500000000000018
+      },
+      "after": {
+        "x": 994.2500000000001,
+        "z": 101.00000000000009,
+        "angle": -3.141592653589793,
+        "edge": "TO0:AB",
+        "s": 1.7500000000000018,
+        "coordinate": 1.7500000000000018
+      },
+      "distanceRemaining": 0.7499980000000018,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-3/true/B/true",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO0:AB",
+        "coordinate": 178.0000000000001
+      },
+      "after": {
+        "x": 988.5000000000001,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "TO0:AB",
+        "s": 7.5,
+        "coordinate": 178.5000000000001
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0.5,
+      "moved": true
+    },
+    {
+      "scenario": "Y-3/true/B/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO0:AB",
+        "coordinate": 184.2500000000001
+      },
+      "after": {
+        "x": 994.2500000000001,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "TO0:AB",
+        "s": 1.75,
+        "coordinate": 184.2500000000001
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-4/false/C/false",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T47",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 718,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-4/false/C/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T47",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 718,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-4/false/C/true",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T47",
+        "coordinate": 240
+      },
+      "after": {
+        "x": 718,
+        "z": 254.00000000000006,
+        "angle": 3.141592653589793,
+        "edge": "T47",
+        "s": 8,
+        "coordinate": 240
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-4/false/C/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T47",
+        "coordinate": 240
+      },
+      "after": {
+        "x": 718,
+        "z": 254.00000000000006,
+        "angle": 3.141592653589793,
+        "edge": "T47",
+        "s": 8,
+        "coordinate": 240
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-4/true/B/false",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 119.76434728764636
+      },
+      "after": {
+        "x": 710.7272267957685,
+        "z": 227.92911180892054,
+        "angle": -2.8714041698191477,
+        "edge": "T44",
+        "s": 119.76434728764636,
+        "coordinate": 119.76434728764636
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-4/true/B/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 119.76434728764636
+      },
+      "after": {
+        "x": 710.7272267957685,
+        "z": 227.92911180892054,
+        "angle": -2.8714041698191477,
+        "edge": "T44",
+        "s": 119.76434728764636,
+        "coordinate": 119.76434728764636
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-4/true/B/true",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 710.7272267957685,
+        "z": 227.92911180892054,
+        "angle": 0.27018848377064547,
+        "edge": "T44",
+        "s": 119.76434728764636,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-4/true/B/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 710.7272267957685,
+        "z": 227.92911180892054,
+        "angle": 0.27018848377064547,
+        "edge": "T44",
+        "s": 119.76434728764636,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-2/false/C/false",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T49",
+        "coordinate": 117.51562216079824
+      },
+      "after": {
+        "x": 616.0008820345848,
+        "z": 150.11277533124166,
+        "angle": 0.02246915931962254,
+        "edge": "T49",
+        "s": 117.51562216079824,
+        "coordinate": 117.51562216079824
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-2/false/C/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T49",
+        "coordinate": 117.51562216079824
+      },
+      "after": {
+        "x": 616.0008820345848,
+        "z": 150.11277533124166,
+        "angle": 0.02246915931962254,
+        "edge": "T49",
+        "s": 117.51562216079824,
+        "coordinate": 117.51562216079824
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-2/false/C/true",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T49",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 616.0008820345848,
+        "z": 150.11277533124166,
+        "angle": -3.1191234942701707,
+        "edge": "T49",
+        "s": 117.51562216079824,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-2/false/C/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T49",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 616.0008820345848,
+        "z": 150.11277533124166,
+        "angle": -3.1191234942701707,
+        "edge": "T49",
+        "s": 117.51562216079824,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-2/true/B/false",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T29",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 622.2722713033038,
+        "z": 176.06934994388524,
+        "angle": -2.8799488667489808,
+        "edge": "T29",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-2/true/B/false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T29",
+        "coordinate": 8
+      },
+      "after": {
+        "x": 622.2722713033038,
+        "z": 176.06934994388524,
+        "angle": -2.8799488667489808,
+        "edge": "T29",
+        "s": 8,
+        "coordinate": 8
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-2/true/B/true",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T29",
+        "coordinate": 239.42069436488117
+      },
+      "after": {
+        "x": 622.2722713033038,
+        "z": 176.06934994388524,
+        "angle": 0.2616437868408125,
+        "edge": "T29",
+        "s": 8,
+        "coordinate": 239.42069436488117
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "Y-2/true/B/true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T29",
+        "coordinate": 239.42069436488117
+      },
+      "after": {
+        "x": 622.2722713033038,
+        "z": 176.06934994388524,
+        "angle": 0.2616437868408125,
+        "edge": "T29",
+        "s": 8,
+        "coordinate": 239.42069436488117
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-false-0",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-false-0.1",
+      "train": 0,
+      "velocityBefore": 0.1,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-false-30",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-false-150",
+      "train": 0,
+      "velocityBefore": 150,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-false-100000000",
+      "train": 0,
+      "velocityBefore": 100000000,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-motion",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-false-NaN",
+      "train": 0,
+      "velocityBefore": null,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-motion",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-false-Infinity",
+      "train": 0,
+      "velocityBefore": null,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-motion",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-true-0",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-true-0.1",
+      "train": 0,
+      "velocityBefore": 0.1,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-true-30",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-true-150",
+      "train": 0,
+      "velocityBefore": 150,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-true-100000000",
+      "train": 0,
+      "velocityBefore": 100000000,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-motion",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-true-NaN",
+      "train": 0,
+      "velocityBefore": null,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-motion",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "high-speed-cache-true-Infinity",
+      "train": 0,
+      "velocityBefore": null,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-motion",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "cache-refresh",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T5",
+        "coordinate": 213.4818200575425
+      },
+      "after": {
+        "x": 370.5009012791899,
+        "z": 68.10102024451135,
+        "angle": 0.024896930764396558,
+        "edge": "T5",
+        "s": 213.9818200575425,
+        "coordinate": 213.9818200575425
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0.5,
+      "moved": true
+    },
+    {
+      "scenario": "unknown-control",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "ambiguous",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "ambiguous",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "no-route",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "no-route",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "invalid-reservation",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-reservation",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "noncanonical-reservation",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-reservation",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "noncanonical-reservation",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-reservation",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "noncanonical-reservation",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-reservation",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "noncanonical-reservation",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-reservation",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "noncanonical-reservation",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-reservation",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "noncanonical-reservation",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-reservation",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "noncanonical-reservation",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "invalid-reservation",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "foreign-reservation",
+      "train": 0,
+      "velocityBefore": 100,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "coordinate": 180
+      },
+      "after": {
+        "x": 891.6388888888889,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 181.63888888888889,
+        "coordinate": 181.63888888888889
+      },
+      "distanceRemaining": 24.999998,
+      "risk": "UNSAFE",
+      "reason": "reserved",
+      "state": "GUARDED_STOP",
+      "delta": 1.6388888888888857,
+      "moved": true
+    },
+    {
+      "scenario": "foreign-reservation",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "coordinate": 204.999998
+      },
+      "after": {
+        "x": 914.999998,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 204.999998,
+        "coordinate": 204.999998
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "reserved",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "reservation-cleared",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "coordinate": 204.999998
+      },
+      "after": {
+        "x": 914.999998,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 204.999998,
+        "coordinate": 204.999998
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "before-align",
+      "train": 0,
+      "velocityBefore": 150,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "cleared-align",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "rearmed-align",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9650927114385,
+        "z": 229.74780501922484,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.76684728764636,
+        "coordinate": 126.76684728764636
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0.012500000000002842,
+      "moved": true
+    },
+    {
+      "scenario": "before-reverse",
+      "train": 0,
+      "velocityBefore": 150,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "cleared-reverse",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 100,
+      "dir": -1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "rearmed-reverse",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9892804986927,
+        "z": 229.74148434301492,
+        "angle": -2.8859915298582224,
+        "edge": "T44",
+        "s": 126.74184728764635,
+        "coordinate": 126.74184728764635
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": -0.012500000000002842,
+      "moved": true
+    },
+    {
+      "scenario": "terminal-T30-false",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 30.096698785040154
+      },
+      "after": {
+        "x": 241.43640059743922,
+        "z": 277.8836265073496,
+        "angle": -2.880990261842434,
+        "edge": "T30",
+        "s": 30.596698785040154,
+        "coordinate": 30.596698785040154
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0.5,
+      "moved": true
+    },
+    {
+      "scenario": "terminal-T30-false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 36.346698785040154
+      },
+      "after": {
+        "x": 235.88054969473205,
+        "z": 279.3651867480715,
+        "angle": -2.880990261842434,
+        "edge": "T30",
+        "s": 36.346698785040154,
+        "coordinate": 36.346698785040154
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "terminal",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "terminal-T30-true",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "coordinate": 32
+      },
+      "after": {
+        "x": 241.43640059743922,
+        "z": 277.8836265073496,
+        "angle": 0.2606023917473593,
+        "edge": "T30",
+        "s": 30.596698785040154,
+        "coordinate": 31.5
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": -0.5,
+      "moved": true
+    },
+    {
+      "scenario": "terminal-T30-true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "coordinate": 25.75
+      },
+      "after": {
+        "x": 235.88054969473205,
+        "z": 279.3651867480715,
+        "angle": 0.2606023917473593,
+        "edge": "T30",
+        "s": 36.346698785040154,
+        "coordinate": 25.75
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "terminal",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "terminal-T37-false",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 30.096698785040097
+      },
+      "after": {
+        "x": 185.43640059743922,
+        "z": 334.8836265073495,
+        "angle": -2.880990261842434,
+        "edge": "T37",
+        "s": 30.596698785040097,
+        "coordinate": 30.596698785040097
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0.5,
+      "moved": true
+    },
+    {
+      "scenario": "terminal-T37-false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 36.3466987850401
+      },
+      "after": {
+        "x": 179.88054969473205,
+        "z": 336.36518674807144,
+        "angle": -2.8809902618424887,
+        "edge": "T37",
+        "s": 36.3466987850401,
+        "coordinate": 36.3466987850401
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "terminal",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "terminal-T37-true",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "coordinate": 32
+      },
+      "after": {
+        "x": 185.43640059743922,
+        "z": 334.8836265073495,
+        "angle": 0.2606023917473593,
+        "edge": "T37",
+        "s": 30.596698785040097,
+        "coordinate": 31.5
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": -0.5,
+      "moved": true
+    },
+    {
+      "scenario": "terminal-T37-true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "coordinate": 25.75
+      },
+      "after": {
+        "x": 179.88054969473205,
+        "z": 336.36518674807144,
+        "angle": 0.2606023917473044,
+        "edge": "T37",
+        "s": 36.3466987850401,
+        "coordinate": 25.75
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "terminal",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "terminal-T39-false",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 30
+      },
+      "after": {
+        "x": 1236.5,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T39",
+        "s": 30.5,
+        "coordinate": 30.5
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0.5,
+      "moved": true
+    },
+    {
+      "scenario": "terminal-T39-false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 36.25
+      },
+      "after": {
+        "x": 1242.25,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T39",
+        "s": 36.25,
+        "coordinate": 36.25
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "terminal",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "terminal-T39-true",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "coordinate": 32
+      },
+      "after": {
+        "x": 1236.5,
+        "z": 254.00000000000006,
+        "angle": 3.141592653589793,
+        "edge": "T39",
+        "s": 30.5,
+        "coordinate": 31.5
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": -0.5,
+      "moved": true
+    },
+    {
+      "scenario": "terminal-T39-true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "coordinate": 25.75
+      },
+      "after": {
+        "x": 1242.25,
+        "z": 254.00000000000006,
+        "angle": 3.141592653589793,
+        "edge": "T39",
+        "s": 36.25,
+        "coordinate": 25.75
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "terminal",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "terminal-T50-false",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "coordinate": 32
+      },
+      "after": {
+        "x": 290.4364005974392,
+        "z": 222.88362650734962,
+        "angle": 0.2606023917473318,
+        "edge": "T50",
+        "s": 31.5,
+        "coordinate": 31.5
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": -0.5,
+      "moved": true
+    },
+    {
+      "scenario": "terminal-T50-false",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "coordinate": 25.75
+      },
+      "after": {
+        "x": 284.88054969473205,
+        "z": 224.36518674807152,
+        "angle": 0.2606023917473593,
+        "edge": "T50",
+        "s": 25.75,
+        "coordinate": 25.75
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "terminal",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "terminal-T50-true",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 216.38679514016044
+      },
+      "after": {
+        "x": 290.4364005974392,
+        "z": 222.88362650734962,
+        "angle": -2.880990261842461,
+        "edge": "T50",
+        "s": 31.5,
+        "coordinate": 216.88679514016044
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0.5,
+      "moved": true
+    },
+    {
+      "scenario": "terminal-T50-true",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 222.63679514016044
+      },
+      "after": {
+        "x": 284.88054969473205,
+        "z": 224.36518674807152,
+        "angle": -2.880990261842434,
+        "edge": "T50",
+        "s": 25.75,
+        "coordinate": 222.63679514016044
+      },
+      "distanceRemaining": 0.749998,
+      "risk": "UNSAFE",
+      "reason": "terminal",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "stale-history-fixed",
+      "train": 0,
+      "velocityBefore": 150,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "stale-history-before-fix",
+      "train": 0,
+      "after": {
+        "x": 701.562873101163,
+        "z": 230.39340345275428,
+        "angle": -2.874395425136206,
+        "edge": "TO4:AB",
+        "s": 184.0955597830823
+      },
+      "coordinate": 129.25434728764634,
+      "forbiddenBoundary": 126.76434728764636,
+      "illegalBeyondMm": 2.4899999999999807
+    },
+    {
+      "scenario": "occupation",
+      "train": 0,
+      "after": {
+        "x": 953.75,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 243.75000000000006
+      },
+      "velocity": 0,
+      "risk": "UNSAFE",
+      "state": "GUARDED_STOP",
+      "reason": "train",
+      "moved": false
+    },
+    {
+      "scenario": "occupation",
+      "train": 1,
+      "after": {
+        "x": 1024.25,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T46",
+        "s": 66.25000000000003
+      },
+      "velocity": 0,
+      "risk": "UNSAFE",
+      "state": "GUARDED_STOP",
+      "reason": "train",
+      "moved": false
+    },
+    {
+      "scenario": "before-new-conflict",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 180
+      },
+      "after": {
+        "x": 890.5,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 180.5,
+        "coordinate": 180.5
+      },
+      "distanceRemaining": null,
+      "risk": "SAFE",
+      "reason": "available",
+      "state": "SAFE",
+      "delta": 0.5,
+      "moved": true
+    },
+    {
+      "scenario": "new-conflict",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "coordinate": 180.5
+      },
+      "after": {
+        "x": 890.509998,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 180.509998,
+        "coordinate": 180.509998
+      },
+      "distanceRemaining": 0.009997999999990905,
+      "risk": "UNSAFE",
+      "reason": "reserved",
+      "state": "GUARDED_STOP",
+      "delta": 0.009997999999995955,
+      "moved": true
+    },
+    {
+      "scenario": "predictive-protected-stop",
+      "train": 0,
+      "velocityBefore": 150,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 46.76434728764636
+      },
+      "after": {
+        "x": 777.0757696948641,
+        "z": 204.19875150378724,
+        "angle": -2.7241277980328222,
+        "edge": "T44",
+        "s": 49.23656950986858,
+        "coordinate": 49.23656950986858
+      },
+      "distanceRemaining": 49.999998,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 2.4722222222222214,
+      "moved": true
+    },
+    {
+      "scenario": "predictive-protected-stop",
+      "train": 0,
+      "velocityBefore": 0,
+      "command": 100,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 96.76434528764636
+      },
+      "after": {
+        "x": 732.7375147839741,
+        "z": 221.26231914862512,
+        "angle": -2.8237362483868904,
+        "edge": "T44",
+        "s": 96.76434528764636,
+        "coordinate": 96.76434528764636
+      },
+      "distanceRemaining": 0,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-IN-A",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO3:AB",
+        "coordinate": 124.98999999999988
+      },
+      "after": {
+        "x": 997.0100000000001,
+        "z": 101.00000000000009,
+        "angle": -3.141592653589793,
+        "edge": "TO3:AB",
+        "s": 124.98999999999988,
+        "coordinate": 124.98999999999988
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-IN-A",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO3:AB",
+        "coordinate": 124.98999999999988
+      },
+      "after": {
+        "x": 997.0100000000001,
+        "z": 101.00000000000009,
+        "angle": -3.141592653589793,
+        "edge": "TO3:AB",
+        "s": 124.98999999999988,
+        "coordinate": 124.98999999999988
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-IN-A",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO3:AB",
+        "coordinate": 124.98999999999988
+      },
+      "after": {
+        "x": 997.0100000000001,
+        "z": 101.00000000000009,
+        "angle": -3.141592653589793,
+        "edge": "TO3:AB",
+        "s": 124.98999999999988,
+        "coordinate": 124.98999999999988
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-IN-B",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T41",
+        "coordinate": 58.99
+      },
+      "after": {
+        "x": 808.99,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "T41",
+        "s": 58.99,
+        "coordinate": 58.99
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-IN-B",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T41",
+        "coordinate": 58.99
+      },
+      "after": {
+        "x": 808.99,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "T41",
+        "s": 58.99,
+        "coordinate": 58.99
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-IN-B",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T41",
+        "coordinate": 58.99
+      },
+      "after": {
+        "x": 808.99,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "T41",
+        "s": 58.99,
+        "coordinate": 58.99
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-IN-C",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO5:AB",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 809.0241027110028,
+        "z": 126.26023927706602,
+        "angle": -2.8809902618424905,
+        "edge": "TO5:AB",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-IN-C",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO5:AB",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 809.0241027110028,
+        "z": 126.26023927706602,
+        "angle": -2.8809902618424905,
+        "edge": "TO5:AB",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-IN-C",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO5:AB",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 809.0241027110028,
+        "z": 126.26023927706602,
+        "angle": -2.8809902618424905,
+        "edge": "TO5:AB",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R1-A",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T38",
+        "coordinate": 61.08669878504004
+      },
+      "after": {
+        "x": 274.0241027110027,
+        "z": 311.26023927706603,
+        "angle": 0.2606023917473593,
+        "edge": "T38",
+        "s": 61.08669878504004,
+        "coordinate": 61.08669878504004
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R1-A",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T38",
+        "coordinate": 61.08669878504004
+      },
+      "after": {
+        "x": 274.0241027110027,
+        "z": 311.26023927706603,
+        "angle": 0.2606023917473593,
+        "edge": "T38",
+        "s": 61.08669878504004,
+        "coordinate": 61.08669878504004
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R1-A",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T38",
+        "coordinate": 61.08669878504004
+      },
+      "after": {
+        "x": 274.0241027110027,
+        "z": 311.26023927706603,
+        "angle": 0.2606023917473593,
+        "edge": "T38",
+        "s": 61.08669878504004,
+        "coordinate": 61.08669878504004
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R1-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T40",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 396.97487863563924,
+        "z": 278.73597036951446,
+        "angle": 0.2644883825492325,
+        "edge": "T40",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R1-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T40",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 396.97487863563924,
+        "z": 278.73597036951446,
+        "angle": 0.2644883825492325,
+        "edge": "T40",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R1-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T40",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 396.97487863563924,
+        "z": 278.73597036951446,
+        "angle": 0.2644883825492325,
+        "edge": "T40",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R1-C",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 125.3729883756171
+      },
+      "after": {
+        "x": 400.0099979498751,
+        "z": 295.0020350057043,
+        "angle": 3.1395777950937296,
+        "edge": "T43",
+        "s": 125.3729883756171,
+        "coordinate": 125.3729883756171
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R1-C",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 125.3729883756171
+      },
+      "after": {
+        "x": 400.0099979498751,
+        "z": 295.0020350057043,
+        "angle": 3.1395777950937296,
+        "edge": "T43",
+        "s": 125.3729883756171,
+        "coordinate": 125.3729883756171
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R1-C",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 125.3729883756171
+      },
+      "after": {
+        "x": 400.0099979498751,
+        "z": 295.0020350057043,
+        "angle": 3.1395777950937296,
+        "edge": "T43",
+        "s": 125.3729883756171,
+        "coordinate": 125.3729883756171
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R2-A",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 937.9758972889972,
+        "z": 133.7397607229341,
+        "angle": 0.26060239174730254,
+        "edge": "T45",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R2-A",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 937.9758972889972,
+        "z": 133.7397607229341,
+        "angle": 0.26060239174730254,
+        "edge": "T45",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R2-A",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 937.9758972889972,
+        "z": 133.7397607229341,
+        "angle": 0.26060239174730254,
+        "edge": "T45",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R2-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T42",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 815.0241027110029,
+        "z": 166.26023927706603,
+        "angle": -2.8809902618424905,
+        "edge": "T42",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R2-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T42",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 815.0241027110029,
+        "z": 166.26023927706603,
+        "angle": -2.8809902618424905,
+        "edge": "T42",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R2-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T42",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 815.0241027110029,
+        "z": 166.26023927706603,
+        "angle": -2.8809902618424905,
+        "edge": "T42",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R2-C",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 820.1220376261317,
+        "z": 182.4992815539066,
+        "angle": -2.6245193476787927,
+        "edge": "T44",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R2-C",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 820.1220376261317,
+        "z": 182.4992815539066,
+        "angle": -2.6245193476787927,
+        "edge": "T44",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-R2-C",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 820.1220376261317,
+        "z": 182.4992815539066,
+        "angle": -2.6245193476787927,
+        "edge": "T44",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-3-A",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T27",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 1123.0099918911658,
+        "z": 101.00404719399054,
+        "angle": -0.004007133486756722,
+        "edge": "T27",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-3-A",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T27",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 1123.0099918911658,
+        "z": 101.00404719399054,
+        "angle": -0.004007133486756722,
+        "edge": "T27",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-3-A",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T27",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 1123.0099918911658,
+        "z": 101.00404719399054,
+        "angle": -0.004007133486756722,
+        "edge": "T27",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-3-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO0:AB",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 994.9900000000001,
+        "z": 101.00000000000009,
+        "angle": -3.141592653589793,
+        "edge": "TO0:AB",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-3-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO0:AB",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 994.9900000000001,
+        "z": 101.00000000000009,
+        "angle": -3.141592653589793,
+        "edge": "TO0:AB",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-3-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "TO0:AB",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 994.9900000000001,
+        "z": 101.00000000000009,
+        "angle": -3.141592653589793,
+        "edge": "TO0:AB",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-3-C",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 61.08669878504012
+      },
+      "after": {
+        "x": 996.0241027110028,
+        "z": 118.2602392770659,
+        "angle": 0.2606023917473318,
+        "edge": "T45",
+        "s": 61.08669878504012,
+        "coordinate": 61.08669878504012
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-3-C",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 61.08669878504012
+      },
+      "after": {
+        "x": 996.0241027110028,
+        "z": 118.2602392770659,
+        "angle": 0.2606023917473318,
+        "edge": "T45",
+        "s": 61.08669878504012,
+        "coordinate": 61.08669878504012
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-3-C",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T45",
+        "coordinate": 61.08669878504012
+      },
+      "after": {
+        "x": 996.0241027110028,
+        "z": 118.2602392770659,
+        "angle": 0.2606023917473318,
+        "edge": "T45",
+        "s": 61.08669878504012,
+        "coordinate": 61.08669878504012
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-4-A",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 523.0230767288701,
+        "z": 279.25636092199284,
+        "angle": -2.8849623113520053,
+        "edge": "T43",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-4-A",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 523.0230767288701,
+        "z": 279.25636092199284,
+        "angle": -2.8849623113520053,
+        "edge": "T43",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-4-A",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T43",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 523.0230767288701,
+        "z": 279.25636092199284,
+        "angle": -2.8849623113520053,
+        "edge": "T43",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-4-B",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-4-B",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-4-B",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T44",
+        "coordinate": 126.75434728764635
+      },
+      "after": {
+        "x": 703.9771866050656,
+        "z": 229.74464468111987,
+        "angle": -2.885991529858221,
+        "edge": "T44",
+        "s": 126.75434728764635,
+        "coordinate": 126.75434728764635
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-4-C",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T47",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 711.01,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-4-C",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T47",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 711.01,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-4-C",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T47",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 711.01,
+        "z": 254.00000000000006,
+        "angle": 0,
+        "edge": "T47",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-2-A",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO0:AC",
+        "coordinate": 187.20092341063327
+      },
+      "after": {
+        "x": 810.9751931951886,
+        "z": 125.73713457424425,
+        "angle": -2.8782982830487738,
+        "edge": "TO0:AC",
+        "s": 187.20092341063327,
+        "coordinate": 187.20092341063327
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-2-A",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO0:AC",
+        "coordinate": 187.20092341063327
+      },
+      "after": {
+        "x": 810.9751931951886,
+        "z": 125.73713457424425,
+        "angle": -2.8782982830487738,
+        "edge": "TO0:AC",
+        "s": 187.20092341063327,
+        "coordinate": 187.20092341063327
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-2-A",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "TO0:AC",
+        "coordinate": 187.20092341063327
+      },
+      "after": {
+        "x": 810.9751931951886,
+        "z": 125.73713457424425,
+        "angle": -2.8782982830487738,
+        "edge": "TO0:AC",
+        "s": 187.20092341063327,
+        "coordinate": 187.20092341063327
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-2-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T29",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 629.0243742520421,
+        "z": 174.26125543041556,
+        "angle": -2.8799488667489808,
+        "edge": "T29",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-2-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T29",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 629.0243742520421,
+        "z": 174.26125543041556,
+        "angle": -2.8799488667489808,
+        "edge": "T29",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-2-B",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T29",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 629.0243742520421,
+        "z": 174.26125543041556,
+        "angle": -2.8799488667489808,
+        "edge": "T29",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-2-C",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T49",
+        "coordinate": 124.50562216079824
+      },
+      "after": {
+        "x": 622.9900310771609,
+        "z": 150.00792306123066,
+        "angle": 0.007844695539044133,
+        "edge": "T49",
+        "s": 124.50562216079824,
+        "coordinate": 124.50562216079824
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-2-C",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T49",
+        "coordinate": 124.50562216079824
+      },
+      "after": {
+        "x": 622.9900310771609,
+        "z": 150.00792306123066,
+        "angle": 0.007844695539044133,
+        "edge": "T49",
+        "s": 124.50562216079824,
+        "coordinate": 124.50562216079824
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-Y-2-C",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T49",
+        "coordinate": 124.50562216079824
+      },
+      "after": {
+        "x": 622.9900310771609,
+        "z": 150.00792306123066,
+        "angle": 0.007844695539044133,
+        "edge": "T49",
+        "s": 124.50562216079824,
+        "coordinate": 124.50562216079824
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-UL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T5",
+        "coordinate": 220.47182005754252
+      },
+      "after": {
+        "x": 376.9900063206937,
+        "z": 68.00357320040668,
+        "angle": 0.003537829564858952,
+        "edge": "T5",
+        "s": 220.47182005754252,
+        "coordinate": 220.47182005754252
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-UL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T5",
+        "coordinate": 220.47182005754252
+      },
+      "after": {
+        "x": 376.9900063206937,
+        "z": 68.00357320040668,
+        "angle": 0.003537829564858952,
+        "edge": "T5",
+        "s": 220.47182005754252,
+        "coordinate": 220.47182005754252
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-UL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T5",
+        "coordinate": 220.47182005754252
+      },
+      "after": {
+        "x": 376.9900063206937,
+        "z": 68.00357320040668,
+        "angle": 0.003537829564858952,
+        "edge": "T5",
+        "s": 220.47182005754252,
+        "coordinate": 220.47182005754252
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-UR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T33",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 689.01,
+        "z": 67.99999999999997,
+        "angle": 0,
+        "edge": "T33",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-UR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T33",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 689.01,
+        "z": 67.99999999999997,
+        "angle": 0,
+        "edge": "T33",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-UR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T33",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 689.01,
+        "z": 67.99999999999997,
+        "angle": 0,
+        "edge": "T33",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-LL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T18",
+        "coordinate": 194.55361932027338
+      },
+      "after": {
+        "x": 376.9900081088342,
+        "z": 101.00404719399054,
+        "angle": 0.004007133486756039,
+        "edge": "T18",
+        "s": 194.55361932027338,
+        "coordinate": 194.55361932027338
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-LL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T18",
+        "coordinate": 194.55361932027338
+      },
+      "after": {
+        "x": 376.9900081088342,
+        "z": 101.00404719399054,
+        "angle": 0.004007133486756039,
+        "edge": "T18",
+        "s": 194.55361932027338,
+        "coordinate": 194.55361932027338
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-LL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T18",
+        "coordinate": 194.55361932027338
+      },
+      "after": {
+        "x": 376.9900081088342,
+        "z": 101.00404719399054,
+        "angle": 0.004007133486756039,
+        "edge": "T18",
+        "s": 194.55361932027338,
+        "coordinate": 194.55361932027338
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-LR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T6",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 689.01,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "T6",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-LR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T6",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 689.01,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "T6",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-A-LR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T6",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 689.01,
+        "z": 101.00000000000009,
+        "angle": 0,
+        "edge": "T6",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-UL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T31",
+        "coordinate": 60.99
+      },
+      "after": {
+        "x": 810.99,
+        "z": 35,
+        "angle": 0,
+        "edge": "T31",
+        "s": 60.99,
+        "coordinate": 60.99
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-UL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T31",
+        "coordinate": 60.99
+      },
+      "after": {
+        "x": 810.99,
+        "z": 35,
+        "angle": 0,
+        "edge": "T31",
+        "s": 60.99,
+        "coordinate": 60.99
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-UL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T31",
+        "coordinate": 60.99
+      },
+      "after": {
+        "x": 810.99,
+        "z": 35,
+        "angle": 0,
+        "edge": "T31",
+        "s": 60.99,
+        "coordinate": 60.99
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-UR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T23",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 1123.0099949351404,
+        "z": 35.00319859201231,
+        "angle": -0.003166928078212389,
+        "edge": "T23",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-UR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T23",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 1123.0099949351404,
+        "z": 35.00319859201231,
+        "angle": -0.003166928078212389,
+        "edge": "T23",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-UR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T23",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 1123.0099949351404,
+        "z": 35.00319859201231,
+        "angle": -0.003166928078212389,
+        "edge": "T23",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-LL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T32",
+        "coordinate": 60.99
+      },
+      "after": {
+        "x": 810.99,
+        "z": 67.99999999999997,
+        "angle": 0,
+        "edge": "T32",
+        "s": 60.99,
+        "coordinate": 60.99
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-LL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T32",
+        "coordinate": 60.99
+      },
+      "after": {
+        "x": 810.99,
+        "z": 67.99999999999997,
+        "angle": 0,
+        "edge": "T32",
+        "s": 60.99,
+        "coordinate": 60.99
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-LL",
+      "train": 0,
+      "velocityBefore": 30,
+      "command": 20,
+      "dir": 1,
+      "before": {
+        "edge": "T32",
+        "coordinate": 60.99
+      },
+      "after": {
+        "x": 810.99,
+        "z": 67.99999999999997,
+        "angle": 0,
+        "edge": "T32",
+        "s": 60.99,
+        "coordinate": 60.99
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-LR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T25",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 1123.0099936793065,
+        "z": 68.0035732004066,
+        "angle": -0.0035378295648013044,
+        "edge": "T25",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-LR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T25",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 1123.0099936793065,
+        "z": 68.0035732004066,
+        "angle": -0.0035378295648013044,
+        "edge": "T25",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    },
+    {
+      "scenario": "unknown-WX-B-LR",
+      "train": 0,
+      "velocityBefore": -30,
+      "command": 20,
+      "dir": -1,
+      "before": {
+        "edge": "T25",
+        "coordinate": 1.01
+      },
+      "after": {
+        "x": 1123.0099936793065,
+        "z": 68.0035732004066,
+        "angle": -0.0035378295648013044,
+        "edge": "T25",
+        "s": 1.01,
+        "coordinate": 1.01
+      },
+      "distanceRemaining": 0,
+      "risk": "UNKNOWN",
+      "reason": "unknown-control",
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "moved": false
+    }
+  ]
+}
