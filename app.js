@@ -6,6 +6,7 @@ import {layoutFor,vehiclePositions,deriveSwitchAssistance,collectRailwayState} f
 import {buildStock,animateStock} from './src/rolling-stock.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
 import {createTurnoutPicking} from "./src/turnout-picking.js";
+import {createTurnoutGlow,GLOW_CONFIG} from "./src/turnout-glow.js";
 import {mountTurnoutInteraction} from "./src/turnout-interaction.js";
 import {createTurnoutModel} from "./src/turnout-routes.js";
 import {createTurnoutCommands} from "./src/turnout-commands.js";
@@ -723,6 +724,8 @@ window.addEventListener("pagehide", (e) => {
   nextSwitchHUD?.dispose();
   routeHighlight.dispose();
   turnoutInteraction.dispose();
+  motionPreference.removeEventListener('change',onMotionPreference);
+  turnoutGlow.dispose();
   turnoutPicking.dispose();
   trainDeck?.dispose();
   nav.dispose();
@@ -784,6 +787,7 @@ function tick(now) {
   scenic.station.update(night, dt);
   scenic.update(paused ? 0 : dt, camera);
   smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2, quality.profile === "low");
+  turnoutGlow.update(now);
   effects.render(quality.profile === "cinema");
   if (frame % 35 === 0) {
     missionUI();
@@ -793,12 +797,20 @@ function tick(now) {
 resize();
 ui();
 const turnoutPicking=createTurnoutPicking(turnoutModel);
+const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+const requestedGlow=new URLSearchParams(location.search).get('turnoutGlow');
+const turnoutGlow=createTurnoutGlow(scene,turnoutModel,{variant:requestedGlow==='B'?'B':'A',reducedMotion:motionPreference.matches});
+const onMotionPreference=()=>turnoutGlow.setReducedMotion(motionPreference.matches);
+motionPreference.addEventListener('change',onMotionPreference);
 const turnoutInteraction=mountTurnoutInteraction({canvas:renderer.domElement,camera,scene,controls,
-  picker:turnoutPicking,panel:$("switchList"),controlIds:controlOrder,requestToggle,selectTrain:select});
+  picker:turnoutPicking,panel:$("switchList"),controlIds:controlOrder,requestToggle,selectTrain:select,
+  onIdentify:id=>turnoutGlow.identify(id),touchIdentifyMs:GLOW_CONFIG.touchHoldMs});
 $("loadMsg").hidden = true;
 animationHandle = requestAnimationFrame(tick);
 if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = {
   indicatorState:switchIndicatorState,
+  turnoutGlowState:()=>turnoutGlow.snapshot,
+  setGlowVariant:variant=>turnoutGlow.setVariant(variant),
   turnoutInteractionState:()=>({active:turnoutInteraction.active,source:turnoutInteraction.source,regions:turnoutPicking.root.children.length,rendered:turnoutPicking.root.parent!==null}),
   requestToggle,
   turnoutView(controlId,options={}) {

@@ -1,0 +1,42 @@
+{
+  "views": {
+    "script": "browser-turnout-glow-views.py",
+    "exitCode": 0,
+    "cwd": "/workspace/SerieN",
+    "env": {
+      "S3_BASELINE_BUNDLE": "/workspace/work/s3/s2-profile.js",
+      "S3_BUNDLE": "/workspace/work/s3/s3-profile.js",
+      "S3_OUTPUT": "/workspace/work/s3/browser-views"
+    }
+  },
+  "contract": {
+    "script": "browser-turnout-contract.py",
+    "exitCode": 0,
+    "cwd": "/workspace/SerieN",
+    "env": {
+      "S1_BUNDLE": "/workspace/work/s3/s3-observer.js",
+      "S1_OUTPUT": "/workspace/work/s3/browser-contract"
+    }
+  },
+  "interaction": {
+    "script": "browser-turnout-interaction.py",
+    "exitCode": 0,
+    "cwd": "/workspace/SerieN",
+    "env": {
+      "S2_BUNDLE": "/workspace/work/s3/s3-profile.js",
+      "S2_OUTPUT": "/workspace/work/s3/browser-interaction"
+    }
+  },
+  "5c": {
+    "script": "browser-phase-five-close.py",
+    "exitCode": 0,
+    "cwd": "/workspace/work/s3/close",
+    "env": {}
+  },
+  "phase0": {
+    "script": "browser-phase-zero.py",
+    "exitCode": 0,
+    "cwd": "/workspace/work/s3/zero",
+    "env": {}
+  }
+}

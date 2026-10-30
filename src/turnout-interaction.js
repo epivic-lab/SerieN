@@ -1,10 +1,10 @@
 import * as THREE from 'three';
 import {isTurnoutId} from './turnout-routes.js';
 
-/** Identification is read-only. Priority is keyboard, panel, then device.
- * S3 can observe the same identity; S2 creates no visible 3D overlay. */
+/** Identification is read-only. Priority is keyboard, panel, brief touch,
+ * then device. Rendering observes this identity; it never owns route state. */
 export function createTurnoutFocus(onChange=()=>{}) {
-  const sources={keyboard:null,panel:null,device:null};let id=null,source=null;
+  const sources={keyboard:null,panel:null,touch:null,device:null};let id=null,source=null;
   const refresh=()=>{
     const next=Object.keys(sources).find(key=>sources[key]!==null)??null,nextId=next?sources[next]:null;
     if(nextId!==id||next!==source){id=nextId;source=next;onChange(id,source);}
@@ -39,17 +39,24 @@ export function createPointerIntent() {
 
 /** Own and dispose all new listeners/RAF work. Raycasting is event-driven and
  * coalesced; no new work is inserted into the railway/render frame loop. */
-export function mountTurnoutInteraction({canvas,camera,scene,controls,picker,panel,controlIds,requestToggle,selectTrain}) {
+export function mountTurnoutInteraction({canvas,camera,scene,controls,picker,panel,controlIds,requestToggle,selectTrain,onIdentify=()=>{},touchIdentifyMs=0}) {
+  if(!Number.isFinite(touchIdentifyMs)||touchIdentifyMs<0||touchIdentifyMs>5000)throw new RangeError('Invalid touch identification duration');
   const doc=canvas.ownerDocument,win=doc.defaultView,disposers=[],intent=createPointerIntent(),captured=new Set();
   const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2(),last={x:0,y:0};
   const cells=[...panel.querySelectorAll('.switchCell')];
-  let inside=false,frame=null,disposed=false,keyboardMode=false;
+  let inside=false,frame=null,disposed=false,keyboardMode=false,touchTimer=null;
   const originalCursor=canvas.style.cursor;
-  const focus=createTurnoutFocus(id=>{
+  const focus=createTurnoutFocus((id,source)=>{
     cells.forEach((cell,i)=>cell.classList.toggle('is-identified',controlIds[i]===id));
     if(id===null)delete canvas.dataset.turnoutId;else canvas.dataset.turnoutId=id;
     picker.root.userData.activeControl=id;
+    onIdentify(id,source);
   });
+  function clearTouch(){if(touchTimer!==null){win.clearTimeout(touchTimer);touchTimer=null;}focus.set('touch',null);}
+  function identifyTouch(id){
+    clearTouch();if(!touchIdentifyMs)return;
+    focus.set('touch',id);touchTimer=win.setTimeout(()=>{touchTimer=null;focus.set('touch',null);},touchIdentifyMs);
+  }
   const listen=(target,type,fn,options)=>{
     target.addEventListener(type,fn,options);
     const capture=typeof options==='boolean'?options:options?.capture??false;
@@ -73,19 +80,20 @@ export function mountTurnoutInteraction({canvas,camera,scene,controls,picker,pan
   const schedule=()=>{if(!disposed&&inside&&!intent.active&&frame===null)frame=win.requestAnimationFrame(updateHover);};
   function clear() {
     for(const id of intent.ids)if(canvas.hasPointerCapture?.(id))canvas.releasePointerCapture(id);
-    intent.clear();captured.clear();inside=false;focus.clear();canvas.style.cursor=originalCursor;
+    intent.clear();captured.clear();inside=false;clearTouch();focus.clear();canvas.style.cursor=originalCursor;
     if(frame!==null){win.cancelAnimationFrame(frame);frame=null;}
   }
   listen(doc,'keydown',e=>{if(e.key==='Tab')keyboardMode=true;});
-  listen(doc,'pointerdown',()=>{keyboardMode=false;focus.set('keyboard',null);},true);
+  listen(doc,'pointerdown',()=>{keyboardMode=false;focus.set('keyboard',null);clearTouch();},true);
   cells.forEach((cell,i)=>{
     const id=controlIds[i];
     listen(cell,'pointerenter',e=>{if(e.pointerType!=='touch'){
-      keyboardMode=false;focus.set('keyboard',null);focus.set('panel',id);
+      keyboardMode=false;clearTouch();focus.set('keyboard',null);focus.set('panel',id);
     }});
     listen(cell,'pointerleave',()=>focus.set('panel',null));
     listen(cell,'focusin',e=>{if(keyboardMode||e.target.matches(':focus-visible'))focus.set('keyboard',id);});
     listen(cell,'focusout',e=>{if(!cell.contains(e.relatedTarget))focus.set('keyboard',null);});
+    listen(cell,'click',e=>{if(e.pointerType==='touch')identifyTouch(id);});
   });
   listen(canvas,'pointerdown',e=>{
     intent.down(e);focus.set('device',null);
@@ -93,7 +101,7 @@ export function mountTurnoutInteraction({canvas,camera,scene,controls,picker,pan
   });
   listen(canvas,'pointermove',e=>{
     intent.move(e);last.x=e.clientX;last.y=e.clientY;
-    if(e.pointerType!=='touch'){keyboardMode=false;focus.set('keyboard',null);inside=true;schedule();}
+    if(e.pointerType!=='touch'){keyboardMode=false;clearTouch();focus.set('keyboard',null);inside=true;schedule();}
   });
   listen(canvas,'pointerup',e=>{
     // A capture request may be released before gotpointercapture is ever
@@ -101,7 +109,7 @@ export function mountTurnoutInteraction({canvas,camera,scene,controls,picker,pan
     const held=typeof canvas.setPointerCapture!=='function'||captured.has(e.pointerId);
     const valid=intent.up(e)&&held,hit=valid?hitAt(e.clientX,e.clientY):null;
     captured.delete(e.pointerId);
-    if(hit?.kind==='turnout')requestToggle(hit.id,'device');
+    if(hit?.kind==='turnout'){if(e.pointerType==='touch')identifyTouch(hit.id);requestToggle(hit.id,'device');}
     else if(hit?.kind==='train')selectTrain(hit.id);
     if(e.pointerType!=='touch'){last.x=e.clientX;last.y=e.clientY;schedule();}
   });
@@ -109,7 +117,7 @@ export function mountTurnoutInteraction({canvas,camera,scene,controls,picker,pan
   const cancel=e=>{intent.cancel(e.pointerId);captured.delete(e.pointerId);focus.set('device',null);};
   listen(canvas,'pointercancel',cancel);listen(canvas,'lostpointercapture',cancel);
   listen(canvas,'pointerleave',()=>{inside=false;focus.set('device',null);canvas.style.cursor=originalCursor;});
-  listen(canvas,'wheel',()=>{intent.clear();focus.set('device',null);},{passive:true});
+  listen(canvas,'wheel',()=>{intent.clear();clearTouch();focus.set('device',null);},{passive:true});
   listen(win,'blur',clear);listen(doc,'visibilitychange',()=>{if(doc.hidden)clear();});
   listen(controls,'change',schedule);
   return {get active(){return focus.active;},get source(){return focus.source;},clear,

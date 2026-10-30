@@ -69,3 +69,21 @@ test('a released pending capture cannot click; only confirmed captures can actua
   send('pointerdown');send('gotpointercapture');send('lostpointercapture');send('pointerup');assert.equal(count,1);
   mounted.dispose();
 });
+
+test('optional brief touch identity expires and its timer is cancelled on teardown; invalid duration adds no listeners',()=>{
+  const canvas=new EventTarget(),doc=new EventTarget(),controls=new EventTarget(),timers=new Map();let serial=0,requests=0;
+  const win=Object.assign(new EventTarget(),{requestAnimationFrame:()=>1,cancelAnimationFrame(){},
+    setTimeout:fn=>{timers.set(++serial,fn);return serial;},clearTimeout:id=>timers.delete(id)});
+  Object.assign(doc,{defaultView:win,hidden:false,elementFromPoint:()=>canvas});
+  Object.assign(canvas,{ownerDocument:doc,style:{cursor:''},dataset:{},setPointerCapture(){},hasPointerCapture(){return false;},
+    getBoundingClientRect:()=>({left:0,top:0,right:100,bottom:100,width:100,height:100})});
+  const config={canvas,controls,camera:new THREE.PerspectiveCamera(),scene:new THREE.Scene(),
+    picker:{root:new THREE.Group(),pick:()=>({kind:'turnout',id:'WX-A'})},panel:{querySelectorAll:()=>[]},controlIds:[],
+    requestToggle:()=>requests++,selectTrain(){},touchIdentifyMs:1100};
+  for(const n of [NaN,Infinity,-1,6000,'1100'])assert.throws(()=>mountTurnoutInteraction({...config,touchIdentifyMs:n}),RangeError);
+  const mounted=mountTurnoutInteraction(config);
+  const send=type=>{const e=new Event(type);Object.assign(e,event({pointerType:'touch'}));canvas.dispatchEvent(e);};
+  send('pointerdown');send('gotpointercapture');send('pointerup');assert.equal(mounted.active,'WX-A');assert.equal(requests,1);assert.equal(timers.size,1);
+  for(const [id,fn] of timers){timers.delete(id);fn();}assert.equal(mounted.active,null);
+  send('pointerdown');send('gotpointercapture');send('pointerup');mounted.dispose();assert.equal(timers.size,0);assert.equal(mounted.active,null);
+});

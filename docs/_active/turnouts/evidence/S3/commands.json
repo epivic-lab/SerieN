@@ -1,0 +1,61 @@
+{
+  "phase": "S3",
+  "dateUTC": "2026-10-30",
+  "repository": "epivic-lab/SerieN",
+  "branch": "feature/turnouts",
+  "initialClean": true,
+  "baselineS2": "6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b",
+  "initialRemoteMain": "6487f61612818c8cd46d882741cfa1ca96ac5a16",
+  "priorRemoteCheckpointsVerified": [
+    "107178921bbc8049d855c0221b799444231120bb",
+    "99b143c918e016f7e744217aa4c760fc9987deb9",
+    "6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b"
+  ],
+  "bundleSha256": {
+    "s2-game.js": "8e82e6457ac5245e37181e9beaaf1a488508ca9f5e29e6499669fd30ef6787be",
+    "s2-profile.js": "22d232536b8107e014945a4b0d840ee4ca31894ce078c8f450537c975c97e13a",
+    "s3-profile.js": "98ae1e6de3b2740f0c67899aad5540320813ab3bde0d54fd28efd19c5b96da4a",
+    "s3-observer.js": "00dc8eba2b23442c475b93aa951cb4e529888ffda1b3c855000523ab642018df",
+    "phase5d-game.js": "147b28274fe42d72c916494e3f80c516b0bc206ec98fce505f34bee457f69653",
+    "phase5d-profile.js": "bc87a3592a6e44f97ca8dc1d418051acb206c90c8222618eb6ff7983bf598098"
+  },
+  "productionBundleSha256": "4e69491d4388836e96d8c86f73fd0719e4561c2954d36976bcb062a85f7e4d50",
+  "commands": [
+    "npm test",
+    "npm run build",
+    "python3 -m unittest discover -s tests -p '*_test.py'",
+    "python3 scripts/build-canonical-layout.py",
+    "git diff --exit-code -- src/canonical-layout.json docs/jmri-layout",
+    "python3 /workspace/work/s3/invariants.py"
+  ],
+  "temporaryObserverRecipes": "recipes/README.md; temporary bundles never installed in dist",
+  "server": "python3 -m http.server 8003; repository root",
+  "browser": {
+    "url": "http://127.0.0.1:8003/",
+    "engine": "/usr/bin/chromium headless --no-sandbox --enable-unsafe-swiftshader",
+    "functional": "S3_BUNDLE=/workspace/work/s3/s3-profile.js S3_OUTPUT=/workspace/work/s3/browser python3 tests/browser-turnout-glow.py",
+    "capture": "S3_BASELINE_BUNDLE=/workspace/work/s3/s2-profile.js S3_BUNDLE=/workspace/work/s3/s3-profile.js S3_OUTPUT=/workspace/work/s3/visual python3 tests/capture-turnout-glow.py",
+    "performance": "S3_5D_BUNDLE=/workspace/work/s3/phase5d-profile.js S3_BUNDLE=/workspace/work/s3/s3-profile.js S3_PERF_OUTPUT=/workspace/work/s3 python3 tests/browser-turnout-glow-performance.py",
+    "regressions": "tests/regressions.json records per-suite cwd/env/exit codes; sequential, historical output directories preserved"
+  },
+  "performanceProvenance": {
+    "actual5DCommit": "58bbe62bffb37f19125ddb38513502b5ca306821",
+    "archive": "git archive 58bbe62 app.js src | tar -x -C /workspace/work/s3/phase5d-src",
+    "profileBuilder": "scripts/performance/build-profile.mjs",
+    "productionShaMatchesPublished": true,
+    "sampling": "16 RAF intervals per condition after 3 warmups, real clock, seed516, paused Low day48 fixed overview650x760 DPR1; isolated one-browser sequential run",
+    "full5DMatrix": "NOT VERIFIED in S3"
+  },
+  "commit": "S3 atomic commit introducing this file; resolve git log -1 --format=%H -- docs/_active/turnouts/evidence/S3/REPORT.md",
+  "remoteProcedure": "fast-forward only feature/turnouts, verify remote SHA and ancestry, main unchanged and working tree clean; actual SHA in handoff",
+  "physicalGPUAndTouch": "NOT VERIFIED",
+  "preCommitRemotePreflight": {
+    "remoteFeature": "6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b",
+    "remoteMain": "6487f61612818c8cd46d882741cfa1ca96ac5a16",
+    "fastForwardAncestry": "PASS",
+    "commands": [
+      "git fetch origin refs/heads/feature/turnouts:refs/remotes/origin/feature/turnouts refs/heads/main:refs/remotes/origin/main",
+      "git merge-base --is-ancestor refs/remotes/origin/feature/turnouts HEAD"
+    ]
+  }
+}
