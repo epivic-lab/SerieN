@@ -42,6 +42,8 @@ def complete(root,r):
   assert sorted(x['repeat'] for x in matches)==[0,1,2],(root,scenario,quality,day,camera)
   assert all(x['frame']['n']==(24 if quality=='low' else 16) for x in matches)
   assert all(x['before']['quality']['profile']==quality for x in matches)
+  assert all(x['before']['render']['calls']>0 and x['after']['render']['calls']>0 and x['after']['render']['geometries']>0 and x['after']['render']['textures']>0 for x in matches)
+  assert all(len(x['raw']['frames'])==x['frame']['n'] for x in matches)
  assert set(r['components'])==set('ABCD') and all(len(x['models']['perCallSamplesMs'])==3 for x in r['components'].values())
  assert len(r['extended'])==3 and all(x['wallSeconds']>=120 for x in r['extended'].values())
  assert len(r['cycles'])==3 and all(len(x)==6 for x in r['cycles'].values())
