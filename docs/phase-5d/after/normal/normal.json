@@ -12003,5 +12003,7949 @@
       "embedderHeapUsedSize": 8693864,
       "backingStorageSize": 96771042
     }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 10,
+    "camera": "overview",
+    "repeat": 2,
+    "wallSeconds": 54.052993698001956,
+    "frame": {
+      "n": 16,
+      "meanMs": 3031.131250000006,
+      "medianMs": 2516.649999999907,
+      "p95Ms": 6049.699999999953,
+      "maxMs": 6049.699999999953,
+      "effectiveFps": 0.3299098315191723,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 13.800000001402463,
+      "medianMs": 11.599999994039536,
+      "p95Ms": 29.299999997019768,
+      "maxMs": 29.299999997019768,
+      "effectiveFps": 72.4637681085777,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        4883.200000000186,
+        6049.699999999953,
+        3933.1999999999534,
+        3433.100000000093,
+        2483.2999999998137,
+        2383.3000000000466,
+        2333.1999999999534,
+        2816.5,
+        2916.600000000093,
+        2683.1999999999534,
+        2483.1999999999534,
+        2550,
+        2416.5,
+        2399.9000000001397,
+        2366.5999999998603,
+        2366.600000000093
+      ],
+      "ticks": [
+        29.299999997019768,
+        20.899999991059303,
+        17.600000008940697,
+        12.300000011920929,
+        9.200000002980232,
+        11.5,
+        8.5,
+        10.399999991059303,
+        11.599999994039536,
+        12.300000011920929,
+        9.599999994039536,
+        10.600000008940697,
+        10.599999994039536,
+        19.200000002980232,
+        16.600000008940697,
+        15.299999997019768,
+        9.100000008940697
+      ],
+      "longTasks": [
+        {
+          "start": 1195109.5,
+          "duration": 5524
+        },
+        {
+          "start": 1200640.400000006,
+          "duration": 4873
+        },
+        {
+          "start": 1205515,
+          "duration": 6055
+        },
+        {
+          "start": 1211572.400000006,
+          "duration": 3923
+        },
+        {
+          "start": 1215496.5,
+          "duration": 3438
+        },
+        {
+          "start": 1218936.100000009,
+          "duration": 2484
+        },
+        {
+          "start": 1221420.300000012,
+          "duration": 2368
+        },
+        {
+          "start": 1223789.5,
+          "duration": 2332
+        },
+        {
+          "start": 1226122.300000012,
+          "duration": 2820
+        },
+        {
+          "start": 1228942.800000012,
+          "duration": 2913
+        },
+        {
+          "start": 1231857.900000006,
+          "duration": 2693
+        },
+        {
+          "start": 1234551.5,
+          "duration": 2479
+        },
+        {
+          "start": 1237031.900000006,
+          "duration": 2539
+        },
+        {
+          "start": 1239572,
+          "duration": 2421
+        },
+        {
+          "start": 1241993.600000009,
+          "duration": 2397
+        },
+        {
+          "start": 1244391,
+          "duration": 2365
+        },
+        {
+          "start": 1246756.700000003,
+          "duration": 2366
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 386,
+        "triangles": 581872,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 386,
+        "triangles": 581872,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 73913.675372
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 820
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1339
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 23047
+        },
+        {
+          "name": "LayoutCount",
+          "value": 601
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 703
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.454856
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.420034
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.336417
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 13.940034
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1164.933105
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1149.781764
+        },
+        {
+          "name": "ThreadTime",
+          "value": 11.575519
+        },
+        {
+          "name": "ProcessTime",
+          "value": 49.21
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 29887140
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 33349632
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 73969.980492
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 838
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1375
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 23047
+        },
+        {
+          "name": "LayoutCount",
+          "value": 619
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 721
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.471117
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.425762
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.34336
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 14.188657
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1221.236064
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1205.807168
+        },
+        {
+          "name": "ThreadTime",
+          "value": 11.902243
+        },
+        {
+          "name": "ProcessTime",
+          "value": 50.61
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 30834244
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 33873920
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 29949324,
+      "totalSize": 33873920,
+      "embedderHeapUsedSize": 11462840,
+      "backingStorageSize": 98130080
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 10,
+    "camera": "follow",
+    "repeat": 0,
+    "wallSeconds": 41.613692411003285,
+    "frame": {
+      "n": 16,
+      "meanMs": 2481.143750000003,
+      "medianMs": 2491.5500000000466,
+      "p95Ms": 3683.1999999999534,
+      "maxMs": 3683.1999999999534,
+      "effectiveFps": 0.40303992866193217,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 14.864705884281326,
+      "medianMs": 12.199999988079071,
+      "p95Ms": 31.5,
+      "maxMs": 31.5,
+      "effectiveFps": 67.2734467661045,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        1583.3000000000466,
+        1449.8999999999069,
+        1733.1999999999534,
+        1783.3000000000466,
+        1950,
+        2949.8000000000466,
+        3683.1999999999534,
+        2866.5,
+        2616.600000000093,
+        3399.899999999907,
+        2916.5,
+        3033.3000000000466,
+        2766.5,
+        2366.5,
+        2233.3000000000466,
+        2366.5
+      ],
+      "ticks": [
+        7.0999999940395355,
+        10.900000005960464,
+        9,
+        6.800000011920929,
+        26,
+        12,
+        17.900000005960464,
+        31.5,
+        12.900000005960464,
+        7.600000008940697,
+        12.299999997019768,
+        26.600000008940697,
+        9.799999997019768,
+        12.400000005960464,
+        10.799999997019768,
+        26.900000005960464,
+        12.199999988079071
+      ],
+      "longTasks": [
+        {
+          "start": 1266929,
+          "duration": 1582
+        },
+        {
+          "start": 1268512,
+          "duration": 1446
+        },
+        {
+          "start": 1269959.200000003,
+          "duration": 1741
+        },
+        {
+          "start": 1271701.300000012,
+          "duration": 1778
+        },
+        {
+          "start": 1273481.600000009,
+          "duration": 1938
+        },
+        {
+          "start": 1275420.600000009,
+          "duration": 2955
+        },
+        {
+          "start": 1278377.600000009,
+          "duration": 3684
+        },
+        {
+          "start": 1282062.100000009,
+          "duration": 2868
+        },
+        {
+          "start": 1284930.800000012,
+          "duration": 2615
+        },
+        {
+          "start": 1287546.400000006,
+          "duration": 3404
+        },
+        {
+          "start": 1290952.200000003,
+          "duration": 2914
+        },
+        {
+          "start": 1293866.5,
+          "duration": 3033
+        },
+        {
+          "start": 1296900.400000006,
+          "duration": 2761
+        },
+        {
+          "start": 1299662.300000012,
+          "duration": 2370
+        },
+        {
+          "start": 1302033.400000006,
+          "duration": 2227
+        },
+        {
+          "start": 1304261.300000012,
+          "duration": 2368
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 113,
+        "triangles": 472753,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          1256.2323225429323,
+          304.27892290264447,
+          461.2798681279448
+        ],
+        "target": [
+          944.008807555462,
+          16.197791958335888,
+          578.2610852361614
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            5.294417966786445,
+            3.5037693667158045,
+            0.9982938751389263
+          ],
+          [
+            1.0596436746933278,
+            4.1186155672385185,
+            0.9986188844906675
+          ],
+          [
+            5.415616239990399,
+            3.8082396136380527,
+            0.9982477743393648
+          ],
+          [
+            1.0799111062109537,
+            4.384768723863327,
+            0.9985865823525542
+          ],
+          [
+            -24.97289319392172,
+            52.48730213804176,
+            1.0241867020254822
+          ],
+          [
+            -17.80389534090613,
+            -27.927269620169216,
+            0.9816793435747924
+          ],
+          [
+            -19.735817292225942,
+            39.425699968882206,
+            1.0191790348148295
+          ],
+          [
+            -22.4516342491848,
+            -32.66028996629079,
+            0.9768163672659437
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 128,
+        "triangles": 512874,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          909.818234453346,
+          288.5000039518571,
+          347.57618643545754
+        ],
+        "target": [
+          657.323066140358,
+          16.499999924311503,
+          566.4089775903163
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            9.343991315560796,
+            0.6238245990975234,
+            0.9967423853992713
+          ],
+          [
+            2.1297528055279757,
+            3.128493309414071,
+            0.998149307853052
+          ],
+          [
+            9.7157054730983,
+            1.0671088756818146,
+            0.996600551721594
+          ],
+          [
+            2.180251124781864,
+            3.4520937248393087,
+            0.9980981295295389
+          ],
+          [
+            2.2383909991444564,
+            17.77010001978687,
+            1.006373790857691
+          ],
+          [
+            -111.46468290366273,
+            -92.09445405230045,
+            0.9446606759207905
+          ],
+          [
+            2.101590925750966,
+            16.041185227382535,
+            1.0060030619499938
+          ],
+          [
+            -276.6816864024746,
+            -213.00816254581824,
+            0.8621785759074084
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 221.8125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 273.9375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 321.0625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 73983.591161
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 586
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1023
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 24957
+        },
+        {
+          "name": "LayoutCount",
+          "value": 634
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 736
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.484021
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.432758
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.355898
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 14.381369
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1234.845965
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1219.191919
+        },
+        {
+          "name": "ThreadTime",
+          "value": 12.14639
+        },
+        {
+          "name": "ProcessTime",
+          "value": 51.43
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 32050180
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 42262528
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74027.580287
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 604
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1061
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 24957
+        },
+        {
+          "name": "LayoutCount",
+          "value": 652
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 754
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.497108
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.438594
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.360131
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 14.652077
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1278.83262
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1262.88471
+        },
+        {
+          "name": "ThreadTime",
+          "value": 12.486641
+        },
+        {
+          "name": "ProcessTime",
+          "value": 52.48
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 31268580
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 40165376
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 31331792,
+      "totalSize": 40165376,
+      "embedderHeapUsedSize": 6256440,
+      "backingStorageSize": 96815826
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 10,
+    "camera": "follow",
+    "repeat": 1,
+    "wallSeconds": 33.96289094100939,
+    "frame": {
+      "n": 16,
+      "meanMs": 2039.5,
+      "medianMs": 2124.9000000000233,
+      "p95Ms": 2733.1999999999534,
+      "maxMs": 2733.1999999999534,
+      "effectiveFps": 0.49031625398381956,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 12.62352941229063,
+      "medianMs": 11.200000002980232,
+      "p95Ms": 23.400000005960464,
+      "maxMs": 23.400000005960464,
+      "effectiveFps": 79.21714817936507,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        1333.3000000000466,
+        1349.9000000001397,
+        1566.5999999998603,
+        1483.3000000000466,
+        1533.1999999999534,
+        1683.3000000000466,
+        1783.3999999999069,
+        2049.8000000000466,
+        2200,
+        2349.9000000001397,
+        2733.1999999999534,
+        2599.899999999907,
+        2599.9000000001397,
+        2533.1999999999534,
+        2449.899999999907,
+        2383.1999999999534
+      ],
+      "ticks": [
+        10.299999997019768,
+        8.400000005960464,
+        7.0999999940395355,
+        8.399999991059303,
+        10.300000011920929,
+        10.199999988079071,
+        11.599999994039536,
+        11.900000005960464,
+        9.300000011920929,
+        11.199999988079071,
+        23.400000005960464,
+        16.299999997019768,
+        13.899999991059303,
+        11.200000002980232,
+        21.400000005960464,
+        15.600000008940697,
+        14.100000008940697
+      ],
+      "longTasks": [
+        {
+          "start": 1320050.5,
+          "duration": 1305
+        },
+        {
+          "start": 1321357.700000003,
+          "duration": 1341
+        },
+        {
+          "start": 1322699.900000006,
+          "duration": 1336
+        },
+        {
+          "start": 1324036.200000003,
+          "duration": 1577
+        },
+        {
+          "start": 1325613.600000009,
+          "duration": 1480
+        },
+        {
+          "start": 1327093.900000006,
+          "duration": 1525
+        },
+        {
+          "start": 1328619.800000012,
+          "duration": 1693
+        },
+        {
+          "start": 1330313.300000012,
+          "duration": 1786
+        },
+        {
+          "start": 1332100.900000006,
+          "duration": 2044
+        },
+        {
+          "start": 1334145.900000006,
+          "duration": 2195
+        },
+        {
+          "start": 1336341.700000003,
+          "duration": 2352
+        },
+        {
+          "start": 1338697.5,
+          "duration": 2721
+        },
+        {
+          "start": 1341419.400000006,
+          "duration": 2613
+        },
+        {
+          "start": 1344033.200000003,
+          "duration": 2592
+        },
+        {
+          "start": 1346626.300000012,
+          "duration": 2531
+        },
+        {
+          "start": 1349160.300000012,
+          "duration": 2450
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 114,
+        "triangles": 473052,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          1241.5601896034557,
+          288.5000000146134,
+          436.3837273845915
+        ],
+        "target": [
+          940.1700748284561,
+          16.499999999720114,
+          579.9925233056852
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            6.07562637924302,
+            3.1496141607605526,
+            0.9981586738436025
+          ],
+          [
+            1.4948469216096218,
+            3.93442196730422,
+            0.9985993726044414
+          ],
+          [
+            6.219117047388509,
+            3.472235237655682,
+            0.9981079184367483
+          ],
+          [
+            1.522776381070738,
+            4.204311786595692,
+            0.9985674537721402
+          ],
+          [
+            -12.982791849531827,
+            33.75282392749188,
+            1.0153435138890736
+          ],
+          [
+            -20.337583790632436,
+            -26.29245955590489,
+            0.9816258548587815
+          ],
+          [
+            -11.178329174732093,
+            27.600692204844677,
+            1.0132537096534744
+          ],
+          [
+            -25.440104750787672,
+            -30.251968608968493,
+            0.9769387342197111
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 126,
+        "triangles": 520218,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          931.6177464455402,
+          288.5,
+          353.3816452342622
+        ],
+        "target": [
+          673.8162912825234,
+          16.5,
+          566.0516808980655
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            8.992171768277549,
+            0.9095777256038043,
+            0.9969034546957466
+          ],
+          [
+            2.0648959301778844,
+            3.193319897583768,
+            0.9981863894248242
+          ],
+          [
+            9.333070800140236,
+            1.342939232249988,
+            0.9967743960572147
+          ],
+          [
+            2.1129892734993367,
+            3.5127520006978323,
+            0.9981369812085058
+          ],
+          [
+            1.6379902827286648,
+            18.034183056913946,
+            1.0065235209058638
+          ],
+          [
+            -115.1821985027345,
+            -99.18033927709732,
+            0.9406760783619607
+          ],
+          [
+            1.5355800207602919,
+            16.248824283163092,
+            1.0061348984621092
+          ],
+          [
+            -319.78332990883376,
+            -256.6672460421835,
+            0.8347508092994006
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74038.608888
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 703
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1181
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 25270
+        },
+        {
+          "name": "LayoutCount",
+          "value": 666
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 768
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.505828
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.443177
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.371401
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 14.791108
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1289.860755
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1273.749241
+        },
+        {
+          "name": "ThreadTime",
+          "value": 12.634414
+        },
+        {
+          "name": "ProcessTime",
+          "value": 53.03
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 32083648
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 42262528
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74074.757161
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 722
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1220
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 25270
+        },
+        {
+          "name": "LayoutCount",
+          "value": 684
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 786
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.520745
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.450448
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.376879
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 15.0213
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1326.00756
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1309.638188
+        },
+        {
+          "name": "ThreadTime",
+          "value": 12.947576
+        },
+        {
+          "name": "ProcessTime",
+          "value": 53.93
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 32486620
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 40165376
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 32566792,
+      "totalSize": 40165376,
+      "embedderHeapUsedSize": 8906336,
+      "backingStorageSize": 98202696
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 10,
+    "camera": "follow",
+    "repeat": 2,
+    "wallSeconds": 39.711252987006446,
+    "frame": {
+      "n": 16,
+      "meanMs": 2398.862500000003,
+      "medianMs": 2149.95000000007,
+      "p95Ms": 6566.399999999907,
+      "maxMs": 6566.399999999907,
+      "effectiveFps": 0.4168642429484803,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 14.505882351714021,
+      "medianMs": 14,
+      "p95Ms": 29.099999994039536,
+      "maxMs": 29.099999994039536,
+      "effectiveFps": 68.93755069520742,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        1350,
+        1399.8999999999069,
+        1400,
+        1483.2000000001863,
+        1566.5999999998603,
+        1666.6999999999534,
+        2016.5,
+        2016.6000000000931,
+        2383.1999999999534,
+        2349.9000000001397,
+        2450,
+        4549.699999999953,
+        6566.399999999907,
+        2549.9000000001397,
+        2349.899999999907,
+        2283.3000000000466
+      ],
+      "ticks": [
+        17.30000001192093,
+        12.599999994039536,
+        9.5,
+        16.30000001192093,
+        15.600000008940697,
+        29.099999994039536,
+        17.599999994039536,
+        14,
+        10.699999988079071,
+        16.599999994039536,
+        16.399999991059303,
+        13,
+        23.299999997019768,
+        8.700000002980232,
+        11.5,
+        7.299999997019768,
+        7.0999999940395355
+      ],
+      "longTasks": [
+        {
+          "start": 1367841.300000012,
+          "duration": 1321
+        },
+        {
+          "start": 1369165.300000012,
+          "duration": 1336
+        },
+        {
+          "start": 1370502.900000006,
+          "duration": 1397
+        },
+        {
+          "start": 1371900.100000009,
+          "duration": 1413
+        },
+        {
+          "start": 1373314.900000006,
+          "duration": 1483
+        },
+        {
+          "start": 1374798.800000012,
+          "duration": 1565
+        },
+        {
+          "start": 1376364.200000003,
+          "duration": 1652
+        },
+        {
+          "start": 1378017.800000012,
+          "duration": 2017
+        },
+        {
+          "start": 1380036.5,
+          "duration": 2015
+        },
+        {
+          "start": 1382051.700000003,
+          "duration": 2389
+        },
+        {
+          "start": 1384441.700000003,
+          "duration": 2354
+        },
+        {
+          "start": 1386796.5,
+          "duration": 2449
+        },
+        {
+          "start": 1389247.800000012,
+          "duration": 4548
+        },
+        {
+          "start": 1393802.400000006,
+          "duration": 6554
+        },
+        {
+          "start": 1400357.200000003,
+          "duration": 2549
+        },
+        {
+          "start": 1402906.600000009,
+          "duration": 2356
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 114,
+        "triangles": 473052,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          1241.996103049967,
+          288.5,
+          436.5002439453235
+        ],
+        "target": [
+          940.4711335314419,
+          16.5,
+          579.9683834694425
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            6.069586481720094,
+            3.1514952620726815,
+            0.9981602919805925
+          ],
+          [
+            1.4922410597308509,
+            3.9345062011269243,
+            0.9986000139309816
+          ],
+          [
+            6.212807845800449,
+            3.4739212002232187,
+            0.9981096196018806
+          ],
+          [
+            1.5201080373758844,
+            4.204300095378261,
+            0.998568122867411
+          ],
+          [
+            -13.040464549395907,
+            33.818747780891094,
+            1.0153823554512953
+          ],
+          [
+            -20.301908692947553,
+            -26.266111123876954,
+            0.9816400026581601
+          ],
+          [
+            -11.224128593722657,
+            27.644071804666957,
+            1.0132826935420094
+          ],
+          [
+            -25.38995271007534,
+            -30.214237231194748,
+            0.9769615131150016
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 126,
+        "triangles": 520218,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          931.6177466885142,
+          288.5,
+          353.38164529920743
+        ],
+        "target": [
+          673.8162914503305,
+          16.5,
+          566.0516808846102
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            8.992171763601307,
+            0.9095777289497886,
+            0.9969034546976883
+          ],
+          [
+            2.0648959290781157,
+            3.1933198982481708,
+            0.9981863894252716
+          ],
+          [
+            9.33307079507976,
+            1.3429392354693899,
+            0.9967743960593084
+          ],
+          [
+            2.112989272362854,
+            3.512752001309916,
+            0.9981369812089754
+          ],
+          [
+            1.6379902752323963,
+            18.03418305949986,
+            1.0065235209074714
+          ],
+          [
+            -115.18219863517606,
+            -99.1803394438118,
+            0.9406760782678252
+          ],
+          [
+            1.5355800137092743,
+            16.248824285162932,
+            1.0061348984635274
+          ],
+          [
+            -319.7833311649767,
+            -256.6672471884419,
+            0.834750808578089
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74086.401121
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 821
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1340
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 25583
+        },
+        {
+          "name": "LayoutCount",
+          "value": 698
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 800
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.531139
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.456501
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.385214
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 15.18101
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1337.649913
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1321.096049
+        },
+        {
+          "name": "ThreadTime",
+          "value": 13.16129
+        },
+        {
+          "name": "ProcessTime",
+          "value": 54.32
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 33084672
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 42262528
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74128.462679
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 840
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1379
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 25583
+        },
+        {
+          "name": "LayoutCount",
+          "value": 716
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 818
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.549011
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.463821
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.394734
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 15.443805
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1379.709461
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1362.85809
+        },
+        {
+          "name": "ThreadTime",
+          "value": 13.488338
+        },
+        {
+          "name": "ProcessTime",
+          "value": 56.2
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 33629584
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 40165376
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 33726080,
+      "totalSize": 40165376,
+      "embedderHeapUsedSize": 11640696,
+      "backingStorageSize": 99589470
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 95,
+    "camera": "overview",
+    "repeat": 0,
+    "wallSeconds": 51.50436429899128,
+    "frame": {
+      "n": 16,
+      "meanMs": 3035.2999999999884,
+      "medianMs": 2658.20000000007,
+      "p95Ms": 6083.09999999986,
+      "maxMs": 6083.09999999986,
+      "effectiveFps": 0.32945672585905966,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 17.75294117541874,
+      "medianMs": 10.799999997019768,
+      "p95Ms": 53.19999998807907,
+      "maxMs": 53.19999998807907,
+      "effectiveFps": 56.32869450300608,
+      "framesOver50Ms": 1
+    },
+    "raw": {
+      "frames": [
+        6083.09999999986,
+        3399.9000000001397,
+        2499.899999999907,
+        2683.3000000000466,
+        2483.1999999999534,
+        2499.8000000000466,
+        2583.3000000000466,
+        2599.7999999998137,
+        2533.3000000000466,
+        2783.3000000000466,
+        2633.100000000093,
+        2849.899999999907,
+        3300,
+        4283.100000000093,
+        2849.7999999998137,
+        2500
+      ],
+      "ticks": [
+        9,
+        53.19999998807907,
+        10.599999994039536,
+        15.400000005960464,
+        12.200000002980232,
+        18.099999994039536,
+        10.599999994039536,
+        48.70000000298023,
+        10.799999997019768,
+        9.399999991059303,
+        10,
+        10.700000002980232,
+        13.400000005960464,
+        34.80000001192093,
+        15,
+        9.599999994039536,
+        10.299999997019768
+      ],
+      "longTasks": [
+        {
+          "start": 1437627.900000006,
+          "duration": 2925
+        },
+        {
+          "start": 1440556.800000012,
+          "duration": 6076
+        },
+        {
+          "start": 1446634.100000009,
+          "duration": 3409
+        },
+        {
+          "start": 1450043.600000009,
+          "duration": 2501
+        },
+        {
+          "start": 1452545.600000009,
+          "duration": 2672
+        },
+        {
+          "start": 1455218.700000003,
+          "duration": 2490
+        },
+        {
+          "start": 1457708.900000006,
+          "duration": 2498
+        },
+        {
+          "start": 1460207.600000009,
+          "duration": 2572
+        },
+        {
+          "start": 1462780.200000003,
+          "duration": 2611
+        },
+        {
+          "start": 1465391.900000006,
+          "duration": 2523
+        },
+        {
+          "start": 1467916.5,
+          "duration": 2790
+        },
+        {
+          "start": 1470706.700000003,
+          "duration": 2629
+        },
+        {
+          "start": 1473336.400000006,
+          "duration": 2852
+        },
+        {
+          "start": 1476190.100000009,
+          "duration": 3298
+        },
+        {
+          "start": 1479489.200000003,
+          "duration": 4281
+        },
+        {
+          "start": 1483772.200000003,
+          "duration": 2854
+        },
+        {
+          "start": 1486627,
+          "duration": 2499
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 386,
+        "triangles": 581872,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1658.7627875288645,
+          1144.195258660288,
+          1684.8840857033474
+        ],
+        "target": [
+          832.698562457225,
+          0.11117612548491021,
+          474.62807991995413
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.37024833930967366,
+            0.6388643340648473,
+            0.9995294049489748
+          ],
+          [
+            -0.8875667775084574,
+            0.22265157823474013,
+            0.9993557814790615
+          ],
+          [
+            -0.37328755267644925,
+            0.6778341657287204,
+            0.9995230159257629
+          ],
+          [
+            -0.896494003798278,
+            0.266215557561811,
+            0.9993462065983361
+          ],
+          [
+            0.9890377446213057,
+            -0.026302875788228805,
+            0.9992519299378666
+          ],
+          [
+            0.6735173825030261,
+            -0.8583377832655124,
+            0.9989048459388739
+          ],
+          [
+            1.000082928618598,
+            0.019286457793280535,
+            0.9992401390708093
+          ],
+          [
+            0.6835484079625707,
+            -0.8099302342216542,
+            0.998883951953178
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 386,
+        "triangles": 581872,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74156.192631
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 733
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1028
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22240
+        },
+        {
+          "name": "LayoutCount",
+          "value": 730
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 832
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.559543
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.4684
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.404478
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 17.830321
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1407.43623
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1388.173488
+        },
+        {
+          "name": "ThreadTime",
+          "value": 13.762032
+        },
+        {
+          "name": "ProcessTime",
+          "value": 57.19
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 28029204
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 37281792
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74210.195312
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 518
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 954
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22240
+        },
+        {
+          "name": "LayoutCount",
+          "value": 748
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 850
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.574803
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.474313
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.407384
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 18.145553
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1461.435245
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1441.833192
+        },
+        {
+          "name": "ThreadTime",
+          "value": 14.128227
+        },
+        {
+          "name": "ProcessTime",
+          "value": 58.92
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 27823148
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 37281792
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 28055996,
+      "totalSize": 37281792,
+      "embedderHeapUsedSize": 5274448,
+      "backingStorageSize": 94079414
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 95,
+    "camera": "overview",
+    "repeat": 1,
+    "wallSeconds": 48.008408303998294,
+    "frame": {
+      "n": 16,
+      "meanMs": 2846.762499999997,
+      "medianMs": 2583.25,
+      "p95Ms": 4583.100000000093,
+      "maxMs": 4583.100000000093,
+      "effectiveFps": 0.35127623045477135,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 19.141176470062312,
+      "medianMs": 13.200000002980232,
+      "p95Ms": 54.900000005960464,
+      "maxMs": 54.900000005960464,
+      "effectiveFps": 52.24339274882327,
+      "framesOver50Ms": 1
+    },
+    "raw": {
+      "frames": [
+        2566.600000000093,
+        2499.899999999907,
+        2649.899999999907,
+        2883.100000000093,
+        2516.600000000093,
+        2566.5999999998603,
+        2499.9000000001397,
+        2633.1999999999534,
+        2433.3000000000466,
+        2533.1999999999534,
+        2599.899999999907,
+        2499.9000000001397,
+        3066.5,
+        3949.899999999907,
+        4583.100000000093,
+        3066.5999999998603
+      ],
+      "ticks": [
+        19.100000008940697,
+        12.5,
+        11.5,
+        17.299999997019768,
+        12.599999994039536,
+        13.599999994039536,
+        11.5,
+        12.799999997019768,
+        13,
+        13.200000002980232,
+        12.399999991059303,
+        13.700000002980232,
+        9.099999994039536,
+        40.79999999701977,
+        54.900000005960464,
+        43.6000000089407,
+        13.799999997019768
+      ],
+      "longTasks": [
+        {
+          "start": 1516605,
+          "duration": 2454
+        },
+        {
+          "start": 1519061,
+          "duration": 2549
+        },
+        {
+          "start": 1521611.400000006,
+          "duration": 2512
+        },
+        {
+          "start": 1524123.800000012,
+          "duration": 2649
+        },
+        {
+          "start": 1526776.300000012,
+          "duration": 2876
+        },
+        {
+          "start": 1529653,
+          "duration": 2507
+        },
+        {
+          "start": 1532160.800000012,
+          "duration": 2568
+        },
+        {
+          "start": 1534729.400000006,
+          "duration": 2499
+        },
+        {
+          "start": 1537229.800000012,
+          "duration": 2634
+        },
+        {
+          "start": 1539864.600000009,
+          "duration": 2439
+        },
+        {
+          "start": 1542304.300000012,
+          "duration": 2524
+        },
+        {
+          "start": 1544829,
+          "duration": 2613
+        },
+        {
+          "start": 1547443.400000006,
+          "duration": 2486
+        },
+        {
+          "start": 1549930.300000012,
+          "duration": 3076
+        },
+        {
+          "start": 1553011.700000003,
+          "duration": 3938
+        },
+        {
+          "start": 1556950.700000003,
+          "duration": 4589
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 386,
+        "triangles": 581872,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 386,
+        "triangles": 581872,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74235.166167
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 617
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1076
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22465
+        },
+        {
+          "name": "LayoutCount",
+          "value": 762
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 864
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.582644
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.478056
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.414886
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 18.283554
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1486.404803
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1466.645663
+        },
+        {
+          "name": "ThreadTime",
+          "value": 14.301012
+        },
+        {
+          "name": "ProcessTime",
+          "value": 59.69
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 28531600
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 37281792
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74285.999622
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 636
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1111
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22465
+        },
+        {
+          "name": "LayoutCount",
+          "value": 780
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 882
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.598459
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.490371
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.41988
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 18.630217
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1537.235849
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1517.096922
+        },
+        {
+          "name": "ThreadTime",
+          "value": 14.753632
+        },
+        {
+          "name": "ProcessTime",
+          "value": 60.72
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 29540336
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 37281792
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 28988120,
+      "totalSize": 37281792,
+      "embedderHeapUsedSize": 7994360,
+      "backingStorageSize": 95404605
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 95,
+    "camera": "overview",
+    "repeat": 2,
+    "wallSeconds": 49.32378651300678,
+    "frame": {
+      "n": 16,
+      "meanMs": 2929.043749999997,
+      "medianMs": 2849.8499999998603,
+      "p95Ms": 4016.5999999998603,
+      "maxMs": 4016.5999999998603,
+      "effectiveFps": 0.34140835212857473,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 12.529411765582422,
+      "medianMs": 11.800000011920929,
+      "p95Ms": 17.700000002980232,
+      "maxMs": 17.700000002980232,
+      "effectiveFps": 79.81220656718641,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        2799.899999999907,
+        3049.8000000000466,
+        4016.5999999998603,
+        2649.8000000000466,
+        2433.3000000000466,
+        2483.1999999999534,
+        3216.600000000093,
+        3166.5,
+        2533.3000000000466,
+        2899.7999999998137,
+        2583.2000000001863,
+        2416.5999999998603,
+        2649.9000000001397,
+        3683.1999999999534,
+        3383.1999999999534,
+        2899.8000000000466
+      ],
+      "ticks": [
+        9.299999997019768,
+        13.100000008940697,
+        13.199999988079071,
+        17.700000002980232,
+        9.299999997019768,
+        8.700000002980232,
+        11.400000005960464,
+        16.400000005960464,
+        11,
+        14.700000002980232,
+        8.200000002980232,
+        11.699999988079071,
+        17.5,
+        12.600000008940697,
+        11.800000011920929,
+        11.699999988079071,
+        14.700000002980232
+      ],
+      "longTasks": [
+        {
+          "start": 1585735.700000003,
+          "duration": 2452
+        },
+        {
+          "start": 1588189.200000003,
+          "duration": 2787
+        },
+        {
+          "start": 1590977.200000003,
+          "duration": 3056
+        },
+        {
+          "start": 1594034.600000009,
+          "duration": 4015
+        },
+        {
+          "start": 1598050.600000009,
+          "duration": 2643
+        },
+        {
+          "start": 1600694.5,
+          "duration": 2438
+        },
+        {
+          "start": 1603133.100000009,
+          "duration": 2479
+        },
+        {
+          "start": 1605613.300000012,
+          "duration": 3216
+        },
+        {
+          "start": 1608829.5,
+          "duration": 3171
+        },
+        {
+          "start": 1612001.5,
+          "duration": 2536
+        },
+        {
+          "start": 1614537.800000012,
+          "duration": 2892
+        },
+        {
+          "start": 1617430.900000006,
+          "duration": 2587
+        },
+        {
+          "start": 1620018.300000012,
+          "duration": 2415
+        },
+        {
+          "start": 1622434.5,
+          "duration": 2654
+        },
+        {
+          "start": 1625089.300000012,
+          "duration": 3675
+        },
+        {
+          "start": 1628765,
+          "duration": 3388
+        },
+        {
+          "start": 1632153.800000012,
+          "duration": 2892
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 386,
+        "triangles": 581872,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 386,
+        "triangles": 581872,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74304.295146
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 735
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1235
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22690
+        },
+        {
+          "name": "LayoutCount",
+          "value": 794
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 896
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.608583
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.495306
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.428296
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 18.810187
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1555.530605
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1535.188233
+        },
+        {
+          "name": "ThreadTime",
+          "value": 14.953344
+        },
+        {
+          "name": "ProcessTime",
+          "value": 61.18
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 29980016
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 37019648
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74356.922678
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 754
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1272
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22690
+        },
+        {
+          "name": "LayoutCount",
+          "value": 812
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 914
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.619564
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.500891
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.431125
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 19.041899
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1608.156453
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1587.562974
+        },
+        {
+          "name": "ThreadTime",
+          "value": 15.24077
+        },
+        {
+          "name": "ProcessTime",
+          "value": 62.7
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 30370632
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 37543936
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 30390956,
+      "totalSize": 37543936,
+      "embedderHeapUsedSize": 10654032,
+      "backingStorageSize": 96728995
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 95,
+    "camera": "follow",
+    "repeat": 0,
+    "wallSeconds": 38.67572900401137,
+    "frame": {
+      "n": 16,
+      "meanMs": 2326.987500000003,
+      "medianMs": 2474.9000000000233,
+      "p95Ms": 3616.5,
+      "maxMs": 3616.5,
+      "effectiveFps": 0.42974016835071044,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 12.500000001753078,
+      "medianMs": 10.700000002980232,
+      "p95Ms": 31.600000008940697,
+      "maxMs": 31.600000008940697,
+      "effectiveFps": 79.9999999887803,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        1483.1999999999534,
+        1549.8999999999069,
+        1583.3000000000466,
+        1816.6000000000931,
+        1800,
+        1816.5,
+        1883.3000000000466,
+        2616.5999999998603,
+        3616.5,
+        3516.5,
+        2649.9000000001397,
+        2649.899999999907,
+        2666.5,
+        2633.3000000000466,
+        2549.899999999907,
+        2399.9000000001397
+      ],
+      "ticks": [
+        10.099999994039536,
+        31.600000008940697,
+        8.400000005960464,
+        10.700000002980232,
+        11,
+        14.200000002980232,
+        17.600000008940697,
+        9.600000008940697,
+        10.5,
+        13.599999994039536,
+        8.799999997019768,
+        7.799999997019768,
+        8.300000011920929,
+        8.100000008940697,
+        18.69999998807907,
+        11.799999997019768,
+        11.700000002980232
+      ],
+      "longTasks": [
+        {
+          "start": 1653772.100000009,
+          "duration": 1448
+        },
+        {
+          "start": 1655221.700000003,
+          "duration": 1480
+        },
+        {
+          "start": 1656702.300000012,
+          "duration": 1537
+        },
+        {
+          "start": 1658240,
+          "duration": 1583
+        },
+        {
+          "start": 1659823.800000012,
+          "duration": 1813
+        },
+        {
+          "start": 1661637.600000009,
+          "duration": 1809
+        },
+        {
+          "start": 1663448,
+          "duration": 1814
+        },
+        {
+          "start": 1665263.400000006,
+          "duration": 1884
+        },
+        {
+          "start": 1667148,
+          "duration": 2611
+        },
+        {
+          "start": 1669759.5,
+          "duration": 3626
+        },
+        {
+          "start": 1673387.700000003,
+          "duration": 3507
+        },
+        {
+          "start": 1676895.600000009,
+          "duration": 2645
+        },
+        {
+          "start": 1679540.800000012,
+          "duration": 2659
+        },
+        {
+          "start": 1682200.900000006,
+          "duration": 2658
+        },
+        {
+          "start": 1684859.600000009,
+          "duration": 2637
+        },
+        {
+          "start": 1687496.700000003,
+          "duration": 2553
+        },
+        {
+          "start": 1690052.300000012,
+          "duration": 2384
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 113,
+        "triangles": 472753,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          1256.2323225429323,
+          304.27892290264447,
+          461.2798681279448
+        ],
+        "target": [
+          944.008807555462,
+          16.197791958335888,
+          578.2610852361614
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            5.294417966786445,
+            3.5037693667158045,
+            0.9982938751389263
+          ],
+          [
+            1.0596436746933278,
+            4.1186155672385185,
+            0.9986188844906675
+          ],
+          [
+            5.415616239990399,
+            3.8082396136380527,
+            0.9982477743393648
+          ],
+          [
+            1.0799111062109537,
+            4.384768723863327,
+            0.9985865823525542
+          ],
+          [
+            -24.97289319392172,
+            52.48730213804176,
+            1.0241867020254822
+          ],
+          [
+            -17.80389534090613,
+            -27.927269620169216,
+            0.9816793435747924
+          ],
+          [
+            -19.735817292225942,
+            39.425699968882206,
+            1.0191790348148295
+          ],
+          [
+            -22.4516342491848,
+            -32.66028996629079,
+            0.9768163672659437
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 126,
+        "triangles": 520218,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          931.6177546236459,
+          288.50000879501965,
+          353.38165911113134
+        ],
+        "target": [
+          673.8162934221959,
+          16.49999983155215,
+          566.0516799329786
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            8.99217118873229,
+            0.9095781197630894,
+            0.9969034548890414
+          ],
+          [
+            2.064895738397827,
+            3.193320080829937,
+            0.9981863894404794
+          ],
+          [
+            9.333070188596322,
+            1.3429396097468431,
+            0.9967743962616341
+          ],
+          [
+            2.112989078288928,
+            3.512752183510059,
+            0.9981369812234612
+          ],
+          [
+            1.6379894894365759,
+            18.034184452506384,
+            1.0065235212181576
+          ],
+          [
+            -115.18222900414357,
+            -99.18037623291369,
+            0.9406760601658198
+          ],
+          [
+            1.5355792695123918,
+            16.248825490909528,
+            1.0061348987262124
+          ],
+          [
+            -319.78360407806343,
+            -256.6674953806372,
+            0.8347506606803418
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74372.329088
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 584
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1020
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 23725
+        },
+        {
+          "name": "LayoutCount",
+          "value": 826
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 928
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.641312
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.515376
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.444514
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 19.331522
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1623.561701
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1602.628977
+        },
+        {
+          "name": "ThreadTime",
+          "value": 15.720365
+        },
+        {
+          "name": "ProcessTime",
+          "value": 63.73
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 30363416
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 43048960
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74413.219756
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 602
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1056
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 23725
+        },
+        {
+          "name": "LayoutCount",
+          "value": 844
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 946
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.654054
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.522108
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.448219
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 19.561231
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1664.450026
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1643.264414
+        },
+        {
+          "name": "ThreadTime",
+          "value": 16.024017
+        },
+        {
+          "name": "ProcessTime",
+          "value": 64.64
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 28301188
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 36757504
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 28458252,
+      "totalSize": 36757504,
+      "embedderHeapUsedSize": 6050176,
+      "backingStorageSize": 96068439
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 95,
+    "camera": "follow",
+    "repeat": 1,
+    "wallSeconds": 35.952804964006646,
+    "frame": {
+      "n": 16,
+      "meanMs": 2159.293749999997,
+      "medianMs": 2141.5500000000466,
+      "p95Ms": 2683.1999999999534,
+      "maxMs": 2683.1999999999534,
+      "effectiveFps": 0.4631143863589664,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 8.929411767160191,
+      "medianMs": 8.400000005960464,
+      "p95Ms": 12.699999988079071,
+      "maxMs": 12.699999988079071,
+      "effectiveFps": 111.98945978476571,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        1849.8999999999069,
+        1500,
+        1749.8999999999069,
+        1633.3000000000466,
+        1750,
+        1833.1999999999534,
+        2000,
+        2099.9000000001397,
+        2183.1999999999534,
+        2533.1999999999534,
+        2583.1999999999534,
+        2583.3000000000466,
+        2683.1999999999534,
+        2616.600000000093,
+        2599.8000000000466,
+        2350
+      ],
+      "ticks": [
+        9.099999994039536,
+        12.699999988079071,
+        12.5,
+        7.800000011920929,
+        9.5,
+        7.600000008940697,
+        8,
+        9.299999997019768,
+        9.300000011920929,
+        7.799999997019768,
+        6.700000002980232,
+        9.700000002980232,
+        9.200000002980232,
+        8.100000008940697,
+        8.400000005960464,
+        7.9000000059604645,
+        8.200000002980232
+      ],
+      "longTasks": [
+        {
+          "start": 1706006.900000006,
+          "duration": 1409
+        },
+        {
+          "start": 1707416.300000012,
+          "duration": 1843
+        },
+        {
+          "start": 1709261,
+          "duration": 1494
+        },
+        {
+          "start": 1710755.700000003,
+          "duration": 1754
+        },
+        {
+          "start": 1712510.300000012,
+          "duration": 1630
+        },
+        {
+          "start": 1714141.900000006,
+          "duration": 1750
+        },
+        {
+          "start": 1715892.200000003,
+          "duration": 1834
+        },
+        {
+          "start": 1717726.900000006,
+          "duration": 2003
+        },
+        {
+          "start": 1719730.800000012,
+          "duration": 2100
+        },
+        {
+          "start": 1721831.800000012,
+          "duration": 2178
+        },
+        {
+          "start": 1724010.5,
+          "duration": 2535
+        },
+        {
+          "start": 1726546.400000006,
+          "duration": 2573
+        },
+        {
+          "start": 1729119.800000012,
+          "duration": 2595
+        },
+        {
+          "start": 1731715.800000012,
+          "duration": 2673
+        },
+        {
+          "start": 1734389.800000012,
+          "duration": 2624
+        },
+        {
+          "start": 1737014.700000003,
+          "duration": 2593
+        },
+        {
+          "start": 1739608.400000006,
+          "duration": 2343
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 114,
+        "triangles": 473052,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          1241.9961030802085,
+          288.5000000325228,
+          436.5002439966384
+        ],
+        "target": [
+          940.4711335393541,
+          16.499999999377103,
+          579.9683834658738
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            6.069586480172057,
+            3.1514952629476722,
+            0.9981602919808964
+          ],
+          [
+            1.4922410588632793,
+            3.934506201658739,
+            0.9986000139310248
+          ],
+          [
+            6.212807844206796,
+            3.4739212010656315,
+            0.9981096196021947
+          ],
+          [
+            1.5201080364936446,
+            4.204300095908914,
+            0.9985681228674536
+          ],
+          [
+            -13.04046456519995,
+            33.818747805774265,
+            1.0153823554624373
+          ],
+          [
+            -20.301908689115848,
+            -26.266111129256316,
+            0.981640002657488
+          ],
+          [
+            -11.224128606045802,
+            27.64407182192754,
+            1.0132826935501202
+          ],
+          [
+            -25.389952706017752,
+            -30.21423723884017,
+            0.9769615131134853
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 126,
+        "triangles": 520218,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          931.6177466885141,
+          288.5,
+          353.38164529920743
+        ],
+        "target": [
+          673.8162914503305,
+          16.5,
+          566.0516808846102
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            8.992171763601311,
+            0.9095777289497874,
+            0.9969034546976883
+          ],
+          [
+            2.0648959290781175,
+            3.1933198982481716,
+            0.9981863894252717
+          ],
+          [
+            9.333070795079763,
+            1.3429392354693888,
+            0.9967743960593083
+          ],
+          [
+            2.112989272362855,
+            3.5127520013099174,
+            0.9981369812089754
+          ],
+          [
+            1.6379902752324045,
+            18.034183059499853,
+            1.0065235209074714
+          ],
+          [
+            -115.18219863517574,
+            -99.18033944381145,
+            0.9406760782678254
+          ],
+          [
+            1.5355800137092819,
+            16.24882428516293,
+            1.0061348984635274
+          ],
+          [
+            -319.78333116497686,
+            -256.6672471884418,
+            0.834750808578089
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74424.565558
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 702
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1181
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 24086
+        },
+        {
+          "name": "LayoutCount",
+          "value": 858
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 960
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.663386
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.527898
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.452703
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 19.66741
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1675.795496
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1654.484099
+        },
+        {
+          "name": "ThreadTime",
+          "value": 16.164521
+        },
+        {
+          "name": "ProcessTime",
+          "value": 64.97
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 29533004
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 38854656
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74464.800951
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 721
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1217
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 24086
+        },
+        {
+          "name": "LayoutCount",
+          "value": 877
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 979
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.674418
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.53361
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.455837
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 19.834083
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1716.028883
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1694.530935
+        },
+        {
+          "name": "ThreadTime",
+          "value": 16.403108
+        },
+        {
+          "name": "ProcessTime",
+          "value": 65.61
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 30419476
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 36757504
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 30182024,
+      "totalSize": 36757504,
+      "embedderHeapUsedSize": 8635568,
+      "backingStorageSize": 97476380
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "high",
+    "day": 95,
+    "camera": "follow",
+    "repeat": 2,
+    "wallSeconds": 34.03371503899689,
+    "frame": {
+      "n": 16,
+      "meanMs": 2043.6687500000116,
+      "medianMs": 2099.899999999907,
+      "p95Ms": 2583.1999999999534,
+      "maxMs": 2583.1999999999534,
+      "effectiveFps": 0.4893160890188267,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 11.652941176119972,
+      "medianMs": 9,
+      "p95Ms": 41.69999998807907,
+      "maxMs": 41.69999998807907,
+      "effectiveFps": 85.81524482842755,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        1383.3000000000466,
+        1416.6000000000931,
+        1483.1999999999534,
+        1500,
+        1683.1999999999534,
+        1800,
+        1899.9000000001397,
+        2016.5999999998603,
+        2183.1999999999534,
+        2349.9000000001397,
+        2500,
+        2583.1999999999534,
+        2566.5,
+        2550,
+        2449.899999999907,
+        2333.2000000001863
+      ],
+      "ticks": [
+        6.299999997019768,
+        7.5999999940395355,
+        7.5,
+        9.900000005960464,
+        14.300000011920929,
+        13.799999997019768,
+        20.399999991059303,
+        41.69999998807907,
+        7.5,
+        9,
+        7.5999999940395355,
+        7.4000000059604645,
+        9.600000008940697,
+        7.9000000059604645,
+        6.799999997019768,
+        9.599999994039536,
+        11.200000002980232
+      ],
+      "longTasks": [
+        {
+          "start": 1758313.800000012,
+          "duration": 1332
+        },
+        {
+          "start": 1759646.700000003,
+          "duration": 1381
+        },
+        {
+          "start": 1761028.200000003,
+          "duration": 1416
+        },
+        {
+          "start": 1762444.800000012,
+          "duration": 1471
+        },
+        {
+          "start": 1763916.600000009,
+          "duration": 1514
+        },
+        {
+          "start": 1765431,
+          "duration": 1675
+        },
+        {
+          "start": 1767107.200000003,
+          "duration": 1799
+        },
+        {
+          "start": 1768909.5,
+          "duration": 1891
+        },
+        {
+          "start": 1770801.200000003,
+          "duration": 2028
+        },
+        {
+          "start": 1772830.5,
+          "duration": 2183
+        },
+        {
+          "start": 1775019.5,
+          "duration": 2334
+        },
+        {
+          "start": 1777355.100000009,
+          "duration": 2498
+        },
+        {
+          "start": 1779859,
+          "duration": 2580
+        },
+        {
+          "start": 1782439.600000009,
+          "duration": 2575
+        },
+        {
+          "start": 1785022.200000003,
+          "duration": 2537
+        },
+        {
+          "start": 1787559.900000006,
+          "duration": 2441
+        },
+        {
+          "start": 1790003.300000012,
+          "duration": 2336
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 114,
+        "triangles": 473052,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          1241.5601895902712,
+          288.5,
+          436.3837273616423
+        ],
+        "target": [
+          940.1700748251799,
+          16.5,
+          579.9925233072664
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            6.075626379933611,
+            3.149614160368617,
+            0.9981586738434671
+          ],
+          [
+            1.4948469219970821,
+            3.934421967065061,
+            0.9985993726044224
+          ],
+          [
+            6.219117048099392,
+            3.472235237278224,
+            0.9981079184366085
+          ],
+          [
+            1.5227763814647344,
+            4.204311786356968,
+            0.9985674537721217
+          ],
+          [
+            -12.982791842521129,
+            33.752823916424845,
+            1.0153435138841311
+          ],
+          [
+            -20.337583792318014,
+            -26.292459553452716,
+            0.9816258548591015
+          ],
+          [
+            -11.178329169262135,
+            27.600692197159674,
+            1.0132537096498746
+          ],
+          [
+            -25.440104752558398,
+            -30.25196860548193,
+            0.9769387342204213
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 126,
+        "triangles": 520218,
+        "geometries": 406,
+        "textures": 51
+      },
+      "quality": {
+        "mode": "high",
+        "profile": "high"
+      },
+      "camera": {
+        "preset": "follow",
+        "position": [
+          931.6177464455402,
+          288.5,
+          353.3816452342622
+        ],
+        "target": [
+          673.8162912825234,
+          16.5,
+          566.0516808980655
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            8.992171768277549,
+            0.9095777256038043,
+            0.9969034546957466
+          ],
+          [
+            2.0648959301778844,
+            3.193319897583768,
+            0.9981863894248242
+          ],
+          [
+            9.333070800140236,
+            1.342939232249988,
+            0.9967743960572147
+          ],
+          [
+            2.1129892734993367,
+            3.5127520006978323,
+            0.9981369812085058
+          ],
+          [
+            1.6379902827286648,
+            18.034183056913946,
+            1.0065235209058638
+          ],
+          [
+            -115.1821985027345,
+            -99.18033927709732,
+            0.9406760783619607
+          ],
+          [
+            1.5355800207602919,
+            16.248824283163092,
+            1.0061348984621092
+          ],
+          [
+            -319.78332990883376,
+            -256.6672460421835,
+            0.8347508092994006
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74476.875624
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 820
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1341
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 24399
+        },
+        {
+          "name": "LayoutCount",
+          "value": 891
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 993
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.681798
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.537764
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.460822
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 19.958516
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1728.103009
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1706.464109
+        },
+        {
+          "name": "ThreadTime",
+          "value": 16.549562
+        },
+        {
+          "name": "ProcessTime",
+          "value": 65.95
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 30969216
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 38854656
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74513.122119
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 498
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 923
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22240
+        },
+        {
+          "name": "LayoutCount",
+          "value": 909
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 1011
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.69347
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.542498
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.464701
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 20.161681
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1764.348183
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1742.485833
+        },
+        {
+          "name": "ThreadTime",
+          "value": 16.815596
+        },
+        {
+          "name": "ProcessTime",
+          "value": 66.78
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 27358744
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 32038912
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 26802416,
+      "totalSize": 32038912,
+      "embedderHeapUsedSize": 4427568,
+      "backingStorageSize": 94077350
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "cinema",
+    "day": 10,
+    "camera": "overview",
+    "repeat": 0,
+    "wallSeconds": 36.49581607199798,
+    "frame": {
+      "n": 16,
+      "meanMs": 2153.0374999999913,
+      "medianMs": 2124.8499999999767,
+      "p95Ms": 2833.3000000000466,
+      "maxMs": 2833.3000000000466,
+      "effectiveFps": 0.46446009416928596,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 15.458823532742613,
+      "medianMs": 14.700000002980232,
+      "p95Ms": 25.5,
+      "maxMs": 25.5,
+      "effectiveFps": 64.6879756329417,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        1966.5999999998603,
+        1999.9000000001397,
+        1966.5999999998603,
+        1966.5,
+        1933.4000000001397,
+        2316.5999999998603,
+        2166.5,
+        2216.600000000093,
+        1983.1999999999534,
+        2000,
+        2149.8000000000466,
+        2483.3000000000466,
+        2166.5,
+        2833.3000000000466,
+        2199.899999999907,
+        2099.899999999907
+      ],
+      "ticks": [
+        25.5,
+        14.5,
+        17.600000008940697,
+        17.200000002980232,
+        17.200000002980232,
+        14.600000008940697,
+        13.600000008940697,
+        17.19999998807907,
+        13.200000002980232,
+        10.900000005960464,
+        13.799999997019768,
+        15.200000002980232,
+        10.800000011920929,
+        17.400000005960464,
+        14.900000005960464,
+        14.5,
+        14.700000002980232
+      ],
+      "longTasks": [
+        {
+          "start": 1815907.5,
+          "duration": 1958
+        },
+        {
+          "start": 1817865.900000006,
+          "duration": 2001
+        },
+        {
+          "start": 1819868.100000009,
+          "duration": 1976
+        },
+        {
+          "start": 1821845.100000009,
+          "duration": 1956
+        },
+        {
+          "start": 1823801.600000009,
+          "duration": 1940
+        },
+        {
+          "start": 1825742.5,
+          "duration": 2308
+        },
+        {
+          "start": 1828051.800000012,
+          "duration": 2168
+        },
+        {
+          "start": 1830221.700000003,
+          "duration": 2219
+        },
+        {
+          "start": 1832441.100000009,
+          "duration": 1984
+        },
+        {
+          "start": 1834426.700000003,
+          "duration": 1991
+        },
+        {
+          "start": 1836419,
+          "duration": 2151
+        },
+        {
+          "start": 1838571.100000009,
+          "duration": 2490
+        },
+        {
+          "start": 1841062.300000012,
+          "duration": 2160
+        },
+        {
+          "start": 1843223.100000009,
+          "duration": 2826
+        },
+        {
+          "start": 1846050,
+          "duration": 2202
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "geometries": 407,
+        "textures": 69
+      },
+      "quality": {
+        "mode": "cinema",
+        "profile": "cinema"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1658.762787528534,
+          1144.195258660288,
+          1684.884085703259
+        ],
+        "target": [
+          832.6985624569968,
+          0.11117612548491021,
+          474.62807991997244
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.37024833930954676,
+            0.6388643340648545,
+            0.9995294049489748
+          ],
+          [
+            -0.8875667775083438,
+            0.22265157823466075,
+            0.9993557814790613
+          ],
+          [
+            -0.3732875526763218,
+            0.6778341657287302,
+            0.9995230159257629
+          ],
+          [
+            -0.8964940037981649,
+            0.26621555756173404,
+            0.999346206598336
+          ],
+          [
+            0.9890377446216408,
+            -0.026302875788333697,
+            0.9992519299378666
+          ],
+          [
+            0.6735173825034387,
+            -0.8583377832658161,
+            0.9989048459388737
+          ],
+          [
+            1.0000829286189388,
+            0.019286457793177614,
+            0.9992401390708092
+          ],
+          [
+            0.6835484079629915,
+            -0.8099302342219591,
+            0.9988839519531779
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "geometries": 407,
+        "textures": 69
+      },
+      "quality": {
+        "mode": "cinema",
+        "profile": "cinema"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74532.431244
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 597
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1048
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22597
+        },
+        {
+          "name": "LayoutCount",
+          "value": 923
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 1025
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.702897
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.547022
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.470946
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 22.43636
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1783.65756
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1759.500335
+        },
+        {
+          "name": "ThreadTime",
+          "value": 17.158399
+        },
+        {
+          "name": "ProcessTime",
+          "value": 67.55
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 30917792
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 36757504
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74575.614367
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 616
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1085
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22597
+        },
+        {
+          "name": "LayoutCount",
+          "value": 941
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 1043
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.715027
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.553337
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.478825
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 22.719733
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1826.838091
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1802.371169
+        },
+        {
+          "name": "ThreadTime",
+          "value": 17.519952
+        },
+        {
+          "name": "ProcessTime",
+          "value": 70.08
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 31584972
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 35184640
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 31861088,
+      "totalSize": 35184640,
+      "embedderHeapUsedSize": 7117200,
+      "backingStorageSize": 95478329
+    }
+  },
+  {
+    "scenario": "E",
+    "quality": "cinema",
+    "day": 10,
+    "camera": "overview",
+    "repeat": 1,
+    "wallSeconds": 33.40607241500402,
+    "frame": {
+      "n": 16,
+      "meanMs": 1955.1312500000058,
+      "medianMs": 1933.2000000000698,
+      "p95Ms": 2249.899999999907,
+      "maxMs": 2249.899999999907,
+      "effectiveFps": 0.5114746132772401,
+      "framesOver50Ms": 16
+    },
+    "tick": {
+      "n": 17,
+      "meanMs": 15.276470587534064,
+      "medianMs": 15.799999997019768,
+      "p95Ms": 20.799999997019768,
+      "maxMs": 20.799999997019768,
+      "effectiveFps": 65.4601463256848,
+      "framesOver50Ms": 0
+    },
+    "raw": {
+      "frames": [
+        1933.1999999999534,
+        1966.6000000000931,
+        1949.8999999999069,
+        1916.6999999999534,
+        1966.5,
+        2000,
+        1933.2000000001863,
+        1900,
+        1916.5999999998603,
+        1933.1999999999534,
+        1999.9000000001397,
+        2249.899999999907,
+        2049.9000000001397,
+        1866.5999999998603,
+        1849.9000000001397,
+        1850
+      ],
+      "ticks": [
+        15.799999997019768,
+        18.69999998807907,
+        16.600000008940697,
+        14.900000005960464,
+        18.700000002980232,
+        17.099999994039536,
+        19.700000002980232,
+        13.199999988079071,
+        12.799999997019768,
+        11.5,
+        17.599999994039536,
+        16.200000002980232,
+        20.799999997019768,
+        11,
+        12.300000011920929,
+        10.700000002980232,
+        12.099999994039536
+      ],
+      "longTasks": [
+        {
+          "start": 1876017.700000003,
+          "duration": 2106
+        },
+        {
+          "start": 1878126.5,
+          "duration": 1923
+        },
+        {
+          "start": 1880051.5,
+          "duration": 1974
+        },
+        {
+          "start": 1882025.800000012,
+          "duration": 1943
+        },
+        {
+          "start": 1883970.700000003,
+          "duration": 1919
+        },
+        {
+          "start": 1885889.900000006,
+          "duration": 1960
+        },
+        {
+          "start": 1887850.900000006,
+          "duration": 1997
+        },
+        {
+          "start": 1889849,
+          "duration": 1943
+        },
+        {
+          "start": 1891792.5,
+          "duration": 1894
+        },
+        {
+          "start": 1893687.200000003,
+          "duration": 1914
+        },
+        {
+          "start": 1895601.600000009,
+          "duration": 1934
+        },
+        {
+          "start": 1897536,
+          "duration": 1996
+        },
+        {
+          "start": 1899532.300000012,
+          "duration": 2260
+        },
+        {
+          "start": 1901793.800000012,
+          "duration": 2038
+        },
+        {
+          "start": 1903832.200000003,
+          "duration": 1876
+        },
+        {
+          "start": 1905709,
+          "duration": 1848
+        },
+        {
+          "start": 1907557.5,
+          "duration": 1849
+        }
+      ],
+      "interactions": []
+    },
+    "before": {
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "geometries": 407,
+        "textures": 69
+      },
+      "quality": {
+        "mode": "cinema",
+        "profile": "cinema"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 45,
+          "travel": 22.875,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "after": {
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "geometries": 407,
+        "textures": 69
+      },
+      "quality": {
+        "mode": "cinema",
+        "profile": "cinema"
+      },
+      "camera": {
+        "preset": "overview",
+        "position": [
+          1664,
+          1150,
+          1694
+        ],
+        "target": [
+          834,
+          0,
+          474
+        ],
+        "fov": 35,
+        "aspect": 1.4254385964912282,
+        "projectedBase": [
+          [
+            -0.36676298806907304,
+            0.6277562038252211,
+            0.9995329562835567
+          ],
+          [
+            -0.8749117563737644,
+            0.21782998922460042,
+            0.9993607255582463
+          ],
+          [
+            -0.3697563154535393,
+            0.6660925908658635,
+            0.9995266329075618
+          ],
+          [
+            -0.8836555069294884,
+            0.26067679631064095,
+            0.9993512612266147
+          ],
+          [
+            0.969564279909735,
+            -0.024225895006312042,
+            0.9992590256448916
+          ],
+          [
+            0.6594709731833129,
+            -0.8393210705176588,
+            0.9989165629570343
+          ],
+          [
+            0.9803060806987157,
+            0.020591475210733273,
+            0.9992474069444246
+          ],
+          [
+            0.6691983441850738,
+            -0.7916753629548469,
+            0.9988960427334101
+          ]
+        ]
+      },
+      "stock": [
+        {
+          "id": 0,
+          "speed": 35,
+          "velocity": 52.5,
+          "travel": 211.3125,
+          "cars": 3
+        },
+        {
+          "id": 1,
+          "speed": 45,
+          "velocity": 67.5,
+          "travel": 260.4375,
+          "cars": 2
+        },
+        {
+          "id": 2,
+          "speed": 55,
+          "velocity": 82.5,
+          "travel": 304.5625,
+          "cars": 2
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "cars": 0
+        }
+      ],
+      "consoles": {
+        "visible": [
+          0,
+          1,
+          2
+        ],
+        "recent": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "active": 2
+      }
+    },
+    "cdpBefore": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74594.576104
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 715
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1205
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22822
+        },
+        {
+          "name": "LayoutCount",
+          "value": 955
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 1057
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.731436
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.570611
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.508292
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 23.397127
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1845.795419
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1820.587953
+        },
+        {
+          "name": "ThreadTime",
+          "value": 18.273571
+        },
+        {
+          "name": "ProcessTime",
+          "value": 71.77
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 33086448
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 35446784
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "cdpAfter": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 74629.90464
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Frames",
+          "value": 2
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 120
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 733
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 1243
+        },
+        {
+          "name": "Resources",
+          "value": 4
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 6
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 2
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 2
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 0
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 22822
+        },
+        {
+          "name": "LayoutCount",
+          "value": 973
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 1075
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0.74306
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0.576513
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.511722
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 23.682124
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 1881.122477
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 1855.609058
+        },
+        {
+          "name": "ThreadTime",
+          "value": 18.645096
+        },
+        {
+          "name": "ProcessTime",
+          "value": 72.63
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 34420820
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 37019648
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 72722.670499
+        },
+        {
+          "name": "NavigationStart",
+          "value": 72718.554536
+        }
+      ]
+    },
+    "heap": {
+      "usedSize": 33728548,
+      "totalSize": 38592512,
+      "embedderHeapUsedSize": 9839832,
+      "backingStorageSize": 96802715
+    }
   }
 ]

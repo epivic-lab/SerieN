@@ -24,9 +24,9 @@ def summarize(root):
  for row in load(root,'profile/components.json') or []:
   r['components'][row['scenario']]={k:{'perCallMedianMs':median([b[k]['totalMs']/b[k]['iterations'] for b in row['batches']]),'perCallSamplesMs':[b[k]['totalMs']/b[k]['iterations'] for b in row['batches']]} for k in row['batches'][0]}
  for path in sorted((Path(root)/'extended').glob('extended-*.json')):
-  v=json.loads(path.read_text());r['extended'][path.stem]={'wallSeconds':v[-1]['elapsed'],'windows':len(v),'heapFirstBytes':v[0]['heap']['usedSize'],'heapLastBytes':v[-1]['heap']['usedSize'],'heapAllBytes':[x['heap']['usedSize'] for x in v],'residentGeometries':[x['state']['render']['geometries'] for x in v],'residentTextures':[x['state']['render']['textures'] for x in v],'frameMediansMs':[x['frame']['medianMs'] for x in v]}
+  v=json.loads(path.read_text());r['extended'][path.stem]={'wallSeconds':v[-1]['elapsed'],'windows':len(v),'heapFirstBytes':v[0]['heap']['usedSize'],'heapLastBytes':v[-1]['heap']['usedSize'],'heapAllBytes':[x['heap']['usedSize'] for x in v],'backingFirstBytes':v[0]['heap'].get('backingStorageSize'),'backingLastBytes':v[-1]['heap'].get('backingStorageSize'),'backingAllBytes':[x['heap'].get('backingStorageSize') for x in v],'residentGeometries':[x['state']['render']['geometries'] for x in v],'residentTextures':[x['state']['render']['textures'] for x in v],'frameMediansMs':[x['frame']['medianMs'] for x in v]}
  for path in sorted((Path(root)/'extended').glob('cycles-*.json')):
-  r['cycles'][path.stem]=[{'cycle':x['cycle'],'quality':x['state']['quality']['profile'],'heapBytes':x['heap']['usedSize'],'geometries':x['state']['render']['geometries'],'textures':x['state']['render']['textures']} for x in json.loads(path.read_text())]
+  r['cycles'][path.stem]=[{'cycle':x['cycle'],'quality':x['state']['quality']['profile'],'heapBytes':x['heap']['usedSize'],'backingBytes':x['heap'].get('backingStorageSize'),'geometries':x['state']['render']['geometries'],'textures':x['state']['render']['textures']} for x in json.loads(path.read_text())]
  for path in sorted((Path(root)/'profile').glob('*.cpuprofile*')):
   v=json.loads(gzip.decompress(path.read_bytes()) if path.suffix=='.gz' else path.read_text());nodes={x['id']:x for x in v['nodes']};cost=collections.Counter()
   for node,delta in zip(v.get('samples',[]),v.get('timeDeltas',[])):
