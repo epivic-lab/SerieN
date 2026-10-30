@@ -1,45 +1,61 @@
-# SerieN — Development handoff / project progress
+# SerieN — Stato e ripresa
 
-Last documentation sync: 2026-10-30. **This is a handoff, not a claim that phase 5D has passed.** Codex must refresh every state from the local checkout before any work.
+**5A, 5B, 5C e 5D concluse. Pubblicazione su main autorizzata dall’utente il 30 ottobre 2026. 5E non iniziata.**
 
-## Verified from remote GitHub at handoff
-- Remote repository `epivic-lab/SerieN`, `main` commit at inspection: `f582b1226ccf8a592970b0304d0010e1cc43aa57` ("commit finale", 2026-10-29 UTC). This commit message does **not** establish what happened in the Codex local 5D workspace.
-- `AGENTS.md` and `PROGRESS.md` did not exist on main before this documentation change.
-- Browser simulator scale N, three rings, two WX310, eight controller IDs, no live Z21 integration; canonical geometry must be validated from checkout.
-- Cloud Supabase project SerieN: 6A initial schema/security work was reported applied separately (10 tables, RLS and restricted public access); **the GitHub repository schema/history has not been reconciled or verified**. Do not infer that 6A application work is complete.
+La richiesta del 30 ottobre ha autorizzato il completamento della 5D dal checkpoint pulito `5ae8ee9`. Controllato GitHub: `main` a `f582b12`, due commit di soli asset/file di sistema rispetto alla base pubblica, preservati. Repository `first` e `SerieN Control` non modificati.
 
-## Development schedule
-1. Finish and verify phase **5D** (performance), with documented tests and commit. State here: **NOT VERIFIED / MAY BE IN PROGRESS IN OTHER CODEX WORKSPACE**.
-2. Execute **Interactive Turnouts S0–S7**, one approved microphase at a time. Current: **S0 NOT STARTED; gated on 5D**.
-3. Complete **6A.3–6A.6**, with schema/migration reconciliation, backend transactions, persistence and protected testing; no unauthorized browser writes.
-4. Implement **6B** asset normalization/catalogue; **6C** Train Composer; **6D** 3D Loco Depot; **6E** integration.
-5. Run **5E final architecture + cybersecurity audit** before any public backend write exposure.
+**5D chiusa:** CPU nel carico con quattro composizioni lunghe: passo 4,564 → 0,366 ms (−92%), pose/animazioni −55,9%, assistenza −61,9%. Confronto frame 39+39 acquisizioni/1.488 campioni, nessuna soglia superata; sei sessioni F e 36 cicli. Ritenzione preesistente Bloom riprodotta e corretta: cache dopo tre uscite Cinema 1/2/3 → 0/0/0, un programma GPU rilasciato. Durata logica 108.000 passi per revisione e dieci checkpoint identici, storie limitate a 6/6/7 segmenti.
 
-## Current working spec
-- `docs/_active/turnouts/SPEC_v3.md` is the active **text specification**.
-- `docs/_active/turnouts/STATUS.md` identifies the phase state.
-- Illustrated PDF `SerieN_Scambi_Master_Specifica_v3.pdf` is supplied separately to the Codex S0 session; if accessible, S0 stores it temporarily as `docs/_active/turnouts/SPEC_v3.pdf`, verifies its checksum, and removes it in S7. Do not fabricate its presence.
+Codice finale `e8d81d3`: **131 Node**, **9 Python**, build, cinque suite operative browser, otto coppie finali pixel-identiche, cache reale/138,9 s aggiuntivi e Pages sotto `/SerieN/` passati. Timing principale su candidato CPU `5ae8ee9`, cleanup successivo ritestato separatamente: provenienza esplicita nel rapporto. Nessuna promessa di FPS su GPU fisiche o assenza universale di leak.
 
-## Next approved action / gate
-**NOTHING authorized beyond readiness/documentation at present.** After 5D is demonstrably closed, user may explicitly authorize **S0** using the companion prompt. If 5D remains open, report BLOCKED and stop.
+- [Rapporto conclusivo 5D](docs/PERFORMANCE_AUDIT_5D.md).
+- [Dati e tabelle complete](docs/phase-5d/COMPARISON.md), [gate](docs/phase-5d/FINAL_GATES.json).
+- [Correzione Bloom e provenienza](docs/phase-5d/BLOOM_LIFECYCLE_FIX.md).
+- [Ripresa](docs/phase-5d/RESUME.md): leggere prima di altro lavoro; **5E richiede nuova istruzione esplicita**.
 
-## Microphase ledger (fill only after actual execution)
-| Phase | State | Commit | Evidence | User approval to proceed |
-|---|---|---|---|---|
-| 5D | NOT VERIFIED | — | local checkout required | — |
-| S0 | NOT STARTED | — | — | — |
-| S1 | NOT STARTED | — | — | — |
-| S2 | NOT STARTED | — | — | — |
-| S3 | NOT STARTED | — | — | visual approval mandatory |
-| S4 | NOT STARTED | — | — | visual approval mandatory |
-| S5 | NOT STARTED | — | — | — |
-| S6 | NOT STARTED | — | — | — |
-| S7 | NOT STARTED | — | — | final signoff |
+## Rapporti e checkpoint
 
-Do not change a state to PASS based on an assertion without recorded evidence. Never pre-populate SHA placeholders with invented values.
+- [Chiusura 5C](docs/PHASE5C_CLOSURE.md): requisiti, correzioni, prove, rischi residui e rollback.
+- [Roadmap](docs/ROADMAP_PHASE5.md): gate delle sottofasi e governance.
+- Baseline pubblicata v0.12: `618f538`; audit 5A: `b819864`.
+- 5B: `5a551f7`, `afd50db`, conclusione `954461e`.
+- Prima implementazione 5C: `d85892f`, rapporto `2a78abc`.
+- Verifica indipendente: `5060221`, con gate ancora aperto a quella baseline.
+- Chiusura applicativa: `5580799` (passo candidato della flotta), `79247d3` (guardie su modelli/inserimento), `b6ec62d` (contatti invariati), `13ebb2b` (storia sganciata coerente con lo scambio attuale), `8cacb18` (riaggancio al giunto con storia ricostruita).
+- Chiusura documentale 5C: `303525c`. 5D: checkpoint iniziali `0775039`, `8292945`, `5ae8ee9`; regressioni `6b3cacf`, `fbf812c`, `71bd99e`; baseline/frame `ad80350`, `97a590a`, `cc2b8b6`, `9051edf`; memoria `7af64e4`, correzione Bloom `e8d81d3`.
 
-## Last approved technical invariants
-- Canonical trackage / all 150 rail meshes unchanged; same rail bed, turnout shapes and physical proportions.
-- Three train consoles keep existing overall desk height; no new controls in this macrophase.
-- Visual effect state separate from simulation route/safety state.
-- No Supabase API, schema, grant, policy or credential changes in S0–S7.
+Branch di consegna: `performance/phase-5d`, derivato da `303525c`. Codice finale 5D: `e8d81d3`; chiusura documentale nel commit che aggiorna il rapporto 5D. Integrazione autorizzata su `main` dalla base `f582b12`, conservando tutti i suoi 26 percorsi aggiunti. Dettagli in `docs/phase-5d/PUBLICATION.md`. Non fare reset distruttivi del lavoro esistente.
+
+## Esito tecnico della 5C (storico)
+
+Il movimento viene verificato prima del commit del passo, con inviluppi durante il movimento e ricontrollo degli arresti a catena. Posizioni, storia e odometri rifiutati restano conservati. Frontale originario: margine minimo +1 mm, entrambe le locomotive ferme. Inserimento del quarto convoglio e crescita dei modelli non possono introdurre nuovi conflitti; i contatti esistenti possono restare invariati o migliorare. La crescita di uno sganciato non inventa occupazione su un vecchio ramo dopo una commutazione lecita. Il riaggancio attraverso il giunto ricostruisce una candidata tramite il router reale prima del matching e conferma soltanto dopo verifica dello spazio completo.
+
+Geometria canonica, router, Journey/clock, missioni, HUD, plancia, costruttori dei rotabili, asset, dipendenze e workflow conservati. Nessuna galleria. Le modifiche applicative sono confinate a `app.js`, conflitti, coordinamento del passo, comandi flotta e contratti JSDoc. [Confronti](docs/phase-5c-close/preservation.json).
+
+## Verifiche finali della 5C (storico)
+
+- **125 test Node**, zero fallimenti o test saltati; **9 Python JMRI**; build riuscita.
+- **Cinque suite browser verdi**: matrice conclusiva 5C (undici scenari), operazioni Fase 0, rendering/operazioni Fase 4, composizioni GLB reali, rollback atomico 5C.
+- Tutti gli ingressi degli otto controlli verificati con oracle esplicito e attraversamento completo; quattro terminali con convogli corti e cinque carri; entrambi i rami del runaround; frontali/inseguimenti/WX; carro sganciato su giunto; scambio in avvicinamento; aggancio in curva e al giunto con identità conservate.
+- 20/60/120 Hz e frame irregolari con uguale fase iniziale e tempo accettato: stessi stati ferroviari, occupazione, HUD e testo delle consolle. Marker e mesh coerenti; testo reale dell’HUD verificato.
+- Schermate Low/High e responsive ispezionate; nessun errore JavaScript o richiesta fallita nelle suite browser riuscite. 36 moduli applicativi, zero cicli ESM statici.
+
+Prove e comandi: [phase-5c-close](docs/phase-5c-close/). Codice applicativo finale verificato: `8cacb18`. Gli output sono locali, contro la build locale; gli script hanno scritto in cwd temporanea e non hanno sovrascritto i report storici.
+
+## Limiti e ripresa
+
+Validazione della simulazione nelle condizioni della matrice: inviluppi sul piano e passo massimo 1/60 s, non certificazione delle mesh articolate o di un impianto reale. La diagnostica può ancora imporre sovrapposizioni per riprodurre difetti; non è una riparazione automatica di stati iniziali invalidi. Restano i limiti metrologici su WX310 e rotabili.
+
+Chromium/SwiftShader non certifica GPU fisiche. La 5D ha misurato e ridotto i costi della previsione e delle animazioni senza cambiare le regole della 5C; vedere il rapporto prestazionale. CSP, supply-chain, CI e recovery restano alla 5E. Il limite del clock di 0,2 s per aggiornamento è conservato e testato.
+
+Alla ripresa leggere rapporto e roadmap, verificare branch/HEAD/working tree e conservare modifiche successive. Usare il checkout esistente `/workspace/SerieN`, senza nuovi worktree salvo richiesta. Ambiente verificato: Node 24.19.0, Python 3.12.14, Chromium/Playwright. Proxy e CA ereditati. Comandi riproducibili in `docs/phase-5c-close/commands.json`.
+
+## Pianificazione futura — Interactive Turnouts (handoff 2026-10-30)
+
+La **Fase 5D è conclusa e pubblicata su main** con commit `58bbe62bffb37f19125ddb38513502b5ca306821`. La pubblicazione è descritta sopra e nei report 5D, che rimangono la fonte principale dei risultati e delle prove.
+
+**Prossima macrofase: Scambi S0–S7. Stato: S0 NON INIZIATA.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
+
+**Guardrail:** 150 rail mesh, geometria canonica e massicciata intatte; nessuna modifica alla plancia, ai permessi Supabase o al backend durante gli scambi. Il PDF illustrato v3 può essere copiato temporaneamente nella directory attiva solo se effettivamente disponibile; alla chiusura S7 vanno ritirate le specifiche attive e mantenuto `docs/turnouts/FINAL_REPORT.md`.
+
+**Sequenza dopo S7:** completamento Supabase/backend 6A.3–6A.6, Train Management 6B–6E, poi audit finale cybersecurity 5E. Le protezioni minime di sicurezza restano obbligatorie fin da subito.

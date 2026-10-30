@@ -1,0 +1,45 @@
+{
+  "invalidJourney": {
+    "moveNaNAccepted": true,
+    "positionFinite": false
+  },
+  "invalidClock": {
+    "accumulatorFinite": false,
+    "callbacksAfterValidElapsed": 0
+  },
+  "detachedOccupation": {
+    "scope": "Comparison with app.js getSwitchAssistance single-edge formula; not an end-to-end switch exploit",
+    "expectedRanges": [
+      {
+        "edge": "TO4:AC",
+        "min": 109.11092341063315,
+        "max": 188.21092341063314
+      },
+      {
+        "edge": "T47",
+        "min": 0,
+        "max": 89.1
+      }
+    ],
+    "currentFormula": [
+      {
+        "edge": "T47",
+        "min": 0,
+        "max": 89.1
+      }
+    ],
+    "missingAdjacentEdge": true
+  },
+  "crossEdgeCollision": {
+    "scope": "Current app.js different-edge centre threshold; confirmed with browser separately",
+    "edges": [
+      "T47",
+      "T46"
+    ],
+    "centreDistanceMm": 20,
+    "currentThresholdMm": 17,
+    "currentPredicate": false,
+    "closedWagonCombinedHalfBodyLengthMm": 62.5,
+    "straightBodyOverlapMm": 42.5
+  }
+}
