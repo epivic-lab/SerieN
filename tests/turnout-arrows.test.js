@@ -61,3 +61,23 @@ test('cached renderer animates state change, keeps refused/no-change idle, reduc
  for(const t of [NaN,-1,Infinity])assert.throws(()=>arrows.update(t),RangeError);assert.throws(()=>arrows.setReducedMotion(1),TypeError);assert.throws(()=>arrows.update(500,1),TypeError);
  arrows.dispose();arrows.dispose();arrows.update(500);assert.equal(g,20);assert.equal(m,8);assert.equal(scene.children.length,0);
 });
+
+test('both arrowhead bisectors follow the canonical tangent on all twenty physical paths',()=>{
+ for(const control of n.controllers)for(const path of model.read(control.id,false).paths){
+  const geometry=arrowGeometry(path),positions=geometry.attributes.position.array,roles=geometry.attributes.role.array,uv=geometry.attributes.uv.array,edge=n.edges[path.edge];
+  for(const role of [1,2]){
+   const wings=[];
+   for(let i=0;i<roles.length;i+=6)if(roles[i]===role){
+    const centre=(a,b)=>({x:(positions[a*3]+positions[b*3])/2,z:(positions[a*3+2]+positions[b*3+2])/2});
+    wings.push({base:centre(i,i+1),tip:centre(i+2,i+4),s:uv[i*2+1]*edge.length});
+   }
+   assert.equal(wings.length,2);const [a,b]=wings;
+   assert.ok(Math.hypot(a.tip.x-b.tip.x,a.tip.z-b.tip.z)<.001);
+   const dx=a.tip.x-(a.base.x+b.base.x)/2,dz=a.tip.z-(a.base.z+b.base.z)/2;
+   const sign=role===1?1:-1,p=sample(edge,a.s-.1*sign),q=sample(edge,a.s+.1*sign),tx=q.x-p.x,tz=q.z-p.z;
+   assert.ok((dx*tx+dz*tz)/(Math.hypot(dx,dz)*Math.hypot(tx,tz))>.99999,`${path.edge}: head ${role} diverges from tangent`);
+   const tip=sample(edge,a.s);assert.ok(Math.hypot(tip.x-a.tip.x,tip.z-a.tip.z)<.001);
+  }
+  geometry.dispose();
+ }
+});

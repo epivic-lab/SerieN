@@ -1,4 +1,4 @@
-# Turnouts — ACTIVE SPEC / S3 B APPROVED / S4 TECHNICAL PASS / VISUAL APPROVAL PENDING
+# Turnouts — ACTIVE SPEC / S3 B APPROVED / S4 REFINEMENT TECHNICAL PASS / VISUAL APPROVAL PENDING
 
 Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-30. **S0–S3 approved; S3 B officially selected by user. S4 verification complete: technical PASS, visual/functional approval PENDING; S5 NOT STARTED.**
 
@@ -17,7 +17,7 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 | S1 | PASS / APPROVED | `99b143c918e016f7e744217aa4c760fc9987deb9` | S2 explicitly approved |
 | S2 | PASS / APPROVED | `6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b` | S3 explicitly approved |
 | S3 | PASS / APPROVED B | `fd32b43fe9438980bde798fd76773f8af2f3f5fc` | S4 explicitly authorized |
-| S4 | TECHNICAL PASS / VISUAL PENDING | final commit updating `evidence/S4/REPORT.md` after `c54c8c1` | visual/functional signoff and S5 authorization required |
+| S4 | TECHNICAL PASS / VISUAL PENDING | latest commit updating `evidence/S4/refinement/REPORT.md`, after `48a89d1` | visual/functional signoff and S5 authorization required |
 | S5 | NOT STARTED | — | pending |
 | S6 | NOT STARTED | — | pending |
 | S7 | NOT STARTED | — | final signoff |
@@ -86,3 +86,12 @@ Resumed from clean verified remote checkpoint c54c8c1. Runtime unchanged; approv
 Isolated 5D/S3/S4 RAF comparison and moving-train presentation CPU sample completed; data/provenance/limits in [final report](evidence/S4/REPORT.md). Existing real captures preserved and revalidated. Only test fixture clock/pointer normalization corrected during resume; no new railway or graphic implementation.
 
 [Gallery](evidence/S4/visual/GALLERY.md), [handoff](evidence/S4/RESUME.md), [commands](evidence/S4/commands.json). Final closure commit updates report after intermediate c54c8c1; actual local/remote SHA and clean tree verified in handoff. Origin/main untouched; no merge/rebase/reset/force-push/deployment. Physical GPU/touch and full5D matrix NOT VERIFIED. **STOP: aesthetic/functional S4 approval and explicit S5 authorization required.**
+
+
+## S4 conservative refinement — technical closure
+
+Fresh review from clean local/remote `48a89d1`, with requested `c54c8c1` ancestor verified. **S4 technical PASS; aesthetic/functional approval PENDING. S5 NOT STARTED.** Only runtime correction: arrowhead bisectors follow local canonical tangents on curved paths, instead of the final7mm chord. All style/configuration,340ms reveal, shaft vertices, approved glowB and railway geometry unchanged.
+
+**195 Node +9 Python/JMRI +build, five fresh browser regression suites and additional stress/camera review PASS.** 1,616 guarded rapid commands, all20geometry/material identities stable, no ghost routes/residual animation; GPU360/45/47 stable. Dispose20geometries/8materials/1program checked separately. Twenty-four opposite/low-angle zoomed poses idle-pixel-exact, real orbit/wheel and three resizes PASS. New73captures validate all8/bothstates/daynight, WX opposite directions,340ms reveal and six B-only comparisons pixel-exact toS3. Fresh isolated5D/S3/S4 comparison within gates; full5D/hardware GPU/touch NOT VERIFIED.
+
+[Current report](evidence/S4/refinement/REPORT.md), [new gallery](evidence/S4/refinement/visual/GALLERY.md), [camera review](evidence/S4/refinement/review/GALLERY.md), [provenance](evidence/S4/refinement/commands.json). Previous report/images preserved as history. Current final commit is the latest affecting refinement/REPORT.md; actual SHA, verified remote feature/turnouts equality and clean tree in handoff. Main unchanged; no merge/rebase/reset/force/deploy. **STOP for user's red-arrow visual/functional approval and explicit S5 authorization.**

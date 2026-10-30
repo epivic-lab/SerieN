@@ -1,0 +1,280 @@
+{
+  "result": "PASS",
+  "railMaterialsAndTexturesUnchanged": true,
+  "materialSignatures": [
+    {
+      "name": "",
+      "type": "MeshStandardMaterial",
+      "color": [
+        1,
+        1,
+        1
+      ],
+      "roughness": 1,
+      "metalness": 0,
+      "bumpScale": 0.22,
+      "vertexColors": false,
+      "textures": {
+        "map": {
+          "width": 256,
+          "height": 256,
+          "sha256": "7b7863d668a2d24e5a3fd7c5151079eb12202b07f8dd867eca59726f066acb0a"
+        },
+        "roughnessMap": {
+          "width": 256,
+          "height": 256,
+          "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+        },
+        "bumpMap": {
+          "width": 256,
+          "height": 256,
+          "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+        }
+      }
+    },
+    {
+      "name": "Weathered rail web / polished running head",
+      "type": "MeshStandardMaterial",
+      "color": [
+        1,
+        1,
+        1
+      ],
+      "roughness": 1,
+      "metalness": 1,
+      "bumpScale": 1,
+      "vertexColors": true,
+      "textures": {
+        "roughnessMap": {
+          "width": 128,
+          "height": 128,
+          "sha256": "1cc2de02d21d2cbcb12beeba65c4c91a1de5f88f1034f60bdce553555c39edab"
+        }
+      }
+    }
+  ],
+  "commands": [
+    [
+      "WX-A",
+      "panel",
+      true
+    ],
+    [
+      "WX-A",
+      "device",
+      false
+    ],
+    [
+      "WX-B",
+      "panel",
+      true
+    ],
+    [
+      "WX-B",
+      "device",
+      false
+    ],
+    [
+      "Y-IN",
+      "panel",
+      true
+    ],
+    [
+      "Y-IN",
+      "device",
+      false
+    ],
+    [
+      "Y-2",
+      "panel",
+      true
+    ],
+    [
+      "Y-2",
+      "device",
+      false
+    ],
+    [
+      "Y-3",
+      "panel",
+      true
+    ],
+    [
+      "Y-3",
+      "device",
+      false
+    ],
+    [
+      "Y-R1",
+      "panel",
+      true
+    ],
+    [
+      "Y-R1",
+      "device",
+      false
+    ],
+    [
+      "Y-R2",
+      "panel",
+      true
+    ],
+    [
+      "Y-R2",
+      "device",
+      false
+    ],
+    [
+      "Y-4",
+      "panel",
+      true
+    ],
+    [
+      "Y-4",
+      "device",
+      false
+    ]
+  ],
+  "blueBDefaultAndHoverAll8": true,
+  "WXDirections": [
+    [
+      "WX-A",
+      false,
+      "UL",
+      "WX-A:upper",
+      1
+    ],
+    [
+      "WX-A",
+      false,
+      "UR",
+      "WX-A:upper",
+      -1
+    ],
+    [
+      "WX-A",
+      false,
+      "LL",
+      "WX-A:lower",
+      1
+    ],
+    [
+      "WX-A",
+      false,
+      "LR",
+      "WX-A:lower",
+      -1
+    ],
+    [
+      "WX-A",
+      true,
+      "UL",
+      "WX-A:down",
+      1
+    ],
+    [
+      "WX-A",
+      true,
+      "UR",
+      "WX-A:up",
+      -1
+    ],
+    [
+      "WX-A",
+      true,
+      "LL",
+      "WX-A:up",
+      1
+    ],
+    [
+      "WX-A",
+      true,
+      "LR",
+      "WX-A:down",
+      -1
+    ],
+    [
+      "WX-B",
+      false,
+      "UL",
+      "WX-B:upper",
+      1
+    ],
+    [
+      "WX-B",
+      false,
+      "UR",
+      "WX-B:upper",
+      -1
+    ],
+    [
+      "WX-B",
+      false,
+      "LL",
+      "WX-B:lower",
+      1
+    ],
+    [
+      "WX-B",
+      false,
+      "LR",
+      "WX-B:lower",
+      -1
+    ],
+    [
+      "WX-B",
+      true,
+      "UL",
+      "WX-B:down",
+      1
+    ],
+    [
+      "WX-B",
+      true,
+      "UR",
+      "WX-B:up",
+      -1
+    ],
+    [
+      "WX-B",
+      true,
+      "LL",
+      "WX-B:up",
+      1
+    ],
+    [
+      "WX-B",
+      true,
+      "LR",
+      "WX-B:down",
+      -1
+    ]
+  ],
+  "occupiedRejectionKeepsRoutes": true,
+  "unknownSuppression": true,
+  "reducedMotion": true,
+  "depthExact": true,
+  "resources": {
+    "before": {
+      "geometries": 368,
+      "textures": 45,
+      "programs": 48
+    },
+    "after": {
+      "geometries": 368,
+      "textures": 45,
+      "programs": 48
+    },
+    "disposed": {
+      "geometries": 348,
+      "textures": 45,
+      "programs": 47
+    },
+    "geometries": 20,
+    "materials": 8,
+    "removed": true
+  },
+  "errors": [],
+  "failedRequests": [],
+  "physicalGPUAndTouch": "NOT VERIFIED"
+}

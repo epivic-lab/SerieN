@@ -1,5 +1,7 @@
 # S4 — Animated Red Route Arrows
 
+> Rapporto della chiusura tecnica a `48a89d1`, conservato come storico. La successiva [rifinitura conservativa e nuova validazione](refinement/REPORT.md) è lo stato corrente; corregge soltanto la tangente delle punte e rinnova le evidenze. Le misure sotto rimangono quelle del precedente checkpoint.
+
 **PASS tecnico. Approvazione estetica e funzionale dell'utente PENDING. S5 NON iniziata.**
 
 Ripresa dal checkpoint remoto verificato `c54c8c12d43a07c62228b99b8ffdbd66cedb13a5` sul branch `feature/turnouts`, working tree iniziale pulito e 87 hash delle evidenze validi. S0–S3 e checkpoint intermedio presenti sul remoto; main iniziale `6487f61612818c8cd46d882741cfa1ca96ac5a16`. La ripresa completa le verifiche mancanti: **nessuna modifica al runtime rispetto al checkpoint**, nessuna modifica alla Variante B approvata.

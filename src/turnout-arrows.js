@@ -15,7 +15,9 @@ export function arrowGeometry(source) {
     uv.push(1,sa,-1,sa,1,sb,-1,sa,-1,sb,1,sb);roles.push(role,role,role,role,role,role);}
   const stations=[c.endInset,...p.distance.filter(s=>s>c.endInset&&s<p.length-c.endInset),p.length-c.endInset];
   for(let i=1;i<stations.length;i++)segment(point(p,stations[i-1]),point(p,stations[i]),stations[i-1]/p.length,stations[i]/p.length,0);
-  for(const sign of [-1,1]){const s=sign>0?p.length-c.endInset:c.endInset,tip=point(p,s),back=point(p,s-sign*c.headLength),dx=tip.x-back.x,dz=tip.z-back.z,len=Math.hypot(dx,dz);
+  for(const sign of [-1,1]){const s=sign>0?p.length-c.endInset:c.endInset,tip=point(p,s),before=point(p,s-.1*sign),after=point(p,s+.1*sign),dx=after.x-before.x,dz=after.z-before.z,len=Math.hypot(dx,dz);
+    // The tip follows the local canonical tangent, including curved branches.
+    const back={x:tip.x-dx/len*c.headLength,z:tip.z-dz/len*c.headLength};
     for(const side of [-1,1])segment({x:back.x-dz/len*c.headHalfWidth*side,z:back.z+dx/len*c.headHalfWidth*side},tip,s/p.length,s/p.length,sign>0?1:2);}
   const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geometry.setAttribute('role',new THREE.Float32BufferAttribute(roles,1));geometry.computeBoundingSphere();return geometry;
 }

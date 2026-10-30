@@ -131,3 +131,15 @@ Salvati tre moduli per proiezione pura S1, osservazione Journey e overlay rosso:
 - [Galleria](docs/_active/turnouts/evidence/S4/visual/GALLERY.md), [pagina HTML](docs/_active/turnouts/evidence/S4/visual/index.html), [handoff](docs/_active/turnouts/evidence/S4/RESUME.md), [provenienza](docs/_active/turnouts/evidence/S4/commands.json). Commit finale S4: quello che aggiorna il rapporto dopo c54c8c1; SHA effettivo e verifica remota nella consegna. Solo feature/turnouts, main intatto.
 
 **Prossima azione unica: attendere approvazione grafica/funzionale S4 ed eventuali rifiniture. S5 richiede autorizzazione esplicita.** Restano NOT VERIFIED GPU/touch hardware e benchmark completo 5D; resa generale diurna discreta, da giudicare visivamente. Nessun blocco tecnico rilevato.
+
+
+## S4 — rifinitura conservativa e nuova chiusura tecnica (2026-10-30)
+
+**S4 PASS tecnico, approvazione estetica/funzionale PENDING; S5 NON iniziata.** Ripresa da `48a89d1`, già salvata su origin/feature/turnouts e discendente di `c54c8c1`, working tree iniziale pulito. Corretto un solo difetto: bisettrice delle punte sui rami curvi, corda7mm → tangente canonica locale (errore massimo0,420154° →0,000102°). Nuovo test falliva prima e passa dopo. Nessuna modifica allo stile, configurazione/durata340ms, tracce, glow B, geometria ferroviaria o massicciata.
+
+- **195 Node +9 Python/JMRI +build PASS** sulla versione finale. Cinque suite browser fresche PASS: S4, S1, S2, 5C undici scenari, Fase0. Nuovo stress PASS: 1.616 richieste protette, identità risorse e percorsi controllati dopo ogni richiesta, GPU360geometrie/45texture/47programmi stabile; dispose20geometrie/8materiali/1programma. Nessuna animazione residua.
+- **24 pose ×confronto idle pixel-identico**, due angoli/due zoom/due stati di Y-IN/WX-A/WX-B, orbita/rotella reali e tre resize PASS. Nuove73immagini, due WX nei due versi, reveal0/170/340ms distinto e sei B isolati pixel-identici aS3. [Galleria aggiornata](docs/_active/turnouts/evidence/S4/refinement/visual/GALLERY.md), [camere](docs/_active/turnouts/evidence/S4/refinement/review/GALLERY.md).
+- Canonico rigenerato invariato, 150rotaie/75letti identici aS0;64file originali e cinque funzioni calde identici aS3. Railway, sicurezza5C, dinamica/5D, UI, dipendenze e backend preservati. Benchmark isolato5D/S3/S4 fresco entro soglie; dati e limiti nel [rapporto](docs/_active/turnouts/evidence/S4/refinement/REPORT.md). GPU/touch fisici e matrice completa5D NOT VERIFIED; procedura manuale documentata.
+- Commit della rifinitura risolvibile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S4/refinement/REPORT.md`; SHA e checkpoint remoto verificati nella consegna. Solo feature/turnouts, main invariato, nessun merge/rebase/reset/force/deployment. Evidenze storiche preservate.
+
+**Unica prossima azione: attendere approvazione esplicita grafica/funzionale delle frecce rosse ed eventuali rifiniture. Non iniziare S5 senza nuova autorizzazione.**
