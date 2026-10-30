@@ -1,0 +1,59 @@
+{
+  "baselineCommit": "107178921bbc8049d855c0221b799444231120bb",
+  "branch": "main",
+  "environment": {
+    "Node": "24.19.0",
+    "Python": "3.12.14",
+    "Chromium": "154.0.8037.57",
+    "renderer": "SwiftShader"
+  },
+  "baseline": [
+    "git status --short --branch",
+    "git rev-parse HEAD",
+    "git fetch origin main",
+    "npm test",
+    "npm run build",
+    "node scripts/performance/build-profile.mjs . /workspace/work/s1/s0-profile.js"
+  ],
+  "verification": [
+    "npm test",
+    "python3 -m unittest discover -s tests -p '*_test.py'",
+    "npm run build",
+    "python3 scripts/build-canonical-layout.py",
+    "git diff --exit-code -- src/canonical-layout.json docs/jmri-layout"
+  ],
+  "observerBuild": [
+    "node scripts/performance/build-profile.mjs . /workspace/work/s1/s1-profile.js",
+    "node docs/_active/turnouts/evidence/S0/build-observer.mjs . /workspace/work/s1/s1-observer.js"
+  ],
+  "browserBase": "http://127.0.0.1:8000/",
+  "browserCommands": [
+    {
+      "cwd": "/workspace/SerieN",
+      "command": "python3 scripts/performance/visual-regression.py --before http://127.0.0.1:8000/ --after http://127.0.0.1:8000/ --before-bundle /workspace/work/s1/s0-profile.js --after-bundle /workspace/work/s1/s1-profile.js --output /workspace/work/s1/visual",
+      "exitCode": 0
+    },
+    {
+      "cwd": "/workspace/SerieN",
+      "command": "S1_BUNDLE=/workspace/work/s1/s1-observer.js S1_OUTPUT=/workspace/work/s1/contract python3 tests/browser-turnout-contract.py",
+      "exitCode": 0
+    },
+    {
+      "cwd": "/workspace/work/s1/browser-close",
+      "command": "python3 /workspace/SerieN/tests/browser-phase-five-close.py",
+      "exitCode": 0
+    },
+    {
+      "cwd": "/workspace/work/s1/browser-zero",
+      "command": "python3 /workspace/SerieN/tests/browser-phase-zero.py",
+      "exitCode": 0
+    }
+  ],
+  "temporaryBundleSha256": {
+    "s0-game.js": "147b28274fe42d72c916494e3f80c516b0bc206ec98fce505f34bee457f69653",
+    "s0-profile.js": "fc410c7c82990b5fca220d56d61fbb77bfcb141625b8ad4e151cea6524e69c66",
+    "s1-profile.js": "d6faedfe5dc1727dc32b7ba7073b27088c8cca6e7b825727b7a6a2f12fc07a50",
+    "s1-observer.js": "8debfacc3738b2a9661e5a9ec0c80f10df6ff7c39f0df8becafc7ec8867a2f53"
+  },
+  "provenance": "S0 production and observer bundles saved before edits; both visual sides served from same root with per-page bundle interception. No profiling bundle committed or copied into dist. Browser suites executed sequentially. Final results only; browser fixture adjustment documented in REPORT.md."
+}

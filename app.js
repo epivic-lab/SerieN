@@ -6,6 +6,8 @@ import {layoutFor,vehiclePositions,deriveSwitchAssistance,collectRailwayState} f
 import {buildStock,animateStock} from './src/rolling-stock.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
 import {createSwitchFeedback} from "./src/switch-feedback.js";
+import {createTurnoutModel} from "./src/turnout-routes.js";
+import {createTurnoutCommands} from "./src/turnout-commands.js";
 import {controlMarkers} from "./src/zone-layout.js";
 import { mountTrainDeck } from "./src/train-deck.js";
 import { captureLocomotiveThumbnail } from "./src/locomotive-thumbnails.js";
@@ -275,6 +277,7 @@ const signalGold = new THREE.MeshStandardMaterial({ color: "#f0bd64", emissive: 
 const signalHover=new THREE.MeshBasicMaterial({color:"#ff8b16",toneMapped:false});
 const controlOrder=["WX-A","WX-B","Y-IN","Y-2","Y-3","Y-R1","Y-R2","Y-4"];
 const switchSpecs=controlOrder.map((id)=>({...network.controllers.find((c)=>c.id===id),on:false}));
+const turnoutModel=createTurnoutModel(network);
 const switchTopology = createSwitchTopology(network, switchSpecs);
 const switchHandles = [];
 const markerPositions=controlMarkers(network,LEGACY_BUILDINGS);
@@ -444,7 +447,7 @@ function ui() {
     $("switchList").querySelectorAll(".switchCell").forEach((cell,i)=>{
       cell.onpointerenter=(e)=>{if(e.pointerType!=="touch")switchFeedback.hover(switchSpecs[i].id);};
       cell.onpointerleave=()=>switchFeedback.hover(null);
-      cell.querySelector("button").onclick=()=>toggle(i);
+      cell.querySelector("button").onclick=()=>requestToggle(switchSpecs[i].id,"panel");
     });
   }
   $("switchList").querySelectorAll("button").forEach((b,i)=>b.classList.toggle("active",switchSpecs[i].on));
@@ -463,22 +466,23 @@ function select(id) {
   trainDeck?.select(id);
   ui();
 }
-function toggle(index) {
-  const s = switchSpecs[index];
-  const status = getSwitchAssistance().safetyByControl.get(s.id);
-  if (!status || status.blocked) {
-    log(status?.message ?? "Insufficient safety data: switch operation blocked.");
+function requestToggle(controlId,origin) {
+  const result = turnoutCommands.requestToggle(controlId,origin);
+  if (!result.changed) {
+    log(result.message);
     nextSwitchHUD?.refresh(true);
-    return;
+    return result;
   }
-  s.on = !s.on;
-  for(const t of trains)t.journey.reconcile(layoutFor(t).tail,t.group.userData.couplers?.front?.x??48,route);
+  const s = switchSpecs.find(s => s.id === controlId);
   s.bulb.material = s.on ? signalGold : signalGreen;
   changes++;
   log(s.name + ": " + (s.on ? "diverging" : "straight"));
   ui();
+  return result;
 }
 const route = routing(network, (id) => switchSpecs.find((s) => s.id === id)?.on || false);
+const turnoutCommands=createTurnoutCommands({switchSpecs,trains,route,
+  getSafety:id=>getSwitchAssistance().safetyByControl.get(id)});
 const fleetCommands=createFleetCommands({trains,detached,route});
 function getSwitchAssistance() {
   return deriveSwitchAssistance({network,switchTopology,trains,detached,selected,switchSpecs,route,tracePoints:false});
@@ -697,8 +701,7 @@ renderer.domElement.addEventListener("pointerup", (e) => {
     let node = hit[0].object;
     while (node && !node.userData.switchId && node.userData.trainId === void 0) node = node.parent;
     if (node?.userData.switchId) {
-      let i = switchSpecs.findIndex((s) => s.id === node.userData.switchId);
-      if (i >= 0) toggle(i);
+      requestToggle(node.userData.switchId,"device");
     } else if (node?.userData.trainId !== void 0) select(node.userData.trainId);
   }
   down = null;
@@ -833,6 +836,12 @@ $("loadMsg").hidden = true;
 animationHandle = requestAnimationFrame(tick);
 if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = {
   indicatorState:switchIndicatorState,
+  requestToggle,
+  turnoutView(controlId,options={}) {
+    const on=switchSpecs.find(s=>s.id===controlId)?.on;
+    return turnoutModel.read(controlId,on,{...options,choose:route,
+      operationLock:getSwitchAssistance().safetyByControl.get(controlId)});
+  },
   captureThumbnail(id) {
     const t=trains[id];if(!t)throw new RangeError("Unknown locomotive");
     return captureLocomotiveThumbnail(renderer,t.group,scene.environment);

@@ -54,7 +54,7 @@ Alla ripresa leggere rapporto e roadmap, verificare branch/HEAD/working tree e c
 
 La **Fase 5D è conclusa e pubblicata su main** con commit `58bbe62bffb37f19125ddb38513502b5ca306821`. La pubblicazione è descritta sopra e nei report 5D, che rimangono la fonte principale dei risultati e delle prove.
 
-**Macrofase Scambi S0–S7: S0 COMPLETATA (PASS), S1 NON INIZIATA; attesa autorizzazione esplicita.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
+**Macrofase Scambi S0–S7: S0 APPROVATA; S1 COMPLETATA (PASS), S2 NON INIZIATA; attesa autorizzazione esplicita.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
 
 **Guardrail:** 150 rail mesh, geometria canonica e massicciata intatte; nessuna modifica alla plancia, ai permessi Supabase o al backend durante gli scambi. Il PDF illustrato v3 può essere copiato temporaneamente nella directory attiva solo se effettivamente disponibile; alla chiusura S7 vanno ritirate le specifiche attive e mantenuto `docs/turnouts/FINAL_REPORT.md`.
 
@@ -69,4 +69,15 @@ Baseline acquisita sul branch aggiornato `main`, HEAD iniziale `6487f61612818c8c
 - Otto riferimenti giorno/notte, semplice e due WX310; camera/seed registrati. PDF originale acquisito e hash verificato. Benchmark 5D conservati con provenienza; nuovo breve campione RAF separato, non confronto equivalente. GPU e touch fisici NOT VERIFIED.
 - [Rapporto S0](docs/_active/turnouts/evidence/S0/REPORT.md), [stato](docs/_active/turnouts/STATUS.md), [baseline e verifiche](docs/_active/turnouts/evidence/S0/baseline.json). Commit S0 recuperabile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S0/REPORT.md`.
 
-**Unica prossima azione: attendere approvazione S1** (contratto puro router e dispatcher validato comune). Nessun effetto, modifica ferroviaria o backend implementato. Nessun push/deployment S0; 5E non iniziata.
+S0 approvata dall’utente nella richiesta successiva, con autorizzazione esclusiva S1. Il commit S0 è `107178921bbc8049d855c0221b799444231120bb`. Nessun push/deployment S0; 5E non iniziata.
+
+## Interactive Turnouts — S1 (2026-10-30)
+
+**S1 PASS; S2 NON INIZIATA.** Baseline pulita `main` a `1071789`, verificata con fetch e test iniziali. Aggiunti vista pura immutabile dal router e comando unico validato per ID canonico; pannello e picking esistente usano `requestToggle(controlId, origin)`. Entrambi gli stati di tutti gli otto dispositivi, porte, versi, UNKNOWN e due percorsi simultanei per ciascun WX310 documentati nel [contratto S1](docs/_active/turnouts/S1_CONTRACT.md). Selezione locale, accesso di rete, lock e rischio restano distinti.
+
+- **148 Node, 9 Python, build: PASS**. Nuova matrice: 7.168 ingressi su 256 configurazioni globali; nuovo test browser: 16 coppie di vere azioni pannello/marker e rifiuti protetti. Suite browser 5C (11 scenari) e circuito/manovre/HUD/responsive (quattro viewport): PASS.
+- **Otto coppie pixel-identiche S0/S1** e stati/trasformazioni nativi/GLB identici nei due versi. Inventario esatto delle 150 rotaie e 75 letti invariato; rigenerazione canonica senza diff. Hash canonico S0 conservato.
+- Router, Journey, sicurezza 5C, ottimizzazioni 5D e funzioni calde intatti. Nuova vista predisposta senza lavoro per-frame. Nessuna modifica a indicatori, glow, frecce, STOP, plancia o backend; nessuna nuova dipendenza. Bundle +3.899 byte (+0,40%).
+- [Rapporto e limiti S1](docs/_active/turnouts/evidence/S1/REPORT.md), [provenienza/comandi](docs/_active/turnouts/evidence/S1/commands.json). Commit S1 recuperabile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S1/REPORT.md`; SHA effettivo nella consegna. Nessun push/deployment S1.
+
+**Unica prossima azione: attendere autorizzazione esplicita S2** (rimozione dei soli marker artificiali e picking conforme ai percorsi canonici). GPU e touch fisici restano NOT VERIFIED; benchmark 5D completo non rieseguito e nessun guadagno FPS rivendicato. Nessun blocco tecnico aperto.
