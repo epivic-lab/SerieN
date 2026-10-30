@@ -4,7 +4,7 @@
 
 Autorizzazione corrente: richiesta completa Fase 5D in `docs/phase-5d/REQUEST.md`. Baseline recuperabile `303525c`; working tree iniziale pulito; 125 Node, 9 Python e build iniziali passati. La 5E richiede una nuova istruzione esplicita. Nessun push, deployment o intervento su `first`, `SerieN Control` o altri repository.
 
-5D: ripresa dal checkpoint pulito `5ae8ee9`. Verificato `origin/main` a `f582b12`: due commit remoti aggiungono solo asset-library e file .DS_Store, preservati senza merge/deployment. Build, 9 Python e 130 casi Node passati; confronto esatto di 8 coppie di immagini Low/High/Cinema giorno/notte e trasformazioni/stato in moto nei due versi nativo/Kenney passato. Prove in `docs/phase-5d/regression`. Matrice browser 5C e suite operativa responsive passate; simulazione e proiezione HUD equivalenti nei casi verificati (`SIMULATION_UI_ACCEPTANCE.md`). Altre tre suite browser, matrice frame completa e sessioni F in corso; 5D non ancora chiusa.
+5D: ripresa dal checkpoint pulito `5ae8ee9`. Verificato `origin/main` a `f582b12`: due commit remoti aggiungono solo asset-library e file .DS_Store, preservati senza merge/deployment. Build, 9 Python e 130 casi Node passati; confronto esatto di 8 coppie di immagini Low/High/Cinema giorno/notte e trasformazioni/stato in moto nei due versi nativo/Kenney passato. Prove in `docs/phase-5d/regression`. Matrice browser 5C e suite operativa responsive passate; simulazione e proiezione HUD equivalenti nei casi verificati (`SIMULATION_UI_ACCEPTANCE.md`). Tutte e cinque le suite browser sono passate; matrice frame completa e sessioni F in corso. 5D non ancora chiusa.
 
 ## Rapporti e checkpoint
 
