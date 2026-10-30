@@ -1,0 +1,215 @@
+{
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+  "dpr": 1,
+  "viewport": [
+    650,
+    760
+  ],
+  "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "navigation": {
+    "name": "http://127.0.0.1:8050/?diagnostics=1",
+    "entryType": "navigation",
+    "startTime": 0,
+    "duration": 15537.299999998882,
+    "navigationId": 5973,
+    "initiatorType": "navigation",
+    "deliveryType": "",
+    "nextHopProtocol": "http/1.0",
+    "renderBlockingStatus": "non-blocking",
+    "contentType": "text/html",
+    "contentEncoding": "",
+    "workerStart": 0,
+    "workerRouterEvaluationStart": 0,
+    "workerCacheLookupStart": 0,
+    "workerMatchedSourceType": "",
+    "workerFinalSourceType": "",
+    "redirectStart": 0,
+    "redirectEnd": 0,
+    "fetchStart": 1.3999999985098839,
+    "domainLookupStart": 1.3999999985098839,
+    "domainLookupEnd": 1.3999999985098839,
+    "connectStart": 1.3999999985098839,
+    "secureConnectionStart": 0,
+    "connectEnd": 1.3999999985098839,
+    "requestStart": 55.69999999925494,
+    "responseStart": 67.69999999925494,
+    "firstInterimResponseStart": 0,
+    "finalResponseHeadersStart": 67.69999999925494,
+    "responseEnd": 68.79999999888241,
+    "transferSize": 7612,
+    "encodedBodySize": 7312,
+    "decodedBodySize": 7312,
+    "responseStatus": 200,
+    "serverTiming": [],
+    "unloadEventStart": 0,
+    "unloadEventEnd": 0,
+    "domInteractive": 344,
+    "domContentLoadedEventStart": 6900.799999998882,
+    "domContentLoadedEventEnd": 6904.799999998882,
+    "domComplete": 15537.199999999255,
+    "loadEventStart": 15537.299999998882,
+    "loadEventEnd": 15537.299999998882,
+    "type": "navigate",
+    "redirectCount": 0,
+    "activationStart": 0,
+    "criticalCHRestart": 0,
+    "notRestoredReasons": null,
+    "confidence": {
+      "randomizedTriggerRate": 0.4994798,
+      "value": "low"
+    }
+  },
+  "resources": [
+    {
+      "name": "http://127.0.0.1:8050/style.css?v=0.12.0",
+      "duration": 74.90000000037253,
+      "transfer": 13923,
+      "encoded": 13623,
+      "decoded": 13623
+    },
+    {
+      "name": "http://127.0.0.1:8050/docs/jmri-layout/minimap-canonical.svg",
+      "duration": 75.09999999962747,
+      "transfer": 107391,
+      "encoded": 107091,
+      "decoded": 107091
+    },
+    {
+      "name": "http://127.0.0.1:8050/dist/game.js?v=0.12.0",
+      "duration": 1157,
+      "transfer": 5925172,
+      "encoded": 5924872,
+      "decoded": 5924872
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/train-carriage-box.glb",
+      "duration": 32.19999999925494,
+      "transfer": 99068,
+      "encoded": 98768,
+      "decoded": 98768
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/train-carriage-lumber.glb",
+      "duration": 43.30000000074506,
+      "transfer": 110608,
+      "encoded": 110308,
+      "decoded": 110308
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/train-carriage-tank.glb",
+      "duration": 42.69999999925494,
+      "transfer": 107052,
+      "encoded": 106752,
+      "decoded": 106752
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/train-locomotive-a.glb",
+      "duration": 56.69999999925494,
+      "transfer": 154920,
+      "encoded": 154620,
+      "decoded": 154620
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/train-diesel-a.glb",
+      "duration": 66.5,
+      "transfer": 156732,
+      "encoded": 156432,
+      "decoded": 156432
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/train-diesel-box-a.glb",
+      "duration": 49.40000000037253,
+      "transfer": 156356,
+      "encoded": 156056,
+      "decoded": 156056
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/locomotive-thumbnails/native-steam.png",
+      "duration": 58.40000000037253,
+      "transfer": 12570,
+      "encoded": 12270,
+      "decoded": 12270
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/locomotive-thumbnails/native-diesel.png",
+      "duration": 59.19999999925494,
+      "transfer": 9041,
+      "encoded": 8741,
+      "decoded": 8741
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/locomotive-thumbnails/native-shunter.png",
+      "duration": 62.69999999925494,
+      "transfer": 5746,
+      "encoded": 5446,
+      "decoded": 5446
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/Textures/colormap.png",
+      "duration": 12.199999999254942,
+      "transfer": 12984,
+      "encoded": 12684,
+      "decoded": 12684
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/Textures/colormap.png",
+      "duration": 18.800000000745058,
+      "transfer": 12984,
+      "encoded": 12684,
+      "decoded": 12684
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/Textures/colormap.png",
+      "duration": 15.5,
+      "transfer": 12984,
+      "encoded": 12684,
+      "decoded": 12684
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/Textures/colormap.png",
+      "duration": 13.699999999254942,
+      "transfer": 12984,
+      "encoded": 12684,
+      "decoded": 12684
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/Textures/colormap.png",
+      "duration": 15,
+      "transfer": 12984,
+      "encoded": 12684,
+      "decoded": 12684
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/kenney/Textures/colormap.png",
+      "duration": 13.700000001117587,
+      "transfer": 12984,
+      "encoded": 12684,
+      "decoded": 12684
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/locomotive-thumbnails/kenney-steam.png",
+      "duration": 18.100000001490116,
+      "transfer": 21687,
+      "encoded": 21387,
+      "decoded": 21387
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/locomotive-thumbnails/kenney-diesel.png",
+      "duration": 16.699999999254942,
+      "transfer": 17316,
+      "encoded": 17016,
+      "decoded": 17016
+    },
+    {
+      "name": "http://127.0.0.1:8050/assets/locomotive-thumbnails/kenney-shunter.png",
+      "duration": 18,
+      "transfer": 20710,
+      "encoded": 20410,
+      "decoded": 20410
+    }
+  ],
+  "os": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "browser": "154.0.8037.57",
+  "firstReadyWallSeconds": 27.89686387099937,
+  "mode": "profile"
+}

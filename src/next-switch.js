@@ -53,7 +53,7 @@ function destinationFor(network, port) {
 
 // Read-only traversal of the actual Journey ribbon. At its ends consult exactly
 // the same router as the simulation; never append to or trim Journey.segments.
-function traceJourney(network, topology, journey, direction, offset, choose, maxDistance = 12000) {
+function traceJourney(network, topology, journey, direction, offset, choose, maxDistance = 12000, includePoints = true) {
   const result = { next: null, encounters: [], ranges: [], points: [], distance: 0, stop: "invalid", uncertain: false };
   if (!journey || ![1, -1].includes(direction) || !Number.isFinite(offset)) return result;
   const at = journey.position - offset;
@@ -70,9 +70,11 @@ function traceJourney(network, topology, journey, direction, offset, choose, max
     const remaining = sign > 0 ? edge.length - s : s;
     const length = Math.min(remaining, maxDistance - result.distance), end = s + sign * length;
     result.ranges.push({ edge: edge.id, from: s, to: end, distance: result.distance });
-    const points = pathSection(edge, s, end);
-    if (result.points.length) points.shift();
-    result.points.push(...points);
+    if(includePoints) {
+      const points = pathSection(edge, s, end);
+      if (result.points.length) points.shift();
+      result.points.push(...points);
+    }
     result.distance += length;
     if (result.distance >= maxDistance - EPS) { result.stop = "limit"; return result; }
     const node = sign > 0 ? edge.to : edge.from, ports = network.nodes[node];

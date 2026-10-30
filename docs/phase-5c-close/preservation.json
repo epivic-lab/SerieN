@@ -1,0 +1,82 @@
+{
+  "baseline": "5060221",
+  "comparedTo": "8cacb18",
+  "files": {
+    "src/canonical-layout.json": {
+      "sha256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "unchanged": true
+    },
+    "src/network.js": {
+      "sha256": "6428b5abc00aa1fdb35202bf2d303df5c790f70dc612942e966a07a129d0f0e0",
+      "unchanged": true
+    },
+    "src/rail-profile.js": {
+      "sha256": "4d0bdc39741e2b77135de39f33411f56d2d25953d71c48033b35a15f4f1cdc28",
+      "unchanged": true
+    },
+    "src/next-switch.js": {
+      "sha256": "b75ab53992d30a4fd558115e6bcd8a3fca0b25938c3977e5181e7152c18a4c52",
+      "unchanged": true
+    },
+    "src/next-switch-view.js": {
+      "sha256": "0853c92322a73d362def25b2294c0d2186a76a44cc5191f9d30e2fed320d7a36",
+      "unchanged": true
+    },
+    "src/rolling-stock.js": {
+      "sha256": "d6235199ed1cdc8c4a1e53f13fef57696e0f737565af59ea544b6a0d86b738f0",
+      "unchanged": true
+    },
+    "src/rolling-stock-art.js": {
+      "sha256": "15e1ab227ff9d6546d683ebc02abc9a5a8788a8cfd2f0b0b57e30d19be1f9314",
+      "unchanged": true
+    },
+    "src/simulation.js": {
+      "sha256": "8668c6456f4fd4b89f58c10e31f475cd5673cf9428bda7cc358706f7137af626",
+      "unchanged": true
+    },
+    "src/train-deck.js": {
+      "sha256": "dd63cdb0030ce5643b0508b2e945b6f2f0e86ae0925b6008800a08d09b696c71",
+      "unchanged": true
+    },
+    "src/train-assets.js": {
+      "sha256": "6af224ad1e9e21016ae5ecf41754cdc9811160a7203a452420c27e7a7555a5de",
+      "unchanged": true
+    },
+    "index.html": {
+      "sha256": "98d06e46f6cc663a2b2e64784e921a73f9ac0b12875e70de18484de38d632799",
+      "unchanged": true
+    },
+    "style.css": {
+      "sha256": "8b7b6d22534e3e1d29b3ce2129d9c731fa989873fdf5d9793555d56d5559c74d",
+      "unchanged": true
+    },
+    "package.json": {
+      "sha256": "24327a8a821c19c4eee998bc4d5734df7825eee7cfcb107237a41e882048f104",
+      "unchanged": true
+    },
+    "package-lock.json": {
+      "sha256": "cdc54245fcf16d326e11a32c1c6568f1b040bec20d1cd604913b4cdae0de58d8",
+      "unchanged": true
+    },
+    ".github/workflows/pages.yml": {
+      "sha256": "99ad5d96b150dc13c48177c06aa09b1aa2dc59658f6d7ee71cf9d4c356f305a8",
+      "unchanged": true
+    }
+  },
+  "nativeBuilder": {
+    "unchanged": true,
+    "sha256": "58fdc39dbc50c767117d18096437958b8a4ede9004bed45f5bfc811edd32b472"
+  },
+  "trackedAssetsUnchanged": true,
+  "missionDefinitions": {
+    "unchanged": true,
+    "sha256": "7d1781b346cecdc358b9db672aa201eca019e0b44715548bd1be492a0f4d70f6"
+  },
+  "applicationChangesFromBaseline": [
+    "app.js",
+    "src/fleet-commands.js",
+    "src/railway-conflicts.js",
+    "src/railway-step.js",
+    "src/railway-types.js"
+  ]
+}

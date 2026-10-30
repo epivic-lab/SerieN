@@ -1,0 +1,141 @@
+✔ Kenney assets include the CC0 license and all referenced local textures (2.916601ms)
+✔ native pitch stays unchanged; imported pairs compact to their individual couplers (1.075359ms)
+✔ partial loading and switching back use active metadata without a fixed imported pitch (0.488065ms)
+✔ compact consists stay on the route across crossovers and reverse to the same positions (7.691759ms)
+✔ detach and immediate recouple preserve the compact wagon position (0.643749ms)
+✔ compact maximum-sized Kenney bodies remain separate on the R249 curve (0.135574ms)
+✔ Home framing contains all eight physical base corners, including the previously clipped lower right corner (1.334219ms)
+✔ polished rail heads and weathered webs have distinct PBR properties without moving rail geometry (1.57472ms)
+✔ ballast and terrain textures are reproducible and distinguish sRGB albedo from linear height/roughness (149.133163ms)
+✔ tightened shadow camera contains the complete table and tallest scenery with a low contact bias (0.973875ms)
+✔ forest generation is deterministic with railway and building clearance (541.249331ms)
+✔ terrain stays flat on tracks and underneath buildings (503.947295ms)
+✔ landscape heights remain finite and below scenic ceiling (294.450451ms)
+✔ seeded random does not depend on frame rate or browser random state (0.223957ms)
+✔ station and yard presets converge without touching the railway (5.492548ms)
+✔ camera transitions use elapsed real time, independent of frame frequency (0.765712ms)
+✔ follow changes target for the selected train; a manual orbit cancels it (1.610675ms)
+✔ eye stays above terrain and rotated building footprints, while target pan is bounded (0.197798ms)
+✔ invalid poses cannot produce NaNs, and dispose removes gesture handling (0.189565ms)
+✔ perspective camera supports all presets and follow with finite projections (2.03959ms)
+✔ minimap focus centres once on the clicked locomotive and preserves manual control (0.93708ms)
+✔ canonical source preserves all XML identifiers, contracts only two zero connectors and documents small joins (1.350083ms)
+✔ all three nominal Kato loops close in both senses for three complete laps without jumps (35.229362ms)
+✔ all eight switches route every entrance in both states; single turnout B-C traversal is impossible (0.745152ms)
+✔ both crossover diagonals are traversable in either sense and do not join at the diamond (1.625627ms)
+✔ every terminal is accessible from the inner mainline with a documented static switch setting and can reverse (14.272325ms)
+✔ runaround main and alternate paths connect the same two toe leads with legal reversing maneuvers (2.269446ms)
+✔ no parallel-track proximity or drawn crossing creates a graph junction (45.00097ms)
+✔ buffer stopping protects the complete consist and safe switch change trims only unoccupied cached ribbon (0.500253ms)
+✔ fixed-step simulation gives the same distance at different rendering rates (0.6777ms)
+✔ eight controls represent six distinct single turnouts and two complete crossover units (0.128333ms)
+✔ each loop previews the first real switch by graph distance in either direction (34.129446ms)
+✔ every WX entrance uses the real selection in both states, with exact five millimetre approach (3.103822ms)
+✔ four terminals are real end nodes; reverse preview and wagon offsets follow actual ribbon (0.231228ms)
+✔ yard topology identifies both accesses and runaround branch switch states rather than old five-way junctions (0.247643ms)
+✔ cached route conflicts stop prediction; safe reconciliation makes the current selection authoritative (5.66006ms)
+✔ missing mapping and unavailable routing never invent destinations (0.127101ms)
+✔ occupied switch bodies, incident tracks and braking envelopes block unsafe commands (0.381465ms)
+✔ schematic and temporary red ribbon derive exactly from canonical paths without mutating rails (20.192346ms)
+✔ forest crown envelopes clear railway, landmarks, buildings and working surfaces (753.819867ms)
+✔ hard surfaces are level across their footprint and stay outside the railway envelope (21.395707ms)
+✔ rear countryside and loading aisle integrate without moving railway or station (27.034515ms)
+✔ two sustained slow windows reduce high quality, a short spike does not (0.533543ms)
+✔ quality only recovers after sustained fast windows and does not oscillate with mixed load (1.146887ms)
+✔ manual profiles including cinema always override automatic adaptation (0.675206ms)
+✔ tab invisibility and first return frame cannot trigger a quality change (0.192139ms)
+✔ invalid timing samples are ignored and mode names are validated (0.149345ms)
+✔ stock catalog creates finite original geometry and full coupling envelopes without fixed pitch (65.431926ms)
+✔ wheel phases and rods follow signed travelled distance, freeze when stopped, and reverse exactly (18.74705ms)
+✔ coach bogies pivot along actual R249 track chords without changing canonical coordinates (15.82387ms)
+✔ coupling rejects distant, parallel-track and opposite-facing vehicles (0.153981ms)
+✔ all native adjacent body envelopes have a separating axis on the tight R249 curve (607.714523ms)
+✔ phase 0 protects the exact railway and simulation baseline (3.78011ms)
+✔ five stable zones inventory the current scene and explicitly exclude tunnels (0.287813ms)
+✔ candidate prop centres respect tracks, buildings, switch landmarks and existing trees (1770.438644ms)
+✔ the audit reports existing conflicts, including a segment crossing a footprint (0.271428ms)
+✔ station occupies the existing site with a credible central body and two lower wings (80.170887ms)
+✔ ground floor windows and entry are real openings through structural walls (93.976865ms)
+✔ full building and roofing envelope remain outside the railway loading gauge (264.64254ms)
+✔ terracotta roof uses shared instanced tiles and no unbounded per-tile objects (52.163946ms)
+✔ station surface data is deterministic, opaque and valid for all material types (55.83059ms)
+✔ roof curvature data drives both relief and physical roughness (11.556638ms)
+✔ texture footprint remains bounded and uses millimetres independently of geometry size (0.440053ms)
+✔ shared station maps respect the texture budget and cleanup is idempotent (598.463931ms)
+✔ crafted paving covers the existing platform with physical joints inside its footprint (0.811231ms)
+✔ canopy columns and furniture do not invade the train side of the platform (1.083541ms)
+✔ real platform mesh respects rail clearance above the platform edge (45.155586ms)
+✔ night lights have bounded intensity and do not require external assets (34.637542ms)
+✔ right curves have no tunnel walls, roof or camera obstruction (3.921553ms)
+✔ bridge spans an open space below deck, not a hidden solid foundation (1.931508ms)
+✔ rail profile rests on sleepers and preserves original railhead height (2.91627ms)
+✔ level bridge spans an actual lowering of the terrain without changing track data (5.685208ms)
+✔ only the hovered indicator flashes orange; actual switch positions never change (0.32524ms)
+✔ leaving a control restores its current state, including a state changed while hovering (0.168854ms)
+✔ uniform fitting preserves source proportions within the N-scale envelope (0.241624ms)
+✔ twenty vehicle replacements share template resources and release registry records (3.161539ms)
+✔ releasing one clone does not invalidate another and visibility restores native children (0.477719ms)
+✔ release during asynchronous loading never reattaches an obsolete model (0.380222ms)
+✔ global disposal also frees templates arriving after cancellation exactly once (0.291369ms)
+✔ failed loading leaves the original playable and permits a later retry (0.49821ms)
+✔ a newer attach supersedes an older pending request without duplicating the model (0.3456ms)
+✔ three recent consoles retain slots, replace the least recent, and handle smaller fleets (0.3786ms)
+✔ console selection and eviction do not modify any actual train Journey or controls (30.280784ms)
+✔ minimap geometry uses every original railway point with one unmodified coordinate system (115.544298ms)
+✔ independent markers follow locomotive centres through curves, crossovers and reversal (4.096487ms)
+✔ sidings and runaround markers use actual locomotive position rather than the tail (0.666403ms)
+✔ thumbnail identity follows the actual visible model, including fallback after failed GLB loading (0.189495ms)
+✔ six distinct transparent thumbnails are tied to their real model sources (1.438275ms)
+✔ progressive perspective zoom preserves target and viewing direction, with distance limits (1.605767ms)
+✔ zoom cancels follow while home and follow use the existing navigation presets (1.221308ms)
+✔ pan and orbit modes support mouse and single touch while retaining pinch and right-button pan (0.247994ms)
+✔ zero distance remains finite and orthographic zoom has equivalent limits (0.822157ms)
+✔ toolbar buttons mount accessibly, reflect follow state and remove listeners on dispose (0.474775ms)
+✔ zone planning is deterministic and does not modify track geometry (28.45775ms)
+✔ farmhouse and goods office footprints have full railway clearance (193.45398ms)
+✔ yard props respect running tracks, moving switches and building footprints (3.179246ms)
+✔ vineyard follows existing hills without invading railway or roads (15.596369ms)
+✔ all four buffers coincide with real canonical terminals without invented extensions (0.202035ms)
+✔ passengers remain N-scale and on the reserved passenger platform (0.594565ms)
+✔ all eight clickable switch markers remain outside the swept railway corridor (132.249024ms)
+ℹ tests 100
+ℹ suites 0
+ℹ pass 100
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10048.898534
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------------------
+ℹ file                      | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------------------
+ℹ src                       |        |          |         |
+ℹ  asset-placement.js       | 100.00 |    77.78 |  100.00 |
+ℹ  consist.js               | 100.00 |    88.00 |  100.00 |
+ℹ  graphic-foundations.js   | 100.00 |    96.43 |  100.00 |
+ℹ  landscape.js             | 100.00 |    98.18 |  100.00 |
+ℹ  locomotive-thumbnails.js |  22.95 |    80.00 |   66.67 | 14-60
+ℹ  navigation.js            | 100.00 |    79.07 |  100.00 |
+ℹ  network.js               |  98.53 |    83.72 |  100.00 | 56
+ℹ  next-switch-view.js      |  50.00 |    90.48 |   81.82 | 47-93
+ℹ  next-switch.js           |  97.60 |    77.86 |  100.00 | 39 51 161-162
+ℹ  quality.js               | 100.00 |    91.89 |  100.00 |
+ℹ  rail-profile.js          |  90.70 |    72.73 |  100.00 | 12-15
+ℹ  railway-works.js         |  71.01 |    83.33 |   83.33 | 9-27 60
+ℹ  rolling-stock.js         | 100.00 |    97.75 |  100.00 |
+ℹ  scenic-plan.js           | 100.00 |    97.53 |  100.00 |
+ℹ  simulation.js            |  98.94 |    89.02 |  100.00 | 37
+ℹ  station-building.js      |  87.89 |    96.83 |   93.75 | 7-12 161-176 183
+ℹ  station-materials.js     | 100.00 |    97.10 |  100.00 |
+ℹ  station-platform.js      |  84.29 |    98.57 |   91.30 | 19-25 29-37 42-66
+ℹ  structure-layout.js      | 100.00 |   100.00 |  100.00 |
+ℹ  switch-feedback.js       | 100.00 |   100.00 |   85.71 |
+ℹ  train-assets.js          |  97.27 |    81.25 |   79.31 | 84 95 129-131
+ℹ  train-deck-state.js      | 100.00 |    86.84 |  100.00 |
+ℹ  view-controls.js         |  99.26 |    83.64 |   91.67 | 96
+ℹ  zone-layout.js           | 100.00 |    89.47 |  100.00 |
+ℹ ----------------------------------------------------------------------------
+ℹ all files                 |  91.28 |    89.71 |   94.77 |
+ℹ ----------------------------------------------------------------------------
+ℹ end of coverage report
