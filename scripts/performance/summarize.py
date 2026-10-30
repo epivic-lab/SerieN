@@ -24,9 +24,9 @@ def summarize(root):
  for row in load(root,'profile/components.json') or []:
   r['components'][row['scenario']]={k:{'perCallMedianMs':median([b[k]['totalMs']/b[k]['iterations'] for b in row['batches']]),'perCallSamplesMs':[b[k]['totalMs']/b[k]['iterations'] for b in row['batches']]} for k in row['batches'][0]}
  for path in sorted((Path(root)/'extended').glob('extended-*.json')):
-  v=json.loads(path.read_text());r['extended'][path.stem]={'wallSeconds':v[-1]['elapsed'],'windows':len(v),'heapFirstBytes':v[0]['heap']['usedSize'],'heapLastBytes':v[-1]['heap']['usedSize'],'heapAllBytes':[x['heap']['usedSize'] for x in v],'backingFirstBytes':v[0]['heap'].get('backingStorageSize'),'backingLastBytes':v[-1]['heap'].get('backingStorageSize'),'backingAllBytes':[x['heap'].get('backingStorageSize') for x in v],'residentGeometries':[x['state']['render']['geometries'] for x in v],'residentTextures':[x['state']['render']['textures'] for x in v],'frameMediansMs':[x['frame']['medianMs'] for x in v]}
+  v=json.loads(path.read_text());r['extended'][path.stem]={'wallSeconds':v[-1]['elapsed'],'windows':len(v),'heapFirstBytes':v[0]['heap']['usedSize'],'heapLastBytes':v[-1]['heap']['usedSize'],'heapAllBytes':[x['heap']['usedSize'] for x in v],'backingFirstBytes':v[0]['heap'].get('backingStorageSize'),'backingLastBytes':v[-1]['heap'].get('backingStorageSize'),'backingAllBytes':[x['heap'].get('backingStorageSize') for x in v],'residentGeometries':[x['state']['render']['geometries'] for x in v],'residentTextures':[x['state']['render']['textures'] for x in v],'frameMediansMs':[x['frame']['medianMs'] for x in v],'domCounters':[x.get('dom') for x in v]}
  for path in sorted((Path(root)/'extended').glob('cycles-*.json')):
-  r['cycles'][path.stem]=[{'cycle':x['cycle'],'quality':x['state']['quality']['profile'],'heapBytes':x['heap']['usedSize'],'backingBytes':x['heap'].get('backingStorageSize'),'geometries':x['state']['render']['geometries'],'textures':x['state']['render']['textures']} for x in json.loads(path.read_text())]
+  r['cycles'][path.stem]=[{'cycle':x['cycle'],'quality':x['state']['quality']['profile'],'heapBytes':x['heap']['usedSize'],'backingBytes':x['heap'].get('backingStorageSize'),'geometries':x['state']['render']['geometries'],'textures':x['state']['render']['textures'],'dom':x.get('dom')} for x in json.loads(path.read_text())]
  for path in sorted((Path(root)/'profile').glob('*.cpuprofile*')):
   v=json.loads(gzip.decompress(path.read_bytes()) if path.suffix=='.gz' else path.read_text());nodes={x['id']:x for x in v['nodes']};cost=collections.Counter()
   for node,delta in zip(v.get('samples',[]),v.get('timeDeltas',[])):
@@ -74,3 +74,15 @@ for label,r in [('Before',before),('After',after)]:
 print('\n| Scenario | Median change | P95 change | Repeat required |\n|---|---:|---:|---|')
 for name,v in result['frameDeltas'].items():print(f"| {name} | {v['medianChangePercent']:+.1f}% | {v['p95ChangePercent']:+.1f}% | {v['repeatRequired']} |")
 print('\nNegative frame change is faster; positive is slower. A flag requires a matched repetition, not automatic attribution to code.')
+print('\n| Revision/session | Real seconds | GC heap first → last MiB | Backing first → last MiB | Geometries | Textures |\n|---|---:|---:|---:|---|---|')
+def mib(value):return f'{value/1048576:.2f}' if value is not None else 'unavailable'
+for label,r in [('Before',before),('After',after)]:
+ if not r:continue
+ for name,v in r['extended'].items():print(f"| {label}/{name} | {v['wallSeconds']:.1f} | {mib(v['heapFirstBytes'])} → {mib(v['heapLastBytes'])} | {mib(v['backingFirstBytes'])} → {mib(v['backingLastBytes'])} | {sorted(set(v['residentGeometries']))} | {sorted(set(v['residentTextures']))} |")
+print('\n| Revision/quality reset cycles | Samples | Geometries | Textures | GC heap first → last MiB | Backing first → last MiB |\n|---|---:|---|---|---:|---:|')
+for label,r in [('Before',before),('After',after)]:
+ if not r:continue
+ cycles=[x for block in r['cycles'].values() for x in block]
+ for quality in ['low','high','cinema']:
+  v=[x for x in cycles if x['quality']==quality]
+  if v:print(f"| {label}/{quality} | {len(v)} | {sorted(set(x['geometries'] for x in v))} | {sorted(set(x['textures'] for x in v))} | {mib(v[0]['heapBytes'])} → {mib(v[-1]['heapBytes'])} | {mib(v[0]['backingBytes'])} → {mib(v[-1]['backingBytes'])} |")

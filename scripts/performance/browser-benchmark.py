@@ -77,10 +77,10 @@ with sync_playwright() as pw:
   for repeat in range(args.repeats):
    prepare('F');samples=[];start=time.monotonic()
    while time.monotonic()-start<args.session_seconds:
-    raw=page.evaluate('__sampleFrames(12)');samples.append({'elapsed':time.monotonic()-start,'frame':stats(raw['frames']),'state':compact(),'heap':gc_heap()})
+    raw=page.evaluate('__sampleFrames(12)');samples.append({'elapsed':time.monotonic()-start,'frame':stats(raw['frames']),'state':compact(),'heap':gc_heap(),'dom':cdp.send('Memory.getDOMCounters')})
     (out/f'extended-{repeat}.json').write_text(json.dumps(samples,indent=2)+'\n');print('extended',repeat,round(samples[-1]['elapsed']),flush=True)
    cycles=[]
    for i in range(args.cycles):
-    prepare('A',quality=['low','high','cinema'][i%3],day=[10,95][i%2]);page.evaluate('__sampleFrames(3)');cycles.append({'cycle':i,'state':compact(),'heap':gc_heap()})
+    prepare('A',quality=['low','high','cinema'][i%3],day=[10,95][i%2]);page.evaluate('__sampleFrames(3)');cycles.append({'cycle':i,'state':compact(),'heap':gc_heap(),'dom':cdp.send('Memory.getDOMCounters')})
    (out/f'cycles-{repeat}.json').write_text(json.dumps(cycles,indent=2)+'\n')
  (out/'errors.json').write_text(json.dumps({'errors':errors,'failedRequests':failed},indent=2)+'\n');assert not errors,errors;assert not failed,failed;browser.close()
