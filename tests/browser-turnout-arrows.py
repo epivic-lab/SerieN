@@ -12,8 +12,8 @@ with sync_playwright() as pw:
  page.route('**/dist/game.js*',lambda r:r.fulfill(path=os.environ['S4_BUNDLE'],content_type='application/javascript'))
  page.goto(os.environ.get('SERIEN_URL','http://127.0.0.1:8003/')+'?diagnostics=1',wait_until='domcontentloaded',timeout=120000);page.wait_for_function('__s4',timeout=180000)
  page.evaluate('''()=>{const p=__serienProfile,api=__serienDiagnostics,a=__s4.arrows,$=id=>document.getElementById(id);p.stop();$('pause').click();$('quality').value='low';$('quality').dispatchEvent(new Event('change'));
- window.__setup=()=>{api.setSwitches([]);['T12','T0','T16'].forEach((e,i)=>api.placeTrain(i,e,150));__s3.interaction.clear();a.update(performance.now()+500,true);};
- window.__settle=()=>{a.update(performance.now()+500,true);__s3.glow.update(performance.now()+200);p.effects.render(false);p.renderer.getContext().finish();return a.snapshot;};
+ window.__setup=()=>{api.setSwitches([]);['T12','T0','T16'].forEach((e,i)=>api.placeTrain(i,e,150));__s3.interaction.clear();a.update(performance.now(),true);a.update(performance.now()+500);};
+ window.__settle=()=>{a.update(performance.now(),true);a.update(performance.now()+500);__s3.glow.update(performance.now()+200);p.effects.render(false);p.renderer.getContext().finish();return a.snapshot;};
  window.__state=()=>{const s=api.snapshot();return {controls:s.switchIndicators.states.map(c=>[c.id,c.on]),stock:s.stock.map(t=>({journey:t.journey,speed:t.speed,velocity:t.velocity,dir:t.dir,odometer:t.odometer}))};};
  __setup();}''')
  assert page.evaluate('__s3.glow.snapshot.variant')=='B','Official default must be approved B'
@@ -39,9 +39,11 @@ with sync_playwright() as pw:
     route=value['local']['approach'];actual=value['actual'];assert len(actual['paths'])==2
     assert next(p for p in actual['paths'] if p['edge']==route['edge'])['sign']==route['sign'],value
     directions.append([id,on,port,route['edge'],route['sign']])
+ # Settle on one clock and re-enter the row after diagnostic clear(); a
+ # stationary pointer cannot emit another pointerenter by itself.
  # Occupied: identification still works, rejection cannot restart route reveal.
- page.evaluate("__setup();__serienDiagnostics.placeTrain(0,'TO4:AB',100);");page.locator('[data-switch-hover="7"]').hover();before=page.evaluate('__settle()');rejected=page.evaluate("['panel','device'].map(o=>__serienDiagnostics.requestToggle('Y-4',o))");after=page.evaluate('__settle()')
- assert all(not r['changed'] and r['reason']=='occupied' for r in rejected);assert before==after;assert page.evaluate('__s3.glow.snapshot.active')=='Y-4'
+ page.evaluate("__setup();__serienDiagnostics.placeTrain(0,'TO4:AB',100);");page.mouse.move(5,5);page.locator('[data-switch-hover="7"]').hover();before=page.evaluate('__settle()');rejected=page.evaluate("['panel','device'].map(o=>__serienDiagnostics.requestToggle('Y-4',o))");after=page.evaluate('__settle()')
+ assert all(not r['changed'] and r['reason']=='occupied' for r in rejected);assert before==after,{'before':before,'after':after,'rejected':rejected};assert page.evaluate('__s3.glow.snapshot.active')=='Y-4'
  # Unknown is never rendered as a fictitious valid route.
  unknown=page.evaluate("()=>{const c=__s4.switchSpecs.find(c=>c.id==='WX-A'),old=c.on;c.on=null;__s4.arrows.update(performance.now(),true);const v=__s4.arrows.snapshot.units.find(u=>u.id===c.id);c.on=old;return v;}");assert unknown['unknown'] and not unknown['paths']
  page.emulate_media(reduced_motion='reduce');page.wait_for_function('__s4.arrows.snapshot.reducedMotion');page.evaluate('__setup();__serienDiagnostics.setSwitches(["WX-A"]);__s4.arrows.update(performance.now(),true)');assert page.evaluate('__s4.arrows.snapshot.units.every(u=>u.progress===1)')

@@ -54,7 +54,7 @@ Alla ripresa leggere rapporto e roadmap, verificare branch/HEAD/working tree e c
 
 La **Fase 5D è conclusa e pubblicata su main** con commit `58bbe62bffb37f19125ddb38513502b5ca306821`. La pubblicazione è descritta sopra e nei report 5D, che rimangono la fonte principale dei risultati e delle prove.
 
-**Macrofase Scambi S0–S7: S0/S1/S2/S3 APPROVATE (glow B); S4 PAUSA / CHECKPOINT INTERMEDIO; S5 NON INIZIATA.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
+**Macrofase Scambi S0–S7: S0/S1/S2/S3 APPROVATE (glow B); S4 PASS tecnico / approvazione estetica PENDING; S5 NON INIZIATA.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
 
 **Guardrail:** 150 rail mesh, geometria canonica e massicciata intatte; nessuna modifica alla plancia, ai permessi Supabase o al backend durante gli scambi. Il PDF illustrato v3 può essere copiato temporaneamente nella directory attiva solo se effettivamente disponibile; alla chiusura S7 vanno ritirate le specifiche attive e mantenuto `docs/turnouts/FINAL_REPORT.md`.
 
@@ -119,3 +119,15 @@ Salvati tre moduli per proiezione pura S1, osservazione Journey e overlay rosso:
 - [RIPRESA OBBLIGATORIA](docs/_active/turnouts/evidence/S4/RESUME.md), [rapporto intermedio](docs/_active/turnouts/evidence/S4/REPORT.md), [contratto](docs/_active/turnouts/S4_ROUTES.md), [galleria](docs/_active/turnouts/evidence/S4/visual/GALLERY.md). Script/ricette salvati nel repository, metadati e screenshot definitivi conservati. Le evidenze S3 restano intatte.
 
 **Prossima azione unica:** verificare checkout/checkpoint e completare prima la suite browser S4, poi regressioni e performance come da RESUME. Solo dopo chiusura S4 e nuova approvazione umana si potrà considerare S5. Commit attuale intermedio: quello che introduce RESUME S4; SHA locale/remoto forniti nella consegna. Checkpoint solo `feature/turnouts`, origin/main invariato.
+
+
+## Interactive Turnouts — S4 chiusura delle verifiche
+
+**S4 PASS tecnico, approvazione estetica/funzionale PENDING. S5 NON INIZIATA.** Ripresa dal checkpoint remoto verificato `c54c8c12d43a07c62228b99b8ffdbd66cedb13a5`. Nessuna modifica al runtime del checkpoint o al glow B: completate le verifiche mancanti e corrette soltanto due assunzioni del test browser (clock e rientro del puntatore dopo clear diagnostico).
+
+- **194 Node + 9 Python + build PASS**. Tutte e cinque le suite browser PASS: S4 funzionale (16 comandi, 16 ingressi/stati WX, B/UNKNOWN/reduced motion/protezione/profondità), S1 (manifest 150 rotaie/75 letti e azioni reali), S2 (rami/zoom/mouse/touch/tastiera/camera/selezione), 5C undici scenari, Phase0 circuiti/convogli nativi e GLB/HUD/minimappe/quattro viewport. Materiali e texture runtime identici a S3; nessun errore JS o richiesta fallita.
+- GPU stabile a 368 geometrie/45 texture/48 programmi durante i cicli; dispose rilascia 20 geometrie, 8 materiali e un programma. Canonico rigenerato invariato, 64 file originali bloccati e cinque funzioni calde identici a S3. Immagini già salvate nuovamente validate, B isolata pixel-identica e tre frame reali di comparsa distinti. Nessuna alterazione a geometrie Kato, massicciata, dinamica, sicurezza, dipendenze o backend.
+- Confronto RAF isolato 5D/S3/S4 e costo CPU della nuova proiezione completati: valori e limiti nel [rapporto finale](docs/_active/turnouts/evidence/S4/REPORT.md). Campione breve SwiftShader, non matrice completa 5D né FPS fisici.
+- [Galleria](docs/_active/turnouts/evidence/S4/visual/GALLERY.md), [pagina HTML](docs/_active/turnouts/evidence/S4/visual/index.html), [handoff](docs/_active/turnouts/evidence/S4/RESUME.md), [provenienza](docs/_active/turnouts/evidence/S4/commands.json). Commit finale S4: quello che aggiorna il rapporto dopo c54c8c1; SHA effettivo e verifica remota nella consegna. Solo feature/turnouts, main intatto.
+
+**Prossima azione unica: attendere approvazione grafica/funzionale S4 ed eventuali rifiniture. S5 richiede autorizzazione esplicita.** Restano NOT VERIFIED GPU/touch hardware e benchmark completo 5D; resa generale diurna discreta, da giudicare visivamente. Nessun blocco tecnico rilevato.

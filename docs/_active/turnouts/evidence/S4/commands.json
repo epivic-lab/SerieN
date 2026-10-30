@@ -1,0 +1,51 @@
+{
+  "phase": "S4",
+  "status": "TECHNICAL_PASS_AWAITING_VISUAL_APPROVAL",
+  "branch": "feature/turnouts",
+  "initialCheckpoint": "c54c8c12d43a07c62228b99b8ffdbd66cedb13a5",
+  "runtimeSourceCommit": "c54c8c12d43a07c62228b99b8ffdbd66cedb13a5",
+  "runtimeUnchangedDuringResume": true,
+  "originalMain": "6487f61612818c8cd46d882741cfa1ca96ac5a16",
+  "checkpointIntegrity": "clean local/remote equality, git fsck connectivity PASS, 87 intermediate artifact hashes verified",
+  "baselineS3": "fd32b43fe9438980bde798fd76773f8af2f3f5fc",
+  "baseline5D": "58bbe62bffb37f19125ddb38513502b5ca306821",
+  "bundleHashes": {
+    "5DProduction": "147b28274fe42d72c916494e3f80c516b0bc206ec98fce505f34bee457f69653",
+    "5DProfile": "bc87a3592a6e44f97ca8dc1d418051acb206c90c8222618eb6ff7983bf598098",
+    "S3Profile": "98ae1e6de3b2740f0c67899aad5540320813ab3bde0d54fd28efd19c5b96da4a",
+    "S4Profile": "e116e9a474d07bae96e095050bb433cb9e31b97f1b4c1a835e4aa3a120006574",
+    "S4Observer": "bd52dc576b812bcf729f276a9d7ea0ddfee476900f71f5c7e9b7305699260422",
+    "S4Production": "cf4b9529e4a23f2d05e65205b85cc5fedff75810e08f78c2edf79634531b6e72"
+  },
+  "commands": [
+    "git fetch origin refs/heads/feature/turnouts:refs/remotes/origin/feature/turnouts refs/heads/main:refs/remotes/origin/main",
+    "git fsck --no-reflogs --connectivity-only",
+    "npm test",
+    "npm run build",
+    "python3 -m unittest discover -s tests -p '*_test.py'",
+    "python3 scripts/build-canonical-layout.py",
+    "git diff --exit-code -- src/canonical-layout.json docs/jmri-layout",
+    "python3 /workspace/work/s4/invariants.py",
+    "node docs/_active/turnouts/evidence/S4/recipes/build-profile.mjs . /workspace/work/s4/s4-profile.js",
+    "node docs/_active/turnouts/evidence/S4/recipes/build-observer.mjs . /workspace/work/s4/s4-observer.js",
+    "python3 docs/_active/turnouts/evidence/S4/recipes/run-regressions.py",
+    "python3 tests/check-turnout-arrows-captures.py docs/_active/turnouts/evidence/S4/visual"
+  ],
+  "browserSuites": "tests/regressions.json; actual per-suite cwd/env/exit codes, sequential one browser",
+  "performanceCommand": "SERIEN_URL=http://127.0.0.1:8003/ S4_5D_BUNDLE=/workspace/work/s3/phase5d-profile.js S3_BASELINE_BUNDLE=/workspace/work/s3/s3-profile.js S4_BUNDLE=/workspace/work/s4/s4-profile.js S4_PERF_OUTPUT=/workspace/work/s4 python3 tests/browser-turnout-arrows-performance.py",
+  "performanceIsolation": "all browser regressions and Node/Python tests completed first; four sequential contexts in one Chromium, 16 RAF intervals per case after 3 warmups, Low/day48/fixed overview650x760/DPR1/seed516, paused physics, no concurrent CPU test or browser",
+  "captureProvenance": "checkpoint capture set preserved byte-for-byte; runtime unchanged, validators rerun. Same camera/light/seed/fixed animation clock; no image edits. Prior failed out-of-range fixture discarded before intermediate checkpoint.",
+  "testFixtureCorrections": [
+    "set actual transition time before advancing clock by500ms",
+    "move pointer outside row before re-entering after diagnostic identity clear"
+  ],
+  "runtimeCorrections": [],
+  "temporaryBundlesInProduction": false,
+  "remoteProtocol": "final commit then explicit fast-forward push feature/turnouts, ls-remote and fetched SHA equality/ancestry/clean tree; actual SHA in handoff",
+  "limitations": [
+    "physical GPU/touch NOT VERIFIED",
+    "full 5D matrix NOT VERIFIED",
+    "aesthetic approval PENDING",
+    "S5 NOT STARTED"
+  ]
+}
