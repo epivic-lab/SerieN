@@ -1,0 +1,2655 @@
+{
+  "before": {
+    "normal": {
+      "A/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 2024.8500000000058,
+        "p95FrameMs": 2966.600000000006,
+        "pooledP95FrameMs": 3783.2000000000116,
+        "maxFrameMs": 5016.399999999994,
+        "meanFrameMs": 2222.1375000000007,
+        "effectiveFps": 0.4500171569041068,
+        "tickWallMedianMs": 9.699999999254942,
+        "longTasks": 72,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.3560890000000001,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "B/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 1858.25,
+        "p95FrameMs": 3349.9000000000233,
+        "pooledP95FrameMs": 3599.9000000000233,
+        "maxFrameMs": 4166.5,
+        "meanFrameMs": 2197.1333333333337,
+        "effectiveFps": 0.4551385138210395,
+        "tickWallMedianMs": 15.599999999627471,
+        "longTasks": 71,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.5036759999999996,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "C/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 1933.3000000000466,
+        "p95FrameMs": 4966.5,
+        "pooledP95FrameMs": 6733.100000000093,
+        "maxFrameMs": 8816.300000000047,
+        "meanFrameMs": 2647.8125,
+        "effectiveFps": 0.37767024666587984,
+        "tickWallMedianMs": 22.200000001117587,
+        "longTasks": 74,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.7527469999999994,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "D/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 2008.25,
+        "p95FrameMs": 4149.800000000047,
+        "pooledP95FrameMs": 4616.599999999977,
+        "maxFrameMs": 8649.699999999953,
+        "meanFrameMs": 2299.2166666666694,
+        "effectiveFps": 0.43493073728008763,
+        "tickWallMedianMs": 19.800000000745058,
+        "longTasks": 73,
+        "interactionMedianMs": 6.1000000005587935,
+        "interactions": [
+          {
+            "frame": 8,
+            "kind": "speed",
+            "durationMs": 8.5
+          },
+          {
+            "frame": 16,
+            "kind": "STOP_ALL",
+            "durationMs": 1.599999999627471
+          },
+          {
+            "frame": 17,
+            "kind": "speed",
+            "durationMs": 33.600000001490116
+          },
+          {
+            "frame": 24,
+            "kind": "reverse",
+            "durationMs": 5.300000000745058
+          },
+          {
+            "frame": 8,
+            "kind": "speed",
+            "durationMs": 6.900000000372529
+          },
+          {
+            "frame": 16,
+            "kind": "STOP_ALL",
+            "durationMs": 1.5
+          },
+          {
+            "frame": 17,
+            "kind": "speed",
+            "durationMs": 23.899999998509884
+          },
+          {
+            "frame": 24,
+            "kind": "reverse",
+            "durationMs": 3.5
+          },
+          {
+            "frame": 8,
+            "kind": "speed",
+            "durationMs": 7.400000000372529
+          },
+          {
+            "frame": 16,
+            "kind": "STOP_ALL",
+            "durationMs": 1
+          },
+          {
+            "frame": 17,
+            "kind": "speed",
+            "durationMs": 23.300000000745058
+          },
+          {
+            "frame": 24,
+            "kind": "reverse",
+            "durationMs": 3.599999999627471
+          }
+        ],
+        "cdpScriptDurationSecondsMedian": 0.6283250000000002,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "C/low/95/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 2558.20000000007,
+        "p95FrameMs": 4533.199999999953,
+        "pooledP95FrameMs": 5683.100000000093,
+        "maxFrameMs": 6983,
+        "meanFrameMs": 2761.0,
+        "effectiveFps": 0.36218761318362913,
+        "tickWallMedianMs": 19.40000000037253,
+        "longTasks": 72,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.6924600000000005,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/high/10/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2974.9499999999534,
+        "p95FrameMs": 9466.199999999953,
+        "pooledP95FrameMs": 9466.199999999953,
+        "maxFrameMs": 13499.40000000014,
+        "meanFrameMs": 4575.856250000012,
+        "effectiveFps": 0.21853833367252248,
+        "tickWallMedianMs": 23.40000000037253,
+        "longTasks": 50,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.67868,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/high/10/follow": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2299.899999999907,
+        "p95FrameMs": 3233.100000000093,
+        "pooledP95FrameMs": 3716.5,
+        "maxFrameMs": 4166.600000000093,
+        "meanFrameMs": 2268.65625,
+        "effectiveFps": 0.440789564307065,
+        "tickWallMedianMs": 21,
+        "longTasks": 48,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.399675000000002,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/high/95/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 3083.25,
+        "p95FrameMs": 5683.09999999986,
+        "pooledP95FrameMs": 6466.399999999907,
+        "maxFrameMs": 6983.100000000093,
+        "meanFrameMs": 3529.024999999994,
+        "effectiveFps": 0.2833643853472281,
+        "tickWallMedianMs": 29.700000001117587,
+        "longTasks": 47,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.6061590000000017,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/high/95/follow": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2533.2000000001863,
+        "p95FrameMs": 9083,
+        "pooledP95FrameMs": 8216.400000000373,
+        "maxFrameMs": 21532.5,
+        "meanFrameMs": 2925.9249999999884,
+        "effectiveFps": 0.34177226005451405,
+        "tickWallMedianMs": 19,
+        "longTasks": 48,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.3803879999999964,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/cinema/10/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2033.199999999997,
+        "p95FrameMs": 3833.2000000000116,
+        "pooledP95FrameMs": 3866.5,
+        "maxFrameMs": 4133.200000000012,
+        "meanFrameMs": 2089.5062500000004,
+        "effectiveFps": 0.47858196164763794,
+        "tickWallMedianMs": 24.600000008940697,
+        "longTasks": 48,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.4697079999999998,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/cinema/10/follow": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2208.3000000000175,
+        "p95FrameMs": 3049.899999999965,
+        "pooledP95FrameMs": 3816.5,
+        "maxFrameMs": 5999.800000000047,
+        "meanFrameMs": 2221.7874999999985,
+        "effectiveFps": 0.45008804847448314,
+        "tickWallMedianMs": 21,
+        "longTasks": 47,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.4665189999999999,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/cinema/95/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2041.5999999999767,
+        "p95FrameMs": 3033.1999999999534,
+        "pooledP95FrameMs": 2616.600000000093,
+        "maxFrameMs": 3083.100000000035,
+        "meanFrameMs": 2126.993749999998,
+        "effectiveFps": 0.47014712666645164,
+        "tickWallMedianMs": 25,
+        "longTasks": 50,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.45896699999999946,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/cinema/95/follow": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2374.9500000000116,
+        "p95FrameMs": 3483.20000000007,
+        "pooledP95FrameMs": 3316.600000000093,
+        "maxFrameMs": 3599.899999999907,
+        "meanFrameMs": 2386.362500000003,
+        "effectiveFps": 0.4190478185941988,
+        "tickWallMedianMs": 21.099999994039536,
+        "longTasks": 49,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.4011490000000002,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      }
+    },
+    "components": {
+      "A": {
+        "models": {
+          "perCallMedianMs": 0.085,
+          "perCallSamplesMs": [
+            0.12199999999254942,
+            0.085,
+            0.03800000000745058
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.25499999998137357,
+          "perCallSamplesMs": [
+            0.325,
+            0.25499999998137357,
+            0.20333333335195977
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.0027999999970197676,
+          "perCallSamplesMs": [
+            0.004599999997764826,
+            0.0027999999970197676,
+            0.002199999999254942
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.03833333333333333,
+          "perCallSamplesMs": [
+            0.03833333333333333,
+            0.04566666666418314,
+            0.018666666665424905
+          ]
+        }
+      },
+      "B": {
+        "models": {
+          "perCallMedianMs": 0.052999999988824126,
+          "perCallSamplesMs": [
+            0.125,
+            0.04699999999254942,
+            0.052999999988824126
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.36666666666666664,
+          "perCallSamplesMs": [
+            0.8216666666790843,
+            0.36666666666666664,
+            0.20500000001241764
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.0027999999970197676,
+          "perCallSamplesMs": [
+            0.006599999997764826,
+            0.0027999999970197676,
+            0.0013999999985098838
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.5289999999975165,
+          "perCallSamplesMs": [
+            0.6046666666679085,
+            0.5289999999975165,
+            0.45300000000124174
+          ]
+        }
+      },
+      "C": {
+        "models": {
+          "perCallMedianMs": 0.05300000000745058,
+          "perCallSamplesMs": [
+            0.09200000001117586,
+            0.035,
+            0.05300000000745058
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.22333333333954214,
+          "perCallSamplesMs": [
+            0.19666666664804022,
+            0.3566666666728755,
+            0.22333333333954214
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.002,
+          "perCallSamplesMs": [
+            0.004800000000745058,
+            0.002,
+            0.0013999999985098838
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.8039999999975165,
+          "perCallSamplesMs": [
+            0.8039999999975165,
+            0.8476666666629413,
+            0.7253333333320916
+          ]
+        }
+      },
+      "D": {
+        "models": {
+          "perCallMedianMs": 0.22900000000372528,
+          "perCallSamplesMs": [
+            0.5969999999925494,
+            0.1909999999962747,
+            0.22900000000372528
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.35,
+          "perCallSamplesMs": [
+            0.35,
+            0.2966666666480402,
+            0.8283333333209157
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.003800000000745058,
+          "perCallSamplesMs": [
+            0.018,
+            0.002599999997764826,
+            0.003800000000745058
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 4.564000000003725,
+          "perCallSamplesMs": [
+            4.291333333334575,
+            4.564000000003725,
+            7.981333333334575
+          ]
+        }
+      }
+    },
+    "extended": {
+      "extended-0": {
+        "wallSeconds": 130.80956351700297,
+        "windows": 4,
+        "heapFirstBytes": 28734592,
+        "heapLastBytes": 27907264,
+        "heapAllBytes": [
+          28734592,
+          27158312,
+          27866916,
+          27907264
+        ],
+        "backingFirstBytes": 99016714,
+        "backingLastBytes": 99016736,
+        "backingAllBytes": [
+          99016714,
+          99016749,
+          99016718,
+          99016736
+        ],
+        "residentGeometries": [
+          402,
+          402,
+          402,
+          402
+        ],
+        "residentTextures": [
+          50,
+          50,
+          50,
+          50
+        ],
+        "frameMediansMs": [
+          1725.0,
+          1674.949999999997,
+          2383.2499999999927,
+          1716.6499999999942
+        ],
+        "domCounters": [
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 904,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 904,
+            "jsEventListeners": 120
+          }
+        ]
+      },
+      "extended-1": {
+        "wallSeconds": 124.36046297800203,
+        "windows": 3,
+        "heapFirstBytes": 32950784,
+        "heapLastBytes": 32169020,
+        "heapAllBytes": [
+          32950784,
+          31671132,
+          32169020
+        ],
+        "backingFirstBytes": 99017058,
+        "backingLastBytes": 99017025,
+        "backingAllBytes": [
+          99017058,
+          99017056,
+          99017025
+        ],
+        "residentGeometries": [
+          404,
+          404,
+          404
+        ],
+        "residentTextures": [
+          51,
+          51,
+          51
+        ],
+        "frameMediansMs": [
+          1674.9499999999825,
+          1724.9499999999825,
+          1583.3000000000466
+        ],
+        "domCounters": [
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 904,
+            "jsEventListeners": 120
+          }
+        ]
+      },
+      "extended-2": {
+        "wallSeconds": 139.2469996239961,
+        "windows": 4,
+        "heapFirstBytes": 31940964,
+        "heapLastBytes": 32185300,
+        "heapAllBytes": [
+          31940964,
+          32380876,
+          32102844,
+          32185300
+        ],
+        "backingFirstBytes": 99017058,
+        "backingLastBytes": 99017043,
+        "backingAllBytes": [
+          99017058,
+          99017056,
+          99017025,
+          99017043
+        ],
+        "residentGeometries": [
+          404,
+          404,
+          404,
+          404
+        ],
+        "residentTextures": [
+          51,
+          51,
+          51,
+          51
+        ],
+        "frameMediansMs": [
+          2333.25,
+          1583.2999999999884,
+          1758.25,
+          1599.9499999999534
+        ],
+        "domCounters": [
+          {
+            "documents": 2,
+            "nodes": 906,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 904,
+            "jsEventListeners": 120
+          }
+        ]
+      }
+    },
+    "cycles": {
+      "cycles-0": [
+        {
+          "cycle": 0,
+          "quality": "low",
+          "heapBytes": 28579484,
+          "backingBytes": 99016691,
+          "geometries": 402,
+          "textures": 50,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "heapBytes": 28790200,
+          "backingBytes": 99016710,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 2,
+          "quality": "cinema",
+          "heapBytes": 29936132,
+          "backingBytes": 99017023,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 3,
+          "quality": "low",
+          "heapBytes": 29936736,
+          "backingBytes": 99016956,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 4,
+          "quality": "high",
+          "heapBytes": 30750364,
+          "backingBytes": 99016957,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 5,
+          "quality": "cinema",
+          "heapBytes": 31943076,
+          "backingBytes": 99017023,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        }
+      ],
+      "cycles-1": [
+        {
+          "cycle": 0,
+          "quality": "low",
+          "heapBytes": 32259364,
+          "backingBytes": 99016956,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "heapBytes": 31461224,
+          "backingBytes": 99016957,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 2,
+          "quality": "cinema",
+          "heapBytes": 32023792,
+          "backingBytes": 99017023,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 3,
+          "quality": "low",
+          "heapBytes": 31291492,
+          "backingBytes": 99016956,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 4,
+          "quality": "high",
+          "heapBytes": 31481084,
+          "backingBytes": 99016957,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 5,
+          "quality": "cinema",
+          "heapBytes": 32105504,
+          "backingBytes": 99017023,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        }
+      ],
+      "cycles-2": [
+        {
+          "cycle": 0,
+          "quality": "low",
+          "heapBytes": 32414728,
+          "backingBytes": 99016956,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "heapBytes": 32554544,
+          "backingBytes": 99016957,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 2,
+          "quality": "cinema",
+          "heapBytes": 32186548,
+          "backingBytes": 99017023,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 3,
+          "quality": "low",
+          "heapBytes": 32393880,
+          "backingBytes": 99016956,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 4,
+          "quality": "high",
+          "heapBytes": 32567872,
+          "backingBytes": 99016957,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 5,
+          "quality": "cinema",
+          "heapBytes": 32341956,
+          "backingBytes": 99017023,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        }
+      ]
+    },
+    "profiles": {
+      "A": {
+        "scope": "self sampled elapsed milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            27588.37099999975
+          ],
+          [
+            "(garbage collector)@-1",
+            11.675999999999998
+          ],
+          [
+            "setProgram@17775",
+            8.527999999999999
+          ],
+          [
+            "needsUpdate@9430",
+            8.343
+          ],
+          [
+            "multiplyMatrices@4129",
+            8.219000000000001
+          ],
+          [
+            "projectObject@17526",
+            8.113
+          ],
+          [
+            "upload@11745",
+            6.716
+          ],
+          [
+            "traceJourney@143",
+            6.297
+          ],
+          [
+            "tick@33656",
+            6.218
+          ],
+          [
+            "updateMatrixWorld@5127",
+            5.672000000000001
+          ],
+          [
+            "refreshUniformsCommon@16465",
+            5.278
+          ],
+          [
+            "update@10786",
+            5.098
+          ],
+          [
+            "renderObject@17668",
+            4.984
+          ],
+          [
+            "refreshUniformsStandard@16600",
+            4.936
+          ],
+          [
+            "bindVertexArray@-1",
+            4.7669999999999995
+          ],
+          [
+            "collectRailwayState@285",
+            4.592
+          ],
+          [
+            "setup@9360",
+            4.068
+          ],
+          [
+            "update@11036",
+            3.916
+          ],
+          [
+            "track@24961",
+            3.423
+          ],
+          [
+            "WebGLRenderer.renderBufferDirect@17285",
+            3.248
+          ],
+          [
+            "PerformanceObserver.observe.type@1",
+            3.019
+          ],
+          [
+            "drawArrays@-1",
+            2.84
+          ],
+          [
+            "setValueT1@11361",
+            2.83
+          ],
+          [
+            "compose@4446",
+            2.715
+          ],
+          [
+            "getProgram@17686",
+            2.37
+          ]
+        ]
+      },
+      "B": {
+        "scope": "self sampled elapsed milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            32299.99199999981
+          ],
+          [
+            "polygonGap@357",
+            35.347
+          ],
+          [
+            "(garbage collector)@-1",
+            34.13099999999999
+          ],
+          [
+            "corners@339",
+            16.517000000000003
+          ],
+          [
+            "@241",
+            12.886
+          ],
+          [
+            "bindVertexArray@-1",
+            11.869999999999997
+          ],
+          [
+            "sweep@372",
+            9.785
+          ],
+          [
+            "needsUpdate@9430",
+            9.555
+          ],
+          [
+            "setProgram@17775",
+            7.155
+          ],
+          [
+            "painterSortStable@12952",
+            6.878
+          ],
+          [
+            "getBindingState@9389",
+            6.723
+          ],
+          [
+            "locate@31958",
+            6.394
+          ],
+          [
+            "hull@344",
+            5.2090000000000005
+          ],
+          [
+            "refreshUniformsCommon@16465",
+            4.6930000000000005
+          ],
+          [
+            "tick@33656",
+            4.559
+          ],
+          [
+            "setAttribute@-1",
+            4.481
+          ],
+          [
+            "@423",
+            4.302
+          ],
+          [
+            "update@8401",
+            4.177
+          ],
+          [
+            "multiplyMatrices@4129",
+            3.8260000000000005
+          ],
+          [
+            "copyArray@11143",
+            3.455
+          ],
+          [
+            "WebGLRenderer.renderBufferDirect@17285",
+            3.364
+          ],
+          [
+            "arraysEqual@11136",
+            3.303
+          ],
+          [
+            "useProgram@-1",
+            2.885
+          ],
+          [
+            "compose@4446",
+            2.847
+          ],
+          [
+            "markUniformsLightsNeedsUpdate@17953",
+            2.6420000000000003
+          ]
+        ]
+      },
+      "C": {
+        "scope": "self sampled elapsed milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            33397.13699999964
+          ],
+          [
+            "getRGB@5912",
+            116.655
+          ],
+          [
+            "polygonGap@357",
+            84.818
+          ],
+          [
+            "hull@344",
+            79.282
+          ],
+          [
+            "(garbage collector)@-1",
+            35.68600000000001
+          ],
+          [
+            "sweep@372",
+            32.987
+          ],
+          [
+            "corners@339",
+            19.068
+          ],
+          [
+            "@423",
+            10.706999999999999
+          ],
+          [
+            "setProgram@17775",
+            10.125
+          ],
+          [
+            "schemaSVG@25473",
+            7.439
+          ],
+          [
+            "setAttribute@-1",
+            6.27
+          ],
+          [
+            "distanceLabel@25399",
+            6.218999999999999
+          ],
+          [
+            "refreshUniformsCommon@16465",
+            6.203
+          ],
+          [
+            "@393",
+            5.737
+          ],
+          [
+            "@376",
+            5.385
+          ],
+          [
+            "tick@33656",
+            5.334
+          ],
+          [
+            "@98",
+            5.115
+          ],
+          [
+            "needsUpdate@9430",
+            4.5009999999999994
+          ],
+          [
+            "setValue@11692",
+            4.108
+          ],
+          [
+            "uniformMatrix4fv@-1",
+            3.753
+          ],
+          [
+            "getUniformList@17750",
+            3.563
+          ],
+          [
+            "projectObject@17526",
+            3.561
+          ],
+          [
+            "bindVertexArray@-1",
+            3.511
+          ],
+          [
+            "consistLayout@8",
+            3.12
+          ],
+          [
+            "couplingDistance@1",
+            3.0829999999999997
+          ]
+        ]
+      },
+      "D": {
+        "scope": "self sampled elapsed milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            24210.024000000114
+          ],
+          [
+            "polygonGap@357",
+            49.904
+          ],
+          [
+            "(garbage collector)@-1",
+            39.46399999999999
+          ],
+          [
+            "hull@344",
+            30.368000000000006
+          ],
+          [
+            "corners@339",
+            17.121000000000002
+          ],
+          [
+            "@376",
+            11.916
+          ],
+          [
+            "@423",
+            11.144
+          ],
+          [
+            "sweep@372",
+            7.027000000000001
+          ],
+          [
+            "@393",
+            6.835000000000001
+          ],
+          [
+            "update@11036",
+            6.522
+          ],
+          [
+            "setProgram@17775",
+            6.34
+          ],
+          [
+            "@98",
+            6.081
+          ],
+          [
+            "bindVertexArray@-1",
+            5.715999999999999
+          ],
+          [
+            "advanceFleet@33355",
+            4.84
+          ],
+          [
+            "getBindingState@9389",
+            4.745
+          ],
+          [
+            "update@8401",
+            4.6930000000000005
+          ],
+          [
+            "copyArray@11143",
+            4.601
+          ],
+          [
+            "requestAnimationFrame@-1",
+            4.563000000000001
+          ],
+          [
+            "@345",
+            4.173
+          ],
+          [
+            "envelope@331",
+            3.7300000000000004
+          ],
+          [
+            "refreshUniformsCommon@16465",
+            3.7159999999999997
+          ],
+          [
+            "multiplyMatrices@4129",
+            3.458
+          ],
+          [
+            "setAttribute@-1",
+            3.279
+          ],
+          [
+            "(idle)@-1",
+            3.026
+          ],
+          [
+            "@33298",
+            2.965
+          ]
+        ]
+      }
+    }
+  },
+  "after": {
+    "normal": {
+      "A/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 1883.2499999999854,
+        "p95FrameMs": 3149.899999999994,
+        "pooledP95FrameMs": 3149.899999999994,
+        "maxFrameMs": 4416.5,
+        "meanFrameMs": 2092.970833333333,
+        "effectiveFps": 0.4777897446412895,
+        "tickWallMedianMs": 9.200000002980232,
+        "longTasks": 72,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.37034199999999995,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "B/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 1725.0,
+        "p95FrameMs": 2099.899999999965,
+        "pooledP95FrameMs": 2299.7999999999884,
+        "maxFrameMs": 4016.5999999999767,
+        "meanFrameMs": 1775.625,
+        "effectiveFps": 0.5631819781766984,
+        "tickWallMedianMs": 9.400000005960464,
+        "longTasks": 74,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.2888320000000002,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "C/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 1808.25,
+        "p95FrameMs": 2616.5999999999767,
+        "pooledP95FrameMs": 3249.9000000000233,
+        "maxFrameMs": 4099.79999999993,
+        "meanFrameMs": 1908.2541666666657,
+        "effectiveFps": 0.5240392068666607,
+        "tickWallMedianMs": 9.400000005960464,
+        "longTasks": 71,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.2908329999999997,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "D/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 1774.8499999999767,
+        "p95FrameMs": 2850,
+        "pooledP95FrameMs": 2883.20000000007,
+        "maxFrameMs": 3149.9000000000233,
+        "meanFrameMs": 2072.141666666668,
+        "effectiveFps": 0.48259248683930045,
+        "tickWallMedianMs": 11.599999994039536,
+        "longTasks": 74,
+        "interactionMedianMs": 6.199999995529652,
+        "interactions": [
+          {
+            "frame": 8,
+            "kind": "speed",
+            "durationMs": 6.199999988079071
+          },
+          {
+            "frame": 16,
+            "kind": "STOP_ALL",
+            "durationMs": 1.2999999970197678
+          },
+          {
+            "frame": 17,
+            "kind": "speed",
+            "durationMs": 24.099999994039536
+          },
+          {
+            "frame": 24,
+            "kind": "reverse",
+            "durationMs": 4.200000002980232
+          },
+          {
+            "frame": 8,
+            "kind": "speed",
+            "durationMs": 5.700000002980232
+          },
+          {
+            "frame": 16,
+            "kind": "STOP_ALL",
+            "durationMs": 0.7999999970197678
+          },
+          {
+            "frame": 17,
+            "kind": "speed",
+            "durationMs": 20
+          },
+          {
+            "frame": 24,
+            "kind": "reverse",
+            "durationMs": 9.700000002980232
+          },
+          {
+            "frame": 8,
+            "kind": "speed",
+            "durationMs": 13.200000002980232
+          },
+          {
+            "frame": 16,
+            "kind": "STOP_ALL",
+            "durationMs": 3
+          },
+          {
+            "frame": 17,
+            "kind": "speed",
+            "durationMs": 36
+          },
+          {
+            "frame": 24,
+            "kind": "reverse",
+            "durationMs": 6.200000002980232
+          }
+        ],
+        "cdpScriptDurationSecondsMedian": 0.3706550000000002,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "C/low/95/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 1683.2000000000116,
+        "p95FrameMs": 1833.3000000000466,
+        "pooledP95FrameMs": 1833.3000000000466,
+        "maxFrameMs": 2116.5,
+        "meanFrameMs": 1695.0708333333314,
+        "effectiveFps": 0.58994584788738,
+        "tickWallMedianMs": 9.799999997019768,
+        "longTasks": 74,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.2809299999999997,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/high/10/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2516.649999999907,
+        "p95FrameMs": 5849.800000000047,
+        "pooledP95FrameMs": 5033.09999999986,
+        "maxFrameMs": 6049.699999999953,
+        "meanFrameMs": 2861.3375000000087,
+        "effectiveFps": 0.3494869095309438,
+        "tickWallMedianMs": 12,
+        "longTasks": 49,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.29493499999999884,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/high/10/follow": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2149.95000000007,
+        "p95FrameMs": 3683.1999999999534,
+        "pooledP95FrameMs": 3683.1999999999534,
+        "maxFrameMs": 6566.399999999907,
+        "meanFrameMs": 2398.862500000003,
+        "effectiveFps": 0.4168642429484803,
+        "tickWallMedianMs": 12.199999988079071,
+        "longTasks": 48,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.2627949999999988,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/high/95/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2658.20000000007,
+        "p95FrameMs": 4583.100000000093,
+        "pooledP95FrameMs": 4283.100000000093,
+        "maxFrameMs": 6083.09999999986,
+        "meanFrameMs": 2929.043749999997,
+        "effectiveFps": 0.34140835212857473,
+        "tickWallMedianMs": 11.800000011920929,
+        "longTasks": 50,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.3152319999999982,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/high/95/follow": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2141.5500000000466,
+        "p95FrameMs": 2683.1999999999534,
+        "pooledP95FrameMs": 2683.1999999999534,
+        "maxFrameMs": 3616.5,
+        "meanFrameMs": 2159.293749999997,
+        "effectiveFps": 0.4631143863589664,
+        "tickWallMedianMs": 9,
+        "longTasks": 51,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.20316500000000204,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/cinema/10/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2041.5999999999767,
+        "p95FrameMs": 2833.3000000000466,
+        "pooledP95FrameMs": 4266.5,
+        "maxFrameMs": 6983.100000000093,
+        "meanFrameMs": 2153.0374999999913,
+        "effectiveFps": 0.46446009416928596,
+        "tickWallMedianMs": 15.799999997019768,
+        "longTasks": 48,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.2849970000000006,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/cinema/10/follow": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2241.5500000000466,
+        "p95FrameMs": 2583.2999999998137,
+        "pooledP95FrameMs": 2633.1999999997206,
+        "maxFrameMs": 3666.5,
+        "meanFrameMs": 2123.868749999994,
+        "effectiveFps": 0.47083888776083865,
+        "tickWallMedianMs": 11.100000008940697,
+        "longTasks": 47,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.21597600000000128,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/cinema/95/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2116.600000000093,
+        "p95FrameMs": 2766.600000000093,
+        "pooledP95FrameMs": 2766.600000000093,
+        "maxFrameMs": 3749.9000000003725,
+        "meanFrameMs": 2233.243749999994,
+        "effectiveFps": 0.44777915532059703,
+        "tickWallMedianMs": 20.5,
+        "longTasks": 49,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.4441740000000003,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      },
+      "E/cinema/95/follow": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2558.25,
+        "p95FrameMs": 3333.2000000001863,
+        "pooledP95FrameMs": 3266.600000000093,
+        "maxFrameMs": 6699.600000000093,
+        "meanFrameMs": 2498.8562500000116,
+        "effectiveFps": 0.40018308376081874,
+        "tickWallMedianMs": 12.900000005960464,
+        "longTasks": 49,
+        "interactionMedianMs": null,
+        "interactions": [],
+        "cdpScriptDurationSecondsMedian": 0.28689999999999927,
+        "cdpScope": "CDP ScriptDuration is elapsed script time including the after-snapshot; not hardware CPU or GPU time"
+      }
+    },
+    "components": {
+      "A": {
+        "models": {
+          "perCallMedianMs": 0.05300000000745058,
+          "perCallSamplesMs": [
+            0.08400000000372529,
+            0.01900000000372529,
+            0.05300000000745058
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.08166666667287549,
+          "perCallSamplesMs": [
+            0.08000000001241764,
+            0.08166666667287549,
+            0.1216666666790843
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.001600000001490116,
+          "perCallSamplesMs": [
+            0.005399999998509884,
+            0.001600000001490116,
+            0.001600000001490116
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.022999999995032945,
+          "perCallSamplesMs": [
+            0.022999999995032945,
+            0.02033333333209157,
+            0.031000000002483527
+          ]
+        }
+      },
+      "B": {
+        "models": {
+          "perCallMedianMs": 0.03800000000745058,
+          "perCallSamplesMs": [
+            0.04699999999254942,
+            0.03800000000745058,
+            0.02299999998882413
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.1849999999937912,
+          "perCallSamplesMs": [
+            0.3699999999875824,
+            0.1849999999937912,
+            0.07333333330849806
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.0015999999977648258,
+          "perCallSamplesMs": [
+            0.003800000000745058,
+            0.001199999999254942,
+            0.0015999999977648258
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.21666666666666667,
+          "perCallSamplesMs": [
+            0.26300000000124174,
+            0.20400000000372528,
+            0.21666666666666667
+          ]
+        }
+      },
+      "C": {
+        "models": {
+          "perCallMedianMs": 0.04299999998882413,
+          "perCallSamplesMs": [
+            0.06600000001490117,
+            0.03,
+            0.04299999998882413
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.06666666666666667,
+          "perCallSamplesMs": [
+            0.13499999999379117,
+            0.06666666666666667,
+            0.06666666666666667
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.005,
+          "perCallSamplesMs": [
+            0.005599999997764826,
+            0.0035999999977648256,
+            0.005
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.17533333333209156,
+          "perCallSamplesMs": [
+            0.2763333333345751,
+            0.17533333333209156,
+            0.15399999999751648
+          ]
+        }
+      },
+      "D": {
+        "models": {
+          "perCallMedianMs": 0.10099999999627471,
+          "perCallSamplesMs": [
+            0.125,
+            0.10099999999627471,
+            0.04099999999627471
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.13333333333333333,
+          "perCallSamplesMs": [
+            0.12166666664804021,
+            0.24166666666666667,
+            0.13333333333333333
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.003,
+          "perCallSamplesMs": [
+            0.003199999999254942,
+            0.003,
+            0.0013999999985098838
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.3663333333345751,
+          "perCallSamplesMs": [
+            0.52,
+            0.34833333333333333,
+            0.3663333333345751
+          ]
+        }
+      }
+    },
+    "extended": {
+      "extended-0": {
+        "wallSeconds": 125.95545311499154,
+        "windows": 4,
+        "heapFirstBytes": 28474840,
+        "heapLastBytes": 26815068,
+        "heapAllBytes": [
+          28474840,
+          26720968,
+          26670456,
+          26815068
+        ],
+        "backingFirstBytes": 99022862,
+        "backingLastBytes": 99022884,
+        "backingAllBytes": [
+          99022862,
+          99022897,
+          99022866,
+          99022884
+        ],
+        "residentGeometries": [
+          402,
+          402,
+          402,
+          402
+        ],
+        "residentTextures": [
+          50,
+          50,
+          50,
+          50
+        ],
+        "frameMediansMs": [
+          1599.8999999999978,
+          1716.6000000000058,
+          1675.0,
+          1616.6000000000058
+        ],
+        "domCounters": [
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 904,
+            "jsEventListeners": 120
+          }
+        ]
+      },
+      "extended-1": {
+        "wallSeconds": 147.37007601599908,
+        "windows": 4,
+        "heapFirstBytes": 31465704,
+        "heapLastBytes": 31747460,
+        "heapAllBytes": [
+          31465704,
+          31829596,
+          31224256,
+          31747460
+        ],
+        "backingFirstBytes": 99023206,
+        "backingLastBytes": 99023191,
+        "backingAllBytes": [
+          99023206,
+          99023204,
+          99023173,
+          99023191
+        ],
+        "residentGeometries": [
+          404,
+          404,
+          404,
+          404
+        ],
+        "residentTextures": [
+          51,
+          51,
+          51,
+          51
+        ],
+        "frameMediansMs": [
+          1949.8999999999942,
+          1616.6499999999942,
+          1949.9500000000116,
+          2291.649999999994
+        ],
+        "domCounters": [
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 904,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 904,
+            "jsEventListeners": 120
+          }
+        ]
+      },
+      "extended-2": {
+        "wallSeconds": 144.15745541799697,
+        "windows": 4,
+        "heapFirstBytes": 31791316,
+        "heapLastBytes": 32147744,
+        "heapAllBytes": [
+          31791316,
+          31947712,
+          32852380,
+          32147744
+        ],
+        "backingFirstBytes": 99023206,
+        "backingLastBytes": 99023191,
+        "backingAllBytes": [
+          99023206,
+          99023204,
+          99023173,
+          99023191
+        ],
+        "residentGeometries": [
+          404,
+          404,
+          404,
+          404
+        ],
+        "residentTextures": [
+          51,
+          51,
+          51,
+          51
+        ],
+        "frameMediansMs": [
+          2283.25,
+          1633.2499999999418,
+          1641.6500000000233,
+          1724.9500000000116
+        ],
+        "domCounters": [
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 905,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 904,
+            "jsEventListeners": 120
+          },
+          {
+            "documents": 2,
+            "nodes": 904,
+            "jsEventListeners": 120
+          }
+        ]
+      }
+    },
+    "cycles": {
+      "cycles-0": [
+        {
+          "cycle": 0,
+          "quality": "low",
+          "heapBytes": 28015664,
+          "backingBytes": 99022839,
+          "geometries": 402,
+          "textures": 50,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "heapBytes": 29158784,
+          "backingBytes": 99022858,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 2,
+          "quality": "cinema",
+          "heapBytes": 30299400,
+          "backingBytes": 99023171,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 3,
+          "quality": "low",
+          "heapBytes": 30335272,
+          "backingBytes": 99023104,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 4,
+          "quality": "high",
+          "heapBytes": 31108604,
+          "backingBytes": 99023105,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 5,
+          "quality": "cinema",
+          "heapBytes": 32322912,
+          "backingBytes": 99023171,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        }
+      ],
+      "cycles-1": [
+        {
+          "cycle": 0,
+          "quality": "low",
+          "heapBytes": 31678944,
+          "backingBytes": 99023104,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "heapBytes": 31813976,
+          "backingBytes": 99023105,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 2,
+          "quality": "cinema",
+          "heapBytes": 32379088,
+          "backingBytes": 99023171,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 3,
+          "quality": "low",
+          "heapBytes": 31660476,
+          "backingBytes": 99023104,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 4,
+          "quality": "high",
+          "heapBytes": 31862520,
+          "backingBytes": 99023105,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 5,
+          "quality": "cinema",
+          "heapBytes": 32470020,
+          "backingBytes": 99023171,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        }
+      ],
+      "cycles-2": [
+        {
+          "cycle": 0,
+          "quality": "low",
+          "heapBytes": 31848948,
+          "backingBytes": 99023104,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "heapBytes": 31993836,
+          "backingBytes": 99023105,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 2,
+          "quality": "cinema",
+          "heapBytes": 32551592,
+          "backingBytes": 99023171,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 902,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 3,
+          "quality": "low",
+          "heapBytes": 31832792,
+          "backingBytes": 99023104,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 4,
+          "quality": "high",
+          "heapBytes": 31999412,
+          "backingBytes": 99023105,
+          "geometries": 404,
+          "textures": 51,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        },
+        {
+          "cycle": 5,
+          "quality": "cinema",
+          "heapBytes": 32692376,
+          "backingBytes": 99023171,
+          "geometries": 405,
+          "textures": 69,
+          "dom": {
+            "documents": 2,
+            "nodes": 901,
+            "jsEventListeners": 120
+          }
+        }
+      ]
+    },
+    "profiles": {
+      "A": {
+        "scope": "self sampled elapsed milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            35245.30799999982
+          ],
+          [
+            "(garbage collector)@-1",
+            19.311000000000003
+          ],
+          [
+            "updateMatrixWorld@4603",
+            12.81
+          ],
+          [
+            "setProgram@17251",
+            12.086
+          ],
+          [
+            "renderObject@17144",
+            11.113999999999999
+          ],
+          [
+            "@1",
+            9.695
+          ],
+          [
+            "bindVertexArray@-1",
+            8.379999999999999
+          ],
+          [
+            "track@25001",
+            6.135999999999999
+          ],
+          [
+            "update@7877",
+            6.05
+          ],
+          [
+            "getProgram@17162",
+            5.579
+          ],
+          [
+            "setup@8836",
+            5.4799999999999995
+          ],
+          [
+            "refreshUniformsCommon@15941",
+            5.24
+          ],
+          [
+            "getNormalMatrix@806",
+            4.934
+          ],
+          [
+            "drawArrays@-1",
+            4.775
+          ],
+          [
+            "WebGLRenderer.renderBufferDirect@16761",
+            4.735
+          ],
+          [
+            "choose@32059",
+            4.639
+          ],
+          [
+            "projectObject@17002",
+            4.496
+          ],
+          [
+            "stepRailway@24313",
+            4.449999999999999
+          ],
+          [
+            "setValue@11213",
+            3.8120000000000003
+          ],
+          [
+            "bindTexture@-1",
+            3.782
+          ],
+          [
+            "copyArray@10619",
+            3.7
+          ],
+          [
+            "@33698",
+            3.621
+          ],
+          [
+            "(idle)@-1",
+            3.3
+          ],
+          [
+            "getParameters@11979",
+            2.983
+          ],
+          [
+            "@-1",
+            2.9
+          ]
+        ]
+      },
+      "B": {
+        "scope": "self sampled elapsed milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            23186.64900000002
+          ],
+          [
+            "(garbage collector)@-1",
+            13.054999999999998
+          ],
+          [
+            "setProgram@17251",
+            9.972000000000001
+          ],
+          [
+            "PerformanceObserver.observe.type@1",
+            8.725999999999999
+          ],
+          [
+            "track@25001",
+            7.459
+          ],
+          [
+            "projectObject@17002",
+            6.998000000000001
+          ],
+          [
+            "traceJourney@24048",
+            6.168
+          ],
+          [
+            "corners@24246",
+            6.16
+          ],
+          [
+            "copyArray@10619",
+            5.64
+          ],
+          [
+            "vehiclesConflict@24234",
+            5.468
+          ],
+          [
+            "hull@24251",
+            5.148999999999999
+          ],
+          [
+            "intersectsSphere@7724",
+            5.144
+          ],
+          [
+            "prepareSweptEnvelope@24278",
+            4.99
+          ],
+          [
+            "@1",
+            4.73
+          ],
+          [
+            "setup@8836",
+            4.655
+          ],
+          [
+            "update@7877",
+            4.417
+          ],
+          [
+            "bindVertexArray@-1",
+            4.262
+          ],
+          [
+            "setMaterial@13671",
+            3.984
+          ],
+          [
+            "setAttribute@-1",
+            3.858
+          ],
+          [
+            "querySelectorAll@-1",
+            3.4060000000000006
+          ],
+          [
+            "refreshUniformsCommon@15941",
+            3.3190000000000004
+          ],
+          [
+            "locate@32001",
+            2.907
+          ],
+          [
+            "preparedSweepsConflict@24302",
+            2.713
+          ],
+          [
+            "getParameters@11979",
+            2.439
+          ],
+          [
+            "schemaSVG@25513",
+            2.419
+          ]
+        ]
+      },
+      "C": {
+        "scope": "self sampled elapsed milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            30013.39500000005
+          ],
+          [
+            "(garbage collector)@-1",
+            27.384000000000007
+          ],
+          [
+            "prepareSweptEnvelope@24278",
+            25.041999999999994
+          ],
+          [
+            "clear@-1",
+            24.453000000000003
+          ],
+          [
+            "setupVertexAttributes@8996",
+            18.442999999999998
+          ],
+          [
+            "track@25001",
+            12.203999999999999
+          ],
+          [
+            "tick@33693",
+            11.124
+          ],
+          [
+            "bindVertexArray@-1",
+            10.451999999999998
+          ],
+          [
+            "setProgram@17251",
+            8.671
+          ],
+          [
+            "distanceLabel@25439",
+            8.068999999999999
+          ],
+          [
+            "updateMatrixWorld@4603",
+            7.764999999999999
+          ],
+          [
+            "projectObject@17002",
+            6.343
+          ],
+          [
+            "renderObjects@17131",
+            6.072000000000001
+          ],
+          [
+            "@33341",
+            5.881
+          ],
+          [
+            "copyArray@10619",
+            5.8759999999999994
+          ],
+          [
+            "traceJourney@24048",
+            5.667
+          ],
+          [
+            "advanceFleet@33392",
+            5.363
+          ],
+          [
+            "set@25527",
+            5.274
+          ],
+          [
+            "(idle)@-1",
+            4.871
+          ],
+          [
+            "ensure@32025",
+            4.784
+          ],
+          [
+            "corners@24246",
+            4.539
+          ],
+          [
+            "update@31951",
+            4.364
+          ],
+          [
+            "setValue@11168",
+            4.319
+          ],
+          [
+            "schemaSVG@25513",
+            4.12
+          ],
+          [
+            "refreshUniformsCommon@15941",
+            3.766
+          ]
+        ]
+      },
+      "D": {
+        "scope": "self sampled elapsed milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            24787.85200000025
+          ],
+          [
+            "(garbage collector)@-1",
+            27.541999999999994
+          ],
+          [
+            "bindVertexArray@-1",
+            13.245
+          ],
+          [
+            "vehiclesConflict@24234",
+            10.543
+          ],
+          [
+            "prepareSweptEnvelope@24278",
+            10.231
+          ],
+          [
+            "corners@24246",
+            7.472
+          ],
+          [
+            "track@25001",
+            7.4239999999999995
+          ],
+          [
+            "setValueM4@10721",
+            6.781999999999999
+          ],
+          [
+            "vehiclePositions@24184",
+            6.112
+          ],
+          [
+            "updateMatrix@4599",
+            5.562
+          ],
+          [
+            "needsUpdate@8906",
+            5.413
+          ],
+          [
+            "getBindingState@8865",
+            4.96
+          ],
+          [
+            "setValue@11213",
+            4.387
+          ],
+          [
+            "(idle)@-1",
+            4.323
+          ],
+          [
+            "traceJourney@24048",
+            4.247
+          ],
+          [
+            "select@25409",
+            3.702
+          ],
+          [
+            "projectObject@17002",
+            3.596
+          ],
+          [
+            "LinearToSRGB@1049",
+            3.553
+          ],
+          [
+            "sync@25313",
+            3.537
+          ],
+          [
+            "upload@11221",
+            3.341
+          ],
+          [
+            "move@32043",
+            3.251
+          ],
+          [
+            "setValue@11168",
+            3.113
+          ],
+          [
+            "setAttribute@-1",
+            3.076
+          ],
+          [
+            "tick@33693",
+            2.963
+          ],
+          [
+            "renderObjects@17131",
+            2.599
+          ]
+        ]
+      }
+    }
+  },
+  "deltas": {
+    "A/models": {
+      "beforeMs": 0.085,
+      "afterMs": 0.05300000000745058,
+      "reductionPercent": 37.64705881476402
+    },
+    "A/assistance": {
+      "beforeMs": 0.25499999998137357,
+      "afterMs": 0.08166666667287549,
+      "reductionPercent": 67.97385620437616
+    },
+    "A/deck": {
+      "beforeMs": 0.0027999999970197676,
+      "afterMs": 0.001600000001490116,
+      "reductionPercent": 42.85714274310336
+    },
+    "A/simulation": {
+      "beforeMs": 0.03833333333333333,
+      "afterMs": 0.022999999995032945,
+      "reductionPercent": 40.00000001295753
+    },
+    "B/models": {
+      "beforeMs": 0.052999999988824126,
+      "afterMs": 0.03800000000745058,
+      "reductionPercent": 28.301886763276467
+    },
+    "B/assistance": {
+      "beforeMs": 0.36666666666666664,
+      "afterMs": 0.1849999999937912,
+      "reductionPercent": 49.54545454714785
+    },
+    "B/deck": {
+      "beforeMs": 0.0027999999970197676,
+      "afterMs": 0.0015999999977648258,
+      "reductionPercent": 42.85714287614944
+    },
+    "B/simulation": {
+      "beforeMs": 0.5289999999975165,
+      "afterMs": 0.21666666666666667,
+      "reductionPercent": 59.04221802123178
+    },
+    "C/models": {
+      "beforeMs": 0.05300000000745058,
+      "afterMs": 0.04299999998882413,
+      "reductionPercent": 18.867924560793735
+    },
+    "C/assistance": {
+      "beforeMs": 0.22333333333954214,
+      "afterMs": 0.06666666666666667,
+      "reductionPercent": 70.14925373217316
+    },
+    "C/deck": {
+      "beforeMs": 0.002,
+      "afterMs": 0.005,
+      "reductionPercent": -150.0
+    },
+    "C/simulation": {
+      "beforeMs": 0.8039999999975165,
+      "afterMs": 0.17533333333209156,
+      "reductionPercent": 78.19237147604065
+    },
+    "D/models": {
+      "beforeMs": 0.22900000000372528,
+      "afterMs": 0.10099999999627471,
+      "reductionPercent": 55.89519650889446
+    },
+    "D/assistance": {
+      "beforeMs": 0.35,
+      "afterMs": 0.13333333333333333,
+      "reductionPercent": 61.904761904761905
+    },
+    "D/deck": {
+      "beforeMs": 0.003800000000745058,
+      "afterMs": 0.003,
+      "reductionPercent": 21.052631594426416
+    },
+    "D/simulation": {
+      "beforeMs": 4.564000000003725,
+      "afterMs": 0.3663333333345751,
+      "reductionPercent": 91.97341513290368
+    }
+  },
+  "frameDeltas": {
+    "A/low/48/overview": {
+      "medianChangePercent": -6.993110600786235,
+      "p95ChangePercent": 6.178790534618361,
+      "repeatRequired": false
+    },
+    "B/low/48/overview": {
+      "medianChangePercent": -7.170725144625322,
+      "p95ChangePercent": -37.31454670288813,
+      "repeatRequired": false
+    },
+    "C/low/48/overview": {
+      "medianChangePercent": -6.46821496922586,
+      "p95ChangePercent": -47.31501057082499,
+      "repeatRequired": false
+    },
+    "D/low/48/overview": {
+      "medianChangePercent": -11.622059006598938,
+      "p95ChangePercent": -31.321991421274088,
+      "repeatRequired": false
+    },
+    "C/low/95/overview": {
+      "medianChangePercent": -34.20373700258128,
+      "p95ChangePercent": -59.55836936380338,
+      "repeatRequired": false
+    },
+    "E/high/10/overview": {
+      "medianChangePercent": -15.405300929429188,
+      "p95ChangePercent": -38.20329171156245,
+      "repeatRequired": false
+    },
+    "E/high/10/follow": {
+      "medianChangePercent": -6.51984868906662,
+      "p95ChangePercent": 13.921623209917634,
+      "repeatRequired": false
+    },
+    "E/high/95/overview": {
+      "medianChangePercent": -13.785777993997572,
+      "p95ChangePercent": -19.355633369108304,
+      "repeatRequired": false
+    },
+    "E/high/95/follow": {
+      "medianChangePercent": -15.460682141169702,
+      "p95ChangePercent": -70.45909941649286,
+      "repeatRequired": false
+    },
+    "E/cinema/10/overview": {
+      "medianChangePercent": 0.41314184536591636,
+      "p95ChangePercent": -26.085255139308206,
+      "repeatRequired": false
+    },
+    "E/cinema/10/follow": {
+      "medianChangePercent": 1.5056831046519337,
+      "p95ChangePercent": -15.298862257784085,
+      "repeatRequired": false
+    },
+    "E/cinema/95/overview": {
+      "medianChangePercent": 3.6735893416985244,
+      "p95ChangePercent": -8.78939733614217,
+      "repeatRequired": false
+    },
+    "E/cinema/95/follow": {
+      "medianChangePercent": 7.71805722225678,
+      "p95ChangePercent": -4.30638493339115,
+      "repeatRequired": false
+    }
+  }
+}

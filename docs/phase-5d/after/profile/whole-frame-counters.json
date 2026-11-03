@@ -1,0 +1,32 @@
+[
+  {
+    "quality": "low",
+    "calls": 389,
+    "triangles": 475372,
+    "memory": {
+      "geometries": 404,
+      "textures": 50
+    },
+    "scope": "all render calls in one complete frame"
+  },
+  {
+    "quality": "high",
+    "calls": 680,
+    "triangles": 1105086,
+    "memory": {
+      "geometries": 406,
+      "textures": 51
+    },
+    "scope": "all render calls in one complete frame"
+  },
+  {
+    "quality": "cinema",
+    "calls": 1367,
+    "triangles": 1981385,
+    "memory": {
+      "geometries": 407,
+      "textures": 69
+    },
+    "scope": "all render calls in one complete frame"
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "beforeRetainedBloom": [
+    1,
+    2,
+    3
+  ],
+  "afterRetainedBloom": [
+    0,
+    0,
+    0
+  ],
+  "beforeLowPrograms": [
+    54,
+    54,
+    54
+  ],
+  "afterLowPrograms": [
+    53,
+    53,
+    53
+  ],
+  "images": {
+    "low": {
+      "exactPixels": true
+    },
+    "cinema": {
+      "exactPixels": true
+    }
+  },
+  "extraEnduranceSeconds": 138.9208177249966,
+  "listeners": [
+    118
+  ],
+  "extraEnduranceScope": "Final cleanup code; three moving trains after three Cinema/Low cycles. Heap read after diagnostic allocation; primary GC heap comparison uses paired F data."
+}

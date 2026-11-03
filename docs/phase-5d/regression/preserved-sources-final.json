@@ -1,0 +1,68 @@
+[
+  {
+    "path": "src/canonical-layout.json",
+    "identical": true,
+    "sha256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc"
+  },
+  {
+    "path": "src/network.js",
+    "identical": true,
+    "sha256": "6428b5abc00aa1fdb35202bf2d303df5c790f70dc612942e966a07a129d0f0e0"
+  },
+  {
+    "path": "src/simulation.js",
+    "identical": true,
+    "sha256": "8668c6456f4fd4b89f58c10e31f475cd5673cf9428bda7cc358706f7137af626"
+  },
+  {
+    "path": "src/next-switch-view.js",
+    "identical": true,
+    "sha256": "0853c92322a73d362def25b2294c0d2186a76a44cc5191f9d30e2fed320d7a36"
+  },
+  {
+    "path": "src/train-deck.js",
+    "identical": true,
+    "sha256": "dd63cdb0030ce5643b0508b2e945b6f2f0e86ae0925b6008800a08d09b696c71"
+  },
+  {
+    "path": "src/presentation.js",
+    "identical": false,
+    "sha256": "ee5fde331b6be64f0f54fe7b68df937fbe11f7ecbab185d84dc30fbc7d0c76c8",
+    "expectedChange": "Pass ownership cleanup only; render method byte-identical, pixel regression passed."
+  },
+  {
+    "path": "src/scenery.js",
+    "identical": true,
+    "sha256": "1c9a751a375c47d72332df023bec6e722dc3cc229ce797ca960570a51a24ac73"
+  },
+  {
+    "path": "src/diorama.js",
+    "identical": true,
+    "sha256": "cf0bbf20c9c9f3b781c01544ffb6ce69d499e8c4ec9406b37dc21fc2d372a3e6"
+  },
+  {
+    "path": "index.html",
+    "identical": true,
+    "sha256": "98d06e46f6cc663a2b2e64784e921a73f9ac0b12875e70de18484de38d632799"
+  },
+  {
+    "path": "style.css",
+    "identical": true,
+    "sha256": "8b7b6d22534e3e1d29b3ce2129d9c731fa989873fdf5d9793555d56d5559c74d"
+  },
+  {
+    "path": "package.json",
+    "identical": true,
+    "sha256": "24327a8a821c19c4eee998bc4d5734df7825eee7cfcb107237a41e882048f104"
+  },
+  {
+    "path": "package-lock.json",
+    "identical": true,
+    "sha256": "cdc54245fcf16d326e11a32c1c6568f1b040bec20d1cd604913b4cdae0de58d8"
+  },
+  {
+    "path": ".github/workflows/pages.yml",
+    "identical": true,
+    "sha256": "99ad5d96b150dc13c48177c06aa09b1aa2dc59658f6d7ee71cf9d4c356f305a8"
+  }
+]

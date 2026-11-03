@@ -1,0 +1,368 @@
+{
+  "scope": "Node logical endurance, no renderer or UI; not a 30-minute wall-clock browser session",
+  "reference": false,
+  "node": "v24.19.0",
+  "steps": 108000,
+  "logicalSeconds": 1800,
+  "samples": [
+    {
+      "logicalSeconds": 180,
+      "wallMs": 1204.354484,
+      "msPerStep": 0.11151430407407407,
+      "memory": {
+        "rss": 59600896,
+        "heapTotal": 24375296,
+        "heapUsed": 5916120,
+        "external": 2245496,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        5,
+        5,
+        6
+      ],
+      "travelMm": [
+        9419.8125,
+        12099.9375,
+        14775.0625
+      ],
+      "stateSha256": "73c41d393a0c5572348ea3a72fd70df6dd81b8691bbcfb7d8b904ca63e3819da"
+    },
+    {
+      "logicalSeconds": 360,
+      "wallMs": 777.7077069999998,
+      "msPerStep": 0.07200997287037035,
+      "memory": {
+        "rss": 60731392,
+        "heapTotal": 24375296,
+        "heapUsed": 5934096,
+        "external": 2245500,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        5,
+        5,
+        7
+      ],
+      "travelMm": [
+        18869.8125,
+        24249.9375,
+        29625.0625
+      ],
+      "stateSha256": "bcc9ff1a8e5dff9499af23ec08e877238693069293f9801a86d00cf4e6139163"
+    },
+    {
+      "logicalSeconds": 540,
+      "wallMs": 770.6687379999998,
+      "msPerStep": 0.07135821648148147,
+      "memory": {
+        "rss": 60919808,
+        "heapTotal": 24375296,
+        "heapUsed": 5931464,
+        "external": 2245500,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        5,
+        6,
+        5
+      ],
+      "travelMm": [
+        28319.8125,
+        36399.9375,
+        44475.0625
+      ],
+      "stateSha256": "4c61ef9a7ad9ce6c74499cd3b5efc2b04083c6b89bb2d30eca58693172cf171d"
+    },
+    {
+      "logicalSeconds": 720,
+      "wallMs": 1592.2343379999998,
+      "msPerStep": 0.14742910537037035,
+      "memory": {
+        "rss": 76296192,
+        "heapTotal": 41152512,
+        "heapUsed": 5949160,
+        "external": 2245500,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        5,
+        6,
+        6
+      ],
+      "travelMm": [
+        37769.8125,
+        48549.9375,
+        59325.0625
+      ],
+      "stateSha256": "c0c2867f63534e85b9e722ea8fb4258f121e506e52b71a7f6ab700d96a141015"
+    },
+    {
+      "logicalSeconds": 900,
+      "wallMs": 1268.9932529999996,
+      "msPerStep": 0.11749937527777775,
+      "memory": {
+        "rss": 77721600,
+        "heapTotal": 40890368,
+        "heapUsed": 5941544,
+        "external": 2245500,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        4,
+        5,
+        6
+      ],
+      "travelMm": [
+        47219.8125,
+        60699.9375,
+        74175.0625
+      ],
+      "stateSha256": "30d4c29e5a90def3d404ae58cd9088b32ce8de4f61d52a287cdb1beb310ca51d"
+    },
+    {
+      "logicalSeconds": 1080,
+      "wallMs": 861.4196930000007,
+      "msPerStep": 0.07976108268518525,
+      "memory": {
+        "rss": 77631488,
+        "heapTotal": 40890368,
+        "heapUsed": 5951624,
+        "external": 2245500,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        6,
+        5,
+        5
+      ],
+      "travelMm": [
+        56669.8125,
+        72849.9375,
+        89025.0625
+      ],
+      "stateSha256": "b4c2f83d9c98ae3443975f02d9d9894dff5cdb21b3b3be6dbc13d1098dfd8eb2"
+    },
+    {
+      "logicalSeconds": 1260,
+      "wallMs": 1132.22379,
+      "msPerStep": 0.10483553611111111,
+      "memory": {
+        "rss": 79011840,
+        "heapTotal": 41152512,
+        "heapUsed": 5958712,
+        "external": 2245500,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        5,
+        4,
+        6
+      ],
+      "travelMm": [
+        66119.8125,
+        84999.9375,
+        103875.0625
+      ],
+      "stateSha256": "d62080a0d2ee8feefb103270ef6d33a72b47550bf44f19ca74f15dcfb3eae328"
+    },
+    {
+      "logicalSeconds": 1440,
+      "wallMs": 907.3035329999993,
+      "msPerStep": 0.08400958638888882,
+      "memory": {
+        "rss": 78786560,
+        "heapTotal": 41152512,
+        "heapUsed": 5987624,
+        "external": 2245500,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        5,
+        5,
+        6
+      ],
+      "travelMm": [
+        75569.8125,
+        97149.9375,
+        118725.0625
+      ],
+      "stateSha256": "9d79e2ae1c520426df97fb2bf9fa16e8030718ba60582032fa173df25b9962cc"
+    },
+    {
+      "logicalSeconds": 1620,
+      "wallMs": 1562.6843790000003,
+      "msPerStep": 0.14469299805555558,
+      "memory": {
+        "rss": 78794752,
+        "heapTotal": 41152512,
+        "heapUsed": 5948632,
+        "external": 2245500,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        5,
+        5,
+        6
+      ],
+      "travelMm": [
+        85019.8125,
+        109299.9375,
+        133575.0625
+      ],
+      "stateSha256": "65a371730f3bcfac4e738082e257a89036bbc1fbe6f1fac1689b7956ef56b546"
+    },
+    {
+      "logicalSeconds": 1800,
+      "wallMs": 888.6146260000005,
+      "msPerStep": 0.08227913203703709,
+      "memory": {
+        "rss": 78761984,
+        "heapTotal": 41152512,
+        "heapUsed": 5970192,
+        "external": 2245500,
+        "arrayBuffers": 143611
+      },
+      "segments": [
+        6,
+        5,
+        5
+      ],
+      "travelMm": [
+        94469.8125,
+        121449.9375,
+        148425.0625
+      ],
+      "stateSha256": "150a5252d4ae857b7ef1cc7ed38039569e8d19053582a60dc2b350cede55f1ac"
+    }
+  ],
+  "finalState": [
+    {
+      "position": 94489.79649809854,
+      "travel": 94469.8125,
+      "segments": [
+        {
+          "id": "T10",
+          "sign": 1,
+          "start": 93367.00170338614,
+          "end": 93614.40171130886
+        },
+        {
+          "id": "T9",
+          "sign": 1,
+          "start": 93614.40171130886,
+          "end": 93861.80171923159
+        },
+        {
+          "id": "T8",
+          "sign": 1,
+          "start": 93861.80171923159,
+          "end": 94109.20172715432
+        },
+        {
+          "id": "T14",
+          "sign": 1,
+          "start": 94109.20172715432,
+          "end": 94357.20172715432
+        },
+        {
+          "id": "T22",
+          "sign": 1,
+          "start": 94357.20172715432,
+          "end": 94481.20172715432
+        },
+        {
+          "id": "T31",
+          "sign": 1,
+          "start": 94481.20172715432,
+          "end": 94543.20172715432
+        }
+      ],
+      "velocity": 52.5,
+      "speed": 35,
+      "odometer": 94469.8125,
+      "dir": 1
+    },
+    {
+      "position": -121403.92295604604,
+      "travel": 121449.9375,
+      "segments": [
+        {
+          "id": "WIDEN-L:straight",
+          "sign": -1,
+          "start": -121810.54601726204,
+          "end": -121500.54601726204
+        },
+        {
+          "id": "T2",
+          "sign": 1,
+          "start": -121500.54601726204,
+          "end": -121279.0641972045
+        },
+        {
+          "id": "T3",
+          "sign": 1,
+          "start": -121279.0641972045,
+          "end": -121057.58237714696
+        },
+        {
+          "id": "T4",
+          "sign": 1,
+          "start": -121057.58237714696,
+          "end": -120836.10055708942
+        },
+        {
+          "id": "T5",
+          "sign": 1,
+          "start": -120836.10055708942,
+          "end": -120614.61873703188
+        }
+      ],
+      "velocity": -67.5,
+      "speed": 45,
+      "odometer": -121449.9375,
+      "dir": -1
+    },
+    {
+      "position": 148585.04346165183,
+      "travel": 148425.0625,
+      "segments": [
+        {
+          "id": "T21",
+          "sign": 1,
+          "start": 147548.23884035368,
+          "end": 147743.80245967396
+        },
+        {
+          "id": "T20",
+          "sign": 1,
+          "start": 147743.80245967396,
+          "end": 147939.36607899424
+        },
+        {
+          "id": "T19",
+          "sign": 1,
+          "start": 147939.36607899424,
+          "end": 148134.92969831452
+        },
+        {
+          "id": "T18",
+          "sign": 1,
+          "start": 148134.92969831452,
+          "end": 148330.4933176348
+        },
+        {
+          "id": "WX-A:lower",
+          "sign": 1,
+          "start": 148330.4933176348,
+          "end": 148640.4933176348
+        }
+      ],
+      "velocity": 82.5,
+      "speed": 55,
+      "odometer": 148425.0625,
+      "dir": 1
+    }
+  ],
+  "finalStateSha256": "150a5252d4ae857b7ef1cc7ed38039569e8d19053582a60dc2b350cede55f1ac"
+}

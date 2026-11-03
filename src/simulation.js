@@ -1,12 +1,14 @@
 import { sample } from "./network.js";
 class Journey {
   constructor(network, edge, s) {
+    if(!network.edges[edge]||!Number.isFinite(s)||s<0||s>network.edges[edge].length)throw new RangeError("Invalid initial railway position");
     this.network = network;
     this.segments = [{ id: edge, sign: 1, start: 0, end: network.edges[edge].length }];
     this.position = s;
     this.travel = 0;
   }
   locate(at = this.position) {
+    if(!Number.isFinite(at))throw new RangeError("Position must be finite");
     let seg = this.segments.find((v) => at >= v.start - 1e-6 && at <= v.end + 1e-6);
     if (!seg) seg = at < this.segments[0].start ? this.segments[0] : this.segments.at(-1);
     const p = this.network.edges[seg.id];
@@ -27,6 +29,7 @@ class Journey {
     return true;
   }
   ensure(at, choose) {
+    if(!Number.isFinite(at))throw new RangeError("Position must be finite");
     for (let n = 0; n < 100; n++) {
       if (at < this.segments[0].start) {
         if (!this.extend(false, choose)) return false;
@@ -37,12 +40,14 @@ class Journey {
     return false;
   }
   reconcile(tail, front, choose) {
+    if(!Number.isFinite(tail)||tail<0||!Number.isFinite(front)||front<0)throw new RangeError("Invalid extent");
     const lo=this.position-tail, hi=this.position+front;
     while(this.segments.length>1 && this.segments[0].end<lo-1e-6)this.segments.shift();
     while(this.segments.length>1 && this.segments.at(-1).start>hi+1e-6)this.segments.pop();
     return this.ensure(lo,choose) && this.ensure(hi,choose);
   }
   move(delta, tail, choose, front = 0) {
+    if(!Number.isFinite(delta)||!Number.isFinite(tail)||tail<0||!Number.isFinite(front)||front<0)throw new RangeError("Invalid movement");
     const target = this.position + delta;
     if (!this.ensure(target + front, choose) || !this.ensure(target - tail, choose)) return false;
     this.position = target;
@@ -76,10 +81,12 @@ function routing(network,state) {
 }
 class FixedClock {
   constructor(step = 1 / 60) {
+    if(!Number.isFinite(step)||step<=0)throw new RangeError("Invalid clock step");
     this.step = step;
     this.accumulator = 0;
   }
   update(elapsed, fn) {
+    if(!Number.isFinite(elapsed)||elapsed<0)throw new RangeError("Invalid elapsed time");
     this.accumulator += Math.min(0.2, elapsed);
     while (this.accumulator >= this.step) {
       fn(this.step);

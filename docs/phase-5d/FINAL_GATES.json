@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-30",
+  "phase": "5D",
+  "passed": true,
+  "finalCodeCommit": "e8d81d3",
+  "finalBundleSha256": "147b28274fe42d72c916494e3f80c516b0bc206ec98fce505f34bee457f69653",
+  "nodeCases": 131,
+  "pythonCases": 9,
+  "existingBrowserSuites": 5,
+  "pairedVisualCases": 8,
+  "normalRunsPerRevision": 39,
+  "normalFramesTotal": 1488,
+  "frameBudgetsExceeded": [],
+  "pairedFRealSessions": 6,
+  "pairedFQualityResetCycles": 36,
+  "logicalStepsPerRevision": 108000,
+  "logicalSecondsPerRevision": 1800,
+  "bloomRetainedAfterCleanup": [
+    0,
+    0,
+    0
+  ],
+  "extraFinalCodeEnduranceSeconds": 138.9208177249966,
+  "pagesSubpathSmoke": true,
+  "physicalGpuValidated": false,
+  "phase5EStarted": false,
+  "provenance": "Main CPU/RAF/F comparison on 5ae8ee9; final Bloom cleanup on e8d81d3 retested with 131 cases, 8 pixel-identical pairs, actual shader cache ownership, extra moving-train endurance and Pages. See BLOOM_LIFECYCLE_FIX.md."
+}

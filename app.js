@@ -1,19 +1,24 @@
+import {animateAuxiliaryWheels} from './src/rolling-stock-animation.js';
+import {stepRailway} from './src/railway-step.js';
+import {vehiclesConflict,envelopeGap} from './src/railway-conflicts.js';
+import {createFleetCommands} from './src/fleet-commands.js';
+import {layoutFor,vehiclePositions,deriveSwitchAssistance,collectRailwayState} from './src/railway-state.js';
 import {buildStock,animateStock} from './src/rolling-stock.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
 import {createSwitchFeedback} from "./src/switch-feedback.js";
 import {controlMarkers} from "./src/zone-layout.js";
 import { mountTrainDeck } from "./src/train-deck.js";
 import { captureLocomotiveThumbnail } from "./src/locomotive-thumbnails.js";
-import { createSwitchTopology, traceJourney, occupiedRanges, siteSafety } from "./src/next-switch.js";
+import { createSwitchTopology, traceJourney } from "./src/next-switch.js";
 import { mountNextSwitchHUD, createRouteHighlight, previewPoints } from "./src/next-switch-view.js";
 import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
-import { couplingDistance, consistLayout, couplingMatch } from "./src/consist.js";
+import { couplingDistance } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
 import { navigation, CAMERA_PRESETS } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
 import { attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets } from "./src/train-assets.js";
-import { locomotiveDetails, wagonDetails, steam } from "./src/rolling-stock-art.js";
+import { locomotiveDetails, steam } from "./src/rolling-stock-art.js";
 import { presentation } from "./src/presentation.js";
 import { enrich } from "./src/scenery.js";
 import { createNetwork, validateNetwork, loopPosition } from "./src/network.js";
@@ -294,8 +299,6 @@ window.addEventListener("blur",()=>switchFeedback.hover(null));
 function switchIndicatorState(){return {active:switchFeedback.active,states:switchSpecs.map(s=>({id:s.id,on:s.on,orange:s.bulb.material===signalHover,color:s.bulb.material.color.getHexString(),position:s.group.position.toArray()}))};}
 const railWheel = mat("#292c2a", 0.8), chassisRed = mat("#9a3a30");
 const locoBlack = mat("#323736", 0.62, 0.16), locoCrimson = mat("#b94334"), locoCream = mat("#d8c49a");
-const wagonColors = ["#8f5c43", "#71826f", "#a27e50", "#7f6e5d"];
-const wagonMats = wagonColors.map((c) => mat(c));
 function wheelSet(group, len) {
   for (let a of [-len * 0.31, len * 0.31]) for (let side of [-6, 6]) {
     const o = cylinder(4.2, 4.2, 2, railWheel, group, a, 3.7, side, 12);
@@ -379,11 +382,36 @@ assetReady.then((loaded) => {
 });
 function updateModels() {
   const active = $("rollingModels").value === "kenney";
+  const histories=trains.filter(t=>t.journey).map(t=>({journey:t.journey,segments:[...t.journey.segments],lastBlock:t.journey.lastBlock}));
+  const clearances=()=>{
+    const bodies=[...trains.filter(t=>t.journey).map(vehiclePositions),...detached.map(d=>[{...d.point,vehicle:d.group}])],pairs=new Map();
+    bodies.forEach((a,i)=>bodies.slice(i+1).forEach(b=>a.forEach(p=>b.forEach(q=>pairs.set(p.vehicle.uuid+'/'+q.vehicle.uuid,{conflict:vehiclesConflict(p,q),gap:envelopeGap(p,q)})))));
+    return pairs;
+  };
+  const previousClearances=clearances();
   importedTrains(active);
-  if (trains.some((t) => t.journey && (!t.journey.ensure(t.journey.position - layoutFor(t).tail, route) || !t.journey.ensure(t.journey.position+(t.group.userData.couplers?.front?.x??48),route)))) {
+  const noRoom=trains.some((t) => t.journey && (!t.journey.ensure(t.journey.position - layoutFor(t).tail, route) || !t.journey.ensure(t.journey.position+(t.group.userData.couplers?.front?.x??48),route))) || detached.some(d=>{
+    // A stationary vehicle may grow only inside its known route history;
+    // never invent the missing branch of a frozen detached Journey.
+    const j=d.journey,c=d.group.userData.couplers;
+    return j&&(j.position+(c?.back?.x??-48)<j.segments[0].start||j.position+(c?.front?.x??48)>j.segments.at(-1).end||[[-1,-(c?.back?.x??-48)],[1,c?.front?.x??48]].some(([direction,extent])=>{
+      // Cached unoccupied history may predate a legal switch change. New
+      // body occupation must still agree with today's actual selected route.
+      const preview=traceJourney(network,switchTopology,j,direction,0,route,extent);
+      return preview.uncertain||preview.stop!=="limit";
+    }));
+  });
+  // Existing coupler contact between dropped wagons may stay unchanged or
+  // improve. Reject every new conflict, and every worsening existing one.
+  const conflict=[...clearances()].some(([key,next])=>{
+    const previous=previousClearances.get(key);
+    return next.conflict&&(!previous?.conflict||next.gap<previous.gap-1e-7);
+  });
+  if (noRoom || conflict) {
+    for(const h of histories){h.journey.segments.splice(0,h.journey.segments.length,...h.segments);if(h.lastBlock===undefined)delete h.journey.lastBlock;else h.journey.lastBlock=h.lastBlock;}
     importedTrains(rollingModelMode === "kenney");
     $("rollingModels").value = rollingModelMode;
-    log("Not enough room for longer rolling stock. Move the train first.");
+    log(conflict?"Rolling stock change blocked: another vehicle occupies the required clearance.":"Not enough room for longer rolling stock. Move the train first.");
     return;
   }
   rollingModelMode = $("rollingModels").value;
@@ -391,7 +419,7 @@ function updateModels() {
     t.name = active && t.assetLoaded ? kenneyNames[["steam","diesel","shunter"].indexOf(t.modelKey)]+(t.id>=3?` · ${t.id+1}`:"") : t.nativeName;
     t.desc = active && t.assetLoaded ? "Kenney Train Kit \xB7 stylized model" : t.nativeDescription;
   }
-  ui();
+  renderVehicles();ui();
 }
 $("rollingModels").onchange = updateModels;
 const detached = [];
@@ -451,40 +479,9 @@ function toggle(index) {
   ui();
 }
 const route = routing(network, (id) => switchSpecs.find((s) => s.id === id)?.on || false);
-function layoutFor(t, extra = []) {
-  return consistLayout([t.group, ...t.carObjs, ...extra].map((o) => o.userData));
-}
-function vehiclePositions(t) {
-  return layoutFor(t).offsets.map((offset, i) => ({
-    train: t, vehicle: [t.group, ...t.carObjs][i], ...t.journey.locate(t.journey.position - offset)
-  }));
-}
+const fleetCommands=createFleetCommands({trains,detached,route});
 function getSwitchAssistance() {
-  const occupied = [], moving = [];
-  for (const t of trains) {
-    const vehicles = [t.group, ...t.carObjs], layout = layoutFor(t);
-    const direction = Math.abs(t.velocity) > .1 ? Math.sign(t.velocity) : t.dir;
-    const index = direction < 0 ? vehicles.length - 1 : 0;
-    const leading = vehicles[index].userData.couplers;
-    const preview = traceJourney(network, switchTopology, t.journey, direction, layout.offsets[index], route);
-    moving.push({ preview, velocity:t.velocity, leadingExtent: direction < 0 ? -(leading?.back?.x ?? -48) : leading?.front?.x ?? 48 });
-    vehicles.forEach((o,i)=>occupied.push(...occupiedRanges(network,t.journey,layout.offsets[i],o.userData.couplers)));
-  }
-  for (const d of detached) {
-    const edge = network.edges[d.point.edge];
-    if (!edge) continue;
-    const c = d.group.userData.couplers, extent = Math.max(c?.front?.x ?? 48,-(c?.back?.x ?? -48));
-    occupied.push({edge:edge.id,min:Math.max(0,d.point.s-extent),max:Math.min(edge.length,d.point.s+extent)});
-  }
-  const safetyByControl = new Map();
-  for (const site of switchTopology.sites) {
-    const safety = siteSafety(site, occupied, moving);
-    for (const id of site.controls) safetyByControl.set(id,safety);
-  }
-  const preview = moving[selected].preview;
-  return { preview, safety:preview.next?safetyByControl.get(preview.next.site.controls[0]):null,
-    safetyByControl, trainName:trains[selected].name, controls:switchSpecs,
-    inverting:Math.abs(trains[selected].velocity)>.1 && Math.sign(trains[selected].velocity)!==trains[selected].dir };
+  return deriveSwitchAssistance({network,switchTopology,trains,detached,selected,switchSpecs,route,tracePoints:false});
 }
 function switchHUDState() {
   const state = getSwitchAssistance();
@@ -511,137 +508,66 @@ function initializeJourney(t) {
 }
 trains.forEach(initializeJourney);
 function vehicleLocation(t, behind = 0) {
-  const p = t.journey.locate(t.journey.position - behind);
-  return { point: new THREE.Vector3(p.x, 3.5, p.z), angle: p.angle };
+  return t.journey.locate(t.journey.position - behind);
 }
 function renderVehicles() {
   for (const t of trains) {
     const layout = layoutFor(t);
     t.journey.ensure(t.journey.position - layout.tail, route);
-    const pos = vehicleLocation(t);
-    t.group.position.copy(pos.point).add(new THREE.Vector3(0,t.group.stockRig&&!t.group.userData.assetDimensions?0:3.6,0));
-    t.group.rotation.y = pos.angle;
-    t.carObjs.forEach((o, i) => {
-      o.visible = true;
-      const q = vehicleLocation(t, layout.offsets[i + 1]);
-      o.position.copy(q.point);
-      o.rotation.y = q.angle;
-    });
-    [t.group,...t.carObjs].forEach((group,i)=>animateStock(group,t.journey,t.journey.position-layout.offsets[i],t.odometer));
-    for (const group of [t.group, ...t.carObjs]) group.traverse((o) => {
-      if (o.userData.wheel) o.quaternion.setFromAxisAngle(new THREE.Vector3(0,0,1),-t.odometer/4.2).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),PI/2));
-      if (o.userData.importedWheel) o.rotation.x = -t.odometer / o.userData.wheelRadius;
-    });
+    const vehicles=[t.group,...t.carObjs];
+    for(let i=0;i<vehicles.length;i++) {
+      const group=vehicles[i],coordinate=t.journey.position-layout.offsets[i],pose=vehicleLocation(t,layout.offsets[i]);
+      if(i)group.visible=true;
+      group.position.set(pose.x,3.5+(i?0:group.stockRig&&!group.userData.assetDimensions?0:3.6),pose.z);
+      group.rotation.y=pose.angle;
+      animateStock(group,t.journey,coordinate,t.odometer,pose);
+      animateAuxiliaryWheels(group,t.odometer);
+    }
   }
-  selectRing.position.copy(vehicleLocation(trains[selected]).point);
-  selectRing.position.y = 5.2;
+  const selectedPoint=vehicleLocation(trains[selected]);
+  selectRing.position.set(selectedPoint.x,5.2,selectedPoint.z);
   for (const d of detached) {
     d.group.visible = true;
     d.group.position.set(d.point.x, 3.5, d.point.z);
     d.group.rotation.y = d.point.angle;
   }
 }
-function advance(t, dt) {
-  const desired = t.dir * (t.speed / 100) * 150;
-  const acceleration = Math.abs(desired) < Math.abs(t.velocity) ? 100 : 45;
-  t.velocity += clamp(desired - t.velocity, -acceleration * dt, acceleration * dt);
-  if (Math.abs(t.velocity) < 1e-3) return;
-  if (!t.journey.move(t.velocity * dt, layoutFor(t).tail, route, t.group.userData.couplers?.front?.x ?? 48)) {
-    t.speed = 0;
-    t.velocity = 0;
-    log(t.name + (t.journey.lastBlock?.reason==="terminal"?": end of track. Reverse direction.":": route blocked. Check switch alignment."));
-    ui();
-    return;
-  }
-  t.odometer += t.velocity * dt;
-  const previousRoute = t.mode + "/" + t.loop + "/" + t.section;
-  const location2 = t.journey.locate(), edge = network.edges[location2.edge];
-  if (edge.lane !== void 0) {
-    if (edge.lane !== t.previousLane) {
-      transferred = true;
-      t.previousLane = edge.lane;
+function advanceFleet(dt) {
+  for (const result of stepRailway({trains,detached,route},dt)) {
+    const t=result.train;
+    if(result.notify){
+      log(result.kind==='train'?"Protection: trains too close. Automatic stop.":result.kind==='wagon'?"Stationary wagon ahead. Stopped for coupling.":t.name+(result.kind==='terminal'?": end of track. Reverse direction.":": route blocked. Check switch alignment."));
+      ui();
     }
-    t.loop = edge.lane;
-    t.mode = "loop";
-  } else if(edge.role==="crossover") {
-    t.mode="loop";
-  } else {
-    t.mode = "yard";
-    t.section = edge.id;
-    if (edge.role?.startsWith("runaround")) visitedRunaround = true;
-  }
-  t.laps = Math.floor(t.journey.travel / loops[t.loop].length);
-  if (previousRoute !== t.mode + "/" + t.loop + "/" + t.section) ui();
-}
-let protectionTimer = 0;
-function updateTrainStatus(dt) {
-  protectionTimer -= dt;
-  if (protectionTimer > 0) return;
-  protectionTimer = 0.08;
-  const occupied = trains.map((t) => vehiclePositions(t));
-  for (let a = 0; a < occupied.length; a++) for (let b = a + 1; b < occupied.length; b++) {
-    if (occupied[a].some((u) => occupied[b].some((v) => u.edge === v.edge ? Math.abs(u.s - v.s) < (u.vehicle.userData.assetDimensions || u.vehicle.userData.stock || v.vehicle.userData.assetDimensions || v.vehicle.userData.stock ? Math.max(couplingDistance(u.vehicle.userData, v.vehicle.userData), couplingDistance(v.vehicle.userData, u.vehicle.userData)) : 58) : Math.hypot(u.x - v.x, u.z - v.z) < 17))) {
-      const u = trains[a], v = trains[b];
-      if (u.speed || v.speed || u.velocity || v.velocity) {
-        u.speed = v.speed = u.velocity = v.velocity = 0;
-        log("Protection: trains too close. Automatic stop.");
-        ui();
+    if(!result.moved)continue;
+    const previousRoute = t.mode + "/" + t.loop + "/" + t.section;
+    const location2 = t.journey.locate(), edge = network.edges[location2.edge];
+    if (edge.lane !== void 0) {
+      if (edge.lane !== t.previousLane) {
+        transferred = true;
+        t.previousLane = edge.lane;
       }
+      t.loop = edge.lane;
+      t.mode = "loop";
+    } else if(edge.role==="crossover") {
+      t.mode="loop";
+    } else {
+      t.mode = "yard";
+      t.section = edge.id;
+      if (edge.role?.startsWith("runaround")) visitedRunaround = true;
     }
-  }
-  for (const t of trains) if (detached.some((d) => vehiclePositions(t).some((p) => {
-    const toward=(d.point.x-p.x)*Math.cos(p.angle)-(d.point.z-p.z)*Math.sin(p.angle);
-    return toward*t.velocity>0 && Math.hypot(p.x - d.point.x, p.z - d.point.z) < (p.vehicle.userData.assetDimensions || p.vehicle.userData.stock || d.group.userData.assetDimensions || d.group.userData.stock ? couplingDistance(p.vehicle.userData, d.group.userData) + 1 : 48);
-  })) && t.velocity) {
-    t.speed = t.velocity = 0;
-    log("Stationary wagon ahead. Stopped for coupling.");
-    ui();
+    t.laps = Math.floor(t.journey.travel / loops[t.loop].length);
+    if (previousRoute !== t.mode + "/" + t.loop + "/" + t.section) ui();
   }
 }
-function uncouple() {
-  const t = trains[selected];
-  if (Math.abs(t.velocity) > 0.1 || t.speed) {
-    log("Stop the train before uncoupling.");
-    return;
-  }
-  if (!t.cars) return;
-  const point = t.journey.locate(t.journey.position - layoutFor(t).offsets.at(-1)), group = t.carObjs.pop();
-  detached.push({ point, group });
-  t.cars = t.carObjs.length;
-  didDetach = true;
-  ui();
-  log("Wagon uncoupled and left on the track.");
+function applyConsistCommand(result) {
+  if (!result.changed) {if(result.message)log(result.message);return;}
+  if(result.kind==='uncoupled')didDetach=true;
+  if(result.kind==='coupled')didAttach=true;
+  renderVehicles();ui();log(result.message);
 }
-function couple() {
-  const t = trains[selected];
-  if (t.speed || Math.abs(t.velocity) > 0.1) {
-    log("Stop the train before coupling.");
-    return;
-  }
-  if (t.cars >= 5) {
-    log("Maximum train length: five wagons.");
-    return;
-  }
-  const tail = t.journey.locate(t.journey.position - layoutFor(t).offsets.at(-1));
-  const i = detached.findIndex(d=>{
-    const candidate=layoutFor(t,[d.group]);
-    const expected=t.journey.locate(t.journey.position-candidate.offsets.at(-1));
-    return couplingMatch(expected,d.point);
-  });
-  if (i < 0) {
-    log("No wagon near the rear of this train on the same track.");
-    return;
-  }
-  if (!t.journey.ensure(t.journey.position - layoutFor(t, [detached[i].group]).tail, route)) {
-    log("Not enough room.");
-    return;
-  }
-  t.carObjs.push(detached.splice(i, 1)[0].group);
-  t.cars = t.carObjs.length;
-  didAttach = true;
-  ui();
-  log("Wagon coupled.");
-}
+function uncouple() {applyConsistCommand(fleetCommands.uncouple(selected));}
+function couple() {applyConsistCommand(fleetCommands.couple(selected));}
 function removeWagon(group) {
   releaseTrainAsset(group);
   const geometries = /* @__PURE__ */ new Set();
@@ -678,24 +604,23 @@ function reset() {
   log("Reset completed.");
 }
 function setTrainSpeed(id,value) {
-  const t=trains[id];if(!t)return;
-  t.speed=clamp(value,0,100);trainDeck?.sync();
+  if(fleetCommands.setSpeed(id,value))trainDeck?.sync();
 }
 function reverseTrain(id) {
-  const t=trains[id];if(!t)return;
-  t.dir*=-1;log(t.name+" reversed direction");trainDeck?.sync();nextSwitchHUD?.refresh(true);
+  const train=fleetCommands.reverse(id);if(!train)return;
+  log(train.name+" reversed direction");trainDeck?.sync();nextSwitchHUD?.refresh(true);
 }
 function stopTrain(id) {
-  const t=trains[id];if(!t)return;
-  t.speed=t.velocity=0;ui();log(t.name+" stopped");
+  const train=fleetCommands.stop(id);if(!train)return;
+  ui();log(train.name+" stopped");
 }
 function stopAllTrains() {
-  for(const t of trains)t.speed=t.velocity=0;
-  ui();log("STOP ALL · every train stopped");
+  fleetCommands.stopAll();ui();log("STOP ALL · every train stopped");
 }
 function addTrain() {
   if(trains.length>=4){log("A session supports up to four trains.");return null;}
-  if(trains.some(t=>vehiclePositions(t).some(p=>p.edge==="T47"&&Math.abs(p.s-80)<120))||detached.some(d=>d.point.edge==="T47"&&Math.abs(d.point.s-80)<120)){
+  const insertion={...new Journey(network,'T47',80).locate(),vehicle:{userData:{}}};
+  if(trains.some(t=>vehiclePositions(t).some(p=>(p.edge==="T47"&&Math.abs(p.s-80)<120)||vehiclesConflict(insertion,p)))||detached.some(d=>(d.point.edge==="T47"&&Math.abs(d.point.s-80)<120)||vehiclesConflict(insertion,{...d.point,vehicle:d.group}))){
     log("Clear the insertion point in the east siding first.");return null;
   }
   const id=trains.length;
@@ -720,8 +645,7 @@ function updateRouteHighlight(force=false) {
   routeHighlight.update(previewPoints(network,getSwitchAssistance().preview,1800),true);
 }
 function toggleTrainLights(id) {
-  const t=trains[id];if(!t)return;
-  t.lights=!t.lights;ui();
+  if(fleetCommands.toggleLights(id))ui();
 }
 $("day").oninput = (e) => {
   day = +e.target.value;
@@ -862,8 +786,7 @@ function tick(now) {
   last = now;
   if (!paused) {
     clock.update(dt, (step) => {
-      trains.forEach((t) => advance(t, step));
-      updateTrainStatus(step);
+      advanceFleet(step);
     });
   }
   frame++;
@@ -918,9 +841,9 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   placeTrain(id, edge, s, direction=1) {
     const t=trains[id], track=network.edges[edge];
     if(!t || !track || !Number.isFinite(s) || s<0 || s>track.length || ![1,-1].includes(direction)) throw new RangeError("Invalid diagnostic train placement");
-    t.journey=new Journey(network,edge,s);
-    t.dir=direction;t.speed=t.velocity=0;
-    if(!t.journey.ensure(t.journey.position-layoutFor(t).tail,route)) throw new RangeError("Diagnostic consist does not fit");
+    const candidate=new Journey(network,edge,s);
+    if(!candidate.ensure(candidate.position-layoutFor(t).tail,route)||!candidate.ensure(candidate.position+(t.group.userData.couplers?.front?.x??48),route)) throw new RangeError("Diagnostic consist does not fit");
+    t.journey=candidate;t.dir=direction;t.speed=t.velocity=0;
     if(track.lane!==undefined){t.loop=track.lane;t.previousLane=track.lane;t.mode="loop";}else{t.mode="yard";t.section=edge;}
     renderVehicles();ui();
   },
@@ -928,18 +851,27 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
     if (!Number.isFinite(seconds) || seconds < 0 || seconds > 120) throw new RangeError("Diagnostic step: 0…120 seconds");
     for (let remaining = seconds; remaining > 1e-9; remaining -= 1/60) {
       const dt = Math.min(1/60, remaining);
-      trains.forEach((t) => advance(t, dt));
-      updateTrainStatus(dt);
+      advanceFleet(dt);
     }
     renderVehicles();
     trainDeck?.update();
     nextSwitchHUD?.refresh(true);
     updateRouteHighlight(true);
   },
+  frames(intervals) {
+    if(!Array.isArray(intervals)||intervals.length>10000||intervals.some(dt=>!Number.isFinite(dt)||dt<0))throw new RangeError("Invalid diagnostic frames");
+    const frameClock=new FixedClock();
+    for(const elapsed of intervals)frameClock.update(elapsed,advanceFleet);
+    renderVehicles();trainDeck?.update();nextSwitchHUD?.refresh(true);updateRouteHighlight(true);
+  },
   setSwitches(on) {
     if(!Array.isArray(on)||on.some((id)=>!switchSpecs.some((s)=>s.id===id)))throw new RangeError("Unknown diagnostic control");
     switchSpecs.forEach((s)=>{s.on=on.includes(s.id);s.bulb.material=s.on?signalGold:signalGreen;});
     trains.forEach((t)=>t.journey.reconcile(layoutFor(t).tail,t.group.userData.couplers?.front?.x??48,route));ui();
+  },
+  railwayState() {
+    return {occupied:collectRailwayState({network,switchTopology,trains,detached,route}).occupied,
+      identities:{trains:trains.map(t=>[t.group,...t.carObjs].map(v=>v.uuid)),detached:detached.map(d=>d.group.uuid)}};
   },
   snapshot() {
   const hull = (group) => {

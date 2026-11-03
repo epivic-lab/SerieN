@@ -1,0 +1,27 @@
+✔ fleet commands match historical state transitions/messages for legacy and catalogued consists (6.526251ms)
+✔ detach/recouple transfers exactly the same physical group at the same route position (0.388689ms)
+✔ blocked coupling preserves identities and counts when distant, reversed, full or without room (0.663175ms)
+✔ simple commands preserve missing-ID behavior and stop every fleet member (0.391751ms)
+✔ A1: native front-on reproduction stops before any adjacent-edge envelope overlap, preserving rejected history and identity (22.863203ms)
+✔ frontals and following conflicts include short/long consists, stationary trains and both approach directions (373.942247ms)
+✔ candidate rollback cascades to followers and is independent of fleet iteration order (57.980942ms)
+✔ swept envelopes detect a crossing between separated endpoints; parallel movement stays clear (1.017206ms)
+✔ three canonical loops allow simultaneous mixed directions and complete laps with no false parallel stop (1509.856648ms)
+✔ detached wagons stop approach without penetration, permit departure and recouple without lost identities in curves (35.434147ms)
+✔ full fleet, occupation, direction and HUD routes agree at 20/60/120 Hz and irregular frames (283.282568ms)
+✔ all four terminal envelopes stop and reverse short and five-wagon consists with legal route history (14.96213ms)
+✔ only the detached coach body across a joint protects TO4 after the locomotive clears (0.763116ms)
+✔ two trains requesting each WX diamond are stopped before overlap, while its straight parallel routes remain independent (26.852328ms)
+✔ adjacent-edge parked coach can overlap the insertion point despite passing the historical centre-only guard (0.434053ms)
+✔ elapsed-time cap and invalid step inputs have explicit, atomic semantics (1.655145ms)
+✔ growth of a frozen detached body cannot claim an old branch after a legal turnout change (0.28057ms)
+✔ recoupling across a joint extends the candidate centre before matching, even after old train history was pruned (0.186658ms)
+✔ a misaligned joint cannot be invented to recouple; rejected candidate leaves the real Journey unchanged (0.20021ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2389.68803

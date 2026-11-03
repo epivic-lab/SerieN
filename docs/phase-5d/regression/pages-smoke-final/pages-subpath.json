@@ -1,0 +1,45 @@
+{
+  "url": "http://127.0.0.1:8052/SerieN/?diagnostics=1",
+  "base": "http://127.0.0.1:8052/SerieN/?diagnostics=1",
+  "trains": 3,
+  "resources": [
+    "http://127.0.0.1:8052/SerieN/style.css?v=0.12.0",
+    "http://127.0.0.1:8052/SerieN/docs/jmri-layout/minimap-canonical.svg",
+    "http://127.0.0.1:8052/SerieN/dist/game.js?v=0.12.0",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/train-carriage-box.glb",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/train-carriage-lumber.glb",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/train-carriage-tank.glb",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/train-locomotive-a.glb",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/train-diesel-a.glb",
+    "http://127.0.0.1:8052/SerieN/assets/locomotive-thumbnails/native-steam.png",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/train-diesel-box-a.glb",
+    "http://127.0.0.1:8052/SerieN/assets/locomotive-thumbnails/native-diesel.png",
+    "http://127.0.0.1:8052/SerieN/assets/locomotive-thumbnails/native-shunter.png",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/Textures/colormap.png",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/Textures/colormap.png",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/Textures/colormap.png",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/Textures/colormap.png",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/Textures/colormap.png",
+    "http://127.0.0.1:8052/SerieN/assets/kenney/Textures/colormap.png",
+    "http://127.0.0.1:8052/SerieN/assets/locomotive-thumbnails/kenney-steam.png",
+    "http://127.0.0.1:8052/SerieN/assets/locomotive-thumbnails/kenney-diesel.png",
+    "http://127.0.0.1:8052/SerieN/assets/locomotive-thumbnails/kenney-shunter.png"
+  ],
+  "thumbnails": [
+    {
+      "src": "http://127.0.0.1:8052/SerieN/assets/locomotive-thumbnails/kenney-steam.png",
+      "width": 320
+    },
+    {
+      "src": "http://127.0.0.1:8052/SerieN/assets/locomotive-thumbnails/kenney-diesel.png",
+      "width": 320
+    },
+    {
+      "src": "http://127.0.0.1:8052/SerieN/assets/locomotive-thumbnails/kenney-shunter.png",
+      "width": 320
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "badStatus": []
+}

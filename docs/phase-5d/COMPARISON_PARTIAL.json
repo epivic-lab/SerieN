@@ -1,0 +1,1321 @@
+{
+  "before": {
+    "normal": {
+      "A/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 2024.8500000000058,
+        "p95FrameMs": 2966.600000000006,
+        "meanFrameMs": 2222.1375000000007,
+        "effectiveFps": 0.4500171569041068,
+        "tickWallMedianMs": 9.699999999254942,
+        "longTasks": 72,
+        "interactionMedianMs": null,
+        "cdpScriptCpuSecondsMedian": 0.3560890000000001
+      },
+      "B/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 1858.25,
+        "p95FrameMs": 3349.9000000000233,
+        "meanFrameMs": 2197.1333333333337,
+        "effectiveFps": 0.4551385138210395,
+        "tickWallMedianMs": 15.599999999627471,
+        "longTasks": 71,
+        "interactionMedianMs": null,
+        "cdpScriptCpuSecondsMedian": 0.5036759999999996
+      },
+      "C/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 1933.3000000000466,
+        "p95FrameMs": 4966.5,
+        "meanFrameMs": 2647.8125,
+        "effectiveFps": 0.37767024666587984,
+        "tickWallMedianMs": 22.200000001117587,
+        "longTasks": 74,
+        "interactionMedianMs": null,
+        "cdpScriptCpuSecondsMedian": 0.7527469999999994
+      },
+      "D/low/48/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 2008.25,
+        "p95FrameMs": 4149.800000000047,
+        "meanFrameMs": 2299.2166666666694,
+        "effectiveFps": 0.43493073728008763,
+        "tickWallMedianMs": 19.800000000745058,
+        "longTasks": 73,
+        "interactionMedianMs": 6.1000000005587935,
+        "cdpScriptCpuSecondsMedian": 0.6283250000000002
+      },
+      "C/low/95/overview": {
+        "runs": 3,
+        "frames": 72,
+        "medianFrameMs": 2558.20000000007,
+        "p95FrameMs": 4533.199999999953,
+        "meanFrameMs": 2761.0,
+        "effectiveFps": 0.36218761318362913,
+        "tickWallMedianMs": 19.40000000037253,
+        "longTasks": 72,
+        "interactionMedianMs": null,
+        "cdpScriptCpuSecondsMedian": 0.6924600000000005
+      },
+      "E/high/10/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2974.9499999999534,
+        "p95FrameMs": 9466.199999999953,
+        "meanFrameMs": 4575.856250000012,
+        "effectiveFps": 0.21853833367252248,
+        "tickWallMedianMs": 23.40000000037253,
+        "longTasks": 50,
+        "interactionMedianMs": null,
+        "cdpScriptCpuSecondsMedian": 0.67868
+      },
+      "E/high/10/follow": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 2299.899999999907,
+        "p95FrameMs": 3233.100000000093,
+        "meanFrameMs": 2268.65625,
+        "effectiveFps": 0.440789564307065,
+        "tickWallMedianMs": 21,
+        "longTasks": 48,
+        "interactionMedianMs": null,
+        "cdpScriptCpuSecondsMedian": 0.399675000000002
+      },
+      "E/high/95/overview": {
+        "runs": 3,
+        "frames": 48,
+        "medianFrameMs": 3083.25,
+        "p95FrameMs": 5683.09999999986,
+        "meanFrameMs": 3529.024999999994,
+        "effectiveFps": 0.2833643853472281,
+        "tickWallMedianMs": 29.700000001117587,
+        "longTasks": 47,
+        "interactionMedianMs": null,
+        "cdpScriptCpuSecondsMedian": 0.6061590000000017
+      },
+      "E/high/95/follow": {
+        "runs": 2,
+        "frames": 32,
+        "medianFrameMs": 2741.5250000000233,
+        "p95FrameMs": 15307.75,
+        "meanFrameMs": 3901.40625,
+        "effectiveFps": 0.2734105372439498,
+        "tickWallMedianMs": 22.0,
+        "longTasks": 32,
+        "interactionMedianMs": null,
+        "cdpScriptCpuSecondsMedian": 0.5187929999999987
+      }
+    },
+    "components": {
+      "A": {
+        "models": {
+          "perCallMedianMs": 0.085,
+          "perCallSamplesMs": [
+            0.12199999999254942,
+            0.085,
+            0.03800000000745058
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.25499999998137357,
+          "perCallSamplesMs": [
+            0.325,
+            0.25499999998137357,
+            0.20333333335195977
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.0027999999970197676,
+          "perCallSamplesMs": [
+            0.004599999997764826,
+            0.0027999999970197676,
+            0.002199999999254942
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.03833333333333333,
+          "perCallSamplesMs": [
+            0.03833333333333333,
+            0.04566666666418314,
+            0.018666666665424905
+          ]
+        }
+      },
+      "B": {
+        "models": {
+          "perCallMedianMs": 0.052999999988824126,
+          "perCallSamplesMs": [
+            0.125,
+            0.04699999999254942,
+            0.052999999988824126
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.36666666666666664,
+          "perCallSamplesMs": [
+            0.8216666666790843,
+            0.36666666666666664,
+            0.20500000001241764
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.0027999999970197676,
+          "perCallSamplesMs": [
+            0.006599999997764826,
+            0.0027999999970197676,
+            0.0013999999985098838
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.5289999999975165,
+          "perCallSamplesMs": [
+            0.6046666666679085,
+            0.5289999999975165,
+            0.45300000000124174
+          ]
+        }
+      },
+      "C": {
+        "models": {
+          "perCallMedianMs": 0.05300000000745058,
+          "perCallSamplesMs": [
+            0.09200000001117586,
+            0.035,
+            0.05300000000745058
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.22333333333954214,
+          "perCallSamplesMs": [
+            0.19666666664804022,
+            0.3566666666728755,
+            0.22333333333954214
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.002,
+          "perCallSamplesMs": [
+            0.004800000000745058,
+            0.002,
+            0.0013999999985098838
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.8039999999975165,
+          "perCallSamplesMs": [
+            0.8039999999975165,
+            0.8476666666629413,
+            0.7253333333320916
+          ]
+        }
+      },
+      "D": {
+        "models": {
+          "perCallMedianMs": 0.22900000000372528,
+          "perCallSamplesMs": [
+            0.5969999999925494,
+            0.1909999999962747,
+            0.22900000000372528
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.35,
+          "perCallSamplesMs": [
+            0.35,
+            0.2966666666480402,
+            0.8283333333209157
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.003800000000745058,
+          "perCallSamplesMs": [
+            0.018,
+            0.002599999997764826,
+            0.003800000000745058
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 4.564000000003725,
+          "perCallSamplesMs": [
+            4.291333333334575,
+            4.564000000003725,
+            7.981333333334575
+          ]
+        }
+      }
+    },
+    "extended": {},
+    "profiles": {
+      "D": {
+        "scope": "self sampled wall milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            24210.024000000114
+          ],
+          [
+            "polygonGap@357",
+            49.904
+          ],
+          [
+            "(garbage collector)@-1",
+            39.46399999999999
+          ],
+          [
+            "hull@344",
+            30.368000000000006
+          ],
+          [
+            "corners@339",
+            17.121000000000002
+          ],
+          [
+            "@376",
+            11.916
+          ],
+          [
+            "@423",
+            11.144
+          ],
+          [
+            "sweep@372",
+            7.027000000000001
+          ],
+          [
+            "@393",
+            6.835000000000001
+          ],
+          [
+            "update@11036",
+            6.522
+          ],
+          [
+            "setProgram@17775",
+            6.34
+          ],
+          [
+            "@98",
+            6.081
+          ],
+          [
+            "bindVertexArray@-1",
+            5.715999999999999
+          ],
+          [
+            "advanceFleet@33355",
+            4.84
+          ],
+          [
+            "getBindingState@9389",
+            4.745
+          ],
+          [
+            "update@8401",
+            4.6930000000000005
+          ],
+          [
+            "copyArray@11143",
+            4.601
+          ],
+          [
+            "requestAnimationFrame@-1",
+            4.563000000000001
+          ],
+          [
+            "@345",
+            4.173
+          ],
+          [
+            "envelope@331",
+            3.7300000000000004
+          ],
+          [
+            "refreshUniformsCommon@16465",
+            3.7159999999999997
+          ],
+          [
+            "multiplyMatrices@4129",
+            3.458
+          ],
+          [
+            "setAttribute@-1",
+            3.279
+          ],
+          [
+            "(idle)@-1",
+            3.026
+          ],
+          [
+            "@33298",
+            2.965
+          ]
+        ]
+      },
+      "C": {
+        "scope": "self sampled wall milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            33397.13699999964
+          ],
+          [
+            "getRGB@5912",
+            116.655
+          ],
+          [
+            "polygonGap@357",
+            84.818
+          ],
+          [
+            "hull@344",
+            79.282
+          ],
+          [
+            "(garbage collector)@-1",
+            35.68600000000001
+          ],
+          [
+            "sweep@372",
+            32.987
+          ],
+          [
+            "corners@339",
+            19.068
+          ],
+          [
+            "@423",
+            10.706999999999999
+          ],
+          [
+            "setProgram@17775",
+            10.125
+          ],
+          [
+            "schemaSVG@25473",
+            7.439
+          ],
+          [
+            "setAttribute@-1",
+            6.27
+          ],
+          [
+            "distanceLabel@25399",
+            6.218999999999999
+          ],
+          [
+            "refreshUniformsCommon@16465",
+            6.203
+          ],
+          [
+            "@393",
+            5.737
+          ],
+          [
+            "@376",
+            5.385
+          ],
+          [
+            "tick@33656",
+            5.334
+          ],
+          [
+            "@98",
+            5.115
+          ],
+          [
+            "needsUpdate@9430",
+            4.5009999999999994
+          ],
+          [
+            "setValue@11692",
+            4.108
+          ],
+          [
+            "uniformMatrix4fv@-1",
+            3.753
+          ],
+          [
+            "getUniformList@17750",
+            3.563
+          ],
+          [
+            "projectObject@17526",
+            3.561
+          ],
+          [
+            "bindVertexArray@-1",
+            3.511
+          ],
+          [
+            "consistLayout@8",
+            3.12
+          ],
+          [
+            "couplingDistance@1",
+            3.0829999999999997
+          ]
+        ]
+      },
+      "B": {
+        "scope": "self sampled wall milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            32299.99199999981
+          ],
+          [
+            "polygonGap@357",
+            35.347
+          ],
+          [
+            "(garbage collector)@-1",
+            34.13099999999999
+          ],
+          [
+            "corners@339",
+            16.517000000000003
+          ],
+          [
+            "@241",
+            12.886
+          ],
+          [
+            "bindVertexArray@-1",
+            11.869999999999997
+          ],
+          [
+            "sweep@372",
+            9.785
+          ],
+          [
+            "needsUpdate@9430",
+            9.555
+          ],
+          [
+            "setProgram@17775",
+            7.155
+          ],
+          [
+            "painterSortStable@12952",
+            6.878
+          ],
+          [
+            "getBindingState@9389",
+            6.723
+          ],
+          [
+            "locate@31958",
+            6.394
+          ],
+          [
+            "hull@344",
+            5.2090000000000005
+          ],
+          [
+            "refreshUniformsCommon@16465",
+            4.6930000000000005
+          ],
+          [
+            "tick@33656",
+            4.559
+          ],
+          [
+            "setAttribute@-1",
+            4.481
+          ],
+          [
+            "@423",
+            4.302
+          ],
+          [
+            "update@8401",
+            4.177
+          ],
+          [
+            "multiplyMatrices@4129",
+            3.8260000000000005
+          ],
+          [
+            "copyArray@11143",
+            3.455
+          ],
+          [
+            "WebGLRenderer.renderBufferDirect@17285",
+            3.364
+          ],
+          [
+            "arraysEqual@11136",
+            3.303
+          ],
+          [
+            "useProgram@-1",
+            2.885
+          ],
+          [
+            "compose@4446",
+            2.847
+          ],
+          [
+            "markUniformsLightsNeedsUpdate@17953",
+            2.6420000000000003
+          ]
+        ]
+      },
+      "A": {
+        "scope": "self sampled wall milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            27588.37099999975
+          ],
+          [
+            "(garbage collector)@-1",
+            11.675999999999998
+          ],
+          [
+            "setProgram@17775",
+            8.527999999999999
+          ],
+          [
+            "needsUpdate@9430",
+            8.343
+          ],
+          [
+            "multiplyMatrices@4129",
+            8.219000000000001
+          ],
+          [
+            "projectObject@17526",
+            8.113
+          ],
+          [
+            "upload@11745",
+            6.716
+          ],
+          [
+            "traceJourney@143",
+            6.297
+          ],
+          [
+            "tick@33656",
+            6.218
+          ],
+          [
+            "updateMatrixWorld@5127",
+            5.672000000000001
+          ],
+          [
+            "refreshUniformsCommon@16465",
+            5.278
+          ],
+          [
+            "update@10786",
+            5.098
+          ],
+          [
+            "renderObject@17668",
+            4.984
+          ],
+          [
+            "refreshUniformsStandard@16600",
+            4.936
+          ],
+          [
+            "bindVertexArray@-1",
+            4.7669999999999995
+          ],
+          [
+            "collectRailwayState@285",
+            4.592
+          ],
+          [
+            "setup@9360",
+            4.068
+          ],
+          [
+            "update@11036",
+            3.916
+          ],
+          [
+            "track@24961",
+            3.423
+          ],
+          [
+            "WebGLRenderer.renderBufferDirect@17285",
+            3.248
+          ],
+          [
+            "PerformanceObserver.observe.type@1",
+            3.019
+          ],
+          [
+            "drawArrays@-1",
+            2.84
+          ],
+          [
+            "setValueT1@11361",
+            2.83
+          ],
+          [
+            "compose@4446",
+            2.715
+          ],
+          [
+            "getProgram@17686",
+            2.37
+          ]
+        ]
+      }
+    }
+  },
+  "after": {
+    "normal": {},
+    "components": {
+      "A": {
+        "models": {
+          "perCallMedianMs": 0.05300000000745058,
+          "perCallSamplesMs": [
+            0.08400000000372529,
+            0.01900000000372529,
+            0.05300000000745058
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.08166666667287549,
+          "perCallSamplesMs": [
+            0.08000000001241764,
+            0.08166666667287549,
+            0.1216666666790843
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.001600000001490116,
+          "perCallSamplesMs": [
+            0.005399999998509884,
+            0.001600000001490116,
+            0.001600000001490116
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.022999999995032945,
+          "perCallSamplesMs": [
+            0.022999999995032945,
+            0.02033333333209157,
+            0.031000000002483527
+          ]
+        }
+      },
+      "B": {
+        "models": {
+          "perCallMedianMs": 0.03800000000745058,
+          "perCallSamplesMs": [
+            0.04699999999254942,
+            0.03800000000745058,
+            0.02299999998882413
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.1849999999937912,
+          "perCallSamplesMs": [
+            0.3699999999875824,
+            0.1849999999937912,
+            0.07333333330849806
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.0015999999977648258,
+          "perCallSamplesMs": [
+            0.003800000000745058,
+            0.001199999999254942,
+            0.0015999999977648258
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.21666666666666667,
+          "perCallSamplesMs": [
+            0.26300000000124174,
+            0.20400000000372528,
+            0.21666666666666667
+          ]
+        }
+      },
+      "C": {
+        "models": {
+          "perCallMedianMs": 0.04299999998882413,
+          "perCallSamplesMs": [
+            0.06600000001490117,
+            0.03,
+            0.04299999998882413
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.06666666666666667,
+          "perCallSamplesMs": [
+            0.13499999999379117,
+            0.06666666666666667,
+            0.06666666666666667
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.005,
+          "perCallSamplesMs": [
+            0.005599999997764826,
+            0.0035999999977648256,
+            0.005
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.17533333333209156,
+          "perCallSamplesMs": [
+            0.2763333333345751,
+            0.17533333333209156,
+            0.15399999999751648
+          ]
+        }
+      },
+      "D": {
+        "models": {
+          "perCallMedianMs": 0.10099999999627471,
+          "perCallSamplesMs": [
+            0.125,
+            0.10099999999627471,
+            0.04099999999627471
+          ]
+        },
+        "assistance": {
+          "perCallMedianMs": 0.13333333333333333,
+          "perCallSamplesMs": [
+            0.12166666664804021,
+            0.24166666666666667,
+            0.13333333333333333
+          ]
+        },
+        "deck": {
+          "perCallMedianMs": 0.003,
+          "perCallSamplesMs": [
+            0.003199999999254942,
+            0.003,
+            0.0013999999985098838
+          ]
+        },
+        "simulation": {
+          "perCallMedianMs": 0.3663333333345751,
+          "perCallSamplesMs": [
+            0.52,
+            0.34833333333333333,
+            0.3663333333345751
+          ]
+        }
+      }
+    },
+    "extended": {},
+    "profiles": {
+      "D": {
+        "scope": "self sampled wall milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            24787.85200000025
+          ],
+          [
+            "(garbage collector)@-1",
+            27.541999999999994
+          ],
+          [
+            "bindVertexArray@-1",
+            13.245
+          ],
+          [
+            "vehiclesConflict@24234",
+            10.543
+          ],
+          [
+            "prepareSweptEnvelope@24278",
+            10.231
+          ],
+          [
+            "corners@24246",
+            7.472
+          ],
+          [
+            "track@25001",
+            7.4239999999999995
+          ],
+          [
+            "setValueM4@10721",
+            6.781999999999999
+          ],
+          [
+            "vehiclePositions@24184",
+            6.112
+          ],
+          [
+            "updateMatrix@4599",
+            5.562
+          ],
+          [
+            "needsUpdate@8906",
+            5.413
+          ],
+          [
+            "getBindingState@8865",
+            4.96
+          ],
+          [
+            "setValue@11213",
+            4.387
+          ],
+          [
+            "(idle)@-1",
+            4.323
+          ],
+          [
+            "traceJourney@24048",
+            4.247
+          ],
+          [
+            "select@25409",
+            3.702
+          ],
+          [
+            "projectObject@17002",
+            3.596
+          ],
+          [
+            "LinearToSRGB@1049",
+            3.553
+          ],
+          [
+            "sync@25313",
+            3.537
+          ],
+          [
+            "upload@11221",
+            3.341
+          ],
+          [
+            "move@32043",
+            3.251
+          ],
+          [
+            "setValue@11168",
+            3.113
+          ],
+          [
+            "setAttribute@-1",
+            3.076
+          ],
+          [
+            "tick@33693",
+            2.963
+          ],
+          [
+            "renderObjects@17131",
+            2.599
+          ]
+        ]
+      },
+      "C": {
+        "scope": "self sampled wall milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            30013.39500000005
+          ],
+          [
+            "(garbage collector)@-1",
+            27.384000000000007
+          ],
+          [
+            "prepareSweptEnvelope@24278",
+            25.041999999999994
+          ],
+          [
+            "clear@-1",
+            24.453000000000003
+          ],
+          [
+            "setupVertexAttributes@8996",
+            18.442999999999998
+          ],
+          [
+            "track@25001",
+            12.203999999999999
+          ],
+          [
+            "tick@33693",
+            11.124
+          ],
+          [
+            "bindVertexArray@-1",
+            10.451999999999998
+          ],
+          [
+            "setProgram@17251",
+            8.671
+          ],
+          [
+            "distanceLabel@25439",
+            8.068999999999999
+          ],
+          [
+            "updateMatrixWorld@4603",
+            7.764999999999999
+          ],
+          [
+            "projectObject@17002",
+            6.343
+          ],
+          [
+            "renderObjects@17131",
+            6.072000000000001
+          ],
+          [
+            "@33341",
+            5.881
+          ],
+          [
+            "copyArray@10619",
+            5.8759999999999994
+          ],
+          [
+            "traceJourney@24048",
+            5.667
+          ],
+          [
+            "advanceFleet@33392",
+            5.363
+          ],
+          [
+            "set@25527",
+            5.274
+          ],
+          [
+            "(idle)@-1",
+            4.871
+          ],
+          [
+            "ensure@32025",
+            4.784
+          ],
+          [
+            "corners@24246",
+            4.539
+          ],
+          [
+            "update@31951",
+            4.364
+          ],
+          [
+            "setValue@11168",
+            4.319
+          ],
+          [
+            "schemaSVG@25513",
+            4.12
+          ],
+          [
+            "refreshUniformsCommon@15941",
+            3.766
+          ]
+        ]
+      },
+      "B": {
+        "scope": "self sampled wall milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            23186.64900000002
+          ],
+          [
+            "(garbage collector)@-1",
+            13.054999999999998
+          ],
+          [
+            "setProgram@17251",
+            9.972000000000001
+          ],
+          [
+            "PerformanceObserver.observe.type@1",
+            8.725999999999999
+          ],
+          [
+            "track@25001",
+            7.459
+          ],
+          [
+            "projectObject@17002",
+            6.998000000000001
+          ],
+          [
+            "traceJourney@24048",
+            6.168
+          ],
+          [
+            "corners@24246",
+            6.16
+          ],
+          [
+            "copyArray@10619",
+            5.64
+          ],
+          [
+            "vehiclesConflict@24234",
+            5.468
+          ],
+          [
+            "hull@24251",
+            5.148999999999999
+          ],
+          [
+            "intersectsSphere@7724",
+            5.144
+          ],
+          [
+            "prepareSweptEnvelope@24278",
+            4.99
+          ],
+          [
+            "@1",
+            4.73
+          ],
+          [
+            "setup@8836",
+            4.655
+          ],
+          [
+            "update@7877",
+            4.417
+          ],
+          [
+            "bindVertexArray@-1",
+            4.262
+          ],
+          [
+            "setMaterial@13671",
+            3.984
+          ],
+          [
+            "setAttribute@-1",
+            3.858
+          ],
+          [
+            "querySelectorAll@-1",
+            3.4060000000000006
+          ],
+          [
+            "refreshUniformsCommon@15941",
+            3.3190000000000004
+          ],
+          [
+            "locate@32001",
+            2.907
+          ],
+          [
+            "preparedSweepsConflict@24302",
+            2.713
+          ],
+          [
+            "getParameters@11979",
+            2.439
+          ],
+          [
+            "schemaSVG@25513",
+            2.419
+          ]
+        ]
+      },
+      "A": {
+        "scope": "self sampled wall milliseconds, includes native/idle (program); not GPU timings",
+        "top": [
+          [
+            "(program)@-1",
+            35245.30799999982
+          ],
+          [
+            "(garbage collector)@-1",
+            19.311000000000003
+          ],
+          [
+            "updateMatrixWorld@4603",
+            12.81
+          ],
+          [
+            "setProgram@17251",
+            12.086
+          ],
+          [
+            "renderObject@17144",
+            11.113999999999999
+          ],
+          [
+            "@1",
+            9.695
+          ],
+          [
+            "bindVertexArray@-1",
+            8.379999999999999
+          ],
+          [
+            "track@25001",
+            6.135999999999999
+          ],
+          [
+            "update@7877",
+            6.05
+          ],
+          [
+            "getProgram@17162",
+            5.579
+          ],
+          [
+            "setup@8836",
+            5.4799999999999995
+          ],
+          [
+            "refreshUniformsCommon@15941",
+            5.24
+          ],
+          [
+            "getNormalMatrix@806",
+            4.934
+          ],
+          [
+            "drawArrays@-1",
+            4.775
+          ],
+          [
+            "WebGLRenderer.renderBufferDirect@16761",
+            4.735
+          ],
+          [
+            "choose@32059",
+            4.639
+          ],
+          [
+            "projectObject@17002",
+            4.496
+          ],
+          [
+            "stepRailway@24313",
+            4.449999999999999
+          ],
+          [
+            "setValue@11213",
+            3.8120000000000003
+          ],
+          [
+            "bindTexture@-1",
+            3.782
+          ],
+          [
+            "copyArray@10619",
+            3.7
+          ],
+          [
+            "@33698",
+            3.621
+          ],
+          [
+            "(idle)@-1",
+            3.3
+          ],
+          [
+            "getParameters@11979",
+            2.983
+          ],
+          [
+            "@-1",
+            2.9
+          ]
+        ]
+      }
+    }
+  },
+  "deltas": {
+    "A/models": {
+      "beforeMs": 0.085,
+      "afterMs": 0.05300000000745058,
+      "reductionPercent": 37.64705881476402
+    },
+    "A/assistance": {
+      "beforeMs": 0.25499999998137357,
+      "afterMs": 0.08166666667287549,
+      "reductionPercent": 67.97385620437616
+    },
+    "A/deck": {
+      "beforeMs": 0.0027999999970197676,
+      "afterMs": 0.001600000001490116,
+      "reductionPercent": 42.85714274310336
+    },
+    "A/simulation": {
+      "beforeMs": 0.03833333333333333,
+      "afterMs": 0.022999999995032945,
+      "reductionPercent": 40.00000001295753
+    },
+    "B/models": {
+      "beforeMs": 0.052999999988824126,
+      "afterMs": 0.03800000000745058,
+      "reductionPercent": 28.301886763276467
+    },
+    "B/assistance": {
+      "beforeMs": 0.36666666666666664,
+      "afterMs": 0.1849999999937912,
+      "reductionPercent": 49.54545454714785
+    },
+    "B/deck": {
+      "beforeMs": 0.0027999999970197676,
+      "afterMs": 0.0015999999977648258,
+      "reductionPercent": 42.85714287614944
+    },
+    "B/simulation": {
+      "beforeMs": 0.5289999999975165,
+      "afterMs": 0.21666666666666667,
+      "reductionPercent": 59.04221802123178
+    },
+    "C/models": {
+      "beforeMs": 0.05300000000745058,
+      "afterMs": 0.04299999998882413,
+      "reductionPercent": 18.867924560793735
+    },
+    "C/assistance": {
+      "beforeMs": 0.22333333333954214,
+      "afterMs": 0.06666666666666667,
+      "reductionPercent": 70.14925373217316
+    },
+    "C/deck": {
+      "beforeMs": 0.002,
+      "afterMs": 0.005,
+      "reductionPercent": -150.0
+    },
+    "C/simulation": {
+      "beforeMs": 0.8039999999975165,
+      "afterMs": 0.17533333333209156,
+      "reductionPercent": 78.19237147604065
+    },
+    "D/models": {
+      "beforeMs": 0.22900000000372528,
+      "afterMs": 0.10099999999627471,
+      "reductionPercent": 55.89519650889446
+    },
+    "D/assistance": {
+      "beforeMs": 0.35,
+      "afterMs": 0.13333333333333333,
+      "reductionPercent": 61.904761904761905
+    },
+    "D/deck": {
+      "beforeMs": 0.003800000000745058,
+      "afterMs": 0.003,
+      "reductionPercent": 21.052631594426416
+    },
+    "D/simulation": {
+      "beforeMs": 4.564000000003725,
+      "afterMs": 0.3663333333345751,
+      "reductionPercent": 91.97341513290368
+    }
+  }
+}

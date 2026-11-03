@@ -1,0 +1,4 @@
+PASS: all actual Kenney vehicles compact individually, locomotive positions preserved
+PASS: detach/recouple preserves the actual wagon position
+PASS: forward/reverse uses the same compact route ribbon
+PASS: native restore, reset and Kenney reload; no JavaScript errors

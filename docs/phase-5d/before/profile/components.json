@@ -1,0 +1,262 @@
+[
+  {
+    "scenario": "A",
+    "batches": [
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 12.199999999254942
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 19.5
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 2.299999998882413
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 11.5
+        }
+      },
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 8.5
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 15.299999998882413
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 1.3999999985098839
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 13.699999999254942
+        }
+      },
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 3.800000000745058
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 12.200000001117587
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 1.099999999627471
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 5.599999999627471
+        }
+      }
+    ],
+    "heap": {
+      "usedSize": 26768496,
+      "totalSize": 28356608,
+      "embedderHeapUsedSize": 2211440,
+      "backingStorageSize": 100338143
+    }
+  },
+  {
+    "scenario": "B",
+    "batches": [
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 12.5
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 49.30000000074506
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 3.299999998882413
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 181.40000000037253
+        }
+      },
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 4.699999999254942
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 22
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 1.3999999985098839
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 158.69999999925494
+        }
+      },
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 5.299999998882413
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 12.300000000745058
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 0.6999999992549419
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 135.90000000037253
+        }
+      }
+    ],
+    "heap": {
+      "usedSize": 26976600,
+      "totalSize": 28618752,
+      "embedderHeapUsedSize": 2229744,
+      "backingStorageSize": 100338157
+    }
+  },
+  {
+    "scenario": "C",
+    "batches": [
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 9.200000001117587
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 11.799999998882413
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 2.400000000372529
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 241.19999999925494
+        }
+      },
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 3.5
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 21.40000000037253
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 1
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 254.2999999988824
+        }
+      },
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 5.300000000745058
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 13.400000000372529
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 0.6999999992549419
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 217.59999999962747
+        }
+      }
+    ],
+    "heap": {
+      "usedSize": 27054168,
+      "totalSize": 28356608,
+      "embedderHeapUsedSize": 2302448,
+      "backingStorageSize": 100338167
+    }
+  },
+  {
+    "scenario": "D",
+    "batches": [
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 59.69999999925494
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 21
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 9
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 1287.4000000003725
+        }
+      },
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 19.09999999962747
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 17.799999998882413
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 1.299999998882413
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 1369.2000000011176
+        }
+      },
+      {
+        "models": {
+          "iterations": 100,
+          "totalMs": 22.90000000037253
+        },
+        "assistance": {
+          "iterations": 60,
+          "totalMs": 49.69999999925494
+        },
+        "deck": {
+          "iterations": 500,
+          "totalMs": 1.900000000372529
+        },
+        "simulation": {
+          "iterations": 300,
+          "totalMs": 2394.4000000003725
+        }
+      }
+    ],
+    "heap": {
+      "usedSize": 27745032,
+      "totalSize": 29143040,
+      "embedderHeapUsedSize": 2380048,
+      "backingStorageSize": 103094471
+    }
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "scope": "Node logical endurance, no renderer or UI; not a 30-minute wall-clock browser session",
+  "stepsPerRevision": 108000,
+  "logicalSecondsPerRevision": 1800,
+  "equalCheckpoints": 10,
+  "finalStateSha256": "150a5252d4ae857b7ef1cc7ed38039569e8d19053582a60dc2b350cede55f1ac",
+  "beforeMaxSegments": [
+    6,
+    6,
+    7
+  ],
+  "afterMaxSegments": [
+    6,
+    6,
+    7
+  ],
+  "beforeHeapFirstLastBytes": [
+    5875416,
+    5927816
+  ],
+  "afterHeapFirstLastBytes": [
+    5916120,
+    5970192
+  ],
+  "beforeLoopSeconds": 52.237622136000006,
+  "afterLoopSeconds": 10.966204541
+}

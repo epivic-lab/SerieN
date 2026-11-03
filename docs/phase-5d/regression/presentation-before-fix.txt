@@ -1,0 +1,30 @@
+✖ leaving Cinema releases the actual Bloom high-pass material from the renderer shader cache (4.109172ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11.809318
+
+✖ failing tests:
+
+test at tests/presentation-resources.test.js:8:1
+✖ leaving Cinema releases the actual Bloom high-pass material from the renderer shader cache (4.109172ms)
+  AssertionError [ERR_ASSERTION]: a discarded Bloom material must not remain strongly owned
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/presentation-resources.test.js:15:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,165 @@
+{
+  "mode": "native",
+  "before": [
+    {
+      "x": 910,
+      "z": 254.00000000000006,
+      "rendered": {
+        "x": 910,
+        "z": 254.00000000000006
+      },
+      "edge": "T47",
+      "s": 200,
+      "couplers": {
+        "front": {
+          "x": 14.392732635480408,
+          "y": 2.853866437294097,
+          "z": 0
+        },
+        "back": {
+          "x": -14.392732635480408,
+          "y": 2.853866437294097,
+          "z": 0
+        }
+      },
+      "stock": {
+        "id": "db-055-study",
+        "name": "BR 055 \u00b7 study",
+        "length": 114.3,
+        "front": 48,
+        "width": 18.5,
+        "prototypeMm": 18285,
+        "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+        "kind": "steam"
+      },
+      "dimensions": {
+        "scale": 10.494409142201365,
+        "length": 27.285465270960817,
+        "width": 15,
+        "height": 17.415465749176388,
+        "bottom": -1.5,
+        "limits": {
+          "length": 58,
+          "width": 15,
+          "height": 42
+        },
+        "source": "Kenney CC0",
+        "stylized": true
+      }
+    },
+    {
+      "x": 970,
+      "z": 254.00000000000006,
+      "rendered": {
+        "x": 970,
+        "z": 254.00000000000006
+      },
+      "edge": "T46",
+      "s": 12,
+      "couplers": {
+        "front": {
+          "x": 15.323463209055737,
+          "y": 3.151813954998829,
+          "z": 0
+        },
+        "back": {
+          "x": -15.323463209055737,
+          "y": 3.151813954998829,
+          "z": 0
+        }
+      },
+      "stock": {
+        "id": "db-v60-study",
+        "name": "BR 260 \u00b7 study",
+        "length": 65.3,
+        "front": 32.65,
+        "width": 19.4,
+        "prototypeMm": 10450,
+        "description": "DB era IV V60, three coupled axles; original dimensional study",
+        "kind": "shunter"
+      },
+      "dimensions": {
+        "scale": 11.11111091488183,
+        "length": 29.146926418111473,
+        "width": 15,
+        "height": 18.607255819995316,
+        "bottom": -1.5,
+        "limits": {
+          "length": 58,
+          "width": 15,
+          "height": 42
+        },
+        "source": "Kenney CC0",
+        "stylized": true
+      }
+    }
+  ],
+  "after": [
+    {
+      "x": 910,
+      "z": 254.00000000000006,
+      "rendered": {
+        "x": 910,
+        "z": 254.00000000000006
+      },
+      "edge": "T47",
+      "s": 200,
+      "couplers": {
+        "front": {
+          "x": 49.6,
+          "y": 8,
+          "z": 0
+        },
+        "back": {
+          "x": -67.89999999999999,
+          "y": 8,
+          "z": 0
+        }
+      },
+      "stock": {
+        "id": "db-055-study",
+        "name": "BR 055 \u00b7 study",
+        "length": 114.3,
+        "front": 48,
+        "width": 18.5,
+        "prototypeMm": 18285,
+        "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+        "kind": "steam"
+      },
+      "dimensions": null
+    },
+    {
+      "x": 970,
+      "z": 254.00000000000006,
+      "rendered": {
+        "x": 970,
+        "z": 254.00000000000006
+      },
+      "edge": "T46",
+      "s": 12,
+      "couplers": {
+        "front": {
+          "x": 34.25,
+          "y": 8,
+          "z": 0
+        },
+        "back": {
+          "x": -34.25,
+          "y": 8,
+          "z": 0
+        }
+      },
+      "stock": {
+        "id": "db-v60-study",
+        "name": "BR 260 \u00b7 study",
+        "length": 65.3,
+        "front": 32.65,
+        "width": 19.4,
+        "prototypeMm": 10450,
+        "description": "DB era IV V60, three coupled axles; original dimensional study",
+        "kind": "shunter"
+      },
+      "dimensions": null
+    }
+  ]
+}
