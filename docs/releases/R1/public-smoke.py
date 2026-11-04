@@ -5,7 +5,12 @@ from playwright.sync_api import sync_playwright
 out=Path(os.environ.get('R1_OUTPUT','/workspace/work/r1/public'));out.mkdir(parents=True,exist_ok=True)
 base=os.environ.get('R1_URL','https://epivic-lab.github.io/SerieN/');version=os.environ['R1_SHA'];expected=os.environ['R1_BUNDLE_SHA256'];results={}
 with sync_playwright()as pw:
- b=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--enable-unsafe-swiftshader']);context=b.new_context(viewport={'width':1100,'height':860},ignore_https_errors=False);p=context.new_page();errors=[];failed=[];bad=[];models=[]
+ if os.environ.get('R1_BROWSER_PROFILE'):
+  proxy=json.loads(Path('/etc/codex/network-policy.json').read_text())['http_proxy']
+  context=pw.chromium.launch_persistent_context(os.environ['R1_BROWSER_PROFILE'],executable_path='/usr/bin/chromium',headless=True,proxy={'server':proxy},viewport={'width':1100,'height':860},ignore_https_errors=False,args=['--no-sandbox','--enable-unsafe-swiftshader']);b=context
+ else:
+  b=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--enable-unsafe-swiftshader']);context=b.new_context(viewport={'width':1100,'height':860},ignore_https_errors=False)
+ p=context.new_page();cdp=context.new_cdp_session(p);cdp.send('Network.enable');cdp.send('Network.setCacheDisabled',{'cacheDisabled':True});errors=[];failed=[];bad=[];models=[]
  p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text)if m.type=='error' else None);p.on('response',lambda r:models.append(r.url)if r.status==200 and '.glb' in r.url else None);p.on('requestfailed',lambda r:failed.append(r.url));p.on('response',lambda r:bad.append([r.status,r.url])if r.status>=400 else None)
  r=context.request.get(base+'dist/game.js?r1='+version,timeout=120000);assert r.ok;actual=hashlib.sha256(r.body()).hexdigest();assert actual==expected,(actual,expected);results['servedBundleSha256']=actual
  with p.expect_response(lambda r:'/dist/game.js' in r.url,timeout=180000)as served:

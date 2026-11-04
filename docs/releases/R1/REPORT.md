@@ -33,3 +33,7 @@ Dopo merge verificare entrambi gli antenati e tutti gli asset; seguire il workfl
 ## Gate finale prima della PR
 
 Smoke aggiuntivo sul bundle di produzione locale sotto `/SerieN/`:PASS, comando semplice e WX-A tramite mouse, glowB/frecce reali, guardia/STOP, gesture audio/MUTE/STOP ALL e responsive. [Risultato](evidence/production-smoke/result.json). Nessun profiler sostituito nel caricamento. Campione STOP integrato: update medio0.14ms contro0.13ms S7, prima ricerca80.5ms contro89ms; memoria354/46 stabile e350/45 dopo dispose in entrambi. Non sono benchmark statistici nuovi né dimostrazioni hardware.
+
+## Consuntivo successivo al deploy
+
+**RELEASED**: [verifica pubblica e SHA effettivi](PUBLISHED.md), [workflow riuscito](https://github.com/epivic-lab/SerieN/actions/runs/41842894645). Queste prove post-deploy sono registrate sul branch di release; main348bfeff12c4005657098d89ea1d3c2ccdda9910 rimane il codice pubblicato verificato, senza un secondo deploy documentale.
