@@ -1,0 +1,357 @@
+{
+  "initial": {
+    "guard": {
+      "leadingExtent": 34.25,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "distance": 0.3708313333333229,
+      "boundary": {
+        "edge": "T47",
+        "from": 64.62083333333332,
+        "to": 0,
+        "distance": 0
+      },
+      "direction": -1,
+      "lookahead": 16.338751,
+      "stoppingDistance": 0,
+      "protectionInset": 30,
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "velocity": 0,
+      "intervened": true,
+      "requestedSpeed": 100,
+      "requestedDelta": 0,
+      "probeDelta": null,
+      "probeKind": null
+    },
+    "fx": {
+      "time": 26035.5,
+      "units": [
+        {
+          "id": 2,
+          "visible": false,
+          "value": 0,
+          "pose": {
+            "x": 740,
+            "z": 284.00000000000006,
+            "y": 0.7324242876647133,
+            "angle": 1.5707963267948966,
+            "edge": "T47",
+            "s": 30,
+            "offset": -30,
+            "geometricClearanceVerified": true
+          },
+          "placementMs": 80.5
+        }
+      ],
+      "audio": {
+        "active": false,
+        "muted": false,
+        "initialized": false,
+        "voices": 0,
+        "timer": false
+      }
+    }
+  },
+  "settled": {
+    "time": 30590.099999999627,
+    "units": [
+      {
+        "id": 2,
+        "visible": true,
+        "value": 1,
+        "pose": {
+          "x": 740,
+          "z": 284.00000000000006,
+          "y": 0.7324242876647133,
+          "angle": 1.5707963267948966,
+          "edge": "T47",
+          "s": 30,
+          "offset": -30,
+          "geometricClearanceVerified": true
+        },
+        "placementMs": 80.5
+      }
+    ],
+    "audio": {
+      "active": false,
+      "muted": false,
+      "initialized": false,
+      "voices": 0,
+      "timer": false
+    }
+  },
+  "renderedSignChangedPixels": 5250,
+  "animation": {
+    "time": 59514.59999999963,
+    "units": [
+      {
+        "id": 2,
+        "visible": false,
+        "value": 0,
+        "pose": {
+          "x": 740,
+          "z": 284.00000000000006,
+          "y": 0.7324242876647133,
+          "angle": 1.5707963267948966,
+          "edge": "T47",
+          "s": 30,
+          "offset": -30,
+          "geometricClearanceVerified": true
+        },
+        "placementMs": 84.59999999962747
+      }
+    ],
+    "audio": {
+      "active": false,
+      "muted": false,
+      "initialized": false,
+      "voices": 0,
+      "timer": false
+    }
+  },
+  "muteInputs": [
+    "mouse",
+    "keyboard Enter",
+    "CDP touch"
+  ],
+  "audioEnabled": {
+    "active": true,
+    "muted": false,
+    "initialized": true,
+    "voices": 1,
+    "timer": true
+  },
+  "multi": {
+    "guards": [
+      {
+        "leadingExtent": 67.89999999999999,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": -1,
+        "lookahead": 15.492500999999999,
+        "stoppingDistance": 14.58,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 100,
+        "requestedDelta": -0.9125,
+        "probeDelta": -0.9125,
+        "probeKind": "train"
+      },
+      {
+        "leadingExtent": 38,
+        "risk": "SAFE",
+        "reason": "available",
+        "distance": null,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 0.012501,
+        "stoppingDistance": 0,
+        "state": "SAFE",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": false,
+        "requestedSpeed": 0,
+        "requestedDelta": 0,
+        "probeDelta": null,
+        "probeKind": null
+      },
+      {
+        "leadingExtent": 34.25,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": {
+          "edge": "T47",
+          "from": 64.62083333333332,
+          "to": 0,
+          "distance": 0
+        },
+        "direction": -1,
+        "lookahead": 16.338751,
+        "stoppingDistance": 0,
+        "protectionInset": 30,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 100,
+        "requestedDelta": 0,
+        "probeDelta": null,
+        "probeKind": null
+      }
+    ],
+    "fx": {
+      "time": 68202.09999999963,
+      "units": [
+        {
+          "id": 2,
+          "visible": true,
+          "value": 1,
+          "pose": {
+            "x": 740,
+            "z": 284.00000000000006,
+            "y": 0.7324242876647133,
+            "angle": 1.5707963267948966,
+            "edge": "T47",
+            "s": 30,
+            "offset": -30,
+            "geometricClearanceVerified": true
+          },
+          "placementMs": 60.19999999925494
+        },
+        {
+          "id": 0,
+          "visible": true,
+          "value": 1,
+          "pose": {
+            "x": 809.25,
+            "z": 230.00000000000006,
+            "y": 0.4070746191950718,
+            "angle": 1.5707963267948966,
+            "edge": "T47",
+            "s": 99.25000000000001,
+            "offset": 24,
+            "geometricClearanceVerified": true
+          },
+          "placementMs": 35.899999998509884
+        }
+      ],
+      "audio": {
+        "active": false,
+        "muted": false,
+        "initialized": true,
+        "voices": 0,
+        "timer": false
+      }
+    }
+  },
+  "release": {
+    "time": 75382.69999999925,
+    "units": [
+      {
+        "id": 2,
+        "visible": true,
+        "value": 1,
+        "pose": {
+          "x": 740,
+          "z": 284.00000000000006,
+          "y": 0.7324242876647133,
+          "angle": 1.5707963267948966,
+          "edge": "T47",
+          "s": 30,
+          "offset": -30,
+          "geometricClearanceVerified": true
+        },
+        "placementMs": 60.19999999925494
+      },
+      {
+        "id": 0,
+        "visible": false,
+        "value": 0,
+        "pose": null,
+        "placementMs": 35.899999998509884
+      }
+    ],
+    "audio": {
+      "active": false,
+      "muted": false,
+      "initialized": true,
+      "voices": 0,
+      "timer": false
+    }
+  },
+  "cpuAndResources": {
+    "before": {
+      "geometries": 354,
+      "textures": 46
+    },
+    "after": {
+      "geometries": 354,
+      "textures": 46
+    },
+    "meanUpdateMs": 0.14
+  },
+  "resolvedWhileStopped": {
+    "guard": {
+      "leadingExtent": 34.25,
+      "risk": "SAFE",
+      "reason": "available",
+      "distance": null,
+      "boundary": null,
+      "direction": -1,
+      "lookahead": 16.338751,
+      "stoppingDistance": 0,
+      "state": "SAFE",
+      "delta": 0,
+      "velocity": 0,
+      "intervened": false,
+      "requestedSpeed": 100,
+      "requestedDelta": 0,
+      "probeDelta": null,
+      "probeKind": null
+    },
+    "speed": 0
+  },
+  "offlineAudio": {
+    "seconds": 1,
+    "sampleRate": 48000,
+    "peak": 0.04027154669165611
+  },
+  "reset": true,
+  "dispose": {
+    "before": {
+      "geometries": 354,
+      "textures": 46
+    },
+    "after": {
+      "geometries": 350,
+      "textures": 45
+    },
+    "snapshot": {
+      "time": 81099.29999999888,
+      "units": [],
+      "audio": {
+        "active": false,
+        "muted": false,
+        "initialized": true,
+        "voices": 0,
+        "timer": false
+      }
+    },
+    "children": 0
+  },
+  "engineWithoutFX": {
+    "guard": {
+      "leadingExtent": 34.25,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "distance": 0,
+      "boundary": {
+        "edge": "T47",
+        "from": 64.250002,
+        "to": 0,
+        "distance": 0
+      },
+      "direction": -1,
+      "lookahead": 115.012501,
+      "stoppingDistance": 0,
+      "protectionInset": 30,
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "velocity": 0,
+      "intervened": true,
+      "requestedSpeed": 100,
+      "requestedDelta": 0,
+      "probeDelta": null,
+      "probeKind": null
+    },
+    "gap": 30.000001999999995
+  },
+  "result": "PASS",
+  "errors": []
+}

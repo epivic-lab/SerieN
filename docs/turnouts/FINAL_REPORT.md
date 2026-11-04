@@ -1,6 +1,6 @@
 # Interactive Turnouts — collaudo finale S7
 
-**S7 PASS tecnico / DELIVERED dopo verifica remota; approvazione indipendente della Regia PENDING.** Regia S7 PENDING. Nessuna integrazione main o pubblicazione del simulatore autorizzata. Nessun avvio Train Management/6A/5E.
+**S7 PASS tecnico / DELIVERED; approvazione della Regia confermata nella richiesta RELEASE R1.** Il committente autorizza integrazione controllata e Pages per la sola R1 dopo i gate: [rapporto R1](../releases/R1/REPORT.md). Nessun avvio Train Management/6A/5E.
 
 ## Perimetro e storia
 
@@ -24,7 +24,7 @@ Baseline5D commit archivio `58bbe62bffb37f19125ddb38513502b5ca306821`, bundle pr
 
 GPU fisica, touch hardware, altoparlanti e screen reader reali non disponibili: NOT VERIFIED. Touch CDP, controlli semantici e rendering software non sono prove hardware. Minimo audit sicurezza non sostituisce5E. Nessuna migrazione, modifica Supabase/RLS/GRANT o dipendenza nuova autorizzata in S7.
 
-Il checkpoint remoto sul solo branch di sviluppo è parte della consegna; non costituisce approvazione della Regia. Per main/deploy serve una nuova autorizzazione del committente dopo audit S7. Handoff futuro: macrofase Train Management esclusivamente dopo autorizzazione specifica, con vincoli ferroviari/contratti e lifecycle preservati.
+Il checkpoint remoto sul solo branch di sviluppo è parte della consegna; non costituisce approvazione della Regia. La necessaria autorizzazione main/deploy è stata concessa per la sola RELEASE R1, subordinata ai suoi gate. Handoff futuro: macrofase Train Management esclusivamente dopo autorizzazione specifica, con vincoli ferroviari/contratti e lifecycle preservati.
 
 ## Risultati finali e prestazioni
 
@@ -97,6 +97,6 @@ Per semplici/WX-A/WX-B/glow/frecce, restano pertinenti le [camere approvate S4](
 
 ## Ritiro operativo e consegna
 
-La specifica PDF/MD e STATUS in docs/_active/turnouts sono **ritirati operativamente e resi non attivi** da README e AGENTS: restano consultabili come archivio storico per conservare bytes della Master Spec, manifest delle evidenze e link esistenti. Non sono istruzioni per proseguire lo sviluppo. Questo rapporto è il documento permanente di consegna; approvazione S7 PENDING. Nessun link storico viene reso pendente.
+La specifica PDF/MD e STATUS in docs/_active/turnouts sono **ritirati operativamente e resi non attivi** da README e AGENTS: restano consultabili come archivio storico per conservare bytes della Master Spec, manifest delle evidenze e link esistenti. Non sono istruzioni per proseguire lo sviluppo. Questo rapporto è il documento permanente di consegna; approvazione S7 confermata dalla Regia in R1. Nessun link storico viene reso pendente.
 
 Checkpoint: commit che introduce questo rapporto finale e la matrice S7, risolvibile con `git log -1 --format=%H -- docs/turnouts/FINAL_REPORT.md`; SHA completo locale/remoto nella consegna. Normale push sul solo feature/turnouts; no main, merge, rebase, reset o deploy. **STOP per audit indipendente della Regia.**
