@@ -1,0 +1,45 @@
+✔ snapshot content verified independently from envelope receipt (9.740357ms)
+✔ corrupt payload (2.639747ms)
+✔ state hash differs (1.502311ms)
+✔ wrong serialization version (0.399876ms)
+✔ schema version (1.221752ms)
+✔ state schema version (0.286247ms)
+✔ engine revision (0.227239ms)
+✔ state engine revision (1.977039ms)
+✔ topology hash (4.534532ms)
+✔ state topology (0.405625ms)
+✔ workspace binding (1.378255ms)
+✔ layout binding (0.441228ms)
+✔ manifest reference (0.471553ms)
+✔ revision zero (0.243563ms)
+✔ response bytes bounded before parse (0.196584ms)
+✔ device and aggregate workspace limits count denied attempts (0.29514ms)
+✔ bounded limiter memory (0.132467ms)
+✔ backoff preserves rate retry-after and grows to bounded ceiling (0.334289ms)
+✔ malformed request attempts count and audit omits payload/secrets (0.404173ms)
+✔ request bytes rejected before transport (1.745823ms)
+✔ response bytes rejected without truncation (0.216282ms)
+✔ unexpected transport error text redacted (0.503301ms)
+✔ successful bounded request (0.078007ms)
+✔ transient retry uses the exact same request id and measured backoff (25.747399ms)
+✔ permanent conflict and quota do not auto-retry (0.211535ms)
+✔ canonical envelope independent of insertion order, with JCS number handling (2.44066ms)
+✔ duplicate decoded keys (0.247449ms)
+✔ nonfinite (0.072708ms)
+✔ unexpected envelope property (0.073589ms)
+✔ unsafe revision overflow (18.863202ms)
+✔ numeric revision (0.105778ms)
+✔ leading zero revision (0.057065ms)
+✔ unknown operation (0.080099ms)
+✔ unexpected recovery source (0.321049ms)
+✔ invalid Unicode (0.180379ms)
+✔ oversize (0.39565ms)
+✔ verified context cannot come from body (3.330777ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 251.646328

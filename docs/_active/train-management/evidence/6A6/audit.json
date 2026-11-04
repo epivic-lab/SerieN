@@ -1,0 +1,1112 @@
+{
+  "gateway": [
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "REPLAY"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ReadSnapshot",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "IDEMPOTENCY_KEY_REUSED"
+    },
+    {
+      "operation": "ReadReceipt",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "REVISION_CONFLICT"
+    },
+    {
+      "operation": "RecoverRevision",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ReadSnapshot",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ListHistory",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ListHistory",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ListHistory",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "INTEGRITY_ERROR"
+    },
+    {
+      "outcome": "INTEGRITY_ERROR"
+    },
+    {
+      "outcome": "INVALID_STATE_PROFILE"
+    },
+    {
+      "outcome": "QUOTA_EXCEEDED"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "QUOTA_EXCEEDED"
+    },
+    {
+      "operation": "ReadSnapshot",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "RETRYABLE_UNAVAILABLE"
+    },
+    {
+      "outcome": "RETRYABLE_UNAVAILABLE"
+    },
+    {
+      "outcome": "RETRYABLE_UNAVAILABLE"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "INVALID_REQUEST"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "INVALID_REQUEST"
+    },
+    {
+      "outcome": "PAYLOAD_TOO_LARGE"
+    },
+    {
+      "outcome": "INVALID_PAGE"
+    },
+    {
+      "outcome": "RESPONSE_TOO_LARGE"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "operation": "ReadSnapshot",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    }
+  ],
+  "database": [
+    {
+      "id": "77f562b8-4c69-4138-b9c6-a593403493d6",
+      "event": "ReadHead",
+      "revision": 0,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:28.584162+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "3abe22d4-efa8-4fc7-8d01-a4dee115d0ef",
+      "event": "ReadHead",
+      "revision": 0,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:29.169083+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "824b1564-477f-4bf3-b08d-cc70095c620f",
+      "event": "ReadHead",
+      "revision": 0,
+      "device_id": "38379c17-b568-4bf1-a094-0f467d37d6d0",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:29.790132+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "86589923-d946-4b96-b634-014f0c656178",
+      "event": "ReadHead",
+      "revision": 0,
+      "device_id": "88c0418e-51ea-4680-969e-70b6aa4aca95",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:32.9052+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "285e193c-198d-4503-9512-701b0da65fab",
+      "event": "SaveCheckpoint",
+      "revision": 1,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": "8aa8adc0-6f02-44c0-9d53-686994a6aeaf",
+      "occurred_at": "2026-11-04T21:29:34.342533+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "b4ea0b43-850c-4782-800f-02ec9604a144",
+      "event": "ReadSnapshot",
+      "revision": 1,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:34.48554+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "fd6aec9f-b014-493f-b702-ebac55cee949",
+      "event": "SaveCheckpoint",
+      "revision": 2,
+      "device_id": "165b6be8-d115-4ca1-9c05-8450dae8bb0f",
+      "request_id": "083629e7-8678-45b9-9b48-a32e431e57ef",
+      "occurred_at": "2026-11-04T21:29:34.706259+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "d566d27f-d9ae-4130-bf33-a4209024c52c",
+      "event": "ReadReceipt",
+      "revision": 1,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": "8aa8adc0-6f02-44c0-9d53-686994a6aeaf",
+      "occurred_at": "2026-11-04T21:29:35.323287+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "6639af0f-3264-4008-91ae-02986066e4c0",
+      "event": "SaveCheckpoint",
+      "revision": 3,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": "8bddbf79-f692-443a-8937-fef96ad9b686",
+      "occurred_at": "2026-11-04T21:29:35.723263+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "f3de2923-f10f-4e19-a9d3-4d8c41d1485e",
+      "event": "SaveCheckpoint",
+      "revision": 4,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": "f0c419ac-140c-4cec-817d-a139cf99de8e",
+      "occurred_at": "2026-11-04T21:29:38.099963+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "e559db45-5a01-432d-bb6d-73c7bac84133",
+      "event": "RecoverRevision",
+      "revision": 5,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": "307e92d5-41df-4748-91f0-abfb4d900b51",
+      "occurred_at": "2026-11-04T21:29:38.3262+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "02b34133-d0ed-4e8a-89e9-d8f0768fe689",
+      "event": "ReadSnapshot",
+      "revision": 1,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:38.333428+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "c7f3b795-efee-4229-8cdc-e1c2b68466c5",
+      "event": "ListHistory",
+      "revision": null,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:38.478306+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "87f803f0-a648-48f1-b83d-0868ec89c891",
+      "event": "ListHistory",
+      "revision": null,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:38.486439+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "644f461d-6a26-415f-8b9f-832b008fdc73",
+      "event": "ListHistory",
+      "revision": null,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:38.492351+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "3033c56b-70b4-478d-9adb-1554ddf5993f",
+      "event": "ReadSnapshot",
+      "revision": 1,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:41.209068+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "b7c06361-c49d-4cb0-86b2-34532f3b8302",
+      "event": "SaveCheckpoint",
+      "revision": 6,
+      "device_id": "5613ce98-0f5b-4c29-9393-e3d98eb9a040",
+      "request_id": "0a79ca2e-6360-4a08-8f48-69f928b92aac",
+      "occurred_at": "2026-11-04T21:29:50.316074+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "da52f72c-f151-475c-ae5c-53b36c9a7b00",
+      "event": "ReadHead",
+      "revision": 6,
+      "device_id": "ccc24c2a-d412-467b-afe7-4f2ee6ed09a8",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:29:52.433231+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "22a4bf7b-e590-41a8-b23f-d41acadaa370",
+      "event": "ReadHead",
+      "revision": 6,
+      "device_id": "38379c17-b568-4bf1-a094-0f467d37d6d0",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:30:02.884412+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "dcb4d24b-23e5-4dae-880f-5f4a2ab44119",
+      "event": "SaveCheckpoint",
+      "revision": 1,
+      "device_id": "f3e0c3ea-1d14-4765-9873-32a58313aa5d",
+      "request_id": "8aa8adc0-6f02-44c0-9d53-686994a6aeaf",
+      "occurred_at": "2026-11-04T21:30:03.877543+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000002"
+    },
+    {
+      "id": "5f90b98f-8e7e-432f-b27b-5254edf21af0",
+      "event": "SaveCheckpoint",
+      "revision": 7,
+      "device_id": "fc4437c9-5494-4727-bc0c-989cb6c4ac37",
+      "request_id": "1352882f-803e-4230-83dc-e3fb8a7de84d",
+      "occurred_at": "2026-11-04T21:30:05.325254+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "e399ba45-c2f1-4ac1-a193-2d5bdffd5b9a",
+      "event": "ReadSnapshot",
+      "revision": 1,
+      "device_id": "4d7dddbb-d441-49cc-8deb-8b2913e0b47b",
+      "request_id": null,
+      "occurred_at": "2026-11-04T21:30:08.678821+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    }
+  ]
+}

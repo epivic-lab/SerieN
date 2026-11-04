@@ -1,0 +1,755 @@
+{
+  "cases": [
+    {
+      "test": "valid signature",
+      "input": "WebCrypto signature / POST read",
+      "expected": 200,
+      "observed": 200,
+      "result": "PASS"
+    },
+    {
+      "test": "no capability",
+      "input": "unsigned POST",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "forged signature",
+      "input": "64 bytes replaced",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "modified body",
+      "input": "change body after signature",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "different method",
+      "input": "POST signed, GET sent",
+      "expected": {
+        "status": 404,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 404,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "different path",
+      "input": "read signature used for write",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "noncanonical path",
+      "input": "percent encoding",
+      "expected": {
+        "status": 404,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 404,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "stale timestamp",
+      "input": "issuedAt older than 120s",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "future timestamp",
+      "input": "issuedAt 120001ms ahead",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "nonce replay",
+      "input": "same signed write repeated",
+      "expected": {
+        "status": 409,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 409,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "concurrent nonce replay",
+      "input": "two simultaneous copies",
+      "expected": {
+        "status": 409,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 409,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "cross-workspace",
+      "input": "valid device from B reads A",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "different workspace binding",
+      "input": "signed A proof with B URL",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "different layout",
+      "input": "signed wrong layout with valid device",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "strict UUID rejects ------------------------------------",
+      "input": "signed read with syntactically invalid workspace",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "strict UUID rejects aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input": "signed read with syntactically invalid workspace",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "strict UUID rejects 000000000-000-4000-8000-000000000001",
+      "input": "signed read with syntactically invalid workspace",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "strict UUID rejects 00000000-0000-4000-8000-00000000000z",
+      "input": "signed read with syntactically invalid workspace",
+      "expected": {
+        "status": 404,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 404,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "unknown device",
+      "input": "valid fresh key not registered",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "old epoch",
+      "input": "signed epoch 0",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "wrong audience",
+      "input": "signature audience another host",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "domain separation",
+      "input": "different signing domain",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "expired invitation",
+      "input": "TTL 10 minutes exceeded",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "altered invitation",
+      "input": "random token",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "key substitution",
+      "input": "redeem bound invitation with another key",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "fingerprint mismatch",
+      "input": "owner approves wrong fingerprint",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "pair race / scope binding",
+      "input": "two signed redeems; body claims owner, invite reader",
+      "expected": [
+        200,
+        403
+      ],
+      "observed": [
+        200,
+        403
+      ],
+      "result": "PASS"
+    },
+    {
+      "test": "consumed invitation",
+      "input": "same invitation again",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "insufficient write scope",
+      "input": "reader claims owner in body",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "insufficient pairing scope",
+      "input": "reader tries to create invite",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "read then revoke",
+      "input": "reader request, signed owner revoke",
+      "expected": [
+        200,
+        200
+      ],
+      "observed": [
+        200,
+        200
+      ],
+      "result": "PASS"
+    },
+    {
+      "test": "request signed before revocation",
+      "input": "previous valid signature sent after revoke",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "revoked device",
+      "input": "previously paired reader",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "malformed JSON",
+      "input": "unfinished object",
+      "expected": {
+        "status": 400,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 400,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "duplicate JSON keys",
+      "input": "decoded escaped alias",
+      "expected": {
+        "status": 400,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 400,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "duplicate nested keys",
+      "input": "nested proof epoch repeated",
+      "expected": {
+        "status": 400,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 400,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "nonfinite JSON",
+      "input": "numeric overflow",
+      "expected": {
+        "status": 400,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 400,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "oversize payload",
+      "input": "2MiB+1",
+      "expected": {
+        "status": 413,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 413,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Origin is not authorization",
+      "input": "allowed Origin but unsigned",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "foreign Origin",
+      "input": "valid signature from foreign Origin",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "CORS preflight cannot authorize",
+      "input": "OPTIONS",
+      "expected": {
+        "status": 404,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 404,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Host rebinding",
+      "input": "forged Host header",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "recovery",
+      "input": "single-use in-process kit + proof of new key",
+      "expected": [
+        200,
+        200
+      ],
+      "observed": [
+        200,
+        200
+      ],
+      "result": "PASS"
+    },
+    {
+      "test": "active editor after recovery",
+      "input": "another previously active key",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "pending invite after recovery",
+      "input": "old pending pairing is invalidated",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "old owner after recovery",
+      "input": "old key/epoch read",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "recovery replay",
+      "input": "consumed kit",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "wrong recovery token",
+      "input": "altered kit",
+      "expected": {
+        "status": 403,
+        "noProtectedData": true,
+        "noDataMutation": true
+      },
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "result": "PASS"
+    }
+  ],
+  "note": "No private keys, signatures, invitations or recovery material retained. Denials assert response has no protected data and both workspace values/counters unchanged."
+}

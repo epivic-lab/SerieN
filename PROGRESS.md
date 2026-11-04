@@ -265,3 +265,16 @@ PASS:141 controlliSQL6A.5,51regressioniSQL6A.3,45SQL6A.4,25boundary/backoff e12a
 Zero SQL/DDL/DML/Auth/RLS/grant/Edge/config/deploy contro Supabase reale; nessuna credenziale produttiva o main/Pages. Profilo sintetico non ampliato; validatore generale, gatewayDB end-to-end, revoca distribuita, provisioning/pool/TLS/cutover, serializer/hydrator/autosave/offline, carichi e PITR restano gap espliciti. Nessuna6A.6 o6B iniziata.
 
 Checkpoint atomico identificabile dal commit che introduce il rapporto6A.5; push normale solo feature/train-management, verifica SHA remoto/locale e working tree nella consegna. **Unica prossima azione: audit indipendente Regia; STOP.**
+
+
+## Train Management — 6A.6 integrazione e gate della macrofase
+
+6A.5 approvata `ef36596224133f19ceebeb4de889456c78959515`; autorizzata esclusivamente6A.6 e ripresa setup confermata dalla Regia. Fetch riuscito con accesso rete Codex esplicito, senza modifiche proxy; branch/tracking e checkpoint/ascendenza R1 verificati. Nessun reset/merge/rebase o ricostruzione commit.
+
+**Laboratorio integrato PASS tecnico, chiusura macrofase6A BLOCKED.** [Contratto](docs/_active/train-management/6A6_INTEGRATION.md), [rapporto gate](docs/_active/train-management/6A_INTEGRATION_GATE.md), [riepilogo/evidenze](docs/_active/train-management/evidence/6A6/summary.md). Chromium→CryptoKey non esportabile IndexedDB→proof HTTP effettiva→gateway loopback→principal dispositivo/session_user reale→API privataPG17→commit→verifica hash browser. Sei operazioni dati, pairing controllato/recovery kit monouso, scope/revoca/expiry/epoch/A-B, nonce e digest, CAS concorrenti con entrambi i backend osservati bloccati, recovery/storico, quote/rate/pagine. Fault SQL, backend kill, statement timeout, HTTP abort, pagina chiusa e SIGKILL Chromium distinti. Revoca in-flight e sessione aperta provate senza nuove read/write dopo commit revoca.
+
+**72test integrati PASS**, regressioni51SQL6A.3/45SQL6A.4/141SQL6A.5;48HTTP6A.2,5browser capability,37adapter, npm37file/220test,9Python/JMRI,build e smoke browserR1 PASS.1500file baseline esclusi tre documenti gate byte-identici; canonico/bundle R1 intatti, nessun app.js/motore/UI/asset o dipendenza applicativa nuova. Metriche misurate con limiti/rendezvous espliciti, non benchmark Supabase.
+
+BLOCKED: il supervisore Docker è solo laboratorio, provisioning/secret broker/pool isolato del futuro hosting richiedono decisione e staging; nessun SET ROLE o pool universale sostitutivo. Owner Auth legacy sintetico riusato: persistenza nativa ownerless NON dimostrata. Piano cutover/preservazione/rollback e vincoli ferroviari, threat model e matrice R0P01–P18 nel rapporto. TLS/Supavisor/configurazione reale, multiistanza/restart, rotazione, browser alternativi/eviction eOS/PITR NOT VERIFIED. Nessuna query o modifica al Supabase reale, migrazione nuova, main/Pages/deploy o6B.
+
+Checkpoint atomico: commit che introduce il rapporto gate, SHA remoto/locale e working tree verificati dopo push normale solo feature/train-management nella consegna. **Unica prossima azione: audit indipendente della Regia e decisione sui due blocchi architetturali; STOP. Nessuna chiusura6A o6B implicita.**
