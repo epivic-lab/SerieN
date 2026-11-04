@@ -5,7 +5,7 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 - Active text: `docs/_active/turnouts/SPEC_v3.md`. Read Shared Gates + the one authorized step; do not load unrelated docs.
 - Visual companion: `SPEC_v3.pdf`, copied from the supplied `SerieN_Scambi_Master_Specifica_v3.pdf` during S0: 27 A4 pages; SHA-256 `2face5b2eb8b02419b4da92efbfdb5d25ad0adf1dafac95721d6e46e65a9b89d` verified. Temporary active copy, to retire only at approved S7 closure.
 - Execution gate: **5D completed and published on main at commit `58bbe62bffb37f19125ddb38513502b5ca306821`** (see `docs/PERFORMANCE_AUDIT_5D.md`). Codex must STILL verify its local checkout, baseline tests/build and working tree before S0. If local 5D is missing or uncommitted: BLOCKED.
-- NEXT: await explicit S5 review and S6 authorization; do not start S6. Current user request requires a local commit and forbids push without further explicit authorization, superseding AGENTS remote protocol for this turn.
+- NEXT: await independent Regia audit; no S6 work authorized. On 2026-11-04 the user explicitly authorized normal push of the S5 checkpoint to feature/turnouts only, superseding the earlier local-only restriction.
 - Changes to the specification require user approval; annotate deviations in the phase report rather than silently editing the reference.
 - After every S: status, evidence, commit SHA, tests, updated `PROGRESS.md`, explicit confirmation request.
 - Final S7, after user approval: preserve `docs/turnouts/FINAL_REPORT.md`, retire `SPEC_v3.md`, `SPEC_v3.pdf` (if staged), and this STATUS file. Do not rewrite older phase reports or pretend deletion removes git history.
@@ -18,7 +18,7 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 | S2 | PASS / APPROVED | `6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b` | S3 explicitly approved |
 | S3 | PASS / APPROVED B | `fd32b43fe9438980bde798fd76773f8af2f3f5fc` | S4 explicitly authorized |
 | S4 | PASS / APPROVED | `a3ace86c0b8e2fe792bbc8dd4499c65d8237eafc` | S5 explicitly authorized |
-| S5 | TECHNICAL PASS / AWAITING REVIEW | commit introducing `evidence/S5/REPORT.md` (local only) | S6 not authorized |
+| S5 | TECHNICAL COMPLETION DECLARED / INDEPENDENT AUDIT PENDING | code `8321979af164f80ecfdcac4a9d884712ccd98031`; publication checkpoint adds 2026-11-04 note | Regia audit required; S6 not authorized |
 | S6 | NOT STARTED | — | pending |
 | S7 | NOT STARTED | — | final signoff |
 
@@ -106,3 +106,8 @@ S4 explicitly approved by current request, including B and340ms arrows. Baseline
 Active isolated5D/S4/S5 performance within gates; absolute CPU increment0.0690ms per three-train step, no GPU resource addition and same S4 render counters. Full5D/hardware GPU/touch NOT VERIFIED; numerical physics and explicit rearm limits documented. No known unresolved technical blocker.
 
 [Report and matrix](evidence/S5/REPORT.md), [contract](S5_GUARD.md), [telemetry](evidence/S5/browser/browser.json), [plot](evidence/S5/plots/braking.png), [commands](evidence/S5/commands.json), [handoff](evidence/S5/RESUME.md). Atomic local commit requested: `feat(safety): prevent invalid turnout traversals`; actual SHA and clean tree in handoff. **User explicitly forbids push without further authorization, overriding AGENTS remote gate for this turn.** Remote S4 preserved, main unchanged. No merge/rebase/reset/deploy. **STOP; S6/S7 not started.**
+
+
+## S5 audit checkpoint — 2026-11-04
+
+Normal push to feature/turnouts explicitly authorized. Existing S5 code/tests/evidence preserved unchanged; only STATUS/PROGRESS updated for publication. Previous test results are historical evidence, not new executions. Artifact hashes and source correspondence checked; scope/credential scan found no issue. Independent approval remains PENDING; do not infer acceptance from technical completion. Main observed at aeff336 (advanced externally since S5); no main publication or modification. Final checkpoint SHA/remote equality in handoff. **STOP pending Regia audit; no S6.**

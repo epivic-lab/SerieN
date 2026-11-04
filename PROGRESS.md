@@ -157,3 +157,10 @@ Salvati tre moduli per proiezione pura S1, osservazione Journey e overlay rosso:
 - **Per istruzione esplicita di questa richiesta: nessun push senza nuova autorizzazione**, prevale sul protocollo remoto generale AGENTS. Finale solo commit locale `feat(safety): prevent invalid turnout traversals`; working tree pulito e remoto S4 invariato verificati nella consegna. Nessun merge/rebase/reset/deployment.
 
 **Unica prossima azione: attendere revisione S5 e autorizzazione esplicita S6 — Cartello STOP scenico e campanello. Non iniziare S6.**
+
+
+## S5 — checkpoint per audit indipendente (2026-11-04)
+
+Pubblicazione ora esplicitamente autorizzata sul solo `feature/turnouts`. Implementazione S5 conservata nel commit `8321979af164f80ecfdcac4a9d884712ccd98031`, senza modifiche a codice/test/evidenze. Completamento tecnico **dichiarato**, approvazione indipendente della Regia **PENDING**. Verificati integrità dei50artefatti, corrispondenza dei sorgenti alle evidenze, perimetro del diff e scan mirato credenziali; nessuna suite rieseguita. Risultati precedenti:217Node,9Python/JMRI,build,cinque regressioni browser e sei casi S5 PASS, con provenienza nel rapporto S5.
+
+Checkpoint di pubblicazione: commit che aggiunge questa nota; SHA e coincidenza remota verificati nella consegna. `origin/main` rilevato ad `aeff336c997748bf49d2a09a61c1d6d9238fb3db`, diverso dal riferimento storico S5, senza interventi su main. Nessun merge/rebase/reset/deploy. **Unica prossima azione: attendere l’audit indipendente della Regia. S6 non autorizzata.**
