@@ -252,3 +252,16 @@ Validator volutamente chiuso al profilo DTO sintetico server con train e loose i
 Suite/evidenze effettive nel rapporto: transazioni, regressione 6A.3, adapter JCS/parser, npm test, build e 9 Python/JMRI. Hash canonico e bundle R1, 1451 file baseline fuori dai documenti di gate, prototipo 6A.2 e migrazione 6A.3 byte-identici. Zero mutazioni Supabase reale, nessun main/Pages/deploy/6A.5. Applicazione reale, gateway proof/epoch end-to-end, provisioning/pool, revoca distribuita, autosave/offline, throughput e crash host/PITR NOT VERIFIED.
 
 Checkpoint atomico: commit che introduce il rapporto 6A.4, SHA locale/remoto e working tree verificati nella consegna dopo push normale solo feature/train-management. **Unica prossima azione: audit Regia; STOP. 6A.5 non iniziata né implicitamente autorizzata.**
+
+
+## Train Management — 6A.5 storico sicuro e recovery locale
+
+La Regia approva 6A.4 `6bf92bf6f100e1c74567dd2b1ed898874e50e66a`; autorizzata esclusivamente6A.5. Working tree iniziale pulito su feature/train-management; fetch non distruttivo, SHA remoto e ascendenza R1 confermati; main ancora `348bfeff12c4005657098d89ea1d3c2ccdda9910`. Nessuna riscrittura storia o modifica produzione.
+
+Proposta additiva locale `20261104175236_serien_history_integrity.sql`, funzioni private ReadHead/ReadSnapshot/ListHistory/ReadReceipt/RecoverRevision e boundary isolato in prototypes/train-management/history-access. [Contratto C1–C3/versioni/retention/quote/R0P09–P15](docs/_active/train-management/6A5_HISTORY.md), [rapporto](docs/_active/train-management/evidence/6A5/REPORT.md). Rimossi grant raw gruppo/login/colonna; controlli device/scope/epoch/expiry/revoca anche su sessione già aperta. Ricevute senza envelope duplicato e retry6A.4 ricostruito identico; request_id indipendente per workspace anche con owner condiviso, legacy non vuoto preservato. Digest stato ed envelope distinti, canonicalizzazione versionata del solo profilo ammesso, corruzione rilevata e recovery CAS nuova revisione senza cancellazioni. Quote checkpoint/storage/audit e limiti request/response/pagina/rate con backoff locale, nessuna certificazione distribuita.
+
+PASS:141 controlliSQL6A.5,51regressioniSQL6A.3,45SQL6A.4,25boundary/backoff e12adapter6A.4,37file npm,9Python/JMRI,build. Prove di race reali, sessione revocata, constraint deferred, fault in sei sub-step e kill backend anche post-upgrade; rollback migrazione completo.1472 file baseline esclusi tre documenti gate, migrazioni approvate,6A.2/6A.4,sorgenti/asset/UI/canonico/bundle R1 byte-identici.
+
+Zero SQL/DDL/DML/Auth/RLS/grant/Edge/config/deploy contro Supabase reale; nessuna credenziale produttiva o main/Pages. Profilo sintetico non ampliato; validatore generale, gatewayDB end-to-end, revoca distribuita, provisioning/pool/TLS/cutover, serializer/hydrator/autosave/offline, carichi e PITR restano gap espliciti. Nessuna6A.6 o6B iniziata.
+
+Checkpoint atomico identificabile dal commit che introduce il rapporto6A.5; push normale solo feature/train-management, verifica SHA remoto/locale e working tree nella consegna. **Unica prossima azione: audit indipendente Regia; STOP.**

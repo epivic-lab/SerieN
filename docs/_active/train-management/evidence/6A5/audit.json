@@ -1,0 +1,191 @@
+[
+  {
+    "id": "bb59a584-a9e6-4b00-9eba-b1ce40cb9f86",
+    "event": "ReadHead",
+    "revision": 2,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:22:53.80329+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "e9be494d-9023-42d6-bed8-8d276271eded",
+    "event": "ReadSnapshot",
+    "revision": 1,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:22:54.441074+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "bc80023c-5230-49fa-b9e8-8c1d5cf5d6c8",
+    "event": "ListHistory",
+    "revision": null,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:22:55.150678+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "9af1be81-0125-42a4-9fa5-8f1f0763ac15",
+    "event": "ListHistory",
+    "revision": null,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:22:55.810064+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "17e30218-8444-42d2-abff-54a534b8b2a7",
+    "event": "ReadHead",
+    "revision": 2,
+    "device_id": "10000000-0000-4000-8000-000000000008",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:23:24.997401+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "15240a84-402a-4c3e-b225-ba7fc636def8",
+    "event": "ReadSnapshot",
+    "revision": 1,
+    "device_id": "10000000-0000-4000-8000-000000000008",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:23:25.678809+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "ed85e136-f8b6-4c74-a019-a855ca99c2a8",
+    "event": "ReadReceipt",
+    "revision": 1,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": "72d13bbc-8f1e-4a29-ba45-5c99b27124a9",
+    "occurred_at": "2026-11-04T18:23:41.936212+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "0bdcb2fb-670b-419f-93ff-d8daf13a7941",
+    "event": "ReadHead",
+    "revision": 2,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:23:42.678166+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "f82c4c38-a884-4b3a-9421-618920b9a943",
+    "event": "ListHistory",
+    "revision": null,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:23:49.270802+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "2f2fa14c-8160-4615-a83e-76a08f5b6b6a",
+    "event": "RecoverRevision",
+    "revision": 3,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": "fc00fe63-7ee3-45bb-9cf3-7d7f7aaa4291",
+    "occurred_at": "2026-11-04T18:23:50.255083+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "11457196-8466-4042-8967-e59453bba485",
+    "event": "RecoverRevision",
+    "revision": 4,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": "f92f78ae-cfec-418c-b8dc-7528db8f6ff5",
+    "occurred_at": "2026-11-04T18:24:02.980495+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "dfcedfc6-7313-42f0-9898-77b167c91ea8",
+    "event": "RecoverRevision",
+    "revision": 5,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": "4cad07ea-7fd8-4cc0-92f8-3449398bd4ed",
+    "occurred_at": "2026-11-04T18:24:06.796377+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "a57dbbbf-f55c-4cdc-9710-c09ff3e56189",
+    "event": "ReadHead",
+    "revision": 5,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:24:07.545199+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "6c7bdedc-0db3-43a7-bf0c-6df76fb7312d",
+    "event": "SaveCheckpoint",
+    "revision": 6,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": "ab3ba5b2-b365-4c2c-a82c-482f1dbe4970",
+    "occurred_at": "2026-11-04T18:24:12.674317+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "58b18caa-594a-4755-8d00-1688d35abbd7",
+    "event": "SaveCheckpoint",
+    "revision": 2,
+    "device_id": "10000000-0000-4000-8000-000000000009",
+    "request_id": "ab3ba5b2-b365-4c2c-a82c-482f1dbe4970",
+    "occurred_at": "2026-11-04T18:24:13.446783+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000002"
+  },
+  {
+    "id": "831f2d1a-537e-461f-aeb6-3f0d5cd34d22",
+    "event": "ReadReceipt",
+    "revision": 2,
+    "device_id": "10000000-0000-4000-8000-000000000009",
+    "request_id": "ab3ba5b2-b365-4c2c-a82c-482f1dbe4970",
+    "occurred_at": "2026-11-04T18:24:14.118713+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000002"
+  },
+  {
+    "id": "a56afbe2-be71-421f-96cf-25cb12460e9d",
+    "event": "ReadHead",
+    "revision": 6,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:24:23.926643+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "e75c4acf-9133-41df-8e0a-ce93149b0b92",
+    "event": "ReadHead",
+    "revision": 6,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:24:24.593748+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "f6e92cca-daf5-44c3-8c64-b81da4cccbaa",
+    "event": "ReadHead",
+    "revision": 6,
+    "device_id": "10000000-0000-4000-8000-000000000008",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:24:25.925391+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "a324b7f2-99c9-457e-b2cb-ce48ccdf5b25",
+    "event": "ReadHead",
+    "revision": 6,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:24:27.349122+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  },
+  {
+    "id": "6eafdafd-23cc-4a16-b31f-4a87a9d119ce",
+    "event": "ReadSnapshot",
+    "revision": 1,
+    "device_id": "10000000-0000-4000-8000-000000000006",
+    "request_id": null,
+    "occurred_at": "2026-11-04T18:24:44.201894+00:00",
+    "workspace_id": "10000000-0000-4000-8000-000000000001"
+  }
+]

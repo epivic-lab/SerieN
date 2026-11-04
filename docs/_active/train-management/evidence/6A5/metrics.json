@@ -1,0 +1,25 @@
+{
+  "method": "reconstructed UTF-8 JSON byte accounting from captured SQL values; no physical disk claim",
+  "workspaces": {
+    "10000000-0000-4000-8000-000000000001": {
+      "snapshots": 6,
+      "receipts": 6,
+      "logicalCheckpointBytes": 36342,
+      "auditRows": 19,
+      "auditJSONBytes": 5207
+    },
+    "10000000-0000-4000-8000-000000000002": {
+      "snapshots": 2,
+      "receipts": 2,
+      "logicalCheckpointBytes": 11959,
+      "auditRows": 2,
+      "auditJSONBytes": 601
+    }
+  },
+  "compaction": {
+    "unchangedReceiptCount": 3,
+    "oldResultBytes": 14280,
+    "compactedResultAndContextBytes": 1554,
+    "legacyResponseReconstructedExactly": true
+  }
+}

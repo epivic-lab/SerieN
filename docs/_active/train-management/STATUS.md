@@ -1,13 +1,17 @@
 # Train Management — gate corrente
 
-R0, 6A.1, 6A.2 e **6A.3 APPROVATE dalla Regia**. Baseline 6A.3 `558f43b44be08235f6d30b6f18bd3b4ef07a4c53`, main/R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910`. Branch esclusivo `feature/train-management`.
+R0 e **6A.1–6A.4 APPROVATE dalla Regia**; checkpoint 6A.4 `6bf92bf6f100e1c74567dd2b1ed898874e50e66a`. Main/R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` immutabile, branch esclusivo `feature/train-management`.
 
-**6A.4: nucleo transazionale locale a profilo vincolato; approvazione indipendente PENDING.** Checkpoint identificabile con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A4/REPORT.md`; verifica remota nella consegna finale. Nessun SaveCheckpoint generale/HTTP/gateway integrato o applicazione produttiva.
+**6A.5: PASS tecnico nel laboratorio isolato; audit indipendente PENDING.** Checkpoint identificabile con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A5/REPORT.md`; SHA remoto/locale nella consegna. 6A.6 NON INIZIATA né implicitamente autorizzata.
 
-[Contratto, privilegi, riproduzione e gap R0 P09–P15](6A4_TRANSACTIONS.md), [rapporto/evidenze](evidence/6A4/REPORT.md). Nuova migrazione additiva proposta, applicata **soltanto** nel PostgreSQL17 isolato; migrazione 6A.3 immutata. Binding SQL a workspace/device, RLS senza bypass, funzione privata con esecutore limitato, lock di coordinamento e head, deduplica prima del CAS, snapshot/proiezioni/head/ricevuta atomici. Validator fail-closed limitato al DTO sintetico server; composizione/Journey/catalogo arbitrari non ammessi.
+[Contratto API, C1–C3, formato e quote](6A5_HISTORY.md), [rapporto/evidenze](evidence/6A5/REPORT.md). Nuova proposta versionata `20261104175236_serien_history_integrity.sql`, applicata solo a PostgreSQL17 effimero. Migrazioni approvate 6A.3/6A.4 e profilo DTO sintetico invariati. Owner Auth legacy obbligatorio conservato; nessun account reale o cutover produttivo.
 
-Owner Auth e FK legacy conservati: il laboratorio usa solo l'owner sintetico esistente, non dimostra workspace applicativi nuovi senza owner. Profilo con train e loose in entrambi i workspace; dati legacy non vuoti preservati in dieci tabelle, timestamp compresi. Test SQL reali di CAS concorrente, idempotenza, fault SQL, terminazione backend, deferred constraint, isolamento e revoca **locale**. Revoca distribuita/gateway, provisioning/pool reali, cutover, validatore generale, offline/autosave, budget produttivi e crash host/PITR **NOT VERIFIED / NON IMPLEMENTATI**, secondo il rapporto.
+C1: eliminati i grant SQL diretti, inclusi quelli per login/colonna; read/recover privati ricontrollano device/workspace/scope/epoch/key/expiry/revoca sotto lock. Revoca verificata anche nella stessa sessione SQL e nella race read/revoke. C2: ricevute compatte v2 e ricostruzione esatta dei retry 6A.4, senza envelope duplicato nel DB. C3: dominio workspace/request_id indipendente anche con owner legacy condiviso, unicità legacy preservata mediante indice parziale.
 
-R1, asset/canonico/bundle, 6A.2, dipendenze e workflow preservati; npm/Node/JMRI/build nei log del rapporto. Supabase reale non modificato; nessuna credenziale produttiva o deploy. Matrice R0 originale P01–P18 preservata.
+Digest stato distinto dall'envelope, versione canonica esplicita limitata al profilo, controlli schema/engine/topology/revision/manifest refs. Storico paginato, segnalazione corruzione/incompatibilità e recovery CAS in una nuova revisione preservando lo storico. Quote storage/checkpoint/audit, limiti byte/pagina/rate e backoff locale; nessuna retention distruttiva.
 
-**Unica prossima azione: audit indipendente della Regia e decisione sul gate 6A.5. 6A.5 NON INIZIATA; STOP dopo il checkpoint 6A.4.**
+**PASS:** 141 controlli SQL6A.5, regressioni51 SQL6A.3 e45 SQL6A.4,25 test boundary/backoff e12 adapter6A.4,37 file npm,9 Python/JMRI ebuild. Fault SQL/deferred e kill backend rieseguiti anche post-upgrade.1472 file baseline fuori dai tre documenti gate byte-identici; canonico/bundle R1 invariati. Zero modifiche Supabase reale, main o Pages.
+
+Restano NOT VERIFIED/NON IMPLEMENTATI: gateway proof+DB/end-to-end6A.6, revoca distribuita, provisioning/rotazione/pool/TLS reali, validatore DTO generale, serializer/hydrator/autosave/offline/UI, catalogo reale, cutover senza owner, carichi/budget produttivi e crash host/PITR. Non sono dedotti PASS dalle prove locali.
+
+**Unica prossima azione: audit indipendente della Regia. STOP dopo checkpoint remoto 6A.5; nessuna 6A.6.**

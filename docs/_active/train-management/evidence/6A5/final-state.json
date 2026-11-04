@@ -1,0 +1,2784 @@
+{
+  "public.layout_snapshots": [
+    {
+      "id": "00000000-0000-4000-8000-000000000050",
+      "payload": {
+        "layout": {
+          "switches": {
+            "Y-2": false,
+            "Y-3": false,
+            "Y-4": false,
+            "WX-A": false,
+            "WX-B": false,
+            "Y-IN": false,
+            "Y-R1": false,
+            "Y-R2": false
+          }
+        },
+        "resumePolicy": "STOPPED",
+        "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc"
+      },
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 1,
+      "saved_at": "2026-11-04T18:22:45.660916+00:00",
+      "layout_id": "00000000-0000-4000-8000-000000000040",
+      "asset_refs": null,
+      "state_digest": null,
+      "workspace_id": null,
+      "ownership_key": "legacy:00000000-0000-4000-8000-000000000001",
+      "topology_hash": null,
+      "payload_digest": null,
+      "engine_revision": null,
+      "snapshot_schema": 1,
+      "canonical_version": null
+    },
+    {
+      "id": "28c7978e-97b7-41fd-85f1-649e12f3584e",
+      "payload": {
+        "ui": {
+          "day": 0,
+          "camera": {
+            "fov": 35,
+            "zoom": 1,
+            "preset": "overview",
+            "target": [
+              834,
+              0,
+              474
+            ],
+            "position": [
+              1664,
+              1150,
+              1694
+            ]
+          },
+          "bellMuted": false,
+          "qualityMode": "auto",
+          "consoleSlots": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "hudMinimized": false,
+          "recentTrainIds": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "selectedTrainId": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+          "rollingModelMode": "native"
+        },
+        "time": {
+          "tickCount": 720,
+          "wasPaused": false,
+          "stepSeconds": 0.016666666666666666,
+          "accumulatorSeconds": 0.001
+        },
+        "items": [
+          {
+            "id": "10000000-0000-4000-8000-000000000065",
+            "modelId": "10000000-0000-4000-8000-000000000064",
+            "nativeKind": "steam",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000064",
+            "nativeModelRevision": "synthetic-fixture-only"
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000068",
+            "modelId": "10000000-0000-4000-8000-000000000067",
+            "nativeKind": "closed",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000067",
+            "nativeModelRevision": "synthetic-fixture-only"
+          }
+        ],
+        "layout": {
+          "switches": {
+            "Y-2": false,
+            "Y-3": false,
+            "Y-4": false,
+            "WX-A": false,
+            "WX-B": false,
+            "Y-IN": false,
+            "Y-R1": false,
+            "Y-R2": false
+          }
+        },
+        "models": [
+          {
+            "id": "10000000-0000-4000-8000-000000000064",
+            "kind": "locomotive",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -67.9,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 49.6,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "steam",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000067",
+            "kind": "wagon",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -10,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 10,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "closed",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          }
+        ],
+        "trains": [
+          {
+            "id": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+            "dir": 1,
+            "name": "fixture",
+            "guard": {
+              "risk": "SAFE",
+              "delta": 0.5,
+              "state": "SAFE",
+              "reason": "available",
+              "boundary": null,
+              "distance": null,
+              "velocity": 30,
+              "direction": 1,
+              "lookahead": 5,
+              "probeKind": null,
+              "intervened": false,
+              "probeDelta": null,
+              "leadingExtent": null,
+              "requestedDelta": 0.5,
+              "requestedSpeed": 20,
+              "protectionInset": null,
+              "stoppingDistance": 4.5
+            },
+            "speed": 20,
+            "lights": false,
+            "journey": {
+              "travel": 12,
+              "position": 120,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 120,
+              "edge": "T47",
+              "heading": 1
+            },
+            "modelKey": "steam",
+            "odometer": 12,
+            "velocity": 30,
+            "consistId": "10000000-0000-4000-8000-000000000066",
+            "resetSeed": {
+              "s": 80,
+              "cars": 0,
+              "edge": "T47",
+              "loop": 2,
+              "fraction": null
+            },
+            "nativeName": "fixture",
+            "description": "fixture",
+            "runtimeSlot": 0,
+            "routeContext": {
+              "laps": 0,
+              "loop": 2,
+              "mode": "yard",
+              "section": "T47",
+              "previousLane": 2
+            },
+            "requestedSpeed": 20,
+            "nativeDescription": "fixture"
+          }
+        ],
+        "stateId": "ce394ec0-fc27-56f8-9362-94fddd3430ff",
+        "consists": [
+          {
+            "id": "10000000-0000-4000-8000-000000000066",
+            "name": "fixture",
+            "members": [
+              {
+                "itemId": "10000000-0000-4000-8000-000000000065",
+                "orientation": 1
+              }
+            ]
+          }
+        ],
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "missions": {
+          "changes": 0,
+          "selected": 0,
+          "didAttach": false,
+          "didDetach": false,
+          "transferred": false,
+          "visitedRunaround": false
+        },
+        "looseStock": [
+          {
+            "itemId": "10000000-0000-4000-8000-000000000068",
+            "journey": {
+              "travel": 0,
+              "position": 220,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 220,
+              "edge": "T47",
+              "heading": 1
+            },
+            "animationDistanceMm": 0
+          }
+        ],
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "resumePolicy": "STOPPED",
+        "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schemaVersion": 1,
+        "engineRevision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+        "inventoryStorage": []
+      },
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 6,
+      "saved_at": "2026-11-04T18:24:12.662491+00:00",
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "asset_refs": [
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000064",
+          "revision": "synthetic-fixture-only"
+        },
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000067",
+          "revision": "synthetic-fixture-only"
+        }
+      ],
+      "state_digest": "e7bdbc2c0beb83134a110155d33ed61299e767099db1bd4e1d64cf1523220a5b",
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "payload_digest": "1ed269bea28c989175b4b1955a010fafdd3812e7973f4d8870d2a1a3e57c5b79",
+      "engine_revision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+      "snapshot_schema": 1,
+      "canonical_version": "jcs-profile-v1"
+    },
+    {
+      "id": "3ed924e2-9c13-4f11-84e6-c4d697f8f33e",
+      "payload": {
+        "ui": {
+          "day": 0,
+          "camera": {
+            "fov": 35,
+            "zoom": 1,
+            "preset": "overview",
+            "target": [
+              834,
+              0,
+              474
+            ],
+            "position": [
+              1664,
+              1150,
+              1694
+            ]
+          },
+          "bellMuted": false,
+          "qualityMode": "auto",
+          "consoleSlots": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "hudMinimized": false,
+          "recentTrainIds": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "selectedTrainId": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+          "rollingModelMode": "native"
+        },
+        "time": {
+          "tickCount": 720,
+          "wasPaused": false,
+          "stepSeconds": 0.016666666666666666,
+          "accumulatorSeconds": 0.001
+        },
+        "items": [
+          {
+            "id": "10000000-0000-4000-8000-000000000065",
+            "modelId": "10000000-0000-4000-8000-000000000064",
+            "nativeKind": "steam",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000064",
+            "nativeModelRevision": "synthetic-fixture-only"
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000068",
+            "modelId": "10000000-0000-4000-8000-000000000067",
+            "nativeKind": "closed",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000067",
+            "nativeModelRevision": "synthetic-fixture-only"
+          }
+        ],
+        "layout": {
+          "switches": {
+            "Y-2": false,
+            "Y-3": false,
+            "Y-4": false,
+            "WX-A": false,
+            "WX-B": false,
+            "Y-IN": false,
+            "Y-R1": false,
+            "Y-R2": false
+          }
+        },
+        "models": [
+          {
+            "id": "10000000-0000-4000-8000-000000000064",
+            "kind": "locomotive",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -67.9,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 49.6,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "steam",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000067",
+            "kind": "wagon",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -10,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 10,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "closed",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          }
+        ],
+        "trains": [
+          {
+            "id": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+            "dir": 1,
+            "name": "fixture",
+            "guard": {
+              "risk": "SAFE",
+              "delta": 0.5,
+              "state": "SAFE",
+              "reason": "available",
+              "boundary": null,
+              "distance": null,
+              "velocity": 30,
+              "direction": 1,
+              "lookahead": 5,
+              "probeKind": null,
+              "intervened": false,
+              "probeDelta": null,
+              "leadingExtent": null,
+              "requestedDelta": 0.5,
+              "requestedSpeed": 20,
+              "protectionInset": null,
+              "stoppingDistance": 4.5
+            },
+            "speed": 20,
+            "lights": false,
+            "journey": {
+              "travel": 12,
+              "position": 120,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 120,
+              "edge": "T47",
+              "heading": 1
+            },
+            "modelKey": "steam",
+            "odometer": 12,
+            "velocity": 30,
+            "consistId": "10000000-0000-4000-8000-000000000066",
+            "resetSeed": {
+              "s": 80,
+              "cars": 0,
+              "edge": "T47",
+              "loop": 2,
+              "fraction": null
+            },
+            "nativeName": "fixture",
+            "description": "fixture",
+            "runtimeSlot": 0,
+            "routeContext": {
+              "laps": 0,
+              "loop": 2,
+              "mode": "yard",
+              "section": "T47",
+              "previousLane": 2
+            },
+            "requestedSpeed": 20,
+            "nativeDescription": "fixture"
+          }
+        ],
+        "stateId": "ce394ec0-fc27-56f8-9362-94fddd3430ff",
+        "consists": [
+          {
+            "id": "10000000-0000-4000-8000-000000000066",
+            "name": "fixture",
+            "members": [
+              {
+                "itemId": "10000000-0000-4000-8000-000000000065",
+                "orientation": 1
+              }
+            ]
+          }
+        ],
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "missions": {
+          "changes": 0,
+          "selected": 0,
+          "didAttach": false,
+          "didDetach": false,
+          "transferred": false,
+          "visitedRunaround": false
+        },
+        "looseStock": [
+          {
+            "itemId": "10000000-0000-4000-8000-000000000068",
+            "journey": {
+              "travel": 0,
+              "position": 220,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 220,
+              "edge": "T47",
+              "heading": 1
+            },
+            "animationDistanceMm": 0
+          }
+        ],
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "resumePolicy": "STOPPED",
+        "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schemaVersion": 1,
+        "engineRevision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+        "inventoryStorage": []
+      },
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 1,
+      "saved_at": "2026-11-04T18:22:49.010429+00:00",
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "asset_refs": [
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000064",
+          "revision": "synthetic-fixture-only"
+        },
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000067",
+          "revision": "synthetic-fixture-only"
+        }
+      ],
+      "state_digest": "e7bdbc2c0beb83134a110155d33ed61299e767099db1bd4e1d64cf1523220a5b",
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "payload_digest": "32164f0f075ec2a746092924b1852244dd66a576ff45fc0955c5a2ea2469652f",
+      "engine_revision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+      "snapshot_schema": 1,
+      "canonical_version": "jcs-profile-v1"
+    },
+    {
+      "id": "601630bb-a1f7-4e12-9815-dd7062b3714c",
+      "payload": {
+        "ui": {
+          "day": 0,
+          "camera": {
+            "fov": 35,
+            "zoom": 1,
+            "preset": "overview",
+            "target": [
+              834,
+              0,
+              474
+            ],
+            "position": [
+              1664,
+              1150,
+              1694
+            ]
+          },
+          "bellMuted": false,
+          "qualityMode": "auto",
+          "consoleSlots": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "hudMinimized": false,
+          "recentTrainIds": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "selectedTrainId": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+          "rollingModelMode": "native"
+        },
+        "time": {
+          "tickCount": 720,
+          "wasPaused": false,
+          "stepSeconds": 0.016666666666666666,
+          "accumulatorSeconds": 0.001
+        },
+        "items": [
+          {
+            "id": "10000000-0000-4000-8000-000000000065",
+            "modelId": "10000000-0000-4000-8000-000000000064",
+            "nativeKind": "steam",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000064",
+            "nativeModelRevision": "synthetic-fixture-only"
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000068",
+            "modelId": "10000000-0000-4000-8000-000000000067",
+            "nativeKind": "closed",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000067",
+            "nativeModelRevision": "synthetic-fixture-only"
+          }
+        ],
+        "layout": {
+          "switches": {
+            "Y-2": false,
+            "Y-3": false,
+            "Y-4": false,
+            "WX-A": false,
+            "WX-B": false,
+            "Y-IN": false,
+            "Y-R1": false,
+            "Y-R2": false
+          }
+        },
+        "models": [
+          {
+            "id": "10000000-0000-4000-8000-000000000064",
+            "kind": "locomotive",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -67.9,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 49.6,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "steam",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000067",
+            "kind": "wagon",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -10,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 10,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "closed",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          }
+        ],
+        "trains": [
+          {
+            "id": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+            "dir": 1,
+            "name": "fixture",
+            "guard": {
+              "risk": "SAFE",
+              "delta": 0.5,
+              "state": "SAFE",
+              "reason": "available",
+              "boundary": null,
+              "distance": null,
+              "velocity": 30,
+              "direction": 1,
+              "lookahead": 5,
+              "probeKind": null,
+              "intervened": false,
+              "probeDelta": null,
+              "leadingExtent": null,
+              "requestedDelta": 0.5,
+              "requestedSpeed": 20,
+              "protectionInset": null,
+              "stoppingDistance": 4.5
+            },
+            "speed": 20,
+            "lights": false,
+            "journey": {
+              "travel": 12,
+              "position": 120,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 120,
+              "edge": "T47",
+              "heading": 1
+            },
+            "modelKey": "steam",
+            "odometer": 12,
+            "velocity": 30,
+            "consistId": "10000000-0000-4000-8000-000000000066",
+            "resetSeed": {
+              "s": 80,
+              "cars": 0,
+              "edge": "T47",
+              "loop": 2,
+              "fraction": null
+            },
+            "nativeName": "fixture",
+            "description": "fixture",
+            "runtimeSlot": 0,
+            "routeContext": {
+              "laps": 0,
+              "loop": 2,
+              "mode": "yard",
+              "section": "T47",
+              "previousLane": 2
+            },
+            "requestedSpeed": 20,
+            "nativeDescription": "fixture"
+          }
+        ],
+        "stateId": "ce394ec0-fc27-56f8-9362-94fddd3430ff",
+        "consists": [
+          {
+            "id": "10000000-0000-4000-8000-000000000066",
+            "name": "fixture",
+            "members": [
+              {
+                "itemId": "10000000-0000-4000-8000-000000000065",
+                "orientation": 1
+              }
+            ]
+          }
+        ],
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "missions": {
+          "changes": 0,
+          "selected": 0,
+          "didAttach": false,
+          "didDetach": false,
+          "transferred": false,
+          "visitedRunaround": false
+        },
+        "looseStock": [
+          {
+            "itemId": "10000000-0000-4000-8000-000000000068",
+            "journey": {
+              "travel": 0,
+              "position": 220,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 220,
+              "edge": "T47",
+              "heading": 1
+            },
+            "animationDistanceMm": 0
+          }
+        ],
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "resumePolicy": "STOPPED",
+        "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schemaVersion": 1,
+        "engineRevision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+        "inventoryStorage": []
+      },
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 4,
+      "saved_at": "2026-11-04T18:24:00.169325+00:00",
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "asset_refs": [
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000064",
+          "revision": "synthetic-fixture-only"
+        },
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000067",
+          "revision": "synthetic-fixture-only"
+        }
+      ],
+      "state_digest": "e7bdbc2c0beb83134a110155d33ed61299e767099db1bd4e1d64cf1523220a5b",
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "payload_digest": "fdb82474f2c68c3076660e29b514a725ec7f30076a1a0de4ce69aa8139d79ae0",
+      "engine_revision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+      "snapshot_schema": 1,
+      "canonical_version": "jcs-profile-v1"
+    },
+    {
+      "id": "8af8fa83-8b15-41e3-8b3b-3f1df76e1baf",
+      "payload": {
+        "ui": {
+          "day": 1,
+          "camera": {
+            "fov": 35,
+            "zoom": 1,
+            "preset": "overview",
+            "target": [
+              834,
+              0,
+              474
+            ],
+            "position": [
+              1664,
+              1150,
+              1694
+            ]
+          },
+          "bellMuted": false,
+          "qualityMode": "auto",
+          "consoleSlots": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "hudMinimized": false,
+          "recentTrainIds": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "selectedTrainId": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+          "rollingModelMode": "native"
+        },
+        "time": {
+          "tickCount": 720,
+          "wasPaused": false,
+          "stepSeconds": 0.016666666666666666,
+          "accumulatorSeconds": 0.001
+        },
+        "items": [
+          {
+            "id": "10000000-0000-4000-8000-000000000065",
+            "modelId": "10000000-0000-4000-8000-000000000064",
+            "nativeKind": "steam",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000064",
+            "nativeModelRevision": "synthetic-fixture-only"
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000068",
+            "modelId": "10000000-0000-4000-8000-000000000067",
+            "nativeKind": "closed",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000067",
+            "nativeModelRevision": "synthetic-fixture-only"
+          }
+        ],
+        "layout": {
+          "switches": {
+            "Y-2": false,
+            "Y-3": false,
+            "Y-4": false,
+            "WX-A": false,
+            "WX-B": false,
+            "Y-IN": false,
+            "Y-R1": false,
+            "Y-R2": false
+          }
+        },
+        "models": [
+          {
+            "id": "10000000-0000-4000-8000-000000000064",
+            "kind": "locomotive",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -67.9,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 49.6,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "steam",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000067",
+            "kind": "wagon",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -10,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 10,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "closed",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          }
+        ],
+        "trains": [
+          {
+            "id": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+            "dir": 1,
+            "name": "fixture",
+            "guard": {
+              "risk": "SAFE",
+              "delta": 0.5,
+              "state": "SAFE",
+              "reason": "available",
+              "boundary": null,
+              "distance": null,
+              "velocity": 30,
+              "direction": 1,
+              "lookahead": 5,
+              "probeKind": null,
+              "intervened": false,
+              "probeDelta": null,
+              "leadingExtent": null,
+              "requestedDelta": 0.5,
+              "requestedSpeed": 20,
+              "protectionInset": null,
+              "stoppingDistance": 4.5
+            },
+            "speed": 20,
+            "lights": false,
+            "journey": {
+              "travel": 12,
+              "position": 120,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 120,
+              "edge": "T47",
+              "heading": 1
+            },
+            "modelKey": "steam",
+            "odometer": 12,
+            "velocity": 30,
+            "consistId": "10000000-0000-4000-8000-000000000066",
+            "resetSeed": {
+              "s": 80,
+              "cars": 0,
+              "edge": "T47",
+              "loop": 2,
+              "fraction": null
+            },
+            "nativeName": "fixture",
+            "description": "fixture",
+            "runtimeSlot": 0,
+            "routeContext": {
+              "laps": 0,
+              "loop": 2,
+              "mode": "yard",
+              "section": "T47",
+              "previousLane": 2
+            },
+            "requestedSpeed": 20,
+            "nativeDescription": "fixture"
+          }
+        ],
+        "stateId": "ce394ec0-fc27-56f8-9362-94fddd3430ff",
+        "consists": [
+          {
+            "id": "10000000-0000-4000-8000-000000000066",
+            "name": "fixture",
+            "members": [
+              {
+                "itemId": "10000000-0000-4000-8000-000000000065",
+                "orientation": 1
+              }
+            ]
+          }
+        ],
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "missions": {
+          "changes": 0,
+          "selected": 0,
+          "didAttach": false,
+          "didDetach": false,
+          "transferred": false,
+          "visitedRunaround": false
+        },
+        "looseStock": [
+          {
+            "itemId": "10000000-0000-4000-8000-000000000068",
+            "journey": {
+              "travel": 0,
+              "position": 220,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 220,
+              "edge": "T47",
+              "heading": 1
+            },
+            "animationDistanceMm": 0
+          }
+        ],
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "resumePolicy": "STOPPED",
+        "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schemaVersion": 1,
+        "engineRevision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+        "inventoryStorage": []
+      },
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 2,
+      "saved_at": "2026-11-04T18:22:49.103228+00:00",
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "asset_refs": [
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000064",
+          "revision": "synthetic-fixture-only"
+        },
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000067",
+          "revision": "synthetic-fixture-only"
+        }
+      ],
+      "state_digest": "8cb2c30b07ebc2b83520ce99b7f486d101ae83c909ac7153d7e18dde04f522da",
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "payload_digest": "331d059e2048f84a74cf2ea0cd927db28074853361edcee6afa1cede11c33227",
+      "engine_revision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+      "snapshot_schema": 1,
+      "canonical_version": "jcs-profile-v1"
+    },
+    {
+      "id": "aa4e50b3-a363-497d-ba10-63924ec2f349",
+      "payload": {
+        "ui": {
+          "day": 0,
+          "camera": {
+            "fov": 35,
+            "zoom": 1,
+            "preset": "overview",
+            "target": [
+              834,
+              0,
+              474
+            ],
+            "position": [
+              1664,
+              1150,
+              1694
+            ]
+          },
+          "bellMuted": false,
+          "qualityMode": "auto",
+          "consoleSlots": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "hudMinimized": false,
+          "recentTrainIds": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "selectedTrainId": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+          "rollingModelMode": "native"
+        },
+        "time": {
+          "tickCount": 720,
+          "wasPaused": false,
+          "stepSeconds": 0.016666666666666666,
+          "accumulatorSeconds": 0.001
+        },
+        "items": [
+          {
+            "id": "10000000-0000-4000-8000-0000000000c9",
+            "modelId": "10000000-0000-4000-8000-0000000000c8",
+            "nativeKind": "steam",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-0000000000c8",
+            "nativeModelRevision": "synthetic-fixture-only"
+          },
+          {
+            "id": "10000000-0000-4000-8000-0000000000cc",
+            "modelId": "10000000-0000-4000-8000-0000000000cb",
+            "nativeKind": "closed",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-0000000000cb",
+            "nativeModelRevision": "synthetic-fixture-only"
+          }
+        ],
+        "layout": {
+          "switches": {
+            "Y-2": false,
+            "Y-3": false,
+            "Y-4": false,
+            "WX-A": false,
+            "WX-B": false,
+            "Y-IN": false,
+            "Y-R1": false,
+            "Y-R2": false
+          }
+        },
+        "models": [
+          {
+            "id": "10000000-0000-4000-8000-0000000000c8",
+            "kind": "locomotive",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -67.9,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 49.6,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "steam",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          },
+          {
+            "id": "10000000-0000-4000-8000-0000000000cb",
+            "kind": "wagon",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -10,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 10,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "closed",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          }
+        ],
+        "trains": [
+          {
+            "id": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+            "dir": 1,
+            "name": "fixture",
+            "guard": {
+              "risk": "SAFE",
+              "delta": 0.5,
+              "state": "SAFE",
+              "reason": "available",
+              "boundary": null,
+              "distance": null,
+              "velocity": 30,
+              "direction": 1,
+              "lookahead": 5,
+              "probeKind": null,
+              "intervened": false,
+              "probeDelta": null,
+              "leadingExtent": null,
+              "requestedDelta": 0.5,
+              "requestedSpeed": 20,
+              "protectionInset": null,
+              "stoppingDistance": 4.5
+            },
+            "speed": 20,
+            "lights": false,
+            "journey": {
+              "travel": 12,
+              "position": 120,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 120,
+              "edge": "T47",
+              "heading": 1
+            },
+            "modelKey": "steam",
+            "odometer": 12,
+            "velocity": 30,
+            "consistId": "10000000-0000-4000-8000-0000000000ca",
+            "resetSeed": {
+              "s": 80,
+              "cars": 0,
+              "edge": "T47",
+              "loop": 2,
+              "fraction": null
+            },
+            "nativeName": "fixture",
+            "description": "fixture",
+            "runtimeSlot": 0,
+            "routeContext": {
+              "laps": 0,
+              "loop": 2,
+              "mode": "yard",
+              "section": "T47",
+              "previousLane": 2
+            },
+            "requestedSpeed": 20,
+            "nativeDescription": "fixture"
+          }
+        ],
+        "stateId": "ce394ec0-fc27-56f8-9362-94fddd3430ff",
+        "consists": [
+          {
+            "id": "10000000-0000-4000-8000-0000000000ca",
+            "name": "fixture",
+            "members": [
+              {
+                "itemId": "10000000-0000-4000-8000-0000000000c9",
+                "orientation": 1
+              }
+            ]
+          }
+        ],
+        "layoutId": "10000000-0000-4000-8000-000000000004",
+        "missions": {
+          "changes": 0,
+          "selected": 0,
+          "didAttach": false,
+          "didDetach": false,
+          "transferred": false,
+          "visitedRunaround": false
+        },
+        "looseStock": [
+          {
+            "itemId": "10000000-0000-4000-8000-0000000000cc",
+            "journey": {
+              "travel": 0,
+              "position": 220,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 220,
+              "edge": "T47",
+              "heading": 1
+            },
+            "animationDistanceMm": 0
+          }
+        ],
+        "workspaceId": "10000000-0000-4000-8000-000000000002",
+        "resumePolicy": "STOPPED",
+        "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schemaVersion": 1,
+        "engineRevision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+        "inventoryStorage": []
+      },
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 1,
+      "saved_at": "2026-11-04T18:22:49.259954+00:00",
+      "layout_id": "10000000-0000-4000-8000-000000000004",
+      "asset_refs": [
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-0000000000c8",
+          "revision": "synthetic-fixture-only"
+        },
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-0000000000cb",
+          "revision": "synthetic-fixture-only"
+        }
+      ],
+      "state_digest": "81bcef98911f007579e87b7e04393261a851ac97d6ef54fed85c1f28a80fda4d",
+      "workspace_id": "10000000-0000-4000-8000-000000000002",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000002",
+      "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "payload_digest": "4234edc219464b2619ab86fb7b884e25ee9c96c51258e8b2fb58f907cdf1bf47",
+      "engine_revision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+      "snapshot_schema": 1,
+      "canonical_version": "jcs-profile-v1"
+    },
+    {
+      "id": "bb7c006e-0a6b-40b9-9bd8-854646af2489",
+      "payload": {
+        "ui": {
+          "day": 0,
+          "camera": {
+            "fov": 35,
+            "zoom": 1,
+            "preset": "overview",
+            "target": [
+              834,
+              0,
+              474
+            ],
+            "position": [
+              1664,
+              1150,
+              1694
+            ]
+          },
+          "bellMuted": false,
+          "qualityMode": "auto",
+          "consoleSlots": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "hudMinimized": false,
+          "recentTrainIds": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "selectedTrainId": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+          "rollingModelMode": "native"
+        },
+        "time": {
+          "tickCount": 720,
+          "wasPaused": false,
+          "stepSeconds": 0.016666666666666666,
+          "accumulatorSeconds": 0.001
+        },
+        "items": [
+          {
+            "id": "10000000-0000-4000-8000-0000000000c9",
+            "modelId": "10000000-0000-4000-8000-0000000000c8",
+            "nativeKind": "steam",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-0000000000c8",
+            "nativeModelRevision": "synthetic-fixture-only"
+          },
+          {
+            "id": "10000000-0000-4000-8000-0000000000cc",
+            "modelId": "10000000-0000-4000-8000-0000000000cb",
+            "nativeKind": "closed",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-0000000000cb",
+            "nativeModelRevision": "synthetic-fixture-only"
+          }
+        ],
+        "layout": {
+          "switches": {
+            "Y-2": false,
+            "Y-3": false,
+            "Y-4": false,
+            "WX-A": false,
+            "WX-B": false,
+            "Y-IN": false,
+            "Y-R1": false,
+            "Y-R2": false
+          }
+        },
+        "models": [
+          {
+            "id": "10000000-0000-4000-8000-0000000000c8",
+            "kind": "locomotive",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -67.9,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 49.6,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "steam",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          },
+          {
+            "id": "10000000-0000-4000-8000-0000000000cb",
+            "kind": "wagon",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -10,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 10,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "closed",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          }
+        ],
+        "trains": [
+          {
+            "id": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+            "dir": 1,
+            "name": "fixture",
+            "guard": {
+              "risk": "SAFE",
+              "delta": 0.5,
+              "state": "SAFE",
+              "reason": "available",
+              "boundary": null,
+              "distance": null,
+              "velocity": 30,
+              "direction": 1,
+              "lookahead": 5,
+              "probeKind": null,
+              "intervened": false,
+              "probeDelta": null,
+              "leadingExtent": null,
+              "requestedDelta": 0.5,
+              "requestedSpeed": 20,
+              "protectionInset": null,
+              "stoppingDistance": 4.5
+            },
+            "speed": 20,
+            "lights": false,
+            "journey": {
+              "travel": 12,
+              "position": 120,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 120,
+              "edge": "T47",
+              "heading": 1
+            },
+            "modelKey": "steam",
+            "odometer": 12,
+            "velocity": 30,
+            "consistId": "10000000-0000-4000-8000-0000000000ca",
+            "resetSeed": {
+              "s": 80,
+              "cars": 0,
+              "edge": "T47",
+              "loop": 2,
+              "fraction": null
+            },
+            "nativeName": "fixture",
+            "description": "fixture",
+            "runtimeSlot": 0,
+            "routeContext": {
+              "laps": 0,
+              "loop": 2,
+              "mode": "yard",
+              "section": "T47",
+              "previousLane": 2
+            },
+            "requestedSpeed": 20,
+            "nativeDescription": "fixture"
+          }
+        ],
+        "stateId": "ce394ec0-fc27-56f8-9362-94fddd3430ff",
+        "consists": [
+          {
+            "id": "10000000-0000-4000-8000-0000000000ca",
+            "name": "fixture",
+            "members": [
+              {
+                "itemId": "10000000-0000-4000-8000-0000000000c9",
+                "orientation": 1
+              }
+            ]
+          }
+        ],
+        "layoutId": "10000000-0000-4000-8000-000000000004",
+        "missions": {
+          "changes": 0,
+          "selected": 0,
+          "didAttach": false,
+          "didDetach": false,
+          "transferred": false,
+          "visitedRunaround": false
+        },
+        "looseStock": [
+          {
+            "itemId": "10000000-0000-4000-8000-0000000000cc",
+            "journey": {
+              "travel": 0,
+              "position": 220,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 220,
+              "edge": "T47",
+              "heading": 1
+            },
+            "animationDistanceMm": 0
+          }
+        ],
+        "workspaceId": "10000000-0000-4000-8000-000000000002",
+        "resumePolicy": "STOPPED",
+        "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schemaVersion": 1,
+        "engineRevision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+        "inventoryStorage": []
+      },
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 2,
+      "saved_at": "2026-11-04T18:24:13.434735+00:00",
+      "layout_id": "10000000-0000-4000-8000-000000000004",
+      "asset_refs": [
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-0000000000c8",
+          "revision": "synthetic-fixture-only"
+        },
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-0000000000cb",
+          "revision": "synthetic-fixture-only"
+        }
+      ],
+      "state_digest": "81bcef98911f007579e87b7e04393261a851ac97d6ef54fed85c1f28a80fda4d",
+      "workspace_id": "10000000-0000-4000-8000-000000000002",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000002",
+      "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "payload_digest": "2546e0acec4ef2e1368d4fcb029e603a238c8bc880865e2bc84c111c1730ac7b",
+      "engine_revision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+      "snapshot_schema": 1,
+      "canonical_version": "jcs-profile-v1"
+    },
+    {
+      "id": "e092cdc3-0c91-46cd-8028-2ebd1c73a681",
+      "payload": {
+        "ui": {
+          "day": 0,
+          "camera": {
+            "fov": 35,
+            "zoom": 1,
+            "preset": "overview",
+            "target": [
+              834,
+              0,
+              474
+            ],
+            "position": [
+              1664,
+              1150,
+              1694
+            ]
+          },
+          "bellMuted": false,
+          "qualityMode": "auto",
+          "consoleSlots": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "hudMinimized": false,
+          "recentTrainIds": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "selectedTrainId": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+          "rollingModelMode": "native"
+        },
+        "time": {
+          "tickCount": 720,
+          "wasPaused": false,
+          "stepSeconds": 0.016666666666666666,
+          "accumulatorSeconds": 0.001
+        },
+        "items": [
+          {
+            "id": "10000000-0000-4000-8000-000000000065",
+            "modelId": "10000000-0000-4000-8000-000000000064",
+            "nativeKind": "steam",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000064",
+            "nativeModelRevision": "synthetic-fixture-only"
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000068",
+            "modelId": "10000000-0000-4000-8000-000000000067",
+            "nativeKind": "closed",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000067",
+            "nativeModelRevision": "synthetic-fixture-only"
+          }
+        ],
+        "layout": {
+          "switches": {
+            "Y-2": false,
+            "Y-3": false,
+            "Y-4": false,
+            "WX-A": false,
+            "WX-B": false,
+            "Y-IN": false,
+            "Y-R1": false,
+            "Y-R2": false
+          }
+        },
+        "models": [
+          {
+            "id": "10000000-0000-4000-8000-000000000064",
+            "kind": "locomotive",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -67.9,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 49.6,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "steam",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000067",
+            "kind": "wagon",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -10,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 10,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "closed",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          }
+        ],
+        "trains": [
+          {
+            "id": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+            "dir": 1,
+            "name": "fixture",
+            "guard": {
+              "risk": "SAFE",
+              "delta": 0.5,
+              "state": "SAFE",
+              "reason": "available",
+              "boundary": null,
+              "distance": null,
+              "velocity": 30,
+              "direction": 1,
+              "lookahead": 5,
+              "probeKind": null,
+              "intervened": false,
+              "probeDelta": null,
+              "leadingExtent": null,
+              "requestedDelta": 0.5,
+              "requestedSpeed": 20,
+              "protectionInset": null,
+              "stoppingDistance": 4.5
+            },
+            "speed": 20,
+            "lights": false,
+            "journey": {
+              "travel": 12,
+              "position": 120,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 120,
+              "edge": "T47",
+              "heading": 1
+            },
+            "modelKey": "steam",
+            "odometer": 12,
+            "velocity": 30,
+            "consistId": "10000000-0000-4000-8000-000000000066",
+            "resetSeed": {
+              "s": 80,
+              "cars": 0,
+              "edge": "T47",
+              "loop": 2,
+              "fraction": null
+            },
+            "nativeName": "fixture",
+            "description": "fixture",
+            "runtimeSlot": 0,
+            "routeContext": {
+              "laps": 0,
+              "loop": 2,
+              "mode": "yard",
+              "section": "T47",
+              "previousLane": 2
+            },
+            "requestedSpeed": 20,
+            "nativeDescription": "fixture"
+          }
+        ],
+        "stateId": "ce394ec0-fc27-56f8-9362-94fddd3430ff",
+        "consists": [
+          {
+            "id": "10000000-0000-4000-8000-000000000066",
+            "name": "fixture",
+            "members": [
+              {
+                "itemId": "10000000-0000-4000-8000-000000000065",
+                "orientation": 1
+              }
+            ]
+          }
+        ],
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "missions": {
+          "changes": 0,
+          "selected": 0,
+          "didAttach": false,
+          "didDetach": false,
+          "transferred": false,
+          "visitedRunaround": false
+        },
+        "looseStock": [
+          {
+            "itemId": "10000000-0000-4000-8000-000000000068",
+            "journey": {
+              "travel": 0,
+              "position": 220,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 220,
+              "edge": "T47",
+              "heading": 1
+            },
+            "animationDistanceMm": 0
+          }
+        ],
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "resumePolicy": "STOPPED",
+        "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schemaVersion": 1,
+        "engineRevision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+        "inventoryStorage": []
+      },
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 3,
+      "saved_at": "2026-11-04T18:23:50.238773+00:00",
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "asset_refs": [
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000064",
+          "revision": "synthetic-fixture-only"
+        },
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000067",
+          "revision": "synthetic-fixture-only"
+        }
+      ],
+      "state_digest": "e7bdbc2c0beb83134a110155d33ed61299e767099db1bd4e1d64cf1523220a5b",
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "payload_digest": "2cc17a3486d419d21b13a2bc2d69c95d04b6d002bc2596526633def48fec1ae4",
+      "engine_revision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+      "snapshot_schema": 1,
+      "canonical_version": "jcs-profile-v1"
+    },
+    {
+      "id": "ed4d3f41-60a6-43ad-8f15-1ca7c12caad1",
+      "payload": {
+        "ui": {
+          "day": 0,
+          "camera": {
+            "fov": 35,
+            "zoom": 1,
+            "preset": "overview",
+            "target": [
+              834,
+              0,
+              474
+            ],
+            "position": [
+              1664,
+              1150,
+              1694
+            ]
+          },
+          "bellMuted": false,
+          "qualityMode": "auto",
+          "consoleSlots": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "hudMinimized": false,
+          "recentTrainIds": [
+            "94c863bd-5a38-530f-a4e5-a9b6d0e812f8"
+          ],
+          "selectedTrainId": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+          "rollingModelMode": "native"
+        },
+        "time": {
+          "tickCount": 720,
+          "wasPaused": false,
+          "stepSeconds": 0.016666666666666666,
+          "accumulatorSeconds": 0.001
+        },
+        "items": [
+          {
+            "id": "10000000-0000-4000-8000-000000000065",
+            "modelId": "10000000-0000-4000-8000-000000000064",
+            "nativeKind": "steam",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000064",
+            "nativeModelRevision": "synthetic-fixture-only"
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000068",
+            "modelId": "10000000-0000-4000-8000-000000000067",
+            "nativeKind": "closed",
+            "displayName": "fixture",
+            "orientation": 1,
+            "modelRevision": "synthetic-fixture-only",
+            "nativeModelId": "10000000-0000-4000-8000-000000000067",
+            "nativeModelRevision": "synthetic-fixture-only"
+          }
+        ],
+        "layout": {
+          "switches": {
+            "Y-2": false,
+            "Y-3": false,
+            "Y-4": false,
+            "WX-A": false,
+            "WX-B": false,
+            "Y-IN": false,
+            "Y-R1": false,
+            "Y-R2": false
+          }
+        },
+        "models": [
+          {
+            "id": "10000000-0000-4000-8000-000000000064",
+            "kind": "locomotive",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -67.9,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 49.6,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "steam",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000067",
+            "kind": "wagon",
+            "asset": {
+              "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+              "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+              "revision": "fixture"
+            },
+            "couplers": {
+              "back": {
+                "x": -10,
+                "y": 8,
+                "z": 0
+              },
+              "front": {
+                "x": 10,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "revision": "synthetic-fixture-only",
+            "runtimeKey": "closed",
+            "couplingMode": "explicit",
+            "representation": "native",
+            "legacyRearExtentMm": 0
+          }
+        ],
+        "trains": [
+          {
+            "id": "94c863bd-5a38-530f-a4e5-a9b6d0e812f8",
+            "dir": 1,
+            "name": "fixture",
+            "guard": {
+              "risk": "SAFE",
+              "delta": 0.5,
+              "state": "SAFE",
+              "reason": "available",
+              "boundary": null,
+              "distance": null,
+              "velocity": 30,
+              "direction": 1,
+              "lookahead": 5,
+              "probeKind": null,
+              "intervened": false,
+              "probeDelta": null,
+              "leadingExtent": null,
+              "requestedDelta": 0.5,
+              "requestedSpeed": 20,
+              "protectionInset": null,
+              "stoppingDistance": 4.5
+            },
+            "speed": 20,
+            "lights": false,
+            "journey": {
+              "travel": 12,
+              "position": 120,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 120,
+              "edge": "T47",
+              "heading": 1
+            },
+            "modelKey": "steam",
+            "odometer": 12,
+            "velocity": 30,
+            "consistId": "10000000-0000-4000-8000-000000000066",
+            "resetSeed": {
+              "s": 80,
+              "cars": 0,
+              "edge": "T47",
+              "loop": 2,
+              "fraction": null
+            },
+            "nativeName": "fixture",
+            "description": "fixture",
+            "runtimeSlot": 0,
+            "routeContext": {
+              "laps": 0,
+              "loop": 2,
+              "mode": "yard",
+              "section": "T47",
+              "previousLane": 2
+            },
+            "requestedSpeed": 20,
+            "nativeDescription": "fixture"
+          }
+        ],
+        "stateId": "ce394ec0-fc27-56f8-9362-94fddd3430ff",
+        "consists": [
+          {
+            "id": "10000000-0000-4000-8000-000000000066",
+            "name": "fixture",
+            "members": [
+              {
+                "itemId": "10000000-0000-4000-8000-000000000065",
+                "orientation": 1
+              }
+            ]
+          }
+        ],
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "missions": {
+          "changes": 0,
+          "selected": 0,
+          "didAttach": false,
+          "didDetach": false,
+          "transferred": false,
+          "visitedRunaround": false
+        },
+        "looseStock": [
+          {
+            "itemId": "10000000-0000-4000-8000-000000000068",
+            "journey": {
+              "travel": 0,
+              "position": 220,
+              "segments": [
+                {
+                  "id": "T47",
+                  "end": 248,
+                  "sign": 1,
+                  "start": 0
+                }
+              ],
+              "lastBlock": null
+            },
+            "location": {
+              "s": 220,
+              "edge": "T47",
+              "heading": 1
+            },
+            "animationDistanceMm": 0
+          }
+        ],
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "resumePolicy": "STOPPED",
+        "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schemaVersion": 1,
+        "engineRevision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+        "inventoryStorage": []
+      },
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 5,
+      "saved_at": "2026-11-04T18:24:03.998561+00:00",
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "asset_refs": [
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000064",
+          "revision": "synthetic-fixture-only"
+        },
+        {
+          "asset": {
+            "id": "9929ed64-4aae-5562-ab90-6cebf3d562dd",
+            "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "revision": "fixture"
+          },
+          "modelId": "10000000-0000-4000-8000-000000000067",
+          "revision": "synthetic-fixture-only"
+        }
+      ],
+      "state_digest": "e7bdbc2c0beb83134a110155d33ed61299e767099db1bd4e1d64cf1523220a5b",
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "payload_digest": "14ccc8b55f16d6cf3824eb0aeffe6b3fd7a6596c4a8e272e594a7a84b32c1198",
+      "engine_revision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+      "snapshot_schema": 1,
+      "canonical_version": "jcs-profile-v1"
+    }
+  ],
+  "public.operation_receipts": [
+    {
+      "result": {
+        "actor": "10000000-0000-4000-8000-000000000006",
+        "digest": "32164f0f075ec2a746092924b1852244dd66a576ff45fc0955c5a2ea2469652f",
+        "revision": "1",
+        "request_id": "72d13bbc-8f1e-4a29-ba45-5c99b27124a9",
+        "snapshotId": "3ed924e2-9c13-4f11-84e6-c4d697f8f33e",
+        "committedAt": "2026-11-04T18:22:49.017656+00:00",
+        "schemaVersion": 1
+      },
+      "op_type": "SaveCheckpoint",
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 1,
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "created_at": "2026-11-04T18:22:49.010429+00:00",
+      "receipt_id": "0abf849a-b476-482b-96ad-04188fa2dd28",
+      "request_id": "72d13bbc-8f1e-4a29-ba45-5c99b27124a9",
+      "snapshot_id": "3ed924e2-9c13-4f11-84e6-c4d697f8f33e",
+      "auth_context": null,
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "payload_digest": "32164f0f075ec2a746092924b1852244dd66a576ff45fc0955c5a2ea2469652f",
+      "receipt_version": 1,
+      "request_context": {
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "operation": "SaveCheckpoint",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "expectedRevision": "0",
+        "recoverySourceRevision": null
+      }
+    },
+    {
+      "result": {
+        "actor": "10000000-0000-4000-8000-000000000006",
+        "digest": "331d059e2048f84a74cf2ea0cd927db28074853361edcee6afa1cede11c33227",
+        "revision": "2",
+        "request_id": "4b6b633c-9924-4e40-8415-b00e02895cb7",
+        "snapshotId": "8af8fa83-8b15-41e3-8b3b-3f1df76e1baf",
+        "committedAt": "2026-11-04T18:22:49.110224+00:00",
+        "schemaVersion": 1
+      },
+      "op_type": "SaveCheckpoint",
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 2,
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "created_at": "2026-11-04T18:22:49.103228+00:00",
+      "receipt_id": "025a111c-c355-4e15-b39b-d673705ec0f2",
+      "request_id": "4b6b633c-9924-4e40-8415-b00e02895cb7",
+      "snapshot_id": "8af8fa83-8b15-41e3-8b3b-3f1df76e1baf",
+      "auth_context": null,
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "payload_digest": "331d059e2048f84a74cf2ea0cd927db28074853361edcee6afa1cede11c33227",
+      "receipt_version": 1,
+      "request_context": {
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "operation": "SaveCheckpoint",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "expectedRevision": "1",
+        "recoverySourceRevision": null
+      }
+    },
+    {
+      "result": {
+        "actor": "10000000-0000-4000-8000-000000000009",
+        "digest": "4234edc219464b2619ab86fb7b884e25ee9c96c51258e8b2fb58f907cdf1bf47",
+        "revision": "1",
+        "request_id": "bbbb48db-4fd2-47f8-a373-ffc7090768fe",
+        "snapshotId": "aa4e50b3-a363-497d-ba10-63924ec2f349",
+        "committedAt": "2026-11-04T18:22:49.266874+00:00",
+        "schemaVersion": 1
+      },
+      "op_type": "SaveCheckpoint",
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 1,
+      "layout_id": "10000000-0000-4000-8000-000000000004",
+      "created_at": "2026-11-04T18:22:49.259954+00:00",
+      "receipt_id": "05c3d6aa-42f9-411d-9c17-f3d52b5c6af0",
+      "request_id": "bbbb48db-4fd2-47f8-a373-ffc7090768fe",
+      "snapshot_id": "aa4e50b3-a363-497d-ba10-63924ec2f349",
+      "auth_context": null,
+      "workspace_id": "10000000-0000-4000-8000-000000000002",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000002",
+      "payload_digest": "4234edc219464b2619ab86fb7b884e25ee9c96c51258e8b2fb58f907cdf1bf47",
+      "receipt_version": 1,
+      "request_context": {
+        "layoutId": "10000000-0000-4000-8000-000000000004",
+        "operation": "SaveCheckpoint",
+        "workspaceId": "10000000-0000-4000-8000-000000000002",
+        "expectedRevision": "0",
+        "recoverySourceRevision": null
+      }
+    },
+    {
+      "result": {
+        "auth": {
+          "keyVersion": 1,
+          "deviceEpoch": "1",
+          "workspaceEpoch": "1"
+        },
+        "actor": "10000000-0000-4000-8000-000000000006",
+        "digest": "14ccc8b55f16d6cf3824eb0aeffe6b3fd7a6596c4a8e272e594a7a84b32c1198",
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "revision": "5",
+        "operation": "RecoverRevision",
+        "request_id": "4cad07ea-7fd8-4cc0-92f8-3449398bd4ed",
+        "snapshotId": "ed4d3f41-60a6-43ad-8f15-1ca7c12caad1",
+        "committedAt": "2026-11-04T18:24:06.795613+00:00",
+        "stateDigest": "e7bdbc2c0beb83134a110155d33ed61299e767099db1bd4e1d64cf1523220a5b",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "schemaVersion": 1,
+        "receiptVersion": 2,
+        "canonicalVersion": "jcs-profile-v1",
+        "expectedRevision": "4",
+        "recoverySourceRevision": "1"
+      },
+      "op_type": "RecoverRevision",
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 5,
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "created_at": "2026-11-04T18:24:03.998561+00:00",
+      "receipt_id": "2c5efbcb-fa99-4059-8712-1e1cb15a43eb",
+      "request_id": "4cad07ea-7fd8-4cc0-92f8-3449398bd4ed",
+      "snapshot_id": "ed4d3f41-60a6-43ad-8f15-1ca7c12caad1",
+      "auth_context": {
+        "keyVersion": 1,
+        "deviceEpoch": "1",
+        "workspaceEpoch": "1"
+      },
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "payload_digest": "14ccc8b55f16d6cf3824eb0aeffe6b3fd7a6596c4a8e272e594a7a84b32c1198",
+      "receipt_version": 2,
+      "request_context": {
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "operation": "RecoverRevision",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "expectedRevision": "4",
+        "recoverySourceRevision": "1"
+      }
+    },
+    {
+      "result": {
+        "auth": {
+          "keyVersion": 1,
+          "deviceEpoch": "1",
+          "workspaceEpoch": "1"
+        },
+        "actor": "10000000-0000-4000-8000-000000000006",
+        "digest": "1ed269bea28c989175b4b1955a010fafdd3812e7973f4d8870d2a1a3e57c5b79",
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "revision": "6",
+        "operation": "SaveCheckpoint",
+        "request_id": "ab3ba5b2-b365-4c2c-a82c-482f1dbe4970",
+        "snapshotId": "28c7978e-97b7-41fd-85f1-649e12f3584e",
+        "committedAt": "2026-11-04T18:24:12.673605+00:00",
+        "stateDigest": "e7bdbc2c0beb83134a110155d33ed61299e767099db1bd4e1d64cf1523220a5b",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "schemaVersion": 1,
+        "receiptVersion": 2,
+        "canonicalVersion": "jcs-profile-v1",
+        "expectedRevision": "5",
+        "recoverySourceRevision": null
+      },
+      "op_type": "SaveCheckpoint",
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 6,
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "created_at": "2026-11-04T18:24:12.662491+00:00",
+      "receipt_id": "fbd5eb50-17d6-4348-8cf4-1534485aadfa",
+      "request_id": "ab3ba5b2-b365-4c2c-a82c-482f1dbe4970",
+      "snapshot_id": "28c7978e-97b7-41fd-85f1-649e12f3584e",
+      "auth_context": {
+        "keyVersion": 1,
+        "deviceEpoch": "1",
+        "workspaceEpoch": "1"
+      },
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "payload_digest": "1ed269bea28c989175b4b1955a010fafdd3812e7973f4d8870d2a1a3e57c5b79",
+      "receipt_version": 2,
+      "request_context": {
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "operation": "SaveCheckpoint",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "expectedRevision": "5",
+        "recoverySourceRevision": null
+      }
+    },
+    {
+      "result": {
+        "auth": {
+          "keyVersion": 1,
+          "deviceEpoch": "1",
+          "workspaceEpoch": "1"
+        },
+        "actor": "10000000-0000-4000-8000-000000000006",
+        "digest": "2cc17a3486d419d21b13a2bc2d69c95d04b6d002bc2596526633def48fec1ae4",
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "revision": "3",
+        "operation": "RecoverRevision",
+        "request_id": "fc00fe63-7ee3-45bb-9cf3-7d7f7aaa4291",
+        "snapshotId": "e092cdc3-0c91-46cd-8028-2ebd1c73a681",
+        "committedAt": "2026-11-04T18:23:50.254442+00:00",
+        "stateDigest": "e7bdbc2c0beb83134a110155d33ed61299e767099db1bd4e1d64cf1523220a5b",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "schemaVersion": 1,
+        "receiptVersion": 2,
+        "canonicalVersion": "jcs-profile-v1",
+        "expectedRevision": "2",
+        "recoverySourceRevision": "1"
+      },
+      "op_type": "RecoverRevision",
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 3,
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "created_at": "2026-11-04T18:23:50.238773+00:00",
+      "receipt_id": "31a44625-3f25-4eea-a358-bf677e95a49a",
+      "request_id": "fc00fe63-7ee3-45bb-9cf3-7d7f7aaa4291",
+      "snapshot_id": "e092cdc3-0c91-46cd-8028-2ebd1c73a681",
+      "auth_context": {
+        "keyVersion": 1,
+        "deviceEpoch": "1",
+        "workspaceEpoch": "1"
+      },
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "payload_digest": "2cc17a3486d419d21b13a2bc2d69c95d04b6d002bc2596526633def48fec1ae4",
+      "receipt_version": 2,
+      "request_context": {
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "operation": "RecoverRevision",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "expectedRevision": "2",
+        "recoverySourceRevision": "1"
+      }
+    },
+    {
+      "result": {
+        "auth": {
+          "keyVersion": 1,
+          "deviceEpoch": "1",
+          "workspaceEpoch": "1"
+        },
+        "actor": "10000000-0000-4000-8000-000000000006",
+        "digest": "fdb82474f2c68c3076660e29b514a725ec7f30076a1a0de4ce69aa8139d79ae0",
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "revision": "4",
+        "operation": "RecoverRevision",
+        "request_id": "f92f78ae-cfec-418c-b8dc-7528db8f6ff5",
+        "snapshotId": "601630bb-a1f7-4e12-9815-dd7062b3714c",
+        "committedAt": "2026-11-04T18:24:02.979779+00:00",
+        "stateDigest": "e7bdbc2c0beb83134a110155d33ed61299e767099db1bd4e1d64cf1523220a5b",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "schemaVersion": 1,
+        "receiptVersion": 2,
+        "canonicalVersion": "jcs-profile-v1",
+        "expectedRevision": "3",
+        "recoverySourceRevision": "1"
+      },
+      "op_type": "RecoverRevision",
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 4,
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "created_at": "2026-11-04T18:24:00.169325+00:00",
+      "receipt_id": "196f00ad-4eec-4d27-923c-859f54c45f46",
+      "request_id": "f92f78ae-cfec-418c-b8dc-7528db8f6ff5",
+      "snapshot_id": "601630bb-a1f7-4e12-9815-dd7062b3714c",
+      "auth_context": {
+        "keyVersion": 1,
+        "deviceEpoch": "1",
+        "workspaceEpoch": "1"
+      },
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "payload_digest": "fdb82474f2c68c3076660e29b514a725ec7f30076a1a0de4ce69aa8139d79ae0",
+      "receipt_version": 2,
+      "request_context": {
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "operation": "RecoverRevision",
+        "workspaceId": "10000000-0000-4000-8000-000000000001",
+        "expectedRevision": "3",
+        "recoverySourceRevision": "1"
+      }
+    },
+    {
+      "result": {
+        "auth": {
+          "keyVersion": 1,
+          "deviceEpoch": "1",
+          "workspaceEpoch": "1"
+        },
+        "actor": "10000000-0000-4000-8000-000000000009",
+        "digest": "2546e0acec4ef2e1368d4fcb029e603a238c8bc880865e2bc84c111c1730ac7b",
+        "layoutId": "10000000-0000-4000-8000-000000000004",
+        "revision": "2",
+        "operation": "SaveCheckpoint",
+        "request_id": "ab3ba5b2-b365-4c2c-a82c-482f1dbe4970",
+        "snapshotId": "bb7c006e-0a6b-40b9-9bd8-854646af2489",
+        "committedAt": "2026-11-04T18:24:13.446093+00:00",
+        "stateDigest": "81bcef98911f007579e87b7e04393261a851ac97d6ef54fed85c1f28a80fda4d",
+        "workspaceId": "10000000-0000-4000-8000-000000000002",
+        "schemaVersion": 1,
+        "receiptVersion": 2,
+        "canonicalVersion": "jcs-profile-v1",
+        "expectedRevision": "1",
+        "recoverySourceRevision": null
+      },
+      "op_type": "SaveCheckpoint",
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": 2,
+      "layout_id": "10000000-0000-4000-8000-000000000004",
+      "created_at": "2026-11-04T18:24:13.434735+00:00",
+      "receipt_id": "2ea18c6a-8665-4c17-95f5-4cf6b4404782",
+      "request_id": "ab3ba5b2-b365-4c2c-a82c-482f1dbe4970",
+      "snapshot_id": "bb7c006e-0a6b-40b9-9bd8-854646af2489",
+      "auth_context": {
+        "keyVersion": 1,
+        "deviceEpoch": "1",
+        "workspaceEpoch": "1"
+      },
+      "workspace_id": "10000000-0000-4000-8000-000000000002",
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000002",
+      "payload_digest": "2546e0acec4ef2e1368d4fcb029e603a238c8bc880865e2bc84c111c1730ac7b",
+      "receipt_version": 2,
+      "request_context": {
+        "layoutId": "10000000-0000-4000-8000-000000000004",
+        "operation": "SaveCheckpoint",
+        "workspaceId": "10000000-0000-4000-8000-000000000002",
+        "expectedRevision": "1",
+        "recoverySourceRevision": null
+      }
+    },
+    {
+      "result": {},
+      "op_type": "synthetic-save",
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "revision": null,
+      "layout_id": null,
+      "created_at": "2026-11-04T18:22:45.661422+00:00",
+      "receipt_id": "d34c64d3-aed9-48dd-a551-d0d6888c4cc0",
+      "request_id": "00000000-0000-4000-8000-000000000060",
+      "snapshot_id": null,
+      "auth_context": null,
+      "workspace_id": null,
+      "ownership_key": "legacy:00000000-0000-4000-8000-000000000001",
+      "payload_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "receipt_version": null,
+      "request_context": null
+    }
+  ],
+  "serien_capability.session_heads": [
+    {
+      "revision": 2,
+      "layout_id": "10000000-0000-4000-8000-000000000004",
+      "snapshot_id": "bb7c006e-0a6b-40b9-9bd8-854646af2489",
+      "workspace_id": "10000000-0000-4000-8000-000000000002",
+      "payload_digest": "2546e0acec4ef2e1368d4fcb029e603a238c8bc880865e2bc84c111c1730ac7b",
+      "receipt_request_id": "ab3ba5b2-b365-4c2c-a82c-482f1dbe4970"
+    },
+    {
+      "revision": 6,
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "snapshot_id": "28c7978e-97b7-41fd-85f1-649e12f3584e",
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "payload_digest": "1ed269bea28c989175b4b1955a010fafdd3812e7973f4d8870d2a1a3e57c5b79",
+      "receipt_request_id": "ab3ba5b2-b365-4c2c-a82c-482f1dbe4970"
+    }
+  ],
+  "public.layout_placements": [
+    {
+      "s_mm": 120.0,
+      "edge_id": "T47",
+      "heading": 1,
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "layout_id": "00000000-0000-4000-8000-000000000040",
+      "consist_id": "00000000-0000-4000-8000-000000000030",
+      "updated_at": "2026-11-04T18:22:45.660126+00:00",
+      "workspace_id": null,
+      "journey_state": {},
+      "ownership_key": "legacy:00000000-0000-4000-8000-000000000001",
+      "state_version": 0
+    },
+    {
+      "s_mm": 120.0,
+      "edge_id": "T47",
+      "heading": 1,
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "consist_id": "10000000-0000-4000-8000-000000000066",
+      "updated_at": "2026-11-04T18:24:12.662491+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "journey_state": {
+        "travel": 12,
+        "position": 120,
+        "segments": [
+          {
+            "id": "T47",
+            "end": 248,
+            "sign": 1,
+            "start": 0
+          }
+        ],
+        "lastBlock": null
+      },
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "state_version": 6
+    },
+    {
+      "s_mm": 120.0,
+      "edge_id": "T47",
+      "heading": 1,
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "layout_id": "10000000-0000-4000-8000-000000000004",
+      "consist_id": "10000000-0000-4000-8000-0000000000ca",
+      "updated_at": "2026-11-04T18:24:13.434735+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000002",
+      "journey_state": {
+        "travel": 12,
+        "position": 120,
+        "segments": [
+          {
+            "id": "T47",
+            "end": 248,
+            "sign": 1,
+            "start": 0
+          }
+        ],
+        "lastBlock": null
+      },
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000002",
+      "state_version": 2
+    }
+  ],
+  "public.loose_stock_placements": [
+    {
+      "s_mm": 200.0,
+      "edge_id": "T47",
+      "heading": 1,
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "layout_id": "00000000-0000-4000-8000-000000000040",
+      "updated_at": "2026-11-04T18:22:45.660551+00:00",
+      "workspace_id": null,
+      "journey_state": null,
+      "ownership_key": "legacy:00000000-0000-4000-8000-000000000001",
+      "state_version": null,
+      "stock_item_id": "00000000-0000-4000-8000-000000000021"
+    },
+    {
+      "s_mm": 220.0,
+      "edge_id": "T47",
+      "heading": 1,
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "layout_id": "10000000-0000-4000-8000-000000000003",
+      "updated_at": "2026-11-04T18:24:12.662491+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001",
+      "journey_state": {
+        "travel": 0,
+        "position": 220,
+        "segments": [
+          {
+            "id": "T47",
+            "end": 248,
+            "sign": 1,
+            "start": 0
+          }
+        ],
+        "lastBlock": null
+      },
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000001",
+      "state_version": 6,
+      "stock_item_id": "10000000-0000-4000-8000-000000000068"
+    },
+    {
+      "s_mm": 220.0,
+      "edge_id": "T47",
+      "heading": 1,
+      "owner_id": "00000000-0000-4000-8000-000000000001",
+      "layout_id": "10000000-0000-4000-8000-000000000004",
+      "updated_at": "2026-11-04T18:24:13.434735+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000002",
+      "journey_state": {
+        "travel": 0,
+        "position": 220,
+        "segments": [
+          {
+            "id": "T47",
+            "end": 248,
+            "sign": 1,
+            "start": 0
+          }
+        ],
+        "lastBlock": null
+      },
+      "ownership_key": "workspace:10000000-0000-4000-8000-000000000002",
+      "state_version": 2,
+      "stock_item_id": "10000000-0000-4000-8000-0000000000cc"
+    }
+  ]
+}
