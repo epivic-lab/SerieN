@@ -129,3 +129,10 @@ Il committente autorizza la pubblicazione S6 e approva il protocollo permanente 
 Commit funzionale S6: `692013c3605ef93e490f2487be9046baa6b3487c`. Codice, test ed evidenze invariati; risultati documentati sul medesimo runtime (220 Node, 9 Python, build e browser S6/S4/S2/5C PASS), non rieseguiti per questa modifica documentale. Manifest degli artefatti e corrispondenza sorgenti verificati nuovamente. Checkpoint di consegna: commit che aggiunge questa nota; SHA locale/remoto ed esito verificati nella consegna finale. PASS / DELIVERED richiede tale verifica, non costituisce approvazione della Regia.
 
 Review tecnica/artistica PENDING; S7 NON iniziata. Prossima azione unica: attendere approvazione della Regia. Main e deploy richiedono nuova autorizzazione; nessun merge/rebase/reset/deploy previsto.
+
+
+## S6.1 — leggibilità STOP notturno
+
+Autorizzata esclusivamente S6.1 dopo audit S6, baseline remota `ddd874ac3f9f1ec7e689408a6345d2f422659ded`. Modifica locale alle sole proprietà emissive dei materiali rosso/bianco; nessuna nuova luce/texture/geometria né variazione a logica, audio, posa, animazione, scena o plancia. Rendering giorno/notte alla stessa camera: migliora il contrasto, tutti i pixel esterni al cartello identici a S6.
+
+220Node+build+browser S6 PASS; confronto risorse GPU prima/dopo e invarianti documentati nel [rapporto S6.1](evidence/S6/S6.1/REPORT.md). Evidenze S6 precedenti preservate. Hardware GPU e approvazione estetica NOT VERIFIED/PENDING; suite S7 e audit5D non eseguiti. Commit dedicato `fix(turnouts): improve nighttime STOP visibility`; checkpoint fast-forward feature/turnouts e coincidenza SHA verificati nella consegna. Nessun main/merge/deploy. **STOP S6.1; attendere giudizio Regia e autorizzazione al collaudo finale. S7 NON iniziata.**
