@@ -1,0 +1,80 @@
+{
+  "counts": {
+    "layouts": 0,
+    "consists": 0,
+    "stock_items": 0,
+    "stock_models": 0,
+    "consist_members": 0,
+    "layout_segments": 0,
+    "layout_snapshots": 0,
+    "layout_placements": 0,
+    "operation_receipts": 0,
+    "loose_stock_placements": 0
+  },
+  "functions": [
+    {
+      "name": "lock_model_identity",
+      "schema": "serien_internal",
+      "anonExecute": false,
+      "securityDefiner": false,
+      "authenticatedExecute": false
+    },
+    {
+      "name": "check_member_assignment",
+      "schema": "serien_internal",
+      "anonExecute": false,
+      "securityDefiner": false,
+      "authenticatedExecute": false
+    },
+    {
+      "name": "touch_updated_at",
+      "schema": "serien_internal",
+      "anonExecute": false,
+      "securityDefiner": false,
+      "authenticatedExecute": false
+    },
+    {
+      "name": "check_loose_assignment",
+      "schema": "serien_internal",
+      "anonExecute": false,
+      "securityDefiner": false,
+      "authenticatedExecute": false
+    },
+    {
+      "name": "assert_ready_consist",
+      "schema": "serien_internal",
+      "anonExecute": false,
+      "securityDefiner": false,
+      "authenticatedExecute": false
+    },
+    {
+      "name": "check_ready_members",
+      "schema": "serien_internal",
+      "anonExecute": false,
+      "securityDefiner": false,
+      "authenticatedExecute": false
+    },
+    {
+      "name": "check_ready_consist",
+      "schema": "serien_internal",
+      "anonExecute": false,
+      "securityDefiner": false,
+      "authenticatedExecute": false
+    },
+    {
+      "name": "check_placement",
+      "schema": "serien_internal",
+      "anonExecute": false,
+      "securityDefiner": false,
+      "authenticatedExecute": false
+    },
+    {
+      "name": "check_snapshot",
+      "schema": "serien_internal",
+      "anonExecute": false,
+      "securityDefiner": false,
+      "authenticatedExecute": false
+    }
+  ],
+  "postgrestSchemas": null
+}

@@ -1,0 +1,73 @@
+{
+  "metaSchema": "PASS",
+  "syntheticFixture": "PASS; schema only, not railway/catalog validation",
+  "rejectionCases": [
+    {
+      "case": "unsupported version",
+      "result": "PASS"
+    },
+    {
+      "case": "unknown root property",
+      "result": "PASS"
+    },
+    {
+      "case": "missing mandatory Journey history",
+      "result": "PASS"
+    },
+    {
+      "case": "extra ninth switch",
+      "result": "PASS"
+    },
+    {
+      "case": "missing eighth switch",
+      "result": "PASS"
+    },
+    {
+      "case": "nonboolean switch",
+      "result": "PASS"
+    },
+    {
+      "case": "malformed workspace UUID",
+      "result": "PASS"
+    },
+    {
+      "case": "automatic resume",
+      "result": "PASS"
+    },
+    {
+      "case": "clock overflow",
+      "result": "PASS"
+    },
+    {
+      "case": "fifth train",
+      "result": "PASS"
+    },
+    {
+      "case": "seventh consist member",
+      "result": "PASS"
+    },
+    {
+      "case": "fourth console slot",
+      "result": "PASS"
+    },
+    {
+      "case": "invalid orientation",
+      "result": "PASS"
+    },
+    {
+      "case": "arbitrary boundary object",
+      "result": "PASS"
+    },
+    {
+      "case": "extra live Journey network",
+      "result": "PASS"
+    },
+    {
+      "case": "malformed digest",
+      "result": "PASS"
+    }
+  ],
+  "annotatedFields": 151,
+  "resolvedLocalRefs": 27,
+  "limitations": "Cross-record ownership, catalog, rail topology, round-trip and atomicity are future tests P01-P17, not proven by JSON Schema."
+}

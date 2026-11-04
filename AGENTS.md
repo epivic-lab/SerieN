@@ -6,6 +6,10 @@ Repository: `epivic-lab/SerieN`. These rules are permanent; read this file at th
 
 Interactive Turnouts S0–S7, including S6.1, are approved by the Regia in RELEASE R1. `docs/turnouts/FINAL_REPORT.md` is the permanent handoff. The entire `docs/_active/turnouts/` tree remains a non-active historical archive; do not interpret old gates as current authorization. The user explicitly authorizes **only R1** controlled integration from current remote main on `release/turnouts-s7`, normal PR merge after required gates/policies, and the existing GitHub Pages publication with public-site verification. This is a task-specific main/deploy authorization, not a permanent relaxation of the rules below. No Train Management/6A/5E or subsequent phase is authorized. After release STOP for Regia post-release review. See `docs/releases/R1/REPORT.md`.
 
+## Current Train Management gate — 6A.1 only
+
+The commissioning request of 4 November 2026 approves Train Management R0 decisions D01–D08 and authorizes only documentary/architectural 6A.1 on `feature/train-management`. This supersedes the historical post-R1 wait above for this named microphase only. Current contracts and gate: `docs/_active/train-management/STATUS.md`; historical turnouts specs remain inactive. No runtime changes, gateway implementation, DB writes/migrations/Auth/deploy, main integration or 6A.2 are authorized. Finish checks, atomic development-branch checkpoint and independent Regia review, then STOP.
+
 ## Source of truth and scope
 - Work **only in this repository**; never change `first`, `SerieN Control`, Z21 control software, or external projects. SerieN is a browser **simulator**, not a live Z21 controller.
 - Read the actual checkout state (`git status`, branch, HEAD), then `PROGRESS.md` and **only the relevant section** of the current `docs/_active/` spec. Inspect actual code before deciding; a remote README or an old conversation is not the source of truth for unpushed work.

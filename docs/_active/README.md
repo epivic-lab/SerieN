@@ -1,7 +1,7 @@
-# Temporary active macrophase specs
+# Specifiche della macrofase attiva
 
-This directory contains only the **currently active** development macrophase's working reference and status. Read `AGENTS.md` and `PROGRESS.md` before starting.
+Macrofase corrente: **Train Management 6A–6E**. La R0 è approvata secondo la richiesta del 4 novembre 2026; è autorizzata soltanto la **6A.1 documentale**. Leggere prima `AGENTS.md`, `PROGRESS.md` e [il gate corrente](train-management/STATUS.md).
 
-For the turnout phase, use `turnouts/SPEC_v3.md` (working specification) and `turnouts/STATUS.md` (execution gate). The illustrated original PDF may be staged here in S0 when the user supplies the binary file. Do not imply it is already staged.
+Contratti attivi: [6A1_CONTRACT](train-management/6A1_CONTRACT.md), [STATE_SCHEMA](train-management/STATE_SCHEMA.json), [SECURITY_AND_DB_MAPPING](train-management/SECURITY_AND_DB_MAPPING.md). La roadmap non autorizza l'esecuzione delle fasi successive.
 
-At the end of the approved phase, move lasting conclusions to a permanent final report and remove (or explicitly SUPERSEDE) these working specs. Historic documents remain in Git history, so do not store secrets here. Do not auto-start any unapproved phase.
+`turnouts/` rimane archivio storico non attivo: Master Spec, STATUS ed evidenze preservati. Handoff permanente: [FINAL_REPORT](../turnouts/FINAL_REPORT.md) e [R1](../releases/R1/REPORT.md). Nessun merge main o deploy implicito.
