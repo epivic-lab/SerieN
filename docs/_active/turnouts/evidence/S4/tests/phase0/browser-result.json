@@ -1,0 +1,108 @@
+{
+  "result": "PASS",
+  "canonicalStats": {
+    "nodes": 70,
+    "edges": 75,
+    "components": 1,
+    "cycleRank": 6,
+    "terminals": 4
+  },
+  "loopTravelMm": [
+    6269.8125,
+    8938.125,
+    11595.1875
+  ],
+  "loopReverseTravelMm": [
+    6269.8125,
+    8938.125,
+    11595.1875
+  ],
+  "threeConcurrentTrains": true,
+  "independentStop": true,
+  "globalStop": true,
+  "fourthTrainViaProductionUI": true,
+  "hiddenSimulationContinues": true,
+  "canonicalMinimaps": true,
+  "worldAndMapPositions": true,
+  "switchCommandUpdatesHUD": true,
+  "temporaryHighlight": true,
+  "highlightExpiryControlledClock": true,
+  "occupiedSwitchGuard": true,
+  "runaround": {
+    "alternate": true,
+    "toeReversal": true,
+    "main": true,
+    "mainlineReturn": true
+  },
+  "oneWebGLContext": 1,
+  "finalHud": {
+    "site": "WX-A",
+    "controls": [
+      "WX-A"
+    ],
+    "name": "WX310 west",
+    "distance": 2215.9423879495084,
+    "outgoing": {
+      "edge": "WX-A:lower",
+      "end": 0
+    },
+    "destination": "Inner loop",
+    "stop": "misaligned",
+    "uncertain": false,
+    "safety": {
+      "blocked": false,
+      "kind": "unlocked",
+      "message": "No switch operation lock detected"
+    },
+    "highlighted": true,
+    "minimized": false
+  },
+  "actualGLBAndThumbnails": true,
+  "desktop": {
+    "overflow": false,
+    "cards": [
+      467.328125,
+      467.328125,
+      467.34375
+    ],
+    "hudInViewport": true,
+    "hudAwayFromSidebar": true,
+    "contexts": 1
+  },
+  "tablet": {
+    "overflow": false,
+    "cards": [
+      328.65625,
+      328.671875,
+      328.65625
+    ],
+    "hudInViewport": true,
+    "hudAwayFromSidebar": true,
+    "contexts": 1
+  },
+  "tablet-portrait": {
+    "overflow": false,
+    "cards": [
+      243.328125,
+      243.328125,
+      243.328125
+    ],
+    "hudInViewport": true,
+    "hudAwayFromSidebar": true,
+    "contexts": 1
+  },
+  "phone": {
+    "overflow": false,
+    "cards": [
+      320,
+      320,
+      320
+    ],
+    "hudInViewport": true,
+    "hudAwayFromSidebar": true,
+    "contexts": 1
+  },
+  "jsErrors": [],
+  "failedRequests": [],
+  "hardware": "Chromium/SwiftShader software; touch and native tablet GPU performance require physical-device testing"
+}

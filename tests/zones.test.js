@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { createNetwork } from "../src/network.js";
 import { clearance } from "../src/landscape.js";
-import { buildZoneLayout, safeScenicPosition, controlMarkers, FARM, GOODS_OFFICE, VINEYARD } from "../src/zone-layout.js";
+import { buildZoneLayout, safeScenicPosition, FARM, GOODS_OFFICE, VINEYARD } from "../src/zone-layout.js";
 const network = createNetwork();
 const buildings = [{ x: 280, z: 455, w: 75, d: 54 }, { x: 583, z: 449, w: 80, d: 57 }, { x: 750, z: 525, w: 135, d: 40 }, { x: 1033, z: 333, w: 125, d: 80 }, { x: 1165, z: 338, w: 77, d: 58 }, { x: 250, z: 195, w: 120, d: 68 }, { x: 430, z: 168, w: 80, d: 55 }];
 const mask = clearance(network, buildings), layout = buildZoneLayout(network, mask);
@@ -48,11 +48,4 @@ test("passengers remain N-scale and on the reserved passenger platform", () => {
     assert.ok(p.z >= 541 && p.z <= 559);
     assert.ok(mask.track(p.x, p.z) > 12);
   }
-});
-
-test("all eight clickable switch markers remain outside the swept railway corridor",()=>{
-  const before=JSON.stringify(network),positions=controlMarkers(network,buildings);
-  assert.equal(positions.length,8);assert.equal(new Set(positions.map(p=>p.id)).size,8);
-  for(const p of positions){assert.ok(mask.track(p.x,p.z)>=25);assert.equal(mask.building(p.x,p.z,10),false);assert.ok(p.x>=8&&p.x<=1492&&p.z>=8&&p.z<=692);}
-  assert.equal(JSON.stringify(network),before);
 });

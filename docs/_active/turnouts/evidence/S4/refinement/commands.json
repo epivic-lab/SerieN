@@ -1,0 +1,68 @@
+{
+  "phase": "S4 conservative refinement",
+  "status": "TECHNICAL_PASS_AWAITING_VISUAL_APPROVAL",
+  "branch": "feature/turnouts",
+  "initialHeadAndRemote": "48a89d1b9a733578666e831b2df5a20ac28bfcb7",
+  "checkpointAncestor": "c54c8c12d43a07c62228b99b8ffdbd66cedb13a5",
+  "originalMain": "6487f61612818c8cd46d882741cfa1ca96ac5a16",
+  "baselineS3": "fd32b43fe9438980bde798fd76773f8af2f3f5fc",
+  "baseline5D": "58bbe62bffb37f19125ddb38513502b5ca306821",
+  "initialIntegrity": "clean working tree; fetch, local/remote equality, checkpoint ancestry and git fsck connectivity verified before edits",
+  "runtimeChanged": [
+    "src/turnout-arrows.js: head base follows symmetric local canonical tangent instead of final7mm chord"
+  ],
+  "preserved": [
+    "all ARROW_CONFIG fields deep-equal to48a89d1 incl340ms",
+    "shaft position vertices,uv,role exact on20paths",
+    "S3 glow source exact",
+    "canonical railway150rails75beds,5C railway behavior,5D hot functions,dependencies,backend"
+  ],
+  "bundleHashes": {
+    "5DProduction": "147b28274fe42d72c916494e3f80c516b0bc206ec98fce505f34bee457f69653",
+    "5DProfile": "bc87a3592a6e44f97ca8dc1d418051acb206c90c8222618eb6ff7983bf598098",
+    "S3Profile": "98ae1e6de3b2740f0c67899aad5540320813ab3bde0d54fd28efd19c5b96da4a",
+    "S4Profile": "4e6c1f24c08dbc13dc8dec8453e21dafa786fc51ce2da6def6d12d9aede8d4f3",
+    "S4Observer": "7a8aad9ec54d9f6dab187c291f6ef53bb2ee06aa7fb1932ec134fb61d824d6ff",
+    "S4Production": "6ad15a60b79f7779e8a28cc95a00c0bf3c56a2bacb2419d5d2b00a3eca17284f"
+  },
+  "commands": [
+    "npm test",
+    "python3 -m unittest discover -s tests -p \"*_test.py\"",
+    "npm run build",
+    "python3 scripts/build-canonical-layout.py",
+    "git diff --exit-code -- src/canonical-layout.json docs/jmri-layout",
+    "node docs/_active/turnouts/evidence/S4/recipes/build-profile.mjs . /workspace/work/s4-refine/s4-profile.js",
+    "node docs/_active/turnouts/evidence/S4/recipes/build-observer.mjs . /workspace/work/s4-refine/s4-observer.js",
+    "python3 /workspace/work/s4-refine/invariants.py (versioned check-invariants.py with output directory adapted)",
+    "python3 /workspace/work/s4-refine/run-regressions.py (versioned run-regressions.py with work directory adapted)",
+    "SERIEN_URL=http://127.0.0.1:8003/ S4_BUNDLE=/workspace/work/s4-refine/s4-profile.js S4_REVIEW_OUTPUT=/workspace/work/s4-refine/review python3 tests/browser-turnout-arrows-refinement.py",
+    "SERIEN_URL=http://127.0.0.1:8003/ S3_BASELINE_BUNDLE=/workspace/work/s3/s3-profile.js S4_BUNDLE=/workspace/work/s4-refine/s4-profile.js S4_OUTPUT=/workspace/work/s4-refine/visual python3 tests/capture-turnout-arrows.py",
+    "python3 tests/check-turnout-arrows-captures.py /workspace/work/s4-refine/visual",
+    "SERIEN_URL=http://127.0.0.1:8003/ S4_5D_BUNDLE=/workspace/work/s3/phase5d-profile.js S3_BASELINE_BUNDLE=/workspace/work/s3/s3-profile.js S4_BUNDLE=/workspace/work/s4-refine/s4-profile.js S4_PERF_OUTPUT=/workspace/work/s4-refine python3 tests/browser-turnout-arrows-performance.py"
+  ],
+  "freshTests": {
+    "Node": 195,
+    "Python": 9,
+    "build": "PASS",
+    "fiveBrowserSuites": "tests/regressions.json",
+    "additionalBrowserReview": "review/review.json",
+    "capture": "visual/comparison.json",
+    "performance": "tests/performance.json"
+  },
+  "performanceIsolation": "one Chromium, four sequential contexts; all other browsers/tests finished first; Low/day48/fixed650x760/DPR1/seed516; paused physics;16RAF intervals after3warmups.1600 forced3train graphics projections separately. No physical FPS or full5D matrix claim.",
+  "captureProvenance": "new73original WebGL PNG,14baselineS3/59candidate, seed516DPR1; camera/light/route/provenance/clock in capture.json; no image edits. Historical S3/S4 PNG untouched.",
+  "observedAndResolvedTestInfrastructure": [
+    "First review attempt: duplicate JS variable name in new test, fixed test only; entire review rerun PASS.",
+    "First performance attempt: local server ERR_EMPTY_RESPONSE before any samples; server restarted with file output and measurement restarted in full."
+  ],
+  "safety": "scoped source secret-pattern scan and production no profiling hooks PASS in invariants; not deferred5E audit",
+  "remoteProtocol": "final atomic commit, verify destination/fast-forward ancestry, explicit feature/turnouts push, actual ls-remote/fetched/local SHA equality, clean working tree and main unchanged. No merge/rebase/reset/force/deploy.",
+  "limitations": [
+    "physical GPU/touch NOT VERIFIED",
+    "full5D benchmark matrix NOT VERIFIED",
+    "static sampled pixel checks cannot certify every possible angle/driver",
+    "aesthetic/functional approval PENDING",
+    "S5 NOT STARTED"
+  ],
+  "performanceGate": "PASS: p50<=+10%,p95<=+15% for S4 red and combined against both5D/S3; short software sample only"
+}

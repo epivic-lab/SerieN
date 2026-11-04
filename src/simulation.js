@@ -70,6 +70,7 @@ function routing(network,state) {
     // Never create crossing junctions or B-A-C reversals inside a turnout.
     return valid.length===1?valid[0]:null;
   };
+  choose.controlState=state; // Read-only raw state for the engine guard; routing semantics unchanged.
   choose.reason=(current,choices)=>{
     const incoming=network.edges[current];
     if(!choices.length)return "terminal";

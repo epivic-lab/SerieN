@@ -54,8 +54,152 @@ Alla ripresa leggere rapporto e roadmap, verificare branch/HEAD/working tree e c
 
 La **Fase 5D è conclusa e pubblicata su main** con commit `58bbe62bffb37f19125ddb38513502b5ca306821`. La pubblicazione è descritta sopra e nei report 5D, che rimangono la fonte principale dei risultati e delle prove.
 
-**Prossima macrofase: Scambi S0–S7. Stato: S0 NON INIZIATA.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
+**Macrofase Scambi S0–S7: S0/S1/S2/S3 APPROVATE (glow B); S4 PASS tecnico / approvazione estetica PENDING; S5 NON INIZIATA.** Le istruzioni operative sono `AGENTS.md`, `docs/_active/turnouts/SPEC_v3.md`, `docs/_active/turnouts/STATUS.md` e `docs/_active/turnouts/CODEX_START.txt`. Prima di S0 Codex verifica branch, working tree, 5D locale e test. L'utente approva **ogni singola sottofase** dopo report, prove e commit; S3 (glow) e S4 (frecce) richiedono approvazione estetica esplicita. Nessuna sottofase è autorizzata automaticamente dal merge di questi documenti.
 
 **Guardrail:** 150 rail mesh, geometria canonica e massicciata intatte; nessuna modifica alla plancia, ai permessi Supabase o al backend durante gli scambi. Il PDF illustrato v3 può essere copiato temporaneamente nella directory attiva solo se effettivamente disponibile; alla chiusura S7 vanno ritirate le specifiche attive e mantenuto `docs/turnouts/FINAL_REPORT.md`.
 
 **Sequenza dopo S7:** completamento Supabase/backend 6A.3–6A.6, Train Management 6B–6E, poi audit finale cybersecurity 5E. Le protezioni minime di sicurezza restano obbligatorie fin da subito.
+
+## Interactive Turnouts — baseline S0 (2026-10-30)
+
+Baseline acquisita sul branch aggiornato `main`, HEAD iniziale `6487f61612818c8cd46d882741cfa1ca96ac5a16` (PR #1 integrata). Verificata l'ascendenza della pubblicazione 5D `58bbe62` e del codice finale `e8d81d3`. Runtime, asset, UI, dipendenze e workflow byte-identici alla 5D pubblicata; bundle locale e live SHA-256 `147b28274fe42d72c916494e3f80c516b0bc206ec98fce505f34bee457f69653`.
+
+- **131 test Node, 9 Python, build e suite browser 5C (11 scenari): PASS**. Suite di produzione per circuiti/manovre/HUD e responsive: evidenze nel rapporto S0.
+- Grafo rigenerato senza differenze: 70 nodi, 75 archi, quattro terminali. Hash canonico `e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc`. Manifest di **150 rotaie e 75 letti** prima del batching statico.
+- Otto riferimenti giorno/notte, semplice e due WX310; camera/seed registrati. PDF originale acquisito e hash verificato. Benchmark 5D conservati con provenienza; nuovo breve campione RAF separato, non confronto equivalente. GPU e touch fisici NOT VERIFIED.
+- [Rapporto S0](docs/_active/turnouts/evidence/S0/REPORT.md), [stato](docs/_active/turnouts/STATUS.md), [baseline e verifiche](docs/_active/turnouts/evidence/S0/baseline.json). Commit S0 recuperabile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S0/REPORT.md`.
+
+S0 approvata dall’utente nella richiesta successiva, con autorizzazione esclusiva S1. Il commit S0 è `107178921bbc8049d855c0221b799444231120bb`. Nessun push/deployment S0; 5E non iniziata.
+
+## Interactive Turnouts — S1 (2026-10-30)
+
+**S1 PASS; S2 NON INIZIATA.** Baseline pulita `main` a `1071789`, verificata con fetch e test iniziali. Aggiunti vista pura immutabile dal router e comando unico validato per ID canonico; pannello e picking esistente usano `requestToggle(controlId, origin)`. Entrambi gli stati di tutti gli otto dispositivi, porte, versi, UNKNOWN e due percorsi simultanei per ciascun WX310 documentati nel [contratto S1](docs/_active/turnouts/S1_CONTRACT.md). Selezione locale, accesso di rete, lock e rischio restano distinti.
+
+- **148 Node, 9 Python, build: PASS**. Nuova matrice: 7.168 ingressi su 256 configurazioni globali; nuovo test browser: 16 coppie di vere azioni pannello/marker e rifiuti protetti. Suite browser 5C (11 scenari) e circuito/manovre/HUD/responsive (quattro viewport): PASS.
+- **Otto coppie pixel-identiche S0/S1** e stati/trasformazioni nativi/GLB identici nei due versi. Inventario esatto delle 150 rotaie e 75 letti invariato; rigenerazione canonica senza diff. Hash canonico S0 conservato.
+- Router, Journey, sicurezza 5C, ottimizzazioni 5D e funzioni calde intatti. Nuova vista predisposta senza lavoro per-frame. Nessuna modifica a indicatori, glow, frecce, STOP, plancia o backend; nessuna nuova dipendenza. Bundle +3.899 byte (+0,40%).
+- [Rapporto e limiti S1](docs/_active/turnouts/evidence/S1/REPORT.md), [provenienza/comandi](docs/_active/turnouts/evidence/S1/commands.json). Commit S1 recuperabile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S1/REPORT.md`; SHA effettivo nella consegna. Nessun push/deployment S1.
+
+S1 approvata nella richiesta S2. S0/S1 successivamente salvate sul checkpoint remoto `feature/turnouts` a `99b143c918e016f7e744217aa4c760fc9987deb9`, verificato nuovamente prima di S2. GPU e touch fisici restano NOT VERIFIED.
+
+## Interactive Turnouts — S2 (2026-10-30)
+
+**S2 PASS; S3 NON INIZIATA.** Branch `feature/turnouts`, baseline S1 `99b143c`. Rimossi soltanto gli otto indicatori artificiali (base/stelo/sfera), materiali dedicati e lampeggio/posizionatore obsoleti. Aggiunte otto hit-area CPU-only fuori dalla scena, conformi a tutti i percorsi canonici del modello S1; picking con occlusione e tie deterministico. Stesso dispatcher protetto S1. Identità condivisa per dispositivo/plancia/focus e contorno neutro nella plancia; nessun glow o overlay 3D provvisorio. [Contratto S2](docs/_active/turnouts/S2_INTERACTION.md).
+
+- **161 Node, 9 Python, build: PASS**. Mouse/penna/touch, drag-return, cancel, capture persa/annullata, blur, wheel, input invalidi, cento cicli di mount/dispose. Browser: 16 coppie pannello/dispositivo, venti rami fisici, due zoom, touch CDP tap/swipe/pinch, tastiera, occlusione e selezione locomotive. Regressioni 5C (11 casi), produzione/HUD/responsive e Fase 2 aggiornata (cinque viewport e High giorno/notte): PASS.
+- **150 rotaie e 75 letti identici al manifest S0**, canonico rigenerato senza diff e hash `e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc`. Materiali/mappe ferroviari invariati. Otto render S2 pixel-identici al riferimento S1 con soli marker nascosti. [Galleria prima/dopo](docs/_active/turnouts/evidence/S2/visual/GALLERY.md).
+- Fonti ferroviarie, protezioni 5C e ottimizzazioni 5D intatte; nessun lavoro nuovo nel tick. Campione RAF equivalente S1→S2: p50 1949,95→1966,55 ms (+0,85%), p95 1983,30→2016,50 (+1,67%), draw call 367→343, geometrie GPU 364→340, texture 45→45. SwiftShader, campione breve; non certifica hardware né ripete la matrice completa 5D.
+- [Rapporto S2](docs/_active/turnouts/evidence/S2/REPORT.md) con limiti, [comandi/provenienza](docs/_active/turnouts/evidence/S2/commands.json). Commit S2: `git log -1 --format=%H -- docs/_active/turnouts/evidence/S2/REPORT.md`; SHA e verifica remota nella consegna finale.
+- Nuova regola permanente aggiunta a `AGENTS.md`: ogni sottofase conclude con test, commit atomico, checkpoint remoto verificato sul branch dedicato e pausa; main richiede distinta autorizzazione. S2 destinata esclusivamente a `feature/turnouts`, nessun merge/rebase/reset/deployment.
+
+**Unica prossima azione: attendere autorizzazione esplicita S3.** Nessun glow, freccia, STOP, audio, dipendenza o backend introdotto. Touch/GPU fisici e benchmark completo 5D NOT VERIFIED in S2. Occlusione geometrica conservativa sulle texture alpha della vegetazione; tutti i venti rami verificati nella fixture. Nessun blocco tecnico noto.
+
+
+## Interactive Turnouts — S3 (2026-10-30)
+
+**S3 PASS tecnico; approvazione estetica PENDING. S4 NON INIZIATA.** S2 esplicitamente approvata; baseline pulita `feature/turnouts` a `6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b`, S0/S1/S2 verificati sul remoto prima del lavoro. Implementate A Precision Outline e B Soft Conformal Glow con geometrie/materiale condivisi e identità S2. A resta soltanto il default provvisorio: `?turnoutGlow=A/B` consente il confronto, senza nuovi controlli permanenti.
+
+- Nuovo overlay conformale ai percorsi reali S1, tutti i rami degli otto dispositivi, inclusi entrambi i WX310; niente centro fittizio, barre trasversali o cambio materiali. Blu #37A8FA/#A9DDFF, periodo 1400 ms, fade 160 ms, reduced motion statico. Identità touch breve con dispatcher ferroviario invariato. [Contratto](docs/_active/turnouts/S3_GLOW.md).
+- **175 Node + 9 Python + build PASS**. Browser glow: hover bidirezionale di tutti gli otto in entrambe le varianti, tastiera/touch, scambio occupato, occlusione, reduced motion, High giorno/notte e cleanup GPU/listener. Regressioni S1/S2, 5C undici scenari, circuiti/manovre/HUD/minimappe/quattro viewport PASS. Due angoli aggiuntivi e due zoom su Y-IN/WX-A/WX-B; materiali e texture runtime S2/S3 identici.
+- **150 rotaie + 75 letti identici al manifest S0**, canonico rigenerato senza diff e hash `e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc`. Dieci viste senza glow pixel-identiche a S2. Fonti ferroviarie/sicurezza e funzioni calde 5D invariati; nessuna modifica a plancia, HUD, minimappe, dinamica, backend o dipendenze.
+- Campione isolato contro la build 5D pubblicata: p50 1983,20 ms → A 1999,90 (+0,84%), B 1949,90 (−1,68%); p95 2066,60 → A 2099,90 (+1,61%), B 2199,90 (+6,45%). Draw call 367 → 343 spento / 344 acceso. SwiftShader, 16 intervalli per condizione; non ripete il benchmark completo 5D e non certifica FPS fisici.
+- [Rapporto](docs/_active/turnouts/evidence/S3/REPORT.md), [galleria comparativa e pulsazione](docs/_active/turnouts/evidence/S3/visual/GALLERY.md), [pagina HTML](docs/_active/turnouts/evidence/S3/visual/index.html), [provenienza](docs/_active/turnouts/evidence/S3/commands.json). Commit atomico: quello che introduce il rapporto S3, risolvibile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S3/REPORT.md`. SHA e checkpoint remoto verificati nella consegna finale.
+
+**Unica prossima azione: attendere scelta visiva A/B, eventuali rifiniture e autorizzazione esplicita S4.** Nessuna approvazione estetica dedotta dai test. GPU/touch fisici e matrice completa 5D NOT VERIFIED; A più discreta alle distanze elevate e viste radenti. Protocollo remoto AGENTS già presente, invariato; solo checkpoint fast-forward `feature/turnouts`, nessun push main o deployment.
+
+
+## Interactive Turnouts — S4 checkpoint intermedio (2026-10-30)
+
+**PAUSA esplicitamente richiesta dall'utente; riprendere S4 domani. S4 NON conclusa; S5 NON iniziata.** S3 B approvata nella richiesta S4 e impostata come default senza cambiarne shader/parametri. Baseline pulita e remoto S0–S3 verificati a `fd32b43fe9438980bde798fd76773f8af2f3f5fc` su `feature/turnouts`.
+
+Salvati tre moduli per proiezione pura S1, osservazione Journey e overlay rosso: percorsi canonici, due percorsi per WX, punte bidirezionali senza approccio, orientamento dalla velocità reale quando noto, UNKNOWN conservativo, comparsa 340 ms e idle fermo. Picking, dispatcher, dinamica e sicurezza non modificati.
+
+- **PASS:** 194 Node, 9 Python, build; canonico rigenerato senza diff; 64 file bloccati e cinque funzioni applicative identiche a S3. Tutti8/due stati/giorno-notte acquisiti; B pixel-identica in sei confronti isolati; WX in versi opposti; tre frame reali di comparsa distinti.
+- **PENDENTI / NOT VERIFIED:** suite browser funzionale S4 interrotta su richiesta, regressioni S1/S2/5C/Phase0, materiali/cleanup GPU runtime, confronto prestazionale 5D/S3. Driver terminato con figli prima di qualsiasi esito di suite. Non dichiarare PASS questi controlli.
+- [RIPRESA OBBLIGATORIA](docs/_active/turnouts/evidence/S4/RESUME.md), [rapporto intermedio](docs/_active/turnouts/evidence/S4/REPORT.md), [contratto](docs/_active/turnouts/S4_ROUTES.md), [galleria](docs/_active/turnouts/evidence/S4/visual/GALLERY.md). Script/ricette salvati nel repository, metadati e screenshot definitivi conservati. Le evidenze S3 restano intatte.
+
+**Prossima azione unica:** verificare checkout/checkpoint e completare prima la suite browser S4, poi regressioni e performance come da RESUME. Solo dopo chiusura S4 e nuova approvazione umana si potrà considerare S5. Commit attuale intermedio: quello che introduce RESUME S4; SHA locale/remoto forniti nella consegna. Checkpoint solo `feature/turnouts`, origin/main invariato.
+
+
+## Interactive Turnouts — S4 chiusura delle verifiche
+
+**S4 PASS tecnico, approvazione estetica/funzionale PENDING. S5 NON INIZIATA.** Ripresa dal checkpoint remoto verificato `c54c8c12d43a07c62228b99b8ffdbd66cedb13a5`. Nessuna modifica al runtime del checkpoint o al glow B: completate le verifiche mancanti e corrette soltanto due assunzioni del test browser (clock e rientro del puntatore dopo clear diagnostico).
+
+- **194 Node + 9 Python + build PASS**. Tutte e cinque le suite browser PASS: S4 funzionale (16 comandi, 16 ingressi/stati WX, B/UNKNOWN/reduced motion/protezione/profondità), S1 (manifest 150 rotaie/75 letti e azioni reali), S2 (rami/zoom/mouse/touch/tastiera/camera/selezione), 5C undici scenari, Phase0 circuiti/convogli nativi e GLB/HUD/minimappe/quattro viewport. Materiali e texture runtime identici a S3; nessun errore JS o richiesta fallita.
+- GPU stabile a 368 geometrie/45 texture/48 programmi durante i cicli; dispose rilascia 20 geometrie, 8 materiali e un programma. Canonico rigenerato invariato, 64 file originali bloccati e cinque funzioni calde identici a S3. Immagini già salvate nuovamente validate, B isolata pixel-identica e tre frame reali di comparsa distinti. Nessuna alterazione a geometrie Kato, massicciata, dinamica, sicurezza, dipendenze o backend.
+- Confronto RAF isolato 5D/S3/S4 e costo CPU della nuova proiezione completati: valori e limiti nel [rapporto finale](docs/_active/turnouts/evidence/S4/REPORT.md). Campione breve SwiftShader, non matrice completa 5D né FPS fisici.
+- [Galleria](docs/_active/turnouts/evidence/S4/visual/GALLERY.md), [pagina HTML](docs/_active/turnouts/evidence/S4/visual/index.html), [handoff](docs/_active/turnouts/evidence/S4/RESUME.md), [provenienza](docs/_active/turnouts/evidence/S4/commands.json). Commit finale S4: quello che aggiorna il rapporto dopo c54c8c1; SHA effettivo e verifica remota nella consegna. Solo feature/turnouts, main intatto.
+
+**Prossima azione unica: attendere approvazione grafica/funzionale S4 ed eventuali rifiniture. S5 richiede autorizzazione esplicita.** Restano NOT VERIFIED GPU/touch hardware e benchmark completo 5D; resa generale diurna discreta, da giudicare visivamente. Nessun blocco tecnico rilevato.
+
+
+## S4 — rifinitura conservativa e nuova chiusura tecnica (2026-10-30)
+
+**S4 PASS tecnico, approvazione estetica/funzionale PENDING; S5 NON iniziata.** Ripresa da `48a89d1`, già salvata su origin/feature/turnouts e discendente di `c54c8c1`, working tree iniziale pulito. Corretto un solo difetto: bisettrice delle punte sui rami curvi, corda7mm → tangente canonica locale (errore massimo0,420154° →0,000102°). Nuovo test falliva prima e passa dopo. Nessuna modifica allo stile, configurazione/durata340ms, tracce, glow B, geometria ferroviaria o massicciata.
+
+- **195 Node +9 Python/JMRI +build PASS** sulla versione finale. Cinque suite browser fresche PASS: S4, S1, S2, 5C undici scenari, Fase0. Nuovo stress PASS: 1.616 richieste protette, identità risorse e percorsi controllati dopo ogni richiesta, GPU360geometrie/45texture/47programmi stabile; dispose20geometrie/8materiali/1programma. Nessuna animazione residua.
+- **24 pose ×confronto idle pixel-identico**, due angoli/due zoom/due stati di Y-IN/WX-A/WX-B, orbita/rotella reali e tre resize PASS. Nuove73immagini, due WX nei due versi, reveal0/170/340ms distinto e sei B isolati pixel-identici aS3. [Galleria aggiornata](docs/_active/turnouts/evidence/S4/refinement/visual/GALLERY.md), [camere](docs/_active/turnouts/evidence/S4/refinement/review/GALLERY.md).
+- Canonico rigenerato invariato, 150rotaie/75letti identici aS0;64file originali e cinque funzioni calde identici aS3. Railway, sicurezza5C, dinamica/5D, UI, dipendenze e backend preservati. Benchmark isolato5D/S3/S4 fresco entro soglie; dati e limiti nel [rapporto](docs/_active/turnouts/evidence/S4/refinement/REPORT.md). GPU/touch fisici e matrice completa5D NOT VERIFIED; procedura manuale documentata.
+- Commit della rifinitura risolvibile con `git log -1 --format=%H -- docs/_active/turnouts/evidence/S4/refinement/REPORT.md`; SHA e checkpoint remoto verificati nella consegna. Solo feature/turnouts, main invariato, nessun merge/rebase/reset/force/deployment. Evidenze storiche preservate.
+
+**Unica prossima azione: attendere approvazione esplicita grafica/funzionale delle frecce rosse ed eventuali rifiniture. Non iniziare S5 senza nuova autorizzazione.**
+
+
+## S5 — guardia ferroviaria e arresto deterministico (2026-10-30)
+
+**S4 esplicitamente APPROVATA dall’utente (B e frecce340ms); S5 COMPLETATA tecnicamente, in attesa di revisione. S6/S7 NON iniziate.** Baseline pulita locale/remota `a3ace86c0b8e2fe792bbc8dd4499c65d8237eafc`; checkpoint precedenti preservati e main6487f61 invariato.
+
+- Guardia readonly nel core prima dell’integrazione: distanze Journey e ingombri reali, SAFE/UNSAFE/UNKNOWN distinti da GUARDED_STOP, frenata numerica5C e clamp rigido al primo limite. Scelta router e Journey invariati; accessor grezzo per UNKNOWN. Riusa area protetta30mm per consentire la correzione dei punti senza indebolire lock. Nessun routing duplicato o centro WX inventato.
+- Riprodotto il vecchio attraversamento da storia stale (+2,49mm oltre una porta incompatibile); nuovo core delta0 a150mm/s e0,01mm residui. Nativo train2: frenata a30,3708mm prima della porta Y-4 C; pannello corregge e nessun riavvio automatico. Occupazione mantiene il rischio finché persiste, ma i probe readonly non prenotano spazio contro chi può allontanarsi. Stop e STOP ALL autoritativi; dopo stop automatico completo serve riarmo esplicito.
+- **217Node,9Python/JMRI,build PASS**;40test mirati inclusi22S5,104casi porta/stato/assi,78UNKNOWNraw. Cinque suite browser finali S4/S1/S2/5C11casi/Fase0 PASS; ulteriori6casi S5 con rotabili/controlli reali, lifecycle Chromium frozen/active e rilascio occupazione PASS. Router/Journey e5funzioni calde,65file bloccati,150rotaie/75letti, canonico e paesaggio/asset intatti. B e frecce340ms byte-identici; nessun nuovo STOP/audio/S6, UI, dipendenza o backend.
+- Benchmark attivo isolato5D/S4/S5 entro soglie. S4→S5 p50 1983,20→1999,90ms,p95 2016,60→2166,50ms; CPU flotta3treni0.1000→0.1690ms/passo. Stesse353draw call/348geometrie/44texture nel benchmark. SwiftShader, campione breve: non FPS hardware o matrice completa5D. GPU/touch fisici NOT VERIFIED.
+- [Contratto](docs/_active/turnouts/S5_GUARD.md), [rapporto/matrice e limiti](docs/_active/turnouts/evidence/S5/REPORT.md), [telemetria](docs/_active/turnouts/evidence/S5/browser/browser.json), [grafico](docs/_active/turnouts/evidence/S5/plots/braking.png), [provenienza](docs/_active/turnouts/evidence/S5/commands.json). SHA del commit locale nella consegna e risolvibile dal log del rapporto.
+- **Per istruzione esplicita di questa richiesta: nessun push senza nuova autorizzazione**, prevale sul protocollo remoto generale AGENTS. Finale solo commit locale `feat(safety): prevent invalid turnout traversals`; working tree pulito e remoto S4 invariato verificati nella consegna. Nessun merge/rebase/reset/deployment.
+
+**Unica prossima azione: attendere revisione S5 e autorizzazione esplicita S6 — Cartello STOP scenico e campanello. Non iniziare S6.**
+
+
+## S5 — checkpoint per audit indipendente (2026-11-04)
+
+Pubblicazione ora esplicitamente autorizzata sul solo `feature/turnouts`. Implementazione S5 conservata nel commit `8321979af164f80ecfdcac4a9d884712ccd98031`, senza modifiche a codice/test/evidenze. Completamento tecnico **dichiarato**, approvazione indipendente della Regia **PENDING**. Verificati integrità dei50artefatti, corrispondenza dei sorgenti alle evidenze, perimetro del diff e scan mirato credenziali; nessuna suite rieseguita. Risultati precedenti:217Node,9Python/JMRI,build,cinque regressioni browser e sei casi S5 PASS, con provenienza nel rapporto S5.
+
+Checkpoint di pubblicazione: commit che aggiunge questa nota; SHA e coincidenza remota verificati nella consegna. `origin/main` rilevato ad `aeff336c997748bf49d2a09a61c1d6d9238fb3db`, diverso dal riferimento storico S5, senza interventi su main. Nessun merge/rebase/reset/deploy. **Unica prossima azione: attendere l’audit indipendente della Regia. S6 non autorizzata.**
+
+
+## S6 — STOP scenico e campanello (2026-11-04)
+
+La Regia ha revisionato S5 e autorizzato esclusivamente S6: questo aggiorna la precedente attesa audit. **S6 PASS tecnico nel perimetro verificato; review tecnica/artistica PENDING; S7 NON iniziata.** Baseline pulita feature/turnouts `ca9d419`, S5 `8321979` preservata. Tre moduli separano osservazione guardia, scena e audio; STOP geometrico in scala N, emersione400ms/rientro300ms, reduced motion, avviso accessibile, singolo campanello globale originale con MUTE e cleanup.
+
+**220Node+9Python+build PASS; browser S6, S4, S2 e5C PASS.** Due rischi e risoluzione indipendente, correzione senza ripartenza, STOP ALL/reset/dispose; protezione S5 operativa dopo rimozione totale S6. Sorgenti ferroviarie/S5/5D/glowB/frecce340ms e asset invariati, canonico rigenerato senza diff. GPU rilascia4geometrie/1texture; nessun timer/voce residua. [Rapporto](docs/_active/turnouts/evidence/S6/REPORT.md), [galleria/audio](docs/_active/turnouts/evidence/S6/visual/GALLERY.md), [risultati](docs/_active/turnouts/evidence/S6/browser/browser.json). Hardware GPU/touch, ascolto fisico e screen reader NOT VERIFIED; sequenza campionata, non video realtime.
+
+Commit atomico locale `feat(turnouts): render guarded stop and bell`; SHA effettivo nella consegna. **Nessun push, merge, rebase, reset o deploy: la richiesta S6 vieta il push senza ulteriore autorizzazione, prevalendo sul gate remoto AGENTS.** Prossima azione unica: review tecnica e artistica della Regia. Non iniziare S7.
+
+
+## S6 — consegna remota e protocollo permanente
+
+Il committente autorizza la pubblicazione S6 e approva il protocollo permanente in AGENTS.md: push normale fast-forward sul branch di sviluppo già autorizzato, verifica remota e confronto SHA fanno parte della chiusura tecnica/DONE senza seconda autorizzazione. Restano prevalenti futuri divieti espliciti specifici. Le restrizioni precedenti qui registrate sono storiche.
+
+Commit funzionale S6: `692013c3605ef93e490f2487be9046baa6b3487c`. Codice, test ed evidenze invariati; risultati documentati sul medesimo runtime (220 Node, 9 Python, build e browser S6/S4/S2/5C PASS), non rieseguiti per questa modifica documentale. Manifest degli artefatti e corrispondenza sorgenti verificati nuovamente. Checkpoint di consegna: commit che aggiunge questa nota; SHA locale/remoto ed esito verificati nella consegna finale. PASS / DELIVERED richiede tale verifica, non costituisce approvazione della Regia.
+
+Review tecnica/artistica PENDING; S7 NON iniziata. Prossima azione unica: attendere approvazione della Regia. Main e deploy richiedono nuova autorizzazione; nessun merge/rebase/reset/deploy previsto.
+
+
+## S6.1 — leggibilità STOP notturno
+
+Autorizzata esclusivamente S6.1 dopo audit S6, baseline remota `ddd874ac3f9f1ec7e689408a6345d2f422659ded`. Modifica locale alle sole proprietà emissive dei materiali rosso/bianco; nessuna nuova luce/texture/geometria né variazione a logica, audio, posa, animazione, scena o plancia. Rendering giorno/notte alla stessa camera: migliora il contrasto, tutti i pixel esterni al cartello identici a S6.
+
+220Node+build+browser S6 PASS; confronto risorse GPU prima/dopo e invarianti documentati nel [rapporto S6.1](docs/_active/turnouts/evidence/S6/S6.1/REPORT.md). Evidenze S6 precedenti preservate. Hardware GPU e approvazione estetica NOT VERIFIED/PENDING; suite S7 e audit5D non eseguiti. Commit dedicato `fix(turnouts): improve nighttime STOP visibility`; checkpoint fast-forward feature/turnouts e coincidenza SHA verificati nella consegna. Nessun main/merge/deploy. **STOP S6.1; attendere giudizio Regia e autorizzazione al collaudo finale. S7 NON iniziata.**
+
+
+## S7 — collaudo tecnico finale e ritiro operativo
+
+S0–S6.1 approvate dalla Regia nella richiesta S7; checkpoint iniziale b627f526ff44481a814f7e4cd5ef0f84fbf30ade. S7 PASS tecnico nel perimetro software:40PASS/0FAIL/0NOT VERIFIED nella matrice, con limiti hardware espliciti.220Node,9Python,build, dieci suite/browser funzionali inclusi Pages ed extra, confronto prestazionale isolato PASS; nessuna modifica runtime. p50/p95 contro5D−4.48%/−4.27%,367→353call; prima posa STOP89ms e update0.13ms documentati come limite. Nessuna nuova prova hardware GPU/touch/speaker/screen reader, né quattro nuove sessioni complete di vittoria missioni: UI e regressioni operative verificate separatamente.
+
+[Rapporto permanente e matrice](docs/turnouts/FINAL_REPORT.md). docs/_active/turnouts è ritirata operativamente e non attiva tramite README/AGENTS; Master Spec ed evidenze intatte per hash/link storici. Approvazione S7 della Regia PENDING. Commit/checkpoint feature/turnouts con SHA locale/remoto verificati nella consegna. Nessun merge/main/deploy o altra macrofase. **Unica prossima azione: audit indipendente della Regia; STOP.**
+
+
+## RELEASE R1 — integrazione e gate prima della pubblicazione
+
+La Regia approva S0–S7/S6.1 e il committente autorizza questa sola integrazione su main e Pages dopo i gate. Main iniziale aeff336c997748bf49d2a09a61c1d6d9238fb3db, feature approvata2ed3312d18244a6dca91cf68d4d54073843e9e85:4/13commit esclusivi e nessun percorso modificato in comune. Branch release/turnouts-s7 da main; merge7db1cb7cb65a63d744c1789c4964b70fbcd3747c senza conflitti. Asset main e due .DS_Store preservati per hash, runtime/bundle identici a S7 ricostruito.
+
+220Node+9Python+build+canonico+browser contratto/interazione/guardia/STOP+Pages desktop/mobile e smoke completo produzione locale PASS. [Rapporto R1](docs/releases/R1/REPORT.md). Questa nota è la fotografia pre-merge: non anticipa il successo di PR/deploy. Esito post-merge/pubblicazione da verificare e consegnare con SHA main, workflow e prove pubbliche. Non cambiano dipendenze, package0.12.0, pipeline, backend o credenziali. Nessuna altra macrofase autorizzata; STOP dopo verifica pubblica e attesa Regia post-release.

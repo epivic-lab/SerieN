@@ -54,27 +54,27 @@ with sync_playwright() as p:
         hover=page.evaluate('''i=>{const state=__serienDiagnostics.indicatorState(),button=document.querySelector('[data-switch="'+i+'"]');return {i,id:state.active,disabled:button.disabled,states:state.states};}''',i)
         assert hover['id']==hover['states'][i]['id'],hover
         assert [s['on'] for s in hover['states']]==initial,'hover actuated switch'
-        assert sum(s['orange'] for s in hover['states'])<=1,'wrong indicators flashing'
+        assert hover['states'] and page.evaluate('__serienDiagnostics.indicatorState().markers')==0,'artificial indicators remain'
         result['hover'].append(hover)
     assert any(h['disabled'] for h in result['hover']),'occupied switch hover not tested'
-    # Check immediate orange phase in the same event turn (no dependence on GPU FPS).
+    # Check immediate shared identification in the same event turn (no dependence on GPU FPS).
     feedback=page.evaluate('''()=>{
       const cell=document.querySelector('[data-switch-hover="0"]'),button=cell.querySelector('button'),api=__serienDiagnostics;
       cell.dispatchEvent(new PointerEvent('pointerleave',{pointerType:'mouse'}));cell.dispatchEvent(new PointerEvent('pointerenter',{pointerType:'mouse'}));
-      const orange=api.indicatorState();document.querySelector('[data-train="1"]').click();const stable=button===cell.querySelector('button')&&cell===document.querySelector('[data-switch-hover="0"]');
+      const identified=api.indicatorState();document.querySelector('[data-train="1"]').click();const stable=button===cell.querySelector('button')&&cell===document.querySelector('[data-switch-hover="0"]');
       cell.dispatchEvent(new PointerEvent('pointerleave',{pointerType:'mouse'}));const leave=api.indicatorState();
       cell.dispatchEvent(new PointerEvent('pointerenter',{pointerType:'touch'}));const touch=api.indicatorState();
-      return {orange,stable,leave,touch};
+      return {identified,stable,leave,touch};
     }''')
-    assert feedback['orange']['states'][0]['orange'] and feedback['orange']['states'][0]['color']=='ff8b16',feedback
+    assert feedback['identified']['active']=='WX-A' and feedback['identified']['markers']==0,feedback
     assert feedback['stable'],'UI replaced hovered control'
-    assert feedback['leave']['active'] is None and not any(s['orange'] for s in feedback['leave']['states']),'leave did not restore indicators'
+    assert feedback['leave']['active'] is None,'leave did not restore indicators'
     assert feedback['touch']['active'] is None,'touch latched hover'
     page.mouse.move(1000,90)
     assert page.evaluate('__serienDiagnostics.indicatorState().active') is None
     result['feedback']=feedback
     (out/'browser-result.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: all eight real hover targets, occupied control, orange phase, restoration, stable DOM, no switch actuation',flush=True)
+    print('PASS: all eight real hover targets, occupied control, shared identification, restoration, stable DOM, no switch actuation',flush=True)
     operations=page.evaluate('''()=>{
       const $=s=>document.querySelector(s),api=__serienDiagnostics,check=(ok,msg)=>{if(!ok)throw Error(msg)},select=id=>$('[data-train="'+id+'"]').click();
       const markers=()=>{const state=api.snapshot();for(const c of document.querySelectorAll('.trainConsole')){const v=state.stock[+c.dataset.consoleTrain].vehicles[0],m=c.querySelector('.trainMapMarker');check(Math.abs(+m.getAttribute('cx')-v.x)<1e-8&&Math.abs(+m.getAttribute('cy')-v.z)<1e-8,'marker lost real position');}};

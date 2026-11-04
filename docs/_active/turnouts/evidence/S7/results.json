@@ -1,0 +1,48 @@
+{
+  "contract": {
+    "command": "turnout-contract",
+    "exitCode": 0
+  },
+  "interaction": {
+    "command": "turnout-interaction",
+    "exitCode": 0
+  },
+  "glow": {
+    "command": "turnout-glow",
+    "exitCode": 0
+  },
+  "arrows": {
+    "command": "turnout-arrows",
+    "exitCode": 0
+  },
+  "guard": {
+    "command": "railway-guard",
+    "exitCode": 0
+  },
+  "stop": {
+    "command": "guarded-stop",
+    "exitCode": 0
+  },
+  "5c": {
+    "command": "phase-five-close",
+    "exitCode": 0
+  },
+  "phase0": {
+    "command": "phase-zero",
+    "exitCode": 0
+  },
+  "performance": {
+    "exitCode": 0,
+    "result": "PASS",
+    "isolatedRetry": true,
+    "labels": "S5 in reused historical driver means final S7 bundle, not historical S5",
+    "initialAttempt": "terminated -15 intentionally to avoid overlap with extras; discarded"
+  },
+  "pages": {
+    "result": "PASS",
+    "fixtureCorrections": "software rendering screenshot timeout and actionability; final fixture uses synchronous DOM setup and Low quality; no runtime change"
+  },
+  "extras": {
+    "result": "PASS"
+  }
+}

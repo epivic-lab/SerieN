@@ -1,0 +1,383 @@
+{
+  "rates": [
+    20,
+    60,
+    120,
+    "irregular"
+  ],
+  "seconds": 12,
+  "identicalEngineOccupancyHudAndCards": true,
+  "final": {
+    "stock": [
+      {
+        "speed": 0,
+        "velocity": 0,
+        "dir": 1,
+        "journey": {
+          "position": 236.575,
+          "travel": 36.575,
+          "segments": [
+            {
+              "id": "T47",
+              "sign": 1,
+              "start": 0,
+              "end": 248
+            },
+            {
+              "id": "T46",
+              "sign": 1,
+              "start": 248,
+              "end": 496
+            }
+          ]
+        },
+        "odometer": 36.575,
+        "layout": {
+          "offsets": [
+            0
+          ],
+          "tail": 67.89999999999999
+        },
+        "vehicles": [
+          {
+            "x": 946.575,
+            "z": 254.00000000000006,
+            "rendered": {
+              "x": 946.575,
+              "z": 254.00000000000006
+            },
+            "edge": "T47",
+            "s": 236.575,
+            "couplers": {
+              "front": {
+                "x": 49.6,
+                "y": 8,
+                "z": 0
+              },
+              "back": {
+                "x": -67.89999999999999,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "stock": {
+              "id": "db-055-study",
+              "name": "BR 055 \u00b7 study",
+              "length": 114.3,
+              "front": 48,
+              "width": 18.5,
+              "prototypeMm": 18285,
+              "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+              "kind": "steam"
+            },
+            "dimensions": null
+          }
+        ]
+      },
+      {
+        "speed": 30,
+        "velocity": -45,
+        "dir": -1,
+        "journey": {
+          "position": -471.86045604603436,
+          "travel": 517.875,
+          "segments": [
+            {
+              "id": "T2",
+              "sign": 1,
+              "start": -885.9272802301703,
+              "end": -664.4454601726277
+            },
+            {
+              "id": "T3",
+              "sign": 1,
+              "start": -664.4454601726277,
+              "end": -442.9636401150851
+            },
+            {
+              "id": "T4",
+              "sign": 1,
+              "start": -442.9636401150851,
+              "end": -221.4818200575425
+            },
+            {
+              "id": "T5",
+              "sign": 1,
+              "start": -221.4818200575425,
+              "end": 0
+            },
+            {
+              "id": "WX-A:upper",
+              "sign": 1,
+              "start": 0,
+              "end": 310
+            }
+          ]
+        },
+        "odometer": -517.875,
+        "layout": {
+          "offsets": [
+            0,
+            80.225,
+            206.54999999999998
+          ],
+          "tail": 290.65
+        },
+        "vehicles": [
+          {
+            "x": 97.48100690255261,
+            "z": 378.8461511167519,
+            "rendered": {
+              "x": 97.48100690255261,
+              "z": 378.8461511167519
+            },
+            "edge": "T3",
+            "s": 192.58500412659333,
+            "couplers": {
+              "front": {
+                "x": 38,
+                "y": 6,
+                "z": 0
+              },
+              "back": {
+                "x": -38,
+                "y": 6,
+                "z": 0
+              }
+            },
+            "stock": null,
+            "dimensions": null
+          },
+          {
+            "x": 116.85207002707408,
+            "z": 456.4185363949243,
+            "rendered": {
+              "x": 116.85207002707408,
+              "z": 456.4185363949243
+            },
+            "edge": "T3",
+            "s": 112.36000412659337,
+            "couplers": {
+              "front": {
+                "x": 42.225,
+                "y": 8,
+                "z": 0
+              },
+              "back": {
+                "x": -42.225,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "stock": {
+              "id": "db-era-flat",
+              "length": 81.25,
+              "width": 18,
+              "description": "Generic DB-era bogie flat wagon; 13m design length",
+              "kind": "flat"
+            },
+            "dimensions": null
+          },
+          {
+            "x": 188.7110774543651,
+            "z": 559.0303785710536,
+            "rendered": {
+              "x": 188.7110774543651,
+              "z": 559.0303785710536
+            },
+            "edge": "T2",
+            "s": 207.51682418413588,
+            "couplers": {
+              "front": {
+                "x": 84.1,
+                "y": 8,
+                "z": 0
+              },
+              "back": {
+                "x": -84.1,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "stock": {
+              "id": "db-era-coach",
+              "length": 165,
+              "width": 17.7,
+              "description": "Generic DB-era bogie passenger coach; 26.4m design length",
+              "kind": "coach"
+            },
+            "dimensions": null
+          }
+        ]
+      },
+      {
+        "speed": 0,
+        "velocity": 0,
+        "dir": -1,
+        "journey": {
+          "position": 73.425,
+          "travel": 36.575,
+          "segments": [
+            {
+              "id": "T46",
+              "sign": 1,
+              "start": 0,
+              "end": 248
+            }
+          ]
+        },
+        "odometer": -36.575,
+        "layout": {
+          "offsets": [
+            0
+          ],
+          "tail": 34.25
+        },
+        "vehicles": [
+          {
+            "x": 1031.425,
+            "z": 254.00000000000006,
+            "rendered": {
+              "x": 1031.425,
+              "z": 254.00000000000006
+            },
+            "edge": "T46",
+            "s": 73.425,
+            "couplers": {
+              "front": {
+                "x": 34.25,
+                "y": 8,
+                "z": 0
+              },
+              "back": {
+                "x": -34.25,
+                "y": 8,
+                "z": 0
+              }
+            },
+            "stock": {
+              "id": "db-v60-study",
+              "name": "BR 260 \u00b7 study",
+              "length": 65.3,
+              "front": 32.65,
+              "width": 19.4,
+              "prototypeMm": 10450,
+              "description": "DB era IV V60, three coupled axles; original dimensional study",
+              "kind": "shunter"
+            },
+            "dimensions": null
+          }
+        ]
+      }
+    ],
+    "occupied": [
+      {
+        "edge": "T47",
+        "min": 168.675,
+        "max": 248
+      },
+      {
+        "edge": "T46",
+        "min": 0,
+        "max": 38.17500000000001
+      },
+      {
+        "edge": "T3",
+        "min": 154.58500412659333,
+        "max": 221.48182005754256
+      },
+      {
+        "edge": "T4",
+        "min": 0,
+        "max": 9.10318406905077
+      },
+      {
+        "edge": "T3",
+        "min": 70.13500412659334,
+        "max": 154.5850041265934
+      },
+      {
+        "edge": "T2",
+        "min": 123.41682418413586,
+        "max": 221.48182005754256
+      },
+      {
+        "edge": "T3",
+        "min": 0,
+        "max": 70.13500412659334
+      },
+      {
+        "edge": "T46",
+        "min": 39.175,
+        "max": 107.675
+      },
+      {
+        "edge": "T10",
+        "min": 2.3840060212720857,
+        "max": 68.08400602127207
+      },
+      {
+        "edge": "T10",
+        "min": 68.08400602127207,
+        "max": 133.78400602127206
+      },
+      {
+        "edge": "T10",
+        "min": 133.78400602127206,
+        "max": 199.48400602127205
+      },
+      {
+        "edge": "T17",
+        "min": 171.14458097208987,
+        "max": 195.56361932027332
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 252.86504877032326,
+        "max": 312.8960104221398
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 187.16504877032324,
+        "max": 252.86504877032323
+      }
+    ],
+    "hud": {
+      "site": "Y-4",
+      "controls": [
+        "Y-4"
+      ],
+      "name": "East siding",
+      "distance": 321.425,
+      "outgoing": null,
+      "destination": null,
+      "stop": "misaligned",
+      "uncertain": false,
+      "safety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "highlighted": false,
+      "minimized": false
+    },
+    "cards": [
+      "BR 055\nDB era III \u00b7 dimensional study\nPaused\n0 wagons\n118 mm\nSpeed\n0%\n\u21c4\n\u25a0\n\u263c",
+      "BR 216\nDiesel DB \u00b7 Era IV\nPaused\n2 wagons\n329 mm\nSpeed\n30%\n\u21c4\n\u25a0\n\u263c",
+      "BR 260\nDB era IV \u00b7 V60 dimensional study\nPaused\n0 wagons\n69 mm\nSpeed\n0%\n\u21c4\n\u25a0\n\u263c"
+    ],
+    "consoles": {
+      "visible": [
+        0,
+        1,
+        2
+      ],
+      "recent": [
+        2,
+        1,
+        0
+      ],
+      "active": 2
+    }
+  }
+}
