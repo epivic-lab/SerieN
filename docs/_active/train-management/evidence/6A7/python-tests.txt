@@ -1,0 +1,14 @@
+test_canonical_artifact_is_the_exact_runtime_graph_and_all_sources_are_traceable (jmri_audit_test.AuditTests.test_canonical_artifact_is_the_exact_runtime_graph_and_all_sources_are_traceable) ... ok
+test_fourth_buffer_is_the_only_xml_change (jmri_audit_test.AuditTests.test_fourth_buffer_is_the_only_xml_change) ... ok
+test_no_references_or_isolated_points_are_invented (jmri_audit_test.AuditTests.test_no_references_or_isolated_points_are_invented) ... ok
+test_only_two_unambiguous_small_joins (jmri_audit_test.AuditTests.test_only_two_unambiguous_small_joins) ... ok
+test_parser_rejects_invalid_source_references_and_duplicate_identifiers (jmri_audit_test.AuditTests.test_parser_rejects_invalid_source_references_and_duplicate_identifiers) ... ok
+test_preserved_legacy_sources_match_the_historical_lock (jmri_audit_test.AuditTests.test_preserved_legacy_sources_match_the_historical_lock) ... ok
+test_source_is_preserved_and_counts_reconcile (jmri_audit_test.AuditTests.test_source_is_preserved_and_counts_reconcile) ... ok
+test_svg_contains_only_exported_segments_and_one_transform (jmri_audit_test.AuditTests.test_svg_contains_only_exported_segments_and_one_transform) ... ok
+test_turnout_ports_and_ui_mapping_remain_distinct (jmri_audit_test.AuditTests.test_turnout_ports_and_ui_mapping_remain_distinct) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.031s
+
+OK

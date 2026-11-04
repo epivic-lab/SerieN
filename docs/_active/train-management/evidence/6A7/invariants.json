@@ -1,0 +1,38 @@
+{
+  "result": "PASS",
+  "baseline": "5d65a32ff392dabf7e57c040981598f5af398e05",
+  "branch": "feature/train-management",
+  "unchangedBaselineFiles": 1534,
+  "existingFilesChanged": [
+    "PROGRESS.md",
+    "docs/_active/train-management/STATUS.md"
+  ],
+  "newDocumentationFiles": [
+    "docs/_active/train-management/6A7_ARCHITECTURE_DECISIONS.md",
+    "docs/_active/train-management/6A7_EXECUTION_PLAN.md",
+    "docs/_active/train-management/6A7_OWNERLESS_CUTOVER.md",
+    "docs/_active/train-management/6A7_RISKS_AND_EVIDENCE.md",
+    "docs/_active/train-management/evidence/6A7/REPORT.md",
+    "docs/_active/train-management/evidence/6A7/SOURCES.md",
+    "docs/_active/train-management/evidence/6A7/build.txt",
+    "docs/_active/train-management/evidence/6A7/invariants.json",
+    "docs/_active/train-management/evidence/6A7/npm-test.txt",
+    "docs/_active/train-management/evidence/6A7/python-tests.txt"
+  ],
+  "localLinksChecked": 53,
+  "scannedNewFiles": 10,
+  "canonicalSHA256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+  "bundleSHA256": "0622836cefcdbab60e6a71012f5228664f6d3ecfca228d970b1ad68c12a37a0b",
+  "approvedSQLAndContractsAndR0": "byte identical to 6A.6",
+  "runtimeAssetsUIAndDependencies": "byte identical to 6A.6",
+  "npmTestFilesPassed": 37,
+  "pythonTestsPassed": 9,
+  "build": "PASS",
+  "newExecutableFiles": 0,
+  "newMigrations": 0,
+  "productionQueries": 0,
+  "designOnly": true,
+  "newArchitectureAndOwnerlessTests": "NOT VERIFIED / NOT IMPLEMENTED",
+  "priorSQLHTTPBrowserSuites": "inherited approved evidence, not rerun",
+  "remotePublication": "verify after atomic commit and normal push; final response is authoritative"
+}
