@@ -1,0 +1,341 @@
+{
+  "engine": "PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+  "image": "postgres:17@sha256:3b0cda93be7c8dba2ed484d19393d93845dc3dafb88973e248ba8e6d99d784e1",
+  "cases": [
+    {
+      "test": "PostgreSQL17 real engine",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "rollback removed partially created roles",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "injected migration fault, DDL rollback/schema/data identical",
+      "result": "PASS"
+    },
+    {
+      "test": "nonempty baseline, all original columns in ten tables unchanged after expand",
+      "result": "PASS"
+    },
+    {
+      "test": "no unvalidated FK",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "no invalid indexes",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "worker cannot bypass RLS/create roles or DB",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "anon read private registry",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "anon read application",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "anon write application",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "authenticated read private registry",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "authenticated read application",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "authenticated write application",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "backfill preserves semantic legacy values (touch timestamps may advance)",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "head monotone rejects decreasing revision",
+      "expectedSQLSTATE": "23514",
+      "observedSQLSTATE": "23514",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "head wrong digest cannot reference snapshot",
+      "expectedSQLSTATE": "23503",
+      "observedSQLSTATE": "23503",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "head foreign workspace valid UUID",
+      "expectedSQLSTATE": "23503",
+      "observedSQLSTATE": "23503",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot foreign workspace",
+      "expectedSQLSTATE": "23503",
+      "observedSQLSTATE": "23503",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "placement foreign workspace",
+      "expectedSQLSTATE": "23503",
+      "observedSQLSTATE": "23503",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "NULL workspace cannot bypass domain FK",
+      "expectedSQLSTATE": "23503",
+      "observedSQLSTATE": "23503",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "member foreign workspace",
+      "expectedSQLSTATE": "23503",
+      "observedSQLSTATE": "23503",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "loose foreign workspace",
+      "expectedSQLSTATE": "23503",
+      "observedSQLSTATE": "23503",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "legacy FK still rejects different owner",
+      "expectedSQLSTATE": "23503",
+      "observedSQLSTATE": "23503",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "membership/loose exclusive",
+      "expectedSQLSTATE": "23514",
+      "observedSQLSTATE": "23514",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "position outside canonical edge",
+      "expectedSQLSTATE": "23514",
+      "observedSQLSTATE": "23514",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "ready member ordinal must remain contiguous",
+      "expectedSQLSTATE": "23514",
+      "observedSQLSTATE": "23514",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot requires STOPPED",
+      "expectedSQLSTATE": "23514",
+      "observedSQLSTATE": "23514",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot requires eight switches",
+      "expectedSQLSTATE": "23514",
+      "observedSQLSTATE": "23514",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot hash must match topology",
+      "expectedSQLSTATE": "23514",
+      "observedSQLSTATE": "23514",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "worker B reads its own mapped item",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "worker A reads mapped items",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "worker B cannot see A even with forged GUC",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "worker B cannot see A head",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "worker B cannot see A segments",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "worker cannot write authorization registry",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "worker cannot read device keys",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "worker cannot grant itself admin",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "worker cannot disable RLS",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "worker cannot write snapshots before 6A.4",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "authorizer cannot write snapshots",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "registry RLS/FORCE all tables",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "no new security definer functions",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "no publicly executable private functions",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "worker may update only coordination marker",
+      "expected": "t",
+      "observed": "t",
+      "result": "PASS"
+    },
+    {
+      "test": "worker cannot change lock identity",
+      "expectedSQLSTATE": "42501",
+      "observedSQLSTATE": "42501",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "device private key material rejected",
+      "expectedSQLSTATE": "23514",
+      "observedSQLSTATE": "23514",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "device missing curve rejected",
+      "expectedSQLSTATE": "23514",
+      "observedSQLSTATE": "23514",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "nonce duplicate rejected",
+      "expectedSQLSTATE": "23505",
+      "observedSQLSTATE": "23505",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "nonce cross-workspace device rejected",
+      "expectedSQLSTATE": "23503",
+      "observedSQLSTATE": "23503",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "invalid UUID type input rejected",
+      "expectedSQLSTATE": "22P02",
+      "observedSQLSTATE": "22P02",
+      "legacyValuesUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "test": "undo backfill preserves original semantic data; updated_at follows existing touch trigger",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS",
+  "production": "untouched; local Docker --network none; no published ports"
+}

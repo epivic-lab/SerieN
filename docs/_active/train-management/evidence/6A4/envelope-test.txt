@@ -1,0 +1,20 @@
+✔ canonical envelope independent of insertion order, with JCS number handling (1.960023ms)
+✔ duplicate decoded keys (0.191696ms)
+✔ nonfinite (0.098076ms)
+✔ unexpected envelope property (0.080991ms)
+✔ unsafe revision overflow (0.092858ms)
+✔ numeric revision (0.063465ms)
+✔ leading zero revision (0.048973ms)
+✔ unknown operation (0.07378ms)
+✔ unexpected recovery source (0.278966ms)
+✔ invalid Unicode (0.168441ms)
+✔ oversize (0.313998ms)
+✔ verified context cannot come from body (0.096464ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12.39105

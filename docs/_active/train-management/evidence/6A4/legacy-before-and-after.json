@@ -1,0 +1,343 @@
+{
+  "before": {
+    "consist_members": [
+      {
+        "ordinal": 0,
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "consist_id": "00000000-0000-4000-8000-000000000030",
+        "orientation": 1,
+        "stock_item_id": "00000000-0000-4000-8000-000000000020"
+      }
+    ],
+    "consists": [
+      {
+        "id": "00000000-0000-4000-8000-000000000030",
+        "name": "synthetic consist",
+        "status": "ready",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "revision": 0,
+        "created_at": "2026-11-04T17:39:32.309997+00:00",
+        "updated_at": "2026-11-04T17:39:32.311589+00:00",
+        "orientation": 1
+      }
+    ],
+    "layout_placements": [
+      {
+        "s_mm": 120.0,
+        "edge_id": "T47",
+        "heading": 1,
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "layout_id": "00000000-0000-4000-8000-000000000040",
+        "consist_id": "00000000-0000-4000-8000-000000000030",
+        "updated_at": "2026-11-04T17:39:32.312506+00:00",
+        "journey_state": {},
+        "state_version": 0
+      }
+    ],
+    "layout_segments": [
+      {
+        "edge_id": "T47",
+        "metadata": {},
+        "layout_id": "00000000-0000-4000-8000-000000000040",
+        "length_mm": 248.0
+      }
+    ],
+    "layout_snapshots": [
+      {
+        "id": "00000000-0000-4000-8000-000000000050",
+        "payload": {
+          "layout": {
+            "switches": {
+              "Y-2": false,
+              "Y-3": false,
+              "Y-4": false,
+              "WX-A": false,
+              "WX-B": false,
+              "Y-IN": false,
+              "Y-R1": false,
+              "Y-R2": false
+            }
+          },
+          "resumePolicy": "STOPPED",
+          "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc"
+        },
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "revision": 1,
+        "saved_at": "2026-11-04T17:39:32.313228+00:00",
+        "layout_id": "00000000-0000-4000-8000-000000000040",
+        "snapshot_schema": 1
+      }
+    ],
+    "layouts": [
+      {
+        "id": "00000000-0000-4000-8000-000000000040",
+        "name": "synthetic canonical",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "created_at": "2026-11-04T17:39:32.312021+00:00",
+        "updated_at": "2026-11-04T17:39:32.312021+00:00",
+        "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schema_version": 1
+      }
+    ],
+    "loose_stock_placements": [
+      {
+        "s_mm": 200.0,
+        "edge_id": "T47",
+        "heading": 1,
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "layout_id": "00000000-0000-4000-8000-000000000040",
+        "updated_at": "2026-11-04T17:39:32.312921+00:00",
+        "stock_item_id": "00000000-0000-4000-8000-000000000021"
+      }
+    ],
+    "operation_receipts": [
+      {
+        "result": {},
+        "op_type": "synthetic-save",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "created_at": "2026-11-04T17:39:32.313699+00:00",
+        "request_id": "00000000-0000-4000-8000-000000000060",
+        "payload_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "stock_items": [
+      {
+        "id": "00000000-0000-4000-8000-000000000020",
+        "model_id": "00000000-0000-4000-8000-000000000010",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "settings": {},
+        "created_at": "2026-11-04T17:39:32.309419+00:00",
+        "updated_at": "2026-11-04T17:39:32.309419+00:00",
+        "orientation": 1,
+        "display_name": null,
+        "inventory_code": null
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000021",
+        "model_id": "00000000-0000-4000-8000-000000000011",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "settings": {},
+        "created_at": "2026-11-04T17:39:32.309419+00:00",
+        "updated_at": "2026-11-04T17:39:32.309419+00:00",
+        "orientation": 1,
+        "display_name": null,
+        "inventory_code": null
+      }
+    ],
+    "stock_models": [
+      {
+        "id": "00000000-0000-4000-8000-000000000010",
+        "kind": "locomotive",
+        "name": "synthetic loco",
+        "metadata": {},
+        "width_mm": null,
+        "asset_uri": null,
+        "height_mm": null,
+        "length_mm": null,
+        "prototype": null,
+        "created_at": "2026-11-04T17:39:32.309103+00:00",
+        "source_url": null,
+        "updated_at": "2026-11-04T17:39:32.309103+00:00",
+        "license_code": "UNKNOWN",
+        "target_scale": 160,
+        "import_status": "pending",
+        "source_format": null,
+        "thumbnail_uri": null,
+        "rear_coupler_mm": null,
+        "front_coupler_mm": null
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000011",
+        "kind": "wagon",
+        "name": "synthetic wagon",
+        "metadata": {},
+        "width_mm": null,
+        "asset_uri": null,
+        "height_mm": null,
+        "length_mm": null,
+        "prototype": null,
+        "created_at": "2026-11-04T17:39:32.309103+00:00",
+        "source_url": null,
+        "updated_at": "2026-11-04T17:39:32.309103+00:00",
+        "license_code": "UNKNOWN",
+        "target_scale": 160,
+        "import_status": "pending",
+        "source_format": null,
+        "thumbnail_uri": null,
+        "rear_coupler_mm": null,
+        "front_coupler_mm": null
+      }
+    ]
+  },
+  "after": {
+    "consist_members": [
+      {
+        "ordinal": 0,
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "consist_id": "00000000-0000-4000-8000-000000000030",
+        "orientation": 1,
+        "stock_item_id": "00000000-0000-4000-8000-000000000020"
+      }
+    ],
+    "consists": [
+      {
+        "id": "00000000-0000-4000-8000-000000000030",
+        "name": "synthetic consist",
+        "status": "ready",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "revision": 0,
+        "created_at": "2026-11-04T17:39:32.309997+00:00",
+        "updated_at": "2026-11-04T17:39:32.311589+00:00",
+        "orientation": 1
+      }
+    ],
+    "layout_placements": [
+      {
+        "s_mm": 120.0,
+        "edge_id": "T47",
+        "heading": 1,
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "layout_id": "00000000-0000-4000-8000-000000000040",
+        "consist_id": "00000000-0000-4000-8000-000000000030",
+        "updated_at": "2026-11-04T17:39:32.312506+00:00",
+        "journey_state": {},
+        "state_version": 0
+      }
+    ],
+    "layout_segments": [
+      {
+        "edge_id": "T47",
+        "metadata": {},
+        "layout_id": "00000000-0000-4000-8000-000000000040",
+        "length_mm": 248.0
+      }
+    ],
+    "layout_snapshots": [
+      {
+        "id": "00000000-0000-4000-8000-000000000050",
+        "payload": {
+          "layout": {
+            "switches": {
+              "Y-2": false,
+              "Y-3": false,
+              "Y-4": false,
+              "WX-A": false,
+              "WX-B": false,
+              "Y-IN": false,
+              "Y-R1": false,
+              "Y-R2": false
+            }
+          },
+          "resumePolicy": "STOPPED",
+          "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc"
+        },
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "revision": 1,
+        "saved_at": "2026-11-04T17:39:32.313228+00:00",
+        "layout_id": "00000000-0000-4000-8000-000000000040",
+        "snapshot_schema": 1
+      }
+    ],
+    "layouts": [
+      {
+        "id": "00000000-0000-4000-8000-000000000040",
+        "name": "synthetic canonical",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "created_at": "2026-11-04T17:39:32.312021+00:00",
+        "updated_at": "2026-11-04T17:39:32.312021+00:00",
+        "topology_hash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "schema_version": 1
+      }
+    ],
+    "loose_stock_placements": [
+      {
+        "s_mm": 200.0,
+        "edge_id": "T47",
+        "heading": 1,
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "layout_id": "00000000-0000-4000-8000-000000000040",
+        "updated_at": "2026-11-04T17:39:32.312921+00:00",
+        "stock_item_id": "00000000-0000-4000-8000-000000000021"
+      }
+    ],
+    "operation_receipts": [
+      {
+        "result": {},
+        "op_type": "synthetic-save",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "created_at": "2026-11-04T17:39:32.313699+00:00",
+        "request_id": "00000000-0000-4000-8000-000000000060",
+        "payload_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "stock_items": [
+      {
+        "id": "00000000-0000-4000-8000-000000000020",
+        "model_id": "00000000-0000-4000-8000-000000000010",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "settings": {},
+        "created_at": "2026-11-04T17:39:32.309419+00:00",
+        "updated_at": "2026-11-04T17:39:32.309419+00:00",
+        "orientation": 1,
+        "display_name": null,
+        "inventory_code": null
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000021",
+        "model_id": "00000000-0000-4000-8000-000000000011",
+        "owner_id": "00000000-0000-4000-8000-000000000001",
+        "settings": {},
+        "created_at": "2026-11-04T17:39:32.309419+00:00",
+        "updated_at": "2026-11-04T17:39:32.309419+00:00",
+        "orientation": 1,
+        "display_name": null,
+        "inventory_code": null
+      }
+    ],
+    "stock_models": [
+      {
+        "id": "00000000-0000-4000-8000-000000000010",
+        "kind": "locomotive",
+        "name": "synthetic loco",
+        "metadata": {},
+        "width_mm": null,
+        "asset_uri": null,
+        "height_mm": null,
+        "length_mm": null,
+        "prototype": null,
+        "created_at": "2026-11-04T17:39:32.309103+00:00",
+        "source_url": null,
+        "updated_at": "2026-11-04T17:39:32.309103+00:00",
+        "license_code": "UNKNOWN",
+        "target_scale": 160,
+        "import_status": "pending",
+        "source_format": null,
+        "thumbnail_uri": null,
+        "rear_coupler_mm": null,
+        "front_coupler_mm": null
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000011",
+        "kind": "wagon",
+        "name": "synthetic wagon",
+        "metadata": {},
+        "width_mm": null,
+        "asset_uri": null,
+        "height_mm": null,
+        "length_mm": null,
+        "prototype": null,
+        "created_at": "2026-11-04T17:39:32.309103+00:00",
+        "source_url": null,
+        "updated_at": "2026-11-04T17:39:32.309103+00:00",
+        "license_code": "UNKNOWN",
+        "target_scale": 160,
+        "import_status": "pending",
+        "source_format": null,
+        "thumbnail_uri": null,
+        "rear_coupler_mm": null,
+        "front_coupler_mm": null
+      }
+    ]
+  },
+  "verification": "every original row matched with all original columns including timestamps in ten tables"
+}

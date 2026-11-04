@@ -1,0 +1,44 @@
+24 failed additive migration rolls back schema/data/role: PASS
+01 first checkpoint head 0 -> 1: PASS
+03 identical retry immediately after first commit: PASS
+02 second checkpoint 1 -> 2: PASS
+03/04 identical retry after commit and later head advance: PASS
+03 repeat identical retry: PASS
+05 request id with changed digest/envelope: PASS
+06 same request id different authorized device: PASS
+07 real concurrent CAS only one winner: PASS
+08 concurrent identical request returns one original receipt: PASS
+09 SQL exception at before_snapshot: PASS
+10 SQL exception at after_snapshot: PASS
+11 SQL exception at during_projection: PASS
+12 SQL exception at before_head: PASS
+13 SQL exception at before_receipt: PASS
+11 SQL exception at during_loose: PASS
+14 committed response discarded, retry recovers exact receipt: PASS
+15 invalid candidate topology/switch/resume: PASS
+16 invalid candidate topology/switch/resume: PASS
+17 invalid candidate topology/switch/resume: PASS
+18 cross-workspace write by real B login: PASS
+19 bound device reader has no write scope: PASS
+20 anon write denied: PASS
+20 authenticated write denied: PASS
+21 forged SQL context cannot cross workspace: PASS
+21 forbidden privilege escalation SET ROLE serien_tm_executor;: PASS
+21 forbidden privilege escalation SET ROLE serien_tm_authorizer;: PASS
+21 forbidden privilege escalation update serien_capability.device_bindings set workspace_id='10000000-0000-4000-8000-000000000002';: PASS
+21 forbidden privilege escalation update public.layout_snapshots set payload='{}';: PASS
+21 forbidden privilege escalation select public_key from serien_capability.devices;: PASS
+22 deferred railway constraint rolls back all checkpoint components: PASS
+server independently rejects wrong digest: PASS
+invalid candidate stateId: PASS
+invalid candidate schemaVersion: PASS
+session_user cannot be forged: PASS
+recover committed revision as new checkpoint: PASS
+recovery source must exist in own layout: PASS
+workspace B independent first checkpoint: PASS
+foreign recovery via B SQL login: PASS
+locally revoked device cannot retry old receipt: PASS
+expired device cannot save: PASS
+local devices revocation waited behind committed save: PASS
+local workspaces revocation waited behind committed save: PASS
+{"checks": 45, "result": "PASS", "evidence": "work/6A4/results"}

@@ -239,3 +239,16 @@ PASS: 51 verifiche SQL reali su dieci tabelle baseline non vuote, FK/RLS/grants 
 Supabase reale solo letture di cataloghi/migrazioni/trigger/advisor: nessun DDL/DML/Auth/RLS/grant/deploy. Advisor storico Auth/password e suggerimenti indici documentati, non corretti in produzione. Applicazione reale, provisioning SQL, cutover senza owner, transazioni CAS/SaveCheckpoint, piattaforma Supabase/PostgREST e carichi reali NOT VERIFIED. Nessuna API/autosave/integrazione nel simulatore.
 
 Checkpoint atomico: commit che introduce rapporto6A.3, SHA e coincidenza remota nella consegna dopo push normale solo feature/train-management. Nessuna PR/main/merge/Pages/Supabase deploy. Approvazione6A.3 PENDING. **Unica prossima azione: audit Regia e autorizzazione esplicita 6A.4, non iniziata.**
+
+
+## Train Management — 6A.4 nucleo transazionale locale
+
+Il committente approva 6A.3 `558f43b44be08235f6d30b6f18bd3b4ef07a4c53` e autorizza soltanto 6A.4. Fetch non distruttivo/letture GitHub confermano branch remoto esattamente al checkpoint e main/R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910`. Creato branch locale autorizzato dal checkpoint, working tree iniziale pulito, nessuna storia riscritta.
+
+Nuova proposta SQL additiva `20261104172819_serien_atomic_checkpoint.sql`, adapter server isolato e runner PostgreSQL17 in `tests/db/6A4/`. [Contratto e matrice privilegi](docs/_active/train-management/6A4_TRANSACTIONS.md), [rapporto](docs/_active/train-management/evidence/6A4/REPORT.md). Funzione privata con executor limitato soggetto a RLS, binding session_user workspace/device, lock autorizzazione→head, ricevuta prima del CAS, snapshot/proiezioni/head/ricevuta e vincoli deferred in un commit. Nessuna DML diretta del worker su checkpoint o modifica autorità/catalogo. Revoca SQL locale coordinata; nessuna certificazione distribuita.
+
+Validator volutamente chiuso al profilo DTO sintetico server con train e loose in A/B; ammesse solo variazioni stateId/ui.day/otto scambi. Non è SaveCheckpoint generale: validazione arbitraria catalogo/Journey/collisioni e sostituzione arbitraria proiezioni restano gap espliciti. Owner/FK legacy intatti, nessun cutover o account produttivo nascosto. Fault SQL nei sub-step, kill reale backend dopo snapshot, risposta già committata scartata dal driver, race con connessioni reali e conservazione di dieci tabelle legacy documentati con stato iniziale/finale per caso.
+
+Suite/evidenze effettive nel rapporto: transazioni, regressione 6A.3, adapter JCS/parser, npm test, build e 9 Python/JMRI. Hash canonico e bundle R1, 1451 file baseline fuori dai documenti di gate, prototipo 6A.2 e migrazione 6A.3 byte-identici. Zero mutazioni Supabase reale, nessun main/Pages/deploy/6A.5. Applicazione reale, gateway proof/epoch end-to-end, provisioning/pool, revoca distribuita, autosave/offline, throughput e crash host/PITR NOT VERIFIED.
+
+Checkpoint atomico: commit che introduce il rapporto 6A.4, SHA locale/remoto e working tree verificati nella consegna dopo push normale solo feature/train-management. **Unica prossima azione: audit Regia; STOP. 6A.5 non iniziata né implicitamente autorizzata.**

@@ -1,0 +1,1758 @@
+{
+  "before": [
+    {
+      "role": "anon",
+      "table": "public.layout_snapshots",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "anon",
+      "table": "public.operation_receipts",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "anon",
+      "table": "serien_capability.session_heads",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "anon",
+      "table": "serien_capability.devices",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "anon",
+      "table": "serien_capability.worker_bindings",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "public.layout_snapshots",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "public.operation_receipts",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "serien_capability.session_heads",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "serien_capability.devices",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "serien_capability.worker_bindings",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "public.layout_snapshots",
+      "delete": false,
+      "insert": false,
+      "select": true,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "public.operation_receipts",
+      "delete": false,
+      "insert": false,
+      "select": true,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "serien_capability.session_heads",
+      "delete": false,
+      "insert": false,
+      "select": true,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "serien_capability.devices",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "serien_capability.worker_bindings",
+      "delete": false,
+      "insert": false,
+      "select": true,
+      "update": false
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "public.layout_snapshots",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "public.operation_receipts",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "serien_capability.session_heads",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "serien_capability.devices",
+      "delete": true,
+      "insert": true,
+      "select": true,
+      "update": true
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "serien_capability.worker_bindings",
+      "delete": true,
+      "insert": true,
+      "select": true,
+      "update": true
+    }
+  ],
+  "after": [
+    {
+      "role": "anon",
+      "table": "public.layout_snapshots",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "anon",
+      "table": "public.operation_receipts",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "anon",
+      "table": "serien_capability.session_heads",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "anon",
+      "table": "serien_capability.devices",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "anon",
+      "table": "serien_capability.worker_bindings",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "public.layout_snapshots",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "public.operation_receipts",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "serien_capability.session_heads",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "serien_capability.devices",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "authenticated",
+      "table": "serien_capability.worker_bindings",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "public.layout_snapshots",
+      "delete": false,
+      "insert": false,
+      "select": true,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "public.operation_receipts",
+      "delete": false,
+      "insert": false,
+      "select": true,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "serien_capability.session_heads",
+      "delete": false,
+      "insert": false,
+      "select": true,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "serien_capability.devices",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_worker",
+      "table": "serien_capability.worker_bindings",
+      "delete": false,
+      "insert": false,
+      "select": true,
+      "update": false
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "public.layout_snapshots",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "public.operation_receipts",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "serien_capability.session_heads",
+      "delete": false,
+      "insert": false,
+      "select": false,
+      "update": false
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "serien_capability.devices",
+      "delete": true,
+      "insert": true,
+      "select": true,
+      "update": true
+    },
+    {
+      "role": "serien_tm_authorizer",
+      "table": "serien_capability.worker_bindings",
+      "delete": true,
+      "insert": true,
+      "select": true,
+      "update": true
+    }
+  ],
+  "columns": [
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "workspaces",
+      "column_name": "auth_epoch",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consist_members",
+      "column_name": "consist_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "consist_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "created_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layouts",
+      "column_name": "created_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "created_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "created_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "created_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "device_bindings",
+      "column_name": "device_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "device_locks",
+      "column_name": "device_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "display_name",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "edge_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_segments",
+      "column_name": "edge_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "edge_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "devices",
+      "column_name": "epoch",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "devices",
+      "column_name": "expires_at",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "heading",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "heading",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "devices",
+      "column_name": "id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layouts",
+      "column_name": "id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "UPDATE"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "workspaces",
+      "column_name": "id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "inventory_code",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "journey_state",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "journey_state",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "devices",
+      "column_name": "key_version",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "candidate_profiles",
+      "column_name": "layout_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "layout_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_segments",
+      "column_name": "layout_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "layout_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "layout_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "layout_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "layout_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "layout_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "layout_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_segments",
+      "column_name": "length_mm",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "device_locks",
+      "column_name": "marker",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "device_locks",
+      "column_name": "marker",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "UPDATE"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "workspace_locks",
+      "column_name": "marker",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "workspace_locks",
+      "column_name": "marker",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "UPDATE"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_segments",
+      "column_name": "metadata",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "model_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "name",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layouts",
+      "column_name": "name",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "op_type",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "op_type",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consist_members",
+      "column_name": "ordinal",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consist_members",
+      "column_name": "orientation",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "orientation",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "orientation",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consist_members",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layouts",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "owner_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consist_members",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layouts",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "ownership_key",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "payload",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "payload",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "payload_digest",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "payload_digest",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "payload_digest",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "payload_digest",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "payload_digest",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "payload_digest",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "UPDATE"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "receipt_request_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "receipt_request_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "UPDATE"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "request_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "request_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "result",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "result",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "revision",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "revision",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "revision",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "revision",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "revision",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "revision",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "revision",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "UPDATE"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "devices",
+      "column_name": "revoked_at",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "device_bindings",
+      "column_name": "role_name",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "worker_bindings",
+      "column_name": "role_name",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "s_mm",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "s_mm",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "saved_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "saved_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layouts",
+      "column_name": "schema_version",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "devices",
+      "column_name": "scope",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "settings",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "snapshot_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "snapshot_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "snapshot_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "snapshot_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "UPDATE"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "snapshot_schema",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "snapshot_schema",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "state_version",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "state_version",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "UPDATE"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "state_version",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "state_version",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "UPDATE"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "status",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "workspaces",
+      "column_name": "status",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consist_members",
+      "column_name": "stock_item_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "stock_item_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "candidate_profiles",
+      "column_name": "template",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layouts",
+      "column_name": "topology_hash",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "updated_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "updated_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layouts",
+      "column_name": "updated_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "updated_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "updated_at",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "candidate_profiles",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consist_members",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "consists",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "device_bindings",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "device_locks",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "devices",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_placements",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layout_snapshots",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "layouts",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "loose_stock_placements",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "INSERT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "operation_receipts",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "session_heads",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "stock_items",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "public",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "worker_bindings",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    },
+    {
+      "grantee": "serien_tm_executor",
+      "grantor": "postgres",
+      "table_name": "workspace_locks",
+      "column_name": "workspace_id",
+      "is_grantable": "NO",
+      "table_schema": "serien_capability",
+      "table_catalog": "postgres",
+      "privilege_type": "SELECT"
+    }
+  ]
+}

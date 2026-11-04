@@ -1,13 +1,13 @@
 # Train Management — gate corrente
 
-R0, 6A.1 e 6A.2 **APPROVATE dalla Regia**, ultima baseline `f64bdc8291a9c51a29c60076bae303e91e6e1d26`. Branch `feature/train-management`; main ancora R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` al kickoff.
+R0, 6A.1, 6A.2 e **6A.3 APPROVATE dalla Regia**. Baseline 6A.3 `558f43b44be08235f6d30b6f18bd3b4ef07a4c53`, main/R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910`. Branch esclusivo `feature/train-management`.
 
-**6A.3: PASS tecnico del collaudo locale; approvazione indipendente PENDING. Checkpoint remoto verificato nella consegna finale. 6A.4 NON INIZIATA e NON AUTORIZZATA.** Commit identificabile con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A3/REPORT.md`.
+**6A.4: nucleo transazionale locale a profilo vincolato; approvazione indipendente PENDING.** Checkpoint identificabile con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A4/REPORT.md`; verifica remota nella consegna finale. Nessun SaveCheckpoint generale/HTTP/gateway integrato o applicazione produttiva.
 
-[Specifica e rollback](6A3_SCHEMA.md), [rapporto con prove](evidence/6A3/REPORT.md). Proposta `supabase/migrations/20261104165408_serien_workspace_expand.sql`: expand additivo, senza cutover owner/Auth. Baseline e fixture sintetiche in `tests/db/6A3/`, PostgreSQL17.11 reale in container effimero senza rete o porte pubblicate. Nessuna modifica al Supabase reale.
+[Contratto, privilegi, riproduzione e gap R0 P09–P15](6A4_TRANSACTIONS.md), [rapporto/evidenze](evidence/6A4/REPORT.md). Nuova migrazione additiva proposta, applicata **soltanto** nel PostgreSQL17 isolato; migrazione 6A.3 immutata. Binding SQL a workspace/device, RLS senza bypass, funzione privata con esecutore limitato, lock di coordinamento e head, deduplica prima del CAS, snapshot/proiezioni/head/ricevuta atomici. Validator fail-closed limitato al DTO sintetico server; composizione/Journey/catalogo arbitrari non ammessi.
 
-51 verifiche DB PASS: legacy non vuoto preservato esattamente dall'expand, rollback DDL, backfill e inversione semantica, RLS/grants/FK, isolamento A/B con login SQL distinti, head, registry e vincoli ferroviari. 48 test HTTP PASS dopo correzione minima UUID; 5 scenari Chromium PASS; npm test 37 file PASS, 9 Python/JMRI PASS, build PASS. Codice/bundle/canonico R1 e dipendenze invariati. Il backfill attiva i trigger updated_at storici: timestamp possono avanzare, come documentato.
+Owner Auth e FK legacy conservati: il laboratorio usa solo l'owner sintetico esistente, non dimostra workspace applicativi nuovi senza owner. Profilo con train e loose in entrambi i workspace; dati legacy non vuoti preservati in dieci tabelle, timestamp compresi. Test SQL reali di CAS concorrente, idempotenza, fault SQL, terminazione backend, deferred constraint, isolamento e revoca **locale**. Revoca distribuita/gateway, provisioning/pool reali, cutover, validatore generale, offline/autosave, budget produttivi e crash host/PITR **NOT VERIFIED / NON IMPLEMENTATI**, secondo il rapporto.
 
-Limiti: cutover senza owner e applicazione reale, API/SaveCheckpoint/CAS, pairing/consumo monouso e revoca DB transazionali, provisioning SQL produttivo, backup/PITR, piattaforma Supabase/PostgREST e carichi reali NOT VERIFIED. Advisor remoti preesistenti registrati senza correzioni produttive. Matrice R0 P01–P18 e contratti precedenti preservati.
+R1, asset/canonico/bundle, 6A.2, dipendenze e workflow preservati; npm/Node/JMRI/build nei log del rapporto. Supabase reale non modificato; nessuna credenziale produttiva o deploy. Matrice R0 originale P01–P18 preservata.
 
-**Unica prossima azione: attendere audit della Regia e autorizzazione esplicita 6A.4. STOP dopo checkpoint 6A.3.**
+**Unica prossima azione: audit indipendente della Regia e decisione sul gate 6A.5. 6A.5 NON INIZIATA; STOP dopo il checkpoint 6A.4.**
