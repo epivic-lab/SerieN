@@ -1,0 +1,18 @@
+{
+  "baseline": "cec3a97042ddd1cbcacc7e50cb99a9f4b76c2afd",
+  "sourceSHA256": {
+    "supabase/migrations/20261104231109_serien_capability_lifecycle.sql": "f1a6701fbde4c055d57d07177748ce3c8e0ef307caa5d37f54f76f1034664ec9",
+    "tests/db/6A8/run.py": "7e32f48ce761dd0976d7145ef4df84e9cb5c75e95274e2ee5c64717d50859103",
+    "tests/db/6A6/run.py": "2ccb68e4f403c21d9719be66bcebe5b7f6eb7b8255d8f7a0cd566d29f5e775b2",
+    "tests/db/6A6/profile_fixture.py": "8e2ba7b76a9c607a40b47f667b0c4029742360c7413dc9be2dcef140d857cda9",
+    "tests/db/6A6/integration.test.js": "a7740d808f16e13eaba5630e1a80d45269f499427115e14d20f21f5e2d6ab021"
+  },
+  "integrationAppliedMigrations": [
+    "20261104165408_serien_workspace_expand.sql",
+    "20261104172819_serien_atomic_checkpoint.sql",
+    "20261104175236_serien_history_integrity.sql",
+    "20261104231109_serien_capability_lifecycle.sql"
+  ],
+  "claimAndLifecycle": "SQL tests only; new P-256 broker integration deferred to 6A.9",
+  "productionQueries": 0
+}

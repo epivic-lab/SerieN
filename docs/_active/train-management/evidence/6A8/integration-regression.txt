@@ -1,0 +1,73 @@
+01 first controlled owner pairing: PASS
+02 second device editor pairing: PASS
+03 non-exportable CryptoKey persisted across reload: PASS
+04 signed empty head read: PASS
+05 no authorized capability: PASS
+06 forged actual HTTP signature: PASS
+07 actual HTTP nonce replay: PASS
+08 cross-workspace signed request: PASS
+09 reader signed read: PASS
+09 reader cannot save: PASS
+09 reader cannot recover: PASS
+10 SQL stale device epoch despite valid gateway proof: PASS
+10 SQL stale epoch cannot save: PASS
+10 expired SQL device denies read: PASS
+10 expired SQL device denies write: PASS
+10 stale SQL workspace epoch denies read: PASS
+10 stale SQL workspace epoch denies write: PASS
+11 revoked live SQL session denies read: PASS
+11 revoked device denies save: PASS
+12 forged scope in pairing: PASS
+13 first signed SaveCheckpoint real commit: PASS
+14 browser independently verifies identical persisted snapshot: PASS
+15 subsequent save: PASS
+16 retry identical request id after newer head: PASS
+16 reused id different digest: PASS
+17 compact receipt owned by actor: PASS
+17 another actor cannot read receipt: PASS
+18 lost HTTP response then idempotent retry: PASS
+19 two browsers simultaneous CAS exactly one winner: PASS
+20 recovery creates revision, preserves source: PASS
+21 history keyset pagination: PASS
+22 corrupted snapshot not returned: PASS
+22 corrupted historical recovery rejected: PASS
+23 incompatible topology rejected atomically: PASS
+24 quota rejects without losing confirmed saves: PASS
+24 quota still permits previous idempotent retry: PASS
+24 storage quota rejects and preserves history: PASS
+25 browser rejects corrupted actual HTTP response: PASS
+26 revocation commits while HTTP request is in flight: PASS
+26 revoked device subsequent read: PASS
+26 revoked device subsequent write: PASS
+27 real SQL fault after snapshot insert rolls back HTTP save: PASS
+28 real SQL connection termination rolls back: PASS
+28 statement timeout rolls back without retrying a changed request: PASS
+29 browser page termination after commit then retry with persisted key: PASS
+30 missing browser key has no unsigned fallback: PASS
+30 SQL authorized read linearizes before overlapping revoke: PASS
+30 after overlapping revoke zero new reads: PASS
+30 after overlapping revoke zero new writes: PASS
+31 proof issuedAt rejected: PASS
+31 proof audience rejected: PASS
+31 proof method rejected: PASS
+31 proof path rejected: PASS
+31 proof epoch rejected: PASS
+31 proof bodyDigest rejected: PASS
+31 signed proof sent to a different actual operation path: PASS
+31 altered wire body digest: PASS
+32 SQL role injection ignored by closed operation schema: PASS
+32 unknown admin endpoint unavailable: PASS
+32 Origin absent is no authentication: PASS
+33 oversized request: PASS
+33 excessive history page size: PASS
+33 SQL response bound prevents delivery: PASS
+34 DB rate limit and stable retry code: PASS
+35 workspace B save independent same request id: PASS
+35 actual Chromium process SIGKILL after commit: PASS
+36 recovery kit approved key: PASS
+36 recovery kit reuse denied: PASS
+36 old owner denied after recovery: PASS
+36 old owner cannot save after recovery: PASS
+37 recovered owner reads previous snapshot: PASS
+38 denial ingress rate budget counts malformed requests: PASS
+72 integration checks PASS

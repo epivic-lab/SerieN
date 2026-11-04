@@ -1,0 +1,1112 @@
+{
+  "gateway": [
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "REPLAY"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ReadSnapshot",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "IDEMPOTENCY_KEY_REUSED"
+    },
+    {
+      "operation": "ReadReceipt",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "REVISION_CONFLICT"
+    },
+    {
+      "operation": "RecoverRevision",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ReadSnapshot",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ListHistory",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ListHistory",
+      "outcome": "OK"
+    },
+    {
+      "operation": "ListHistory",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "INTEGRITY_ERROR"
+    },
+    {
+      "outcome": "INTEGRITY_ERROR"
+    },
+    {
+      "outcome": "INVALID_STATE_PROFILE"
+    },
+    {
+      "outcome": "QUOTA_EXCEEDED"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "QUOTA_EXCEEDED"
+    },
+    {
+      "operation": "ReadSnapshot",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "RETRYABLE_UNAVAILABLE"
+    },
+    {
+      "outcome": "RETRYABLE_UNAVAILABLE"
+    },
+    {
+      "outcome": "RETRYABLE_UNAVAILABLE"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "INVALID_REQUEST"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "INVALID_REQUEST"
+    },
+    {
+      "outcome": "PAYLOAD_TOO_LARGE"
+    },
+    {
+      "outcome": "INVALID_PAGE"
+    },
+    {
+      "outcome": "RESPONSE_TOO_LARGE"
+    },
+    {
+      "operation": "ReadHead",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "PAIRED"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "outcome": "FORBIDDEN"
+    },
+    {
+      "operation": "ReadSnapshot",
+      "outcome": "OK"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "NOT_FOUND"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    },
+    {
+      "outcome": "RATE_LIMITED"
+    }
+  ],
+  "database": [
+    {
+      "id": "1f4d8197-6011-45b2-aab0-720dcd0b82a0",
+      "event": "ReadHead",
+      "revision": 0,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:27.358429+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "605c8b2d-eb94-4c19-99fd-11ffbbf00ad9",
+      "event": "ReadHead",
+      "revision": 0,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:28.003144+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "b49fa6a3-99c2-48c3-9dfb-b0604be8c31c",
+      "event": "ReadHead",
+      "revision": 0,
+      "device_id": "4704ffd7-8d8a-4e87-91de-68d430bbdd6a",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:28.748486+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "e104181c-d3ac-4e24-8cc8-c6be708b48ba",
+      "event": "ReadHead",
+      "revision": 0,
+      "device_id": "c392af2d-61cf-44a1-b39c-bbfbd9dacb65",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:32.337571+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "744994f6-c379-4fcc-837e-47b3b0b149bc",
+      "event": "SaveCheckpoint",
+      "revision": 1,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": "3a30416a-560b-4922-9373-404ff52f590b",
+      "occurred_at": "2026-11-04T23:30:33.973825+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "2529a537-e4bf-417b-a84e-bdf530832d96",
+      "event": "ReadSnapshot",
+      "revision": 1,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:34.118707+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "5590a1a2-ea84-4a31-9ee4-e256467c6663",
+      "event": "SaveCheckpoint",
+      "revision": 2,
+      "device_id": "bcfefc98-14cf-420c-97bd-db8c08f05512",
+      "request_id": "96cf9072-d768-4a59-8e4d-b4a134517b98",
+      "occurred_at": "2026-11-04T23:30:34.369688+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "761be187-5057-4834-b6b0-c631115c154b",
+      "event": "ReadReceipt",
+      "revision": 1,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": "3a30416a-560b-4922-9373-404ff52f590b",
+      "occurred_at": "2026-11-04T23:30:35.002755+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "c8651010-c4da-4688-89f8-dba8a0cb513a",
+      "event": "SaveCheckpoint",
+      "revision": 3,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": "08117472-7506-405b-935e-f8c4538e7101",
+      "occurred_at": "2026-11-04T23:30:35.461496+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "9a536868-6ecd-49fc-a967-0bf109467e77",
+      "event": "SaveCheckpoint",
+      "revision": 4,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": "319cff94-ab79-453e-a257-c2734c9eb265",
+      "occurred_at": "2026-11-04T23:30:37.909547+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "e97b7a14-705f-474b-85fa-2aa02189ccac",
+      "event": "RecoverRevision",
+      "revision": 5,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": "28bc1fee-6c4f-4f5c-8d24-3515f5871e88",
+      "occurred_at": "2026-11-04T23:30:38.146597+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "577906bd-7012-495d-8680-7260ee84ec87",
+      "event": "ReadSnapshot",
+      "revision": 1,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:38.159574+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "2793cebe-5c94-4582-9986-3cae96df0498",
+      "event": "ListHistory",
+      "revision": null,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:38.33544+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "55eb3138-0952-4593-ba90-561667f583b4",
+      "event": "ListHistory",
+      "revision": null,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:38.352602+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "e74444e7-ce7b-4364-8b4e-5953f4cc0781",
+      "event": "ListHistory",
+      "revision": null,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:38.36244+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "544a4208-b7d0-479a-8c03-5aac3fbac57f",
+      "event": "ReadSnapshot",
+      "revision": 1,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:40.669+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "9704e81d-28ff-4b87-bd79-c270cd9af2f4",
+      "event": "SaveCheckpoint",
+      "revision": 6,
+      "device_id": "32397b83-7998-447f-a80c-cfccd5e50aaf",
+      "request_id": "468939bd-242b-4d91-a39e-24c64492eba8",
+      "occurred_at": "2026-11-04T23:30:47.483522+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "84a6be67-17e3-4988-932d-246c1d0c89d1",
+      "event": "ReadHead",
+      "revision": 6,
+      "device_id": "05bf75a4-94e4-4d3c-8901-136c0b15d3ae",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:49.054852+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "21a3eb02-1455-4671-8750-867a97a2c31d",
+      "event": "ReadHead",
+      "revision": 6,
+      "device_id": "4704ffd7-8d8a-4e87-91de-68d430bbdd6a",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:56.358873+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "0a2cb9e3-d25e-48ee-b640-34f5afcc9a8d",
+      "event": "SaveCheckpoint",
+      "revision": 1,
+      "device_id": "e8124ea7-9d1c-4f6e-91e3-84e045c739eb",
+      "request_id": "3a30416a-560b-4922-9373-404ff52f590b",
+      "occurred_at": "2026-11-04T23:30:56.881797+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000002"
+    },
+    {
+      "id": "49f07e6b-f18a-46dd-9410-80a188ff4485",
+      "event": "SaveCheckpoint",
+      "revision": 7,
+      "device_id": "0df8329c-4d28-4939-a22f-27509bf4603d",
+      "request_id": "2973f4a8-9fc8-4c4a-b26b-96819e9cc926",
+      "occurred_at": "2026-11-04T23:30:57.830849+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "90496bf1-95b0-4893-9650-3da5edd5f2df",
+      "event": "ReadSnapshot",
+      "revision": 1,
+      "device_id": "971f8be4-d999-403a-b111-4abf097b05d0",
+      "request_id": null,
+      "occurred_at": "2026-11-04T23:30:59.871328+00:00",
+      "workspace_id": "10000000-0000-4000-8000-000000000001"
+    }
+  ]
+}

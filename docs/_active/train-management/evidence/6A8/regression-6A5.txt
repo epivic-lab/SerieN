@@ -1,0 +1,140 @@
+24 failed additive migration rolls back schema/data/role: PASS
+21 injected 6A.5 migration failure preserves all checkpoints: PASS
+21 unsafe extra inherited role blocks migration safely: PASS
+21 corrupted old receipt is not silently certified by migration: PASS
+01 authorized ReadHead: PASS
+02 authorized ReadSnapshot historical 1: PASS
+03 history page1: PASS
+03 history stable cursor page2: PASS
+04 cross-workspace private read denied: PASS
+04 cross-workspace private read denied: PASS
+04 cross-workspace private read denied: PASS
+04 cross-workspace private read denied: PASS
+04 unknown workspace not enumerable: PASS
+05/06 current device rejected after revoked_at: PASS
+05/06 current device rejected after revoked_at: PASS
+05/06 current device rejected after revoked_at: PASS
+05/06 current device rejected after revoked_at: PASS
+08 revoked/stale login direct SELECT layout_snapshots: PASS
+08 revoked/stale login direct SELECT operation_receipts: PASS
+08 revoked/stale login direct SELECT layouts: PASS
+08 revoked/stale login direct SELECT stock_items: PASS
+08 revoked/stale login direct SELECT layout_placements: PASS
+05/06 current device rejected after expires_at: PASS
+05/06 current device rejected after expires_at: PASS
+05/06 current device rejected after expires_at: PASS
+05/06 current device rejected after expires_at: PASS
+08 revoked/stale login direct SELECT layout_snapshots: PASS
+08 revoked/stale login direct SELECT operation_receipts: PASS
+08 revoked/stale login direct SELECT layouts: PASS
+08 revoked/stale login direct SELECT stock_items: PASS
+08 revoked/stale login direct SELECT layout_placements: PASS
+05/06 current device rejected after epoch: PASS
+05/06 current device rejected after epoch: PASS
+05/06 current device rejected after epoch: PASS
+05/06 current device rejected after epoch: PASS
+08 revoked/stale login direct SELECT layout_snapshots: PASS
+08 revoked/stale login direct SELECT operation_receipts: PASS
+08 revoked/stale login direct SELECT layouts: PASS
+08 revoked/stale login direct SELECT stock_items: PASS
+08 revoked/stale login direct SELECT layout_placements: PASS
+05/06 current device rejected after key_version: PASS
+05/06 current device rejected after key_version: PASS
+05/06 current device rejected after key_version: PASS
+05/06 current device rejected after key_version: PASS
+08 revoked/stale login direct SELECT layout_snapshots: PASS
+08 revoked/stale login direct SELECT operation_receipts: PASS
+08 revoked/stale login direct SELECT layouts: PASS
+08 revoked/stale login direct SELECT stock_items: PASS
+08 revoked/stale login direct SELECT layout_placements: PASS
+05 stale workspace epoch rejected: PASS
+07 reader reads head: PASS
+07 reader reads snapshot: PASS
+07 reader cannot write: PASS
+07 reader cannot recover: PASS
+08 SQL direct read denied public.stock_models: PASS
+08 SQL direct read denied public.stock_items: PASS
+08 SQL direct read denied public.consists: PASS
+08 SQL direct read denied public.consist_members: PASS
+08 SQL direct read denied public.layouts: PASS
+08 SQL direct read denied public.layout_segments: PASS
+08 SQL direct read denied public.layout_placements: PASS
+08 SQL direct read denied public.loose_stock_placements: PASS
+08 SQL direct read denied public.layout_snapshots: PASS
+08 SQL direct read denied public.operation_receipts: PASS
+08 SQL direct read denied serien_capability.session_heads: PASS
+08 SQL direct read denied serien_capability.worker_bindings: PASS
+08 SQL direct read denied serien_capability.device_bindings: PASS
+08 SQL direct read denied serien_capability.devices: PASS
+08 SQL direct read denied serien_capability.candidate_profiles: PASS
+08 SQL direct read denied serien_capability.audit_events: PASS
+08 SQL direct read denied serien_capability.api_windows: PASS
+08 SQL direct read denied serien_capability.api_limits: PASS
+08 preexisting column SELECT grant removed: PASS
+08 preexisting per-login table grant removed: PASS
+18 pre-6A.5 receipt compatible exact retry: PASS
+18 read legacy receipt exact response: PASS
+05 persistent SQL session cannot retain read access after revocation: PASS
+19 raw SQL envelope must be canonical without duplicate keys: PASS
+19 raw SQL envelope must be canonical without duplicate keys: PASS
+09 corrupt payload with old state digest rejected: PASS
+09 corrupt current head rejected: PASS
+09 previous intact revision discoverable without automatic recovery: PASS
+11 controlled recovery of intact revision 1: PASS
+15 recovery retry after response discarded: PASS
+12 recovery nonexistent source: PASS
+13 recovery foreign workspace: PASS
+11 corrupt source never recovered: PASS
+10 incompatible stored version/hash rejected topology_hash='wrong': PASS
+10 incompatible stored version/hash rejected snapshot_schema=2: PASS
+10 incompatible stored version/hash rejected engine_revision='wrong-engine': PASS
+09 stored state digest mismatch rejected: PASS
+09 stored asset reference mismatch rejected: PASS
+09 compact context tamper breaks envelope digest verification: PASS
+09 tampered receipt digest rejected before returning receipt: PASS
+14 two genuinely concurrent recovery CAS requests: PASS
+14/15 concurrent identical recovery idempotency: PASS
+05 real read/revoke race linearizes before revocation commit: PASS
+05 new read after concurrent revoke denied: PASS
+08 old column grant cannot bypass concurrent revoke: PASS
+17 shared request key workspace A: PASS
+17 same owner/request key workspace B: PASS
+17 workspace B reads its independent same-id receipt: PASS
+18 compact receipt retry unchanged: PASS
+18 same workspace reused request id rejects changed envelope: PASS
+18 reused request id by different device rejected: PASS
+19 request byte limit SQL: PASS
+19 excessive page size: PASS
+19 snapshot response byte limit: PASS
+19 response limit aborts oversized save result atomically: PASS
+20 revision count quota preserves checkpoints: PASS
+20 quota does not erase idempotent retry: PASS
+20 next checkpoint would cross exact current storage budget: PASS
+20 storage quota rolls back all save substeps: PASS
+20 audit growth quota bounds repeated reads without deleting data: PASS
+API device budget request1: PASS
+API device budget request2: PASS
+API device budget exceeded: PASS
+API other device workspace budget request3: PASS
+API workspace aggregate budget exceeded: PASS
+API budget reset after window/backoff: PASS
+API malformed request denied: PASS
+API malformed request denied: PASS
+API malformed request denied: PASS
+API no public execute anon: PASS
+API no public execute authenticated: PASS
+SQL forged authorization/helper access denied: PASS
+SQL forged authorization/helper access denied: PASS
+SQL forged authorization/helper access denied: PASS
+SQL forged authorization/helper access denied: PASS
+6A.4 post-upgrade SQL rollback before_snapshot: PASS
+6A.4 post-upgrade SQL rollback after_snapshot: PASS
+6A.4 post-upgrade SQL rollback during_projection: PASS
+6A.4 post-upgrade SQL rollback during_loose: PASS
+6A.4 post-upgrade SQL rollback before_head: PASS
+6A.4 post-upgrade SQL rollback before_receipt: PASS
+6A.4 post-upgrade deferred railway rollback: PASS
+C3 legacy partial unique owner/request remains enforced: PASS
+confirmed snapshot update blocked even admin accidentally: PASS
+confirmed receipt delete blocked even admin accidentally: PASS
+{"checks": 141, "result": "PASS", "evidence": "/workspace/work/6A8/regression-6A5"}
