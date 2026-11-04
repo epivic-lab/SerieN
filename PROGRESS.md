@@ -189,3 +189,10 @@ Review tecnica/artistica PENDING; S7 NON iniziata. Prossima azione unica: attend
 Autorizzata esclusivamente S6.1 dopo audit S6, baseline remota `ddd874ac3f9f1ec7e689408a6345d2f422659ded`. Modifica locale alle sole proprietà emissive dei materiali rosso/bianco; nessuna nuova luce/texture/geometria né variazione a logica, audio, posa, animazione, scena o plancia. Rendering giorno/notte alla stessa camera: migliora il contrasto, tutti i pixel esterni al cartello identici a S6.
 
 220Node+build+browser S6 PASS; confronto risorse GPU prima/dopo e invarianti documentati nel [rapporto S6.1](docs/_active/turnouts/evidence/S6/S6.1/REPORT.md). Evidenze S6 precedenti preservate. Hardware GPU e approvazione estetica NOT VERIFIED/PENDING; suite S7 e audit5D non eseguiti. Commit dedicato `fix(turnouts): improve nighttime STOP visibility`; checkpoint fast-forward feature/turnouts e coincidenza SHA verificati nella consegna. Nessun main/merge/deploy. **STOP S6.1; attendere giudizio Regia e autorizzazione al collaudo finale. S7 NON iniziata.**
+
+
+## S7 — collaudo tecnico finale e ritiro operativo
+
+S0–S6.1 approvate dalla Regia nella richiesta S7; checkpoint iniziale b627f526ff44481a814f7e4cd5ef0f84fbf30ade. S7 PASS tecnico nel perimetro software:40PASS/0FAIL/0NOT VERIFIED nella matrice, con limiti hardware espliciti.220Node,9Python,build, dieci suite/browser funzionali inclusi Pages ed extra, confronto prestazionale isolato PASS; nessuna modifica runtime. p50/p95 contro5D−4.48%/−4.27%,367→353call; prima posa STOP89ms e update0.13ms documentati come limite. Nessuna nuova prova hardware GPU/touch/speaker/screen reader, né quattro nuove sessioni complete di vittoria missioni: UI e regressioni operative verificate separatamente.
+
+[Rapporto permanente e matrice](docs/turnouts/FINAL_REPORT.md). docs/_active/turnouts è ritirata operativamente e non attiva tramite README/AGENTS; Master Spec ed evidenze intatte per hash/link storici. Approvazione S7 della Regia PENDING. Commit/checkpoint feature/turnouts con SHA locale/remoto verificati nella consegna. Nessun merge/main/deploy o altra macrofase. **Unica prossima azione: audit indipendente della Regia; STOP.**

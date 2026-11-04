@@ -2,6 +2,10 @@
 
 Repository: `epivic-lab/SerieN`. These rules are permanent; read this file at the beginning of every new Codex conversation.
 
+## Current turnout documentation status — S7 technical closure
+
+Interactive Turnouts S0–S6.1 are approved by the Regia; S7 technical acceptance is complete, independent S7 approval PENDING. `docs/turnouts/FINAL_REPORT.md` is the permanent handoff. The entire `docs/_active/turnouts/` tree, including SPEC_v3.md/PDF and STATUS.md, is now a **non-active historical archive**, retained to preserve evidence hashes and links. Do not interpret its old phase gates as current authorization. No Train Management, main integration, deployment or subsequent phase is authorized. Await independent Regia review.
+
 ## Source of truth and scope
 - Work **only in this repository**; never change `first`, `SerieN Control`, Z21 control software, or external projects. SerieN is a browser **simulator**, not a live Z21 controller.
 - Read the actual checkout state (`git status`, branch, HEAD), then `PROGRESS.md` and **only the relevant section** of the current `docs/_active/` spec. Inspect actual code before deciding; a remote README or an old conversation is not the source of truth for unpushed work.
