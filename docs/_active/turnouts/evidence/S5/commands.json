@@ -1,0 +1,104 @@
+{
+  "phase": "S5",
+  "status": "COMPLETED_LOCAL_AWAITING_S6_REVIEW",
+  "branch": "feature/turnouts",
+  "baselineS4": "a3ace86c0b8e2fe792bbc8dd4499c65d8237eafc",
+  "checkpointS4Ancestor": "c54c8c12d43a07c62228b99b8ffdbd66cedb13a5",
+  "originalMain": "6487f61612818c8cd46d882741cfa1ca96ac5a16",
+  "approval": "User explicitly approved S4 including glowB and340ms arrows, authorized only S5. S6/S7 not authorized.",
+  "remotePolicy": "Current explicit user instruction: no push without further authorization. S5 final commit LOCAL ONLY; supersedes AGENTS general remote checkpoint for this phase. No merge/rebase/reset/deploy.",
+  "baselineTests": {
+    "Node": 195,
+    "Python": 9,
+    "build": "PASS"
+  },
+  "finalTests": {
+    "Node": 217,
+    "Python": 9,
+    "build": "PASS",
+    "S5FocusedAndLegacy": 40,
+    "S5IntegratedBrowser": 6,
+    "regressions": "PASS: five suites, all exit0, final runtime",
+    "performance": "PASS: active5D/S4/S5 <=+10%p50/+15%p95; source hashes correspond to retained-occupation final core"
+  },
+  "runtimeFiles": [
+    "app.js",
+    "src/railway-guard.js",
+    "src/railway-step.js",
+    "src/simulation.js",
+    "src/fleet-commands.js",
+    "src/railway-types.js"
+  ],
+  "runtimeSourceSha256": {
+    "app.js": "59e12c2220774655c96d6399ac60ae6cf97374c1ce79c44d32685e729067b78f",
+    "src/railway-guard.js": "13815f4d8d53b827a154e0febf098bd74c00e7223c13e8effe2804c5ad8fdf15",
+    "src/railway-step.js": "e96411470661c3767884b4574ee9121f2a7f6abac2986bd8b127fb9baa29ffbb",
+    "src/simulation.js": "0b243f69abc9c652adb9dff83fbba26cbe93cb8c8fa2f30716022c167d206c3c",
+    "src/fleet-commands.js": "b87d16b53375c38dbd18bfb6376532a2af725e9ee5393590da37dd1cf82dffcd",
+    "src/railway-types.js": "341a80f00d4e7841cea69c5185d7cbf64cb5753afd894751aecdc3225f8f0e60"
+  },
+  "bundleSha256": {
+    "5DProfile": "bc87a3592a6e44f97ca8dc1d418051acb206c90c8222618eb6ff7983bf598098",
+    "S4Profile": "4e6c1f24c08dbc13dc8dec8453e21dafa786fc51ce2da6def6d12d9aede8d4f3",
+    "S5Profile": "426de964fb7156895fbd20de0a3d1d5870bea9aad50dcc2321d10c86c99fe276",
+    "S5Observer": "1ebc5d84dec63ab640e3911f8acb3c27c92456590d0071f0e3ecb8aaa302eeeb",
+    "S5Production": "0e5b329fb9300f34695e01af8849a3d8f41e98329131974f15effad0c575b3ce"
+  },
+  "commands": [
+    "git status --short --branch",
+    "git rev-parse HEAD origin/feature/turnouts origin/main",
+    "git fetch origin refs/heads/feature/turnouts:refs/remotes/origin/feature/turnouts refs/heads/main:refs/remotes/origin/main",
+    "git fsck --no-reflogs --connectivity-only",
+    "npm test",
+    "npm run build",
+    "python3 -m unittest discover -s tests -p '*_test.py'",
+    "S5_EVIDENCE=/workspace/work/s5/scenarios.json npm test",
+    "python3 scripts/build-canonical-layout.py",
+    "git diff --exit-code -- src/canonical-layout.json docs/jmri-layout",
+    "python3 docs/_active/turnouts/evidence/S5/recipes/check-invariants.py",
+    "node docs/_active/turnouts/evidence/S4/recipes/build-profile.mjs . /workspace/work/s5/s4-profile.js",
+    "node docs/_active/turnouts/evidence/S4/recipes/build-observer.mjs . /workspace/work/s5/s4-observer.js",
+    "SERIEN_URL=http://127.0.0.1:8003/ S5_BUNDLE=/workspace/work/s5/s4-profile.js S5_OUTPUT=/workspace/work/s5/browser-s5 python3 tests/browser-railway-guard.py",
+    "python3 docs/_active/turnouts/evidence/S5/recipes/run-regressions.py",
+    "SERIEN_URL=http://127.0.0.1:8003/ S5_5D_BUNDLE=/workspace/work/s3/phase5d-profile.js S4_BASELINE_BUNDLE=/workspace/work/s4-refine/s4-profile.js S5_BUNDLE=/workspace/work/s5/s4-profile.js S5_PERF_OUTPUT=/workspace/work/s5 python3 tests/browser-railway-guard-performance.py",
+    "MPLCONFIGDIR=/workspace/work/s5/matplotlib python3 docs/_active/turnouts/evidence/S5/recipes/plot-braking.py"
+  ],
+  "profileCoreSourceMapCheck": "tests/profile-source-check.json; exact current four safety modules embedded in temporary profile",
+  "baseline5D": "58bbe62bffb37f19125ddb38513502b5ca306821",
+  "baseline5DProductionSha256": "147b28274fe42d72c916494e3f80c516b0bc206ec98fce505f34bee457f69653",
+  "baselineS4ProfileOrigin": "ApprovedS4 refinement commands.json hash verified before reuse",
+  "performanceConditions": "one Chromium/SwiftShader, sequential5D/S4/S5 contexts, Low/day48/650x760/DPR1/seed516, three ACTIVE trains on different canonical loops (mixed directions),16RAF intervals after3warmups. Actual travel verified during RAF.1600 further fixed railway steps,16batchmeans100steps. No parallel browser/CPU tests. Earlier pre-retention measurements discarded.",
+  "recovery": "Guard releases; no auto-restart after completed automatic stop. requestedSpeed is observation; new speed command required. Manual stop/STOP ALL remain authoritative.",
+  "reservationScope": "Optional internal canonical range admission only; no reservation producer/service exists or was connected. No second routing engine.",
+  "observations": "scenarios.json:104port/state/Journey-axis cases,78raw-state unknown cases, deterministic highspeed/dt/cache/recovery cases. Native browser train2 rear34.25mm, stop30.370833mm beforeY4C, no illegal crossing. Core oracle fixture uses1mm ends only for unit port coverage; never changes product geometry.",
+  "jsonEncoding": "Nonfinite SAFE distance Infinity serializes as null; no finite telemetry changed.",
+  "browserLifecycle": "Actual Chromium Page.setWebLifecycleState frozen500ms/active with RAF verified after resume; plus deterministic60s elapsed inputs. Not universal OS suspension certification.",
+  "knownResolvedTestSetup": "First native fixture on shortT44 failed diagnostic fit; corrected test placement only to canonicalT47, preserving native dimensions.",
+  "minimumSecurity": "scoped source secret-pattern scan, no production profiling hooks, no new dependencies/backend/network API; not full5E audit.",
+  "limitations": [
+    "physical GPU/touch NOT VERIFIED",
+    "full5D matrix NOT VERIFIED",
+    "software braking units, not real-scale railway physics",
+    "conservative explicit rearm after full automatic stop",
+    "S6/S7 NOT STARTED"
+  ],
+  "userRequestSha256": "5b2ef8f00096851b989ccaffad60bc0605bd604ebfaa376bf411509177807b1a",
+  "localCommitMessage": "feat(safety): prevent invalid turnout traversals",
+  "remoteCheckpoint": "NOT_PUSHED: expressly requires additional authorization; remote S4 preserved",
+  "validationHardening": "Canonical reservation edge IDs strictly checked as own string keys, including negative tests for inherited prototype names; final complete chain rerun.",
+  "testSourceSha256": {
+    "tests/railway-guard.test.js": "e21a551198d2c8f53a64d76bed42bc42f36dd43d2d835e27ddcb10a0c7cedbf2",
+    "tests/browser-railway-guard.py": "9366edfdf9de667968fd100d55c7feb698e4c5cb3424cb7e43317b38225555a5",
+    "tests/browser-railway-guard-performance.py": "65eff0908c3153dd2a91ec022ee096d001c9da7b00c6cca36ac8e361f8866623"
+  },
+  "toolVersions": {
+    "node": "v24.19.0",
+    "python": "Python 3.12.14",
+    "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)"
+  },
+  "readOnlyRemoteVerification": {
+    "feature": "a3ace86c0b8e2fe792bbc8dd4499c65d8237eafc",
+    "main": "6487f61612818c8cd46d882741cfa1ca96ac5a16",
+    "pushPerformed": false
+  }
+}

@@ -10,6 +10,12 @@ La v0.11 completa la **Fase 3 — Paesaggio e integrazione**: boschi con ingombr
 
 La v0.10 introduce la **Fase 2 — Fondamenta grafiche**: terreno, luce, materiali ferroviari, ombre e camera. La vista Home contiene l'intero tavolato; la plancia mantiene l'altezza della v0.9 con nome, locomotiva, mappa e stato sulla stessa riga e minimappe più grandi. Passando il mouse sui comandi scambi lampeggia in arancione il rispettivo indicatore 3D, anche quando il comando è protetto per occupazione. [Confronto visivo e verifiche](docs/phase-2/README.md).
 
+## Interactive Turnouts — release R1
+
+La macrofase S0–S7, compresa S6.1, è approvata dalla Regia. Gli otto dispositivi reali sono selezionabili dal plastico e dalla plancia tramite un unico comando protetto. Il glow blu Variante B identifica il dispositivo; le frecce rosse seguono gli itinerari canonici e non indicano via libera. La guardia ferroviaria arresta gli approcci non consentiti; STOP scenico e campanello originale con MUTE ne rappresentano lo stato. Sono supportati touch, tastiera e reduced motion.
+
+[Rapporto permanente e limiti](docs/turnouts/FINAL_REPORT.md) · [Integrazione e verifica release R1](docs/releases/R1/REPORT.md). R1 identifica questo rilascio approvato: la versione del pacchetto resta0.12.0; nessun nuovo tag o numero di versione introdotto. Le specifiche in docs/_active/turnouts sono archivio non attivo.
+
 ## Avvio
 
 Node.js 22+ e Python 3:

@@ -1,0 +1,48 @@
+✔ prepared broad phase agrees with the frozen 5C SAT for rotations, corners, contact, crossing and separated envelopes (82.679011ms)
+✔ prepared per-step geometry preserves 5C fleet trajectories, atomic rollback and commands (1120.744679ms)
+✔ broad bounds retain the 5C corner contact within its SAT tolerance (0.290591ms)
+✔ S5 Y-IN: every port/state and both Journey axes respect actual routing (57.11078ms)
+✔ S5 Y-R1: every port/state and both Journey axes respect actual routing (31.770836ms)
+✔ S5 Y-R2: every port/state and both Journey axes respect actual routing (30.308433ms)
+✔ S5 Y-3: every port/state and both Journey axes respect actual routing (23.526171ms)
+✔ S5 Y-4: every port/state and both Journey axes respect actual routing (26.799413ms)
+✔ S5 Y-2: every port/state and both Journey axes respect actual routing (19.266194ms)
+✔ S5 WX-A: every port/state and both Journey axes respect actual routing (52.05322ms)
+✔ S5 WX-B: every port/state and both Journey axes respect actual routing (43.715399ms)
+✔ S5 high speed, tiny residual gap: bumper never crosses the first forbidden port, even with cached history (0.95691ms)
+✔ S5 cached unused route is revalidated and refreshed after a legal state change; no invented central WX junction (1.231055ms)
+✔ S5 UNKNOWN fails closed for raw unknown states, ambiguous/missing routes and malformed reservations (0.835541ms)
+✔ S5 foreign reservations stop before their interval, own reservations admit transit, release requires explicit rearm (1.56635ms)
+✔ S5 recovery: aligned turnout and reverse away clear guard, manual stop and STOP ALL never auto-restart (1.054127ms)
+✔ S5 large dt, background resume and frame rates cannot bypass admission; invalid dt rejected atomically (21.6188ms)
+✔ S5 terminal braking covers short and long consists in both directions; reversal leaves the buffer (6.687193ms)
+✔ S5 predictive margin uses graph distance, not geometric proximity; full legal loops keep exact motion (95.154835ms)
+✔ S5 reproduces and prevents the stale-history crossing admitted by the old engine (0.843737ms)
+✔ S5 occupation conflicts retain authoritative 5C rollback, including conflict introduced during approach (1.690162ms)
+✔ S5 predictive stop preserves existing operation locks and leaves a blocked switch correctable through the real dispatcher (6.01849ms)
+✔ S5 UNKNOWN takes precedence at the same boundary, including inactive ports and directly touching turnouts (1.903626ms)
+✔ S5 assessment and admission are deterministic read-only core APIs, independent of graphics (7.680592ms)
+✔ S5 occupation warning persists at rest and releases on departure without a phantom reservation (6.202471ms)
+✔ A1: native front-on reproduction stops before any adjacent-edge envelope overlap, preserving rejected history and identity (22.492825ms)
+✔ frontals and following conflicts include short/long consists, stationary trains and both approach directions (468.00875ms)
+✔ candidate rollback cascades to followers and is independent of fleet iteration order (66.308539ms)
+✔ swept envelopes detect a crossing between separated endpoints; parallel movement stays clear (0.455473ms)
+✔ three canonical loops allow simultaneous mixed directions and complete laps with no false parallel stop (487.321904ms)
+✔ detached wagons stop approach without penetration, permit departure and recouple without lost identities in curves (21.288947ms)
+✔ full fleet, occupation, direction and HUD routes agree at 20/60/120 Hz and irregular frames (133.883208ms)
+✔ all four terminal envelopes stop and reverse short and five-wagon consists with legal route history (18.578642ms)
+✔ only the detached coach body across a joint protects TO4 after the locomotive clears (0.6253ms)
+✔ two trains requesting each WX diamond are stopped before overlap, while its straight parallel routes remain independent (22.000759ms)
+✔ adjacent-edge parked coach can overlap the insertion point despite passing the historical centre-only guard (0.292553ms)
+✔ elapsed-time cap and invalid step inputs have explicit, atomic semantics (1.037671ms)
+✔ growth of a frozen detached body cannot claim an old branch after a legal turnout change (0.341255ms)
+✔ recoupling across a joint extends the candidate centre before matching, even after old train history was pruned (0.227288ms)
+✔ a misaligned joint cannot be invented to recouple; rejected candidate leaves the real Journey unchanged (0.415886ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3134.30253

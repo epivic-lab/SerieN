@@ -1,0 +1,17 @@
+{
+  "scope": "Limited credential-pattern scan of modified runtime and final bundle; review of added imports/input boundaries, not final 5E audit",
+  "matchedFiles": [],
+  "newDependencies": false,
+  "newApplicationNetworkEgress": false,
+  "newUnsafeHTMLOrEval": false,
+  "backendOrPermissionChanges": false,
+  "inputValidation": [
+    "canonical control ID whitelist",
+    "panel/device origin",
+    "strict boolean switch state",
+    "external edge and endpoint 0/1",
+    "own canonical port",
+    "fresh unlocked engine guard"
+  ],
+  "rendererOrAudioChanges": false
+}

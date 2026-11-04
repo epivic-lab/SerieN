@@ -1,0 +1,22 @@
+{
+  "contract": {
+    "exitCode": 0,
+    "command": "browser-turnout-contract.py"
+  },
+  "interaction": {
+    "exitCode": 0,
+    "command": "browser-turnout-interaction.py"
+  },
+  "guard": {
+    "exitCode": 0,
+    "command": "browser-railway-guard.py"
+  },
+  "stop": {
+    "exitCode": 0,
+    "command": "browser-guarded-stop.py"
+  },
+  "pages": {
+    "exitCode": 0,
+    "evidence": "/workspace/work/s7/pages (fresh R1 overwrite of scratch only)"
+  }
+}
