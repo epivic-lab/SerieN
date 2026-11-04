@@ -120,3 +120,12 @@ Regia reviewed S5 and explicitly authorized S6; prior audit-pending notes are hi
 **220Node+9Python+build PASS; S6/S4/S2/5C browser PASS.** Two native guarded trains, independent release/reverse, correction while stationary, STOP ALL/reset/dispose; engine guard still blocks after all S6 objects are disposed. Canonical regeneration unchanged; existing railway/S5/5D/glowB/arrows/assets unchanged. GPU dispose releases4geometries/1texture, no audio voice/timer remains. Physical GPU/touch/audio listening/screen reader NOT VERIFIED; no repeated full5D benchmark or S7 audit.
 
 [Report](evidence/S6/REPORT.md), [gallery and audio](evidence/S6/visual/GALLERY.md), [telemetry](evidence/S6/browser/browser.json), [commands](evidence/S6/commands.json). Atomic local commit `feat(turnouts): render guarded stop and bell`; actual SHA in handoff. **User explicitly forbids push without further authorization for S6, overriding AGENTS remote gate. No push/merge/rebase/reset/deploy.** STOP for Regia technical and artistic review. No S7 or inferred approval.
+
+
+## S6 — consegna remota e protocollo permanente
+
+Il committente autorizza la pubblicazione S6 e approva il protocollo permanente in AGENTS.md: push normale fast-forward sul branch di sviluppo già autorizzato, verifica remota e confronto SHA fanno parte della chiusura tecnica/DONE senza seconda autorizzazione. Restano prevalenti futuri divieti espliciti specifici. Le restrizioni precedenti qui registrate sono storiche.
+
+Commit funzionale S6: `692013c3605ef93e490f2487be9046baa6b3487c`. Codice, test ed evidenze invariati; risultati documentati sul medesimo runtime (220 Node, 9 Python, build e browser S6/S4/S2/5C PASS), non rieseguiti per questa modifica documentale. Manifest degli artefatti e corrispondenza sorgenti verificati nuovamente. Checkpoint di consegna: commit che aggiunge questa nota; SHA locale/remoto ed esito verificati nella consegna finale. PASS / DELIVERED richiede tale verifica, non costituisce approvazione della Regia.
+
+Review tecnica/artistica PENDING; S7 NON iniziata. Prossima azione unica: attendere approvazione della Regia. Main e deploy richiedono nuova autorizzazione; nessun merge/rebase/reset/deploy previsto.

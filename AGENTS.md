@@ -16,6 +16,23 @@ Repository: `epivic-lab/SerieN`. These rules are permanent; read this file at th
 - Do not force-push, merge, deploy, modify production configuration, or change other branches without explicit user authorization.
 - Before changing code, establish a baseline. Preserve existing performance gains, UI layout, camera, HUD, minimaps, train physics and all eight switches.
 
+## Permanent rule — mandatory remote checkpoint
+
+This commissioning directive applies to S6, S7, all later development phases and resumed/new sessions. It supersedes earlier generic local-only or second-push-approval restrictions; historical records remain intact. A later explicit task-specific publication prohibition still takes precedence.
+
+For every authorized macrophase or microphase:
+1. Verify the authorized development branch and initial checkpoint.
+2. Implement only authorized work; run pertinent tests and checks.
+3. Record evidence and update status documentation.
+4. Create an atomic, reproducible commit.
+5. Automatically perform a normal fast-forward push to the dedicated, already authorized development branch; no second authorization is required for that completed phase's code and evidence.
+6. Verify the published remote commit and files; compare local HEAD with remote HEAD.
+7. Deliver SHA, diff, tests and evidence to the Regia, then STOP for explicit approval of the next phase.
+
+A verified remote checkpoint is part of DONE. PASS / DELIVERED means code and evidence complete, remote checkpoint verified, pending independent Regia audit; it never implies final approval. FAIL means technical checks failed. BLOCKED means publication or a mandatory check cannot be completed. NOT VERIFIED identifies specific checks not performed. Never declare delivery complete after a failed push.
+
+Before a new branch is used, verify it is authorized for the task. If remote history diverges, STOP and report without rewriting history. Do not publish without an authorized phase ready for delivery. Automatic authorization covers only its development branch: never implicitly merge/push main, deploy, force-push, destructively reset, perform unauthorized rebase, change other repositories or production credentials/configuration, expose secrets, or start another phase. Main operations and deployment require separate explicit authorization.
+
 ## Art direction for the current turnout macrophase
 - Blue pulsating glow identifies the **actual complete Kato turnout device** and must be refined, conformal, depth-aware and non-occlusive. No bulbs, generic rectangles, floating halos, toy aesthetics or globally expensive bloom.
 - Red route arrows follow **real permitted network paths**, including both valid routes for WX310 and correct incoming direction. Low-intensity idle remains visible; red arrow means *selected routing*, **not safety clearance**.
