@@ -1,0 +1,10 @@
+Loaded real scene
+user-viewport PASS, desk 183 map 66; entire table inside frame
+desktop PASS, desk 183 map 66; entire table inside frame
+tablet PASS, desk 183 map 66; entire table inside frame
+tablet-portrait PASS, desk 183 map 66; entire table inside frame
+phone PASS, desk 212 map 66; entire table inside frame
+PASS: all eight real hover targets, occupied control, shared identification, restoration, stable DOM, no switch actuation
+PASS: desk controls, reverse, real positions, MRU hidden train, STOP ALL and map focus
+PASS: High/day and High/night rendered
+Phase 2 PASS: unchanged desk height, larger maps, uncropped table, safe hover, graphics and touch CSS

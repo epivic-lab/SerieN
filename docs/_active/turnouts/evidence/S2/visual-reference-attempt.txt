@@ -1,0 +1,104 @@
+before overview-48
+before overview-95
+before Y-IN-48
+before Y-IN-95
+before WX-A-48
+before WX-A-95
+before WX-B-48
+before WX-B-95
+{
+  "WX-A-48": {
+    "onlyArtificialMarkersDiffer": true,
+    "beforeAfterChangedBounds": [
+      315,
+      314,
+      345,
+      347
+    ],
+    "sameCamera": true,
+    "sameTarget": true
+  },
+  "WX-A-95": {
+    "onlyArtificialMarkersDiffer": true,
+    "beforeAfterChangedBounds": [
+      315,
+      314,
+      345,
+      347
+    ],
+    "sameCamera": true,
+    "sameTarget": true
+  },
+  "WX-B-48": {
+    "onlyArtificialMarkersDiffer": true,
+    "beforeAfterChangedBounds": [
+      92,
+      211,
+      435,
+      468
+    ],
+    "sameCamera": true,
+    "sameTarget": true
+  },
+  "WX-B-95": {
+    "onlyArtificialMarkersDiffer": true,
+    "beforeAfterChangedBounds": [
+      92,
+      211,
+      435,
+      468
+    ],
+    "sameCamera": true,
+    "sameTarget": true
+  },
+  "Y-IN-48": {
+    "onlyArtificialMarkersDiffer": true,
+    "beforeAfterChangedBounds": [
+      50,
+      207,
+      596,
+      462
+    ],
+    "sameCamera": true,
+    "sameTarget": true
+  },
+  "Y-IN-95": {
+    "onlyArtificialMarkersDiffer": true,
+    "beforeAfterChangedBounds": [
+      50,
+      207,
+      596,
+      462
+    ],
+    "sameCamera": true,
+    "sameTarget": true
+  },
+  "overview-48": {
+    "onlyArtificialMarkersDiffer": false,
+    "beforeAfterChangedBounds": [
+      320,
+      211,
+      516,
+      289
+    ],
+    "sameCamera": true,
+    "sameTarget": true
+  },
+  "overview-95": {
+    "onlyArtificialMarkersDiffer": true,
+    "beforeAfterChangedBounds": [
+      320,
+      211,
+      511,
+      285
+    ],
+    "sameCamera": true,
+    "sameTarget": true
+  },
+  "railMaterialsIdentical": true
+}
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/capture-turnout-baseline.py", line 52, in <module>
+    print(json.dumps(result,indent=2));assert result['railMaterialsIdentical'];assert all(v['onlyArtificialMarkersDiffer'] and v['sameCamera'] and v['sameTarget'] for k,v in result.items() if k!='railMaterialsIdentical')
+                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,11 +1,11 @@
-# Turnouts — ACTIVE SPEC / WAIT FOR 5D
+# Turnouts — ACTIVE SPEC / S0–S4 APPROVED / S5 TECHNICAL PASS / S6 PENDING
 
-Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-30. The initial action **S0 has not been run or approved**.
+Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-30. **S0–S3 approved; S3 B officially selected by user. S4 explicitly approved in the S5 request; S5 technically complete; S6 requires explicit review/authorization.**
 
 - Active text: `docs/_active/turnouts/SPEC_v3.md`. Read Shared Gates + the one authorized step; do not load unrelated docs.
-- Visual companion: local source `SerieN_Scambi_Master_Specifica_v3.pdf` (27 A4 pages; SHA-256 `2face5b2eb8b02419b4da92efbfdb5d25ad0adf1dafac95721d6e46e65a9b89d`). **NOT YET IN THIS BRANCH**. If the user attaches it to Codex, copy exactly to `docs/_active/turnouts/SPEC_v3.pdf` during S0 and verify SHA before using; otherwise note PDF NOT AVAILABLE and rely on complete Markdown requirements, requesting the original if visual approval depends on it.
+- Visual companion: `SPEC_v3.pdf`, copied from the supplied `SerieN_Scambi_Master_Specifica_v3.pdf` during S0: 27 A4 pages; SHA-256 `2face5b2eb8b02419b4da92efbfdb5d25ad0adf1dafac95721d6e46e65a9b89d` verified. Temporary active copy, to retire only at approved S7 closure.
 - Execution gate: **5D completed and published on main at commit `58bbe62bffb37f19125ddb38513502b5ca306821`** (see `docs/PERFORMANCE_AUDIT_5D.md`). Codex must STILL verify its local checkout, baseline tests/build and working tree before S0. If local 5D is missing or uncommitted: BLOCKED.
-- NEXT: after merging PR #1, user explicitly authorizes S0 in a new Codex conversation. Do not automatically execute S1.
+- NEXT: await independent Regia audit; no S6 work authorized. On 2026-11-04 the user explicitly authorized normal push of the S5 checkpoint to feature/turnouts only, superseding the earlier local-only restriction.
 - Changes to the specification require user approval; annotate deviations in the phase report rather than silently editing the reference.
 - After every S: status, evidence, commit SHA, tests, updated `PROGRESS.md`, explicit confirmation request.
 - Final S7, after user approval: preserve `docs/turnouts/FINAL_REPORT.md`, retire `SPEC_v3.md`, `SPEC_v3.pdf` (if staged), and this STATUS file. Do not rewrite older phase reports or pretend deletion removes git history.
@@ -13,12 +13,12 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 ## S0–S7 status
 | S | Status | Commit | User next-phase approval |
 |---|---|---|---|
-| S0 | NOT STARTED | — | pending |
-| S1 | NOT STARTED | — | pending |
-| S2 | NOT STARTED | — | pending |
-| S3 | NOT STARTED | — | visual signoff required |
-| S4 | NOT STARTED | — | visual signoff required |
-| S5 | NOT STARTED | — | pending |
+| S0 | PASS / APPROVED | `107178921bbc8049d855c0221b799444231120bb` | S1 explicitly approved |
+| S1 | PASS / APPROVED | `99b143c918e016f7e744217aa4c760fc9987deb9` | S2 explicitly approved |
+| S2 | PASS / APPROVED | `6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b` | S3 explicitly approved |
+| S3 | PASS / APPROVED B | `fd32b43fe9438980bde798fd76773f8af2f3f5fc` | S4 explicitly authorized |
+| S4 | PASS / APPROVED | `a3ace86c0b8e2fe792bbc8dd4499c65d8237eafc` | S5 explicitly authorized |
+| S5 | TECHNICAL COMPLETION DECLARED / INDEPENDENT AUDIT PENDING | code `8321979af164f80ecfdcac4a9d884712ccd98031`; publication checkpoint adds 2026-11-04 note | Regia audit required; S6 not authorized |
 | S6 | NOT STARTED | — | pending |
 | S7 | NOT STARTED | — | final signoff |
 
@@ -27,3 +27,119 @@ Spec revision: **v3.0**. Branch prepared: `docs/turnouts-handoff-v3` on 2026-10-
 - Single turnout and both WX310 closeups; glow transition and arrows animation frames/GIF if possible.
 - Headless tests / browser tests / performance comparisons after 5D baseline.
 - Invariants: 150 rail meshes & canonical hash unchanged, track bed not modified, routing/safety regression passes.
+
+## S0 evidence and handoff (2026-10-30)
+
+- Baseline branch `main`, HEAD `6487f61612818c8cd46d882741cfa1ca96ac5a16`, clean before S0 artifacts; final S0 commit contains only documentation/PDF/evidence. Resolve its actual SHA with `git log -1 --format=%H -- docs/_active/turnouts/evidence/S0/REPORT.md`; actual SHA supplied in user handoff.
+- [S0 report](evidence/S0/REPORT.md), [baseline](evidence/S0/baseline.json), [geometry manifest](evidence/S0/geometry.json), [camera/timing](evidence/S0/capture.json).
+- 5D publication/code and PR #1 integration verified. 131 Node + 9 Python + build PASS; 11-scenario production 5C browser suite PASS. Production circuit/HUD/responsive evidence linked in S0 report.
+- Canonical SHA-256 `e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc`, 150 original rails + 75 track beds captured before existing static batching; runtime unchanged. No local ballast or UI changes.
+- Eight fixed-camera Low day/night images: overview, simple Y-IN, WX-A, WX-B. Historical 5D metrics retained separately from short S0 instrumented RAF sample. Hardware GPU / physical touch NOT VERIFIED.
+- S1 subsequently explicitly authorized and completed as recorded below. No S2–S7 implementation.
+
+## S1 evidence and handoff (2026-10-30)
+
+- Baseline S0 `107178921bbc8049d855c0221b799444231120bb`, branch `main`, clean at start. Actual S1 SHA is the commit adding [S1 report](evidence/S1/REPORT.md); resolve with `git log -1 --format=%H -- docs/_active/turnouts/evidence/S1/REPORT.md`. SHA and clean final status supplied in user handoff.
+- [Internal contract and transition tables](S1_CONTRACT.md). Pure model from existing router; actual-network approach includes current neighbouring states. Canonical-ID guarded dispatcher shared by panel and existing 3D markers. Logic/safety/rendering remain separate.
+- **148 Node + 9 Python + build PASS**; 7.168 entries across all 256 controller configurations; 16 actual panel/marker pairs, occupied and invalid rejection. Browser 5C 11 cases and production circuit/HUD/four-viewport responsive suite PASS.
+- **150 rails + 75 beds match full S0 fingerprints**; canonical regeneration unchanged. Eight visual pairs pixel-identical; native and GLB motion/state/transforms equal in both directions. Hot simulation/renderer/Next Switch functions unchanged. No per-frame new view work, no dependencies/backend/permission changes.
+- Security minima PASS within S1 scope. Hardware GPU, physical touch and full repeated 5D benchmarks NOT VERIFIED in S1; no claimed FPS improvement. No known blocker.
+- S1 subsequently approved; S0/S1 remote checkpoint verified at `99b143c` on `feature/turnouts`. S2 subsequently authorized/completed below; no S3 implementation.
+
+## S2 evidence and handoff (2026-10-30)
+
+- Branch `feature/turnouts`, clean initial baseline `99b143c`; remote checkpoint S0/S1 verified before edits. [Report](evidence/S2/REPORT.md), [interaction contract](S2_INTERACTION.md), [before/after gallery](evidence/S2/visual/GALLERY.md), [commands](evidence/S2/commands.json).
+- Removed only artificial base/stalk/bulbs and obsolete materials/feedback. Eight off-scene CPU-only canonical-path hit regions; geometry-based occlusion, stable ties, same S1 command boundary. Shared read-only identity for panel/device/keyboard; no visible 3D replacement, glow/arrows/STOP/audio.
+- **161 Node, 9 Python, build PASS**. All eight controls, twenty branches, two zooms, 16 actual panel/device pairs; protected rejection, no hover mutation, real mouse gestures and CDP touch, keyboard, scenery occlusion, locomotive selection, resource/listener teardown.
+- **150 rails + 75 beds exactly match S0**; canonical regeneration unchanged, material/texture signatures identical. Eight WebGL views equal the S1 reference with only old markers hidden. Railway/safety/5D sources unchanged. Small paired RAF sample within budgets; draw calls 367→343, GPU geometry count 364→340; no physical FPS claim.
+- 5C eleven-scenario browser suite, production circuit/HUD/responsive suite and adapted Phase 2 acceptance (five viewports, occupied hover, High day/night) PASS. GPU/physical touch/full repeated 5D benchmark NOT VERIFIED in S2. Conservative geometric occlusion for alpha-masked foliage; no known blocker for S3.
+- Permanent checkpoint protocol now in `AGENTS.md`. Resolve actual S2 SHA with `git log -1 --format=%H -- docs/_active/turnouts/evidence/S2/REPORT.md`; local SHA and verified remote SHA supplied after the final commit/push. Checkpoint only `feature/turnouts`; origin/main unchanged, no integration/deployment authorized.
+- **STOP: wait for explicit S3 authorization.** Two blue-glow variants and aesthetic signoff belong to S3; none has been implemented here.
+
+
+## S3 evidence and handoff (2026-10-30)
+
+- Authorized only S3 after explicit S2 approval. Clean baseline and verified remote S0/S1/S2 at `6bdec29194d4e232eeab0e1ff5a8d4e6b26ec47b`, branch `feature/turnouts`. [Report](evidence/S3/REPORT.md), [contract](S3_GLOW.md), [A/B gallery](evidence/S3/visual/GALLERY.md), [HTML comparison](evidence/S3/visual/index.html), [commands](evidence/S3/commands.json).
+- Two shared-resource conformal styles; all real S1 device paths, S2 identity and guarded commands. 1400 ms pulse, 160 ms fade, static reduced motion, brief touch identity; one visible device, depth test, no global bloom/light or route mutation. Default A is provisional review configuration, not aesthetic selection.
+- **175 Node + 9 Python + build PASS**. Real bidirectional hover all8 both styles, keyboard/touch/protected/reduced-motion/depth/High day-night/resource cleanup; full original 150 rails + 75 beds equal S0, material/texture runtime signatures equal S2. S1/S2 interaction regressions, 5C eleven scenarios and Phase0 circuits/HUD/minimaps/responsive PASS. Ten no-glow images exactly match S2; both WX, day/night and three pulse phases per style captured. Opposite/low cameras at two zooms also checked.
+- Isolated actual published5D comparison: p50 A +0.84%, B −1.68%; p95 A +1.61%, B +6.45%; draw calls 367→343 off /344 active. 16 software RAF samples per condition; full5D matrix/hardware FPS NOT VERIFIED. GPU lifecycle stable after warmup and all eight geometries/one material/listener released. Railway/safety/hot5D sources unchanged.
+- GPU/physical touch NOT VERIFIED; inherited conservative alpha-foliage picking. A is subtler at distance/raking views. No known technical blocker; aesthetic approval deliberately pending. No S4 arrows, STOP/audio, backend, dependencies, layout/material changes or deployment.
+- Resolve S3 SHA with `git log -1 --format=%H -- docs/_active/turnouts/evidence/S3/REPORT.md`; actual local/remote SHA, ancestry and clean tree verified in final handoff. Permanent checkpoint rule already in AGENTS and unchanged here. Only fast-forward `feature/turnouts`, origin/main untouched.
+- **STOP: explicit A/B visual approval, any refinements and S4 authorization required.**
+
+
+## S4 intermediate checkpoint — user-requested pause
+
+S3 B officially approved; current runtime uses B by default with original geometry/shader/style unchanged. [Resume instructions](evidence/S4/RESUME.md), [intermediate report](evidence/S4/REPORT.md), [contract](S4_ROUTES.md), [gallery](evidence/S4/visual/GALLERY.md).
+
+194 Node + 9 Python + build PASS. Canonical regeneration unchanged, 64 locked source/asset/dependency files and five hot functions unchanged. Capture set all8/two states/day-night PASS, B isolated renders exact to S3, WX same-path reverse examples and three reveal phases PASS. Original geometry/material construction sources intact.
+
+**NOT VERIFIED / pending:** new S4 functional browser was interrupted by explicit user request before completion; S1/S2/5C/Phase0 regressions, runtime material/GPU checks and 5D/S3 performance still to run. No complete browser suite result from the interrupted driver. No S4 aesthetic signoff, no S5, no engine STOP/audio/backend work. Resume only S4 tomorrow; tests → final S4 commit → remote checkpoint → aesthetic approval remains the final gate.
+
+Intermediate commit introducing RESUME, actual SHA/local-remote equality and clean tree in handoff. Permanent AGENTS protocol unchanged, checkpoint only feature/turnouts; main untouched. Prior historical S3 pending-signoff entries are superseded by the user's official B approval recorded here.
+
+
+## S4 verification closure — supersedes the intermediate pause
+
+Resumed from clean verified remote checkpoint c54c8c1. Runtime unchanged; approved B unchanged. **194 Node + 9 Python + build PASS; all five browser suites PASS** (S4 functional, S1 contract/geometry, S2 interactions, 5C eleven cases, Phase0 operations/GLB/HUD/minimaps/responsive). All WX four ports/two states and both signs verified; rejected commands preserve routes; UNKNOWN/reduced-motion/depth pass. GPU lifecycle stable, twenty geometries/eight materials/one program released. Runtime materials and textures equal S3; 150 rails/75 beds exactly equal S0, canonical hash unchanged, 64 original source/asset/dependency files and five hot functions unchanged.
+
+Isolated 5D/S3/S4 RAF comparison and moving-train presentation CPU sample completed; data/provenance/limits in [final report](evidence/S4/REPORT.md). Existing real captures preserved and revalidated. Only test fixture clock/pointer normalization corrected during resume; no new railway or graphic implementation.
+
+[Gallery](evidence/S4/visual/GALLERY.md), [handoff](evidence/S4/RESUME.md), [commands](evidence/S4/commands.json). Final closure commit updates report after intermediate c54c8c1; actual local/remote SHA and clean tree verified in handoff. Origin/main untouched; no merge/rebase/reset/force-push/deployment. Physical GPU/touch and full5D matrix NOT VERIFIED. **STOP: aesthetic/functional S4 approval and explicit S5 authorization required.**
+
+
+## S4 conservative refinement — technical closure
+
+Fresh review from clean local/remote `48a89d1`, with requested `c54c8c1` ancestor verified. **S4 technical PASS; aesthetic/functional approval PENDING. S5 NOT STARTED.** Only runtime correction: arrowhead bisectors follow local canonical tangents on curved paths, instead of the final7mm chord. All style/configuration,340ms reveal, shaft vertices, approved glowB and railway geometry unchanged.
+
+**195 Node +9 Python/JMRI +build, five fresh browser regression suites and additional stress/camera review PASS.** 1,616 guarded rapid commands, all20geometry/material identities stable, no ghost routes/residual animation; GPU360/45/47 stable. Dispose20geometries/8materials/1program checked separately. Twenty-four opposite/low-angle zoomed poses idle-pixel-exact, real orbit/wheel and three resizes PASS. New73captures validate all8/bothstates/daynight, WX opposite directions,340ms reveal and six B-only comparisons pixel-exact toS3. Fresh isolated5D/S3/S4 comparison within gates; full5D/hardware GPU/touch NOT VERIFIED.
+
+[Current report](evidence/S4/refinement/REPORT.md), [new gallery](evidence/S4/refinement/visual/GALLERY.md), [camera review](evidence/S4/refinement/review/GALLERY.md), [provenance](evidence/S4/refinement/commands.json). Previous report/images preserved as history. Current final commit is the latest affecting refinement/REPORT.md; actual SHA, verified remote feature/turnouts equality and clean tree in handoff. Main unchanged; no merge/rebase/reset/force/deploy. **STOP for user's red-arrow visual/functional approval and explicit S5 authorization.**
+
+
+## S5 — technical closure, local checkpoint only
+
+S4 explicitly approved by current request, including B and340ms arrows. Baseline clean local/remotea3ace86, c54c8c1 ancestor verified. **S5 technically complete; all7gates PASS within verified scope.** Authoritative direction/coupler-aware admission before motion, existing braking plus hard clamp; SAFE/UNSAFE/UNKNOWN and GUARDED_STOP separated. No new router, fictitious WX node, rendering authority or weakened occupancy locks.
+
+**217Node+9Python+build PASS; five final browser regressions and six integrated S5 cases PASS.** Covers104port/state/Journey-axis cases,78raw unknown states, cached illegal route, high speed/tiny gap, elapsed60s, actual Chromium lifecycle500ms, correction/reverse/rearm, retained occupation and compatible departure, manual stop/STOP ALL. Old cached crossing+2.49mm prevented; native train2 stops30.3708mm before Y4C and panel correction succeeds.150original rails/75beds and canonical hash unchanged,65locked files, router/Journey bodies and5hot functions exact toS4. Approved graphic modules untouched.
+
+Active isolated5D/S4/S5 performance within gates; absolute CPU increment0.0690ms per three-train step, no GPU resource addition and same S4 render counters. Full5D/hardware GPU/touch NOT VERIFIED; numerical physics and explicit rearm limits documented. No known unresolved technical blocker.
+
+[Report and matrix](evidence/S5/REPORT.md), [contract](S5_GUARD.md), [telemetry](evidence/S5/browser/browser.json), [plot](evidence/S5/plots/braking.png), [commands](evidence/S5/commands.json), [handoff](evidence/S5/RESUME.md). Atomic local commit requested: `feat(safety): prevent invalid turnout traversals`; actual SHA and clean tree in handoff. **User explicitly forbids push without further authorization, overriding AGENTS remote gate for this turn.** Remote S4 preserved, main unchanged. No merge/rebase/reset/deploy. **STOP; S6/S7 not started.**
+
+
+## S5 audit checkpoint — 2026-11-04
+
+Normal push to feature/turnouts explicitly authorized. Existing S5 code/tests/evidence preserved unchanged; only STATUS/PROGRESS updated for publication. Previous test results are historical evidence, not new executions. Artifact hashes and source correspondence checked; scope/credential scan found no issue. Independent approval remains PENDING; do not infer acceptance from technical completion. Main observed at aeff336 (advanced externally since S5); no main publication or modification. Final checkpoint SHA/remote equality in handoff. **STOP pending Regia audit; no S6.**
+
+
+## S6 — technical closure, local checkpoint (2026-11-04)
+
+Regia reviewed S5 and explicitly authorized S6; prior audit-pending notes are historical. **S6 technical PASS within tested scope; technical/artistic review PENDING. S7 NOT STARTED.** Clean baseline ca9d419, S5 code8321979 preserved. Read-only guard projection, geometric N-scale STOP,400/300ms emergence/retraction, reduced motion, accessible status and one original gesture-gated bell coordinator with native MUTE and lifecycle cleanup.
+
+**220Node+9Python+build PASS; S6/S4/S2/5C browser PASS.** Two native guarded trains, independent release/reverse, correction while stationary, STOP ALL/reset/dispose; engine guard still blocks after all S6 objects are disposed. Canonical regeneration unchanged; existing railway/S5/5D/glowB/arrows/assets unchanged. GPU dispose releases4geometries/1texture, no audio voice/timer remains. Physical GPU/touch/audio listening/screen reader NOT VERIFIED; no repeated full5D benchmark or S7 audit.
+
+[Report](evidence/S6/REPORT.md), [gallery and audio](evidence/S6/visual/GALLERY.md), [telemetry](evidence/S6/browser/browser.json), [commands](evidence/S6/commands.json). Atomic local commit `feat(turnouts): render guarded stop and bell`; actual SHA in handoff. **User explicitly forbids push without further authorization for S6, overriding AGENTS remote gate. No push/merge/rebase/reset/deploy.** STOP for Regia technical and artistic review. No S7 or inferred approval.
+
+
+## S6 — consegna remota e protocollo permanente
+
+Il committente autorizza la pubblicazione S6 e approva il protocollo permanente in AGENTS.md: push normale fast-forward sul branch di sviluppo già autorizzato, verifica remota e confronto SHA fanno parte della chiusura tecnica/DONE senza seconda autorizzazione. Restano prevalenti futuri divieti espliciti specifici. Le restrizioni precedenti qui registrate sono storiche.
+
+Commit funzionale S6: `692013c3605ef93e490f2487be9046baa6b3487c`. Codice, test ed evidenze invariati; risultati documentati sul medesimo runtime (220 Node, 9 Python, build e browser S6/S4/S2/5C PASS), non rieseguiti per questa modifica documentale. Manifest degli artefatti e corrispondenza sorgenti verificati nuovamente. Checkpoint di consegna: commit che aggiunge questa nota; SHA locale/remoto ed esito verificati nella consegna finale. PASS / DELIVERED richiede tale verifica, non costituisce approvazione della Regia.
+
+Review tecnica/artistica PENDING; S7 NON iniziata. Prossima azione unica: attendere approvazione della Regia. Main e deploy richiedono nuova autorizzazione; nessun merge/rebase/reset/deploy previsto.
+
+
+## S6.1 — leggibilità STOP notturno
+
+Autorizzata esclusivamente S6.1 dopo audit S6, baseline remota `ddd874ac3f9f1ec7e689408a6345d2f422659ded`. Modifica locale alle sole proprietà emissive dei materiali rosso/bianco; nessuna nuova luce/texture/geometria né variazione a logica, audio, posa, animazione, scena o plancia. Rendering giorno/notte alla stessa camera: migliora il contrasto, tutti i pixel esterni al cartello identici a S6.
+
+220Node+build+browser S6 PASS; confronto risorse GPU prima/dopo e invarianti documentati nel [rapporto S6.1](evidence/S6/S6.1/REPORT.md). Evidenze S6 precedenti preservate. Hardware GPU e approvazione estetica NOT VERIFIED/PENDING; suite S7 e audit5D non eseguiti. Commit dedicato `fix(turnouts): improve nighttime STOP visibility`; checkpoint fast-forward feature/turnouts e coincidenza SHA verificati nella consegna. Nessun main/merge/deploy. **STOP S6.1; attendere giudizio Regia e autorizzazione al collaudo finale. S7 NON iniziata.**
+
+
+## S7 — collaudo tecnico finale e ritiro operativo
+
+S0–S6.1 approvate dalla Regia nella richiesta S7; checkpoint iniziale b627f526ff44481a814f7e4cd5ef0f84fbf30ade. S7 PASS tecnico nel perimetro software:40PASS/0FAIL/0NOT VERIFIED nella matrice, con limiti hardware espliciti.220Node,9Python,build, dieci suite/browser funzionali inclusi Pages ed extra, confronto prestazionale isolato PASS; nessuna modifica runtime. p50/p95 contro5D−4.48%/−4.27%,367→353call; prima posa STOP89ms e update0.13ms documentati come limite. Nessuna nuova prova hardware GPU/touch/speaker/screen reader, né quattro nuove sessioni complete di vittoria missioni: UI e regressioni operative verificate separatamente.
+
+[Rapporto permanente e matrice](../../turnouts/FINAL_REPORT.md). docs/_active/turnouts è ritirata operativamente e non attiva tramite README/AGENTS; Master Spec ed evidenze intatte per hash/link storici. Approvazione S7 della Regia PENDING. Commit/checkpoint feature/turnouts con SHA locale/remoto verificati nella consegna. Nessun merge/main/deploy o altra macrofase. **Unica prossima azione: audit indipendente della Regia; STOP.**

@@ -1,0 +1,110 @@
+{
+  "initial": {
+    "guard": {
+      "leadingExtent": 34.25,
+      "risk": "UNSAFE",
+      "reason": "misaligned",
+      "distance": 0.3708313333333229,
+      "boundary": {
+        "edge": "T47",
+        "from": 64.62083333333332,
+        "to": 0,
+        "distance": 0
+      },
+      "direction": -1,
+      "lookahead": 16.338751,
+      "stoppingDistance": 0,
+      "protectionInset": 30,
+      "state": "GUARDED_STOP",
+      "delta": 0,
+      "velocity": 0,
+      "intervened": true,
+      "requestedSpeed": 100,
+      "requestedDelta": 0,
+      "probeDelta": null,
+      "probeKind": null
+    },
+    "fx": {
+      "time": 23070.900000000373,
+      "units": [
+        {
+          "id": 2,
+          "visible": false,
+          "value": 0,
+          "pose": {
+            "x": 740,
+            "z": 284.00000000000006,
+            "y": 0.7324242876647133,
+            "angle": 1.5707963267948966,
+            "edge": "T47",
+            "s": 30,
+            "offset": -30,
+            "geometricClearanceVerified": true
+          },
+          "placementMs": 71.5
+        }
+      ],
+      "audio": {
+        "active": false,
+        "muted": false,
+        "initialized": false,
+        "voices": 0,
+        "timer": false
+      }
+    }
+  },
+  "settled": {
+    "time": 27326.400000000373,
+    "units": [
+      {
+        "id": 2,
+        "visible": true,
+        "value": 1,
+        "pose": {
+          "x": 740,
+          "z": 284.00000000000006,
+          "y": 0.7324242876647133,
+          "angle": 1.5707963267948966,
+          "edge": "T47",
+          "s": 30,
+          "offset": -30,
+          "geometricClearanceVerified": true
+        },
+        "placementMs": 71.5
+      }
+    ],
+    "audio": {
+      "active": false,
+      "muted": false,
+      "initialized": false,
+      "voices": 0,
+      "timer": false
+    }
+  },
+  "renderedSignChangedPixels": 5250,
+  "gpu": {
+    "memory": {
+      "geometries": 354,
+      "textures": 46
+    },
+    "calls": 118,
+    "pose": [
+      {
+        "id": 2,
+        "visible": true,
+        "value": 1,
+        "pose": {
+          "x": 740,
+          "z": 284.00000000000006,
+          "y": 0.7324242876647133,
+          "angle": 1.5707963267948966,
+          "edge": "T47",
+          "s": 30,
+          "offset": -30,
+          "geometricClearanceVerified": true
+        },
+        "placementMs": 71.5
+      }
+    ]
+  }
+}

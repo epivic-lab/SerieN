@@ -57,3 +57,5 @@ h1,h2,h3,p{margin-top:0}
 
 .switchCell{min-width:0}.switchCell .sw{width:100%;height:100%}.switchCell.is-disabled{cursor:not-allowed}.switchCell .sw:disabled{pointer-events:none}
 @media(max-width:1170px){.trainConsoleName{font-size:11px;line-height:15px}.trainConsoleHeading{gap:3px}}
+
+.switchCell.is-identified,.switchCell:focus-visible{outline:1px solid #c7d2c6;outline-offset:1px;border-radius:8px}

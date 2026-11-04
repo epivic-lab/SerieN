@@ -8,7 +8,7 @@ export function createFleetCommands({trains,detached,route}) {
   function setSpeed(id,value) {
     const train=trains[id];if(!train)return;
     if(!Number.isFinite(value))throw new RangeError("Speed must be finite");
-    train.speed=Math.max(0,Math.min(100,value));return train;
+    train.requestedSpeed=train.speed=Math.max(0,Math.min(100,value));return train;
   }
   function reverse(id) {
     const train=trains[id];if(!train)return;
@@ -16,9 +16,9 @@ export function createFleetCommands({trains,detached,route}) {
   }
   function stop(id) {
     const train=trains[id];if(!train)return;
-    train.speed=train.velocity=0;return train;
+    train.requestedSpeed=train.speed=train.velocity=0;return train;
   }
-  function stopAll() {for(const train of trains)train.speed=train.velocity=0;}
+  function stopAll() {for(const train of trains)train.requestedSpeed=train.speed=train.velocity=0;}
   function toggleLights(id) {
     const train=trains[id];if(!train)return;
     train.lights=!train.lights;return train;

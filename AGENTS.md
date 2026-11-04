@@ -2,6 +2,10 @@
 
 Repository: `epivic-lab/SerieN`. These rules are permanent; read this file at the beginning of every new Codex conversation.
 
+## Current turnout documentation status — S7 technical closure
+
+Interactive Turnouts S0–S6.1 are approved by the Regia; S7 technical acceptance is complete, independent S7 approval PENDING. `docs/turnouts/FINAL_REPORT.md` is the permanent handoff. The entire `docs/_active/turnouts/` tree, including SPEC_v3.md/PDF and STATUS.md, is now a **non-active historical archive**, retained to preserve evidence hashes and links. Do not interpret its old phase gates as current authorization. No Train Management, main integration, deployment or subsequent phase is authorized. Await independent Regia review.
+
 ## Source of truth and scope
 - Work **only in this repository**; never change `first`, `SerieN Control`, Z21 control software, or external projects. SerieN is a browser **simulator**, not a live Z21 controller.
 - Read the actual checkout state (`git status`, branch, HEAD), then `PROGRESS.md` and **only the relevant section** of the current `docs/_active/` spec. Inspect actual code before deciding; a remote README or an old conversation is not the source of truth for unpushed work.
@@ -11,9 +15,27 @@ Repository: `epivic-lab/SerieN`. These rules are permanent; read this file at th
 ## Development gates — mandatory
 - Execute **ONE authorized microphase per user turn**, even when the whole macrophase is documented. A PDF or long plan is **not** authorization to execute all steps.
 - At the end of every microphase: run relevant tests and `npm run build`; verify invariants; capture required visual/performance evidence; update `PROGRESS.md` and the current `STATUS.md`; make **one reviewable atomic commit** with actual SHA; show `git status`; state PASS / FAIL / NOT VERIFIED accurately; and **STOP to ask for explicit user approval** of the next named microphase.
+- For **every future microphase and macrophase**: tests → atomic local commit → verified remote checkpoint on the dedicated development branch → pause for user approval. For Interactive Turnouts use `feature/turnouts`. Before pushing, verify the destination and fast-forward ancestry; after pushing, verify the actual remote SHA and clean working tree. If remote history diverges or checkpoint fails, stop and report the exact issue. Never publish local main to origin/main automatically; integration into main requires separate explicit user authorization. No automatic merges, force-push, destructive reset, unauthorized rebase or deployment.
 - A user approval covers only the named next microphase. If a gate fails, mark BLOCKED; do not quietly skip tests or continue. Never invent screenshots, benchmarks, test runs, or approval.
 - Do not force-push, merge, deploy, modify production configuration, or change other branches without explicit user authorization.
 - Before changing code, establish a baseline. Preserve existing performance gains, UI layout, camera, HUD, minimaps, train physics and all eight switches.
+
+## Permanent rule — mandatory remote checkpoint
+
+This commissioning directive applies to S6, S7, all later development phases and resumed/new sessions. It supersedes earlier generic local-only or second-push-approval restrictions; historical records remain intact. A later explicit task-specific publication prohibition still takes precedence.
+
+For every authorized macrophase or microphase:
+1. Verify the authorized development branch and initial checkpoint.
+2. Implement only authorized work; run pertinent tests and checks.
+3. Record evidence and update status documentation.
+4. Create an atomic, reproducible commit.
+5. Automatically perform a normal fast-forward push to the dedicated, already authorized development branch; no second authorization is required for that completed phase's code and evidence.
+6. Verify the published remote commit and files; compare local HEAD with remote HEAD.
+7. Deliver SHA, diff, tests and evidence to the Regia, then STOP for explicit approval of the next phase.
+
+A verified remote checkpoint is part of DONE. PASS / DELIVERED means code and evidence complete, remote checkpoint verified, pending independent Regia audit; it never implies final approval. FAIL means technical checks failed. BLOCKED means publication or a mandatory check cannot be completed. NOT VERIFIED identifies specific checks not performed. Never declare delivery complete after a failed push.
+
+Before a new branch is used, verify it is authorized for the task. If remote history diverges, STOP and report without rewriting history. Do not publish without an authorized phase ready for delivery. Automatic authorization covers only its development branch: never implicitly merge/push main, deploy, force-push, destructively reset, perform unauthorized rebase, change other repositories or production credentials/configuration, expose secrets, or start another phase. Main operations and deployment require separate explicit authorization.
 
 ## Art direction for the current turnout macrophase
 - Blue pulsating glow identifies the **actual complete Kato turnout device** and must be refined, conformal, depth-aware and non-occlusive. No bulbs, generic rectangles, floating halos, toy aesthetics or globally expensive bloom.

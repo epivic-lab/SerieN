@@ -1,0 +1,112 @@
+{
+  "result": "PASS",
+  "hoverPairs": [
+    [
+      "A",
+      "WX-A"
+    ],
+    [
+      "A",
+      "WX-B"
+    ],
+    [
+      "A",
+      "Y-IN"
+    ],
+    [
+      "A",
+      "Y-2"
+    ],
+    [
+      "A",
+      "Y-3"
+    ],
+    [
+      "A",
+      "Y-R1"
+    ],
+    [
+      "A",
+      "Y-R2"
+    ],
+    [
+      "A",
+      "Y-4"
+    ],
+    [
+      "B",
+      "WX-A"
+    ],
+    [
+      "B",
+      "WX-B"
+    ],
+    [
+      "B",
+      "Y-IN"
+    ],
+    [
+      "B",
+      "Y-2"
+    ],
+    [
+      "B",
+      "Y-3"
+    ],
+    [
+      "B",
+      "Y-R1"
+    ],
+    [
+      "B",
+      "Y-R2"
+    ],
+    [
+      "B",
+      "Y-4"
+    ]
+  ],
+  "keyboard": [
+    "WX-A",
+    "WX-B",
+    "Y-IN",
+    "Y-2",
+    "Y-3",
+    "Y-R1",
+    "Y-R2",
+    "Y-4"
+  ],
+  "reducedMotionExact": true,
+  "protectedGlowAndRejection": true,
+  "touchTapIdentifiesAndTogglesOnce": true,
+  "touchSwipeDoesNotToggle": true,
+  "opaqueDepthOcclusionExact": true,
+  "highDayNightBothStyles": true,
+  "resources": {
+    "before": {
+      "geometries": 348,
+      "textures": 45,
+      "programs": 84
+    },
+    "after": {
+      "geometries": 348,
+      "textures": 45,
+      "programs": 84
+    },
+    "disposed": {
+      "geometries": 340,
+      "textures": 45,
+      "programs": 83
+    },
+    "geometryDisposals": 8,
+    "materialDisposals": 1,
+    "removed": true
+  },
+  "mediaListeners": {
+    "add": 1,
+    "remove": 1
+  },
+  "errors": [],
+  "failedRequests": [],
+  "physicalGPUAndTouch": "NOT VERIFIED; Chromium/SwiftShader and CDP emulation"
+}

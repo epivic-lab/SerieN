@@ -1,0 +1,378 @@
+{
+  "result": "PASS",
+  "railMaterialsIdentical": true,
+  "materials": {
+    "S2": [
+      {
+        "name": "",
+        "type": "MeshStandardMaterial",
+        "color": [
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metalness": 0,
+        "bumpScale": 0.22,
+        "vertexColors": false,
+        "textures": {
+          "map": {
+            "width": 256,
+            "height": 256,
+            "sha256": "7b7863d668a2d24e5a3fd7c5151079eb12202b07f8dd867eca59726f066acb0a"
+          },
+          "roughnessMap": {
+            "width": 256,
+            "height": 256,
+            "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+          },
+          "bumpMap": {
+            "width": 256,
+            "height": 256,
+            "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+          }
+        }
+      },
+      {
+        "name": "Weathered rail web / polished running head",
+        "type": "MeshStandardMaterial",
+        "color": [
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metalness": 1,
+        "bumpScale": 1,
+        "vertexColors": true,
+        "textures": {
+          "roughnessMap": {
+            "width": 128,
+            "height": 128,
+            "sha256": "1cc2de02d21d2cbcb12beeba65c4c91a1de5f88f1034f60bdce553555c39edab"
+          }
+        }
+      }
+    ],
+    "S3": [
+      {
+        "name": "",
+        "type": "MeshStandardMaterial",
+        "color": [
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metalness": 0,
+        "bumpScale": 0.22,
+        "vertexColors": false,
+        "textures": {
+          "map": {
+            "width": 256,
+            "height": 256,
+            "sha256": "7b7863d668a2d24e5a3fd7c5151079eb12202b07f8dd867eca59726f066acb0a"
+          },
+          "roughnessMap": {
+            "width": 256,
+            "height": 256,
+            "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+          },
+          "bumpMap": {
+            "width": 256,
+            "height": 256,
+            "sha256": "90c7605763f3d5642ee63a5e871b4cd0104bc2090ff24e6ed2481561db08f026"
+          }
+        }
+      },
+      {
+        "name": "Weathered rail web / polished running head",
+        "type": "MeshStandardMaterial",
+        "color": [
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metalness": 1,
+        "bumpScale": 1,
+        "vertexColors": true,
+        "textures": {
+          "roughnessMap": {
+            "width": 128,
+            "height": 128,
+            "sha256": "1cc2de02d21d2cbcb12beeba65c4c91a1de5f88f1034f60bdce553555c39edab"
+          }
+        }
+      }
+    ]
+  },
+  "views": [
+    {
+      "id": "Y-IN",
+      "view": "opposite",
+      "variant": "A",
+      "changedBounds": [
+        238,
+        251,
+        465,
+        321
+      ],
+      "camera": [
+        813,
+        400,
+        -218.99999999999991
+      ],
+      "target": [
+        903,
+        0,
+        101.00000000000009
+      ],
+      "zoom": 0.8
+    },
+    {
+      "id": "Y-IN",
+      "view": "opposite",
+      "variant": "B",
+      "changedBounds": [
+        237,
+        250,
+        465,
+        323
+      ],
+      "camera": [
+        813,
+        400,
+        -218.99999999999991
+      ],
+      "target": [
+        903,
+        0,
+        101.00000000000009
+      ],
+      "zoom": 0.8
+    },
+    {
+      "id": "Y-IN",
+      "view": "low",
+      "variant": "A",
+      "changedBounds": [
+        90,
+        243,
+        598,
+        321
+      ],
+      "camera": [
+        1003,
+        130,
+        421.0000000000001
+      ],
+      "target": [
+        903,
+        0,
+        101.00000000000009
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "Y-IN",
+      "view": "low",
+      "variant": "B",
+      "changedBounds": [
+        88,
+        242,
+        599,
+        321
+      ],
+      "camera": [
+        1003,
+        130,
+        421.0000000000001
+      ],
+      "target": [
+        903,
+        0,
+        101.00000000000009
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "WX-A",
+      "view": "opposite",
+      "variant": "A",
+      "changedBounds": [
+        162,
+        224,
+        540,
+        356
+      ],
+      "camera": [
+        442.99999999999994,
+        400,
+        -235.5
+      ],
+      "target": [
+        533,
+        0,
+        84.5
+      ],
+      "zoom": 0.8
+    },
+    {
+      "id": "WX-A",
+      "view": "opposite",
+      "variant": "B",
+      "changedBounds": [
+        161,
+        223,
+        540,
+        358
+      ],
+      "camera": [
+        442.99999999999994,
+        400,
+        -235.5
+      ],
+      "target": [
+        533,
+        0,
+        84.5
+      ],
+      "zoom": 0.8
+    },
+    {
+      "id": "WX-A",
+      "view": "low",
+      "variant": "A",
+      "changedBounds": [
+        16,
+        219,
+        695,
+        357
+      ],
+      "camera": [
+        633,
+        130,
+        404.5
+      ],
+      "target": [
+        533,
+        0,
+        84.5
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "WX-A",
+      "view": "low",
+      "variant": "B",
+      "changedBounds": [
+        16,
+        218,
+        695,
+        359
+      ],
+      "camera": [
+        633,
+        130,
+        404.5
+      ],
+      "target": [
+        533,
+        0,
+        84.5
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "WX-B",
+      "view": "opposite",
+      "variant": "A",
+      "changedBounds": [
+        162,
+        224,
+        540,
+        356
+      ],
+      "camera": [
+        877,
+        400,
+        -268.5
+      ],
+      "target": [
+        967,
+        0,
+        51.499999999999986
+      ],
+      "zoom": 0.8
+    },
+    {
+      "id": "WX-B",
+      "view": "opposite",
+      "variant": "B",
+      "changedBounds": [
+        161,
+        223,
+        540,
+        358
+      ],
+      "camera": [
+        877,
+        400,
+        -268.5
+      ],
+      "target": [
+        967,
+        0,
+        51.499999999999986
+      ],
+      "zoom": 0.8
+    },
+    {
+      "id": "WX-B",
+      "view": "low",
+      "variant": "A",
+      "changedBounds": [
+        0,
+        219,
+        695,
+        357
+      ],
+      "camera": [
+        1067,
+        130,
+        371.5
+      ],
+      "target": [
+        967,
+        0,
+        51.499999999999986
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "WX-B",
+      "view": "low",
+      "variant": "B",
+      "changedBounds": [
+        0,
+        218,
+        695,
+        359
+      ],
+      "camera": [
+        1067,
+        130,
+        371.5
+      ],
+      "target": [
+        967,
+        0,
+        51.499999999999986
+      ],
+      "zoom": 1.2
+    }
+  ],
+  "errors": [],
+  "limits": "Two additional opposite/low camera angles and zooms, not every possible angle or physical GPU"
+}

@@ -1,0 +1,85 @@
+{
+  "blueBUnchangedExact": {
+    "Y-IN-48-blue": true,
+    "Y-IN-95-blue": true,
+    "WX-A-48-blue": true,
+    "WX-A-95-blue": true,
+    "WX-B-48-blue": true,
+    "WX-B-95-blue": true
+  },
+  "arrowsVisible": {
+    "Y-IN-48-0": true,
+    "Y-IN-48-blue": true,
+    "Y-IN-95-0": true,
+    "Y-IN-95-blue": true,
+    "WX-A-48-0": true,
+    "WX-A-48-blue": true,
+    "WX-A-95-0": true,
+    "WX-A-95-blue": true,
+    "WX-B-48-0": true,
+    "WX-B-48-blue": true,
+    "WX-B-95-0": true,
+    "WX-B-95-blue": true,
+    "overview-48-0": true,
+    "overview-95-0": true
+  },
+  "errors": [],
+  "oppositeDirections": {
+    "WX-A-0": [
+      {
+        "edge": "WX-A:upper",
+        "sign": 1,
+        "source": "JOURNEY"
+      },
+      {
+        "edge": "WX-A:upper",
+        "sign": -1,
+        "source": "JOURNEY"
+      }
+    ],
+    "WX-A-1": [
+      {
+        "edge": "WX-A:down",
+        "sign": 1,
+        "source": "JOURNEY"
+      },
+      {
+        "edge": "WX-A:down",
+        "sign": -1,
+        "source": "JOURNEY"
+      }
+    ],
+    "WX-B-0": [
+      {
+        "edge": "WX-B:upper",
+        "sign": 1,
+        "source": "JOURNEY"
+      },
+      {
+        "edge": "WX-B:upper",
+        "sign": -1,
+        "source": "JOURNEY"
+      }
+    ],
+    "WX-B-1": [
+      {
+        "edge": "WX-B:down",
+        "sign": 1,
+        "source": "JOURNEY"
+      },
+      {
+        "edge": "WX-B:down",
+        "sign": -1,
+        "source": "JOURNEY"
+      }
+    ]
+  },
+  "threeRevealFramesDistinct": true,
+  "all8BothStatesDayNight": true,
+  "revealProgress": [
+    0,
+    0.5,
+    1
+  ],
+  "result": "PASS"
+}
