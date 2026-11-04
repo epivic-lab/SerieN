@@ -1,11 +1,13 @@
 # Train Management — gate corrente
 
-R0 **APPROVATA** dal committente il 4 novembre 2026, decisioni D01–D08 vincolanti. Roadmap: 6A backend/contratti, 6B persistenza, 6C catalogo, 6D compositore/inventario, 6E collaudo; 5E successiva. La roadmap non è autorizzazione cumulativa.
+R0 e 6A.1 **APPROVATE dalla Regia**, quest'ultima al commit `4c90f1520ce6cd1cc7c1e9a538f819c135c45a82`. Base R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910`, main invariato al kickoff6A.2. Solo branch `feature/train-management`.
 
-**6A.1: verifiche documentali PASS; checkpoint di consegna da verificare nella risposta finale. Approvazione indipendente della Regia PENDING. 6A.2 NON INIZIATA e NON AUTORIZZATA.** Branch `feature/train-management`, base `348bfeff12c4005657098d89ea1d3c2ccdda9910` coincidente con main al kickoff. Il commit che introduce [REPORT](evidence/6A1/REPORT.md) identifica atomicamente la consegna; risolvere con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A1/REPORT.md`. SHA locale/remoto e working tree vanno verificati dopo il push: il presente file non anticipa un successo remoto.
+**6A.2: prototipo locale e verifiche PASS nel perimetro osservato. Approvazione indipendente PENDING; checkpoint remoto verificato nella consegna finale. 6A.3 NON INIZIATA/NON AUTORIZZATA.** Commit risolvibile con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A2/REPORT.md`.
 
-Contratti: [stato/lifecycle/atomicità/test futuri](6A1_CONTRACT.md), [schema dati](STATE_SCHEMA.json), [sicurezza/ownership/mapping](SECURITY_AND_DB_MAPPING.md). Le proposte di ownership A, pairing/recovery, limiti e migrazioni richiedono review della Regia prima di implementazione. Il testo integrale R0 non è nel checkout: il confronto indipendente col documento originale resta alla Regia.
+[Contratto e comandi](6A2_PROTOTYPE.md), [rapporto/evidenze](evidence/6A2/REPORT.md), [matrice R0 P01–P18](R0_ACCEPTANCE_MAPPING.md). Contratti6A.1 conservati senza rinumerazioni. La Regia ha fornito i criteri R0.13 originali durante6A.2: la matrice registra corrispondenze complete/parziali e lacune degli oracoli, non esegue funzionalità6B–6E.
 
-Verifiche eseguite: npm test (37 file), esecuzione diretta dei 37 file (220 test), 9 Python/JMRI, build, JSON Schema/meta-schema/16 rifiuti, tracciabilità di 151 proprietà. Esiti e limiti nel rapporto. Nessuna modifica runtime/asset/dipendenza, schema DB, RLS, grants, Auth, funzione o produzione. R1 preservata per identità sorgenti e bundle; nessuna nuova prova browser/hardware/prestazionale.
+44 test HTTP di sicurezza PASS;5 scenari Chromium reale PASS (CryptoKey non esportabile/IndexedDB/reload/firma/revoca/perdita); npm test37 file PASS,9Python PASS, build PASS. Runtime/canonico/bundle R1 invariati. Prototipo isolato senza dipendenze produttive, DB/credenziali, Pages o deploy. Negazioni verificano sia assenza di dati protetti in risposta sia assenza di scritture sui workspace fixture.
 
-**Unica prossima azione: attendere audit della Regia e autorizzazione esplicita alla 6A.2. STOP dopo il checkpoint 6A.1.** Nessun gateway, client di persistenza, API, migrazione o autosave da avviare automaticamente; nessun merge/main/deploy.
+Limiti: memoria e sezioni sincrone di un processo, HTTP loopback; nessuna prova transazionale/DB/RLS/quote/DoS/TLS/revoca distribuita o rotazione definitiva. Solo Chromium headless nella sessione di test; altri browser e durabilità dopo crash OS NOT VERIFIED. Scadenza grant device e cerimonia recovery duraturo restano punti da definire prima della produzione. Nessuna certificazione produttiva implicita.
+
+**Unica prossima azione: attendere audit della Regia e autorizzazione esplicita 6A.3. STOP dopo checkpoint 6A.2.**

@@ -1,0 +1,47 @@
+{
+  "browser": "154.0.8037.57",
+  "cases": [
+    {
+      "test": "browser generation, owner-approved pairing",
+      "expected": 200,
+      "observed": 200
+    },
+    {
+      "test": "private CryptoKey non-exportable",
+      "observed": {
+        "extractable": false,
+        "exportRejected": true
+      },
+      "expected": {
+        "extractable": false,
+        "exportRejected": true
+      }
+    },
+    {
+      "test": "IndexedDB key after reload signs real HTTP read",
+      "expected": 200,
+      "observed": 200
+    },
+    {
+      "test": "revoked browser key returns no protected data",
+      "expected": 403,
+      "observed": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      }
+    },
+    {
+      "test": "missing key after deletion/reload does not send unsigned fallback",
+      "expected": {
+        "missing": true
+      },
+      "observed": {
+        "missing": true
+      }
+    }
+  ],
+  "result": "PASS",
+  "limitations": "Chromium headless only; no Safari/Firefox/mobile, OS recovery, power-loss durability or XSS resistance certification."
+}

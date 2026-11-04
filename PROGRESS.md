@@ -215,3 +215,14 @@ Prodotti [contratto DTO/lifecycle/CAS/idempotenza](docs/_active/train-management
 Supabase riletta solo in lettura: dieci tabelle RLS, zero record esatti, due migrazioni storiche e zero Edge Function confermati. Dipendenza owner_id→Auth e assenza Journey nei placement loose documentate; nessuna modifica DB/RLS/grants/Auth/segreti. Esposizione Data API Dashboard e testo integrale R0 NOT VERIFIED; la richiesta fornisce le decisioni approvate ma non il documento completo. Proposte e rischi sono sottoposti alla Regia.
 
 Checkpoint atomico: commit che introduce il rapporto 6A.1, risolvibile con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A1/REPORT.md`; SHA e corrispondenza remoto documentati nella consegna dopo push normale. Nessuna approvazione della Regia implicita. Se push/verifica remota fallisce, consegna BLOCKED. Nessuna PR/merge/main/deploy. **Unica prossima azione: attendere audit e autorizzazione esplicita 6A.2, NON iniziata.**
+
+
+## Train Management — 6A.2 prototipo capability gateway
+
+La Regia approva 6A.1 `4c90f1520ce6cd1cc7c1e9a538f819c135c45a82` e autorizza soltanto 6A.2. Fetch/ls-remote e ascendenza R1 verificati; branch feature/train-management pulito al kickoff, remoto coincidente,main `348bfeff12c4005657098d89ea1d3c2ccdda9910` invariato. Nessuna storia riscritta.
+
+Prototipo isolato in `prototypes/train-management/capability-gateway/`:WebCryptoP-256→NodeP1363,proof firmata,nonce/timestamp,scope da registry,HTTP solo127.0.0.1,pairing owner/fingerprint/invito monouso,recovery simulata e revoca. Nessun import nel bundle R1,DB/credenziale reale o dipendenza produttiva nuova. [Contratto](docs/_active/train-management/6A2_PROTOTYPE.md),[rapporto](docs/_active/train-management/evidence/6A2/REPORT.md). [Corrispondenza R0P01–P18](docs/_active/train-management/R0_ACCEPTANCE_MAPPING.md) dai criteri originali forniti dalla Regia durante il lavoro: lacune esplicite, nessuna rinumerazione6A.1 né test 6B–6E avviato.
+
+PASS:44 testHTTP con negazioni senza dati restituiti/modifiche ai workspace;5 scenari browser Chromium reale per private CryptoKey non esportabile,IndexedDB,reload,firma,revoca/perdita;npm test37 file,9Python/JMRI,build. Canonico/bundle con hash R1 identici,app/motore/asset/workflow/package intatti. TLS/DB/transazioni/ratebudget produzione,revoca multiprocesso,rotazione definitiva e altri browser/hardware NOT VERIFIED; nessun PASS produttivo dedotto.
+
+Checkpoint atomico: commit che introduce rapporto 6A.2, SHA e confronto remoto nella consegna dopo push normale solo feature/train-management. Nessuna PR/main/merge/deploy. Approvazione6A.2 PENDING. **Unica prossima azione: audit Regia e autorizzazione esplicita 6A.3,non iniziata.**
