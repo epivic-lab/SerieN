@@ -111,3 +111,12 @@ Active isolated5D/S4/S5 performance within gates; absolute CPU increment0.0690ms
 ## S5 audit checkpoint — 2026-11-04
 
 Normal push to feature/turnouts explicitly authorized. Existing S5 code/tests/evidence preserved unchanged; only STATUS/PROGRESS updated for publication. Previous test results are historical evidence, not new executions. Artifact hashes and source correspondence checked; scope/credential scan found no issue. Independent approval remains PENDING; do not infer acceptance from technical completion. Main observed at aeff336 (advanced externally since S5); no main publication or modification. Final checkpoint SHA/remote equality in handoff. **STOP pending Regia audit; no S6.**
+
+
+## S6 — technical closure, local checkpoint (2026-11-04)
+
+Regia reviewed S5 and explicitly authorized S6; prior audit-pending notes are historical. **S6 technical PASS within tested scope; technical/artistic review PENDING. S7 NOT STARTED.** Clean baseline ca9d419, S5 code8321979 preserved. Read-only guard projection, geometric N-scale STOP,400/300ms emergence/retraction, reduced motion, accessible status and one original gesture-gated bell coordinator with native MUTE and lifecycle cleanup.
+
+**220Node+9Python+build PASS; S6/S4/S2/5C browser PASS.** Two native guarded trains, independent release/reverse, correction while stationary, STOP ALL/reset/dispose; engine guard still blocks after all S6 objects are disposed. Canonical regeneration unchanged; existing railway/S5/5D/glowB/arrows/assets unchanged. GPU dispose releases4geometries/1texture, no audio voice/timer remains. Physical GPU/touch/audio listening/screen reader NOT VERIFIED; no repeated full5D benchmark or S7 audit.
+
+[Report](evidence/S6/REPORT.md), [gallery and audio](evidence/S6/visual/GALLERY.md), [telemetry](evidence/S6/browser/browser.json), [commands](evidence/S6/commands.json). Atomic local commit `feat(turnouts): render guarded stop and bell`; actual SHA in handoff. **User explicitly forbids push without further authorization for S6, overriding AGENTS remote gate. No push/merge/rebase/reset/deploy.** STOP for Regia technical and artistic review. No S7 or inferred approval.

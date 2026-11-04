@@ -1,3 +1,4 @@
+import {createGuardedStops} from './src/guarded-stop-scene.js';
 import {animateAuxiliaryWheels} from './src/rolling-stock-animation.js';
 import {stepRailway} from './src/railway-step.js';
 import {vehiclesConflict,envelopeGap} from './src/railway-conflicts.js';
@@ -564,6 +565,7 @@ function removeWagon(group) {
   scene.remove(group);
 }
 function reset() {
+  guardedStops.clear();
   if (!confirm("Reset locomotives, switches and missions?")) return;
   for (const d of detached) removeWagon(d.group);
   detached.length = 0;
@@ -581,6 +583,7 @@ function reset() {
     }
     initializeJourney(t);
   });
+  guardedStops.clear();
   paused = false;
   mission = 0;
   transferred = visitedRunaround = didDetach = didAttach = false;
@@ -589,7 +592,7 @@ function reset() {
   log("Reset completed.");
 }
 function setTrainSpeed(id,value) {
-  if(fleetCommands.setSpeed(id,value))trainDeck?.sync();
+  if(fleetCommands.setSpeed(id,value)){trainDeck?.sync();guardedStops.update(performance.now());}
 }
 function reverseTrain(id) {
   const train=fleetCommands.reverse(id);if(!train)return;
@@ -597,9 +600,11 @@ function reverseTrain(id) {
 }
 function stopTrain(id) {
   const train=fleetCommands.stop(id);if(!train)return;
+  guardedStops.update(performance.now());
   ui();log(train.name+" stopped");
 }
 function stopAllTrains() {
+  guardedStops.bell.setActive(false);
   fleetCommands.stopAll();ui();log("STOP ALL · every train stopped");
 }
 function addTrain() {
@@ -641,6 +646,7 @@ $("nextMission").onclick = () => {
   ui();
 };
 $("pause").onclick = () => {
+  guardedStops.bell.setActive(false);
   paused = !paused;
   $("pause").textContent = paused ? "\u25B6 Resume" : "\u2161 Pause";
   log(paused ? "Simulation paused." : "Simulation resumed.");
@@ -730,6 +736,7 @@ window.addEventListener("pagehide", (e) => {
   turnoutInteraction.dispose();
   motionPreference.removeEventListener('change',onMotionPreference);
   turnoutGlow.dispose();
+  guardedStops.dispose();
   turnoutArrows.dispose();
   turnoutPicking.dispose();
   trainDeck?.dispose();
@@ -794,6 +801,7 @@ function tick(now) {
   smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2, quality.profile === "low");
   turnoutGlow.update(now);
   turnoutArrows.update(now);
+  guardedStops.update(now);
   effects.render(quality.profile === "cinema");
   if (frame % 35 === 0) {
     missionUI();
@@ -809,7 +817,8 @@ const turnoutGlow=createTurnoutGlow(scene,turnoutModel,{variant:requestedGlow===
 const turnoutArrows=createTurnoutArrows(scene,turnoutModel,{getState:id=>switchSpecs.find(s=>s.id===id)?.on,choose:route,
   getApproaches:()=>turnoutArrowApproaches({network,topology:switchTopology,trains,choose:route}),reducedMotion:motionPreference.matches});
 turnoutArrows.update(performance.now());
-const onMotionPreference=()=>{turnoutGlow.setReducedMotion(motionPreference.matches);turnoutArrows.setReducedMotion(motionPreference.matches);};
+const guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:()=>detached,host,isPaused:()=>paused,reducedMotion:motionPreference.matches});
+const onMotionPreference=()=>{guardedStops.setReducedMotion(motionPreference.matches);turnoutGlow.setReducedMotion(motionPreference.matches);turnoutArrows.setReducedMotion(motionPreference.matches);};
 motionPreference.addEventListener('change',onMotionPreference);
 const turnoutInteraction=mountTurnoutInteraction({canvas:renderer.domElement,camera,scene,controls,
   picker:turnoutPicking,panel:$("switchList"),controlIds:controlOrder,requestToggle,selectTrain:select,
@@ -817,6 +826,7 @@ const turnoutInteraction=mountTurnoutInteraction({canvas:renderer.domElement,cam
 $("loadMsg").hidden = true;
 animationHandle = requestAnimationFrame(tick);
 if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = {
+  guardedStopState:()=>guardedStops.snapshot,
   indicatorState:switchIndicatorState,
   turnoutGlowState:()=>turnoutGlow.snapshot,
   turnoutArrowsState:()=>{turnoutArrows.update(performance.now(),true);return turnoutArrows.snapshot;},

@@ -1,0 +1,55 @@
+{
+  "fx": {
+    "time": 30214.60000000056,
+    "units": [
+      {
+        "id": 2,
+        "visible": true,
+        "value": 1,
+        "pose": {
+          "x": 740,
+          "z": 284.00000000000006,
+          "y": 0.7324242876647133,
+          "angle": 1.5707963267948966,
+          "edge": "T47",
+          "s": 30,
+          "offset": -30,
+          "geometricClearanceVerified": true
+        },
+        "placementMs": 86.90000000037253
+      },
+      {
+        "id": 0,
+        "visible": true,
+        "value": 1,
+        "pose": {
+          "x": 809.25,
+          "z": 230.00000000000006,
+          "y": 0.4070746191950718,
+          "angle": 1.5707963267948966,
+          "edge": "T47",
+          "s": 99.25000000000001,
+          "offset": 24,
+          "geometricClearanceVerified": true
+        },
+        "placementMs": 48.90000000037253
+      }
+    ],
+    "audio": {
+      "active": false,
+      "muted": false,
+      "initialized": false,
+      "voices": 0,
+      "timer": false
+    }
+  },
+  "cameras": {
+    "multi-top": [
+      775,
+      220,
+      230
+    ],
+    "second-risk-close": "pose + [60,45,-15]"
+  },
+  "source": "native S6 fixture, same two guarded trains; day48"
+}

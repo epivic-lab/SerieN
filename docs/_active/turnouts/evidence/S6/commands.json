@@ -1,0 +1,39 @@
+{
+  "phase": "S6",
+  "dateUtc": "2026-11-04",
+  "baseline": "ca9d419b40dae8b54181fcd0524af492c80b570b",
+  "branch": "feature/turnouts",
+  "publication": "local commit only; push explicitly not authorized",
+  "commands": [
+    "npm test",
+    "npm run build",
+    "python3 -m unittest discover -s tests -p '*_test.py'",
+    "python3 scripts/build-canonical-layout.py",
+    "node docs/_active/turnouts/evidence/S6/recipes/build-profile.mjs . /workspace/work/s6/profile.js",
+    "python3 -m http.server 8003 --bind 127.0.0.1",
+    "python3 tests/browser-guarded-stop.py",
+    "python3 docs/_active/turnouts/evidence/S6/recipes/regressions.py",
+    "python3 docs/_active/turnouts/evidence/S6/recipes/capture-multi.py"
+  ],
+  "regressionBaseline": "S4 test uses the preserved S3 profile from fd32b43fe9438980bde798fd76773f8af2f3f5fc; rebuild via git archive and versioned S3 build-profile.mjs with current node_modules symlink if temporary bundle is lost. No checkout/reset/rebase required.",
+  "browser": "Chromium headless, SwiftShader; native engine guards, temporary observer bundle only",
+  "visuals": "Original WebGL canvas PNG; test-only close camera lowers OrbitControls minDistance, no production camera change; animation clock controlled. Extra targeted multi-risk camera capture reuses same native fixture. Primary two-risks.png comes from the targeted capture-multi.py high camera; second-risk-close.png shows its second sign.",
+  "audio": "Original same-factory OfflineAudioContext rendering, mono48kHz16bit, one second",
+  "tests": "Fresh S6 runs, not reused S5 historical results",
+  "notVerified": [
+    "physical GPU/FPS",
+    "physical touch",
+    "physical audio listening",
+    "screen reader",
+    "realtime video",
+    "complete5D performance matrix",
+    "S7 final audit"
+  ],
+  "runtimeSha256": {
+    "app.js": "34f77115f98d2442daf79b5dacaf825693adad530342defce7e0103986261a4e",
+    "src/guarded-stop-scene.js": "110c1bbcff7a9d87a3bc35756892fe3b0110dd670887daa70f727a583b3eb611",
+    "src/guarded-stop-view.js": "5802da4a07078b57e43df58eabf334deffec5f272eb735714d839a4ee4aca753",
+    "src/guarded-stop-bell.js": "87183993172c1778b5c29ba50d83f77ac5f6f7ef4d570889c264dee7a681de38"
+  },
+  "productionBundleSha256": "df6a0674c15892e3df81c84a5c62f940cf8f8c7e80b9c223dbde3e691e42dbd0"
+}

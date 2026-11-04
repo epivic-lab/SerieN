@@ -164,3 +164,12 @@ Salvati tre moduli per proiezione pura S1, osservazione Journey e overlay rosso:
 Pubblicazione ora esplicitamente autorizzata sul solo `feature/turnouts`. Implementazione S5 conservata nel commit `8321979af164f80ecfdcac4a9d884712ccd98031`, senza modifiche a codice/test/evidenze. Completamento tecnico **dichiarato**, approvazione indipendente della Regia **PENDING**. Verificati integrità dei50artefatti, corrispondenza dei sorgenti alle evidenze, perimetro del diff e scan mirato credenziali; nessuna suite rieseguita. Risultati precedenti:217Node,9Python/JMRI,build,cinque regressioni browser e sei casi S5 PASS, con provenienza nel rapporto S5.
 
 Checkpoint di pubblicazione: commit che aggiunge questa nota; SHA e coincidenza remota verificati nella consegna. `origin/main` rilevato ad `aeff336c997748bf49d2a09a61c1d6d9238fb3db`, diverso dal riferimento storico S5, senza interventi su main. Nessun merge/rebase/reset/deploy. **Unica prossima azione: attendere l’audit indipendente della Regia. S6 non autorizzata.**
+
+
+## S6 — STOP scenico e campanello (2026-11-04)
+
+La Regia ha revisionato S5 e autorizzato esclusivamente S6: questo aggiorna la precedente attesa audit. **S6 PASS tecnico nel perimetro verificato; review tecnica/artistica PENDING; S7 NON iniziata.** Baseline pulita feature/turnouts `ca9d419`, S5 `8321979` preservata. Tre moduli separano osservazione guardia, scena e audio; STOP geometrico in scala N, emersione400ms/rientro300ms, reduced motion, avviso accessibile, singolo campanello globale originale con MUTE e cleanup.
+
+**220Node+9Python+build PASS; browser S6, S4, S2 e5C PASS.** Due rischi e risoluzione indipendente, correzione senza ripartenza, STOP ALL/reset/dispose; protezione S5 operativa dopo rimozione totale S6. Sorgenti ferroviarie/S5/5D/glowB/frecce340ms e asset invariati, canonico rigenerato senza diff. GPU rilascia4geometrie/1texture; nessun timer/voce residua. [Rapporto](docs/_active/turnouts/evidence/S6/REPORT.md), [galleria/audio](docs/_active/turnouts/evidence/S6/visual/GALLERY.md), [risultati](docs/_active/turnouts/evidence/S6/browser/browser.json). Hardware GPU/touch, ascolto fisico e screen reader NOT VERIFIED; sequenza campionata, non video realtime.
+
+Commit atomico locale `feat(turnouts): render guarded stop and bell`; SHA effettivo nella consegna. **Nessun push, merge, rebase, reset o deploy: la richiesta S6 vieta il push senza ulteriore autorizzazione, prevalendo sul gate remoto AGENTS.** Prossima azione unica: review tecnica e artistica della Regia. Non iniziare S7.
