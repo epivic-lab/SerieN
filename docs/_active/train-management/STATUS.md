@@ -1,13 +1,13 @@
 # Train Management — gate corrente
 
-R0 e 6A.1 **APPROVATE dalla Regia**, quest'ultima al commit `4c90f1520ce6cd1cc7c1e9a538f819c135c45a82`. Base R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910`, main invariato al kickoff6A.2. Solo branch `feature/train-management`.
+R0, 6A.1 e 6A.2 **APPROVATE dalla Regia**, ultima baseline `f64bdc8291a9c51a29c60076bae303e91e6e1d26`. Branch `feature/train-management`; main ancora R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` al kickoff.
 
-**6A.2: prototipo locale e verifiche PASS nel perimetro osservato. Approvazione indipendente PENDING; checkpoint remoto verificato nella consegna finale. 6A.3 NON INIZIATA/NON AUTORIZZATA.** Commit risolvibile con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A2/REPORT.md`.
+**6A.3: PASS tecnico del collaudo locale; approvazione indipendente PENDING. Checkpoint remoto verificato nella consegna finale. 6A.4 NON INIZIATA e NON AUTORIZZATA.** Commit identificabile con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A3/REPORT.md`.
 
-[Contratto e comandi](6A2_PROTOTYPE.md), [rapporto/evidenze](evidence/6A2/REPORT.md), [matrice R0 P01–P18](R0_ACCEPTANCE_MAPPING.md). Contratti6A.1 conservati senza rinumerazioni. La Regia ha fornito i criteri R0.13 originali durante6A.2: la matrice registra corrispondenze complete/parziali e lacune degli oracoli, non esegue funzionalità6B–6E.
+[Specifica e rollback](6A3_SCHEMA.md), [rapporto con prove](evidence/6A3/REPORT.md). Proposta `supabase/migrations/20261104165408_serien_workspace_expand.sql`: expand additivo, senza cutover owner/Auth. Baseline e fixture sintetiche in `tests/db/6A3/`, PostgreSQL17.11 reale in container effimero senza rete o porte pubblicate. Nessuna modifica al Supabase reale.
 
-44 test HTTP di sicurezza PASS;5 scenari Chromium reale PASS (CryptoKey non esportabile/IndexedDB/reload/firma/revoca/perdita); npm test37 file PASS,9Python PASS, build PASS. Runtime/canonico/bundle R1 invariati. Prototipo isolato senza dipendenze produttive, DB/credenziali, Pages o deploy. Negazioni verificano sia assenza di dati protetti in risposta sia assenza di scritture sui workspace fixture.
+51 verifiche DB PASS: legacy non vuoto preservato esattamente dall'expand, rollback DDL, backfill e inversione semantica, RLS/grants/FK, isolamento A/B con login SQL distinti, head, registry e vincoli ferroviari. 48 test HTTP PASS dopo correzione minima UUID; 5 scenari Chromium PASS; npm test 37 file PASS, 9 Python/JMRI PASS, build PASS. Codice/bundle/canonico R1 e dipendenze invariati. Il backfill attiva i trigger updated_at storici: timestamp possono avanzare, come documentato.
 
-Limiti: memoria e sezioni sincrone di un processo, HTTP loopback; nessuna prova transazionale/DB/RLS/quote/DoS/TLS/revoca distribuita o rotazione definitiva. Solo Chromium headless nella sessione di test; altri browser e durabilità dopo crash OS NOT VERIFIED. Scadenza grant device e cerimonia recovery duraturo restano punti da definire prima della produzione. Nessuna certificazione produttiva implicita.
+Limiti: cutover senza owner e applicazione reale, API/SaveCheckpoint/CAS, pairing/consumo monouso e revoca DB transazionali, provisioning SQL produttivo, backup/PITR, piattaforma Supabase/PostgREST e carichi reali NOT VERIFIED. Advisor remoti preesistenti registrati senza correzioni produttive. Matrice R0 P01–P18 e contratti precedenti preservati.
 
-**Unica prossima azione: attendere audit della Regia e autorizzazione esplicita 6A.3. STOP dopo checkpoint 6A.2.**
+**Unica prossima azione: attendere audit della Regia e autorizzazione esplicita 6A.4. STOP dopo checkpoint 6A.3.**

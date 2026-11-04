@@ -226,3 +226,16 @@ Prototipo isolato in `prototypes/train-management/capability-gateway/`:WebCrypto
 PASS:44 testHTTP con negazioni senza dati restituiti/modifiche ai workspace;5 scenari browser Chromium reale per private CryptoKey non esportabile,IndexedDB,reload,firma,revoca/perdita;npm test37 file,9Python/JMRI,build. Canonico/bundle con hash R1 identici,app/motore/asset/workflow/package intatti. TLS/DB/transazioni/ratebudget produzione,revoca multiprocesso,rotazione definitiva e altri browser/hardware NOT VERIFIED; nessun PASS produttivo dedotto.
 
 Checkpoint atomico: commit che introduce rapporto 6A.2, SHA e confronto remoto nella consegna dopo push normale solo feature/train-management. Nessuna PR/main/merge/deploy. Approvazione6A.2 PENDING. **Unica prossima azione: audit Regia e autorizzazione esplicita 6A.3,non iniziata.**
+
+
+## Train Management — 6A.3 schema PostgreSQL isolato
+
+La Regia approva 6A.2 `f64bdc8291a9c51a29c60076bae303e91e6e1d26` e autorizza soltanto 6A.3. Branch feature/train-management pulito al kickoff; fetch/ls-remote e ascendenza R1 confermati, remoto coincidente e main `348bfeff12c4005657098d89ea1d3c2ccdda9910` invariato. Nessuna storia riscritta.
+
+Proposta additiva `supabase/migrations/20261104165408_serien_workspace_expand.sql`, generata con CLI 3.0.0: workspace/registry privato, ownership domain con FK composite, session head coerente con snapshot e ricevuta, separazione authorizer/worker. Expand senza cutover: owner_id e compatibilità legacy rimangono. Baseline storiche lette dal catalogo reale e ricostruite soltanto in PostgreSQL17.11 locale effimero senza rete. [Specifica/rollback](docs/_active/train-management/6A3_SCHEMA.md), [rapporto/evidenze](docs/_active/train-management/evidence/6A3/REPORT.md). Corretto solo il controllo UUID richiesto nel prototipo; matrice R0 P01–P18 e contratti approvati conservati.
+
+PASS: 51 verifiche SQL reali su dieci tabelle baseline non vuote, FK/RLS/grants e isolamento A/B con connessioni SQL distinte, head, vincoli ferroviari, rollback DDL e conservazione dati. Expand conserva anche timestamp; backfill e inversione conservano valori semantici ma touch_updated_at può avanzare. 48 test HTTP con UUID invalidi, 5 scenari Chromium, npm test37 file, 9 Python/JMRI e build PASS. Canonico/bundle R1 e sorgenti applicativi, asset, package/workflow invariati.
+
+Supabase reale solo letture di cataloghi/migrazioni/trigger/advisor: nessun DDL/DML/Auth/RLS/grant/deploy. Advisor storico Auth/password e suggerimenti indici documentati, non corretti in produzione. Applicazione reale, provisioning SQL, cutover senza owner, transazioni CAS/SaveCheckpoint, piattaforma Supabase/PostgREST e carichi reali NOT VERIFIED. Nessuna API/autosave/integrazione nel simulatore.
+
+Checkpoint atomico: commit che introduce rapporto6A.3, SHA e coincidenza remota nella consegna dopo push normale solo feature/train-management. Nessuna PR/main/merge/Pages/Supabase deploy. Approvazione6A.3 PENDING. **Unica prossima azione: audit Regia e autorizzazione esplicita 6A.4, non iniziata.**

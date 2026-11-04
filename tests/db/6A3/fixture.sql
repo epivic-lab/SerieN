@@ -1,0 +1,12 @@
+INSERT INTO auth.users VALUES('00000000-0000-4000-8000-000000000001');
+INSERT INTO public.stock_models(id,kind,name) VALUES('00000000-0000-4000-8000-000000000010','locomotive','synthetic loco'),('00000000-0000-4000-8000-000000000011','wagon','synthetic wagon');
+INSERT INTO public.stock_items(id,owner_id,model_id) VALUES('00000000-0000-4000-8000-000000000020','00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000010'),('00000000-0000-4000-8000-000000000021','00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000011');
+INSERT INTO public.consists(id,owner_id,name) VALUES('00000000-0000-4000-8000-000000000030','00000000-0000-4000-8000-000000000001','synthetic consist');
+INSERT INTO public.consist_members(consist_id,stock_item_id,owner_id,ordinal) VALUES('00000000-0000-4000-8000-000000000030','00000000-0000-4000-8000-000000000020','00000000-0000-4000-8000-000000000001',0);
+UPDATE public.consists SET status='ready';
+INSERT INTO public.layouts(id,owner_id,name,topology_hash) VALUES('00000000-0000-4000-8000-000000000040','00000000-0000-4000-8000-000000000001','synthetic canonical','e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc');
+INSERT INTO public.layout_segments(layout_id,edge_id,length_mm) VALUES('00000000-0000-4000-8000-000000000040','T47',248);
+INSERT INTO public.layout_placements(consist_id,owner_id,layout_id,edge_id,s_mm,heading) VALUES('00000000-0000-4000-8000-000000000030','00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000040','T47',120,1);
+INSERT INTO public.loose_stock_placements(stock_item_id,owner_id,layout_id,edge_id,s_mm,heading) VALUES('00000000-0000-4000-8000-000000000021','00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000040','T47',200,1);
+INSERT INTO public.layout_snapshots(id,owner_id,layout_id,revision,payload) VALUES('00000000-0000-4000-8000-000000000050','00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000040',1,'{"topologyHash":"e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc","resumePolicy":"STOPPED","layout":{"switches":{"WX-A":false,"WX-B":false,"Y-IN":false,"Y-2":false,"Y-3":false,"Y-R1":false,"Y-R2":false,"Y-4":false}}}');
+INSERT INTO public.operation_receipts(owner_id,request_id,op_type,payload_digest) VALUES('00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000060','synthetic-save',repeat('a',64));

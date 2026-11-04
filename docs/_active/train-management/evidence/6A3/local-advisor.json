@@ -1,0 +1,128 @@
+{
+  "rls": [
+    {
+      "force": false,
+      "table": "layout_placements",
+      "schema": "public",
+      "enabled": true
+    },
+    {
+      "force": true,
+      "table": "workspaces",
+      "schema": "serien_capability",
+      "enabled": true
+    },
+    {
+      "force": true,
+      "table": "devices",
+      "schema": "serien_capability",
+      "enabled": true
+    },
+    {
+      "force": true,
+      "table": "invitations",
+      "schema": "serien_capability",
+      "enabled": true
+    },
+    {
+      "force": true,
+      "table": "recovery_verifiers",
+      "schema": "serien_capability",
+      "enabled": true
+    },
+    {
+      "force": true,
+      "table": "replay_nonces",
+      "schema": "serien_capability",
+      "enabled": true
+    },
+    {
+      "force": true,
+      "table": "worker_bindings",
+      "schema": "serien_capability",
+      "enabled": true
+    },
+    {
+      "force": true,
+      "table": "device_locks",
+      "schema": "serien_capability",
+      "enabled": true
+    },
+    {
+      "force": false,
+      "table": "stock_items",
+      "schema": "public",
+      "enabled": true
+    },
+    {
+      "force": false,
+      "table": "consists",
+      "schema": "public",
+      "enabled": true
+    },
+    {
+      "force": false,
+      "table": "consist_members",
+      "schema": "public",
+      "enabled": true
+    },
+    {
+      "force": false,
+      "table": "layouts",
+      "schema": "public",
+      "enabled": true
+    },
+    {
+      "force": false,
+      "table": "loose_stock_placements",
+      "schema": "public",
+      "enabled": true
+    },
+    {
+      "force": false,
+      "table": "layout_snapshots",
+      "schema": "public",
+      "enabled": true
+    },
+    {
+      "force": false,
+      "table": "operation_receipts",
+      "schema": "public",
+      "enabled": true
+    },
+    {
+      "force": true,
+      "table": "session_heads",
+      "schema": "serien_capability",
+      "enabled": true
+    },
+    {
+      "force": false,
+      "table": "layout_segments",
+      "schema": "public",
+      "enabled": true
+    },
+    {
+      "force": false,
+      "table": "stock_models",
+      "schema": "public",
+      "enabled": true
+    }
+  ],
+  "roles": [
+    {
+      "name": "serien_tm_worker",
+      "bypassrls": false,
+      "superuser": false,
+      "createRole": false
+    },
+    {
+      "name": "serien_tm_authorizer",
+      "bypassrls": false,
+      "superuser": false,
+      "createRole": false
+    }
+  ],
+  "constraints": 0,
+  "invalidIndexes": 0
+}

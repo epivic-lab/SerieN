@@ -1,0 +1,74 @@
+{
+  "triggers": [
+    {
+      "name": "stock_models_touch",
+      "table": "stock_models",
+      "definition": "CREATE TRIGGER stock_models_touch BEFORE UPDATE ON public.stock_models FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()"
+    },
+    {
+      "name": "stock_items_touch",
+      "table": "stock_items",
+      "definition": "CREATE TRIGGER stock_items_touch BEFORE UPDATE ON public.stock_items FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()"
+    },
+    {
+      "name": "consists_touch",
+      "table": "consists",
+      "definition": "CREATE TRIGGER consists_touch BEFORE UPDATE ON public.consists FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()"
+    },
+    {
+      "name": "layouts_touch",
+      "table": "layouts",
+      "definition": "CREATE TRIGGER layouts_touch BEFORE UPDATE ON public.layouts FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()"
+    },
+    {
+      "name": "layout_placements_touch",
+      "table": "layout_placements",
+      "definition": "CREATE TRIGGER layout_placements_touch BEFORE UPDATE ON public.layout_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()"
+    },
+    {
+      "name": "loose_stock_touch",
+      "table": "loose_stock_placements",
+      "definition": "CREATE TRIGGER loose_stock_touch BEFORE UPDATE ON public.loose_stock_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()"
+    },
+    {
+      "name": "check_member_assignment",
+      "table": "consist_members",
+      "definition": "CREATE TRIGGER check_member_assignment BEFORE INSERT OR UPDATE ON public.consist_members FOR EACH ROW EXECUTE FUNCTION serien_internal.check_member_assignment()"
+    },
+    {
+      "name": "check_loose_assignment",
+      "table": "loose_stock_placements",
+      "definition": "CREATE TRIGGER check_loose_assignment BEFORE INSERT OR UPDATE ON public.loose_stock_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.check_loose_assignment()"
+    },
+    {
+      "name": "members_ready_at_commit",
+      "table": "consist_members",
+      "definition": "CREATE CONSTRAINT TRIGGER members_ready_at_commit AFTER INSERT OR DELETE OR UPDATE ON public.consist_members DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION serien_internal.check_ready_members()"
+    },
+    {
+      "name": "consists_ready_at_commit",
+      "table": "consists",
+      "definition": "CREATE CONSTRAINT TRIGGER consists_ready_at_commit AFTER INSERT OR UPDATE OF status ON public.consists DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION serien_internal.check_ready_consist()"
+    },
+    {
+      "name": "check_layout_placement",
+      "table": "layout_placements",
+      "definition": "CREATE TRIGGER check_layout_placement BEFORE INSERT OR UPDATE ON public.layout_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.check_placement()"
+    },
+    {
+      "name": "check_loose_placement",
+      "table": "loose_stock_placements",
+      "definition": "CREATE TRIGGER check_loose_placement BEFORE INSERT OR UPDATE ON public.loose_stock_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.check_placement()"
+    },
+    {
+      "name": "check_snapshot",
+      "table": "layout_snapshots",
+      "definition": "CREATE TRIGGER check_snapshot BEFORE INSERT OR UPDATE ON public.layout_snapshots FOR EACH ROW EXECUTE FUNCTION serien_internal.check_snapshot()"
+    },
+    {
+      "name": "lock_model_kind",
+      "table": "stock_models",
+      "definition": "CREATE TRIGGER lock_model_kind BEFORE UPDATE OF kind ON public.stock_models FOR EACH ROW EXECUTE FUNCTION serien_internal.lock_model_identity()"
+    }
+  ]
+}

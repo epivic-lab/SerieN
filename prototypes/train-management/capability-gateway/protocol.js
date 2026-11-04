@@ -1,3 +1,5 @@
+// External IDs use canonical UUID text; PostgreSQL's permissive UUID input is not the wire contract.
+export const isUUID = v => typeof v === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(v);
 // Shared browser/server wire encoding. JSON values only; sorted UTF-16 keys (JCS).
 export const canonical = value => {
   if (typeof value === 'string' && !value.isWellFormed()) throw Error('Invalid Unicode');

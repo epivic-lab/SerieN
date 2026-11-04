@@ -1,13 +1,13 @@
 import http from 'node:http';
 import {createHash, createPublicKey, verify, randomBytes} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
-import {canonical} from './protocol.js';
+import {canonical,isUUID} from './protocol.js';
 import {parseStrict} from './strict-json.js';
 const hash = value => createHash('sha256').update(value).digest('hex');
 const fp = key => hash(canonical(key));
 const fail = (status=403) => {throw Object.assign(Error('Denied'),{status});};
 const scopes = ['reader','editor','owner'];
-const id = v => typeof v==='string' && /^[0-9a-f-]{36}$/.test(v);
+const id = isUUID;
 const secret = () => randomBytes(32).toString('hex');
 const validKey = jwk => {
   if(!jwk||jwk.d||jwk.kty!=='EC'||jwk.crv!=='P-256')fail();
@@ -35,7 +35,7 @@ export async function startGateway({now=Date.now}={}) {
     if(!p||Object.keys(p).length!==fields.length||fields.some(k=>!Object.hasOwn(p,k))||
       p.domain!=='SerieN-capability-v1'||p.version!==1||p.audience!==origin||p.method!==req.method||p.path!==path||
       p.operation!==operation||p.workspaceId!==workspaceId||p.layoutId!==layoutId||
-      !id(p.deviceId)||p.keyId!==p.deviceId||!id(p.request_id)||!Number.isSafeInteger(p.epoch)||
+      !id(workspaceId)||!id(layoutId)||!id(p.deviceId)||p.keyId!==p.deviceId||!id(p.request_id)||!Number.isSafeInteger(p.epoch)||
       !Number.isSafeInteger(p.issuedAt)||Math.abs(now()-p.issuedAt)>120000||
       !/^[0-9a-f]{32}$/.test(p.nonce)||p.bodyDigest!==hash(canonical(body)))fail();
     const d=candidate??devices.get(p.deviceId);

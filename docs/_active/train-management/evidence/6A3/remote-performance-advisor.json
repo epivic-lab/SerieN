@@ -1,0 +1,238 @@
+{
+  "result": {
+    "lints": [
+      {
+        "name": "unindexed_foreign_keys",
+        "title": "Unindexed foreign keys",
+        "level": "INFO",
+        "facing": "EXTERNAL",
+        "categories": [
+          "PERFORMANCE"
+        ],
+        "description": "Identifies foreign key constraints without a covering index, which can impact database performance.",
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0001_unindexed_foreign_keys",
+        "count": 9,
+        "findings": [
+          {
+            "detail": "Table \\`public.consist_members\\` has a foreign key \\`consist_members_consist_id_owner_id_fkey\\` without a covering index. This can lead to suboptimal query performance.",
+            "metadata": {
+              "name": "consist_members",
+              "type": "table",
+              "schema": "public",
+              "fkey_name": "consist_members_consist_id_owner_id_fkey",
+              "fkey_columns": [
+                1,
+                2
+              ]
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Table \\`public.layout_placements\\` has a foreign key \\`layout_placements_consist_id_owner_id_fkey\\` without a covering index. This can lead to suboptimal query performance.",
+            "metadata": {
+              "name": "layout_placements",
+              "type": "table",
+              "schema": "public",
+              "fkey_name": "layout_placements_consist_id_owner_id_fkey",
+              "fkey_columns": [
+                1,
+                2
+              ]
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Table \\`public.layout_placements\\` has a foreign key \\`layout_placements_layout_id_edge_id_fkey\\` without a covering index. This can lead to suboptimal query performance.",
+            "metadata": {
+              "name": "layout_placements",
+              "type": "table",
+              "schema": "public",
+              "fkey_name": "layout_placements_layout_id_edge_id_fkey",
+              "fkey_columns": [
+                3,
+                4
+              ]
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Table \\`public.layout_placements\\` has a foreign key \\`layout_placements_owner_id_fkey\\` without a covering index. This can lead to suboptimal query performance.",
+            "metadata": {
+              "name": "layout_placements",
+              "type": "table",
+              "schema": "public",
+              "fkey_name": "layout_placements_owner_id_fkey",
+              "fkey_columns": [
+                2
+              ]
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Table \\`public.layout_snapshots\\` has a foreign key \\`layout_snapshots_layout_id_owner_id_fkey\\` without a covering index. This can lead to suboptimal query performance.",
+            "metadata": {
+              "name": "layout_snapshots",
+              "type": "table",
+              "schema": "public",
+              "fkey_name": "layout_snapshots_layout_id_owner_id_fkey",
+              "fkey_columns": [
+                3,
+                2
+              ]
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Table \\`public.layout_snapshots\\` has a foreign key \\`layout_snapshots_owner_id_fkey\\` without a covering index. This can lead to suboptimal query performance.",
+            "metadata": {
+              "name": "layout_snapshots",
+              "type": "table",
+              "schema": "public",
+              "fkey_name": "layout_snapshots_owner_id_fkey",
+              "fkey_columns": [
+                2
+              ]
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Table \\`public.loose_stock_placements\\` has a foreign key \\`loose_stock_placements_layout_id_edge_id_fkey\\` without a covering index. This can lead to suboptimal query performance.",
+            "metadata": {
+              "name": "loose_stock_placements",
+              "type": "table",
+              "schema": "public",
+              "fkey_name": "loose_stock_placements_layout_id_edge_id_fkey",
+              "fkey_columns": [
+                3,
+                4
+              ]
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Table \\`public.loose_stock_placements\\` has a foreign key \\`loose_stock_placements_owner_id_fkey\\` without a covering index. This can lead to suboptimal query performance.",
+            "metadata": {
+              "name": "loose_stock_placements",
+              "type": "table",
+              "schema": "public",
+              "fkey_name": "loose_stock_placements_owner_id_fkey",
+              "fkey_columns": [
+                2
+              ]
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Table \\`public.loose_stock_placements\\` has a foreign key \\`loose_stock_placements_stock_item_id_owner_id_fkey\\` without a covering index. This can lead to suboptimal query performance.",
+            "metadata": {
+              "name": "loose_stock_placements",
+              "type": "table",
+              "schema": "public",
+              "fkey_name": "loose_stock_placements_stock_item_id_owner_id_fkey",
+              "fkey_columns": [
+                1,
+                2
+              ]
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          }
+        ]
+      },
+      {
+        "name": "unused_index",
+        "title": "Unused Index",
+        "level": "INFO",
+        "facing": "EXTERNAL",
+        "categories": [
+          "PERFORMANCE"
+        ],
+        "description": "Detects if an index has never been used and may be a candidate for removal.",
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index",
+        "count": 9,
+        "findings": [
+          {
+            "detail": "Index \\`stock_items_owner_idx\\` on table \\`public.stock_items\\` has not been used",
+            "metadata": {
+              "name": "stock_items",
+              "type": "table",
+              "schema": "public"
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Index \\`stock_items_model_idx\\` on table \\`public.stock_items\\` has not been used",
+            "metadata": {
+              "name": "stock_items",
+              "type": "table",
+              "schema": "public"
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Index \\`consists_owner_idx\\` on table \\`public.consists\\` has not been used",
+            "metadata": {
+              "name": "consists",
+              "type": "table",
+              "schema": "public"
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Index \\`consist_members_owner_idx\\` on table \\`public.consist_members\\` has not been used",
+            "metadata": {
+              "name": "consist_members",
+              "type": "table",
+              "schema": "public"
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Index \\`layouts_owner_idx\\` on table \\`public.layouts\\` has not been used",
+            "metadata": {
+              "name": "layouts",
+              "type": "table",
+              "schema": "public"
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Index \\`layout_placements_layout_owner_idx\\` on table \\`public.layout_placements\\` has not been used",
+            "metadata": {
+              "name": "layout_placements",
+              "type": "table",
+              "schema": "public"
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Index \\`loose_stock_layout_owner_idx\\` on table \\`public.loose_stock_placements\\` has not been used",
+            "metadata": {
+              "name": "loose_stock_placements",
+              "type": "table",
+              "schema": "public"
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Index \\`layout_snapshots_recent_idx\\` on table \\`public.layout_snapshots\\` has not been used",
+            "metadata": {
+              "name": "layout_snapshots",
+              "type": "table",
+              "schema": "public"
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          },
+          {
+            "detail": "Index \\`operation_receipts_recent_idx\\` on table \\`public.operation_receipts\\` has not been used",
+            "metadata": {
+              "name": "operation_receipts",
+              "type": "table",
+              "schema": "public"
+            },
+            "observed_at": "2026-11-04T17:04:24.071Z"
+          }
+        ]
+      }
+    ]
+  }
+}

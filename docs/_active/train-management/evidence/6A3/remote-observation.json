@@ -1,0 +1,3413 @@
+{
+  "version": "PostgreSQL 17.11 on aarch64-unknown-linux-gnu, compiled by gcc (GCC) 15.2.0, 64-bit",
+  "migrations": [
+    {
+      "version": "20261029230530",
+      "name": "serien_core_schema"
+    },
+    {
+      "version": "20261029230558",
+      "name": "serien_constraints_security"
+    }
+  ],
+  "tables": {
+    "tables": [
+      {
+        "name": "public.stock_models",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "gen_random_uuid()"
+          },
+          {
+            "name": "kind",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "check": "kind = ANY (ARRAY['locomotive'::text, 'wagon'::text])"
+          },
+          {
+            "name": "name",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "check": "length(TRIM(BOTH FROM name)) >= 1 AND length(TRIM(BOTH FROM name)) <= 200"
+          },
+          {
+            "name": "prototype",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "nullable",
+              "updatable"
+            ]
+          },
+          {
+            "name": "target_scale",
+            "data_type": "integer",
+            "format": "int4",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "160",
+            "check": "target_scale > 0"
+          },
+          {
+            "name": "length_mm",
+            "data_type": "numeric",
+            "format": "numeric",
+            "options": [
+              "nullable",
+              "updatable"
+            ],
+            "check": "length_mm > 0::numeric"
+          },
+          {
+            "name": "width_mm",
+            "data_type": "numeric",
+            "format": "numeric",
+            "options": [
+              "nullable",
+              "updatable"
+            ],
+            "check": "width_mm > 0::numeric"
+          },
+          {
+            "name": "height_mm",
+            "data_type": "numeric",
+            "format": "numeric",
+            "options": [
+              "nullable",
+              "updatable"
+            ],
+            "check": "height_mm > 0::numeric"
+          },
+          {
+            "name": "front_coupler_mm",
+            "data_type": "numeric",
+            "format": "numeric",
+            "options": [
+              "nullable",
+              "updatable"
+            ],
+            "check": "front_coupler_mm >= 0::numeric"
+          },
+          {
+            "name": "rear_coupler_mm",
+            "data_type": "numeric",
+            "format": "numeric",
+            "options": [
+              "nullable",
+              "updatable"
+            ],
+            "check": "rear_coupler_mm >= 0::numeric"
+          },
+          {
+            "name": "asset_uri",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "nullable",
+              "updatable"
+            ]
+          },
+          {
+            "name": "thumbnail_uri",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "nullable",
+              "updatable"
+            ]
+          },
+          {
+            "name": "source_format",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "nullable",
+              "updatable"
+            ],
+            "check": "source_format = ANY (ARRAY['native'::text, 'glb'::text, 'gltf'::text, 'fbx'::text, 'obj'::text, 'zip'::text, 'other'::text])"
+          },
+          {
+            "name": "license_code",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "'UNKNOWN'::text"
+          },
+          {
+            "name": "source_url",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "nullable",
+              "updatable"
+            ]
+          },
+          {
+            "name": "import_status",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "'pending'::text",
+            "check": "import_status = ANY (ARRAY['pending'::text, 'verified'::text, 'converted'::text, 'blocked'::text, 'failed'::text])"
+          },
+          {
+            "name": "metadata",
+            "data_type": "jsonb",
+            "format": "jsonb",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "'{}'::jsonb",
+            "check": "jsonb_typeof(metadata) = 'object'::text"
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          }
+        ],
+        "primary_keys": [
+          "id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "stock_items_model_id_fkey",
+            "source_table": "public.stock_items",
+            "source_columns": [
+              "model_id"
+            ],
+            "target_table": "public.stock_models",
+            "target_columns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "public.stock_items",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "gen_random_uuid()"
+          },
+          {
+            "name": "owner_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "auth.uid()"
+          },
+          {
+            "name": "model_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "inventory_code",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "nullable",
+              "updatable"
+            ]
+          },
+          {
+            "name": "display_name",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "nullable",
+              "updatable"
+            ]
+          },
+          {
+            "name": "orientation",
+            "data_type": "smallint",
+            "format": "int2",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "1",
+            "check": "orientation = ANY (ARRAY['-1'::integer, 1])"
+          },
+          {
+            "name": "settings",
+            "data_type": "jsonb",
+            "format": "jsonb",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "'{}'::jsonb",
+            "check": "jsonb_typeof(settings) = 'object'::text"
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          }
+        ],
+        "primary_keys": [
+          "id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "stock_items_owner_id_fkey",
+            "source_table": "public.stock_items",
+            "source_columns": [
+              "owner_id"
+            ],
+            "target_table": "auth.users",
+            "target_columns": [
+              "id"
+            ]
+          },
+          {
+            "name": "stock_items_model_id_fkey",
+            "source_table": "public.stock_items",
+            "source_columns": [
+              "model_id"
+            ],
+            "target_table": "public.stock_models",
+            "target_columns": [
+              "id"
+            ]
+          },
+          {
+            "name": "consist_members_stock_item_id_owner_id_fkey",
+            "source_table": "public.consist_members",
+            "source_columns": [
+              "stock_item_id",
+              "owner_id"
+            ],
+            "target_table": "public.stock_items",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          },
+          {
+            "name": "loose_stock_placements_stock_item_id_owner_id_fkey",
+            "source_table": "public.loose_stock_placements",
+            "source_columns": [
+              "stock_item_id",
+              "owner_id"
+            ],
+            "target_table": "public.stock_items",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "public.consists",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "gen_random_uuid()"
+          },
+          {
+            "name": "owner_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "auth.uid()"
+          },
+          {
+            "name": "name",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "check": "length(TRIM(BOTH FROM name)) >= 1 AND length(TRIM(BOTH FROM name)) <= 160"
+          },
+          {
+            "name": "status",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "'draft'::text",
+            "check": "status = ANY (ARRAY['draft'::text, 'ready'::text])"
+          },
+          {
+            "name": "revision",
+            "data_type": "bigint",
+            "format": "int8",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "0",
+            "check": "revision >= 0"
+          },
+          {
+            "name": "orientation",
+            "data_type": "smallint",
+            "format": "int2",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "1",
+            "check": "orientation = ANY (ARRAY['-1'::integer, 1])"
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          }
+        ],
+        "primary_keys": [
+          "id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "consists_owner_id_fkey",
+            "source_table": "public.consists",
+            "source_columns": [
+              "owner_id"
+            ],
+            "target_table": "auth.users",
+            "target_columns": [
+              "id"
+            ]
+          },
+          {
+            "name": "consist_members_consist_id_owner_id_fkey",
+            "source_table": "public.consist_members",
+            "source_columns": [
+              "consist_id",
+              "owner_id"
+            ],
+            "target_table": "public.consists",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          },
+          {
+            "name": "layout_placements_consist_id_owner_id_fkey",
+            "source_table": "public.layout_placements",
+            "source_columns": [
+              "consist_id",
+              "owner_id"
+            ],
+            "target_table": "public.consists",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "public.consist_members",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "consist_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "owner_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "auth.uid()"
+          },
+          {
+            "name": "stock_item_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable",
+              "unique"
+            ]
+          },
+          {
+            "name": "ordinal",
+            "data_type": "integer",
+            "format": "int4",
+            "options": [
+              "updatable"
+            ],
+            "check": "ordinal >= 0"
+          },
+          {
+            "name": "orientation",
+            "data_type": "smallint",
+            "format": "int2",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "1",
+            "check": "orientation = ANY (ARRAY['-1'::integer, 1])"
+          }
+        ],
+        "primary_keys": [
+          "consist_id",
+          "stock_item_id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "consist_members_stock_item_id_owner_id_fkey",
+            "source_table": "public.consist_members",
+            "source_columns": [
+              "stock_item_id",
+              "owner_id"
+            ],
+            "target_table": "public.stock_items",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          },
+          {
+            "name": "consist_members_owner_id_fkey",
+            "source_table": "public.consist_members",
+            "source_columns": [
+              "owner_id"
+            ],
+            "target_table": "auth.users",
+            "target_columns": [
+              "id"
+            ]
+          },
+          {
+            "name": "consist_members_consist_id_owner_id_fkey",
+            "source_table": "public.consist_members",
+            "source_columns": [
+              "consist_id",
+              "owner_id"
+            ],
+            "target_table": "public.consists",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "public.layouts",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "gen_random_uuid()"
+          },
+          {
+            "name": "owner_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "auth.uid()"
+          },
+          {
+            "name": "name",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "check": "length(TRIM(BOTH FROM name)) >= 1 AND length(TRIM(BOTH FROM name)) <= 160"
+          },
+          {
+            "name": "topology_hash",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "check": "length(topology_hash) >= 32 AND length(topology_hash) <= 128"
+          },
+          {
+            "name": "schema_version",
+            "data_type": "integer",
+            "format": "int4",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "1",
+            "check": "schema_version > 0"
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          }
+        ],
+        "primary_keys": [
+          "id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "layout_placements_layout_id_owner_id_fkey",
+            "source_table": "public.layout_placements",
+            "source_columns": [
+              "layout_id",
+              "owner_id"
+            ],
+            "target_table": "public.layouts",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          },
+          {
+            "name": "loose_stock_placements_layout_id_owner_id_fkey",
+            "source_table": "public.loose_stock_placements",
+            "source_columns": [
+              "layout_id",
+              "owner_id"
+            ],
+            "target_table": "public.layouts",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          },
+          {
+            "name": "layout_snapshots_layout_id_owner_id_fkey",
+            "source_table": "public.layout_snapshots",
+            "source_columns": [
+              "layout_id",
+              "owner_id"
+            ],
+            "target_table": "public.layouts",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          },
+          {
+            "name": "layouts_owner_id_fkey",
+            "source_table": "public.layouts",
+            "source_columns": [
+              "owner_id"
+            ],
+            "target_table": "auth.users",
+            "target_columns": [
+              "id"
+            ]
+          },
+          {
+            "name": "layout_segments_layout_id_fkey",
+            "source_table": "public.layout_segments",
+            "source_columns": [
+              "layout_id"
+            ],
+            "target_table": "public.layouts",
+            "target_columns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "public.layout_segments",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "layout_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "edge_id",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "check": "length(edge_id) >= 1 AND length(edge_id) <= 120"
+          },
+          {
+            "name": "length_mm",
+            "data_type": "numeric",
+            "format": "numeric",
+            "options": [
+              "updatable"
+            ],
+            "check": "length_mm > 0::numeric"
+          },
+          {
+            "name": "metadata",
+            "data_type": "jsonb",
+            "format": "jsonb",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "'{}'::jsonb",
+            "check": "jsonb_typeof(metadata) = 'object'::text"
+          }
+        ],
+        "primary_keys": [
+          "layout_id",
+          "edge_id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "loose_stock_placements_layout_id_edge_id_fkey",
+            "source_table": "public.loose_stock_placements",
+            "source_columns": [
+              "layout_id",
+              "edge_id"
+            ],
+            "target_table": "public.layout_segments",
+            "target_columns": [
+              "layout_id",
+              "edge_id"
+            ]
+          },
+          {
+            "name": "layout_placements_layout_id_edge_id_fkey",
+            "source_table": "public.layout_placements",
+            "source_columns": [
+              "layout_id",
+              "edge_id"
+            ],
+            "target_table": "public.layout_segments",
+            "target_columns": [
+              "layout_id",
+              "edge_id"
+            ]
+          },
+          {
+            "name": "layout_segments_layout_id_fkey",
+            "source_table": "public.layout_segments",
+            "source_columns": [
+              "layout_id"
+            ],
+            "target_table": "public.layouts",
+            "target_columns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "public.layout_placements",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "consist_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "owner_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "auth.uid()"
+          },
+          {
+            "name": "layout_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "edge_id",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "s_mm",
+            "data_type": "numeric",
+            "format": "numeric",
+            "options": [
+              "updatable"
+            ],
+            "check": "s_mm >= 0::numeric"
+          },
+          {
+            "name": "heading",
+            "data_type": "smallint",
+            "format": "int2",
+            "options": [
+              "updatable"
+            ],
+            "check": "heading = ANY (ARRAY['-1'::integer, 1])"
+          },
+          {
+            "name": "journey_state",
+            "data_type": "jsonb",
+            "format": "jsonb",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "'{}'::jsonb",
+            "check": "jsonb_typeof(journey_state) = 'object'::text"
+          },
+          {
+            "name": "state_version",
+            "data_type": "bigint",
+            "format": "int8",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "0",
+            "check": "state_version >= 0"
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          }
+        ],
+        "primary_keys": [
+          "consist_id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "layout_placements_owner_id_fkey",
+            "source_table": "public.layout_placements",
+            "source_columns": [
+              "owner_id"
+            ],
+            "target_table": "auth.users",
+            "target_columns": [
+              "id"
+            ]
+          },
+          {
+            "name": "layout_placements_consist_id_owner_id_fkey",
+            "source_table": "public.layout_placements",
+            "source_columns": [
+              "consist_id",
+              "owner_id"
+            ],
+            "target_table": "public.consists",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          },
+          {
+            "name": "layout_placements_layout_id_edge_id_fkey",
+            "source_table": "public.layout_placements",
+            "source_columns": [
+              "layout_id",
+              "edge_id"
+            ],
+            "target_table": "public.layout_segments",
+            "target_columns": [
+              "layout_id",
+              "edge_id"
+            ]
+          },
+          {
+            "name": "layout_placements_layout_id_owner_id_fkey",
+            "source_table": "public.layout_placements",
+            "source_columns": [
+              "layout_id",
+              "owner_id"
+            ],
+            "target_table": "public.layouts",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "public.loose_stock_placements",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "stock_item_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "owner_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "auth.uid()"
+          },
+          {
+            "name": "layout_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "edge_id",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "s_mm",
+            "data_type": "numeric",
+            "format": "numeric",
+            "options": [
+              "updatable"
+            ],
+            "check": "s_mm >= 0::numeric"
+          },
+          {
+            "name": "heading",
+            "data_type": "smallint",
+            "format": "int2",
+            "options": [
+              "updatable"
+            ],
+            "check": "heading = ANY (ARRAY['-1'::integer, 1])"
+          },
+          {
+            "name": "updated_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          }
+        ],
+        "primary_keys": [
+          "stock_item_id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "loose_stock_placements_owner_id_fkey",
+            "source_table": "public.loose_stock_placements",
+            "source_columns": [
+              "owner_id"
+            ],
+            "target_table": "auth.users",
+            "target_columns": [
+              "id"
+            ]
+          },
+          {
+            "name": "loose_stock_placements_stock_item_id_owner_id_fkey",
+            "source_table": "public.loose_stock_placements",
+            "source_columns": [
+              "stock_item_id",
+              "owner_id"
+            ],
+            "target_table": "public.stock_items",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          },
+          {
+            "name": "loose_stock_placements_layout_id_edge_id_fkey",
+            "source_table": "public.loose_stock_placements",
+            "source_columns": [
+              "layout_id",
+              "edge_id"
+            ],
+            "target_table": "public.layout_segments",
+            "target_columns": [
+              "layout_id",
+              "edge_id"
+            ]
+          },
+          {
+            "name": "loose_stock_placements_layout_id_owner_id_fkey",
+            "source_table": "public.loose_stock_placements",
+            "source_columns": [
+              "layout_id",
+              "owner_id"
+            ],
+            "target_table": "public.layouts",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "public.layout_snapshots",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "gen_random_uuid()"
+          },
+          {
+            "name": "owner_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "auth.uid()"
+          },
+          {
+            "name": "layout_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "revision",
+            "data_type": "bigint",
+            "format": "int8",
+            "options": [
+              "updatable"
+            ],
+            "check": "revision >= 0"
+          },
+          {
+            "name": "snapshot_schema",
+            "data_type": "integer",
+            "format": "int4",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "1",
+            "check": "snapshot_schema > 0"
+          },
+          {
+            "name": "payload",
+            "data_type": "jsonb",
+            "format": "jsonb",
+            "options": [
+              "updatable"
+            ],
+            "check": "jsonb_typeof(payload) = 'object'::text"
+          },
+          {
+            "name": "saved_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          }
+        ],
+        "primary_keys": [
+          "id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "layout_snapshots_owner_id_fkey",
+            "source_table": "public.layout_snapshots",
+            "source_columns": [
+              "owner_id"
+            ],
+            "target_table": "auth.users",
+            "target_columns": [
+              "id"
+            ]
+          },
+          {
+            "name": "layout_snapshots_layout_id_owner_id_fkey",
+            "source_table": "public.layout_snapshots",
+            "source_columns": [
+              "layout_id",
+              "owner_id"
+            ],
+            "target_table": "public.layouts",
+            "target_columns": [
+              "id",
+              "owner_id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "public.operation_receipts",
+        "rls_enabled": true,
+        "rows": 0,
+        "columns": [
+          {
+            "name": "owner_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "auth.uid()"
+          },
+          {
+            "name": "request_id",
+            "data_type": "uuid",
+            "format": "uuid",
+            "options": [
+              "updatable"
+            ]
+          },
+          {
+            "name": "op_type",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "check": "length(op_type) >= 1 AND length(op_type) <= 120"
+          },
+          {
+            "name": "payload_digest",
+            "data_type": "text",
+            "format": "text",
+            "options": [
+              "updatable"
+            ],
+            "check": "payload_digest ~ '^[0-9a-f]{64}$'::text"
+          },
+          {
+            "name": "result",
+            "data_type": "jsonb",
+            "format": "jsonb",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "'{}'::jsonb",
+            "check": "jsonb_typeof(result) = 'object'::text"
+          },
+          {
+            "name": "created_at",
+            "data_type": "timestamp with time zone",
+            "format": "timestamptz",
+            "options": [
+              "updatable"
+            ],
+            "default_value": "now()"
+          }
+        ],
+        "primary_keys": [
+          "owner_id",
+          "request_id"
+        ],
+        "foreign_key_constraints": [
+          {
+            "name": "operation_receipts_owner_id_fkey",
+            "source_table": "public.operation_receipts",
+            "source_columns": [
+              "owner_id"
+            ],
+            "target_table": "auth.users",
+            "target_columns": [
+              "id"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "grants": [
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_models",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "stock_items",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consists",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "consist_members",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layouts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_segments",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "loose_stock_placements",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "layout_snapshots",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "postgres",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "YES",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "INSERT",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "UPDATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "DELETE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRUNCATE",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "REFERENCES",
+        "with_hierarchy": "NO"
+      },
+      {
+        "grantee": "service_role",
+        "grantor": "postgres",
+        "table_name": "operation_receipts",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "TRIGGER",
+        "with_hierarchy": "NO"
+      }
+    ],
+    "indexes": [
+      {
+        "indexdef": "CREATE UNIQUE INDEX stock_models_pkey ON public.stock_models USING btree (id)",
+        "indexname": "stock_models_pkey",
+        "tablename": "stock_models",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX stock_items_pkey ON public.stock_items USING btree (id)",
+        "indexname": "stock_items_pkey",
+        "tablename": "stock_items",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX stock_items_id_owner_id_key ON public.stock_items USING btree (id, owner_id)",
+        "indexname": "stock_items_id_owner_id_key",
+        "tablename": "stock_items",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX stock_items_owner_id_inventory_code_key ON public.stock_items USING btree (owner_id, inventory_code)",
+        "indexname": "stock_items_owner_id_inventory_code_key",
+        "tablename": "stock_items",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX stock_items_owner_idx ON public.stock_items USING btree (owner_id)",
+        "indexname": "stock_items_owner_idx",
+        "tablename": "stock_items",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX stock_items_model_idx ON public.stock_items USING btree (model_id)",
+        "indexname": "stock_items_model_idx",
+        "tablename": "stock_items",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX consists_pkey ON public.consists USING btree (id)",
+        "indexname": "consists_pkey",
+        "tablename": "consists",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX consists_id_owner_id_key ON public.consists USING btree (id, owner_id)",
+        "indexname": "consists_id_owner_id_key",
+        "tablename": "consists",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX consists_owner_idx ON public.consists USING btree (owner_id)",
+        "indexname": "consists_owner_idx",
+        "tablename": "consists",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX consist_members_pkey ON public.consist_members USING btree (consist_id, stock_item_id)",
+        "indexname": "consist_members_pkey",
+        "tablename": "consist_members",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX consist_members_consist_id_ordinal_key ON public.consist_members USING btree (consist_id, ordinal)",
+        "indexname": "consist_members_consist_id_ordinal_key",
+        "tablename": "consist_members",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX consist_members_stock_item_id_key ON public.consist_members USING btree (stock_item_id)",
+        "indexname": "consist_members_stock_item_id_key",
+        "tablename": "consist_members",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX consist_members_owner_idx ON public.consist_members USING btree (owner_id)",
+        "indexname": "consist_members_owner_idx",
+        "tablename": "consist_members",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX consist_members_stock_owner_idx ON public.consist_members USING btree (stock_item_id, owner_id)",
+        "indexname": "consist_members_stock_owner_idx",
+        "tablename": "consist_members",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX layouts_pkey ON public.layouts USING btree (id)",
+        "indexname": "layouts_pkey",
+        "tablename": "layouts",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX layouts_id_owner_id_key ON public.layouts USING btree (id, owner_id)",
+        "indexname": "layouts_id_owner_id_key",
+        "tablename": "layouts",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX layouts_owner_idx ON public.layouts USING btree (owner_id)",
+        "indexname": "layouts_owner_idx",
+        "tablename": "layouts",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX layout_segments_pkey ON public.layout_segments USING btree (layout_id, edge_id)",
+        "indexname": "layout_segments_pkey",
+        "tablename": "layout_segments",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX layout_placements_pkey ON public.layout_placements USING btree (consist_id)",
+        "indexname": "layout_placements_pkey",
+        "tablename": "layout_placements",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX layout_placements_layout_owner_idx ON public.layout_placements USING btree (layout_id, owner_id)",
+        "indexname": "layout_placements_layout_owner_idx",
+        "tablename": "layout_placements",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX loose_stock_placements_pkey ON public.loose_stock_placements USING btree (stock_item_id)",
+        "indexname": "loose_stock_placements_pkey",
+        "tablename": "loose_stock_placements",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX loose_stock_layout_owner_idx ON public.loose_stock_placements USING btree (layout_id, owner_id)",
+        "indexname": "loose_stock_layout_owner_idx",
+        "tablename": "loose_stock_placements",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX layout_snapshots_pkey ON public.layout_snapshots USING btree (id)",
+        "indexname": "layout_snapshots_pkey",
+        "tablename": "layout_snapshots",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX layout_snapshots_layout_id_revision_key ON public.layout_snapshots USING btree (layout_id, revision)",
+        "indexname": "layout_snapshots_layout_id_revision_key",
+        "tablename": "layout_snapshots",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX layout_snapshots_recent_idx ON public.layout_snapshots USING btree (layout_id, saved_at DESC)",
+        "indexname": "layout_snapshots_recent_idx",
+        "tablename": "layout_snapshots",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX operation_receipts_pkey ON public.operation_receipts USING btree (owner_id, request_id)",
+        "indexname": "operation_receipts_pkey",
+        "tablename": "operation_receipts",
+        "schemaname": "public",
+        "tablespace": null
+      },
+      {
+        "indexdef": "CREATE INDEX operation_receipts_recent_idx ON public.operation_receipts USING btree (owner_id, created_at DESC)",
+        "indexname": "operation_receipts_recent_idx",
+        "tablename": "operation_receipts",
+        "schemaname": "public",
+        "tablespace": null
+      }
+    ],
+    "policies": [
+      {
+        "cmd": "SELECT",
+        "qual": "true",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "stock_models",
+        "permissive": "PERMISSIVE",
+        "policyname": "stock_models_signed_in_read",
+        "schemaname": "public",
+        "with_check": null
+      },
+      {
+        "cmd": "SELECT",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "stock_items",
+        "permissive": "PERMISSIVE",
+        "policyname": "stock_items_owner_select",
+        "schemaname": "public",
+        "with_check": null
+      },
+      {
+        "cmd": "INSERT",
+        "qual": null,
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "stock_items",
+        "permissive": "PERMISSIVE",
+        "policyname": "stock_items_owner_insert",
+        "schemaname": "public",
+        "with_check": "(( SELECT auth.uid() AS uid) = owner_id)"
+      },
+      {
+        "cmd": "UPDATE",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "stock_items",
+        "permissive": "PERMISSIVE",
+        "policyname": "stock_items_owner_update",
+        "schemaname": "public",
+        "with_check": "(( SELECT auth.uid() AS uid) = owner_id)"
+      },
+      {
+        "cmd": "DELETE",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "stock_items",
+        "permissive": "PERMISSIVE",
+        "policyname": "stock_items_owner_delete",
+        "schemaname": "public",
+        "with_check": null
+      },
+      {
+        "cmd": "ALL",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "consists",
+        "permissive": "PERMISSIVE",
+        "policyname": "consists_owner_all",
+        "schemaname": "public",
+        "with_check": "(( SELECT auth.uid() AS uid) = owner_id)"
+      },
+      {
+        "cmd": "ALL",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "consist_members",
+        "permissive": "PERMISSIVE",
+        "policyname": "consist_members_owner_all",
+        "schemaname": "public",
+        "with_check": "(( SELECT auth.uid() AS uid) = owner_id)"
+      },
+      {
+        "cmd": "ALL",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "layouts",
+        "permissive": "PERMISSIVE",
+        "policyname": "layouts_owner_all",
+        "schemaname": "public",
+        "with_check": "(( SELECT auth.uid() AS uid) = owner_id)"
+      },
+      {
+        "cmd": "ALL",
+        "qual": "(EXISTS ( SELECT 1\n   FROM layouts l\n  WHERE ((l.id = layout_segments.layout_id) AND (l.owner_id = ( SELECT auth.uid() AS uid)))))",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "layout_segments",
+        "permissive": "PERMISSIVE",
+        "policyname": "segments_owner_all",
+        "schemaname": "public",
+        "with_check": "(EXISTS ( SELECT 1\n   FROM layouts l\n  WHERE ((l.id = layout_segments.layout_id) AND (l.owner_id = ( SELECT auth.uid() AS uid)))))"
+      },
+      {
+        "cmd": "ALL",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "layout_placements",
+        "permissive": "PERMISSIVE",
+        "policyname": "placements_owner_all",
+        "schemaname": "public",
+        "with_check": "(( SELECT auth.uid() AS uid) = owner_id)"
+      },
+      {
+        "cmd": "ALL",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "loose_stock_placements",
+        "permissive": "PERMISSIVE",
+        "policyname": "loose_owner_all",
+        "schemaname": "public",
+        "with_check": "(( SELECT auth.uid() AS uid) = owner_id)"
+      },
+      {
+        "cmd": "ALL",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "layout_snapshots",
+        "permissive": "PERMISSIVE",
+        "policyname": "snapshots_owner_all",
+        "schemaname": "public",
+        "with_check": "(( SELECT auth.uid() AS uid) = owner_id)"
+      },
+      {
+        "cmd": "ALL",
+        "qual": "(( SELECT auth.uid() AS uid) = owner_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "operation_receipts",
+        "permissive": "PERMISSIVE",
+        "policyname": "receipts_owner_all",
+        "schemaname": "public",
+        "with_check": "(( SELECT auth.uid() AS uid) = owner_id)"
+      }
+    ],
+    "functions": [
+      {
+        "name": "lock_model_identity",
+        "definition": "CREATE OR REPLACE FUNCTION serien_internal.lock_model_identity()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin if old.kind is distinct from new.kind and exists(select 1 from public.stock_items where model_id=old.id) then raise exception 'Cannot change model kind when in inventory' using errcode='23514';end if;return new;end;$function$\n"
+      },
+      {
+        "name": "check_member_assignment",
+        "definition": "CREATE OR REPLACE FUNCTION serien_internal.check_member_assignment()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\ndeclare v_kind text;\nbegin\n perform 1 from public.stock_items where id=new.stock_item_id for update;\n if exists(select 1 from public.loose_stock_placements where stock_item_id=new.stock_item_id) then raise exception 'Item already loose on track' using errcode='23514';end if;\n select m.kind into v_kind from public.stock_items i join public.stock_models m on m.id=i.model_id where i.id=new.stock_item_id;\n if v_kind is null then raise exception 'Unknown item' using errcode='23503';end if;\n if (new.ordinal=0 and v_kind<>'locomotive') or (new.ordinal>0 and v_kind<>'wagon') then raise exception 'First member must be locomotive; others wagons' using errcode='23514';end if;\n return new;\nend;$function$\n"
+      },
+      {
+        "name": "touch_updated_at",
+        "definition": "CREATE OR REPLACE FUNCTION serien_internal.touch_updated_at()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin new.updated_at=now();return new;end; $function$\n"
+      },
+      {
+        "name": "check_loose_assignment",
+        "definition": "CREATE OR REPLACE FUNCTION serien_internal.check_loose_assignment()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin\n perform 1 from public.stock_items where id=new.stock_item_id for update;\n if exists(select 1 from public.consist_members where stock_item_id=new.stock_item_id) then raise exception 'Item already in consist' using errcode='23514';end if;\n return new;\nend;$function$\n"
+      },
+      {
+        "name": "assert_ready_consist",
+        "definition": "CREATE OR REPLACE FUNCTION serien_internal.assert_ready_consist(p_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\ndeclare v_status text; v_total bigint; v_min integer; v_max integer;\nbegin\n select status into v_status from public.consists where id=p_id;\n if v_status is distinct from 'ready' then return;end if;\n select count(*),min(ordinal),max(ordinal) into v_total,v_min,v_max from public.consist_members where consist_id=p_id;\n if v_total=0 or v_min<>0 or v_max<>v_total-1 then raise exception 'Ready consist needs consecutive ordinal positions from zero' using errcode='23514';end if;\nend;$function$\n"
+      },
+      {
+        "name": "check_ready_members",
+        "definition": "CREATE OR REPLACE FUNCTION serien_internal.check_ready_members()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin\n if tg_op='UPDATE' and new.consist_id is distinct from old.consist_id then perform serien_internal.assert_ready_consist(old.consist_id);end if;\n perform serien_internal.assert_ready_consist(case when tg_op='DELETE' then old.consist_id else new.consist_id end);\n return null;\nend;$function$\n"
+      },
+      {
+        "name": "check_ready_consist",
+        "definition": "CREATE OR REPLACE FUNCTION serien_internal.check_ready_consist()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin perform serien_internal.assert_ready_consist(new.id);return null;end;$function$\n"
+      },
+      {
+        "name": "check_placement",
+        "definition": "CREATE OR REPLACE FUNCTION serien_internal.check_placement()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\ndeclare v_length numeric;v_status text;\nbegin\n select length_mm into v_length from public.layout_segments where layout_id=new.layout_id and edge_id=new.edge_id;\n if v_length is null or new.s_mm>v_length then raise exception 'Invalid track location' using errcode='23514';end if;\n if tg_table_name='layout_placements' then\n select status into v_status from public.consists where id=new.consist_id;\n if v_status<>'ready' then raise exception 'Only ready consists may be placed' using errcode='23514';end if;\n end if;\n return new;\nend;$function$\n"
+      },
+      {
+        "name": "check_snapshot",
+        "definition": "CREATE OR REPLACE FUNCTION serien_internal.check_snapshot()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\ndeclare v_hash text;v_switches jsonb;v_name text;v_count int;\nbegin\n select topology_hash into v_hash from public.layouts where id=new.layout_id;\n if new.payload->>'topologyHash' is distinct from v_hash then raise exception 'Layout hash mismatch' using errcode='23514';end if;\n if new.payload->>'resumePolicy' is distinct from 'STOPPED' then raise exception 'Resume policy must be STOPPED' using errcode='23514';end if;\n v_switches=new.payload#>'{layout,switches}';\n if jsonb_typeof(v_switches)='object' then select count(*) into v_count from jsonb_object_keys(v_switches);else v_count=0;end if;\n if v_count<>8 then raise exception 'Eight switches required' using errcode='23514';end if;\n foreach v_name in array array['WX-A','WX-B','Y-IN','Y-2','Y-3','Y-R1','Y-R2','Y-4'] loop\n if jsonb_typeof(v_switches->v_name) is distinct from 'boolean' then raise exception 'Invalid switch: %',v_name using errcode='23514';end if;\n end loop;\n return new;\nend;$function$\n"
+      }
+    ],
+    "constraints": [
+      {
+        "name": "layouts_owner_id_fkey",
+        "table": "layouts",
+        "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "consists_ready_at_commit",
+        "table": "consists",
+        "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "name": "stock_models_kind_check",
+        "table": "stock_models",
+        "definition": "CHECK ((kind = ANY (ARRAY['locomotive'::text, 'wagon'::text])))"
+      },
+      {
+        "name": "stock_models_name_check",
+        "table": "stock_models",
+        "definition": "CHECK (((length(TRIM(BOTH FROM name)) >= 1) AND (length(TRIM(BOTH FROM name)) <= 200)))"
+      },
+      {
+        "name": "stock_models_target_scale_check",
+        "table": "stock_models",
+        "definition": "CHECK ((target_scale > 0))"
+      },
+      {
+        "name": "stock_models_length_mm_check",
+        "table": "stock_models",
+        "definition": "CHECK ((length_mm > (0)::numeric))"
+      },
+      {
+        "name": "stock_models_width_mm_check",
+        "table": "stock_models",
+        "definition": "CHECK ((width_mm > (0)::numeric))"
+      },
+      {
+        "name": "stock_models_height_mm_check",
+        "table": "stock_models",
+        "definition": "CHECK ((height_mm > (0)::numeric))"
+      },
+      {
+        "name": "stock_models_front_coupler_mm_check",
+        "table": "stock_models",
+        "definition": "CHECK ((front_coupler_mm >= (0)::numeric))"
+      },
+      {
+        "name": "stock_models_rear_coupler_mm_check",
+        "table": "stock_models",
+        "definition": "CHECK ((rear_coupler_mm >= (0)::numeric))"
+      },
+      {
+        "name": "stock_models_source_format_check",
+        "table": "stock_models",
+        "definition": "CHECK ((source_format = ANY (ARRAY['native'::text, 'glb'::text, 'gltf'::text, 'fbx'::text, 'obj'::text, 'zip'::text, 'other'::text])))"
+      },
+      {
+        "name": "stock_models_import_status_check",
+        "table": "stock_models",
+        "definition": "CHECK ((import_status = ANY (ARRAY['pending'::text, 'verified'::text, 'converted'::text, 'blocked'::text, 'failed'::text])))"
+      },
+      {
+        "name": "stock_models_metadata_check",
+        "table": "stock_models",
+        "definition": "CHECK ((jsonb_typeof(metadata) = 'object'::text))"
+      },
+      {
+        "name": "stock_models_pkey",
+        "table": "stock_models",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "stock_items_orientation_check",
+        "table": "stock_items",
+        "definition": "CHECK ((orientation = ANY (ARRAY['-1'::integer, 1])))"
+      },
+      {
+        "name": "stock_items_settings_check",
+        "table": "stock_items",
+        "definition": "CHECK ((jsonb_typeof(settings) = 'object'::text))"
+      },
+      {
+        "name": "stock_items_pkey",
+        "table": "stock_items",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "stock_items_id_owner_id_key",
+        "table": "stock_items",
+        "definition": "UNIQUE (id, owner_id)"
+      },
+      {
+        "name": "stock_items_owner_id_inventory_code_key",
+        "table": "stock_items",
+        "definition": "UNIQUE (owner_id, inventory_code)"
+      },
+      {
+        "name": "stock_items_owner_id_fkey",
+        "table": "stock_items",
+        "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "stock_items_model_id_fkey",
+        "table": "stock_items",
+        "definition": "FOREIGN KEY (model_id) REFERENCES stock_models(id) ON DELETE RESTRICT"
+      },
+      {
+        "name": "consists_name_check",
+        "table": "consists",
+        "definition": "CHECK (((length(TRIM(BOTH FROM name)) >= 1) AND (length(TRIM(BOTH FROM name)) <= 160)))"
+      },
+      {
+        "name": "consists_status_check",
+        "table": "consists",
+        "definition": "CHECK ((status = ANY (ARRAY['draft'::text, 'ready'::text])))"
+      },
+      {
+        "name": "consists_revision_check",
+        "table": "consists",
+        "definition": "CHECK ((revision >= 0))"
+      },
+      {
+        "name": "consists_orientation_check",
+        "table": "consists",
+        "definition": "CHECK ((orientation = ANY (ARRAY['-1'::integer, 1])))"
+      },
+      {
+        "name": "consists_pkey",
+        "table": "consists",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "consists_id_owner_id_key",
+        "table": "consists",
+        "definition": "UNIQUE (id, owner_id)"
+      },
+      {
+        "name": "consists_owner_id_fkey",
+        "table": "consists",
+        "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "consist_members_ordinal_check",
+        "table": "consist_members",
+        "definition": "CHECK ((ordinal >= 0))"
+      },
+      {
+        "name": "consist_members_orientation_check",
+        "table": "consist_members",
+        "definition": "CHECK ((orientation = ANY (ARRAY['-1'::integer, 1])))"
+      },
+      {
+        "name": "consist_members_pkey",
+        "table": "consist_members",
+        "definition": "PRIMARY KEY (consist_id, stock_item_id)"
+      },
+      {
+        "name": "consist_members_consist_id_ordinal_key",
+        "table": "consist_members",
+        "definition": "UNIQUE (consist_id, ordinal)"
+      },
+      {
+        "name": "consist_members_stock_item_id_key",
+        "table": "consist_members",
+        "definition": "UNIQUE (stock_item_id)"
+      },
+      {
+        "name": "consist_members_owner_id_fkey",
+        "table": "consist_members",
+        "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "consist_members_consist_id_owner_id_fkey",
+        "table": "consist_members",
+        "definition": "FOREIGN KEY (consist_id, owner_id) REFERENCES consists(id, owner_id) ON DELETE CASCADE"
+      },
+      {
+        "name": "consist_members_stock_item_id_owner_id_fkey",
+        "table": "consist_members",
+        "definition": "FOREIGN KEY (stock_item_id, owner_id) REFERENCES stock_items(id, owner_id) ON DELETE RESTRICT"
+      },
+      {
+        "name": "layouts_name_check",
+        "table": "layouts",
+        "definition": "CHECK (((length(TRIM(BOTH FROM name)) >= 1) AND (length(TRIM(BOTH FROM name)) <= 160)))"
+      },
+      {
+        "name": "layouts_topology_hash_check",
+        "table": "layouts",
+        "definition": "CHECK (((length(topology_hash) >= 32) AND (length(topology_hash) <= 128)))"
+      },
+      {
+        "name": "layouts_schema_version_check",
+        "table": "layouts",
+        "definition": "CHECK ((schema_version > 0))"
+      },
+      {
+        "name": "layouts_pkey",
+        "table": "layouts",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "layouts_id_owner_id_key",
+        "table": "layouts",
+        "definition": "UNIQUE (id, owner_id)"
+      },
+      {
+        "name": "layout_segments_edge_id_check",
+        "table": "layout_segments",
+        "definition": "CHECK (((length(edge_id) >= 1) AND (length(edge_id) <= 120)))"
+      },
+      {
+        "name": "layout_segments_length_mm_check",
+        "table": "layout_segments",
+        "definition": "CHECK ((length_mm > (0)::numeric))"
+      },
+      {
+        "name": "layout_segments_metadata_check",
+        "table": "layout_segments",
+        "definition": "CHECK ((jsonb_typeof(metadata) = 'object'::text))"
+      },
+      {
+        "name": "layout_segments_pkey",
+        "table": "layout_segments",
+        "definition": "PRIMARY KEY (layout_id, edge_id)"
+      },
+      {
+        "name": "layout_segments_layout_id_fkey",
+        "table": "layout_segments",
+        "definition": "FOREIGN KEY (layout_id) REFERENCES layouts(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "layout_placements_s_mm_check",
+        "table": "layout_placements",
+        "definition": "CHECK ((s_mm >= (0)::numeric))"
+      },
+      {
+        "name": "layout_placements_heading_check",
+        "table": "layout_placements",
+        "definition": "CHECK ((heading = ANY (ARRAY['-1'::integer, 1])))"
+      },
+      {
+        "name": "layout_placements_journey_state_check",
+        "table": "layout_placements",
+        "definition": "CHECK ((jsonb_typeof(journey_state) = 'object'::text))"
+      },
+      {
+        "name": "layout_placements_state_version_check",
+        "table": "layout_placements",
+        "definition": "CHECK ((state_version >= 0))"
+      },
+      {
+        "name": "layout_placements_pkey",
+        "table": "layout_placements",
+        "definition": "PRIMARY KEY (consist_id)"
+      },
+      {
+        "name": "layout_placements_owner_id_fkey",
+        "table": "layout_placements",
+        "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "layout_placements_consist_id_owner_id_fkey",
+        "table": "layout_placements",
+        "definition": "FOREIGN KEY (consist_id, owner_id) REFERENCES consists(id, owner_id) ON DELETE CASCADE"
+      },
+      {
+        "name": "layout_placements_layout_id_owner_id_fkey",
+        "table": "layout_placements",
+        "definition": "FOREIGN KEY (layout_id, owner_id) REFERENCES layouts(id, owner_id) ON DELETE CASCADE"
+      },
+      {
+        "name": "layout_placements_layout_id_edge_id_fkey",
+        "table": "layout_placements",
+        "definition": "FOREIGN KEY (layout_id, edge_id) REFERENCES layout_segments(layout_id, edge_id) ON DELETE RESTRICT"
+      },
+      {
+        "name": "loose_stock_placements_s_mm_check",
+        "table": "loose_stock_placements",
+        "definition": "CHECK ((s_mm >= (0)::numeric))"
+      },
+      {
+        "name": "loose_stock_placements_heading_check",
+        "table": "loose_stock_placements",
+        "definition": "CHECK ((heading = ANY (ARRAY['-1'::integer, 1])))"
+      },
+      {
+        "name": "loose_stock_placements_pkey",
+        "table": "loose_stock_placements",
+        "definition": "PRIMARY KEY (stock_item_id)"
+      },
+      {
+        "name": "loose_stock_placements_owner_id_fkey",
+        "table": "loose_stock_placements",
+        "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "loose_stock_placements_stock_item_id_owner_id_fkey",
+        "table": "loose_stock_placements",
+        "definition": "FOREIGN KEY (stock_item_id, owner_id) REFERENCES stock_items(id, owner_id) ON DELETE CASCADE"
+      },
+      {
+        "name": "loose_stock_placements_layout_id_owner_id_fkey",
+        "table": "loose_stock_placements",
+        "definition": "FOREIGN KEY (layout_id, owner_id) REFERENCES layouts(id, owner_id) ON DELETE CASCADE"
+      },
+      {
+        "name": "loose_stock_placements_layout_id_edge_id_fkey",
+        "table": "loose_stock_placements",
+        "definition": "FOREIGN KEY (layout_id, edge_id) REFERENCES layout_segments(layout_id, edge_id) ON DELETE RESTRICT"
+      },
+      {
+        "name": "layout_snapshots_revision_check",
+        "table": "layout_snapshots",
+        "definition": "CHECK ((revision >= 0))"
+      },
+      {
+        "name": "layout_snapshots_snapshot_schema_check",
+        "table": "layout_snapshots",
+        "definition": "CHECK ((snapshot_schema > 0))"
+      },
+      {
+        "name": "layout_snapshots_payload_check",
+        "table": "layout_snapshots",
+        "definition": "CHECK ((jsonb_typeof(payload) = 'object'::text))"
+      },
+      {
+        "name": "layout_snapshots_pkey",
+        "table": "layout_snapshots",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "layout_snapshots_layout_id_revision_key",
+        "table": "layout_snapshots",
+        "definition": "UNIQUE (layout_id, revision)"
+      },
+      {
+        "name": "layout_snapshots_owner_id_fkey",
+        "table": "layout_snapshots",
+        "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "layout_snapshots_layout_id_owner_id_fkey",
+        "table": "layout_snapshots",
+        "definition": "FOREIGN KEY (layout_id, owner_id) REFERENCES layouts(id, owner_id) ON DELETE CASCADE"
+      },
+      {
+        "name": "operation_receipts_op_type_check",
+        "table": "operation_receipts",
+        "definition": "CHECK (((length(op_type) >= 1) AND (length(op_type) <= 120)))"
+      },
+      {
+        "name": "operation_receipts_payload_digest_check",
+        "table": "operation_receipts",
+        "definition": "CHECK ((payload_digest ~ '^[0-9a-f]{64}$'::text))"
+      },
+      {
+        "name": "operation_receipts_result_check",
+        "table": "operation_receipts",
+        "definition": "CHECK ((jsonb_typeof(result) = 'object'::text))"
+      },
+      {
+        "name": "operation_receipts_pkey",
+        "table": "operation_receipts",
+        "definition": "PRIMARY KEY (owner_id, request_id)"
+      },
+      {
+        "name": "operation_receipts_owner_id_fkey",
+        "table": "operation_receipts",
+        "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "members_ready_at_commit",
+        "table": "consist_members",
+        "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+      }
+    ]
+  }
+}

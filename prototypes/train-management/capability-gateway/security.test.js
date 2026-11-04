@@ -35,6 +35,9 @@ try{
  await deny('cross-workspace','valid device from B reads A',403,async()=>send(await envelope('read',{},intruder)));
  await deny('different workspace binding','signed A proof with B URL',403,async()=>send(await envelope(),path('read').replace(ws,other)));
  await deny('different layout','signed wrong layout with valid device',403,async()=>{const wrong=crypto.randomUUID(),p=path('read').replace(layout,wrong);return send(await signed(owner,g.origin,'POST',p,ws,wrong,'read',{}, {issuedAt:current}),p);});
+ for(const malformed of ['-'.repeat(36),'a'.repeat(36),'000000000-000-4000-8000-000000000001','00000000-0000-4000-8000-00000000000z']){
+  await deny('strict UUID rejects '+malformed,'signed read with syntactically invalid workspace',malformed.endsWith('z')?404:403,async()=>{const p=path('read').replace(ws,malformed);return send(await signed(owner,g.origin,'POST',p,malformed,layout,'read',{}, {issuedAt:current}),p);});
+ }
  await deny('unknown device','valid fresh key not registered',403,async()=>send(await envelope('read',{},await generateDevice())));
  await deny('old epoch','signed epoch 0',403,async()=>send(await signed(owner,g.origin,'POST',path('read'),ws,layout,'read',{}, {issuedAt:current,epoch:0})));
  await deny('wrong audience','signature audience another host',403,async()=>send(await signed(owner,'https://example.invalid','POST',path('read'),ws,layout,'read',{}, {issuedAt:current})));
