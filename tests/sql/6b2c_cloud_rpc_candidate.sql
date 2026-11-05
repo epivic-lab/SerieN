@@ -57,6 +57,33 @@ CREATE POLICY serien_rpc_receipt_gate ON public.operation_receipts AS RESTRICTIV
 
 -- Frozen copies of the existing client sources; no new catalog tables.
 -- Changes to these constants MUST be separately signed and versioned.
+-- Prevent a time-of-check/time-of-use revocation race WITHOUT requiring a
+-- special admin revoke endpoint. SELECT FOR SHARE locks BOTH auth.users and
+-- the private allowlist row until the caller's transaction ends. Ordinary
+-- admin UPDATE/DELETE of either row conflicts with this lock, so a committed
+-- revocation precedes any subsequent successful Save/Open/Read.
+-- Deliberately small SECURITY DEFINER exception in unexposed internal schema.
+-- The role that owns this helper is the migration owner (postgres in prod);
+-- it checks the original auth.uid(), returns ONLY a boolean, and grants
+-- EXECUTE to serien_rpc, never to a direct Data API client.
+CREATE FUNCTION serien_internal.serien_access_allowed_lock() RETURNS boolean
+ LANGUAGE sql VOLATILE SECURITY DEFINER SET search_path=''
+AS $lock$
+ SELECT EXISTS(
+  SELECT 1 FROM auth.users AS u
+   JOIN serien_access.allowed_emails AS a
+      ON a.email=pg_catalog.lower(pg_catalog.btrim(u.email))
+  WHERE u.id=(SELECT auth.uid())
+    AND u.email IS NOT NULL
+    AND u.email_confirmed_at IS NOT NULL
+  FOR SHARE OF u,a
+ )
+$lock$;
+REVOKE ALL ON FUNCTION serien_internal.serien_access_allowed_lock()
+ FROM PUBLIC, anon, authenticated;
+GRANT EXECUTE ON FUNCTION serien_internal.serien_access_allowed_lock()
+ TO serien_rpc;
+
 CREATE FUNCTION serien_internal.serien_schema_v1() RETURNS json
  LANGUAGE sql IMMUTABLE SET search_path=''
  AS $function$
@@ -227,10 +254,10 @@ RETURNS jsonb LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path=''
 AS $function$
 DECLARE u uuid:=auth.uid(); v_hash text:='e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc'; l public.layouts%ROWTYPE;
 BEGIN
- IF u IS NULL OR NOT public.serien_access_allowed() THEN
+ IF u IS NULL THEN
   RAISE EXCEPTION 'FORBIDDEN' USING ERRCODE='P0001'; END IF;
  PERFORM pg_catalog.pg_advisory_xact_lock(pg_catalog.hashtextextended(u::text,0));
- IF NOT public.serien_access_allowed() THEN
+ IF NOT serien_internal.serien_access_allowed_lock() THEN
   RAISE EXCEPTION 'FORBIDDEN' USING ERRCODE='P0001'; END IF;
  INSERT INTO public.layouts(id,owner_id,name,topology_hash,schema_version)
  VALUES(u,u,'SerieN',v_hash,1) ON CONFLICT(id) DO NOTHING;
@@ -242,11 +269,11 @@ BEGIN
 END $function$;
 
 CREATE FUNCTION public.serien_read_head(p_workspace uuid,p_layout uuid)
-RETURNS jsonb LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path=''
+RETURNS jsonb LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path=''
 AS $function$
 DECLARE u uuid:=auth.uid(); s public.layout_snapshots%ROWTYPE; r public.operation_receipts%ROWTYPE;
 BEGIN
- IF u IS NULL OR p_workspace IS DISTINCT FROM u OR NOT public.serien_access_allowed() OR
+ IF u IS NULL OR p_workspace IS DISTINCT FROM u OR NOT serien_internal.serien_access_allowed_lock() OR
    NOT EXISTS(SELECT 1 FROM public.layouts WHERE id=p_layout AND owner_id=u)
  THEN RAISE EXCEPTION 'FORBIDDEN' USING ERRCODE='P0001'; END IF;
  SELECT * INTO s FROM public.layout_snapshots
@@ -261,12 +288,12 @@ BEGIN
 END $function$;
 
 CREATE FUNCTION public.serien_read_snapshot(p_workspace uuid,p_layout uuid,p_revision text)
-RETURNS jsonb LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path=''
+RETURNS jsonb LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path=''
 AS $function$
 DECLARE u uuid:=auth.uid(); revision_i bigint; s public.layout_snapshots%ROWTYPE;
  r public.operation_receipts%ROWTYPE;
 BEGIN
- IF u IS NULL OR p_workspace IS DISTINCT FROM u OR NOT public.serien_access_allowed() OR
+ IF u IS NULL OR p_workspace IS DISTINCT FROM u OR NOT serien_internal.serien_access_allowed_lock() OR
    NOT EXISTS(SELECT 1 FROM public.layouts WHERE id=p_layout AND owner_id=u)
  THEN RAISE EXCEPTION 'FORBIDDEN' USING ERRCODE='P0001'; END IF;
  IF p_revision IS NULL OR length(p_revision)>19 OR
@@ -296,7 +323,7 @@ BEGIN
     p_request_id IS NULL THEN
   RAISE EXCEPTION 'FORBIDDEN' USING ERRCODE='P0001'; END IF;
  PERFORM pg_catalog.pg_advisory_xact_lock(pg_catalog.hashtextextended(u::text,0));
- IF NOT public.serien_access_allowed() THEN
+ IF NOT serien_internal.serien_access_allowed_lock() THEN
   RAISE EXCEPTION 'FORBIDDEN' USING ERRCODE='P0001'; END IF;
  SELECT * INTO l FROM public.layouts WHERE id=p_layout AND owner_id=u;
  IF NOT FOUND OR l.topology_hash<>'e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc' OR l.schema_version<>1 THEN
