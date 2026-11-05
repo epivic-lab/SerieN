@@ -106,6 +106,20 @@ GRANT EXECUTE ON FUNCTION serien_internal.serien_schema_v1(),
  serien_internal.serien_asset_manifest_v1(),
  serien_internal.serien_edge_lengths_v1() TO serien_rpc;
 
+-- Explicit fixed owner quota protects Supabase Free (500 MB per project).
+-- No auto-prune, no mutation of past snapshots. Hard cap: 64 MiB of
+-- normalized serialized payloads per owner (conservative approximation
+-- ignoring receipt/index/WAL overhead). Increase only via reviewed migration.
+CREATE FUNCTION serien_internal.serien_within_quota_v1(
+ used_bytes bigint, next_bytes bigint
+) RETURNS boolean LANGUAGE sql IMMUTABLE SET search_path=''
+AS $quota$ SELECT used_bytes>=0 AND next_bytes>=0
+     AND used_bytes <= 67108864 - next_bytes $quota$;
+REVOKE ALL ON FUNCTION serien_internal.serien_within_quota_v1(bigint,bigint)
+ FROM PUBLIC,anon,authenticated;
+GRANT EXECUTE ON FUNCTION serien_internal.serien_within_quota_v1(bigint,bigint)
+ TO serien_rpc;
+
 CREATE FUNCTION serien_internal.serien_validate_references_v1(d jsonb) RETURNS void
  LANGUAGE plpgsql SET search_path='' AS $function$
 DECLARE
@@ -354,6 +368,7 @@ AS $function$
 DECLARE u uuid:=auth.uid(); l public.layouts%ROWTYPE; d jsonb;
  old public.operation_receipts%ROWTYPE; head_revision bigint; expected bigint;
  digest text; snapshot_id uuid; committed_at timestamptz; receipt jsonb;
+ current_bytes bigint;
 BEGIN
  IF u IS NULL OR p_workspace IS DISTINCT FROM u OR p_layout IS NULL OR
     p_request_id IS NULL THEN
@@ -397,6 +412,12 @@ BEGIN
   RAISE EXCEPTION 'REVISION_CONFLICT' USING ERRCODE='P0001'; END IF;
  IF head_revision=9223372036854775807 THEN
   RAISE EXCEPTION 'REVISION_OVERFLOW' USING ERRCODE='P0001'; END IF;
+ -- One-user advisory lock serializes all authorized writers.
+ SELECT coalesce(sum(pg_catalog.octet_length(payload::text)),0)
+ INTO current_bytes FROM public.layout_snapshots WHERE owner_id=u;
+ IF NOT serien_internal.serien_within_quota_v1(
+      current_bytes,pg_catalog.octet_length(d::text)) THEN
+  RAISE EXCEPTION 'OWNER_QUOTA_EXCEEDED' USING ERRCODE='P0001'; END IF;
  INSERT INTO public.layout_snapshots(owner_id,layout_id,revision,snapshot_schema,payload)
  VALUES(u,p_layout,head_revision+1,1,d)
  RETURNING id,saved_at INTO snapshot_id,committed_at;
