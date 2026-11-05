@@ -1,12 +1,50 @@
 # 6B.1 — Capture & Restore Gate
 
-**PASS tecnico, in attesa del collaudo indipendente della Regia.**
+**PASS REGIA per il perimetro Capture & Restore locale, dopo 6B.1-F e CI indipendente.**
 5 novembre 2026. Branch esclusivo `feature/train-persistence-auth`, dalla baseline
 main `9126788d3c68e43c0687e948db767bfccbbfc774`. Nessun merge/rebase dal branch
 storico, nessun deployment, nessuna query o modifica a Supabase produzione.
 Il checkpoint è il commit atomico che contiene questo report; SHA e verifica
 remota sono riportati nella consegna. Ricavabile con `git log -1 --format=%H --
 docs/_active/train-persistence-auth/6B1_CAPTURE_RESTORE_GATE.md`.
+
+## Gate indipendente Regia 6B.1-F — PASS (5 novembre 2026)
+
+Dopo il blocco del workspace Codex sul vecchio commit `5c8f0f5`, la Regia ha
+applicato una correzione di cinque file direttamente sul tree GitHub originale.
+Questo preserva i blob binari senza ricostruirli a mano. Commit di codice
+`61dd831bd67d9e0185d6fff3f87ce20db0d94c4e`; commit di configurazione CI
+`465d046061621d543e2cb4bc59fb7d357c686108` (Ubuntu 24.04 per Playwright).
+
+- **R1:** dopo un fault durante apply, tornano i flag originali di pausa,
+  l'etichetta esatta del pulsante, il pulsante Aggiungi e la UI aggiornata.
+- **R2:** `commitOverrides` è compreso nel confine protetto di commit; il
+  vecchio scene state non viene rilasciato prima del suo esito.
+  In caso di fault successivo, la visibilità originale è ripristinata.
+- **Test RED/GREEN:** sono state aggiunte prove browser con fault one-shot
+  a tre punti (dopo inserimento gruppi, dopo UI, dopo commitOverrides),
+  sia da simulazione in marcia sia in pausa. Non sono presenti registrazioni
+  RED eseguite in CI: le prove sono nate assieme alla patch e hanno esito
+  GREEN indipendente. Non attribuire un RED non osservato.
+- **CI indipendente:** [run 42107202499](https://github.com/epivic-lab/SerieN/actions/runs/42107202499)
+  **SUCCESS**, checkout completo dei 1.432 file incluso il binario,
+  `npm test` **231/231**, build **PASS**, `unittest` **9/9**,
+  Chromium/Playwright **56/56 controlli PASS**.
+- Per ogni fault, capture prima/dopo identico escludendo il nuovo
+  `stateId`, etichetta di pausa identica e conteggio dei gruppi
+  ferroviari/record asset identico. Restore successivo riuscito.
+  Nessuna richiesta esterna Auth/DB né errore JavaScript nel collaudo.
+- Gli hook di fault sono esposti solo su hostname loopback e con
+  `?persistenceTest=1`; assenti dalla UI normale di produzione.
+
+Limiti: non eseguiti benchmark 5D su hardware reale o test multiutente
+Google/concorrenza DB. La persistenza cloud rimane disabilitata. Il PASS
+conferma **solo** la capacità di capture e restore locale e la resilienza ai
+fault simulati nei punti citati; non certifica fail-proof universale né
+l'atomicità transazionale del futuro backend.
+
+**STOP verso cloud:** nessuna autorizzazione a scrivere nel DB reale,
+pubblicare su `main` o attivare autosave. Richiedere un gate separato.
 
 ## Implementazione e utilizzo locale
 

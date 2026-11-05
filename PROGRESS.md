@@ -2,12 +2,12 @@
 
 ## Percorso operativo corrente — 6B.1 Auth Google (5 novembre 2026)
 
-**6B.1 PASS tecnico, in attesa del collaudo indipendente della Regia.** Branch
+**6B.1 APPROVATA dalla Regia per il solo Capture & Restore locale, dopo correzione 6B.1-F.** Branch
 `feature/train-persistence-auth` dalla baseline main `9126788d3c68e43c0687e948db767bfccbbfc774`.
 Implementati capture, schema/validazione e restore locale dello stato browser R1,
 con ID stabili, staging non distruttivo e blocco fino a Riprendi. Round-trip
-native/Kenney, tre/quattro convogli e sganciati PASS. **231 Node, 9 Python, build,
-30 controlli browser, regressioni 5C e Fase 0 PASS.** Sei miniature pixel-identiche.
+native/Kenney, tre/quattro convogli e sganciati PASS. Sul codice 6B.1-F,
+GitHub Actions CI run [42107202499](https://github.com/epivic-lab/SerieN/actions/runs/42107202499) ha verificato **231 test Node, 9 Python, build e 56 controlli browser PASS**, compresi fault in commit/rollback. Le precedenti regressioni 5C/Fase 0 e le sei miniature identiche restano evidenza 6B.1 ereditata, non rieseguita dal workflow 6B.1-F.
 
 L'architettura corrente usa **Supabase Auth Google + auth.uid() + allowlist/RLS**;
 D09/D10 e il percorso ownerless storico non sono da importare. Adapter cloud
@@ -20,7 +20,7 @@ la concorrenza cloud reale restano da collaudare.
 - [Stato corrente](docs/_active/train-persistence-auth/STATUS.md).
 - [Proposta Supabase non applicata](docs/_active/train-persistence-auth/SUPABASE_SAVE_PROPOSAL.md).
 
-**Unica prossima azione: collaudo indipendente della Regia. STOP 6B.1.**
+**Gate locale della Regia: PASS 6B.1-F.** Prossima fase da autorizzare separatamente: protocollo di salvataggio cloud con isolamento utenti/RLS, CAS e recupero, previa verifica di schema e privilegi reali. Nessun deploy o mutazione DB autorizzati da questo gate.
 Le sezioni seguenti conservano il contesto storico, non autorizzano altre fasi.
 
 **5A, 5B, 5C e 5D concluse. Pubblicazione su main autorizzata dall’utente il 30 ottobre 2026. 5E non iniziata.**
