@@ -2,11 +2,29 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#16241d">
 <link rel="icon" href="data:,">
 <title>SerieN · Autumn Railways</title><link rel="stylesheet" href="./style.css?v=0.12.0">
-</head><body>
+<style>
+body.auth-locked .app{display:none!important}
+#authGate[hidden],#signOut[hidden],#googleSignIn[hidden]{display:none!important}
+#authGate{min-height:100vh;display:grid;place-items:center;background:#16241d;color:#f2f5ef;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:24px;box-sizing:border-box}
+.authPanel{width:min(430px,100%);background:#24372d;border:1px solid #56745d;border-radius:16px;padding:32px;box-shadow:0 15px 50px #0005;text-align:center}
+.authPanel .authBrand{font-weight:800;font-size:28px;letter-spacing:.06em}
+.authPanel p{line-height:1.6}
+.authPanel button{background:#d3e9b1;color:#17291f;font:inherit;font-weight:650;padding:12px 20px;border:0;border-radius:8px;cursor:pointer}
+.authPanel button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.authPanel .authHelp{color:#c5d0c7;font-size:13px}
+</style>
+</head><body class="auth-locked">
+<section id="authGate" aria-label="Accesso riservato" role="region"><div class="authPanel">
+<div class="authBrand">SerieN · N160</div><h1>Accesso riservato</h1>
+<p>Effettua l'accesso per avviare il simulatore ferroviario.</p>
+<p id="authStatus" role="status" aria-live="polite">Verifica dell'accesso in corso…</p>
+<button type="button" id="googleSignIn" hidden>Accedi con Google</button>
+<p class="authHelp">L'accesso è disponibile soltanto per gli account autorizzati.</p>
+</div></section>
 <div class="app">
 <header class="top">
 <div class="brand"><div class="mark">N<small>160</small></div><div><b>SerieN <i>Autumn Railways</i></b><span>N SCALE RAILWAY · 150 × 70 CM</span></div></div>
-<nav aria-label="Application"><label class="qualityLabel">Quality <select id="quality" aria-label="Graphics quality"><option value="auto">Auto</option><option value="high">High</option><option value="cinema">Cinema</option><option value="low">Low</option></select></label><span class="online">● WEB SIMULATION</span><button id="homeView" class="secondary">⌖ Home</button><button id="planBtn" class="secondary">▦ Track plan</button><button id="helpBtn" class="secondary">? Help</button></nav>
+<nav aria-label="Application"><label class="qualityLabel">Quality <select id="quality" aria-label="Graphics quality"><option value="auto">Auto</option><option value="high">High</option><option value="cinema">Cinema</option><option value="low">Low</option></select></label><span class="online">● WEB SIMULATION</span><button id="homeView" class="secondary">⌖ Home</button><button id="planBtn" class="secondary">▦ Track plan</button><button id="helpBtn" class="secondary">? Help</button><button id="signOut" class="secondary" type="button" hidden>Esci</button></nav>
 </header>
 <div class="middle"><main id="view3d" class="world" aria-label="3D railway layout">
 <div id="loadMsg" class="load">Preparing the 3D railway…</div>
@@ -35,5 +53,10 @@
 <script>
 window.addEventListener('error',()=>{const e=document.getElementById('loadMsg');if(e&&!e.hidden)e.textContent='Startup failed. Check WebGL support and reload the page.';});
 window.addEventListener('unhandledrejection',()=>{const e=document.getElementById('loadMsg');if(e&&!e.hidden)e.textContent='Unable to load the game. Please reload the page.';});
-</script><script type="module" src="./dist/game.js?v=0.12.0"></script>
+</script><script type="module">
+import("./auth-gate.js?v=1").catch(() => {
+  const status = document.getElementById("authStatus");
+  if (status) status.textContent = "Autenticazione temporaneamente non disponibile.";
+});
+</script>
 </body></html>
