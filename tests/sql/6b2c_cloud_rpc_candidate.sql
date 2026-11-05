@@ -328,7 +328,7 @@ BEGIN
    RAISE EXCEPTION 'IDEMPOTENCY_KEY_REUSED' USING ERRCODE='P0001'; END IF;
   RETURN old.result;
  END IF;
- SELECT pg_catalog.coalesce(max(revision),0) INTO head_revision FROM public.layout_snapshots
+ SELECT coalesce(max(revision),0) INTO head_revision FROM public.layout_snapshots
   WHERE owner_id=u AND layout_id=p_layout;
  IF head_revision<>expected THEN
   RAISE EXCEPTION 'REVISION_CONFLICT' USING ERRCODE='P0001'; END IF;
