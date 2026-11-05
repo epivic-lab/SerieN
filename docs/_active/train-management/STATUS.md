@@ -1,52 +1,89 @@
 # Train Management — gate corrente
 
-**6A.12-P DESIGN DELIVERED — STAGING EXECUTION BLOCKED — MACRO 6A OPEN — 6B NOT AUTHORIZED.**
+**6A.12-R DESIGN PROPOSTO — REVIEW REGIA PENDING — IMPLEMENTAZIONE/PRODUZIONE NON AUTORIZZATE.**
 
-6A.1–6A.11 approvate nei rispettivi perimetri;6A.11 solo laboratorio single-broker.
-Base approvata `1da0675ca59cd47cffe79250f17419c929d90048`, branch esclusivo
+5 novembre 2026, Europe/Rome. Il cambio strategico6A.12-R supera operativamente
+il piano6A.12-P, che resta storico e non autorizza hosting a pagamento.
+6A.12-L sospesa; nessun WIP rilevato nei percorsi collegati, nessuna cancellazione.
+6A.1–6A.11 restano approvate nei rispettivi perimetri di laboratorio; macrofase6A
+aperta e R0P01–P18 non completati. Nessuna6B–6E avviata qui.
+
+Base approvata `55d6bd6ef8211e9f136468090ff195f4ac791bde`, solo
 `feature/train-management`; R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` congelata.
-Audit di recupero: checkout pulito e corretto, nessun commit locale/stash/bozza
-6A.12 da perdere; ricerca e contratti già disponibili conservati. Nessun cambio
-branch, main import, reset/rebase/merge/force-push o ricostruzione di storia.
+Checkout originale pulito su work/5c8f0f5 e stash assenti, preservati.
+Git shell non raggiunge il proxy; letture GitHub autorizzate confermano checkpoint
+e ancestry R1 (ahead12/behind0). Checkout isolato shallow/sparse con commit/tree/blob
+verificati per hash, senza import di main o riscrittura della storia.
+Dettagli del recupero nell'architettura, scratch in /workspace/work/6A12-R.
 
-Sette deliverable di sola progettazione:
+## Cinque deliverable
 
-1. [Readiness, blocker, fonti e GO/NO-GO](6A12_STAGING_READINESS.md).
-2. [Hosting e single-broker/fencing](6A12_HOSTING_ARCHITECTURE.md).
-3. [Compatibilità Supabase direct/session/transaction](6A12_SUPABASE_COMPATIBILITY.md).
-4. [Provisioner, secret manager, lifecycle e journal](6A12_PROVISIONING_AND_SECRETS.md).
-5. [Runbook futuro non eseguito](6A12_STAGING_RUNBOOK.md).
-6. [Test obbligatori e recovery su clone](6A12_TEST_AND_RECOVERY_PLAN.md).
-7. [Costi verificabili e registro approvazioni](6A12_COST_AND_APPROVAL_GATE.md).
+1. [Architettura browser-first gratuita e confine SQL](6A12R_FREE_BROWSER_ARCHITECTURE.md).
+2. [Confronto identità e decisioni D09/D10](6A12R_D09_D10_DECISION.md).
+3. [Audit reale in sola lettura e piano produttivo](6A12R_PRODUCTION_MIGRATION_PLAN.md).
+4. [Limiti Free, fonti, dimensionamento e rischi](6A12R_FREE_LIMITS_AND_RISKS.md).
+5. [Percorso breve e matrice R0P01–P18](6A12R_ROUTE_TO_COMPLETE_SERIEN.md).
 
-Raccomandazione: un host EC2 fisso, ingresso HTTPS separato dal broker privato,
-SQL direct TLS/IPv6, identità macchina/secret manager e provisioner fuori banda.
-Alternativa Render con disco persistente/OIDC; entrambi subordinati alle prove
-staging. Nessun provider/account/piano scelto o attivato tacitamente.
+Proposta W: mantenere WebCrypto P-256 e nuovi dati ownerless, Edge fidato con
+attestazione interna e login SQL EXECUTE-only, claim nonce committato separatamente,
+RLS su contesto verificato per transazione. Richiede **nuova decisione D09**:
+non conserva identità session_user per-device o separazione UID/IPC del broker.
+Compromissione Edge/issuer e credenziali privilegiate predefinite nel runtime sono
+rischi espliciti. Nessun riuso diretto delle vecchie API basate sul principal.
 
-D09=A e D10 invariati. L01 resta FAIL multi-broker32/16, modalità non supportata;
-launcher locale non dimostra esclusività hosting. Il piano richiede prevenzione
-del secondo avvio, drain, fence esterno e zero vecchi backend prima di READY.
-Nessun coordinatore distribuito o login SQL universale/SET ROLE introdotto.
+Alternativa Auth anonima confrontata ma NON adottata: crea veri utenti Auth,
+richiede deroga D10, membership/RLS e recovery dedicati; JWT non sostituisce nonce.
+Proposta W conserva D10/provenienza/immutabilità e zero nuovi Auth; non dichiara
+Auth0 reale, non cancella l'utente preesistente. L01 32/16 rimane FAIL storico:
+cap aggregato connessioni Edge/Supavisor NOT VERIFIED e bloccante prima apertura.
+Slot SQL di ammissione limitano transazioni, non connessioni.
 
-Blocker: organizzazione/nome/ref staging e budget non assegnati; fattibilità DDL e
-delega gestiti, session_user/pool/cache/TLS, secret adapter/journal/registro revoche,
-packaging/fixture, esclusività hosted e recovery ancora da provare/implementare
-solo con incarico esplicito. Proposta75USD/7giorni NON AUTORIZZATA; preventivo
-completo e costo clone/lavoro/fiscalità necessari prima del GO. Restore/fault
-host-volume-store-DB/PITR richiedono clone dedicato e seconda autorizzazione.
+## Audit produzione e gate
 
-Fonti pubbliche consultate il5novembre2026, Europe/Rome; fatti, interpretazioni e
-NOT VERIFIED separati. Nessun accesso a dati o metadata del Supabase reale
-`vehfrjgifzjjgamrgwze`, nessuna creazione/SQL/configurazione/deploy cloud o staging.
-Tutti i file backend/SQL/migrazioni/test e R1/UI/asset/canonico/bundle/dipendenze,
-contratti D09/D10/R0 precedenti restano invariati. Nuovi controlli soltanto locali:
-documenti/link/scope/secret (38link,1777file precedenti identici), npm37file PASS,
-Python/JMRI9 PASS ebuild PASS; SQL/Chromium6A.11 non rieseguiti.
-Nessuna nuova certificazione hosted, R1 visuale/prestazionale o browser/OS recovery.
+Unica destinazione futura `vehfrjgifzjjgamrgwze`, SerieN ACTIVE_HEALTHY,
+Free/eu-west-3/PG17.11.0.003. Solo due migrazioni iniziali reali; dieci tabelle
+pubbliche tutte esattamente0righe, Auth1, Storage0bucket/0oggetti, zeroEdge Functions.
+Otto FK Auth CASCADE e13policy owner legacy ancora presenti; RLS su tutte10tabelle,
+nessun grant tabella anon/authenticated nella vista role_table_grants osservata.
+Nessun nuovo confine capability o immutabilità6A.5 distribuito. Advisors:1WARN
+leaked password protection disabled, nessuna impostazione cambiata.
+Audit parziale dichiarato: esposizione Data API, usage, ACL colonna/membership,
+SSL/pooler e dipendenze esterne da completare prima di un'azione produttiva.
 
-Commit atomico dei soli nove Markdown, push fast-forward solo sul branch dedicato,
-SHA remoto/locale e working tree pulito verificati nella consegna.
-**Unica prossima azione: audit indipendente della Regia sul piano e compilazione
-delle approvazioni economiche/operative. STOP6A.12-P.**
-6A.12 operativa,6A.13 e6B non autorizzate; macrofase6A ancora aperta.
+Backup reale NON eseguito: export completo, leggibilità e restore locale verificato
+sono gate predeploy, insieme a inventario fresco, migrazioni minime revisionate,
+test locali, forward-fix/rollback e feature flag server/client DISABLED.
+Nessun progetto staging/clone remoto; rehearsal/restore solo locale effimero.
+Approvazione del modello e approvazione di una specifica modifica produttiva sono
+gate distinti; nessuna delle due è anticipata da questi documenti.
+
+## Verifiche di questa microfase
+
+- PASS: npm test **37unità file,0FAIL** (Node24.19.0), Python/JMRI **9test**, build,
+  rigenerazione canonico senza diff. Log locali npm-test.txt/python-tests.txt/
+  build.txt/canonical.txt in /workspace/work/6A12-R.
+- PASS: perimetro esclusivamente cinque nuovi Markdown più PROGRESS/STATUS;
+  25link locali e149righe tabellari controllati; scansione credenziali dei sette documenti.
+  1784blob Git precedenti preservati salvo i due file di stato:1488materializzati
+  confrontati per hash e296sparse conservati nell'indice. Rapporto locale verification.json.
+- Invarianti ferroviarie/UI: nessun cambiamento a R1,150rail75bed,otto scambi,
+  WX310/Journey/guardia, plancia/HUD/camera/minimappe, assets o topologia;
+  canonical-layout e bundle ricostruito confrontati alla baseline.
+  SHA-256 canonico e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc;
+  bundle0622836cefcdbab60e6a71012f5228664f6d3ecfca228d970b1ad68c12a37a0b.
+- NOT VERIFIED in questa fase documentale: nuove suite SQL/HTTP/Chromium6A.11,
+  browser/device alternativi, hardware, visuale/performance R1/5D completi;
+  risultati precedenti solo ereditati, nessun nuovo PASS hosted/restore/backup.
+- Sicurezza: solo SELECT e letture metadata Supabase; nessuna mutazione remota,
+  creazione Auth, migrazione, deploy, secret letto/modificato o credenziale nei file.
+  Nessuna modifica applicativa/backend/SQL/test/dipendenza/workflow/main.
+
+Checkpoint atomico dei soli sette Markdown; pubblicazione fast-forward esclusiva
+su feature/train-management tramite Git Data API con expected_sha e force=false,
+dopo controlli e materializzazione locale del commit. SHA locale/remoto e file
+verificati nella consegna; nessun esito di pubblicazione anticipato nel documento.
+main remoto rilevato5c8f0f59a5914a4105a45ceef104e1e24f38163f, non modificato.
+
+**Unica prossima azione: audit della Regia e approvazione esplicita del modello
+W/D09/D10. STOP6A.12-R. La proposta6A.12-R.1 locale richiede nuova autorizzazione;
+nessuna implementazione, produzione,6B–6E, main, deploy o merge autorizzati.**

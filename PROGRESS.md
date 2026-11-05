@@ -1,5 +1,7 @@
 # SerieN — Stato e ripresa
 
+> Stato corrente: 6A.12-R, revisione browser-first proposta; vedere l'ultima voce e il [STATUS Train Management](docs/_active/train-management/STATUS.md). Le voci precedenti restano storiche.
+
 **5A, 5B, 5C e 5D concluse. Pubblicazione su main autorizzata dall’utente il 30 ottobre 2026. 5E non iniziata.**
 
 La richiesta del 30 ottobre ha autorizzato il completamento della 5D dal checkpoint pulito `5ae8ee9`. Controllato GitHub: `main` a `f582b12`, due commit di soli asset/file di sistema rispetto alla base pubblica, preservati. Repository `first` e `SerieN Control` non modificati.
@@ -435,3 +437,55 @@ push normale soltanto feature/train-management; SHA remoto/locale e working tree
 pulito verificati nella consegna. **Unica prossima azione: audit della Regia sul
 piano e decisioni esplicite su ambiente, budget, accessi, fencing e operazioni.
 STOP dopo6A.12-P; nessuna richiesta di eseguire subito lo staging.**
+
+## Train Management — 6A.12-R cambio strategico browser-first (2026-11-05, Europe/Rome)
+
+**6A.12-R DESIGN PROPOSTO — REVIEW REGIA PENDING — PRODUZIONE/IMPLEMENTAZIONE NON AUTORIZZATE.**
+Base approvata `55d6bd6ef8211e9f136468090ff195f4ac791bde`, solo feature/train-management;
+R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` preservata. Il piano6A.12-P resta
+storico, superato operativamente: nessun acquisto hosting o staging da eseguire.
+6A.12-L sospesa, nessun WIP rilevato nei checkout disponibili, nessun reset/clean.
+
+Cinque soli nuovi documenti: [architettura](docs/_active/train-management/6A12R_FREE_BROWSER_ARCHITECTURE.md),
+[decisione D09/D10](docs/_active/train-management/6A12R_D09_D10_DECISION.md),
+[piano produzione/audit](docs/_active/train-management/6A12R_PRODUCTION_MIGRATION_PLAN.md),
+[limiti Free/rischi/fonti](docs/_active/train-management/6A12R_FREE_LIMITS_AND_RISKS.md),
+[percorso e18criteri R0](docs/_active/train-management/6A12R_ROUTE_TO_COMPLETE_SERIEN.md).
+STATUS aggiornato; nessun altro file applicativo/SQL/test/workflow modificato.
+
+Proposta W: Pages→HTTPS→Edge verificatore P-256→SQL privato attestato, ownerless
+e zero nuovi Auth. D09=A non trasferibile tacitamente: nuova decisione richiesta
+per login runtime EXECUTE-only e contesto RLS verificato, claimCOMMIT separato
+dai dati, lifecycle senza ruoli per-device. Verificatore Edge fidato, rischio issuer
+e credenziali privilegiate runtime espliciti; nessuna separazione processo inventata.
+Auth anonima confrontata, NON adottata: richiederebbe deroga D10/membership/recovery;
+JWT non sostituisce nonce. L01 32/16 storico FAIL conservato, nuovo cap gestito
+aggregato NOT VERIFIED/bloccante; ammissione transazioni non equivale a cap sessioni.
+
+Audit Supabase reale autorizzato solo letture: SerieN Free/eu-west-3/PG17.11.0.003,
+due migrazioni iniziali, dieci tabelle tutte0righe, Auth1, Storage0/0, Edge0;
+otto FK Auth CASCADE, RLS attiva e policy owner legacy. Nessun utente eliminato,
+nessun segreto letto o modifica remota. Backup NON eseguito: inventario fresco,
+dump esportabile/leggibile e restore locale, rehearsal, flag DISABLED, rollback/
+forward-fix e approvazione esatta della Regia restano gate prima del futuro deploy.
+Nessun nuovo progetto staging e nessun costo ricorrente introdotto.
+
+Checkout originale work/5c8f0f5 pulito e senza stash conservato. Git shell bloccato
+da proxy irraggiungibile; connettore GitHub conferma checkpoint e12commit dopoR1.
+Checkout isolato shallow/sparse con108blob/172tree e commit esatti verificati SHA;
+evidenze storiche e due .DS_Store esclusi solo dalla materializzazione, nel tree intatti.
+Nessun main import, rebase/reset/merge. Pubblicazione del solo branch autorizzato
+via Git Data API fast-forward con lease dopo verifica locale.
+
+Verifiche fresche: npm37unità file PASS/0FAIL, Python/JMRI9 PASS, build e canonico
+senza diff; scope/link/tabelle/hash/segreti in /workspace/work/6A12-R/verification.json.
+Bundle/R1/canonico/UI/backend/SQL/asset/dipendenze invariati per hash e tree.
+Nessuna nuova suite SQL/browser6A.11, misura hosted o R1 visuale/performance/hardware:
+NOT VERIFIED, prove approvate precedenti solo ereditate. Il simulatore non dispone
+ancora di capture/hydrate/outbox generali; il piano li mette prima dell'apertura
+cloud generale e conserva tutti R0P01–P18 senza dichiarazioni di completamento.
+
+Checkpoint atomico contenente i cinque documenti più PROGRESS/STATUS; SHA effettivo,
+coincidenza remota, contenuti e working tree verificati nella consegna dopo
+pubblicazione. **Unica prossima azione: audit Regia e decisione esplicita sul modello
+W/D09/D10. STOP6A.12-R;6A.12-R.1 locale, produzione e6B–6E non autorizzate.**
