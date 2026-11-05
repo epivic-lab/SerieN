@@ -1,5 +1,11 @@
 # SerieN — Codex working rules
 
+## Nuovo vincolo PROD — allowlist autenticazione 2026-11-05
+
+Su **Supabase reale SerieN** è già stata applicata la migrazione `20261105155420_serien_verified_email_gate` (registro remoto: `serien_verified_email_gate`), con schema privato `serien_access.allowed_emails` popolato con **esattamente due indirizzi email autorizzati**; gli indirizzi non sono copiati nel repository pubblico. Funzione `public.serien_access_allowed()` (identità JWT validata e email confermata) e policy RLS `AS RESTRICTIVE` per tutte e dieci le tabelle pubbliche ferroviarie. **Non cancellare né ricreare questi oggetti; riconciliare ogni futura migrazione D09/D10 con il DB reale.** Nessun utente Auth o dato ferroviario è stato cancellato.
+
+Il login Google e gate client sono preparati sul ramo separato `feature/approved-users-login`, checkpoint `64652d0e7ee9bbfe770aa6084aae481cde9425af`, **non pubblicati su main**: Google OAuth/redirect e smoke test reali sono ancora da configurare/verificare. GitHub Pages serve file statici pubblici, quindi il gate browser non nasconde il codice del simulatore; la protezione dei dati è RLS. Codex Train Management resta sospeso fino al riallineamento. Nessun nuovo deploy o altra migrazione è autorizzato automaticamente.
+
 ## Requisiti permanenti di prodotto — superseding future design constraints (2026-11-05)
 
 **Obbligatorio prima di Train Management/Auth/cloud:** leggere [docs/product/SERIEN_PRODUCT_REQUIREMENTS.md](docs/product/SERIEN_PRODUCT_REQUIREMENTS.md). Requisiti futuri: applicazione dietro social login senza password SerieN, paywall/subscription lato server, persistenza ferroviaria isolata per utente e multiutenza contemporanea; semplicità e robustezza, browser-only, nessun Mac/server persistente/costo obbligatorio. **Codex 6A.12-S1 sospesa per riallineamento**, nessuna implementazione/deploy/DDL implicitamente autorizzata. Questa indicazione aggiornata prevale sui vecchi riferimenti a gate 6A.6 o ownerless definitivo; la storia dei gate resta storica.
