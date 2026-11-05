@@ -1,0 +1,35 @@
+name: SerieN 6B.2-B isolated CAS / idempotency verification
+on:
+  push:
+    branches: [feature/train-persistence-auth]
+    paths:
+      - 'tests/db-cas-6b2b.sql'
+      - 'tests/run-db-cas-6b2b.sh'
+      - '.github/workflows/persistence-db-cas-6b2b.yml'
+      - 'tests/db-security-6b2a.sql'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cas-idempotency:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    services:
+      pg17:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: test-only-ephemeral
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    steps:
+      - name: Checkout exact branch tree (no production access)
+        uses: actions/checkout@v4
+      - name: Exercise real PostgreSQL 17 transactions and RLS with synthetic users
+        env:
+          DB_CONTAINER: ${{ job.services.pg17.id }}
+        run: bash tests/run-db-cas-6b2b.sh
