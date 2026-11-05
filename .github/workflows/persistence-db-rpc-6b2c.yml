@@ -1,0 +1,50 @@
+name: SerieN 6B.2-C offline RPC integration — Supabase PG17
+on:
+  push:
+    branches: [feature/train-persistence-auth]
+    paths:
+      - 'tests/sql/6b2c_cloud_rpc_candidate.sql'
+      - 'tests/sql/6b2c_real_schema_fixture.sql'
+      - 'tests/sql/6b2c_rpc_gate.sql'
+      - '.github/workflows/persistence-db-rpc-6b2c.yml'
+      - 'tests/gen-6b2c-fixture.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  candidate-probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    services:
+      pg17:
+        image: supabase/postgres:17.11.0.018
+        env:
+          POSTGRES_USER: supabase_admin
+          POSTGRES_PASSWORD: ephemeral-test-only
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd "pg_isready -U supabase_admin"
+          --health-interval 8s
+          --health-timeout 5s
+          --health-retries 18
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install pinned packages and capture real R1 state
+        run: |
+          npm ci
+          node tests/gen-6b2c-fixture.mjs > /tmp/serien_state.json
+      - name: Run fixture, candidate and auth/DTO tests only inside disposable database
+        env:
+          DB_CONTAINER: ${{ job.services.pg17.id }}
+        run: |
+          test -n "$DB_CONTAINER"
+          db() { docker exec -i "$DB_CONTAINER" psql -X -v ON_ERROR_STOP=1 -U supabase_admin -d postgres "$@"; }
+          db -c "CREATE EXTENSION IF NOT EXISTS pg_jsonschema WITH SCHEMA extensions;"
+          db -f tests/sql/6b2c_real_schema_fixture.sql
+          db -f tests/sql/6b2c_cloud_rpc_candidate.sql
+          db -v "state=$(cat /tmp/serien_state.json)" -f tests/sql/6b2c_rpc_gate.sql
