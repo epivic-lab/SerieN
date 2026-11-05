@@ -153,9 +153,9 @@ BEGIN
          RAISE EXCEPTION 'UNRESOLVED_MEMBER' USING ERRCODE='P0001'; END IF;
       SELECT value INTO model FROM pg_catalog.jsonb_array_elements(d->'models')
         WHERE value->>'id'=item->>'modelId';
-      IF model->>'kind' IS DISTINCT FROM
-         CASE WHEN n=0 THEN 'locomotive' ELSE 'wagon' END
-      THEN RAISE EXCEPTION 'INVALID_CONSIST_ORDER' USING ERRCODE='P0001'; END IF;
+      expected_kind:=CASE WHEN n=0 THEN 'locomotive' ELSE 'wagon' END;
+      IF model->>'kind' IS DISTINCT FROM expected_kind THEN
+       RAISE EXCEPTION 'INVALID_CONSIST_ORDER' USING ERRCODE='P0001'; END IF;
       assigned:=pg_catalog.array_append(assigned,mem->>'itemId');n:=n+1;
     END LOOP;
   END LOOP;
