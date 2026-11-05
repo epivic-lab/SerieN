@@ -21,7 +21,7 @@ Non ci sono righe in `layouts`, `layout_snapshots` o `operation_receipts`, né R
 Tre migrazioni applicate: `20261029230530`, `20261029230558`, `20261105155420`.
 La vista dei branch Supabase segnala `MIGRATIONS_FAILED` su un branch preview `main`, mentre il progetto principale è `ACTIVE_HEALTHY`: chiarire prima di qualunque migrazione.
 
-**Gate Auth aperto:** 2 utenti con identità Google confermata, 2 email in allowlist, ma **solo 1 corrispondenza** fra gli account registrati e l'allowlist. Non dedurre quale account sia; non pubblicare dati personali. Il secondo login va riconciliato e testato prima del rollout.
+**Gate Auth funzionale da completare (nessuna correzione allowlist autorizzata):** 2 identità Google confermate; un account registrato corrisponde all'allowlist e uno no; un secondo indirizzo autorizzato non ha ancora una corrispondente identità Google. Questo è coerente con i test pregressi (primo account ammesso, account estraneo respinto, Sergio non ancora collaudato). **Non è prova di un errore**: non modificare l'allowlist senza un test diretto del secondo accesso. Non pubblicare dati personali.
 
 ## 2. Decisioni minimali della Regia (da provare prima di implementare)
 
@@ -38,7 +38,7 @@ La vista dei branch Supabase segnala `MIGRATIONS_FAILED` su un branch preview `m
 
 ### Riduzione della complessità del digest
 
-Il documento 6B.1 propone RFC 8785/JCS completo, non implementato in PostgreSQL. **Per la prima versione non introdurre una libreria di canonicalizzazione JCS nel database.** Proposta più piccola da verificare con test: la RPC riceve un `state_text` UTF-8 immutabile (non una prova di autorizzazione), misura `octet_length` prima del cast, valida testo/duplicati/JSON, costruisce un envelope server con operazione, UID, layout, revisione attesa e testo, e ne calcola SHA-256 server-side con algoritmo versionato. Lo stesso `request_id` è riutilizzabile solo se l'envelope byte-identico coincide. Il client conserva esattamente il testo iniziale per ogni retry. **Non chiamare questo digest “JCS”**; è un identificatore opaco di ricevuta, non una firma crittografica del client. Testare esplicitamente equivalenza, variazione di un byte, chiavi duplicate annidate e limiti di trasporto. La funzione `pg_catalog.sha256(bytea)` è presente nel DB reale. Se i test non dimostrano validazione sicura del testo, fermarsi e rivedere il contratto, senza downgrade silenzioso.
+Il documento 6B.1 propone RFC 8785/JCS completo, non implementato in PostgreSQL. **Verifica SQL read-only sul PostgreSQL 17 reale:** `IS JSON OBJECT WITH UNIQUE KEYS` respinge duplicati anche annidati; `pg_catalog.sha256(bytea)` è disponibile. Questo non sostituisce ancora i test di validazione e di replay RPC. **Per la prima versione non introdurre una libreria di canonicalizzazione JCS nel database.** Proposta più piccola da verificare con test: la RPC riceve un `state_text` UTF-8 immutabile (non una prova di autorizzazione), misura `octet_length` prima del cast, valida testo/duplicati/JSON, costruisce un envelope server con operazione, UID, layout, revisione attesa e testo, e ne calcola SHA-256 server-side con algoritmo versionato. Lo stesso `request_id` è riutilizzabile solo se l'envelope byte-identico coincide. Il client conserva esattamente il testo iniziale per ogni retry. **Non chiamare questo digest “JCS”**; è un identificatore opaco di ricevuta, non una firma crittografica del client. Testare esplicitamente equivalenza, variazione di un byte, chiavi duplicate annidate e limiti di trasporto. La funzione `pg_catalog.sha256(bytea)` è presente nel DB reale. Se i test non dimostrano validazione sicura del testo, fermarsi e rivedere il contratto, senza downgrade silenzioso.
 
 ## 3. Superficie API privata proposta, NON presente in produzione
 
@@ -61,7 +61,7 @@ Prima dell'INSERT il DB verifica sessione, allowlist, owner, contesto (`state.wo
 
 ## 6. Gate 6B.2-A prima di autorizzare SQL o salvataggi
 
-- [ ] Allineare i due account Google/allowlist e collaudare secondo account e account estraneo, senza pubblicare email.
+- [ ] Collaudare direttamente il secondo account Google autorizzato; confermare respinta utenza estranea, senza pubblicare email. Nessuna correzione in produzione è richiesta dai soli conteggi.
 - [ ] Chiarire `MIGRATIONS_FAILED` del branch preview Supabase; confermare migrazioni produzione.
 - [ ] Validare in DB locale effettivo: ruolo DEFINER non bypass, grant, policy, UID originali, RLS e accesso diretto Data API negato.
 - [ ] Bootstrap concorrente: un solo layout iniziale; A non vede/scrive B con UUID noti.
@@ -78,3 +78,9 @@ Prima verificare in un checkout affidabile `git rev-parse HEAD`, `git status --s
 Una volta ripristinato il checkout, Codex potrà **solo con distinta autorizzazione Regia** preparare SQL/migrazione e test locali per queste quattro RPC. Nessuna scrittura su Supabase produzione, `main`, geometria o R1. La Regia approva ogni microfase dopo verifica indipendente.
 
 **Stato attuale: 6B.1 PASS; 6B.2-A SPEC DOCUMENTATA, GATE NON ANCORA PASS; 6B.2 cloud NON ABILITATA.**
+
+## 8. Prova isolata avviata (senza toccare Supabase)
+
+- `tests/db-security-6b2a.sql`: database sintetico PostgreSQL 17 con tre account inventati, RLS per proprietario, ruolo RPC NOLOGIN/NOBYPASSRLS, funzioni test SECURITY DEFINER, divieto CRUD diretto client, verifica isolamento A/B, account estraneo, JWT assente, divieto UPDATE/DELETE RPC e test JSON/SHA.
+- `.github/workflows/persistence-db-security-6b2a.yml`: esegue il file SQL in un container PostgreSQL 17 **effimero** su GitHub Actions; non accede al database o alle chiavi Supabase. Un PASS eventuale certifica **solo** il meccanismo di ruoli/RLS sullo schema sintetico, non CAS/idempotenza, migrazione né conformità totale del DB reale.
+- Il workflow è stato avviato per il commit `fb7cddd93fa9b4240d68b0567aca013a165d5f1c`; attendere l'esito verificato prima di dichiarare il relativo gate parziale PASS.
