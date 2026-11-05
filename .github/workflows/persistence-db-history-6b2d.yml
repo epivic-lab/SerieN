@@ -1,0 +1,65 @@
+name: SerieN 6B.2-D — authenticated migration history and revocation gate
+on:
+  push:
+    branches: [feature/train-persistence-auth]
+    paths:
+      - 'tests/sql/history/*_APPLIED.sql'
+      - 'tests/sql/6b2d_docker_auth_adapter.sql'
+      - 'tests/sql/6b2d_synthetic_users.sql'
+      - 'tests/sql/6b2c_cloud_rpc_candidate.sql'
+      - 'tests/sql/6b2c_rpc_gate.sql'
+      - 'tests/run-db-rpc-concurrency-6b2c.sh'
+      - 'tests/run-db-revoke-6b2d.sh'
+      - 'tests/gen-6b2c-fixture.mjs'
+      - '.github/workflows/persistence-db-history-6b2d.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-schema:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      pg17:
+        image: supabase/postgres:17.11.0.018
+        env:
+          POSTGRES_USER: supabase_admin
+          POSTGRES_PASSWORD: ephemeral-test-only
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd "pg_isready -U supabase_admin"
+          --health-interval 8s
+          --health-timeout 5s
+          --health-retries 18
+    steps:
+      - name: Checkout pinned branch tree
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Build genuine 6B.1 Capture fixture
+        run: |
+          npm ci
+          node tests/gen-6b2c-fixture.mjs > /tmp/serien_state.json
+      - name: Replay actual three applied migration statements, then test RPC
+        env:
+          DB_CONTAINER: ${{ job.services.pg17.id }}
+        run: |
+          test -n "$DB_CONTAINER"
+          db() { docker exec -i "$DB_CONTAINER" psql -X -v ON_ERROR_STOP=1 -U supabase_admin -d postgres "$@"; }
+          # The 3 historical files are byte-identical records read from Supabase
+          # migration history (not manually recreated). No user records.
+          echo '6714898735ce079b8848e019d7819c20  tests/sql/history/20261029230530_serien_core_schema_APPLIED.sql' | md5sum -c
+          echo '0a4b887af0d0703f1250bb15f2ccf2b1  tests/sql/history/20261029230558_serien_constraints_security_APPLIED.sql' | md5sum -c
+          echo 'ffdc9caaa8818aca5ba413ff179d64f0  tests/sql/history/20261105155420_serien_verified_email_gate_APPLIED.sql' | md5sum -c
+          db < tests/sql/6b2d_docker_auth_adapter.sql
+          db < tests/sql/history/20261029230530_serien_core_schema_APPLIED.sql
+          db < tests/sql/history/20261029230558_serien_constraints_security_APPLIED.sql
+          db < tests/sql/history/20261105155420_serien_verified_email_gate_APPLIED.sql
+          db < tests/sql/6b2d_synthetic_users.sql
+          db -c 'CREATE EXTENSION IF NOT EXISTS pg_jsonschema WITH SCHEMA extensions;'
+          db < tests/sql/6b2c_cloud_rpc_candidate.sql
+          db -v "state=$(cat /tmp/serien_state.json)" < tests/sql/6b2c_rpc_gate.sql
+          bash tests/run-db-rpc-concurrency-6b2c.sh
+          bash tests/run-db-revoke-6b2d.sh
