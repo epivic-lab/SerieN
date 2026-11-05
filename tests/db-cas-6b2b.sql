@@ -198,10 +198,16 @@ BEGIN
  THEN RAISE EXCEPTION 'CAS bypass privilege detected'; END IF;
 END $$;
 
+-- A second layout for the SAME owner exercises owner-wide idempotency.
+-- It has no snapshots: sharing a request_id across layouts must be refused.
+INSERT INTO public.layouts(id,owner_id,topology_hash)
+VALUES ('dddddddd-dddd-4ddd-8ddd-dddddddddddd',
+        'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',repeat('a',64));
+
 SET ROLE authenticated;
 SET "request.jwt.claim.sub"='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
 
--- Both layouts start with revision 1 (inserted by 6B.2-A smoke).
+-- Both original layouts start with revision 1 (inserted by 6B.2-A smoke).
 DO $$
 DECLARE
  w uuid:='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
@@ -222,6 +228,11 @@ BEGIN
  PERFORM public.serien_smoke_expect_error(
    'IDEMPOTENCY_KEY_REUSED',w,w,'1',req,
    public.serien_smoke_state(w,w,'different text'));
+ PERFORM public.serien_smoke_expect_error(
+   'IDEMPOTENCY_KEY_REUSED',w,
+   'dddddddd-dddd-4ddd-8ddd-dddddddddddd','0',req,
+   public.serien_smoke_state(w,'dddddddd-dddd-4ddd-8ddd-dddddddddddd',
+                             'same request, different layout'));
  PERFORM public.serien_smoke_expect_error(
    'REVISION_CONFLICT',w,w,'1',
    '22222222-2222-4222-8222-222222222222',s);
@@ -303,7 +314,9 @@ BEGIN
     (SELECT max(revision) FROM public.layout_snapshots WHERE
   owner_id='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa')<>3 OR
     (SELECT count(*) FROM public.layout_snapshots WHERE
-  owner_id='bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb')<>2
+  owner_id='bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb')<>2 OR
+    (SELECT count(*) FROM public.layout_snapshots WHERE
+  layout_id='dddddddd-dddd-4ddd-8ddd-dddddddddddd')<>0
  THEN RAISE EXCEPTION 'Fault, replay, or invalid input wrote unexpected records';
  END IF;
 END $$;
