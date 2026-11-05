@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SerieN · Verifica accesso riservato</title>
+<style>
+:root{font:16px/1.55 system-ui,-apple-system,sans-serif;color-scheme:dark;background:#15251e;color:#f1f7ed}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;box-sizing:border-box}
+main{box-sizing:border-box;width:min(490px,100%);padding:32px;border:1px solid #48654f;background:#22362b;border-radius:16px}
+h1{font-size:26px;margin:0 0 8px}.hint{font-size:14px;color:#bed0bf}.status{background:#13251b;border-radius:8px;padding:16px;min-height:58px;margin:22px 0}
+button{font:inherit;cursor:pointer;padding:12px 18px;border-radius:8px;border:1px solid #accbaf;background:#d5ecbf;color:#173323;font-weight:700;margin:0 8px 8px 0}
+button.secondary{color:#eff8ee;background:transparent}
+button:disabled{opacity:.5;cursor:wait}
+button:focus-visible{outline:3px solid white;outline-offset:3px}
+[hidden]{display:none!important}
+footer{font-size:13px;color:#bed0bf;margin-top:22px}
+</style>
+</head>
+<body>
+<main>
+<h1>SerieN · Prova del login</h1>
+<p class="hint">Questa pagina serve solo a verificare Google e le autorizzazioni Supabase. Non modifica né avvia il simulatore.</p>
+<div id="status" class="status" role="status" aria-live="polite">Verifica della sessione in corso…</div>
+<button id="login" type="button" hidden>Accedi con Google</button>
+<button id="logout" type="button" class="secondary" hidden>Esci</button>
+<footer>Solo gli utenti autorizzati dal database possono superare il controllo. Questa è una pagina di collaudo, non la pubblicazione del login sul simulatore.</footer>
+</main>
+<script type="module">
+import {createClient} from "https://esm.sh/@supabase/supabase-js@2.95.0?bundle";
+const supabase=createClient("https://vehfrjgifzjjgamrgwze.supabase.co", "sb_publishable_tyqE-YM_Ap0SVkrVMtw-Lg_l82NwQMy",{
+  auth:{flowType:"pkce",detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}
+});
+const status=document.getElementById("status");
+const login=document.getElementById("login");
+const logout=document.getElementById("logout");
+let generation=0;
+function show(message,loginVisible=false,logoutVisible=false){
+  status.textContent=message;
+  login.hidden=!loginVisible;
+  logout.hidden=!logoutVisible;
+}
+async function verify(){
+  const current=++generation;
+  try{
+    const {data:{session},error:sessionError}=await supabase.auth.getSession();
+    if(sessionError)throw sessionError;
+    if(!session){if(current===generation)show("Nessuna sessione. Premi Accedi con Google.",true,false);return}
+    const {data:{user},error:userError}=await supabase.auth.getUser();
+    if(userError||!user){if(current===generation)show("Identità non verificata. Esci e riprova.",false,true);return}
+    const {data:allowed,error:rpcError}=await supabase.rpc("serien_access_allowed");
+    if(rpcError)throw rpcError;
+    if(current!==generation)return;
+    if(allowed===true)show("ACCESSO AUTORIZZATO. L'identità è verificata e il database consente l'accesso.",false,true);
+    else show("ACCESSO NEGATO. Questo account non è presente nella lista autorizzata.",false,true);
+  }catch(e){
+    if(current===generation){
+      show("Verifica non riuscita: impossibile ottenere una risposta valida da Supabase. Non è stato concesso alcun accesso.",true,true);
+    }
+  }
+}
+login.addEventListener("click",async()=>{
+  login.disabled=true;
+  show("Reindirizzamento a Google…",false,false);
+  try{
+    const {error}=await supabase.auth.signInWithOAuth({
+      provider:"google",
+      options:{
+        redirectTo:location.origin+location.pathname,
+        queryParams:{prompt:"select_account"}
+      }
+    });
+    if(error)throw error;
+  }catch{
+    show("Login Google non disponibile. Controllare il provider OAuth e riprovare.",true,false);
+  }finally{login.disabled=false}
+});
+logout.addEventListener("click",async()=>{
+  ++generation;
+  show("Uscita in corso…");
+  try{await supabase.auth.signOut()}catch{}
+  show("Sessione terminata. Puoi provare un altro account.",true,false);
+});
+supabase.auth.onAuthStateChange((event)=>{
+  if(event==="SIGNED_IN"||event==="SIGNED_OUT"||event==="TOKEN_REFRESHED") {
+    queueMicrotask(()=>void verify());
+  }
+});
+void verify();
+</script>
+</body>
+</html>
