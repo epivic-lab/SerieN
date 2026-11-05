@@ -18,7 +18,7 @@ export async function startLab({provision,recover,revoke,execute,emit=()=>{},now
  function authenticate(e,req,workspaceId,layoutId,operation,candidate) {
   const p=e?.proof;
   const fields='audience,bodyDigest,deviceId,domain,epoch,issuedAt,keyId,layoutId,method,nonce,operation,path,request_id,version,workspaceId';
-  if(!p||Object.keys(p).sort().join(',')!==fields||p.domain!=='SerieN-capability-v1'||p.version!==1||p.audience!==origin||p.method!==req.method||p.path!==req.url||p.operation!==operation||p.workspaceId!==workspaceId||p.layoutId!==layoutId||![workspaceId,layoutId,p.deviceId,p.request_id].every(isUUID)||p.keyId!==p.deviceId||!Number.isSafeInteger(p.epoch)||!Number.isSafeInteger(p.issuedAt)||Math.abs(now()-p.issuedAt)>120000||!/^[a-f0-9]{32}$/.test(p.nonce)||p.bodyDigest!==hash(canonical(e.body)))deny();
+  if(!p||Object.keys(p).sort().join(',')!==fields||p.domain!=='SerieN-capability-v1'||p.version!==1||p.audience!==origin||p.method!==req.method||p.path!==req.url||p.operation!==operation||p.workspaceId!==workspaceId||p.layoutId!==layoutId||![workspaceId,layoutId,p.deviceId,p.request_id].every(isUUID)||p.keyId!==p.deviceId||!Number.isSafeInteger(p.epoch)||!Number.isSafeInteger(p.issuedAt)||Math.abs(now()-p.issuedAt)>120000||typeof p.nonce!=='string'||!/^[a-f0-9]{32}$/.test(p.nonce)||p.bodyDigest!==hash(canonical(e.body)))deny();
   const d=candidate??devices.get(p.deviceId);
   if(!d||d.revoked||d.epoch!==p.epoch||d.workspaceId!==workspaceId||workspaces.get(workspaceId)!==layoutId)deny();
   if(typeof e.signature!=='string'||!/^[a-f0-9]{128}$/.test(e.signature)||!verify('sha256',Buffer.from(canonical(p)),{key:key(d.publicKey),dsaEncoding:'ieee-p1363'},Buffer.from(e.signature,'hex')))deny();

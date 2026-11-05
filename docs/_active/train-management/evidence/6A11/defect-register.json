@@ -1,0 +1,66 @@
+{
+  "fixed": [
+    {
+      "id": "D01",
+      "cause": "RegExp coercion accepts array nonce with valid signature",
+      "files": [
+        "broker-lab/broker.js",
+        "capability-gateway/gateway.js",
+        "integration-lab/gateway.js"
+      ],
+      "fix": "string type guard only",
+      "red": [
+        "defects-red.json",
+        "legacy-nonce-red.json"
+      ],
+      "green": [
+        "defects-green.json",
+        "legacy-nonce-green.json"
+      ],
+      "result": "FIXED"
+    },
+    {
+      "id": "D02",
+      "cause": "Client strict JSON exception classified as infrastructure503",
+      "files": [
+        "broker-lab/broker.js",
+        "broker-lab/ingress.js"
+      ],
+      "fix": "input parser errors400; fatal UTF8 errors400",
+      "red": [
+        "defects-red.json"
+      ],
+      "green": [
+        "defects-green.json"
+      ],
+      "result": "FIXED"
+    },
+    {
+      "id": "D03",
+      "cause": "Default Node30s interval leaves declared5s header deadline unenforced",
+      "files": [
+        "broker-lab/broker.js",
+        "broker-lab/ingress.js"
+      ],
+      "fix": "connectionsCheckingInterval250ms; existing deadlines unchanged",
+      "red": [
+        "defects-red.json"
+      ],
+      "green": [
+        "defects-green.json",
+        "results.json"
+      ],
+      "result": "FIXED"
+    }
+  ],
+  "open": [
+    {
+      "id": "L01",
+      "result": "FAIL unsupported multi-broker",
+      "scope": "32 actual SQL connections across two independent workers with local16 cap each",
+      "required": "single worker + failclosed replacement; hosting gate before support",
+      "architectureChangeMade": false
+    }
+  ],
+  "harnessFailures": "run-provenance.json; not runtime security findings"
+}

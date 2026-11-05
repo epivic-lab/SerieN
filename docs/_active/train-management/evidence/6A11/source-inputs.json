@@ -1,0 +1,32 @@
+{
+  "base": "de53ba702164428e3b76936dc9791dee4eb1697a",
+  "files": {
+    "prototypes/train-management/broker-lab/broker.js": "8bbbf1f322ce6b2069ff53d07e3953d8f210846de85159683e8059a9d31ee9e2",
+    "prototypes/train-management/broker-lab/client.js": "a978e757f11429b271e00c956ae33b3d00588d76812ac596fe97e0b9f9f841a0",
+    "prototypes/train-management/broker-lab/ingress.js": "7fd63c9cb3f4160a741b92dd16b2e9c2a3e41596852d05baa219e6baaa32fadb",
+    "prototypes/train-management/broker-lab/pool.js": "65d169b88fb3afb25d0b0fb6a7f8dd1f2b74af84b64e4b90428b4f88858359af",
+    "prototypes/train-management/broker-lab/probes.js": "9e6989d11792374f88b3ba9413c9ca2128332f1c3289024c061079a6272d5973",
+    "prototypes/train-management/broker-lab/transport.js": "d7fe49873e7007e756f4b292d25fd77b179ca104d0cf51b71eaa10321d8b9987",
+    "prototypes/train-management/capability-gateway/gateway.js": "fb42683da2eca9cc7b98014e46dde8bda70fbd457eea6547e7099ddd186893e5",
+    "prototypes/train-management/integration-lab/gateway.js": "b3122e9a0f95c9f25453ebf685e50562bb29dcf1cbafe565bda7096b3532c151",
+    "supabase/migrations/20261104165408_serien_workspace_expand.sql": "6a0e2e559302f4e8fd71b8ffa01beb0fba4a616ca0c431e0556553f4d08e39d7",
+    "supabase/migrations/20261104172819_serien_atomic_checkpoint.sql": "ce28375ccdffe420ad8df08a42ba679a5135a557ce82b4642b21ca9208b02ba2",
+    "supabase/migrations/20261104175236_serien_history_integrity.sql": "26fb20ccb04cb86a9309ace8b1861ee86fd1cf6cc8f5ae38ad67c0bcf8498b3d",
+    "supabase/migrations/20261104231109_serien_capability_lifecycle.sql": "f1a6701fbde4c055d57d07177748ce3c8e0ef307caa5d37f54f76f1034664ec9",
+    "supabase/migrations/20261105090212_serien_ownerless_cutover.sql": "b41e8d73a8144777145fffce89d5fe52929f1e5ae3097072ae4f0c65874e4fe2",
+    "tests/db/6A10/fixture.py": "4a0f8235aaa32b1e0cfe23d986bb94850ce09d281487958dd681703fbcf996ff",
+    "tests/db/6A10/run.py": "77a96c774d781fce21823fb9040832bf0805a12378c50eade614cb55bf51381c",
+    "tests/db/6A10/sql_checks.py": "4e2df3e6c462be02ad80ecb9640d53ccda078bd42fb95a70d5103b04edad3923",
+    "tests/db/6A10/verify-invariants.py": "d0b8541e79a5db1b896f769b04960e075af95c3dc3c4f63a0b2bbf451e33042c",
+    "tests/db/6A11/README.md": "bfccc5750f098cd1136df6e44a4372519425fc42ff389d23200cf1d877871d50",
+    "tests/db/6A11/adversarial.test.js": "3c4dec10c15e62ad25892d453f6062c506080d39ec0e01fb263de39c293ed178",
+    "tests/db/6A11/build-security-matrix.py": "1b74f29e2a2be31144f63d1206192fe14ad58e108db6df53a247d0a1414be9d0",
+    "tests/db/6A11/collect-evidence.py": "90acf423f6d77459858ea1b4e33878de39f232d3d76fb4a5a7a15c242584a229",
+    "tests/db/6A11/extensions.js": "6e8ce360400f2c6f15630444206afa033c40afd97fde9bd9f03e9fd749b5561a",
+    "tests/db/6A11/legacy-nonce.test.js": "af865ea631fea1dc2ba1ccee17fca951d92ee18a9845b8dc47898b8154577b84",
+    "tests/db/6A11/legacy-repro.py": "aaf9e319d347dfda0493d9d7badecf60b5717654df30d0906b512cf25997f8e5",
+    "tests/db/6A11/run.py": "dc070aa25bc4f50cc6ae3276aaf228e717b422e36b09a286ccc895fa438fbb25",
+    "tests/db/6A11/sql-probes.js": "89fdc6208dfd0a3089e379617c791b0dac9e0b6870a8285ffc598b50d4bf103e",
+    "tests/db/6A11/verify-invariants.py": "cc1fda81bb437a1178bbe488231409a37566cf5d5ea7af12bf7d7892e591b466"
+  }
+}

@@ -1,0 +1,6872 @@
+{
+  "profiles": [
+    {
+      "id": "ordinary",
+      "artificialLocks": false,
+      "faults": false,
+      "concurrency": 2,
+      "samples": [
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 51.9654069999815
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 63.58151300001191
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 17.43050799999037
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 15.600689000013517
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 14.361891000007745
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 13.965910000028089
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 18.809338999999454
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 15.952324000012595
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 14.010101000021677
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 12.57608200001414
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 17.869582000013907
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 17.237400000012713
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 14.589900999999372
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 12.87395199999446
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 12.876756000012392
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 14.20250399998622
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 15.210216000006767
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 14.53927500001737
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 11.102270999981556
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 9.836782999977004
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 12.060227000009036
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 9.912413000012748
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 10.613970000005793
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 8.742528999981005
+        }
+      ],
+      "events": [
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 1,
+          "queued": 1,
+          "opened": 8,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265209
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 1,
+          "queued": 1,
+          "opened": 8,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 8.897369999999682,
+          "at": 1793880265209
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "80814e71-7aa6-4e0d-8e7d-81cd8cd1944e",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265225
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265234
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 32.8609120000001,
+          "at": 1793880265234
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "80814e71-7aa6-4e0d-8e7d-81cd8cd1944e",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265236
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265237
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "600ce60b-360a-4a22-b05a-3c3c4aeec5e8",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265245
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "600ce60b-360a-4a22-b05a-3c3c4aeec5e8",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265248
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265248
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.03659400000015012,
+          "at": 1793880265257
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.044866999999612744,
+          "at": 1793880265257
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "707f0370-88b3-476b-a94b-81ddb25d9d5b",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265260
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "707f0370-88b3-476b-a94b-81ddb25d9d5b",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265261
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265262
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "4ce68f42-439b-47a7-88be-0f131c22beba",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265263
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "4ce68f42-439b-47a7-88be-0f131c22beba",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265267
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265268
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.030144999999720312,
+          "at": 1793880265274
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.018417999999655876,
+          "at": 1793880265274
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "9e392fba-8152-4998-96c9-99d61d08777b",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265277
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "2526f1ec-3be3-42a8-b67b-d9360efcb736",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265278
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "2526f1ec-3be3-42a8-b67b-d9360efcb736",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265280
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265280
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "9e392fba-8152-4998-96c9-99d61d08777b",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265281
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265281
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.028462999999646854,
+          "at": 1793880265289
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.01689500000065891,
+          "at": 1793880265290
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "5a4c28b7-c079-4a34-8ef1-5a7dc026793c",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265293
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "99aa42e5-4098-44a0-b40c-0cc35dd6272f",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265294
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "5a4c28b7-c079-4a34-8ef1-5a7dc026793c",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265296
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265297
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "99aa42e5-4098-44a0-b40c-0cc35dd6272f",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265300
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265300
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.02872300000035466,
+          "at": 1793880265307
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.017075999999178748,
+          "at": 1793880265308
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "4dff8a0b-b8ba-45e7-aadc-b74d1bdae2f2",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265310
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "160351cf-c3e9-4d19-8612-104132f9d520",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265310
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "160351cf-c3e9-4d19-8612-104132f9d520",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265312
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265313
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "4dff8a0b-b8ba-45e7-aadc-b74d1bdae2f2",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265314
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265315
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.026119000000107917,
+          "at": 1793880265322
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.018597999999656167,
+          "at": 1793880265322
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "da710b3f-ce4d-4569-bdb4-6f25faa150c7",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265325
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "34223707-9e2b-4bbd-9e87-e4ee379e18bb",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265327
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "da710b3f-ce4d-4569-bdb4-6f25faa150c7",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265328
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265331
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "34223707-9e2b-4bbd-9e87-e4ee379e18bb",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265331
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265332
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.031216000000313215,
+          "at": 1793880265339
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.020751000000018394,
+          "at": 1793880265340
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "b91f8f50-957f-4a3a-a54b-78795f83b8c5",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265342
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "f75d66e6-fa15-41d6-a3c6-aabc760c46e4",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265343
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "f75d66e6-fa15-41d6-a3c6-aabc760c46e4",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265344
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265345
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "b91f8f50-957f-4a3a-a54b-78795f83b8c5",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265347
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265348
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.028543000000354368,
+          "at": 1793880265353
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.020891000000119675,
+          "at": 1793880265355
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "68b658b7-2eed-4c1f-9686-c5cf70f8746f",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265356
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "5793816a-4564-4c5a-b0ff-45faec8894ca",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265357
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "5793816a-4564-4c5a-b0ff-45faec8894ca",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265359
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "68b658b7-2eed-4c1f-9686-c5cf70f8746f",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265359
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265360
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265360
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.03253899999981513,
+          "at": 1793880265369
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.019930000000385917,
+          "at": 1793880265371
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "da311876-d389-475c-9de8-e64968b9a515",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265373
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "0895f1ee-b190-45c4-a2a1-a48e51ed05cc",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265374
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "0895f1ee-b190-45c4-a2a1-a48e51ed05cc",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265375
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "da311876-d389-475c-9de8-e64968b9a515",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265376
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265376
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265377
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.019178999999894586,
+          "at": 1793880265382
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.012559000000692322,
+          "at": 1793880265382
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "b5ecfd6d-13aa-4684-b221-9602979fe2fe",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265384
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "05fa38a7-94e2-4b57-8b35-5e98bfe6ffb4",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265384
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "05fa38a7-94e2-4b57-8b35-5e98bfe6ffb4",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265385
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265386
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "b5ecfd6d-13aa-4684-b221-9602979fe2fe",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265388
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265388
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.018477999999959138,
+          "at": 1793880265393
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.04965399999946385,
+          "at": 1793880265395
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "2182868e-47a7-43bc-b40c-1023b7265f27",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265396
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "62d18879-876e-4a64-aafc-0bd6b749d112",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265396
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "2182868e-47a7-43bc-b40c-1023b7265f27",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265397
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265397
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "62d18879-876e-4a64-aafc-0bd6b749d112",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265400
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265400
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.0178169999999227,
+          "at": 1793880265405
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.032779000000118685,
+          "at": 1793880265406
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "a4c1c6ed-6c15-4a04-8704-48a3ed996a39",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265407
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "00f85b8b-5bfd-4593-808e-3fa68f6fea4a",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265407
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "00f85b8b-5bfd-4593-808e-3fa68f6fea4a",
+          "principal": "n9_device_4",
+          "pid": 16426,
+          "at": 1793880265409
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265409
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "a4c1c6ed-6c15-4a04-8704-48a3ed996a39",
+          "principal": "n9_device_32",
+          "pid": 16425,
+          "at": 1793880265411
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 2,
+          "queued": 0,
+          "opened": 9,
+          "maxOpen": 2,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880265411
+        }
+      ],
+      "resources": {
+        "processMemory": [
+          {
+            "pid": 1,
+            "rssKiB": 76352
+          }
+        ],
+        "ingressRssKiB": 66500,
+        "backend": [
+          {
+            "connections": 2,
+            "application_name": "serien-6a9-serien-6a11-484051d8-broker"
+          }
+        ]
+      }
+    },
+    {
+      "id": "single-spike",
+      "artificialLocks": true,
+      "faults": false,
+      "concurrency": 96,
+      "peakConnections": 16,
+      "samples": [
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 53.6942159999744
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1540.5401669999992
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1576.2066559999948
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1591.0249189999886
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1585.1379890000098
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1570.4221470000048
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1590.9563459999918
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1550.535195000004
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1564.2649639999727
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1557.8122499999881
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1928.6810750000004
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1941.281959999993
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1547.8709809999855
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1543.6112370000046
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1516.3669900000095
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1585.1117890000169
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 124.24318900000071
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1884.370641000016
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1772.6920819999941
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1781.284388
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1683.4587630000024
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1676.5165480000142
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1697.0974660000065
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1654.8575920000148
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1762.4095049999887
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1668.816902999999
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1817.5242739999958
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1866.9154949999938
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1658.406925999996
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1645.532371999987
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1626.2016289999883
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1685.9799730000086
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 163.2158380000037
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1931.8374030000123
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1678.8398539999907
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1690.7079550000199
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1732.4266329999955
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1763.9096429999918
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1902.3455330000143
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1933.7233360000246
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1669.1925929999852
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1909.653152999992
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1881.5301439999894
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1917.5095710000023
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1935.143053000007
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1742.896729
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1716.404183000006
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1779.905752999999
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 262.5487729999877
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1823.5991350000259
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1853.985109000001
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 238.68274499999825
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1909.6456419999886
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 231.10325000001467
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1854.1365749999823
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1890.9420229999814
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1895.3338039999944
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1848.608819999994
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1703.0444070000085
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1792.995636000007
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1833.0975029999972
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1829.4905729999882
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1900.8268370000005
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 233.14094900002237
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 245.13673200001358
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1747.7689780000073
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 235.65752300000167
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 242.85945499999798
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1860.8694660000037
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 227.0048470000038
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1943.3336199999903
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1834.6890260000073
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1942.833964999998
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1766.9685850000242
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1600.9858570000215
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1700.9208389999985
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1887.629562999995
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 230.0355279999785
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1843.514049999998
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 234.53527900000336
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 242.51484099999652
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1647.008633999998
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 235.09334099999978
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 229.6981739999901
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1785.3380849999958
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 234.06313500000397
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1785.6983829999808
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1755.0297180000052
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1836.555469999992
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1719.6628139999812
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1739.2201559999958
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1598.1213449999923
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1748.3782559999963
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 229.2787890000036
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 1760.2514459999802
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 503,
+          "error": "POOL_QUEUE_FULL",
+          "latencyMs": 234.35781399998814
+        }
+      ],
+      "events": [
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.043414999999185966,
+          "at": 1793880266866
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "5105f429-ed9c-462c-9577-a513b73029fa",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880266873
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "5105f429-ed9c-462c-9577-a513b73029fa",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880266876
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880266877
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.035482000000229164,
+          "at": 1793880266881
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.21608199999991484,
+          "at": 1793880266884
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.020541000000775966,
+          "at": 1793880266888
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.019349000000147498,
+          "at": 1793880266889
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.01717599999938102,
+          "at": 1793880266890
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.01789699999972072,
+          "at": 1793880266891
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.01894799999990937,
+          "at": 1793880266893
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.019640000000435975,
+          "at": 1793880266895
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.04302399999960471,
+          "at": 1793880266907
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.018497999999453896,
+          "at": 1793880266909
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.01815699999951903,
+          "at": 1793880266912
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 1,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.01678500000070926,
+          "at": 1793880266913
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "08a064a2-64cf-46d1-97ca-9e19b78de027",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880266923
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 9,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 10,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.020089999999981956,
+          "at": 1793880266927
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 13,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.04120199999942997,
+          "at": 1793880266945
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "08a064a2-64cf-46d1-97ca-9e19b78de027",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880266950
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 18,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 18,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880266951
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 17,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 18,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 25.066437000000406,
+          "at": 1793880266951
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "3ee9398f-1dfe-4298-b7f8-e7a2cb424e6e",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880266955
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "3ee9398f-1dfe-4298-b7f8-e7a2cb424e6e",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880266957
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 17,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 18,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880266959
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 18,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 19,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.046079000000645465,
+          "at": 1793880267006
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 20,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 21,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 0.02302400000007765,
+          "at": 1793880267032
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 49,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 50,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 0.023003999999673397,
+          "at": 1793880267043
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "31562e56-5afd-48d9-a597-5cd89b445d61",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880267057
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 1,
+          "at": 1793880267062
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "47b7762b-3bb0-4d58-b724-8c3b090cdd31",
+          "at": 1793880267062
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 2,
+          "at": 1793880267063
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "1164f881-4360-4945-a3fb-d79c4a97aac3",
+          "at": 1793880267063
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 3,
+          "at": 1793880267064
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "648b0760-9378-4d87-a962-b29454b894db",
+          "at": 1793880267064
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 4,
+          "at": 1793880267065
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "a8dcccd5-806d-4427-b824-163cd6ef25ad",
+          "at": 1793880267065
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 5,
+          "at": 1793880267066
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "b8984fa1-92f4-4d86-9de7-7bf0ffdb8fa1",
+          "at": 1793880267066
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 6,
+          "at": 1793880267068
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "f65a27c8-b9f8-490f-a150-ddb4c7571326",
+          "at": 1793880267068
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 7,
+          "at": 1793880267069
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "5f44b488-25d7-4fd2-b479-89dacf189c66",
+          "at": 1793880267069
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 8,
+          "at": 1793880267070
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "d5282e1f-b90c-4386-8dfb-a90ed9cc409f",
+          "at": 1793880267070
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 9,
+          "at": 1793880267072
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "4b9bbcf7-7420-4f6a-9036-7046f9a77152",
+          "at": 1793880267072
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 10,
+          "at": 1793880267073
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "c390a781-242a-4c96-846e-474a07408f34",
+          "at": 1793880267073
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 11,
+          "at": 1793880267074
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "b95d25c7-9551-4ce9-ae98-048a80286590",
+          "at": 1793880267074
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 12,
+          "at": 1793880267082
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "bbc68c7a-ea85-49e6-a583-0450d3e4834d",
+          "at": 1793880267082
+        },
+        {
+          "component": "pool",
+          "event": "queueFull",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880267084
+        },
+        {
+          "event": "denied",
+          "code": "POOL_QUEUE_FULL",
+          "requestId": "163ca088-d339-46a1-b4f4-71daf928cb35",
+          "at": 1793880267084
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "31562e56-5afd-48d9-a597-5cd89b445d61",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880267084
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 64,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880267084
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 63,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 40.409975000000486,
+          "at": 1793880267084
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "00b6cfca-9fb3-44cb-94ba-e3825c2cbbb5",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880267087
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "00b6cfca-9fb3-44cb-94ba-e3825c2cbbb5",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880267089
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 63,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880267089
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 62,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 32.44055800000024,
+          "at": 1793880267089
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "6d1be36c-c6e9-44fc-b9bf-bc1ac88c463a",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880267091
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "6d1be36c-c6e9-44fc-b9bf-bc1ac88c463a",
+          "principal": "n9_device_4",
+          "pid": 16514,
+          "at": 1793880267092
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 62,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880267092
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "1efc9f95-14dc-4a99-afeb-83200ad1b8a7",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268344
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "f16380a2-f432-401a-ae86-ba9c55e95b53",
+          "principal": "n9_device_25",
+          "pid": 16511,
+          "at": 1793880268347
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "722a2f66-217c-4c99-b5d4-bcb740da6bed",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268350
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "8d3b5c0e-6104-4c0f-b4de-915d2d3b74ea",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268351
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "8e60e6db-3d2e-442e-bbed-6247fd1f2274",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268352
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "70dcd238-880e-423c-9349-81f39fb0b630",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268354
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "8d3b5c0e-6104-4c0f-b4de-915d2d3b74ea",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268356
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 62,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268357
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 61,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1434.415473,
+          "at": 1793880268357
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "5220461b-94ad-4d7c-a291-4afca15c3d21",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268361
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "82e0d1f2-47a4-434c-a488-a8c97e198560",
+          "principal": "n9_device_17",
+          "pid": 16503,
+          "at": 1793880268363
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "97af35d3-f814-4142-9ed8-929f61f64554",
+          "principal": "n9_device_14",
+          "pid": 16500,
+          "at": 1793880268363
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "897e6178-cff2-4a5d-a774-3bebf4490d5d",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268367
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "230a555c-5db6-4cd6-9993-a2bdeec5556a",
+          "principal": "n9_device_27",
+          "pid": 16513,
+          "at": 1793880268368
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "03705045-825b-48d9-ba48-67480d25e0f6",
+          "principal": "n9_device_15",
+          "pid": 16501,
+          "at": 1793880268371
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "fe9438c6-e437-404e-86fd-5211809f16bf",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268371
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "0782189d-255b-4a22-9224-d0701f99b41b",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268375
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "47211671-2130-43bc-9661-539d88450388",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268378
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "1efc9f95-14dc-4a99-afeb-83200ad1b8a7",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268378
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 61,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268380
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 60,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1374.9382140000007,
+          "at": 1793880268380
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "f16380a2-f432-401a-ae86-ba9c55e95b53",
+          "principal": "n9_device_25",
+          "pid": 16511,
+          "at": 1793880268383
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 60,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268383
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 59,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1433.3421339999995,
+          "at": 1793880268383
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "722a2f66-217c-4c99-b5d4-bcb740da6bed",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268386
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 59,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268387
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 58,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1464.8759479999999,
+          "at": 1793880268387
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "8e60e6db-3d2e-442e-bbed-6247fd1f2274",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268391
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 58,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268391
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 57,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1448.3024879999994,
+          "at": 1793880268391
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "70dcd238-880e-423c-9349-81f39fb0b630",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268397
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "5f49ea5e-97c7-4ea8-bf88-4640b2a487a7",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268397
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 57,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268397
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 56,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1473.4083650000002,
+          "at": 1793880268397
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "5220461b-94ad-4d7c-a291-4afca15c3d21",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268403
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 56,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268403
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 55,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1456.0208219999995,
+          "at": 1793880268403
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "82e0d1f2-47a4-434c-a488-a8c97e198560",
+          "principal": "n9_device_17",
+          "pid": 16503,
+          "at": 1793880268408
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 55,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268411
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 54,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1461.3610559999997,
+          "at": 1793880268411
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "97af35d3-f814-4142-9ed8-929f61f64554",
+          "principal": "n9_device_14",
+          "pid": 16500,
+          "at": 1793880268413
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 54,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268414
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 53,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1497.6448850000006,
+          "at": 1793880268414
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "897e6178-cff2-4a5d-a774-3bebf4490d5d",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268422
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 53,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268422
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 52,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1503.3162650000004,
+          "at": 1793880268422
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "230a555c-5db6-4cd6-9993-a2bdeec5556a",
+          "principal": "n9_device_27",
+          "pid": 16513,
+          "at": 1793880268422
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 52,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268424
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 51,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1507.2007190000004,
+          "at": 1793880268424
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "03705045-825b-48d9-ba48-67480d25e0f6",
+          "principal": "n9_device_15",
+          "pid": 16501,
+          "at": 1793880268428
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 51,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268429
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 50,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1489.1266610000002,
+          "at": 1793880268429
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "fe9438c6-e437-404e-86fd-5211809f16bf",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268431
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 50,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268432
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 49,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1485.7456780000002,
+          "at": 1793880268432
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "0782189d-255b-4a22-9224-d0701f99b41b",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268439
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 49,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268441
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 48,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1409.6959780000007,
+          "at": 1793880268441
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "47211671-2130-43bc-9661-539d88450388",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268442
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 48,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268443
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 47,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1410.284966000001,
+          "at": 1793880268443
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "1b8c0831-a141-41b3-902a-7da599dde199",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268447
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "0c7311e9-7998-4d78-bc6e-c6b661046e5c",
+          "principal": "n9_device_25",
+          "pid": 16511,
+          "at": 1793880268450
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "17b82f66-4bb4-4b68-8658-b11e92f86b20",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268453
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "e3ef5427-d6bb-4785-b7bd-e3c4cf91415b",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268453
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "25b20476-8e64-4097-8419-33250fa55cdc",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268455
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "5f49ea5e-97c7-4ea8-bf88-4640b2a487a7",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268462
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "01e76220-d143-428b-bfb1-2121d1d150a2",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268466
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 47,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268466
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 46,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1522.8400419999998,
+          "at": 1793880268466
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "db2eb21c-8cda-420a-8146-446549eca0c0",
+          "principal": "n9_device_17",
+          "pid": 16503,
+          "at": 1793880268467
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "71919ead-7971-4909-8efb-0e90aeec1b2e",
+          "principal": "n9_device_14",
+          "pid": 16500,
+          "at": 1793880268472
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "4b2378d2-7217-4870-94d4-03568cd9a6d3",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268472
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "c196028c-b836-4471-9c74-be412902f077",
+          "principal": "n9_device_27",
+          "pid": 16513,
+          "at": 1793880268474
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "924668cd-10ae-4718-8c62-4106b46f3bc9",
+          "principal": "n9_device_15",
+          "pid": 16501,
+          "at": 1793880268476
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "96e0405b-0b9a-4477-a586-5a1a2ca3a93b",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268479
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "936b3e6f-59b9-47db-839d-4c236d133278",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268480
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "d3b15bbb-1acc-41e1-9fcc-a665bbc20187",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268483
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "0c7311e9-7998-4d78-bc6e-c6b661046e5c",
+          "principal": "n9_device_25",
+          "pid": 16511,
+          "at": 1793880268487
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 46,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268487
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 45,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1442.1920479999999,
+          "at": 1793880268487
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "1b8c0831-a141-41b3-902a-7da599dde199",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268487
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 45,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268490
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 44,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1458.6558060000007,
+          "at": 1793880268490
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "17b82f66-4bb4-4b68-8658-b11e92f86b20",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268495
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 44,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268495
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 43,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1459.3229310000006,
+          "at": 1793880268495
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "e3ef5427-d6bb-4785-b7bd-e3c4cf91415b",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268500
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 43,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268501
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 42,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1462.1078140000009,
+          "at": 1793880268501
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "25b20476-8e64-4097-8419-33250fa55cdc",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268506
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 42,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268507
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 41,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1467.8417869999994,
+          "at": 1793880268507
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "d8cebd4b-2ef7-4f5b-8dd8-c1380c424621",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268507
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "01e76220-d143-428b-bfb1-2121d1d150a2",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268511
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 41,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268512
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 40,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1563.3953699999993,
+          "at": 1793880268512
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "db2eb21c-8cda-420a-8146-446549eca0c0",
+          "principal": "n9_device_17",
+          "pid": 16503,
+          "at": 1793880268514
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 40,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268515
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 39,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1471.2062149999992,
+          "at": 1793880268515
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "71919ead-7971-4909-8efb-0e90aeec1b2e",
+          "principal": "n9_device_14",
+          "pid": 16500,
+          "at": 1793880268518
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 39,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268521
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 38,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1603.743152000001,
+          "at": 1793880268521
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "4b2378d2-7217-4870-94d4-03568cd9a6d3",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268523
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 38,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268525
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 37,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1599.6322300000002,
+          "at": 1793880268525
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "c196028c-b836-4471-9c74-be412902f077",
+          "principal": "n9_device_27",
+          "pid": 16513,
+          "at": 1793880268526
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "efbbac18-6437-49e5-967f-24eed23ee65e",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268528
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 37,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268529
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 36,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1482.852777,
+          "at": 1793880268529
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "924668cd-10ae-4718-8c62-4106b46f3bc9",
+          "principal": "n9_device_15",
+          "pid": 16501,
+          "at": 1793880268532
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 36,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268533
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 35,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1592.2710000000006,
+          "at": 1793880268533
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "96e0405b-0b9a-4477-a586-5a1a2ca3a93b",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268536
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 35,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268539
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 34,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1506.6833639999995,
+          "at": 1793880268539
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "936b3e6f-59b9-47db-839d-4c236d133278",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268543
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "d3b15bbb-1acc-41e1-9fcc-a665bbc20187",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268543
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "89d04f4f-c807-4f62-bd67-0cf89fe41a58",
+          "principal": "n9_device_25",
+          "pid": 16511,
+          "at": 1793880268545
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 34,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268545
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 33,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1512.3613019999993,
+          "at": 1793880268545
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 33,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268546
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 32,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1513.7533089999997,
+          "at": 1793880268547
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "d32d0509-0ddd-4ab4-8783-b53cebc85524",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268549
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "2a267800-1e00-4305-97b9-c00e9a10b4e9",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268552
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "493d74f3-86a5-40c7-9be7-77f0dbb26f67",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268552
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "52dd359f-e4bb-4e60-a9e3-6e01afdc0114",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268556
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "d8cebd4b-2ef7-4f5b-8dd8-c1380c424621",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268556
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "f72e0a32-98a3-47ae-ad13-d66992c2705a",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268558
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 32,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268558
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 31,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1522.9843070000006,
+          "at": 1793880268558
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "52dd359f-e4bb-4e60-a9e3-6e01afdc0114",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268563
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "d76e090c-4ee6-465f-aa5a-37f8beda79fe",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268563
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 31,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268563
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 30,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1523.8768989999999,
+          "at": 1793880268563
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "991fba49-8c9d-48d2-8bda-953bfb181b2a",
+          "principal": "n9_device_17",
+          "pid": 16503,
+          "at": 1793880268565
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "13cd9b21-3b12-499d-9a08-ec92a5966f08",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268568
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "c868d895-ee43-4aee-b577-7f255d2b3cb1",
+          "principal": "n9_device_14",
+          "pid": 16500,
+          "at": 1793880268568
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "29debfd8-f9c5-4c64-9b52-7337fc3bfa95",
+          "principal": "n9_device_27",
+          "pid": 16513,
+          "at": 1793880268570
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "efbbac18-6437-49e5-967f-24eed23ee65e",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268574
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 30,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268574
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 29,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1534.0329080000001,
+          "at": 1793880268574
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "7e87177e-4132-4dbc-8e55-dcea11eea8e8",
+          "principal": "n9_device_15",
+          "pid": 16501,
+          "at": 1793880268575
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "2f73c3d2-acaf-473b-82d2-76cf8393c580",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268578
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "e5a2565d-6b51-4946-8071-5b670ece67e2",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268578
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "5fd93701-38e2-4982-966f-022e037ef2e1",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268580
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "e5a2565d-6b51-4946-8071-5b670ece67e2",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268583
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 29,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268584
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 28,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1540.5656309999995,
+          "at": 1793880268584
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "89d04f4f-c807-4f62-bd67-0cf89fe41a58",
+          "principal": "n9_device_25",
+          "pid": 16511,
+          "at": 1793880268585
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 28,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268586
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 27,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1528.3312930000002,
+          "at": 1793880268586
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "d32d0509-0ddd-4ab4-8783-b53cebc85524",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268589
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 27,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268591
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 26,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1549.9779710000003,
+          "at": 1793880268591
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "493d74f3-86a5-40c7-9be7-77f0dbb26f67",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268592
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 26,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268594
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 25,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1553.8955640000004,
+          "at": 1793880268594
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "2a267800-1e00-4305-97b9-c00e9a10b4e9",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268597
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 25,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268598
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 24,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1561.4984949999998,
+          "at": 1793880268598
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "f72e0a32-98a3-47ae-ad13-d66992c2705a",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268602
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "d76e090c-4ee6-465f-aa5a-37f8beda79fe",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268602
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 24,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268603
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 23,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1568.1859110000005,
+          "at": 1793880268603
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 23,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268604
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 22,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1568.6405790000008,
+          "at": 1793880268604
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "991fba49-8c9d-48d2-8bda-953bfb181b2a",
+          "principal": "n9_device_17",
+          "pid": 16503,
+          "at": 1793880268607
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 22,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268607
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "13cd9b21-3b12-499d-9a08-ec92a5966f08",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268611
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 22,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268611
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 21,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1571.3525630000004,
+          "at": 1793880268611
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "c868d895-ee43-4aee-b577-7f255d2b3cb1",
+          "principal": "n9_device_14",
+          "pid": 16500,
+          "at": 1793880268614
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 21,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268614
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 20,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1569.7036829999997,
+          "at": 1793880268614
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "29debfd8-f9c5-4c64-9b52-7337fc3bfa95",
+          "principal": "n9_device_27",
+          "pid": 16513,
+          "at": 1793880268619
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "18bd94d4-c2b8-4946-816d-263b0daae237",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268619
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 20,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268619
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "7e87177e-4132-4dbc-8e55-dcea11eea8e8",
+          "principal": "n9_device_15",
+          "pid": 16501,
+          "at": 1793880268623
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 20,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268623
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "18bd94d4-c2b8-4946-816d-263b0daae237",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268629
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 20,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268629
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 19,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1588.9090809999998,
+          "at": 1793880268629
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "2f73c3d2-acaf-473b-82d2-76cf8393c580",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268630
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 19,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268630
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 18,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1596.770507000001,
+          "at": 1793880268630
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "5fd93701-38e2-4982-966f-022e037ef2e1",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268634
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 18,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268635
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 17,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1594.3591989999995,
+          "at": 1793880268635
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "deb92ae7-4438-4608-ac59-806839fed452",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268637
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "7a3b72cd-8ee6-437d-882e-c58c231419b5",
+          "principal": "n9_device_25",
+          "pid": 16511,
+          "at": 1793880268638
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "983e42e4-426d-4545-a28b-6a2cffb1de76",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268640
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "7a519998-b9e8-4377-bcc3-4204484e1fdc",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268643
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "fc90c121-7c8e-4b23-9c79-27d408275637",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268644
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "25cecccb-fca8-4fb5-b538-785cfb194e60",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268646
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "aab1fb6c-1ec0-4738-bbd4-dcf675ca36f4",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268649
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "e5d1428a-4805-4091-8f56-860a7aadb10a",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268649
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "113e79ce-260d-4cf3-ac6b-99ffa0711475",
+          "principal": "n9_device_14",
+          "pid": 16500,
+          "at": 1793880268651
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "cefcac72-0615-4d24-859b-4cfb7c8d1582",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268654
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "69791430-f7f8-4580-8d99-5321dbf4b0bf",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268654
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "a50acac3-3451-4bc6-b4fe-27cef2e5b8be",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268656
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "deb92ae7-4438-4608-ac59-806839fed452",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268659
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 17,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268659
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 16,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1610.313776,
+          "at": 1793880268659
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "983e42e4-426d-4545-a28b-6a2cffb1de76",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268666
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 16,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268666
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 15,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1624.5395860000008,
+          "at": 1793880268666
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "7a3b72cd-8ee6-437d-882e-c58c231419b5",
+          "principal": "n9_device_25",
+          "pid": 16511,
+          "at": 1793880268666
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 15,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268668
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "7a519998-b9e8-4377-bcc3-4204484e1fdc",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268671
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 15,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268671
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 14,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1625.1802020000005,
+          "at": 1793880268671
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "fc90c121-7c8e-4b23-9c79-27d408275637",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268675
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 14,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268679
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 13,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1642.5090999999993,
+          "at": 1793880268679
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "25cecccb-fca8-4fb5-b538-785cfb194e60",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268681
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 13,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268682
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 12,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1645.2792909999998,
+          "at": 1793880268682
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "aab1fb6c-1ec0-4738-bbd4-dcf675ca36f4",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268687
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 12,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268687
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 11,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1649.3610999999992,
+          "at": 1793880268687
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "e5d1428a-4805-4091-8f56-860a7aadb10a",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268691
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 11,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268691
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 10,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1642.0630040000005,
+          "at": 1793880268691
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "113e79ce-260d-4cf3-ac6b-99ffa0711475",
+          "principal": "n9_device_14",
+          "pid": 16500,
+          "at": 1793880268694
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 10,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268695
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "cefcac72-0615-4d24-859b-4cfb7c8d1582",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268697
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 10,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268698
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 9,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1662.583273000001,
+          "at": 1793880268698
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "69791430-f7f8-4580-8d99-5321dbf4b0bf",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268702
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 9,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268702
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 8,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1656.0026659999994,
+          "at": 1793880268702
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "aff56ff3-f93d-4cca-956e-d9fdc2b3360d",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268703
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "a50acac3-3451-4bc6-b4fe-27cef2e5b8be",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268706
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "fdb20b3c-a324-44df-bfd7-2c28c6304b71",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268708
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 8,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268708
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 7,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1665.0022990000007,
+          "at": 1793880268708
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "bfe9e296-7382-4e9e-92a6-e80f8195ece2",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268710
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "a8a5c8c8-71f3-42b4-a885-3b11f8747052",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268713
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "14a9b70a-3424-44ab-a73e-209cc207076b",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268714
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "841d5b23-49b2-473c-8423-429d0ac0fbb3",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268715
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "c6c45747-7926-4eb7-bc57-92c1a3c8efcf",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268718
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "edec45f5-e70a-4e04-842e-e71eb2222349",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268718
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "2b106ae5-7c96-4f5e-8141-957b5b2f86a1",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268719
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "aff56ff3-f93d-4cca-956e-d9fdc2b3360d",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268722
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 7,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268723
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 6,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1667.643811,
+          "at": 1793880268723
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "fdb20b3c-a324-44df-bfd7-2c28c6304b71",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268726
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 6,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268727
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 5,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1684.3129339999996,
+          "at": 1793880268727
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "18af929b-6bc1-439e-b5d5-a2e0d05ae316",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268731
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "bfe9e296-7382-4e9e-92a6-e80f8195ece2",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268732
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 5,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268732
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 4,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1682.0981699999993,
+          "at": 1793880268732
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "a8a5c8c8-71f3-42b4-a885-3b11f8747052",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268734
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 4,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268735
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 3,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1688.8716730000006,
+          "at": 1793880268735
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "14a9b70a-3424-44ab-a73e-209cc207076b",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268739
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 3,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268739
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 2,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1701.1154160000006,
+          "at": 1793880268739
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "841d5b23-49b2-473c-8423-429d0ac0fbb3",
+          "principal": "n9_device_26",
+          "pid": 16512,
+          "at": 1793880268743
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 2,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268743
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "edec45f5-e70a-4e04-842e-e71eb2222349",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268744
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 2,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268745
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 1,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1707.6229629999998,
+          "at": 1793880268745
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "c6c45747-7926-4eb7-bc57-92c1a3c8efcf",
+          "principal": "n9_device_21",
+          "pid": 16507,
+          "at": 1793880268750
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "2b106ae5-7c96-4f5e-8141-957b5b2f86a1",
+          "principal": "n9_device_16",
+          "pid": 16502,
+          "at": 1793880268750
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 1,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268751
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 1,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268751
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "24971ebd-f6e3-4601-9733-f986eee16af9",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268752
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "921e821a-e99a-42f7-9b34-07cfba00615c",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268755
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "18af929b-6bc1-439e-b5d5-a2e0d05ae316",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268758
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "0922123c-7eae-443c-ad8e-41d48e9d1334",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268758
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 1,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268760
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 1704.4353680000004,
+          "at": 1793880268760
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "6c4dac94-9017-4f6d-b2ee-440e1eb3bf6d",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268760
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "4e7564fa-2ed6-4233-9977-5086565e880c",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268763
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "768881bd-2e4b-4a8d-881c-568297e7323f",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268764
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "38454d3d-0b31-4945-8414-6d53634adb15",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268767
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "24971ebd-f6e3-4601-9733-f986eee16af9",
+          "principal": "n9_device_22",
+          "pid": 16508,
+          "at": 1793880268768
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268769
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "921e821a-e99a-42f7-9b34-07cfba00615c",
+          "principal": "n9_device_13",
+          "pid": 16499,
+          "at": 1793880268773
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "6c4dac94-9017-4f6d-b2ee-440e1eb3bf6d",
+          "principal": "n9_device_19",
+          "pid": 16505,
+          "at": 1793880268774
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268774
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268775
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "0922123c-7eae-443c-ad8e-41d48e9d1334",
+          "principal": "n9_device_24",
+          "pid": 16510,
+          "at": 1793880268778
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268779
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "4e7564fa-2ed6-4233-9977-5086565e880c",
+          "principal": "n9_device_23",
+          "pid": 16509,
+          "at": 1793880268783
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268783
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "768881bd-2e4b-4a8d-881c-568297e7323f",
+          "principal": "n9_device_20",
+          "pid": 16506,
+          "at": 1793880268786
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268787
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "38454d3d-0b31-4945-8414-6d53634adb15",
+          "principal": "n9_device_18",
+          "pid": 16504,
+          "at": 1793880268787
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 26,
+          "maxOpen": 16,
+          "maxQueue": 64,
+          "evictions": 3,
+          "timeouts": 0,
+          "rejected": 13,
+          "at": 1793880268788
+        }
+      ],
+      "resources": [
+        {
+          "processMemory": [
+            {
+              "pid": 1,
+              "rssKiB": 80128
+            }
+          ],
+          "ingressRssKiB": 74276,
+          "backend": [
+            {
+              "connections": 16,
+              "application_name": "serien-6a9-serien-6a11-484051d8-broker"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "two-broker-diagnostic",
+      "artificialLocks": true,
+      "faults": false,
+      "independentProcesses": 2,
+      "secondPid": 43,
+      "peakConnections": 32,
+      "localCapEach": 16,
+      "globalCap16": "EXCEEDED — unsupported operating mode",
+      "samples": [
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2731.7689919999975
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2689.952859000012
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2713.9760649999953
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2685.664822999999
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2740.329085000005
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2701.326058000006
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2725.647112000006
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2670.5233200000075
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2683.1713239999954
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2673.6880900000106
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2710.041537000012
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2713.662737000006
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2724.395294999995
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2695.777853000007
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2709.732155000005
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2576.3975909999863
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2571.4244369999797
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2554.368967999995
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2560.6959649999917
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2544.4926229999983
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2583.812732999999
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2580.9767340000253
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2570.8088489999936
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2605.9763209999946
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2618.7319069999794
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2590.7163500000024
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2639.0142880000058
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2600.585770000005
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2619.8370660000073
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2625.928419999982
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2634.488838999998
+        },
+        {
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "status": 200,
+          "error": null,
+          "latencyMs": 2377.5820949999907
+        }
+      ],
+      "resources": [
+        {
+          "processMemory": [
+            {
+              "pid": 1,
+              "rssKiB": 89108
+            },
+            {
+              "pid": 43,
+              "rssKiB": 75580
+            }
+          ],
+          "ingressRssKiB": 75956,
+          "backend": [
+            {
+              "connections": 16,
+              "application_name": "serien-6a9-serien-6a11-484051d8-broker"
+            },
+            {
+              "connections": 16,
+              "application_name": "serien-6a9-serien-6a11-484051d8-second"
+            }
+          ]
+        }
+      ],
+      "secondaryEvents": [
+        {
+          "event": "ready",
+          "uid": 10002,
+          "pid": 43,
+          "at": 1793880269493
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 1,
+          "queued": 0,
+          "opened": 1,
+          "maxOpen": 1,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_32",
+          "pid": 16682,
+          "at": 1793880270128
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 1,
+          "queued": 0,
+          "opened": 1,
+          "maxOpen": 1,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 22.41396999999995,
+          "at": 1793880270128
+        },
+        {
+          "event": "denied",
+          "code": "REPLAY",
+          "requestId": "9bb6c2d5-881d-4e94-b48d-4fea8406d868",
+          "at": 1793880271349
+        },
+        {
+          "component": "pool",
+          "event": "discard",
+          "open": 0,
+          "queued": 0,
+          "opened": 1,
+          "maxOpen": 1,
+          "maxQueue": 1,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880271355
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 1,
+          "queued": 10,
+          "opened": 2,
+          "maxOpen": 1,
+          "maxQueue": 10,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_15",
+          "pid": 16798,
+          "at": 1793880272207
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 1,
+          "queued": 10,
+          "opened": 2,
+          "maxOpen": 1,
+          "maxQueue": 10,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 26.894202999999834,
+          "at": 1793880272207
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 2,
+          "queued": 14,
+          "opened": 3,
+          "maxOpen": 2,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_13",
+          "pid": 16799,
+          "at": 1793880272220
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 2,
+          "queued": 14,
+          "opened": 3,
+          "maxOpen": 2,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 33.89784000000009,
+          "at": 1793880272220
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 3,
+          "queued": 13,
+          "opened": 4,
+          "maxOpen": 3,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_4",
+          "pid": 16800,
+          "at": 1793880272230
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 3,
+          "queued": 13,
+          "opened": 4,
+          "maxOpen": 3,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000006",
+          "waitMs": 20.230503000000226,
+          "at": 1793880272230
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 4,
+          "queued": 12,
+          "opened": 5,
+          "maxOpen": 4,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_14",
+          "pid": 16801,
+          "at": 1793880272240
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 4,
+          "queued": 12,
+          "opened": 5,
+          "maxOpen": 4,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 51.15394699999979,
+          "at": 1793880272240
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 5,
+          "queued": 11,
+          "opened": 6,
+          "maxOpen": 5,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_18",
+          "pid": 16802,
+          "at": 1793880272248
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 5,
+          "queued": 11,
+          "opened": 6,
+          "maxOpen": 5,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 59.85857000000033,
+          "at": 1793880272248
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 6,
+          "queued": 10,
+          "opened": 7,
+          "maxOpen": 6,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_12",
+          "pid": 16803,
+          "at": 1793880272256
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 6,
+          "queued": 10,
+          "opened": 7,
+          "maxOpen": 6,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 66.83732899999995,
+          "at": 1793880272256
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 7,
+          "queued": 9,
+          "opened": 8,
+          "maxOpen": 7,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_17",
+          "pid": 16804,
+          "at": 1793880272264
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 7,
+          "queued": 9,
+          "opened": 8,
+          "maxOpen": 7,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 71.60014200000023,
+          "at": 1793880272264
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 8,
+          "queued": 8,
+          "opened": 9,
+          "maxOpen": 8,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_16",
+          "pid": 16805,
+          "at": 1793880272274
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 8,
+          "queued": 8,
+          "opened": 9,
+          "maxOpen": 8,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 81.29007600000023,
+          "at": 1793880272274
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 9,
+          "queued": 7,
+          "opened": 10,
+          "maxOpen": 9,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_21",
+          "pid": 16806,
+          "at": 1793880272282
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 9,
+          "queued": 7,
+          "opened": 10,
+          "maxOpen": 9,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 78.99372099999982,
+          "at": 1793880272282
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 10,
+          "queued": 6,
+          "opened": 11,
+          "maxOpen": 10,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_23",
+          "pid": 16807,
+          "at": 1793880272289
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 10,
+          "queued": 6,
+          "opened": 11,
+          "maxOpen": 10,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 85.43937400000004,
+          "at": 1793880272289
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 11,
+          "queued": 5,
+          "opened": 12,
+          "maxOpen": 11,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_19",
+          "pid": 16808,
+          "at": 1793880272298
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 11,
+          "queued": 5,
+          "opened": 12,
+          "maxOpen": 11,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 93.47850500000004,
+          "at": 1793880272298
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 12,
+          "queued": 4,
+          "opened": 13,
+          "maxOpen": 12,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_20",
+          "pid": 16809,
+          "at": 1793880272304
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 12,
+          "queued": 4,
+          "opened": 13,
+          "maxOpen": 12,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 97.68896399999994,
+          "at": 1793880272305
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 13,
+          "queued": 3,
+          "opened": 14,
+          "maxOpen": 13,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_24",
+          "pid": 16810,
+          "at": 1793880272311
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 13,
+          "queued": 3,
+          "opened": 14,
+          "maxOpen": 13,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 103.80030799999986,
+          "at": 1793880272311
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 14,
+          "queued": 2,
+          "opened": 15,
+          "maxOpen": 14,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_25",
+          "pid": 16811,
+          "at": 1793880272316
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 14,
+          "queued": 2,
+          "opened": 15,
+          "maxOpen": 14,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 106.65079999999989,
+          "at": 1793880272316
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 15,
+          "queued": 1,
+          "opened": 16,
+          "maxOpen": 15,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_26",
+          "pid": 16812,
+          "at": 1793880272325
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 15,
+          "queued": 1,
+          "opened": 16,
+          "maxOpen": 15,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 114.68559400000004,
+          "at": 1793880272325
+        },
+        {
+          "component": "pool",
+          "event": "connected",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "principal": "n9_device_22",
+          "pid": 16813,
+          "at": 1793880272333
+        },
+        {
+          "component": "pool",
+          "event": "leased",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "workspace": "10000000-0000-4000-8000-000000000005",
+          "waitMs": 118.17097299999978,
+          "at": 1793880272333
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "a5f3e92d-b00a-46b6-bd4a-12c92dffb596",
+          "principal": "n9_device_4",
+          "pid": 16800,
+          "at": 1793880274518
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "a5f3e92d-b00a-46b6-bd4a-12c92dffb596",
+          "principal": "n9_device_4",
+          "pid": 16800,
+          "at": 1793880274526
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274527
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "b7597e4a-5011-4196-8353-6bc1627dfc52",
+          "principal": "n9_device_15",
+          "pid": 16798,
+          "at": 1793880274547
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "227e79b7-9b26-4f5b-bbe3-127f0ac4ae17",
+          "principal": "n9_device_13",
+          "pid": 16799,
+          "at": 1793880274555
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "6b141026-f8c7-4593-8b80-cfc6215befba",
+          "principal": "n9_device_14",
+          "pid": 16801,
+          "at": 1793880274559
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "d512b056-503e-4ee6-9968-d0d14cd4abff",
+          "principal": "n9_device_18",
+          "pid": 16802,
+          "at": 1793880274563
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "5f43cf52-a635-4a5b-a18b-df4ca02f0dd5",
+          "principal": "n9_device_12",
+          "pid": 16803,
+          "at": 1793880274569
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "0197afc6-d73a-477d-8286-fa59a1171202",
+          "principal": "n9_device_17",
+          "pid": 16804,
+          "at": 1793880274573
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "d976f2aa-febf-489e-8998-85197b766d16",
+          "principal": "n9_device_16",
+          "pid": 16805,
+          "at": 1793880274578
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "5fd6781b-f606-4644-b1f7-44690e264368",
+          "principal": "n9_device_21",
+          "pid": 16806,
+          "at": 1793880274587
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "4f1dc1f7-0423-4369-9309-545b5434de29",
+          "principal": "n9_device_23",
+          "pid": 16807,
+          "at": 1793880274587
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "039c3f93-c318-4ea9-8cfa-2492a6306343",
+          "principal": "n9_device_19",
+          "pid": 16808,
+          "at": 1793880274592
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "4aac1986-251a-4494-9a5a-29f9cf5b6475",
+          "principal": "n9_device_20",
+          "pid": 16809,
+          "at": 1793880274597
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "413177eb-cf22-4179-bb7e-2825e264535f",
+          "principal": "n9_device_24",
+          "pid": 16810,
+          "at": 1793880274603
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "db23aabe-3086-4a07-b955-bd761ce265ec",
+          "principal": "n9_device_25",
+          "pid": 16811,
+          "at": 1793880274606
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "10579178-0e58-4267-a0ac-c6fbb029968c",
+          "principal": "n9_device_26",
+          "pid": 16812,
+          "at": 1793880274612
+        },
+        {
+          "event": "claimCommitted",
+          "requestId": "3b3e1891-f3d5-4f79-b648-008c24dbdb5c",
+          "principal": "n9_device_22",
+          "pid": 16813,
+          "at": 1793880274616
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "b7597e4a-5011-4196-8353-6bc1627dfc52",
+          "principal": "n9_device_15",
+          "pid": 16798,
+          "at": 1793880274694
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274694
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "227e79b7-9b26-4f5b-bbe3-127f0ac4ae17",
+          "principal": "n9_device_13",
+          "pid": 16799,
+          "at": 1793880274703
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274704
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "6b141026-f8c7-4593-8b80-cfc6215befba",
+          "principal": "n9_device_14",
+          "pid": 16801,
+          "at": 1793880274707
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274708
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "d512b056-503e-4ee6-9968-d0d14cd4abff",
+          "principal": "n9_device_18",
+          "pid": 16802,
+          "at": 1793880274719
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274720
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "5f43cf52-a635-4a5b-a18b-df4ca02f0dd5",
+          "principal": "n9_device_12",
+          "pid": 16803,
+          "at": 1793880274720
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274721
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "0197afc6-d73a-477d-8286-fa59a1171202",
+          "principal": "n9_device_17",
+          "pid": 16804,
+          "at": 1793880274729
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274731
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "d976f2aa-febf-489e-8998-85197b766d16",
+          "principal": "n9_device_16",
+          "pid": 16805,
+          "at": 1793880274734
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274734
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "5fd6781b-f606-4644-b1f7-44690e264368",
+          "principal": "n9_device_21",
+          "pid": 16806,
+          "at": 1793880274741
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274741
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "4f1dc1f7-0423-4369-9309-545b5434de29",
+          "principal": "n9_device_23",
+          "pid": 16807,
+          "at": 1793880274747
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274752
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "039c3f93-c318-4ea9-8cfa-2492a6306343",
+          "principal": "n9_device_19",
+          "pid": 16808,
+          "at": 1793880274753
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274756
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "4aac1986-251a-4494-9a5a-29f9cf5b6475",
+          "principal": "n9_device_20",
+          "pid": 16809,
+          "at": 1793880274763
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274768
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "413177eb-cf22-4179-bb7e-2825e264535f",
+          "principal": "n9_device_24",
+          "pid": 16810,
+          "at": 1793880274768
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274771
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "db23aabe-3086-4a07-b955-bd761ce265ec",
+          "principal": "n9_device_25",
+          "pid": 16811,
+          "at": 1793880274776
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274776
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "10579178-0e58-4267-a0ac-c6fbb029968c",
+          "principal": "n9_device_26",
+          "pid": 16812,
+          "at": 1793880274783
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274783
+        },
+        {
+          "event": "dataCommitted",
+          "operation": "ReadHead",
+          "requestId": "3b3e1891-f3d5-4f79-b648-008c24dbdb5c",
+          "principal": "n9_device_22",
+          "pid": 16813,
+          "at": 1793880274790
+        },
+        {
+          "component": "pool",
+          "event": "released",
+          "open": 16,
+          "queued": 0,
+          "opened": 17,
+          "maxOpen": 16,
+          "maxQueue": 14,
+          "evictions": 0,
+          "timeouts": 0,
+          "rejected": 0,
+          "at": 1793880274790
+        }
+      ]
+    }
+  ],
+  "globalBudget": "NOT SUPPORTED; no aggregate coordinator",
+  "operationalMode": "one broker; fence old process and verify SQL sessions zero before replacement",
+  "productionSLO": "NOT VERIFIED"
+}

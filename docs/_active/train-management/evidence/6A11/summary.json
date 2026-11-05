@@ -1,0 +1,20 @@
+{
+  "result": "TECHNICAL_PASS_SINGLE_BROKER",
+  "checks": 111,
+  "diagnostics": [
+    {
+      "test": "A16 diagnostic two active broker processes measure aggregate budget breach",
+      "result": "LIMITATION_REPRODUCED"
+    }
+  ],
+  "postgresTransport": "TCP SCRAM TLS verified CA/hostname",
+  "defaultPool": {
+    "cap": 16,
+    "queue": 64,
+    "waitMs": 2000,
+    "idleMs": 30000
+  },
+  "globalPoolCoordination": "FAIL in diagnostic two-worker mode: observed 32 connections; supported mode is one broker only",
+  "hosting": "NOT VERIFIED",
+  "productionQueries": 0
+}

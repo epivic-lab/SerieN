@@ -1,0 +1,109 @@
+{
+  "baseline": "de53ba702164428e3b76936dc9791dee4eb1697a",
+  "tests": [
+    {
+      "id": "D01 lifecycle nonce must be a string and job stay APPROVED",
+      "expected": "D01 lifecycle nonce must be a string and job stay APPROVED",
+      "observed": {
+        "http": 202,
+        "error": null,
+        "jobState": "ACTIVATING"
+      },
+      "before": {
+        "data": "940a6bbdfb7001a24329f22daade11fd22e648ae5fbebd5d2280b294de35ef02",
+        "authority": "1905b8485510647af20c290a55ed58434e00edf5999e169e93fa112bce8ccdf8",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "0816ed2b-808b-4220-853d-fef498c9111b",
+            "role": "n9_device_1",
+            "state": "APPROVED"
+          }
+        ]
+      },
+      "after": {
+        "data": "940a6bbdfb7001a24329f22daade11fd22e648ae5fbebd5d2280b294de35ef02",
+        "authority": "fb239e09ce282ae220deead3ae9668b156b717bf8292fe5b57c715a8d9733f32",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "0816ed2b-808b-4220-853d-fef498c9111b",
+            "role": "n9_device_1",
+            "state": "ACTIVATING"
+          }
+        ]
+      },
+      "result": "FAIL"
+    },
+    {
+      "id": "D02 malformed client JSON must be INVALID_REQUEST 400",
+      "expected": "D02 malformed client JSON must be INVALID_REQUEST 400",
+      "observed": {
+        "http": 503,
+        "body": {
+          "error": "RETRYABLE_UNAVAILABLE"
+        }
+      },
+      "before": {
+        "data": "940a6bbdfb7001a24329f22daade11fd22e648ae5fbebd5d2280b294de35ef02",
+        "authority": "fb239e09ce282ae220deead3ae9668b156b717bf8292fe5b57c715a8d9733f32",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "0816ed2b-808b-4220-853d-fef498c9111b",
+            "role": "n9_device_1",
+            "state": "ACTIVATING"
+          }
+        ]
+      },
+      "after": {
+        "data": "940a6bbdfb7001a24329f22daade11fd22e648ae5fbebd5d2280b294de35ef02",
+        "authority": "fb239e09ce282ae220deead3ae9668b156b717bf8292fe5b57c715a8d9733f32",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "0816ed2b-808b-4220-853d-fef498c9111b",
+            "role": "n9_device_1",
+            "state": "ACTIVATING"
+          }
+        ]
+      },
+      "result": "FAIL"
+    },
+    {
+      "id": "D03 declared five-second header deadline closes partial headers",
+      "expected": "D03 declared five-second header deadline closes partial headers",
+      "observed": {
+        "closed": false,
+        "elapsedMs": 7000.305472000001,
+        "responseBytes": 0,
+        "status": 0
+      },
+      "before": {
+        "data": "940a6bbdfb7001a24329f22daade11fd22e648ae5fbebd5d2280b294de35ef02",
+        "authority": "fb239e09ce282ae220deead3ae9668b156b717bf8292fe5b57c715a8d9733f32",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "0816ed2b-808b-4220-853d-fef498c9111b",
+            "role": "n9_device_1",
+            "state": "ACTIVATING"
+          }
+        ]
+      },
+      "after": {
+        "data": "940a6bbdfb7001a24329f22daade11fd22e648ae5fbebd5d2280b294de35ef02",
+        "authority": "fb239e09ce282ae220deead3ae9668b156b717bf8292fe5b57c715a8d9733f32",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "0816ed2b-808b-4220-853d-fef498c9111b",
+            "role": "n9_device_1",
+            "state": "ACTIVATING"
+          }
+        ]
+      },
+      "result": "FAIL"
+    }
+  ]
+}

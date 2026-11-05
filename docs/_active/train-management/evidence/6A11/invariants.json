@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "baseline": "de53ba702164428e3b76936dc9791dee4eb1697a",
+  "r1Baseline": "348bfeff12c4005657098d89ea1d3c2ccdda9910",
+  "r1RuntimeComparedDirectly": true,
+  "unchangedBaselineFiles": 1685,
+  "allowedExistingChanges": [
+    "PROGRESS.md",
+    "docs/_active/train-management/STATUS.md",
+    "prototypes/train-management/broker-lab/broker.js",
+    "prototypes/train-management/broker-lab/ingress.js",
+    "prototypes/train-management/capability-gateway/gateway.js",
+    "prototypes/train-management/integration-lab/gateway.js"
+  ],
+  "canonicalSHA256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+  "bundleSHA256": "0622836cefcdbab60e6a71012f5228664f6d3ecfca228d970b1ad68c12a37a0b",
+  "scannedFiles": 94,
+  "localLinksChecked": 80,
+  "newMigrations": 0,
+  "approvedSQLContractsR0D09D10PoolTransportRuntimeUIAssetsDependencies": "byte identical",
+  "productionQueries": 0,
+  "stagingOperations": 0,
+  "scope": "single broker isolated synthetic PG17; NOT general audit, staging or complete R1 visual/perf certification"
+}

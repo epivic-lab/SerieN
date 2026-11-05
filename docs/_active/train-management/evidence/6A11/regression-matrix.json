@@ -1,0 +1,95 @@
+{
+  "testsActuallyRerun": [
+    {
+      "phase": "6A3",
+      "checks": 51,
+      "result": "PASS",
+      "evidence": "regression-6A3.json"
+    },
+    {
+      "phase": "6A4",
+      "checks": 45,
+      "result": "PASS",
+      "evidence": "regression-6A4.json"
+    },
+    {
+      "phase": "6A5",
+      "checks": 141,
+      "result": "PASS",
+      "evidence": "regression-6A5.json"
+    },
+    {
+      "phase": "6A8",
+      "checks": 97,
+      "result": "PASS",
+      "evidence": "regression-6A8.json"
+    },
+    {
+      "phase": "6A6-final",
+      "checks": 72,
+      "result": "PASS",
+      "evidence": "regression-6A6-final.json"
+    },
+    {
+      "phase": "6A9",
+      "checks": 50,
+      "result": "PASS",
+      "evidence": "regression-6A9.json"
+    },
+    {
+      "phase": "6A10",
+      "checks": 50,
+      "result": "PASS",
+      "evidence": "regression-6A10.json"
+    },
+    {
+      "phase": "6A10 SQL O01–O14",
+      "checks": 185,
+      "result": "PASS",
+      "evidence": "regression-6A10-ownerless-sql.json"
+    },
+    {
+      "phase": "6A2 HTTP",
+      "checks": 48,
+      "result": "PASS",
+      "evidence": "capability-security.json"
+    },
+    {
+      "phase": "6A2 browser",
+      "checks": 5,
+      "result": "PASS",
+      "evidence": "capability-browser.json"
+    },
+    {
+      "phase": "6A4 adapter",
+      "checks": 12,
+      "result": "PASS",
+      "evidence": "adapter6A4.txt"
+    },
+    {
+      "phase": "6A5 adapter",
+      "checks": 25,
+      "result": "PASS",
+      "evidence": "adapter6A5.txt"
+    },
+    {
+      "phase": "npm test (file units)",
+      "checks": 37,
+      "result": "PASS",
+      "evidence": "npm-test.txt"
+    },
+    {
+      "phase": "Python/JMRI",
+      "checks": 9,
+      "result": "PASS",
+      "evidence": "python.txt"
+    },
+    {
+      "phase": "build",
+      "checks": 1,
+      "result": "PASS",
+      "evidence": "build.txt"
+    }
+  ],
+  "note": "No aggregate total: SQL/E2E/adapter/test-file units differ; reused fixtures do not count as new scenarios. 6A6-final is the post-fix rerun; old sequential run also passed."
+}

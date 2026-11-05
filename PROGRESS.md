@@ -336,3 +336,47 @@ Rieseguite51/45/141SQL6A.3–6A.5,97SQL6A.8,72gateway6A.6 e50broker6A.9 legacy o
 Baseline6A.9 salvo PROGRESS/STATUS byte-identica: SQL/contratti/R0 approvati, broker/gateway/adapter, R1/motore/Journey/WX310/UI/topologia/asset/canonico/bundle e dipendenze root conservati. Profilo sintetico chiuso, nessun serializer/hydrator generale, UI persistenza, autosave/offline/outbox o6B. Zero query/mutazioni Supabase reale, zero staging/main/Pages/deploy. Changelog403, docs pubbliche consultate senza progetto. Hosting/Supavisor/provisioning gestito/secret manager/costo/churn/cap globale e host recovery restano NOT VERIFIED; nessuna chiusura6A.
 
 Checkpoint atomico: commit che introduce il rapporto6A.10, push normale soltanto feature/train-management e SHA locale/remoto/working tree verificati nella consegna. **Unica prossima azione: audit indipendente Regia; STOP6A.10. Nessuna6A.11,6A.12 o6B avviata.**
+
+## Train Management — 6A.11 hardening e gate avversario (2026-11-05)
+
+**6A.1–6A.10 APPROVATE — 6A.11 TECHNICAL PASS nel laboratorio singolo broker,
+audit Regia PENDING — macrofase6A NON CHIUSA — staging6A.12 e6B NON AUTORIZZATE.**
+Base approvata `de53ba702164428e3b76936dc9791dee4eb1697a`, solo
+feature/train-management; checkout iniziale/HEAD/remoto/ascendenza puliti verificati.
+Nessun branch change, main import, reset/rebase/merge/force-push/deploy.
+
+[Gate avversario](docs/_active/train-management/6A11_ADVERSARIAL_GATE.md),
+[matrice A01–A16](docs/_active/train-management/6A11_SECURITY_MATRIX.md),
+[carico/fault/recovery](docs/_active/train-management/6A11_LOAD_FAULT_RECOVERY.md),
+[privilegi/threat/NV](docs/_active/train-management/6A11_SECURITY_BOUNDARIES.md),
+[regressioni/R0](docs/_active/train-management/6A11_REGRESSION_MATRIX.md).
+Fixture mista legacy non vuota, Auth0 dopo cutover, C/D ownerless;185SQL O01–O14
+e111controlli integrati PASS,1diagnostica limite esclusa dai PASS;
+confronto completo48righe originali+2head,7domain FK/NULL, nessun UPDATE/DELETE
+dello storico nella nuova suite. HTTP/Chromium/P-256→ingresso separato→broker→
+claimCOMMIT→LOGIN/TLS→API transazionale→verifica. Replay durevole, CAS due backend,
+retry receipt dopo ack perso/head/quota, revoca/rotation su sessione calda,
+activation crash prima/dopo commit e fault reali di rete/SQL/processi/store access.
+
+D01 nonce array coercivo riprodotto RED nel broker lifecycle e nei due prototipi
+precedenti; aggiunta solo guardia tipo stringa in3gateway. D02 parser input503→400;
+D03 controllo Node deadline30s→250ms per applicare effettivamente header5s/body15s.
+Quattro file backend corretti,9righe aggiunte/8rimosse. RED/GREEN e problemi
+harness distinti conservati; nessun nuovo privilegio, migrazione o architettura.
+
+**Limite aperto L01:2broker indipendenti aprono32connessioni reali,16ciascuno;
+il budget globale16 FAIL.** Sicurezza nonce a2broker PASS (una riga,200+409),
+nessun supporto operativo multiistanza dichiarato. Singolo broker obbligatorio,
+launcher rifiuta replicas2; fencing/sostituzione senza overlap proposti, enforcement
+hosting NOT VERIFIED. Nessun coordinatore distribuito introdotto.
+
+Rieseguite tutte le regressioni6A.2–6A.10, npm37file PASS, Python/JMRI9 PASS,
+adapter12+25, build PASS. Canonico/bundle e ogni file R1 byte-identici. Profilo
+sintetico chiuso invariato, non serializer generale. Zero query Supabase reale,
+zero staging, nessun runtime ferroviario/UI/assets/dependency modificato.
+Crash host/perdita store/DB/PITR/hosting/Supavisor/costi/browser alternativi e
+matrice completa R1 visuale/performance NOT VERIFIED, con prove future necessarie.
+
+Checkpoint atomico: commit che introduce il rapporto6A.11, push normale soltanto
+feature/train-management, SHA locale/remoto e working tree verificati nella consegna.
+**Unica prossima azione: audit indipendente Regia; STOP6A.11. Nessuna6A.12 o6B avviata.**

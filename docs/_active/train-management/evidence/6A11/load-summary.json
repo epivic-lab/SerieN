@@ -1,0 +1,144 @@
+{
+  "profiles": [
+    {
+      "eventScope": "current profile primary process events",
+      "id": "ordinary",
+      "requests": 24,
+      "statusCounts": {
+        "200": 24
+      },
+      "latencyMs": {
+        "p50": 14.20250399998622,
+        "p95": 51.9654069999815,
+        "max": 63.58151300001191
+      },
+      "observedQueuePeak": 1,
+      "observedWaitMaxMs": 32.8609120000001,
+      "artificialLocks": false,
+      "faults": false,
+      "eventCounts": {
+        "connected": 2,
+        "leased": 24,
+        "claimCommitted": 24,
+        "dataCommitted": 24,
+        "released": 24
+      },
+      "pgPeak": 2,
+      "resources": {
+        "processMemory": [
+          {
+            "pid": 1,
+            "rssKiB": 76352
+          }
+        ],
+        "ingressRssKiB": 66500,
+        "backend": [
+          {
+            "connections": 2,
+            "application_name": "serien-6a9-serien-6a11-484051d8-broker"
+          }
+        ]
+      }
+    },
+    {
+      "eventScope": "current profile primary process events",
+      "id": "single-spike",
+      "requests": 96,
+      "statusCounts": {
+        "200": 83,
+        "503": 13
+      },
+      "latencyMs": {
+        "p50": 1700.9208389999985,
+        "p95": 1933.7233360000246,
+        "max": 1943.3336199999903
+      },
+      "observedQueuePeak": 64,
+      "observedWaitMaxMs": 1707.6229629999998,
+      "artificialLocks": true,
+      "faults": false,
+      "eventCounts": {
+        "leased": 83,
+        "claimCommitted": 83,
+        "dataCommitted": 83,
+        "released": 83,
+        "queueFull": 13,
+        "denied": 13
+      },
+      "pgPeak": 16,
+      "resources": [
+        {
+          "processMemory": [
+            {
+              "pid": 1,
+              "rssKiB": 80128
+            }
+          ],
+          "ingressRssKiB": 74276,
+          "backend": [
+            {
+              "connections": 16,
+              "application_name": "serien-6a9-serien-6a11-484051d8-broker"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "eventScope": "secondary process, including preceding nonce race; not aggregate queue/wait",
+      "id": "two-broker-diagnostic",
+      "requests": 32,
+      "statusCounts": {
+        "200": 32
+      },
+      "latencyMs": {
+        "p50": 2634.488838999998,
+        "p95": 2731.7689919999975,
+        "max": 2740.329085000005
+      },
+      "observedQueuePeak": 14,
+      "observedWaitMaxMs": 118.17097299999978,
+      "artificialLocks": true,
+      "faults": false,
+      "eventCounts": {
+        "ready": 1,
+        "connected": 17,
+        "leased": 17,
+        "denied": 1,
+        "discard": 1,
+        "claimCommitted": 16,
+        "dataCommitted": 16,
+        "released": 16
+      },
+      "pgPeak": 32,
+      "resources": [
+        {
+          "processMemory": [
+            {
+              "pid": 1,
+              "rssKiB": 89108
+            },
+            {
+              "pid": 43,
+              "rssKiB": 75580
+            }
+          ],
+          "ingressRssKiB": 75956,
+          "backend": [
+            {
+              "connections": 16,
+              "application_name": "serien-6a9-serien-6a11-484051d8-broker"
+            },
+            {
+              "connections": 16,
+              "application_name": "serien-6a9-serien-6a11-484051d8-second"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalBudget16": "FAIL with two workers: 32 actual SQL connections",
+  "supportedMode": "single broker",
+  "scope": "Loopback Chromium/Playwright timing; 1.5s/2.7s operator locks only in spikes; no production SLO or distributed fairness certification. RSS is sampled process memory, not cgroup peak or PostgreSQL memory."
+}

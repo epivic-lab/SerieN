@@ -1,0 +1,51 @@
+01 approved owner editor reader pairing after SQL commit: PASS
+01 CryptoKey persists reload and valid signature read: PASS
+03 identical proof replay: PASS
+04 actual broker SIGKILL restart: PASS
+04 replay after real process restart: PASS
+05 replay at independent second broker: PASS
+05 measured aggregate connections for replay only: PASS
+02 invalid P256 signature: PASS
+10 altered audience: PASS
+10 altered operation: PASS
+10 altered epoch: PASS
+10 altered path rejected at ingress: PASS
+10 altered actual body digest: PASS
+08 reader Save denied: PASS
+09 A cannot read B: PASS
+12 separate process identities mounts and socket access: PASS
+11 ingress cannot choose a principal in RPC: PASS
+13 real password TLS and least privilege transport probes: PASS
+13 SQL rejects configured binding with wrong principal: PASS
+14 signed Save and verified ReadSnapshot: PASS
+14 compact receipt and reader history via new transport: PASS
+14 another actor cannot read receipt: PASS
+15 response lost after data COMMIT then same id retry: PASS
+claim response lost fails closed before DATA: PASS
+16 real distinct SQL connections concurrent CAS: PASS
+17 recovery history is nondestructive new revision: PASS
+failed Save after durable claim: PASS
+18 browser catches corrupted real response: PASS
+19 revoke between committed claim and Save: PASS
+06 revoked device cannot read: PASS
+07 key version changed after claim denies Save: PASS
+20 statement timeout rolls back snapshot: PASS
+unreachable SQL transport fails closed without RAM fallback: PASS
+20 kill real SQL backend after snapshot INSERT: PASS
+pair key different from approved: PASS
+forged invitation token rejected: PASS
+scope injected into pairing body: PASS
+job incomplete restart and idempotent activation: PASS
+SQL ceiling forbids owner activation through broker: PASS
+23 old open connection denied across key principal rotation: PASS
+recovery kit and candidate possession revoke predecessors: PASS
+recovery kit cannot activate another job: PASS
+22 real idle eviction at default 30 seconds: PASS
+21 default cap16 queue64 backpressure with two workspaces: PASS
+21 two-second queue timeout: PASS
+22 LRU eviction and same fixed principal reconnection: PASS
+25 storage quota protects confirmed checkpoints: PASS
+25 nonce rate limit fails closed: PASS
+definer observes fixed session_user and executor: PASS
+27 graceful shutdown clears SQL connections: PASS
+50 broker gate checks PASS

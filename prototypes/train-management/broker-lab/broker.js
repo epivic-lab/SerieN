@@ -13,13 +13,14 @@ const code=e=>codes.find(c=>e.message===c)??'RETRYABLE_UNAVAILABLE';
 const status=c=>['POOL_QUEUE_FULL','POOL_TIMEOUT','RETRYABLE_UNAVAILABLE'].includes(c)?503:['REPLAY','REVISION_CONFLICT','IDEMPOTENCY_KEY_REUSED'].includes(c)?409:['NONCE_QUOTA','NONCE_RATE_LIMITED','QUOTA_EXCEEDED','RATE_LIMITED'].includes(c)?429:['PAYLOAD_TOO_LARGE','RESPONSE_TOO_LARGE'].includes(c)?413:['INTEGRITY_ERROR','INCOMPATIBLE_SNAPSHOT','INVALID_STATE_PROFILE'].includes(c)?422:c==='NOT_FOUND'?404:c==='FORBIDDEN'?403:400;
 const emit=r=>process.stdout.write(JSON.stringify({...r,at:Date.now()})+'\n');
 const fail=(c='FORBIDDEN')=>{throw Error(c);};
+const inputJSON=value=>{try{return parseStrict(typeof value==='string'?value:new TextDecoder('utf-8',{fatal:true}).decode(value));}catch{fail('INVALID_REQUEST');}};
 const sameFields=(o,s)=>{if(!o||typeof o!=='object'||Array.isArray(o)||Object.keys(o).sort().join(',')!==s.split(',').sort().join(','))fail('INVALID_REQUEST');};
 const ops=['ReadHead','ReadSnapshot','ListHistory','ReadReceipt','SaveCheckpoint','RecoverRevision'];
 function signature(key,body,sig){if(key?.d||key?.kty!=='EC'||key.crv!=='P-256'||typeof sig!=='string'||!/^[a-f0-9]{128}$/.test(sig))fail();try{if(!verify('sha256',Buffer.from(canonical(body)),{key:createPublicKey({key,format:'jwk'}),dsaEncoding:'ieee-p1363'},Buffer.from(sig,'hex')))fail();}catch{fail();}}
 function proof(e,rpc,cfg,b) {
  sameFields(e,'proof,signature,body');sameFields(e.proof,'audience,bodyDigest,deviceId,domain,epoch,issuedAt,keyId,layoutId,method,nonce,operation,path,request_id,version,workspaceId');
  const p=e.proof;
- if(!e.body||typeof e.body!=='object'||Array.isArray(e.body)||p.domain!=='SerieN-capability-v1'||p.version!==1||p.audience!==cfg.origin||p.method!=='POST'||rpc.method!==p.method||rpc.path!==p.path||p.workspaceId!==b.workspaceId||p.layoutId!==b.layoutId||p.deviceId!==b.deviceId||p.keyId!==b.deviceId||![p.workspaceId,p.layoutId,p.deviceId,p.request_id].every(isUUID)||p.epoch!==b.epoch||!Number.isSafeInteger(p.epoch)||!Number.isSafeInteger(p.issuedAt)||Math.abs(Date.now()-p.issuedAt)>120000||!/^[a-f0-9]{32}$/.test(p.nonce)||p.bodyDigest!==hash(canonical(e.body)))fail();
+ if(!e.body||typeof e.body!=='object'||Array.isArray(e.body)||p.domain!=='SerieN-capability-v1'||p.version!==1||p.audience!==cfg.origin||p.method!=='POST'||rpc.method!==p.method||rpc.path!==p.path||p.workspaceId!==b.workspaceId||p.layoutId!==b.layoutId||p.deviceId!==b.deviceId||p.keyId!==b.deviceId||![p.workspaceId,p.layoutId,p.deviceId,p.request_id].every(isUUID)||p.epoch!==b.epoch||!Number.isSafeInteger(p.epoch)||!Number.isSafeInteger(p.issuedAt)||Math.abs(Date.now()-p.issuedAt)>120000||typeof p.nonce!=='string'||!/^[a-f0-9]{32}$/.test(p.nonce)||p.bodyDigest!==hash(canonical(e.body)))fail();
  signature(b.publicKey,p,e.signature);return p;
 }
 async function lifecycleNonce(p) {
@@ -39,15 +40,15 @@ async function main() {
  const pool=new FixedPool({...initial.pool,applicationName:'serien-6a9-'+(process.env.LAB_ID??'one')},r=>emit({component:'pool',...r}));
  const connection=cfg=>({host:'db',port:5432,database:'postgres',ssl:{ca:cfg.ca,rejectUnauthorized:true}});
  const credential=(cfg,b)=>{const s=cfg.credentials[b.principal];if(!s||s.version!==b.version)fail();return {principal:b.principal,version:s.version,password:s.password,connection:connection(cfg)};};
- const server=http.createServer(async(req,res)=>{
+ const server=http.createServer({connectionsCheckingInterval:250},async(req,res)=>{
   let lease,drop=false,p;
   const send=(s,b)=>{if(res.destroyed)return;res.writeHead(s,{'content-type':'application/json'});res.end(JSON.stringify(b));};
   try {
    if(req.url!=='/request'||req.method!=='POST')fail();let size=0;const parts=[];
    for await(const chunk of req){size+=chunk.length;if(size>4400000)fail('PAYLOAD_TOO_LARGE');parts.push(chunk);}
-   const rpc=parseStrict(new TextDecoder('utf-8',{fatal:true}).decode(Buffer.concat(parts)));sameFields(rpc,'method,path,wire');
+   const rpc=inputJSON(Buffer.concat(parts));sameFields(rpc,'method,path,wire');
    if(typeof rpc.wire!=='string'||Buffer.byteLength(rpc.wire)>2097152)fail('PAYLOAD_TOO_LARGE');
-   const cfg=JSON.parse(await readFile(CONFIG,'utf8')),e=parseStrict(rpc.wire);
+   const cfg=JSON.parse(await readFile(CONFIG,'utf8')),e=inputJSON(rpc.wire);
    await pool.retire(new Set([...Object.values(cfg.devices),...Object.values(cfg.redeemers)].map(b=>b.principal+'@'+b.version)));
    const route=rpc.path.match(/^\/v1\/workspaces\/([a-f0-9-]{36})\/layouts\/([a-f0-9-]{36})\/([A-Za-z]+)$/);
    if(route&&ops.includes(route[3])) {

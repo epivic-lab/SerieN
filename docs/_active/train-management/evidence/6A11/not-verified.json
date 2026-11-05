@@ -1,0 +1,86 @@
+{
+  "stagingAuthorized": false,
+  "productionQueries": 0,
+  "properties": [
+    {
+      "result": "NOT VERIFIED",
+      "property": "Crash host/power loss",
+      "reason": "Solo SIGKILL processi con volumi conservati",
+      "requiredDedicatedTest": "Arresto host/VM mentre claim/job/data attraversano fsync/COMMIT, riavvio e confronto ledger/receipt"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Perdita volume/journal",
+      "reason": "Solo chmod/rename ripristinati",
+      "requiredDedicatedTest": "Perdita reale volume su clone, backup/restore journal, rifiuto replay e ripresa job senza duplicati"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Secret store loss",
+      "reason": "Stesso config ripristinato",
+      "requiredDedicatedTest": "Store vuoto o rollback/rotazione versioni, fencing vecchie credenziali, riallineamento job senza riattivare grant"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Perdita database",
+      "reason": "Nessun DB-loss della primaria",
+      "requiredDedicatedTest": "Restore completo su clone con credenziali/binding/claim/job/receipt coerenti, prove read/write/revoca e integrità storica"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "PITR/replay post-write",
+      "reason": "Restore locale prima delle scritture soltanto",
+      "requiredDedicatedTest": "PITR a istante scelto e replay scritture successive, nessun nonce o kit riutilizzabile, RPO/RTO misurati"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Supabase principal/DDL delegabile",
+      "reason": "PG17 locale con operatore postgres",
+      "requiredDedicatedTest": "Verificare permessi custom roles/default ACL/authorizer/provisioner sullo staging esplicitamente autorizzato; fallimento→riesameD09, niente fallbackadmin"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Supavisor/session_user/TLS",
+      "reason": "TCP diretto locale, TLS CA locale",
+      "requiredDedicatedTest": "Pool gestito connessione/transaction-mode, conservazione session_user, revoke su sessione calda, CA/hostname e limiti reali"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Cap globale hosting",
+      "reason": "2worker locali superano16; altri servizi non dimensionati",
+      "requiredDedicatedTest": "Enforcement singola replica/fencing o decisione separata per budget aggregato; prove doppio avvio e sostituzione fail-closed"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Provisioning/rotazione gestiti",
+      "reason": "Supervisore Docker non provisioner operativo",
+      "requiredDedicatedTest": "Secretadapter/versioni/durablejob/rotation e compensazioni in infrastruttura dedicata, nessuna shadowAuth"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Capacità/costi/churn",
+      "reason": "Piccoli burst locali; nessun tier o budget autorizzato",
+      "requiredDedicatedTest": "Ruoli/device/workspace a regime, storage/WAL/egress/backup/secretops, limiti e costo concordati prima di abilitazione"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Browser/OS/XSS",
+      "reason": "Chromium Linux headless; key reload soltanto",
+      "requiredDedicatedTest": "Firefox/Safari/mobile/profili persistenti, storage eviction/OS/browser crash, CSP/origin/asset trust e threat model client"
+    },
+    {
+      "result": "NOT VERIFIED",
+      "property": "Visuale/performance R1 completa",
+      "reason": "Suite Node/JMRI e byte invariant, nessuna nuova campagna R1",
+      "requiredDedicatedTest": "Rieseguire matrice completa S0–S7/5C/5D con stesse condizioni hardware/viste/memoria; nessuna modifica in6A.11"
+    }
+  ],
+  "knownFail": {
+    "id": "L01",
+    "property": "global aggregate pool budget16",
+    "observed": 32,
+    "result": "FAIL",
+    "supportedMode": "single broker only",
+    "hostingEnforcement": "NOT VERIFIED"
+  }
+}

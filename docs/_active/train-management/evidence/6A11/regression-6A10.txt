@@ -1,0 +1,236 @@
+O01 mixed nonempty ten tables two verified owners and A/B heads: PASS
+O14 pre-cutover backup restore reproduces schema ACL and every row: PASS
+O14 DDL rollback after step 01: PASS
+O14 DDL rollback after step 02: PASS
+O14 DDL rollback after step 03: PASS
+O14 DDL rollback after step 04: PASS
+O14 DDL rollback after step 05: PASS
+O14 DDL rollback after step 06: PASS
+O14 DDL rollback after step 07: PASS
+O14 DDL rollback after step 08: PASS
+O14 DDL rollback after step 09: PASS
+O14 DDL rollback after step 10: PASS
+O14 DDL rollback after step 11: PASS
+O14 DDL rollback after step 12: PASS
+O14 DDL rollback after step 13: PASS
+O14 DDL rollback after step 14: PASS
+O02 atomic DDL preserves all rows and verified provenance: PASS
+O14 after DDL before first write path can be disabled and restore conditions hold: PASS
+O03 O11 delete all Auth users with no application cascade: PASS
+O04 private creator C D ownerNULL head0 and no fabricated checkpoint: PASS
+O04 same approved creation job idempotent: PASS
+O09 O10 existing A B commit new ownerNULL checkpoints and read old snapshots with zero Auth: PASS
+O12 controlled maintenance has raw ACL but no SQL administrative power: PASS
+O12 retired Auth policies deny real legacy owner claim even with SELECT ACL: PASS
+O12 effective creator provenance ACL and no broker provisioning authority: PASS
+O05 root ownerNULL workspaceNULL rejected: PASS
+O05 workspace FK cannot be NULL bypass for ownerless root: PASS
+O05 generated domain cannot be supplied: PASS
+O05 missing parent member ID rejected: PASS
+O05 workspace receipt NULL snapshot tuple rejected: PASS
+O05 ownerNULL workspaceNULL consists: PASS
+O05 ownerNULL workspaceNULL layouts: PASS
+O05 ownerNULL workspaceNULL consist_members: PASS
+O05 ownerNULL workspaceNULL layout_placements: PASS
+O05 ownerNULL workspaceNULL loose_stock_placements: PASS
+O05 ownerNULL workspaceNULL layout_snapshots: PASS
+O05 ownerNULL workspaceNULL operation_receipts: PASS
+O04 new workspace row cannot reuse historical owner: PASS
+O06 member consist domain: PASS
+O06 member item domain: PASS
+O06 placement consist domain: PASS
+O06 placement layout domain: PASS
+O06 loose item domain: PASS
+O06 loose layout domain: PASS
+O06 snapshot layout domain: PASS
+O06 A to B member consist: PASS
+O06 A to B member item: PASS
+O06 A to B placement consist: PASS
+O06 A to B placement layout: PASS
+O06 A to B loose item: PASS
+O06 A to B loose layout: PASS
+O06 A to B snapshot layout: PASS
+O06 A to C member consist: PASS
+O06 A to C member item: PASS
+O06 A to C placement consist: PASS
+O06 A to C placement layout: PASS
+O06 A to C loose item: PASS
+O06 A to C loose layout: PASS
+O06 A to C snapshot layout: PASS
+O06 A to D member consist: PASS
+O06 A to D member item: PASS
+O06 A to D placement consist: PASS
+O06 A to D placement layout: PASS
+O06 A to D loose item: PASS
+O06 A to D loose layout: PASS
+O06 A to D snapshot layout: PASS
+O06 B to A member consist: PASS
+O06 B to A member item: PASS
+O06 B to A placement consist: PASS
+O06 B to A placement layout: PASS
+O06 B to A loose item: PASS
+O06 B to A loose layout: PASS
+O06 B to A snapshot layout: PASS
+O06 B to C member consist: PASS
+O06 B to C member item: PASS
+O06 B to C placement consist: PASS
+O06 B to C placement layout: PASS
+O06 B to C loose item: PASS
+O06 B to C loose layout: PASS
+O06 B to C snapshot layout: PASS
+O06 B to D member consist: PASS
+O06 B to D member item: PASS
+O06 B to D placement consist: PASS
+O06 B to D placement layout: PASS
+O06 B to D loose item: PASS
+O06 B to D loose layout: PASS
+O06 B to D snapshot layout: PASS
+O06 C to A member consist: PASS
+O06 C to A member item: PASS
+O06 C to A placement consist: PASS
+O06 C to A placement layout: PASS
+O06 C to A loose item: PASS
+O06 C to A loose layout: PASS
+O06 C to A snapshot layout: PASS
+O06 C to B member consist: PASS
+O06 C to B member item: PASS
+O06 C to B placement consist: PASS
+O06 C to B placement layout: PASS
+O06 C to B loose item: PASS
+O06 C to B loose layout: PASS
+O06 C to B snapshot layout: PASS
+O06 D to A member consist: PASS
+O06 D to A member item: PASS
+O06 D to A placement consist: PASS
+O06 D to A placement layout: PASS
+O06 D to A loose item: PASS
+O06 D to A loose layout: PASS
+O06 D to A snapshot layout: PASS
+O06 D to B member consist: PASS
+O06 D to B member item: PASS
+O06 D to B placement consist: PASS
+O06 D to B placement layout: PASS
+O06 D to B loose item: PASS
+O06 D to B loose layout: PASS
+O06 D to B snapshot layout: PASS
+O06 D to C member consist: PASS
+O06 D to C member item: PASS
+O06 D to C placement consist: PASS
+O06 D to C placement layout: PASS
+O06 D to C loose item: PASS
+O06 D to C loose layout: PASS
+O06 D to C snapshot layout: PASS
+O06 legacy same provenance cannot reference workspace domain: PASS
+O06 legacy to A domain FK with old owner FK satisfied: PASS
+O06 legacy owner1 cannot reference legacy owner2: PASS
+O07 locomotive cannot follow ordinal zero: PASS
+O07 wagon cannot be first member: PASS
+O07 ready member ordinals stay consecutive deferred: PASS
+O07 member cannot also be loose: PASS
+O07 loose cannot also be member: PASS
+O07 invalid position: PASS
+O07 invalid heading: PASS
+O07 invalid edge: PASS
+O07 snapshot topology: PASS
+O07 snapshot STOPPED: PASS
+O07 snapshot eight switches: PASS
+O07 snapshot switch boolean: PASS
+O05 identity guard stock_items: PASS
+O05 identity guard consists: PASS
+O05 identity guard consist_members: PASS
+O05 identity guard layouts: PASS
+O05 identity guard layout_placements: PASS
+O05 identity guard loose_stock_placements: PASS
+O11 referenced provenance cannot be deleted: PASS
+O12 anon denied SELECT public.stock_items: PASS
+O12 anon denied SELECT serien_capability.legacy_owners: PASS
+O12 anon denied SELECT serien_capability.create_ownerless_workspace('10000000-0000-4000-8000-0000000002bc'): PASS
+O12 authenticated denied SELECT public.stock_items: PASS
+O12 authenticated denied SELECT serien_capability.legacy_owners: PASS
+O12 authenticated denied SELECT serien_capability.create_ownerless_workspace('10000000-0000-4000-8000-0000000002bc'): PASS
+O12 n10_device_0 denied SELECT public.stock_items: PASS
+O12 n10_device_0 denied SELECT serien_capability.legacy_owners: PASS
+O12 n10_device_0 denied SELECT serien_capability.create_ownerless_workspace('10000000-0000-4000-8000-0000000002bc'): PASS
+O12 private creator denies unapproved foreign job: PASS
+O12 reader cannot Save: PASS
+O12 C cannot read D: PASS
+O12 creation requires matching operator and approved job 10000000-0000-4000-8000-0000000002c6: PASS
+O12 creation requires matching operator and approved job 10000000-0000-4000-8000-0000000002c9: PASS
+O12 operator cannot approve raw: PASS
+O12 operator cannot workspace raw: PASS
+O12 operator cannot role DDL: PASS
+O05 positive head requires complete snapshot receipt tuple: PASS
+O08 rollback after layout_snapshots: PASS
+O08 rollback after layout_placements: PASS
+O08 rollback after loose_stock_placements: PASS
+O08 rollback after session_heads: PASS
+O08 rollback after operation_receipts: PASS
+O08 rollback after audit_events: PASS
+O08 deferred failure before API commit: PASS
+O04 O09 both ownerless workspaces save same request_id independently: PASS
+O06 receipt tuple cannot reference snapshot D from C: PASS
+O09 next head advances to 2: PASS
+O09 retry original envelope after head advanced returns original receipt: PASS
+O09 request_id different digest rejected: PASS
+O09 request_id different actor rejected: PASS
+O10 read snapshot history receipt before recovery: PASS
+O10 RecoverRevision appends revision3 preserving source1: PASS
+O10 immutable layout_snapshots UPDATE: PASS
+O10 immutable layout_snapshots DELETE: PASS
+O10 immutable operation_receipts UPDATE: PASS
+O10 immutable operation_receipts DELETE: PASS
+O13 same inventory code in C D accepted: PASS
+O13 duplicate code same domain rejected: PASS
+O13 duplicate legacy same owner rejected: PASS
+O14 after ownerless writes and Auth deletion read-only containment preserves data: PASS
+01 approved owner editor reader pairing after SQL commit: PASS
+01 CryptoKey persists reload and valid signature read: PASS
+03 identical proof replay: PASS
+04 actual broker SIGKILL restart: PASS
+04 replay after real process restart: PASS
+05 replay at independent second broker: PASS
+05 measured aggregate connections for replay only: PASS
+02 invalid P256 signature: PASS
+10 altered audience: PASS
+10 altered operation: PASS
+10 altered epoch: PASS
+10 altered path rejected at ingress: PASS
+10 altered actual body digest: PASS
+08 reader Save denied: PASS
+09 A cannot read B: PASS
+12 separate process identities mounts and socket access: PASS
+11 ingress cannot choose a principal in RPC: PASS
+13 real password TLS and least privilege transport probes: PASS
+13 SQL rejects configured binding with wrong principal: PASS
+14 signed Save and verified ReadSnapshot: PASS
+14 compact receipt and reader history via new transport: PASS
+14 another actor cannot read receipt: PASS
+15 response lost after data COMMIT then same id retry: PASS
+claim response lost fails closed before DATA: PASS
+16 real distinct SQL connections concurrent CAS: PASS
+17 recovery history is nondestructive new revision: PASS
+failed Save after durable claim: PASS
+18 browser catches corrupted real response: PASS
+19 revoke between committed claim and Save: PASS
+06 revoked device cannot read: PASS
+07 key version changed after claim denies Save: PASS
+20 statement timeout rolls back snapshot: PASS
+unreachable SQL transport fails closed without RAM fallback: PASS
+20 kill real SQL backend after snapshot INSERT: PASS
+pair key different from approved: PASS
+forged invitation token rejected: PASS
+scope injected into pairing body: PASS
+job incomplete restart and idempotent activation: PASS
+SQL ceiling forbids owner activation through broker: PASS
+23 old open connection denied across key principal rotation: PASS
+recovery kit and candidate possession revoke predecessors: PASS
+recovery kit cannot activate another job: PASS
+22 real idle eviction at default 30 seconds: PASS
+21 default cap16 queue64 backpressure with two workspaces: PASS
+21 two-second queue timeout: PASS
+22 LRU eviction and same fixed principal reconnection: PASS
+25 storage quota protects confirmed checkpoints: PASS
+25 nonce rate limit fails closed: PASS
+definer observes fixed session_user and executor: PASS
+27 graceful shutdown clears SQL connections: PASS
+50 broker gate checks PASS

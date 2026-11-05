@@ -37,7 +37,7 @@ export async function startGateway({now=Date.now}={}) {
       p.operation!==operation||p.workspaceId!==workspaceId||p.layoutId!==layoutId||
       !id(workspaceId)||!id(layoutId)||!id(p.deviceId)||p.keyId!==p.deviceId||!id(p.request_id)||!Number.isSafeInteger(p.epoch)||
       !Number.isSafeInteger(p.issuedAt)||Math.abs(now()-p.issuedAt)>120000||
-      !/^[0-9a-f]{32}$/.test(p.nonce)||p.bodyDigest!==hash(canonical(body)))fail();
+      typeof p.nonce!=='string'||!/^[0-9a-f]{32}$/.test(p.nonce)||p.bodyDigest!==hash(canonical(body)))fail();
     const d=candidate??devices.get(p.deviceId);
     if(!d||d.revoked||d.epoch!==p.epoch||d.workspaceId!==workspaceId)fail();
     if(typeof signature!=='string'||!/^[0-9a-f]{128}$/.test(signature))fail();

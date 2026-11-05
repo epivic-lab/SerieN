@@ -1,0 +1,100 @@
+{
+  "scope": "Process/permission/network faults only; retained stores. No host/store-loss/DB-loss/PITR certification.",
+  "evidence": [
+    "results.json",
+    "ownerless-sql.json",
+    "regression-6A6-final.json"
+  ],
+  "cases": [
+    {
+      "fault": "Broker SIGKILL",
+      "boundaryAndObserved": "SegnaleKILL container, PID cambiato; vecchie sessioni0 prima di start",
+      "recovery": "Nonce committato ancoraREPLAY; nessun fallback RAM",
+      "result": "PASS processo"
+    },
+    {
+      "fault": "Ingresso restart",
+      "boundaryAndObserved": "PID cambiato, stessa porta/origin; header408 e successivo read valido",
+      "recovery": "CryptoKey già memorizzata ancora utilizzabile, nonceSQL non perso; rate RAM locale riparte",
+      "result": "PASS processo"
+    },
+    {
+      "fault": "Claim ack perso",
+      "boundaryAndObserved": "Dopo claim COMMIT, prima DATA,503",
+      "recovery": "Stessa proof409, nessuna read/write dati; nuovo nonce necessario",
+      "result": "PASS"
+    },
+    {
+      "fault": "Ack HTTP perso",
+      "boundaryAndObserved": "Abort browser dopo dataCOMMIT, prima consegna",
+      "recovery": "Stesso request_id/envelope e nonce nuovo stessa receipt anche dopo head avanzato/quota piena",
+      "result": "PASS"
+    },
+    {
+      "fault": "Save timeout",
+      "boundaryAndObserved": "statement_timeout4s durante operazioneSQL",
+      "recovery": "503error-only; INSERT snapshot/head/receipt rollback, claim resta",
+      "result": "PASS"
+    },
+    {
+      "fault": "Backend terminato",
+      "boundaryAndObserved": "pg_terminate_backend dopo INSERT snapshot prima COMMIT",
+      "recovery": "503, nessuno snapshot/receipt parziale; stato confermato intatto",
+      "result": "PASS"
+    },
+    {
+      "fault": "Rete SQL interrotta",
+      "boundaryAndObserved": "Broker disconnesso dalla rete SQL della fixture",
+      "recovery": "503, niente fallback; rete ripristinata fuori banda, prova positiva successiva",
+      "result": "PASS indisponibilità, non DB-loss"
+    },
+    {
+      "fault": "Activation interrotta",
+      "boundaryAndObserved": "KILL broker dopo redeem COMMIT e poi dopo activation COMMIT prima ack",
+      "recovery": "JobACTIVATING ripreso202→ACTIVE200, binding1, vecchia proofREPLAY",
+      "result": "PASS processo/store conservato"
+    },
+    {
+      "fault": "Rotation interrotta",
+      "boundaryAndObserved": "KILL duranteACTIVATING, poi vecchia connessione ferma dopo claim",
+      "recovery": "Stesso job ripreso, nuovo grant, vecchioNOLOGIN e403; receipt storica identica",
+      "result": "PASS processo/store conservato"
+    },
+    {
+      "fault": "Secret adapter assente",
+      "boundaryAndObserved": "Rename temporaneo config; richiesta su connessione già calda",
+      "recovery": "503, nessun dato; stesso file ripristinato e read positivo",
+      "result": "PASS indisponibilità, non perdita store"
+    },
+    {
+      "fault": "Journal illeggibile",
+      "boundaryAndObserved": "chmod000 nella sola fixture",
+      "recovery": "Lifecycle503/jobAPPROVED, dati già attivi indipendenti; restore700",
+      "result": "PASS indisponibilità, non perdita journal"
+    },
+    {
+      "fault": "Revoca concorrente",
+      "boundaryAndObserved": "Save e9read sospesi dopo claim, revocaCOMMIT prima di rilascio",
+      "recovery": "403/error-only, nessuna nuova operazione dopo revoca; vecchie letture già committate non annullabili",
+      "result": "PASS"
+    },
+    {
+      "fault": "Snapshot corrotto",
+      "boundaryAndObserved": "Nuova riga orphan999 a digest falso, nessun UPDATE storico",
+      "recovery": "422, head confermato intatto; browser nega anche risposta alterata",
+      "result": "PASS"
+    },
+    {
+      "fault": "Constraint/deferred/DDL",
+      "boundaryAndObserved": "SQL185:6substep Save, deferred FK, kill/timeout,14punti DDL",
+      "recovery": "Rollback completo dati/catalogo/ruoli; NULL/domain FK distinti daACL",
+      "result": "PASS"
+    },
+    {
+      "fault": "Chromium SIGKILL",
+      "boundaryAndObserved": "Vero processo browser terminato dopo Save COMMIT; eseguito anche nella regressione6A.6",
+      "recovery": "Una receipt, revisione intera, snapshot verificabile; nessun claim di durabilità key dopo crash incognito",
+      "result": "PASS processo; key crash NOT VERIFIED"
+    }
+  ]
+}

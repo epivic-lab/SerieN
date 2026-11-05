@@ -1,0 +1,33 @@
+{
+  "base": "de53ba702164428e3b76936dc9791dee4eb1697a",
+  "integrated": "final: 185 SQL PASS +111 integrated PASS +1 diagnostic LIMITATION_REPRODUCED",
+  "metadataCorrection": "Final runner emits explicit single-broker PASS and diagnostic multi-budget FAIL; previous attempt3 summary inherited metadata was corrected without changing assertions",
+  "failedHarnessAttempts": [
+    {
+      "id": "H01",
+      "cause": "Docker reassigned unpinned loopback port across ingress restart",
+      "fix": "reserve explicit loopback port before starting services",
+      "effect": "first red header repro invalid; red-pinned rerun demonstrates defect"
+    },
+    {
+      "id": "H02",
+      "cause": "legacy nonce probe omitted transport.close and held two isolated PG fixtures",
+      "fix": "close transport in finally, terminate exact test processes and allow supervisor cleanup",
+      "effect": "first post-fix 6A6 retry ran out of disk; final legacy green and full 6A6 rerun clean"
+    },
+    {
+      "id": "H04",
+      "cause": "Failed Docker create left unregistered vfs writable/init copies consuming 1.2GiB",
+      "fix": "Read-only layer metadata inventory, recheck no live image/container reference, empty only exact four current-phase failed-copy directories; leave older/unrelated layers intact",
+      "effect": "Final first broker start returned125 before HTTP tests; cleanup all registered resources passed, clean rerun required"
+    },
+    {
+      "id": "H03",
+      "cause": "121s future proof drifted inside 120s validity while test loop ran",
+      "fix": "future/past invalid proofs 300s from generation",
+      "effect": "attempt1 failed oracle; no backend change"
+    }
+  ],
+  "productionQueries": 0,
+  "stagingOperations": 0
+}

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/db/6A6/run.py", line 25, in <module>
+    r=docker(['run','-d','--name',NAME,'--network','none','--tmpfs','/var/lib/postgresql/data:rw','-e','POSTGRES_HOST_AUTH_METHOD=trust',IMAGE,'-c','listen_addresses=']);assert not r.returncode,r.stderr
+                                                                                                                                                                                 ^^^^^^^^^^^^^^^^
+AssertionError: docker: Error response from daemon: no space left on device
+
+Run 'docker run --help' for more information

@@ -1,0 +1,86 @@
+{
+  "scope": "isolated legacy 6A.2/6 fixture; not ownerless certification",
+  "cases": [
+    {
+      "test": "D01b capability2 rejects typed-array nonce",
+      "expected": {
+        "status": 403,
+        "body": {
+          "error": "DENIED"
+        }
+      },
+      "observed": {
+        "status": 200,
+        "body": {
+          "value": "private-fixture",
+          "writes": 0
+        }
+      },
+      "before": {
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "value": "private-fixture",
+        "writes": 0
+      },
+      "after": {
+        "layoutId": "10000000-0000-4000-8000-000000000003",
+        "value": "private-fixture",
+        "writes": 0
+      },
+      "result": "FAIL"
+    },
+    {
+      "test": "D01c integration6 invalid nonce cannot create SQL principal",
+      "expected": {
+        "status": 403,
+        "body": {
+          "error": "FORBIDDEN"
+        },
+        "sqlBindingsUnchanged": true
+      },
+      "observed": {
+        "status": 200,
+        "body": {
+          "deviceId": "9a7b9979-2833-41c3-8b83-22d114f43112",
+          "epoch": 1
+        }
+      },
+      "beforeBindings": 0,
+      "afterBindings": 1,
+      "result": "FAIL"
+    },
+    {
+      "test": "D01c integration6 invalid nonce cannot read actual SQL head",
+      "expected": {
+        "status": 403,
+        "body": {
+          "error": "FORBIDDEN"
+        }
+      },
+      "observed": {
+        "status": 200,
+        "body": {
+          "layoutId": "10000000-0000-4000-8000-000000000003",
+          "revision": "0",
+          "snapshotId": null,
+          "stateDigest": null,
+          "workspaceId": "10000000-0000-4000-8000-000000000001",
+          "envelopeDigest": null,
+          "canonicalVersion": null
+        }
+      },
+      "positiveControl": {
+        "status": 200,
+        "body": {
+          "layoutId": "10000000-0000-4000-8000-000000000003",
+          "revision": "0",
+          "snapshotId": null,
+          "stateDigest": null,
+          "workspaceId": "10000000-0000-4000-8000-000000000001",
+          "envelopeDigest": null,
+          "canonicalVersion": null
+        }
+      },
+      "result": "FAIL"
+    }
+  ]
+}

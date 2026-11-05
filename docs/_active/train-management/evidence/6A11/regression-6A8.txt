@@ -1,0 +1,97 @@
+21 migration fault rolls back schema roles and data: PASS
+01 registration PREPARED: PASS
+15 NOLOGIN prepared principal cannot connect: PASS
+10 approved key cannot be substituted: PASS
+01 controlled operator approval: PASS
+10 redemption key mismatch: PASS
+01 bound ticket redemption ACTIVATING: PASS
+15 principal not made LOGIN by control plane: PASS
+14 failure after LOGIN before commit rolls back role and activation: PASS
+01 activation commits before LOGIN is usable: PASS
+13 lost activation response repeat returns same job: PASS
+13 prepare retry after active does not create principal/device: PASS
+13 same job different key rejected: PASS
+12 same invitation retry cannot create second grant: PASS
+08 reader cannot write: PASS
+09 reader job cannot be approved as owner: PASS
+09 rotation cannot elevate reader to owner: PASS
+09 operator scope ceiling cannot be exceeded: PASS
+09 limited operator cannot approve preexisting owner job: PASS
+09 limited operator cannot issue owner recovery verifier: PASS
+09 limited operator cannot revoke owner: PASS
+09 limited redeemer cannot redeem owner job: PASS
+09 limited provisioner cannot activate owner job: PASS
+17 control A cannot approve job B: PASS
+17 data A cannot read B: PASS
+17 broker control A cannot retrieve job B: PASS
+02 first durable nonce claim: PASS
+04 replay after new psql process and connection: PASS
+05 malformed nonce: PASS
+05 expired nonce proof: PASS
+05 another device context: PASS
+07 stale proof epoch: PASS
+07 stale proof key version: PASS
+07 stale workspace epoch: PASS
+09 signatureVerified boolean cannot authorize: PASS
+05 wrong audience: PASS
+05 wrong path: PASS
+05 wrong protocol domain: PASS
+18 device cannot SET ROLE authorizer: PASS
+18 forged GUC does not select B: PASS
+18 raw registry update denied: PASS
+18 device cannot invoke control function: PASS
+18 control cannot modify session head: PASS
+18 redeemer cannot approve: PASS
+18 device cannot GRANT admin role: PASS
+03 nonce committed before failing Save: PASS
+03 failed CAS after nonce commit: PASS
+03 replay survives separate Save rollback: PASS
+22 Save with compact receipt: PASS
+22 newer Save: PASS
+22 retry after lost response and head advance: PASS
+22 reused id different digest: PASS
+22 invalid profile rolls back all components: PASS
+22 historical recovery creates new revision: PASS
+02 simultaneous real connections one claim: PASS
+18 reject unsafe principal extra: PASS
+18 reject unsafe principal column: PASS
+14 secret adapter put before SQL fault is idempotent: PASS
+14 role creation before job retry retains one NOLOGIN role: PASS
+12 expired invitation cannot be approved: PASS
+11 concurrent identical pairing one grant: PASS
+20 prepared jobs cannot overrun device quota at redemption: PASS
+12 invitation verifier cannot be assigned to second job: PASS
+14 provisioning fault at lifecycle_jobs: PASS
+14 provisioning fault at devices: PASS
+14 provisioning fault at worker_bindings: PASS
+14 provisioning fault at device_bindings: PASS
+14 provisioning fault at lifecycle_events: PASS
+14 durable RECOVERABLE fault state: PASS
+14 resume exact provisioning state: PASS
+14 terminal FAILED never reactivated: PASS
+14 FAILED cannot resume: PASS
+14 FAILED cannot complete even after operator LOGIN: PASS
+15 early LOGIN still has zero data authority: PASS
+20 live nonce quota denies unbounded growth: PASS
+20 workspace nonce quota: PASS
+20 claim rate quota: PASS
+20 expired proof stays denied after retention cleanup horizon: PASS
+20 expired rows cleaned on a later successful claim: PASS
+20 device cannot delete live nonce: PASS
+20 device cannot change retention or limits: PASS
+16 revocation denies second read on already open session: PASS
+06 revocation between claim and Save is authoritative: PASS
+16 revoked principal read on fresh connection: PASS
+07 old epoch binding denied after rotation: PASS
+07 new key version and epoch accepted: PASS
+17 recovery reservation FK cannot reference workspace B job: PASS
+12 confirmed recovery revokes preceding devices: PASS
+12 new recovered device authorized: PASS
+13 lost recovery response same job idempotent: PASS
+12 kit cannot be reused for another job: PASS
+12 consumed recovery version cannot be reissued: PASS
+17 RLS USING independently hides B: PASS
+17 RLS WITH CHECK independently rejects foreign INSERT: PASS
+23 all ten nonempty legacy tables preserved: PASS
+19 zero private EXECUTE for anon authenticated: PASS
+18 owners are NOLOGIN NOBYPASSRLS without table ownership: PASS

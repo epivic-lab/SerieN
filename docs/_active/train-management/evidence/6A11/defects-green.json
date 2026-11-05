@@ -1,0 +1,109 @@
+{
+  "baseline": "de53ba702164428e3b76936dc9791dee4eb1697a",
+  "tests": [
+    {
+      "id": "D01 lifecycle nonce must be a string and job stay APPROVED",
+      "expected": "D01 lifecycle nonce must be a string and job stay APPROVED",
+      "observed": {
+        "http": 403,
+        "error": "FORBIDDEN",
+        "jobState": "APPROVED"
+      },
+      "before": {
+        "data": "8c8ca97174125df67c845f59c9a4022a437f7407b13a8ea274f62e6a2127ebf2",
+        "authority": "1905b8485510647af20c290a55ed58434e00edf5999e169e93fa112bce8ccdf8",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "b08cae24-2279-4a28-b0a9-c75676cce154",
+            "role": "n9_device_1",
+            "state": "APPROVED"
+          }
+        ]
+      },
+      "after": {
+        "data": "8c8ca97174125df67c845f59c9a4022a437f7407b13a8ea274f62e6a2127ebf2",
+        "authority": "1905b8485510647af20c290a55ed58434e00edf5999e169e93fa112bce8ccdf8",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "b08cae24-2279-4a28-b0a9-c75676cce154",
+            "role": "n9_device_1",
+            "state": "APPROVED"
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "D02 malformed client JSON must be INVALID_REQUEST 400",
+      "expected": "D02 malformed client JSON must be INVALID_REQUEST 400",
+      "observed": {
+        "http": 400,
+        "body": {
+          "error": "INVALID_REQUEST"
+        }
+      },
+      "before": {
+        "data": "8c8ca97174125df67c845f59c9a4022a437f7407b13a8ea274f62e6a2127ebf2",
+        "authority": "1905b8485510647af20c290a55ed58434e00edf5999e169e93fa112bce8ccdf8",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "b08cae24-2279-4a28-b0a9-c75676cce154",
+            "role": "n9_device_1",
+            "state": "APPROVED"
+          }
+        ]
+      },
+      "after": {
+        "data": "8c8ca97174125df67c845f59c9a4022a437f7407b13a8ea274f62e6a2127ebf2",
+        "authority": "1905b8485510647af20c290a55ed58434e00edf5999e169e93fa112bce8ccdf8",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "b08cae24-2279-4a28-b0a9-c75676cce154",
+            "role": "n9_device_1",
+            "state": "APPROVED"
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "D03 declared five-second header deadline closes partial headers",
+      "expected": "D03 declared five-second header deadline closes partial headers",
+      "observed": {
+        "closed": true,
+        "elapsedMs": 5213.525310000001,
+        "responseBytes": 51,
+        "status": 408
+      },
+      "before": {
+        "data": "8c8ca97174125df67c845f59c9a4022a437f7407b13a8ea274f62e6a2127ebf2",
+        "authority": "1905b8485510647af20c290a55ed58434e00edf5999e169e93fa112bce8ccdf8",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "b08cae24-2279-4a28-b0a9-c75676cce154",
+            "role": "n9_device_1",
+            "state": "APPROVED"
+          }
+        ]
+      },
+      "after": {
+        "data": "8c8ca97174125df67c845f59c9a4022a437f7407b13a8ea274f62e6a2127ebf2",
+        "authority": "1905b8485510647af20c290a55ed58434e00edf5999e169e93fa112bce8ccdf8",
+        "nonces": 0,
+        "jobs": [
+          {
+            "id": "b08cae24-2279-4a28-b0a9-c75676cce154",
+            "role": "n9_device_1",
+            "state": "APPROVED"
+          }
+        ]
+      },
+      "result": "PASS"
+    }
+  ]
+}
