@@ -45,6 +45,6 @@ jobs:
           test -n "$DB_CONTAINER"
           db() { docker exec -i "$DB_CONTAINER" psql -X -v ON_ERROR_STOP=1 -U supabase_admin -d postgres "$@"; }
           db -c "CREATE EXTENSION IF NOT EXISTS pg_jsonschema WITH SCHEMA extensions;"
-          db -f tests/sql/6b2c_real_schema_fixture.sql
-          db -f tests/sql/6b2c_cloud_rpc_candidate.sql
-          db -v "state=$(cat /tmp/serien_state.json)" -f tests/sql/6b2c_rpc_gate.sql
+          db < tests/sql/6b2c_real_schema_fixture.sql
+          db < tests/sql/6b2c_cloud_rpc_candidate.sql
+          db -v "state=$(cat /tmp/serien_state.json)" < tests/sql/6b2c_rpc_gate.sql
