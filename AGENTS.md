@@ -1,5 +1,9 @@
 # SerieN — Codex working rules
 
+## Requisiti permanenti di prodotto — superseding future design constraints (2026-11-05)
+
+**Obbligatorio prima di Train Management/Auth/cloud:** leggere [docs/product/SERIEN_PRODUCT_REQUIREMENTS.md](docs/product/SERIEN_PRODUCT_REQUIREMENTS.md). Requisiti futuri: applicazione dietro social login senza password SerieN, paywall/subscription lato server, persistenza ferroviaria isolata per utente e multiutenza contemporanea; semplicità e robustezza, browser-only, nessun Mac/server persistente/costo obbligatorio. **Codex 6A.12-S1 sospesa per riallineamento**, nessuna implementazione/deploy/DDL implicitamente autorizzata. Questa indicazione aggiornata prevale sui vecchi riferimenti a gate 6A.6 o ownerless definitivo; la storia dei gate resta storica.
+
 Repository: `epivic-lab/SerieN`. These rules are permanent; read this file at the beginning of every new Codex conversation.
 
 ## Current turnout documentation status — S7 technical closure

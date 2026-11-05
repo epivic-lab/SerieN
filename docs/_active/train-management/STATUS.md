@@ -1,3 +1,5 @@
+> **DIRETTIVA PRODOTTO 2026-11-05 — REQUISITI FUTURI PERSISTENTI.** Fonte vincolante: [SERIEN_PRODUCT_REQUIREMENTS.md](../../product/SERIEN_PRODUCT_REQUIREMENTS.md). L'utente richiede per il futuro (1) applicazione dietro social login, (2) paywall e subscription verificati lato server, (3) multiutenza simultanea con persistente stato ferroviario privato per singolo utente/workspace e CAS fra dispositivi. Progettazione semplice e robusta; GitHub Pages + Supabase Free, nessuna dipendenza dal Mac. **6A.12-S1 PAUSA**, architettura da riallineare: Auth anonima non è la decisione finale, W non approvata come modello definitivo. Nessuna implementazione o mutazione produzione autorizzata da questa direttiva. Le annotazioni di gate sotto sono cronologia tecnica.
+
 # Train Management — gate corrente
 
 **6A.12-R DESIGN PROPOSTO — REVIEW REGIA PENDING — IMPLEMENTAZIONE/PRODUZIONE NON AUTORIZZATE.**
