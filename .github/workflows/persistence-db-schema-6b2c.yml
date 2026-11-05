@@ -1,0 +1,49 @@
+name: SerieN 6B.2-C schema validator — isolated Supabase PG17
+on:
+  push:
+    branches: [feature/train-persistence-auth]
+    paths:
+      - 'tests/db-schema-6b2c.sql'
+      - 'tests/gen-6b2c-fixture.mjs'
+      - '.github/workflows/persistence-db-schema-6b2c.yml'
+      - 'src/persistence/state-schema.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  schema-validation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    services:
+      pg17:
+        image: supabase/postgres:17.11.0.018
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: ephemeral-test-only
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 8s
+          --health-timeout 5s
+          --health-retries 18
+    steps:
+      - name: Checkout exact branch (no production)
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install pinned repository dependencies
+        run: npm ci
+      - name: Capture and validate real R1 state with in-browser schema
+        run: node tests/gen-6b2c-fixture.mjs > /tmp/serien_state.json
+      - name: Validate full schema in ephemeral Supabase PostgreSQL 17
+        env:
+          DB_CONTAINER: ${{ job.services.pg17.id }}
+        run: |
+          test -n "$DB_CONTAINER"
+          docker exec -i "$DB_CONTAINER" psql -X -U postgres -d postgres \
+            -v ON_ERROR_STOP=1 \
+            -v "schema=$(cat src/persistence/state-schema.json)" \
+            -v "state=$(cat /tmp/serien_state.json)" \
+            < tests/db-schema-6b2c.sql
