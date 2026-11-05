@@ -122,6 +122,11 @@ DECLARE
 BEGIN
   IF d->>'topologyHash' IS DISTINCT FROM cat->>'topologyHash'
   THEN RAISE EXCEPTION 'INCOMPATIBLE_TOPOLOGY' USING ERRCODE='P0001'; END IF;
+  -- 6B.1 R1 explicitly forbids storage until 6D; closed schema alone
+  -- would admit this FUTURE field and create an unrestorable snapshot.
+  IF pg_catalog.jsonb_array_length(d->'inventoryStorage')<>0 THEN
+   RAISE EXCEPTION 'UNSUPPORTED_INVENTORY_STORAGE' USING ERRCODE='P0001';
+  END IF;
   FOR m IN SELECT value FROM pg_catalog.jsonb_array_elements(d->'models') LOOP
     IF (m->>'id')=ANY(seen_models) THEN
        RAISE EXCEPTION 'DUPLICATE_MODEL' USING ERRCODE='P0001'; END IF;
@@ -157,6 +162,15 @@ BEGIN
       WHERE value->>'id'=i->>'modelId';
     IF model IS NULL OR i->>'modelRevision' IS DISTINCT FROM model->>'revision' THEN
        RAISE EXCEPTION 'ITEM_MODEL_MISSING' USING ERRCODE='P0001'; END IF;
+    -- A Kenney effective model MUST also have its original native
+    -- fallback manifest present, exactly as validateDocument requires.
+    IF NOT EXISTS(
+      SELECT 1 FROM pg_catalog.jsonb_array_elements(d->'models') AS nm
+      WHERE nm.value->>'id'=i->>'nativeModelId'
+        AND nm.value->>'revision'=i->>'nativeModelRevision'
+        AND nm.value->>'representation'='native'
+        AND nm.value->>'runtimeKey'=i->>'nativeKind'
+    ) THEN RAISE EXCEPTION 'NATIVE_MODEL_MISSING' USING ERRCODE='P0001'; END IF;
     base_n:=pg_catalog.array_position(
       ARRAY['steam','diesel','shunter','closed','open','tank','flat','coach'],
       i->>'nativeKind');
@@ -211,6 +225,15 @@ BEGIN
     IF tr->>'id'=ANY(seen_trains) OR tr->>'consistId'=ANY(train_consists) OR
        NOT tr->>'consistId'=ANY(seen_consists)
     THEN RAISE EXCEPTION 'TRAIN_CONSIST_INVALID' USING ERRCODE='P0001'; END IF;
+    -- Train ID is locomotive item identity, not an independent UUID.
+    IF NOT EXISTS (
+      SELECT 1 FROM pg_catalog.jsonb_array_elements(d->'consists') cc
+       JOIN LATERAL pg_catalog.jsonb_array_elements(d->'items') ii ON
+         ii.value->>'id'=cc.value#>>'{members,0,itemId}'
+      WHERE cc.value->>'id'=tr->>'consistId'
+        AND ii.value->>'id'=tr->>'id'
+        AND ii.value->>'nativeKind'=tr->>'modelKey'
+    ) THEN RAISE EXCEPTION 'TRAIN_LOCO_IDENTITY_INVALID' USING ERRCODE='P0001'; END IF;
     seen_trains:=pg_catalog.array_append(seen_trains,tr->>'id');
     train_consists:=pg_catalog.array_append(train_consists,tr->>'consistId');
   END LOOP;
@@ -222,6 +245,19 @@ BEGIN
   END LOOP;
   IF NOT (d#>>'{ui,selectedTrainId}')=ANY(seen_trains) THEN
     RAISE EXCEPTION 'INVALID_SELECTED_TRAIN' USING ERRCODE='P0001'; END IF;
+  -- LRU must be a permutation with the selected train first; deck
+  -- slots are a unique min(3,N) subset that contains the selected ID.
+  IF pg_catalog.jsonb_array_length(d#>'{ui,recentTrainIds}')<>pg_catalog.array_length(seen_trains,1)
+     OR pg_catalog.jsonb_array_length(d#>'{ui,consoleSlots}') <>
+        pg_catalog.least(3,pg_catalog.array_length(seen_trains,1))
+     OR d#>>'{ui,recentTrainIds,0}' IS DISTINCT FROM d#>>'{ui,selectedTrainId}'
+     OR NOT (d#>>'{ui,selectedTrainId}') IN
+       (SELECT value FROM pg_catalog.jsonb_array_elements_text(d#>'{ui,consoleSlots}'))
+     OR (SELECT count(DISTINCT value) FROM pg_catalog.jsonb_array_elements_text(d#>'{ui,recentTrainIds}'))
+        <>pg_catalog.jsonb_array_length(d#>'{ui,recentTrainIds}')
+     OR (SELECT count(DISTINCT value) FROM pg_catalog.jsonb_array_elements_text(d#>'{ui,consoleSlots}'))
+        <>pg_catalog.jsonb_array_length(d#>'{ui,consoleSlots}')
+  THEN RAISE EXCEPTION 'INVALID_UI_LRU' USING ERRCODE='P0001'; END IF;
   FOR i IN SELECT value FROM pg_catalog.jsonb_array_elements(d#>'{ui,recentTrainIds}') LOOP
     IF NOT trim(both '"' FROM i::text)=ANY(seen_trains) THEN
       RAISE EXCEPTION 'INVALID_RECENT_TRAIN' USING ERRCODE='P0001'; END IF;
