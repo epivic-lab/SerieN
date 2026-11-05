@@ -110,7 +110,7 @@ BEGIN
  PERFORM public.serien_test_expect_error('UNTRUSTED_ASSET_MANIFEST','save',a,a,'1',
   '33333333-3333-4333-8333-333333333333',
   pg_catalog.jsonb_set(s::jsonb,'{models,0,asset,digest}',
-    '"'||pg_catalog.repeat('0',64)||'"'::jsonb)::text);
+    pg_catalog.to_jsonb(pg_catalog.repeat('0',64)))::text);
 END $f$;
 
 SET "request.jwt.claim.sub"='bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb';
