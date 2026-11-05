@@ -22,11 +22,13 @@ CREATE SCHEMA IF NOT EXISTS serien_internal;
 DO $role$
 BEGIN
  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname='serien_rpc') THEN
-   CREATE ROLE serien_rpc NOLOGIN NOBYPASSRLS;
+   CREATE ROLE serien_rpc NOLOGIN NOINHERIT NOBYPASSRLS;
  END IF;
  IF EXISTS(SELECT 1 FROM pg_roles WHERE rolname='serien_rpc'
-          AND (rolbypassrls OR rolcanlogin OR rolsuper OR rolcreaterole))
- THEN RAISE EXCEPTION 'STOP: unexpected serien_rpc privilege'; END IF;
+          AND (rolbypassrls OR rolcanlogin OR rolsuper OR rolcreaterole OR rolinherit))
+    OR EXISTS(SELECT 1 FROM pg_auth_members m
+      WHERE m.member=(SELECT oid FROM pg_roles WHERE rolname='serien_rpc'))
+ THEN RAISE EXCEPTION 'STOP: unexpected serien_rpc privilege or membership'; END IF;
 END $role$;
 GRANT USAGE ON SCHEMA auth, extensions, serien_internal, public TO serien_rpc;
 GRANT EXECUTE ON FUNCTION auth.uid() TO serien_rpc;
