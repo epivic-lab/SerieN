@@ -55,6 +55,17 @@ BEGIN
  THEN RAISE EXCEPTION 'Privilege breach'; END IF;
 END $f$;
 
+-- Exact 64MiB quota threshold is tested algebraically without writing 64MiB.
+DO $quota$
+BEGIN
+ IF NOT serien_internal.serien_within_quota_v1(0,67108864)
+  OR NOT serien_internal.serien_within_quota_v1(67108863,1)
+  OR serien_internal.serien_within_quota_v1(1,67108864)
+  OR serien_internal.serien_within_quota_v1(67108864,1)
+  OR serien_internal.serien_within_quota_v1(-1,1)
+ THEN RAISE EXCEPTION 'Owner quota boundary failed'; END IF;
+END $quota$;
+
 SET ROLE authenticated;
 SET "request.jwt.claim.sub"='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
 DO $f$
