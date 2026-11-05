@@ -1,0 +1,155 @@
+{
+  "result": "PASS",
+  "phase": "6A.10",
+  "approval": "PENDING independent Regia audit",
+  "macro6A": "BLOCKED",
+  "baseline": "d7075c3a980f554ba8111f5a5478279f5ff6ddbd",
+  "branch": "feature/train-management",
+  "suites": [
+    {
+      "suite": "ownerless SQL O01-O14",
+      "checks": 185,
+      "result": "PASS",
+      "rerun": true,
+      "results": "ownerless-sql.json",
+      "log": "ownerless-tests.txt"
+    },
+    {
+      "suite": "ownerless broker C/D",
+      "checks": 50,
+      "result": "PASS",
+      "rerun": true,
+      "results": "results.json",
+      "log": "ownerless-tests.txt"
+    },
+    {
+      "suite": "legacy SQL6A.3",
+      "checks": 51,
+      "result": "PASS",
+      "rerun": true,
+      "results": "regression-6A3.json",
+      "log": "regression-6A3.txt"
+    },
+    {
+      "suite": "legacy SQL6A.4",
+      "checks": 45,
+      "result": "PASS",
+      "rerun": true,
+      "results": "regression-6A4.json",
+      "log": "regression-6A4.txt"
+    },
+    {
+      "suite": "legacy SQL6A.5",
+      "checks": 141,
+      "result": "PASS",
+      "rerun": true,
+      "results": "regression-6A5.json",
+      "log": "regression-6A5.txt"
+    },
+    {
+      "suite": "legacy SQL6A.8",
+      "checks": 97,
+      "result": "PASS",
+      "rerun": true,
+      "results": "regression-6A8.json",
+      "log": "regression-6A8.txt"
+    },
+    {
+      "suite": "legacy gateway6A.6",
+      "checks": 72,
+      "result": "PASS",
+      "rerun": true,
+      "results": "regression-6A6.json",
+      "log": "regression-6A6.txt"
+    },
+    {
+      "suite": "legacy broker6A.9",
+      "checks": 50,
+      "result": "PASS",
+      "rerun": true,
+      "results": "regression-6A9.json",
+      "log": "regression-6A9.txt"
+    },
+    {
+      "suite": "capability HTTP6A.2",
+      "checks": 48,
+      "result": "PASS",
+      "rerun": true,
+      "results": "capability-security.json",
+      "log": "capability-security.txt"
+    },
+    {
+      "suite": "capability Chromium6A.2",
+      "checks": 5,
+      "result": "PASS",
+      "rerun": true,
+      "results": "capability-browser.json",
+      "log": "capability-browser.txt"
+    },
+    {
+      "suite": "adapter6A.4",
+      "checks": 12,
+      "result": "PASS",
+      "rerun": true,
+      "results": null,
+      "log": "adapter6A4.txt"
+    },
+    {
+      "suite": "boundary6A.5",
+      "checks": 25,
+      "result": "PASS",
+      "rerun": true,
+      "results": null,
+      "log": "adapter6A5.txt"
+    },
+    {
+      "suite": "npm test files",
+      "checks": 37,
+      "result": "PASS",
+      "rerun": true,
+      "results": null,
+      "log": "npm-test.txt"
+    },
+    {
+      "suite": "Python/JMRI",
+      "checks": 9,
+      "result": "PASS",
+      "rerun": true,
+      "results": null,
+      "log": "python-tests.txt"
+    },
+    {
+      "suite": "build",
+      "checks": null,
+      "result": "PASS",
+      "rerun": true,
+      "results": null,
+      "log": "build.txt"
+    }
+  ],
+  "authProof": {
+    "result": "PASS",
+    "authUsers": 0,
+    "allFixtureDatabasesAuthCounts": {
+      "n10_struct": 0,
+      "postgres": 0
+    },
+    "historicalApplicationRowsUnchanged": true,
+    "legacyOwnerCount": 2,
+    "legacyNonempty": true,
+    "ownerlessWorkspaces": [
+      "10000000-0000-4000-8000-000000000005",
+      "10000000-0000-4000-8000-000000000006"
+    ],
+    "browserSuite": "unmodified 6A.9 integrated suite against ownerless C/D",
+    "newSnapshotsOwnerNULL": true,
+    "productionQueries": 0
+  },
+  "productionQueries": 0,
+  "stagingOperations": 0,
+  "hosting": "NOT VERIFIED",
+  "ownerless": true,
+  "globalPoolCoordination": "NOT VERIFIED",
+  "postWriteRestoreReplay": "NOT VERIFIED; tested read-only containment",
+  "inherited": "Approved contracts/R0/prior evidence preserved; not substituted for rerun suites"
+}

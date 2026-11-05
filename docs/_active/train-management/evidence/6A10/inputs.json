@@ -1,0 +1,34 @@
+{
+  "baseline": "d7075c3a980f554ba8111f5a5478279f5ff6ddbd",
+  "sha256": {
+    "prototypes/train-management/broker-lab/broker.js": "124d99c2347ec3e9e1a74b59c243f389e0798bc8a42243d14b00317fceda8020",
+    "prototypes/train-management/broker-lab/client.js": "a978e757f11429b271e00c956ae33b3d00588d76812ac596fe97e0b9f9f841a0",
+    "prototypes/train-management/broker-lab/ingress.js": "5edfb14fe7296cff714183e7bc2f8ee55d0802203450fc8d9a0f69021a678278",
+    "prototypes/train-management/broker-lab/pool.js": "65d169b88fb3afb25d0b0fb6a7f8dd1f2b74af84b64e4b90428b4f88858359af",
+    "prototypes/train-management/broker-lab/probes.js": "9e6989d11792374f88b3ba9413c9ca2128332f1c3289024c061079a6272d5973",
+    "prototypes/train-management/broker-lab/transport.js": "d7fe49873e7007e756f4b292d25fd77b179ca104d0cf51b71eaa10321d8b9987",
+    "supabase/migrations/20261104165408_serien_workspace_expand.sql": "6a0e2e559302f4e8fd71b8ffa01beb0fba4a616ca0c431e0556553f4d08e39d7",
+    "supabase/migrations/20261104172819_serien_atomic_checkpoint.sql": "ce28375ccdffe420ad8df08a42ba679a5135a557ce82b4642b21ca9208b02ba2",
+    "supabase/migrations/20261104175236_serien_history_integrity.sql": "26fb20ccb04cb86a9309ace8b1861ee86fd1cf6cc8f5ae38ad67c0bcf8498b3d",
+    "supabase/migrations/20261104231109_serien_capability_lifecycle.sql": "f1a6701fbde4c055d57d07177748ce3c8e0ef307caa5d37f54f76f1034664ec9",
+    "supabase/migrations/20261105090212_serien_ownerless_cutover.sql": "b41e8d73a8144777145fffce89d5fe52929f1e5ae3097072ae4f0c65874e4fe2",
+    "tests/db/6A10/fixture.py": "4a0f8235aaa32b1e0cfe23d986bb94850ce09d281487958dd681703fbcf996ff",
+    "tests/db/6A10/inventory.sql": "ffaf119c30db09a5e35a28f68ea3fa16f01f15fd21560d196f2f331ac982c942",
+    "tests/db/6A10/run.py": "77a96c774d781fce21823fb9040832bf0805a12378c50eade614cb55bf51381c",
+    "tests/db/6A10/sql_checks.py": "4e2df3e6c462be02ad80ecb9640d53ccda078bd42fb95a70d5103b04edad3923",
+    "tests/db/6A6/profile_fixture.py": "8e2ba7b76a9c607a40b47f667b0c4029742360c7413dc9be2dcef140d857cda9",
+    "tests/db/6A9/integration.test.js": "5b714750536f4eae1bc79e921f82a05d6afebb6cd71e5f68a78bf4bea4961da3",
+    "tests/db/6A10/verify-invariants.py": "d0b8541e79a5db1b896f769b04960e075af95c3dc3c4f63a0b2bbf451e33042c"
+  },
+  "images": {
+    "engine": "PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+    "postgresImage": "postgres:17@sha256:3b0cda93be7c8dba2ed484d19393d93845dc3dafb88973e248ba8e6d99d784e1",
+    "nodeImage": "node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c",
+    "scope": "isolated synthetic PostgreSQL; SQL internal unpublished; separate loopback HTTP ingress",
+    "productionQueries": 0,
+    "stagingOperations": 0
+  },
+  "browser": "154.0.8037.57",
+  "fixture": "two synthetic historical Auth users removed before ownerless creation; no production or staging access",
+  "newDependency": false
+}

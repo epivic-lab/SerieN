@@ -1,0 +1,19 @@
+{
+  "containers": {
+    "serien-6a10-b93aa15d-second": true,
+    "serien-6a10-b93aa15d-broker": true,
+    "serien-6a10-b93aa15d-ingress": true,
+    "serien-6a10-b93aa15d-db": true
+  },
+  "networks": {
+    "serien-6a10-b93aa15d-sql": true,
+    "serien-6a10-b93aa15d-http": true
+  },
+  "volumes": {
+    "serien-6a10-b93aa15d-secrets": true,
+    "serien-6a10-b93aa15d-public": true,
+    "serien-6a10-b93aa15d-hooks": true,
+    "serien-6a10-b93aa15d-ipc": true,
+    "serien-6a10-b93aa15d-journal": true
+  }
+}

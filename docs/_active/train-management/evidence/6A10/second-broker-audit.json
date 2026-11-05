@@ -1,0 +1,115 @@
+[
+  {
+    "event": "ready",
+    "uid": 10002,
+    "pid": 1,
+    "at": 1793871436961
+  },
+  {
+    "component": "pool",
+    "event": "connected",
+    "open": 1,
+    "queued": 0,
+    "opened": 1,
+    "maxOpen": 1,
+    "maxQueue": 1,
+    "evictions": 0,
+    "timeouts": 0,
+    "rejected": 0,
+    "principal": "n9_device_1",
+    "pid": 8493,
+    "at": 1793871437295
+  },
+  {
+    "component": "pool",
+    "event": "leased",
+    "open": 1,
+    "queued": 0,
+    "opened": 1,
+    "maxOpen": 1,
+    "maxQueue": 1,
+    "evictions": 0,
+    "timeouts": 0,
+    "rejected": 0,
+    "workspace": "10000000-0000-4000-8000-000000000005",
+    "waitMs": 15.065878999999995,
+    "at": 1793871437296
+  },
+  {
+    "event": "denied",
+    "code": "REPLAY",
+    "requestId": "23b7cd68-bffe-40bb-acb1-54fdc3bb5f0e",
+    "at": 1793871437303
+  },
+  {
+    "component": "pool",
+    "event": "discard",
+    "open": 0,
+    "queued": 0,
+    "opened": 1,
+    "maxOpen": 1,
+    "maxQueue": 1,
+    "evictions": 0,
+    "timeouts": 0,
+    "rejected": 0,
+    "at": 1793871437304
+  },
+  {
+    "component": "pool",
+    "event": "connected",
+    "open": 1,
+    "queued": 0,
+    "opened": 2,
+    "maxOpen": 1,
+    "maxQueue": 1,
+    "evictions": 0,
+    "timeouts": 0,
+    "rejected": 0,
+    "principal": "n9_device_1",
+    "pid": 8570,
+    "at": 1793871437927
+  },
+  {
+    "component": "pool",
+    "event": "leased",
+    "open": 1,
+    "queued": 0,
+    "opened": 2,
+    "maxOpen": 1,
+    "maxQueue": 1,
+    "evictions": 0,
+    "timeouts": 0,
+    "rejected": 0,
+    "workspace": "10000000-0000-4000-8000-000000000005",
+    "waitMs": 7.36388199999999,
+    "at": 1793871437927
+  },
+  {
+    "event": "claimCommitted",
+    "requestId": "46fe4fec-b962-4f1e-a97e-40e43ad94599",
+    "principal": "n9_device_1",
+    "pid": 8570,
+    "at": 1793871437934
+  },
+  {
+    "event": "dataCommitted",
+    "operation": "ReadHead",
+    "requestId": "46fe4fec-b962-4f1e-a97e-40e43ad94599",
+    "principal": "n9_device_1",
+    "pid": 8570,
+    "at": 1793871437937
+  },
+  {
+    "component": "pool",
+    "event": "released",
+    "open": 1,
+    "queued": 0,
+    "opened": 2,
+    "maxOpen": 1,
+    "maxQueue": 1,
+    "evictions": 0,
+    "timeouts": 0,
+    "rejected": 0,
+    "at": 1793871437937
+  }
+]

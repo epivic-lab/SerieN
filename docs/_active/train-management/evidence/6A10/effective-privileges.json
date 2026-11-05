@@ -1,0 +1,50 @@
+[
+  {
+    "role": "anon",
+    "creator": false,
+    "ledgerRead": false,
+    "ledgerWrite": false
+  },
+  {
+    "role": "authenticated",
+    "creator": false,
+    "ledgerRead": false,
+    "ledgerWrite": false
+  },
+  {
+    "role": "serien_tm_control",
+    "creator": false,
+    "ledgerRead": false,
+    "ledgerWrite": false
+  },
+  {
+    "role": "serien_tm_executor",
+    "creator": false,
+    "ledgerRead": false,
+    "ledgerWrite": false
+  },
+  {
+    "role": "serien_tm_provisioner",
+    "creator": false,
+    "ledgerRead": false,
+    "ledgerWrite": false
+  },
+  {
+    "role": "serien_tm_redeemer",
+    "creator": false,
+    "ledgerRead": false,
+    "ledgerWrite": false
+  },
+  {
+    "role": "serien_tm_worker",
+    "creator": false,
+    "ledgerRead": false,
+    "ledgerWrite": false
+  },
+  {
+    "role": "serien_tm_workspace_operator",
+    "creator": true,
+    "ledgerRead": false,
+    "ledgerWrite": false
+  }
+]

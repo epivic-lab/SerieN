@@ -1,0 +1,19 @@
+{
+  "sqlChecks": 185,
+  "sqlApplicationStates": 6,
+  "browserBrokerChecks": 50,
+  "httpSamples": 238,
+  "latencyMs": {
+    "p50": 259.96757100000104,
+    "p95": 3050.630376000001,
+    "max": 4016.237444000002
+  },
+  "bodyResponseBytes": {
+    "p50": 288,
+    "p95": 372,
+    "max": 4808
+  },
+  "peakPool": 16,
+  "peakQueue": 64,
+  "limitation": "faults, lock waits and loopback lab; not hosting performance"
+}

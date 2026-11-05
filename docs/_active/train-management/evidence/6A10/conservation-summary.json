@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "originalPublicRows": 48,
+  "originalHeads": 2,
+  "allOriginalRowsPresentUnchanged": true,
+  "ownerlessEightTableNonemptyCountsOnSQLClone": {
+    "10000000-0000-4000-8000-000000000005": {
+      "stock_items": 2,
+      "consists": 1,
+      "consist_members": 1,
+      "layouts": 1,
+      "layout_placements": 1,
+      "loose_stock_placements": 1,
+      "layout_snapshots": 3,
+      "operation_receipts": 3
+    },
+    "10000000-0000-4000-8000-000000000006": {
+      "stock_items": 2,
+      "consists": 1,
+      "consist_members": 1,
+      "layouts": 1,
+      "layout_placements": 1,
+      "loose_stock_placements": 1,
+      "layout_snapshots": 1,
+      "operation_receipts": 1
+    }
+  },
+  "primaryOwnerlessBrowserHistory": "C commits revisions1-4; D separate paired/read workspace; no archives invented by creator"
+}

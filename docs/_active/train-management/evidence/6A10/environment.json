@@ -1,0 +1,8 @@
+{
+  "engine": "PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+  "postgresImage": "postgres:17@sha256:3b0cda93be7c8dba2ed484d19393d93845dc3dafb88973e248ba8e6d99d784e1",
+  "nodeImage": "node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c",
+  "scope": "isolated synthetic PostgreSQL; SQL internal unpublished; separate loopback HTTP ingress",
+  "productionQueries": 0,
+  "stagingOperations": 0
+}

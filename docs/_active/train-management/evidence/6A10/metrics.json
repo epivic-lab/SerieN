@@ -1,0 +1,1503 @@
+[
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 41.75724300000002,
+    "requestBytes": 1028,
+    "responseBytes": 261
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 10.405807999999979,
+    "requestBytes": 1028,
+    "responseBytes": 287
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 12.880558000000747,
+    "requestBytes": 1028,
+    "responseBytes": 261
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 11.759015999999974,
+    "requestBytes": 1028,
+    "responseBytes": 287
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 15.818860000000313,
+    "requestBytes": 1028,
+    "responseBytes": 261
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.76575800000046,
+    "requestBytes": 1028,
+    "responseBytes": 287
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 24.08291300000019,
+    "requestBytes": 1028,
+    "responseBytes": 261
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 11.600548999999774,
+    "requestBytes": 1028,
+    "responseBytes": 286
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 30.168926000000283,
+    "responseBytes": 202
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 12.492871000000378,
+    "requestBytes": 808,
+    "responseBytes": 202
+  },
+  {
+    "operation": "ReadHead",
+    "status": 409,
+    "latencyMs": 11.326301000000058,
+    "requestBytes": 808,
+    "responseBytes": 18
+  },
+  {
+    "operation": "ReadHead",
+    "status": 409,
+    "latencyMs": 43.00252100000034,
+    "requestBytes": 808,
+    "responseBytes": 18
+  },
+  {
+    "operation": "ReadHead",
+    "status": 409,
+    "latencyMs": 35.95797399999901,
+    "requestBytes": 808,
+    "responseBytes": 18
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 26.69564200000059,
+    "responseBytes": 202
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 26.63178599999992,
+    "responseBytes": 202
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 8.782286999999997,
+    "requestBytes": 808,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 6.190107000000353,
+    "requestBytes": 807,
+    "responseBytes": 21
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 403,
+    "latencyMs": 7.637424000000465,
+    "requestBytes": 814,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 6.895273000000088,
+    "requestBytes": 809,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 404,
+    "latencyMs": 5.450968999999532,
+    "requestBytes": 712,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 6.811588000000484,
+    "requestBytes": 822,
+    "responseBytes": 21
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 403,
+    "latencyMs": 12.717985999999655,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 8.25657400000091,
+    "requestBytes": 808,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 19.140032999999676,
+    "responseBytes": 21
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 200,
+    "latencyMs": 48.17252099999678,
+    "responseBytes": 694
+  },
+  {
+    "operation": "ReadSnapshot",
+    "status": 200,
+    "latencyMs": 15.992067999999563,
+    "responseBytes": 4808
+  },
+  {
+    "operation": "ReadReceipt",
+    "status": 200,
+    "latencyMs": 15.323411000001215,
+    "responseBytes": 694
+  },
+  {
+    "operation": "ListHistory",
+    "status": 200,
+    "latencyMs": 27.712312999999995,
+    "responseBytes": 218
+  },
+  {
+    "operation": "ReadReceipt",
+    "status": 404,
+    "latencyMs": 27.608266000002914,
+    "responseBytes": 21
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 200,
+    "latencyMs": 23.081615999999485,
+    "responseBytes": 694
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 9.84997999999905,
+    "requestBytes": 808,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 409,
+    "latencyMs": 8.27534100000048,
+    "requestBytes": 808,
+    "responseBytes": 18
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 409,
+    "latencyMs": 1030.1912540000012,
+    "responseBytes": 29
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 200,
+    "latencyMs": 1030.1566620000012,
+    "responseBytes": 694
+  },
+  {
+    "operation": "RecoverRevision",
+    "status": 200,
+    "latencyMs": 37.22870400000102,
+    "responseBytes": 694
+  },
+  {
+    "operation": "ReadSnapshot",
+    "status": 200,
+    "latencyMs": 13.022783000000345,
+    "responseBytes": 4808
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 409,
+    "latencyMs": 16.665712999998505,
+    "responseBytes": 29
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 25.19981000000189,
+    "requestBytes": 1028,
+    "responseBytes": 261
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 10.707438000001275,
+    "requestBytes": 1028,
+    "responseBytes": 287
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 403,
+    "latencyMs": 181.5032199999987,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 19.696123000001535,
+    "responseBytes": 21
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 13.188497999999527,
+    "requestBytes": 1028,
+    "responseBytes": 261
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 10.030227999999624,
+    "requestBytes": 1028,
+    "responseBytes": 287
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 403,
+    "latencyMs": 180.68670000000202,
+    "responseBytes": 21
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 503,
+    "latencyMs": 4016.237444000002,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 18.555301000000327,
+    "responseBytes": 33
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 503,
+    "latencyMs": 207.18108300000313,
+    "responseBytes": 33
+  },
+  {
+    "operation": "pair",
+    "status": 403,
+    "latencyMs": 6.288397000003897,
+    "requestBytes": 1028,
+    "responseBytes": 21
+  },
+  {
+    "operation": "pair",
+    "status": 403,
+    "latencyMs": 20.817361000001256,
+    "requestBytes": 1028,
+    "responseBytes": 21
+  },
+  {
+    "operation": "pair",
+    "status": 400,
+    "latencyMs": 6.634704999996757,
+    "requestBytes": 1044,
+    "responseBytes": 27
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 24.55264499999612,
+    "requestBytes": 1028,
+    "responseBytes": 261
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 34.906865999997535,
+    "requestBytes": 1028,
+    "responseBytes": 261
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 13.825136999999813,
+    "requestBytes": 1028,
+    "responseBytes": 287
+  },
+  {
+    "operation": "pair",
+    "status": 409,
+    "latencyMs": 7.51745099999971,
+    "requestBytes": 1028,
+    "responseBytes": 18
+  },
+  {
+    "operation": "pair",
+    "status": 403,
+    "latencyMs": 13.722092999996676,
+    "requestBytes": 1028,
+    "responseBytes": 21
+  },
+  {
+    "operation": "rotate",
+    "status": 202,
+    "latencyMs": 26.13558600000397,
+    "requestBytes": 1178,
+    "responseBytes": 261
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 265.89110499999515,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 26.062335999995412,
+    "responseBytes": 372
+  },
+  {
+    "operation": "recover",
+    "status": 202,
+    "latencyMs": 16.17381999999634,
+    "requestBytes": 1096,
+    "responseBytes": 262
+  },
+  {
+    "operation": "recover",
+    "status": 200,
+    "latencyMs": 11.805185000004712,
+    "requestBytes": 1096,
+    "responseBytes": 288
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 6.709661000000779,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 403,
+    "latencyMs": 6.638591000002634,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 26.49434100000508,
+    "responseBytes": 372
+  },
+  {
+    "operation": "recover",
+    "status": 403,
+    "latencyMs": 12.205871999998635,
+    "requestBytes": 1096,
+    "responseBytes": 21
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 15.384472999998252,
+    "responseBytes": 372
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 26.67978900000162,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 13.116861000002245,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 14.02831100000185,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 9.944080000001122,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 14.701214000000618,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.13190300000133,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 13.37677000000258,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.714440999989165,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 13.790806999997585,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 16.117196000006516,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 15.098738000000594,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.500943000006373,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 15.381496999994852,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 14.579813999996986,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 14.779781999997795,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.660631999999168,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 14.328368000002229,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 13.566853000011179,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 14.720393000010517,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 13.129721000004793,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 15.139907999997376,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.548013999999966,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 14.474015999992844,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.415797000008752,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 15.499325000011595,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 11.25170999999682,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 13.518026000005193,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.139022999996087,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 24.00066700000025,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.294414000003599,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 15.13386800000444,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 13.264741000006325,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 15.67562700000417,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 15.018826999992598,
+    "requestBytes": 1028,
+    "responseBytes": 288
+  },
+  {
+    "operation": "pair",
+    "status": 202,
+    "latencyMs": 18.860636999990675,
+    "requestBytes": 1028,
+    "responseBytes": 262
+  },
+  {
+    "operation": "pair",
+    "status": 200,
+    "latencyMs": 12.667381999999634,
+    "requestBytes": 1028,
+    "responseBytes": 286
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 30.01081599999452,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 27.80696000000171,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 29.693693000008352,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 26.909851999997045,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 24.551906000007875,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 27.759699000002,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 26.156147999994573,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 24.59017200001108,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 25.26413799999864,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 25.182125000006636,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 30.22377400001278,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 29.005166000002646,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 25.152381000007153,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 26.65457199999946,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 24.98234699999739,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 25.98005500000727,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 24.67536900000414,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 25.99453700000595,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 261.53117299999576,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 259.96757100000104,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 263.0213259999873,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 261.41283700001077,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 260.70098500000313,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 263.20203500000935,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 274.2054349999962,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 274.9454379999952,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 275.7002550000034,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 278.90971100000024,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 278.0926919999911,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 277.36403599999903,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 280.1736660000024,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 277.61963699999615,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 278.37160899999435,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 279.3750549999968,
+    "responseBytes": 27
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1552.824145000006,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1556.667677000005,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1562.6777449999936,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1564.8218520000082,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1576.1556659999915,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1580.0534590000025,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1582.4201979999925,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1592.3717689999903,
+    "responseBytes": 202
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1597.356494000007,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1608.7031549999956,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1617.0690319999994,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1621.4788289999997,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1636.181264999992,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1642.5055859999993,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1645.7236659999908,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1656.6458149999962,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1658.8237130000052,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1706.1443940000026,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1720.4658130000025,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1721.267538,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1726.1948269999993,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1738.4338279999938,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1737.3831720000017,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1739.2983269999968,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1742.5073940000002,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1746.8747270000022,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1754.7058560000005,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1762.1498180000053,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1766.4281979999942,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1766.0423730000039,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1779.222569000005,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1784.0153170000121,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1789.1230129999894,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1796.249661000009,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1832.5084659999993,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1831.125914999997,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1835.935857999997,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1842.5536770000035,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1851.3239170000015,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1850.4588959999965,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1853.4823560000077,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1860.8494480000081,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1865.8229750000028,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1866.6155569999974,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1872.6651890000066,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1872.1174520000059,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1876.892663999999,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1884.63953700001,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1889.266227,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1894.085533999998,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1905.001132999998,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1918.6800030000013,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1929.9417780000076,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1931.9906639999972,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1936.729131,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1943.0394420000084,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1944.5061089999945,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1949.8088669999997,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1955.7505979999987,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1959.209136000005,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1964.9743140000064,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1968.9732680000016,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1973.951282000009,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1974.740077999988,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1992.4147569999914,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 1996.6170229999989,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2004.1759820000007,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2012.265677000003,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2014.242643999998,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2019.4009979999973,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2019.0634539999883,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2027.5127149999898,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2032.8923369999975,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2034.6781309999933,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2041.347226999991,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2044.130421000009,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2047.141312000007,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2049.485969000001,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2054.9495980000065,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 2058.6396999999997,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 2042.6195790000056,
+    "responseBytes": 24
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 2042.667530000006,
+    "responseBytes": 24
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 2042.8333569999959,
+    "responseBytes": 24
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 2043.730727999995,
+    "responseBytes": 24
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3039.290673999989,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3042.2984099999885,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3043.732839000004,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3049.7045050000015,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3050.2540739999968,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3050.630376000001,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3052.590188000002,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3053.285554999995,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3062.005479000014,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3065.593989999994,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3068.231964999999,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3076.195630999995,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3079.3739110000024,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3083.1828810000006,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 503,
+    "latencyMs": 3083.1053260000044,
+    "responseBytes": 33
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 3418.941451000006,
+    "responseBytes": 372
+  },
+  {
+    "operation": "ReadHead",
+    "status": 200,
+    "latencyMs": 35.19363600001088,
+    "responseBytes": 372
+  },
+  {
+    "operation": "SaveCheckpoint",
+    "status": 429,
+    "latencyMs": 22.10364300000947,
+    "responseBytes": 26
+  },
+  {
+    "operation": "ReadHead",
+    "status": 429,
+    "latencyMs": 21.389017000008607,
+    "responseBytes": 30
+  }
+]
