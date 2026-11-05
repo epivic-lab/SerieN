@@ -1,0 +1,135 @@
+{
+  "result": "PASS",
+  "phase": "6A.9",
+  "approval": "PENDING independent Regia audit",
+  "macro6A": "BLOCKED",
+  "date": "2026-11-05 Europe/Rome",
+  "baseline": "d6aa13001ae10d23b2b3c8c6e45e1dcf8f4e3764",
+  "branch": "feature/train-management",
+  "suites": [
+    {
+      "suite": "new broker",
+      "checks": 50,
+      "result": "PASS",
+      "rerun": true,
+      "log": "broker-tests.txt",
+      "results": "results.json"
+    },
+    {
+      "suite": "SQL6A.3",
+      "checks": 51,
+      "result": "PASS",
+      "rerun": true,
+      "log": "regression-6A3.txt",
+      "results": "regression-6A3.json"
+    },
+    {
+      "suite": "SQL6A.4",
+      "checks": 45,
+      "result": "PASS",
+      "rerun": true,
+      "log": "regression-6A4.txt",
+      "results": "regression-6A4.json"
+    },
+    {
+      "suite": "SQL6A.5",
+      "checks": 141,
+      "result": "PASS",
+      "rerun": true,
+      "log": "regression-6A5.txt",
+      "results": "regression-6A5.json"
+    },
+    {
+      "suite": "SQL6A.8",
+      "checks": 97,
+      "result": "PASS",
+      "rerun": true,
+      "log": "regression-6A8.txt",
+      "results": "regression-6A8.json"
+    },
+    {
+      "suite": "old gateway6A.6",
+      "checks": 72,
+      "result": "PASS",
+      "rerun": true,
+      "log": "integration-regression.txt",
+      "results": "integration-regression-results.json"
+    },
+    {
+      "suite": "capability HTTP6A.2",
+      "checks": 48,
+      "result": "PASS",
+      "rerun": true,
+      "log": "capability-security.txt",
+      "results": "capability-security.json"
+    },
+    {
+      "suite": "capability Chromium6A.2",
+      "checks": 5,
+      "result": "PASS",
+      "rerun": true,
+      "log": "capability-browser.txt",
+      "results": "capability-browser.json"
+    },
+    {
+      "suite": "adapter6A.4",
+      "checks": 12,
+      "result": "PASS",
+      "rerun": true,
+      "log": "adapter6A4.txt",
+      "results": null
+    },
+    {
+      "suite": "boundary6A.5",
+      "checks": 25,
+      "result": "PASS",
+      "rerun": true,
+      "log": "adapter6A5.txt",
+      "results": null
+    },
+    {
+      "suite": "npm test (files)",
+      "checks": 37,
+      "result": "PASS",
+      "rerun": true,
+      "log": "npm-test.txt",
+      "results": null
+    },
+    {
+      "suite": "Python/JMRI",
+      "checks": 9,
+      "result": "PASS",
+      "rerun": true,
+      "log": "python-tests.txt",
+      "results": null
+    },
+    {
+      "suite": "build",
+      "checks": null,
+      "result": "PASS",
+      "rerun": true,
+      "log": "build.txt",
+      "results": null
+    }
+  ],
+  "newGate": {
+    "result": "PASS",
+    "checks": 50,
+    "postgresTransport": "TCP SCRAM TLS verified CA/hostname",
+    "defaultPool": {
+      "cap": 16,
+      "queue": 64,
+      "waitMs": 2000,
+      "idleMs": 30000
+    },
+    "globalPoolCoordination": "NOT VERIFIED; second instance replay only",
+    "hosting": "NOT VERIFIED",
+    "productionQueries": 0
+  },
+  "productionQueries": 0,
+  "stagingOperations": 0,
+  "ownerless": false,
+  "hosting": "NOT VERIFIED",
+  "globalPoolCoordination": "NOT VERIFIED; second broker removed before load",
+  "inherited": "Approved contracts/R0/prior evidence preserved byte-for-byte; no inherited hosted certification"
+}

@@ -1,0 +1,19 @@
+{
+  "requestSamples": 238,
+  "latencyMs": {
+    "p50": 239.34164800000144,
+    "p95": 3060.7751389999903,
+    "max": 4015.9716200000003
+  },
+  "responseBytes": {
+    "p50": 288,
+    "p95": 372,
+    "max": 4808
+  },
+  "totalMeasuredResponseBytes": 69211,
+  "requestsWithWireBytes": 73,
+  "maxMeasuredRequestBytes": 1178,
+  "maxOpen": 16,
+  "maxQueue": 64,
+  "scope": "one active broker load; HTTP includes deliberate faults and lock waits; wire sizes available only send(envelope) samples; excludes TCP/TLS framing; not throughput or hosting capacity"
+}

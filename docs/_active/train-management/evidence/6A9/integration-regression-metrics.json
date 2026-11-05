@@ -1,0 +1,826 @@
+{
+  "method": "Chromium headless real local HTTP; wall time includes Playwright and Docker/psql; JSON UTF-8 operation body/response bytes, not full proof/headers; single run no production throughput claim",
+  "samples": [
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 119.47185400000012,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 135.11233800000014,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 111.97884999999974,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 117.50670300000002,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 115.65379899999971,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 143.3514610000002,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "ReadHead",
+      "status": 200,
+      "latencyMs": 69.54673300000013,
+      "bodyBytes": 2,
+      "responseBytes": 202
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 7.028062000000318,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 5.442234999999528,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 200,
+      "latencyMs": 64.23078500000065,
+      "bodyBytes": 2,
+      "responseBytes": 202
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 403,
+      "latencyMs": 9.54935099999966,
+      "bodyBytes": 4072,
+      "responseBytes": 21
+    },
+    {
+      "operation": "RecoverRevision",
+      "status": 403,
+      "latencyMs": 6.554360000000088,
+      "bodyBytes": 45,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 64.73599900000045,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 403,
+      "latencyMs": 72.36376000000018,
+      "bodyBytes": 4072,
+      "responseBytes": 21
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 106.651476,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 69.36184299999968,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 403,
+      "latencyMs": 71.6932539999998,
+      "bodyBytes": 4072,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 9.517178000000058,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 403,
+      "latencyMs": 73.11797799999931,
+      "bodyBytes": 4072,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 200,
+      "latencyMs": 71.96048800000062,
+      "bodyBytes": 2,
+      "responseBytes": 202
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 9.343654000000242,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 403,
+      "latencyMs": 74.63555199999973,
+      "bodyBytes": 4072,
+      "responseBytes": 21
+    },
+    {
+      "operation": "pair",
+      "status": 403,
+      "latencyMs": 9.838180999999167,
+      "bodyBytes": 313,
+      "responseBytes": 21
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 60.297630999999456,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 200,
+      "latencyMs": 75.449485000001,
+      "bodyBytes": 4072,
+      "responseBytes": 694
+    },
+    {
+      "operation": "ReadSnapshot",
+      "status": 200,
+      "latencyMs": 13.141757999999754,
+      "bodyBytes": 16,
+      "responseBytes": 4808
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 200,
+      "latencyMs": 77.74309999999969,
+      "bodyBytes": 4072,
+      "responseBytes": 694
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 200,
+      "latencyMs": 11.90273100000013,
+      "bodyBytes": 4072,
+      "responseBytes": 694
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 409,
+      "latencyMs": 14.594458999999915,
+      "bodyBytes": 4072,
+      "responseBytes": 34
+    },
+    {
+      "operation": "ReadReceipt",
+      "status": 200,
+      "latencyMs": 66.15636099999938,
+      "bodyBytes": 52,
+      "responseBytes": 694
+    },
+    {
+      "operation": "ReadReceipt",
+      "status": 404,
+      "latencyMs": 10.246884999998656,
+      "bodyBytes": 52,
+      "responseBytes": 21
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 200,
+      "latencyMs": 11.621922000000268,
+      "bodyBytes": 4072,
+      "responseBytes": 694
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 200,
+      "latencyMs": 2112.907207,
+      "bodyBytes": 4072,
+      "responseBytes": 694
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 409,
+      "latencyMs": 2115.0074289999993,
+      "bodyBytes": 4072,
+      "responseBytes": 29
+    },
+    {
+      "operation": "RecoverRevision",
+      "status": 200,
+      "latencyMs": 17.954705999998623,
+      "bodyBytes": 45,
+      "responseBytes": 694
+    },
+    {
+      "operation": "ReadSnapshot",
+      "status": 200,
+      "latencyMs": 10.378337000000101,
+      "bodyBytes": 16,
+      "responseBytes": 4808
+    },
+    {
+      "operation": "ListHistory",
+      "status": 200,
+      "latencyMs": 11.367582000000766,
+      "bodyBytes": 43,
+      "responseBytes": 384
+    },
+    {
+      "operation": "ListHistory",
+      "status": 200,
+      "latencyMs": 8.225345999999263,
+      "bodyBytes": 42,
+      "responseBytes": 384
+    },
+    {
+      "operation": "ListHistory",
+      "status": 200,
+      "latencyMs": 6.6537719999996625,
+      "bodyBytes": 42,
+      "responseBytes": 218
+    },
+    {
+      "operation": "ReadSnapshot",
+      "status": 422,
+      "latencyMs": 11.000239999999394,
+      "bodyBytes": 16,
+      "responseBytes": 27
+    },
+    {
+      "operation": "RecoverRevision",
+      "status": 422,
+      "latencyMs": 84.02351699999963,
+      "bodyBytes": 45,
+      "responseBytes": 27
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 422,
+      "latencyMs": 82.17949700000099,
+      "bodyBytes": 4072,
+      "responseBytes": 33
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 429,
+      "latencyMs": 69.14138399999865,
+      "bodyBytes": 4072,
+      "responseBytes": 26
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 200,
+      "latencyMs": 73.02166000000034,
+      "bodyBytes": 4072,
+      "responseBytes": 694
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 429,
+      "latencyMs": 18.946264000000156,
+      "bodyBytes": 4072,
+      "responseBytes": 26
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 121.74180499999966,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 403,
+      "latencyMs": 156.21036300000014,
+      "bodyBytes": 4072,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 5.207786999999371,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 403,
+      "latencyMs": 6.420003999999608,
+      "bodyBytes": 4072,
+      "responseBytes": 21
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 503,
+      "latencyMs": 17.446968000000197,
+      "bodyBytes": 4072,
+      "responseBytes": 33
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 503,
+      "latencyMs": 216.87429200000042,
+      "bodyBytes": 4072,
+      "responseBytes": 33
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 503,
+      "latencyMs": 4074.685225999998,
+      "bodyBytes": 4072,
+      "responseBytes": 33
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 200,
+      "latencyMs": 24.823225000000093,
+      "bodyBytes": 4072,
+      "responseBytes": 694
+    },
+    {
+      "operation": "ReadHead",
+      "status": 0,
+      "latencyMs": 1.3806189999995695,
+      "bodyBytes": 2,
+      "responseBytes": 2
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 111.59428300000218,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "ReadHead",
+      "status": 200,
+      "latencyMs": 2077.942949,
+      "bodyBytes": 2,
+      "responseBytes": 372
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 9.927154000000883,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 403,
+      "latencyMs": 69.83397600000171,
+      "bodyBytes": 4072,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 6.887230000000272,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 5.798300999998901,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 5.181988000000274,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 404,
+      "latencyMs": 5.451280000001134,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 4.915929999999207,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 5.230019000002358,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 400,
+      "latencyMs": 6.518029999999271,
+      "bodyBytes": 19,
+      "responseBytes": 27
+    },
+    {
+      "operation": "ReadHead",
+      "status": 413,
+      "latencyMs": 76.22318900000027,
+      "bodyBytes": 2097162,
+      "responseBytes": 29
+    },
+    {
+      "operation": "ListHistory",
+      "status": 400,
+      "latencyMs": 19.58332900000096,
+      "bodyBytes": 44,
+      "responseBytes": 24
+    },
+    {
+      "operation": "ReadSnapshot",
+      "status": 413,
+      "latencyMs": 70.75960099999793,
+      "bodyBytes": 16,
+      "responseBytes": 30
+    },
+    {
+      "operation": "ReadHead",
+      "status": 200,
+      "latencyMs": 12.325721000001067,
+      "bodyBytes": 2,
+      "responseBytes": 372
+    },
+    {
+      "operation": "ReadHead",
+      "status": 429,
+      "latencyMs": 10.170201000000816,
+      "bodyBytes": 2,
+      "responseBytes": 24
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 200,
+      "latencyMs": 83.40202499999941,
+      "bodyBytes": 4072,
+      "responseBytes": 694
+    },
+    {
+      "operation": "pair",
+      "status": 200,
+      "latencyMs": 97.9491080000007,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "recover",
+      "status": 200,
+      "latencyMs": 81.43415000000095,
+      "bodyBytes": 297,
+      "responseBytes": 61
+    },
+    {
+      "operation": "recover",
+      "status": 403,
+      "latencyMs": 5.09288000000015,
+      "bodyBytes": 297,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadHead",
+      "status": 403,
+      "latencyMs": 5.005334000001312,
+      "bodyBytes": 2,
+      "responseBytes": 21
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "status": 403,
+      "latencyMs": 6.3401840000005905,
+      "bodyBytes": 4072,
+      "responseBytes": 21
+    },
+    {
+      "operation": "ReadSnapshot",
+      "status": 200,
+      "latencyMs": 90.25977400000193,
+      "bodyBytes": 16,
+      "responseBytes": 4808
+    }
+  ],
+  "actualWireRequests": [
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "RecoverRevision",
+      "requestBytes": 865
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1018
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "ReadSnapshot",
+      "requestBytes": 830
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "ReadReceipt",
+      "requestBytes": 864
+    },
+    {
+      "operation": "ReadReceipt",
+      "requestBytes": 864
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "RecoverRevision",
+      "requestBytes": 865
+    },
+    {
+      "operation": "ReadSnapshot",
+      "requestBytes": 830
+    },
+    {
+      "operation": "ListHistory",
+      "requestBytes": 855
+    },
+    {
+      "operation": "ListHistory",
+      "requestBytes": 854
+    },
+    {
+      "operation": "ListHistory",
+      "requestBytes": 854
+    },
+    {
+      "operation": "ReadSnapshot",
+      "requestBytes": 830
+    },
+    {
+      "operation": "RecoverRevision",
+      "requestBytes": 865
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "ReadSnapshot",
+      "requestBytes": 830
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "ReadHead",
+      "requestBytes": 808
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "pair",
+      "requestBytes": 1002
+    },
+    {
+      "operation": "SaveCheckpoint",
+      "requestBytes": 4890
+    },
+    {
+      "operation": "recover",
+      "requestBytes": 1008
+    },
+    {
+      "operation": "recover",
+      "requestBytes": 1008
+    },
+    {
+      "operation": "ReadSnapshot",
+      "requestBytes": 830
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "baseline": "d6aa13001ae10d23b2b3c8c6e45e1dcf8f4e3764",
+  "unchangedBaselineFiles": 1580,
+  "canonicalSHA256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+  "bundleSHA256": "0622836cefcdbab60e6a71012f5228664f6d3ecfca228d970b1ad68c12a37a0b",
+  "scannedFiles": 49,
+  "localLinksChecked": 21,
+  "priorContractsR0SQLAndEvidence": "byte identical",
+  "simulatorUIAssetsAndDependencies": "byte identical",
+  "newMigrations": 0,
+  "productionQueries": 0,
+  "ownerless": false,
+  "driver": "isolated pg@8.23.1 with locked transitive dependencies",
+  "limitation": "source/pattern and generated-value evidence scans; not a general security audit or hosting certification"
+}

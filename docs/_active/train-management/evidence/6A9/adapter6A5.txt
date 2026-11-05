@@ -1,0 +1,33 @@
+✔ snapshot content verified independently from envelope receipt (6.142631ms)
+✔ corrupt payload (1.255913ms)
+✔ state hash differs (1.044748ms)
+✔ wrong serialization version (1.336994ms)
+✔ schema version (1.758162ms)
+✔ state schema version (1.15336ms)
+✔ engine revision (0.745342ms)
+✔ state engine revision (1.135834ms)
+✔ topology hash (1.530803ms)
+✔ state topology (0.639304ms)
+✔ workspace binding (0.42927ms)
+✔ layout binding (0.34907ms)
+✔ manifest reference (0.611271ms)
+✔ revision zero (0.997017ms)
+✔ response bytes bounded before parse (1.342983ms)
+✔ device and aggregate workspace limits count denied attempts (0.737259ms)
+✔ bounded limiter memory (0.356331ms)
+✔ backoff preserves rate retry-after and grows to bounded ceiling (0.322ms)
+✔ malformed request attempts count and audit omits payload/secrets (0.778301ms)
+✔ request bytes rejected before transport (6.238765ms)
+✔ response bytes rejected without truncation (0.150965ms)
+✔ unexpected transport error text redacted (0.139879ms)
+✔ successful bounded request (0.072668ms)
+✔ transient retry uses the exact same request id and measured backoff (0.24833ms)
+✔ permanent conflict and quota do not auto-retry (0.249382ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 37.506098

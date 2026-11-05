@@ -1,17 +1,50 @@
 # Train Management — gate corrente
 
-**6A.6 TECHNICAL PASS — 6A.7 DESIGN APPROVED — 6A MACRO GATE BLOCKED — 6B NOT AUTHORIZED.**
+**6A.1–6A.8 APPROVATE nei rispettivi perimetri — 6A.9 PASS tecnico di laboratorio,
+audit Regia PENDING — MACROFASE6A BLOCKED — 6B NON AUTORIZZATA.**
 
-R0 e6A.1–6A.7 APPROVATE dalla Regia nel rispettivo perimetro. Base6A.7 `cec3a97042ddd1cbcacc7e50cb99a9f4b76c2afd`; branch esclusivo `feature/train-management`; R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` immutabile. Main77b6f64 indipendente non importato.
+Base approvata6A.8 `d6aa13001ae10d23b2b3c8c6e45e1dcf8f4e3764`; branch esclusivo
+`feature/train-management`; R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` intoccabile.
+Audit ripresa conferma checkout/lavoro6A.9 conservati, nessuno stash/WIP da ricostruire.
+Main avanzato indipendentemente non importato, nessun merge/rebase/reset/clean.
 
-**6A.8: PASS tecnico SQL locale, audit Regia PENDING.** [Contratto e API per broker futuro](6A8_SQL_LIFECYCLE.md), [matrice ACL/RLS](6A8_ACL_MATRIX.md), [rapporto sicurezza/fault/24criteri](evidence/6A8/REPORT.md), [risultati](evidence/6A8/results.json). Nuova migrazione additiva `20261104231109_serien_capability_lifecycle.sql`, runner `tests/db/6A8/`; nessuna applicazione reale o staging.
+[Rapporto6A.9](6A9_BROKER_GATE.md), [confini e threat model](6A9_SECURITY_BOUNDARIES.md),
+[risultati](evidence/6A9/results.json), [indice suite](evidence/6A9/summary.json),
+[misure effettive](evidence/6A9/measured-summary.json),
+[scope/hash/scan](evidence/6A9/invariants.json).
 
-Claim nonce durevole in commit separato del caller, unicità/quote/cleanup e autorizzazione derivata da session_user. Lifecycle con job durevoli, ticket/kit key-bound monouso, epoch/key rotation, approvazione e finalizzazione controllate; control/redeemer/provisioner separati e ceiling/RLS/ACL effettivi. Principal preparato NOLOGIN; ALTER LOGIN e completamento sono del solo operatore fixture. Il DB non verifica P-256 e non crea una transazione autonoma interna; il broker resta fidato D09.
+Browser WebCrypto→ingressoHTTP senza credenzialiSQL→broker Unix privato UID distinto→
+proof originale verificata→claim_nonce6A.8 COMMIT→driver pg8.23.1 TCP/SCRAM/TLS→API
+private6A.5 COMMIT→verifica browser. Pool lazy a principal/versione fissi con cap16,
+coda64, attesa2s, idle30s; niente SET ROLE/Docker nel data plane. Supervisor privilegiato
+solo fuori banda per prepare/approve/LOGIN+complete dei job. D09=A invariata: broker
+fidato, PostgreSQL non verifica P-256; migrazioni/contratti approvati intatti.
 
-**PASS attuali:**97SQL nuovi;51/45/141regressioni SQL6A.3–6A.5;72browser/HTTP/PG6A.6 dopo upgrade;48HTTP e5Chromium6A.2;12+25adapter; npm37file,9Python/JMRI,build. Vere connessioni concorrenti, nuovi processi per replay e sessione aperta durante revoca, fault/rollback e legacy non vuoto. Matrice R0P01–P18, contratti/evidenze approvate, tre migrazioni precedenti e runtime/UI/topologia/asset/canonico/bundle conservati. Il profilo rimane sintetico chiuso, nessun serializer generale.
+**50E2E nuovi PASS**,15sottoprove trasporto/ACL. Pairing owner/editor/reader, chiave
+persistita al reload, replay dopo restart/secondo processo, revoca e keyVersion dopo
+claim, CAS con backend distinti, ack perso/idempotenza, history/receipt/snapshot,
+timeout/kill/risposta corrotta, lifecycle interrotto, recovery kit monouso, rotazione
+con vecchia sessione negata. Journal lifecycle esclusivo/fsynced solo lab per i
+candidati non ancoraLOGIN; non è un fallback del claim SQL dati né un servizio nonce
+produttivo. Secret adapter file privato non certifica recovery dopo perdita volume.
 
-**BLOCKED per chiusura6A:** nuovo broker/pool/lifecycle end-to-end, provisioning/secret distribution gestiti e ownerless D10 ancora da attuare e verificare nelle fasi autorizzate successive. I72PASS6A.6 usano il gateway originale, non dimostrano integrazione del nuovo claim. Secret adapter in memoria e Unix trust sono limiti del laboratorio; TLS/password/Supavisor/staging/costi/host crash/PITR non certificati.
+Pool sotto carico con una istanza: peak16/queue64, batch96→81HTTP200/15HTTP503,
+4timeout2s, idle reale31s,25LRU. Secondo broker solo prova replay/letture minime,
+2connessioni aggregate; cap globale multiistanza NOT VERIFIED. Shutdown0sessioni e
+assenza di tutti i container/network/volumi propri dopo cleanup verificati.
 
-Zero query o mutazioni Supabase reale, zero staging, nessuna nuova piattaforma/broker/pool/secret store reale, ownerless, refactoring R1, deploy/main/merge/Pages o6B. D09/D10 e piano6A.7 restano riferimenti approvati; le implementazioni successive richiedono autorizzazione propria.
+Rieseguite regressioni51/45/141SQL6A.3–6A.5,97SQL6A.8,72E2E gateway6A.6 (distinti dai
+50nuovi),48HTTP e5Chromium6A.2,12+25adapter; npm37file,9Python/JMRI ebuild. Canonico,
+bundle R1, runtime/UI/asset/topologia, dipendenze root e R0P01–P18 byte-identici.
+Validatore sintetico chiuso6A.4–6A.5, nessun serializer/hydrator generale.
 
-Checkpoint6A.8 identificabile con `git log -1 --format=%H -- docs/_active/train-management/evidence/6A8/REPORT.md`; SHA remoto/locale e working tree verificati dopo push normale nella consegna finale. **Unica prossima azione: audit indipendente Regia; STOP6A.8. 6A.9 NON INIZIATA.**
+**BLOCKED per chiusura6A:** ownerless D10 non implementato, proprietà hosted di
+provisioning principal/segreti/rotazione/rete Supabase/Supavisor/costi e cap globale
+NOT VERIFIED; perdita host/secret store, PITR, browser alternativi e matrice visuale/
+performance R1 completa non certificati. Legacy owner sintetico non vuoto conservato.
+Zero query o modifiche al Supabase reale, zero staging, main/Pages/deploy, UI persistenza,
+autosave/offline/outbox/asset/motore o6B. Nessuna6A.10 iniziata.
+
+Checkpoint6A.9 identificabile con `git log -1 --format=%H -- docs/_active/train-management/6A9_BROKER_GATE.md`;
+SHA remoto/locale e working tree verificati dopo push normale nella consegna finale.
+**Unica prossima azione: audit indipendente Regia; STOP6A.9.**
