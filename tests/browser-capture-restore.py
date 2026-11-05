@@ -12,7 +12,10 @@ def check(ok,label):
  results.append(label);print(label,flush=True)
 def normalize(s):return {k:v for k,v in s.items() if k!='stateId'}
 with sync_playwright() as p:
- b=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--enable-unsafe-swiftshader'])
+ browser_options={'headless':True,'args':['--no-sandbox','--enable-unsafe-swiftshader']}
+ chromium_path=os.environ.get('SERIEN_CHROMIUM_PATH','/usr/bin/chromium')
+ if Path(chromium_path).exists():browser_options['executable_path']=chromium_path
+ b=p.chromium.launch(**browser_options)
  def setup():
   page=b.new_page(viewport={'width':650,'height':760});page.set_default_timeout(120000)
   page.on('pageerror',lambda e:errors.append(str(e)))
@@ -53,6 +56,34 @@ with sync_playwright() as p:
   check(normalize(initial)==normalize(page.evaluate('__serienPersistence.capture()')),f'zero movement/tick after {ms//1000}s wall time')
  check(not page.evaluate('__serienDiagnostics.guardedStopState().audio.active'),'no bell event during restore')
  page.screenshot(path=str(out/'ready-stopped.png'))
+ # 6B.1-F: fault DURING commit, initially running and initially paused.
+ check(page.evaluate("typeof window.__serienInjectRestoreFault==='function'"),'loopback-only fault injection available')
+ page.evaluate("document.getElementById('pause').click()")  # leave READY_STOPPED: running
+ for initially_paused in (False,True):
+  if initially_paused:page.evaluate("document.getElementById('pause').click()")
+  for fault_point in ('afterSceneInsertion','afterUiApply','afterOverrides'):
+   outcome=page.evaluate("""async point=>{
+     const before=__serienPersistence.capture();
+     const button=document.getElementById('pause').textContent;
+     const resources=__serienInspectRestore();
+     __serienInjectRestoreFault(point);
+     let error=null;
+     try{await __serienPersistence.hydrate(before)}catch(e){error=e.message;}
+     return {before,after:__serienPersistence.capture(),button,
+       afterButton:document.getElementById('pause').textContent,
+       resources,afterResources:__serienInspectRestore(),error};
+   }""",fault_point)
+   prefix=('paused' if initially_paused else 'running')+' '+fault_point
+   check(bool(outcome['error']) and fault_point in outcome['error'],prefix+' injected error detected')
+   check(normalize(outcome['before'])==normalize(outcome['after']),prefix+' state atomic')
+   check(outcome['button']==outcome['afterButton'],prefix+' pause button atomic')
+   check(outcome['resources']==outcome['afterResources'],prefix+' scene and asset records atomic')
+ recovered=page.evaluate("""async()=>{const before=__serienPersistence.capture();
+   const result=await __serienPersistence.hydrate(before);
+   return {result,before,after:__serienPersistence.capture()};
+ }""")
+ check(recovered['result']['status']=='READY_STOPPED' and normalize(recovered['before'])==normalize(recovered['after']),'successful restore after injected rollback')
+ initial=page.evaluate("__serienPersistence.capture()")
  # Explicit Resume followed by new commands; fourth locomotive and full LRU.
  page.evaluate("document.getElementById('pause').click()")
  if controlled:

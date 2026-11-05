@@ -17,3 +17,6 @@ Il documento prodotto non esisteva su main al kickoff. Sono riferimenti di
 contratto: le precedenti sezioni Auth/capacità/ownerless sono superate dalla
 richiesta 6B.1 e da SUPABASE_SAVE_PROPOSAL.md. Lo schema operativo v1 mantiene
 immutata la struttura di STATE_SCHEMA; orientamento -1 e ricovero richiedono 6D.
+
+## 6B.1-F — recovery GitHub remoto (Regia, 2026-11-05)
+Il checkout Codex obsoleto work/5c8f0f5 non era idoneo. La Regia ha preparato una correzione diretta sul branch GitHub utilizzando il tree originale, lasciando invariati gli asset binari. Il rollback dei pulsanti/flag e commitOverrides è stato ristretto in un unico confine. Test di fault injection browser e workflow CI sul branch. Il PASS definitivo richiede l'esito dei test sul nuovo commit; niente deploy o modifica DB.

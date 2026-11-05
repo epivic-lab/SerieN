@@ -914,6 +914,22 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
 } };
 
 if(new URLSearchParams(location.search).has('persistenceTest')) {
+  // Fault controls are available only in loopback tests, not on GitHub Pages.
+  const localFaultTest=['localhost','127.0.0.1'].includes(location.hostname);
+  let pendingRestoreFault=null;
+  const tripRestoreFault=point=>{
+    if(pendingRestoreFault===point){pendingRestoreFault=null;throw new Error('6B.1-F injected fault: '+point);}
+  };
+  if(localFaultTest){
+    window.__serienInjectRestoreFault=point=>{
+      if(!['afterSceneInsertion','afterUiApply','afterOverrides'].includes(point))throw new Error('Unknown 6B.1-F fault point');
+      pendingRestoreFault=point;
+    };
+    window.__serienInspectRestore=()=>({
+      trainGroups:scene.children.filter(g=>g.userData.persistenceKind).length,
+      assetTargets:trainAssetManager.stats.targets
+    });
+  }
   window.__serienPersistence=createLocalPersistence({network,scene,trainAssetManager,
     read:()=>({trains,detached,pending:trainAssetManager.stats.pending,describe:g=>trainAssetManager.describe(g),
       switches:Object.fromEntries(switchSpecs.map(s=>[s.id,s.on])),time:{tickCount,stepSeconds:clock.step,accumulatorSeconds:clock.accumulator,wasPaused:restoreStopped?savedWasPaused:paused},
@@ -923,11 +939,13 @@ if(new URLSearchParams(location.search).has('persistenceTest')) {
     thaw:()=>{persistenceBusy=false;document.body.inert=false;last=performance.now();},
     validateView:view=>nav.validateRestore(view),
     makeNative:(kind,slot,parent)=>{if(['steam','diesel','shunter'].includes(kind))return locoModel(['steam','diesel','shunter'].indexOf(kind),slot,parent);const g=freightWagon(['closed','open','tank','flat','coach'].indexOf(kind),false);parent.add(g);return g;},
-    commit:(staged,previous)=>{
+    commit:(staged,previous,afterApply)=>{
       const priorGate={restoreStopped,paused,savedWasPaused};
+      const priorPauseText=$('pause').textContent,priorAddDisabled=$('addTrain').disabled,priorRollingMode=rollingModelMode;
       function apply(staged){
       trains.splice(0,trains.length,...staged.trains);detached.splice(0,detached.length,...staged.detached);
       for(const g of staged.groups.values()){g.userData.dynamic=true;scene.add(g);}
+      tripRestoreFault('afterSceneInsertion');
       const s=staged.state;switchSpecs.forEach(sw=>sw.on=s.layout.switches[sw.id]);
       tickCount=s.time.tickCount;clock.accumulator=s.time.accumulatorSeconds;savedWasPaused=s.time.wasPaused;restoreStopped=true;paused=true;
       ({selected:mission,changes,transferred,visitedRunaround,didDetach,didAttach}=s.missions);
@@ -940,10 +958,29 @@ if(new URLSearchParams(location.search).has('persistenceTest')) {
       renderVehicles();
       for(const d of detached){animateStock(d.group,d.journey,d.journey.position,d.animationDistanceMm,d.point);animateAuxiliaryWheels(d.group,d.animationDistanceMm);}
       ui();
+      tripRestoreFault('afterUiApply');
       }
-      try{apply(staged);}catch(error){
+      // Do not release the old scene until state and asset visibility commit.
+      try{
+        apply(staged);
+        afterApply();
+        tripRestoreFault('afterOverrides');
+      }catch(error){
         for(const g of staged.groups.values())g.removeFromParent();
-        apply(previous);({restoreStopped,paused,savedWasPaused}=priorGate);throw error;
+        let rollbackError=null;
+        try{
+          apply(previous);
+          trainAssetManager.commitOverrides(priorRollingMode==='kenney');
+        }catch(e){rollbackError=e;}
+        finally{
+          ({restoreStopped,paused,savedWasPaused}=priorGate);
+          $('pause').textContent=priorPauseText;
+          $('addTrain').disabled=priorAddDisabled;
+          trainDeck?.update();
+          ui();
+        }
+        if(rollbackError)throw new AggregateError([error,rollbackError],'Restore failed and rollback failed');
+        throw error;
       }
       for(const g of previous.groups.values())removeWagon(g);
     }

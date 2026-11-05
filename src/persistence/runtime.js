@@ -30,8 +30,9 @@ export function createLocalPersistence(host){
           }catch(e){dispose(g);throw e;}
         },describe:g=>host.trainAssetManager.describe(g),dispose
       },ids);
-      host.commit(staged,previous);
-      host.trainAssetManager.commitOverrides(staged.state.ui.rollingModelMode==='kenney');
+      host.commit(staged,previous,()=>{
+        host.trainAssetManager.commitOverrides(staged.state.ui.rollingModelMode==='kenney');
+      });
       return {status:'READY_STOPPED',cloud:false};
     } catch(e){if(staged)for(const g of staged.groups.values())dispose(g);throw e;}
     finally {busy=false;host.thaw();}

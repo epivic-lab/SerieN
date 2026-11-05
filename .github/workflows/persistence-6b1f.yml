@@ -1,0 +1,36 @@
+name: Verify SerieN 6B.1-F (branch only, no deploy)
+on:
+  push:
+    branches: [feature/train-persistence-auth]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch commit, including binary evidence
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Node regression tests
+        run: npm test
+      - name: Build real browser bundle
+        run: npm run build
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Python regression tests
+        run: python3 -m unittest discover -s tests -p '*_test.py'
+      - name: Install Chromium browser harness
+        run: |
+          python3 -m pip install 'playwright==1.56.0'
+          python3 -m playwright install --with-deps chromium
+      - name: Browser Capture Restore and injected commit rollback
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 >/tmp/serien-6b1f-http.log 2>&1 &
+          for attempt in 1 2 3 4 5; do curl -fsS http://127.0.0.1:8000/ >/dev/null && break || sleep 1; done
+          SERIEN_CONTROLLED_RAF=1 SERIEN_EVIDENCE=/tmp/serien-6b1f-evidence python3 tests/browser-capture-restore.py
