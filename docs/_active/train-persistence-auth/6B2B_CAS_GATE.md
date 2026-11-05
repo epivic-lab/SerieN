@@ -8,7 +8,7 @@ Data: 2026-11-05. Stato **PASS limitato al protocollo CAS/idempotenza su Postgre
 - Codice del gate: `6986027a189a594bd316eb9f501e66a00894031d`.
 - GitHub Actions: [run 42117514119](https://github.com/epivic-lab/SerieN/actions/runs/42117514119), **SUCCESS**, log letto direttamente.
 - Dipendenza gate: 6B.2-A [run 42114768839](https://github.com/epivic-lab/SerieN/actions/runs/42114768839), SUCCESS.
-- Baseline 6B.1 approvata: `715e86dbea4003f87050e0fdf3e933a3a9ea9ead`; R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` intoccabile. La regressione 6B.1 sul commit esatto di questo gate era ancora IN PROGRESS all'ultima lettura: non dichiararne anticipatamente il PASS.
+- Baseline 6B.1 approvata: `715e86dbea4003f87050e0fdf3e933a3a9ea9ead`; R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` intoccabile. Regressione 6B.1 sul commit del codice del gate: [run 42117514228](https://github.com/epivic-lab/SerieN/actions/runs/42117514228), **SUCCESS**. I commit documentali successivi non cambiano il codice del test.
 
 ## Materiali di prova (nessun codice da distribuire)
 
