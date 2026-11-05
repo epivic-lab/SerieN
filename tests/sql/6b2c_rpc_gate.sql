@@ -111,6 +111,34 @@ BEGIN
   '33333333-3333-4333-8333-333333333333',
   pg_catalog.jsonb_set(s::jsonb,'{models,0,asset,digest}',
     pg_catalog.to_jsonb(pg_catalog.repeat('0',64)))::text);
+ -- Functional R1 semantics not implicit in JSON Schema:
+ -- storage is a FUTURE feature; selected LRU order, train-to-loco and
+ -- native fallback model must match the actual 6B.1 validator.
+ PERFORM public.serien_test_expect_error(
+  'UNSUPPORTED_INVENTORY_STORAGE','save',a,a,'1',
+  '33333333-3333-4333-8333-333333333333',
+  pg_catalog.jsonb_set(s::jsonb,'{inventoryStorage}',
+   pg_catalog.jsonb_build_array(pg_catalog.jsonb_build_object(
+      'itemId',s::jsonb#>>'{items,0,id}','bayId',NULL)))::text);
+ PERFORM public.serien_test_expect_error(
+  'TRAIN_LOCO_IDENTITY_INVALID','save',a,a,'1',
+  '33333333-3333-4333-8333-333333333333',
+  pg_catalog.jsonb_set(s::jsonb,'{trains,0,id}',
+   '"dddddddd-dddd-4ddd-8ddd-dddddddddddd"'::jsonb)::text);
+ PERFORM public.serien_test_expect_error(
+  'NATIVE_MODEL_MISSING','save',a,a,'1',
+  '33333333-3333-4333-8333-333333333333',
+  pg_catalog.jsonb_set(s::jsonb,'{items,0,nativeModelId}',
+   '"eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee"'::jsonb)::text);
+ PERFORM public.serien_test_expect_error(
+  'INVALID_UI_LRU','save',a,a,'1',
+  '33333333-3333-4333-8333-333333333333',
+  pg_catalog.jsonb_set(
+   pg_catalog.jsonb_set(s::jsonb,'{ui,recentTrainIds,0}',
+      s::jsonb#>'{ui,recentTrainIds,1}'),
+   '{ui,recentTrainIds,1}',
+      s::jsonb#>'{ui,recentTrainIds,0}')::text);
+
 END $f$;
 
 SET "request.jwt.claim.sub"='bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb';
