@@ -4,7 +4,7 @@ Data: 2026-11-05. **Esito Regia: PASS SOLO OFFLINE, PRODUZIONE NON AUTORIZZATA.*
 
 ## Base ed evidenza indipendente
 
-- Repository: `epivic-lab/SerieN`, branch `feature/train-persistence-auth`; baseline main intoccata `9126788d3c68e43c0687e948db767bfccbbfc774`; R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910`.
+- Repository: `epivic-lab/SerieN`, branch `feature/train-persistence-auth`; **main al kickoff** `9126788d3c68e43c0687e948db767bfccbbfc774`, R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910`.
 - Base 6B.1 Capture & Restore approvata, cloud ancora `enabled:false` sul simulatore; 6B.2-A/B schema e CAS precedentemente provati.
 - Gate schema reale: [run 42120784522](https://github.com/epivic-lab/SerieN/actions/runs/42120784522), **SUCCESS** su `bada6b6309d60c02b5bf0433de12089b37d1809d`. Fixture JSON prodotta da `captureState()` reale, validata con `pg_jsonschema` in container Supabase PG17; cinque alterazioni respinte. Scoperto e risolto **nella derivazione server** che `format:uuid` non era vincolante: tutte le 17 posizioni UUID ricevono un pattern ancorato. File sorgente schema non alterato.
 - Gate RPC definitivo isolato: [run 42122966438](https://github.com/epivic-lab/SerieN/actions/runs/42122966438), **SUCCESS** sul commit `856356630b2f42dfdd05461492eda0fae41b38e7`; log letto direttamente:
@@ -38,7 +38,7 @@ Data: 2026-11-05. **Esito Regia: PASS SOLO OFFLINE, PRODUZIONE NON AUTORIZZATA.*
 - **Migrations/preview Supabase**: `MIGRATIONS_FAILED` segnato nel branch preview `main`, mentre progetto produzione `ACTIVE_HEALTHY` con tre migrazioni registrate. Chiarire prima di altre migrazioni.
 - **Secondo account Google**: la composizione dei due login reali è coerente con un login ammesso e un outsider; il secondo indirizzo autorizzato non ha ancora login confermato. Collaudare Sergio senza esporre email.
 - **Restano NON provati**: quote/limiti aggregati di spazio (oltre ai 2MiB per richiesta), storicizzazione/paginazione completa, restore con asset reali cloud e rete PostgREST, comportamento su JWT scaduti/revoca, trigger/privilegi su catalogo di produzione dopo migrazione, deployment e UI.
-- **Regressione 6B.1**: il codice ferroviario non è stato modificato nei commit C; verificare comunque run CI dell'ultimo commit prima di chiudere il gate finale. Non confondere il PASS DB con quello R1.
+- **Regressione 6B.1**: [run 42122966437](https://github.com/epivic-lab/SerieN/actions/runs/42122966437), **SUCCESS** sul medesimo SHA di codice C `856356630b2f42dfdd05461492eda0fae41b38e7`. Il documento aggiunto dopo non modifica codice applicativo; non confondere PASS DB con copertura completa delle ulteriori condizioni di produzione.
 - Il candidato SQL è una *bozza validata in replica*, non una migrazione approvata. Prima dell'uso: audit indipendente riga per riga, migrazione formalizzata/rollback, review dei GRANT/capacità del ruolo, Supabase advisors ed esplicita autorizzazione della Regia.
 
 ## Stato e prossima mossa
@@ -46,3 +46,7 @@ Data: 2026-11-05. **Esito Regia: PASS SOLO OFFLINE, PRODUZIONE NON AUTORIZZATA.*
 **6B.1 APPROVATA; 6B.2-A/B PASS isolati; 6B.2-C schema + RPC + concorrenza PASS isolati; cloud di produzione DISABILITATO; gate produzione APERTO.** 
 
 Prossima microfase raccomandata: 6B.2-D audit dei gap reali (revoca concorrente, limiti validazione Journey/asset, immagini/test auth) e piano di migrazione minimo, ancora senza scritture a produzione.
+
+## Evento esterno rilevato durante l'audit finale
+
+**main è avanzato indipendentemente** dopo il kickoff: ora `36711a29aa38f3b60581d4ee01327825cd6fe56c` (merge del 5 novembre 2026 ore 22:36 UTC, autore `epivic-lab`, genitori `cf1fba9f8313af6cfd70ce539a06e4c7ece3b371` e `9126788d3c68e43c0687e948db767bfccbbfc774`). Il ramo di lavoro è `diverged`, avanti 38/indietro 2 rispetto a main all'audit. Questo cambiamento **non è stato eseguito dalla Regia**, che ha scritto soltanto su `feature/train-persistence-auth`. Non rebase/merge/reset automaticamente: fare riconciliazione distinta prima della futura integrazione. La validità del gate RPC **isolato** resta riferita allo SHA del test.
