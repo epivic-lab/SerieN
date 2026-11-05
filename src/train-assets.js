@@ -74,9 +74,10 @@ function createTrainAssetManager({
     return cache.get(name);
   }
   function visibility(record) {
-    for (const [child, visible] of record.native) child.visible = (!enabled || !record.model) && visible;
-    if (record.model) record.model.visible = enabled;
-    if (enabled && record.model) {
+    const active=record.enabledOverride??enabled;
+    for (const [child, visible] of record.native) child.visible = (!active || !record.model) && visible;
+    if (record.model) record.model.visible = active;
+    if (active && record.model) {
       record.target.userData.couplers = trainCouplers(record.dimensions);
       record.target.userData.assetDimensions = { ...record.dimensions, source: "Kenney CC0", stylized: true };
     } else {
@@ -96,12 +97,13 @@ function createTrainAssetManager({
     delete target.userData.assetDimensions;
     records.delete(target);
   }
-  async function attach(target, type, locomotive = false) {
+  async function attach(target, type, locomotive = false, enabledOverride) {
     if (disposed) return false;
     release(target);
     const children = nativeChildren(target);
     const record = {
       target,
+      enabledOverride,
       native: children.map((o) => [o, o.visible]),
       nativeCouplers: target.userData.stock ? structuredClone(target.userData.couplers) : nativeCouplers(target, children),
       model: null,
@@ -148,7 +150,7 @@ function createTrainAssetManager({
     enabled = Boolean(value);
     for (const record of [...records.values()]) {
       if (!record.target.parent && record.model) release(record.target);
-      else visibility(record);
+      else {delete record.enabledOverride;visibility(record);}
     }
   }
   function dispose() {
@@ -161,6 +163,8 @@ function createTrainAssetManager({
   }
   return {
     attach,
+    commitOverrides(value) {enabled=Boolean(value);for(const record of records.values())visibility(record);},
+    describe(target) { const r=records.get(target); return r ? {nativeCouplers:r.nativeCouplers,couplers:target.userData.couplers,pending:r.pending} : null; },
     release,
     setEnabled,
     dispose,
@@ -179,5 +183,6 @@ export {
   createTrainAssetManager,
   disposeTrainAssets,
   importedTrains,
-  releaseTrainAsset
+  releaseTrainAsset,
+  manager as trainAssetManager
 };

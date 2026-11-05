@@ -1,0 +1,31 @@
+{
+  "baseline": "9126788d3c68e43c0687e948db767bfccbbfc774",
+  "sourceSha256": {
+    "app.js": "5d0f084fa68aac3a0b6a2f467bd7a1ab89035113d2f0301c75850f8ed3105961",
+    "assets/locomotive-thumbnails/manifest.json": "a615ccd6239c477b27a46ed768a071af1200fd4c292f9f7d3d95cd84ad7c75c1",
+    "src/fleet-commands.js": "06e80ceee351c951942120afab37e81b493f2eba6c84574cdeb0f737531751bc",
+    "src/guarded-stop-scene.js": "0f29c9e3ca8ffd76724671d50e540ce917b653c2890b87381ef38e4e2627d476",
+    "src/navigation.js": "b3d8b1063c006245cb43306dfbfde35adf2cea7a5122cad1cac2df392cbbd157",
+    "src/next-switch-view.js": "4c0ba5d1a5899f10db2fc69525485018264fdf619564b3473b106845efef0efc",
+    "src/persistence/capture.js": "b85f210bf7fa74d91cf8dd98527d0b8b57fc48c8e7f71cb47fe02c872169556b",
+    "src/persistence/catalog.json": "9f508a89bb979586a66a5622dc8fc289b61957b8321c8a8aa1b4cef87fd1d826",
+    "src/persistence/cloud-adapter.js": "f46aff5d9ef0c97b988cf0ee7e5c2729dfe926ee363e89c1f07a5fd5ea0181ce",
+    "src/persistence/hydrate.js": "c6e48d89eeb6c7686bf795d378aa4ae2c896cf90791a110bbbff5aa38b29f5d3",
+    "src/persistence/identity.js": "bb2898c1ba94c359876e22f79795e18b4337601024d5833f9c89c761075a7bce",
+    "src/persistence/runtime.js": "b6be450d74706a604e2fc986ded810bfb71ecd875ef99f09246dc80d9022bcf9",
+    "src/persistence/schema.js": "40840b800ffacb41a3e1ddc8aba9d83abe9271467a20c949f4cf3f6e5341f905",
+    "src/persistence/state-schema.json": "3ff1f3d6d921b2179cc1120a9a413c4d3c5bc382ae9d905380885d6467b9b613",
+    "src/persistence/validate.js": "f265f960478baee2852ebdda84aa4e651f677283ed22fc3d253c5dd43fbb6085",
+    "src/train-assets.js": "ac7cc0747dce6727aa28bf8c41cf6a35d5043e9f9e2044d9e4acbb7758e1b25c",
+    "src/train-deck.js": "a1e2956f7205a28239f2c97cbefa428f92b17df1ba5bbb410901b8f425b7c109",
+    "tests/browser-capture-restore.py": "984219105467d5dcb3bbff271ea161831288f30dd205fd549d58edaca93afc53",
+    "tests/persistence.test.js": "ac0dd73586081aad48f795e2c494d7fe54f8d5cf2f2f0899694fd20ea45553bb"
+  },
+  "bundle": {
+    "path": "dist/game.js",
+    "bytes": 1073036,
+    "sha256": "9f0917ae7b659e68771bec2f6275161294bf4b772318695b0462e01e6264a970"
+  },
+  "browser": "Chromium / SwiftShader",
+  "node": "v24.19.0"
+}

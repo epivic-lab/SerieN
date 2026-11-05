@@ -32,7 +32,7 @@ export function createFleetCommands({trains,detached,route}) {
     const point=train.journey.locate(coordinate),group=train.carObjs.pop();
     const journey=Object.create(Object.getPrototypeOf(train.journey));
     Object.assign(journey,train.journey,{segments:train.journey.segments.map(s=>({...s})),position:coordinate});
-    detached.push({point,group,journey});train.cars=train.carObjs.length;
+    detached.push({point,group,journey,animationDistanceMm:train.odometer??0});train.cars=train.carObjs.length;
     return {changed:true,kind:'uncoupled',group,message:'Wagon uncoupled and left on the track.'};
   }
   /** @returns {import('./railway-types.js').ConsistCommandResult} */

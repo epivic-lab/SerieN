@@ -1,0 +1,764 @@
+{
+  "schemaVersion": 1,
+  "stateId": "edf224eb-fdb4-44a7-b3f6-e923326fabe0",
+  "workspaceId": "a59ddaae-d523-464b-b0b2-e879b04d5eda",
+  "layoutId": "8530f7f6-0c91-4166-92b4-9d7db192ff17",
+  "topologyHash": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+  "engineRevision": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+  "resumePolicy": "STOPPED",
+  "layout": {
+    "switches": {
+      "WX-A": false,
+      "WX-B": false,
+      "Y-IN": false,
+      "Y-2": true,
+      "Y-3": false,
+      "Y-R1": true,
+      "Y-R2": false,
+      "Y-4": false
+    }
+  },
+  "time": {
+    "tickCount": 1,
+    "stepSeconds": 0.016666666666666666,
+    "accumulatorSeconds": 4.9670545454461035e-12,
+    "wasPaused": true
+  },
+  "models": [
+    {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "runtimeKey": "steam",
+      "kind": "locomotive",
+      "representation": "native",
+      "asset": {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+        "digest": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e"
+      },
+      "couplers": {
+        "front": {
+          "x": 49.6,
+          "y": 8,
+          "z": 0
+        },
+        "back": {
+          "x": -67.89999999999999,
+          "y": 8,
+          "z": 0
+        }
+      },
+      "couplingMode": "explicit",
+      "legacyRearExtentMm": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000002",
+      "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "runtimeKey": "diesel",
+      "kind": "locomotive",
+      "representation": "native",
+      "asset": {
+        "id": "00000000-0000-4000-8000-000000000002",
+        "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+        "digest": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e"
+      },
+      "couplers": {
+        "front": {
+          "x": 38,
+          "y": 6,
+          "z": 0
+        },
+        "back": {
+          "x": -38,
+          "y": 6,
+          "z": 0
+        }
+      },
+      "couplingMode": "legacy64",
+      "legacyRearExtentMm": 38
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000003",
+      "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "runtimeKey": "shunter",
+      "kind": "locomotive",
+      "representation": "native",
+      "asset": {
+        "id": "00000000-0000-4000-8000-000000000003",
+        "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+        "digest": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e"
+      },
+      "couplers": {
+        "front": {
+          "x": 34.25,
+          "y": 8,
+          "z": 0
+        },
+        "back": {
+          "x": -34.25,
+          "y": 8,
+          "z": 0
+        }
+      },
+      "couplingMode": "explicit",
+      "legacyRearExtentMm": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000004",
+      "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "runtimeKey": "closed",
+      "kind": "wagon",
+      "representation": "native",
+      "asset": {
+        "id": "00000000-0000-4000-8000-000000000004",
+        "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+        "digest": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e"
+      },
+      "couplers": {
+        "front": {
+          "x": 32.85,
+          "y": 8,
+          "z": 0
+        },
+        "back": {
+          "x": -32.85,
+          "y": 8,
+          "z": 0
+        }
+      },
+      "couplingMode": "explicit",
+      "legacyRearExtentMm": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000005",
+      "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "runtimeKey": "open",
+      "kind": "wagon",
+      "representation": "native",
+      "asset": {
+        "id": "00000000-0000-4000-8000-000000000005",
+        "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+        "digest": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e"
+      },
+      "couplers": {
+        "front": {
+          "x": 32.85,
+          "y": 8,
+          "z": 0
+        },
+        "back": {
+          "x": -32.85,
+          "y": 8,
+          "z": 0
+        }
+      },
+      "couplingMode": "explicit",
+      "legacyRearExtentMm": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000006",
+      "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "runtimeKey": "tank",
+      "kind": "wagon",
+      "representation": "native",
+      "asset": {
+        "id": "00000000-0000-4000-8000-000000000006",
+        "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+        "digest": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e"
+      },
+      "couplers": {
+        "front": {
+          "x": 32.85,
+          "y": 8,
+          "z": 0
+        },
+        "back": {
+          "x": -32.85,
+          "y": 8,
+          "z": 0
+        }
+      },
+      "couplingMode": "explicit",
+      "legacyRearExtentMm": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000007",
+      "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "runtimeKey": "flat",
+      "kind": "wagon",
+      "representation": "native",
+      "asset": {
+        "id": "00000000-0000-4000-8000-000000000007",
+        "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+        "digest": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e"
+      },
+      "couplers": {
+        "front": {
+          "x": 42.225,
+          "y": 8,
+          "z": 0
+        },
+        "back": {
+          "x": -42.225,
+          "y": 8,
+          "z": 0
+        }
+      },
+      "couplingMode": "explicit",
+      "legacyRearExtentMm": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000008",
+      "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "runtimeKey": "coach",
+      "kind": "wagon",
+      "representation": "native",
+      "asset": {
+        "id": "00000000-0000-4000-8000-000000000008",
+        "revision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+        "digest": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e"
+      },
+      "couplers": {
+        "front": {
+          "x": 84.1,
+          "y": 8,
+          "z": 0
+        },
+        "back": {
+          "x": -84.1,
+          "y": 8,
+          "z": 0
+        }
+      },
+      "couplingMode": "explicit",
+      "legacyRearExtentMm": 0
+    }
+  ],
+  "items": [
+    {
+      "id": "e5d8e3fa-18cb-4969-af7a-cb82556b93f2",
+      "modelId": "00000000-0000-4000-8000-000000000001",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000001",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "steam",
+      "displayName": "steam",
+      "orientation": 1
+    },
+    {
+      "id": "b6d45dff-e39d-411e-973f-952c3c0b625c",
+      "modelId": "00000000-0000-4000-8000-000000000004",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000004",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "closed",
+      "displayName": "closed",
+      "orientation": 1
+    },
+    {
+      "id": "0a901140-f8ef-4f0e-8c08-340909477aaa",
+      "modelId": "00000000-0000-4000-8000-000000000005",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000005",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "open",
+      "displayName": "open",
+      "orientation": 1
+    },
+    {
+      "id": "cfe200af-5a89-442b-9d99-d09fa4f7ec74",
+      "modelId": "00000000-0000-4000-8000-000000000002",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000002",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "diesel",
+      "displayName": "diesel",
+      "orientation": 1
+    },
+    {
+      "id": "7b516794-fe52-419b-b428-73fd7c2c6d63",
+      "modelId": "00000000-0000-4000-8000-000000000007",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000007",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "flat",
+      "displayName": "flat",
+      "orientation": 1
+    },
+    {
+      "id": "5245db3b-5607-48b2-940a-d00cb8dc7d04",
+      "modelId": "00000000-0000-4000-8000-000000000008",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000008",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "coach",
+      "displayName": "coach",
+      "orientation": 1
+    },
+    {
+      "id": "18ac71b2-69bf-48b0-85e8-73b33cf4bee0",
+      "modelId": "00000000-0000-4000-8000-000000000003",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000003",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "shunter",
+      "displayName": "shunter",
+      "orientation": 1
+    },
+    {
+      "id": "2001f2b8-28e9-4013-8111-1d516fb67c1f",
+      "modelId": "00000000-0000-4000-8000-000000000006",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000006",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "tank",
+      "displayName": "tank",
+      "orientation": 1
+    },
+    {
+      "id": "4b37db9f-8399-4ba4-a932-50d5e1d3daed",
+      "modelId": "00000000-0000-4000-8000-000000000007",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000007",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "flat",
+      "displayName": "flat",
+      "orientation": 1
+    },
+    {
+      "id": "ab5f4d67-b9db-49cd-bbf2-98f1ec963a80",
+      "modelId": "00000000-0000-4000-8000-000000000002",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000002",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "diesel",
+      "displayName": "diesel",
+      "orientation": 1
+    },
+    {
+      "id": "d642a517-3ce7-4828-a5bc-b97e26eb7797",
+      "modelId": "00000000-0000-4000-8000-000000000006",
+      "modelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeModelId": "00000000-0000-4000-8000-000000000006",
+      "nativeModelRevision": "2f2596076ab8687bdb68cb8c6a6bcad27ed19301111d3f87fe6deae721f1c36e",
+      "nativeKind": "tank",
+      "displayName": "tank",
+      "orientation": 1
+    }
+  ],
+  "consists": [
+    {
+      "id": "ec8e5f94-45d3-4d52-bfcd-059c92347769",
+      "name": "BR 055",
+      "members": [
+        {
+          "itemId": "e5d8e3fa-18cb-4969-af7a-cb82556b93f2",
+          "orientation": 1
+        },
+        {
+          "itemId": "b6d45dff-e39d-411e-973f-952c3c0b625c",
+          "orientation": 1
+        },
+        {
+          "itemId": "0a901140-f8ef-4f0e-8c08-340909477aaa",
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "id": "fddcf3e0-344e-4539-9917-ef2a7f1a0fc4",
+      "name": "BR 216",
+      "members": [
+        {
+          "itemId": "cfe200af-5a89-442b-9d99-d09fa4f7ec74",
+          "orientation": 1
+        },
+        {
+          "itemId": "7b516794-fe52-419b-b428-73fd7c2c6d63",
+          "orientation": 1
+        },
+        {
+          "itemId": "5245db3b-5607-48b2-940a-d00cb8dc7d04",
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "id": "1a337599-a03c-460e-b549-64c919637db3",
+      "name": "BR 260",
+      "members": [
+        {
+          "itemId": "18ac71b2-69bf-48b0-85e8-73b33cf4bee0",
+          "orientation": 1
+        },
+        {
+          "itemId": "2001f2b8-28e9-4013-8111-1d516fb67c1f",
+          "orientation": 1
+        },
+        {
+          "itemId": "4b37db9f-8399-4ba4-a932-50d5e1d3daed",
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "id": "a98b3471-7e8f-4fe5-a2ab-f4259be1c6e1",
+      "name": "BR 216 \u00b7 4",
+      "members": [
+        {
+          "itemId": "ab5f4d67-b9db-49cd-bbf2-98f1ec963a80",
+          "orientation": 1
+        }
+      ]
+    }
+  ],
+  "trains": [
+    {
+      "id": "e5d8e3fa-18cb-4969-af7a-cb82556b93f2",
+      "runtimeSlot": 0,
+      "consistId": "ec8e5f94-45d3-4d52-bfcd-059c92347769",
+      "name": "BR 055",
+      "description": "DB era III \u00b7 dimensional study",
+      "nativeName": "BR 055",
+      "nativeDescription": "DB era III \u00b7 dimensional study",
+      "modelKey": "steam",
+      "journey": {
+        "segments": [
+          {
+            "id": "T10",
+            "sign": 1,
+            "start": -247.40000792272627,
+            "end": 0
+          },
+          {
+            "id": "T9",
+            "sign": 1,
+            "start": 0,
+            "end": 247.40000792272647
+          }
+        ],
+        "position": 19.983998098545783,
+        "travel": 0,
+        "lastBlock": null
+      },
+      "location": {
+        "edge": "T9",
+        "s": 19.983998098545783,
+        "heading": 1
+      },
+      "speed": 0,
+      "requestedSpeed": 0,
+      "velocity": 0,
+      "dir": 1,
+      "odometer": 0,
+      "lights": true,
+      "guard": {
+        "state": "SAFE",
+        "risk": "SAFE",
+        "reason": "available",
+        "direction": 1,
+        "distance": null,
+        "boundary": null,
+        "lookahead": 0.012501,
+        "stoppingDistance": 0,
+        "leadingExtent": 49.6,
+        "protectionInset": null,
+        "requestedSpeed": 0,
+        "requestedDelta": 0,
+        "delta": 0,
+        "velocity": 0,
+        "intervened": false,
+        "probeDelta": null,
+        "probeKind": null
+      },
+      "routeContext": {
+        "loop": 2,
+        "previousLane": 2,
+        "mode": "loop",
+        "section": null,
+        "laps": 0
+      },
+      "resetSeed": {
+        "loop": 2,
+        "cars": 3,
+        "fraction": 0.22,
+        "edge": null,
+        "s": null
+      }
+    },
+    {
+      "id": "cfe200af-5a89-442b-9d99-d09fa4f7ec74",
+      "runtimeSlot": 1,
+      "consistId": "fddcf3e0-344e-4539-9917-ef2a7f1a0fc4",
+      "name": "BR 216",
+      "description": "Diesel DB \u00b7 Era IV",
+      "nativeName": "BR 216",
+      "nativeDescription": "Diesel DB \u00b7 Era IV",
+      "modelKey": "diesel",
+      "journey": {
+        "segments": [
+          {
+            "id": "T4",
+            "sign": 1,
+            "start": -442.9636401150851,
+            "end": -221.4818200575425
+          },
+          {
+            "id": "T5",
+            "sign": 1,
+            "start": -221.4818200575425,
+            "end": 0
+          },
+          {
+            "id": "WX-A:upper",
+            "sign": 1,
+            "start": 0,
+            "end": 310
+          }
+        ],
+        "position": 44.87704395396564,
+        "travel": 1.1375,
+        "lastBlock": null
+      },
+      "location": {
+        "edge": "WX-A:upper",
+        "s": 44.87704395396564,
+        "heading": 1
+      },
+      "speed": 0,
+      "requestedSpeed": 0,
+      "velocity": 0,
+      "dir": -1,
+      "odometer": -1.1375,
+      "lights": true,
+      "guard": {
+        "state": "SAFE",
+        "risk": "SAFE",
+        "reason": "available",
+        "direction": -1,
+        "distance": null,
+        "boundary": null,
+        "lookahead": 0.567501,
+        "stoppingDistance": 0.405,
+        "leadingExtent": 84.1,
+        "protectionInset": null,
+        "requestedSpeed": 26,
+        "requestedDelta": -0.1625,
+        "delta": -0.1625,
+        "velocity": -9.75,
+        "intervened": false,
+        "probeDelta": null,
+        "probeKind": null
+      },
+      "routeContext": {
+        "loop": 1,
+        "previousLane": 1,
+        "mode": "loop",
+        "section": null,
+        "laps": 0
+      },
+      "resetSeed": {
+        "loop": 1,
+        "cars": 2,
+        "fraction": 0.65,
+        "edge": null,
+        "s": null
+      }
+    },
+    {
+      "id": "18ac71b2-69bf-48b0-85e8-73b33cf4bee0",
+      "runtimeSlot": 2,
+      "consistId": "1a337599-a03c-460e-b549-64c919637db3",
+      "name": "BR 260",
+      "description": "DB era IV \u00b7 V60 dimensional study",
+      "nativeName": "BR 260",
+      "nativeDescription": "DB era IV \u00b7 V60 dimensional study",
+      "modelKey": "shunter",
+      "journey": {
+        "segments": [
+          {
+            "id": "T17",
+            "sign": 1,
+            "start": -195.56361932027332,
+            "end": 0
+          },
+          {
+            "id": "WIDEN-R:offset",
+            "sign": -1,
+            "start": 0,
+            "end": 312.8960104221398
+          }
+        ],
+        "position": 159.98096165181656,
+        "travel": 0,
+        "lastBlock": null
+      },
+      "location": {
+        "edge": "WIDEN-R:offset",
+        "s": 152.91504877032324,
+        "heading": -1
+      },
+      "speed": 0,
+      "requestedSpeed": 0,
+      "velocity": 0,
+      "dir": 1,
+      "odometer": 0,
+      "lights": false,
+      "guard": {
+        "state": "SAFE",
+        "risk": "SAFE",
+        "reason": "available",
+        "direction": 1,
+        "distance": null,
+        "boundary": null,
+        "lookahead": 0.012501,
+        "stoppingDistance": 0,
+        "leadingExtent": 34.25,
+        "protectionInset": null,
+        "requestedSpeed": 0,
+        "requestedDelta": 0,
+        "delta": 0,
+        "velocity": 0,
+        "intervened": false,
+        "probeDelta": null,
+        "probeKind": null
+      },
+      "routeContext": {
+        "loop": 0,
+        "previousLane": 0,
+        "mode": "loop",
+        "section": null,
+        "laps": 0
+      },
+      "resetSeed": {
+        "loop": 0,
+        "cars": 2,
+        "fraction": 0.45,
+        "edge": null,
+        "s": null
+      }
+    },
+    {
+      "id": "ab5f4d67-b9db-49cd-bbf2-98f1ec963a80",
+      "runtimeSlot": 3,
+      "consistId": "a98b3471-7e8f-4fe5-a2ab-f4259be1c6e1",
+      "name": "BR 216 \u00b7 4",
+      "description": "Diesel DB \u00b7 additional locomotive",
+      "nativeName": "BR 216 \u00b7 4",
+      "nativeDescription": "Diesel DB \u00b7 additional locomotive",
+      "modelKey": "diesel",
+      "journey": {
+        "segments": [
+          {
+            "id": "T47",
+            "sign": 1,
+            "start": 0,
+            "end": 248
+          }
+        ],
+        "position": 80,
+        "travel": 0,
+        "lastBlock": null
+      },
+      "location": {
+        "edge": "T47",
+        "s": 80,
+        "heading": 1
+      },
+      "speed": 0,
+      "requestedSpeed": 0,
+      "velocity": 0,
+      "dir": 1,
+      "odometer": 0,
+      "lights": false,
+      "guard": null,
+      "routeContext": {
+        "loop": 2,
+        "previousLane": 2,
+        "mode": "yard",
+        "section": "T47",
+        "laps": 0
+      },
+      "resetSeed": {
+        "loop": 2,
+        "cars": 0,
+        "fraction": null,
+        "edge": "T47",
+        "s": 80
+      }
+    }
+  ],
+  "looseStock": [
+    {
+      "itemId": "d642a517-3ce7-4828-a5bc-b97e26eb7797",
+      "journey": {
+        "segments": [
+          {
+            "id": "T10",
+            "sign": 1,
+            "start": -247.40000792272627,
+            "end": 0
+          },
+          {
+            "id": "T9",
+            "sign": 1,
+            "start": 0,
+            "end": 247.40000792272647
+          }
+        ],
+        "position": -212.1660019014542,
+        "travel": 0,
+        "lastBlock": null
+      },
+      "location": {
+        "edge": "T10",
+        "s": 35.23400602127208,
+        "heading": 1
+      },
+      "animationDistanceMm": 0
+    }
+  ],
+  "inventoryStorage": [],
+  "missions": {
+    "selected": 1,
+    "changes": 0,
+    "transferred": false,
+    "visitedRunaround": false,
+    "didDetach": true,
+    "didAttach": false
+  },
+  "ui": {
+    "selectedTrainId": "ab5f4d67-b9db-49cd-bbf2-98f1ec963a80",
+    "consoleSlots": [
+      "18ac71b2-69bf-48b0-85e8-73b33cf4bee0",
+      "cfe200af-5a89-442b-9d99-d09fa4f7ec74",
+      "ab5f4d67-b9db-49cd-bbf2-98f1ec963a80"
+    ],
+    "recentTrainIds": [
+      "ab5f4d67-b9db-49cd-bbf2-98f1ec963a80",
+      "18ac71b2-69bf-48b0-85e8-73b33cf4bee0",
+      "cfe200af-5a89-442b-9d99-d09fa4f7ec74",
+      "e5d8e3fa-18cb-4969-af7a-cb82556b93f2"
+    ],
+    "day": 81,
+    "rollingModelMode": "native",
+    "qualityMode": "low",
+    "camera": {
+      "preset": "overview",
+      "position": [
+        1664.0000000000005,
+        1149.9999999999998,
+        1694.0000000000002
+      ],
+      "target": [
+        834,
+        0,
+        474
+      ],
+      "zoom": 1,
+      "fov": 35
+    },
+    "hudMinimized": false,
+    "bellMuted": false
+  }
+}

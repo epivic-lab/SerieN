@@ -1,0 +1,1642 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "stateId",
+    "workspaceId",
+    "layoutId",
+    "topologyHash",
+    "engineRevision",
+    "resumePolicy",
+    "layout",
+    "time",
+    "models",
+    "items",
+    "consists",
+    "trains",
+    "looseStock",
+    "inventoryStorage",
+    "missions",
+    "ui"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1,
+      "x-source": "FUTURE serializer version",
+      "x-restore": "Reject unsupported versions; explicit migration only",
+      "x-authority": "authoritative"
+    },
+    "stateId": {
+      "type": "string",
+      "format": "uuid",
+      "x-source": "FUTURE unique capture ID",
+      "x-restore": "Stable immutable capture identity",
+      "x-authority": "authoritative"
+    },
+    "workspaceId": {
+      "type": "string",
+      "format": "uuid",
+      "x-source": "FUTURE authorized workspace",
+      "x-restore": "Must match verified capability binding",
+      "x-authority": "authoritative"
+    },
+    "layoutId": {
+      "type": "string",
+      "format": "uuid",
+      "x-source": "FUTURE canonical layout identity",
+      "x-restore": "Must belong to workspace",
+      "x-authority": "authoritative"
+    },
+    "topologyHash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "x-source": "SHA-256 raw src/canonical-layout.json bytes",
+      "x-restore": "Require exact deployed canonical bytes; never accept client topology",
+      "x-authority": "authoritative"
+    },
+    "engineRevision": {
+      "const": "R1-348bfeff12c4005657098d89ea1d3c2ccdda9910",
+      "x-source": "R1 compatibility manifest",
+      "x-restore": "Fail closed on incompatible engine",
+      "x-authority": "authoritative"
+    },
+    "resumePolicy": {
+      "const": "STOPPED",
+      "x-source": "D02 and existing snapshot trigger",
+      "x-restore": "Freeze before any tick; retain all kinetics",
+      "x-authority": "authoritative"
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "switches"
+      ],
+      "properties": {
+        "switches": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "WX-A",
+            "WX-B",
+            "Y-IN",
+            "Y-2",
+            "Y-3",
+            "Y-R1",
+            "Y-R2",
+            "Y-4"
+          ],
+          "properties": {
+            "WX-A": {
+              "type": "boolean",
+              "x-source": "switchSpecs[WX-A].on",
+              "x-restore": "Restore before Journey/guard reconstruction",
+              "x-authority": "authoritative"
+            },
+            "WX-B": {
+              "type": "boolean",
+              "x-source": "switchSpecs[WX-B].on",
+              "x-restore": "Restore before Journey/guard reconstruction",
+              "x-authority": "authoritative"
+            },
+            "Y-IN": {
+              "type": "boolean",
+              "x-source": "switchSpecs[Y-IN].on",
+              "x-restore": "Restore before Journey/guard reconstruction",
+              "x-authority": "authoritative"
+            },
+            "Y-2": {
+              "type": "boolean",
+              "x-source": "switchSpecs[Y-2].on",
+              "x-restore": "Restore before Journey/guard reconstruction",
+              "x-authority": "authoritative"
+            },
+            "Y-3": {
+              "type": "boolean",
+              "x-source": "switchSpecs[Y-3].on",
+              "x-restore": "Restore before Journey/guard reconstruction",
+              "x-authority": "authoritative"
+            },
+            "Y-R1": {
+              "type": "boolean",
+              "x-source": "switchSpecs[Y-R1].on",
+              "x-restore": "Restore before Journey/guard reconstruction",
+              "x-authority": "authoritative"
+            },
+            "Y-R2": {
+              "type": "boolean",
+              "x-source": "switchSpecs[Y-R2].on",
+              "x-restore": "Restore before Journey/guard reconstruction",
+              "x-authority": "authoritative"
+            },
+            "Y-4": {
+              "type": "boolean",
+              "x-source": "switchSpecs[Y-4].on",
+              "x-restore": "Restore before Journey/guard reconstruction",
+              "x-authority": "authoritative"
+            }
+          },
+          "description": "Exactly eight canonical controller IDs.",
+          "x-source": "app.switchSpecs",
+          "x-restore": "Apply booleans; never recreate geometry",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Logical controls only.",
+      "x-source": "app.switchSpecs",
+      "x-restore": "No geometric authority",
+      "x-authority": "authoritative"
+    },
+    "time": {
+      "$ref": "#/$defs/time",
+      "x-source": "FixedClock + FUTURE accepted tick count",
+      "x-restore": "Restore frozen",
+      "x-authority": "authoritative"
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/model"
+      },
+      "minItems": 1,
+      "maxItems": 128,
+      "x-source": "STOCK/train-assets + FUTURE versioned catalog mapping",
+      "x-restore": "Only verified revisions",
+      "x-authority": "authoritative"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      },
+      "minItems": 1,
+      "maxItems": 512,
+      "x-source": "Fleet concrete objects + FUTURE inventory",
+      "x-restore": "Stable IDs across sessions",
+      "x-authority": "authoritative"
+    },
+    "consists": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/consist"
+      },
+      "minItems": 1,
+      "maxItems": 4,
+      "x-source": "Fleet ordered arrays + FUTURE IDs",
+      "x-restore": "Max four active compositions",
+      "x-authority": "authoritative"
+    },
+    "trains": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/train"
+      },
+      "minItems": 1,
+      "maxItems": 4,
+      "x-source": "app.trains",
+      "x-restore": "Keep slot mapping and identities",
+      "x-authority": "authoritative"
+    },
+    "looseStock": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/loose"
+      },
+      "maxItems": 512,
+      "x-source": "app.detached",
+      "x-restore": "Restore full frozen Journey",
+      "x-authority": "authoritative"
+    },
+    "inventoryStorage": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/storage"
+      },
+      "maxItems": 512,
+      "x-source": "FUTURE 6D inventory; R1 empty",
+      "x-restore": "No track occupancy for off-scene stock",
+      "x-authority": "authoritative"
+    },
+    "missions": {
+      "$ref": "#/$defs/missions",
+      "x-source": "app statuses/global progress",
+      "x-restore": "Restore without completing extra events",
+      "x-authority": "authoritative"
+    },
+    "ui": {
+      "$ref": "#/$defs/ui",
+      "x-source": "UI state values listed in definitions",
+      "x-restore": "No DOM serialized",
+      "x-authority": "authoritative"
+    }
+  },
+  "description": "SerieN Train Management durable state v1. Proposed 6A.1 contract; no serializer implemented. Cross-record and railway predicates in 6A1_CONTRACT.md are mandatory in addition to JSON Schema.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:serien:state:1",
+  "$defs": {
+    "vector": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "Plain x,y,z numeric triple in layout mm; no Three.js vector."
+    },
+    "coupler": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "z"
+      ],
+      "properties": {
+        "x": {
+          "type": "number",
+          "x-source": "userData.couplers.*.x",
+          "x-restore": "Copy numeric geometry after catalog validation",
+          "x-authority": "authoritative"
+        },
+        "y": {
+          "type": "number",
+          "x-source": "userData.couplers.*.y",
+          "x-restore": "Copy numeric geometry after catalog validation",
+          "x-authority": "authoritative"
+        },
+        "z": {
+          "type": "number",
+          "x-source": "userData.couplers.*.z",
+          "x-restore": "Copy numeric geometry after catalog validation",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Logical point in vehicle coordinates; mm."
+    },
+    "assetRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "revision",
+        "digest"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "FUTURE immutable catalog identity",
+          "x-restore": "Resolve verified manifest",
+          "x-authority": "authoritative"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "FUTURE asset registry revision",
+          "x-restore": "Require exact revision",
+          "x-authority": "authoritative"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "x-source": "FUTURE SHA-256 of GLB or native builder manifest",
+          "x-restore": "Check bytes before scene creation",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Reference only: no executable URL from saved state."
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "revision",
+        "runtimeKey",
+        "kind",
+        "representation",
+        "asset",
+        "couplers",
+        "couplingMode",
+        "legacyRearExtentMm"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "FUTURE stable model identity; STOCK.id is source key only",
+          "x-restore": "Resolve catalog; never create arbitrary geometry",
+          "x-authority": "authoritative"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "FUTURE verified geometry/catalog revision",
+          "x-restore": "Require exact dimensions and coupling behavior",
+          "x-authority": "authoritative"
+        },
+        "runtimeKey": {
+          "enum": [
+            "steam",
+            "diesel",
+            "shunter",
+            "closed",
+            "open",
+            "tank",
+            "flat",
+            "coach",
+            "lumber",
+            "box"
+          ],
+          "x-source": "rolling-stock.STOCK / train-assets.files / app.locoModel",
+          "x-restore": "Resolve native builder or Kenney mapping",
+          "x-authority": "authoritative"
+        },
+        "kind": {
+          "enum": [
+            "locomotive",
+            "wagon"
+          ],
+          "x-source": "app.trains.group versus carObjs / STOCK",
+          "x-restore": "Validate ordinal zero locomotive",
+          "x-authority": "authoritative"
+        },
+        "representation": {
+          "enum": [
+            "native",
+            "kenney"
+          ],
+          "x-source": "rollingModelMode + per-vehicle actual assetLoaded",
+          "x-restore": "Require saved effective representation; no silent geometry fallback",
+          "x-authority": "authoritative"
+        },
+        "asset": {
+          "$ref": "#/$defs/assetRef",
+          "x-source": "FUTURE verified reference to native builder or six Kenney GLBs",
+          "x-restore": "Allow only approved registry",
+          "x-authority": "authoritative"
+        },
+        "couplers": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "front",
+            "back"
+          ],
+          "properties": {
+            "front": {
+              "$ref": "#/$defs/coupler",
+              "x-source": "userData.couplers.front",
+              "x-restore": "Verify catalog equality",
+              "x-authority": "authoritative"
+            },
+            "back": {
+              "$ref": "#/$defs/coupler",
+              "x-source": "userData.couplers.back",
+              "x-restore": "Verify catalog equality",
+              "x-authority": "authoritative"
+            }
+          },
+          "description": "Effective R1 coupling points.",
+          "x-source": "userData.couplers; native or imported effective values",
+          "x-restore": "Validate against pinned model revision; not a new geometry authority",
+          "x-authority": "authoritative"
+        },
+        "couplingMode": {
+          "enum": [
+            "explicit",
+            "legacy64"
+          ],
+          "x-source": "consist.couplingDistance stock/assetDimensions predicate",
+          "x-restore": "Preserve explicit ends or exact legacy 64mm fallback",
+          "x-authority": "authoritative"
+        },
+        "legacyRearExtentMm": {
+          "type": "number",
+          "minimum": 0,
+          "x-source": "consist.consistLayout legacy 38mm fallback",
+          "x-restore": "For legacy64 require 38; explicit require 0",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Versioned effective geometry manifest. Values are assertions against server-approved catalog, not user-authorized geometry edits."
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "modelId",
+        "nativeModelId",
+        "nativeModelRevision",
+        "nativeKind",
+        "modelRevision",
+        "displayName",
+        "orientation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "FUTURE stable identity for group/carObjs/detached.group",
+          "x-restore": "Maintain identity through coupling and detaching; never mesh.uuid",
+          "x-authority": "authoritative"
+        },
+        "modelId": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "FUTURE mapping of concrete vehicle to models.id",
+          "x-restore": "Resolve pinned model",
+          "x-authority": "authoritative"
+        },
+        "nativeModelId": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "FUTURE pinned native builder identity; current hidden native children are not serializable",
+          "x-restore": "Resolve original wagon variant even when effective model is Kenney",
+          "x-authority": "authoritative"
+        },
+        "nativeModelRevision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "FUTURE native builder revision",
+          "x-restore": "Require exact native builder for later explicit model-mode change",
+          "x-authority": "authoritative"
+        },
+        "nativeKind": {
+          "enum": [
+            "steam",
+            "diesel",
+            "shunter",
+            "closed",
+            "open",
+            "tank",
+            "flat",
+            "coach"
+          ],
+          "x-source": "app.locoModel/freightWagon and userData.stock.kind when present",
+          "x-restore": "Preserve original native constructor independently from effective Kenney asset",
+          "x-authority": "authoritative"
+        },
+        "modelRevision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "FUTURE model revision",
+          "x-restore": "Must equal referenced models.revision",
+          "x-authority": "authoritative"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "FUTURE inventory label; runtime stock.name if present",
+          "x-restore": "Plain text only",
+          "x-authority": "authoritative"
+        },
+        "orientation": {
+          "enum": [
+            -1,
+            1
+          ],
+          "x-source": "FUTURE 6D; R1 uses +1 for attached vehicles",
+          "x-restore": "Relative to Journey positive axis; reject -1 until adapter supports it",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "All stock owned by workspace, including off-scene inventory."
+    },
+    "member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "itemId",
+        "orientation"
+      ],
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "[train.group,...train.carObjs] identity map",
+          "x-restore": "Restore order without cloning identities",
+          "x-authority": "authoritative"
+        },
+        "orientation": {
+          "enum": [
+            -1,
+            1
+          ],
+          "x-source": "FUTURE member orientation; R1 +1",
+          "x-restore": "Must equal item.orientation",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Array index is ordinal; no duplicate order field."
+    },
+    "consist": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "members"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "FUTURE stable composition identity",
+          "x-restore": "Link train and ordered members",
+          "x-authority": "authoritative"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "train.name / FUTURE composition label",
+          "x-restore": "Plain text",
+          "x-authority": "authoritative"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/member"
+          },
+          "minItems": 1,
+          "maxItems": 6,
+          "x-source": "[train.group,...train.carObjs]",
+          "x-restore": "Index 0 locomotive, <=5 wagons; unique workspace assignment",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Active composition, maximum one train per composition."
+    },
+    "segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sign",
+        "start",
+        "end"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "x-source": "Journey.segments[].id",
+          "x-restore": "Resolve canonical edge",
+          "x-authority": "authoritative"
+        },
+        "sign": {
+          "enum": [
+            -1,
+            1
+          ],
+          "x-source": "Journey.segments[].sign",
+          "x-restore": "Copy axis orientation",
+          "x-authority": "authoritative"
+        },
+        "start": {
+          "type": "number",
+          "x-source": "Journey.segments[].start",
+          "x-restore": "Copy unrebased ribbon coordinate",
+          "x-authority": "authoritative"
+        },
+        "end": {
+          "type": "number",
+          "x-source": "Journey.segments[].end",
+          "x-restore": "Copy; end-start must equal edge.length",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Ordered historical traversal occurrence; repeated edge IDs allowed."
+    },
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge",
+        "from",
+        "to",
+        "distance"
+      ],
+      "properties": {
+        "edge": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "x-source": "guard.boundary.edge",
+          "x-restore": "Resolve canonical edge",
+          "x-authority": "authoritative"
+        },
+        "from": {
+          "type": "number",
+          "minimum": 0,
+          "x-source": "guard.boundary.from",
+          "x-restore": "Check <= edge.length",
+          "x-authority": "authoritative"
+        },
+        "to": {
+          "type": "number",
+          "minimum": 0,
+          "x-source": "guard.boundary.to",
+          "x-restore": "Check <= edge.length",
+          "x-authority": "authoritative"
+        },
+        "distance": {
+          "type": "number",
+          "minimum": 0,
+          "x-source": "guard.boundary.distance",
+          "x-restore": "Preserve diagnostic range",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "traceJourney range."
+    },
+    "boundary": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        {
+          "$ref": "#/$defs/range"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Guard boundary can be node/edge ID, trace range, or null. Never an object reference."
+    },
+    "lastBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge",
+        "node",
+        "reason",
+        "boundary"
+      ],
+      "properties": {
+        "edge": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "Journey.lastBlock.edge or absent",
+          "x-restore": "Absent normalized null",
+          "x-authority": "authoritative"
+        },
+        "node": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "Journey.lastBlock.node or absent",
+          "x-restore": "Absent normalized null",
+          "x-authority": "authoritative"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "Journey.lastBlock.reason",
+          "x-restore": "Preserve diagnostic reason; no routing permission",
+          "x-authority": "authoritative"
+        },
+        "boundary": {
+          "$ref": "#/$defs/boundary",
+          "x-source": "Journey.lastBlock.boundary or absent",
+          "x-restore": "Absent normalized null",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Both shapes produced by Journey.extend and stepRailway normalized explicitly."
+    },
+    "journey": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "segments",
+        "position",
+        "travel",
+        "lastBlock"
+      ],
+      "properties": {
+        "segments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/segment"
+          },
+          "minItems": 1,
+          "maxItems": 10000,
+          "x-source": "Journey.segments",
+          "x-restore": "Copy full retained history; do not retrace from present switches",
+          "x-authority": "authoritative"
+        },
+        "position": {
+          "type": "number",
+          "x-source": "Journey.position",
+          "x-restore": "Restore exact ribbon coordinate",
+          "x-authority": "authoritative"
+        },
+        "travel": {
+          "type": "number",
+          "minimum": 0,
+          "x-source": "Journey.travel",
+          "x-restore": "Absolute travelled mm, preserve",
+          "x-authority": "authoritative"
+        },
+        "lastBlock": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/lastBlock"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "Journey.lastBlock or absent",
+          "x-restore": "Null means delete lastBlock",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Data only. network is obtained from locked R1 topology, not serialized."
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge",
+        "s",
+        "heading"
+      ],
+      "properties": {
+        "edge": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "x-source": "Journey.locate().edge or detached.point.edge",
+          "x-restore": "Verify against saved Journey",
+          "x-authority": "authoritative"
+        },
+        "s": {
+          "type": "number",
+          "minimum": 0,
+          "x-source": "Journey.locate().s or detached.point.s",
+          "x-restore": "Within canonical edge length",
+          "x-authority": "authoritative"
+        },
+        "heading": {
+          "enum": [
+            -1,
+            1
+          ],
+          "x-source": "Active Journey segment.sign",
+          "x-restore": "Tangent orientation relative to edge source order, independent of train.dir",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Canonical location assertion; derived from Journey, never x/z world coordinates."
+    },
+    "guard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "risk",
+        "reason",
+        "direction",
+        "distance",
+        "boundary",
+        "lookahead",
+        "stoppingDistance",
+        "leadingExtent",
+        "protectionInset",
+        "requestedSpeed",
+        "requestedDelta",
+        "delta",
+        "velocity",
+        "intervened",
+        "probeDelta",
+        "probeKind"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "SAFE",
+            "GUARDED_STOP"
+          ],
+          "x-source": "train.guard.state",
+          "x-restore": "Preserve latch; reassess before movement",
+          "x-authority": "authoritative"
+        },
+        "risk": {
+          "enum": [
+            "SAFE",
+            "UNSAFE",
+            "UNKNOWN"
+          ],
+          "x-source": "train.guard.risk",
+          "x-restore": "Preserve observation; not permission",
+          "x-authority": "authoritative"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "train.guard.reason",
+          "x-restore": "Plain diagnostic code",
+          "x-authority": "authoritative"
+        },
+        "direction": {
+          "enum": [
+            -1,
+            1
+          ],
+          "x-source": "train.guard.direction",
+          "x-restore": "Preserve observed sign",
+          "x-authority": "authoritative"
+        },
+        "distance": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.guard.distance",
+          "x-restore": "Only +Infinity maps to null; null decodes +Infinity",
+          "x-authority": "authoritative"
+        },
+        "boundary": {
+          "$ref": "#/$defs/boundary",
+          "x-source": "train.guard.boundary",
+          "x-restore": "Copy diagnostic value",
+          "x-authority": "authoritative"
+        },
+        "lookahead": {
+          "type": "number",
+          "minimum": 0,
+          "x-source": "train.guard.lookahead",
+          "x-restore": "Retained horizon used by assessRailwayGuard",
+          "x-authority": "authoritative"
+        },
+        "stoppingDistance": {
+          "type": "number",
+          "minimum": 0,
+          "x-source": "train.guard.stoppingDistance",
+          "x-restore": "Preserve numeric observation",
+          "x-authority": "authoritative"
+        },
+        "leadingExtent": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.guard.leadingExtent or absent",
+          "x-restore": "Null decodes absent",
+          "x-authority": "authoritative"
+        },
+        "protectionInset": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.guard.protectionInset or absent",
+          "x-restore": "Null decodes absent",
+          "x-authority": "authoritative"
+        },
+        "requestedSpeed": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "x-source": "train.guard.requestedSpeed",
+          "x-restore": "Preserve saved observation",
+          "x-authority": "authoritative"
+        },
+        "requestedDelta": {
+          "type": "number",
+          "x-source": "train.guard.requestedDelta",
+          "x-restore": "Preserve saved observation",
+          "x-authority": "authoritative"
+        },
+        "delta": {
+          "type": "number",
+          "x-source": "train.guard.delta",
+          "x-restore": "Preserve saved observation",
+          "x-authority": "authoritative"
+        },
+        "velocity": {
+          "type": "number",
+          "minimum": -150,
+          "maximum": 150,
+          "x-source": "train.guard.velocity",
+          "x-restore": "Preserve saved observation",
+          "x-authority": "authoritative"
+        },
+        "intervened": {
+          "type": "boolean",
+          "x-source": "train.guard.intervened",
+          "x-restore": "Preserve latch",
+          "x-authority": "authoritative"
+        },
+        "probeDelta": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.guard.probeDelta or absent",
+          "x-restore": "Restore signed collision probe; null deletes",
+          "x-authority": "authoritative"
+        },
+        "probeKind": {
+          "anyOf": [
+            {
+              "enum": [
+                "train",
+                "wagon"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.guard.probeKind or absent",
+          "x-restore": "Restore retained hazard; null deletes",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Complete stepRailway guard record. Absence before first step represented by train.guard=null."
+    },
+    "routeContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "loop",
+        "previousLane",
+        "mode",
+        "section",
+        "laps"
+      ],
+      "properties": {
+        "loop": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "x-source": "train.loop",
+          "x-restore": "Retain last loop even while in yard",
+          "x-authority": "authoritative"
+        },
+        "previousLane": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "x-source": "train.previousLane",
+          "x-restore": "Retain transfer mission history",
+          "x-authority": "authoritative"
+        },
+        "mode": {
+          "enum": [
+            "loop",
+            "yard"
+          ],
+          "x-source": "train.mode",
+          "x-restore": "Retain R1 crossover semantics",
+          "x-authority": "authoritative"
+        },
+        "section": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.section or absent",
+          "x-restore": "Null deletes; can retain historical section while on loop",
+          "x-authority": "authoritative"
+        },
+        "laps": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991,
+          "x-source": "train.laps",
+          "x-restore": "Check floor(journey.travel/loops[loop].length); restore consistency",
+          "x-authority": "derived"
+        }
+      },
+      "description": "R1 historical route context cannot all be recomputed from current edge."
+    },
+    "resetSeed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "loop",
+        "cars",
+        "fraction",
+        "edge",
+        "s"
+      ],
+      "properties": {
+        "loop": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "x-source": "train.initial.loop",
+          "x-restore": "Preserve explicit reset behavior",
+          "x-authority": "authoritative"
+        },
+        "cars": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "x-source": "train.initial.cars",
+          "x-restore": "Initial count, not current count",
+          "x-authority": "authoritative"
+        },
+        "fraction": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.initial.fraction or absent",
+          "x-restore": "Exclusive with edge/s",
+          "x-authority": "authoritative"
+        },
+        "edge": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.initial.edge or absent",
+          "x-restore": "Exclusive with fraction",
+          "x-authority": "authoritative"
+        },
+        "s": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.initial.s or absent",
+          "x-restore": "Require with edge",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Reset template only; restore must never call initializeJourney/reset."
+    },
+    "train": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "runtimeSlot",
+        "consistId",
+        "name",
+        "description",
+        "nativeName",
+        "nativeDescription",
+        "modelKey",
+        "journey",
+        "location",
+        "speed",
+        "requestedSpeed",
+        "velocity",
+        "dir",
+        "odometer",
+        "lights",
+        "guard",
+        "routeContext",
+        "resetSeed"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "FUTURE stable train identity",
+          "x-restore": "Rebuild runtime slot mapping separately",
+          "x-authority": "authoritative"
+        },
+        "runtimeSlot": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "x-source": "train.id currently equals array index",
+          "x-restore": "Preserve R1 index-based commands; unique contiguous slots",
+          "x-authority": "authoritative"
+        },
+        "consistId": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "FUTURE stable composition mapping",
+          "x-restore": "Must reference exactly one consist",
+          "x-authority": "authoritative"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "train.name",
+          "x-restore": "Plain text",
+          "x-authority": "authoritative"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 500,
+          "x-source": "train.desc",
+          "x-restore": "Plain text",
+          "x-authority": "authoritative"
+        },
+        "nativeName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "x-source": "train.nativeName",
+          "x-restore": "Preserve native/model switching name",
+          "x-authority": "authoritative"
+        },
+        "nativeDescription": {
+          "type": "string",
+          "maxLength": 500,
+          "x-source": "train.nativeDescription",
+          "x-restore": "Preserve native/model switching description",
+          "x-authority": "authoritative"
+        },
+        "modelKey": {
+          "enum": [
+            "steam",
+            "diesel",
+            "shunter"
+          ],
+          "x-source": "train.modelKey",
+          "x-restore": "Resolve approved locomotive builder",
+          "x-authority": "authoritative"
+        },
+        "journey": {
+          "$ref": "#/$defs/journey",
+          "x-source": "train.journey",
+          "x-restore": "Rehydrate data into existing Journey implementation",
+          "x-authority": "authoritative"
+        },
+        "location": {
+          "$ref": "#/$defs/location",
+          "x-source": "train.journey.locate() plus segment sign",
+          "x-restore": "Cross-check only; Journey wins after equality validation",
+          "x-authority": "derived"
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "x-source": "train.speed",
+          "x-restore": "Preserve command %, including zero after protected stop",
+          "x-authority": "authoritative"
+        },
+        "requestedSpeed": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "x-source": "train.requestedSpeed",
+          "x-restore": "Preserve intent even when speed is zero",
+          "x-authority": "authoritative"
+        },
+        "velocity": {
+          "type": "number",
+          "minimum": -150,
+          "maximum": 150,
+          "x-source": "train.velocity",
+          "x-restore": "Signed mm/s; do not clear on restore",
+          "x-authority": "authoritative"
+        },
+        "dir": {
+          "enum": [
+            -1,
+            1
+          ],
+          "x-source": "train.dir",
+          "x-restore": "Requested movement direction; can differ from velocity while reversing",
+          "x-authority": "authoritative"
+        },
+        "odometer": {
+          "type": "number",
+          "x-source": "train.odometer",
+          "x-restore": "Signed mm for wheel phase, unlike Journey.travel",
+          "x-authority": "authoritative"
+        },
+        "lights": {
+          "type": "boolean",
+          "x-source": "train.lights",
+          "x-restore": "Apply after assets ready",
+          "x-authority": "authoritative"
+        },
+        "guard": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/guard"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "train.guard or absent",
+          "x-restore": "Restore retained horizon/probe before first admissible step",
+          "x-authority": "authoritative"
+        },
+        "routeContext": {
+          "$ref": "#/$defs/routeContext",
+          "x-source": "app.advanceFleet train context",
+          "x-restore": "Restore mission-sensitive fields",
+          "x-authority": "authoritative"
+        },
+        "resetSeed": {
+          "$ref": "#/$defs/resetSeed",
+          "x-source": "train.initial",
+          "x-restore": "For later explicit reset only",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "No Three.Group, carObjs references, live functions, or DOM."
+    },
+    "loose": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "itemId",
+        "journey",
+        "location",
+        "animationDistanceMm"
+      ],
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "detached.group identity map",
+          "x-restore": "Resolve unique item",
+          "x-authority": "authoritative"
+        },
+        "journey": {
+          "$ref": "#/$defs/journey",
+          "x-source": "detached.journey",
+          "x-restore": "Mandatory full frozen history, including joints",
+          "x-authority": "authoritative"
+        },
+        "location": {
+          "$ref": "#/$defs/location",
+          "x-source": "detached.point and Journey",
+          "x-restore": "Check equality; derive x,z,angle via network",
+          "x-authority": "authoritative"
+        },
+        "animationDistanceMm": {
+          "type": "number",
+          "x-source": "FUTURE retained odometer at uncouple; R1 only retains live mesh wheel phase",
+          "x-restore": "Recreate detached wheel/rod phase without serializing mesh rotations",
+          "x-authority": "presentation"
+        }
+      },
+      "description": "Detached vehicle on track; legacy fixtures without Journey are not durable v1 states."
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "itemId",
+        "bayId"
+      ],
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "FUTURE off-scene inventory / 6D",
+          "x-restore": "Must not occupy consist or loose placement",
+          "x-authority": "authoritative"
+        },
+        "bayId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "x-source": "FUTURE inventory shelf identity",
+          "x-restore": "Null = available inventory, no physical rail position",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Inventory storage outside scene, not railway shed placement."
+    },
+    "missions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selected",
+        "changes",
+        "transferred",
+        "visitedRunaround",
+        "didDetach",
+        "didAttach"
+      ],
+      "properties": {
+        "selected": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "x-source": "app.mission",
+          "x-restore": "Select status without invoking commands",
+          "x-authority": "authoritative"
+        },
+        "changes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991,
+          "x-source": "app.changes",
+          "x-restore": "Preserve counter even though reset currently leaves it unchanged",
+          "x-authority": "authoritative"
+        },
+        "transferred": {
+          "type": "boolean",
+          "x-source": "app.transferred",
+          "x-restore": "Preserve completion",
+          "x-authority": "authoritative"
+        },
+        "visitedRunaround": {
+          "type": "boolean",
+          "x-source": "app.visitedRunaround",
+          "x-restore": "Preserve completion",
+          "x-authority": "authoritative"
+        },
+        "didDetach": {
+          "type": "boolean",
+          "x-source": "app.didDetach",
+          "x-restore": "Preserve completion",
+          "x-authority": "authoritative"
+        },
+        "didAttach": {
+          "type": "boolean",
+          "x-source": "app.didAttach",
+          "x-restore": "Preserve completion",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "Mission 0 progress derives from first train laps. No serialized done() functions."
+    },
+    "ui": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selectedTrainId",
+        "consoleSlots",
+        "recentTrainIds",
+        "day",
+        "rollingModelMode",
+        "qualityMode",
+        "camera",
+        "hudMinimized",
+        "bellMuted"
+      ],
+      "properties": {
+        "selectedTrainId": {
+          "type": "string",
+          "format": "uuid",
+          "x-source": "app.selected -> train.id mapping",
+          "x-restore": "Resolve runtime slot",
+          "x-authority": "authoritative"
+        },
+        "consoleSlots": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "x-source": "trainDeck.visibleIds / RecentConsoles.slots",
+          "x-restore": "Restore exact order; max 3",
+          "x-authority": "authoritative"
+        },
+        "recentTrainIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "x-source": "trainDeck.recentIds / RecentConsoles.recent",
+          "x-restore": "Restore full LRU order, not only visible slots",
+          "x-authority": "authoritative"
+        },
+        "day": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "x-source": "app.day",
+          "x-restore": "Apply light slider",
+          "x-authority": "authoritative"
+        },
+        "rollingModelMode": {
+          "enum": [
+            "native",
+            "kenney"
+          ],
+          "x-source": "app.rollingModelMode / rollingModels select",
+          "x-restore": "Preserve preference separately from effective model per item",
+          "x-authority": "authoritative"
+        },
+        "qualityMode": {
+          "enum": [
+            "auto",
+            "low",
+            "high",
+            "cinema"
+          ],
+          "x-source": "quality.mode",
+          "x-restore": "Recompute auto profile per device",
+          "x-authority": "presentation"
+        },
+        "camera": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "preset",
+            "position",
+            "target",
+            "zoom",
+            "fov"
+          ],
+          "properties": {
+            "preset": {
+              "enum": [
+                "overview",
+                "station",
+                "yard",
+                "follow",
+                "manual"
+              ],
+              "x-source": "nav.preset",
+              "x-restore": "Restore mode without pending interpolation",
+              "x-authority": "authoritative"
+            },
+            "position": {
+              "$ref": "#/$defs/vector",
+              "x-source": "camera.position.toArray()",
+              "x-restore": "Copy finite coordinates; validate safeView",
+              "x-authority": "authoritative"
+            },
+            "target": {
+              "$ref": "#/$defs/vector",
+              "x-source": "controls.target.toArray()",
+              "x-restore": "Copy finite coordinates; validate safeView",
+              "x-authority": "authoritative"
+            },
+            "zoom": {
+              "type": "number",
+              "minimum": 0.65,
+              "maximum": 3.4,
+              "x-source": "camera.zoom",
+              "x-restore": "Restore projection",
+              "x-authority": "authoritative"
+            },
+            "fov": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "exclusiveMaximum": 180,
+              "x-source": "camera.fov",
+              "x-restore": "Restore projection",
+              "x-authority": "authoritative"
+            }
+          },
+          "description": "Current view; transient goal/damping are not durable.",
+          "x-source": "navigation/camera/controls",
+          "x-restore": "Restore view, recalculate aspect from viewport",
+          "x-authority": "presentation"
+        },
+        "hudMinimized": {
+          "type": "boolean",
+          "x-source": "nextSwitchHUD.panel.classList is-minimized",
+          "x-restore": "Apply preference",
+          "x-authority": "presentation"
+        },
+        "bellMuted": {
+          "type": "boolean",
+          "x-source": "guardedStops.bell.snapshot.muted",
+          "x-restore": "Apply mute; audio unlock still requires gesture",
+          "x-authority": "presentation"
+        }
+      },
+      "description": "Significant UI only. Route preview timer, hover, modals, GPU state and announcements excluded."
+    },
+    "time": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tickCount",
+        "stepSeconds",
+        "accumulatorSeconds",
+        "wasPaused"
+      ],
+      "properties": {
+        "tickCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991,
+          "x-source": "FUTURE accepted logical tick counter; R1 has no total counter",
+          "x-restore": "Never derive from browser wall time",
+          "x-authority": "authoritative"
+        },
+        "stepSeconds": {
+          "const": 0.016666666666666666,
+          "x-source": "FixedClock.step",
+          "x-restore": "Fixed R1 1/60 sec",
+          "x-authority": "authoritative"
+        },
+        "accumulatorSeconds": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMaximum": 0.016666666666666666,
+          "x-source": "FixedClock.accumulator at stable RAF boundary",
+          "x-restore": "Preserve substep remainder; freeze until resume",
+          "x-authority": "authoritative"
+        },
+        "wasPaused": {
+          "type": "boolean",
+          "x-source": "app.paused before capture",
+          "x-restore": "Preserve pre-save pause preference; restore gate always stopped",
+          "x-authority": "authoritative"
+        }
+      },
+      "description": "elapsed simulated seconds is derived tickCount * stepSeconds; no wall-clock catch-up."
+    }
+  },
+  "title": "SerieN persistent state v1"
+}

@@ -62,6 +62,16 @@ function navigation(camera, controls, options = {}) {
     get preset() {
       return mode;
     },
+    validateRestore(view) {
+      const safe=safeView(new Vector3(...view.position),new Vector3(...view.target),options);
+      for(const [key,values] of [['position',view.position],['target',view.target]])for(const [i,k] of ['x','y','z'].entries())if(Math.abs(safe[key][k]-values[i])>1e-6)throw new Error('Unsafe saved camera');
+    },
+    restore(view) {
+      goal=null;mode=view.preset;camera.position.fromArray(view.position);controls.target.fromArray(view.target);
+      const damping=controls.enableDamping;controls.enableDamping=false;controls.update();controls.enableDamping=damping;
+      // Discard transient damping and preserve the document's exact coordinates.
+      camera.position.fromArray(view.position);controls.target.fromArray(view.target);camera.zoom=view.zoom;camera.fov=view.fov;camera.lookAt(controls.target);camera.updateProjectionMatrix();camera.updateMatrixWorld();
+    },
     select(preset) {
       if (disposed) return;
       if (preset !== "follow" && !CAMERA_PRESETS[preset]) throw new RangeError("Unknown camera preset: " + preset);

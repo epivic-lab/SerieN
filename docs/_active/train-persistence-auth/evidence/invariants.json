@@ -1,0 +1,49 @@
+{
+  "baseline": "9126788d3c68e43c0687e948db767bfccbbfc774",
+  "checks": {
+    "src/canonical-layout.json": {
+      "sha256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "byteIdenticalToBaseline": true
+    },
+    "src/network.js": {
+      "sha256": "6428b5abc00aa1fdb35202bf2d303df5c790f70dc612942e966a07a129d0f0e0",
+      "byteIdenticalToBaseline": true
+    },
+    "src/simulation.js": {
+      "sha256": "0b243f69abc9c652adb9dff83fbba26cbe93cb8c8fa2f30716022c167d206c3c",
+      "byteIdenticalToBaseline": true
+    },
+    "src/railway-step.js": {
+      "sha256": "e96411470661c3767884b4574ee9121f2a7f6abac2986bd8b127fb9baa29ffbb",
+      "byteIdenticalToBaseline": true
+    },
+    "src/railway-guard.js": {
+      "sha256": "13815f4d8d53b827a154e0febf098bd74c00e7223c13e8effe2804c5ad8fdf15",
+      "byteIdenticalToBaseline": true
+    },
+    "src/railway-conflicts.js": {
+      "sha256": "7dc1b44fffae951df219118d8490a4f21e015c9631f623e314931806f8b6fd62",
+      "byteIdenticalToBaseline": true
+    },
+    "src/consist.js": {
+      "sha256": "17c536e5f9561d899e67a6747f50795a1506e4820789f16030d0e08a5410d3a2",
+      "byteIdenticalToBaseline": true
+    },
+    "src/rolling-stock.js": {
+      "sha256": "13c0727a9fdb3b5ae8888c597f25c7293b93d45b3dc685a9d6e416f06712a8db",
+      "byteIdenticalToBaseline": true
+    },
+    "src/rolling-stock-art.js": {
+      "sha256": "15e1ab227ff9d6546d683ebc02abc9a5a8788a8cfd2f0b0b57e30d19be1f9314",
+      "byteIdenticalToBaseline": true
+    },
+    "src/rail-profile.js": {
+      "sha256": "4d0bdc39741e2b77135de39f33411f56d2d25953d71c48033b35a15f4f1cdc28",
+      "byteIdenticalToBaseline": true
+    },
+    "app.js:rail-and-scenery-builders": {
+      "byteIdenticalToBaseline": true,
+      "sha256": "7da823577b8e53ce85f28f47d5dcc5f080350369977cf38e6712e233d72a60ef"
+    }
+  }
+}

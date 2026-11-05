@@ -1,5 +1,28 @@
 # SerieN — Stato e ripresa
 
+## Percorso operativo corrente — 6B.1 Auth Google (5 novembre 2026)
+
+**6B.1 PASS tecnico, in attesa del collaudo indipendente della Regia.** Branch
+`feature/train-persistence-auth` dalla baseline main `9126788d3c68e43c0687e948db767bfccbbfc774`.
+Implementati capture, schema/validazione e restore locale dello stato browser R1,
+con ID stabili, staging non distruttivo e blocco fino a Riprendi. Round-trip
+native/Kenney, tre/quattro convogli e sganciati PASS. **231 Node, 9 Python, build,
+30 controlli browser, regressioni 5C e Fase 0 PASS.** Sei miniature pixel-identiche.
+
+L'architettura corrente usa **Supabase Auth Google + auth.uid() + allowlist/RLS**;
+D09/D10 e il percorso ownerless storico non sono da importare. Adapter cloud
+**disabilitato**; nessuna scrittura/migrazione Supabase, merge o pubblicazione
+Pages. Proposta futura di privilegi minimi, RPC atomica, CAS, idempotenza e
+storico separata dal codice operativo. Il secondo account Google autorizzato e
+la concorrenza cloud reale restano da collaudare.
+
+- [Gate 6B.1](docs/_active/train-persistence-auth/6B1_CAPTURE_RESTORE_GATE.md).
+- [Stato corrente](docs/_active/train-persistence-auth/STATUS.md).
+- [Proposta Supabase non applicata](docs/_active/train-persistence-auth/SUPABASE_SAVE_PROPOSAL.md).
+
+**Unica prossima azione: collaudo indipendente della Regia. STOP 6B.1.**
+Le sezioni seguenti conservano il contesto storico, non autorizzano altre fasi.
+
 **5A, 5B, 5C e 5D concluse. Pubblicazione su main autorizzata dall’utente il 30 ottobre 2026. 5E non iniziata.**
 
 La richiesta del 30 ottobre ha autorizzato il completamento della 5D dal checkpoint pulito `5ae8ee9`. Controllato GitHub: `main` a `f582b12`, due commit di soli asset/file di sistema rispetto alla base pubblica, preservati. Repository `first` e `SerieN Control` non modificati.

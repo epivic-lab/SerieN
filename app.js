@@ -1,3 +1,4 @@
+import {createLocalPersistence} from './src/persistence/runtime.js';
 import {createGuardedStops} from './src/guarded-stop-scene.js';
 import {animateAuxiliaryWheels} from './src/rolling-stock-animation.js';
 import {stepRailway} from './src/railway-step.js';
@@ -23,7 +24,7 @@ import { couplingDistance } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
 import { navigation, CAMERA_PRESETS } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
-import { attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets } from "./src/train-assets.js";
+import { attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets, trainAssetManager } from "./src/train-assets.js";
 import { locomotiveDetails, steam } from "./src/rolling-stock-art.js";
 import { presentation } from "./src/presentation.js";
 import { enrich } from "./src/scenery.js";
@@ -292,14 +293,16 @@ function wheelSet(group, len) {
     o.userData.wheel = true;
   }
 }
-function freightWagon(i) {
+function freightWagon(i, attach=true) {
   const kind=['closed','open','tank','flat','coach'][i%5];
   const g=buildStock(kind);
-  attachTrainAsset(g, ['box','lumber','tank','lumber','box'][i%5]);
+  g.userData.persistenceKind=kind;
+  if(attach)attachTrainAsset(g, ['box','lumber','tank','lumber','box'][i%5]);
   return g;
 }
-function locoModel(id,trainId=id) {
+function locoModel(id,trainId=id,parent=scene) {
   const g = id===0||id===2 ? buildStock(id===0?'steam':'shunter') : new THREE.Group();
+  g.userData.persistenceKind=["steam","diesel","shunter"][id];
   g.userData.trainId = trainId;
   if(id===1) {
     const long = 61;
@@ -337,7 +340,7 @@ function locoModel(id,trainId=id) {
     if (o.isMesh) o.userData.trainId = trainId;
   });
   if(id===1)locomotiveDetails(g, id);
-  scene.add(g);
+  parent.add(g);
   return g;
 }
 const trains = [
@@ -366,7 +369,7 @@ assetReady.then((loaded) => {
   startupTrains.forEach((t, i) => t.assetLoaded = loaded[i]);
   updateModels();
 });
-function updateModels() {
+function updateModels() {if(persistenceBusy)return;
   const active = $("rollingModels").value === "kenney";
   const histories=trains.filter(t=>t.journey).map(t=>({journey:t.journey,segments:[...t.journey.segments],lastBlock:t.journey.lastBlock}));
   const clearances=()=>{
@@ -412,6 +415,7 @@ const detached = [];
 const selectRing = new THREE.Mesh(new THREE.TorusGeometry(25, 1.5, 5, 34), new THREE.MeshBasicMaterial({ color: "#efdc9d" }));
 selectRing.rotation.x = PI / 2;
 scene.add(selectRing);
+let persistenceBusy=false,restoreStopped=false,tickCount=0,savedWasPaused=false;
 let selected = 0, paused = false, day = 48, changes = 0, transferred = false, visitedRunaround = false, didDetach = false, didAttach = false, mission = 0;
 const statuses = [
   { title: "First lap", body: "Complete one lap of the steam locomotive’s loop.", done: () => trains[0].laps >= 1, detail: () => "Completed laps: " + trains[0].laps + " / 1" },
@@ -441,13 +445,13 @@ function ui() {
 function missionUI() {
   $("missionStatus").textContent = statuses[mission].done() ? "\u2713 Mission completed" : statuses[mission].detail();
 }
-function select(id) {
+function select(id) {if(persistenceBusy)return;
   if(!trains[id])return;
   selected = id;
   trainDeck?.select(id);
   ui();
 }
-function requestToggle(controlId,origin) {
+function requestToggle(controlId,origin) {if(persistenceBusy)return;
   const result = turnoutCommands.requestToggle(controlId,origin);
   if (!result.changed) {
     log(result.message);
@@ -500,7 +504,7 @@ function vehicleLocation(t, behind = 0) {
 function renderVehicles() {
   for (const t of trains) {
     const layout = layoutFor(t);
-    t.journey.ensure(t.journey.position - layout.tail, route);
+    if(!restoreStopped&&!persistenceBusy)t.journey.ensure(t.journey.position - layout.tail, route);
     const vehicles=[t.group,...t.carObjs];
     for(let i=0;i<vehicles.length;i++) {
       const group=vehicles[i],coordinate=t.journey.position-layout.offsets[i],pose=vehicleLocation(t,layout.offsets[i]);
@@ -553,8 +557,8 @@ function applyConsistCommand(result) {
   if(result.kind==='coupled')didAttach=true;
   renderVehicles();ui();log(result.message);
 }
-function uncouple() {applyConsistCommand(fleetCommands.uncouple(selected));}
-function couple() {applyConsistCommand(fleetCommands.couple(selected));}
+function uncouple() {if(persistenceBusy)return;applyConsistCommand(fleetCommands.uncouple(selected));}
+function couple() {if(persistenceBusy)return;applyConsistCommand(fleetCommands.couple(selected));}
 function removeWagon(group) {
   releaseTrainAsset(group);
   const geometries = /* @__PURE__ */ new Set();
@@ -564,7 +568,7 @@ function removeWagon(group) {
   geometries.forEach((g) => g.dispose());
   scene.remove(group);
 }
-function reset() {
+function reset() {if(persistenceBusy)return;
   guardedStops.clear();
   if (!confirm("Reset locomotives, switches and missions?")) return;
   for (const d of detached) removeWagon(d.group);
@@ -591,23 +595,23 @@ function reset() {
   ui();
   log("Reset completed.");
 }
-function setTrainSpeed(id,value) {
+function setTrainSpeed(id,value) {if(persistenceBusy)return;
   if(fleetCommands.setSpeed(id,value)){trainDeck?.sync();guardedStops.update(performance.now());}
 }
-function reverseTrain(id) {
+function reverseTrain(id) {if(persistenceBusy)return;
   const train=fleetCommands.reverse(id);if(!train)return;
   log(train.name+" reversed direction");trainDeck?.sync();nextSwitchHUD?.refresh(true);
 }
-function stopTrain(id) {
+function stopTrain(id) {if(persistenceBusy)return;
   const train=fleetCommands.stop(id);if(!train)return;
   guardedStops.update(performance.now());
   ui();log(train.name+" stopped");
 }
-function stopAllTrains() {
+function stopAllTrains() {if(persistenceBusy)return;
   guardedStops.bell.setActive(false);
   fleetCommands.stopAll();ui();log("STOP ALL · every train stopped");
 }
-function addTrain() {
+function addTrain() {if(persistenceBusy)return;
   if(trains.length>=4){log("A session supports up to four trains.");return null;}
   const insertion={...new Journey(network,'T47',80).locate(),vehicle:{userData:{}}};
   if(trains.some(t=>vehiclePositions(t).some(p=>(p.edge==="T47"&&Math.abs(p.s-80)<120)||vehiclesConflict(insertion,p)))||detached.some(d=>(d.point.edge==="T47"&&Math.abs(d.point.s-80)<120)||vehiclesConflict(insertion,{...d.point,vehicle:d.group}))){
@@ -647,7 +651,8 @@ $("nextMission").onclick = () => {
 };
 $("pause").onclick = () => {
   guardedStops.bell.setActive(false);
-  paused = !paused;
+  if(persistenceBusy)return;
+  if(restoreStopped){restoreStopped=false;paused=false;last=performance.now();}else paused = !paused;
   $("pause").textContent = paused ? "\u25B6 Resume" : "\u2161 Pause";
   log(paused ? "Simulation paused." : "Simulation resumed.");
   trainDeck?.update();
@@ -687,7 +692,7 @@ const nav = navigation(camera, controls, { height: scenic.cameraHeight, building
 const views = mountViewControls({ camera, controls, navigation: nav, host: $("viewControls"), onViewChange: (preset) => {
   $("cameraView").value = preset;
 } });
-trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains:()=>trains,getSelected:()=>selected,isPaused:()=>paused,
+trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains:()=>trains,getSelected:()=>selected,isPaused:()=>paused||restoreStopped||persistenceBusy,
   onSelect:select,onSpeed:setTrainSpeed,onReverse:reverseTrain,onStop:stopTrain,onLights:toggleTrainLights,onUncouple:uncouple,onCouple:couple,
   onFocus:(id)=>{nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
 });
@@ -763,9 +768,10 @@ function tick(now) {
   const realDt = Math.max(0, (now - last) / 1e3);
   const dt = Math.min(0.2, realDt);
   last = now;
-  if (!paused) {
+  if (!paused&&!restoreStopped&&!persistenceBusy) {
     clock.update(dt, (step) => {
       advanceFleet(step);
+      if(!Number.isSafeInteger(++tickCount))throw new Error("Simulation clock overflow");
     });
   }
   frame++;
@@ -787,8 +793,8 @@ function tick(now) {
   windowNight.emissiveIntensity = lerp(0.02, 2.4, night);
   windowNight.color.setRGB(lerp(0.15, 0.8, night), lerp(0.22, 0.56, night), lerp(0.24, 0.23, night));
   glow.emissiveIntensity = lerp(0.4, 2.8, night);
-  controls.update();
-  nav.update(realDt, trains[selected].journey.locate());
+  if(!restoreStopped&&!persistenceBusy)controls.update();
+  if(!restoreStopped&&!persistenceBusy)nav.update(realDt, trains[selected].journey.locate());
   views.update();
   nextSwitchHUD?.refresh();
   updateRouteHighlight();
@@ -817,7 +823,7 @@ const turnoutGlow=createTurnoutGlow(scene,turnoutModel,{variant:requestedGlow===
 const turnoutArrows=createTurnoutArrows(scene,turnoutModel,{getState:id=>switchSpecs.find(s=>s.id===id)?.on,choose:route,
   getApproaches:()=>turnoutArrowApproaches({network,topology:switchTopology,trains,choose:route}),reducedMotion:motionPreference.matches});
 turnoutArrows.update(performance.now());
-const guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:()=>detached,host,isPaused:()=>paused,reducedMotion:motionPreference.matches});
+const guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:()=>detached,host,isPaused:()=>paused||restoreStopped||persistenceBusy,reducedMotion:motionPreference.matches});
 const onMotionPreference=()=>{guardedStops.setReducedMotion(motionPreference.matches);turnoutGlow.setReducedMotion(motionPreference.matches);turnoutArrows.setReducedMotion(motionPreference.matches);};
 motionPreference.addEventListener('change',onMotionPreference);
 const turnoutInteraction=mountTurnoutInteraction({canvas:renderer.domElement,camera,scene,controls,
@@ -844,6 +850,7 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   },
   addTrain,
   placeTrain(id, edge, s, direction=1) {
+    if(persistenceBusy||restoreStopped)throw new Error("Restore frozen");
     const t=trains[id], track=network.edges[edge];
     if(!t || !track || !Number.isFinite(s) || s<0 || s>track.length || ![1,-1].includes(direction)) throw new RangeError("Invalid diagnostic train placement");
     const candidate=new Journey(network,edge,s);
@@ -853,6 +860,7 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
     renderVehicles();ui();
   },
   step(seconds) {
+    if(persistenceBusy||restoreStopped)throw new Error("Restore frozen");
     if (!Number.isFinite(seconds) || seconds < 0 || seconds > 120) throw new RangeError("Diagnostic step: 0…120 seconds");
     for (let remaining = seconds; remaining > 1e-9; remaining -= 1/60) {
       const dt = Math.min(1/60, remaining);
@@ -864,12 +872,14 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
     updateRouteHighlight(true);
   },
   frames(intervals) {
+    if(persistenceBusy||restoreStopped)throw new Error("Restore frozen");
     if(!Array.isArray(intervals)||intervals.length>10000||intervals.some(dt=>!Number.isFinite(dt)||dt<0))throw new RangeError("Invalid diagnostic frames");
     const frameClock=new FixedClock();
     for(const elapsed of intervals)frameClock.update(elapsed,advanceFleet);
     renderVehicles();trainDeck?.update();nextSwitchHUD?.refresh(true);updateRouteHighlight(true);
   },
   setSwitches(on) {
+    if(persistenceBusy||restoreStopped)throw new Error("Restore frozen");
     if(!Array.isArray(on)||on.some((id)=>!switchSpecs.some((s)=>s.id===id)))throw new RangeError("Unknown diagnostic control");
     switchSpecs.forEach((s)=>{s.on=on.includes(s.id);});
     trains.forEach((t)=>t.journey.reconcile(layoutFor(t).tail,t.group.userData.couplers?.front?.x??48,route));ui();
@@ -902,3 +912,40 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   const next = assistance.preview.next;
   return { consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray(),fov:camera.fov,aspect:camera.aspect,projectedBase:[-10,1510].flatMap(x=>[-34,0].flatMap(y=>[-10,710].map(z=>new THREE.Vector3(x,y,z).project(camera).toArray()))) },switchIndicators:switchIndicatorState(), render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, requestedSpeed:t.requestedSpeed,guard:t.guard, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, journey:{position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments.map(p=>({...p}))}, odometer:t.odometer,animation:t.group.stockRig?{wheels:t.group.stockRig.wheels.map(w=>({angle:w.node.rotation.z,radius:w.radius})),rods:t.group.stockRig.rods.map(r=>r.node.position.toArray()),bogies:t.group.stockRig.bogies.map(b=>b.node.rotation.y)}:null,hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, stock:p.vehicle.userData.stock??null, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
 } };
+
+if(new URLSearchParams(location.search).has('persistenceTest')) {
+  window.__serienPersistence=createLocalPersistence({network,scene,trainAssetManager,
+    read:()=>({trains,detached,pending:trainAssetManager.stats.pending,describe:g=>trainAssetManager.describe(g),
+      switches:Object.fromEntries(switchSpecs.map(s=>[s.id,s.on])),time:{tickCount,stepSeconds:clock.step,accumulatorSeconds:clock.accumulator,wasPaused:restoreStopped?savedWasPaused:paused},
+      missions:{selected:mission,changes,transferred,visitedRunaround,didDetach,didAttach},
+      ui:{selectedTrainId:selected,consoleSlots:trainDeck.visibleIds,recentTrainIds:trainDeck.recentIds,day,rollingModelMode,qualityMode:quality.mode,camera:{preset:nav.preset,position:camera.position.toArray(),target:controls.target.toArray(),zoom:camera.zoom,fov:camera.fov},hudMinimized:nextSwitchHUD.panel.classList.contains('is-minimized'),bellMuted:guardedStops.bell.snapshot.muted}}),
+    freeze:()=>{if(persistenceBusy)throw Error('Restore in progress');persistenceBusy=true;document.body.inert=true;guardedStops.bell.setActive(false);},
+    thaw:()=>{persistenceBusy=false;document.body.inert=false;last=performance.now();},
+    validateView:view=>nav.validateRestore(view),
+    makeNative:(kind,slot,parent)=>{if(['steam','diesel','shunter'].includes(kind))return locoModel(['steam','diesel','shunter'].indexOf(kind),slot,parent);const g=freightWagon(['closed','open','tank','flat','coach'].indexOf(kind),false);parent.add(g);return g;},
+    commit:(staged,previous)=>{
+      const priorGate={restoreStopped,paused,savedWasPaused};
+      function apply(staged){
+      trains.splice(0,trains.length,...staged.trains);detached.splice(0,detached.length,...staged.detached);
+      for(const g of staged.groups.values()){g.userData.dynamic=true;scene.add(g);}
+      const s=staged.state;switchSpecs.forEach(sw=>sw.on=s.layout.switches[sw.id]);
+      tickCount=s.time.tickCount;clock.accumulator=s.time.accumulatorSeconds;savedWasPaused=s.time.wasPaused;restoreStopped=true;paused=true;
+      ({selected:mission,changes,transferred,visitedRunaround,didDetach,didAttach}=s.missions);
+      selected=s.trains.findIndex(t=>t.id===s.ui.selectedTrainId);day=s.ui.day;rollingModelMode=s.ui.rollingModelMode;
+      $('day').value=day;$('sun').textContent=day<42?'☀':day<72?'◐':'☾';$('rollingModels').value=rollingModelMode;$('quality').value=s.ui.qualityMode;applyQuality(quality.setMode(s.ui.qualityMode));
+      nav.restore(s.ui.camera);$('cameraView').value=s.ui.camera.preset;
+      nextSwitchHUD.setMinimized(s.ui.hudMinimized);guardedStops.clear();guardedStops.setMuted(s.ui.bellMuted);
+      $('pause').textContent='▶ Riprendi';$('addTrain').disabled=trains.length>=4;
+      const slots=ids=>ids.map(id=>s.trains.findIndex(t=>t.id===id));trainDeck.restoreConsoles(slots(s.ui.consoleSlots),slots(s.ui.recentTrainIds));
+      renderVehicles();
+      for(const d of detached){animateStock(d.group,d.journey,d.journey.position,d.animationDistanceMm,d.point);animateAuxiliaryWheels(d.group,d.animationDistanceMm);}
+      ui();
+      }
+      try{apply(staged);}catch(error){
+        for(const g of staged.groups.values())g.removeFromParent();
+        apply(previous);({restoreStopped,paused,savedWasPaused}=priorGate);throw error;
+      }
+      for(const g of previous.groups.values())removeWagon(g);
+    }
+  });
+}

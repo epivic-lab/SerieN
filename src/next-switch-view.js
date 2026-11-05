@@ -89,6 +89,6 @@ function mountNextSwitchHUD({host,network,getState,now=()=>performance.now()}) {
 
   }
   refresh(true);
-  return {panel,refresh,dispose(){disposed=true;minimize.removeEventListener("click",onMinimize);panel.remove();},get snapshot(){return latest;}};
+  return {panel,refresh,setMinimized(value){minimized=Boolean(value);renderMinimized();},dispose(){disposed=true;minimize.removeEventListener("click",onMinimize);panel.remove();},get snapshot(){return latest;}};
 }
 export { distanceLabel, routeRibbonGeometry, previewPoints, schemaSVG, createRouteHighlight, mountNextSwitchHUD };
