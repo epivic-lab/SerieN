@@ -6,6 +6,7 @@ on:
       - 'tests/sql/history/*_APPLIED.sql'
       - 'tests/sql/6b2d_docker_auth_adapter.sql'
       - 'tests/sql/6b2d_synthetic_users.sql'
+      - 'tests/sql/6b2d_rollback_rehearsal.sql'
       - 'tests/sql/6b2c_cloud_rpc_candidate.sql'
       - 'tests/sql/6b2c_rpc_gate.sql'
       - 'tests/run-db-rpc-concurrency-6b2c.sh'
@@ -63,3 +64,4 @@ jobs:
           db -v "state=$(cat /tmp/serien_state.json)" < tests/sql/6b2c_rpc_gate.sql
           bash tests/run-db-rpc-concurrency-6b2c.sh
           bash tests/run-db-revoke-6b2d.sh
+          db < tests/sql/6b2d_rollback_rehearsal.sql
