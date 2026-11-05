@@ -9,6 +9,7 @@ on:
       - '.github/workflows/persistence-db-rpc-6b2c.yml'
       - 'tests/gen-6b2c-fixture.mjs'
       - 'tests/run-db-rpc-concurrency-6b2c.sh'
+      - 'tests/run-db-revoke-6b2d.sh'
   workflow_dispatch:
 permissions:
   contents: read
@@ -50,3 +51,4 @@ jobs:
           db < tests/sql/6b2c_cloud_rpc_candidate.sql
           db -v "state=$(cat /tmp/serien_state.json)" < tests/sql/6b2c_rpc_gate.sql
           bash tests/run-db-rpc-concurrency-6b2c.sh
+          bash tests/run-db-revoke-6b2d.sh
