@@ -1,54 +1,52 @@
 # Train Management — gate corrente
 
-**6A.1–6A.10 APPROVATE — 6A.11 TECHNICAL PASS nel laboratorio a singolo broker,
-audit Regia PENDING — MACROFASE6A NON CHIUSA — 6A.12/STAGING e6B NON AUTORIZZATE.**
+**6A.12-P DESIGN DELIVERED — STAGING EXECUTION BLOCKED — MACRO 6A OPEN — 6B NOT AUTHORIZED.**
 
-Base approvata6A.10 `de53ba702164428e3b76936dc9791dee4eb1697a`; solo
-`feature/train-management`; R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` intoccabile.
-HEAD/branch/remoto/working tree iniziale/ascendenza verificati. Nessun main import,
-branch change, reset/rebase/merge/force-push/Pages/deploy o operazione reale.
+6A.1–6A.11 approvate nei rispettivi perimetri;6A.11 solo laboratorio single-broker.
+Base approvata `1da0675ca59cd47cffe79250f17419c929d90048`, branch esclusivo
+`feature/train-management`; R1 `348bfeff12c4005657098d89ea1d3c2ccdda9910` congelata.
+Audit di recupero: checkout pulito e corretto, nessun commit locale/stash/bozza
+6A.12 da perdere; ricerca e contratti già disponibili conservati. Nessun cambio
+branch, main import, reset/rebase/merge/force-push o ricostruzione di storia.
 
-[Gate6A.11](6A11_ADVERSARIAL_GATE.md), [A01–A16](6A11_SECURITY_MATRIX.md),
-[load/fault](6A11_LOAD_FAULT_RECOVERY.md),
-[privilegi/threat/NV](6A11_SECURITY_BOUNDARIES.md),
-[regressioni e R0](6A11_REGRESSION_MATRIX.md),
-[risultati integrati](evidence/6A11/summary.json),
-[Auth0/conservazione](evidence/6A11/zero-auth-proof.json),
-[invarianti](evidence/6A11/invariants.json).
+Sette deliverable di sola progettazione:
 
-Laboratorio misto:48righe storiche+2head integralmente conservati, Auth0,2owner
-legacy verificati e C/D ownerless senza nuovi Auth.185SQL O01–O14 e111controlli
-integrati PASS;1diagnostica limite separata dai PASS. SIGKILL Chromium dopo Save
-COMMIT ownerless:revisione9/receipt1/snapshot verificato; key crash NOT VERIFIED.
-Prova completa Chromium→P-256→ingresso→broker→claimSQL COMMIT→principal/TLS→
-API ownerless COMMIT→verifica snapshot. Reader/editor/owner, due dispositivi/CAS,
-replay concorrente/restart/rollback, receipt retry/head/quota, revoca/epoch/expiry
-su sessioni aperte, rotation/activation interrotte, rete/SQL/fault/limiti reali.
+1. [Readiness, blocker, fonti e GO/NO-GO](6A12_STAGING_READINESS.md).
+2. [Hosting e single-broker/fencing](6A12_HOSTING_ARCHITECTURE.md).
+3. [Compatibilità Supabase direct/session/transaction](6A12_SUPABASE_COMPATIBILITY.md).
+4. [Provisioner, secret manager, lifecycle e journal](6A12_PROVISIONING_AND_SECRETS.md).
+5. [Runbook futuro non eseguito](6A12_STAGING_RUNBOOK.md).
+6. [Test obbligatori e recovery su clone](6A12_TEST_AND_RECOVERY_PLAN.md).
+7. [Costi verificabili e registro approvazioni](6A12_COST_AND_APPROVAL_GATE.md).
 
-D01 (nonce array), D02 (malformed input503), D03 (header deadline non effettivo)
-riprodotti RED e corretti con modifiche minime a4file backend. Nessuna migrazione,
-ACL/privilegio/contratto/D09/D10/pool/transport modificato. Problemi harness
-separati e tentativi falliti conservati, non contati come PASS.
+Raccomandazione: un host EC2 fisso, ingresso HTTPS separato dal broker privato,
+SQL direct TLS/IPv6, identità macchina/secret manager e provisioner fuori banda.
+Alternativa Render con disco persistente/OIDC; entrambi subordinati alle prove
+staging. Nessun provider/account/piano scelto o attivato tacitamente.
 
-**L01 aperto: cap16 è per processo. Due broker hanno aperto32connessioni SQL;
-FAIL budget globale, multi-broker NON SUPPORTATO.** Stesso nonce concorrente su
-due backend:200+409/una riga SQL PASS. Modalità supportata singolo broker;
-launcher rifiuta replicas2. Sostituzione con fencing e zero vecchie sessioni;
-enforcement hosting/multi-deploy NOT VERIFIED, nessun coordinatore aggiunto.
+D09=A e D10 invariati. L01 resta FAIL multi-broker32/16, modalità non supportata;
+launcher locale non dimostra esclusività hosting. Il piano richiede prevenzione
+del secondo avvio, drain, fence esterno e zero vecchi backend prima di READY.
+Nessun coordinatore distribuito o login SQL universale/SET ROLE introdotto.
 
-Tutte le regressioni6A.2–6A.10 rieseguite PASS nel perimetro dichiarato,
-6A.6 anche dopo l'ultima correzione; npm37file/Python9/adapter12+25/build PASS.
-Canonico/bundle/UI/motore/Journey/routing/WX310/guardie/HUD/console/asset/dipendenze
-R1 byte-identici. Profilo sintetico chiuso, non serializer/hydrator generale.
+Blocker: organizzazione/nome/ref staging e budget non assegnati; fattibilità DDL e
+delega gestiti, session_user/pool/cache/TLS, secret adapter/journal/registro revoche,
+packaging/fixture, esclusività hosted e recovery ancora da provare/implementare
+solo con incarico esplicito. Proposta75USD/7giorni NON AUTORIZZATA; preventivo
+completo e costo clone/lavoro/fiscalità necessari prima del GO. Restore/fault
+host-volume-store-DB/PITR richiedono clone dedicato e seconda autorizzazione.
 
-NOT VERIFIED: host/power-loss, perdita volumi/journal/secret store/database,
-PITR/replay post-write, Supabase/Supavisor/principal/provisioning/secretadapter gestiti,
-cap aggregato operativo, costi/churn, altri browser/OS/XSS e matrice R1 completa
-visuale/performance. Ogni proprietà ha prova dedicata futura nel rapporto,
-nessuna autorizzazione implicita. Zero query Supabase reale e zero staging.
+Fonti pubbliche consultate il5novembre2026, Europe/Rome; fatti, interpretazioni e
+NOT VERIFIED separati. Nessun accesso a dati o metadata del Supabase reale
+`vehfrjgifzjjgamrgwze`, nessuna creazione/SQL/configurazione/deploy cloud o staging.
+Tutti i file backend/SQL/migrazioni/test e R1/UI/asset/canonico/bundle/dipendenze,
+contratti D09/D10/R0 precedenti restano invariati. Nuovi controlli soltanto locali:
+documenti/link/scope/secret (38link,1777file precedenti identici), npm37file PASS,
+Python/JMRI9 PASS ebuild PASS; SQL/Chromium6A.11 non rieseguiti.
+Nessuna nuova certificazione hosted, R1 visuale/prestazionale o browser/OS recovery.
 
-Commit atomico contenente il rapporto6A.11; push normale solo sul branch dedicato,
+Commit atomico dei soli nove Markdown, push fast-forward solo sul branch dedicato,
 SHA remoto/locale e working tree pulito verificati nella consegna.
-**Unica prossima azione: audit indipendente Regia; STOP6A.11.**
-La macrofase6A non è chiusa.6A.12 richiede autorizzazione specifica ambiente/costi;
-6B richiede gate separato. Nessuna fase successiva avviata.
+**Unica prossima azione: audit indipendente della Regia sul piano e compilazione
+delle approvazioni economiche/operative. STOP6A.12-P.**
+6A.12 operativa,6A.13 e6B non autorizzate; macrofase6A ancora aperta.

@@ -380,3 +380,58 @@ matrice completa R1 visuale/performance NOT VERIFIED, con prove future necessari
 Checkpoint atomico: commit che introduce il rapporto6A.11, push normale soltanto
 feature/train-management, SHA locale/remoto e working tree verificati nella consegna.
 **Unica prossima azione: audit indipendente Regia; STOP6A.11. Nessuna6A.12 o6B avviata.**
+
+## Train Management — 6A.12-P progettazione staging (2026-11-05, Europe/Rome)
+
+**6A.12-P DESIGN DELIVERED — STAGING EXECUTION BLOCKED — MACRO 6A OPEN — 6B NOT AUTHORIZED.**
+La Regia ha approvato6A.11 soltanto nel laboratorio a broker singolo. Checkpoint
+approvato e conservato `1da0675ca59cd47cffe79250f17419c929d90048`, branch esclusivo
+feature/train-management; checkout inizialmente pulito, HEAD/remoto/ascendenza,
+commit locali/stash e assenza delle sette bozze verificati. Ricerca pubblica e
+contratti già letti riutilizzati; nessun recupero distruttivo o import di main.
+
+Consegna dei soli sette documenti:
+[readiness e fonti](docs/_active/train-management/6A12_STAGING_READINESS.md),
+[hosting/L01](docs/_active/train-management/6A12_HOSTING_ARCHITECTURE.md),
+[compatibilità gestita](docs/_active/train-management/6A12_SUPABASE_COMPATIBILITY.md),
+[provisioning/secret/journal](docs/_active/train-management/6A12_PROVISIONING_AND_SECRETS.md),
+[runbook non eseguito](docs/_active/train-management/6A12_STAGING_RUNBOOK.md),
+[test/recovery futuri](docs/_active/train-management/6A12_TEST_AND_RECOVERY_PLAN.md),
+[costi e approvazioni](docs/_active/train-management/6A12_COST_AND_APPROVAL_GATE.md).
+
+Proposta principale: VM EC2 fissa senza autoscaling, ingresso separato dal broker,
+socket privato, SQL direct TLS/IPv6 e secret manager con identità macchina;
+alternativa Render private service con disco e OIDC. Esclusività/fencing preventivi,
+drain, stop e zero sessioni vecchie prima del subentro, fail-closed se non provabili.
+L01 resta FAIL nel multi-broker32/16: nessun coordinatore o cap globale inventato.
+D09=A/session_user/principal per device e D10/Auth0/storico immutabile invariati.
+
+Fonti ufficiali consultate il5novembre: documentazione e changelog HTML Supabase,
+pricing/compute, FAQ Supavisor aggiornata4novembre, AWS/Render. Changelog markdown
+non leggibile dal tool, HTML e voci pertinenti disponibili. Ambiguità tra esempio
+generico di pool-size e FAQ per user/db/mode esplicitata: nessun cap aggregato
+ricavato dal pooler. postgres gestito non è superuser; delega DDL/ownership,
+identity pooling/cache/rotation e infrastruttura richiedono prove autorizzate.
+
+Runbook separa baseline storica, cinque migrazioni approvate, fixture sintetica,
+D10 e C/D; non esegue il bootstrap Auth finto o runner locali sul gestito. Packaging,
+fixture/secret adapter e fencing richiedono un incarico attuativo distinto; nessuna
+loro implementazione qui. Restore preliminare e recovery host/store/DB/PITR solo
+su clone con autorizzazione separata; post-write replay non dedotto da audit compatto.
+Tetto proposto75USD/7giorni NON AUTORIZZATO, bound parziale44.60USD più preventivi
+mancanti/clone/fiscalità; tetto lavoro separato. Nessun costo ignoto trattato come zero.
+
+Verifiche locali di questa fase: sette deliverable/nove soli Markdown,38link
+locali,29URL ufficiali censiti,213righe tabellari, scansione secret senza riscontri;
+1777file precedenti byte-identici. npm test37unità file PASS, Python/JMRI9test PASS
+ebuild PASS, log locali /workspace/work/6A12-P. Suite SQL/Chromium6A.11 non rieseguite;
+risultati approvati ereditati, nessun nuovo PASS hosting/visuale/performance.
+R1/canonico/bundle, backend, SQL/migrazioni, test, contratti D09/D10/R0/UI/asset e
+dipendenze invariati. Zero accessi Supabase reale o staging, zero provisioning,
+servizi a pagamento, configurazioni remote, deploy o fasi successive.
+
+Checkpoint atomico contenente i sette documenti e i due aggiornamenti di stato,
+push normale soltanto feature/train-management; SHA remoto/locale e working tree
+pulito verificati nella consegna. **Unica prossima azione: audit della Regia sul
+piano e decisioni esplicite su ambiente, budget, accessi, fencing e operazioni.
+STOP dopo6A.12-P; nessuna richiesta di eseguire subito lo staging.**
