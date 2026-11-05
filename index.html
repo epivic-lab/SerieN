@@ -53,5 +53,10 @@ body.auth-locked .app{display:none!important}
 <script>
 window.addEventListener('error',()=>{const e=document.getElementById('loadMsg');if(e&&!e.hidden)e.textContent='Startup failed. Check WebGL support and reload the page.';});
 window.addEventListener('unhandledrejection',()=>{const e=document.getElementById('loadMsg');if(e&&!e.hidden)e.textContent='Unable to load the game. Please reload the page.';});
-</script><script type="module" src="./auth-gate.js?v=1"></script>
+</script><script type="module">
+import("./auth-gate.js?v=1").catch(() => {
+  const status = document.getElementById("authStatus");
+  if (status) status.textContent = "Autenticazione temporaneamente non disponibile.";
+});
+</script>
 </body></html>
