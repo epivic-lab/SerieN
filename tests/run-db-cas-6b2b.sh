@@ -17,7 +17,7 @@ pg < tests/db-cas-6b2b.sql
 pg <<'SQL'
 SET ROLE authenticated;
 SET "request.jwt.claim.sub"='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
-DO $
+DO $$
 DECLARE replay jsonb;
 BEGIN
  replay:=public.serien_smoke_save_checkpoint(
@@ -30,7 +30,7 @@ BEGIN
  IF replay->>'revision'<>'3' THEN
    RAISE EXCEPTION 'Response-lost replay after real commit is incorrect';
  END IF;
-END $;
+END $$;
 RESET ROLE;
 SQL
 echo "PASS: same request recovered across committed DB sessions"
