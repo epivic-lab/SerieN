@@ -120,7 +120,7 @@ BEGIN
     RETURN v_receipt.result;
   END IF;
 
-  SELECT pg_catalog.coalesce(pg_catalog.max(s.revision),0) INTO v_head
+  SELECT coalesce(pg_catalog.max(s.revision),0) INTO v_head
   FROM public.layout_snapshots s
   WHERE s.layout_id=p_layout AND s.owner_id=v_owner;
   IF v_head<>v_expected THEN
