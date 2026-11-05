@@ -16,6 +16,9 @@ AS $f$ SELECT nullif(pg_catalog.current_setting('request.jwt.claim.sub',true),''
 
 CREATE TABLE IF NOT EXISTS auth.users(
  id uuid PRIMARY KEY, email text NOT NULL, email_confirmed_at timestamptz);
+-- Supabase's standalone Docker image can seed a minimal auth.users stub
+-- without email_confirmed_at; normalize the disposable fixture to production.
+ALTER TABLE auth.users ADD COLUMN IF NOT EXISTS email_confirmed_at timestamptz;
 CREATE TABLE serien_access.allowed_emails(
  email text PRIMARY KEY,created_at timestamptz NOT NULL DEFAULT now());
 ALTER TABLE serien_access.allowed_emails ENABLE ROW LEVEL SECURITY;
