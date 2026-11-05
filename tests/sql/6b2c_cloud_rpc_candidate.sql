@@ -249,7 +249,7 @@ BEGIN
   -- slots are a unique min(3,N) subset that contains the selected ID.
   IF pg_catalog.jsonb_array_length(d#>'{ui,recentTrainIds}')<>pg_catalog.array_length(seen_trains,1)
      OR pg_catalog.jsonb_array_length(d#>'{ui,consoleSlots}') <>
-        pg_catalog.least(3,pg_catalog.array_length(seen_trains,1))
+        least(3,pg_catalog.array_length(seen_trains,1))
      OR d#>>'{ui,recentTrainIds,0}' IS DISTINCT FROM d#>>'{ui,selectedTrainId}'
      OR NOT (d#>>'{ui,selectedTrainId}') IN
        (SELECT value FROM pg_catalog.jsonb_array_elements_text(d#>'{ui,consoleSlots}'))
