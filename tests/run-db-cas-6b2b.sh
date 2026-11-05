@@ -12,6 +12,29 @@ pg < tests/db-security-6b2a.sql
 echo "6B.2-B sequential/fault/idempotency checks (not production)"
 pg < tests/db-cas-6b2b.sql
 
+# The SQL script has COMMITTED. Simulate a response that was lost AFTER
+# commit by reopening a fresh authenticated DB session with the same ID/text.
+pg <<'SQL'
+SET ROLE authenticated;
+SET "request.jwt.claim.sub"='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
+DO $
+DECLARE replay jsonb;
+BEGIN
+ replay:=public.serien_smoke_save_checkpoint(
+  'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
+  'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
+  '2','66666666-6666-4666-8666-666666666666',
+  public.serien_smoke_state(
+    'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
+    'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa','lost response'));
+ IF replay->>'revision'<>'3' THEN
+   RAISE EXCEPTION 'Response-lost replay after real commit is incorrect';
+ END IF;
+END $;
+RESET ROLE;
+SQL
+echo "PASS: same request recovered across committed DB sessions"
+
 a_log="$(mktemp)"
 b_log="$(mktemp)"
 trap 'rm -f "$a_log" "$b_log"' EXIT
