@@ -1,0 +1,49 @@
+{
+  "python_runner_syntax": "valid (AST + compile, not executed)",
+  "workflow_yaml": "parsed with system Ruby/Psych; push trigger and ref/permissions asserted",
+  "workflow_shell_syntax": [
+    {
+      "name": "Record exact code and install runner-local dependencies",
+      "exit_code": 0
+    },
+    {
+      "name": "Python regression",
+      "exit_code": 0
+    },
+    {
+      "name": "Node regression",
+      "exit_code": 0
+    },
+    {
+      "name": "Build",
+      "exit_code": 0
+    },
+    {
+      "name": "Actual Capture R1 and detached positive control",
+      "exit_code": 0
+    },
+    {
+      "name": "PG17 historical replay, schema, C, existing E1, concurrency, revocation and rollback",
+      "exit_code": 0
+    },
+    {
+      "name": "Browser Capture Restore regression",
+      "exit_code": 0
+    }
+  ],
+  "new_node_generator_syntax": "NOT VERIFIED: Node absent",
+  "postgres_sql_execution": "NOT VERIFIED: PostgreSQL/Docker absent",
+  "six_audited_hashes": "unchanged",
+  "toolchain": {
+    "node": null,
+    "npm": null,
+    "psql": null,
+    "docker": null,
+    "python3": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+    "ruby": "/usr/bin/ruby",
+    "bash": "/bin/bash"
+  },
+  "new_files_whitespace": "no diagnostics",
+  "runtime_asset_diff": "empty",
+  "schema_receipts_order": "owner_id,request_id (historical composite PK)"
+}

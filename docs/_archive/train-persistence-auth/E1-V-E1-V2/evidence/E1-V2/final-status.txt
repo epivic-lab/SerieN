@@ -1,0 +1,30 @@
+ M PROGRESS.md
+ M docs/_active/train-persistence-auth/STATUS.md
+ M tests/gen-6b2c-fixture.mjs
+ M tests/sql/6b2c_cloud_rpc_candidate.sql
+?? .github/workflows/persistence-e1v-verification.yml
+?? docs/_active/train-persistence-auth/6B2E1V2_VERIFICATION_GATE.md
+?? docs/_active/train-persistence-auth/6B2E1V_FUNCTIONAL_VERIFICATION.md
+?? docs/_active/train-persistence-auth/6B2E1_SEMANTIC_GATE.md
+?? docs/_active/train-persistence-auth/evidence/E1-V/audited-files-sha256.json
+?? docs/_active/train-persistence-auth/evidence/E1-V/branch.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V/commands.json
+?? docs/_active/train-persistence-auth/evidence/E1-V/diff-check.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V/final-diff-check.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V/final-status.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V/git-status.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V/head.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V/python-tests.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V/static-checks.json
+?? docs/_active/train-persistence-auth/evidence/E1-V/toolchain.json
+?? docs/_active/train-persistence-auth/evidence/E1-V2/audited-files-sha256.json
+?? docs/_active/train-persistence-auth/evidence/E1-V2/commands.json
+?? docs/_active/train-persistence-auth/evidence/E1-V2/delivery-manifest.json
+?? docs/_active/train-persistence-auth/evidence/E1-V2/diff-check.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V2/final-status.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V2/initial-status.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V2/python-tests.txt
+?? docs/_active/train-persistence-auth/evidence/E1-V2/static-checks.json
+?? tests/gen-6b2e1v2-cases.mjs
+?? tests/run-6b2e1v2.py
+?? tests/sql/6b2e1_semantic_gate.sql

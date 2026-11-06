@@ -1,0 +1,90 @@
+[
+  {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "*_test.py"
+    ],
+    "exit_code": 0,
+    "log": "python-tests.txt"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "diff-check.txt"
+  },
+  {
+    "command": [
+      "git",
+      "status",
+      "--porcelain=v1"
+    ],
+    "exit_code": 0,
+    "log": "git-status.txt"
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "log": "head.txt"
+  },
+  {
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit_code": 0,
+    "log": "branch.txt"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--no-index",
+      "--check",
+      "/dev/null",
+      ".github/workflows/persistence-e1v-verification.yml"
+    ],
+    "exit_code": 1,
+    "output": "",
+    "note": "no-index difference status; no whitespace diagnostics"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--no-index",
+      "--check",
+      "/dev/null",
+      "docs/_active/train-persistence-auth/6B2E1V_FUNCTIONAL_VERIFICATION.md"
+    ],
+    "exit_code": 1,
+    "output": "",
+    "note": "no-index difference status; no whitespace diagnostics"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "final-diff-check.txt"
+  },
+  {
+    "note": "First wrapper for new-file whitespace checks incorrectly expected no-index exit 0; got 1 with empty output, then interpreted correctly. No source edits or functional test failure."
+  }
+]

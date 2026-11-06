@@ -1,0 +1,64 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "*_test.py"
+    ],
+    "exit_code": 0,
+    "log": "python-tests.txt"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "diff-check.txt"
+  },
+  {
+    "check": "ast.parse + compile in memory",
+    "path": "tests/run-6b2e1v2.py",
+    "result": "valid; not executed"
+  },
+  {
+    "argv": [
+      "/usr/bin/ruby",
+      "-rjson",
+      "-ryaml",
+      "-e",
+      "puts JSON.generate(YAML.load_file(ARGV[0]))",
+      ".github/workflows/persistence-e1v-verification.yml"
+    ],
+    "exit_code": 0,
+    "details": "trigger/ref/permissions asserted from parsed output"
+  },
+  {
+    "argv": [
+      "/bin/bash",
+      "-n"
+    ],
+    "input": "each of seven workflow run blocks",
+    "exit_code": 0
+  },
+  {
+    "check": "git diff --no-index --check /dev/null PATH",
+    "paths": [
+      "tests/gen-6b2e1v2-cases.mjs",
+      "tests/run-6b2e1v2.py",
+      ".github/workflows/persistence-e1v-verification.yml",
+      "docs/_active/train-persistence-auth/6B2E1V2_VERIFICATION_GATE.md"
+    ],
+    "details": "exit 1 for differing file, no whitespace diagnostics"
+  },
+  {
+    "check": "final branch/HEAD/six SHA/runtime diff",
+    "result": "unchanged"
+  }
+]
