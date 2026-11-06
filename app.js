@@ -13,6 +13,7 @@ import {createTurnoutGlow,GLOW_CONFIG} from "./src/turnout-glow.js";
 import {mountTurnoutInteraction} from "./src/turnout-interaction.js";
 import {createTurnoutModel} from "./src/turnout-routes.js";
 import {createTurnoutCommands} from "./src/turnout-commands.js";
+import {mountTrainManagement} from "./src/train-management.js";
 import { mountTrainDeck } from "./src/train-deck.js";
 import { captureLocomotiveThumbnail } from "./src/locomotive-thumbnails.js";
 import { createSwitchTopology, traceJourney } from "./src/next-switch.js";
@@ -23,7 +24,7 @@ import { couplingDistance } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
 import { navigation, CAMERA_PRESETS } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
-import { attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets } from "./src/train-assets.js";
+import { getTrainAssetCatalog, attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets } from "./src/train-assets.js";
 import { locomotiveDetails, steam } from "./src/rolling-stock-art.js";
 import { presentation } from "./src/presentation.js";
 import { enrich } from "./src/scenery.js";
@@ -33,7 +34,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 const $ = (id) => document.getElementById(id);
 const host = $("view3d");
-let nextSwitchHUD = null, trainDeck = null;
+let nextSwitchHUD = null, trainDeck = null, trainManagement = null;
 let highlightUntil=0,highlightUpdated=0;
 importedTrains($("rollingModels").value === "kenney");
 const scene = new THREE.Scene();
@@ -424,6 +425,7 @@ function log(s) {
 }
 function ui() {
   trainDeck?.sync();
+  trainManagement?.sync();
   $("switchCount").textContent = switchSpecs.filter((s) => s.on).length + " / " + switchSpecs.length;
   if(!$("switchList").children.length){
     $("switchList").innerHTML=switchSpecs.map((s,i)=>`<div class="switchCell" data-switch-hover="${i}"><button class="sw" data-switch="${i}"><b>${s.id}</b><small>${s.name}</small></button></div>`).join("");
@@ -691,6 +693,9 @@ trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains
   onSelect:select,onSpeed:setTrainSpeed,onReverse:reverseTrain,onStop:stopTrain,onLights:toggleTrainLights,onUncouple:uncouple,onCouple:couple,
   onFocus:(id)=>{nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
 });
+trainManagement=mountTrainManagement({button:$("trainManagement"),getTrains:()=>trains,getDetached:()=>detached,getSelected:()=>selected,getImportedCatalog:getTrainAssetCatalog,
+  onSelect:select,onFocus:(id)=>{select(id);nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
+});
 nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState});
 const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
 function applyQuality(profile) {
@@ -739,6 +744,7 @@ window.addEventListener("pagehide", (e) => {
   guardedStops.dispose();
   turnoutArrows.dispose();
   turnoutPicking.dispose();
+  trainManagement?.dispose();
   trainDeck?.dispose();
   nav.dispose();
   effects.dispose();
@@ -769,6 +775,7 @@ function tick(now) {
     });
   }
   frame++;
+  trainManagement?.update(now);
   renderVehicles();
   trainDeck?.update();
   const night = clamp((day - 35) / 65, 0, 1);

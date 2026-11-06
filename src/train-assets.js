@@ -13,7 +13,7 @@ const loader = new GLTFLoader();
 function nativeChildren(target) {
   return target.children.filter((o) => !o.isLight && !o.userData.imported && !target.children.some((l) => l.isLight && l.target === o));
 }
-function nativeCouplers(target, children) {
+function nativeCouplers(target, children, dimensions) {
   target.updateWorldMatrix(true, true);
   const inverse = target.matrixWorld.clone().invert(), bounds = new THREE.Box3();
   for (const child of children) child.traverse((o) => {
@@ -22,6 +22,7 @@ function nativeCouplers(target, children) {
     bounds.union(o.geometry.boundingBox.clone().applyMatrix4(inverse.clone().multiply(o.matrixWorld)));
   });
   if (bounds.isEmpty()) return null;
+  if(dimensions)Object.assign(dimensions,{length:bounds.max.x-bounds.min.x,width:bounds.max.z-bounds.min.z,height:bounds.max.y-bounds.min.y});
   return { front: { x: bounds.max.x + 2, y: 6, z: 0 }, back: { x: bounds.min.x - 2, y: 6, z: 0 } };
 }
 function createTrainAssetManager({
@@ -78,7 +79,7 @@ function createTrainAssetManager({
     if (record.model) record.model.visible = enabled;
     if (enabled && record.model) {
       record.target.userData.couplers = trainCouplers(record.dimensions);
-      record.target.userData.assetDimensions = { ...record.dimensions, source: "Kenney CC0", stylized: true };
+      record.target.userData.assetDimensions = { ...record.dimensions, source: "Kenney CC0", type: record.type, stylized: true };
     } else {
       if (record.nativeCouplers) record.target.userData.couplers = record.nativeCouplers;
       else delete record.target.userData.couplers;
@@ -100,10 +101,13 @@ function createTrainAssetManager({
     if (disposed) return false;
     release(target);
     const children = nativeChildren(target);
+    const nativeDimensions={};
     const record = {
       target,
+      nativeDimensions,
+      type,
       native: children.map((o) => [o, o.visible]),
-      nativeCouplers: target.userData.stock ? structuredClone(target.userData.couplers) : nativeCouplers(target, children),
+      nativeCouplers: target.userData.stock ? structuredClone(target.userData.couplers) : nativeCouplers(target, children, nativeDimensions),
       model: null,
       dimensions: null,
       released: false,
@@ -164,6 +168,9 @@ function createTrainAssetManager({
     release,
     setEnabled,
     dispose,
+    get catalog() {
+      return [...new Map([...records.values()].filter(r=>r.dimensions).map(r=>[r.type,{type:r.type,file:files[r.type],nativeDimensions:{...r.nativeDimensions},...r.dimensions}])).values()];
+    },
     get stats() {
       return { targets: records.size, templates: templates.size, pending: [...records.values()].filter((r) => r.pending).length, disposed };
     }
@@ -171,11 +178,13 @@ function createTrainAssetManager({
 }
 const manager = createTrainAssetManager();
 const attachTrainAsset = (target, type, locomotive = false) => manager.attach(target, type, locomotive);
+const getTrainAssetCatalog = () => manager.catalog;
 const importedTrains = (value) => manager.setEnabled(value);
 const releaseTrainAsset = (target) => manager.release(target);
 const disposeTrainAssets = () => manager.dispose();
 export {
   attachTrainAsset,
+  getTrainAssetCatalog,
   createTrainAssetManager,
   disposeTrainAssets,
   importedTrains,

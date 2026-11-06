@@ -1,0 +1,24 @@
+{
+  "baseline": "72ed618516b13ab2f77d2759c499e800a7ce7b1b",
+  "unchangedProtectedFiles": {
+    "app.js": "9b70349c9a3ebde0fc1b654300a8646082277b9bc946c657a03b6d09c10b7208",
+    "src/consist.js": "17c536e5f9561d899e67a6747f50795a1506e4820789f16030d0e08a5410d3a2",
+    "src/railway-state.js": "ecc7cbbdf266fc89dd4d85999e509fb85a2e3ba62a2f4a655d1eb8795702b092",
+    "src/railway-step.js": "e96411470661c3767884b4574ee9121f2a7f6abac2986bd8b127fb9baa29ffbb",
+    "src/railway-conflicts.js": "7dc1b44fffae951df219118d8490a4f21e015c9631f623e314931806f8b6fd62",
+    "src/railway-guard.js": "13815f4d8d53b827a154e0febf098bd74c00e7223c13e8effe2804c5ad8fdf15",
+    "src/fleet-commands.js": "b87d16b53375c38dbd18bfb6376532a2af725e9ee5393590da37dd1cf82dffcd",
+    "src/simulation.js": "0b243f69abc9c652adb9dff83fbba26cbe93cb8c8fa2f30716022c167d206c3c",
+    "src/network.js": "6428b5abc00aa1fdb35202bf2d303df5c790f70dc612942e966a07a129d0f0e0",
+    "src/canonical-layout.json": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+    "src/train-assets.js": "60d32587bc41b5347717ffa8e0c97968cca821cad7acd0c250900f88e1b3b0d1",
+    "src/train-deck.js": "dd63cdb0030ce5643b0508b2e945b6f2f0e86ae0925b6008800a08d09b696c71"
+  },
+  "preexistingCssUnchanged": true,
+  "preexistingAssetsUnchanged": true,
+  "newWebGLRendererInRuntime": false,
+  "trackedChangesBeforeDocumentation": [
+    "src/train-management.js",
+    "style.css"
+  ]
+}

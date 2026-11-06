@@ -1,0 +1,352 @@
+{
+  "kenney-box": {
+    "bounds": {
+      "minX": -15.625,
+      "maxX": 15.625,
+      "minY": 4,
+      "maxY": 20.125
+    },
+    "width": 250,
+    "height": 129,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 15.374713307309133,
+        "y": 5.014523726799325,
+        "z": 0
+      },
+      "back": {
+        "x": -15.374713307309133,
+        "y": 5.014523726799325,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/kenney-box.png"
+  },
+  "kenney-diesel": {
+    "bounds": {
+      "minX": -16,
+      "maxX": 16,
+      "minY": 4.5,
+      "maxY": 26.625
+    },
+    "width": 256,
+    "height": 177,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 15.749999999999998,
+        "y": 3.49062257574238,
+        "z": 0
+      },
+      "back": {
+        "x": -15.749999999999998,
+        "y": 3.49062257574238,
+        "z": 0
+      }
+    },
+    "mountY": 7.1,
+    "url": "./assets/rolling-stock-sides/kenney-diesel.png"
+  },
+  "kenney-lumber": {
+    "bounds": {
+      "minX": -17,
+      "maxX": 17,
+      "minY": 4,
+      "maxY": 19.75
+    },
+    "width": 272,
+    "height": 126,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 16.70454852837203,
+        "y": 4.925793999230315,
+        "z": 0
+      },
+      "back": {
+        "x": -16.70454852837203,
+        "y": 4.925793999230315,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/kenney-lumber.png"
+  },
+  "kenney-shunter": {
+    "bounds": {
+      "minX": -15.625,
+      "maxX": 15.625,
+      "minY": 4.5,
+      "maxY": 25.25
+    },
+    "width": 250,
+    "height": 166,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 15.323463209055737,
+        "y": 3.151813954998829,
+        "z": 0
+      },
+      "back": {
+        "x": -15.323463209055737,
+        "y": 3.151813954998829,
+        "z": 0
+      }
+    },
+    "mountY": 7.1,
+    "url": "./assets/rolling-stock-sides/kenney-shunter.png"
+  },
+  "kenney-steam": {
+    "bounds": {
+      "minX": -14.75,
+      "maxX": 14.75,
+      "minY": 4.5,
+      "maxY": 24.125
+    },
+    "width": 236,
+    "height": 157,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 14.392732635480408,
+        "y": 2.853866437294097,
+        "z": 0
+      },
+      "back": {
+        "x": -14.392732635480408,
+        "y": 2.853866437294097,
+        "z": 0
+      }
+    },
+    "mountY": 7.1,
+    "url": "./assets/rolling-stock-sides/kenney-steam.png"
+  },
+  "kenney-tank": {
+    "bounds": {
+      "minX": -13.75,
+      "maxX": 13.75,
+      "minY": 4,
+      "maxY": 22.5
+    },
+    "width": 220,
+    "height": 148,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 13.412339753376093,
+        "y": 5.60939624727154,
+        "z": 0
+      },
+      "back": {
+        "x": -13.412339753376093,
+        "y": 5.60939624727154,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/kenney-tank.png"
+  },
+  "native-closed": {
+    "bounds": {
+      "minX": -33.875,
+      "maxX": 33.875,
+      "minY": 4.875,
+      "maxY": 33.5
+    },
+    "width": 542,
+    "height": 229,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 32.85,
+        "y": 8,
+        "z": 0
+      },
+      "back": {
+        "x": -32.85,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/native-closed.png"
+  },
+  "native-coach": {
+    "bounds": {
+      "minX": -85.125,
+      "maxX": 85.125,
+      "minY": 4.875,
+      "maxY": 33.75
+    },
+    "width": 1362,
+    "height": 231,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 84.1,
+        "y": 8,
+        "z": 0
+      },
+      "back": {
+        "x": -84.1,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/native-coach.png"
+  },
+  "native-diesel": {
+    "bounds": {
+      "minX": -37,
+      "maxX": 37,
+      "minY": 5.5,
+      "maxY": 45.875
+    },
+    "width": 592,
+    "height": 323,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 38,
+        "y": 6,
+        "z": 0
+      },
+      "back": {
+        "x": -38,
+        "y": 6,
+        "z": 0
+      }
+    },
+    "mountY": 7.1,
+    "url": "./assets/rolling-stock-sides/native-diesel.png"
+  },
+  "native-flat": {
+    "bounds": {
+      "minX": -43.25,
+      "maxX": 43.25,
+      "minY": 4.875,
+      "maxY": 23.5
+    },
+    "width": 692,
+    "height": 149,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 42.225,
+        "y": 8,
+        "z": 0
+      },
+      "back": {
+        "x": -42.225,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/native-flat.png"
+  },
+  "native-open": {
+    "bounds": {
+      "minX": -33.875,
+      "maxX": 33.875,
+      "minY": 4.875,
+      "maxY": 24
+    },
+    "width": 542,
+    "height": 153,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 32.85,
+        "y": 8,
+        "z": 0
+      },
+      "back": {
+        "x": -32.85,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/native-open.png"
+  },
+  "native-shunter": {
+    "bounds": {
+      "minX": -35.25,
+      "maxX": 35.25,
+      "minY": 4.875,
+      "maxY": 37.5
+    },
+    "width": 564,
+    "height": 261,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 34.25,
+        "y": 8,
+        "z": 0
+      },
+      "back": {
+        "x": -34.25,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/native-shunter.png"
+  },
+  "native-steam": {
+    "bounds": {
+      "minX": -69,
+      "maxX": 50.625,
+      "minY": 4.875,
+      "maxY": 37.5
+    },
+    "width": 957,
+    "height": 261,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 49.6,
+        "y": 8,
+        "z": 0
+      },
+      "back": {
+        "x": -67.89999999999999,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/native-steam.png"
+  },
+  "native-tank": {
+    "bounds": {
+      "minX": -33.875,
+      "maxX": 33.875,
+      "minY": 4.875,
+      "maxY": 32.5
+    },
+    "width": 542,
+    "height": 221,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 32.85,
+        "y": 8,
+        "z": 0
+      },
+      "back": {
+        "x": -32.85,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "mountY": 3.5,
+    "url": "./assets/rolling-stock-sides/native-tank.png"
+  }
+}

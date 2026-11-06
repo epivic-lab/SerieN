@@ -155,3 +155,17 @@ test("a newer attach supersedes an older pending request without duplicating the
   assert.equal(manager.stats.pending, 0);
   manager.dispose();
 });
+
+test('management catalog reuses loaded templates and returns independent measured metadata', async () => {
+  const f=fixture(),scene=new THREE.Scene(),manager=createTrainAssetManager({loadAsset:async()=>f.gltf});
+  const a=vehicle(scene),b=vehicle(scene);
+  await Promise.all([manager.attach(a.target,'diesel',true),manager.attach(b.target,'diesel',true)]);
+  assert.equal(manager.catalog.length,1);
+  assert.equal(manager.catalog[0].type,'diesel');
+  assert.equal(manager.catalog[0].nativeDimensions.length,50);
+  assert.equal(manager.catalog[0].nativeDimensions.width,13);
+  manager.catalog[0].nativeDimensions.width=999;
+  assert.equal(manager.catalog[0].nativeDimensions.width,13);
+  manager.setEnabled(false);assert.equal(manager.catalog.length,1);
+  manager.dispose();assert.equal(manager.catalog.length,0);
+});

@@ -203,3 +203,27 @@ S0–S6.1 approvate dalla Regia nella richiesta S7; checkpoint iniziale b627f526
 La Regia approva S0–S7/S6.1 e il committente autorizza questa sola integrazione su main e Pages dopo i gate. Main iniziale aeff336c997748bf49d2a09a61c1d6d9238fb3db, feature approvata2ed3312d18244a6dca91cf68d4d54073843e9e85:4/13commit esclusivi e nessun percorso modificato in comune. Branch release/turnouts-s7 da main; merge7db1cb7cb65a63d744c1789c4964b70fbcd3747c senza conflitti. Asset main e due .DS_Store preservati per hash, runtime/bundle identici a S7 ricostruito.
 
 220Node+9Python+build+canonico+browser contratto/interazione/guardia/STOP+Pages desktop/mobile e smoke completo produzione locale PASS. [Rapporto R1](docs/releases/R1/REPORT.md). Questa nota è la fotografia pre-merge: non anticipa il successo di PR/deploy. Esito post-merge/pubblicazione da verificare e consegnare con SHA main, workflow e prove pubbliche. Non cambiano dipendenze, package0.12.0, pipeline, backend o credenziali. Nessuna altra macrofase autorizzata; STOP dopo verifica pubblica e attesa Regia post-release.
+
+## Train Management — M1 (2026-11-06)
+
+Autorizzata esclusivamente M1 dalla baseline main `2a48681c9a7fbfa97386ab619684cab55c779b98`, verificata con fetch. Branch isolato `codex/train-management-m1`. Catalogo grafico, composizioni reali, dettaglio ordinato/direzione/lunghezza, sganciati e selezione/focus condivisi con plancia e scena. Nessuno store ferroviario aggiunto, nessuna modifica R1/collisioni/router/layout/scenografia/Supabase; E1 non importato.
+
+**229 Node, 9 Python, build, browser M1 e regressioni Train Deck/Phase Zero PASS**. Screenshot desktop/tablet ispezionati; touch CDP sulla build minificata PASS. Fixture di autenticazione locale e rendering su richiesta, nessuna verifica hardware o cloud: dettagli in [rapporto M1](docs/_active/train-management/REPORT.md), [stato](docs/_active/train-management/STATUS.md).
+
+Commit atomico e checkpoint remoto sul branch autorizzato, Draft PR verso main: SHA effettivo e link nella consegna dopo verifica. Nessun merge o deploy. **Unica prossima azione: review indipendente della Regia. M2/M3 non iniziate; STOP M1.**
+
+## Train Management — M1.1 (2026-11-06)
+
+Autorizzata esclusivamente la vista laterale completa prima di M1-V1. Checkpoint locale/remoto iniziale pulito `72ed618516b13ab2f77d2759c499e800a7ce7b1b`; stesso branch `codex/train-management-m1` e Draft PR #3. Quattordici PNG ortografiche trasparenti a scala comune, posizioni dai ganci/consistLayout, ordine effettivo e orientamento previsto da R1, lunghezza/numero veicoli, zoom/scroll/Fit e testo sotto. Nessuna modifica ad app.js, motore, regole ferroviarie, asset preesistenti, plancia, Supabase/cloud o funzionalità M2/M3.
+
+**234 Node, 9 Python, build, browser M1.1 sulla build minificata e regressione M1 PASS.** Screenshot BR 055 reale con tre carri (314,6 mm), tablet nativo/Kenney e fixture UI lunga a sei veicoli ispezionati; 14 PNG + manifest rigenerati identici byte per byte. Rendering su richiesta nella fixture Chromium/SwiftShader, nessuna verifica hardware fisica o gate runtime generale. [Rapporto M1.1](docs/_active/train-management/M1.1_REPORT.md), [stato](docs/_active/train-management/STATUS.md).
+
+Commit aggiuntivo atomico e checkpoint remoto verificati nella consegna; PR #3 rimane Draft. Nessun merge/deploy. **STOP M1.1; unica prossima azione: review della Regia. M1-V1 NON avviata e richiede nuova autorizzazione.**
+
+## Train Management — M1-V1 Final Runtime Gate (2026-11-06)
+
+Regia approva M1/M1.1 per la verifica conclusiva, baseline locale/remota pulita `318aaf89da5a5a12e249c2d5c72d5252c4fb3431`, stesso branch e Draft PR #3. **M1-V1 PASS CON LIMITI**: build minificata reale, RAF nativo continuo non intercettato, tre treni in movimento, apertura/chiusura, sincronizzazione, aggancio/sgancio reali, zoom/Fit/scroll desktop/tablet touch e catalogo verificati. Zero errori JS/console, richieste fallite o HTTP ≥400. Risorse ai checkpoint: 348 geometrie/44 texture; contesto attivo all'ultimo controllo.
+
+**Fluidità hardware NON validata:** nel worker Chromium usa soltanto SwiftShader, circa 0,4–0,6 frame/s in Low, non fluido. Nessun test a rendering fermato usato in sostituzione. Build ricostruita identica per hash a M1.1; suite già superate non ripetute. Due errori nel solo harness Python corretti e verifiche mancanti riprese sullo stesso bundle: provenienza completa in [rapporto M1-V1](docs/_active/train-management/M1-V1_REPORT.md), [stato](docs/_active/train-management/STATUS.md).
+
+Prodotto, R1, Supabase e autenticazione invariati. Commit solo test/documentazione/evidenze, checkpoint normale sul branch autorizzato e verifica remota nella consegna. Nessun merge/deploy o M2/M3. **STOP dopo il rapporto; unica prossima azione: review Regia dei risultati e del limite GPU.**
