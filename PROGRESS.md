@@ -219,3 +219,11 @@ Autorizzata esclusivamente la vista laterale completa prima di M1-V1. Checkpoint
 **234 Node, 9 Python, build, browser M1.1 sulla build minificata e regressione M1 PASS.** Screenshot BR 055 reale con tre carri (314,6 mm), tablet nativo/Kenney e fixture UI lunga a sei veicoli ispezionati; 14 PNG + manifest rigenerati identici byte per byte. Rendering su richiesta nella fixture Chromium/SwiftShader, nessuna verifica hardware fisica o gate runtime generale. [Rapporto M1.1](docs/_active/train-management/M1.1_REPORT.md), [stato](docs/_active/train-management/STATUS.md).
 
 Commit aggiuntivo atomico e checkpoint remoto verificati nella consegna; PR #3 rimane Draft. Nessun merge/deploy. **STOP M1.1; unica prossima azione: review della Regia. M1-V1 NON avviata e richiede nuova autorizzazione.**
+
+## Train Management — M1-V1 Final Runtime Gate (2026-11-06)
+
+Regia approva M1/M1.1 per la verifica conclusiva, baseline locale/remota pulita `318aaf89da5a5a12e249c2d5c72d5252c4fb3431`, stesso branch e Draft PR #3. **M1-V1 PASS CON LIMITI**: build minificata reale, RAF nativo continuo non intercettato, tre treni in movimento, apertura/chiusura, sincronizzazione, aggancio/sgancio reali, zoom/Fit/scroll desktop/tablet touch e catalogo verificati. Zero errori JS/console, richieste fallite o HTTP ≥400. Risorse ai checkpoint: 348 geometrie/44 texture; contesto attivo all'ultimo controllo.
+
+**Fluidità hardware NON validata:** nel worker Chromium usa soltanto SwiftShader, circa 0,4–0,6 frame/s in Low, non fluido. Nessun test a rendering fermato usato in sostituzione. Build ricostruita identica per hash a M1.1; suite già superate non ripetute. Due errori nel solo harness Python corretti e verifiche mancanti riprese sullo stesso bundle: provenienza completa in [rapporto M1-V1](docs/_active/train-management/M1-V1_REPORT.md), [stato](docs/_active/train-management/STATUS.md).
+
+Prodotto, R1, Supabase e autenticazione invariati. Commit solo test/documentazione/evidenze, checkpoint normale sul branch autorizzato e verifica remota nella consegna. Nessun merge/deploy o M2/M3. **STOP dopo il rapporto; unica prossima azione: review Regia dei risultati e del limite GPU.**

@@ -1,15 +1,15 @@
-# Train Management — M1 + M1.1
+# Train Management — M1-V1
 
-M1.1 PASS tecnico, pending review indipendente della Regia. **M1-V1 NON avviata.**
-Branch autorizzato `codex/train-management-m1`; Draft PR [#3](https://github.com/epivic-lab/SerieN/pull/3).
-Baseline M1 origin/main: `2a48681c9a7fbfa97386ab619684cab55c779b98`.
-Checkpoint M1: `72ed618516b13ab2f77d2759c499e800a7ce7b1b`.
+**M1-V1 PASS CON LIMITI**, in attesa della review Regia sul rapporto.
+M1 e M1.1 approvate dalla Regia per questa verifica conclusiva.
 
-M1: catalogo, composizioni, dettaglio, sganciati e selezione condivisa.
-M1.1: vista laterale ortografica completa, proporzioni/ganci reali, zoom/scroll/Fit, lista testuale complementare e aggiornamento automatico.
+Branch `codex/train-management-m1`, Draft PR [#3](https://github.com/epivic-lab/SerieN/pull/3).
+Codice testato: `318aaf89da5a5a12e249c2d5c72d5252c4fb3431`, inizialmente coincidente con il remoto.
 
-234 Node, 9 Python, build, browser M1.1 e regressione M1: PASS. Screenshot reali desktop/tablet e fixture lunga ispezionati; 14 PNG + manifest rigenerati identici.
-Rapporti: [M1](REPORT.md), [M1.1 e limiti](M1.1_REPORT.md).
+Build minificata reale, identica per hash a M1.1, rendering continuo e RAF nativo non intercettato. PASS funzionali: tre treni in movimento e apertura/chiusura, sincronizzazione, aggancio/sgancio, zoom/Fit/scroll desktop/tablet touch, catalogo e assenza di errori/richieste fallite.
 
-Commit aggiuntivo e checkpoint remoto sullo stesso branch, verificati nella consegna dopo il commit atomico. Nessun merge/deploy, M2/M3 non iniziate.
-Prossima azione unica: review M1.1 della Regia; M1-V1 soltanto dopo nuova autorizzazione. STOP.
+**Limite aperto: fluidità su GPU reale NON verificata.** Nel worker solo SwiftShader, circa 0,4–0,6 frame/s in Low: resa software non fluida. Nessuna prova sostitutiva con rendering bloccato. Dettagli, due errori del solo harness corretti e provenienza delle tre sessioni nel [rapporto M1-V1](M1-V1_REPORT.md).
+
+Suite Node/Python/browser già superate non ripetute. Nessuna modifica al prodotto/R1/Supabase/autenticazione; nuovo commit soltanto test/documentazione/evidenze. Checkpoint remoto verificato nella consegna.
+
+Nessun merge/deploy o M2/M3. **STOP dopo M1-V1; unica prossima azione: review del rapporto da parte della Regia.**

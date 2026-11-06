@@ -1,0 +1,98 @@
+{
+  "status": "M1-V1 BLOCKED",
+  "failure": "Page.wait_for_function() takes 2 positional arguments but 3 were given",
+  "webgl": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "vendor": "Google Inc. (Google)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "checks": {
+    "openCloseThreeMoving": "PASS: 3 cycles, all three continued advancing",
+    "continuousSceneChanged": "PASS",
+    "selectionSideConsoleScene": "PASS",
+    "desktopZoomScrollFit": "PASS",
+    "focus3D": "PASS"
+  },
+  "frameStats": {
+    "closed-three-moving": {
+      "frames": 37,
+      "durationMs": 84913.20000000001,
+      "fps": 0.4239623521431296,
+      "p50Ms": 2333.300000000003,
+      "p95Ms": 2599.800000000003,
+      "maxMs": 2983.300000000003
+    },
+    "closed-three-moving-0": {
+      "frames": 19,
+      "durationMs": 41898.399999999994,
+      "fps": 0.4296106772573655,
+      "p50Ms": 2316.5,
+      "p95Ms": 2549.899999999994,
+      "maxMs": 2583.3000000000175
+    },
+    "closed-three-moving-1": {
+      "frames": 20,
+      "durationMs": 42414.899999999965,
+      "fps": 0.44795578912127615,
+      "p50Ms": 2233.2999999999884,
+      "p95Ms": 2350.0,
+      "maxMs": 2483.2000000000116
+    },
+    "closed-three-moving-2": {
+      "frames": 40,
+      "durationMs": 88813.19999999995,
+      "fps": 0.4391239140127821,
+      "p50Ms": 2266.600000000035,
+      "p95Ms": 2499.7999999999884,
+      "maxMs": 2683.3000000000466
+    },
+    "coupling-two-moving": {
+      "frames": 8,
+      "durationMs": 12982.79999999993,
+      "fps": 0.5391749083402685,
+      "p50Ms": 1866.5999999999767,
+      "p95Ms": 1933.1999999999534,
+      "maxMs": 1933.1999999999534
+    },
+    "open-three-moving-0": {
+      "frames": 22,
+      "durationMs": 52331.20000000001,
+      "fps": 0.4012902436787231,
+      "p50Ms": 2499.9000000000233,
+      "p95Ms": 2633.1999999999825,
+      "maxMs": 2749.899999999994
+    },
+    "open-three-moving-1": {
+      "frames": 17,
+      "durationMs": 34748.600000000035,
+      "fps": 0.46045020518812224,
+      "p50Ms": 2183.2999999999884,
+      "p95Ms": 2349.9000000000233,
+      "maxMs": 2349.9000000000233
+    },
+    "open-three-moving-2": {
+      "frames": 16,
+      "durationMs": 34281.90000000002,
+      "fps": 0.43754867729034824,
+      "p50Ms": 2283.2000000000116,
+      "p95Ms": 2449.9000000000233,
+      "maxMs": 2549.7999999999884
+    },
+    "selection-and-desktop-controls": {
+      "frames": 114,
+      "durationMs": 252823.09999999998,
+      "fps": 0.44695282986404333,
+      "p50Ms": 2283.1999999999534,
+      "p95Ms": 2533.100000000035,
+      "maxMs": 2966.5
+    },
+    "warmup": {
+      "frames": 23,
+      "durationMs": 50447.899999999994,
+      "fps": 0.4360934746540491,
+      "p50Ms": 2266.5999999999985,
+      "p95Ms": 2449.9000000000015,
+      "maxMs": 2549.7999999999993
+    }
+  }
+}

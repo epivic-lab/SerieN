@@ -1,0 +1,52 @@
+{
+  "verdict": "M1-V1 PASS CON LIMITI",
+  "testedHead": "318aaf89da5a5a12e249c2d5c72d5252c4fb3431",
+  "bundleSHA256": "e64d3efc7915456a33ce6c539afa298c577623d49fffea0e12438ded7a13222c",
+  "productionCodeChanged": false,
+  "checks": {
+    "openCloseThreeMoving": "PASS: 3 cycles, all three continued advancing",
+    "continuousSceneChanged": "PASS",
+    "selectionSideConsoleScene": "PASS",
+    "desktopZoomScrollFit": "PASS",
+    "focus3D": "PASS",
+    "liveUncoupleRecouple": "PASS: actual commands, dialog open, other two moving",
+    "tabletZoomScrollFit": "PASS: landscape and portrait during movement, native CDP touch swipe and Fit",
+    "catalogWhileMoving": "PASS: 14 models, return to current composition",
+    "errorsAndRequests": "PASS",
+    "nativeContinuousRAF": "PASS"
+  },
+  "limits": {
+    "physicalGPU": "NOT VERIFIED: Chromium uses ANGLE SwiftShader; no accessible DRI/NVIDIA GPU device",
+    "softwareFluidity": "INSUFFICIENT: approximately 0.4-0.6 RAF frames/s in Low. Hardware fluidity is not validated.",
+    "profiles": "Low only; no certification of Auto/High/Cinema or physical desktop/tablet hardware",
+    "authentication": "Unchanged and not executed: standalone local simulator harness, no Supabase calls"
+  },
+  "nativeRAFCheckpoints": 14,
+  "frameObservations": [
+    316,
+    128,
+    246
+  ],
+  "observedIntervalsSeconds": [
+    715.7878999999999,
+    217.4914,
+    429.18289999999996
+  ],
+  "resourceCounters": {
+    "geometries": [
+      348
+    ],
+    "textures": [
+      44
+    ]
+  },
+  "javascriptErrors": 0,
+  "consoleErrors": 0,
+  "failedRequests": 0,
+  "httpFailures": 0,
+  "provenance": {
+    "session-1": "Desktop continuous rendering, three open/close cycles, selection/scene/side consistency, desktop zoom/scroll/Fit and 3D focus passed. Then Python SDK argument error stopped the harness.",
+    "session-2": "Resumed only remaining checks on identical bundle; live uncouple/recouple passed. Then Python local variable scope error stopped the harness.",
+    "session-3": "Corrected harness; reused recorded successful checks on identical bundle, verified remaining tablet touch/zoom/scroll/Fit, catalog and final continuous movement. No passed unit/browser suite was repeated."
+  }
+}
