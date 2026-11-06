@@ -1,0 +1,800 @@
+{
+  "$meta": {
+    "name": "SerieN Autumn Railways — UI specification",
+    "version": "1.0.0",
+    "audience": "Implementing developer (Sol). Machine-readable companion of docs/SerieN-UI-Blueprint.pdf.",
+    "sourceOfTruth": "reference/serien-ui-reference.html (visual + behaviour). If this file and the reference disagree, the reference wins; report the mismatch."
+  },
+  "files": {
+    "reference/serien-ui-reference.html": "Self-contained working reference (mock simulation). Open in Chrome. Query param ?trains=0..8 previews any train count.",
+    "css/serien-ui.css": "Production stylesheet, 1:1 with reference. ORDER-DEPENDENT. Do not reorder/split.",
+    "tokens/tokens.css": "Fonts @import + design tokens (--sn-*) + core shorthands. Load first.",
+    "tokens/tokens.json": "Same tokens + behaviour constants (thresholds, timings).",
+    "assets/svg/serien-sprite.svg": "Gradients, icons, loco silhouettes, edition emblem. Inline once in <body>.",
+    "assets/textures/*.jpg": "Brushed brass, enamel, brushed steel, mahogany, parchment, spun brass (gauge bezels).",
+    "library/serien-ui-library.html": "Component gallery with every state, live CSS.",
+    "spec/ui-spec.json": "This file.",
+    "docs/SerieN-UI-Blueprint.pdf": "Human blueprint + migration guide from current prototype."
+  },
+  "rootContract": {
+    "rootElement": "<main id=\"st\" class=\"st\" data-tab=\"treni\">  (ids and classes below are REQUIRED; CSS and behaviour depend on them)",
+    "rootClasses": {
+      "q-low": "low graphics quality active",
+      "nt": "night (night factor > 0.5)",
+      "no-tr": "zero trains"
+    },
+    "rootCustomProperties": {
+      "--n": "night factor 0..1 (registered @property, animates)",
+      "--k": "sunset factor 0..1"
+    },
+    "domOrder": [
+      "header.m.hd",
+      "section.m.vp",
+      "aside.side",
+      "footer.m.dk",
+      "nav.nav",
+      "div#dlg.dlg",
+      "div#tpD.dlg",
+      "div#hlD.dlg",
+      "canvas.lx (created by JS)"
+    ],
+    "sidePanelDomOrder": "m-sw, m-env, m-ms, m-lg in DOM; VISUAL order is set by CSS `order`: Environment, Switches, Map, Missions. Keep DOM as in reference."
+  },
+  "layout": {
+    "areas": {
+      "h": "header",
+      "v": "view (3D + overlays)",
+      "s": "side panels",
+      "d": "train dock"
+    },
+    "viewport3D": "Engine canvas goes INSIDE .win as first child (position:absolute; inset:0). Delete .vph placeholder and the hidden svg.lay3d. Overlays (#nx, #slip, #cam) stay as siblings after the canvas.",
+    "pointerEvents": ".win itself must pass pointer events to the engine canvas; only .ov elements capture clicks."
+  },
+  "components": [
+    {
+      "id": "woodPlaque",
+      "selector": ".hd .plq > b.inl",
+      "content": "Static text 'SERIE N'",
+      "notes": "Mahogany texture, two brass rivets .rvp. Height equals edition plate."
+    },
+    {
+      "id": "editionPlate",
+      "selector": "#edp",
+      "content": "#edn = EDITION.name; <use> emblem = '#emb-'+EDITION.emblem",
+      "config": "EDITION = {name:'Autumn Railways', emblem:'maple'}",
+      "notes": "Two slotted screws .scr. Swap name/emblem per edition; nothing else changes."
+    },
+    {
+      "id": "annunciator",
+      "selector": ".ann > button.anl[data-c]",
+      "channels": {
+        "sim": "Running/Paused/E-stop",
+        "col": "Collision",
+        "pts": "Points",
+        "buf": "Buffer"
+      },
+      "states": {
+        "ok": "green (sim only)",
+        "wn": "amber steady",
+        "al": "red",
+        "blk": "added to 'al' when unacknowledged: blinks 1.1 s",
+        "(none)": "off"
+      },
+      "click": "acknowledge all alarms of that channel + select involved train"
+    },
+    {
+      "id": "headerButtons",
+      "selector": ".hc",
+      "items": {
+        "#menuB": "open Menu dialog",
+        "#tpB": "open Track plan dialog",
+        "#hlB": "open Help dialog",
+        "#snd": "toggle sound; label 'Sound: On|Off'; mirrors Menu > Sound"
+      }
+    },
+    {
+      "id": "nextSwitchHud",
+      "selector": "#nx",
+      "collapsed": "#nxh row: lamp, #nxn switch id, #nxd distance mm",
+      "expanded": "#nxl train name, #nxe 'description · straight|diverging', #nxs Straight|Diverging segmented",
+      "expandWhen": "user click (toggle .open) OR (distance<500 mm AND selected train moving) -> class .near (amber lamp, warn sound once)",
+      "hiddenWhen": "no trains (.gone)",
+      "binding": "first facing-point switch ahead of the SELECTED train on its current route",
+      "action": "#nxs buttons set that switch (same as tile)"
+    },
+    {
+      "id": "alarmSlip",
+      "selector": "#slip",
+      "binding": "highest-priority active alarm (al > wn); 'in' items never shown",
+      "parts": {
+        "#slt": "title",
+        "#sld": "detail (mm)",
+        "#sln": "'+N' more",
+        "#sla": "action buttons"
+      },
+      "show": "add .on; add .al for red",
+      "actions": "from alarm.actions + 'Show' (select train) + 'Ack' for red alarms"
+    },
+    {
+      "id": "cameraBar",
+      "selector": "#cam",
+      "alwaysVisible": [
+        "Zoom in",
+        "Zoom out",
+        "Recenter"
+      ],
+      "toggle": "#camt 'View' toggles .open; #cmo is inert when closed",
+      "expanded": {
+        "views": [
+          "Overview",
+          "Station",
+          "Depot",
+          "Loop"
+        ],
+        "Pan / Orbit": "mutually exclusive (data-c)",
+        "Follow / Route": "independent toggles (data-k)"
+      },
+      "autoCollapseMs": 8000,
+      "emits": "camera"
+    },
+    {
+      "id": "environmentPanel",
+      "selector": ".m-env",
+      "controls": {
+        "#day": "range 0..100; set --p custom property = value%",
+        "#dl": "'Day'|'Sunset'|'Night' (v<33, v<66, else)",
+        ".lab span.on": "highlight current phase"
+      },
+      "emits": "setTimeOfDay",
+      "lighting": "see 'lighting'"
+    },
+    {
+      "id": "switchesPanel",
+      "selector": ".m-sw",
+      "counter": "#cnt = diverging/total",
+      "tile": {
+        "markup": "<div class=\"sw\" data-k=\"ID\" role=\"group\" aria-label=\"ID, description\"><span class=\"sn\"><b>ID</b><small>description</small></span><div class=\"sg swg\"><button data-v=\"0\" class=\"on\" aria-pressed=\"true\">Straight</button><button data-v=\"1\" aria-pressed=\"false\">Diverging</button></div></div>",
+        "states": {
+          ".dev": "switch diverging",
+          ".ck": "click wobble 280 ms",
+          ".nx1": "is the next switch of the selected train (soft pulse)",
+          "button.on": "current position (aria-pressed)"
+        },
+        "grid": "2 columns; N tiles generated from the game switch registry (NOT hard-coded)"
+      },
+      "emits": "setSwitch"
+    },
+    {
+      "id": "mapPanel",
+      "selector": ".m-lg",
+      "counter": "#mpc 'N train(s)'",
+      "map": "svg.map: <use href=#lay> track twice (sepia + dashed); #md switch dots (.mdot, .dv amber); #mm train markers (.tm; .s selected pulses; .wn/.al); #mr predicted route of selected train in its colour",
+      "key": "#mkl rows button.mkr: brass dot (halo = train colour), name, .k1 run time, .k2 distance; .on selected; .run moving (green dot); .al alarm",
+      "emptyState": ".mkE 'No trains'",
+      "click": "marker or row selects train"
+    },
+    {
+      "id": "missionsPanel",
+      "selector": ".m-ms",
+      "fields": {
+        "#msn": "title",
+        "#msd": "description (hidden below 1000 px viewport height)",
+        "#mpf": "progress fill width %",
+        "#mpt": "'x.x / y.y m' or status",
+        "#mnx": "Next mission; disabled until progress = 1; panel gets .dn when complete (green bar, chime once)",
+        "h2 em": "index/total"
+      }
+    },
+    {
+      "id": "trainCarousel",
+      "selector": "#trw > #trk",
+      "arrows": "#aL/#aR scroll by one card; disabled at ends; hidden when no trains",
+      "cardWidth": "3 per row desktop, 2 below 760 px container, 1 below 430 px; cards grow when fewer trains (max half width)",
+      "emptyState": ".trE with '+ Add train'"
+    },
+    {
+      "id": "trainCard",
+      "selector": "article.tr",
+      "states": {
+        ".sel": "selected (double brass ring, top sheen bar, brass name plate)",
+        "not .sel": "dimmed (brightness .8)",
+        ".alm": "red pulsing ring",
+        ".wrn": "amber ring",
+        ".lk": "throttle locked (E-stop)"
+      },
+      "parts": {
+        "gauge": "svg.gg from gauge(train): main SPEED % needle .nd shows ACTUAL speed; sub-dial .nd2 = BAR (steam) or RPM (diesel/shunter)",
+        "nameRow": ".tg colour dot, svg.lc <use href=#l{kind}>, h3 name, .pl status pill",
+        "pill": {
+          "Stopped": "neutral",
+          "Running": ".go",
+          "Reversing": ".bk",
+          "alarm text": ".al / .wn"
+        },
+        "caption": ".cap '{type} · {era} · {wagons} · {length}'",
+        "throttle": "input.thr 0..100 = COMMANDED speed; .pc percent",
+        "buttons": "[data-a] rev, stop, lt (.on when lights on), unc, cpl — icon + small label"
+      },
+      "emits": [
+        "setSpeed",
+        "reverse",
+        "stopTrain",
+        "lights",
+        "couple",
+        "uncouple",
+        "selectTrain"
+      ]
+    },
+    {
+      "id": "controlCluster",
+      "selector": ".cc",
+      "items": {
+        "[data-g=add]": "+ Train (max 8)",
+        "[data-g=pause]": "Pause <-> Resume (label swaps)",
+        "#rst": "Reset: HOLD 900 ms (red fill, custom property --h 0..1); early release cancels; keyboard: hold Space/Enter while focused",
+        ".mush": "STOP ALL mushroom: press = latch E-stop (.lt2, label 'RE LEASE'); press again = release (.tw twist animation)"
+      }
+    },
+    {
+      "id": "versionLabel",
+      "selector": "#ver",
+      "content": "'v'+VERSION, bottom-right of dock"
+    },
+    {
+      "id": "mobileNav",
+      "selector": "nav.nav",
+      "visibleAt": "phone breakpoint",
+      "tabs": {
+        "treni": "Trains (dock + map)",
+        "scambi": "Switches",
+        "ambiente": "Environment",
+        "missioni": "Missions"
+      },
+      "binding": "#st[data-tab]",
+      "stop": "STOP ALL mirror"
+    },
+    {
+      "id": "menuDialog",
+      "selector": "#dlg",
+      "sections": {
+        "#qsg": "Graphics quality Auto/Low/High + #qd description + #fps live",
+        "#ssg": "Sound On/Off"
+      },
+      "actions": {
+        "#exitB": "Exit to title (emits exit)",
+        "#dlgC": "Resume (close)"
+      },
+      "close": "Esc, click on backdrop, Resume; focus returns to the opener"
+    },
+    {
+      "id": "trackPlanDialog",
+      "selector": "#tpD",
+      "content": "Large parchment track plan; switch labels .tpl (amber when diverging); click toggles switch; #tpC counter"
+    },
+    {
+      "id": "helpDialog",
+      "selector": "#hlD",
+      "content": "Keyboard list + annunciator legend (static)"
+    }
+  ],
+  "stateModel": {
+    "$note": "The UI is a VIEW of this state. Produce it from the game every tick (or on change) and call the render functions. Field names are a recommendation; keep them stable.",
+    "simulation": {
+      "paused": "boolean",
+      "emergencyStop": "boolean"
+    },
+    "environment": {
+      "timeOfDay": "number 0..100"
+    },
+    "selectedTrainId": "string | null",
+    "trains": [
+      {
+        "id": "string (stable)",
+        "name": "'BR 055'",
+        "kind": "1 steam | 2 diesel | 3 shunter (selects silhouette l{kind} and gauge type)",
+        "type": "'Steam'",
+        "era": "'DB era III'",
+        "wagons": "int",
+        "lengthMm": "int",
+        "colorIndex": "0..7 (index into tokens color.train.list)",
+        "speedCmd": "0..100 (slider)",
+        "speedActual": "0..100 (needle, motion)",
+        "direction": "1 | -1",
+        "lights": "boolean",
+        "subDial": "pressure bar (steam) or rpm (diesel) — optional, UI can derive from speedActual like the reference",
+        "run": {
+          "timeS": "number",
+          "distanceMm": "number"
+        },
+        "position": {
+          "x": "layout units",
+          "y": "layout units"
+        },
+        "nextSwitch": "{id, distanceMm} | null",
+        "predictedRoute": "[[x,y],...] in layout units (about 2600 units ahead)",
+        "status": "Stopped | Running | Reversing | <alarm text>"
+      }
+    ],
+    "switches": [
+      {
+        "id": "string",
+        "description": "string",
+        "diverging": "boolean"
+      }
+    ],
+    "alarms": [
+      {
+        "key": "stable string",
+        "channel": "col|pts|buf|sim",
+        "level": "al|wn|in",
+        "title": "string",
+        "detail": "string",
+        "trainId": "string | null",
+        "actions": [
+          {
+            "label": "string",
+            "event": "ui event object"
+          }
+        ]
+      }
+    ],
+    "missions": {
+      "index": "int",
+      "total": "int",
+      "title": "string",
+      "description": "string",
+      "progress": "0..1",
+      "progressLabel": "string",
+      "complete": "boolean"
+    },
+    "layoutGraph": {
+      "$note": "Track geometry in layout units for Map and Track plan. Reference uses PDF units (4022 x 1916 for 150 x 70 cm). Provide from the game's track model.",
+      "edges": "[{pts:[[x,y],...]}]",
+      "bufferStops": "[[x,y],...]",
+      "switchPositions": "{id: [[x,y],...]}"
+    }
+  },
+  "events": {
+    "$transport": "UI -> game: window.dispatchEvent(new CustomEvent('serien:ui',{detail:{type,...}})) (reference already does this for 'exit'). Any bus is fine; keep the payloads.",
+    "uiToGame": [
+      {
+        "type": "setSwitch",
+        "payload": {
+          "id": "string",
+          "diverging": "boolean"
+        }
+      },
+      {
+        "type": "setSpeed",
+        "payload": {
+          "trainId": "string",
+          "value": "0..100"
+        }
+      },
+      {
+        "type": "reverse",
+        "payload": {
+          "trainId": "string"
+        }
+      },
+      {
+        "type": "stopTrain",
+        "payload": {
+          "trainId": "string"
+        }
+      },
+      {
+        "type": "lights",
+        "payload": {
+          "trainId": "string",
+          "on": "boolean"
+        }
+      },
+      {
+        "type": "couple",
+        "payload": {
+          "trainId": "string"
+        }
+      },
+      {
+        "type": "uncouple",
+        "payload": {
+          "trainId": "string"
+        }
+      },
+      {
+        "type": "selectTrain",
+        "payload": {
+          "trainId": "string"
+        }
+      },
+      {
+        "type": "addTrain",
+        "payload": {}
+      },
+      {
+        "type": "pause",
+        "payload": {
+          "on": "boolean"
+        }
+      },
+      {
+        "type": "reset",
+        "payload": {}
+      },
+      {
+        "type": "emergencyStop",
+        "payload": {
+          "on": "boolean"
+        }
+      },
+      {
+        "type": "setTimeOfDay",
+        "payload": {
+          "value": "0..100"
+        }
+      },
+      {
+        "type": "camera",
+        "payload": {
+          "action": "zoomIn|zoomOut|recenter|pan|orbit|follow|route|view",
+          "value": "view name or boolean"
+        }
+      },
+      {
+        "type": "ackAlarm",
+        "payload": {
+          "keys": "string[]"
+        }
+      },
+      {
+        "type": "nextMission",
+        "payload": {}
+      },
+      {
+        "type": "setQuality",
+        "payload": {
+          "value": "auto|low|high",
+          "effective": "low|high"
+        }
+      },
+      {
+        "type": "setSound",
+        "payload": {
+          "on": "boolean"
+        }
+      },
+      {
+        "type": "exit",
+        "payload": {}
+      }
+    ],
+    "uiOnly": [
+      "open/close dialogs",
+      "HUD expand",
+      "camera bar expand",
+      "carousel scroll",
+      "mobile tab switch",
+      "sound playback (SFX)"
+    ]
+  },
+  "alarmRules": {
+    "$note": "Evaluated about 6 times per second along each train's ACTUAL route through current switch positions. Port scanAhead()/scan() from the reference into the game layer if the game does not have them.",
+    "rules": [
+      {
+        "channel": "col",
+        "level": "wn",
+        "when": "moving train, another train ahead within 450 mm",
+        "title": "Collision risk",
+        "actions": [
+          "Stop <train>"
+        ]
+      },
+      {
+        "channel": "col",
+        "level": "al",
+        "when": "distance <= 100 mm; train auto-held at 90 mm (emergency brake)",
+        "title": "Emergency brake",
+        "actions": [
+          "Reverse",
+          "Show",
+          "Ack"
+        ]
+      },
+      {
+        "channel": "pts",
+        "level": "wn",
+        "when": "moving train will enter a switch from the trailing side set against it, within 450 mm",
+        "title": "Points set against",
+        "actions": [
+          "Set <id>"
+        ]
+      },
+      {
+        "channel": "pts",
+        "level": "al",
+        "when": "train held at that switch (<= 3 mm)",
+        "title": "Points set against",
+        "actions": [
+          "Set <id>",
+          "Show",
+          "Ack"
+        ]
+      },
+      {
+        "channel": "buf",
+        "level": "wn",
+        "when": "moving train within 350 mm of a buffer stop",
+        "title": "Buffer stop ahead",
+        "actions": [
+          "Stop <train>"
+        ]
+      },
+      {
+        "channel": "buf",
+        "level": "in",
+        "when": "train stopped at buffer (<= 3 mm)",
+        "title": "At buffer stop",
+        "notes": "lamp amber steady, no slip"
+      },
+      {
+        "channel": "sim",
+        "level": "al",
+        "when": "emergency stop latched",
+        "title": "Emergency stop",
+        "actions": [
+          "Release"
+        ]
+      }
+    ],
+    "sounds": "new 'al' -> SFX.alarm (not for E-stop); new 'wn' -> SFX.warn",
+    "acknowledge": "Ack button or annunciator click stops blinking; alarm stays until its condition clears"
+  },
+  "keyboard": {
+    "Space": "STOP ALL / release (ignored when a button has focus)",
+    "1-8": "select train",
+    "ArrowUp/ArrowDown": "selected train speed +/-5 (blocked during E-stop)",
+    "R": "reverse",
+    "S": "stop selected",
+    "L": "lights",
+    "M": "menu",
+    "Esc": "close dialog",
+    "ignore": "when focus is in a dialog, when a range input uses arrows, with Ctrl/Meta/Alt"
+  },
+  "sound": {
+    "engine": "Web Audio synthesis, no audio files (object SFX in the reference: port as-is)",
+    "unlock": "AudioContext resumes on first user gesture",
+    "events": {
+      "click": "enamel button",
+      "brass": "brass button",
+      "detent": "segmented control",
+      "tick": "slider step (5%) / map pick",
+      "point": "switch thrown",
+      "reverse": "reverser",
+      "light": "lights switch",
+      "couple": "couple/uncouple",
+      "brake": "stop train",
+      "stop": "STOP ALL / collision hold / reset",
+      "bump": "buffer",
+      "warn": "warning / HUD near",
+      "alarm": "alarm",
+      "chime": "mission complete",
+      "twist": "E-stop release",
+      "joint": "rail joints every 124 mm, panned by x, quieter for non-selected trains"
+    }
+  },
+  "lighting": {
+    "inputs": "timeOfDay v: sunset LK = max(0, 1-|v-50|/34); night LN = clamp((v-42)/50, 0, 1)",
+    "night": "set --n = LN on #st (CSS transition 1.2 s); add .nt when LN > 0.5. Everything else is CSS: panels darken (--dk overlay), gauges get the hidden-bulb layer (.gnt), enamel controls get warm edge light, brass buttons get grazing light from below. No canvas at night.",
+    "sunset": "canvas.lx (multiply) warm wash, cut out over .win; disabled in Low quality",
+    "3Dview": "lighting of the 3D scene is the engine's job; send setTimeOfDay"
+  },
+  "quality": {
+    "classOnRoot": "q-low",
+    "low": [
+      "textures off (vars set to none)",
+      "no blur/backdrop-filter",
+      "no decorative animation (sheen, pulses, lamp breathing)",
+      "sunset canvas off",
+      "UI/sim loop 30 fps"
+    ],
+    "keeps": [
+      "alarm blinking",
+      "sounds",
+      "all functions"
+    ],
+    "auto": "see tokens.json behaviour.quality"
+  },
+  "migration": {
+    "$note": "Current prototype (screenshot in PDF section 3) -> new UI. REMOVED = delete the old element and its handlers.",
+    "map": [
+      [
+        "Header: N160 logo + 'SerieN Autumn Railways' + 'N SCALE RAILWAY · 150×70 CM'",
+        "Wood plaque 'SERIE N' + brass edition plate (EDITION config)",
+        "Logo and subtitle REMOVED"
+      ],
+      [
+        "Header: Quality select 'Auto · High'",
+        "Menu dialog > Graphics quality (Auto/Low/High)",
+        "emit setQuality; toggle .q-low"
+      ],
+      [
+        "Header: '● WEB SIMULATION' status",
+        "Annunciator lamp 'Running' (+ Collision/Points/Buffer lamps)",
+        "from simulation.paused / emergencyStop"
+      ],
+      [
+        "Header: Home",
+        "Menu button (#menuB) -> Menu dialog",
+        "old Home = main menu"
+      ],
+      [
+        "Header: Track plan",
+        "Track plan button (#tpB) -> Track plan dialog",
+        "now interactive"
+      ],
+      [
+        "Header: ? Help",
+        "Help button (#hlB) -> Help dialog",
+        ""
+      ],
+      [
+        "Header: Esci",
+        "Menu dialog > 'Exit to title' (#exitB)",
+        "emit exit"
+      ],
+      [
+        "(new)",
+        "Header: Sound On/Off (#snd)",
+        "mirrors Menu > Sound"
+      ],
+      [
+        "View: 'Bell: on' button",
+        "REMOVED",
+        "bell only as alarm sound; sound toggle in header"
+      ],
+      [
+        "View: NEXT SWITCH card (diagram, 'Expected exit', collapse −)",
+        "HUD plate #nx (one line; expands on click or < 500 mm)",
+        "diagram REMOVED; Straight/Diverging control added"
+      ],
+      [
+        "View: camera bar (Route, View select, Zoom ±, Pan, Orbit, Home, Follow)",
+        "#cam: Zoom+, Zoom−, Recenter always; 'View' expands views + Pan/Orbit/Follow/Route",
+        "View select -> segmented; old Home -> Recenter; auto-collapse 8 s"
+      ],
+      [
+        "Right: INFRASTRUCTURE / Switches grid with descriptions + paragraph",
+        "Switches panel: one tile per switch = ID + Straight|Diverging",
+        "generate from game registry; paragraph REMOVED; counter = diverging/total"
+      ],
+      [
+        "Right: ENVIRONMENT 'Daylight' + slider + Day/Sunset/Night",
+        "Environment panel: slider + sun/sunset/moon labels",
+        "drives UI lighting + emit setTimeOfDay"
+      ],
+      [
+        "Right: Rolling stock select 'DB · original models'",
+        "REMOVED",
+        "not needed with the new train management"
+      ],
+      [
+        "Right: RAILWAY OPERATIONS / Missions / First lap",
+        "Missions panel (compact) with progress bar + Next mission",
+        "Next enabled only when complete"
+      ],
+      [
+        "(new)",
+        "Map panel: track map + train markers + predicted route + Run KPI per train",
+        "KPI: time & distance since last start"
+      ],
+      [
+        "Dock: 'Trains' tab bar BR 055/216/260",
+        "REMOVED",
+        "select via card / marker / key row / keys 1–8; carousel arrows"
+      ],
+      [
+        "Dock: + Add train, STOP ALL, Pause, Reset",
+        "Control cluster: + Train, Pause/Resume, Reset (hold 900 ms), STOP ALL mushroom (latching)",
+        "STOP ALL now latches; second press releases"
+      ],
+      [
+        "Card: loco image",
+        "Silhouette <use href=#l1|l2|l3> by train.kind + colour dot",
+        ""
+      ],
+      [
+        "Card: mini-map per train",
+        "REMOVED",
+        "replaced by the Map panel"
+      ],
+      [
+        "Card: 'Stopped · 3 wagons · 315 mm'",
+        "Status pill + caption 'type · era · wagons · length'",
+        ""
+      ],
+      [
+        "Card: Speed slider + %",
+        "Gauge (actual speed) + throttle slider (commanded) + %",
+        "inertia; sub-dial BAR/RPM"
+      ],
+      [
+        "Card: Reverse, Stop, Lights, Uncouple, Couple",
+        "Same five; icon buttons with small labels; Lights shows on-state",
+        "titles show shortcuts"
+      ],
+      [
+        "3D layout view",
+        "Unchanged (engine). Put the engine canvas inside .win",
+        "the UI package does not include the 3D view"
+      ]
+    ]
+  },
+  "referenceJs": {
+    "$note": "Functions inside the <script> of reference/serien-ui-reference.html. KEEP = port as-is. ADAPT = keep the rendering, feed it from game state. MOCK = delete and replace with game data/logic.",
+    "KEEP": [
+      "$",
+      "SFX",
+      "railJ (feed real distance)",
+      "fmtT",
+      "gauge",
+      "GS",
+      "pt",
+      "applyQ",
+      "QD",
+      "paintS",
+      "openM / closeM",
+      "openD / closeD",
+      "setCam",
+      "arr",
+      "go",
+      "emptyUpd",
+      "hold-to-reset block (startH / stopH / doReset -> emit reset)",
+      "keyboard handler",
+      "light (sunset canvas)",
+      "estopOn / release (emit emergencyStop)",
+      "slip",
+      "annunciator click handler"
+    ],
+    "ADAPT": [
+      "mk (create card + markers + key row from a train)",
+      "upd / all (render trains from state)",
+      "sets (render switch + emit setSwitch)",
+      "pick (emit selectTrain)",
+      "routeUpd (draw #mr from train.predictedRoute; HUD from train.nextSwitch)",
+      "scan (render state.alarms instead of computing)",
+      "msUpd (render missions from state)",
+      "place (markers from train.position)",
+      "tpUpd (labels from switchPositions)"
+    ],
+    "MOCK": [
+      "G (track graph JSON)",
+      "walk",
+      "at",
+      "nearest",
+      "nextE",
+      "predict",
+      "scanAhead (move into the game if needed)",
+      "spawn / SPAWN",
+      "NEW (sample trains)",
+      "T initial array",
+      "MS missions",
+      "requestAnimationFrame movement loop (speedActual integration, KPI accumulation, totD)",
+      "LAY / MT / toP / toPh / scenery (old 3D placeholder, already hidden)"
+    ]
+  },
+  "acceptance": [
+    "Visual check at 1440×900 against the PDF screenshots (with fonts loaded): layout, spacing, colours match.",
+    "0, 1, 2, 3, 5, 8 trains: no overflow, carousel arrows correct, empty states at 0.",
+    "Selected train highlighted on card, map marker and key row; keys 1–8 select.",
+    "Switch thrown from tile, HUD and Track plan: all three + map dot update; counter correct.",
+    "STOP ALL latches (throttles disabled, annunciator red); second press releases.",
+    "Reset requires a 900 ms hold; a short press does nothing.",
+    "Each alarm rule produces lamp, slip, card ring, marker colour and sound; Ack stops blinking.",
+    "Night: panels dim, gauges/controls lit by hidden bulbs, ~1.2 s transition; no glow pools.",
+    "Low quality: no textures/blur/decorative animation; alarms still blink.",
+    "1024×768, 1280×800, 1920×1080, 390×844: nothing clipped; side column fits; phone bottom nav works.",
+    "Keyboard: every shortcut works; Esc closes dialogs; focus ring visible (2 px #fff3c4).",
+    "prefers-reduced-motion: no animation."
+  ]
+}
