@@ -1,5 +1,7 @@
 # Train Management M1 — consegna tecnica
 
+Rapporto della baseline M1. Estensione corrente: [M1.1 — vista laterale](M1.1_REPORT.md); [stato](STATUS.md).
+
 Baseline verificata con fetch: HEAD e origin/main entrambi `2a48681c9a7fbfa97386ab619684cab55c779b98`, working tree iniziale pulito. Branch isolato `codex/train-management-m1`. Nessuna importazione E1. Unico esecutore tecnico, nessun subagent.
 
 ## Interfaccia e architettura

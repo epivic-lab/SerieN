@@ -211,3 +211,11 @@ Autorizzata esclusivamente M1 dalla baseline main `2a48681c9a7fbfa97386ab619684c
 **229 Node, 9 Python, build, browser M1 e regressioni Train Deck/Phase Zero PASS**. Screenshot desktop/tablet ispezionati; touch CDP sulla build minificata PASS. Fixture di autenticazione locale e rendering su richiesta, nessuna verifica hardware o cloud: dettagli in [rapporto M1](docs/_active/train-management/REPORT.md), [stato](docs/_active/train-management/STATUS.md).
 
 Commit atomico e checkpoint remoto sul branch autorizzato, Draft PR verso main: SHA effettivo e link nella consegna dopo verifica. Nessun merge o deploy. **Unica prossima azione: review indipendente della Regia. M2/M3 non iniziate; STOP M1.**
+
+## Train Management — M1.1 (2026-11-06)
+
+Autorizzata esclusivamente la vista laterale completa prima di M1-V1. Checkpoint locale/remoto iniziale pulito `72ed618516b13ab2f77d2759c499e800a7ce7b1b`; stesso branch `codex/train-management-m1` e Draft PR #3. Quattordici PNG ortografiche trasparenti a scala comune, posizioni dai ganci/consistLayout, ordine effettivo e orientamento previsto da R1, lunghezza/numero veicoli, zoom/scroll/Fit e testo sotto. Nessuna modifica ad app.js, motore, regole ferroviarie, asset preesistenti, plancia, Supabase/cloud o funzionalità M2/M3.
+
+**234 Node, 9 Python, build, browser M1.1 sulla build minificata e regressione M1 PASS.** Screenshot BR 055 reale con tre carri (314,6 mm), tablet nativo/Kenney e fixture UI lunga a sei veicoli ispezionati; 14 PNG + manifest rigenerati identici byte per byte. Rendering su richiesta nella fixture Chromium/SwiftShader, nessuna verifica hardware fisica o gate runtime generale. [Rapporto M1.1](docs/_active/train-management/M1.1_REPORT.md), [stato](docs/_active/train-management/STATUS.md).
+
+Commit aggiuntivo atomico e checkpoint remoto verificati nella consegna; PR #3 rimane Draft. Nessun merge/deploy. **STOP M1.1; unica prossima azione: review della Regia. M1-V1 NON avviata e richiede nuova autorizzazione.**
