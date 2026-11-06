@@ -1,5 +1,17 @@
 # Train Persistence Auth — stato 6B.1
 
+## Stato corrente — 6B.2-E1 (6 novembre 2026)
+
+**STOP E1 / BLOCKED: toolchain eseguibile mancante; patch in audit, non committata.**
+Checkpoint `0a191e30239133067e4dc6598bd01060274d0b3b`, branch locale
+`codex/6b2e1-semantic-gate`. Due assert numerici nel candidato offline,
+matrice e test mirati nel [rapporto E1](6B2E1_SEMANTIC_GATE.md).
+9 Python PASS e invarianti statici preservati; SQL/Capture/Node/build/browser
+NOT VERIFIED. Nessun cambiamento produzione/R1/asset/main o abilitazione cloud.
+Il divieto esplicito E1 esclude commit e checkpoint remoto fino all'audit.
+Prossima azione unica: audit e verifica E1 offline; E2 non iniziata.
+Le sezioni successive conservano lo stato storico 6B.1.
+
 Percorso corrente: Supabase Auth Google, `auth.uid()` e allowlist server. Le
 sperimentazioni ownerless/D09/D10 del branch storico non sono l'architettura
 operativa. Baseline main `9126788d3c68e43c0687e948db767bfccbbfc774`, R1 `348bfeff`.

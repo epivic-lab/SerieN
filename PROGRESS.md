@@ -1,5 +1,20 @@
 # SerieN — Stato e ripresa
 
+## 6B.2-E1 — candidato semantico offline (6 novembre 2026)
+
+**STOP E1 / BLOCKED per verifica mancante; audit Regia PENDING.** Baseline
+`0a191e30239133067e4dc6598bd01060274d0b3b`, branch locale dedicato
+`codex/6b2e1-semantic-gate`, nessun commit per divieto esplicito E1.
+Preparati nel solo candidato SQL continuità numerica dei segmenti e range
+Journey.position, con matrice dei rischi, Capture R1 con sganciato e otto
+negativi. 9 Python PASS; costanti schema/catalogo/75 edge invariate.
+Node/npm/psql/Docker assenti: SQL, Capture, suite Node e build NOT VERIFIED.
+Runtime R1/UI/asset invariati; cloud disabilitato. Nessuna rete, scrittura
+Supabase, fetch/push/merge/rebase/reset/deploy.
+[Rapporto E1](docs/_active/train-persistence-auth/6B2E1_SEMANTIC_GATE.md).
+Unica prossima azione: audit Regia e verifica E1 offline con toolchain disponibile;
+nessun commit prima dell'audit e nessun avvio di E2.
+
 ## Percorso operativo corrente — 6B.1 Auth Google (5 novembre 2026)
 
 **6B.1 APPROVATA dalla Regia per il solo Capture & Restore locale, dopo correzione 6B.1-F.** Branch

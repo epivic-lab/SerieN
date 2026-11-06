@@ -1,0 +1,104 @@
+name: SerieN E1-V2 — offline verification, no deploy
+on:
+  push:
+    branches: [codex/6b2e1-verification]
+permissions:
+  contents: read
+jobs:
+  offline-verification:
+    # Proposed branch only. No branch/publication is authorized by this file.
+    if: github.ref == 'refs/heads/codex/6b2e1-verification'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      pg17:
+        image: supabase/postgres:17.11.0.018
+        env:
+          POSTGRES_USER: supabase_admin
+          POSTGRES_PASSWORD: ephemeral-test-only
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd "pg_isready -U supabase_admin"
+          --health-interval 8s
+          --health-timeout 5s
+          --health-retries 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Record exact code and install runner-local dependencies
+        run: |
+          mkdir -p /tmp/serien-e1v
+          git rev-parse HEAD > /tmp/serien-e1v/HEAD.txt
+          git status --porcelain=v1 > /tmp/serien-e1v/status.txt
+          git diff --check
+          npm ci 2>&1 | tee /tmp/serien-e1v/npm-ci.txt
+      - name: Python regression
+        if: ${{ !cancelled() }}
+        run: python3 -m unittest discover -s tests -p '*_test.py' 2>&1 | tee /tmp/serien-e1v/python.txt
+      - name: Node regression
+        if: ${{ !cancelled() }}
+        run: npm test 2>&1 | tee /tmp/serien-e1v/node.txt
+      - name: Build
+        if: ${{ !cancelled() }}
+        run: npm run build 2>&1 | tee /tmp/serien-e1v/build.txt
+      - name: Actual Capture R1 and detached positive control
+        id: capture
+        if: ${{ !cancelled() }}
+        run: |
+          node tests/gen-6b2c-fixture.mjs > /tmp/serien_state.json
+          node tests/gen-6b2c-fixture.mjs --with-loose > /tmp/serien-e1v/capture-with-loose.json
+          node tests/gen-6b2c-strict-schema.mjs > /tmp/serien-e1v/strict-schema.json
+          node tests/gen-6b2e1v2-cases.mjs /tmp/serien-e1v/cases-v2.json 2>&1 | tee /tmp/serien-e1v/cases-v2.txt
+          cp /tmp/serien_state.json /tmp/serien-e1v/capture-default.json
+          sha256sum /tmp/serien-e1v/capture-*.json > /tmp/serien-e1v/capture-sha256.txt
+      - name: PG17 historical replay, schema, C, existing E1, concurrency, revocation and rollback
+        if: ${{ !cancelled() && steps.capture.outcome == 'success' }}
+        env:
+          DB_CONTAINER: ${{ job.services.pg17.id }}
+        run: |
+          test -n "$DB_CONTAINER"
+          db() { docker exec -i "$DB_CONTAINER" psql -X -v ON_ERROR_STOP=1 -U supabase_admin -d postgres "$@"; }
+          {
+            echo '6714898735ce079b8848e019d7819c20  tests/sql/history/20261029230530_serien_core_schema_APPLIED.sql' | md5sum -c
+            echo '0a4b887af0d0703f1250bb15f2ccf2b1  tests/sql/history/20261029230558_serien_constraints_security_APPLIED.sql' | md5sum -c
+            echo 'ffdc9caaa8818aca5ba413ff179d64f0  tests/sql/history/20261105155420_serien_verified_email_gate_APPLIED.sql' | md5sum -c
+            db < tests/sql/6b2d_docker_auth_adapter.sql
+            db < tests/sql/history/20261029230530_serien_core_schema_APPLIED.sql
+            db < tests/sql/history/20261029230558_serien_constraints_security_APPLIED.sql
+            db < tests/sql/history/20261105155420_serien_verified_email_gate_APPLIED.sql
+            db < tests/sql/6b2d_synthetic_users.sql
+            db -c 'CREATE EXTENSION IF NOT EXISTS pg_jsonschema WITH SCHEMA extensions;'
+            db -v "schema=$(cat /tmp/serien-e1v/strict-schema.json)" -v "state=$(cat /tmp/serien_state.json)" < tests/db-schema-6b2c.sql
+            db < tests/sql/6b2c_cloud_rpc_candidate.sql
+            db -v "state=$(cat /tmp/serien_state.json)" < tests/sql/6b2c_rpc_gate.sql
+            db -v "state=$(cat /tmp/serien-e1v/capture-with-loose.json)" < tests/sql/6b2e1_semantic_gate.sql
+            python3 tests/run-6b2e1v2.py /tmp/serien-e1v/cases-v2.json /tmp/serien-e1v/results-v2.json
+            bash tests/run-db-rpc-concurrency-6b2c.sh
+            bash tests/run-db-revoke-6b2d.sh
+            db < tests/sql/6b2d_rollback_rehearsal.sql
+          } 2>&1 | tee /tmp/serien-e1v/postgres-gates.txt
+      - name: Browser Capture Restore regression
+        if: ${{ !cancelled() }}
+        run: |
+          python3 -m pip install 'playwright==1.56.0'
+          python3 -m playwright install --with-deps chromium
+          python3 -m http.server 8000 --bind 127.0.0.1 > /tmp/serien-e1v/http.txt 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in 1 2 3 4 5; do curl -fsS http://127.0.0.1:8000/ > /dev/null && break || sleep 1; done
+          SERIEN_CONTROLLED_RAF=1 SERIEN_EVIDENCE=/tmp/serien-e1v/browser python3 tests/browser-capture-restore.py 2>&1 | tee /tmp/serien-e1v/browser.txt
+      - name: Preserve evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: serien-e1v-${{ github.sha }}
+          path: /tmp/serien-e1v/
+          if-no-files-found: error
+          retention-days: 14
+      # Execution evidence remains pending independent Regia review.

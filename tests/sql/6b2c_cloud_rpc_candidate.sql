@@ -135,6 +135,7 @@ DECLARE
   seen_consists text[]:='{}'; seen_trains text[]:='{}';
   train_consists text[]:='{}'; assigned text[]:='{}';
   model jsonb; item jsonb;
+  previous_end numeric;
 BEGIN
   IF d->>'topologyHash' IS DISTINCT FROM cat->>'topologyHash'
   THEN RAISE EXCEPTION 'INCOMPATIBLE_TOPOLOGY' USING ERRCODE='P0001'; END IF;
@@ -283,19 +284,28 @@ BEGIN
       RAISE EXCEPTION 'INVALID_CONSOLE_TRAIN' USING ERRCODE='P0001'; END IF;
   END LOOP;
 
-  -- Semantic topology check is limited to edge IDs and segment lengths.
-  -- Full R1 journey/occupancy reconciliation still occurs on browser staging.
+  -- E1: reuse the pinned edge lengths; add only scalar history assertions
+  -- from hydrateJourney. No node graph, routing, pose or occupancy engine.
   FOR j IN
     SELECT value->'journey' FROM pg_catalog.jsonb_array_elements(d->'trains')
     UNION ALL
     SELECT value->'journey' FROM pg_catalog.jsonb_array_elements(d->'looseStock')
   LOOP
+    previous_end:=NULL;
     FOR seg IN SELECT value FROM pg_catalog.jsonb_array_elements(j->'segments') LOOP
       IF edges->(seg->>'id') IS NULL OR
          pg_catalog.abs(((seg->>'end')::numeric-(seg->>'start')::numeric)
                     -(edges->>(seg->>'id'))::numeric)>0.000001
       THEN RAISE EXCEPTION 'INVALID_JOURNEY_SEGMENT' USING ERRCODE='P0001'; END IF;
+      IF previous_end IS NOT NULL AND
+         pg_catalog.abs(previous_end-(seg->>'start')::numeric)>0.000001
+      THEN RAISE EXCEPTION 'INVALID_JOURNEY_CONTINUITY' USING ERRCODE='P0001'; END IF;
+      previous_end:=(seg->>'end')::numeric;
     END LOOP;
+    -- R1 uses exact inclusive bounds here (no epsilon expansion).
+    IF (j->>'position')::numeric < (j#>>'{segments,0,start}')::numeric OR
+       (j->>'position')::numeric > previous_end
+    THEN RAISE EXCEPTION 'INVALID_JOURNEY_POSITION' USING ERRCODE='P0001'; END IF;
   END LOOP;
 END $function$;
 REVOKE ALL ON FUNCTION serien_internal.serien_validate_references_v1(jsonb) FROM PUBLIC;
