@@ -203,3 +203,11 @@ S0–S6.1 approvate dalla Regia nella richiesta S7; checkpoint iniziale b627f526
 La Regia approva S0–S7/S6.1 e il committente autorizza questa sola integrazione su main e Pages dopo i gate. Main iniziale aeff336c997748bf49d2a09a61c1d6d9238fb3db, feature approvata2ed3312d18244a6dca91cf68d4d54073843e9e85:4/13commit esclusivi e nessun percorso modificato in comune. Branch release/turnouts-s7 da main; merge7db1cb7cb65a63d744c1789c4964b70fbcd3747c senza conflitti. Asset main e due .DS_Store preservati per hash, runtime/bundle identici a S7 ricostruito.
 
 220Node+9Python+build+canonico+browser contratto/interazione/guardia/STOP+Pages desktop/mobile e smoke completo produzione locale PASS. [Rapporto R1](docs/releases/R1/REPORT.md). Questa nota è la fotografia pre-merge: non anticipa il successo di PR/deploy. Esito post-merge/pubblicazione da verificare e consegnare con SHA main, workflow e prove pubbliche. Non cambiano dipendenze, package0.12.0, pipeline, backend o credenziali. Nessuna altra macrofase autorizzata; STOP dopo verifica pubblica e attesa Regia post-release.
+
+## Train Management — M1 (2026-11-06)
+
+Autorizzata esclusivamente M1 dalla baseline main `2a48681c9a7fbfa97386ab619684cab55c779b98`, verificata con fetch. Branch isolato `codex/train-management-m1`. Catalogo grafico, composizioni reali, dettaglio ordinato/direzione/lunghezza, sganciati e selezione/focus condivisi con plancia e scena. Nessuno store ferroviario aggiunto, nessuna modifica R1/collisioni/router/layout/scenografia/Supabase; E1 non importato.
+
+**229 Node, 9 Python, build, browser M1 e regressioni Train Deck/Phase Zero PASS**. Screenshot desktop/tablet ispezionati; touch CDP sulla build minificata PASS. Fixture di autenticazione locale e rendering su richiesta, nessuna verifica hardware o cloud: dettagli in [rapporto M1](docs/_active/train-management/REPORT.md), [stato](docs/_active/train-management/STATUS.md).
+
+Commit atomico e checkpoint remoto sul branch autorizzato, Draft PR verso main: SHA effettivo e link nella consegna dopo verifica. Nessun merge o deploy. **Unica prossima azione: review indipendente della Regia. M2/M3 non iniziate; STOP M1.**
