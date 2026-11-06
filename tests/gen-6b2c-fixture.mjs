@@ -5,7 +5,8 @@ import {Journey,routing} from '../src/simulation.js';
 import {buildStock} from '../src/rolling-stock.js';
 import {createIdentities} from '../src/persistence/identity.js';
 import {captureState} from '../src/persistence/capture.js';
-import {validateDocument} from '../src/persistence/validate.js';
+import {validateDocument,validateStaging} from '../src/persistence/validate.js';
+import {createFleetCommands} from '../src/fleet-commands.js';
 const network=createNetwork(), route=routing(network,()=>false);
 const owner='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
 const context={workspaceId:owner,layoutId:owner};
@@ -32,5 +33,13 @@ const host={
  camera:{preset:'manual',position:[600,800,1300],target:[750,0,350],zoom:1.2,fov:35},
  hudMinimized:true,bellMuted:true}
 };
+// Optional E1 fixture: a real detached wagon, produced by the R1 command.
+// Default C/D fixture and its existing callers remain unchanged.
+if(process.argv.includes('--with-loose')){
+ const t=host.trains[0];t.speed=t.velocity=0;
+ createFleetCommands({...host,route}).uncouple(0);
+ if(host.detached.length!==1)throw Error('E1 fixture requires actual R1 detach');
+ validateStaging(host.trains,host.detached);
+}
 const doc=captureState(host,ids,context);validateDocument(doc,context,network);
 process.stdout.write(JSON.stringify(doc));

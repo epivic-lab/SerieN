@@ -1,5 +1,27 @@
 # SerieN — Stato e ripresa
 
+## Checkpoint corrente — 6B.2-E1 PASS OFFLINE (6 novembre 2026)
+
+**E1 APPROVATA dalla Regia — PASS OFFLINE. E2 NON AVVIATA.**
+Checkpoint verificato sul branch `codex/6b2e1-verification`:
+[`5bb447a0f614a5f68e26fcde73b19586c136d62b`](https://github.com/epivic-lab/SerieN/commit/5bb447a0f614a5f68e26fcde73b19586c136d62b).
+[CI 42139742357](https://github.com/epivic-lab/SerieN/actions/runs/42139742357)
+SUCCESS al primo tentativo, come verificato dalla Regia: 26/26 casi semantici,
+231/231 Node, 9/9 Python, build, 56 controlli browser Capture/Restore e gate
+PostgreSQL 17 C/D (CAS/idempotenza, concorrenza, revoche e rollback offline).
+[Ambito, limiti e riferimenti](docs/_active/train-persistence-auth/6B2E1_SEMANTIC_GATE.md).
+
+Chiusura sul solo branch sorgente `codex/6b2e1-semantic-gate`, da
+`0a191e30239133067e4dc6598bd01060274d0b3b`: un commit locale di codice/test già
+verificati e aggiornamento documentale, nessun nuovo push. Main, motore R1 e
+Supabase produzione NON MODIFICATI da questa fase; cloud save NON ABILITATO,
+nessun deploy. PASS offline non autorizza cloud reale, migrazione o integrazione.
+
+Unica azione di custodia pendente: conservare permanentemente artifact e log CI
+prima della scadenza dell'artifact il 20 novembre 2026 (retention 14 giorni);
+la conservazione permanente non è attestata da questo checkpoint. Poi attendere
+la Regia: nessuna nuova attività o E2 autorizzata. Le sezioni seguenti sono storiche.
+
 ## Percorso operativo corrente — 6B.1 Auth Google (5 novembre 2026)
 
 **6B.1 APPROVATA dalla Regia per il solo Capture & Restore locale, dopo correzione 6B.1-F.** Branch

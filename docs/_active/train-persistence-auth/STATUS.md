@@ -1,5 +1,24 @@
 # Train Persistence Auth — stato 6B.1
 
+## Stato corrente — checkpoint E1 PASS OFFLINE (6 novembre 2026)
+
+**6B.2-E1 APPROVATA dalla Regia: PASS OFFLINE. E2 NON AVVIATA.**
+Codice/test verificati: `5bb447a0f614a5f68e26fcde73b19586c136d62b` sul branch
+`codex/6b2e1-verification`. [Run 42139742357](https://github.com/epivic-lab/SerieN/actions/runs/42139742357)
+SUCCESS, primo tentativo secondo audit Regia. Risultati e limiti nel
+[rapporto E1 aggiornato](6B2E1_SEMANTIC_GATE.md).
+
+Chiusura autorizzata solo come commit locale su `codex/6b2e1-semantic-gate`;
+nessun push autorizzato. Main, motore ferroviario R1, Capture/Restore, UI e asset
+NON MODIFICATI dalla fase; Supabase produzione NON MODIFICATO; cloud save
+NON ABILITATO; nessun deploy. Nessuna prova OAuth/PostgREST o cloud reale è
+implicita nei test PostgreSQL effimeri.
+
+Custodia da completare: archiviazione permanente di artifact e log CI, attualmente
+con retention 14 giorni e scadenza artifact il 20 novembre 2026. Nessun artifact
+è incluso nel commit. Sessione chiusa; attendere decisione Regia, E2 non avviata.
+Le sezioni successive conservano lo stato storico 6B.1.
+
 Percorso corrente: Supabase Auth Google, `auth.uid()` e allowlist server. Le
 sperimentazioni ownerless/D09/D10 del branch storico non sono l'architettura
 operativa. Baseline main `9126788d3c68e43c0687e948db767bfccbbfc774`, R1 `348bfeff`.
