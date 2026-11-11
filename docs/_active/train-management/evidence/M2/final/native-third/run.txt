@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "threeMovingAndM1IdentitySynchronization": "PASS"
+  },
+  "failure": "Locator.evaluate: Timeout 90000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-copy-train=\\\"0\\\"]\")\n",
+  "frameStats": null
+}

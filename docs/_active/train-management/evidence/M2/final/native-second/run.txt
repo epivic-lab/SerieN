@@ -1,0 +1,44 @@
+{
+  "status": "M2-RUNTIME BLOCKED",
+  "failure": "Locator.click: Timeout 90000ms exceeded.\nCall log:\n  - waiting for locator(\"#trainManagement\")\n    - locator resolved to <button id=\"trainManagement\" class=\"secondary wide\">\u25a4 Train Management</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - performing click action\n",
+  "webgl": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "vendor": "Google Inc. (Google)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "checks": {},
+  "frameStats": {
+    "closed-three-moving": {
+      "frames": 29,
+      "durationMs": 96429.59999999999,
+      "fps": 0.29036727311945715,
+      "p50Ms": 3349.8000000000175,
+      "p95Ms": 4099.799999999988,
+      "maxMs": 4199.799999999988
+    },
+    "closed-three-moving-0": {
+      "frames": 23,
+      "durationMs": 132811.3,
+      "fps": 0.1656485555069486,
+      "p50Ms": 3366.5,
+      "p95Ms": 5749.700000000012,
+      "maxMs": 54714.5
+    },
+    "open-three-moving-0": {
+      "frames": 21,
+      "durationMs": 71097.20000000001,
+      "fps": 0.28130503029655174,
+      "p50Ms": 3383.2999999999884,
+      "p95Ms": 4316.5,
+      "maxMs": 4349.8000000000175
+    },
+    "warmup": {
+      "frames": 23,
+      "durationMs": 75613.6,
+      "fps": 0.2909529502629156,
+      "p50Ms": 3383.0999999999985,
+      "p95Ms": 3949.800000000003,
+      "maxMs": 4049.899999999994
+    }
+  }
+}

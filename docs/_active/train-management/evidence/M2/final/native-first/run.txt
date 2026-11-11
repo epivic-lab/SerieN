@@ -1,0 +1,28 @@
+{
+  "status": "M2-RUNTIME BLOCKED",
+  "failure": "Locator.screenshot: Timeout 41991ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts to load...\n  - fonts loaded\n  - attempting scroll into view action\n    - waiting for element to be stable\n",
+  "webgl": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "vendor": "Google Inc. (Google)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "checks": {},
+  "frameStats": {
+    "closed-three-moving": {
+      "frames": 25,
+      "durationMs": 87163.20000000001,
+      "fps": 0.2753455586761385,
+      "p50Ms": 3633.1999999999825,
+      "p95Ms": 3883.2000000000116,
+      "maxMs": 4083.0
+    },
+    "warmup": {
+      "frames": 23,
+      "durationMs": 80263.40000000001,
+      "fps": 0.27409753386973384,
+      "p50Ms": 3549.899999999994,
+      "p95Ms": 4116.5,
+      "maxMs": 4166.4000000000015
+    }
+  }
+}

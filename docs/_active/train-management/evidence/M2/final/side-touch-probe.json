@@ -1,0 +1,78 @@
+[
+  {
+    "label": "before-fit",
+    "zoom": "150%",
+    "left": 309,
+    "width": 1404,
+    "client": 936,
+    "events": [
+      {
+        "type": "click",
+        "target": "<button type=\"button\" data-zoom=\"in\" aria-label=\"Zoom in side view\">\uff0b</button>",
+        "at": 606.5
+      }
+    ]
+  },
+  {
+    "label": "after-fit-tap",
+    "zoom": "100%",
+    "left": 0,
+    "width": 936,
+    "client": 936,
+    "events": [
+      {
+        "type": "click",
+        "target": "<button type=\"button\" data-zoom=\"in\" aria-label=\"Zoom in side view\">\uff0b</button>",
+        "at": 606.5
+      },
+      {
+        "type": "click",
+        "target": "<button type=\"button\" data-fit=\"\">Fit train</button>",
+        "at": 894.2000000001863
+      }
+    ]
+  },
+  {
+    "label": "one-second-later",
+    "zoom": "100%",
+    "left": 0,
+    "width": 936,
+    "client": 936,
+    "events": [
+      {
+        "type": "click",
+        "target": "<button type=\"button\" data-zoom=\"in\" aria-label=\"Zoom in side view\">\uff0b</button>",
+        "at": 606.5
+      },
+      {
+        "type": "click",
+        "target": "<button type=\"button\" data-fit=\"\">Fit train</button>",
+        "at": 894.2000000001863
+      }
+    ]
+  },
+  {
+    "label": "second-fit-tap",
+    "zoom": "100%",
+    "left": 0,
+    "width": 936,
+    "client": 936,
+    "events": [
+      {
+        "type": "click",
+        "target": "<button type=\"button\" data-zoom=\"in\" aria-label=\"Zoom in side view\">\uff0b</button>",
+        "at": 606.5
+      },
+      {
+        "type": "click",
+        "target": "<button type=\"button\" data-fit=\"\">Fit train</button>",
+        "at": 894.2000000001863
+      },
+      {
+        "type": "click",
+        "target": "<button type=\"button\" data-fit=\"\">Fit train</button>",
+        "at": 1942.9000000001397
+      }
+    ]
+  }
+]
