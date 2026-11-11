@@ -23,5 +23,7 @@ Il laboratorio ricrea il livello PostgreSQL applicativo con un adattatore Auth
 sintetico e i default privilege pubblici osservati. Non è un clone di GoTrue,
 PostgREST, Google OAuth o della configurazione di integrazione Supabase.
 
-Nessuna PR finché il comportamento della Preview non è verificato sul progetto.
-La presenza del workflow isolato non sostituisce né disabilita Supabase Preview.
+S3 aggiorna i trigger della CI e prepara la sola Draft PR sulla base delle
+impostazioni dashboard verificate dalla Regia: vedere [S3](S3.md). Il merge può
+avviare deploy Supabase e Pages e non è autorizzato in questa fase. Il workflow
+isolato non sostituisce né disabilita Supabase Preview.

@@ -1,16 +1,39 @@
 name: S2 Supabase alignment - isolated, no deploy
 on:
   push:
-    branches: [codex/supabase-alignment-s2]
+    branches: [main, codex/supabase-alignment-s2]
+    paths:
+      - 'supabase/**'
+      - 'tests/supabase-alignment/**'
+      - 'scripts/verify-supabase-alignment.py'
+      - 'scripts/qualify-supabase-cli.py'
+      - 'docs/supabase/alignment/**'
+      - '.github/workflows/supabase-alignment.yml'
+      - 'package.json'
+      - 'package-lock.json'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'supabase/**'
+      - 'tests/supabase-alignment/**'
+      - 'scripts/verify-supabase-alignment.py'
+      - 'scripts/qualify-supabase-cli.py'
+      - 'docs/supabase/alignment/**'
+      - '.github/workflows/supabase-alignment.yml'
+      - 'package.json'
+      - 'package-lock.json'
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: supabase-alignment-s2
+  group: supabase-alignment-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: false
 jobs:
   isolated-alignment:
-    if: github.ref == 'refs/heads/codex/supabase-alignment-s2'
+    if: >-
+      (github.event_name == 'pull_request' && github.base_ref == 'main') ||
+      ((github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/codex/supabase-alignment-s2'))
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     defaults:

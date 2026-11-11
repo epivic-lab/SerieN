@@ -1,13 +1,14 @@
-# S2 — Stato di review
+# S3 — Preparazione Draft PR e gate prima del merge
 
-- Baseline: `46f2655f4a5d332c2ea6adac2fb895b37ed87c4b`.
-- Branch unico autorizzato: `codex/supabase-alignment-s2`.
-- Recupero, hash, replay e test locali: verificati; provenienza in RECOVERY.md e RESULTS.md.
-- CI: leggere il check **S2 Supabase alignment - isolated, no deploy** dello SHA consegnato e i suoi artefatti; non inferire successo dalla sola presenza del YAML.
-- Auth/Data API e configurazione live Preview: NOT VERIFIED nei punti indicati nel manifest.
-- PR: non aperta; manca la prova di sicurezza Preview richiesta dalla Regia.
-- Produzione: nessun intervento autorizzato o eseguito; main invariata durante S2.
+- Baseline main: `46f2655f4a5d332c2ea6adac2fb895b37ed87c4b`.
+- S2 tecnicamente approvata: `a864de9f17c71775d60746f6432618343b8299ac`, CI 43003338052 PASS.
+- Branch unico: `codex/supabase-alignment-s2`; nessuna integrazione sperimentale.
+- Modifica S3: CI permanente su PR main, push main/S2 pertinenti e dispatch main/S2; documentazione aggiornata.
+- GitHub Integration: USER_VERIFIED dalla Regia l'11 novembre; automatic branching disattivato, deploy produttivo su main attivo, working directory `.`.
+- Draft PR: autorizzata dopo verifiche conformi. Nessun ambiente Preview a pagamento richiesto.
+- Auth e Data API: valori ancora NOT VERIFIED, separati dalle impostazioni GitHub Integration ora confermate.
+- Esiti del nuovo commit e della PR: leggere CI/check e rapporto S3 finale; nessun successo dedotto dalla presenza del YAML.
+- Produzione: soltanto letture di storia/catalogo/stato e confronto prima/dopo; nessuna modifica autorizzata.
+- Merge: **NON ESEGUITO**, può avviare deployment Supabase e Pages. Autorizzazione separata della Regia obbligatoria.
 
-La consegna del branch è una candidatura alla review S2, non una chiusura S3.
-Nessuna fase successiva, import E1, merge, deploy o modifica cloud è implicita.
-STOP dopo il rapporto finale e attesa della Regia.
+Vedere [S3](S3.md). STOP dopo Draft PR e rapporto, senza merge o ulteriori fasi.

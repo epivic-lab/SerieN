@@ -115,20 +115,34 @@
       "value": null
     },
     "github_integration.automatic_branching": {
-      "status": "NOT VERIFIED",
-      "value": null
+      "status": "USER_VERIFIED",
+      "value": false,
+      "source": "Regia S3: GitHub Integration dashboard screenshot reported 2026-11-11; not independently inspected or modified by Codex"
     },
     "github_integration.working_directory": {
-      "status": "NOT VERIFIED",
-      "value": null
+      "status": "USER_VERIFIED",
+      "value": ".",
+      "source": "Regia S3: GitHub Integration dashboard screenshot reported 2026-11-11; not independently inspected or modified by Codex"
     },
     "github_integration.production_branch": {
-      "status": "NOT VERIFIED",
-      "value": null
+      "status": "USER_VERIFIED",
+      "value": "main",
+      "source": "Regia S3: GitHub Integration dashboard screenshot reported 2026-11-11; not independently inspected or modified by Codex"
     },
     "github_integration.deploy_to_production": {
-      "status": "NOT VERIFIED",
-      "value": null
+      "status": "USER_VERIFIED",
+      "value": true,
+      "source": "Regia S3: GitHub Integration dashboard screenshot reported 2026-11-11; not independently inspected or modified by Codex"
+    },
+    "github_integration.repository": {
+      "status": "USER_VERIFIED",
+      "value": "epivic-lab/SerieN",
+      "source": "Regia S3: GitHub Integration dashboard screenshot reported 2026-11-11; not independently inspected or modified by Codex"
+    },
+    "github_integration.automatic_preview_available": {
+      "status": "USER_VERIFIED",
+      "value": false,
+      "source": "Regia S3: GitHub Integration dashboard screenshot reported 2026-11-11; not independently inspected or modified by Codex"
     }
   },
   "comparison_scope": {
@@ -166,6 +180,7 @@
     "synthetic_data_only": true,
     "candidate_rpc_imported": false,
     "production_config_file_added": false,
-    "pr_authorized_by_evidence": false
+    "pr_authorized_by_evidence": true,
+    "merge_authorized": false
   }
 }

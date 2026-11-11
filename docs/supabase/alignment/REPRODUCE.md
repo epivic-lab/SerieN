@@ -70,11 +70,15 @@ S2 non implementa alcun percorso verso Supabase remoto.
 
 ## CI
 
-`.github/workflows/supabase-alignment.yml` parte solo sul branch S2 con push o
-dispatch su quel ref, usa Actions fissate a commit, `contents: read`, checkout
-senza credenziali persistenti e nessun secret di produzione. Scarica la CLI
-verificata, esegue il laboratorio, npm ci/test/build e audit canonico Python.
-Conserva artefatti non segreti per 30 giorni. Non ha job di deploy, merge o PR.
+`.github/workflows/supabase-alignment.yml` parte sulle PR verso main e sui push
+a main o al branch S2 quando cambiano file Supabase, laboratorio, script, dossier,
+workflow o dipendenze npm pertinenti. Il dispatch manuale è ammesso su main e
+S2. La condizione del job gestisce esplicitamente gli eventi PR, push e dispatch;
+non richiede il ref del branch S2 nelle PR. I gruppi concurrency sono distinti
+per PR/ref. Usa Actions fissate a commit, `contents: read`, checkout senza
+credenziali persistenti e nessun secret di produzione. Scarica la CLI verificata,
+esegue il laboratorio, npm ci/test/build e audit canonico Python. Conserva
+artefatti non segreti per 30 giorni. Non ha job di deploy, merge o creazione PR.
 
 ## Recupero
 
