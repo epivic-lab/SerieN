@@ -1,5 +1,7 @@
 # UI V2.1 — INTEGRATION READINESS REPORT
 
+Aggiornamento acquisizione allegato: vedere §11, che prevale sul precedente stato di disponibilità del design.
+
 Data: 2026-11-11. Perimetro: **FASE 0**, audit e preparazione. Nessuna implementazione UI, modifica applicativa, merge o deploy autorizzati/eseguiti.
 
 ## 1. Baseline Git verificata
@@ -160,3 +162,47 @@ Confronto Git contro `91722fb`: app.js, src, HTML/CSS, asset, Auth, Supabase/mig
 Nessuna incompatibilità Git o regressione software riprodotta nelle prove eseguite. L'equivalenza funzionale del design V2.1 è **NOT VERIFIED** finché non arriva il pacchetto; la mancanza non autorizza l'uso del V1 o l'invenzione di adapter. Fluidità/GPU fisica rimane un limite da risolvere prima della release, non un PASS desunto dai test.
 
 **STOP dopo Fase 0.** Unica prossima azione: ricevere il pacchetto definitivo e attendere l'autorizzazione della Regia; nessuna UI V2.1 iniziata. SHA del commit documentale e verifica checkpoint remoto sono riportati nella consegna, evitando autoriferimenti del commit.
+
+## 11. Acquisizione design approvato — aggiornamento del mandato
+
+Il committente dichiara **UI V2.1 APPROVATA DALLA REGIA**, conferma la sola Fase 0 e rinvia a consegna/approvazione separata del pacchetto tecnico definitivo. Questa approvazione è registrata; non autorizza implementazione e non attesta che i byte dell'allegato siano stati verificati. I §§6/10 descrivono la precedente esecuzione: ora il design è allegato, ma non è leggibile tramite il trasferimento disponibile.
+
+### Identità e blocco di acquisizione
+
+- Nome effettivo dell'allegato: `serien-codex-package-ui-v21.zip`.
+- Nome citato nel mandato: `serien-mainui-v2.1-train-management.zip`.
+- Riferimento ricevuto: `sediment://file_00000000c2748212a234008561ed5c76`.
+- Tentativo con `download_file`: **FAIL di trasferimento**, risposta esatta `file exceeds the executor transfer limit of 32 MiB`.
+- Nessuna copia dell'archivio trovata negli allegati locali. Nessuna estrazione eseguita. Dimensione precisa e contenuto non disponibili; il solo errore stabilisce il superamento del limite, non una corruzione dello ZIP.
+- Equivalenza tra il nome caricato e quello richiesto: **NOT VERIFIED**. Il nome «codex-package» non prova che sia il pacchetto tecnico definitivo; prevale la distinzione esplicita del mandato.
+
+**BLOCKED: acquisizione incompleta.** Non sono leggibili README, PDF, FUNCTIONAL_COVERAGE, mapping CSV/JSON, DATA_AND_EVENT_CONTRACTS, DESIGN_DECISIONS, OPEN_ISSUES, CHANGELOG-DESIGN, FILE_INDEX né reference/component library/asset. CRC ZIP, checksum dichiarati, manifest, integrità, dipendenze/font/licenze, copertura dei mapping e compatibilità del JavaScript dimostrativo sono tutti **NOT VERIFIED**, non FAIL di contenuto. Non sono stati inventati file, checksum o divergenze della reference.
+
+### Verifica Git ripetuta
+
+Remote main `184cc9ba93a6b35493f365b2ffcb20ef0645963d`, branch Train Management `91722fbdf6671e69deebf645c3d8bf389212f421`, branch design V1 `cf2c29a8112b37a53c62cb84fca44061942aea31`: SHA nuovamente verificati direttamente con ls-remote, identici ai riferimenti precedenti. Branch d'integrazione iniziale locale/remoto `e61402c63780dd6bf616f809177b031e1475241b`, working tree pulito, baseline approvata antenata del checkpoint. Main vs baseline M2/M3: 0/6 commit esclusivi. Non si ricrea né si riporta indietro il branch già preparato.
+
+### Quattro sezioni: autorità applicativa confermata, confronto design sospeso
+
+| Sezione | Moduli/contratti effettivi riutilizzabili | Da verificare sul design una volta leggibile |
+| --- | --- | --- |
+| On the Layout | `train-management.js`, `train-management-state.js`, `train-side-view.js`; getter treni/sganciati/selezione, onSelect/onFocus; composizioni/identità/lunghezze reali e generazione reset | Nuovo DOM, selezione comune, STALE, dettagli e viste laterali; test M1/M1.1, reset e focus |
+| Model Catalog | `PROJECT_CATALOG` in `train-projects.js`, miniature e asset esistenti; vista catalog generata da management | Copertura modelli, dimensioni/immagini/fallback e distinzione catalogo/inventario; nessun KPI senza sorgente |
+| Projects / Train Composer | `train-projects.js`, `train-projects-view.js`, `train-side-layout.js`; bozza/confermati/UUID, copy/discard/snapshot, dirty guards, confronto read-only con treno reale | Mapping di tutti i comandi M2, conferma/annulla, STALE e session only; niente apply globale o DnD; suite M2/lifecycle e identità |
+| Depot | `depot-inventory.js`, `depot-view.js`; inventario separato in RAM, slot confermati, reconcile, getGeneration e stato fisico read-only | Mapping M3 completo, prenotazioni/rilasci/rimozioni/avvisi, trasferimenti disabilitati; suite M3/lifecycle, reset, R1 con treni in moto |
+
+Resta valida la mappa tecnica dei §§3/4/8, che descrive **il codice reale**, non una verifica del design non letto. Candidati da adattare: presentazioni shell/deck/HUD/management/composer/depot e relativi selettori dei test. Componenti nuovi e file applicativi da modificare non possono essere stabiliti definitivamente prima di leggere i mapping V2.1. Exit to title è tuttora un'assenza nel codice, non una divergenza dimostrata della reference.
+
+Conservare integralmente tutte le decisioni della Regia dei mandati: quattro treni, stop momentanei, Space selezionato, reset confermato/STALE, qualità/preset reali, HUD read-only dalla topologia reale, campana R1 separata da UI Sound, ultimo log visibile, Sign out distinto, protezioni e identità R1, separazione progetti/inventario/stock fisico. Nessun mock importato, nessuna persistenza/trasferimento fisico/apply globale o DnD. La sequenza proposta al §7 resta preliminare, non eseguita e da confrontare col pacchetto definitivo.
+
+### Prerequisito operativo
+
+Rendere disponibili gli stessi byte dello ZIP tramite un URL scaricabile oppure suddividerli in allegati ciascuno inferiore a 32 MiB, conservando un checksum SHA-256 dell'archivio originale per la ricomposizione. In alternativa, per iniziare il confronto documentale, allegare un sottoinsieme leggero con i documenti prioritari, CSV/JSON dei contratti e checksum; l'integrità dell'intero pacchetto e l'audit degli asset resterebbero comunque da completare.
+
+**Verdetto confermato: BLOCKED**, ora per limite tecnico di trasferimento dell'allegato e per pacchetto tecnico definitivo ancora separatamente atteso. Non si richiede approvazione all'implementazione: **STOP Fase 0**, in attesa di accesso ai file; audit completo design↔codice non consegnato.
+
+### Test e confini dell'aggiornamento di acquisizione
+
+Nuove esecuzioni: **254 Node PASS (zero fail/skip), 9 Python PASS, build PASS, canonico rigenerato/diff PASS**. Codici d'uscita tutti zero; log e codici in `evidence/acquisition/`. Bundle e canonico mantengono gli SHA-256 riportati al §9/10. Confronto Git dei percorsi applicativi/bloccati contro `91722fb`: diff vuoto (app/src/HTML/CSS/asset/Auth/Supabase/workflow/package). Nessun cambiamento a V1 o agli altri branch; nessun dato/credenziale remota trattato. Nuove modifiche limitate a questo rapporto, STATUS, PROGRESS ed evidenze test.
+
+Le dieci suite browser della precedente Fase 0 restano **PASS storico**, non rieseguite in questo aggiornamento documentale: non è cambiato il bundle. Nuovo confronto browser con il design, immagini/PDF/reference, checksum e verifiche di dipendenze del pacchetto **NOT VERIFIED** per mancata acquisizione. Il fallimento di download non è una regressione del simulatore né prova di un archivio danneggiato.

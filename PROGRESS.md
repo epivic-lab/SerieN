@@ -277,3 +277,11 @@ Mandato limitato alla Fase 0. Verificati direttamente main `184cc9ba93a6b35493f3
 **254 Node, 9 Python, build, canonico e dieci suite browser PASS**, incluso RAF nativo con tre treni, input mouse/touch trusted, sgancio/riaggancio reale con altri due in moto; software circa 0,524 fps, hardware fisico NOT VERIFIED. [Integration Readiness Report](docs/ui-v2-integration/REPORT.md), [stato](docs/ui-v2-integration/STATUS.md), evidenze nuove separate da quelle storiche. Checkpoint documentale sul branch dedicato, SHA e verifica remota nella consegna.
 
 **BLOCKED per integrazione UI:** ZIP V2.1 non disponibile, pacchetto tecnico definitivo Claude e relativa approvazione mancanti; Exit to title separato da logout da definire. Audit software completato senza regressioni rilevate. **STOP Fase 0; unica prossima azione: attendere pacchetto definitivo e successiva autorizzazione della Regia.**
+
+## UI V2.1 — acquisizione design: blocco trasferimento (2026-11-11)
+
+Design dichiarato approvato dalla Regia, incarico ancora limitato alla Fase 0. Allegato effettivo `serien-codex-package-ui-v21.zip` (nome citato diverso); `download_file` restituisce `file exceeds the executor transfer limit of 32 MiB`. Nessuna copia locale: contenuto, equivalenza nomi, checksum e confronto V2.1↔baseline **NOT VERIFIED**. **Acquisizione/audit design BLOCKED**, non dichiarati completati.
+
+Remote main `184cc9b`, M2/M3 `91722fb` e checkpoint dedicato iniziale `e61402c` nuovamente verificati; working tree iniziale pulito. Nuove esecuzioni: **254 Node, 9 Python, build/canonico PASS**, stesso bundle/canonico; suite browser precedenti non ripetute. Aggiornati solo [rapporto §11](docs/ui-v2-integration/REPORT.md), STATUS, PROGRESS ed evidenze. Nessuna modifica applicativa/Auth/Supabase/V1, merge o deploy.
+
+**STOP. Unica prossima azione: acquisire lo ZIP tramite URL scaricabile o parti sotto 32 MiB e completare l'audit**; pacchetto tecnico definitivo e autorizzazione all'implementazione restano separati. SHA del checkpoint documentale e allineamento remoto nella consegna.
