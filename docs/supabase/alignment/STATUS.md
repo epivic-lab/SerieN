@@ -1,5 +1,11 @@
 # S3 — Preparazione Draft PR e gate prima del merge
 
+**Stato successivo al gate:** la Regia ha autorizzato la release finale. PR #5
+unita con merge commit `184cc9ba93a6b35493f365b2ffcb20ef0645963d`; Pages,
+CI permanente e integrazione Supabase SUCCESS. Backend applicativo invariato.
+Vedere [RELEASE.md](RELEASE.md) per evidenze e smoke browser PARTIAL dovuto al
+proxy del worker. I punti sottostanti conservano la fotografia pre-merge S3.
+
 - Baseline main: `46f2655f4a5d332c2ea6adac2fb895b37ed87c4b`.
 - S2 tecnicamente approvata: `a864de9f17c71775d60746f6432618343b8299ac`, CI 43003338052 PASS.
 - Branch unico: `codex/supabase-alignment-s2`; nessuna integrazione sperimentale.

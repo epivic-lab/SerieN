@@ -1,5 +1,9 @@
 # SerieN — S2 Recovery & Alignment
 
+**Release finale autorizzata ed eseguita:** vedere [RELEASE.md](RELEASE.md) per
+merge, deployment automatici, verifiche pre/post e limiti dello smoke browser.
+Questo aggiornamento documentale resta sul branch dedicato, senza ulteriori merge.
+
 Baseline obbligatoria: `46f2655f4a5d332c2ea6adac2fb895b37ed87c4b`.
 Branch autorizzato: `codex/supabase-alignment-s2`.
 [Checkpoint permanente #4](https://github.com/epivic-lab/SerieN/issues/4).

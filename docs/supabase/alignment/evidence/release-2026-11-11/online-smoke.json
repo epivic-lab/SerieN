@@ -1,0 +1,60 @@
+{
+  "release_sha": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+  "url": "https://epivic-lab.github.io/SerieN/",
+  "tls_verification": true,
+  "login_attempted": false,
+  "network_overrides": false,
+  "http": {
+    "index.html": {
+      "status": 200,
+      "sha256": "d5631fbd5151dd14edd50e7c5138e7aa360ace841b00857754487df8fb385b55",
+      "matches_authorized_release": true
+    },
+    "auth-gate.js": {
+      "status": 200,
+      "sha256": "b736d8e49a5e63f145a2a7df07436627aa3c5372acb4573413089c1a4b110c77",
+      "matches_authorized_release": true
+    },
+    "auth-gate-core.js": {
+      "status": 200,
+      "sha256": "6a66c0a6cea18001c8998c34013654758d80bcba937d59a7809848c805de3106",
+      "matches_authorized_release": true
+    },
+    "style.css": {
+      "status": 200,
+      "sha256": "a84cb414d637d88c3e32fbe08cedfd5ecef7feac74cf763c59011b11d901d214",
+      "matches_authorized_release": true
+    },
+    "dist/game.js": {
+      "status": 200,
+      "sha256": "e64d3efc7915456a33ce6c539afa298c577623d49fffea0e12438ded7a13222c",
+      "matches_authorized_release": true
+    },
+    "docs/supabase/alignment/S3.md": {
+      "status": 200,
+      "sha256": "bd01136fe2f079dd78b6bdfd970a01a305e280ae732fd34f9e8f20a55509c32f",
+      "matches_authorized_release": true
+    }
+  },
+  "browser": {
+    "status": "PARTIAL",
+    "entry_status": 200,
+    "auth_initialized_without_session": false,
+    "gate_visible": true,
+    "google_button_visible": false,
+    "auth_status": "Autenticazione temporaneamente non disponibile.",
+    "body_locked": true,
+    "runtime_not_loaded": true,
+    "errors": [],
+    "failed_requests": [
+      {
+        "host": "esm.sh",
+        "path": "/@supabase/supabase-js@2.95.0",
+        "failure": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      }
+    ],
+    "http_errors": [],
+    "mobile_no_overflow": true
+  },
+  "http_status": "PASS"
+}

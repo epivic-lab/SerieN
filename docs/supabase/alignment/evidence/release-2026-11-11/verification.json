@@ -1,0 +1,175 @@
+{
+  "merge_sha": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+  "approved_head": "6e2ecbe0891b8740b44e28d8748fd6bb64b65101",
+  "previous_main": "46f2655f4a5d332c2ea6adac2fb895b37ed87c4b",
+  "merge_parents": [
+    "46f2655f4a5d332c2ea6adac2fb895b37ed87c4b",
+    "6e2ecbe0891b8740b44e28d8748fd6bb64b65101"
+  ],
+  "merge_tree": "baa014e67d36572f6bcd4c4aef49ce8965f934a0",
+  "runs": [
+    {
+      "id": 43007661441,
+      "name": "S2 Supabase alignment - isolated, no deploy",
+      "event": "push",
+      "head_sha": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+      "conclusion": "success",
+      "url": "https://github.com/epivic-lab/SerieN/actions/runs/43007661441"
+    },
+    {
+      "id": 43007661601,
+      "name": "Deploy SerieN to GitHub Pages",
+      "event": "push",
+      "head_sha": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+      "conclusion": "success",
+      "url": "https://github.com/epivic-lab/SerieN/actions/runs/43007661601"
+    }
+  ],
+  "checks": [
+    {
+      "id": 130479586381,
+      "name": "Supabase Preview",
+      "app": "supabase",
+      "head_sha": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+      "conclusion": "success",
+      "url": "https://supabase.com/dashboard/project/vehfrjgifzjjgamrgwze"
+    },
+    {
+      "id": 130479069811,
+      "name": "deploy",
+      "app": "github-actions",
+      "head_sha": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+      "conclusion": "success",
+      "url": "https://github.com/epivic-lab/SerieN/actions/runs/43007661601/job/130479069811"
+    },
+    {
+      "id": 130479069530,
+      "name": "isolated-alignment",
+      "app": "github-actions",
+      "head_sha": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+      "conclusion": "success",
+      "url": "https://github.com/epivic-lab/SerieN/actions/runs/43007661441/job/130479069530"
+    }
+  ],
+  "remote_history": [
+    {
+      "version": "20261029230530",
+      "name": "serien_core_schema",
+      "sha256": "30cef69efb7a798152f13d33922e03192410207c5058d271bfd85c2c73d38754"
+    },
+    {
+      "version": "20261029230558",
+      "name": "serien_constraints_security",
+      "sha256": "097dc090f224bbba8cd614a557d5c736b4f881b67f0ab5ac8e25f8c44fcbc849"
+    },
+    {
+      "version": "20261105155420",
+      "name": "serien_verified_email_gate",
+      "sha256": "3db4ee578dfe8efb1c6e877fc2175238f2f1ba312cbc9d3384a04c74f8f7cbc7"
+    }
+  ],
+  "supabase_project": {
+    "id": "vehfrjgifzjjgamrgwze",
+    "ref": "vehfrjgifzjjgamrgwze",
+    "organization_id": "ibdayhzicldukpyuobhp",
+    "organization_slug": "ibdayhzicldukpyuobhp",
+    "name": "SerieN",
+    "region": "eu-west-3",
+    "status": "ACTIVE_HEALTHY",
+    "database": {
+      "host": "db.vehfrjgifzjjgamrgwze.supabase.co",
+      "version": "17.11.0.003",
+      "postgres_engine": "17",
+      "release_channel": "ga"
+    },
+    "created_at": "2026-10-29T21:24:45.372863Z"
+  },
+  "branches_before": {
+    "branches": [
+      {
+        "id": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+        "name": "main",
+        "project_ref": "vehfrjgifzjjgamrgwze",
+        "is_default": true,
+        "git_branch": "main",
+        "persistent": false,
+        "status": "MIGRATIONS_FAILED",
+        "created_at": "2026-10-29T22:16:21.506545+00:00",
+        "updated_at": "2026-10-29T22:16:21.506545+00:00",
+        "parent_project_ref": "vehfrjgifzjjgamrgwze",
+        "with_data": false,
+        "preview_project_status": "ACTIVE_HEALTHY"
+      }
+    ]
+  },
+  "branches_after": {
+    "branches": [
+      {
+        "id": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+        "name": "main",
+        "project_ref": "vehfrjgifzjjgamrgwze",
+        "is_default": true,
+        "git_branch": "main",
+        "persistent": false,
+        "status": "FUNCTIONS_DEPLOYED",
+        "created_at": "2026-10-29T22:16:21.506545+00:00",
+        "updated_at": "2026-10-29T22:16:21.506545+00:00",
+        "parent_project_ref": "vehfrjgifzjjgamrgwze",
+        "with_data": false,
+        "preview_project_status": "ACTIVE_HEALTHY"
+      }
+    ]
+  },
+  "supabase_logs": [
+    {
+      "event_message": "2026/11/11 10:56:04 INFO Cloning git repo... git_ref=main",
+      "timestamp": "2026-11-11T10:56:04.429529",
+      "workflow_run": "451b413ee7354ac79b1876bcd021d4c8"
+    },
+    {
+      "event_message": "2026/11/11 10:56:40 INFO Reading project config... project_ref=vehfrjgifzjjgamrgwze",
+      "timestamp": "2026-11-11T10:56:40.546347",
+      "workflow_run": "451b413ee7354ac79b1876bcd021d4c8"
+    },
+    {
+      "event_message": "2026/11/11 10:56:40 INFO Checking service health... project_ref=vehfrjgifzjjgamrgwze",
+      "timestamp": "2026-11-11T10:56:40.867950",
+      "workflow_run": "451b413ee7354ac79b1876bcd021d4c8"
+    },
+    {
+      "event_message": "2026/11/11 10:56:41 INFO Skipping configuration for protected branch...",
+      "timestamp": "2026-11-11T10:56:41.283785",
+      "workflow_run": "451b413ee7354ac79b1876bcd021d4c8"
+    },
+    {
+      "event_message": "2026/11/11 10:56:41 INFO Connecting to database... host=[omesso]",
+      "timestamp": "2026-11-11T10:56:41.283937",
+      "workflow_run": "451b413ee7354ac79b1876bcd021d4c8"
+    },
+    {
+      "event_message": "2026/11/11 10:56:42 INFO All migrations are up to date.",
+      "timestamp": "2026-11-11T10:56:42.052903",
+      "workflow_run": "451b413ee7354ac79b1876bcd021d4c8"
+    },
+    {
+      "event_message": "2026/11/11 10:56:42 INFO No buckets found. Try setting [storage.buckets.name] in config.toml.",
+      "timestamp": "2026-11-11T10:56:42.053149",
+      "workflow_run": "451b413ee7354ac79b1876bcd021d4c8"
+    },
+    {
+      "event_message": "2026/11/11 10:56:42 INFO Skipping seed data for protected branch...",
+      "timestamp": "2026-11-11T10:56:42.053240",
+      "workflow_run": "451b413ee7354ac79b1876bcd021d4c8"
+    },
+    {
+      "event_message": "2026/11/11 10:56:42 INFO No functions to deploy.",
+      "timestamp": "2026-11-11T10:56:42.089131",
+      "workflow_run": "451b413ee7354ac79b1876bcd021d4c8"
+    }
+  ],
+  "catalog_comparison": "PASS: empty pre/post diff for all captured application catalog fields; no E1 RPC or role",
+  "production_mutations_by_agent": false,
+  "manual_sql_or_repair": false,
+  "scope_limit": "Auth/Data API configuration values still not independently read; no authenticated browser login attempted.",
+  "verdict": "RELEASE COMPLETE — historical alignment and automatic deployments; browser authentication smoke PARTIAL due to worker proxy"
+}

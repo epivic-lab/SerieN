@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "pre_sha256": "5b1b9fd90e774d4c6df41226edb502aad0aef50111d89210bb52d8f675b9ee3d",
+  "post_sha256": "5b1b9fd90e774d4c6df41226edb502aad0aef50111d89210bb52d8f675b9ee3d",
+  "sections": {
+    "tables": 11,
+    "columns": 83,
+    "indexes": 28,
+    "schemas": 3,
+    "policies": 23,
+    "triggers": 14,
+    "functions": 10,
+    "constraints": 77,
+    "custom_roles": 0,
+    "custom_schemas": 2,
+    "default_privileges": 6,
+    "effective_privileges": 33
+  },
+  "captured_scope": [
+    "public",
+    "serien_internal",
+    "serien_access"
+  ],
+  "new_rpc_e1": false,
+  "new_serien_roles": false,
+  "manual_production_mutation": false
+}
