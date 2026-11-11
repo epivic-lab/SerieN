@@ -1,0 +1,46 @@
+initial {'time': 8606.800000000745, 'units': [{'id': 2, 'visible': False, 'value': 0, 'pose': {'x': 740, 'z': 284.00000000000006, 'y': 0.7324242876647133, 'angle': 1.5707963267948966, 'edge': 'T47', 's': 30, 'offset': -30, 'geometricClearanceVerified': True}, 'placementMs': 93}], 'audio': {'active': False, 'muted': False, 'initialized': False, 'voices': 0, 'timer': False}}
+settled {'time': 15291.20000000298, 'units': [{'id': 2, 'visible': True, 'value': 1, 'pose': {'x': 740, 'z': 284.00000000000006, 'y': 0.7324242876647133, 'angle': 1.5707963267948966, 'edge': 'T47', 's': 30, 'offset': -30, 'geometricClearanceVerified': True}, 'placementMs': 93}], 'audio': {'active': False, 'muted': False, 'initialized': False, 'voices': 0, 'timer': False}}
+/workspace/SerieN/tests/browser-guarded-stop.py:24: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  results['renderedSignChangedPixels']=sum(v!=(0,0,0) for v in delta.getdata());assert results['renderedSignChangedPixels']>100,'sign missing from actual render'
+Traceback (most recent call last):
+  File "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/run-regression.py", line 43, in <module>
+    runpy.run_path(str(test), run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/SerieN/tests/browser-guarded-stop.py", line 31, in <module>
+    p.select_option('#cameraView','follow');p.evaluate('__s6Tick(performance.now()+1500);__serienProfile.stop()');capture('follow-train')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 12285, in select_option
+    self._sync(
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_page.py", line 1073, in select_option
+    return await self._main_frame.select_option(**params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_frame.py", line 814, in select_option
+    return await self._channel.send("selectOption", self._timeout, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.select_option: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#cameraView")
+    - locator resolved to <select id="cameraView" data-ctrl="CTRL-008" aria-label="Camera preset">…</select>
+  - attempting select option action
+    2 × waiting for element to be visible and enabled
+      - element is not visible
+    - retrying select option action
+    - waiting 20ms
+    2 × waiting for element to be visible and enabled
+      - element is not visible
+    - retrying select option action
+      - waiting 100ms
+    59 × waiting for element to be visible and enabled
+       - element is not visible
+     - retrying select option action
+       - waiting 500ms

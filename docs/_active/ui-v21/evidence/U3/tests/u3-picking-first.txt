@@ -1,0 +1,8 @@
+all-eight-real-3D-turnout-clicks-reach-original-dispatcher: PASS
+trusted-real-train-hit-selects-same-console: PASS
+trusted-pan-and-touch-orbit-after-view-panel-closes: PASS
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U3-picking.py", line 78, in <module>
+    assert page.evaluate('__u3.nextSwitchHUD.panel.querySelector(".nextSwitchScheme").innerHTML===__u3.schemaSVG(__u3.network,__u3.nextSwitchHUD.snapshot.preview)')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

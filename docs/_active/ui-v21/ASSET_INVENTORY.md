@@ -20,3 +20,5 @@ Provenienza e integrità del design conservate in [PROVENANCE.json](PROVENANCE.j
 U1 aggiornamento: 19 file predisposti in ui/css, ui/fonts e ui/assets (inattivi); tre font/licenze copiati senza alterazioni, manifest completo. Fixture isolata e HTTP/offline/cascade/visual1440×900 PASS. [U1_ASSET_STAGING_REPORT.md](U1_ASSET_STAGING_REPORT.md). Nessun link nel boot applicativo; U2 non autorizzata.
 
 U2 aggiornamento: i font/asset U1 sono ora usati dalle sole regioni shell/dialoghi/auth U2 tramite copie CSS scoped e integration; file U1/frozen intatti. Le precedenti note «non attivo» descrivono lo staging U1. Vedi U2_REPORT.md e evidence/U2/css-adapters.json. Sidebar/dock/HUD/TM interni restano legacy; U3 non autorizzata.
+
+U3 aggiornamento: autorizzazione separata acquisita; camera, HUD, Bell/status, log e startup ora riusano gli stessi materiali/font nelle sole regioni `u3-region`, tramite i contenitori scoped già esistenti. Nessun nuovo asset/font, nessuna modifica a copie CSS U1/U2 o licenze. Solo appendice U3 nel foglio integration ultimo. Sidebar/dock/TM interni restano legacy; U4–U9 non autorizzate. Vedi U3_REPORT.md e evidence/U3/invariants.json.

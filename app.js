@@ -1,4 +1,5 @@
 import {mountShell} from './src/ui/shell.js';
+import {mountViewportOverlays} from './src/ui/overlays.js';
 import {createGuardedStops} from './src/guarded-stop-scene.js';
 import {animateAuxiliaryWheels} from './src/rolling-stock-animation.js';
 import {stepRailway} from './src/railway-step.js';
@@ -35,7 +36,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 const $ = (id) => document.getElementById(id);
 const host = $("view3d");
-let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null;
+let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null, viewportOverlays = null;
 let highlightUntil=0,highlightUpdated=0;
 importedTrains($("rollingModels").value === "kenney");
 const scene = new THREE.Scene();
@@ -747,6 +748,7 @@ window.addEventListener("pagehide", (e) => {
   guardedStops.dispose();
   turnoutArrows.dispose();
   turnoutPicking.dispose();
+  viewportOverlays?.dispose();
   uiShell?.dispose();
   trainManagement?.dispose();
   trainDeck?.dispose();
@@ -813,6 +815,7 @@ function tick(now) {
   turnoutGlow.update(now);
   turnoutArrows.update(now);
   guardedStops.update(now);
+  viewportOverlays?.update();
   effects.render(quality.profile === "cinema");
   if (frame % 35 === 0) {
     missionUI();
@@ -829,6 +832,7 @@ const turnoutArrows=createTurnoutArrows(scene,turnoutModel,{getState:id=>switchS
   getApproaches:()=>turnoutArrowApproaches({network,topology:switchTopology,trains,choose:route}),reducedMotion:motionPreference.matches});
 turnoutArrows.update(performance.now());
 const guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:()=>detached,host,isPaused:()=>paused,reducedMotion:motionPreference.matches});
+viewportOverlays=mountViewportOverlays({host,guardedStops,getCameraPreset:()=>nav.preset});
 const onMotionPreference=()=>{guardedStops.setReducedMotion(motionPreference.matches);turnoutGlow.setReducedMotion(motionPreference.matches);turnoutArrows.setReducedMotion(motionPreference.matches);};
 motionPreference.addEventListener('change',onMotionPreference);
 const turnoutInteraction=mountTurnoutInteraction({canvas:renderer.domElement,camera,scene,controls,

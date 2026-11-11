@@ -1,0 +1,10 @@
+single-canvas-original-startup-and-one-persistent-log: PASS
+real-presets-home-follow-zoom-pan-orbit-escape-and-trusted-drag-breaks-follow: PASS
+real-15-second-route-expiry-second-click-hides-and-disclaimer: PASS
+read-only-hud-no-switch-actions-real-train-name-route-and-topology-svg: PASS
+real-guard-risk-retained-muted-single-bell-menu-chip-and-independent-ui-sound: PASS
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U3.py", line 164, in <module>
+    assert not refused['changed'] and refused['message']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "proposal": "U3 READY FOR REGIA REVIEW",
+  "approved": false,
+  "branch": "codex/ui-v2-integration",
+  "approvedU2": "48a7c4d48b118877ec7edf7f4c61fba090e460b8",
+  "bundleSHA256": "e45a019e20ca80b079d00fc3c8ae5b4d36111e6bb3ec87733a9bb2d1d7709cfc",
+  "commands": [
+    {
+      "name": "node",
+      "command": "npm test",
+      "exit": 0,
+      "log": "tests/node.txt",
+      "receipt": "tests/node.exit"
+    },
+    {
+      "name": "python",
+      "command": "python -m unittest discover -s tests -p \"*_test.py\"",
+      "exit": 0,
+      "log": "tests/python.txt",
+      "receipt": "tests/python.exit"
+    },
+    {
+      "name": "build-final",
+      "command": "npm run build -- --metafile=docs/_active/ui-v21/evidence/U3/bundle-inputs.json",
+      "exit": 0,
+      "log": "tests/build-final.txt",
+      "receipt": "tests/build-final.exit"
+    },
+    {
+      "name": "canonical",
+      "command": "python scripts/build-canonical-layout.py",
+      "exit": 0,
+      "log": "tests/canonical.txt",
+      "receipt": "tests/canonical.exit"
+    },
+    {
+      "name": "canonical-diff",
+      "command": "git diff --exit-code 48a7c4d -- src/canonical-layout.json docs/jmri-layout",
+      "exit": 0,
+      "log": "tests/canonical-diff.txt",
+      "receipt": "tests/canonical-diff.exit"
+    },
+    {
+      "name": "invariants",
+      "command": "python docs/_active/ui-v21/evidence/U3/verify-invariants.py",
+      "exit": 0,
+      "log": "tests/invariants.txt",
+      "receipt": "tests/invariants.exit"
+    },
+    {
+      "name": "u3-production-final",
+      "command": "U3_OUTPUT=/workspace/work/ui-v21-u3/production-final python tests/browser-ui-v21-U3.py",
+      "exit": 0,
+      "log": "tests/u3-production-final.txt",
+      "receipt": "tests/u3-production-final.exit"
+    },
+    {
+      "name": "u3-picking",
+      "command": "U3_OBSERVER=/workspace/work/ui-v21-u3/observer.js U3_PICKING_OUTPUT=/workspace/work/ui-v21-u3/picking-final python tests/browser-ui-v21-U3-picking.py",
+      "exit": 0,
+      "log": "tests/u3-picking.txt",
+      "receipt": "tests/u3-picking.exit"
+    },
+    {
+      "name": "railway",
+      "command": "python docs/_active/ui-v21/evidence/U3/run-regression.py tests/browser-phase-five-close.py docs/_active/ui-v21/evidence/U3/regressions/railway",
+      "exit": 0,
+      "log": "tests/railway.txt",
+      "receipt": "tests/railway.exit"
+    },
+    {
+      "name": "phase-zero",
+      "command": "python docs/_active/ui-v21/evidence/U3/run-regression.py tests/browser-phase-zero.py docs/_active/ui-v21/evidence/U3/regressions/phase-zero",
+      "exit": 0,
+      "log": "tests/phase-zero.txt",
+      "receipt": "tests/phase-zero.exit"
+    },
+    {
+      "name": "interaction",
+      "command": "U3_OBSERVER=/workspace/work/ui-v21-u3/observer.js python docs/_active/ui-v21/evidence/U3/run-regression.py tests/browser-turnout-interaction.py docs/_active/ui-v21/evidence/U3/regressions/interaction",
+      "exit": 0,
+      "log": "tests/interaction.txt",
+      "receipt": "tests/interaction.exit"
+    },
+    {
+      "name": "guarded-stop",
+      "command": "U3_OBSERVER=/workspace/work/ui-v21-u3/observer.js python docs/_active/ui-v21/evidence/U3/run-regression.py tests/browser-guarded-stop.py docs/_active/ui-v21/evidence/U3/regressions/guarded-stop-final",
+      "exit": 0,
+      "log": "tests/guarded-stop.txt",
+      "receipt": "tests/guarded-stop.exit"
+    },
+    {
+      "name": "native",
+      "command": "U3_NATIVE_OUTPUT=/workspace/work/ui-v21-u3/native-final python docs/_active/ui-v21/evidence/U3/native-smoke.py",
+      "exit": 0,
+      "log": "tests/native.txt",
+      "receipt": "tests/native.exit"
+    },
+    {
+      "name": "valid-route",
+      "command": "python docs/_active/ui-v21/evidence/U3/capture-valid-route.py",
+      "exit": 0,
+      "log": "tests/valid-route.txt",
+      "receipt": "tests/valid-route.exit"
+    }
+  ],
+  "NodePass": 254,
+  "PythonPass": 9,
+  "U3ProductionGroups": 9,
+  "pickingGroups": 5,
+  "shellScreenshots": 13,
+  "validRouteScreenshots": 3,
+  "native": {
+    "frames": 63,
+    "durationMs": 194542.19999999998,
+    "fpsSoftware": 0.31869692025689034,
+    "checks": [
+      "three actual trains advance on native RAF",
+      "production bundle over HTTP",
+      "native Follow and trusted drag to manual",
+      "one original canvas and no pageerror"
+    ]
+  },
+  "sourceProtection": "222/226 approved-U2 baseline files identical; four validated deltas plus scoped CSS/new adapter/tests",
+  "historicalAssertions": "S6 domain assertions byte-identical; View panel setup and stable Bell locator only",
+  "notVerified": [
+    "Physical GPU fluidity/touch hardware/audio output/screen reader",
+    "Other browsers and @scope support",
+    "Remote Google OAuth login/logout",
+    "Full UI acceptance U9",
+    "Native beforeunload prompt"
+  ],
+  "nextAction": "Independent Regia review only; U4 not started"
+}

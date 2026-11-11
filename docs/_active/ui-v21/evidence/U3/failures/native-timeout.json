@@ -1,0 +1,7 @@
+{
+  "status": "FAIL",
+  "method": "native RAF; production bundle; local Auth boundary",
+  "hardware": "Chromium SwiftShader; physical GPU NOT VERIFIED",
+  "bundleSHA256": "e45a019e20ca80b079d00fc3c8ae5b4d36111e6bb3ec87733a9bb2d1d7709cfc",
+  "failure": "Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-preset=follow]\")\n    - locator resolved to <button class=\"bt d\" type=\"button\" data-preset=\"follow\" data-ctrl=\"CTRL-008\" aria-pressed=\"false\">Follow train</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - performing click action\n"
+}

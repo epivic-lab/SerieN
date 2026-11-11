@@ -1,0 +1,46 @@
+[
+  {
+    "name": "railway",
+    "command": [
+      "python",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/run-regression.py",
+      "tests/browser-phase-five-close.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/regressions/railway"
+    ],
+    "observer": false,
+    "exit": 0
+  },
+  {
+    "name": "phase-zero",
+    "command": [
+      "python",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/run-regression.py",
+      "tests/browser-phase-zero.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/regressions/phase-zero"
+    ],
+    "observer": false,
+    "exit": 0
+  },
+  {
+    "name": "interaction",
+    "command": [
+      "python",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/run-regression.py",
+      "tests/browser-turnout-interaction.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/regressions/interaction"
+    ],
+    "observer": true,
+    "exit": 0
+  },
+  {
+    "name": "guarded-stop",
+    "command": [
+      "python",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/run-regression.py",
+      "tests/browser-guarded-stop.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/regressions/guarded-stop"
+    ],
+    "observer": true,
+    "exit": 1
+  }
+]

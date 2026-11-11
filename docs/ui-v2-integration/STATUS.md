@@ -1,11 +1,9 @@
 # UI V2.1 — stato corrente
 
-**U2 READY FOR REGIA REVIEW — STOP; U3–U9 non autorizzate.**
+**U3 READY FOR REGIA REVIEW — STOP; U4–U9 non autorizzate.** U2 approvata dalla Regia.
 
-[Rapporto U2](../_active/ui-v21/U2_REPORT.md), [stato e gate](../_active/ui-v21/STATUS.md), [evidenze](../_active/ui-v21/evidence/U2/RESULTS.json).
+[Rapporto U3](../_active/ui-v21/U3_REPORT.md), [stato e gate](../_active/ui-v21/STATUS.md), [evidenze e comandi](../_active/ui-v21/evidence/U3/results.json).
 
-Branch codex/ui-v2-integration; baseline ferroviaria/M2/M3 91722fb, checkpoint U1 iniziale74a8d91. Integrate solo shell/header/dialoghi/Menu/launcher/guard Sign out; regioni ferroviarie e viste TM restano legacy. CSS confinato alle regioni U2, nodi/handler reali riusati, nessun mock nel bundle.
+Branch `codex/ui-v2-integration`; ingresso U2 approvato `48a7c4d48b118877ec7edf7f4c61fba090e460b8`, baseline R1/M2/M3 `91722fb`. Integrate solo superfici viewport camera/Route, HUD reale read-only, Bell/status unico, log persistente e startup skin. Sidebar/dock/TM legacy; nessun mock, secondo renderer o dominio modificato.
 
-PASS unit/Python/build/canonico, U2 specifici e screenshot3viewport, pointer, M1/M2/M3/lifecycle/R1/console/layout e native3treni. Motore/store/Auth/Supabase/design/dipendenze/workflow invariati. OAuth remoto/hardware e UI completa NOT VERIFIED. Nessun main/merge/deploy/release; attendere gate Regia e autorizzazione U3.
-
-Ripresa controllata completata: U2 già pubblicata in `19a84092131a81ee95a869218d77357723abf3a4`, locale/remoto allineati e stato iniziale pulito. Nuovo audit statico PASS su hash sorgenti/invarianti/bundle e ricevute; precedenti test runtime validi, non ripetuti. Aggiornamento solo documentale, [prove di ripresa](../_active/ui-v21/evidence/U2/recovery/VERIFICATION.json). U2 rimane proposta per review, non approvata autonomamente.
+PASS nuovi: 254 Node/9 Python/build/canonico/invarianti, U3 produttivo e picking, R1/PhaseZero/S2/S6, RAF nativo tre treni; 14 comandi finali exit0 e17 immagini finali oltre alle regressioni. 222/226 file manifest U2 identici; delta rimanenti autorizzati e verificati. Hardware/GPU reale, OAuth remoto, altri browser e UI completa NOT VERIFIED. Nessun main/merge/deploy/release. Prossima attività consentita: revisione indipendente della Regia; U4 non avviata.
