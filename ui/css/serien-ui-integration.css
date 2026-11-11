@@ -89,3 +89,48 @@ dialog.u2-region::backdrop{background:#030705b0}dialog.u2-region .mi{height:auto
  .u3-overlays>.u3-operations{max-height:96px}
 }
 @media(prefers-reduced-motion:reduce){.u3-region *{animation:none!important;transition:none!important}}
+/* U4 / A12: the sidebar alone adopts the frozen materials; other regions stay scoped. */
+.sidebar.u4-region{display:flex;flex-direction:column;gap:12px;min-width:0;padding:12px;overflow:auto;background:linear-gradient(#183328,#10251c);font:400 14px/1.4 Federo}
+.u4-region>.m{flex:none;min-width:0;max-width:100%;animation:none}
+.u4-region>.m>.mi{height:auto;min-width:0;padding:12px;background-color:#173328}
+.u4-region .sectionHeader{gap:8px;margin:0 0 10px;min-width:0}
+.u4-region .sectionHeader h2{font:700 16px/1.4 'Cinzel Decorative';color:#f6e2a4;letter-spacing:0;text-transform:none;margin:0}
+.u4-region .eyebrow{font:400 12px Federo;letter-spacing:.08em;color:#a9bfae}
+.u4-region .pill{font:400 12px 'Cutive Mono';color:#f6e2a4;background:#243d2b;padding:5px;white-space:nowrap}
+.u4-region p,.u4-region .note{font:400 14px/1.45 Federo;color:#c8d8c7}
+/* CTRL-012: original eight cells/hooks/disabled bindings, exact safety reasons without hover. */
+.u4-region #switchList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.u4-region #switchList .switchCell{display:flex;flex-direction:column;gap:4px;min-width:0}
+.u4-region #switchList .sw{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:4px;width:100%;height:auto;min-height:94px;padding:9px;text-align:left;border:1px solid #66816a}
+.u4-region #switchList .sw b{font:400 14px 'Cutive Mono';color:#f6e2a4}
+.u4-region #switchList .sw small{display:block;font:400 13px/1.4 Federo;letter-spacing:0;white-space:normal;text-transform:none;color:#c8d8c7}
+.u4-region #switchList .sw.active{border-color:#d9b45f;background-color:#4f4a2c;box-shadow:inset 0 -2px #d9b45f}
+.u4-region #switchList .sw:disabled{opacity:1;border-style:dashed}
+.u4-region .u4-switch-position{font:400 13px Federo;color:#f2e8d0}
+.u4-region .u4-switch-reason{margin:0;padding:6px;border-left:2px solid #d9b45f;background:#513a214d;color:#ffe0af;font:400 14px/1.4 Federo;overflow-wrap:anywhere}
+.u4-region [hidden]{display:none}
+.u4-region .switchCell:focus-visible{outline:2px solid #f6e2a4;outline-offset:2px;border-radius:5px}
+/* CTRL-013/015: actual slider/glyph and mission strings, no progress or completion gate. */
+.u4-region #day{width:100%;min-height:44px;margin:0;accent-color:#d9b45f;cursor:pointer}
+.u4-region #sun{font:400 24px Federo;color:#f6e2a4}
+.u4-region .u4-day-value{display:block;font:400 14px 'Cutive Mono';color:#f6e2a4}
+.u4-region .ticks{font:400 13px Federo;margin-top:6px;color:#a9bfae}
+.u4-region .rollingLabel{display:grid;gap:6px;font:400 14px Federo;margin-top:14px;color:#f2e8d0}
+.u4-region #rollingModels{width:100%;max-width:100%;min-height:44px;font:400 14px Federo}
+.u4-region #missionName{font:700 16px/1.4 'Cinzel Decorative';color:#f6e2a4;margin:0 0 8px}
+.u4-region #missionText{display:block;font:400 14px/1.45 Federo;margin:0 0 8px}
+.u4-region #missionStatus{font:400 14px/1.4 Federo;color:#f6e2a4;padding:9px;margin:0 0 10px}
+.u4-region #nextMission{min-height:44px;width:100%;font:400 14px Federo;color:#2a1d08}
+/* CTRL-053: canonical SVG + actual physical markers; 44px legend is an equivalent focus action. */
+.u4-region .m-lg .mi{display:block}
+.u4-region .mapw{min-height:0;padding:8px;background-color:#e6d6af}
+.u4-region #sidebarRailwayMap{display:block;width:100%;height:auto;aspect-ratio:15/7;overflow:visible}
+.u4-region #sidebarRailwayMap circle{fill:#d9b45f;stroke:#4a2a16;stroke-width:6;cursor:pointer}
+.u4-region #sidebarRailwayMap circle[aria-pressed=true]{fill:#e73b50;stroke:#ffe0af}
+.u4-region #sidebarRailwayMap circle:focus-visible{outline:4px solid #283f30}
+.u4-region .u4-map-trains{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:10px}
+.u4-region .u4-map-trains .bt{min-width:44px;min-height:44px;font:400 14px Federo;letter-spacing:0;padding:7px;overflow-wrap:anywhere}
+.u4-region .u4-map-trains .bt[aria-pressed=true]{background:linear-gradient(#f6e2a4,#a9802f);color:#2a1d08}
+@media(max-width:930px){.sidebar.u4-region{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;overflow:visible}}
+@media(max-width:700px){.sidebar.u4-region{display:flex;flex-direction:column;padding:12px}.u4-region>.m>.mi{padding:14px}.u4-region #switchList .sw{min-height:90px}}
+@media(prefers-reduced-motion:reduce){.u4-region *{animation:none!important;transition:none!important}}

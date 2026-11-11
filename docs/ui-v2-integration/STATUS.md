@@ -1,9 +1,11 @@
 # UI V2.1 — stato corrente
 
-**U3 READY FOR REGIA REVIEW — STOP; U4–U9 non autorizzate.** U2 approvata dalla Regia.
+**U4 READY FOR REGIA REVIEW — STOP; U5–U9 non autorizzate.** U3 approvata dalla Regia.
 
-[Rapporto U3](../_active/ui-v21/U3_REPORT.md), [stato e gate](../_active/ui-v21/STATUS.md), [evidenze e comandi](../_active/ui-v21/evidence/U3/results.json).
+[Rapporto U4](../_active/ui-v21/U4_REPORT.md), [stato](../_active/ui-v21/STATUS.md), [risultati e comandi](../_active/ui-v21/evidence/U4/results.json).
 
-Branch `codex/ui-v2-integration`; ingresso U2 approvato `48a7c4d48b118877ec7edf7f4c61fba090e460b8`, baseline R1/M2/M3 `91722fb`. Integrate solo superfici viewport camera/Route, HUD reale read-only, Bell/status unico, log persistente e startup skin. Sidebar/dock/TM legacy; nessun mock, secondo renderer o dominio modificato.
+Branch `codex/ui-v2-integration`; ingresso U3 `907a9ec4a9d570f03af9ab77d39269ff49787256`, baseline R1/M2/M3 `91722fb`. Sidebar soltanto: otto scambi/guardie originali con motivi visibili, daylight/mission cycle originali, nuova mappa fisica canonica con selezione/focus esistenti. Dock/TM legacy, U2/U3 intatti; nessun log duplicato, renderer, mock o dominio nuovo.
 
-PASS nuovi: 254 Node/9 Python/build/canonico/invarianti, U3 produttivo e picking, R1/PhaseZero/S2/S6, RAF nativo tre treni; 14 comandi finali exit0 e17 immagini finali oltre alle regressioni. 222/226 file manifest U2 identici; delta rimanenti autorizzati e verificati. Hardware/GPU reale, OAuth remoto, altri browser e UI completa NOT VERIFIED. Nessun main/merge/deploy/release. Prossima attività consentita: revisione indipendente della Regia; U4 non avviata.
+PASS nuovi U4: 254 Node/9 Python/build/canonico/invarianti,9 gruppi produttivi/6 safety, S2/S5/PhaseZero, RAF nativo marker/focus;13 comandi exit0 e27 immagini oltre alle regressioni. 225/226 file manifest U3 identici, unico delta app.js solo binding; CSS integration appendice U4 soltanto. Hardware/altre piattaforme/OAuth reale/UI completa NOT VERIFIED. M2/M3 e certificazione estesa R1 restano storici, domini invariati.
+
+STOP per audit Regia. U5 non iniziata; nessun main/merge/deploy/Supabase o packaging modificato.

@@ -1,15 +1,15 @@
-# UI V2.1 — U3 Real Viewport Overlays
+# UI V2.1 — U4 Sidebar, Switches, Environment, Missions & Map
 
-**U3 READY FOR REGIA REVIEW — STOP. U4–U9 non autorizzate.** U2 approvata dalla Regia; mandato U3 conservato in evidence/U3/AUTHORIZATION_U3.md.
+**U4 READY FOR REGIA REVIEW — STOP. U5–U9 non autorizzate.** U3 approvata; mandato U4 in evidence/U4/AUTHORIZATION_U4.md.
 
-Branch `codex/ui-v2-integration`; checkpoint U2 iniziale locale/upstream/remoto `48a7c4d48b118877ec7edf7f4c61fba090e460b8`, working tree iniziale pulito. Baseline ferroviaria/M2/M3 `91722fbdf6671e69deebf645c3d8bf389212f421`, main remoto `184cc9ba93a6b35493f365b2ffcb20ef0645963d` conservati. Nessun merge/rebase/main/deploy.
+Branch `codex/ui-v2-integration`; ingresso locale/upstream/remoto `907a9ec4a9d570f03af9ab77d39269ff49787256`, working tree iniziale pulito. U2 `48a7c4d` antenata; baseline ferroviaria/M2/M3 `91722fbdf6671e69deebf645c3d8bf389212f421`, main remoto `184cc9ba93a6b35493f365b2ffcb20ef0645963d` conservati.
 
-Camera/View/Route riusano nodi e controller originali; HUD read-only e SVG originale; status Guarded Stop originale e chip/Menu sullo stesso Bell; log originale completo e persistente nel viewport; startup skin soltanto. Un canvas, layer pointer-through, CSS limitato a U3. Nessuna nuova logica ferroviaria, mock, controller Bell o handler globale. Sidebar/dock/viste TM restano legacy.
+Sidebar V2.1 con otto pulsanti reali e hook originali, stati/counter e motivi di blocco completi senza hover; Daylight e missioni con handler originali, soglie42/72 e Next sempre disponibile. Mappa SVG canonica, marker fisici e focus sul controller esistente; quattro treni accessibili, dock LRU tre intatto. U2/U3 e Operations Log unico invariati. Nessun mock, nuova safety, store o renderer.
 
-**PASS nuovi U3:** 254 Node, 9 Python, build/canonico, invarianti, nove gruppi sul bundle produttivo, cinque gruppi picking/cleanup, tre catture aggiuntive con route valida, regressioni R1/5C, Phase Zero, S2 e S6. 14 comandi finali exit0. 17 screenshot finali fra shell/valid-route/native, oltre alle regressioni. RAF nativo: tre treni reali, 63 frame in circa195s, ~0,319fps SwiftShader; nessuna certificazione di fluidità hardware.
+**PASS nuovi U4:** 254 Node,9 Python,build+canonico/invarianti,9 gruppi produttivi,6 gruppi safety/camera/cleanup, S2/S5 e Phase Zero. 13 comandi finali exit0;27 immagini finali oltre alle regressioni. Occupied/approaching/unknown verificati con stesso rifiuto tra tile e click3D. Native RAF:3treni reali e marker sincronizzati, focus senza mutazione ferroviaria,16frame/24132,3ms (~0,622fps SwiftShader a650×760), un canvas e zero pageerror; hardware NOT VERIFIED.
 
-222/226 file del manifest U2 byte-identici; quattro delta autorizzati verificati per inversione esatta (app/index/solo getter scena/un test con preparazione e selettore UI). CSS U2 conservato come prefisso, asset/font/licenze invariati; motore/store/Auth/Supabase/layout/workflow/dipendenze protetti. Bundle finale `e45a019e20ca80b079d00fc3c8ae5b4d36111e6bb3ec87733a9bb2d1d7709cfc` verificato anche viaHTTP nel test nativo.
+225/226 file manifest U3 identici, app.js solo binding UI verificato per inversione esatta; tutti gli altri file preesistenti src/ui/tests e font/asset/licenze invariati; CSS U3 prefisso intatto. Bundle `4d63096f8b4cdaa15e62de27ee2b70384712deed58483fa2382fcdccdcde3c27` identico anche al test nativo viaHTTP.
 
-[Rapporto U3](U3_REPORT.md), [risultati e comandi](evidence/U3/results.json), [invarianti](evidence/U3/invariants.json). Failure intermedi e recuperi documentati senza modificare asserzioni ferroviarie. Suite M2/M3 complete non ripetute poiché moduli/contratti invariati; restano PASS storici. OAuth remoto, altri browser, hardware, prompt beforeunload e accettazione completa U9 **NOT VERIFIED**. Packaging Pages ui/ ancora prerequisito della futura release, fuori U3.
+[Rapporto](U4_REPORT.md), [risultati/comandi](evidence/U4/results.json), [invarianti](evidence/U4/invariants.json). Failure di costruzione/fixture/harness documentati e risolti senza cambiare asserzioni storiche. M2/M3 completi e matrice estesa R1/5C restano PASS storici U3, non ripetuti senza modifiche ai domini. GPU/touch/audio fisici, screen reader, altri browser, OAuth remoto, prompt beforeunload e accettazione U9 **NOT VERIFIED**.
 
-Prossima attività consentita: sola revisione indipendente della Regia. U4 non iniziata. SHA finale e verifica remota nella consegna.
+Prossima attività: revisione indipendente della Regia. U5 non avviata. Nessun main/merge/deploy/Supabase/workflow/packaging modificato. SHA finale e allineamento remoto nella consegna.

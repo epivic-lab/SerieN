@@ -1,5 +1,6 @@
 import {mountShell} from './src/ui/shell.js';
 import {mountViewportOverlays} from './src/ui/overlays.js';
+import {mountSidebar} from './src/ui/sidebar.js';
 import {createGuardedStops} from './src/guarded-stop-scene.js';
 import {animateAuxiliaryWheels} from './src/rolling-stock-animation.js';
 import {stepRailway} from './src/railway-step.js';
@@ -36,7 +37,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 const $ = (id) => document.getElementById(id);
 const host = $("view3d");
-let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null, viewportOverlays = null;
+let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null, viewportOverlays = null, sidebarUI = null;
 let highlightUntil=0,highlightUpdated=0;
 importedTrains($("rollingModels").value === "kenney");
 const scene = new THREE.Scene();
@@ -441,6 +442,7 @@ function ui() {
   $("missionText").textContent = statuses[mission].body;
   missionUI();
   nextSwitchHUD?.refresh(true);
+  sidebarUI?.update();
 }
 function missionUI() {
   $("missionStatus").textContent = statuses[mission].done() ? "\u2713 Mission completed" : statuses[mission].detail();
@@ -749,6 +751,7 @@ window.addEventListener("pagehide", (e) => {
   turnoutArrows.dispose();
   turnoutPicking.dispose();
   viewportOverlays?.dispose();
+  sidebarUI?.dispose();
   uiShell?.dispose();
   trainManagement?.dispose();
   trainDeck?.dispose();
@@ -804,6 +807,7 @@ function tick(now) {
   nav.update(realDt, trains[selected].journey.locate());
   views.update();
   nextSwitchHUD?.refresh();
+  sidebarUI?.update();
   updateRouteHighlight();
   if ($("cameraView").value !== nav.preset && nav.preset === "manual") $("cameraView").value = "manual";
   const nextQuality = quality.update(realDt, !document.hidden);
@@ -833,6 +837,10 @@ const turnoutArrows=createTurnoutArrows(scene,turnoutModel,{getState:id=>switchS
 turnoutArrows.update(performance.now());
 const guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:()=>detached,host,isPaused:()=>paused,reducedMotion:motionPreference.matches});
 viewportOverlays=mountViewportOverlays({host,guardedStops,getCameraPreset:()=>nav.preset});
+sidebarUI=mountSidebar({host:document.querySelector('.sidebar'),network,controlOrder,
+  getSwitches:()=>switchSpecs.map(({id,on})=>({id,on})),getTrains:()=>trains,getSelected:()=>selected,
+  onFocus:(id)=>{select(id);nav.focus(trains[id].journey.locate());$('cameraView').value='manual';}
+});
 const onMotionPreference=()=>{guardedStops.setReducedMotion(motionPreference.matches);turnoutGlow.setReducedMotion(motionPreference.matches);turnoutArrows.setReducedMotion(motionPreference.matches);};
 motionPreference.addEventListener('change',onMotionPreference);
 const turnoutInteraction=mountTurnoutInteraction({canvas:renderer.domElement,camera,scene,controls,
@@ -876,13 +884,14 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
     renderVehicles();
     trainDeck?.update();uiShell?.update();
     nextSwitchHUD?.refresh(true);
+    sidebarUI?.update();
     updateRouteHighlight(true);
   },
   frames(intervals) {
     if(!Array.isArray(intervals)||intervals.length>10000||intervals.some(dt=>!Number.isFinite(dt)||dt<0))throw new RangeError("Invalid diagnostic frames");
     const frameClock=new FixedClock();
     for(const elapsed of intervals)frameClock.update(elapsed,advanceFleet);
-    renderVehicles();trainDeck?.update();uiShell?.update();nextSwitchHUD?.refresh(true);updateRouteHighlight(true);
+    renderVehicles();trainDeck?.update();uiShell?.update();nextSwitchHUD?.refresh(true);sidebarUI?.update();updateRouteHighlight(true);
   },
   setSwitches(on) {
     if(!Array.isArray(on)||on.some((id)=>!switchSpecs.some((s)=>s.id===id)))throw new RangeError("Unknown diagnostic control");

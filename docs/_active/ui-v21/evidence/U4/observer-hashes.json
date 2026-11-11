@@ -1,0 +1,16 @@
+[
+  {
+    "name": "observer.js",
+    "sha256": "105dad0b2b972960300a899112b38a1abab26e5335a98004a673cc10fc28e439",
+    "bytes": 2008214,
+    "recipe": "node docs/_active/ui-v21/evidence/U4/build-observer.mjs <output>",
+    "production": false
+  },
+  {
+    "name": "observer-native.js",
+    "sha256": "0a43b6c405a25e72dd9bb5b21aa62510a1f9cd6d8bd5bc880540d31e40a0575f",
+    "bytes": 2008390,
+    "recipe": "node docs/_active/ui-v21/evidence/U4/build-observer.mjs <output> --native-profile",
+    "production": false
+  }
+]

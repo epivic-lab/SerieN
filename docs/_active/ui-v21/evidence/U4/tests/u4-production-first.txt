@@ -1,0 +1,10 @@
+eight-canonical-tiles-original-hooks-one-canvas-and-one-operations-log: PASS
+all-eight-original-panel-callbacks-both-positions-and-real-counter: PASS
+canonical-map-live-four-physical-markers-focus-LRU-and-marker-Space-no-stop: PASS
+original-four-mission-cycle-next-enabled-without-completion-no-railway-mutation: PASS
+original-daylight-input-value-glyph-thresholds-42-and-72: PASS
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U4.py", line 108, in <module>
+    assert page.locator('#sidebarRailwayMap circle').count()==3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

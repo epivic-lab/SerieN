@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "observerSHA256": "105dad0b2b972960300a899112b38a1abab26e5335a98004a673cc10fc28e439",
+  "checks": [
+    "occupied-real-engine-lock-visible-exact-reason-and-3D-panel-parity",
+    "approaching-real-engine-lock-visible-exact-reason-and-3D-panel-parity",
+    "unknown-real-engine-lock-visible-exact-reason-and-3D-panel-parity",
+    "original-daylight-value-and-actual-scene-sun-follow-original-threshold-binding",
+    "map-focus-real-camera-target-matches-physical-locomotive",
+    "pagehide-sidebar-cleanup-and-detached-map-click-no-callback"
+  ],
+  "errors": [],
+  "cases": {
+    "occupied": {
+      "id": "Y-4",
+      "safety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied \u00b7 operation blocked"
+      },
+      "preview": "misaligned"
+    },
+    "approaching": {
+      "id": "Y-4",
+      "safety": {
+        "blocked": true,
+        "kind": "approaching",
+        "message": "Train approaching \u00b7 operation blocked"
+      },
+      "preview": "misaligned"
+    },
+    "unknown": {
+      "id": "WX-B",
+      "safety": {
+        "blocked": true,
+        "kind": "unknown",
+        "message": "Approach route unknown \u00b7 operation blocked"
+      },
+      "preview": "history-conflict"
+    }
+  },
+  "sceneLighting": [
+    {
+      "day": 41,
+      "glyph": "\u2600",
+      "intensity": 2.420153846153846
+    },
+    {
+      "day": 42,
+      "glyph": "\u25d0",
+      "intensity": 2.381846153846154
+    },
+    {
+      "day": 71,
+      "glyph": "\u25d0",
+      "intensity": 1.2709230769230768
+    },
+    {
+      "day": 72,
+      "glyph": "\u263e",
+      "intensity": 1.2326153846153847
+    }
+  ],
+  "focus": {
+    "point": {
+      "x": 1365.037121838326,
+      "z": 493.02580670972725,
+      "angle": -2.103948107764071,
+      "edge": "T0",
+      "s": 150
+    },
+    "target": [
+      1365.037121838326,
+      16.5,
+      493.02580670972725
+    ],
+    "preset": "manual"
+  }
+}
