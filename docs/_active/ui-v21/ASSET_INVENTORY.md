@@ -18,3 +18,5 @@
 Provenienza e integrità del design conservate in [PROVENANCE.json](PROVENANCE.json). Aggiornamento PRE-U1: acquisiti i tre font e le rispettive licenze ufficiali; conversione WOFF2 e verifica offline PASS, [FONT_PREFLIGHT_REPORT.md](FONT_PREFLIGHT_REPORT.md). **Prerequisito font soddisfatto; U1 non autorizzata.** Font Gate storico conservato sotto font-staging/. In U1 i font sono anche copiati in ui/fonts/ e i font-face predisposti nello staging CSS, senza link o attivazione nel runtime.
 
 U1 aggiornamento: 19 file predisposti in ui/css, ui/fonts e ui/assets (inattivi); tre font/licenze copiati senza alterazioni, manifest completo. Fixture isolata e HTTP/offline/cascade/visual1440×900 PASS. [U1_ASSET_STAGING_REPORT.md](U1_ASSET_STAGING_REPORT.md). Nessun link nel boot applicativo; U2 non autorizzata.
+
+U2 aggiornamento: i font/asset U1 sono ora usati dalle sole regioni shell/dialoghi/auth U2 tramite copie CSS scoped e integration; file U1/frozen intatti. Le precedenti note «non attivo» descrivono lo staging U1. Vedi U2_REPORT.md e evidence/U2/css-adapters.json. Sidebar/dock/HUD/TM interni restano legacy; U3 non autorizzata.

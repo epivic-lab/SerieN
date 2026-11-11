@@ -1,0 +1,5 @@
+
+  work/m2-lifecycle-bundle.js  264.6kb
+
+⚡ Done in 89ms
+{"result": "PASS", "checks": ["no unload guard before edits", "dirty draft guarded", "discard removes draft guard", "session-only confirmed projects guarded", "dispose removes unload handler, dialog and launcher action", "25 mount/open/dispose cycles leave no observable guard or dialog residue"], "pageErrors": [], "limit": "Synthetic cancelable beforeunload verifies handler behavior, not native browser prompt presentation."}

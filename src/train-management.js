@@ -12,7 +12,7 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
   dialog.innerHTML=`<header class="managementHead"><div><span class="eyebrow">ROLLING STOCK · 1:160</span><h2 id="managementTitle">Train Management</h2></div><button type="button" data-close>✕ Close</button></header><p class="managementIntro">Explore available models, inspect real trains and design independent projects.</p><nav class="managementNav" aria-label="Train Management views"><button type="button" data-view="layout">On the layout</button><button type="button" data-view="catalog">Model catalog</button><button type="button" data-view="projects">Projects</button><button type="button" data-view="depot">Depot</button></nav><div class="managementBody"></div>`;
   document.body.append(dialog);
   const sideView=createTrainSideView();
-  let generation=0,inventory;
+  let generation=0,inventory,launcher=button;
   const projects=createTrainProjectsView({getTrains,getSelected,getGeneration:()=>generation,onChange:()=>{inventory?.reconcile();signature='';sync();}});
   inventory=createDepotInventory({getProjects:()=>projects.snapshot.confirmed});
   const depot=createDepotView({inventory,getProjects:()=>projects.snapshot,getTrains,getDetached,getGeneration:()=>generation,onChange:()=>{signature='';sync();}});
@@ -64,13 +64,14 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
     else {body.replaceChildren();if(view==='catalog')catalog();else layout();}body.scrollTop=scroll;
     if(focused!==undefined)body.querySelector(`[data-composition="${Number(focused)}"]`)?.focus();
   }
-  button.onclick=()=>{signature='';dialog.showModal();sync();};
+  function open(initialView,origin=button){if(disposed)return;if(['layout','catalog','projects','depot'].includes(initialView))view=initialView;launcher=origin;signature='';if(!dialog.open)dialog.showModal();sync();}
+  button.onclick=()=>open(undefined,button);
   function requestClose(){if(projects.discard())dialog.close();}
   dialog.querySelector('[data-close]').onclick=requestClose;
   dialog.addEventListener('cancel',event=>{event.preventDefault();requestClose();});
   function beforeUnload(event){if(projects.dirty||projects.hasProjects||inventory.size>0){event.preventDefault();event.returnValue='';}}
   window.addEventListener('beforeunload',beforeUnload);
   for(const b of dialog.querySelectorAll('[data-view]'))b.onclick=()=>{view=b.dataset.view;sync();};
-  dialog.addEventListener('close',()=>button.focus());
-  return {sync,invalidateReferences(){generation++;signature='';sync();},update(now){if(dialog.open&&now-lastSync>=250){lastSync=now;sync();}},dispose(){disposed=true;button.onclick=null;sideView.dispose();projects.dispose();depot.dispose();inventory.dispose();window.removeEventListener('beforeunload',beforeUnload);dialog.remove();}};
+  dialog.addEventListener('close',()=>{if(launcher?.isConnected)launcher.focus();});
+  return {sync,open,get sessionSummary(){return Object.freeze({dirty:projects.dirty,projects:projects.snapshot.confirmed.length,depot:inventory.size,hasSessionData:projects.dirty||projects.hasProjects||inventory.size>0,generation});},invalidateReferences(){generation++;signature='';sync();},update(now){if(dialog.open&&now-lastSync>=250){lastSync=now;sync();}},dispose(){disposed=true;button.onclick=null;sideView.dispose();projects.dispose();depot.dispose();inventory.dispose();window.removeEventListener('beforeunload',beforeUnload);dialog.remove();}};
 }

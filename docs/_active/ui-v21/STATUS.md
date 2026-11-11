@@ -1,13 +1,13 @@
-# UI V2.1 — U1 Asset Staging & Isolated Visual Foundation
+# UI V2.1 — U2 Shell, Header, Dialogs & TM Launchers
 
-**U1 READY FOR REGIA REVIEW — STOP. U2–U9 non autorizzate.** U0 e Font Gate approvati; autorizzazioni U1 duplicate identiche conservate una volta.
+**U2 READY FOR REGIA REVIEW — STOP. U3–U9 non autorizzate.** U1 approvata, U2 autorizzata dal mandato in evidence/U2/AUTHORIZATION_U2.md.
 
-Branch codex/ui-v2-integration, checkpoint iniziale locale/remoto `65b910bc25def1f0064a0758e29f8d5715314568`, baseline applicativa `91722fbdf6671e69deebf645c3d8bf389212f421`, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d` verificati.
+Branch codex/ui-v2-integration, checkpoint iniziale approvato `74a8d91c2feafcb826ee316862ec2e8bf7d12a56`, baseline ferroviaria/M2/M3 `91722fbdf6671e69deebf645c3d8bf389212f421`, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d` verificati. Nessun merge/rebase/main/deploy.
 
-19 file staging inattivi in ui/: 5 CSS,6 texture,1 sprite,3 WOFF2 approvati,3 licenze e manifest. Unico import Google Fonts rimosso dalla copia tokens V1 con diff; CSS/token design altrimenti verbatim, sette simboli TM visivi aggiunti alla copia sprite. Nessun asset ferroviario sovrascritto, nessun index/runtime collegato ai fogli.
+Shell/header/Menu e skin auth/Help/Plan integrate regionalmente con CSS scoped; A01 Sign out one-shot con A02 summary reale e A03 guard U2 soltanto; TM istanza unica/launcher/focus. Qualità e rollingModels usano gli handler originali. UI sound opt-in separato dalla vera Bell. Sidebar/dock/HUD/camera/viste interne TM restano legacy, conferme reset/Composer/Depot originali.
 
-Fixture isolata 1440×900: HTTP200 su tutti gli asset locali, font loaded/pesi/famiglie reali, no synthetic, nessuna richiesta esterna o script/errori, offline locale PASS. Cascade misurata su sette campioni con/senza legacy: zero differenze non spiegate. Screenshot HTTP ispezionato. Build/bundle identico PASS,226file protetti byte-identici a baseline. Nessuna suite storica ripetuta o evidenza U0/PRE-U1 sovrascritta.
+PASS: 254 Node,9 Python,build/canonico, test U2 10 gruppi e16 screenshot (15 matrice+login), pointer OrbitControls, M1/M2/M3 e lifecycle, R1/5C11scenari, console/PhaseZero, native finale6gruppi/7checkpoint/74frame con3treni. Tutti16comandi registrati exit0. 215/226file baseline identici;11delta autorizzati app/index/TM e8test con sole sostituzioni di selettore dialog. Motore/store/Auth/Supabase/asset/dipendenze/workflow protetti invariati. Bundle finale `3112b76b6988dc9f5932511cbe31336f0e1b2e68cff15bfff1b26e722e572fa1` verificato anche nel gate nativo.
 
-[Rapporto U1](U1_ASSET_STAGING_REPORT.md), [evidenze](evidence/U1/). UI integrata/altri viewport/browser/hardware NOT VERIFIED, non deducibili dal campione statico. SHA checkpoint e verifica remoto nella consegna.
+[Rapporto U2](U2_REPORT.md), [risultati e provenienza](evidence/U2/RESULTS.json). OAuth reale/altre piattaforme/hardware/accettazione UI completa NOT VERIFIED; software0,645fps non certifica fluidità. Packaging Pages ui/ necessario prima di una futura release autorizzata, fuori U2 e non modificato ora.
 
-Prossima azione unica: review Regia U1 e nuova autorizzazione U2. Nessun merge/rebase/reset/deploy/release.
+Prossima azione unica: audit Regia U2 e nuova autorizzazione esplicita U3. SHA checkpoint remoto verificato nella consegna.

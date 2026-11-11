@@ -59,7 +59,7 @@ with sync_playwright() as pw:
   assert page.locator('[data-depot-physical-id]').evaluate_all('(nodes)=>nodes.every(n=>n.dataset.generation==="1")')
   projects();assert planned()==new_ids;depot();check('ResetRefreshesPhysicalReferencesAndPreservesM2AndVirtualReservations')
   for width,height,name in [(1024,768,'tablet-landscape'),(768,1024,'tablet-portrait')]:
-   page.set_viewport_size({'width':width,'height':height});assert page.evaluate('document.documentElement.scrollWidth<=innerWidth');assert page.locator('dialog').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
+   page.set_viewport_size({'width':width,'height':height});assert page.evaluate('document.documentElement.scrollWidth<=innerWidth');assert page.locator('dialog.trainManagement').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
    page.get_by_label('Inventory model',exact=True).select_option('native-steam');da('add').tap();created=items()[-1]['id'];da('remove-'+created).tap();assert items()==saved
    assert page.locator('.managementDepot button').evaluate_all('(nodes)=>nodes.every(n=>n.getBoundingClientRect().height>=44)')
    page.locator('.managementDepot').evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(out/(name+'.png')))

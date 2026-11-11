@@ -68,7 +68,7 @@ with sync_playwright() as pw:
   for width,height,label in [(1024,768,'landscape'),(768,1024,'portrait')]:
    page.set_viewport_size({'width':width,'height':height});native_click('[data-project-action="edit"]',True);native_click('[data-project-action="flip-'+planned[0]+'"]',True);native_click('[data-project-action="confirm"]',True)
    native_click('[data-zoom="in"]',True);native_click('[data-fit]',True)
-   assert page.locator('.sideViewport').evaluate('(e)=>e.scrollLeft===0&&e.scrollWidth<=e.clientWidth+1');assert page.locator('dialog').evaluate('(e)=>e.scrollWidth<=e.clientWidth')
+   assert page.locator('.sideViewport').evaluate('(e)=>e.scrollLeft===0&&e.scrollWidth<=e.clientWidth+1');assert page.locator('dialog.trainManagement').evaluate('(e)=>e.scrollWidth<=e.clientWidth')
    current=checkpoint('confirmed-by-trusted-native-touch-'+label);assert current['railway']['identities']==initial['railway']['identities'];check('trustedNativeTouchEditConfirmZoomFit-'+label)
   r['trustedInputEvents']=page.evaluate('__trustedEditorEvents');assert sum(e['trusted'] for e in r['trustedInputEvents'])>=13;assert any(e['trusted'] and e['pointerType']=='mouse' for e in r['trustedInputEvents']);assert any(e['trusted'] and e['pointerType']=='touch' for e in r['trustedInputEvents'])
   # Restore the planned forward orientation for the physical comparison.
@@ -84,7 +84,7 @@ with sync_playwright() as pw:
    page.set_viewport_size({'width':width,'height':height});click('[data-zoom="in"]')
    page.locator('.sideViewport').evaluate('(e)=>{e.scrollLeft=e.scrollWidth;}');assert page.locator('.sideViewport').evaluate('(e)=>e.scrollLeft>0')
    click('[data-fit]');assert page.locator('.sideViewport').evaluate('(e)=>e.scrollLeft===0&&e.scrollWidth<=e.clientWidth+1')
-   assert page.locator('dialog').evaluate('(e)=>e.scrollWidth<=e.clientWidth');checkpoint('native-project-'+label)
+   assert page.locator('dialog.trainManagement').evaluate('(e)=>e.scrollWidth<=e.clientWidth');checkpoint('native-project-'+label)
   page.locator('.projectEditor').evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(out/'project-native-portrait.png'),timeout=120000);check('nativeProjectZoomScrollFitAndResponsiveViewsDuringMovement')
   click('[data-view="layout"]')
   for id in [2,0]:

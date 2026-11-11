@@ -4,3 +4,27 @@
 @font-face{font-family:'Cutive Mono';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/CutiveMono-400.woff2') format('woff2')}
 /* CTRL-027: enable exact font weights in isolated foundation; no synthetic bold/italic. */
 #u1-fixture{font-synthesis:none}
+/* CTRL-001/027: U2-only regions. Frozen U1 CSS remains intact; scoped copies contain cascade. */
+.u2-region{font:400 14px Federo,sans-serif;font-synthesis:none;color:#f2e8d0}
+.top.u2-region{padding:4px;min-height:72px;display:block}.top.u2-region>.mi{width:100%;gap:10px}.u2-edition{font:400 13px 'Cutive Mono';color:#a9bfae}.u2-running{font:400 13px Federo;white-space:nowrap}
+.u2-region button.bt{min-height:44px;font-weight:400}.u2-region button:disabled{opacity:.5;cursor:not-allowed}
+/* CTRL-002/003/014: native dialogs preserve modal focus/top-layer; readable local settings. */
+dialog.u2-region{padding:4px;max-width:min(520px,calc(100vw - 24px));width:100%;border:0;border-radius:14px;background:#a9802f;color:#f2e8d0;max-height:calc(100dvh - 24px);overflow:auto}
+dialog.u2-region::backdrop{background:#030705b0}dialog.u2-region .mi{height:auto;overflow:visible}dialog.u2-region h2{font:700 22px 'Cinzel Decorative';color:#d9b45f;margin:6px 0 18px}.u2-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.u2-settings{display:grid;gap:16px}.u2-setting{display:grid;gap:8px}.u2-setting select{min-height:44px;width:100%;font:400 15px Federo;background:#173328;color:#f2e8d0;border:1px solid #d9b45f;border-radius:5px;padding:6px}.u2-note{font:400 14px Federo;line-height:1.5;color:#a9bfae}
+/* CTRL-005/006: preserve the existing real modal IDs, generated plan and content. */
+.u2-modal .dialog{padding:4px;background:#a9802f;border-radius:14px;max-height:90dvh;overflow:auto}.u2-modal .dialog>.mi{height:auto;overflow:visible}.u2-modal p{font:400 15px Federo;line-height:1.5}.u2-modal h2{font:700 22px 'Cinzel Decorative';color:#d9b45f}.u2-modal a{color:#f6e2a4}.u2-modal[hidden]{display:none}
+/* CTRL-001: skin only; original gate states and original inline display/visibility rules win. */
+#authGate .authPanel{background:linear-gradient(#1f4337,#0f271f);border:3px solid #a9802f;color:#f2e8d0;font:400 16px Federo}#authGate h1{font:700 24px 'Cinzel Decorative'}#authGate button{font:400 16px Federo;min-height:44px;background:linear-gradient(#f6e2a4,#a9802f);color:#2a1d08}
+/* CTRL-027: mobile application navigation is shell-only, no invisible viewport overlay. */
+.u2-mobile{display:none}@media(max-width:700px){.top.u2-region>.mi{flex-wrap:wrap;padding:8px;gap:8px}.u2-edition,.u2-running{display:none}.top.u2-region #homeView{display:none}.top.u2-region .plq{margin-right:auto}.top.u2-region .sp{display:none}.top.u2-region #trainManagement{font-size:13px}.top.u2-region #planBtn,.top.u2-region #helpBtn{display:none}.u2-mobile{display:flex;gap:6px;flex-wrap:wrap;padding:6px;background:#132519}.u2-mobile .bt{flex:1;min-height:44px;font-size:14px}}
+/* CTRL-002/027: scope roots are not .st; explicitly supply the design's zero-night surface and bounded plaque. */
+.u2-region{--n:0;--k:0;--dk:linear-gradient(#0000,#0000);--dk2:linear-gradient(#0000,#0000)}
+.top.u2-region .plq{position:relative;inset:auto;width:auto;flex:0 0 auto;transform:none;padding:8px 12px}
+.top.u2-region>.mi{min-height:60px;height:auto}.u2-menu .mi,.u2-guard .mi,.u2-modal .mi{background:linear-gradient(180deg,#1f4337,#0f271f)}
+.app.u2-frame{grid-template-rows:auto minmax(300px,1fr) auto}
+@media(max-width:700px){.top.u2-region .plq{padding:6px 12px}.top.u2-region>.mi{min-height:56px}.u2-region .u2-note{font-size:15px}}
+/* CTRL-002/027: explicit scope-root flex and native-dialog panels (V1 .dlgp animation coordinator is not imported). */
+.top.u2-region>.mi{display:flex;align-items:center;flex-wrap:nowrap}.u2-menu .m,.u2-guard .m{animation:none}
+@media(max-width:700px){.top.u2-region>.mi{flex-wrap:wrap}}
+/* CTRL-027: brass launcher uses the approved dark ink for readable contrast, shell only. */
+.top.u2-region #trainManagement{color:#2a1d08}

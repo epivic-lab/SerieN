@@ -22,9 +22,9 @@ with sync_playwright() as p:
  page.locator('#open').click();page.locator('[data-view="projects"]').click();page.locator('[data-project-action="new"]').click();assert page.evaluate(guard)
  page.once('dialog',lambda d:d.accept());page.locator('[data-project-action="cancel"]').click();assert not page.evaluate(guard)
  page.locator('[data-project-action="new"]').click();page.get_by_label('Catalog model',exact=True).select_option('native-steam');page.locator('[data-project-action="add"]').click();page.locator('[data-project-action="confirm"]').click();assert page.evaluate(guard)
- page.evaluate('projectWindow.dispose()');assert not page.evaluate(guard);assert page.locator('dialog').count()==0
+ page.evaluate('projectWindow.dispose()');assert not page.evaluate(guard);assert page.locator('dialog.trainManagement').count()==0
  for _ in range(25):page.evaluate('projectWindow=mountProjectWindow();document.getElementById("open").click();projectWindow.dispose()')
- assert not page.evaluate(guard);page.locator('#open').click();assert page.locator('dialog').count()==0
+ assert not page.evaluate(guard);page.locator('#open').click();assert page.locator('dialog.trainManagement').count()==0
  assert not errors,errors
  result={'result':'PASS','checks':['no unload guard before edits','dirty draft guarded','discard removes draft guard','session-only confirmed projects guarded','dispose removes unload handler, dialog and launcher action','25 mount/open/dispose cycles leave no observable guard or dialog residue'],'pageErrors':errors,'limit':'Synthetic cancelable beforeunload verifies handler behavior, not native browser prompt presentation.'}
  (out/'browser.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result));b.close()

@@ -17,10 +17,10 @@ with sync_playwright() as p:
  guard="()=>{const e=new Event('beforeunload',{cancelable:true});dispatchEvent(e);return e.defaultPrevented;}"
  assert not page.evaluate(guard)
  page.locator('#open').click();page.locator('[data-view="depot"]').click();page.locator('[data-depot-action="add"]').click();assert page.evaluate(guard)
- page.locator('dialog [data-close]').click();page.locator('#open').click();assert page.locator('[data-depot-id]').count()==1
+ page.locator('dialog.trainManagement [data-close]').click();page.locator('#open').click();assert page.locator('[data-depot-id]').count()==1
  page.locator('[data-depot-action^="remove-"]').click();assert not page.evaluate(guard)
- page.locator('[data-depot-action="add"]').click();assert page.evaluate(guard);page.evaluate('depotWindow.dispose()');assert not page.evaluate(guard);assert page.locator('dialog').count()==0
+ page.locator('[data-depot-action="add"]').click();assert page.evaluate(guard);page.evaluate('depotWindow.dispose()');assert not page.evaluate(guard);assert page.locator('dialog.trainManagement').count()==0
  for _ in range(25):page.evaluate("depotWindow=mountDepotWindow();document.getElementById('open').click();document.querySelector('[data-view=depot]').click();document.querySelector('[data-depot-action=add]').click();depotWindow.dispose()")
- assert not page.evaluate(guard);page.locator('#open').click();assert page.locator('dialog').count()==0;assert not errors,errors
+ assert not page.evaluate(guard);page.locator('#open').click();assert page.locator('dialog.trainManagement').count()==0;assert not errors,errors
  result={'status':'PASS','checks':['virtual inventory guard without M2 projects','close/reopen preserves records','removing last record clears guard','dispose removes guard and dialog','25 create/open/add/dispose cycles leave no observable residue'],'pageErrors':errors,'limit':'Synthetic cancelable beforeunload tests the handler, not physical browser prompt presentation.'}
  (out/'result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result));b.close()

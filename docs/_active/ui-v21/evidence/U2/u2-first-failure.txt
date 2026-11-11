@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U2.py", line 30, in <module>
+    assert p.evaluate('__serienDiagnostics.railwayState()')==initial;check('dialog-browsing-no-railway-mutation')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

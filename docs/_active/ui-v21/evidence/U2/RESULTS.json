@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "bundleSHA256": "3112b76b6988dc9f5932511cbe31336f0e1b2e68cff15bfff1b26e722e572fa1",
+  "nativeBundleIdentical": true,
+  "nativeChecks": 6,
+  "nativeFrameStats": {
+    "frames": 74,
+    "durationMs": 113112.09999999999,
+    "fps": 0.6453774618276913
+  },
+  "U2Checks": [
+    "UI-sound-toggle-independent-from-real-bell-mute",
+    "four-quality-modes-and-disabled-title",
+    "real-session-summary-cancel-zero-logout",
+    "same-store-and-close-preserves-inventory",
+    "dialog-browsing-no-railway-mutation",
+    "mobile-stock-same-instance-focus-return",
+    "15-screenshots-shell-menu-help-plan-confirm-and-Escape",
+    "confirm-and-double-event-exactly-one-original-listener",
+    "obsolete-and-disposed-intents-no-callback",
+    "locked-boot-and-login-skin-local-auth-boundary"
+  ],
+  "commands": {
+    "node-delivery": {
+      "exit": 0
+    },
+    "build-delivery": {
+      "exit": 0
+    },
+    "python-final": {
+      "exit": 0
+    },
+    "canonical-final": {
+      "exit": 0
+    },
+    "canonical-diff": {
+      "exit": 0
+    },
+    "u2-final-screens": {
+      "exit": 0
+    },
+    "pointer": {
+      "exit": 0
+    },
+    "m1-latest": {
+      "exit": 0
+    },
+    "m2-latest": {
+      "exit": 0
+    },
+    "m3-latest": {
+      "exit": 0
+    },
+    "m2-lifecycle": {
+      "exit": 0
+    },
+    "m3-lifecycle": {
+      "exit": 0
+    },
+    "railway": {
+      "exit": 0
+    },
+    "deck": {
+      "exit": 0
+    },
+    "phase-zero": {
+      "exit": 0
+    },
+    "native-final": {
+      "exit": 0
+    }
+  }
+}

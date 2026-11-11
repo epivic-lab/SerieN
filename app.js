@@ -1,3 +1,4 @@
+import {mountShell} from './src/ui/shell.js';
 import {createGuardedStops} from './src/guarded-stop-scene.js';
 import {animateAuxiliaryWheels} from './src/rolling-stock-animation.js';
 import {stepRailway} from './src/railway-step.js';
@@ -34,7 +35,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 const $ = (id) => document.getElementById(id);
 const host = $("view3d");
-let nextSwitchHUD = null, trainDeck = null, trainManagement = null;
+let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null;
 let highlightUntil=0,highlightUpdated=0;
 importedTrains($("rollingModels").value === "kenney");
 const scene = new THREE.Scene();
@@ -653,7 +654,7 @@ $("pause").onclick = () => {
   paused = !paused;
   $("pause").textContent = paused ? "\u25B6 Resume" : "\u2161 Pause";
   log(paused ? "Simulation paused." : "Simulation resumed.");
-  trainDeck?.update();
+  trainDeck?.update();uiShell?.update();
 };
 $("reset").onclick = reset;
 $("homeView").onclick = () => {
@@ -697,6 +698,7 @@ trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains
 trainManagement=mountTrainManagement({button:$("trainManagement"),getTrains:()=>trains,getDetached:()=>detached,getSelected:()=>selected,getImportedCatalog:getTrainAssetCatalog,
   onSelect:select,onFocus:(id)=>{select(id);nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
 });
+uiShell=mountShell({management:trainManagement,isPaused:()=>paused});
 nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState});
 const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
 function applyQuality(profile) {
@@ -745,6 +747,7 @@ window.addEventListener("pagehide", (e) => {
   guardedStops.dispose();
   turnoutArrows.dispose();
   turnoutPicking.dispose();
+  uiShell?.dispose();
   trainManagement?.dispose();
   trainDeck?.dispose();
   nav.dispose();
@@ -778,7 +781,7 @@ function tick(now) {
   frame++;
   trainManagement?.update(now);
   renderVehicles();
-  trainDeck?.update();
+  trainDeck?.update();uiShell?.update();
   const night = clamp((day - 35) / 65, 0, 1);
   sun.intensity = lerp(2.65, 0.16, night);
   sun.color.copy(new THREE.Color(day>40?"#f4cd9d":"#fff0d5").lerp(new THREE.Color("#a9bee4"),night));
@@ -867,7 +870,7 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
       advanceFleet(dt);
     }
     renderVehicles();
-    trainDeck?.update();
+    trainDeck?.update();uiShell?.update();
     nextSwitchHUD?.refresh(true);
     updateRouteHighlight(true);
   },
@@ -875,7 +878,7 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
     if(!Array.isArray(intervals)||intervals.length>10000||intervals.some(dt=>!Number.isFinite(dt)||dt<0))throw new RangeError("Invalid diagnostic frames");
     const frameClock=new FixedClock();
     for(const elapsed of intervals)frameClock.update(elapsed,advanceFleet);
-    renderVehicles();trainDeck?.update();nextSwitchHUD?.refresh(true);updateRouteHighlight(true);
+    renderVehicles();trainDeck?.update();uiShell?.update();nextSwitchHUD?.refresh(true);updateRouteHighlight(true);
   },
   setSwitches(on) {
     if(!Array.isArray(on)||on.some((id)=>!switchSpecs.some((s)=>s.id===id)))throw new RangeError("Unknown diagnostic control");

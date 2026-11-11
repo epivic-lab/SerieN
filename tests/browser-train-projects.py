@@ -57,10 +57,10 @@ with sync_playwright() as pw:
         # Keep the draft across navigation; rejecting close and Escape must preserve it.
         page.locator('[data-view="catalog"]').click();assert page.locator('.managementModel').count()==14
         page.locator('[data-view="projects"]').click();assert len(rows())==6
-        answer(False);page.locator('dialog [data-close]').click();assert page.locator('dialog').evaluate('(d)=>d.open')
+        answer(False);page.locator('dialog.trainManagement [data-close]').click();assert page.locator('dialog.trainManagement').evaluate('(d)=>d.open')
         answer(False);page.keyboard.press('Escape');assert len(rows())==6
         answer(False);action('new').click();assert page.get_by_label('Project name',exact=True).input_value()=='Regional project'
-        page.locator('[data-view="layout"]').click();answer(False);page.get_by_role('button',name='Focus in 3D').click();assert page.locator('dialog').evaluate('(d)=>d.open')
+        page.locator('[data-view="layout"]').click();answer(False);page.get_by_role('button',name='Focus in 3D').click();assert page.locator('dialog.trainManagement').evaluate('(d)=>d.open')
         page.locator('[data-view="projects"]').click();assert len(rows())==6
         check('unsavedCloseEscapeNavigationReplacementGuards')
         assert state()==initial,'draft changes must not affect any railway state'
@@ -99,7 +99,7 @@ with sync_playwright() as pw:
         for width,height,label in [(1440,1000,'desktop'),(1024,768,'tablet-landscape'),(768,1024,'tablet-portrait')]:
             page.set_viewport_size({'width':width,'height':height})
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
-            assert page.locator('dialog').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
+            assert page.locator('dialog.trainManagement').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
             action('flip-'+rows()[0]).tap();action('flip-'+rows()[0]).tap()
             page.locator('[data-zoom="in"]').tap();page.locator('[data-fit]').tap()
             assert page.locator('.projectEditor button').evaluate_all('(nodes)=>nodes.every(n=>n.getBoundingClientRect().height>=44)')
@@ -119,7 +119,7 @@ with sync_playwright() as pw:
         page.get_by_label('Catalog model',exact=True).select_option('kenney-box');action('add').tap();action('confirm').tap()
         assert page.locator('.projectList [data-project-id]').count()==3
         check('tabletTouchCreateAddConfirmKenneyProject')
-        page.locator('dialog [data-close]').click()
+        page.locator('dialog.trainManagement [data-close]').click()
         assert page.locator('#trainManagement').evaluate('(b)=>document.activeElement===b')
         assert not result['pageErrors'] and not result['failedRequests'] and not result['httpFailures'],result
         result['result']='PASS';save();print(json.dumps(result))
