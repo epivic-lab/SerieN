@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-11",
+  "baseline_remote": "46f2655f4a5d332c2ea6adac2fb895b37ed87c4b",
+  "history_sha256": "all three equal to S1 and recovered manifest",
+  "first_two_sql_bytes": "equal to fresh remote statements[1]",
+  "email_migration": "byte-identical to baseline",
+  "current_remote_vs_saved_catalog": "PASS, empty diff",
+  "manifest_pins": "PASS",
+  "production_mutations": false,
+  "replayed_catalog_sha256_recovered": "6698ecc7398357e4e8cb6048afc879f67a494e2c040d86caa353c8daeb1d066d",
+  "original_replay_result_sha256": "8c88fec19b1a78b46fc8e9c215b56fdf71fc4f4a7e472b38e9163291cbd1db78"
+}

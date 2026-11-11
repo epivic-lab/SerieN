@@ -1,0 +1,166 @@
+{
+  "branch": "codex/supabase-alignment-s2",
+  "head": "46f2655f4a5d332c2ea6adac2fb895b37ed87c4b",
+  "untracked_files": {
+    "docs/supabase/alignment/manifest.json": {
+      "sha256": "38795ef1e91dfcc93c717a5b1e1d72ef25750ab7e6d95c651437e9504fab6815",
+      "bytes": 8850
+    },
+    "docs/supabase/alignment/remote-catalog.json": {
+      "sha256": "4494572d7a2cfcec95c0c3b7e681b29b7cbf89ec218d3c14ff24e68c613ce39e",
+      "bytes": 137509
+    },
+    "scripts/qualify-supabase-cli.py": {
+      "sha256": "7bd8d0bcbcaae40ade9d6860e307d6c5979d45a56c4fcf0bc1f866e75d98135e",
+      "bytes": 2682
+    },
+    "scripts/verify-supabase-alignment.py": {
+      "sha256": "6140dd818b4984f9d84742d0962f543a5f88581701f11675f7a3868c6244f5f1",
+      "bytes": 8814
+    },
+    "supabase/migrations/20261029230530_serien_core_schema.sql": {
+      "sha256": "30cef69efb7a798152f13d33922e03192410207c5058d271bfd85c2c73d38754",
+      "bytes": 8010
+    },
+    "supabase/migrations/20261029230558_serien_constraints_security.sql": {
+      "sha256": "097dc090f224bbba8cd614a557d5c736b4f881b67f0ab5ac8e25f8c44fcbc849",
+      "bytes": 8884
+    },
+    "tests/supabase-alignment/bootstrap.sql": {
+      "sha256": "6f335b6d5d7b017892c1644dfa2e75804933019e939ee369f6082ec47dd17f56",
+      "bytes": 1697
+    },
+    "tests/supabase-alignment/catalog.sql": {
+      "sha256": "248e6c7a503f9f4ddbf4160b301ebbfd0955bc7be1ab5694aa56a78ed36ed230",
+      "bytes": 6200
+    },
+    "tests/supabase-alignment/compare.py": {
+      "sha256": "0f1d99c42aeb69d1b85bc303ba5b5b5006f2c5b1ce79c53211fc3101b2590c9b",
+      "bytes": 3190
+    },
+    "tests/supabase-alignment/deferred-commit.sql": {
+      "sha256": "0f7556b43466f5b539de4b3dedf411fe5e533ad6331c91b75153a5d358298b45",
+      "bytes": 452
+    },
+    "tests/supabase-alignment/security.sql": {
+      "sha256": "36c50ffd68a389277e28c04db96ecf17353dfbef21e5e8524e1416a1ca662996",
+      "bytes": 13851
+    }
+  },
+  "evidence_files": {
+    "cli-root-help.txt": {
+      "sha256": "0d52d7bf685aa53520957876e475d356cdaa448f7080c922b77afc6702967eaa",
+      "bytes": 4443
+    },
+    "cli-db-help.txt": {
+      "sha256": "869be71dc79bb5e418a179622da9fde1b419c4f271a076b4b3f850d3bbac1135",
+      "bytes": 2888
+    },
+    "cli-query-help.txt": {
+      "sha256": "9af0f53396d1b0c3db1e64c104ac4409a6f7781d6bbf0fb892ef6ba3fff77bfb",
+      "bytes": 3045
+    },
+    "python-tests.txt": {
+      "sha256": "7d21a407289990089a56b09a902b923514e40ba0582069895b9cd2268275e0ff",
+      "bytes": 107
+    },
+    "cli-migration-help.txt": {
+      "sha256": "b7b5ed1f792db54706dbcc46ef251cb6c565bf3d62ae73af3439a740ace3c605",
+      "bytes": 2747
+    },
+    "cli-diff-help.txt": {
+      "sha256": "2f56eff22d089ab7b0716bdf8963991952ea3b66f1540b84fd69918398cd7b7c",
+      "bytes": 4341
+    },
+    "cli-dump-help.txt": {
+      "sha256": "1a6535d1b100c26bd0333ebedd21d6244dcbe0a1db1f0e356e6a8b19d1b9fc58",
+      "bytes": 3732
+    },
+    "cli-list-help.txt": {
+      "sha256": "0326230f6a1f2256ba9966aebd7b86135553ab43956f23790bcbb041f1e51fb1",
+      "bytes": 3192
+    },
+    "node-tests.txt": {
+      "sha256": "255d9f05c188bcce9eac5f18c2bb44cff1ee4c16cc96c00caefad8db754f9ae0",
+      "bytes": 2071
+    },
+    "build.txt": {
+      "sha256": "29504f76a63c9a268f041e2bcfea96d2a17a7d237cf0976301f9b5b91b03f812",
+      "bytes": 140
+    },
+    "remote-history.json": {
+      "sha256": "73dfb175972d8f2eaaec08ef32a5dd0414c841efa18ac875df86be535a13956f",
+      "bytes": 20829
+    },
+    "cli-config-diff-help.txt": {
+      "sha256": "b96c3c368a031c7a5b153fba622009200609ac48ef6f0700ab2c9b76a40a33cb",
+      "bytes": 3341
+    },
+    "qualification/query.txt": {
+      "sha256": "9af0f53396d1b0c3db1e64c104ac4409a6f7781d6bbf0fb892ef6ba3fff77bfb",
+      "bytes": 3045
+    },
+    "qualification/dump.txt": {
+      "sha256": "1a6535d1b100c26bd0333ebedd21d6244dcbe0a1db1f0e356e6a8b19d1b9fc58",
+      "bytes": 3732
+    },
+    "qualification/qualification.json": {
+      "sha256": "4e28fcd35db50687a40cfb881ed9818c0a2fc19abd26bb34416675d1d27350b8",
+      "bytes": 733
+    },
+    "qualification/config-diff.txt": {
+      "sha256": "b96c3c368a031c7a5b153fba622009200609ac48ef6f0700ab2c9b76a40a33cb",
+      "bytes": 3341
+    },
+    "qualification/version.txt": {
+      "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c",
+      "bytes": 6
+    },
+    "qualification/list.txt": {
+      "sha256": "0326230f6a1f2256ba9966aebd7b86135553ab43956f23790bcbb041f1e51fb1",
+      "bytes": 3192
+    },
+    "qualification/db.txt": {
+      "sha256": "869be71dc79bb5e418a179622da9fde1b419c4f271a076b4b3f850d3bbac1135",
+      "bytes": 2888
+    },
+    "qualification/diff.txt": {
+      "sha256": "2f56eff22d089ab7b0716bdf8963991952ea3b66f1540b84fd69918398cd7b7c",
+      "bytes": 4341
+    },
+    "qualification/migration.txt": {
+      "sha256": "b7b5ed1f792db54706dbcc46ef251cb6c565bf3d62ae73af3439a740ace3c605",
+      "bytes": 2747
+    },
+    "qualification/root.txt": {
+      "sha256": "0d52d7bf685aa53520957876e475d356cdaa448f7080c922b77afc6702967eaa",
+      "bytes": 4443
+    },
+    "replay/replayed-catalog.json": {
+      "sha256": "6698ecc7398357e4e8cb6048afc879f67a494e2c040d86caa353c8daeb1d066d",
+      "bytes": 127460
+    },
+    "replay/result.json": {
+      "sha256": "8c88fec19b1a78b46fc8e9c215b56fdf71fc4f4a7e472b38e9163291cbd1db78",
+      "bytes": 1289
+    },
+    "replay/bootstrap.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "replay/deferred-commit.txt": {
+      "sha256": "dfe0689bd18ff52ed2321d9fbdffdd5ab52db35bf895ee5b49a1282dc9b81983",
+      "bytes": 362
+    },
+    "replay/catalog.diff": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "replay/security.txt": {
+      "sha256": "0c939bc7e6da8f5ba98d08be52b4591058063b2b816446eb1d28a23ff44f7da4",
+      "bytes": 445
+    }
+  },
+  "checkpoint": "https://github.com/epivic-lab/SerieN/issues/4",
+  "local_commits_since_baseline": 0
+}

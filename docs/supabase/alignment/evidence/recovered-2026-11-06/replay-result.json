@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "container_network": "none",
+  "ports_published": false,
+  "image": "postgres:17.11-alpine@sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac",
+  "platform_scope": "synthetic Auth adapter + observed public default privileges",
+  "migration_sha256": {
+    "20261029230530_serien_core_schema.sql": "30cef69efb7a798152f13d33922e03192410207c5058d271bfd85c2c73d38754",
+    "20261029230558_serien_constraints_security.sql": "097dc090f224bbba8cd614a557d5c736b4f881b67f0ab5ac8e25f8c44fcbc849",
+    "20261105155420_serien_verified_email_gate.sql": "85a83a622d4b192158278663136133178826e29941c0e2585da29e7652e6e06e"
+  },
+  "server_version": "PostgreSQL 17.11 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+  "catalog_comparison": "PASS",
+  "catalog_sections": {
+    "tables": 11,
+    "columns": 83,
+    "indexes": 28,
+    "schemas": 3,
+    "policies": 23,
+    "triggers": 14,
+    "functions": 10,
+    "constraints": 77,
+    "custom_roles": 0,
+    "custom_schemas": 2,
+    "default_privileges": 6,
+    "effective_privileges": 33
+  },
+  "negative_drift_control": "PASS",
+  "security_integrity_tests": "PASS",
+  "deferred_commit_rejection": "PASS",
+  "post_test_catalog_and_fixture_cleanup": "PASS",
+  "container_removed": true
+}

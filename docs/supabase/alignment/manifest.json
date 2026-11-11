@@ -1,0 +1,171 @@
+{
+  "format_version": 1,
+  "phase": "S2",
+  "baseline": "46f2655f4a5d332c2ea6adac2fb895b37ed87c4b",
+  "repository": "epivic-lab/SerieN",
+  "branch": "codex/supabase-alignment-s2",
+  "project": {
+    "ref": "vehfrjgifzjjgamrgwze",
+    "name": "SerieN",
+    "postgres_version_observed": "17.11.0.003",
+    "region": "eu-west-3"
+  },
+  "migrations": [
+    {
+      "version": "20261029230530",
+      "name": "serien_core_schema",
+      "file": "20261029230530_serien_core_schema.sql",
+      "remote_sha256": "30cef69efb7a798152f13d33922e03192410207c5058d271bfd85c2c73d38754",
+      "local_sha256": "30cef69efb7a798152f13d33922e03192410207c5058d271bfd85c2c73d38754",
+      "source": "supabase_migrations.schema_migrations.statements[1]; read-only S2 capture"
+    },
+    {
+      "version": "20261029230558",
+      "name": "serien_constraints_security",
+      "file": "20261029230558_serien_constraints_security.sql",
+      "remote_sha256": "097dc090f224bbba8cd614a557d5c736b4f881b67f0ab5ac8e25f8c44fcbc849",
+      "local_sha256": "097dc090f224bbba8cd614a557d5c736b4f881b67f0ab5ac8e25f8c44fcbc849",
+      "source": "supabase_migrations.schema_migrations.statements[1]; read-only S2 capture"
+    },
+    {
+      "version": "20261105155420",
+      "name": "serien_verified_email_gate",
+      "file": "20261105155420_serien_verified_email_gate.sql",
+      "remote_sha256": "3db4ee578dfe8efb1c6e877fc2175238f2f1ba312cbc9d3384a04c74f8f7cbc7",
+      "local_sha256": "85a83a622d4b192158278663136133178826e29941c0e2585da29e7652e6e06e",
+      "source": "supabase_migrations.schema_migrations.statements[1]; read-only S2 capture"
+    }
+  ],
+  "remote_gate_sql": "-- SerieN: allowlisted verified email access, additive and non-destructive.\nCREATE SCHEMA serien_access;\nREVOKE ALL ON SCHEMA serien_access FROM PUBLIC, anon, authenticated;\n\nCREATE TABLE serien_access.allowed_emails (\n  email text PRIMARY KEY,\n  created_at timestamptz NOT NULL DEFAULT now(),\n  CONSTRAINT normalized_email CHECK (email = lower(btrim(email)) AND position('@' IN email) > 1)\n);\nALTER TABLE serien_access.allowed_emails ENABLE ROW LEVEL SECURITY;\nREVOKE ALL ON serien_access.allowed_emails FROM PUBLIC, anon, authenticated;\n\nCREATE FUNCTION public.serien_access_allowed()\nRETURNS boolean\nLANGUAGE sql STABLE SECURITY DEFINER\nSET search_path = ''\nAS $function$\n  SELECT EXISTS (\n    SELECT 1 FROM auth.users AS u\n      JOIN serien_access.allowed_emails AS a\n      ON a.email = lower(btrim(u.email))\n    WHERE u.id = (SELECT auth.uid())\n      AND u.email IS NOT NULL\n      AND u.email_confirmed_at IS NOT NULL\n  )\n$function$;\nREVOKE ALL ON FUNCTION public.serien_access_allowed() FROM PUBLIC, anon;\nGRANT EXECUTE ON FUNCTION public.serien_access_allowed() TO authenticated;\n\nCREATE POLICY serien_verified_email_gate ON public.consist_members\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n\nCREATE POLICY serien_verified_email_gate ON public.consists\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n\nCREATE POLICY serien_verified_email_gate ON public.layout_placements\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n\nCREATE POLICY serien_verified_email_gate ON public.layout_segments\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n\nCREATE POLICY serien_verified_email_gate ON public.layout_snapshots\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n\nCREATE POLICY serien_verified_email_gate ON public.layouts\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n\nCREATE POLICY serien_verified_email_gate ON public.loose_stock_placements\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n\nCREATE POLICY serien_verified_email_gate ON public.operation_receipts\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n\nCREATE POLICY serien_verified_email_gate ON public.stock_items\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n\nCREATE POLICY serien_verified_email_gate ON public.stock_models\n AS RESTRICTIVE FOR ALL TO authenticated\n USING (public.serien_access_allowed())\n WITH CHECK (public.serien_access_allowed());\n",
+  "gate_comparison": {
+    "bytes_equal": false,
+    "sql_tokens_equal": true,
+    "allowed_differences": [
+      "comments",
+      "whitespace",
+      "unquoted case"
+    ],
+    "local_file_preserved_from_baseline": true
+  },
+  "toolchain": {
+    "supabase_cli": "3.0.0",
+    "cli_archive_url": "https://github.com/supabase/cli/releases/download/v3.0.0/supabase_3.0.0_linux_amd64.tar.gz",
+    "cli_archive_sha256": "eeb61edcd59a4735fcb5e58596574f25d03d420efca779f43ddb307e1cc5c754",
+    "postgres_image": "postgres:17.11-alpine@sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac",
+    "node_ci": "22",
+    "python_ci": "3.12",
+    "dependencies": {
+      "three": "0.163.0",
+      "esbuild": "0.25.12",
+      "browser_supabase_js": "2.95.0 (CDN, outside npm lockfile)"
+    },
+    "package_lock_sha256": "cdc54245fcf16d326e11a32c1c6568f1b040bec20d1cd604913b4cdae0de58d8"
+  },
+  "pinned_files": {
+    "tests/supabase-alignment/catalog.sql": "248e6c7a503f9f4ddbf4160b301ebbfd0955bc7be1ab5694aa56a78ed36ed230",
+    "tests/supabase-alignment/bootstrap.sql": "6f335b6d5d7b017892c1644dfa2e75804933019e939ee369f6082ec47dd17f56",
+    "tests/supabase-alignment/security.sql": "36c50ffd68a389277e28c04db96ecf17353dfbef21e5e8524e1416a1ca662996",
+    "tests/supabase-alignment/deferred-commit.sql": "0f7556b43466f5b539de4b3dedf411fe5e533ad6331c91b75153a5d358298b45",
+    "tests/supabase-alignment/compare.py": "0f1d99c42aeb69d1b85bc303ba5b5b5006f2c5b1ce79c53211fc3101b2590c9b",
+    "docs/supabase/alignment/remote-catalog.json": "4494572d7a2cfcec95c0c3b7e681b29b7cbf89ec218d3c14ff24e68c613ce39e"
+  },
+  "external_configuration": {
+    "auth.providers": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "auth.site_url": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "auth.redirect_allow_list": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "auth.signup": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "auth.anonymous_sign_in": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "auth.jwt_expiry": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "auth.mfa": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "auth.rate_limits": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "data_api.exposed_schemas": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "data_api.extra_search_path": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "data_api.max_rows": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "github_integration.automatic_branching": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "github_integration.working_directory": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "github_integration.production_branch": {
+      "status": "NOT VERIFIED",
+      "value": null
+    },
+    "github_integration.deploy_to_production": {
+      "status": "NOT VERIFIED",
+      "value": null
+    }
+  },
+  "comparison_scope": {
+    "schemas": [
+      "public",
+      "serien_internal",
+      "serien_access"
+    ],
+    "include": [
+      "schemas/owners/ACL",
+      "relations/RLS/ACL",
+      "columns/defaults/column ACL",
+      "constraints",
+      "indexes",
+      "functions/source/owner/flags/config/ACL",
+      "triggers",
+      "policies",
+      "default privileges in application schemas",
+      "effective client and service_role privileges",
+      "serien* roles/schemas"
+    ],
+    "outside_scope": [
+      "platform schemas internals",
+      "hosted Auth/GoTrue and JWT verification",
+      "PostgREST configuration and routing",
+      "extensions not used by the three migrations",
+      "live Google OAuth",
+      "managed Preview runner configuration"
+    ]
+  },
+  "safety": {
+    "production_sql": "read-only catalog/history SELECT only",
+    "runner_database_network": "none",
+    "published_ports": false,
+    "synthetic_data_only": true,
+    "candidate_rpc_imported": false,
+    "production_config_file_added": false,
+    "pr_authorized_by_evidence": false
+  }
+}
