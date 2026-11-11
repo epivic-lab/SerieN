@@ -41,3 +41,10 @@ test('conservative capabilities never grant a whole-project or spatial coupling 
 test('draft lifecycle rejects implicit replacement and copy rejects unknown physical models without partial draft',()=>{
   const s=store();s.begin();assert.throws(()=>s.begin());assert.throws(()=>s.copy(real()));s.cancel();const t=real();delete t.carObjs[0].userData.stock;assert.throws(()=>s.copy(t));assert.equal(s.draft,null);
 });
+
+test('linking an independent design compares model, order and orientation without assigning a physical identity',()=>{
+  const s=store(),t=real(),before=structuredClone(t);s.begin();s.add('native-steam');s.add('native-tank');s.link(t,2);
+  const p=s.draft;assert.equal(p.vehicles[0].sourceVehicleId,undefined);
+  assert.equal(compareProject(p,realComposition(t,2),2).status,'different');
+  assert.deepEqual(t,before);assert.equal(compareProject(p,realComposition(t,7),2).status,'stale');
+});

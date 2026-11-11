@@ -591,6 +591,7 @@ function reset() {
   transferred = visitedRunaround = didDetach = didAttach = false;
   $("pause").textContent = "\u2161 Pause";
   ui();
+  trainManagement?.invalidateReferences();
   log("Reset completed.");
 }
 function setTrainSpeed(id,value) {

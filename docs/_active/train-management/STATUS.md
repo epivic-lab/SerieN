@@ -1,8 +1,9 @@
 # Train Management — M2 / Milestone A
 
-Baseline main remota verificata `184cc9ba93a6b35493f365b2ffcb20ef0645963d`.
-Branch dedicato autorizzato `codex/train-management-m2`. Mandato dell'11 novembre: intera A in incrementi atomici, checkpoint remoti, STOP alla fine di A. M1/M1.1 approvate e pubblicate.
+Baseline main remota `184cc9ba93a6b35493f365b2ffcb20ef0645963d`, branch dedicato `codex/train-management-m2`. Mandato: intera A con incrementi/checkpoint, STOP finale; niente M3/persistenza/redesign/merge/deploy.
 
-Incremento 1: dominio/catalogo normalizzato, bozze e confermati in RAM, identità separate, validazione e confronto conservativo. Sette nuovi test unitari. Prove in evidence/M2/domain; [rapporto](M2_REPORT.md).
+Primo checkpoint pubblicato `2743bcd` tramite connettore GitHub esplicitamente autorizzato, albero identico al precursore locale `d80082f` preservato.
 
-M2 IN CORSO; UI/browser ancora NOT VERIFIED. Nessun M3, persistenza, redesign, merge o deploy. Prossima azione autorizzata: integrare il compositore nella finestra M1 e riusare la vista laterale.
+Dominio e UI del compositore completati: catalogo 14, bozze/confermati in RAM, identità, lifecycle, ordine/orientamento, laterale condiviso, copia/confronto reale, invalidazione reset. **245 Node, 9 Python, build, canonico e browser funzionale (13 gruppi) PASS**. Prove in evidence/M2/ui; [rapporto](M2_REPORT.md).
+
+M2 IN CORSO: gate runtime continuo e regressioni browser R1 ancora NOT VERIFIED. Prossima azione autorizzata: collaudo finale A. Hardware touch/GPU e persistenza non verificati/non implementata.

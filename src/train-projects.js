@@ -33,7 +33,7 @@ export function validateProject(project){
 // Read-only comparison: model equality never implies physical identity or permission.
 export function compareProject(project,real,generation=0){
   if(!project.source)return {status:'unlinked',message:'Independent project: no physical train is linked.',differences:[]};
-  if(!real||project.source.generation!==generation||real.trainId!==project.source.trainId)return {status:'stale',message:'Source reference invalidated. Copy the current train into a new project.',differences:[]};
+  if(!real||project.source.generation!==generation||real.generation!==generation||real.trainId!==project.source.trainId)return {status:'stale',message:'Source reference invalidated. Copy the current train into a new project.',differences:[]};
   const source=project.source.vehicles,now=real.vehicles,planned=project.vehicles;
   const changed=JSON.stringify(source)!==JSON.stringify(now);
   const differences=[];
@@ -72,6 +72,7 @@ export function createTrainProjects({newId=()=>crypto.randomUUID()}={}){
       const p={id:newId(),name:`${train.name} project`.slice(0,80),source,vehicles:source.vehicles.map(v=>({id:newId(),modelId:v.modelId,orientation:1,sourceVehicleId:v.id}))};
       const errors=validateProject(p);if(errors.length)throw new RangeError(errors[0]);draft=p;original=null;return clone(draft);},
     open(id){if(draft)throw new Error('Finish or cancel the open draft first.');if(!confirmed.has(id))throw new RangeError('Unknown project');draft=clone(confirmed.get(id));original=clone(draft);return clone(draft);},
+    link(train,generation=0){const source=realComposition(train,generation);if(!source)throw new RangeError('Comparison train unavailable.');requireDraft().source=source;},
     rename(name){if(typeof name!=='string'||name.length>80)throw new RangeError('Project name too long.');requireDraft().name=name;},
     add(modelId){const model=projectModel(modelId);return edit(p=>{if(model.role==='locomotive'){if(p.vehicles.length)throw new RangeError('Remove the existing composition before choosing another locomotive.');}
       else if(!p.vehicles.length)throw new RangeError('Choose a locomotive first.');p.vehicles.push({id:newId(),modelId,orientation:1});});},

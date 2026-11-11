@@ -241,3 +241,7 @@ Regia approva tecnicamente S2 `a864de9f17c71775d60746f6432618343b8299ac` e autor
 ## Train Management — M2, incremento dominio (2026-11-11)
 
 Mandato esplicito per tutta Milestone A, con incrementi e checkpoint, da main remoto `184cc9b` verificato; branch nuovo `codex/train-management-m2`. Nessun M3/persistenza/merge/deploy/redesign. Catalogo quattordici modelli normalizzato dal manifest esistente, store di progetti in RAM isolato, identità progettate/fisiche distinte, lifecycle/ordine/orientamento e confronto con generazione di reset. Sette nuovi test; baseline 234 Node/build PASS. [Rapporto e prove aggiornati](docs/_active/train-management/M2_REPORT.md). UI/browser M2 NOT VERIFIED in questo incremento. Prossima azione: integrare la UI M2 e la vista laterale, nel perimetro A già autorizzato.
+
+## Train Management — M2, incremento editor (2026-11-11)
+
+Primo checkpoint remoto `2743bcd`, albero identico al precursore locale d80082f, pubblicato tramite connettore con autorizzazione esplicita dell'utente. Integrata vista Projects: lifecycle, modifiche non confermate protette, anteprima M1.1 con flip, confronto e copia del reale, invalidazione riferimenti al reset. **245 Node, 9 Python, build, canonico e browser funzionale M2 (13 gruppi) PASS**; limiti e primo errore dell'harness preservati nel [rapporto M2](docs/_active/train-management/M2_REPORT.md). Solo notifica reset aggiunta ad app.js; sorgenti R1/backend/layout/deck invariati. Prossima azione: gate runtime continuo con tre treni e regressioni browser R1, senza M3/persistenza/merge/deploy.
