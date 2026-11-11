@@ -1,7 +1,8 @@
 // U2 coordinator: no store mutation, no conversion of synchronous discard/reset.
-export function createGuardModal(){
- const dialog=document.createElement('dialog');dialog.className='u2-region u2-guard';dialog.setAttribute('aria-labelledby','u2GuardTitle');
+export function createGuardModal({title='Sign out?',cancelLabel='Keep session',confirmLabel='Sign out',titleId='u2GuardTitle',guardClass='u2-guard'}={}){
+ const dialog=document.createElement('dialog');dialog.className=`u2-region ${guardClass}`;dialog.setAttribute('aria-labelledby','u2GuardTitle');
  dialog.innerHTML='<div class="m"><div class="mi"><h2 id="u2GuardTitle">Sign out?</h2><p data-message></p><div class="u2-actions"><button class="bt d" data-cancel>Keep session</button><button class="bt" data-confirm>Sign out</button></div></div></div>';
+ dialog.querySelector('h2').id=titleId;dialog.setAttribute('aria-labelledby',titleId);dialog.querySelector('h2').textContent=title;dialog.querySelector('[data-cancel]').textContent=cancelLabel;dialog.querySelector('[data-confirm]').textContent=confirmLabel;
  document.body.append(dialog);let pending=null,disposed=false;
  function settle(yes){if(!pending)return;const item=pending;pending=null;if(dialog.open)dialog.close();if(item.origin?.isConnected)item.origin.focus();if(yes&&!disposed&&item.valid())item.confirm();}
  const topKey=e=>{if(e.key==='Escape')e.stopPropagation();};

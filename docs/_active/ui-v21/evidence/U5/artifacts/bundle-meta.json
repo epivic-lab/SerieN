@@ -1,0 +1,1699 @@
+{
+  "inputs": {
+    "src/ui/guard-modal.js": {
+      "bytes": 2217,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/ui/dock.js": {
+      "bytes": 2174,
+      "imports": [
+        {
+          "path": "src/ui/guard-modal.js",
+          "kind": "import-statement",
+          "original": "./guard-modal.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/ui/keyboard.js": {
+      "bytes": 621,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/ui/sfx.js": {
+      "bytes": 783,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/ui/shell.js": {
+      "bytes": 7426,
+      "imports": [
+        {
+          "path": "src/ui/sfx.js",
+          "kind": "import-statement",
+          "original": "./sfx.js"
+        },
+        {
+          "path": "src/ui/guard-modal.js",
+          "kind": "import-statement",
+          "original": "./guard-modal.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/ui/overlays.js": {
+      "bytes": 6075,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/train-deck-state.js": {
+      "bytes": 1862,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/ui/sidebar.js": {
+      "bytes": 7257,
+      "imports": [
+        {
+          "path": "src/train-deck-state.js",
+          "kind": "import-statement",
+          "original": "../train-deck-state.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/build/three.module.js": {
+      "bytes": 1268830,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/canonical-layout.json": {
+      "bytes": 232698,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "src/network.js": {
+      "bytes": 3210,
+      "imports": [
+        {
+          "path": "src/canonical-layout.json",
+          "kind": "import-statement",
+          "original": "./canonical-layout.json",
+          "with": {
+            "type": "json"
+          }
+        }
+      ],
+      "format": "esm"
+    },
+    "src/consist.js": {
+      "bytes": 1196,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/next-switch.js": {
+      "bytes": 9397,
+      "imports": [
+        {
+          "path": "src/network.js",
+          "kind": "import-statement",
+          "original": "./network.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/railway-state.js": {
+      "bytes": 3451,
+      "imports": [
+        {
+          "path": "src/consist.js",
+          "kind": "import-statement",
+          "original": "./consist.js"
+        },
+        {
+          "path": "src/next-switch.js",
+          "kind": "import-statement",
+          "original": "./next-switch.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/guarded-stop-view.js": {
+      "bytes": 1999,
+      "imports": [
+        {
+          "path": "src/network.js",
+          "kind": "import-statement",
+          "original": "./network.js"
+        },
+        {
+          "path": "src/railway-state.js",
+          "kind": "import-statement",
+          "original": "./railway-state.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/guarded-stop-bell.js": {
+      "bytes": 1738,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/guarded-stop-scene.js": {
+      "bytes": 8819,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/guarded-stop-view.js",
+          "kind": "import-statement",
+          "original": "./guarded-stop-view.js"
+        },
+        {
+          "path": "src/guarded-stop-bell.js",
+          "kind": "import-statement",
+          "original": "./guarded-stop-bell.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/rolling-stock-animation.js": {
+      "bytes": 994,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/railway-guard.js": {
+      "bytes": 6588,
+      "imports": [
+        {
+          "path": "src/next-switch.js",
+          "kind": "import-statement",
+          "original": "./next-switch.js"
+        },
+        {
+          "path": "src/railway-state.js",
+          "kind": "import-statement",
+          "original": "./railway-state.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/railway-conflicts.js": {
+      "bytes": 4141,
+      "imports": [
+        {
+          "path": "src/consist.js",
+          "kind": "import-statement",
+          "original": "./consist.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/railway-step.js": {
+      "bytes": 8919,
+      "imports": [
+        {
+          "path": "src/railway-guard.js",
+          "kind": "import-statement",
+          "original": "./railway-guard.js"
+        },
+        {
+          "path": "src/railway-state.js",
+          "kind": "import-statement",
+          "original": "./railway-state.js"
+        },
+        {
+          "path": "src/railway-conflicts.js",
+          "kind": "import-statement",
+          "original": "./railway-conflicts.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/fleet-commands.js": {
+      "bytes": 3570,
+      "imports": [
+        {
+          "path": "src/consist.js",
+          "kind": "import-statement",
+          "original": "./consist.js"
+        },
+        {
+          "path": "src/railway-state.js",
+          "kind": "import-statement",
+          "original": "./railway-state.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 31554,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/rolling-stock.js": {
+      "bytes": 8577,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+          "kind": "import-statement",
+          "original": "three/addons/utils/BufferGeometryUtils.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/graphic-foundations.js": {
+      "bytes": 3730,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/simulation.js": {
+      "bytes": 4974,
+      "imports": [
+        {
+          "path": "src/network.js",
+          "kind": "import-statement",
+          "original": "./network.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/turnout-routes.js": {
+      "bytes": 6266,
+      "imports": [
+        {
+          "path": "src/simulation.js",
+          "kind": "import-statement",
+          "original": "./simulation.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/turnout-picking.js": {
+      "bytes": 3673,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/turnout-routes.js",
+          "kind": "import-statement",
+          "original": "./turnout-routes.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/turnout-arrow-view.js": {
+      "bytes": 1372,
+      "imports": [
+        {
+          "path": "src/turnout-routes.js",
+          "kind": "import-statement",
+          "original": "./turnout-routes.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/turnout-arrows.js": {
+      "bytes": 6920,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/turnout-arrow-view.js",
+          "kind": "import-statement",
+          "original": "./turnout-arrow-view.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/turnout-arrow-approaches.js": {
+      "bytes": 1383,
+      "imports": [
+        {
+          "path": "src/next-switch.js",
+          "kind": "import-statement",
+          "original": "./next-switch.js"
+        },
+        {
+          "path": "src/railway-state.js",
+          "kind": "import-statement",
+          "original": "./railway-state.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/turnout-glow.js": {
+      "bytes": 9312,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/turnout-routes.js",
+          "kind": "import-statement",
+          "original": "./turnout-routes.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/turnout-interaction.js": {
+      "bytes": 7504,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/turnout-routes.js",
+          "kind": "import-statement",
+          "original": "./turnout-routes.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/turnout-commands.js": {
+      "bytes": 1634,
+      "imports": [
+        {
+          "path": "src/turnout-routes.js",
+          "kind": "import-statement",
+          "original": "./turnout-routes.js"
+        },
+        {
+          "path": "src/railway-state.js",
+          "kind": "import-statement",
+          "original": "./railway-state.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "assets/rolling-stock-sides/manifest.json": {
+      "bytes": 6580,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "src/train-side-layout.js": {
+      "bytes": 2422,
+      "imports": [
+        {
+          "path": "src/consist.js",
+          "kind": "import-statement",
+          "original": "./consist.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/train-side-view.js": {
+      "bytes": 4709,
+      "imports": [
+        {
+          "path": "assets/rolling-stock-sides/manifest.json",
+          "kind": "import-statement",
+          "original": "../assets/rolling-stock-sides/manifest.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "src/train-side-layout.js",
+          "kind": "import-statement",
+          "original": "./train-side-layout.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/train-projects.js": {
+      "bytes": 8122,
+      "imports": [
+        {
+          "path": "assets/rolling-stock-sides/manifest.json",
+          "kind": "import-statement",
+          "original": "../assets/rolling-stock-sides/manifest.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "src/rolling-stock.js",
+          "kind": "import-statement",
+          "original": "./rolling-stock.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/train-projects-view.js": {
+      "bytes": 8084,
+      "imports": [
+        {
+          "path": "src/train-side-view.js",
+          "kind": "import-statement",
+          "original": "./train-side-view.js"
+        },
+        {
+          "path": "src/train-projects.js",
+          "kind": "import-statement",
+          "original": "./train-projects.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/train-management-state.js": {
+      "bytes": 1099,
+      "imports": [
+        {
+          "path": "src/consist.js",
+          "kind": "import-statement",
+          "original": "./consist.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/depot-inventory.js": {
+      "bytes": 3496,
+      "imports": [
+        {
+          "path": "src/train-projects.js",
+          "kind": "import-statement",
+          "original": "./train-projects.js"
+        },
+        {
+          "path": "src/train-management-state.js",
+          "kind": "import-statement",
+          "original": "./train-management-state.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/locomotive-thumbnails.js": {
+      "bytes": 4649,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/depot-view.js": {
+      "bytes": 6947,
+      "imports": [
+        {
+          "path": "src/train-projects.js",
+          "kind": "import-statement",
+          "original": "./train-projects.js"
+        },
+        {
+          "path": "src/depot-inventory.js",
+          "kind": "import-statement",
+          "original": "./depot-inventory.js"
+        },
+        {
+          "path": "src/locomotive-thumbnails.js",
+          "kind": "import-statement",
+          "original": "./locomotive-thumbnails.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/train-management.js": {
+      "bytes": 8295,
+      "imports": [
+        {
+          "path": "src/train-side-view.js",
+          "kind": "import-statement",
+          "original": "./train-side-view.js"
+        },
+        {
+          "path": "src/train-projects.js",
+          "kind": "import-statement",
+          "original": "./train-projects.js"
+        },
+        {
+          "path": "src/train-projects-view.js",
+          "kind": "import-statement",
+          "original": "./train-projects-view.js"
+        },
+        {
+          "path": "src/depot-inventory.js",
+          "kind": "import-statement",
+          "original": "./depot-inventory.js"
+        },
+        {
+          "path": "src/depot-view.js",
+          "kind": "import-statement",
+          "original": "./depot-view.js"
+        },
+        {
+          "path": "src/train-management-state.js",
+          "kind": "import-statement",
+          "original": "./train-management-state.js"
+        },
+        {
+          "path": "src/locomotive-thumbnails.js",
+          "kind": "import-statement",
+          "original": "./locomotive-thumbnails.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/train-deck.js": {
+      "bytes": 11658,
+      "imports": [
+        {
+          "path": "src/consist.js",
+          "kind": "import-statement",
+          "original": "./consist.js"
+        },
+        {
+          "path": "src/train-deck-state.js",
+          "kind": "import-statement",
+          "original": "./train-deck-state.js"
+        },
+        {
+          "path": "src/locomotive-thumbnails.js",
+          "kind": "import-statement",
+          "original": "./locomotive-thumbnails.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/next-switch-view.js": {
+      "bytes": 7158,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/next-switch.js",
+          "kind": "import-statement",
+          "original": "./next-switch.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/landscape.js": {
+      "bytes": 3715,
+      "imports": [
+        {
+          "path": "src/canonical-layout.json",
+          "kind": "import-statement",
+          "original": "./canonical-layout.json",
+          "with": {
+            "type": "json"
+          }
+        }
+      ],
+      "format": "esm"
+    },
+    "src/zone-layout.js": {
+      "bytes": 3209,
+      "imports": [
+        {
+          "path": "src/landscape.js",
+          "kind": "import-statement",
+          "original": "./landscape.js"
+        },
+        {
+          "path": "src/canonical-layout.json",
+          "kind": "import-statement",
+          "original": "./canonical-layout.json",
+          "with": {
+            "type": "json"
+          }
+        }
+      ],
+      "format": "esm"
+    },
+    "src/station-building.js": {
+      "bytes": 10065,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/structure-layout.js": {
+      "bytes": 477,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/scenic-plan.js": {
+      "bytes": 7859,
+      "imports": [
+        {
+          "path": "src/canonical-layout.json",
+          "kind": "import-statement",
+          "original": "./canonical-layout.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "src/landscape.js",
+          "kind": "import-statement",
+          "original": "./landscape.js"
+        },
+        {
+          "path": "src/zone-layout.js",
+          "kind": "import-statement",
+          "original": "./zone-layout.js"
+        },
+        {
+          "path": "src/station-building.js",
+          "kind": "import-statement",
+          "original": "./station-building.js"
+        },
+        {
+          "path": "src/structure-layout.js",
+          "kind": "import-statement",
+          "original": "./structure-layout.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/view-controls.js": {
+      "bytes": 5052,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/rail-profile.js": {
+      "bytes": 2070,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/graphic-foundations.js",
+          "kind": "import-statement",
+          "original": "./graphic-foundations.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/navigation.js": {
+      "bytes": 4929,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/quality.js": {
+      "bytes": 2563,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/loaders/GLTFLoader.js": {
+      "bytes": 108606,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+          "kind": "import-statement",
+          "original": "../utils/BufferGeometryUtils.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/asset-placement.js": {
+      "bytes": 928,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/train-assets.js": {
+      "bytes": 7723,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+          "kind": "import-statement",
+          "original": "three/addons/loaders/GLTFLoader.js"
+        },
+        {
+          "path": "src/asset-placement.js",
+          "kind": "import-statement",
+          "original": "./asset-placement.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/rolling-stock-art.js": {
+      "bytes": 6127,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+          "kind": "import-statement",
+          "original": "three/addons/utils/BufferGeometryUtils.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/shaders/CopyShader.js": {
+      "bytes": 571,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/Pass.js": {
+      "bytes": 1706,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/ShaderPass.js": {
+      "bytes": 1576,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/MaskPass.js": {
+      "bytes": 2231,
+      "imports": [
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/EffectComposer.js": {
+      "bytes": 4651,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/CopyShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/CopyShader.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/ShaderPass.js",
+          "kind": "import-statement",
+          "original": "./ShaderPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/MaskPass.js",
+          "kind": "import-statement",
+          "original": "./MaskPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/MaskPass.js",
+          "kind": "import-statement",
+          "original": "./MaskPass.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/RenderPass.js": {
+      "bytes": 1915,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/shaders/LuminosityHighPassShader.js": {
+      "bytes": 1192,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js": {
+      "bytes": 12406,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/CopyShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/CopyShader.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/LuminosityHighPassShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/LuminosityHighPassShader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/math/SimplexNoise.js": {
+      "bytes": 14351,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/shaders/SSAOShader.js": {
+      "bytes": 6478,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/SSAOPass.js": {
+      "bytes": 11308,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/math/SimplexNoise.js",
+          "kind": "import-statement",
+          "original": "../math/SimplexNoise.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/SSAOShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/SSAOShader.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/SSAOShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/SSAOShader.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/SSAOShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/SSAOShader.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/CopyShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/CopyShader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/shaders/OutputShader.js": {
+      "bytes": 1499,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/OutputPass.js": {
+      "bytes": 2524,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/OutputShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/OutputShader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/presentation.js": {
+      "bytes": 2804,
+      "imports": [
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/EffectComposer.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/EffectComposer.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/RenderPass.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/RenderPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/UnrealBloomPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/ShaderPass.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/ShaderPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/SSAOPass.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/SSAOPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/OutputPass.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/OutputPass.js"
+        },
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/station-materials.js": {
+      "bytes": 8606,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/geometries/RoundedBoxGeometry.js": {
+      "bytes": 4625,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/station-platform.js": {
+      "bytes": 13597,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+          "kind": "import-statement",
+          "original": "three/addons/geometries/RoundedBoxGeometry.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/zones.js": {
+      "bytes": 12857,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/zone-layout.js",
+          "kind": "import-statement",
+          "original": "./zone-layout.js"
+        },
+        {
+          "path": "src/landscape.js",
+          "kind": "import-statement",
+          "original": "./landscape.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/railway-works.js": {
+      "bytes": 2944,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/structure-layout.js",
+          "kind": "import-statement",
+          "original": "./structure-layout.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/diorama.js": {
+      "bytes": 14018,
+      "imports": [
+        {
+          "path": "src/railway-works.js",
+          "kind": "import-statement",
+          "original": "./railway-works.js"
+        },
+        {
+          "path": "src/structure-layout.js",
+          "kind": "import-statement",
+          "original": "./structure-layout.js"
+        },
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "src/landscape.js",
+          "kind": "import-statement",
+          "original": "./landscape.js"
+        },
+        {
+          "path": "src/graphic-foundations.js",
+          "kind": "import-statement",
+          "original": "./graphic-foundations.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/environments/RoomEnvironment.js": {
+      "bytes": 3735,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/scenery.js": {
+      "bytes": 5069,
+      "imports": [
+        {
+          "path": "src/station-materials.js",
+          "kind": "import-statement",
+          "original": "./station-materials.js"
+        },
+        {
+          "path": "src/station-building.js",
+          "kind": "import-statement",
+          "original": "./station-building.js"
+        },
+        {
+          "path": "src/station-platform.js",
+          "kind": "import-statement",
+          "original": "./station-platform.js"
+        },
+        {
+          "path": "src/zones.js",
+          "kind": "import-statement",
+          "original": "./zones.js"
+        },
+        {
+          "path": "src/landscape.js",
+          "kind": "import-statement",
+          "original": "./landscape.js"
+        },
+        {
+          "path": "src/diorama.js",
+          "kind": "import-statement",
+          "original": "./diorama.js"
+        },
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+          "kind": "import-statement",
+          "original": "three/addons/utils/BufferGeometryUtils.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/environments/RoomEnvironment.js",
+          "kind": "import-statement",
+          "original": "three/addons/environments/RoomEnvironment.js"
+        },
+        {
+          "path": "src/graphic-foundations.js",
+          "kind": "import-statement",
+          "original": "./graphic-foundations.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/controls/OrbitControls.js": {
+      "bytes": 32250,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "app.js": {
+      "bytes": 47409,
+      "imports": [
+        {
+          "path": "src/ui/dock.js",
+          "kind": "import-statement",
+          "original": "./src/ui/dock.js"
+        },
+        {
+          "path": "src/ui/keyboard.js",
+          "kind": "import-statement",
+          "original": "./src/ui/keyboard.js"
+        },
+        {
+          "path": "src/ui/shell.js",
+          "kind": "import-statement",
+          "original": "./src/ui/shell.js"
+        },
+        {
+          "path": "src/ui/overlays.js",
+          "kind": "import-statement",
+          "original": "./src/ui/overlays.js"
+        },
+        {
+          "path": "src/ui/sidebar.js",
+          "kind": "import-statement",
+          "original": "./src/ui/sidebar.js"
+        },
+        {
+          "path": "src/guarded-stop-scene.js",
+          "kind": "import-statement",
+          "original": "./src/guarded-stop-scene.js"
+        },
+        {
+          "path": "src/rolling-stock-animation.js",
+          "kind": "import-statement",
+          "original": "./src/rolling-stock-animation.js"
+        },
+        {
+          "path": "src/railway-step.js",
+          "kind": "import-statement",
+          "original": "./src/railway-step.js"
+        },
+        {
+          "path": "src/railway-conflicts.js",
+          "kind": "import-statement",
+          "original": "./src/railway-conflicts.js"
+        },
+        {
+          "path": "src/fleet-commands.js",
+          "kind": "import-statement",
+          "original": "./src/fleet-commands.js"
+        },
+        {
+          "path": "src/railway-state.js",
+          "kind": "import-statement",
+          "original": "./src/railway-state.js"
+        },
+        {
+          "path": "src/rolling-stock.js",
+          "kind": "import-statement",
+          "original": "./src/rolling-stock.js"
+        },
+        {
+          "path": "src/graphic-foundations.js",
+          "kind": "import-statement",
+          "original": "./src/graphic-foundations.js"
+        },
+        {
+          "path": "src/turnout-picking.js",
+          "kind": "import-statement",
+          "original": "./src/turnout-picking.js"
+        },
+        {
+          "path": "src/turnout-arrows.js",
+          "kind": "import-statement",
+          "original": "./src/turnout-arrows.js"
+        },
+        {
+          "path": "src/turnout-arrow-approaches.js",
+          "kind": "import-statement",
+          "original": "./src/turnout-arrow-approaches.js"
+        },
+        {
+          "path": "src/turnout-glow.js",
+          "kind": "import-statement",
+          "original": "./src/turnout-glow.js"
+        },
+        {
+          "path": "src/turnout-interaction.js",
+          "kind": "import-statement",
+          "original": "./src/turnout-interaction.js"
+        },
+        {
+          "path": "src/turnout-routes.js",
+          "kind": "import-statement",
+          "original": "./src/turnout-routes.js"
+        },
+        {
+          "path": "src/turnout-commands.js",
+          "kind": "import-statement",
+          "original": "./src/turnout-commands.js"
+        },
+        {
+          "path": "src/train-management.js",
+          "kind": "import-statement",
+          "original": "./src/train-management.js"
+        },
+        {
+          "path": "src/train-deck.js",
+          "kind": "import-statement",
+          "original": "./src/train-deck.js"
+        },
+        {
+          "path": "src/locomotive-thumbnails.js",
+          "kind": "import-statement",
+          "original": "./src/locomotive-thumbnails.js"
+        },
+        {
+          "path": "src/next-switch.js",
+          "kind": "import-statement",
+          "original": "./src/next-switch.js"
+        },
+        {
+          "path": "src/next-switch-view.js",
+          "kind": "import-statement",
+          "original": "./src/next-switch-view.js"
+        },
+        {
+          "path": "src/scenic-plan.js",
+          "kind": "import-statement",
+          "original": "./src/scenic-plan.js"
+        },
+        {
+          "path": "src/view-controls.js",
+          "kind": "import-statement",
+          "original": "./src/view-controls.js"
+        },
+        {
+          "path": "src/consist.js",
+          "kind": "import-statement",
+          "original": "./src/consist.js"
+        },
+        {
+          "path": "src/rail-profile.js",
+          "kind": "import-statement",
+          "original": "./src/rail-profile.js"
+        },
+        {
+          "path": "src/navigation.js",
+          "kind": "import-statement",
+          "original": "./src/navigation.js"
+        },
+        {
+          "path": "src/quality.js",
+          "kind": "import-statement",
+          "original": "./src/quality.js"
+        },
+        {
+          "path": "src/train-assets.js",
+          "kind": "import-statement",
+          "original": "./src/train-assets.js"
+        },
+        {
+          "path": "src/rolling-stock-art.js",
+          "kind": "import-statement",
+          "original": "./src/rolling-stock-art.js"
+        },
+        {
+          "path": "src/presentation.js",
+          "kind": "import-statement",
+          "original": "./src/presentation.js"
+        },
+        {
+          "path": "src/scenery.js",
+          "kind": "import-statement",
+          "original": "./src/scenery.js"
+        },
+        {
+          "path": "src/network.js",
+          "kind": "import-statement",
+          "original": "./src/network.js"
+        },
+        {
+          "path": "src/simulation.js",
+          "kind": "import-statement",
+          "original": "./src/simulation.js"
+        },
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/controls/OrbitControls.js",
+          "kind": "import-statement",
+          "original": "three/addons/controls/OrbitControls.js"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "work/u5-final-bundle.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "app.js",
+      "inputs": {
+        "src/ui/guard-modal.js": {
+          "bytesInOutput": 1656
+        },
+        "src/ui/dock.js": {
+          "bytesInOutput": 1579
+        },
+        "src/ui/keyboard.js": {
+          "bytesInOutput": 441
+        },
+        "src/ui/sfx.js": {
+          "bytesInOutput": 492
+        },
+        "src/ui/shell.js": {
+          "bytesInOutput": 5473
+        },
+        "src/ui/overlays.js": {
+          "bytesInOutput": 3723
+        },
+        "src/train-deck-state.js": {
+          "bytesInOutput": 1221
+        },
+        "src/ui/sidebar.js": {
+          "bytesInOutput": 3893
+        },
+        "node_modules/three/build/three.module.js": {
+          "bytesInOutput": 543426
+        },
+        "src/canonical-layout.json": {
+          "bytesInOutput": 210785
+        },
+        "src/network.js": {
+          "bytesInOutput": 1950
+        },
+        "src/consist.js": {
+          "bytesInOutput": 560
+        },
+        "src/next-switch.js": {
+          "bytesInOutput": 5053
+        },
+        "src/railway-state.js": {
+          "bytesInOutput": 1415
+        },
+        "src/guarded-stop-view.js": {
+          "bytesInOutput": 1457
+        },
+        "src/guarded-stop-bell.js": {
+          "bytesInOutput": 1114
+        },
+        "src/guarded-stop-scene.js": {
+          "bytesInOutput": 6331
+        },
+        "src/rolling-stock-animation.js": {
+          "bytesInOutput": 510
+        },
+        "src/railway-guard.js": {
+          "bytesInOutput": 3324
+        },
+        "src/railway-conflicts.js": {
+          "bytesInOutput": 2424
+        },
+        "src/railway-step.js": {
+          "bytesInOutput": 4489
+        },
+        "src/fleet-commands.js": {
+          "bytesInOutput": 1980
+        },
+        "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js": {
+          "bytesInOutput": 4715
+        },
+        "src/rolling-stock.js": {
+          "bytesInOutput": 6684
+        },
+        "src/graphic-foundations.js": {
+          "bytesInOutput": 2328
+        },
+        "src/simulation.js": {
+          "bytesInOutput": 3102
+        },
+        "src/turnout-routes.js": {
+          "bytesInOutput": 3044
+        },
+        "src/turnout-picking.js": {
+          "bytesInOutput": 2062
+        },
+        "src/turnout-arrow-view.js": {
+          "bytesInOutput": 808
+        },
+        "src/turnout-arrows.js": {
+          "bytesInOutput": 5035
+        },
+        "src/turnout-arrow-approaches.js": {
+          "bytesInOutput": 708
+        },
+        "src/turnout-glow.js": {
+          "bytesInOutput": 6084
+        },
+        "src/turnout-interaction.js": {
+          "bytesInOutput": 4328
+        },
+        "src/turnout-commands.js": {
+          "bytesInOutput": 775
+        },
+        "assets/rolling-stock-sides/manifest.json": {
+          "bytesInOutput": 3520
+        },
+        "src/train-side-layout.js": {
+          "bytesInOutput": 1635
+        },
+        "src/train-side-view.js": {
+          "bytesInOutput": 3627
+        },
+        "src/train-projects.js": {
+          "bytesInOutput": 5976
+        },
+        "src/train-projects-view.js": {
+          "bytesInOutput": 5547
+        },
+        "src/train-management-state.js": {
+          "bytesInOutput": 682
+        },
+        "src/depot-inventory.js": {
+          "bytesInOutput": 2447
+        },
+        "src/locomotive-thumbnails.js": {
+          "bytesInOutput": 2748
+        },
+        "src/depot-view.js": {
+          "bytesInOutput": 5252
+        },
+        "src/train-management.js": {
+          "bytesInOutput": 5565
+        },
+        "src/train-deck.js": {
+          "bytesInOutput": 8824
+        },
+        "src/next-switch-view.js": {
+          "bytesInOutput": 5020
+        },
+        "src/landscape.js": {
+          "bytesInOutput": 2184
+        },
+        "src/zone-layout.js": {
+          "bytesInOutput": 1732
+        },
+        "src/station-building.js": {
+          "bytesInOutput": 5481
+        },
+        "src/structure-layout.js": {
+          "bytesInOutput": 276
+        },
+        "src/scenic-plan.js": {
+          "bytesInOutput": 768
+        },
+        "src/view-controls.js": {
+          "bytesInOutput": 2773
+        },
+        "src/rail-profile.js": {
+          "bytesInOutput": 1073
+        },
+        "src/navigation.js": {
+          "bytesInOutput": 2468
+        },
+        "src/quality.js": {
+          "bytesInOutput": 1714
+        },
+        "node_modules/three/examples/jsm/loaders/GLTFLoader.js": {
+          "bytesInOutput": 43680
+        },
+        "src/asset-placement.js": {
+          "bytesInOutput": 448
+        },
+        "src/train-assets.js": {
+          "bytesInOutput": 3866
+        },
+        "src/rolling-stock-art.js": {
+          "bytesInOutput": 3072
+        },
+        "node_modules/three/examples/jsm/shaders/CopyShader.js": {
+          "bytesInOutput": 427
+        },
+        "node_modules/three/examples/jsm/postprocessing/Pass.js": {
+          "bytesInOutput": 617
+        },
+        "node_modules/three/examples/jsm/postprocessing/ShaderPass.js": {
+          "bytesInOutput": 779
+        },
+        "node_modules/three/examples/jsm/postprocessing/MaskPass.js": {
+          "bytesInOutput": 1096
+        },
+        "node_modules/three/examples/jsm/postprocessing/EffectComposer.js": {
+          "bytesInOutput": 2570
+        },
+        "node_modules/three/examples/jsm/postprocessing/RenderPass.js": {
+          "bytesInOutput": 953
+        },
+        "node_modules/three/examples/jsm/shaders/LuminosityHighPassShader.js": {
+          "bytesInOutput": 919
+        },
+        "node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js": {
+          "bytesInOutput": 8037
+        },
+        "node_modules/three/examples/jsm/math/SimplexNoise.js": {
+          "bytesInOutput": 4332
+        },
+        "node_modules/three/examples/jsm/shaders/SSAOShader.js": {
+          "bytesInOutput": 5777
+        },
+        "node_modules/three/examples/jsm/postprocessing/SSAOPass.js": {
+          "bytesInOutput": 6348
+        },
+        "node_modules/three/examples/jsm/shaders/OutputShader.js": {
+          "bytesInOutput": 1398
+        },
+        "node_modules/three/examples/jsm/postprocessing/OutputPass.js": {
+          "bytesInOutput": 1373
+        },
+        "src/presentation.js": {
+          "bytesInOutput": 1212
+        },
+        "src/station-materials.js": {
+          "bytesInOutput": 4328
+        },
+        "node_modules/three/examples/jsm/geometries/RoundedBoxGeometry.js": {
+          "bytesInOutput": 1489
+        },
+        "src/station-platform.js": {
+          "bytesInOutput": 7843
+        },
+        "src/zones.js": {
+          "bytesInOutput": 7452
+        },
+        "src/railway-works.js": {
+          "bytesInOutput": 1583
+        },
+        "src/diorama.js": {
+          "bytesInOutput": 8085
+        },
+        "node_modules/three/examples/jsm/environments/RoomEnvironment.js": {
+          "bytesInOutput": 1816
+        },
+        "src/scenery.js": {
+          "bytesInOutput": 2552
+        },
+        "node_modules/three/examples/jsm/controls/OrbitControls.js": {
+          "bytesInOutput": 13428
+        },
+        "app.js": {
+          "bytesInOutput": 28208
+        }
+      },
+      "bytes": 1076138
+    }
+  }
+}

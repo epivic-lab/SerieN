@@ -1,0 +1,111 @@
+{
+  "compatibilityIDs": [
+    "trainName",
+    "trainIcon",
+    "trainDescription",
+    "trainRoute",
+    "speed",
+    "speedNumber",
+    "cars",
+    "stop",
+    "reverse",
+    "lights",
+    "uncouple",
+    "couple"
+  ],
+  "uniqueness": "clear all previous compatibility IDs before assigning active card, tested after every selection",
+  "cards": "all physical ids in fleet order; recentIds remains original RecentConsoles(3); visibleIds now every mounted card, not viewport intersection",
+  "controls": [
+    {
+      "id": "CTRL-016",
+      "name": "Train selectors / arrows / keyboard",
+      "selector": "tabs [data-train], .trainConsoleSelect, #trainDeck",
+      "callback": "onSelect \u2192 select(id); scroll UI only"
+    },
+    {
+      "id": "CTRL-017",
+      "name": "Throttle / actual gauge",
+      "selector": "[data-console-train] input, .actualSpeed, .u5-needle",
+      "callback": "onSelect(id) \u2192 onSpeed(id,value) \u2192 fleetCommands.setSpeed; gauge abs(train.velocity), max 100\u00d71.5"
+    },
+    {
+      "id": "CTRL-018",
+      "name": "Reverse",
+      "selector": "[data-command=reverse]",
+      "callback": "onSelect(id) \u2192 onReverse(id) \u2192 fleetCommands.reverse"
+    },
+    {
+      "id": "CTRL-019",
+      "name": "Individual Stop",
+      "selector": "[data-command=stop]",
+      "callback": "onSelect(id) \u2192 onStop(id) \u2192 fleetCommands.stop"
+    },
+    {
+      "id": "CTRL-020",
+      "name": "Lights",
+      "selector": "[data-command=lights]",
+      "callback": "onSelect(id) \u2192 onLights(id) \u2192 fleetCommands.toggleLights"
+    },
+    {
+      "id": "CTRL-021",
+      "name": "Uncouple",
+      "selector": "[data-command=uncouple]",
+      "callback": "onSelect(id) \u2192 onUncouple \u2192 fleetCommands.uncouple(selected) \u2192 applyConsistCommand"
+    },
+    {
+      "id": "CTRL-022",
+      "name": "Couple",
+      "selector": "[data-command=couple]",
+      "callback": "onSelect(id) \u2192 onCouple \u2192 fleetCommands.couple(selected) \u2192 applyConsistCommand"
+    },
+    {
+      "id": "CTRL-023",
+      "name": "Add Train",
+      "selector": "#addTrain",
+      "callback": "original addTrain; select only on successful non-null result"
+    },
+    {
+      "id": "CTRL-024",
+      "name": "STOP ALL",
+      "selector": "#stopAll",
+      "callback": "original stopAllTrains \u2192 fleetCommands.stopAll; no latch"
+    },
+    {
+      "id": "CTRL-025",
+      "name": "Pause/Resume",
+      "selector": "#pause",
+      "callback": "original onclick; paused + original Bell updates"
+    },
+    {
+      "id": "CTRL-026",
+      "name": "Reset",
+      "selector": "#reset \u2192 dialog.u5-guard",
+      "callback": "request intent; validate generation+identities; existing reset once on consent"
+    },
+    {
+      "id": "CTRL-050",
+      "name": "Space",
+      "selector": "window keydown in src/ui/keyboard.js",
+      "callback": "single handler \u2192 selected #stop.click; excludes native controls, editables and open dialogs"
+    },
+    {
+      "id": "CTRL-053",
+      "name": "Map focus",
+      "selector": ".railwayMiniMap, #sidebarRailwayMap, .u4-map-trains",
+      "callback": "original onSelect/onFocus; same real selection; sidebar unchanged"
+    },
+    {
+      "id": "CTRL-054",
+      "name": "Card name/image",
+      "selector": ".trainConsoleSelect, .locomotiveThumbnail",
+      "callback": "onSelect only"
+    }
+  ],
+  "historicalTestChanges": [
+    "browser-train-deck: obsolete LRU/old HUD visual expectations updated to all-card carousel and approved U3 enamel/52% mobile bound; railway assertions unchanged",
+    "browser-phase-zero: four mounted cards instead of three evicted cards; railway assertions unchanged",
+    "browser-ui-v21-U4: four mounted cards; explicit reset modal consent",
+    "browser-ui-v21-U2: external-request test uses SERIEN_URL instead of hardcoded obsolete port",
+    "isolated run-regression: translate previously explicit window.confirm=true reset consent to .u5-guard confirm; no railway assertion rewritten"
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "phase-zero",
+    "command": [
+      "python3",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/run-regression.py",
+      "tests/browser-phase-zero.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/verified-remaining/phase-zero"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsedSeconds": 24.061281204223633
+  },
+  {
+    "name": "U2",
+    "command": [
+      "python3",
+      "tests/browser-ui-v21-U2.py"
+    ],
+    "environment": {
+      "U2_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/verified-remaining/U2"
+    },
+    "exitCode": 0,
+    "elapsedSeconds": 87.2179307937622
+  },
+  {
+    "name": "U3",
+    "command": [
+      "python3",
+      "tests/browser-ui-v21-U3.py"
+    ],
+    "environment": {
+      "U3_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/verified-remaining/U3"
+    },
+    "exitCode": 0,
+    "elapsedSeconds": 58.28279662132263
+  }
+]

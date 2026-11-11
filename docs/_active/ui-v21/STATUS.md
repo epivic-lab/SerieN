@@ -1,15 +1,13 @@
-# UI V2.1 — U4 Sidebar, Switches, Environment, Missions & Map
+# UI V2.1 — U5 Train Dock, Carousel, Global Commands & Reset
 
-**U4 READY FOR REGIA REVIEW — STOP. U5–U9 non autorizzate.** U3 approvata; mandato U4 in evidence/U4/AUTHORIZATION_U4.md.
+**U5 READY FOR REGIA REVIEW — STOP. U6–U9 non avviate.** U4 approvata nel mandato U5.
 
-Branch `codex/ui-v2-integration`; ingresso locale/upstream/remoto `907a9ec4a9d570f03af9ab77d39269ff49787256`, working tree iniziale pulito. U2 `48a7c4d` antenata; baseline ferroviaria/M2/M3 `91722fbdf6671e69deebf645c3d8bf389212f421`, main remoto `184cc9ba93a6b35493f365b2ffcb20ef0645963d` conservati.
+Branch `codex/ui-v2-integration`, ingresso U4 `1d591bbc914f74cf066666522c6692be4132a614`, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d` conservata. Quattro card fisiche stabili, LRU recente conservata, selezione condivisa/ID unici, throttle distinto da actual/gauge 0–150 layout/s. Comandi, STOP ALL momentaneo, Pause e Add Train originali. Reset coordinato con consenso atomico, contesto rivalidato, generation/STale e sessioni/prenotazioni M2/M3 conservate. Keyboard/focus e dispose verificati; CSS solo U5.
 
-Sidebar V2.1 con otto pulsanti reali e hook originali, stati/counter e motivi di blocco completi senza hover; Daylight e missioni con handler originali, soglie42/72 e Next sempre disponibile. Mappa SVG canonica, marker fisici e focus sul controller esistente; quattro treni accessibili, dock LRU tre intatto. U2/U3 e Operations Log unico invariati. Nessun mock, nuova safety, store o renderer.
+**PASS eseguiti:** 254 Node, 9 Python, build/canonico/invarianti, 8 gruppi U5 produttivi, lifecycle callback, Browser Train Deck, Phase Zero, matrice 5C e smoke U2/U3/U4. RAF nativo definitivo: 4 treni, 89 frame/140877,644 ms (~0,625 fps SwiftShader), selezione/stop/pause/resume reali, zero pageerror. Nessuna certificazione hardware.
 
-**PASS nuovi U4:** 254 Node,9 Python,build+canonico/invarianti,9 gruppi produttivi,6 gruppi safety/camera/cleanup, S2/S5 e Phase Zero. 13 comandi finali exit0;27 immagini finali oltre alle regressioni. Occupied/approaching/unknown verificati con stesso rifiuto tra tile e click3D. Native RAF:3treni reali e marker sincronizzati, focus senza mutazione ferroviaria,16frame/24132,3ms (~0,622fps SwiftShader a650×760), un canvas e zero pageerror; hardware NOT VERIFIED.
+Bundle SHA-256 `8199e84ff8b0bf600013ff7b7ded3fe7d42a5a6be13468f55032e3a78add7ac3`. Motore/dispatcher/topologia/asset/font/dep/Auth/Supabase intatti; CSS U4 prefisso conservato. Failure/recovery, limiti e provenienza espliciti nel [rapporto U5](U5_REPORT.md) e [risultati](evidence/U5/results.json).
 
-225/226 file manifest U3 identici, app.js solo binding UI verificato per inversione esatta; tutti gli altri file preesistenti src/ui/tests e font/asset/licenze invariati; CSS U3 prefisso intatto. Bundle `4d63096f8b4cdaa15e62de27ee2b70384712deed58483fa2382fcdccdcde3c27` identico anche al test nativo viaHTTP.
+**NOT VERIFIED:** hardware/touch/audio/screen reader/altri browser/OAuth remoto/U9; sessione fisica singleton (cattura singola = proiezione del vero treno 0, non rimozione fisica). M2/M3 completi e matrici estese precedenti restano PASS documentati, non rieseguiti indiscriminatamente.
 
-[Rapporto](U4_REPORT.md), [risultati/comandi](evidence/U4/results.json), [invarianti](evidence/U4/invariants.json). Failure di costruzione/fixture/harness documentati e risolti senza cambiare asserzioni storiche. M2/M3 completi e matrice estesa R1/5C restano PASS storici U3, non ripetuti senza modifiche ai domini. GPU/touch/audio fisici, screen reader, altri browser, OAuth remoto, prompt beforeunload e accettazione U9 **NOT VERIFIED**.
-
-Prossima attività: revisione indipendente della Regia. U5 non avviata. Nessun main/merge/deploy/Supabase/workflow/packaging modificato. SHA finale e allineamento remoto nella consegna.
+Checkpoint normale sul solo branch autorizzato; SHA locale/remoto verificati nella consegna. Unica prossima attività: revisione indipendente della Regia. Nessun merge/main/deploy/Pages o U6.

@@ -1,0 +1,10 @@
+PASS insertion-occupied-zero-mutation-allowed-four-real-trains-fifth-refused
+PASS stable-four-cards-LRU-independent-unique-IDs-correct-identity-keyboard-carousel-no-rail-mutation
+PASS actual-velocity-not-throttle-Space-only-selected-input-exclusions-stopAll-four-no-latch
+PASS pause-resume-no-mutating-UI-reverse-order-lights-moving-uncouple-refused-stopped-detach-recouple
+PASS reset-pending-cancel-Escape-backdrop-zero-mutation-focus-restored-dialog-Space-captured
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U5.py", line 97, in <module>
+    click('#trainManagement');click('[data-view="projects"]');assert 'STALE' in p.locator('.managementBody').inner_text().upper()
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

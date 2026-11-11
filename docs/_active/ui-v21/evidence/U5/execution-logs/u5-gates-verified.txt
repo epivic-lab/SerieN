@@ -1,0 +1,6 @@
+deck RUNNING
+Traceback (most recent call last):
+  File "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/run-gates.py", line 14, in <module>
+    records.append({'name':name,'command':cmd,'environment':env,'exitCode':r.returncode,'elapsedSeconds':time.time()-start});(ev/label+'-gate-commands.json').write_text(json.dumps(records,indent=2)+'\n');print(name+' exit '+str(r.returncode),flush=True)
+                                                                                                                              ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for +: 'PosixPath' and 'str'

@@ -1,0 +1,8 @@
+PASS insertion-occupied-zero-mutation-allowed-four-real-trains-fifth-refused
+PASS stable-four-cards-LRU-independent-unique-IDs-correct-identity-keyboard-carousel-no-rail-mutation
+PASS actual-velocity-not-throttle-Space-only-selected-input-exclusions-stopAll-four-no-latch
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U5.py", line 70, in <module>
+    speed(0,30);js('__serienDiagnostics.step(0.2)');before=rail();click('#pause');shot('pause');assert rail()==before;click('#pause');assert rail()==before;click('#stopAll')
+                                                                                                       ^^^^^^^^^^^^^^
+AssertionError

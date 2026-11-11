@@ -134,3 +134,43 @@ dialog.u2-region::backdrop{background:#030705b0}dialog.u2-region .mi{height:auto
 @media(max-width:930px){.sidebar.u4-region{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;overflow:visible}}
 @media(max-width:700px){.sidebar.u4-region{display:flex;flex-direction:column;padding:12px}.u4-region>.m>.mi{padding:14px}.u4-region #switchList .sw{min-height:90px}}
 @media(prefers-reduced-motion:reduce){.u4-region *{animation:none!important;transition:none!important}}
+/* U5 / CTRL-016–026, 050, 053–054: Train Dock only. Frozen enamel/brass,
+   snap carousel and momentary mushroom, native controls and real engine readouts. */
+.u5-dock{padding:10px 12px;background:linear-gradient(135deg,#d9b45f,#5f4416 40%,#f6e2a4 80%,#a9802f);border:0;border-radius:12px;color:#f2e8d0;min-width:0;font:400 14px Federo}
+.u5-dock .consoleHead{display:flex;flex-wrap:wrap;gap:10px;padding:8px 10px;background:linear-gradient(#1f4337,#0f271f);border-radius:8px}
+.u5-dock h2{font:700 18px 'Cinzel Decorative';color:#f6e2a4;margin:0}
+.u5-dock .consoleHeading{flex:0 0 auto}.u5-dock .trainTabs{flex:1;min-width:180px;gap:6px;overflow:auto}
+.u5-dock button{min-width:44px;min-height:44px;border:1px solid #a9802f;border-radius:6px;background:linear-gradient(#285543,#0f271f);color:#f2e8d0;font:400 14px Federo;cursor:pointer}
+.u5-dock button:disabled{opacity:.5;cursor:not-allowed}.u5-dock :focus-visible{outline:2px solid #f6e2a4;outline-offset:2px}
+.u5-dock .trainTabs .tab{padding:4px 8px;flex:0 0 auto}.u5-dock .tab.active{background:linear-gradient(#f6e2a4,#a9802f);color:#2a1d08}.u5-dock .tab small{color:inherit}
+.u5-dock .allButtons{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.u5-dock #stopAll{width:68px;height:68px;border-radius:50%;color:white;font-size:12px;font-weight:bold;background:radial-gradient(circle at 35% 28%,#ffa08c,#d4452f 40%,#7c1b0e 88%);box-shadow:0 0 0 2px #d9b45f,inset 0 -6px 10px #0006,inset 0 4px 6px #fff5}
+.u5-dock #stopAll:active{transform:translateY(2px)}
+.u5-carousel-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#0f271f;padding:4px 8px;margin-top:6px;color:#d9b45f;letter-spacing:.08em}
+.u5-dock .trainDeck{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 3px;scroll-padding:3px;grid-template-columns:none}
+.u5-dock .trainConsole{flex:0 0 calc((100% - 20px)/3);min-width:310px;max-width:none;scroll-snap-align:start;padding:10px 12px;border:1px solid #a9802f66;border-radius:8px;background:linear-gradient(180deg,#0d231b,#14342a);box-shadow:inset 0 2px 6px #000c;color:#f2e8d0}
+.u5-dock .trainConsole.is-active{border-color:#f6e2a4;box-shadow:inset 0 2px 6px #000c,0 0 10px #d9b45f55}
+.u5-dock .trainConsoleHeading{grid-template-columns:minmax(0,1fr) 90px;gap:4px}.u5-dock .trainConsoleSelect{grid-column:1;grid-row:1;padding:3px 0;background:none;border:0;text-align:left}
+.u5-dock .trainConsoleName{font:700 15px 'Cinzel Decorative';color:#f6e2a4}.u5-dock .trainConsoleDescription{font:400 12px Federo;color:#a9bfae}
+.u5-dock .locomotiveThumbnail{grid-column:2;grid-row:1;width:90px;height:52px;object-fit:contain}.u5-dock .railwayMiniMap{grid-column:2;grid-row:2;width:90px;height:48px;background:#e4e7d9}.u5-dock .trainConsoleStatus{grid-column:1;grid-row:2;color:#a9bfae}
+.u5-dock .trainActual{display:grid;grid-template-columns:1fr auto;gap:3px 10px;margin:7px 0;color:#d9b45f}.u5-dock .trainActual output{font:400 15px 'Cutive Mono';color:#f6e2a4}.u5-dock meter{grid-column:1/-1;width:100%;height:12px;accent-color:#d9b45f}.u5-dock .trainActual small{font:400 11px 'Cutive Mono';color:#a9bfae}
+.u5-dock .trainConsoleSpeed{margin:4px 0}.u5-dock input[type=range]{min-height:44px;accent-color:#d9b45f}.u5-dock .trainConsoleSpeed label{color:#f2e8d0}.u5-dock .trainConsoleSpeed output{font:400 15px 'Cutive Mono';color:#f6e2a4}
+.u5-dock .trainConsoleCommands{display:flex;flex-wrap:wrap;gap:4px}.u5-dock .trainConsoleCommands button{flex:1;padding:4px;min-width:52px}.u5-dock .trainConsoleCommands button span{display:block;font-size:12px}.u5-dock .trainConsoleCommands button.active{background:linear-gradient(#f6e2a4,#a9802f);color:#2a1d08}.u5-dock [data-command=stop]{background:linear-gradient(#983b2b,#551e14)}
+@media(max-width:1100px){.u5-dock .trainConsole{flex-basis:calc((100% - 10px)/2)}.u5-dock .allButtons{margin-left:auto}}
+@media(max-width:700px){.u5-dock{padding:8px}.u5-dock .trainTabs{flex-basis:100%}.u5-dock .allButtons{margin:0;justify-content:space-between;width:100%}.u5-dock .trainConsole{flex-basis:100%;min-width:0}.u5-dock .consoleHead{padding:8px}.u5-carousel-nav{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.u5-dock *{scroll-behavior:auto;transition:none}}
+/* U5: replace the legacy fixed three-row geometry for the extra actual-speed row. */
+.u5-dock .trainConsole{grid-template-rows:auto auto auto auto;gap:4px}
+.u5-dock .trainConsoleHeading{grid-template-rows:52px 48px}
+.u5-dock .trainConsoleStatus{align-items:flex-start;line-height:15px}.u5-dock .trainConsoleState,.u5-dock .trainConsoleCars{font:400 12px/15px Federo}
+.u5-dock .trainConsoleDescription{line-height:16px}.u5-dock .trainConsoleSpeed label{height:auto;min-height:44px;font-size:13px;grid-template-columns:auto minmax(0,1fr) 42px}
+.u5-dock .trainConsoleSpeed input{height:44px}.u5-dock .trainConsoleSpeed output{font-size:15px}
+/* A03: reset shares the coordinator, while Sign out keeps its existing selectors. */
+.u5-guard .mi{background:linear-gradient(#1f4337,#0f271f)}.u5-guard .m{animation:none}
+/* A07: needle and readout both read abs(train.velocity), 150 = MOTION.maxSpeed × speedScale. */
+.u5-dock .trainActual{grid-template-columns:64px minmax(0,1fr) auto;align-items:center;margin:2px 0}
+.u5-dock .u5-gauge{width:64px;height:64px;grid-column:1;grid-row:1/3}.u5-gauge text{font:12px 'Cutive Mono';fill:#5f4416}
+.u5-dock .trainActual meter{position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden}
+.u5-dock .trainActual small{grid-column:2/4}
+/* Contain the accessible meter's clipped absolute box inside its own readout. */
+.u5-dock .trainActual{position:relative}.u5-dock .trainActual meter{left:0;top:0}

@@ -72,7 +72,7 @@ with sync_playwright() as pw:
             page.locator('.u4-map-trains [data-map-train="'+str(train_id)+'"]').click()
             state=snapshot()
             assert state['consoles']['active']==train_id and state['camera']['preset']=='manual'
-            assert len(state['consoles']['visible'])==3
+            assert len(state['consoles']['visible'])==4
             assert page.evaluate('__serienDiagnostics.railwayState()')==before
             verify_map()
         page.evaluate("document.querySelector('[data-train=\"0\"]').click();document.getElementById('speed').value=30;document.getElementById('speed').dispatchEvent(new Event('input'))")
@@ -104,7 +104,7 @@ with sync_playwright() as pw:
         check('original-daylight-input-value-glyph-thresholds-42-and-72')
 
         # Original reset, then real occupied and approaching cases through the existing engine.
-        page.evaluate("document.getElementById('reset').click();document.getElementById('pause').click();document.querySelector('[data-train=\"2\"]').click();for(let i=0;i<5;i++)document.getElementById('uncouple').click();__serienDiagnostics.setSwitches(['Y-4']);__serienDiagnostics.placeTrain(2,'TO4:AC',100,-1);__serienDiagnostics.step(0)")
+        page.evaluate("document.getElementById('reset').click();document.querySelector('dialog.u5-guard [data-confirm]').click();document.getElementById('pause').click();document.querySelector('[data-train=\"2\"]').click();for(let i=0;i<5;i++)document.getElementById('uncouple').click();__serienDiagnostics.setSwitches(['Y-4']);__serienDiagnostics.placeTrain(2,'TO4:AC',100,-1);__serienDiagnostics.step(0)")
         # Baseline reset preserves the real fleet, including the fourth train.
         assert page.locator('#sidebarRailwayMap circle').count()==len(snapshot()['stock'])==4
         button=page.locator('[data-switch-id=Y-4][data-switch]')

@@ -36,7 +36,7 @@ with sync_playwright() as p:
       const reverseTravel=s.stock.map((t,id)=>t.journey.travel-travel[id]);command(1,'stop');api.step(2);s=snap();check(s.stock[1].velocity===0&&Math.abs(s.stock[0].velocity)>0&&Math.abs(s.stock[2].velocity)>0,'individual stop');
       $('#stopAll').click();s=snap();check(s.stock.every(t=>t.speed===0&&t.velocity===0),'STOP TUTTI for all original trains');
       // A real fourth train is added through the production UI, not a mock.
-      speed(0,20);[1,2].forEach(select);$('#addTrain').click();s=snap();check(s.stock.length===4&&s.consoles.visible.length===3&&!s.consoles.visible.includes(0),'LRU fourth console replacement');
+      speed(0,20);[1,2].forEach(select);$('#addTrain').click();s=snap();check(s.stock.length===4&&s.consoles.visible.length===4&&s.consoles.visible.includes(0),'four stable carousel cards');
       const hidden=s.stock[0],point=hidden.vehicles[0];api.step(2);s=snap();check(Math.abs(s.stock[0].velocity)>0&&s.stock[0].journey.travel>hidden.journey.travel,'hidden simulation continues');
       select(0);s=snap();check(s.stock[0].speed===20&&s.stock[0].dir===hidden.dir&&s.stock[0].lights===hidden.lights&&s.stock[0].cars.length===hidden.cars.length,'hidden state retained');markers();
       $('#stopAll').click();check(snap().stock.every(t=>t.speed===0&&t.velocity===0),'STOP TUTTI includes hidden fourth train');

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "deck",
+    "command": [
+      "python3",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/run-regression.py",
+      "tests/browser-train-deck.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/final/deck"
+    ],
+    "environment": {},
+    "exitCode": 1,
+    "elapsedSeconds": 8.338596820831299
+  },
+  {
+    "name": "phase-zero",
+    "command": [
+      "python3",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/run-regression.py",
+      "tests/browser-phase-zero.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/final/phase-zero"
+    ],
+    "environment": {},
+    "exitCode": 1,
+    "elapsedSeconds": 7.394865989685059
+  },
+  {
+    "name": "U2",
+    "command": [
+      "python3",
+      "tests/browser-ui-v21-U2.py"
+    ],
+    "environment": {
+      "U2_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/final/U2"
+    },
+    "exitCode": 1,
+    "elapsedSeconds": 39.80066776275635
+  },
+  {
+    "name": "U3",
+    "command": [
+      "python3",
+      "tests/browser-ui-v21-U3.py"
+    ],
+    "environment": {
+      "U3_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/final/U3"
+    },
+    "exitCode": 1,
+    "elapsedSeconds": 56.90244960784912
+  },
+  {
+    "name": "U4",
+    "command": [
+      "python3",
+      "tests/browser-ui-v21-U4.py"
+    ],
+    "environment": {
+      "U4_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/final/U4"
+    },
+    "exitCode": 0,
+    "elapsedSeconds": 48.42211985588074
+  }
+]

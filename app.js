@@ -1,3 +1,5 @@
+import {mountDock} from './src/ui/dock.js';
+import {mountKeyboard} from './src/ui/keyboard.js';
 import {mountShell} from './src/ui/shell.js';
 import {mountViewportOverlays} from './src/ui/overlays.js';
 import {mountSidebar} from './src/ui/sidebar.js';
@@ -37,7 +39,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 const $ = (id) => document.getElementById(id);
 const host = $("view3d");
-let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null, viewportOverlays = null, sidebarUI = null;
+let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null, viewportOverlays = null, sidebarUI = null, dockUI = null, keyboardUI = null;
 let highlightUntil=0,highlightUpdated=0;
 importedTrains($("rollingModels").value === "kenney");
 const scene = new THREE.Scene();
@@ -572,7 +574,6 @@ function removeWagon(group) {
 }
 function reset() {
   guardedStops.clear();
-  if (!confirm("Reset locomotives, switches and missions?")) return;
   for (const d of detached) removeWagon(d.group);
   detached.length = 0;
   switchSpecs.forEach((s) => {
@@ -659,7 +660,7 @@ $("pause").onclick = () => {
   log(paused ? "Simulation paused." : "Simulation resumed.");
   trainDeck?.update();uiShell?.update();
 };
-$("reset").onclick = reset;
+// Reset intent is mounted after the real Train Management generation is available.
 $("homeView").onclick = () => {
   nav.select("overview");
   $("cameraView").value = "overview";
@@ -701,6 +702,9 @@ trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains
 trainManagement=mountTrainManagement({button:$("trainManagement"),getTrains:()=>trains,getDetached:()=>detached,getSelected:()=>selected,getImportedCatalog:getTrainAssetCatalog,
   onSelect:select,onFocus:(id)=>{select(id);nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
 });
+dockUI=mountDock({host:$("trainDeck"),tabs:$("tabs"),button:$("reset"),getTrains:()=>trains,getSelected:()=>selected,onSelect:select,
+  getGeneration:()=>trainManagement.sessionSummary.generation,onReset:reset});
+keyboardUI=mountKeyboard({onStop:()=>$("stop")?.click()});
 uiShell=mountShell({management:trainManagement,isPaused:()=>paused});
 nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState});
 const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
@@ -716,12 +720,6 @@ quality.setMode("auto");
 applyQuality(quality.profile);
 document.addEventListener("visibilitychange", () => {
   if (document.hidden){quality.update(0, false);turnoutInteraction.clear(); }
-});
-window.addEventListener("keydown", (e) => {
-  if (e.code === "Space" && !["INPUT", "SELECT", "BUTTON"].includes(e.target.tagName)) {
-    e.preventDefault();
-    $("stop").click();
-  }
 });
 const observer = new ResizeObserver(resize);
 observer.observe(host);
@@ -754,6 +752,8 @@ window.addEventListener("pagehide", (e) => {
   sidebarUI?.dispose();
   uiShell?.dispose();
   trainManagement?.dispose();
+  dockUI?.dispose();
+  keyboardUI?.dispose();
   trainDeck?.dispose();
   nav.dispose();
   effects.dispose();

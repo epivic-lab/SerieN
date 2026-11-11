@@ -1,0 +1,7 @@
+{
+  "status": "FAIL",
+  "bundleSHA256": "828e56e218731dc85b8a8ffa86836aff143db869050ec65ca8c3d2c8cac06303",
+  "checks": [],
+  "errors": [],
+  "failure": "Page.evaluate: RangeError: Diagnostic consist does not fit\n    at Object.placeTrain (http://127.0.0.1:8033/dist/game.js:4201:45965)\n    at eval (eval at evaluate (:311:30), <anonymous>:1:21)\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:311:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+}
