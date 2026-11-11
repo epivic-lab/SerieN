@@ -1,0 +1,20 @@
+{
+  "verdict": "BLOCKED",
+  "driveFileId": "1lZ9zmhbh8HwDC1ILd5OqeKJCrV0fm2i8",
+  "fileName": "serien-codex-package-ui-v21.zip",
+  "providerMimeType": "application/zip",
+  "providerSizeBytes": 36752894,
+  "metadataRead": "PASS",
+  "connectorRawFetch": "PASS: complete file reference returned, include_base64=false",
+  "workspaceMaterialization": "FAIL: HTTP 403",
+  "directDriveAttempt": "FAIL: curl (56) CONNECT tunnel failed, response 403",
+  "temporaryDownloadHost": "sdmntprnortheu.oaiusercontent.com",
+  "directHost": "drive.google.com",
+  "networkPolicy": "restricted/enforced; observations_current=true; neither download host in effective allowlist",
+  "downloadedZipBytes": "NOT VERIFIED: no local ZIP available",
+  "formatCRCManifestChecksums": "NOT VERIFIED",
+  "documentationMappingContractsComparison": "NOT VERIFIED",
+  "baselineApplicationDiff": "PASS: empty diff against 91722fbdf6671e69deebf645c3d8bf389212f421",
+  "applicationTests": "NOT RERUN: user instruction, application unchanged",
+  "signedDownloadURL": "OMITTED"
+}

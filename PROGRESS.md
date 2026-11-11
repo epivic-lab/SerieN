@@ -285,3 +285,11 @@ Design dichiarato approvato dalla Regia, incarico ancora limitato alla Fase 0. A
 Remote main `184cc9b`, M2/M3 `91722fb` e checkpoint dedicato iniziale `e61402c` nuovamente verificati; working tree iniziale pulito. Nuove esecuzioni: **254 Node, 9 Python, build/canonico PASS**, stesso bundle/canonico; suite browser precedenti non ripetute. Aggiornati solo [rapporto §11](docs/ui-v2-integration/REPORT.md), STATUS, PROGRESS ed evidenze. Nessuna modifica applicativa/Auth/Supabase/V1, merge o deploy.
 
 **STOP. Unica prossima azione: acquisire lo ZIP tramite URL scaricabile o parti sotto 32 MiB e completare l'audit**; pacchetto tecnico definitivo e autorizzazione all'implementazione restano separati. SHA del checkpoint documentale e allineamento remoto nella consegna.
+
+## UI V2.1 — tentativo Google Drive (2026-11-11)
+
+Metadati e raw fetch connettore PASS: file Drive `1lZ9zmhbh8HwDC1ILd5OqeKJCrV0fm2i8`, `serien-codex-package-ui-v21.zip`, application/zip dichiarato, 36.752.894 byte. **BLOCKED nella materializzazione**: host temporaneo `sdmntprnortheu.oaiusercontent.com` HTTP 403; Drive diretto CONNECT 403, domini non in allowlist enforced. Non è un diniego dei permessi Google Drive. Nessun ZIP locale: integrità/manifest/contenuto/contratti e confronto completo NOT VERIFIED.
+
+SHA main/M2-M3/V1 e checkpoint iniziale `e48dd96` confermati; nessuna modifica applicativa contro `91722fb`. Test non ripetuti come richiesto; bundle/canonico identici. Solo rapporto §12, STATUS, PROGRESS ed evidenza sicura del blocco; nessun URL firmato salvato. [Rapporto](docs/ui-v2-integration/REPORT.md).
+
+**STOP per la Regia. Prossima azione:** consentire il dominio di download nelle impostazioni rete e ripetere con riferimento fresco, oppure parti sotto 32 MiB; poi completare l'audit. Nessuna implementazione/merge/deploy.

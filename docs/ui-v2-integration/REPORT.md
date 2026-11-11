@@ -206,3 +206,33 @@ Rendere disponibili gli stessi byte dello ZIP tramite un URL scaricabile oppure 
 Nuove esecuzioni: **254 Node PASS (zero fail/skip), 9 Python PASS, build PASS, canonico rigenerato/diff PASS**. Codici d'uscita tutti zero; log e codici in `evidence/acquisition/`. Bundle e canonico mantengono gli SHA-256 riportati al §9/10. Confronto Git dei percorsi applicativi/bloccati contro `91722fb`: diff vuoto (app/src/HTML/CSS/asset/Auth/Supabase/workflow/package). Nessun cambiamento a V1 o agli altri branch; nessun dato/credenziale remota trattato. Nuove modifiche limitate a questo rapporto, STATUS, PROGRESS ed evidenze test.
 
 Le dieci suite browser della precedente Fase 0 restano **PASS storico**, non rieseguite in questo aggiornamento documentale: non è cambiato il bundle. Nuovo confronto browser con il design, immagini/PDF/reference, checksum e verifiche di dipendenze del pacchetto **NOT VERIFIED** per mancata acquisizione. Il fallimento di download non è una regressione del simulatore né prova di un archivio danneggiato.
+
+## 12. Acquisizione da Google Drive — esito del nuovo tentativo
+
+Questa sezione aggiorna il §11: il file è ora identificato tramite Drive, ma l'acquisizione nel workspace resta bloccata. URL fornito: https://drive.google.com/file/d/1lZ9zmhbh8HwDC1ILd5OqeKJCrV0fm2i8/view . Evidenza sintetica priva del link temporaneo firmato: `evidence/drive-acquisition/result.json`.
+
+| Passaggio | Esito osservato |
+| --- | --- |
+| Metadati con connettore Google Drive | **PASS**: nome `serien-codex-package-ui-v21.zip`, MIME dichiarato `application/zip`, dimensione 36.752.894 byte corrispondenti al mandato |
+| Fetch raw con `include_base64=false` | **PASS del connettore**: restituiti riferimento completo al file e dimensione 36.752.894 byte; nessun `workspace_path` materializzato |
+| Materializzazione del riferimento tramite curl | **FAIL trasferimento**: HTTP 403 sul dominio temporaneo `sdmntprnortheu.oaiusercontent.com` |
+| Tentativo diretto Drive `/uc?export=download&id=…` | **FAIL trasferimento**: `curl: (56) CONNECT tunnel failed, response 403`; nessun corpo/file scaricato |
+| Policy dell'ambiente | `restricted`, `enforced`, osservazioni correnti; `drive.google.com` e l'host temporaneo non sono nell'allowlist effettiva |
+| ZIP magic, confronto byte locali con dimensione, CRC, directory centrale, manifest/checksum | **NOT VERIFIED**, nessun archivio disponibile localmente. MIME e size del provider non provano l'integrità dei byte |
+| Identificazione tecnica/design/entrambi, lettura istruzioni/contratti/mapping, incompatibilità con M2/M3 | **NOT VERIFIED**: non si deduce il contenuto dal nome del file |
+
+Il connettore ha accesso al file; **non è stato osservato un diniego dei permessi Google Drive né un archivio incompleto/corrotto**. Il blocco osservato è la policy di rete dell'ambiente per la materializzazione. Il precedente limite Sediment di 32 MiB resta insufficiente per il riferimento da 36.752.894 byte. Non si usa base64 inline né si modifica la condivisione del file. Nessun link firmato o credenziale salvato in Git.
+
+### Baseline e test
+
+Verifica remota ripetuta: main `184cc9ba93a6b35493f365b2ffcb20ef0645963d`, M2/M3 `91722fbdf6671e69deebf645c3d8bf389212f421`, V1 `cf2c29a8112b37a53c62cb84fca44061942aea31`, branch dedicato iniziale locale/remoto `e48dd96dcc9d14a3b1ad7befd9287619640f54b2`. Working tree iniziale pulito; baseline approvata antenata di HEAD. Confronto dei percorsi applicativi e congelati contro `91722fb`: diff vuoto. Bundle e canonico mantengono gli hash dei §§9/10.
+
+**Test applicativi non ripetuti**, come richiesto: nessuna modifica applicativa. Restano i risultati precedenti con provenienza distinta (254 Node, 9 Python, build/canonico e dieci suite browser nella Fase 0; Node/Python/build/canonico ripetuti nel §11). In questo tentativo verificati soltanto metadati, trasferimenti, Git e invarianti. Nessun merge/deploy, modifica R1/Supabase/Auth/main/V1 o avvio dell'implementazione.
+
+### Verdetto e prossimo passo
+
+**BLOCKED.** Per completare il gate occorre prima consentire la materializzazione: nelle impostazioni di rete dell'ambiente autorizzare `sdmntprnortheu.oaiusercontent.com` (poi generare un riferimento fresco con il connettore); per l'alternativa HTTP diretta servono `drive.google.com` e gli eventuali host di redirect effettivamente osservati. Non è disponibile in questa sessione uno strumento per proporre/modificare tale configurazione. In alternativa sono utilizzabili parti dell'archivio sotto 32 MiB.
+
+Dopo lo sblocco restano obbligatori verifica ZIP/CRC/manifest/checksum, lettura completa e identificazione del contenuto, confronto dei contratti con R1/M1/M2/M3 e verifica dell'effettiva approvazione del pacchetto tecnico. Il titolo **READY FOR UI V2.1 IMPLEMENTATION GATE** non può essere assegnato a un pacchetto non ispezionato. Nessuna incompatibilità concreta del pacchetto è dichiarata senza accesso ai documenti.
+
+**STOP per la Regia.** Questo è un checkpoint documentale di blocco, non la consegna dell'audit completo né un'autorizzazione a implementare.
