@@ -68,5 +68,5 @@ export function createTrainProjectsView({getTrains,getSelected,getGeneration,onC
     if(focusKey){const target=[...root.querySelectorAll('[data-project-action]')].find(n=>n.dataset.projectAction===focusKey);target?.focus({preventScroll:true});if(selection&&target?.tagName==='INPUT')target.setSelectionRange(...selection);}
     if(scroll!==undefined)root.closest('dialog').scrollTop=scroll;
   }
-  return {root,sync,copy,discard,get dirty(){return store.dirty;},get hasProjects(){return store.projects.length>0;},dispose(){disposed=true;side.dispose();root.remove();store.cancel();}};
+  return {root,sync,copy,discard,get snapshot(){return {confirmed:store.projects,draft:store.draft};},get dirty(){return store.dirty;},get hasProjects(){return store.projects.length>0;},dispose(){disposed=true;side.dispose();root.remove();store.cancel();}};
 }

@@ -1,17 +1,21 @@
 import {createTrainSideView} from './train-side-view.js';
 import {PROJECT_CATALOG} from './train-projects.js';
 import {createTrainProjectsView} from './train-projects-view.js';
+import {createDepotInventory} from './depot-inventory.js';
+import {createDepotView} from './depot-view.js';
 import {compositionView,detachedView} from './train-management-state.js';
 import {THUMBNAIL_FALLBACK,thumbnailURL} from './locomotive-thumbnails.js';
 
 export function mountTrainManagement({button,getTrains,getDetached,getSelected,getImportedCatalog,onSelect,onFocus}) {
   const dialog=document.createElement('dialog');dialog.className='trainManagement';
   dialog.setAttribute('aria-labelledby','managementTitle');
-  dialog.innerHTML=`<header class="managementHead"><div><span class="eyebrow">ROLLING STOCK · 1:160</span><h2 id="managementTitle">Train Management</h2></div><button type="button" data-close>✕ Close</button></header><p class="managementIntro">Explore available models, inspect real trains and design independent projects.</p><nav class="managementNav" aria-label="Train Management views"><button type="button" data-view="layout">On the layout</button><button type="button" data-view="catalog">Model catalog</button><button type="button" data-view="projects">Projects</button></nav><div class="managementBody"></div>`;
+  dialog.innerHTML=`<header class="managementHead"><div><span class="eyebrow">ROLLING STOCK · 1:160</span><h2 id="managementTitle">Train Management</h2></div><button type="button" data-close>✕ Close</button></header><p class="managementIntro">Explore available models, inspect real trains and design independent projects.</p><nav class="managementNav" aria-label="Train Management views"><button type="button" data-view="layout">On the layout</button><button type="button" data-view="catalog">Model catalog</button><button type="button" data-view="projects">Projects</button><button type="button" data-view="depot">Depot</button></nav><div class="managementBody"></div>`;
   document.body.append(dialog);
   const sideView=createTrainSideView();
-  let generation=0;
-  const projects=createTrainProjectsView({getTrains,getSelected,getGeneration:()=>generation,onChange:()=>{signature='';sync();}});
+  let generation=0,inventory;
+  const projects=createTrainProjectsView({getTrains,getSelected,getGeneration:()=>generation,onChange:()=>{inventory?.reconcile();signature='';sync();}});
+  inventory=createDepotInventory({getProjects:()=>projects.snapshot.confirmed});
+  const depot=createDepotView({inventory,getProjects:()=>projects.snapshot,getTrains,getDetached,getGeneration:()=>generation,onChange:()=>{signature='';sync();}});
   const body=dialog.querySelector('.managementBody');let view='layout',signature='',disposed=false,lastSync=0;
   const element=(tag,text,className)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;};
   const mm=n=>Number.isFinite(n)?`${n.toFixed(1)} mm`:'Not measured';
@@ -51,11 +55,12 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
   function sync() {
     if(disposed||!dialog.open)return;
     // No per-frame DOM rebuilding: only structural/model/selection changes.
-    const next=JSON.stringify([view,getSelected(),getTrains().map(compositionView),getDetached().map(detachedView),getImportedCatalog(),generation,getTrains().map(t=>Boolean(t.speed||Math.abs(t.velocity)>.1))]);
+    const next=JSON.stringify([view,getSelected(),getTrains().map(compositionView),getDetached().map(detachedView),getImportedCatalog(),generation,getTrains().map(t=>Boolean(t.speed||Math.abs(t.velocity)>.1)),inventory.items,projects.snapshot]);
     if(next===signature)return;signature=next;
     const scroll=body.scrollTop,focused=document.activeElement?.dataset.composition;
     for(const b of dialog.querySelectorAll('[data-view]'))b.setAttribute('aria-pressed',String(b.dataset.view===view));
-    if(view==='projects'){if(projects.root.parentNode!==body)body.replaceChildren(projects.root);projects.sync();}
+    if(view==='depot'){if(depot.root.parentNode!==body)body.replaceChildren(depot.root);depot.sync();}
+    else if(view==='projects'){if(projects.root.parentNode!==body)body.replaceChildren(projects.root);projects.sync();}
     else {body.replaceChildren();if(view==='catalog')catalog();else layout();}body.scrollTop=scroll;
     if(focused!==undefined)body.querySelector(`[data-composition="${Number(focused)}"]`)?.focus();
   }
@@ -63,9 +68,9 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
   function requestClose(){if(projects.discard())dialog.close();}
   dialog.querySelector('[data-close]').onclick=requestClose;
   dialog.addEventListener('cancel',event=>{event.preventDefault();requestClose();});
-  function beforeUnload(event){if(projects.dirty||projects.hasProjects){event.preventDefault();event.returnValue='';}}
+  function beforeUnload(event){if(projects.dirty||projects.hasProjects||inventory.size>0){event.preventDefault();event.returnValue='';}}
   window.addEventListener('beforeunload',beforeUnload);
   for(const b of dialog.querySelectorAll('[data-view]'))b.onclick=()=>{view=b.dataset.view;sync();};
   dialog.addEventListener('close',()=>button.focus());
-  return {sync,invalidateReferences(){generation++;signature='';sync();},update(now){if(dialog.open&&now-lastSync>=250){lastSync=now;sync();}},dispose(){disposed=true;button.onclick=null;sideView.dispose();projects.dispose();window.removeEventListener('beforeunload',beforeUnload);dialog.remove();}};
+  return {sync,invalidateReferences(){generation++;signature='';sync();},update(now){if(dialog.open&&now-lastSync>=250){lastSync=now;sync();}},dispose(){disposed=true;button.onclick=null;sideView.dispose();projects.dispose();depot.dispose();inventory.dispose();window.removeEventListener('beforeunload',beforeUnload);dialog.remove();}};
 }
