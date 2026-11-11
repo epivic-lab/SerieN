@@ -293,3 +293,11 @@ Metadati e raw fetch connettore PASS: file Drive `1lZ9zmhbh8HwDC1ILd5OqeKJCrV0fm
 SHA main/M2-M3/V1 e checkpoint iniziale `e48dd96` confermati; nessuna modifica applicativa contro `91722fb`. Test non ripetuti come richiesto; bundle/canonico identici. Solo rapporto §12, STATUS, PROGRESS ed evidenza sicura del blocco; nessun URL firmato salvato. [Rapporto](docs/ui-v2-integration/REPORT.md).
 
 **STOP per la Regia. Prossima azione:** consentire il dominio di download nelle impostazioni rete e ripetere con riferimento fresco, oppure parti sotto 32 MiB; poi completare l'audit. Nessuna implementazione/merge/deploy.
+
+## UI V2.1 — acquisizione definitiva e readiness gate (2026-11-11)
+
+**READY FOR UI V2.1 IMPLEMENTATION GATE**, non autorizzazione applicativa. Due ZIP CRC PASS; `.aa` + `.ab` ricostruiscono l'originale di 36.752.894 byte, SHA-256 `9bd0252311ab82dd77af76f66cf9bb5251d74ce09d0815deae044ea90a58333d`. CRC originale e manifest tecnico 197/197 + design 143/143 PASS. Presenti dossier tecnico/spec/contratti/prompts U0–U9, design V2.1 congelato e V1 (40 file identici al branch design). Blocco di trasferimento RISOLTO.
+
+[Rapporto §13](docs/ui-v2-integration/REPORT.md), [mapping 66 controlli e 31 schermate / evidenze](docs/ui-v2-integration/evidence/final-package/). Confronto con M2/M3 `91722fb` completo; branch effettivo resta `codex/ui-v2-integration`, M3 già approvata/presente: riferimenti precedenti del dossier superati dal mandato, nessun merge/rebase. Adattamenti solo UI documentati (getter/launcher, conferme, DOM, cascade); engine/store/Auth congelati.
+
+Smoke nuovo reference 4 tab PASS con limiti espliciti; primo harness selettore errato registrato. Font definitivi/licenze da acquisire in U1, gate visivo/interattivo completo da eseguire nelle fasi previste. Baseline test non ripetuti come richiesto; nessuna modifica applicativa, hash bundle/canonico invariati. Aggiornati solo rapporto/stato/progresso/evidenze. **STOP per gate Regia sul pacchetto e adattamenti; nessuna U0/U1 applicativa, merge o deploy avviati.**

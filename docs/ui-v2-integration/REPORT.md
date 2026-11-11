@@ -1,6 +1,6 @@
 # UI V2.1 — INTEGRATION READINESS REPORT
 
-Aggiornamento acquisizione allegato: vedere §11, che prevale sul precedente stato di disponibilità del design.
+**Stato corrente: READY FOR UI V2.1 IMPLEMENTATION GATE — vedere §13.** I blocchi di trasferimento dei §§6/10/11/12 sono storici e risolti dagli allegati segmentati; nessuna implementazione autorizzata.
 
 Data: 2026-11-11. Perimetro: **FASE 0**, audit e preparazione. Nessuna implementazione UI, modifica applicativa, merge o deploy autorizzati/eseguiti.
 
@@ -236,3 +236,88 @@ Verifica remota ripetuta: main `184cc9ba93a6b35493f365b2ffcb20ef0645963d`, M2/M3
 Dopo lo sblocco restano obbligatori verifica ZIP/CRC/manifest/checksum, lettura completa e identificazione del contenuto, confronto dei contratti con R1/M1/M2/M3 e verifica dell'effettiva approvazione del pacchetto tecnico. Il titolo **READY FOR UI V2.1 IMPLEMENTATION GATE** non può essere assegnato a un pacchetto non ispezionato. Nessuna incompatibilità concreta del pacchetto è dichiarata senza accesso ai documenti.
 
 **STOP per la Regia.** Questo è un checkpoint documentale di blocco, non la consegna dell'audit completo né un'autorizzazione a implementare.
+
+## 13. Acquisizione definitiva da segmenti — gate tecnico di readiness
+
+**Verdetto: READY FOR UI V2.1 IMPLEMENTATION GATE.** Pacchetto acquisito, integro secondo CRC e manifest dichiarati, identificato e confrontato con la baseline completa M2/M3. I precedenti blocchi di trasferimento e indisponibilità documentale sono **RISOLTI**. Questo verdetto porta il dossier al gate della Regia: non approva automaticamente il pacchetto tecnico né autorizza U0/U1 o modifiche applicative.
+
+### 13.1 Ricostruzione e integrità — PASS
+
+| Oggetto | Riscontro |
+| --- | --- |
+| `serien-v21-01.zip` | 24.000.186 byte; CRC PASS; contiene soltanto `serien-v21.part.aa` |
+| `serien-v21-02.zip` | 12.753.080 byte; CRC PASS; contiene soltanto `serien-v21.part.ab` |
+| Segmenti estratti | `.aa` = 24.000.000 byte; `.ab` = 12.752.894 byte |
+| Ricostruzione | Concatenazione binaria `.aa` poi `.ab`, non concatenazione dei due contenitori ZIP |
+| ZIP originale | **36.752.894 byte**, esattamente la dimensione attesa; archivio ZIP leggibile, non HTML |
+| SHA-256 originale calcolato | `9bd0252311ab82dd77af76f66cf9bb5251d74ce09d0815deae044ea90a58333d` |
+| CRC originale | PASS su tutte le entry; percorsi controllati prima dell'estrazione, nessuna traversal assoluta/`..` |
+| Manifest tecnico `FILE_INDEX.md` | **197/197** voci: dimensioni e prefissi SHA-256 dichiarati (16 cifre) corrispondenti |
+| Manifest design V2.1 | **143/143** voci corrispondenti |
+| Inventario completo | 198 file, compreso l'indice tecnico stesso; SHA-256 completi calcolati in `file-inventory.json` |
+
+SHA dell'archivio registrato come misura riproducibile: non è stato fornito un hash esterno originale con cui confrontarlo. I manifest contengono hash abbreviati, non firme di autenticità. Nessun errore di integrità osservato. Le copie estratte restano nello scratch, senza installare asset o controller nell'app.
+
+Evidenze nuove: `evidence/final-package/integrity.json`, `manifests.json`, `file-inventory.json`. I file dei precedenti tentativi rimangono come cronologia, non indicano più un impedimento corrente.
+
+### 13.2 Identità del contenuto — entrambi i pacchetti presenti
+
+- **Dossier tecnico Codex** alla radice: README, indice; `spec/` (specifica, regole supplementari, constraints ferroviari, asset layout, test plan, status template); `contracts/` (66 controlli, 31 schermate, read models/intents, state machines, accettazione per microfase); `prompts/CODEX_PROMPTS.md` (U0–U9). È il pacchetto tecnico destinato al gate, non soltanto un export del design.
+- **Design V2.1 approvato**, versione documentale `2.1.1-design`, in `design-baseline/serien-mainui-v21/`: audit, functional coverage, mapping master, decisioni/open issues/changelog, T-01/T-02; reference HTML con tre script demo, CSS/token, libreria componenti, asset, due PDF e screenshot. Il PDF Design ha 20 pagine. PDF letti tramite estrazione testo, immagini trattate come riferimento visivo mock, non prova ferroviaria.
+- **V1 congelato** in `design-baseline/serien-mainui-v1/`: 40 file confrontati byte per byte con `design/main-ui-redesign@cf2c29a…`, tutti identici. Nessuna modifica/copia sopra il V1 del repository.
+- JSON sintatticamente validi; CSV e JSON coerenti campo per campo: 66 righe nel binding tecnico, 143 nel master (66 controlli, 31 schermate, 24 migration, 17 aggiunte, 3 estensioni, 2 blocchi). I due contratti UI e state machine duplicati nel design sono identici alle copie tecniche.
+
+La frase storica D-24/O-12/PDF «pacchetto tecnico non ancora preparato» descrive lo stadio del design precedente. La presenza verificata di spec/contracts/prompts risolve l'indisponibilità; l'approvazione tecnica del dossier e l'avvio di ogni microfase restano decisioni della Regia. Le istruzioni U0 incluse sono materiale da revisionare: **non sono state eseguite** (nessuna copia nelle specifiche attive, selector migration o modifica ai test/app).
+
+### 13.3 Baseline effettiva e correzioni di contesto
+
+Nuova verifica diretta remota: main `184cc9ba93a6b35493f365b2ffcb20ef0645963d`; Train Management `91722fbdf6671e69deebf645c3d8bf389212f421`; V1 `cf2c29a8112b37a53c62cb84fca44061942aea31`; checkpoint iniziale locale/remoto `5586ab4ef93327b0fb910f203c9993fab1be2e19` su **`codex/ui-v2-integration`**, working tree pulito. Baseline approvata antenata del branch dedicato.
+
+Il dossier propone `codex/ui-v21` da `a67e0de` e M3 provvisoria `252d9c3`, con U8 subordinata a futuro merge/rebase. **Prevale il mandato corrente**: mantenere `codex/ui-v2-integration` da `91722fb`, con M3 già approvata e presente. Nessun nuovo branch, arretramento, merge/rebase o reintegrazione M3 necessari. Il confronto `252d9c3..91722fb` su app/src/CSS/HTML/asset è vuoto: il commit finale aggiunge collaudo/evidenze. Il dominio M2 `train-projects.js` resta invariato rispetto alla M2 approvata; M3 aggiunge dominio/vista e due righe di coordinamento nella vista Projects. Gate C M3 **già assolto** dalla baseline e dal mandato, non più un blocco attuale.
+
+Nessun test baseline ripetuto: codice applicativo identico a `91722fb`, bundle e canonico con hash invariati dei §§9/10. I risultati precedenti conservano la loro provenienza: 254 Node, 9 Python, build/canonico e dieci suite browser nella Fase 0, poi Node/Python/build/canonico nel §11. Non sono nuove prove di questa acquisizione.
+
+### 13.4 Mapping effettivo e soluzioni conservative
+
+Il registro `evidence/final-package/CONTROL_COMPATIBILITY.csv` conserva tutti i **66** binding originali, nuovo DOM, callback, test, accettazione, microfase e risoluzione conservativa dell'audit su `91722fb`. `SOURCE_CODE_DOM_MAP.json` conserva anche le 31 schermate. Questi registri completano la mappa del §3: la copertura dichiarata è documentale, non certificazione di una UI integrata.
+
+| Componente / CTRL | Baseline e dati reali | Nuova presentazione / lavoro consentito in futuro | Test da conservare |
+| --- | --- | --- | --- |
+| Shell/Auth/Menu 001–006, 014, 027, 060–064 | Boot auth, quality/applyQuality, handler rollingModels, modali, log, launcher esistenti | Skin e nodi spostati; proxy ai select; mantenere ID/boot, link XML, Exit to title disabilitato con motivo | access-gate, quality, Phase Zero/One, modal focus/Escape |
+| Camera/HUD 004, 007–011, 048–049, 052 | nav, mountViewControls, real deriveSwitchAssistance/schemaSVG, routePreview 15 s, picking canvas | `.win/#cam/#nx`, canvas unico, diagramma reale read-only, disclaimer e avvisi; overlay non intercettano la scena | navigation/view-controls/next-switch, phase-three/four, turnout-interaction |
+| Scambi/ambiente/missioni/mappa 012–015, 053 | switchSpecs, requestToggle, safetyByControl, day, statuses, railwayMapPath/locomotivePoint | Otto tile con motivi leggibili; stati reali; nessun KPI o blocco artificiale Next mission | turnout/guard, phase-one/zero, marker focus |
+| Dock/stop/reset 016–026, 050, 054 | Fleet callbacks, selected, speed/velocity, max quattro treni, reset confermato | Tutte le card nel carosello, ID selezionato preservati, manometro vs throttle distinti, modale reset, STOP ALL momentaneo | train-deck/fleet/consist/R1, quarto treno nascosto, Space, reset cancel/confirm |
+| **On the Layout** 028–030, 040, 055–056, 065 | compositionView/detachedView, getter reali, selezione comune, onFocus/copy, train-side-view | Binario laterale e lista UUID/ordine/lunghezza reali, sganciati sul binario; dialogo unico e ritorno focus | M1/M1.1, selezione scena/console/TM, focus, dirty guard |
+| **Model Catalog** 014, 066, ADD-05/06/13 | PROJECT_CATALOG: 14 modelli, ruoli/dimensioni/miniature; updateModels con rollback | Filtri/anteprima/nomi solo vista; nessuna quantità inventario; non mutare modelId | catalogo native/Kenney, fallback, cambio modelli rifiutato |
+| **Projects/Composer/Compare** 031–040, 057–058 | createTrainProjects, draft/confirmed, UUID posti, copy/link, compareProject cinque stati, capabilities | Vassoio, inspector e ghost slots; bottoni/scorciatoie locali; confermato read-only → Edit. Link picker solo nella bozza (`compareView(p,editable)`), come store.requireDraft; nessun confirm implicito | M2 domain/browser/lifecycle, 1+5, atomicità, STALE, dirty, no mutazioni fisiche |
+| **Depot** 041–045, 059 | inventory.items, projectSlots dei confermati, assign/release/remove/reconcile, railwayInventoryView/generation | Schede virtuali, riepiloghi derivati, posti progettati e piastra fisica separati; targa trasferimenti senza controlli; conferma rimozione solo UX | M3/lifecycle, prenotazione esclusiva, modello uguale, release, reset, R1 in moto |
+| Bell/Guarded stop/Log 046–047, 062 | guardedStops.bell.setMuted/snapshot, status reale interno, log(string) | Un solo controller bell per chip/Menu, UI Sound separato; status e ultimo messaggio persistenti, niente lampade mock | guarded-stop e lifecycle/audio, rifiuti R1 visibili anche con UI sound off |
+
+**Adattamenti concreti da pianificare, non blocchi del motore:**
+
+1. **Session summary / launcher.** `mountTrainManagement` non espone lo snapshot richiesto dalla riga logout né open(view)/launcher multipli: servono getter read-only con conteggi/dirty e API minima della vista. Store/identità rimangono privati, nessuna copia ferroviaria. `auth-gate.js` usa `addEventListener`, non `.onclick`: spostare il nodo non basta per la guard. Intercettazione UI prima del listener originale, consenso una sola volta e prevenzione della ricorsione/doppio logout; nessun cambio Auth.
+2. **Conferme sincrone.** `discard()` restituisce booleano ed è usato da start/copy/close/focus; una modale stilizzata non può sostituire `window.confirm` lasciando i call site sincroni. Coordinare callback/promise solo nelle viste. Prima di conferma nessun cancel/reset; conferma applicata una sola volta. Reset conserva il corpo ferroviario e incrementa generation dopo conferma; M2/M3 rimangono in sessione.
+3. **DOM e API effettive.** `setZoom` è interno a train-side-view, non metodo pubblico come può suggerire il contratto: mantenere i controlli o esporre un adapter UI minimo. Guarded-stop text/hazards sono interni: riusare/spostare il nodo status, senza reimplementare guardie. `#stop` e gli altri ID migrano sulla card selezionata; mantenerli finché consumati. Conservare anche data-switch/data-switch-hover/parent focus per gli attuali consumer.
+4. **Stato e reference.** State machine `dialog` usa guard come destinazione senza elencarlo negli stati; wildcard dirty «any switch» non è un requisito di scartare la bozza al cambio tab TM. Prevalgono intenti/code e conservazione della bozza. `hasSession` mock include qualunque draft, mentre la guard reale è `dirty || hasProjects || inventory.size>0`: preservare la condizione reale. Confermati restano read-only; link disponibile dopo Edit, coerentemente con la reference verificata.
+5. **Scala e messaggi.** `train.speed` è comando percentuale, `velocity` dato dinamico del motore: il gauge deve usare una scala derivata da grandezze reali, senza attribuire km/h fittizi. `log` ha testo ma nessun severity enum: colori UI conservativi, messaggio integrale, nessuna nuova categoria di allarme motore.
+6. **Contraddizioni operative U1/U0.** Il pacchetto non decide univocamente l'ordine finale di legacy CSS (ASSET_LAYOUT propone alternative), e caricare CSS globali V1 può alterare regioni prima di U2. Verificare cascade e host in U1, usare soltanto il file di integrazione per isolamento, senza correggere il design frozen. Il prompt U0 comprende registry/migrazione selettori e tutti i browser: è lavoro futuro da autorizzare esplicitamente, non già eseguito in questa Fase 0.
+
+### 13.5 Asset, dipendenze e reference
+
+Font richiesti: **Cinzel Decorative 700, Federo 400, Cutive Mono 400**, da self-host con OFL. **Non sono inclusi WOFF/WOFF2 o licenze font**: acquisizione/verifica licenze e gate visivo appartengono a U1/U9, non sono certificati ora. V1 tokens contiene `@import` Google Fonts: la specifica asset ammette una rimozione documentata nella futura copia applicativa per offline, mantenendo intatta la baseline; `@font-face` non annulla da solo l'import remoto. Nessun font scaricato o dipendenza aggiunta in questa acquisizione.
+
+I 28 PNG rotabili inclusi differiscono per bytes/hashing dai PNG applicativi, ma hanno **dimensioni e tutti i pixel RGBA identici**. Il fallback SVG differisce come bytes: riusare quello applicativo. Le copie design non vanno sovrascritte sugli asset del simulatore; topologia, manifest coupler e `train-side-layout` sono l'autorità per la geometria, non il mirror `sideLayout`. CSS/token/materiali/sprite disponibili; nuovo styling soltanto in copia applicativa/foglio integration dopo autorizzazione, V1 congelato.
+
+Reference: V1 inline simula graph/RAF/treni; `tm-reference.js` mantiene SIM/PRJ/INV mirror e scenari; `tm-catalog.js` è una copia di catalogo per demo; `tm-shell-v21.js` simula HUD/campana/reset/guardie. **Nessuno dei tre script entra nel bundle applicativo**. T-01/T-02 sono presenti coerentemente nei contratti: HUD dal vero schemaSVG, campana dal vero controller, nessun dispatcher HUD o mock ferroviario.
+
+**Smoke indipendente nuovo PASS:** Chromium headless, reference servita localmente, quattro click reali sui tab Layout/Catalog/Projects/Depot e verifica aria-selected, zero pageerror/HTTP locali falliti; screenshot Depot ispezionato. `reference-smoke.json`, script e log conservati. Primo harness fallito per selettore `data-v` errato, corretto in `data-view` e ripetuto sullo stesso pacchetto invariato; il limite dell'harness è registrato. Font esterni deliberatamente non caricati nello smoke. Non è collaudo completo interattivo/accessibilità/responsive, prova R1 o gate font; la libreria è una raccolta di iframe/scenari della stessa reference, non componenti applicativi autonomi.
+
+### 13.6 Sequenza aggiornata e gate residui
+
+Adottare la struttura **U0–U9** del dossier, nel branch e sulla baseline del mandato: U0 intake/selector registry mirata al delta ancora da autorizzare; U1 asset/font/cascade; U2 shell/dialoghi; U3 overlay camera/HUD/bell/log; U4 sidebar; U5 dock; U6 Layout/Catalog; U7 Composer/Compare; U8 Depot già disponibile senza integrazione Git; U9 responsive/accessibilità/font/regressioni e gate finale. Per ogni passo: adapter minimo, test semantici preservati, evidence, commit/checkpoint reversibile e STOP. No delete progetto, DnD, apply globale, trasferimenti fisici o persistenza cloud.
+
+**Non rimangono blocchi di acquisizione o incompatibilità che richiedano una modifica R1/store/backend.** Le correzioni di branch/base/stato M3 sono risolte dal mandato, le differenze di API hanno soluzioni di sola vista documentate sopra. Nessun merge su main necessario per iniziare il gate.
+
+**Ancora da eseguire nelle rispettive fasi:** acquisizione dei font/licenze, gate visivo con font definitivi, verifica interattiva completa indipendente (lo smoke non la sostituisce), registry/cascade, test dei nuovi adapter, regressioni della futura UI, hardware fisico/fluidità. Non sono dichiarati PASS né sostituiti da screenshot mock. Prima di qualunque intervento applicativo serve **approvazione della Regia del pacchetto tecnico con questi adattamenti e autorizzazione della microfase nominata**.
+
+Invarianti attuali PASS per diff vuoto contro `91722fb`: app/src/HTML/CSS/assets/Auth/Supabase/dipendenze/workflow intatti. Sole modifiche: rapporto, STATUS, PROGRESS ed evidenze di acquisizione/audit. **STOP per approvazione della Regia.**
