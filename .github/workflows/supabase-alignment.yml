@@ -1,0 +1,104 @@
+name: S2 Supabase alignment - isolated, no deploy
+on:
+  push:
+    branches: [main, codex/supabase-alignment-s2]
+    paths:
+      - 'supabase/**'
+      - 'tests/supabase-alignment/**'
+      - 'scripts/verify-supabase-alignment.py'
+      - 'scripts/qualify-supabase-cli.py'
+      - 'docs/supabase/alignment/**'
+      - '.github/workflows/supabase-alignment.yml'
+      - 'package.json'
+      - 'package-lock.json'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'supabase/**'
+      - 'tests/supabase-alignment/**'
+      - 'scripts/verify-supabase-alignment.py'
+      - 'scripts/qualify-supabase-cli.py'
+      - 'docs/supabase/alignment/**'
+      - '.github/workflows/supabase-alignment.yml'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: supabase-alignment-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+jobs:
+  isolated-alignment:
+    if: >-
+      (github.event_name == 'pull_request' && github.base_ref == 'main') ||
+      ((github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/codex/supabase-alignment-s2'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Record code and verify historical inputs
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/serien-s2"
+          git rev-parse HEAD > "$RUNNER_TEMP/serien-s2/HEAD.txt"
+          git status --porcelain=v1 > "$RUNNER_TEMP/serien-s2/initial-status.txt"
+          git diff --check
+          python3 scripts/verify-supabase-alignment.py --check-files-only --output "$RUNNER_TEMP/serien-s2/preflight"
+      - name: Qualify the checksum-pinned CLI with version and help only
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/serien-s2/cli"
+          S2_CLI_URL="$(python3 -c 'import json; print(json.load(open("docs/supabase/alignment/manifest.json"))["toolchain"]["cli_archive_url"])')"
+          curl --fail --location --retry 2 "$S2_CLI_URL" --output "$RUNNER_TEMP/serien-s2/cli/archive.tar.gz"
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          expected=json.loads(Path('docs/supabase/alignment/manifest.json').read_text())['toolchain']['cli_archive_sha256']
+          archive=Path(os.environ['RUNNER_TEMP'])/'serien-s2/cli/archive.tar.gz'
+          if hashlib.sha256(archive.read_bytes()).hexdigest()!=expected:
+              raise SystemExit('CLI archive checksum mismatch')
+          PY
+          tar -xzf "$RUNNER_TEMP/serien-s2/cli/archive.tar.gz" -C "$RUNNER_TEMP/serien-s2/cli" supabase
+          python3 scripts/qualify-supabase-cli.py --binary "$RUNNER_TEMP/serien-s2/cli/supabase" --archive "$RUNNER_TEMP/serien-s2/cli/archive.tar.gz" --output "$RUNNER_TEMP/serien-s2/qualification"
+      - name: Replay and compare in a fresh PostgreSQL container without networking
+        run: |
+          set -euo pipefail
+          python3 scripts/verify-supabase-alignment.py --output "$RUNNER_TEMP/serien-s2/replay" 2>&1 | tee "$RUNNER_TEMP/serien-s2/replay.txt"
+      - name: Application regression and build
+        run: |
+          set -euo pipefail
+          npm ci
+          npm test 2>&1 | tee "$RUNNER_TEMP/serien-s2/node-tests.txt"
+          python3 -m unittest discover -s tests -p '*_test.py' 2>&1 | tee "$RUNNER_TEMP/serien-s2/python-tests.txt"
+          npm run build 2>&1 | tee "$RUNNER_TEMP/serien-s2/build.txt"
+          python3 scripts/build-canonical-layout.py
+          git diff --exit-code -- src/canonical-layout.json docs/jmri-layout/canonical-graph.json docs/jmri-layout/layout-canonical.svg docs/jmri-layout/minimap-canonical.svg
+          git status --porcelain=v1 > "$RUNNER_TEMP/serien-s2/final-status.txt"
+      - name: Preserve non-secret evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: supabase-alignment-s2-${{ github.sha }}
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            ${{ runner.temp }}/serien-s2/*.txt
+            ${{ runner.temp }}/serien-s2/replay/*.json
+            ${{ runner.temp }}/serien-s2/replay/*.diff
+            ${{ runner.temp }}/serien-s2/replay/*.txt
+            ${{ runner.temp }}/serien-s2/qualification/*.txt
+            ${{ runner.temp }}/serien-s2/qualification/qualification.json

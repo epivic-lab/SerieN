@@ -1,0 +1,6 @@
+REACHED_COMMIT
+ERROR:  23514: Ready consist needs consecutive ordinal positions from zero
+CONTEXT:  PL/pgSQL function serien_internal.assert_ready_consist(uuid) line 7 at RAISE
+SQL statement "SELECT serien_internal.assert_ready_consist(new.id)"
+PL/pgSQL function serien_internal.check_ready_consist() line 2 at PERFORM
+LOCATION:  exec_stmt_raise, pl_exec.c:3897

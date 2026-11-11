@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "version": "3.0.0",
+  "archive_sha256": "eeb61edcd59a4735fcb5e58596574f25d03d420efca779f43ddb307e1cc5c754",
+  "commands": {
+    "version": [
+      "--version"
+    ],
+    "root": [
+      "--help"
+    ],
+    "db": [
+      "db",
+      "--help"
+    ],
+    "migration": [
+      "migration",
+      "--help"
+    ],
+    "query": [
+      "db",
+      "query",
+      "--help"
+    ],
+    "list": [
+      "migration",
+      "list",
+      "--help"
+    ],
+    "dump": [
+      "db",
+      "dump",
+      "--help"
+    ],
+    "diff": [
+      "db",
+      "diff",
+      "--help"
+    ],
+    "config-diff": [
+      "config",
+      "diff",
+      "--help"
+    ]
+  },
+  "scope": "version and help only; no database command executed"
+}

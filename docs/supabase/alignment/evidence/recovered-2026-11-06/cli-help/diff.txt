@@ -1,0 +1,52 @@
+DESCRIPTION
+  Compares a shadow built from supabase/migrations with a live database (the local database by default, or the one --remote selects). Declarative files under supabase/schemas are not part of this baseline. Output is printed by default; in normal mode, -f names and saves the complete diff as a migration and does not filter objects. Explicit --from/--to output is flattened review SQL, not a portable apply script.
+
+TARGET
+  Local by default. Pass --remote for the linked project, or --remote=<ref|branch|url>.
+
+USAGE
+  supabase db diff [flags]
+
+FLAGS
+  --use-migra                    Use migra to generate schema diff.
+  --use-pgadmin                  Use pgAdmin to generate schema diff.
+  --use-pg-delta                 Use pg-delta to generate schema diff.
+  --strict-coverage              Fail when bundled pg-delta finds schema objects it cannot manage instead of leaving them unmanaged.
+  --from string                  Diff from local, migrations, remote (always the linked project), a project ref, a branch, or a Postgres URL.
+  --to string                    Diff to local, migrations, remote (always the linked project), a project ref, a branch, or a Postgres URL.
+  --output, -o string            Write flattened explicit diff SQL to a file for review; this is not a portable apply script.
+  --remote[=<ref|branch|url>]    Target a remote database: the linked project, or --remote=<ref|branch|url>.
+  --file, -f string              In normal mode, names and saves the complete schema diff as a new migration; it does not filter objects. Ignored with --from/--to.
+  --schema, -s string            Comma separated list of schema to include.
+
+GLOBAL FLAGS
+  --help, -h                                                          Show help information
+  --version, -v                                                       Show version information
+  --wizard                                                            Start wizard mode for a command
+  --completions <bash|zsh|fish|sh>                                    Print shell completion script (choices: bash, zsh, fish, sh)
+  --log-level <all|trace|debug|info|warn|warning|error|fatal|none>    Sets the minimum log level (choices: all, trace, debug, info, warn, warning, error, fatal, none)
+  --output-format choice                                              Output format: text (default), json, or stream-json (NDJSON) (choices: text, json, stream-json)
+  --output, -o choice                                                 output format of status variables (choices: env, pretty, json, toml, yaml, table, csv)
+  --profile string                                                    use a specific profile for connecting to Supabase API
+  --debug                                                             output debug logs to stderr
+  --workdir string                                                    path to the directory containing your supabase/ folder; used exactly as given, with no ancestor directory search (defaults to searching upward from the current directory)
+  --experimental                                                      enable experimental features
+  --network-id string                                                 use the specified docker network instead of a generated one
+  --yes                                                               answer yes to all prompts; hosted changes only accept this flag or SUPABASE_YES exported in your shell, never supabase/.env or another .env file
+  --dns-resolver choice                                               lookup domain names using the specified resolver (choices: native, https)
+  --agent choice                                                      Override agent detection: yes, no, or auto (default auto) (choices: auto, yes, no)
+
+PERMISSIONS
+  Scoped access token:
+    May be required (with --remote, --from or --to):
+      database_write
+      database_pooling_config_read
+    May be required (with --remote, --from=linked|remote or --to=linked|remote):
+      projects_read
+    May be required:
+      branching_development_read for a preview branch
+        or branching_production_read for the main branch
+    Optional, with --remote, --from or --to (command still runs without these):
+      database_network_bans_read
+      database_network_bans_write
+      project_admin_read
