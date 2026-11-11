@@ -1,0 +1,200 @@
+{
+  "status": "PASS",
+  "verifiedAtUTC": "2026-11-11T20:29:47.526743+00:00",
+  "method": "Fresh read-only recovery audit; no runtime suite or build repeated",
+  "recoveredState": {
+    "head": "19a84092131a81ee95a869218d77357723abf3a4",
+    "remoteHead": "19a84092131a81ee95a869218d77357723abf3a4",
+    "branch": "codex/ui-v2-integration",
+    "upstream": "origin/codex/ui-v2-integration",
+    "statusPorcelain": "",
+    "staged": 0,
+    "unstaged": 0,
+    "untracked": 0,
+    "commitsSinceApprovedU1": "1",
+    "remoteMain": "184cc9ba93a6b35493f365b2ffcb20ef0645963d"
+  },
+  "freshChecks": {
+    "deliverySourceHashes": 15,
+    "baselineReceiptHashes": 226,
+    "baselineUnchanged": 215,
+    "authorizedDeltas": [
+      "app.js",
+      "index.html",
+      "src/train-management.js",
+      "tests/browser-depot-lifecycle.py",
+      "tests/browser-depot.py",
+      "tests/browser-train-management-runtime.py",
+      "tests/browser-train-management.py",
+      "tests/browser-train-project-lifecycle.py",
+      "tests/browser-train-projects-runtime.py",
+      "tests/browser-train-projects.py",
+      "tests/browser-train-side.py"
+    ],
+    "matchingExitCodeReceipts": 16,
+    "bundleSHA256": "3112b76b6988dc9f5932511cbe31336f0e1b2e68cff15bfff1b26e722e572fa1",
+    "nativeBundleMatches": true,
+    "screenshots": [
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1024-confirm.png",
+        "width": 1024,
+        "height": 768,
+        "sha256": "e6b45f114f8cb29e44935ca4111681d8419b2cbed7876c90c4d509ea3f3f8cfa"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1024-help.png",
+        "width": 1024,
+        "height": 768,
+        "sha256": "d12495b20fe21bc8b66179287d4599095f82cd816fcff81ba10a953776a7d472"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1024-menu.png",
+        "width": 1024,
+        "height": 768,
+        "sha256": "5180fbad194aadd0b80dc6326cb4f70df9b0401e7100ce76c9c437546b5713d2"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1024-plan.png",
+        "width": 1024,
+        "height": 768,
+        "sha256": "7ccc33f7c38ea774bd9684e4fe9b08b3e1a4f15a9a88cd943ada1206b6fd6bc5"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1024-shell.png",
+        "width": 1024,
+        "height": 768,
+        "sha256": "baa445c86200f9c37e637399bce3a27207405948bd14b054148ce2177393e52a"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1440-confirm.png",
+        "width": 1440,
+        "height": 900,
+        "sha256": "c487e648c31a388b9fee475215c7788d1109a552db6aa0ef61baa364700238eb"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1440-help.png",
+        "width": 1440,
+        "height": 900,
+        "sha256": "aa14a2953eaa9509193c13df55c19f43c0eacd3a85286e4d29d776de33731d8e"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1440-menu.png",
+        "width": 1440,
+        "height": 900,
+        "sha256": "fa969f5aa22c1d8b6f4ac5898641c433ce178551b14d7d7d76a3272849a45622"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1440-plan.png",
+        "width": 1440,
+        "height": 900,
+        "sha256": "9274d1aeb167c4b82f10d5423f0bb1ee1ec5328282dafa0bf397ef2b0dacad7a"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/1440-shell.png",
+        "width": 1440,
+        "height": 900,
+        "sha256": "e24cd98fa7488b8c01026f2c4861d2470fe1eabc908181628496d97b97b9670a"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/390-confirm.png",
+        "width": 390,
+        "height": 844,
+        "sha256": "afb5844b8a75cd943d89d6e379cd4f2400368aef4a0329497f53595f6732f954"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/390-help.png",
+        "width": 390,
+        "height": 844,
+        "sha256": "64ace3eb912dba0918f1d4274987f5e9a13dc14e401374dd18ff298ee570974d"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/390-menu.png",
+        "width": 390,
+        "height": 844,
+        "sha256": "26ace9f904772a0c72a3ba3887059427be4287ba4d7a4524a2c339ad0a7d3c5d"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/390-plan.png",
+        "width": 390,
+        "height": 844,
+        "sha256": "70e726f911db3a1b00f2b794250b44553312a48d3370a038bf3e20c134886785"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/390-shell.png",
+        "width": 390,
+        "height": 844,
+        "sha256": "48aab0bec827d60340c9646daff253f7edb0c35b1681eb31682d23a6d2ccc562"
+      },
+      {
+        "path": "docs/_active/ui-v21/evidence/U2/shell/login-gate.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "1ea04451ac335a2d3d9fdfaebc63a46140243996729e9aee0d3c1d17b1fe4ded"
+      }
+    ],
+    "priorEvidenceFilesHashed": 114
+  },
+  "previousRuntimeEvidence": {
+    "status": "PASS documented from previous execution; not rerun",
+    "results": "docs/_active/ui-v21/evidence/U2/RESULTS.json",
+    "U2Groups": 10,
+    "commands": {
+      "node-delivery": {
+        "exit": 0
+      },
+      "build-delivery": {
+        "exit": 0
+      },
+      "python-final": {
+        "exit": 0
+      },
+      "canonical-final": {
+        "exit": 0
+      },
+      "canonical-diff": {
+        "exit": 0
+      },
+      "u2-final-screens": {
+        "exit": 0
+      },
+      "pointer": {
+        "exit": 0
+      },
+      "m1-latest": {
+        "exit": 0
+      },
+      "m2-latest": {
+        "exit": 0
+      },
+      "m3-latest": {
+        "exit": 0
+      },
+      "m2-lifecycle": {
+        "exit": 0
+      },
+      "m3-lifecycle": {
+        "exit": 0
+      },
+      "railway": {
+        "exit": 0
+      },
+      "deck": {
+        "exit": 0
+      },
+      "phase-zero": {
+        "exit": 0
+      },
+      "native-final": {
+        "exit": 0
+      }
+    }
+  },
+  "notVerified": [
+    "Real OAuth provider login/logout",
+    "Other browsers and their @scope support",
+    "Physical GPU/touch/audio/screen reader",
+    "Native beforeunload prompt presentation",
+    "U3-U9 and full UI acceptance"
+  ],
+  "failures": []
+}

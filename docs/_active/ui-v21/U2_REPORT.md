@@ -74,3 +74,22 @@ Fallimenti intermedi registrati in `failures-and-recovery.txt` e log: server8000
 Le superfici non migrate sono ancora legacy per scelta di perimetro; il confronto visuale non è un collaudo U3–U9. Prima di un'eventuale release autorizzata, il packaging Pages dovrà includere ui/ (workflow attuale copia dist/assets/docs): **non modificato in U2, nessun deploy consentito**. Questo non blocca review e test locali U2, ma impedisce di considerare questo branch una release pronta.
 
 Nessun impedimento U2 residuo nei gate eseguiti. File/limiti/evidenze pronti per audit della Regia. Checkpoint atomico sul branch autorizzato, SHA effettivo e allineamento locale/remoto verificati nella consegna. **U2 READY FOR REGIA REVIEW — STOP e attendere approvazione esplicita prima di U3.**
+
+## Ripresa controllata dopo interruzione — 2026-11-11
+
+Prima di modificare file, recuperati repository, branch, HEAD, upstream, stato Git ed evidenze. U2 era già interamente committata e pubblicata in **`19a84092131a81ee95a869218d77357723abf3a4`**, unico commit dopo U1 approvata. HEAD locale e remoto coincidevano; nessuna modifica staged, unstaged o non tracciata. Main remoto ancora `184cc9ba93a6b35493f365b2ffcb20ef0645963d`; U1 e baseline M2/M3 verificate antenate. Rapporti, codice, log e screenshot erano recuperabili. Nessuna componente è stata ricreata.
+
+La configurazione locale aveva l'upstream dichiarato ma il fetch limitato a main: aggiunto soltanto il refspec esatto, senza force, del branch autorizzato e ripristinato il tracking `origin/codex/ui-v2-integration`. Nessun cambiamento a branch originali o configurazioni di prodotto. Il confronto del delta completo U1→U2 e dei callback conferma il perimetro sopra documentato.
+
+**Lavoro precedente:** tutta l'implementazione, correzioni circoscritte, build, test e screenshot descritti nel rapporto appartengono al checkpoint U2 recuperato. **Lavoro nella ripresa:** audit statico effettivo, lettura dei log, nuova ispezione dello screenshot Menu mobile già acquisito, inventario SHA-256 delle 114 evidenze precedenti e questo aggiornamento documentale. Nessun sorgente, test, asset o bundle modificato; nessun test runtime/build ripetuto, come richiesto dal mandato di ripresa. Il campo `codeCheckpoint` di alcune ricevute precedenti identifica il HEAD U1 al momento dell'esecuzione sul delta non ancora committato; la provenienza del risultato U2 è corroborata dagli hash dei sorgenti consegnati e del bundle finale, non da quel solo campo.
+
+| Categoria | Risultato della ripresa |
+| --- | --- |
+| PASS verificato con esecuzione effettiva | Branch/HEAD/remoto/upstream e ancestry; 15 hash sorgenti, 226 hash/blob delle ricevute baseline; 16 file exit code coerenti con RESULTS; 16 PNG con dimensioni registrate; hash bundle locale identico a quello del test nativo; inventario delle 114 evidenze precedenti |
+| PASS documentato da evidenza valida precedente | 254 Node, 9 Python, build/canonico, 10 gruppi U2, pointer, M1/M2/M3/lifecycle, R1/5C, console/Phase Zero e RAF nativo; stessi sorgenti e bundle verificati, nessuna nuova esecuzione dichiarata |
+| NOT VERIFIED | OAuth remoto, altri browser/@scope, hardware GPU/touch/audio/screen reader, prompt beforeunload nativo, accettazione completa U9; limiti precedenti confermati |
+| FAIL | Nessun fallimento residuo nell'audit di ripresa; diagnostica dei fallimenti intermedi preservata nei log originali |
+
+Prove della ripresa: [VERIFICATION.json](evidence/U2/recovery/VERIFICATION.json), [manifest delle evidenze precedenti](evidence/U2/recovery/PRIOR_EVIDENCE_SHA256.json). Il diff del checkpoint di ripresa comprende soltanto questi due file, questo rapporto, i due STATUS e PROGRESS. Il suo SHA completo e la verifica remota finale sono riportati nella consegna; il checkpoint applicativo resta `19a84092131a81ee95a869218d77357723abf3a4`.
+
+**U2 READY FOR REGIA REVIEW.** Nessuna attività U2 applicativa mancante rilevata; U3 non iniziata. Prossima azione unica: audit indipendente della Regia e nuova autorizzazione esplicita prima di U3. Nessun merge o deploy.
