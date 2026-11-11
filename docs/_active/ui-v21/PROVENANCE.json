@@ -122,5 +122,12 @@
     }
   ],
   "manifest_limits": "FILE_INDEX declarations use 16-hex SHA256 prefixes (197 technical/143 nested); full calculated hashes in file-inventory; archive hash measured, no external original expected hash supplied",
-  "duplicates_policy": "No ZIP/raw segments, full design copies, runtime assets or reference JS copied into the application in U0."
+  "duplicates_policy": "No ZIP/raw segments, full design copies, runtime assets or reference JS copied into the application in U0.",
+  "font_preflight": {
+    "manifest": "docs/_active/ui-v21/font-staging/manifest.json",
+    "manifest_sha256": "5781598981aab4af96809cd62ed408c82d57e1eb2abd2ee268b4d9374a2d896a",
+    "report": "docs/_active/ui-v21/FONT_PREFLIGHT_REPORT.md",
+    "google_fonts_commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "runtime_installation": "NONE; isolated staging only; U1 not authorized"
+  }
 }

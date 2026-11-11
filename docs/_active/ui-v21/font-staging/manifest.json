@@ -1,0 +1,243 @@
+{
+  "authority": "official google/fonts repository pinned commit",
+  "repository": "https://github.com/google/fonts",
+  "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+  "status": "FONT GATE PASS — READY FOR U1",
+  "fonts": [
+    {
+      "family": "Cinzel Decorative",
+      "weight": 700,
+      "style": "normal",
+      "slug": "cinzeldecorative",
+      "source_ttf": "CinzelDecorative-Bold.ttf",
+      "google_fonts_commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+      "files": [
+        {
+          "file": "cinzeldecorative/CinzelDecorative-Bold.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/cinzeldecorative/CinzelDecorative-Bold.ttf",
+          "size": 62300,
+          "sha256": "e854e68a388aa50d742a4415c1ae5c17a617ef7956c95a70021d0a4a44f20518"
+        },
+        {
+          "file": "cinzeldecorative/METADATA.pb",
+          "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/cinzeldecorative/METADATA.pb",
+          "size": 1208,
+          "sha256": "bafa57b7e50fb8bc805420297f9f3a86731ad72298bd302bed7acdb8ee18a08e"
+        },
+        {
+          "file": "cinzeldecorative/OFL.txt",
+          "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/cinzeldecorative/OFL.txt",
+          "size": 4393,
+          "sha256": "1e5d6660366ddcfca4f2fc10e2acfba9fa4d97d40aec80d7dbfd41d730a420ae"
+        }
+      ],
+      "version": "Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325",
+      "postscript_name": "CinzelDecorative-Bold",
+      "copyright_font": "Copyright © 2012 Natanael Gama (info@ndiscovered.com), with Reserved Font Name 'Cinzel'",
+      "license_font": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+      "license_url_font": "http://scripts.sil.org/ofl",
+      "woff2": {
+        "file": "cinzeldecorative/CinzelDecorative-Bold.woff2",
+        "size": 22460,
+        "sha256": "da243cadfd41afd6eae0518f60d2eb1c326d4f9c383fd76abdf1aca0ea0402a3"
+      },
+      "conversion": "TTF → WOFF2 container only; no subset, synthetic weight, name, metrics or glyph edits; standard WOFF2 transform bookkeeping only",
+      "future_destination": "ui/fonts/CinzelDecorative-700.woff2",
+      "glyph_count": 353,
+      "checks": {
+        "signature": true,
+        "family": true,
+        "weight": true,
+        "style": true,
+        "embeddable_fsType_0": true,
+        "name_table_preserved": true,
+        "cmap_preserved": true,
+        "metrics_preserved": true,
+        "all_glyph_outlines_preserved": true,
+        "layout_tables_preserved": true
+      },
+      "license": {
+        "spdx": "OFL-1.1",
+        "text_file": "cinzeldecorative/OFL.txt",
+        "reserved_font_names": [
+          "Cinzel"
+        ],
+        "conditions": [
+          "Redistribute with copyright notice and OFL text; retain embedded license/name metadata",
+          "Do not sell the font by itself; bundling with software is permitted",
+          "Font stays under OFL; application code need not be OFL",
+          "Do not use author names for endorsement; RFN applies to modified versions; no glyph/name/style changes performed here",
+          "Any later subsetting/design edits require separate RFN/license review; no such changes in PRE-U1"
+        ]
+      },
+      "gate": {
+        "provenance": "PASS",
+        "license_text": "PASS",
+        "integrity": "PASS",
+        "family_weight": "PASS",
+        "woff2": "PASS",
+        "offline": "PASS",
+        "redistribution_conditions_recorded": "PASS"
+      }
+    },
+    {
+      "family": "Federo",
+      "weight": 400,
+      "style": "normal",
+      "slug": "federo",
+      "source_ttf": "Federo-Regular.ttf",
+      "google_fonts_commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+      "files": [
+        {
+          "file": "federo/Federo-Regular.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/federo/Federo-Regular.ttf",
+          "size": 145056,
+          "sha256": "5284628c38309ec5046a6bf231e038eaf84c46df03602690607af56cac2b9bc7"
+        },
+        {
+          "file": "federo/METADATA.pb",
+          "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/federo/METADATA.pb",
+          "size": 507,
+          "sha256": "fa9314665e89ab1d98b37cd7c110d93cf293c124afffdd7f618dde956dee92df"
+        },
+        {
+          "file": "federo/OFL.txt",
+          "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/federo/OFL.txt",
+          "size": 4382,
+          "sha256": "e30f893523e50ebbe07acd783ae29c7d604e6208cae7646d993e8528ce13e35a"
+        }
+      ],
+      "version": "Version 1.000",
+      "postscript_name": "Federo-Regular",
+      "copyright_font": "Copyright (c) 2011 by Olexa M. Volochay | Cyreal.org. All rights reserved.",
+      "license_font": "Copyright (c) 2011, Olexa M. Volochay,\r\nwith Reserved Font Name Federo.\r\nThis Font Software is licensed under the SIL Open Font License, Version 1.1.\r\nThis license is available with a FAQ at: http://scripts.sil.org/OFL",
+      "license_url_font": "http://scripts.sil.org/OFL",
+      "woff2": {
+        "file": "federo/Federo-Regular.woff2",
+        "size": 38704,
+        "sha256": "4ba9047f6d98614d6dd1849e42803e55a383bd153cc47221b692d53eb9e5cbd1"
+      },
+      "conversion": "TTF → WOFF2 container only; no subset, synthetic weight, name, metrics or glyph edits; standard WOFF2 transform bookkeeping only",
+      "future_destination": "ui/fonts/Federo-400.woff2",
+      "glyph_count": 220,
+      "checks": {
+        "signature": true,
+        "family": true,
+        "weight": true,
+        "style": true,
+        "embeddable_fsType_0": true,
+        "name_table_preserved": true,
+        "cmap_preserved": true,
+        "metrics_preserved": true,
+        "all_glyph_outlines_preserved": true,
+        "layout_tables_preserved": true
+      },
+      "license": {
+        "spdx": "OFL-1.1",
+        "text_file": "federo/OFL.txt",
+        "reserved_font_names": [
+          "Federo"
+        ],
+        "conditions": [
+          "Redistribute with copyright notice and OFL text; retain embedded license/name metadata",
+          "Do not sell the font by itself; bundling with software is permitted",
+          "Font stays under OFL; application code need not be OFL",
+          "Do not use author names for endorsement; RFN applies to modified versions; no glyph/name/style changes performed here",
+          "Any later subsetting/design edits require separate RFN/license review; no such changes in PRE-U1"
+        ]
+      },
+      "gate": {
+        "provenance": "PASS",
+        "license_text": "PASS",
+        "integrity": "PASS",
+        "family_weight": "PASS",
+        "woff2": "PASS",
+        "offline": "PASS",
+        "redistribution_conditions_recorded": "PASS"
+      }
+    },
+    {
+      "family": "Cutive Mono",
+      "weight": 400,
+      "style": "normal",
+      "slug": "cutivemono",
+      "source_ttf": "CutiveMono-Regular.ttf",
+      "google_fonts_commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+      "files": [
+        {
+          "file": "cutivemono/CutiveMono-Regular.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/cutivemono/CutiveMono-Regular.ttf",
+          "size": 80004,
+          "sha256": "96a36a00079058684982f61ee334323f8b501d7b68dcecd6049a4f9177e3a62c"
+        },
+        {
+          "file": "cutivemono/METADATA.pb",
+          "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/cutivemono/METADATA.pb",
+          "size": 932,
+          "sha256": "51f11ed0c060818e3624dafd71656df736bdc7b7ea6c76da4252c14d3437bd0a"
+        },
+        {
+          "file": "cutivemono/OFL.txt",
+          "url": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/cutivemono/OFL.txt",
+          "size": 4390,
+          "sha256": "ca83490f9c203cdaa5437202c44cb636e0c3c11b44b6dc5318bbe5678156e3f4"
+        }
+      ],
+      "version": "Version 1.110; ttfautohint (v1.8.4.7-5d5b)",
+      "postscript_name": "CutiveMono-Regular",
+      "copyright_font": "Copyright 2012 The Cutive Project Authors (https://github.com/googlefonts/cutivemono)",
+      "license_font": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "license_url_font": "https://openfontlicense.org",
+      "woff2": {
+        "file": "cutivemono/CutiveMono-Regular.woff2",
+        "size": 30780,
+        "sha256": "838a23082061b6eef65b292c3fe2083d88b3051dc0551f5525f512020ab660c2"
+      },
+      "conversion": "TTF → WOFF2 container only; no subset, synthetic weight, name, metrics or glyph edits; standard WOFF2 transform bookkeeping only",
+      "future_destination": "ui/fonts/CutiveMono-400.woff2",
+      "glyph_count": 452,
+      "checks": {
+        "signature": true,
+        "family": true,
+        "weight": true,
+        "style": true,
+        "embeddable_fsType_0": true,
+        "name_table_preserved": true,
+        "cmap_preserved": true,
+        "metrics_preserved": true,
+        "all_glyph_outlines_preserved": true,
+        "layout_tables_preserved": true
+      },
+      "license": {
+        "spdx": "OFL-1.1",
+        "text_file": "cutivemono/OFL.txt",
+        "reserved_font_names": [],
+        "conditions": [
+          "Redistribute with copyright notice and OFL text; retain embedded license/name metadata",
+          "Do not sell the font by itself; bundling with software is permitted",
+          "Font stays under OFL; application code need not be OFL",
+          "Do not use author names for endorsement; RFN applies to modified versions; no glyph/name/style changes performed here",
+          "Any later subsetting/design edits require separate RFN/license review; no such changes in PRE-U1"
+        ]
+      },
+      "gate": {
+        "provenance": "PASS",
+        "license_text": "PASS",
+        "integrity": "PASS",
+        "family_weight": "PASS",
+        "woff2": "PASS",
+        "offline": "PASS",
+        "redistribution_conditions_recorded": "PASS"
+      }
+    }
+  ],
+  "tools": {
+    "fonttools": "4.61.1",
+    "node": "v24.19.0",
+    "brotli": "1.2.0",
+    "codec": "node:zlib Brotli quality 11 MODE_FONT, no new dependencies"
+  },
+  "offline_validation": "offline-validation.json",
+  "u1_authorized": false,
+  "packaging_notes": "Format conversion only. FontTools reports existing oversized kern subtable length (Federo); serializer preserves pairs. All layout semantics and glyph outlines roundtrip equal; Chromium loads all fonts without warnings/errors."
+}

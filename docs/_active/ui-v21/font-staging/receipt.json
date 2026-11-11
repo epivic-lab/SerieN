@@ -1,0 +1,8 @@
+{
+  "bundle_sha256": "69eb83ebae0250ffe245d4ec6ede50cae3561f148f2e2973d0274f2c53b1068e",
+  "expected": "69eb83ebae0250ffe245d4ec6ede50cae3561f148f2e2973d0274f2c53b1068e",
+  "build": "PASS",
+  "u0_static_invariants": "PASS",
+  "network_restriction": "fonts.googleapis.com CONNECT tunnel failed HTTP403; official pinned raw.githubusercontent.com allowed. No bypass/extra network permissions used.",
+  "harness_note": "First offline harness failed before font checks: BrowserContext.new_page(viewport=...) unsupported. Corrected viewport to new_context; final three fonts load PASS. No font files changed by harness fix."
+}

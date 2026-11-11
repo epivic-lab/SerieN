@@ -311,3 +311,11 @@ Regia approva il pacchetto tecnico e autorizza **soltanto U0 documentale**. Veri
 **PASS:** validatore isolato: 19 controlli statici, 226 file applicativi/test/config byte-identici a 91722fb, build con bundle/canonico identici. Suite browser/Node/Python baseline non ripetute; nuovi adapter/font/gate visuali NOT VERIFIED. Font/licenze Cinzel Decorative/Federo/Cutive Mono da acquisire e verificare prima U1; U0 non li installa. U1 normalizzata solo staging/fixture, attivazione CSS regionale da U2.
 
 Checkpoint atomico documentale sul branch esistente; SHA/allineamento remoto nella consegna. Nessuna modifica R1/M2/M3/Auth/Supabase/V1/dipendenze/workflow, merge o deploy. **STOP U0: attendere review Regia e autorizzazione esplicita U1 con prerequisiti font.**
+
+## UI V2.1 — PRE-U1 font preflight (2026-11-11)
+
+U0 `b9574ae71dd7ebf4039affc20d969d813b93797d` APPROVATA SENZA RISERVE. Autorizzato solo prerequisito font, non U1. **FONT GATE PASS — READY FOR U1.** Font ufficiali google/fonts@`c30b221beb0c1da59d563feb91ec8656a1fa972a`: Cinzel Decorative Bold 700, Federo Regular 400, Cutive Mono Regular 400, licenze OFL separate/copyright/RFN preservati, metadati/pesi/hash verificati. TTF→WOFF2 con FontTools già presente e Brotli integrato Node; nessuna dipendenza o installazione globale.
+
+[FONT_PREFLIGHT_REPORT](docs/_active/ui-v21/FONT_PREFLIGHT_REPORT.md), manifest/font/licenze e verifiche in docs/_active/ui-v21/font-staging. PASS conversione/roundtrip contorni e metriche/layout, browser Chromium offline senza richieste/errori, validatore invarianti 226 file e build/bundle identico. Warning kern upstream Federo documentato con coppie preservate e browser PASS; primo harness corretto prima dei check. Endpoint CSS Google Fonts CONNECT403, sorgenti ufficiali pinned su raw.githubusercontent.com accessibili, nessun aggiramento policy. Suite baseline non ripetute; UI integrata/font visual gate e altri browser/hardware NOT VERIFIED.
+
+Solo inventario/provenienza/documentazione e staging non attivo; nessun index/style/app/src/test/workflow/dipendenze/Auth/Supabase/design o ramo originale modificato, nessun merge/deploy. Checkpoint remoto sul branch codex/ui-v2-integration verificato nella consegna. **STOP per la Regia: U1 richiede autorizzazione esplicita separata.**
