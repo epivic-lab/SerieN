@@ -1,0 +1,82 @@
+{
+  "verdict": "M3 READY FOR REVIEW - technical gates passed; final remote checkpoint verified in delivery",
+  "approvedM2": "a67e0de7fa01a968152cf47af3a744ea39034bcc",
+  "mainReference": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+  "contractCheckpoint": "afc6c00d4eeeea7c5947e6d7a107f85bbc47dce3",
+  "testedCodeCheckpoint": "252d9c30e8497b16d3f3f10e39d6e0e09f879a63",
+  "branch": "codex/train-management-m2",
+  "bundleSHA256": "69eb83ebae0250ffe245d4ec6ede50cae3561f148f2e2973d0274f2c53b1068e",
+  "node": {
+    "status": "PASS",
+    "tests": 254
+  },
+  "python": {
+    "status": "PASS",
+    "tests": 9
+  },
+  "build": "PASS",
+  "canonical": "PASS - unchanged",
+  "browserSuites": {
+    "M3 functional": {
+      "status": "PASS",
+      "evidence": "implementation/result.json"
+    },
+    "M3 lifecycle": {
+      "status": "PASS",
+      "evidence": "implementation/lifecycle.json"
+    },
+    "R1 5C": {
+      "status": "PASS",
+      "evidence": "final/regressions/railway/docs/phase-5c-close/acceptance.json"
+    },
+    "train deck": {
+      "status": "PASS",
+      "evidence": "final/regressions/deck/docs/train-deck/browser-result.json"
+    },
+    "Phase Zero": {
+      "status": "PASS",
+      "evidence": "final/regressions/phase-zero/docs/consolidation/browser-result.json"
+    },
+    "M1": {
+      "status": "PASS",
+      "evidence": "final/m1/browser.json"
+    },
+    "M1.1": {
+      "status": "PASS",
+      "evidence": "final/side/browser.json"
+    },
+    "M2 functional": {
+      "status": "PASS",
+      "evidence": "final/m2/browser.json"
+    },
+    "M2 lifecycle": {
+      "status": "PASS",
+      "evidence": "final/m2-lifecycle/browser.json"
+    },
+    "M3 native RAF/input": {
+      "status": "PASS",
+      "evidence": "final/native/result.json"
+    }
+  },
+  "nativeChecks": 6,
+  "nativeCheckpoints": 7,
+  "nativeFrameStats": {
+    "frames": 74,
+    "durationMs": 160477.0,
+    "fps": 0.4548938477164952
+  },
+  "trustedNativeInputEvents": 3,
+  "stableThreeResources": [
+    [
+      348,
+      44
+    ]
+  ],
+  "physicalTransfers": "UNAVAILABLE - no generic R1 depot entry/exit contract",
+  "storage": "RAM only; reset preserves virtual records/projects; reload loses them",
+  "physicalGPUAndTabletHardware": "NOT VERIFIED",
+  "hardwareFluidity": "NOT VERIFIED; software renderer not fluid, not a comparative benchmark",
+  "nativeBeforeUnloadPromptPresentation": "NOT VERIFIED; handler/lifecycle tested with cancelable event",
+  "historicalFailure": "Initial browser predicate invoked frame callback without timestamp; source/bundle unchanged; original FAIL retained.",
+  "scope": "M3 only, no persistence, E1, main, deploy, release or redesign"
+}
