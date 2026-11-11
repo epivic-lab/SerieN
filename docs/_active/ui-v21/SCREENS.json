@@ -1,0 +1,1348 @@
+{
+  "meta": {
+    "schema_version": 1,
+    "branch": "codex/ui-v2-integration",
+    "application_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421",
+    "readiness_checkpoint": "af67ee5c65679b7e5fa384d76a0825dff022f27d",
+    "main": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+    "source_archive_sha256": "9bd0252311ab82dd77af76f66cf9bb5251d74ce09d0815deae044ea90a58333d",
+    "authorization": "U0 documentation/contracts only; no selector migration or app mutation",
+    "frozen_source": "docs/ui-v2-integration/evidence/final-package/SOURCE_CODE_DOM_MAP.json"
+  },
+  "screens": [
+    {
+      "id": "AUTH-01",
+      "name": "Auth gate",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#googleSignIn",
+        "#signOut"
+      ],
+      "new_dom": "Brass gate plate (outside #st)",
+      "states": "checking, signed-out, redirecting-google, authorized, unauthorized, sdk-unavailable, load-failed",
+      "control_ids": [
+        "CTRL-001",
+        "CTRL-002"
+      ],
+      "source_modules": [
+        "auth-gate.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/quality.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2"
+      ],
+      "integration_phases": [
+        "U2"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html (#authGate); auth-gate.js; auth-gate-core.js @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-01",
+      "name": "Simulator shell",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#addTrain",
+        "#cameraView",
+        "#day",
+        "#googleSignIn",
+        "#helpBtn",
+        "#helpModal",
+        "#homeView",
+        "#nextMission",
+        "#pause",
+        "#planBtn",
+        "#planModal",
+        "#quality",
+        "#reset",
+        "#rollingModels",
+        "#routePreview",
+        "#signOut",
+        "#stopAll",
+        "#sun",
+        "#switchList button.sw[data-switch]",
+        "#tabs .tab[data-train]",
+        "#trainManagement",
+        "#viewFollow",
+        "#viewHome",
+        "#viewOrbit",
+        "#viewPan",
+        "#viewZoomIn",
+        "#viewZoomOut",
+        ".trainConsoleSpeed input",
+        "[data-command=\"couple\"]",
+        "[data-command=\"lights\"]",
+        "[data-command=\"reverse\"]",
+        "[data-command=\"stop\"]",
+        "[data-command=\"uncouple\"]"
+      ],
+      "new_dom": "#st .hd .vp .side .dk (V1)",
+      "states": "loading, ready, paused, load-failed",
+      "control_ids": [
+        "CTRL-001",
+        "CTRL-002",
+        "CTRL-003",
+        "CTRL-004",
+        "CTRL-005",
+        "CTRL-006",
+        "CTRL-007",
+        "CTRL-008",
+        "CTRL-009",
+        "CTRL-010",
+        "CTRL-011",
+        "CTRL-012",
+        "CTRL-013",
+        "CTRL-014",
+        "CTRL-015",
+        "CTRL-016",
+        "CTRL-017",
+        "CTRL-018",
+        "CTRL-019",
+        "CTRL-020",
+        "CTRL-021",
+        "CTRL-022",
+        "CTRL-023",
+        "CTRL-024",
+        "CTRL-025",
+        "CTRL-026",
+        "CTRL-027"
+      ],
+      "source_modules": [
+        "app.js",
+        "auth-gate.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js",
+        "src/train-management.js",
+        "src/turnout-commands.js",
+        "src/view-controls.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-five-close.py",
+        "tests/browser-phase-four.py",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-three.py",
+        "tests/browser-phase-zero.py",
+        "tests/browser-train-deck.py",
+        "tests/browser-train-management.py",
+        "tests/browser-turnout-interaction.py",
+        "tests/fleet-commands.test.js",
+        "tests/navigation.test.js",
+        "tests/quality.test.js",
+        "tests/railway-guard.test.js",
+        "tests/run-train-side-regression.py",
+        "tests/train-deck.test.js",
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/turnout-commands.test.js",
+        "tests/view-controls.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2",
+        "G-U3",
+        "G-U4",
+        "G-U5",
+        "G-U6"
+      ],
+      "integration_phases": [
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html; style.css @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-02",
+      "name": "3D viewport",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#loadMsg",
+        "#view3d canvas"
+      ],
+      "new_dom": ".vp .win (engine canvas first child)",
+      "states": "normal, follow, manual",
+      "control_ids": [
+        "CTRL-048",
+        "CTRL-049",
+        "CTRL-064"
+      ],
+      "source_modules": [
+        "index.html",
+        "src/turnout-commands.js",
+        "src/turnout-interaction.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-five-close.py",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/browser-turnout-interaction.py",
+        "tests/quality.test.js",
+        "tests/railway-guard.test.js",
+        "tests/turnout-commands.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U3"
+      ],
+      "integration_phases": [
+        "U3"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "app.js; src/navigation.js; src/view-controls.js @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-03",
+      "name": "Camera toolbar",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#cameraView",
+        "#helpBtn",
+        "#helpModal",
+        "#homeView",
+        "#planBtn",
+        "#planModal",
+        "#routePreview",
+        "#viewFollow",
+        "#viewHome",
+        "#viewOrbit",
+        "#viewPan",
+        "#viewZoomIn",
+        "#viewZoomOut"
+      ],
+      "new_dom": "#cam collapsible",
+      "states": "collapsed, expanded, follow active",
+      "control_ids": [
+        "CTRL-004",
+        "CTRL-005",
+        "CTRL-006",
+        "CTRL-007",
+        "CTRL-008",
+        "CTRL-009",
+        "CTRL-010",
+        "CTRL-011"
+      ],
+      "source_modules": [
+        "app.js",
+        "src/view-controls.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-four.py",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-three.py",
+        "tests/browser-phase-zero.py",
+        "tests/navigation.test.js",
+        "tests/quality.test.js",
+        "tests/view-controls.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2",
+        "G-U3"
+      ],
+      "integration_phases": [
+        "U2",
+        "U3"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html (.cameraToolbar); src/view-controls.js @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-04",
+      "name": "Route preview",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#routePreview"
+      ],
+      "new_dom": "#cam Route",
+      "states": "off, on (15 s)",
+      "control_ids": [
+        "CTRL-007"
+      ],
+      "source_modules": [
+        "app.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/quality.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U3"
+      ],
+      "integration_phases": [
+        "U3"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "app.js (routePreview, updateRouteHighlight) @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-05",
+      "name": "Next Switch HUD",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#nextSwitchHUD .nextSwitchMinimize"
+      ],
+      "new_dom": "#nx",
+      "states": "next-turnout, no-turnout, unknown-route, terminal, misaligned, reversal, minimized",
+      "control_ids": [
+        "CTRL-052"
+      ],
+      "source_modules": [
+        "src/next-switch-view.js",
+        "src/next-switch.js",
+        "src/railway-state.js"
+      ],
+      "existing_tests": [
+        "tests/browser-phase-zero.py",
+        "tests/browser-train-deck.py",
+        "tests/next-switch.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U3"
+      ],
+      "integration_phases": [
+        "U3"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/next-switch-view.js; src/next-switch.js @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-06",
+      "name": "Switches",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#switchList button.sw[data-switch]",
+        "#view3d canvas"
+      ],
+      "new_dom": ".m-sw tiles",
+      "states": "straight, diverging, occupied-blocked, approach-blocked, route-uncertain",
+      "control_ids": [
+        "CTRL-012",
+        "CTRL-048"
+      ],
+      "source_modules": [
+        "app.js",
+        "src/turnout-commands.js",
+        "src/turnout-interaction.js"
+      ],
+      "existing_tests": [
+        "tests/browser-phase-five-close.py",
+        "tests/browser-turnout-interaction.py",
+        "tests/railway-guard.test.js",
+        "tests/turnout-commands.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U3",
+        "G-U4"
+      ],
+      "integration_phases": [
+        "U3",
+        "U4"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "app.js (ui, requestToggle, switchHUDState); src/turnout-commands.js; src/canonical-layout.json @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-07",
+      "name": "Daylight",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#day",
+        "#sun"
+      ],
+      "new_dom": ".m-env",
+      "states": "day, sunset, night",
+      "control_ids": [
+        "CTRL-013"
+      ],
+      "source_modules": [
+        "app.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/quality.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U4"
+      ],
+      "integration_phases": [
+        "U4"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html (#day,#sun); app.js @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-08",
+      "name": "Rolling models source",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#rollingModels"
+      ],
+      "new_dom": "TM Catalog toolbar + Menu",
+      "states": "native, kenney, change-blocked",
+      "control_ids": [
+        "CTRL-014"
+      ],
+      "source_modules": [
+        "app.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/quality.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2",
+        "G-U6"
+      ],
+      "integration_phases": [
+        "U2",
+        "U6"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html (#rollingModels); app.js updateModels() @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-09",
+      "name": "Missions + ops log",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#log",
+        "#nextMission"
+      ],
+      "new_dom": ".m-ms + persistent Last operation on the layout view",
+      "states": "mission 1..4, completed",
+      "control_ids": [
+        "CTRL-015",
+        "CTRL-062"
+      ],
+      "source_modules": [
+        "app.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/quality.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U3",
+        "G-U4"
+      ],
+      "integration_phases": [
+        "U3",
+        "U4"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html; app.js (statuses, missionUI, log) @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-10",
+      "name": "Train dock",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#addTrain",
+        "#pause",
+        "#reset",
+        "#stopAll",
+        "#tabs .tab[data-train]",
+        ".trainConsole .locomotiveThumbnail",
+        ".trainConsoleSelect"
+      ],
+      "new_dom": ".dk carousel",
+      "states": "0..4 trains (engine), selected, hidden-in-LRU (n/a in V1)",
+      "control_ids": [
+        "CTRL-016",
+        "CTRL-023",
+        "CTRL-024",
+        "CTRL-025",
+        "CTRL-026",
+        "CTRL-054"
+      ],
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "existing_tests": [
+        "tests/browser-phase-five-close.py",
+        "tests/browser-train-deck.py",
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U5"
+      ],
+      "integration_phases": [
+        "U5"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-deck.js; src/train-deck-state.js @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-11",
+      "name": "Single-train controls",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        ".railwayMiniMap",
+        ".trainConsole .locomotiveThumbnail",
+        ".trainConsoleSelect",
+        ".trainConsoleSpeed input",
+        "[data-command=\"couple\"]",
+        "[data-command=\"lights\"]",
+        "[data-command=\"reverse\"]",
+        "[data-command=\"stop\"]",
+        "[data-command=\"uncouple\"]"
+      ],
+      "new_dom": "article.tr",
+      "states": "stopped, starting, moving, moving reverse, paused, lights on",
+      "control_ids": [
+        "CTRL-017",
+        "CTRL-018",
+        "CTRL-019",
+        "CTRL-020",
+        "CTRL-021",
+        "CTRL-022",
+        "CTRL-053",
+        "CTRL-054"
+      ],
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "existing_tests": [
+        "tests/browser-phase-five-close.py",
+        "tests/browser-train-deck.py",
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U4",
+        "G-U5"
+      ],
+      "integration_phases": [
+        "U4",
+        "U5"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-deck.js; src/fleet-commands.js; app.js applyConsistCommand @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "MAIN-12",
+      "name": "Global controls",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#addTrain",
+        "#pause",
+        "#reset",
+        "#stopAll"
+      ],
+      "new_dom": ".cc cluster",
+      "states": "add disabled at 4, paused, reset confirm",
+      "control_ids": [
+        "CTRL-023",
+        "CTRL-024",
+        "CTRL-025",
+        "CTRL-026",
+        "CTRL-050"
+      ],
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "existing_tests": [
+        "tests/browser-phase-five-close.py",
+        "tests/browser-train-deck.py",
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U5"
+      ],
+      "integration_phases": [
+        "U5"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html; app.js (addTrain, stopAllTrains, pause, reset) @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "DIALOG-01",
+      "name": "Track plan",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#planBtn",
+        "#planModal",
+        ".modal",
+        ".scenicMapLink"
+      ],
+      "new_dom": "#tpD",
+      "states": "open, closed",
+      "control_ids": [
+        "CTRL-005",
+        "CTRL-060",
+        "CTRL-061"
+      ],
+      "source_modules": [
+        "app.js",
+        "index.html"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/quality.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2"
+      ],
+      "integration_phases": [
+        "U2"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html (#planModal); app.js planBtn @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "DIALOG-02",
+      "name": "Help",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#helpBtn",
+        "#helpModal",
+        ".modal"
+      ],
+      "new_dom": "#hlD (+ TM section)",
+      "states": "open, closed",
+      "control_ids": [
+        "CTRL-006",
+        "CTRL-051",
+        "CTRL-061"
+      ],
+      "source_modules": [
+        "app.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/browser-train-management.py",
+        "tests/quality.test.js",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2",
+        "G-U6"
+      ],
+      "integration_phases": [
+        "U2",
+        "U6"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html (#helpModal) @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-00",
+      "name": "Train Management dialog",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#trainManagement",
+        ".managementNav [data-view]",
+        "dialog.trainManagement [data-close]"
+      ],
+      "new_dom": "#tmD (.dlg family, brass)",
+      "states": "closed, open/view, dirty-close-blocked",
+      "control_ids": [
+        "CTRL-027",
+        "CTRL-051",
+        "CTRL-055",
+        "CTRL-056",
+        "CTRL-063"
+      ],
+      "source_modules": [
+        "app.js",
+        "src/train-management.js"
+      ],
+      "existing_tests": [
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2",
+        "G-U6"
+      ],
+      "integration_phases": [
+        "U2",
+        "U6"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-management.js @184cc9b (M1) / @252d9c3",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-01",
+      "name": "On the layout",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        ".managementDetached [data-detached-id]",
+        ".trainSideView [data-fit]",
+        ".trainSideView [data-zoom]",
+        ".trainSideView input[type=\"range\"]",
+        "[data-composition]",
+        "[data-copy-train]"
+      ],
+      "new_dom": "#tmD On the Layout",
+      "states": "populated, selected, no-trains (defensive), detached-empty, detached-present",
+      "control_ids": [
+        "CTRL-028",
+        "CTRL-029",
+        "CTRL-030",
+        "CTRL-040",
+        "CTRL-065"
+      ],
+      "source_modules": [
+        "src/train-management-state.js",
+        "src/train-management.js",
+        "src/train-projects.js",
+        "src/train-side-layout.js",
+        "src/train-side-view.js"
+      ],
+      "existing_tests": [
+        "tests/browser-train-management.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py",
+        "tests/browser-train-projects.py",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-project-side.test.js",
+        "tests/train-projects.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U6",
+        "G-U7"
+      ],
+      "integration_phases": [
+        "U6",
+        "U7"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-management.js layout(); src/train-management-state.js @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-02",
+      "name": "Model catalog",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#rollingModels",
+        ".managementCatalog article.managementModel"
+      ],
+      "new_dom": "#tmD Model Catalog",
+      "states": "all, filtered, preview open, image missing",
+      "control_ids": [
+        "CTRL-014",
+        "CTRL-066"
+      ],
+      "source_modules": [
+        "app.js",
+        "src/train-management.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/browser-train-management.py",
+        "tests/quality.test.js",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2",
+        "G-U6"
+      ],
+      "integration_phases": [
+        "U2",
+        "U6"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-management.js catalog() @184cc9b; PROJECT_CATALOG in src/train-projects.js @a67e0de",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-03",
+      "name": "Projects dashboard",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "[data-project-action=\"edit\"]",
+        "[data-project-action=\"new\"]",
+        "[data-project-action^=\"open-\"]"
+      ],
+      "new_dom": "#tmD Projects list",
+      "states": "empty, populated, selected, draft open",
+      "control_ids": [
+        "CTRL-031",
+        "CTRL-057",
+        "CTRL-058"
+      ],
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "existing_tests": [
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py",
+        "tests/browser-train-projects.py",
+        "tests/train-project-side.test.js",
+        "tests/train-projects.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U7"
+      ],
+      "integration_phases": [
+        "U7"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-projects-view.js @a67e0de",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-04",
+      "name": "Project editor",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        ".trainSideView [data-fit]",
+        ".trainSideView [data-zoom]",
+        ".trainSideView input[type=\"range\"]",
+        "[data-project-action=\"add\"]",
+        "[data-project-action=\"cancel\"]",
+        "[data-project-action=\"confirm\"]",
+        "[data-project-action=\"link\"]",
+        "[data-project-action=\"new\"]",
+        "[data-project-action^=\"down-\"]",
+        "[data-project-action^=\"flip-\"]",
+        "[data-project-action^=\"remove-\"]",
+        "[data-project-action^=\"up-\"]",
+        "input[data-project-action=\"name\"]",
+        "select[data-project-action=\"model\"]"
+      ],
+      "new_dom": "Composer",
+      "states": "empty draft, loco only, 1–5 trailers, full (6), dirty, invalid, confirmed read-only",
+      "control_ids": [
+        "CTRL-031",
+        "CTRL-032",
+        "CTRL-033",
+        "CTRL-034",
+        "CTRL-035",
+        "CTRL-036",
+        "CTRL-037",
+        "CTRL-038",
+        "CTRL-039",
+        "CTRL-040"
+      ],
+      "source_modules": [
+        "src/depot-inventory.js",
+        "src/train-management.js",
+        "src/train-projects-view.js",
+        "src/train-projects.js",
+        "src/train-side-layout.js",
+        "src/train-side-view.js"
+      ],
+      "existing_tests": [
+        "tests/browser-train-management.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py",
+        "tests/browser-train-projects.py",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-project-side.test.js",
+        "tests/train-projects.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U6",
+        "G-U7"
+      ],
+      "integration_phases": [
+        "U6",
+        "U7"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-projects-view.js; src/train-projects.js @a67e0de",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-05",
+      "name": "Side preview",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        ".trainSideView [data-fit]",
+        ".trainSideView [data-zoom]",
+        ".trainSideView input[type=\"range\"]"
+      ],
+      "new_dom": "Composer rail + layout ribbon",
+      "states": "fit, zoomed, scrolled, image missing",
+      "control_ids": [
+        "CTRL-040"
+      ],
+      "source_modules": [
+        "src/train-side-layout.js",
+        "src/train-side-view.js"
+      ],
+      "existing_tests": [
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U6",
+        "G-U7"
+      ],
+      "integration_phases": [
+        "U6",
+        "U7"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-side-view.js; src/train-side-layout.js @a67e0de",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-06",
+      "name": "Compare planned vs real",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "[data-copy-train]",
+        "[data-project-action=\"link\"]"
+      ],
+      "new_dom": "Compare panel",
+      "states": "unlinked, matching, different, changed, stale",
+      "control_ids": [
+        "CTRL-030",
+        "CTRL-039"
+      ],
+      "source_modules": [
+        "src/train-management.js",
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "existing_tests": [
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py",
+        "tests/browser-train-projects.py",
+        "tests/train-project-side.test.js",
+        "tests/train-projects.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U6",
+        "G-U7"
+      ],
+      "integration_phases": [
+        "U6",
+        "U7"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-projects.js compareProject(); train-projects-view.js comparison() @a67e0de",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-07",
+      "name": "Guards and messages",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        ".modal",
+        "[data-project-action=\"cancel\"]",
+        "dialog.trainManagement [data-close]"
+      ],
+      "new_dom": "Guard modal + enamel alerts",
+      "states": "dirty-close, dirty-switch, dirty-focus, unload, error alert",
+      "control_ids": [
+        "CTRL-038",
+        "CTRL-051",
+        "CTRL-055",
+        "CTRL-061",
+        "CTRL-063"
+      ],
+      "source_modules": [
+        "app.js",
+        "src/train-management.js",
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/browser-train-management.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py",
+        "tests/browser-train-projects.py",
+        "tests/quality.test.js",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-project-side.test.js",
+        "tests/train-projects.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2",
+        "G-U6",
+        "G-U7"
+      ],
+      "integration_phases": [
+        "U2",
+        "U6",
+        "U7"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/train-management.js (beforeunload, cancel); train-projects-view.js discard() @a67e0de",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-08",
+      "name": "Depot inventory",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "[data-depot-action=\"add\"]",
+        "[data-depot-action=\"enter\"]",
+        "[data-depot-action=\"exit\"]",
+        "[data-depot-action^=\"assign-\"]",
+        "[data-depot-action^=\"release-\"]",
+        "[data-depot-action^=\"remove-\"]",
+        "select[data-depot-action=\"model\"]",
+        "select[data-depot-action^=\"target-\"]"
+      ],
+      "new_dom": "#tmD Depot > Virtual inventory",
+      "states": "zero, available, reserved, released notice, no compatible slots",
+      "control_ids": [
+        "CTRL-041",
+        "CTRL-042",
+        "CTRL-043",
+        "CTRL-044",
+        "CTRL-045",
+        "CTRL-059"
+      ],
+      "source_modules": [
+        "src/depot-inventory.js",
+        "src/depot-view.js"
+      ],
+      "existing_tests": [
+        "tests/browser-depot-lifecycle.py",
+        "tests/browser-depot-runtime.py",
+        "tests/browser-depot.py",
+        "tests/depot-inventory.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U8"
+      ],
+      "integration_phases": [
+        "U8"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/depot-inventory.js; src/depot-view.js @252d9c3 (provisional)",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "TM-09",
+      "name": "Depot physical/plan lists",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        ".managementDetached [data-detached-id]",
+        "[data-depot-action=\"enter\"]",
+        "[data-depot-action=\"exit\"]",
+        "[data-depot-action^=\"assign-\"]",
+        "select[data-depot-action^=\"target-\"]"
+      ],
+      "new_dom": "Depot > Planned slots / Physical (read only) / Transfers locked",
+      "states": "physical attached, physical detached, transfers unavailable, open-draft notice",
+      "control_ids": [
+        "CTRL-042",
+        "CTRL-045",
+        "CTRL-065"
+      ],
+      "source_modules": [
+        "src/depot-inventory.js",
+        "src/depot-view.js",
+        "src/train-management-state.js",
+        "src/train-management.js"
+      ],
+      "existing_tests": [
+        "tests/browser-depot-lifecycle.py",
+        "tests/browser-depot-runtime.py",
+        "tests/browser-depot.py",
+        "tests/browser-train-management.py",
+        "tests/depot-inventory.test.js",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U6",
+        "G-U8"
+      ],
+      "integration_phases": [
+        "U6",
+        "U8"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/depot-view.js; depot-inventory.js railwayInventoryView() @252d9c3",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "FUT-01",
+      "name": "Persistence",
+      "authority": "NOT_IMPLEMENTED_PERSISTENCE",
+      "current_dom": [],
+      "new_dom": "Not designed as active; \"Session only\" tags everywhere",
+      "states": "session-only (only state shown)",
+      "control_ids": [
+        "CTRL-063"
+      ],
+      "source_modules": [
+        "src/train-management.js"
+      ],
+      "existing_tests": [
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U6"
+      ],
+      "integration_phases": [
+        "U6"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "none (not implemented) — future gate",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "REF-01",
+      "name": "UI V1 reference shell",
+      "authority": "MOCK_ONLY",
+      "current_dom": [],
+      "new_dom": "V2 reference = V1 + TM extension",
+      "states": "V1 states unchanged",
+      "control_ids": [],
+      "source_modules": [],
+      "existing_tests": [],
+      "future_gate_ids": [],
+      "integration_phases": [],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "V1 menu/mobile DOM absent in application; future presentation only.",
+      "package_source_ref": "design/main-ui-redesign@cf2c29a serien-mainui-v1/reference/serien-ui-reference.html (design only)",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "SCR-028",
+      "name": "Guarded-stop overlay (3D)",
+      "authority": "REAL_BASELINE",
+      "current_dom": [],
+      "new_dom": "Guarded-stop text + Bell chip on the layout view; Menu bell control",
+      "states": "none, braking, guarded stop",
+      "control_ids": [
+        "CTRL-046",
+        "CTRL-047"
+      ],
+      "source_modules": [
+        "src/guarded-stop-bell.js",
+        "src/guarded-stop-scene.js",
+        "src/guarded-stop-view.js"
+      ],
+      "existing_tests": [
+        "tests/browser-guarded-stop.py",
+        "tests/guarded-stop.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U3"
+      ],
+      "integration_phases": [
+        "U3"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "src/guarded-stop-scene.js; src/guarded-stop-view.js; src/guarded-stop-bell.js @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "SCR-029",
+      "name": "Startup / failure",
+      "authority": "REAL_BASELINE",
+      "current_dom": [
+        "#loadMsg"
+      ],
+      "new_dom": ".win loading plate",
+      "states": "preparing, startup failed, load failed",
+      "control_ids": [
+        "CTRL-064"
+      ],
+      "source_modules": [
+        "index.html"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/quality.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U3"
+      ],
+      "integration_phases": [
+        "U3"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "Use real state and normalized control contracts; package M3 provisional labels superseded.",
+      "package_source_ref": "index.html (#loadMsg + error handlers) @184cc9b",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "SCR-030",
+      "name": "Menu dialog (V1)",
+      "authority": "MOCK_ONLY",
+      "current_dom": [],
+      "new_dom": "#dlg + TM entry + Rolling stock + Sign out",
+      "states": "open, closed",
+      "control_ids": [
+        "CTRL-002",
+        "CTRL-003",
+        "CTRL-014",
+        "CTRL-027",
+        "CTRL-046"
+      ],
+      "source_modules": [
+        "app.js",
+        "auth-gate.js",
+        "src/guarded-stop-bell.js",
+        "src/guarded-stop-scene.js",
+        "src/guarded-stop-view.js",
+        "src/train-management.js"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/browser-guarded-stop.py",
+        "tests/browser-phase-one.py",
+        "tests/browser-phase-zero.py",
+        "tests/browser-train-management.py",
+        "tests/guarded-stop.test.js",
+        "tests/quality.test.js",
+        "tests/run-train-side-regression.py",
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2",
+        "G-U3",
+        "G-U6"
+      ],
+      "integration_phases": [
+        "U2",
+        "U3",
+        "U6"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "V1 menu/mobile DOM absent in application; future presentation only.",
+      "package_source_ref": "serien-mainui-v1 reference #dlg (design only) + V2.1 additions",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    },
+    {
+      "id": "SCR-031",
+      "name": "Mobile navigation (V1)",
+      "authority": "MOCK_ONLY",
+      "current_dom": [],
+      "new_dom": ".nav + \"Stock\" tab",
+      "states": "trains, switches, environment, missions, stock",
+      "control_ids": [
+        "CTRL-024",
+        "CTRL-027"
+      ],
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js",
+        "src/train-management.js"
+      ],
+      "existing_tests": [
+        "tests/browser-phase-five-close.py",
+        "tests/browser-train-deck.py",
+        "tests/browser-train-management.py",
+        "tests/fleet-commands.test.js",
+        "tests/run-train-side-regression.py",
+        "tests/train-deck.test.js",
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js"
+      ],
+      "future_gate_ids": [
+        "G-U2",
+        "G-U5"
+      ],
+      "integration_phases": [
+        "U2",
+        "U5"
+      ],
+      "constraints": "No mock runtime. Session-only notice is real; cloud persistence absent. Defensive zero-train view is not a new fleet delete API.",
+      "notes": "V1 menu/mobile DOM absent in application; future presentation only.",
+      "package_source_ref": "serien-mainui-v1 reference .nav (design only) + V2.1 Stock tab",
+      "effective_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "archive": {
+    "name": "serien-codex-package-ui-v21.zip",
+    "size": 36752894,
+    "sha256": "9bd0252311ab82dd77af76f66cf9bb5251d74ce09d0815deae044ea90a58333d",
+    "source": "user uploaded independent ZIP containers serien-v21-01.zip and serien-v21-02.zip, extracted .aa + .ab in order",
+    "crc": "PASS previously verified, not a signature of origin"
+  },
+  "approval": "Regia approval of technical package and U0 in AUTHORIZATION_U0.md; U1–U9 not authorized",
+  "authorization_sha256": "bdf57b0fbcf8612623d15d23558df3522270a8b81dbe7659b1a84e1093a7646a",
+  "design_version": "2.1.1-design (V2.1 frozen, T-01/T-02 document corrections)",
+  "baseline": "91722fbdf6671e69deebf645c3d8bf389212f421",
+  "branch": "codex/ui-v2-integration",
+  "readiness": "af67ee5c65679b7e5fa384d76a0825dff022f27d",
+  "main": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+  "technical_sources": [
+    {
+      "package_path": "spec/AGENTS-UI-V21.md",
+      "size": 2074,
+      "sha256": "f04191d1427c82601b4ce74d74b3578b4274b6b8a8d5037f82df734a90306aee",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "spec/ASSET_LAYOUT.md",
+      "size": 2329,
+      "sha256": "dfbb0c9f57ee1de3fac6278aa811567c5e57b888f49641c911e342028f718db5",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "spec/RAILWAY_CONSTRAINTS.md",
+      "size": 3171,
+      "sha256": "14e205f2a4415fe7a26e4e3996fbadb0fa93cdcbff8e5ad2914d761ef800ef9e",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "spec/SPEC_UI_V21.md",
+      "size": 13077,
+      "sha256": "ab648c59e67f1c117c7f39f7df0b296bf66515a22a99d41771397e147f826ff1",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "spec/STATUS_TEMPLATE.md",
+      "size": 971,
+      "sha256": "7810f97063f332a9a9653e032b4ff8bfefb2b9bc2d5016dde6be862a948b6191",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "spec/TEST_PLAN.md",
+      "size": 5049,
+      "sha256": "6145048e2d8a56e4de45442164de54d0a68c555462330f8f82b8014d94374fd1",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "contracts/ACCEPTANCE_BY_MICROPHASE.md",
+      "size": 10562,
+      "sha256": "a0dcfb2bb69b911a5f54814c7541a2faea1a0ec9399c520eb8c75bf50837f9b5",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "contracts/CODE_DOM_MAP.csv",
+      "size": 30768,
+      "sha256": "c8e3e62050dc1d0e8ca7adbb4e9d2f102314917e36e72df57e3e2fe7dcc66786",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "contracts/CODE_DOM_MAP.json",
+      "size": 59197,
+      "sha256": "e2ef727e6a2aa850f7aa2b14111fb046b8b59ab874a8a9a0e823a626f3ba010e",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "contracts/STATE_MACHINES.json",
+      "size": 2275,
+      "sha256": "5589a1192a6b7c3a06952e408608ec9d6961ea43f16f84e3a825a230c3768722",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "contracts/UI_CONTRACTS.json",
+      "size": 13232,
+      "sha256": "cc3e9d22a64a8560fd7765ca0125867051a512c1c26809f457acc98c98a95202",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "README.md",
+      "size": 3697,
+      "sha256": "bf95fe5a9536ed55097962aa569a96b8c5018c3d532b5eb6fc091dc189cce899",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "FILE_INDEX.md",
+      "size": 20632,
+      "sha256": "89f13b528c20773ea895eb1ce529a7f82e13d91a318124b2411442f9dcc0a964",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    },
+    {
+      "package_path": "prompts/CODEX_PROMPTS.md",
+      "size": 10327,
+      "sha256": "8018508cfafa968e56040c8bf9246aa9d0e749f6ee895a59f1aaed94f874fe55",
+      "role": "frozen source; normalized overrides in current docs, original prompt not authorization"
+    }
+  ],
+  "versioned_evidence": [
+    {
+      "path": "docs/ui-v2-integration/evidence/final-package/integrity.json",
+      "sha256": "5c64b8700fb8344e7bd9d7ad8b599067a85fed874d855b236c04491878185bd2"
+    },
+    {
+      "path": "docs/ui-v2-integration/evidence/final-package/manifests.json",
+      "sha256": "d8b2af78bd1dd762a8c0eb84765a0a8db3b3a7b762b84d9e5de47c720cb6437e"
+    },
+    {
+      "path": "docs/ui-v2-integration/evidence/final-package/file-inventory.json",
+      "sha256": "0ce5ec21bda9433cae0fa2fdaf10c48e3e3a6c3644f273be4e30f170912bfe9b"
+    },
+    {
+      "path": "docs/ui-v2-integration/evidence/final-package/compatibility-checks.json",
+      "sha256": "971da76058d5c585b744292f6c34ab6de6694466e1b8875ecb8cfb503d4d0a07"
+    },
+    {
+      "path": "docs/ui-v2-integration/evidence/final-package/SOURCE_CODE_DOM_MAP.json",
+      "sha256": "e2ef727e6a2aa850f7aa2b14111fb046b8b59ab874a8a9a0e823a626f3ba010e"
+    }
+  ],
+  "manifest_limits": "FILE_INDEX declarations use 16-hex SHA256 prefixes (197 technical/143 nested); full calculated hashes in file-inventory; archive hash measured, no external original expected hash supplied",
+  "duplicates_policy": "No ZIP/raw segments, full design copies, runtime assets or reference JS copied into the application in U0."
+}

@@ -1,15 +1,9 @@
-# UI V2.1 — Fase 0 / acquisizione definitiva
+# UI V2.1 — stato corrente
 
-**READY FOR UI V2.1 IMPLEMENTATION GATE — STOP per approvazione della Regia.** Nessuna microfase applicativa autorizzata/eseguita.
+**U0 READY FOR REGIA REVIEW.** Il pacchetto tecnico è approvato e la Regia ha autorizzato esclusivamente U0 documentale. Le precedenti acquisizioni/blocchi sono storici e risolti.
 
-Due ZIP ricevuti integri; segmenti `.aa` (24.000.000 byte) e `.ab` (12.752.894 byte) ricomposti in ordine: originale **36.752.894 byte**, CRC PASS, SHA-256 `9bd0252311ab82dd77af76f66cf9bb5251d74ce09d0815deae044ea90a58333d`. Manifest tecnico 197/197 e design 143/143 PASS; inventario completo 198 file. Risolti i precedenti blocchi di allegato/Drive.
+[U0_REPORT.md](U0_REPORT.md), [autorità e registry normalizzati](../_active/ui-v21/README.md), [stato U0](../_active/ui-v21/STATUS.md).
 
-Presenti **dossier tecnico Codex + design V2.1 2.1.1-design + V1 congelato**. Mappa verificata: 66 controlli, 31 schermate, tutte le quattro sezioni incluse M2/M3. V1 incluso identico al branch design (40 file). Testo tecnico revisionato come materiale di gate, non come autorizzazione a eseguire i prompt.
+Branch `codex/ui-v2-integration`, baseline applicativa M2/M3 `91722fb`, readiness iniziale `af67ee5`. Registry 66 controlli/31 schermate,13 adapter, piano U1–U9 e gate con provenienza verificabile. Validatore statico PASS (19 controlli,226 file invariati), build PASS/bundle identico; niente suite baseline ripetute o selettori test migrati.
 
-Branch effettivo `codex/ui-v2-integration`, baseline `91722fbdf6671e69deebf645c3d8bf389212f421` già completa di M3 approvata; riferimenti alternativi del dossier `codex/ui-v21`/`a67e0de`/M3 provvisoria superati dal mandato. Nessun nuovo merge/rebase/branch necessario.
-
-[Rapporto corrente §13](REPORT.md), [evidenze](evidence/final-package/), [mapping 66 controlli](evidence/final-package/CONTROL_COMPATIBILITY.csv). Smoke nuovo reference quattro tab PASS (fallback font, non accettazione interattiva completa). Vecchi test baseline non ripetuti: diff applicativo vuoto e bundle/canonico invariati.
-
-Da risolvere nelle microfasi autorizzate: adapter session summary/launcher, guard asincrone, DOM/ID selezionato, cascade CSS, font self-hosted con licenze (non inclusi), gate visivo/font e collaudo interattivo completo. Nessuna modifica necessaria a R1/store/backend per questi adattamenti.
-
-Checkpoint solo documentale sul branch dedicato, SHA/confronto remoto nella consegna. Nessuna modifica UI/R1/Supabase/Auth/main/V1, merge o deploy. **Prossima azione unica: gate Regia sul dossier e sugli adattamenti del §13, poi autorizzazione esplicita della microfase nominata.**
+Font/licenze da acquisire/verificare **prima di U1**; nessun CSS/font/asset o adapter installato nel runtime. Nessuna modifica R1/M2/M3/Auth/Supabase/main/V1 o dipendenze/workflow. Nessun merge/deploy. **STOP: U1–U9 non autorizzate.**

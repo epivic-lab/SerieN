@@ -301,3 +301,13 @@ SHA main/M2-M3/V1 e checkpoint iniziale `e48dd96` confermati; nessuna modifica a
 [Rapporto §13](docs/ui-v2-integration/REPORT.md), [mapping 66 controlli e 31 schermate / evidenze](docs/ui-v2-integration/evidence/final-package/). Confronto con M2/M3 `91722fb` completo; branch effettivo resta `codex/ui-v2-integration`, M3 già approvata/presente: riferimenti precedenti del dossier superati dal mandato, nessun merge/rebase. Adattamenti solo UI documentati (getter/launcher, conferme, DOM, cascade); engine/store/Auth congelati.
 
 Smoke nuovo reference 4 tab PASS con limiti espliciti; primo harness selettore errato registrato. Font definitivi/licenze da acquisire in U1, gate visivo/interattivo completo da eseguire nelle fasi previste. Baseline test non ripetuti come richiesto; nessuna modifica applicativa, hash bundle/canonico invariati. Aggiornati solo rapporto/stato/progresso/evidenze. **STOP per gate Regia sul pacchetto e adattamenti; nessuna U0/U1 applicativa, merge o deploy avviati.**
+
+## UI V2.1 — U0 Integration Foundation & Contract Normalization (2026-11-11)
+
+Regia approva il pacchetto tecnico e autorizza **soltanto U0 documentale**. Verificati branch locale/remoto iniziale `codex/ui-v2-integration@af67ee5c65679b7e5fa384d76a0825dff022f27d`, baseline applicativa `91722fbdf6671e69deebf645c3d8bf389212f421`, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d`; nessun altro branch/merge/rebase M3, già approvata/presente.
+
+**U0 READY FOR REGIA REVIEW.** [Rapporto](docs/ui-v2-integration/U0_REPORT.md); registry completo 66 CTRL / 31 schermate, crosswalk source/DOM/callback/test, 13 adapter futuri, 14 conflitti normalizzati, piano U1–U9, matrice test/gate, inventario/provenienza in [docs/_active/ui-v21](docs/_active/ui-v21/README.md). Nessuna copia dell'intero design, nessun runtime/test baseline modificato, niente selector migration.
+
+**PASS:** validatore isolato: 19 controlli statici, 226 file applicativi/test/config byte-identici a 91722fb, build con bundle/canonico identici. Suite browser/Node/Python baseline non ripetute; nuovi adapter/font/gate visuali NOT VERIFIED. Font/licenze Cinzel Decorative/Federo/Cutive Mono da acquisire e verificare prima U1; U0 non li installa. U1 normalizzata solo staging/fixture, attivazione CSS regionale da U2.
+
+Checkpoint atomico documentale sul branch esistente; SHA/allineamento remoto nella consegna. Nessuna modifica R1/M2/M3/Auth/Supabase/V1/dipendenze/workflow, merge o deploy. **STOP U0: attendere review Regia e autorizzazione esplicita U1 con prerequisiti font.**

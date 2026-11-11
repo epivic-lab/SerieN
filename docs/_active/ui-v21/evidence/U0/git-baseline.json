@@ -1,0 +1,16 @@
+{
+  "branch": "codex/ui-v2-integration",
+  "initial_local_head": "af67ee5c65679b7e5fa384d76a0825dff022f27d",
+  "initial_remote_head": "af67ee5c65679b7e5fa384d76a0825dff022f27d",
+  "initial_worktree": "clean",
+  "verified_origin": "https://github.com/epivic-lab/SerieN.git",
+  "remote_refs": {
+    "main": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+    "codex/train-management-m2": "91722fbdf6671e69deebf645c3d8bf389212f421",
+    "design/main-ui-redesign": "cf2c29a8112b37a53c62cb84fca44061942aea31"
+  },
+  "application_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421",
+  "method": "git status/rev-parse/ls-remote --heads; source evidence 226 git blobs verified by verify_u0.py",
+  "new_branch_merge_rebase_reset_force_push_deploy": "NONE",
+  "delivery_commit": "commit containing this evidence; actual SHA and local/remote equality in final delivery, not recursive self hash"
+}
