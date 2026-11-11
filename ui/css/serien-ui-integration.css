@@ -1,0 +1,6 @@
+/* CTRL-001/027: local approved fonts; no remote imports, synthetic faces or UI activation. */
+@font-face{font-family:'Cinzel Decorative';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/CinzelDecorative-700.woff2') format('woff2')}
+@font-face{font-family:'Federo';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/Federo-400.woff2') format('woff2')}
+@font-face{font-family:'Cutive Mono';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/CutiveMono-400.woff2') format('woff2')}
+/* CTRL-027: enable exact font weights in isolated foundation; no synthetic bold/italic. */
+#u1-fixture{font-synthesis:none}

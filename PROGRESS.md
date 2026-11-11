@@ -319,3 +319,13 @@ U0 `b9574ae71dd7ebf4039affc20d969d813b93797d` APPROVATA SENZA RISERVE. Autorizza
 [FONT_PREFLIGHT_REPORT](docs/_active/ui-v21/FONT_PREFLIGHT_REPORT.md), manifest/font/licenze e verifiche in docs/_active/ui-v21/font-staging. PASS conversione/roundtrip contorni e metriche/layout, browser Chromium offline senza richieste/errori, validatore invarianti 226 file e build/bundle identico. Warning kern upstream Federo documentato con coppie preservate e browser PASS; primo harness corretto prima dei check. Endpoint CSS Google Fonts CONNECT403, sorgenti ufficiali pinned su raw.githubusercontent.com accessibili, nessun aggiramento policy. Suite baseline non ripetute; UI integrata/font visual gate e altri browser/hardware NOT VERIFIED.
 
 Solo inventario/provenienza/documentazione e staging non attivo; nessun index/style/app/src/test/workflow/dipendenze/Auth/Supabase/design o ramo originale modificato, nessun merge/deploy. Checkpoint remoto sul branch codex/ui-v2-integration verificato nella consegna. **STOP per la Regia: U1 richiede autorizzazione esplicita separata.**
+
+## UI V2.1 — U1 Asset Staging & Isolated Visual Foundation (2026-11-11)
+
+Font Gate approvato; due autorizzazioni U1 ricevute identiche. Verificati locale/remoto `codex/ui-v2-integration@65b910bc25def1f0064a0758e29f8d5715314568`, baseline M2/M3 `91722fb`, main `184cc9b`, working tree iniziale pulito. **U1 READY FOR REGIA REVIEW.**
+
+19 file inattivi in ui/: CSS/token/materiali/sprite da pacchetto verificato, tre font WOFF2 PRE-U1 e licenze verbatim, manifest. Solo import remoto rimosso da copia tokens V1, sette simboli TM visivi aggiunti a copia sprite; nessuna JS reference o miniatura/renderer copiata. Ordine legacy→V1→TM→integration ultimo soltanto nella fixture isolata. [Rapporto](docs/_active/ui-v21/U1_ASSET_STAGING_REPORT.md), evidenze nuove docs/_active/ui-v21/evidence/U1/.
+
+**PASS:** hash/integrità/licenze, HTTP200 tutti asset, tre font loaded/famiglie/pesi/no synthetic, rete esterna assente, offline con risposte da file locali in contesto nuovo, zero errori, screenshot 1440×900 ispezionato. Cascade sette campioni con/senza legacy senza differenze; build/bundle identico e 226 file runtime/test/config protetti invariati. Nessuna suite storica ripetuta; UI integrata/altri viewport/browser/hardware NOT VERIFIED.
+
+Solo staging e documentazione; nessun index/style/app/src/R1/M2/M3/Auth/Supabase/V1/V2.1 congelato/test/workflow/dipendenze modificato; nessuna attivazione nuova UI, merge/rebase/reset/deploy/release. Checkpoint remoto verificato nella consegna. **STOP U1: attendere review Regia e nuova autorizzazione U2.**

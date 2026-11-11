@@ -1,13 +1,13 @@
-# UI V2.1 — U0
+# UI V2.1 — U1 Asset Staging & Isolated Visual Foundation
 
-**U0 APPROVATA SENZA RISERVE; FONT GATE PASS — READY FOR U1. STOP.** PRE-U1 soltanto font in staging/documentazione, U1–U9 non autorizzate.
+**U1 READY FOR REGIA REVIEW — STOP. U2–U9 non autorizzate.** U0 e Font Gate approvati; autorizzazioni U1 duplicate identiche conservate una volta.
 
-Branch `codex/ui-v2-integration`; checkpoint iniziale readiness `af67ee5c65679b7e5fa384d76a0825dff022f27d`; baseline applicativa M2/M3 approvata `91722fbdf6671e69deebf645c3d8bf389212f421`; main `184cc9ba93a6b35493f365b2ffcb20ef0645963d`. Nessun merge/rebase M3: è già presente e approvata.
+Branch codex/ui-v2-integration, checkpoint iniziale locale/remoto `65b910bc25def1f0064a0758e29f8d5715314568`, baseline applicativa `91722fbdf6671e69deebf645c3d8bf389212f421`, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d` verificati.
 
-66 CTRL,31 schermate,13 adapter futuri,14 conflitti risolti documentalmente, piano U1–U9/matrice test/gate, inventario asset e provenienza. Fonte congelata non modificata e nessuna duplicazione del pacchetto completo. [Rapporto U0](../../ui-v2-integration/U0_REPORT.md).
+19 file staging inattivi in ui/: 5 CSS,6 texture,1 sprite,3 WOFF2 approvati,3 licenze e manifest. Unico import Google Fonts rimosso dalla copia tokens V1 con diff; CSS/token design altrimenti verbatim, sette simboli TM visivi aggiunti alla copia sprite. Nessun asset ferroviario sovrascritto, nessun index/runtime collegato ai fogli.
 
-Verifica isolata U0: **19 controlli statici PASS**, 226 file runtime/test/config byte-identici a baseline; build **PASS**, bundle/canonico identici. Suite baseline non ripetute; nessuna migrazione dei test. Evidenze in `evidence/U0/`. SHA consegna e checkpoint remoto verificati nella risposta finale.
+Fixture isolata 1440×900: HTTP200 su tutti gli asset locali, font loaded/pesi/famiglie reali, no synthetic, nessuna richiesta esterna o script/errori, offline locale PASS. Cascade misurata su sette campioni con/senza legacy: zero differenze non spiegate. Screenshot HTTP ispezionato. Build/bundle identico PASS,226file protetti byte-identici a baseline. Nessuna suite storica ripetuta o evidenza U0/PRE-U1 sovrascritta.
 
-**Prerequisito font soddisfatto in PRE-U1:** Cinzel Decorative 700, Federo 400, Cutive Mono 400 ufficiali Google Fonts a commit fissato, WOFF2/caricamento offline/licenze/hash PASS. [FONT_PREFLIGHT_REPORT.md](FONT_PREFLIGHT_REPORT.md), file/licenze/evidenze in font-staging/. Nessuna installazione o attivazione UI. U1 normalizzata resta staging/fixture; CSS attivo da U2, soltanto dopo autorizzazione.
+[Rapporto U1](U1_ASSET_STAGING_REPORT.md), [evidenze](evidence/U1/). UI integrata/altri viewport/browser/hardware NOT VERIFIED, non deducibili dal campione statico. SHA checkpoint e verifica remoto nella consegna.
 
-Prossima azione unica: review Regia del preflight e autorizzazione esplicita U1. Nessuna U1 automaticamente autorizzata, main/deploy/merge o fase successiva avviati.
+Prossima azione unica: review Regia U1 e nuova autorizzazione U2. Nessun merge/rebase/reset/deploy/release.

@@ -2,8 +2,8 @@
 
 | Materiale | Provenienza verificata | Destinazione futura | Stato / azione necessaria |
 | --- | --- | --- | --- |
-| V1 tokens/CSS/6 texture/sprite | Archivio SHA in PROVENANCE; V1 40 file identici al branch design congelato | ui/css/tokens.css, serien-ui.css; ui/assets/textures; ui/assets/svg | DISPONIBILE come reference; NON INSTALLATO. Confrontare bytes prima/dopo copia, sprite TM append solo alla copia applicativa. Mai cambiare V1 congelato |
-| V2.1 tokens/CSS/materiali TM | design-baseline/serien-mainui-v21/design/tokens e css; manifest verificati | ui/css/tokens-tm.css, serien-ui-train-management.css | DISPONIBILE, NON INSTALLATO; no riscrittura del design. Staging fixture U1, attivazione da U2 |
+| V1 tokens/CSS/6 texture/sprite | Archivio SHA in PROVENANCE; V1 40 file identici al branch design congelato | ui/css/tokens.css, serien-ui.css; ui/assets/textures; ui/assets/svg | STAGED U1 in ui/, NON ATTIVO. Confrontare bytes prima/dopo copia, sprite TM append solo alla copia applicativa. Mai cambiare V1 congelato |
+| V2.1 tokens/CSS/materiali TM | design-baseline/serien-mainui-v21/design/tokens e css; manifest verificati | ui/css/tokens-tm.css, serien-ui-train-management.css | STAGED U1 in ui/, NON ATTIVO; no riscrittura del design. Staging fixture U1, attivazione da U2 |
 | Cinzel Decorative 700 | google/fonts@c30b221beb0c1da59d563feb91ec8656a1fa972a; TTF ufficiale + OFL | ui/fonts/CinzelDecorative-700.woff2 + licenza famiglia | **PASS PRE-U1**, WOFF2 verificato in font-staging/cinzeldecorative, non attivo |
 | Federo 400 | Stesso commit ufficiale, TTF + METADATA.pb + OFL | ui/fonts/Federo-400.woff2 + licenza famiglia | **PASS PRE-U1**, font-staging/federo, non attivo |
 | Cutive Mono 400 | Stesso commit ufficiale, TTF + METADATA.pb + OFL | ui/fonts/CutiveMono-400.woff2 + licenza famiglia | **PASS PRE-U1**, font-staging/cutivemono, non attivo |
@@ -15,4 +15,6 @@
 | JS reference e inline V1 | tm-reference, tm-catalog, tm-shell-v21, simulazione V1 | **NESSUNA** destinazione nel bundle | ESCLUSO INTEGRALMENTE, anche import parziale o copia di store/catalogo; non è un modulo di produzione |
 | Codice UI adapter | Registry e A01–A13 | src/ui e sole viste autorizzabili | NON IMPLEMENTATO. Nessuna nuova dipendenza runtime necessaria; U0 non crea src/ui |
 
-Provenienza e integrità del design conservate in [PROVENANCE.json](PROVENANCE.json). Aggiornamento PRE-U1: acquisiti i tre font e le rispettive licenze ufficiali; conversione WOFF2 e verifica offline PASS, [FONT_PREFLIGHT_REPORT.md](FONT_PREFLIGHT_REPORT.md). **Prerequisito font soddisfatto; U1 non autorizzata.** Tutti i file restano sotto font-staging/, nessuna copia in ui/fonts/ né font-face nel runtime.
+Provenienza e integrità del design conservate in [PROVENANCE.json](PROVENANCE.json). Aggiornamento PRE-U1: acquisiti i tre font e le rispettive licenze ufficiali; conversione WOFF2 e verifica offline PASS, [FONT_PREFLIGHT_REPORT.md](FONT_PREFLIGHT_REPORT.md). **Prerequisito font soddisfatto; U1 non autorizzata.** Font Gate storico conservato sotto font-staging/. In U1 i font sono anche copiati in ui/fonts/ e i font-face predisposti nello staging CSS, senza link o attivazione nel runtime.
+
+U1 aggiornamento: 19 file predisposti in ui/css, ui/fonts e ui/assets (inattivi); tre font/licenze copiati senza alterazioni, manifest completo. Fixture isolata e HTTP/offline/cascade/visual1440×900 PASS. [U1_ASSET_STAGING_REPORT.md](U1_ASSET_STAGING_REPORT.md). Nessun link nel boot applicativo; U2 non autorizzata.

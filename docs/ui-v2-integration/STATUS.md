@@ -1,9 +1,7 @@
 # UI V2.1 — stato corrente
 
-**U0 APPROVATA; FONT GATE PASS — READY FOR U1.** Il pacchetto tecnico è approvato e la Regia ha autorizzato esclusivamente U0 documentale. Le precedenti acquisizioni/blocchi sono storici e risolti.
+**U1 READY FOR REGIA REVIEW — STOP.** U0 e Font Gate approvati. U1 autorizzata soltanto staging/fixture; U2–U9 non autorizzate.
 
-[U0_REPORT.md](U0_REPORT.md), [autorità e registry normalizzati](../_active/ui-v21/README.md), [stato U0](../_active/ui-v21/STATUS.md).
+[Rapporto U1](../_active/ui-v21/U1_ASSET_STAGING_REPORT.md), [stato/evidenze](../_active/ui-v21/STATUS.md). Branch codex/ui-v2-integration, baseline M2/M3 91722fb, checkpoint iniziale U1 65b910b.
 
-Branch `codex/ui-v2-integration`, baseline applicativa M2/M3 `91722fb`, readiness iniziale `af67ee5`. Registry 66 controlli/31 schermate,13 adapter, piano U1–U9 e gate con provenienza verificabile. Validatore statico PASS (19 controlli,226 file invariati), build PASS/bundle identico; niente suite baseline ripetute o selettori test migrati.
-
-Font/licenze acquisiti e verificati nel PRE-U1 autorizzato: [rapporto](../_active/ui-v21/FONT_PREFLIGHT_REPORT.md). File in staging isolato, nessun CSS/font/asset o adapter installato nel runtime. Nessuna modifica R1/M2/M3/Auth/Supabase/main/V1 o dipendenze/workflow. Nessun merge/deploy. **STOP: U1–U9 non autorizzate.**
+19 file ui/ inattivi, tre WOFF2/licenze verbatim, CSS/materiali/sprite con modifiche applicative tracciate. Fixture HTTP/offline/cascade/font/visual1440×900 PASS; build/bundle identico e 226 file protetti invariati. Nessun runtime/test storico/dipendenza/workflow/design congelato modificato, nessun link CSS/font nel boot. Nessun merge/deploy o UI integrata; STOP per la Regia.
