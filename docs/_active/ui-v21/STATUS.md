@@ -1,13 +1,11 @@
-# UI V2.1 — U6 Train Management
+# UI V2.1 — U7 Projects, Composer & Compare
 
-**U6 READY FOR REGIA REVIEW — STOP. U7/U8/U9 non avviate.** U5 approvata nel mandato U6.
+**U7 READY FOR REGIA REVIEW — STOP. U8/U9 non avviate.** U6 approvata nel mandato U7.
 
-Branch `codex/ui-v2-integration`, baseline `e6f152c9b5a23347cbbd5aa6898b91a11e2194e0`, main produttiva invariata. Recovery locale documentata prima delle modifiche; conservati i quattro file parziali e completata la fase senza reset/clean/rebase.
+Branch `codex/ui-v2-integration`, ingresso `6f8a28a4fe49875dc499872454d5128b2860bdfc` locale/upstream/remoto pulito; main invariata. Dashboard confermati read-only con Edit esplicito, Composer da store M2 originale, rail/inspector/tray e cinque stati Compare originali. Guard condivisa con shell U6, intenti rivalidati/consumati una volta, nessun discard prematuro. Keyboard solo locale/contesto valido, nessun secondo Space. Prenotazioni M3 associate agli slot, conservate durante draft/Cancel e riconciliate su conferma secondo il dominio.
 
-Shell unica, quattro tab/accessibilità/focus, Layout con proiezioni fisiche reali e Side View originale, Catalog da PROJECT_CATALOG con filtri di presentazione. Guard shell atomica con generation/draft/identità rivalidati, nessuna Promise su discard. Sola API aggiuntiva di presentazione nella vista Projects; store e interni U7/U8 invariati. beforeunload mantiene la condizione reale.
+PASS eseguiti:254 Node,9 Python,build/canonico/invarianti,M1,Side View,Projects M2,lifecycle,regressione U6/U5,5 gruppi U7/sette viewport,Runtime Projects nativo/trusted mouse+touch e gate nativo definitivo4treni+Composer. Runtime esteso480frame/929662,7ms (~0,515fps SwiftShader); nessuna conclusione hardware o confronto prestazionale.
 
-**PASS:** 254 Node,9 Python,build/canonico/invarianti,M1,Side View,Projects lifecycle,6 gruppi U6,smoke U2,8 gruppi regressione U5 e RAF nativo con4 treni/apertura-selezione-chiusura TM. Bundle definitivo `8672384da7e4224342c2d6f2168132aca45d97ce49a6a1b1a6d98fe84ad2b7e7`, identico in acceptance e native finali.
+Bundle `8e6f7628c2b78fc4eb1abe6ef00ca99929ee66aae6d17cc5ac0163499c89ca6b`, identico in acceptance e native-checkpoint. Unico wiring U6:argomento guard condiviso; altri moduli ferroviari/store/catalogo/geometria/asset/Auth/Supabase/dependency/workflow intatti; CSS U6 prefisso conservato. Failure intermedi e adapter senza riscrivere asserzioni di dominio nel [rapporto U7](U7_REPORT.md); [risultati](evidence/U7/results.json), [matrici guard/Compare/Depot](evidence/U7/guard-matrix.json).
 
-Screenshot a1440×900/1024×768/820×1180/768×1024/390×844; recuperi/failure separati, nessun riutilizzo fittizio dei log di baseline. U3/U4/R1 e M2/M3 estesi restano PASS storici ove non rieseguiti; font/asset/engine/dispatcher/app/Auth/workflow/dep immutati. NOT VERIFIED: prompt beforeunload nativo, hardware fisico, altri browser, OAuth remoto e U9.
-
-[Rapporto](U6_REPORT.md), [risultati e comandi](evidence/U6/results.json), [recovery](evidence/U6/recovery-inventory.json). Checkpoint atomico e verifica remoto nella consegna. Unica prossima attività: revisione indipendente della Regia; nessun merge/main/deploy/Pages/Supabase o U7.
+NOT VERIFIED:hardware fisico,screen reader,altri browser,OAuth remoto,prompt beforeunload nativo,U9. Matrici estese precedenti non rieseguite restano PASS storici, non nuove prove. Checkpoint/push normale e SHA remoto nella consegna. Unica prossima attività: review indipendente della Regia; nessun merge/main/deploy/Pages o U8.

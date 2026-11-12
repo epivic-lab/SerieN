@@ -1,0 +1,111 @@
+[
+  {
+    "name": "node",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsed": 13.371610164642334
+  },
+  {
+    "name": "python",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "*_test.py"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsed": 0.08391308784484863
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build",
+      "--",
+      "--metafile=/workspace/SerieN/docs/_active/ui-v21/evidence/U7/metafile.json"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsed": 0.19507598876953125
+  },
+  {
+    "name": "canonical",
+    "command": [
+      "python3",
+      "scripts/build-canonical-layout.py"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsed": 0.06281638145446777
+  },
+  {
+    "name": "M1",
+    "command": [
+      "python3",
+      "tests/browser-train-management.py"
+    ],
+    "environment": {
+      "M1_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U7/M1"
+    },
+    "exitCode": 0,
+    "elapsed": 20.300639152526855
+  },
+  {
+    "name": "side",
+    "command": [
+      "python3",
+      "tests/run-train-side-regression.py"
+    ],
+    "environment": {
+      "M11_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U7/side"
+    },
+    "exitCode": 0,
+    "elapsed": 24.077224016189575
+  },
+  {
+    "name": "projects-lifecycle",
+    "command": [
+      "python3",
+      "tests/browser-train-project-lifecycle.py"
+    ],
+    "environment": {
+      "M2_LIFECYCLE_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U7/projects-lifecycle"
+    },
+    "exitCode": 1,
+    "elapsed": 1.4389970302581787
+  },
+  {
+    "name": "U6",
+    "command": [
+      "python3",
+      "tests/browser-ui-v21-U6.py"
+    ],
+    "environment": {
+      "U6_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U7/U6"
+    },
+    "exitCode": 1,
+    "elapsed": 9.60241150856018
+  },
+  {
+    "name": "U5",
+    "command": [
+      "python3",
+      "tests/browser-ui-v21-U5.py"
+    ],
+    "environment": {
+      "U5_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U7/U5"
+    },
+    "exitCode": 0,
+    "elapsed": 37.36471390724182
+  }
+]

@@ -16,7 +16,7 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
   const notice=dialog.querySelector('.u6-notice');let roleFilter='all',sourceFilter='all',searchFilter='';
   const sideView=createTrainSideView();
   let generation=0,inventory,launcher=button;
-  const projects=createTrainProjectsView({getTrains,getSelected,getGeneration:()=>generation,onChange:()=>{inventory?.reconcile();signature='';sync();}});
+  const projects=createTrainProjectsView({guard,getTrains,getSelected,getGeneration:()=>generation,onChange:()=>{inventory?.reconcile();signature='';sync();}});
   inventory=createDepotInventory({getProjects:()=>projects.snapshot.confirmed});
   const depot=createDepotView({inventory,getProjects:()=>projects.snapshot,getTrains,getDetached,getGeneration:()=>generation,onChange:()=>{signature='';sync();}});
   const body=dialog.querySelector('.managementBody');let view='layout',signature='',disposed=false,lastSync=0;

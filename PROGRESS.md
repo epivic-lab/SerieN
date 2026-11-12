@@ -383,3 +383,11 @@ Ripresa U6 autorizzata da U5 approvata `e6f152c9b5a23347cbbd5aa6898b91a11e2194e0
 254Node,9Python,build/canonico/invarianti,M1,Side View,Projects lifecycle,6gruppi U6,smoke U2,8gruppi U5 e RAF nativo4treni con consultazione TM PASS. Cinque viewport richiesti; nessuna pretesa hardware. Bundle `8672384da7e4224342c2d6f2168132aca45d97ce49a6a1b1a6d98fe84ad2b7e7`. Disconnessione temporanea exec-server recuperata senza modifiche distruttive; failure intermedi e limiti espliciti nel [rapporto U6](docs/_active/ui-v21/U6_REPORT.md), [risultati](docs/_active/ui-v21/evidence/U6/results.json).
 
 App/motore/dispatcher/topologia/catalogo/store/asset/Auth/Supabase/dipendenze/workflow intatti; CSS limitato U6. Checkpoint atomico/push sul solo branch autorizzato e SHA remoto nella consegna. **U6 READY FOR REGIA REVIEW — STOP; U7/U8/U9 non avviate, nessun merge/main/deploy/Pages.**
+
+## UI V2.1 — U7 (2026-11-12)
+
+Autorizzata U7 da U6 approvata `6f8a28a4fe49875dc499872454d5128b2860bdfc`, branch `codex/ui-v2-integration`. Dashboard confermati read-only (selezione non apre draft), Edit esplicito, Composer rail/inspector/tray da store M2 e cinque stati Compare veri. Coordinator condiviso con shell U6 tramite un argomento, guard New/View/Edit/Copy/Cancel con rivalidazione e consenso singolo; nessuna Promise su discard o mutazione fisica. Shortcuts locali con esclusione input/dialoghi e operazioni valide; niente Space globale aggiuntivo. Side View originale, UUID slot e M3 prenotazioni/riconciliazione preservati.
+
+254Node,9Python,build/canonico/invarianti,M1,Side View,Projects M2,lifecycle,U6/U5 regression,5gruppi U7/sette viewport,Runtime nativo storico/trusted mouse+touch e native-checkpoint4treni+Composer PASS. Bundle `8e6f7628c2b78fc4eb1abe6ef00ca99929ee66aae6d17cc5ac0163499c89ca6b`. Runtime esteso480frame/929662,7ms (~0,515fps SwiftShader): non prova hardware né confronto prestazionale. Matrici, errori/recuperi e limiti nel [rapporto U7](docs/_active/ui-v21/U7_REPORT.md), [risultati](docs/_active/ui-v21/evidence/U7/results.json).
+
+Domini M2/M3, catalogo/geometria/R1/dispatcher/topologia, app/Auth/Supabase/asset/dipendenze/workflow invariati; CSS soltanto U7. Checkpoint atomico e push normale sul solo branch autorizzato, SHA remoto nella consegna. **U7 READY FOR REGIA REVIEW — STOP; U8/U9 non avviate, nessun merge/main/deploy/Pages.**

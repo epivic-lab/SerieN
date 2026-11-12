@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "checks": {
+    "threeMovingAndM1IdentitySynchronization": "PASS",
+    "copyEditOrderOrientationConfirmWithoutPhysicalEffectsWhileThreeMove": "PASS",
+    "actualR1CoupleAndUncoupleRefusedWhileMoving": "PASS",
+    "threeOpenCloseCyclesWithThreeAdvancingTrainsAndConfirmedProject": "PASS",
+    "trustedNativeMouseEditOrientationConfirmWhileThreeMove": "PASS",
+    "trustedNativeTouchEditConfirmZoomFit-landscape": "PASS",
+    "trustedNativeTouchEditConfirmZoomFit-portrait": "PASS",
+    "liveUncoupleRecoupleWithOtherTwoMovingAndPhysicalIdentityPreserved": "PASS",
+    "nativeProjectZoomScrollFitAndResponsiveViewsDuringMovement": "PASS",
+    "nativeRealSideConsoleAnd3DPositionsSynchronized": "PASS",
+    "continuousNativeRAFContextAndNoRuntimeErrors": "PASS"
+  },
+  "failure": null,
+  "frameStats": {
+    "frames": 480,
+    "durationMs": 929662.7,
+    "fps": 0.515240635124976,
+    "p50Ms": 1416.5999999999767,
+    "p95Ms": 4199.900000000023
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "coordinator": "one shared U6 guard, passed as optional constructor argument; standalone view owns one when absent",
+  "New": "dirty Cancel/Escape preserve; clean start direct",
+  "View confirmed": "read-only, dirty replacement guarded, no store.open",
+  "Edit": "explicit global or per-project action; dirty guard Cancel preserves",
+  "Copy": "source composition/generation revalidated, no physical mutation",
+  "Cancel changes": "dirty custom guard; confirm once restores confirmed snapshot; no native confirm",
+  "Close Focus": "original shell requestAction + discardAfterConsent; U6 regression passed",
+  "Obsolete": "generation reset invalidates shared pending; U6 reset contract regression",
+  "Dispose": "pending guard cancelled; root keyboard and current handlers disposed",
+  "beforeunload": "original listener condition; presentation of native prompt NOT VERIFIED"
+}

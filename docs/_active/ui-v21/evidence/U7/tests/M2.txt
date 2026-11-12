@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/SerieN/docs/_active/ui-v21/evidence/U7/run-projects-regression.py", line 41, in <module>
+    out=Path(os.environ.get('M2_OUTPUT',ev/'M2'));os.environ['M2_OUTPUT']=str(out);out.mkdir(parents=True,exist_ok=True)
+                                        ~~^~~~~
+TypeError: unsupported operand type(s) for /: 'function' and 'str'
