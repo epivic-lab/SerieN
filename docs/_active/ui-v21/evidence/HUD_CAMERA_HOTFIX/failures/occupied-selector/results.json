@@ -1,0 +1,2017 @@
+{
+  "status": "FAIL",
+  "bundleSHA256": "78202ea9ef9322e76e080a2da0526ce9b3b69485439187546828e3a0cb3f87d3",
+  "method": "Production bundle, real camera/engine; localhost Auth bootstrap, controlled real RAF, trusted input",
+  "checks": [
+    "320x700: A/B, real Station and all presets, ARIA/focus, no railway mutation",
+    "375x812: A/B, real Station and all presets, ARIA/focus, no railway mutation",
+    "390x844: A/B, real Station and all presets, ARIA/focus, no railway mutation",
+    "430x932: A/B, real Station and all presets, ARIA/focus, no railway mutation",
+    "768x1024: A/B, real Station and all presets, ARIA/focus, no railway mutation",
+    "1692x877: A/B, real Station and all presets, ARIA/focus, no railway mutation",
+    "keyboard Escape/focus, twelve repeated cycles, compact intent and user cancellation",
+    "open-menu resize, portrait/landscape, desktop exit and narrow reentry restore state"
+  ],
+  "measurements": [
+    {
+      "viewport": [
+        320,
+        700
+      ],
+      "camera": {
+        "x": 28,
+        "y": 298,
+        "right": 290,
+        "bottom": 408,
+        "width": 262,
+        "height": 110
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 188,
+            "right": 292,
+            "bottom": 234,
+            "width": 264,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 240,
+            "right": 292,
+            "bottom": 290,
+            "width": 264,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 180,
+        "right": 300,
+        "bottom": 478,
+        "width": 280,
+        "height": 298
+      },
+      "case": "A-HUD-View"
+    },
+    {
+      "viewport": [
+        320,
+        700
+      ],
+      "camera": {
+        "x": 28,
+        "y": 298,
+        "right": 290,
+        "bottom": 408,
+        "width": 262,
+        "height": 110
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 188,
+            "right": 292,
+            "bottom": 234,
+            "width": 264,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 240,
+            "right": 292,
+            "bottom": 290,
+            "width": 264,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 180,
+        "right": 300,
+        "bottom": 478,
+        "width": 280,
+        "height": 298
+      },
+      "case": "all-presets-overview"
+    },
+    {
+      "viewport": [
+        320,
+        700
+      ],
+      "camera": {
+        "x": 28,
+        "y": 298,
+        "right": 290,
+        "bottom": 408,
+        "width": 262,
+        "height": 110
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 188,
+            "right": 292,
+            "bottom": 234,
+            "width": 264,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 240,
+            "right": 292,
+            "bottom": 290,
+            "width": 264,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 180,
+        "right": 300,
+        "bottom": 478,
+        "width": 280,
+        "height": 298
+      },
+      "case": "all-presets-station"
+    },
+    {
+      "viewport": [
+        320,
+        700
+      ],
+      "camera": {
+        "x": 28,
+        "y": 298,
+        "right": 290,
+        "bottom": 408,
+        "width": 262,
+        "height": 110
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 188,
+            "right": 292,
+            "bottom": 234,
+            "width": 264,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 240,
+            "right": 292,
+            "bottom": 290,
+            "width": 264,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 180,
+        "right": 300,
+        "bottom": 478,
+        "width": 280,
+        "height": 298
+      },
+      "case": "all-presets-yard"
+    },
+    {
+      "viewport": [
+        320,
+        700
+      ],
+      "camera": {
+        "x": 28,
+        "y": 298,
+        "right": 290,
+        "bottom": 408,
+        "width": 262,
+        "height": 110
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 188,
+            "right": 292,
+            "bottom": 234,
+            "width": 264,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 240,
+            "right": 292,
+            "bottom": 290,
+            "width": 264,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 180,
+        "right": 300,
+        "bottom": 478,
+        "width": 280,
+        "height": 298
+      },
+      "case": "all-presets-follow"
+    },
+    {
+      "viewport": [
+        375,
+        812
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 345,
+        "bottom": 417.515625,
+        "width": 317,
+        "height": 161.515625
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 347,
+            "bottom": 192,
+            "width": 319,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 347,
+            "bottom": 248,
+            "width": 319,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 355,
+        "bottom": 487.515625,
+        "width": 335,
+        "height": 349.515625
+      },
+      "case": "A-HUD-View"
+    },
+    {
+      "viewport": [
+        375,
+        812
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 345,
+        "bottom": 417.515625,
+        "width": 317,
+        "height": 161.515625
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 347,
+            "bottom": 192,
+            "width": 319,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 347,
+            "bottom": 248,
+            "width": 319,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 355,
+        "bottom": 487.515625,
+        "width": 335,
+        "height": 349.515625
+      },
+      "case": "all-presets-overview"
+    },
+    {
+      "viewport": [
+        375,
+        812
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 345,
+        "bottom": 417.515625,
+        "width": 317,
+        "height": 161.515625
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 347,
+            "bottom": 192,
+            "width": 319,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 347,
+            "bottom": 248,
+            "width": 319,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 355,
+        "bottom": 487.515625,
+        "width": 335,
+        "height": 349.515625
+      },
+      "case": "all-presets-station"
+    },
+    {
+      "viewport": [
+        375,
+        812
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 345,
+        "bottom": 417.515625,
+        "width": 317,
+        "height": 161.515625
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 347,
+            "bottom": 192,
+            "width": 319,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 347,
+            "bottom": 248,
+            "width": 319,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 355,
+        "bottom": 487.515625,
+        "width": 335,
+        "height": 349.515625
+      },
+      "case": "all-presets-yard"
+    },
+    {
+      "viewport": [
+        375,
+        812
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 345,
+        "bottom": 417.515625,
+        "width": 317,
+        "height": 161.515625
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 347,
+            "bottom": 192,
+            "width": 319,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 347,
+            "bottom": 248,
+            "width": 319,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 355,
+        "bottom": 487.515625,
+        "width": 335,
+        "height": 349.515625
+      },
+      "case": "all-presets-follow"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 360,
+        "bottom": 432.234375,
+        "width": 332,
+        "height": 176.234375
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 362,
+            "bottom": 192,
+            "width": 334,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 362,
+            "bottom": 248,
+            "width": 334,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 370,
+        "bottom": 502.234375,
+        "width": 350,
+        "height": 364.234375
+      },
+      "case": "A-HUD-View"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 360,
+        "bottom": 432.234375,
+        "width": 332,
+        "height": 176.234375
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 362,
+            "bottom": 192,
+            "width": 334,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 362,
+            "bottom": 248,
+            "width": 334,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 370,
+        "bottom": 502.234375,
+        "width": 350,
+        "height": 364.234375
+      },
+      "case": "all-presets-overview"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 360,
+        "bottom": 432.234375,
+        "width": 332,
+        "height": 176.234375
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 362,
+            "bottom": 192,
+            "width": 334,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 362,
+            "bottom": 248,
+            "width": 334,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 370,
+        "bottom": 502.234375,
+        "width": 350,
+        "height": 364.234375
+      },
+      "case": "all-presets-station"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 360,
+        "bottom": 432.234375,
+        "width": 332,
+        "height": 176.234375
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 362,
+            "bottom": 192,
+            "width": 334,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 362,
+            "bottom": 248,
+            "width": 334,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 370,
+        "bottom": 502.234375,
+        "width": 350,
+        "height": 364.234375
+      },
+      "case": "all-presets-yard"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 360,
+        "bottom": 432.234375,
+        "width": 332,
+        "height": 176.234375
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 362,
+            "bottom": 192,
+            "width": 334,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 362,
+            "bottom": 248,
+            "width": 334,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 370,
+        "bottom": 502.234375,
+        "width": 350,
+        "height": 364.234375
+      },
+      "case": "all-presets-follow"
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "camera": {
+        "x": 28,
+        "y": 284.71875,
+        "right": 400,
+        "bottom": 472.71875,
+        "width": 372,
+        "height": 188
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 402,
+            "bottom": 192,
+            "width": 374,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 402,
+            "bottom": 248,
+            "width": 374,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 410,
+        "bottom": 542.71875,
+        "width": 390,
+        "height": 404.71875
+      },
+      "case": "A-HUD-View"
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "camera": {
+        "x": 28,
+        "y": 284.71875,
+        "right": 400,
+        "bottom": 472.71875,
+        "width": 372,
+        "height": 188
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 402,
+            "bottom": 192,
+            "width": 374,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 402,
+            "bottom": 248,
+            "width": 374,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 410,
+        "bottom": 542.71875,
+        "width": 390,
+        "height": 404.71875
+      },
+      "case": "all-presets-overview"
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "camera": {
+        "x": 28,
+        "y": 284.71875,
+        "right": 400,
+        "bottom": 472.71875,
+        "width": 372,
+        "height": 188
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 402,
+            "bottom": 192,
+            "width": 374,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 402,
+            "bottom": 248,
+            "width": 374,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 410,
+        "bottom": 542.71875,
+        "width": 390,
+        "height": 404.71875
+      },
+      "case": "all-presets-station"
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "camera": {
+        "x": 28,
+        "y": 284.71875,
+        "right": 400,
+        "bottom": 472.71875,
+        "width": 372,
+        "height": 188
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 402,
+            "bottom": 192,
+            "width": 374,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 402,
+            "bottom": 248,
+            "width": 374,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 410,
+        "bottom": 542.71875,
+        "width": 390,
+        "height": 404.71875
+      },
+      "case": "all-presets-yard"
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "camera": {
+        "x": 28,
+        "y": 284.71875,
+        "right": 400,
+        "bottom": 472.71875,
+        "width": 372,
+        "height": 188
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 402,
+            "bottom": 192,
+            "width": 374,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 402,
+            "bottom": 248,
+            "width": 374,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 410,
+        "bottom": 542.71875,
+        "width": 390,
+        "height": 404.71875
+      },
+      "case": "all-presets-follow"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "camera": {
+        "x": 42,
+        "y": 203,
+        "right": 432,
+        "bottom": 376,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 476,
+            "y": 124,
+            "right": 726,
+            "bottom": 332.96875,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 124,
+            "right": 133.328125,
+            "bottom": 170,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 112,
+        "right": 738,
+        "bottom": 456,
+        "width": 708,
+        "height": 344
+      },
+      "case": "A-HUD-View"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "camera": {
+        "x": 42,
+        "y": 203,
+        "right": 432,
+        "bottom": 376,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 476,
+            "y": 124,
+            "right": 726,
+            "bottom": 332.96875,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 124,
+            "right": 133.328125,
+            "bottom": 170,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 112,
+        "right": 738,
+        "bottom": 456,
+        "width": 708,
+        "height": 344
+      },
+      "case": "all-presets-overview"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "camera": {
+        "x": 42,
+        "y": 203,
+        "right": 432,
+        "bottom": 376,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 476,
+            "y": 124,
+            "right": 726,
+            "bottom": 332.96875,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 124,
+            "right": 133.328125,
+            "bottom": 170,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 112,
+        "right": 738,
+        "bottom": 456,
+        "width": 708,
+        "height": 344
+      },
+      "case": "all-presets-station"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "camera": {
+        "x": 42,
+        "y": 203,
+        "right": 432,
+        "bottom": 376,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 476,
+            "y": 124,
+            "right": 726,
+            "bottom": 332.96875,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 124,
+            "right": 133.328125,
+            "bottom": 170,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 112,
+        "right": 738,
+        "bottom": 456,
+        "width": 708,
+        "height": 344
+      },
+      "case": "all-presets-yard"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "camera": {
+        "x": 42,
+        "y": 203,
+        "right": 432,
+        "bottom": 376,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 476,
+            "y": 124,
+            "right": 726,
+            "bottom": 332.96875,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 124,
+            "right": 133.328125,
+            "bottom": 170,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 112,
+        "right": 738,
+        "bottom": 456,
+        "width": 708,
+        "height": 344
+      },
+      "case": "all-presets-follow"
+    },
+    {
+      "viewport": [
+        1692,
+        877
+      ],
+      "camera": {
+        "x": 42,
+        "y": 428,
+        "right": 432,
+        "bottom": 601,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 1060,
+            "y": 116.890625,
+            "right": 1310,
+            "bottom": 325.859375,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 116.890625,
+            "right": 133.328125,
+            "bottom": 162.890625,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 104.890625,
+        "right": 1322,
+        "bottom": 681,
+        "width": 1292,
+        "height": 576.109375
+      },
+      "case": "A-HUD-View"
+    },
+    {
+      "viewport": [
+        1692,
+        877
+      ],
+      "camera": {
+        "x": 42,
+        "y": 428,
+        "right": 432,
+        "bottom": 601,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 1060,
+            "y": 116.890625,
+            "right": 1310,
+            "bottom": 325.859375,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 116.890625,
+            "right": 133.328125,
+            "bottom": 162.890625,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 104.890625,
+        "right": 1322,
+        "bottom": 681,
+        "width": 1292,
+        "height": 576.109375
+      },
+      "case": "all-presets-overview"
+    },
+    {
+      "viewport": [
+        1692,
+        877
+      ],
+      "camera": {
+        "x": 42,
+        "y": 428,
+        "right": 432,
+        "bottom": 601,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 1060,
+            "y": 116.890625,
+            "right": 1310,
+            "bottom": 325.859375,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 116.890625,
+            "right": 133.328125,
+            "bottom": 162.890625,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 104.890625,
+        "right": 1322,
+        "bottom": 681,
+        "width": 1292,
+        "height": 576.109375
+      },
+      "case": "all-presets-station"
+    },
+    {
+      "viewport": [
+        1692,
+        877
+      ],
+      "camera": {
+        "x": 42,
+        "y": 428,
+        "right": 432,
+        "bottom": 601,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 1060,
+            "y": 116.890625,
+            "right": 1310,
+            "bottom": 325.859375,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 116.890625,
+            "right": 133.328125,
+            "bottom": 162.890625,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 104.890625,
+        "right": 1322,
+        "bottom": 681,
+        "width": 1292,
+        "height": 576.109375
+      },
+      "case": "all-presets-yard"
+    },
+    {
+      "viewport": [
+        1692,
+        877
+      ],
+      "camera": {
+        "x": 42,
+        "y": 428,
+        "right": 432,
+        "bottom": 601,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 1060,
+            "y": 116.890625,
+            "right": 1310,
+            "bottom": 325.859375,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 116.890625,
+            "right": 133.328125,
+            "bottom": 162.890625,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 104.890625,
+        "right": 1322,
+        "bottom": 681,
+        "width": 1292,
+        "height": 576.109375
+      },
+      "case": "all-presets-follow"
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "camera": {
+        "x": 28,
+        "y": 210,
+        "right": 814,
+        "bottom": 298,
+        "width": 786,
+        "height": 88
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 100,
+            "right": 816,
+            "bottom": 146,
+            "width": 788,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 152,
+            "right": 816,
+            "bottom": 202,
+            "width": 788,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 92,
+        "right": 824,
+        "bottom": 368,
+        "width": 804,
+        "height": 276
+      },
+      "case": "resize-orientation"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "camera": {
+        "x": 42,
+        "y": 203,
+        "right": 432,
+        "bottom": 376,
+        "width": 390,
+        "height": 173
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 476,
+            "y": 124,
+            "right": 726,
+            "bottom": 332.96875,
+            "width": 250,
+            "height": 208.96875
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 42,
+            "y": 124,
+            "right": 133.328125,
+            "bottom": 170,
+            "width": 91.328125,
+            "height": 46
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 30,
+        "y": 112,
+        "right": 738,
+        "bottom": 456,
+        "width": 708,
+        "height": 344
+      },
+      "case": "resize-orientation"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "camera": {
+        "x": 28,
+        "y": 256,
+        "right": 360,
+        "bottom": 432.234375,
+        "width": 332,
+        "height": 176.234375
+      },
+      "blockers": [
+        {
+          "selector": "#nextSwitchHUD",
+          "box": {
+            "x": 28,
+            "y": 146,
+            "right": 362,
+            "bottom": 192,
+            "width": 334,
+            "height": 46
+          },
+          "area": 0
+        },
+        {
+          "selector": "#guardedStopStatus",
+          "box": {
+            "x": 28,
+            "y": 198,
+            "right": 362,
+            "bottom": 248,
+            "width": 334,
+            "height": 50
+          },
+          "area": 0
+        }
+      ],
+      "world": {
+        "x": 20,
+        "y": 138,
+        "right": 370,
+        "bottom": 502.234375,
+        "width": 350,
+        "height": 364.234375
+      },
+      "case": "resize-orientation"
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "stationCameraResponses": [
+    {
+      "viewport": [
+        320,
+        700
+      ],
+      "camera": {
+        "preset": "station",
+        "position": [
+          1237.9507433495523,
+          833.939720585721,
+          1280.5931545261233
+        ],
+        "target": [
+          780.9018730584012,
+          12.642411176571153,
+          506.23814850025644
+        ],
+        "fov": 52.15,
+        "aspect": 0.9395973154362416,
+        "projectedBase": [
+          [
+            -1.0386450095489737,
+            1.2504683884436534,
+            0.9992405369370386
+          ],
+          [
+            -2.575577200046396,
+            0.36496592882233503,
+            0.9988956179031555
+          ],
+          [
+            -1.0515086705812613,
+            1.3251920237739416,
+            0.9992273195876505
+          ],
+          [
+            -2.6179550714607926,
+            0.4496677240205962,
+            0.9988723832224385
+          ],
+          [
+            3.174665356249284,
+            0.05177056539401389,
+            0.9987736227116157
+          ],
+          [
+            2.881345725345106,
+            -2.0794273857831995,
+            0.9979434830204759
+          ],
+          [
+            3.231493911556549,
+            0.13831445756697539,
+            0.99874616102995
+          ],
+          [
+            2.961610951012551,
+            -2.0041168744003848,
+            0.9978776222699189
+          ]
+        ]
+      }
+    },
+    {
+      "viewport": [
+        375,
+        812
+      ],
+      "camera": {
+        "preset": "station",
+        "position": [
+          849.3621391181293,
+          592.6656376766337,
+          959.5334383275862
+        ],
+        "target": [
+          606.1283858645495,
+          18.111685868854128,
+          455.37027480428213
+        ],
+        "fov": 51.19402985074627,
+        "aspect": 0.9571428571428572,
+        "projectedBase": [
+          [
+            -1.5667646747883974,
+            1.9371226563669632,
+            0.9987909730637785
+          ],
+          [
+            -4.500945625387606,
+            -0.05741079643467099,
+            0.9979986366173845
+          ],
+          [
+            -1.5962408319137606,
+            2.076342071658862,
+            0.9987624375402223
+          ],
+          [
+            -4.631137747016807,
+            0.09894553879572365,
+            0.9979318446478316
+          ],
+          [
+            6.9398862850339,
+            -0.11415350886605888,
+            0.9979760953463602
+          ],
+          [
+            10.165822138214192,
+            -6.666366131312774,
+            0.9953732024954056
+          ],
+          [
+            7.14264285130376,
+            0.04211595549181918,
+            0.9979079737412203
+          ],
+          [
+            10.815577434418806,
+            -6.7432868367010474,
+            0.9950578082647776
+          ]
+        ]
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "camera": {
+        "preset": "station",
+        "position": [
+          846.1641531991729,
+          590.6800130048075,
+          956.8911980756419
+        ],
+        "target": [
+          604.6900442740689,
+          18.156696616113223,
+          454.95164507084274
+        ],
+        "fov": 50.96,
+        "aspect": 0.9615384615384616,
+        "projectedBase": [
+          [
+            -1.5744257018625551,
+            1.9546326272707495,
+            0.9987856101185647
+          ],
+          [
+            -4.528087032193834,
+            -0.06619625690701493,
+            0.9979864173019943
+          ],
+          [
+            -1.6041735565336634,
+            2.0953531808469488,
+            0.9987568503694669
+          ],
+          [
+            -4.659870829265034,
+            0.09174636336472768,
+            0.9979188583811149
+          ],
+          [
+            6.990108628442744,
+            -0.11472569518478272,
+            0.9979672249899845
+          ],
+          [
+            10.296241353383582,
+            -6.772118962128658,
+            0.9953343742238049
+          ],
+          [
+            7.195277563116099,
+            0.0431366937666238,
+            0.9978985277886432
+          ],
+          [
+            10.96033102771456,
+            -6.854613487409918,
+            0.9950136007964586
+          ]
+        ]
+      }
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "camera": {
+        "preset": "station",
+        "position": [
+          846.1378345839936,
+          590.6636718160241,
+          956.8694531067258
+        ],
+        "target": [
+          604.6782070866093,
+          18.157067043177655,
+          454.9481998540293
+        ],
+        "fov": 50.88461538461539,
+        "aspect": 0.9629629629629629,
+        "projectedBase": [
+          [
+            -1.5748181337117495,
+            1.958008740554629,
+            0.9987855658162202
+          ],
+          [
+            -4.529257865783342,
+            -0.0663790970474542,
+            0.9979863161956748
+          ],
+          [
+            -1.6045744578732235,
+            2.098974357530173,
+            0.9987568042105937
+          ],
+          [
+            -4.661082417886032,
+            0.09183774370122152,
+            0.9979187509087176
+          ],
+          [
+            6.991984453293474,
+            -0.11491976980324482,
+            0.9979671518272861
+          ],
+          [
+            10.299475236774233,
+            -6.784192590177835,
+            0.9953340527382736
+          ],
+          [
+            7.197216250011053,
+            0.04321677186799664,
+            0.9978984498660758
+          ],
+          [
+            10.963823221315836,
+            -6.866870290077747,
+            0.9950132345605428
+          ]
+        ]
+      }
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "camera": {
+        "preset": "station",
+        "position": [
+          846.137617988448,
+          590.663537332174,
+          956.869274151132
+        ],
+        "target": [
+          604.6781096695506,
+          18.157070091698696,
+          454.9481715007665
+        ],
+        "fov": 35,
+        "aspect": 2.058139534883721,
+        "projectedBase": [
+          [
+            -1.1117644411708065,
+            2.9543518467537377,
+            0.9987855654516117
+          ],
+          [
+            -3.1974918997258683,
+            -0.10015730242816435,
+            0.9979863153635581
+          ],
+          [
+            -1.1327713320904924,
+            3.167048588592049,
+            0.9987568038307056
+          ],
+          [
+            -3.290555294613315,
+            0.13856903234367923,
+            0.9979187500242063
+          ],
+          [
+            4.936088011384767,
+            -0.17339725189330762,
+            0.9979671512251648
+          ],
+          [
+            7.271059555028822,
+            -10.236369556779053,
+            0.9953340500923971
+          ],
+          [
+            5.080974278671552,
+            0.06520792407115995,
+            0.9978984492247802
+          ],
+          [
+            7.740065657359563,
+            -10.361118746947227,
+            0.9950132315463491
+          ]
+        ]
+      }
+    },
+    {
+      "viewport": [
+        1692,
+        877
+      ],
+      "camera": {
+        "preset": "station",
+        "position": [
+          846.1376162059215,
+          590.6635362254059,
+          956.8692726783727
+        ],
+        "target": [
+          604.6781088678329,
+          18.15707011678725,
+          454.94817126742623
+        ],
+        "fov": 35,
+        "aspect": 2.2430555555555554,
+        "projectedBase": [
+          [
+            -1.0201113162661908,
+            2.9543518529330686,
+            0.9987855654486111
+          ],
+          [
+            -2.9338927850603245,
+            -0.10015730963852869,
+            0.99798631535671
+          ],
+          [
+            -1.039386413044444,
+            3.167048595421229,
+            0.9987568038275795
+          ],
+          [
+            -3.0192840955978006,
+            0.13856902577735117,
+            0.9979187500169269
+          ],
+          [
+            4.529160187664063,
+            -0.17339725183839916,
+            0.9979671512202094
+          ],
+          [
+            6.671638245668597,
+            -10.236369616674093,
+            0.995334050070622
+          ],
+          [
+            4.662102127457506,
+            0.065207924777097,
+            0.9978984492195027
+          ],
+          [
+            7.10197979932324,
+            -10.361118811261516,
+            0.9950132315215431
+          ]
+        ]
+      }
+    }
+  ],
+  "failure": "Locator.is_disabled: Error: strict mode violation: locator(\"[data-switch-id=\\\"Y-4\\\"]\") resolved to 2 elements:\n    1) <div tabindex=\"0\" data-switch-id=\"Y-4\" data-switch-hover=\"7\" aria-describedby=\"switchReason-Y-4\" class=\"switchCell is-disabled is-blocked\" title=\"Switch area occupied \u00b7 operation blocked\">\u2026</div> aka get_by_text(\"Y-4East sidingStraightDivergingDivergingSwitch area occupied \u00b7 operation blocked\")\n    2) <button disabled data-switch=\"7\" class=\"sw active\" aria-pressed=\"true\" data-switch-id=\"Y-4\" data-ctrl=\"CTRL-012\" aria-describedby=\"switchReason-Y-4\" title=\"Switch area occupied \u00b7 operation blocked\">\u2026</button> aka get_by_role(\"button\", name=\"\u25cfY-4 Diverging\")\n\nCall log:\n  - waiting for locator(\"[data-switch-id=\\\"Y-4\\\"]\")\n"
+}

@@ -3,9 +3,9 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   const find = id => document.getElementById(id);
   const disposers = [];
   let disposed = false;
-  const on = (node, type, listener) => {
-    node.addEventListener(type, listener);
-    disposers.push(() => node.removeEventListener(type, listener));
+  const on = (node, type, listener, options) => {
+    node.addEventListener(type, listener, options);
+    disposers.push(() => node.removeEventListener(type, listener, options));
   };
   const element = (tag, className, text) => {
     const node = document.createElement(tag);
@@ -34,21 +34,17 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   toggle.setAttribute('aria-controls', tools.id);
   toggle.setAttribute('aria-expanded', 'false');
   const free = element('span', 'u3-camera-state');
-  const closeTools = () => {
-    tools.hidden = true;
-    toggle.setAttribute('aria-expanded', 'false');
-  };
-  // U9: bound the open menu above the primary toolbar, within the layout canvas.
-  const positionTools = () => {
-    if (!tools.hidden) tools.style.maxHeight = `${Math.max(44, Math.min(280, camera.getBoundingClientRect().top - layer.getBoundingClientRect().top - 8))}px`;
-  };
   on(toggle, 'click', () => {
-    tools.hidden = !tools.hidden;
-    toggle.setAttribute('aria-expanded', String(!tools.hidden));
-    positionTools();
+    if (!tools.hidden) closeTools();
+    else {
+      tools.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      coordinateTools();
+    }
   });
-  on(window, 'resize', positionTools);
-  on(camera, 'keydown', event => {
+  on(window, 'resize', coordinateTools);
+  on(window, 'orientationchange', coordinateTools);
+  on(layer, 'keydown', event => {
     if (event.key === 'Escape' && !tools.hidden) {
       event.stopPropagation();
       closeTools();
@@ -56,7 +52,9 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
     }
   });
   on(canvas, 'pointerdown', closeTools);
-  for (const id of ['viewZoomIn', 'viewZoomOut', 'viewHome']) primary.append(find(id));
+  for (const [id,icon,label] of [['viewZoomIn','zp','Zoom'],['viewZoomOut','zm','Zoom'],['viewHome','home','Recenter']]) {
+    const control=find(id);control.innerHTML=`<svg class="ic" aria-hidden="true"><use href="./ui/assets/svg/serien-sprite.svg#i-${icon}"/></svg><small>${label}</small>`;primary.append(control);
+  }
   primary.append(toggle, free);
   const select = find('cameraView');
   select.dataset.ctrl = 'CTRL-008';
@@ -98,6 +96,9 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   while (hud.firstChild) hudSurface.append(hud.firstChild);
   hud.append(hudSurface);
   hud.querySelector('button').classList.add('bt', 'd');
+  // Match the reference's compact initial HUD through its existing view action.
+  // Warning text remains in the original HUD and guarded-stop status surfaces.
+  if (!hud.classList.contains('has-warning') && !hud.classList.contains('is-minimized')) hud.querySelector('button').click();
   layer.append(hud);
 
   // Reuse the actual status and mute nodes; never derive hazards in this adapter.
@@ -130,10 +131,74 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   log.setAttribute('role', 'status');
   log.setAttribute('aria-live', 'polite');
   log.setAttribute('aria-atomic', 'true');
-  const logSurface = element('div', 'mi');
-  while (logPlate.firstChild) logSurface.append(logPlate.firstChild);
+  const logSurface = element('details', 'mi');
+  const logSummary=element('summary','','Operations log');
+  const logPreview=element('span','u3-log-preview');
+  logSummary.append(logPreview);logSurface.append(logSummary,log);
+  // The complete current engine message stays visible in the compact summary.
+  // Opening the disclosure also exposes the original diagnostic node verbatim.
+  const updateLog=()=>{logPreview.textContent=log.textContent;};updateLog();
+  const logObserver=new MutationObserver(updateLog);logObserver.observe(log,{childList:true,subtree:true,characterData:true});disposers.push(()=>logObserver.disconnect());
+  logPlate.replaceChildren();
   logPlate.append(logSurface);
   layer.append(logPlate);
+
+  // Presentation-only ownership: the original HUD button remains its sole
+  // state controller. A user HUD action cancels our temporary restoration.
+  const narrow = window.matchMedia('(max-width:700px), (max-height:480px)');
+  const minimize = hud.querySelector('.nextSwitchMinimize');
+  const warning = hud.querySelector('.nextSwitchWarning');
+  const warningHome = warning.parentElement;
+  let restoreExpanded = false;
+  let coordinated = false;
+  let hudCommand = false;
+  const expanded = () => minimize.getAttribute('aria-expanded') === 'true';
+  const setExpanded = value => {
+    if (expanded() === value) return;
+    hudCommand = true;
+    try { minimize.click(); } finally { hudCommand = false; }
+  };
+  function releaseHUD(restore = true) {
+    if (!coordinated) return;
+    coordinated = false;
+    warningHome.append(warning);
+    layer.classList.remove('is-camera-coordinated');
+    status.style.removeProperty('top');
+    if (restore && restoreExpanded) setExpanded(true);
+    restoreExpanded = false;
+  }
+  function closeTools(restore = true) {
+    const returnFocus = tools.contains(document.activeElement);
+    tools.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    releaseHUD(restore);
+    if (returnFocus) toggle.focus();
+  }
+  function coordinateTools() {
+    if (disposed || tools.hidden) return;
+    if (narrow.matches && !coordinated) {
+      restoreExpanded = expanded();
+      coordinated = true;
+      setExpanded(false);
+      // Keep the original, engine-updated warning outside the hidden HUD body.
+      hudSurface.append(warning);
+      layer.classList.add('is-camera-coordinated');
+    } else if (!narrow.matches) releaseHUD();
+    const top = layer.getBoundingClientRect().top;
+    let reserved = 0;
+    if (coordinated) {
+      status.style.top = `${hud.getBoundingClientRect().bottom - top + 6}px`;
+      reserved = status.getBoundingClientRect().bottom - top + 8;
+    }
+    tools.style.maxHeight = `${Math.max(44, Math.min(280, camera.getBoundingClientRect().top - top - reserved - 8))}px`;
+  }
+  on(minimize, 'click', () => {
+    if (!hudCommand && coordinated) closeTools(false);
+  }, true); // Close View before the original target listener expands the HUD.
+  const overlaySizes = new ResizeObserver(coordinateTools);
+  overlaySizes.observe(hud);
+  overlaySizes.observe(status);
+  disposers.push(() => overlaySizes.disconnect());
 
   function update() {
     if (disposed) return;
@@ -144,6 +209,9 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
     bellMenu.textContent = muted ? 'Railway warning bell: muted' : 'Railway warning bell: on';
     bellMenu.setAttribute('aria-pressed', String(muted));
     status.classList.toggle('has-warning', !text.hidden);
+    const nextName=hud.querySelector('.nextSwitchName').textContent;
+    const heading=hud.querySelector('.nextSwitchHead>span:first-child');
+    if(heading.textContent!==nextName)heading.textContent=nextName;
     const preset = getCameraPreset();
     free.textContent = preset === 'manual' ? 'Free camera' : select.querySelector(`option[value="${preset}"]`)?.textContent ?? '';
     for (const button of presets.children) button.setAttribute('aria-pressed', String(button.dataset.preset === preset));
@@ -152,6 +220,7 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   return {update, dispose() {
     if (disposed) return;
     disposed = true;
+    closeTools();
     disposers.splice(0).forEach(dispose => dispose());
     bellMenu.remove();
     layer.remove();

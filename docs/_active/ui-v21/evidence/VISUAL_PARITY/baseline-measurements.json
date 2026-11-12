@@ -1,0 +1,3592 @@
+{
+  "mode": "baseline",
+  "viewports": [
+    {
+      "width": 1692,
+      "height": 877,
+      "screenshot": "baseline-1692x877.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1692,
+            "height": 877,
+            "scrollWidth": 1692,
+            "clientWidth": 1692,
+            "scrollHeight": 877,
+            "clientHeight": 877,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "grid",
+            "gridRows": "75px 300px 502px",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1692,
+            "height": 75,
+            "scrollWidth": 1692,
+            "clientWidth": 1692,
+            "scrollHeight": 92,
+            "clientHeight": 74,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 0,
+            "y": 75,
+            "width": 1392,
+            "height": 300,
+            "scrollWidth": 1392,
+            "clientWidth": 1392,
+            "scrollHeight": 300,
+            "clientHeight": 300,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 0,
+            "y": 75,
+            "width": 1392,
+            "height": 300,
+            "scrollWidth": 1392,
+            "clientWidth": 1392,
+            "scrollHeight": 300,
+            "clientHeight": 300,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 1392,
+            "y": 75,
+            "width": 300,
+            "height": 300,
+            "scrollWidth": 299,
+            "clientWidth": 299,
+            "scrollHeight": 1514,
+            "clientHeight": 300,
+            "padding": "12px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgb(24, 51, 40), rgb(16, 37, 28))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "dock": [
+          {
+            "x": 0,
+            "y": 375,
+            "width": 1692,
+            "height": 502,
+            "scrollWidth": 1692,
+            "clientWidth": 1692,
+            "scrollHeight": 502,
+            "clientHeight": 502,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(217, 180, 95), rgb(95, 68, 22) 40%, rgb(246, 226, 164) 80%, rgb(169, 128, 47))",
+            "font": "14px Federo"
+          }
+        ],
+        "environment": [
+          {
+            "x": 1405,
+            "y": 87,
+            "width": 275,
+            "height": 251.578125,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 252,
+            "clientHeight": 252,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "switches": [
+          {
+            "x": 1405,
+            "y": 350.578125,
+            "width": 275,
+            "height": 653.375,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 653,
+            "clientHeight": 653,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "map": [
+          {
+            "x": 1405,
+            "y": 1015.953125,
+            "width": 275,
+            "height": 290.921875,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 291,
+            "clientHeight": 291,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "missions": [
+          {
+            "x": 1405,
+            "y": 1318.875,
+            "width": 275,
+            "height": 257.765625,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 258,
+            "clientHeight": 258,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "cards": [
+          {
+            "x": 15,
+            "y": 543,
+            "width": 547.328125,
+            "height": 316,
+            "scrollWidth": 545,
+            "clientWidth": 545,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 572.328125,
+            "y": 543,
+            "width": 547.328125,
+            "height": 316,
+            "scrollWidth": 545,
+            "clientWidth": 545,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 1129.65625,
+            "y": 543,
+            "width": 547.328125,
+            "height": 316,
+            "scrollWidth": 545,
+            "clientWidth": 545,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          }
+        ],
+        "hud": [
+          {
+            "x": 1122,
+            "y": 85,
+            "width": 260,
+            "height": 118.8125,
+            "scrollWidth": 260,
+            "clientWidth": 260,
+            "scrollHeight": 260,
+            "clientHeight": 119,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 10,
+            "y": 211.8125,
+            "width": 331.46875,
+            "height": 74,
+            "scrollWidth": 329,
+            "clientWidth": 329,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "6px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 22,
+            "y": 29,
+            "width": 135.265625,
+            "height": 38,
+            "scrollWidth": 135,
+            "clientWidth": 135,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "8px 12px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 169.265625,
+            "y": 25,
+            "width": 254.25,
+            "height": 46,
+            "scrollWidth": 254,
+            "clientWidth": 254,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 34px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 10,
+            "y": 85,
+            "width": 340,
+            "height": 72,
+            "scrollWidth": 340,
+            "clientWidth": 340,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 10,
+            "y": 293.8125,
+            "width": 1372,
+            "height": 71.1875,
+            "scrollWidth": 1372,
+            "clientWidth": 1372,
+            "scrollHeight": 71,
+            "clientHeight": 71,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 28,
+            "y": 674,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 585.328125,
+            "y": 674,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 1142.65625,
+            "y": 674,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 79.6875,
+            "y": 750,
+            "width": 416.640625,
+            "height": 44,
+            "scrollWidth": 417,
+            "clientWidth": 417,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 637.015625,
+            "y": 750,
+            "width": 416.640625,
+            "height": 44,
+            "scrollWidth": 417,
+            "clientWidth": 417,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 1194.34375,
+            "y": 750,
+            "width": 416.640625,
+            "height": 44,
+            "scrollWidth": 417,
+            "clientWidth": 417,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          }
+        ],
+        "commands": [
+          {
+            "x": 28,
+            "y": 804,
+            "width": 521.328125,
+            "height": 44,
+            "scrollWidth": 521,
+            "clientWidth": 521,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 585.328125,
+            "y": 804,
+            "width": 521.328125,
+            "height": 44,
+            "scrollWidth": 521,
+            "clientWidth": 521,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 1142.65625,
+            "y": 804,
+            "width": 521.328125,
+            "height": 44,
+            "scrollWidth": 521,
+            "clientWidth": 521,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 877,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 1648,
+      "height": 895,
+      "screenshot": "baseline-1648x895.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1648,
+            "height": 895,
+            "scrollWidth": 1648,
+            "clientWidth": 1648,
+            "scrollHeight": 895,
+            "clientHeight": 895,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "grid",
+            "gridRows": "93px 300px 502px",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1648,
+            "height": 93,
+            "scrollWidth": 1648,
+            "clientWidth": 1648,
+            "scrollHeight": 92,
+            "clientHeight": 92,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 0,
+            "y": 93,
+            "width": 1348,
+            "height": 300,
+            "scrollWidth": 1348,
+            "clientWidth": 1348,
+            "scrollHeight": 300,
+            "clientHeight": 300,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 0,
+            "y": 93,
+            "width": 1348,
+            "height": 300,
+            "scrollWidth": 1348,
+            "clientWidth": 1348,
+            "scrollHeight": 300,
+            "clientHeight": 300,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 1348,
+            "y": 93,
+            "width": 300,
+            "height": 300,
+            "scrollWidth": 299,
+            "clientWidth": 299,
+            "scrollHeight": 1514,
+            "clientHeight": 300,
+            "padding": "12px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgb(24, 51, 40), rgb(16, 37, 28))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "dock": [
+          {
+            "x": 0,
+            "y": 393,
+            "width": 1648,
+            "height": 502,
+            "scrollWidth": 1648,
+            "clientWidth": 1648,
+            "scrollHeight": 502,
+            "clientHeight": 502,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(217, 180, 95), rgb(95, 68, 22) 40%, rgb(246, 226, 164) 80%, rgb(169, 128, 47))",
+            "font": "14px Federo"
+          }
+        ],
+        "environment": [
+          {
+            "x": 1361,
+            "y": 105,
+            "width": 275,
+            "height": 251.578125,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 252,
+            "clientHeight": 252,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "switches": [
+          {
+            "x": 1361,
+            "y": 368.578125,
+            "width": 275,
+            "height": 653.375,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 653,
+            "clientHeight": 653,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "map": [
+          {
+            "x": 1361,
+            "y": 1033.953125,
+            "width": 275,
+            "height": 290.921875,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 291,
+            "clientHeight": 291,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "missions": [
+          {
+            "x": 1361,
+            "y": 1336.875,
+            "width": 275,
+            "height": 257.765625,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 258,
+            "clientHeight": 258,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "cards": [
+          {
+            "x": 15,
+            "y": 561,
+            "width": 532.65625,
+            "height": 316,
+            "scrollWidth": 531,
+            "clientWidth": 531,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 557.65625,
+            "y": 561,
+            "width": 532.65625,
+            "height": 316,
+            "scrollWidth": 531,
+            "clientWidth": 531,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 1100.3125,
+            "y": 561,
+            "width": 532.65625,
+            "height": 316,
+            "scrollWidth": 531,
+            "clientWidth": 531,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          }
+        ],
+        "hud": [
+          {
+            "x": 1078,
+            "y": 103,
+            "width": 260,
+            "height": 118.8125,
+            "scrollWidth": 260,
+            "clientWidth": 260,
+            "scrollHeight": 260,
+            "clientHeight": 119,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 10,
+            "y": 229.8125,
+            "width": 331.46875,
+            "height": 74,
+            "scrollWidth": 329,
+            "clientWidth": 329,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "6px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 22,
+            "y": 29,
+            "width": 135.265625,
+            "height": 38,
+            "scrollWidth": 135,
+            "clientWidth": 135,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "8px 12px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 169.265625,
+            "y": 25,
+            "width": 254.25,
+            "height": 46,
+            "scrollWidth": 254,
+            "clientWidth": 254,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 34px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 10,
+            "y": 103,
+            "width": 340,
+            "height": 72,
+            "scrollWidth": 340,
+            "clientWidth": 340,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 10,
+            "y": 311.8125,
+            "width": 1328,
+            "height": 71.1875,
+            "scrollWidth": 1328,
+            "clientWidth": 1328,
+            "scrollHeight": 71,
+            "clientHeight": 71,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 28,
+            "y": 692,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 570.65625,
+            "y": 692,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 1113.3125,
+            "y": 692,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 79.6875,
+            "y": 768,
+            "width": 401.96875,
+            "height": 44,
+            "scrollWidth": 402,
+            "clientWidth": 402,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 622.34375,
+            "y": 768,
+            "width": 401.96875,
+            "height": 44,
+            "scrollWidth": 402,
+            "clientWidth": 402,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 1165,
+            "y": 768,
+            "width": 401.96875,
+            "height": 44,
+            "scrollWidth": 402,
+            "clientWidth": 402,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          }
+        ],
+        "commands": [
+          {
+            "x": 28,
+            "y": 822,
+            "width": 506.65625,
+            "height": 44,
+            "scrollWidth": 507,
+            "clientWidth": 507,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 570.65625,
+            "y": 822,
+            "width": 506.65625,
+            "height": 44,
+            "scrollWidth": 507,
+            "clientWidth": 507,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 1113.3125,
+            "y": 822,
+            "width": 506.65625,
+            "height": 44,
+            "scrollWidth": 507,
+            "clientWidth": 507,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 895,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "screenshot": "baseline-1440x900.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "scrollWidth": 1440,
+            "clientWidth": 1440,
+            "scrollHeight": 900,
+            "clientHeight": 900,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "grid",
+            "gridRows": "97px 301px 502px",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 97,
+            "scrollWidth": 1440,
+            "clientWidth": 1440,
+            "scrollHeight": 96,
+            "clientHeight": 96,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 0,
+            "y": 97,
+            "width": 1140,
+            "height": 301,
+            "scrollWidth": 1140,
+            "clientWidth": 1140,
+            "scrollHeight": 301,
+            "clientHeight": 301,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 0,
+            "y": 97,
+            "width": 1140,
+            "height": 301,
+            "scrollWidth": 1140,
+            "clientWidth": 1140,
+            "scrollHeight": 301,
+            "clientHeight": 301,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 1140,
+            "y": 97,
+            "width": 300,
+            "height": 301,
+            "scrollWidth": 299,
+            "clientWidth": 299,
+            "scrollHeight": 1514,
+            "clientHeight": 301,
+            "padding": "12px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgb(24, 51, 40), rgb(16, 37, 28))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "dock": [
+          {
+            "x": 0,
+            "y": 398,
+            "width": 1440,
+            "height": 502,
+            "scrollWidth": 1440,
+            "clientWidth": 1440,
+            "scrollHeight": 502,
+            "clientHeight": 502,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(217, 180, 95), rgb(95, 68, 22) 40%, rgb(246, 226, 164) 80%, rgb(169, 128, 47))",
+            "font": "14px Federo"
+          }
+        ],
+        "environment": [
+          {
+            "x": 1153,
+            "y": 109,
+            "width": 275,
+            "height": 251.578125,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 252,
+            "clientHeight": 252,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "switches": [
+          {
+            "x": 1153,
+            "y": 372.578125,
+            "width": 275,
+            "height": 653.375,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 653,
+            "clientHeight": 653,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "map": [
+          {
+            "x": 1153,
+            "y": 1037.953125,
+            "width": 275,
+            "height": 290.921875,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 291,
+            "clientHeight": 291,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "missions": [
+          {
+            "x": 1153,
+            "y": 1340.875,
+            "width": 275,
+            "height": 257.765625,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 258,
+            "clientHeight": 258,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "cards": [
+          {
+            "x": 15,
+            "y": 566,
+            "width": 463.328125,
+            "height": 316,
+            "scrollWidth": 461,
+            "clientWidth": 461,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 488.328125,
+            "y": 566,
+            "width": 463.328125,
+            "height": 316,
+            "scrollWidth": 461,
+            "clientWidth": 461,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 961.65625,
+            "y": 566,
+            "width": 463.328125,
+            "height": 316,
+            "scrollWidth": 461,
+            "clientWidth": 461,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          }
+        ],
+        "hud": [
+          {
+            "x": 870,
+            "y": 107,
+            "width": 260,
+            "height": 119.8125,
+            "scrollWidth": 260,
+            "clientWidth": 260,
+            "scrollHeight": 260,
+            "clientHeight": 120,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 10,
+            "y": 234.8125,
+            "width": 331.46875,
+            "height": 74,
+            "scrollWidth": 329,
+            "clientWidth": 329,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "6px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 22,
+            "y": 29,
+            "width": 135.265625,
+            "height": 38,
+            "scrollWidth": 135,
+            "clientWidth": 135,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "8px 12px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 169.265625,
+            "y": 25,
+            "width": 254.25,
+            "height": 46,
+            "scrollWidth": 254,
+            "clientWidth": 254,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 34px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 10,
+            "y": 107,
+            "width": 340,
+            "height": 72,
+            "scrollWidth": 340,
+            "clientWidth": 340,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 10,
+            "y": 316.8125,
+            "width": 1120,
+            "height": 71.1875,
+            "scrollWidth": 1120,
+            "clientWidth": 1120,
+            "scrollHeight": 71,
+            "clientHeight": 71,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 28,
+            "y": 697,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 501.328125,
+            "y": 697,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 974.65625,
+            "y": 697,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 79.6875,
+            "y": 773,
+            "width": 332.640625,
+            "height": 44,
+            "scrollWidth": 333,
+            "clientWidth": 333,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 553.015625,
+            "y": 773,
+            "width": 332.640625,
+            "height": 44,
+            "scrollWidth": 333,
+            "clientWidth": 333,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 1026.34375,
+            "y": 773,
+            "width": 332.640625,
+            "height": 44,
+            "scrollWidth": 333,
+            "clientWidth": 333,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          }
+        ],
+        "commands": [
+          {
+            "x": 28,
+            "y": 827,
+            "width": 437.328125,
+            "height": 44,
+            "scrollWidth": 437,
+            "clientWidth": 437,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 501.328125,
+            "y": 827,
+            "width": 437.328125,
+            "height": 44,
+            "scrollWidth": 437,
+            "clientWidth": 437,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 974.65625,
+            "y": 827,
+            "width": 437.328125,
+            "height": 44,
+            "scrollWidth": 437,
+            "clientWidth": 437,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 900,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "screenshot": "baseline-1366x768.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 768,
+            "scrollWidth": 1366,
+            "clientWidth": 1366,
+            "scrollHeight": 874,
+            "clientHeight": 768,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "grid",
+            "gridRows": "72px 300px 502px",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 72,
+            "scrollWidth": 1366,
+            "clientWidth": 1366,
+            "scrollHeight": 92,
+            "clientHeight": 71,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 0,
+            "y": 72,
+            "width": 1066,
+            "height": 300,
+            "scrollWidth": 1066,
+            "clientWidth": 1066,
+            "scrollHeight": 300,
+            "clientHeight": 300,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 0,
+            "y": 72,
+            "width": 1066,
+            "height": 300,
+            "scrollWidth": 1066,
+            "clientWidth": 1066,
+            "scrollHeight": 300,
+            "clientHeight": 300,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 1066,
+            "y": 72,
+            "width": 300,
+            "height": 300,
+            "scrollWidth": 299,
+            "clientWidth": 299,
+            "scrollHeight": 1491,
+            "clientHeight": 300,
+            "padding": "12px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgb(24, 51, 40), rgb(16, 37, 28))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "dock": [
+          {
+            "x": 0,
+            "y": 372,
+            "width": 1366,
+            "height": 502,
+            "scrollWidth": 1366,
+            "clientWidth": 1366,
+            "scrollHeight": 502,
+            "clientHeight": 502,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(217, 180, 95), rgb(95, 68, 22) 40%, rgb(246, 226, 164) 80%, rgb(169, 128, 47))",
+            "font": "14px Federo"
+          }
+        ],
+        "environment": [
+          {
+            "x": 1079,
+            "y": 84,
+            "width": 275,
+            "height": 251.578125,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 252,
+            "clientHeight": 252,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "switches": [
+          {
+            "x": 1079,
+            "y": 347.578125,
+            "width": 275,
+            "height": 653.375,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 653,
+            "clientHeight": 653,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "map": [
+          {
+            "x": 1079,
+            "y": 1012.953125,
+            "width": 275,
+            "height": 290.921875,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 291,
+            "clientHeight": 291,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "missions": [
+          {
+            "x": 1079,
+            "y": 1315.875,
+            "width": 275,
+            "height": 235.375,
+            "scrollWidth": 275,
+            "clientWidth": 275,
+            "scrollHeight": 235,
+            "clientHeight": 235,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "cards": [
+          {
+            "x": 15,
+            "y": 540,
+            "width": 438.65625,
+            "height": 316,
+            "scrollWidth": 437,
+            "clientWidth": 437,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 463.65625,
+            "y": 540,
+            "width": 438.65625,
+            "height": 316,
+            "scrollWidth": 437,
+            "clientWidth": 437,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 912.3125,
+            "y": 540,
+            "width": 438.65625,
+            "height": 316,
+            "scrollWidth": 437,
+            "clientWidth": 437,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          }
+        ],
+        "hud": [
+          {
+            "x": 796,
+            "y": 82,
+            "width": 260,
+            "height": 118.8125,
+            "scrollWidth": 260,
+            "clientWidth": 260,
+            "scrollHeight": 260,
+            "clientHeight": 119,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 10,
+            "y": 208.8125,
+            "width": 331.46875,
+            "height": 74,
+            "scrollWidth": 329,
+            "clientWidth": 329,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "6px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 22,
+            "y": 29,
+            "width": 135.265625,
+            "height": 38,
+            "scrollWidth": 135,
+            "clientWidth": 135,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "8px 12px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 169.265625,
+            "y": 25,
+            "width": 228.25,
+            "height": 46,
+            "scrollWidth": 228,
+            "clientWidth": 228,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 30px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 10,
+            "y": 82,
+            "width": 340,
+            "height": 72,
+            "scrollWidth": 340,
+            "clientWidth": 340,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 10,
+            "y": 290.8125,
+            "width": 1046,
+            "height": 71.1875,
+            "scrollWidth": 1046,
+            "clientWidth": 1046,
+            "scrollHeight": 71,
+            "clientHeight": 71,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 28,
+            "y": 671,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 476.65625,
+            "y": 671,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 925.3125,
+            "y": 671,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 79.6875,
+            "y": 747,
+            "width": 307.96875,
+            "height": 44,
+            "scrollWidth": 308,
+            "clientWidth": 308,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 528.34375,
+            "y": 747,
+            "width": 307.96875,
+            "height": 44,
+            "scrollWidth": 308,
+            "clientWidth": 308,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 977,
+            "y": 747,
+            "width": 307.96875,
+            "height": 44,
+            "scrollWidth": 308,
+            "clientWidth": 308,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          }
+        ],
+        "commands": [
+          {
+            "x": 28,
+            "y": 801,
+            "width": 412.65625,
+            "height": 44,
+            "scrollWidth": 413,
+            "clientWidth": 413,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 476.65625,
+            "y": 801,
+            "width": 412.65625,
+            "height": 44,
+            "scrollWidth": 413,
+            "clientWidth": 413,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 925.3125,
+            "y": 801,
+            "width": 412.65625,
+            "height": 44,
+            "scrollWidth": 413,
+            "clientWidth": 413,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 874,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "screenshot": "baseline-1024x768.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 768,
+            "scrollWidth": 1024,
+            "clientWidth": 1024,
+            "scrollHeight": 874,
+            "clientHeight": 768,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "grid",
+            "gridRows": "72px 300px 502px",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 72,
+            "scrollWidth": 1024,
+            "clientWidth": 1024,
+            "scrollHeight": 92,
+            "clientHeight": 71,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 0,
+            "y": 72,
+            "width": 759,
+            "height": 300,
+            "scrollWidth": 759,
+            "clientWidth": 759,
+            "scrollHeight": 300,
+            "clientHeight": 300,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 0,
+            "y": 72,
+            "width": 759,
+            "height": 300,
+            "scrollWidth": 759,
+            "clientWidth": 759,
+            "scrollHeight": 300,
+            "clientHeight": 300,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 759,
+            "y": 72,
+            "width": 265,
+            "height": 300,
+            "scrollWidth": 264,
+            "clientWidth": 264,
+            "scrollHeight": 1552,
+            "clientHeight": 300,
+            "padding": "12px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgb(24, 51, 40), rgb(16, 37, 28))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "dock": [
+          {
+            "x": 0,
+            "y": 372,
+            "width": 1024,
+            "height": 502,
+            "scrollWidth": 1024,
+            "clientWidth": 1024,
+            "scrollHeight": 502,
+            "clientHeight": 502,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(217, 180, 95), rgb(95, 68, 22) 40%, rgb(246, 226, 164) 80%, rgb(169, 128, 47))",
+            "font": "14px Federo"
+          }
+        ],
+        "environment": [
+          {
+            "x": 772,
+            "y": 84,
+            "width": 240,
+            "height": 251.578125,
+            "scrollWidth": 240,
+            "clientWidth": 240,
+            "scrollHeight": 252,
+            "clientHeight": 252,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "switches": [
+          {
+            "x": 772,
+            "y": 347.578125,
+            "width": 240,
+            "height": 710.046875,
+            "scrollWidth": 240,
+            "clientWidth": 240,
+            "scrollHeight": 710,
+            "clientHeight": 710,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "map": [
+          {
+            "x": 772,
+            "y": 1069.625,
+            "width": 240,
+            "height": 274.59375,
+            "scrollWidth": 240,
+            "clientWidth": 240,
+            "scrollHeight": 275,
+            "clientHeight": 275,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "missions": [
+          {
+            "x": 772,
+            "y": 1356.21875,
+            "width": 240,
+            "height": 255.671875,
+            "scrollWidth": 240,
+            "clientWidth": 240,
+            "scrollHeight": 256,
+            "clientHeight": 256,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "cards": [
+          {
+            "x": 15,
+            "y": 540,
+            "width": 492,
+            "height": 316,
+            "scrollWidth": 490,
+            "clientWidth": 490,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 517,
+            "y": 540,
+            "width": 492,
+            "height": 316,
+            "scrollWidth": 490,
+            "clientWidth": 490,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 1019,
+            "y": 540,
+            "width": 492,
+            "height": 316,
+            "scrollWidth": 490,
+            "clientWidth": 490,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          }
+        ],
+        "hud": [
+          {
+            "x": 489,
+            "y": 82,
+            "width": 260,
+            "height": 118.8125,
+            "scrollWidth": 260,
+            "clientWidth": 260,
+            "scrollHeight": 260,
+            "clientHeight": 119,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 10,
+            "y": 208.8125,
+            "width": 331.46875,
+            "height": 74,
+            "scrollWidth": 329,
+            "clientWidth": 329,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "6px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 22,
+            "y": 29,
+            "width": 113.125,
+            "height": 38,
+            "scrollWidth": 113,
+            "clientWidth": 113,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "8px 12px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 147.125,
+            "y": 25,
+            "width": 190.46875,
+            "height": 46,
+            "scrollWidth": 190,
+            "clientWidth": 190,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 30px",
+            "gap": "7px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 10,
+            "y": 82,
+            "width": 340,
+            "height": 72,
+            "scrollWidth": 340,
+            "clientWidth": 340,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 10,
+            "y": 290.8125,
+            "width": 739,
+            "height": 71.1875,
+            "scrollWidth": 739,
+            "clientWidth": 739,
+            "scrollHeight": 71,
+            "clientHeight": 71,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 28,
+            "y": 671,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 530,
+            "y": 671,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 1032,
+            "y": 671,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 79.6875,
+            "y": 747,
+            "width": 361.3125,
+            "height": 44,
+            "scrollWidth": 361,
+            "clientWidth": 361,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 581.6875,
+            "y": 747,
+            "width": 361.3125,
+            "height": 44,
+            "scrollWidth": 361,
+            "clientWidth": 361,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 1083.6875,
+            "y": 747,
+            "width": 361.3125,
+            "height": 44,
+            "scrollWidth": 361,
+            "clientWidth": 361,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          }
+        ],
+        "commands": [
+          {
+            "x": 28,
+            "y": 801,
+            "width": 466,
+            "height": 44,
+            "scrollWidth": 466,
+            "clientWidth": 466,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 530,
+            "y": 801,
+            "width": 466,
+            "height": 44,
+            "scrollWidth": 466,
+            "clientWidth": 466,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 1032,
+            "y": 801,
+            "width": 466,
+            "height": 44,
+            "scrollWidth": 466,
+            "clientWidth": 466,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 874,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "screenshot": "baseline-390x844.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 2604.984375,
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "scrollHeight": 2605,
+            "clientHeight": 2605,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "auto minmax(300px, 1fr) auto",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 137,
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "scrollHeight": 136,
+            "clientHeight": 136,
+            "padding": "4px",
+            "gap": "6px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 0,
+            "y": 197,
+            "width": 390,
+            "height": 405.109375,
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "scrollHeight": 405,
+            "clientHeight": 405,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 0,
+            "y": 197,
+            "width": 390,
+            "height": 405.109375,
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "scrollHeight": 405,
+            "clientHeight": 405,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 0,
+            "y": 1154.109375,
+            "width": 390,
+            "height": 1450.875,
+            "scrollWidth": 389,
+            "clientWidth": 389,
+            "scrollHeight": 1451,
+            "clientHeight": 1451,
+            "padding": "12px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgb(24, 51, 40), rgb(16, 37, 28))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "dock": [
+          {
+            "x": 0,
+            "y": 602.109375,
+            "width": 390,
+            "height": 552,
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "scrollHeight": 552,
+            "clientHeight": 552,
+            "padding": "8px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(217, 180, 95), rgb(95, 68, 22) 40%, rgb(246, 226, 164) 80%, rgb(169, 128, 47))",
+            "font": "14px Federo"
+          }
+        ],
+        "environment": [
+          {
+            "x": 13,
+            "y": 1166.109375,
+            "width": 365,
+            "height": 255.578125,
+            "scrollWidth": 365,
+            "clientWidth": 365,
+            "scrollHeight": 256,
+            "clientHeight": 256,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "switches": [
+          {
+            "x": 13,
+            "y": 1433.6875,
+            "width": 365,
+            "height": 588.0625,
+            "scrollWidth": 365,
+            "clientWidth": 365,
+            "scrollHeight": 588,
+            "clientHeight": 588,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "map": [
+          {
+            "x": 13,
+            "y": 2033.75,
+            "width": 365,
+            "height": 335.0625,
+            "scrollWidth": 365,
+            "clientWidth": 365,
+            "scrollHeight": 335,
+            "clientHeight": 335,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "missions": [
+          {
+            "x": 13,
+            "y": 2380.8125,
+            "width": 365,
+            "height": 212.171875,
+            "scrollWidth": 365,
+            "clientWidth": 365,
+            "scrollHeight": 212,
+            "clientHeight": 212,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "cards": [
+          {
+            "x": 11,
+            "y": 822.109375,
+            "width": 368,
+            "height": 316,
+            "scrollWidth": 366,
+            "clientWidth": 366,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 389,
+            "y": 822.109375,
+            "width": 368,
+            "height": 316,
+            "scrollWidth": 366,
+            "clientWidth": 366,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 767,
+            "y": 822.109375,
+            "width": 368,
+            "height": 316,
+            "scrollWidth": 366,
+            "clientWidth": 366,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          }
+        ],
+        "hud": [
+          {
+            "x": 187.53125,
+            "y": 205,
+            "width": 194.46875,
+            "height": 238.78125,
+            "scrollWidth": 194,
+            "clientWidth": 194,
+            "scrollHeight": 239,
+            "clientHeight": 239,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 8,
+            "y": 456.921875,
+            "width": 243.34375,
+            "height": 68,
+            "scrollWidth": 241,
+            "clientWidth": 241,
+            "scrollHeight": 66,
+            "clientHeight": 66,
+            "padding": "4px",
+            "gap": "4px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 12,
+            "y": 15,
+            "width": 106.234375,
+            "height": 38,
+            "scrollWidth": 106,
+            "clientWidth": 106,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "6px 12px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 128.234375,
+            "y": 12,
+            "width": 249.765625,
+            "height": 44,
+            "scrollWidth": 250,
+            "clientWidth": 250,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px 26px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 8,
+            "y": 205,
+            "width": 173.53125,
+            "height": 64,
+            "scrollWidth": 174,
+            "clientWidth": 174,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 8,
+            "y": 530.921875,
+            "width": 374,
+            "height": 63.1875,
+            "scrollWidth": 374,
+            "clientWidth": 374,
+            "scrollHeight": 63,
+            "clientHeight": 63,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 24,
+            "y": 953.109375,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 402,
+            "y": 953.109375,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 780,
+            "y": 953.109375,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 75.6875,
+            "y": 1029.109375,
+            "width": 237.3125,
+            "height": 44,
+            "scrollWidth": 237,
+            "clientWidth": 237,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 453.6875,
+            "y": 1029.109375,
+            "width": 237.3125,
+            "height": 44,
+            "scrollWidth": 237,
+            "clientWidth": 237,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 831.6875,
+            "y": 1029.109375,
+            "width": 237.3125,
+            "height": 44,
+            "scrollWidth": 237,
+            "clientWidth": 237,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          }
+        ],
+        "commands": [
+          {
+            "x": 24,
+            "y": 1083.109375,
+            "width": 342,
+            "height": 44,
+            "scrollWidth": 342,
+            "clientWidth": 342,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 402,
+            "y": 1083.109375,
+            "width": 342,
+            "height": 44,
+            "scrollWidth": 342,
+            "clientWidth": 342,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 780,
+            "y": 1083.109375,
+            "width": 342,
+            "height": 44,
+            "scrollWidth": 342,
+            "clientWidth": 342,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 2605,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "screenshot": "baseline-768x1024.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 2236.609375,
+            "scrollWidth": 768,
+            "clientWidth": 768,
+            "scrollHeight": 2237,
+            "clientHeight": 2237,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "auto minmax(300px, 1fr) auto",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 151,
+            "scrollWidth": 768,
+            "clientWidth": 768,
+            "scrollHeight": 150,
+            "clientHeight": 150,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 0,
+            "y": 151,
+            "width": 768,
+            "height": 614.390625,
+            "scrollWidth": 768,
+            "clientWidth": 768,
+            "scrollHeight": 614,
+            "clientHeight": 614,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 0,
+            "y": 151,
+            "width": 768,
+            "height": 614.390625,
+            "scrollWidth": 768,
+            "clientWidth": 768,
+            "scrollHeight": 614,
+            "clientHeight": 614,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px system-ui, sans-serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 0,
+            "y": 1267.390625,
+            "width": 768,
+            "height": 969.21875,
+            "scrollWidth": 767,
+            "clientWidth": 767,
+            "scrollHeight": 969,
+            "clientHeight": 969,
+            "padding": "12px",
+            "gap": "12px",
+            "display": "grid",
+            "gridRows": "600.062px 333.156px",
+            "background": "linear-gradient(rgb(24, 51, 40), rgb(16, 37, 28))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "dock": [
+          {
+            "x": 0,
+            "y": 765.390625,
+            "width": 768,
+            "height": 502,
+            "scrollWidth": 768,
+            "clientWidth": 768,
+            "scrollHeight": 502,
+            "clientHeight": 502,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(217, 180, 95), rgb(95, 68, 22) 40%, rgb(246, 226, 164) 80%, rgb(169, 128, 47))",
+            "font": "14px Federo"
+          }
+        ],
+        "environment": [
+          {
+            "x": 13,
+            "y": 1279.390625,
+            "width": 365.5,
+            "height": 600.0625,
+            "scrollWidth": 366,
+            "clientWidth": 366,
+            "scrollHeight": 600,
+            "clientHeight": 600,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "switches": [
+          {
+            "x": 390.5,
+            "y": 1279.390625,
+            "width": 365.5,
+            "height": 600.0625,
+            "scrollWidth": 366,
+            "clientWidth": 366,
+            "scrollHeight": 600,
+            "clientHeight": 600,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "map": [
+          {
+            "x": 13,
+            "y": 1891.453125,
+            "width": 365.5,
+            "height": 333.15625,
+            "scrollWidth": 366,
+            "clientWidth": 366,
+            "scrollHeight": 333,
+            "clientHeight": 333,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "missions": [
+          {
+            "x": 390.5,
+            "y": 1891.453125,
+            "width": 365.5,
+            "height": 333.15625,
+            "scrollWidth": 366,
+            "clientWidth": 366,
+            "scrollHeight": 333,
+            "clientHeight": 333,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "cards": [
+          {
+            "x": 15,
+            "y": 933.390625,
+            "width": 364,
+            "height": 316,
+            "scrollWidth": 362,
+            "clientWidth": 362,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 389,
+            "y": 933.390625,
+            "width": 364,
+            "height": 316,
+            "scrollWidth": 362,
+            "clientWidth": 362,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          },
+          {
+            "x": 763,
+            "y": 933.390625,
+            "width": 364,
+            "height": 316,
+            "scrollWidth": 362,
+            "clientWidth": 362,
+            "scrollHeight": 314,
+            "clientHeight": 314,
+            "padding": "10px 12px",
+            "gap": "4px",
+            "display": "grid",
+            "gridRows": "114px 68px 56px 44px",
+            "background": "linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "14px Federo"
+          }
+        ],
+        "hud": [
+          {
+            "x": 498,
+            "y": 161,
+            "width": 260,
+            "height": 259.578125,
+            "scrollWidth": 260,
+            "clientWidth": 260,
+            "scrollHeight": 260,
+            "clientHeight": 260,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 10,
+            "y": 602.203125,
+            "width": 331.46875,
+            "height": 74,
+            "scrollWidth": 329,
+            "clientWidth": 329,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "6px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 22,
+            "y": 29,
+            "width": 106.234375,
+            "height": 38,
+            "scrollWidth": 106,
+            "clientWidth": 106,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "8px 12px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 140.234375,
+            "y": 25,
+            "width": 190.46875,
+            "height": 46,
+            "scrollWidth": 190,
+            "clientWidth": 190,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 30px",
+            "gap": "7px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8040/baseline/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "14px Federo, sans-serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 10,
+            "y": 161,
+            "width": 340,
+            "height": 72,
+            "scrollWidth": 340,
+            "clientWidth": 340,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 10,
+            "y": 684.203125,
+            "width": 748,
+            "height": 71.1875,
+            "scrollWidth": 748,
+            "clientWidth": 748,
+            "scrollHeight": 71,
+            "clientHeight": 71,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "14px / 19.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 28,
+            "y": 1064.390625,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 402,
+            "y": 1064.390625,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 776,
+            "y": 1064.390625,
+            "width": 64,
+            "height": 64,
+            "scrollWidth": 64,
+            "clientWidth": 64,
+            "scrollHeight": 64,
+            "clientHeight": 64,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 79.6875,
+            "y": 1140.390625,
+            "width": 233.3125,
+            "height": 44,
+            "scrollWidth": 233,
+            "clientWidth": 233,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 453.6875,
+            "y": 1140.390625,
+            "width": 233.3125,
+            "height": 44,
+            "scrollWidth": 233,
+            "clientWidth": 233,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          },
+          {
+            "x": 827.6875,
+            "y": 1140.390625,
+            "width": 233.3125,
+            "height": 44,
+            "scrollWidth": 233,
+            "clientWidth": 233,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "13px Federo"
+          }
+        ],
+        "commands": [
+          {
+            "x": 28,
+            "y": 1194.390625,
+            "width": 338,
+            "height": 44,
+            "scrollWidth": 338,
+            "clientWidth": 338,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 402,
+            "y": 1194.390625,
+            "width": 338,
+            "height": 44,
+            "scrollWidth": 338,
+            "clientWidth": 338,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          },
+          {
+            "x": 776,
+            "y": 1194.390625,
+            "width": 338,
+            "height": 44,
+            "scrollWidth": 338,
+            "clientWidth": 338,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "14px Federo"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 2237,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    }
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "provenance": "Isolated original reference / actual runtime bundle with explicit local Auth bootstrap; no OAuth claim"
+}

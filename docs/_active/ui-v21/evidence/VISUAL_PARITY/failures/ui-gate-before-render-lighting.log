@@ -1,0 +1,7 @@
+PASS six-original-textures-HTTP200-hashes-and-computed-runtime-materials
+PASS seven-viewports-expanded-HUD-schematic-camera-popup-contained-and-real-canvas-reachable
+Traceback (most recent call last):
+  File "/workspace/work/visual-parity/tools/ui-gate.py", line 61, in <module>
+    expected=2.65+(0.16-2.65)*max(0,min(1,(value-35)/65));assert d['value']==value and abs(d['intensity']-expected)<1e-9
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

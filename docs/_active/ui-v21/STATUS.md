@@ -1,3 +1,31 @@
+# UI V2.1 — Visual Parity Hotfix
+
+**Aggiornamento corrente — HUD/CAMERA MOBILE COLLISION HOTFIX: PASS tecnico, REGIA REVIEW PENDING.** Dal checkpoint `6e62967356df836df27de59f352496511769d591`, sul solo `codex/ui-v21-visual-parity`. PR #8 rimane Draft; PR #7 e main `d77b8aa2710fa474fdb069b204705364b4a9e7e6` non modificate. Il nuovo mandato autorizza esclusivamente correzione, verifiche e checkpoint remoto, senza merge/deploy.
+
+Riprodotta l'occlusione198×102,734375px. Coordinamento mediante pulsante HUD originale; ripristino dell'intenzione, chiusura View prima dell'espansione utente, Escape/focus/resize/orientation/dispose. Stesso nodo warning aggiornato dal motore disponibile durante la minimizzazione, insieme al Guarded Stop originale. Modifiche applicative solo `src/ui/overlays.js` e CSS contestuale di integrazione; desktop, Train Dock, materiali/frozen e domini invariati.
+
+Nuovi254Node,9Python,build e11gruppi browser PASS;42misure d'intersezione pari a0, sei viewport, tutti i preset/camera reale, allarme sopraggiunto con View aperto, occupazione, rotazione,12cicli e cleanup.132invarianti originali e138file protetti verificati; geometria/testi/stili desktop/tablet identici. Bundle1.092.265byte/SHA256 `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378`.
+
+[Rapporto corrente](VISUAL_PARITY_REPORT.md), [prove e prima/dopo](evidence/HUD_CAMERA_HOTFIX/README.md). SHA del commit atomico e verifica remota nella consegna; risolvibile dal log del rapporto. **STOP al checkpoint correttivo: unica prossima azione, revisione indipendente Regia. OAuth/hardware/screen reader/altri browser/5E non attestati; nessuna nuova fase.**
+
+---
+
+## Stato precedente — storico
+
+**Stato corrente — UI V2.1 VISUAL PARITY HOTFIX: READY FOR REGIA VISUAL REVIEW.** [PR Draft #8](https://github.com/epivic-lab/SerieN/pull/8); checkpoint applicativo `637a140950d3047c5c7926193f6b312dadc464f1` verificato su remoto. Il mandato completo autorizza la ricostruzione sul solo branch `codex/ui-v21-visual-parity`, derivato dalla produzione `d77b8aa2710fa474fdb069b204705364b4a9e7e6`, e la consegna in PR Draft. La UI pubblicata resta in attesa di accettazione visiva; i precedenti verdetti tecnici non valgono come approvazione estetica.
+
+Ripristinate la griglia Claude e le superfici originali: a1692×877 dock502→156px e viewport300→612,11px, tre console visibili e quattro pannelli sidebar. Cinque viewport desktop con scarto0px dei bounding box esterni rispetto al vero HTML `cf2c29a`; sette confronti completi, adattamenti mobile/tablet dichiarati. PASS254Node,9Python,build/canonico,11scenari5C,6gruppi UI/HUD con16stati,5gruppi RAF nativo/125frame,5gruppi picking/cleanup,28stati missione e sette controlli console/overflow. Ultimo affinamento solo CSS delle missioni strette, con provenienza e verifica mirata distinte.
+
+Motore,150rotaie,topologia,8scambi/WX310,R1,M1/M2/M3,Auth/Supabase/RLS/persistenza,asset e CSS frozen,workflow e dipendenze preservati;132file protetti byte-identici. Prove browser con bootstrap Auth solo locale; OAuth live, hardware fisico/altri browser e certificazione WCAG completa NOT VERIFIED. Produzione e PR #7 documentale non modificate.
+
+[Rapporto e checkpoint](VISUAL_PARITY_REPORT.md), [galleria completa](evidence/VISUAL_PARITY/GALLERY.md), [invarianti/package](evidence/VISUAL_PARITY/invariants-and-package.json), [scope CSS finale](evidence/VISUAL_PARITY/final-scope-verification.json).
+
+**STOP alla PR Draft: prossima azione esclusivamente revisione visiva della Regia. Nessun merge/deploy autorizzato o eseguito.**
+
+---
+
+## Registro precedente — storico, superato dal mandato hotfix sopra
+
 # UI V2.1 — REL-001 Release Packaging Gate
 
 **U0–U9 APPROVATE dalla Regia. REL-001: READY FOR REGIA RELEASE REVIEW — STOP.**

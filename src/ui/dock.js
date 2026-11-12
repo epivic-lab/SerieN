@@ -4,8 +4,9 @@ export function mountDock({host,tabs,button,getTrains,getSelected,onSelect,getGe
   const guard=createGuardModal({title:'Reset railway?',cancelLabel:'Cancel',confirmLabel:'Reset railway',titleId:'u5ResetTitle',guardClass:'u5-guard'});
   const region=host.closest('.u5-dock');
   const nav=document.createElement('div');nav.className='u5-carousel-nav';
-  nav.innerHTML='<button type="button" aria-label="Previous train">←</button><span>Train Dock · All locomotives</span><button type="button" aria-label="Next train">→</button>';
-  host.before(nav);
+  nav.innerHTML='<button type="button" class="bt d ar dock-previous" aria-label="Previous train">‹</button><button type="button" class="bt d ar dock-next" aria-label="Next train">›</button>';
+  const previousButton=nav.firstElementChild,nextButton=nav.lastElementChild;
+  host.before(previousButton);host.after(nextButton);
   function move(delta){const ids=getTrains().map(t=>t.id),i=ids.indexOf(getSelected());if(ids.length)onSelect(ids[(i+delta+ids.length)%ids.length]);}
   const previous=()=>move(-1),next=()=>move(1);
   const keys=e=>{if(e.target!==host&&!e.target.closest?.('#tabs'))return;
@@ -20,8 +21,8 @@ export function mountDock({host,tabs,button,getTrains,getSelected,onSelect,getGe
     guard.request({origin:button,message:'Reset locomotives, switches and missions? Projects and Depot stay in this session; physical references become STALE.',
       valid:()=>getGeneration()===generation&&context.length===getTrains().length&&context.every((t,i)=>t===getTrains()[i]),confirm:onReset});
   };
-  nav.firstElementChild.addEventListener('click',previous);nav.lastElementChild.addEventListener('click',next);
+  previousButton.addEventListener('click',previous);nextButton.addEventListener('click',next);
   region.addEventListener('keydown',keys);button.addEventListener('click',request);
   tabs.setAttribute('aria-label','Select any locomotive');
-  return {dispose(){guard.dispose();button.removeEventListener('click',request);region.removeEventListener('keydown',keys);nav.firstElementChild.removeEventListener('click',previous);nav.lastElementChild.removeEventListener('click',next);nav.remove();}};
+  return {dispose(){guard.dispose();button.removeEventListener('click',request);region.removeEventListener('keydown',keys);previousButton.removeEventListener('click',previous);nextButton.removeEventListener('click',next);previousButton.remove();nextButton.remove();}};
 }

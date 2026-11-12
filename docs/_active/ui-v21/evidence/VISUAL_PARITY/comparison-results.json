@@ -1,0 +1,679 @@
+{
+  "status": "PASS_MACRO_GEOMETRY_WITH_DOCUMENTED_ADAPTATIONS",
+  "referenceUIQuality": "High, original isolated demo only",
+  "maskMethod": "Intersection of dynamic canvas interiors minus every HUD/Bell/camera/log box from both images; no UI/text mask",
+  "viewports": [
+    {
+      "viewport": [
+        1692,
+        877
+      ],
+      "desktopMacroMaxErrorPx": 0,
+      "macroGate": "PASS",
+      "bodyHorizontalOverflow": false,
+      "canvasCount": 1,
+      "regionDeviationPx": {
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0.0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0.0
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0.0
+        },
+        "dock": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "plaque": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 0
+        },
+        "edition": {
+          "x": 2.0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 0
+        },
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "width": 2.188,
+          "height": 0
+        },
+        "hud": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "environment": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "switches": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": -3.891
+        },
+        "map": {
+          "x": 0,
+          "y": -3.891,
+          "width": 0,
+          "height": 0
+        },
+        "missions": {
+          "x": 0,
+          "y": -3.891,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "before": {
+        "comparedPixels": 1294340,
+        "excludedDynamicPixels": 189544,
+        "changedPixelsThreshold24": 544009,
+        "changedPercent": 42.02983760063044
+      },
+      "corrected": {
+        "comparedPixels": 791706,
+        "excludedDynamicPixels": 692178,
+        "changedPixelsThreshold24": 121670,
+        "changedPercent": 15.368078554412875
+      }
+    },
+    {
+      "viewport": [
+        1648,
+        895
+      ],
+      "desktopMacroMaxErrorPx": 0,
+      "macroGate": "PASS",
+      "bodyHorizontalOverflow": false,
+      "canvasCount": 1,
+      "regionDeviationPx": {
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0.0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0.0
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0.0
+        },
+        "dock": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "plaque": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 0
+        },
+        "edition": {
+          "x": 2.0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 0
+        },
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "width": 2.188,
+          "height": 0
+        },
+        "hud": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "environment": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "switches": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 12.781
+        },
+        "map": {
+          "x": 0,
+          "y": 12.781,
+          "width": 0,
+          "height": -12.781
+        },
+        "missions": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "before": {
+        "comparedPixels": 1282364,
+        "excludedDynamicPixels": 192596,
+        "changedPixelsThreshold24": 537635,
+        "changedPercent": 41.92530357995078
+      },
+      "corrected": {
+        "comparedPixels": 788074,
+        "excludedDynamicPixels": 686886,
+        "changedPixelsThreshold24": 122878,
+        "changedPercent": 15.592190581087563
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "desktopMacroMaxErrorPx": 0,
+      "macroGate": "PASS",
+      "bodyHorizontalOverflow": false,
+      "canvasCount": 1,
+      "regionDeviationPx": {
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0.0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 0.0
+        },
+        "sidebar": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 0.0
+        },
+        "dock": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "plaque": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 0
+        },
+        "edition": {
+          "x": 2.0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 0
+        },
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "width": 2.188,
+          "height": 0
+        },
+        "hud": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "environment": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 0
+        },
+        "switches": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.0,
+          "height": 17.406
+        },
+        "map": {
+          "x": 0.0,
+          "y": 17.406,
+          "width": 0.0,
+          "height": -17.406
+        },
+        "missions": {
+          "x": 0.0,
+          "y": 0,
+          "width": 0.0,
+          "height": 0
+        }
+      },
+      "before": {
+        "comparedPixels": 1140499,
+        "excludedDynamicPixels": 155501,
+        "changedPixelsThreshold24": 492837,
+        "changedPercent": 43.21240088768162
+      },
+      "corrected": {
+        "comparedPixels": 710403,
+        "excludedDynamicPixels": 585597,
+        "changedPixelsThreshold24": 132952,
+        "changedPercent": 18.715011057104206
+      }
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "desktopMacroMaxErrorPx": 0,
+      "macroGate": "PASS",
+      "bodyHorizontalOverflow": false,
+      "canvasCount": 1,
+      "regionDeviationPx": {
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 0,
+          "width": 0.0,
+          "height": 0
+        },
+        "sidebar": {
+          "x": 0.0,
+          "y": 0,
+          "width": 0.0,
+          "height": 0
+        },
+        "dock": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "plaque": {
+          "x": 0,
+          "y": 0,
+          "width": 0.0,
+          "height": 0
+        },
+        "edition": {
+          "x": 2.0,
+          "y": 0,
+          "width": 0.0,
+          "height": 0
+        },
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "width": 2.188,
+          "height": 0
+        },
+        "hud": {
+          "x": 0.0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "environment": {
+          "x": 0.0,
+          "y": 0,
+          "width": 0.0,
+          "height": 9
+        },
+        "switches": {
+          "x": 0.0,
+          "y": 9,
+          "width": 0.0,
+          "height": -8
+        },
+        "map": {
+          "x": 0.0,
+          "y": 1,
+          "width": 0.0,
+          "height": -32
+        },
+        "missions": {
+          "x": 0.0,
+          "y": -31,
+          "width": 0.0,
+          "height": 31
+        }
+      },
+      "before": {
+        "comparedPixels": 1060024,
+        "excludedDynamicPixels": 133860,
+        "changedPixelsThreshold24": 561687,
+        "changedPercent": 52.988139891172274
+      },
+      "corrected": {
+        "comparedPixels": 611621,
+        "excludedDynamicPixels": 437467,
+        "changedPixelsThreshold24": 149944,
+        "changedPercent": 24.515835787195012
+      }
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "desktopMacroMaxErrorPx": 0,
+      "macroGate": "PASS",
+      "bodyHorizontalOverflow": false,
+      "canvasCount": 1,
+      "regionDeviationPx": {
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 0,
+          "width": 0.0,
+          "height": 0
+        },
+        "sidebar": {
+          "x": 0.0,
+          "y": 0,
+          "width": 0.0,
+          "height": 0
+        },
+        "dock": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "plaque": {
+          "x": 0,
+          "y": 0,
+          "width": 8.0,
+          "height": 0
+        },
+        "edition": {
+          "x": 8.0,
+          "y": 0,
+          "width": -13.922,
+          "height": 0
+        },
+        "camera": {
+          "x": 0,
+          "y": -7,
+          "width": 27.516,
+          "height": 7
+        },
+        "hud": {
+          "x": 0.0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "environment": {
+          "x": 0.0,
+          "y": 0,
+          "width": 0.0,
+          "height": 9
+        },
+        "switches": {
+          "x": 0.0,
+          "y": 9,
+          "width": 0.0,
+          "height": -8
+        },
+        "map": {
+          "x": 0.0,
+          "y": 1,
+          "width": 0.0,
+          "height": -32
+        },
+        "missions": {
+          "x": 0.0,
+          "y": -31,
+          "width": 0.0,
+          "height": 31
+        }
+      },
+      "before": {
+        "comparedPixels": 821357,
+        "excludedDynamicPixels": 73619,
+        "changedPixelsThreshold24": 451237,
+        "changedPercent": 54.93798677067341
+      },
+      "corrected": {
+        "comparedPixels": 491246,
+        "excludedDynamicPixels": 295186,
+        "changedPixelsThreshold24": 126614,
+        "changedPercent": 25.77405210424105
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "desktopMacroMaxErrorPx": null,
+      "macroGate": "Responsive adaptation \u2014 see report",
+      "bodyHorizontalOverflow": false,
+      "canvasCount": 1,
+      "regionDeviationPx": {
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0.0
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 15.0,
+          "width": 0,
+          "height": 555.5
+        },
+        "dock": {
+          "x": 0,
+          "y": 0.0,
+          "width": 0,
+          "height": 15
+        },
+        "plaque": {
+          "x": 12.828,
+          "y": 2,
+          "width": 0.0,
+          "height": -4
+        },
+        "edition": {
+          "x": 8.828,
+          "y": 3,
+          "width": -17.672,
+          "height": -6
+        },
+        "camera": {
+          "x": -10,
+          "y": 9.0,
+          "width": -40.484,
+          "height": 1
+        },
+        "hud": {
+          "x": 12,
+          "y": -10,
+          "width": -2,
+          "height": 2
+        },
+        "environment": {
+          "x": 8,
+          "y": 740.234,
+          "width": 374,
+          "height": 110
+        },
+        "switches": {
+          "x": 8,
+          "y": 858.234,
+          "width": 374,
+          "height": 310
+        },
+        "map": {
+          "x": 0,
+          "y": 451.0,
+          "width": 0,
+          "height": 1.5
+        },
+        "missions": {
+          "x": 8,
+          "y": 1344.234,
+          "width": 374,
+          "height": 110
+        }
+      },
+      "before": {
+        "comparedPixels": 983491,
+        "excludedDynamicPixels": 32459,
+        "changedPixelsThreshold24": 773550,
+        "changedPercent": 78.65349047423922
+      },
+      "corrected": {
+        "comparedPixels": 509506,
+        "excludedDynamicPixels": 80954,
+        "changedPixelsThreshold24": 329650,
+        "changedPercent": 64.69992502541677
+      }
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "desktopMacroMaxErrorPx": null,
+      "macroGate": "Responsive adaptation \u2014 see report",
+      "bodyHorizontalOverflow": false,
+      "canvasCount": 1,
+      "regionDeviationPx": {
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 40
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 40,
+          "width": 0,
+          "height": -173
+        },
+        "dock": {
+          "x": 0,
+          "y": -133,
+          "width": 0,
+          "height": 58
+        },
+        "plaque": {
+          "x": 0,
+          "y": 0,
+          "width": 8.0,
+          "height": 0
+        },
+        "edition": {
+          "x": 8.0,
+          "y": 0,
+          "width": -13.922,
+          "height": 0
+        },
+        "camera": {
+          "x": 0,
+          "y": 40,
+          "width": 2.188,
+          "height": 0
+        },
+        "hud": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "environment": {
+          "x": 0,
+          "y": 40,
+          "width": 0,
+          "height": -208
+        },
+        "switches": {
+          "x": 0,
+          "y": 40,
+          "width": 0,
+          "height": 57
+        },
+        "map": {
+          "x": 0,
+          "y": -168,
+          "width": 0,
+          "height": -70
+        },
+        "missions": {
+          "x": -377,
+          "y": -8,
+          "width": 0,
+          "height": -125
+        }
+      },
+      "before": {
+        "comparedPixels": 1634611,
+        "excludedDynamicPixels": 83405,
+        "changedPixelsThreshold24": 1264376,
+        "changedPercent": 77.35026865719122
+      },
+      "corrected": {
+        "comparedPixels": 676480,
+        "excludedDynamicPixels": 173696,
+        "changedPixelsThreshold24": 352147,
+        "changedPercent": 52.05578878902554
+      }
+    }
+  ]
+}

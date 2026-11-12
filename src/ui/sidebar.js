@@ -40,6 +40,9 @@ export function mountSidebar({host, network, controlOrder, getSwitches, getTrain
     button.dataset.switchId = id;
     button.dataset.ctrl = 'CTRL-012';
     const position = create('span', 'u4-switch-position');
+    const straight=create('span','u4-route-straight','Straight'),diverging=create('span','u4-route-diverging','Diverging'),positionText=create('span','sr-only');
+    straight.setAttribute('aria-hidden','true');diverging.setAttribute('aria-hidden','true');position.append(straight,diverging,positionText);
+    const lamp = create('i', 'lp');lamp.setAttribute('aria-hidden','true');button.prepend(lamp);
     button.append(position);
     const reason = create('p', 'u4-switch-reason');
     reason.id = 'switchReason-'+id;
@@ -47,19 +50,25 @@ export function mountSidebar({host, network, controlOrder, getSwitches, getTrain
     button.setAttribute('aria-describedby', reason.id);
     cell.setAttribute('aria-describedby', reason.id);
     cell.append(reason);
-    return {id, button, cell, position, reason};
+    return {id, button, cell, position, positionText, straight, diverging, reason};
   });
   const switchNote = host.querySelector(':scope > .note');
+  switchNote.classList.add('sr-only');
   const infrastructure = panel('m-sw', [headers[0], list, switchNote]);
   const day = find('day');
   day.dataset.ctrl = 'CTRL-013';
   const environmentValue = create('output', 'u4-day-value');
   environmentValue.id = 'dayValue';
   environmentValue.setAttribute('for', 'day');
-  const environment = panel('m-env', [headers[1], day, environmentValue,
-    host.querySelector('.ticks'), host.querySelector('.rollingLabel')]);
+  headers[1].querySelector('h2').textContent='Environment';
+  const modes=create('div','sg environment-modes');modes.setAttribute('role','group');modes.setAttribute('aria-label','Daylight presets');
+  for(const [label,value] of [['Day',0],['Sunset',48],['Night',100]]){const b=create('button','',label);b.type='button';b.dataset.day=value;on(b,'click',()=>{day.value=String(value);day.dispatchEvent(new Event('input',{bubbles:true}));});modes.append(b);}
+  const environment = panel('m-env', [headers[1], day, environmentValue, modes]);
+  const rollingLabel=host.querySelector('.rollingLabel');rollingLabel?.remove();
   const nextMission = find('nextMission');
-  const missions = panel('m-ms', [headers[2], find('missionName'), find('missionText'),
+  const instructions=create('details','mission-instructions');instructions.append(create('summary','','Mission instructions'),find('missionText'));
+  find('dlg').querySelector('.u2-settings').append(instructions);
+  const missions = panel('m-ms', [headers[2], find('missionName'),
     find('missionStatus'), nextMission]);
   nextMission.classList.add('bt');
   nextMission.dataset.ctrl = 'CTRL-015';
@@ -85,7 +94,8 @@ export function mountSidebar({host, network, controlOrder, getSwitches, getTrain
   const legend = create('div', 'u4-map-trains');
   legend.setAttribute('role', 'group');
   legend.setAttribute('aria-label', 'Focus a train on the layout');
-  const map = panel('m-lg', [mapHead, mapFrame, legend]);
+  mapFrame.append(legend);
+  const map = panel('m-lg', [mapHead, mapFrame]);
   const markers = new Map();
   function focus(event) {
     const target = event.target.closest('[data-map-train]');
@@ -107,6 +117,12 @@ export function mountSidebar({host, network, controlOrder, getSwitches, getTrain
     const glyph = find('sun').textContent;
     const label = {'☀':'Day', '◐':'Sunset', '☾':'Night'}[glyph] ?? '';
     setText(environmentValue, `${day.value}% · ${label}`);
+    // Original material lighting is a projection of the real daylight input;
+    // CSS never writes the simulator's state or substitutes for its lighting.
+    const frame=host.closest('.app');
+    frame.style.setProperty('--n',String(Math.max(0,Math.min(1,(Number(day.value)-35)/65))));
+    frame.classList.toggle('nt',Number(day.value)>=72);
+    for(const b of modes.children){b.classList.toggle('on',b.textContent===label);setAttribute(b,'aria-pressed',b.textContent===label);}
   }
   host.classList.add('u2-region', 'u4-region', 'side');
   host.replaceChildren(environment, infrastructure, map, missions);
@@ -117,9 +133,12 @@ export function mountSidebar({host, network, controlOrder, getSwitches, getTrain
     const states = getSwitches();
     for (const tile of tiles) {
       const state = states.find(s => s.id === tile.id)?.on;
-      setText(tile.position, state === true ? 'Diverging' : state === false ? 'Straight' : 'Unknown');
+      setText(tile.positionText, state === true ? 'Diverging' : state === false ? 'Straight' : 'Unknown');
+      tile.straight.classList.toggle('on',state===false);tile.diverging.classList.toggle('on',state===true);
+      setAttribute(tile.button,'aria-pressed',state===true);
       // The original HUD binding owns disabled/title; this is its visible, exact reason.
       const blocked = tile.button.disabled;
+      tile.cell.classList.toggle('is-blocked',blocked);
       tile.reason.hidden = !blocked;
       setText(tile.reason, blocked ? tile.button.title : '');
     }

@@ -1,5 +1,18 @@
 # SerieN — Stato e ripresa
 
+**Stato corrente — UI V2.1 VISUAL PARITY HOTFIX: READY FOR REGIA VISUAL REVIEW.** [PR Draft #8](https://github.com/epivic-lab/SerieN/pull/8); checkpoint applicativo `637a140950d3047c5c7926193f6b312dadc464f1` verificato su remoto. Il mandato completo autorizza la ricostruzione sul solo branch `codex/ui-v21-visual-parity`, derivato dalla produzione `d77b8aa2710fa474fdb069b204705364b4a9e7e6`, e la consegna in PR Draft. La UI pubblicata resta in attesa di accettazione visiva; i precedenti verdetti tecnici non valgono come approvazione estetica.
+
+Ripristinate la griglia Claude e le superfici originali: a1692×877 dock502→156px e viewport300→612,11px, tre console visibili e quattro pannelli sidebar. Cinque viewport desktop con scarto0px dei bounding box esterni rispetto al vero HTML `cf2c29a`; sette confronti completi, adattamenti mobile/tablet dichiarati. PASS254Node,9Python,build/canonico,11scenari5C,6gruppi UI/HUD con16stati,5gruppi RAF nativo/125frame,5gruppi picking/cleanup,28stati missione e sette controlli console/overflow. Ultimo affinamento solo CSS delle missioni strette, con provenienza e verifica mirata distinte.
+
+Motore,150rotaie,topologia,8scambi/WX310,R1,M1/M2/M3,Auth/Supabase/RLS/persistenza,asset e CSS frozen,workflow e dipendenze preservati;132file protetti byte-identici. Prove browser con bootstrap Auth solo locale; OAuth live, hardware fisico/altri browser e certificazione WCAG completa NOT VERIFIED. Produzione e PR #7 documentale non modificate.
+
+[Rapporto corrente](docs/_active/ui-v21/VISUAL_PARITY_REPORT.md), [galleria reference/prima/dopo/overlay/diff](docs/_active/ui-v21/evidence/VISUAL_PARITY/GALLERY.md), [stato UI](docs/_active/ui-v21/STATUS.md). Checkpoint applicativo e URL Draft nel rapporto; ultimo SHA documentale nella consegna e in `git log -1`.
+
+**Unica prossima azione: accettazione visiva indipendente della Regia sulla PR Draft. Nessun merge, deploy, workflow_dispatch o nuova fase eseguito/autorizzato dall’hotfix.**
+
+---
+
+## Registro precedente — storico; stato corrente sopra
 **5A, 5B, 5C e 5D concluse. Pubblicazione su main autorizzata dall’utente il 30 ottobre 2026. 5E non iniziata.**
 
 La richiesta del 30 ottobre ha autorizzato il completamento della 5D dal checkpoint pulito `5ae8ee9`. Controllato GitHub: `main` a `f582b12`, due commit di soli asset/file di sistema rispetto alla base pubblica, preservati. Repository `first` e `SerieN Control` non modificati.
@@ -434,3 +447,12 @@ U0–U9 e REL001/002 approvate dalla Regia; autorizzata soltanto preparazione PR
 PASS Node22.23.5/npm ci, 254 Node, 9 Python, canonico senza diff, build, ricetta REL002 esatta e identità completa dei 97 file/4.491.628 byte. Bundle U9 identico, 269 identità sorgenti/test/asset, domini M2/M3/R1 e Auth preservati con adapter di presentazione approvati distinti. HTTP: 97 risposte200 e 3.470 esclusioni404 attese. Scansione di 1.758 nuovi blob Git senza candidati ai pattern di credenziali. Browser/ferrovia U9 e REL002 riusati per identità, non rieseguiti indiscriminatamente.
 
 [Rapporto RC](docs/_active/ui-v21/RC_PREMERGE_REPORT.md), [evidenze](docs/_active/ui-v21/evidence/RC_PREMERGE/). **READY FOR REGIA MERGE REVIEW**, subordinato alla PR DRAFT e verifica HEAD/base nella consegna. NOT VERIFIED OAuth/cloud live, Pages pubblicata, hardware fisico e altri browser. Procedura post-deploy e rollback soltanto documentati. Il merge su main attiverà automaticamente Pages. **STOP dopo la PR: nessun auto-merge/merge/workflow_dispatch/deploy/nuova fase; serve autorizzazione esplicita Regia al merge.**
+## UI V2.1 — HUD/Camera mobile collision hotfix (2026-11-12)
+
+**PASS tecnico / REGIA REVIEW PENDING.** Autorizzata soltanto la rimozione del blocker della PR #8, dal checkpoint locale/remoto `6e62967356df836df27de59f352496511769d591` su `codex/ui-v21-visual-parity`. Riproduzione prima della modifica: HUD expanded copre Station, intersezione198×102,734375px. Coordinamento di sola presentazione tramite controllo HUD originale, ripristino coerente, precedenza all'espansione utente, Escape/focus/rotazione e cleanup; stesso warning motore mantenuto visibile fuori dal body temporaneamente minimizzato, con Bell/Guarded Stop originali.
+
+Nuovi254Node,9Python/JMRI,build e11gruppi browser PASS sul bundle definitivo: sei viewport richiesti,42misure camera/HUD/Bell tutte0px², click/preset e movimento camera reali,12cicli, occupazione, allarme sopraggiunto con View aperto, resize/orientation e pagehide con listener/observer rimossi. Nessuna mutazione ferroviaria nei segmenti UI. Desktop1692×877/tablet768×1024 con geometria/testi/stili identici; raster diagnostico non dichiarato pixel-perfect.132invarianti originali e138file protetti verificati, canonico immutato. Solo due file applicativi cambiati: `src/ui/overlays.js` e CSS di integrazione contestuale.
+
+Bundle1.092.265byte, SHA256 `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378`. [Rapporto aggiornato](docs/_active/ui-v21/VISUAL_PARITY_REPORT.md), [prove prima/dopo e regressione](docs/_active/ui-v21/evidence/HUD_CAMERA_HOTFIX/README.md). Checkpoint atomico/push normale sul solo branch autorizzato; SHA effettivo e coincidenza remota nella consegna. PR #8 Draft; main `d77b8aa2710fa474fdb069b204705364b4a9e7e6` e PR #7 `310f39f94448a30f986c5a1801400fa732b65a64` preservate. Nessun merge/deploy/Auth/Supabase/workflow o nuovo sviluppo. OAuth, dispositivi fisici, screen reader, altri browser e5E non attestati.
+
+**Unica prossima azione: revisione della Regia sul checkpoint correttivo. STOP; nessuna ripresa automatica del precedente mandato di rilascio.**

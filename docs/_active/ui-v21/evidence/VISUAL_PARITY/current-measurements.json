@@ -1,0 +1,3592 @@
+{
+  "mode": "current",
+  "viewports": [
+    {
+      "width": 1692,
+      "height": 877,
+      "screenshot": "current-1692x877.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1692,
+            "height": 877,
+            "scrollWidth": 1692,
+            "clientWidth": 1692,
+            "scrollHeight": 877,
+            "clientHeight": 877,
+            "padding": "12px",
+            "gap": "10px",
+            "display": "grid",
+            "gridRows": "64.8906px 612.109px 156px",
+            "background": "url(\"http://127.0.0.1:8040/current/ui/assets/textures/steel-brushed.jpg\"), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.024) 0px, rgba(255, 255, 255, 0.024) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 3px), radial-gradient(120% 90% at 30% 0px, rgb(44, 77, 64), rgb(19, 37, 25) 60%, rgb(8, 18, 13))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 1668,
+            "height": 64.890625,
+            "scrollWidth": 1668,
+            "clientWidth": 1668,
+            "scrollHeight": 65,
+            "clientHeight": 65,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 12,
+            "y": 86.890625,
+            "width": 1328,
+            "height": 612.109375,
+            "scrollWidth": 1328,
+            "clientWidth": 1328,
+            "scrollHeight": 612,
+            "clientHeight": 612,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 30,
+            "y": 104.890625,
+            "width": 1292,
+            "height": 576.109375,
+            "scrollWidth": 1292,
+            "clientWidth": 1292,
+            "scrollHeight": 576,
+            "clientHeight": 576,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "radial-gradient(120% 90% at 50% 45%, rgb(42, 52, 48), rgb(21, 27, 25) 70%, rgb(13, 17, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 1350,
+            "y": 86.890625,
+            "width": 330,
+            "height": 612.109375,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 612,
+            "clientHeight": 612,
+            "padding": "0px",
+            "gap": "9px",
+            "display": "grid",
+            "gridRows": "95px 291.109px 112px 87px",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "dock": [
+          {
+            "x": 12,
+            "y": 709,
+            "width": 1668,
+            "height": 156,
+            "scrollWidth": 1668,
+            "clientWidth": 1668,
+            "scrollHeight": 156,
+            "clientHeight": 156,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "environment": [
+          {
+            "x": 1350,
+            "y": 86.890625,
+            "width": 330,
+            "height": 95,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 95,
+            "clientHeight": 95,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "switches": [
+          {
+            "x": 1350,
+            "y": 190.890625,
+            "width": 330,
+            "height": 291.109375,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 291,
+            "clientHeight": 291,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "map": [
+          {
+            "x": 1350,
+            "y": 491,
+            "width": 330,
+            "height": 112,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 112,
+            "clientHeight": 112,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "missions": [
+          {
+            "x": 1350,
+            "y": 612,
+            "width": 330,
+            "height": 87,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 87,
+            "clientHeight": 87,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "cards": [
+          {
+            "x": 78,
+            "y": 721,
+            "width": 452,
+            "height": 132,
+            "scrollWidth": 452,
+            "clientWidth": 452,
+            "scrollHeight": 132,
+            "clientHeight": 132,
+            "padding": "6px 14px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 540,
+            "y": 721,
+            "width": 452,
+            "height": 132,
+            "scrollWidth": 452,
+            "clientWidth": 452,
+            "scrollHeight": 132,
+            "clientHeight": 132,
+            "padding": "6px 14px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 1002,
+            "y": 721,
+            "width": 452,
+            "height": 132,
+            "scrollWidth": 452,
+            "clientWidth": 452,
+            "scrollHeight": 132,
+            "clientHeight": 132,
+            "padding": "6px 14px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "hud": [
+          {
+            "x": 1060,
+            "y": 116.890625,
+            "width": 250,
+            "height": 44,
+            "scrollWidth": 250,
+            "clientWidth": 250,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 42,
+            "y": 609,
+            "width": 248.9375,
+            "height": 60,
+            "scrollWidth": 249,
+            "clientWidth": 249,
+            "scrollHeight": 60,
+            "clientHeight": 60,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 24,
+            "y": 25.4375,
+            "width": 199.265625,
+            "height": 38,
+            "scrollWidth": 199,
+            "clientWidth": 199,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px 44px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/current/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 239.265625,
+            "y": 21.4375,
+            "width": 254.25,
+            "height": 46,
+            "scrollWidth": 254,
+            "clientWidth": 254,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 34px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 42,
+            "y": 116.890625,
+            "width": 91.328125,
+            "height": 46,
+            "scrollWidth": 91,
+            "clientWidth": 91,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 1000,
+            "y": 620,
+            "width": 310,
+            "height": 49,
+            "scrollWidth": 310,
+            "clientWidth": 310,
+            "scrollHeight": 49,
+            "clientHeight": 49,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 92,
+            "y": 743,
+            "width": 88,
+            "height": 88,
+            "scrollWidth": 88,
+            "clientWidth": 88,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 554,
+            "y": 743,
+            "width": 88,
+            "height": 88,
+            "scrollWidth": 88,
+            "clientWidth": 88,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 1016,
+            "y": 743,
+            "width": 88,
+            "height": 88,
+            "scrollWidth": 88,
+            "clientWidth": 88,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 190,
+            "y": 763.796875,
+            "width": 286,
+            "height": 24,
+            "scrollWidth": 286,
+            "clientWidth": 286,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 652,
+            "y": 763.796875,
+            "width": 286,
+            "height": 24,
+            "scrollWidth": 286,
+            "clientWidth": 286,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 1114,
+            "y": 763.796875,
+            "width": 286,
+            "height": 24,
+            "scrollWidth": 286,
+            "clientWidth": 286,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          }
+        ],
+        "commands": [
+          {
+            "x": 190,
+            "y": 789.796875,
+            "width": 326,
+            "height": 36,
+            "scrollWidth": 326,
+            "clientWidth": 326,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 652,
+            "y": 789.796875,
+            "width": 326,
+            "height": 36,
+            "scrollWidth": 326,
+            "clientWidth": 326,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 1114,
+            "y": 789.796875,
+            "width": 326,
+            "height": 36,
+            "scrollWidth": 326,
+            "clientWidth": 326,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 877,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 1648,
+      "height": 895,
+      "screenshot": "current-1648x895.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1648,
+            "height": 895,
+            "scrollWidth": 1648,
+            "clientWidth": 1648,
+            "scrollHeight": 895,
+            "clientHeight": 895,
+            "padding": "12px",
+            "gap": "10px",
+            "display": "grid",
+            "gridRows": "66.2188px 628.781px 156px",
+            "background": "url(\"http://127.0.0.1:8040/current/ui/assets/textures/steel-brushed.jpg\"), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.024) 0px, rgba(255, 255, 255, 0.024) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 3px), radial-gradient(120% 90% at 30% 0px, rgb(44, 77, 64), rgb(19, 37, 25) 60%, rgb(8, 18, 13))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 1624,
+            "height": 66.21875,
+            "scrollWidth": 1624,
+            "clientWidth": 1624,
+            "scrollHeight": 66,
+            "clientHeight": 66,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 12,
+            "y": 88.21875,
+            "width": 1284,
+            "height": 628.78125,
+            "scrollWidth": 1284,
+            "clientWidth": 1284,
+            "scrollHeight": 629,
+            "clientHeight": 629,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 30,
+            "y": 106.21875,
+            "width": 1248,
+            "height": 592.78125,
+            "scrollWidth": 1248,
+            "clientWidth": 1248,
+            "scrollHeight": 593,
+            "clientHeight": 593,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "radial-gradient(120% 90% at 50% 45%, rgb(42, 52, 48), rgb(21, 27, 25) 70%, rgb(13, 17, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 1306,
+            "y": 88.21875,
+            "width": 330,
+            "height": 628.78125,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 629,
+            "clientHeight": 629,
+            "padding": "0px",
+            "gap": "9px",
+            "display": "grid",
+            "gridRows": "95px 307.781px 112px 87px",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "dock": [
+          {
+            "x": 12,
+            "y": 727,
+            "width": 1624,
+            "height": 156,
+            "scrollWidth": 1624,
+            "clientWidth": 1624,
+            "scrollHeight": 156,
+            "clientHeight": 156,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "environment": [
+          {
+            "x": 1306,
+            "y": 88.21875,
+            "width": 330,
+            "height": 95,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 95,
+            "clientHeight": 95,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "switches": [
+          {
+            "x": 1306,
+            "y": 192.21875,
+            "width": 330,
+            "height": 307.78125,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 308,
+            "clientHeight": 308,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "map": [
+          {
+            "x": 1306,
+            "y": 509,
+            "width": 330,
+            "height": 112,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 112,
+            "clientHeight": 112,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "missions": [
+          {
+            "x": 1306,
+            "y": 630,
+            "width": 330,
+            "height": 87,
+            "scrollWidth": 330,
+            "clientWidth": 330,
+            "scrollHeight": 87,
+            "clientHeight": 87,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "cards": [
+          {
+            "x": 78,
+            "y": 739,
+            "width": 437.328125,
+            "height": 132,
+            "scrollWidth": 437,
+            "clientWidth": 437,
+            "scrollHeight": 132,
+            "clientHeight": 132,
+            "padding": "6px 14px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 525.328125,
+            "y": 739,
+            "width": 437.34375,
+            "height": 132,
+            "scrollWidth": 437,
+            "clientWidth": 437,
+            "scrollHeight": 132,
+            "clientHeight": 132,
+            "padding": "6px 14px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 972.671875,
+            "y": 739,
+            "width": 437.328125,
+            "height": 132,
+            "scrollWidth": 437,
+            "clientWidth": 437,
+            "scrollHeight": 132,
+            "clientHeight": 132,
+            "padding": "6px 14px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "hud": [
+          {
+            "x": 1016,
+            "y": 118.21875,
+            "width": 250,
+            "height": 44,
+            "scrollWidth": 250,
+            "clientWidth": 250,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 42,
+            "y": 627,
+            "width": 248.9375,
+            "height": 60,
+            "scrollWidth": 249,
+            "clientWidth": 249,
+            "scrollHeight": 60,
+            "clientHeight": 60,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 24,
+            "y": 26.109375,
+            "width": 199.265625,
+            "height": 38,
+            "scrollWidth": 199,
+            "clientWidth": 199,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px 44px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/current/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 239.265625,
+            "y": 22.109375,
+            "width": 254.25,
+            "height": 46,
+            "scrollWidth": 254,
+            "clientWidth": 254,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 34px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 42,
+            "y": 118.21875,
+            "width": 91.328125,
+            "height": 46,
+            "scrollWidth": 91,
+            "clientWidth": 91,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 956,
+            "y": 638,
+            "width": 310,
+            "height": 49,
+            "scrollWidth": 310,
+            "clientWidth": 310,
+            "scrollHeight": 49,
+            "clientHeight": 49,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 92,
+            "y": 761,
+            "width": 88,
+            "height": 88,
+            "scrollWidth": 88,
+            "clientWidth": 88,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 539.328125,
+            "y": 761,
+            "width": 88,
+            "height": 88,
+            "scrollWidth": 88,
+            "clientWidth": 88,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 986.671875,
+            "y": 761,
+            "width": 88,
+            "height": 88,
+            "scrollWidth": 88,
+            "clientWidth": 88,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 190,
+            "y": 781.796875,
+            "width": 271.328125,
+            "height": 24,
+            "scrollWidth": 271,
+            "clientWidth": 271,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 637.328125,
+            "y": 781.796875,
+            "width": 271.34375,
+            "height": 24,
+            "scrollWidth": 271,
+            "clientWidth": 271,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 1084.671875,
+            "y": 781.796875,
+            "width": 271.328125,
+            "height": 24,
+            "scrollWidth": 271,
+            "clientWidth": 271,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          }
+        ],
+        "commands": [
+          {
+            "x": 190,
+            "y": 807.796875,
+            "width": 311.328125,
+            "height": 36,
+            "scrollWidth": 311,
+            "clientWidth": 311,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 637.328125,
+            "y": 807.796875,
+            "width": 311.34375,
+            "height": 36,
+            "scrollWidth": 311,
+            "clientWidth": 311,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 1084.671875,
+            "y": 807.796875,
+            "width": 311.328125,
+            "height": 36,
+            "scrollWidth": 311,
+            "clientWidth": 311,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 895,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "screenshot": "current-1440x900.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "scrollWidth": 1440,
+            "clientWidth": 1440,
+            "scrollHeight": 900,
+            "clientHeight": 900,
+            "padding": "12px",
+            "gap": "10px",
+            "display": "grid",
+            "gridRows": "66.5938px 633.406px 156px",
+            "background": "url(\"http://127.0.0.1:8040/current/ui/assets/textures/steel-brushed.jpg\"), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.024) 0px, rgba(255, 255, 255, 0.024) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 3px), radial-gradient(120% 90% at 30% 0px, rgb(44, 77, 64), rgb(19, 37, 25) 60%, rgb(8, 18, 13))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 1416,
+            "height": 66.59375,
+            "scrollWidth": 1416,
+            "clientWidth": 1416,
+            "scrollHeight": 67,
+            "clientHeight": 67,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 12,
+            "y": 88.59375,
+            "width": 1103.609375,
+            "height": 633.40625,
+            "scrollWidth": 1104,
+            "clientWidth": 1104,
+            "scrollHeight": 633,
+            "clientHeight": 633,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 30,
+            "y": 106.59375,
+            "width": 1067.609375,
+            "height": 597.40625,
+            "scrollWidth": 1068,
+            "clientWidth": 1068,
+            "scrollHeight": 597,
+            "clientHeight": 597,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "radial-gradient(120% 90% at 50% 45%, rgb(42, 52, 48), rgb(21, 27, 25) 70%, rgb(13, 17, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 1125.609375,
+            "y": 88.59375,
+            "width": 302.390625,
+            "height": 633.40625,
+            "scrollWidth": 302,
+            "clientWidth": 302,
+            "scrollHeight": 633,
+            "clientHeight": 633,
+            "padding": "0px",
+            "gap": "9px",
+            "display": "grid",
+            "gridRows": "95px 312.406px 112px 87px",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "dock": [
+          {
+            "x": 12,
+            "y": 732,
+            "width": 1416,
+            "height": 156,
+            "scrollWidth": 1416,
+            "clientWidth": 1416,
+            "scrollHeight": 156,
+            "clientHeight": 156,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "environment": [
+          {
+            "x": 1125.609375,
+            "y": 88.59375,
+            "width": 302.390625,
+            "height": 95,
+            "scrollWidth": 302,
+            "clientWidth": 302,
+            "scrollHeight": 95,
+            "clientHeight": 95,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "switches": [
+          {
+            "x": 1125.609375,
+            "y": 192.59375,
+            "width": 302.390625,
+            "height": 312.40625,
+            "scrollWidth": 302,
+            "clientWidth": 302,
+            "scrollHeight": 312,
+            "clientHeight": 312,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "map": [
+          {
+            "x": 1125.609375,
+            "y": 514,
+            "width": 302.390625,
+            "height": 112,
+            "scrollWidth": 302,
+            "clientWidth": 302,
+            "scrollHeight": 112,
+            "clientHeight": 112,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "missions": [
+          {
+            "x": 1125.609375,
+            "y": 635,
+            "width": 302.390625,
+            "height": 87,
+            "scrollWidth": 302,
+            "clientWidth": 302,
+            "scrollHeight": 87,
+            "clientHeight": 87,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "cards": [
+          {
+            "x": 78,
+            "y": 744,
+            "width": 368,
+            "height": 132,
+            "scrollWidth": 368,
+            "clientWidth": 368,
+            "scrollHeight": 132,
+            "clientHeight": 132,
+            "padding": "6px 14px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 456,
+            "y": 744,
+            "width": 368,
+            "height": 132,
+            "scrollWidth": 368,
+            "clientWidth": 368,
+            "scrollHeight": 132,
+            "clientHeight": 132,
+            "padding": "6px 14px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 834,
+            "y": 744,
+            "width": 368,
+            "height": 132,
+            "scrollWidth": 368,
+            "clientWidth": 368,
+            "scrollHeight": 132,
+            "clientHeight": 132,
+            "padding": "6px 14px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "hud": [
+          {
+            "x": 835.609375,
+            "y": 118.59375,
+            "width": 250,
+            "height": 44,
+            "scrollWidth": 250,
+            "clientWidth": 250,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 42,
+            "y": 632,
+            "width": 248.9375,
+            "height": 60,
+            "scrollWidth": 249,
+            "clientWidth": 249,
+            "scrollHeight": 60,
+            "clientHeight": 60,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 24,
+            "y": 26.296875,
+            "width": 199.265625,
+            "height": 38,
+            "scrollWidth": 199,
+            "clientWidth": 199,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px 44px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/current/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 239.265625,
+            "y": 22.296875,
+            "width": 254.25,
+            "height": 46,
+            "scrollWidth": 254,
+            "clientWidth": 254,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 34px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 42,
+            "y": 118.59375,
+            "width": 91.328125,
+            "height": 46,
+            "scrollWidth": 91,
+            "clientWidth": 91,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 775.609375,
+            "y": 643,
+            "width": 310,
+            "height": 49,
+            "scrollWidth": 310,
+            "clientWidth": 310,
+            "scrollHeight": 49,
+            "clientHeight": 49,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 92,
+            "y": 766,
+            "width": 88,
+            "height": 88,
+            "scrollWidth": 88,
+            "clientWidth": 88,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 470,
+            "y": 766,
+            "width": 88,
+            "height": 88,
+            "scrollWidth": 88,
+            "clientWidth": 88,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 848,
+            "y": 766,
+            "width": 88,
+            "height": 88,
+            "scrollWidth": 88,
+            "clientWidth": 88,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 190,
+            "y": 797.59375,
+            "width": 202,
+            "height": 24,
+            "scrollWidth": 202,
+            "clientWidth": 202,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 568,
+            "y": 786.796875,
+            "width": 202,
+            "height": 24,
+            "scrollWidth": 202,
+            "clientWidth": 202,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 946,
+            "y": 797.59375,
+            "width": 202,
+            "height": 24,
+            "scrollWidth": 202,
+            "clientWidth": 202,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          }
+        ],
+        "commands": [
+          {
+            "x": 190,
+            "y": 823.59375,
+            "width": 242,
+            "height": 36,
+            "scrollWidth": 242,
+            "clientWidth": 242,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 568,
+            "y": 812.796875,
+            "width": 242,
+            "height": 36,
+            "scrollWidth": 242,
+            "clientWidth": 242,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 946,
+            "y": 823.59375,
+            "width": 242,
+            "height": 36,
+            "scrollWidth": 242,
+            "clientWidth": 242,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 900,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "screenshot": "current-1366x768.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 768,
+            "scrollWidth": 1366,
+            "clientWidth": 1366,
+            "scrollHeight": 768,
+            "clientHeight": 768,
+            "padding": "12px",
+            "gap": "10px",
+            "display": "grid",
+            "gridRows": "58px 520px 146px",
+            "background": "url(\"http://127.0.0.1:8040/current/ui/assets/textures/steel-brushed.jpg\"), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.024) 0px, rgba(255, 255, 255, 0.024) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 3px), radial-gradient(120% 90% at 30% 0px, rgb(44, 77, 64), rgb(19, 37, 25) 60%, rgb(8, 18, 13))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 1342,
+            "height": 58,
+            "scrollWidth": 1342,
+            "clientWidth": 1342,
+            "scrollHeight": 58,
+            "clientHeight": 58,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 12,
+            "y": 80,
+            "width": 1045.140625,
+            "height": 520,
+            "scrollWidth": 1045,
+            "clientWidth": 1045,
+            "scrollHeight": 520,
+            "clientHeight": 520,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 30,
+            "y": 98,
+            "width": 1009.140625,
+            "height": 484,
+            "scrollWidth": 1009,
+            "clientWidth": 1009,
+            "scrollHeight": 484,
+            "clientHeight": 484,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "radial-gradient(120% 90% at 50% 45%, rgb(42, 52, 48), rgb(21, 27, 25) 70%, rgb(13, 17, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 1067.140625,
+            "y": 80,
+            "width": 286.859375,
+            "height": 520,
+            "scrollWidth": 287,
+            "clientWidth": 287,
+            "scrollHeight": 520,
+            "clientHeight": 520,
+            "padding": "0px",
+            "gap": "7px",
+            "display": "grid",
+            "gridRows": "88px 237px 96px 78px",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "dock": [
+          {
+            "x": 12,
+            "y": 610,
+            "width": 1342,
+            "height": 146,
+            "scrollWidth": 1342,
+            "clientWidth": 1342,
+            "scrollHeight": 146,
+            "clientHeight": 146,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "environment": [
+          {
+            "x": 1067.140625,
+            "y": 80,
+            "width": 286.859375,
+            "height": 88,
+            "scrollWidth": 287,
+            "clientWidth": 287,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "switches": [
+          {
+            "x": 1067.140625,
+            "y": 175,
+            "width": 286.859375,
+            "height": 237,
+            "scrollWidth": 287,
+            "clientWidth": 287,
+            "scrollHeight": 237,
+            "clientHeight": 237,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "map": [
+          {
+            "x": 1067.140625,
+            "y": 419,
+            "width": 286.859375,
+            "height": 96,
+            "scrollWidth": 287,
+            "clientWidth": 287,
+            "scrollHeight": 96,
+            "clientHeight": 96,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "missions": [
+          {
+            "x": 1067.140625,
+            "y": 522,
+            "width": 286.859375,
+            "height": 78,
+            "scrollWidth": 287,
+            "clientWidth": 287,
+            "scrollHeight": 78,
+            "clientHeight": 78,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "cards": [
+          {
+            "x": 78,
+            "y": 622,
+            "width": 343.328125,
+            "height": 122,
+            "scrollWidth": 343,
+            "clientWidth": 343,
+            "scrollHeight": 122,
+            "clientHeight": 122,
+            "padding": "6px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 431.328125,
+            "y": 622,
+            "width": 343.34375,
+            "height": 122,
+            "scrollWidth": 343,
+            "clientWidth": 343,
+            "scrollHeight": 122,
+            "clientHeight": 122,
+            "padding": "6px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 784.671875,
+            "y": 622,
+            "width": 343.328125,
+            "height": 122,
+            "scrollWidth": 343,
+            "clientWidth": 343,
+            "scrollHeight": 122,
+            "clientHeight": 122,
+            "padding": "6px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "hud": [
+          {
+            "x": 777.140625,
+            "y": 110,
+            "width": 250,
+            "height": 44,
+            "scrollWidth": 250,
+            "clientWidth": 250,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 42,
+            "y": 510,
+            "width": 248.9375,
+            "height": 60,
+            "scrollWidth": 249,
+            "clientWidth": 249,
+            "scrollHeight": 60,
+            "clientHeight": 60,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 24,
+            "y": 22,
+            "width": 199.265625,
+            "height": 38,
+            "scrollWidth": 199,
+            "clientWidth": 199,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px 44px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/current/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 239.265625,
+            "y": 18,
+            "width": 228.25,
+            "height": 46,
+            "scrollWidth": 228,
+            "clientWidth": 228,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 30px",
+            "gap": "12px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 42,
+            "y": 110,
+            "width": 91.328125,
+            "height": 46,
+            "scrollWidth": 91,
+            "clientWidth": 91,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 717.140625,
+            "y": 521,
+            "width": 310,
+            "height": 49,
+            "scrollWidth": 310,
+            "clientWidth": 310,
+            "scrollHeight": 49,
+            "clientHeight": 49,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 86,
+            "y": 648,
+            "width": 70,
+            "height": 70,
+            "scrollWidth": 70,
+            "clientWidth": 70,
+            "scrollHeight": 70,
+            "clientHeight": 70,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 439.328125,
+            "y": 648,
+            "width": 70,
+            "height": 70,
+            "scrollWidth": 70,
+            "clientWidth": 70,
+            "scrollHeight": 70,
+            "clientHeight": 70,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 792.671875,
+            "y": 648,
+            "width": 70,
+            "height": 70,
+            "scrollWidth": 70,
+            "clientWidth": 70,
+            "scrollHeight": 70,
+            "clientHeight": 70,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 162,
+            "y": 675.59375,
+            "width": 211.328125,
+            "height": 24,
+            "scrollWidth": 211,
+            "clientWidth": 211,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 515.328125,
+            "y": 664.796875,
+            "width": 211.34375,
+            "height": 24,
+            "scrollWidth": 211,
+            "clientWidth": 211,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 868.671875,
+            "y": 675.59375,
+            "width": 211.328125,
+            "height": 24,
+            "scrollWidth": 211,
+            "clientWidth": 211,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          }
+        ],
+        "commands": [
+          {
+            "x": 162,
+            "y": 701.59375,
+            "width": 251.328125,
+            "height": 36,
+            "scrollWidth": 251,
+            "clientWidth": 251,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 515.328125,
+            "y": 690.796875,
+            "width": 251.34375,
+            "height": 36,
+            "scrollWidth": 251,
+            "clientWidth": 251,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 868.671875,
+            "y": 701.59375,
+            "width": 251.328125,
+            "height": 36,
+            "scrollWidth": 251,
+            "clientWidth": 251,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 768,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "screenshot": "current-1024x768.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 768,
+            "scrollWidth": 1024,
+            "clientWidth": 1024,
+            "scrollHeight": 768,
+            "clientHeight": 768,
+            "padding": "12px",
+            "gap": "10px",
+            "display": "grid",
+            "gridRows": "58px 520px 146px",
+            "background": "url(\"http://127.0.0.1:8040/current/ui/assets/textures/steel-brushed.jpg\"), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.024) 0px, rgba(255, 255, 255, 0.024) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 3px), radial-gradient(120% 90% at 30% 0px, rgb(44, 77, 64), rgb(19, 37, 25) 60%, rgb(8, 18, 13))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 1000,
+            "height": 58,
+            "scrollWidth": 1000,
+            "clientWidth": 1000,
+            "scrollHeight": 58,
+            "clientHeight": 58,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 12,
+            "y": 80,
+            "width": 744.25,
+            "height": 520,
+            "scrollWidth": 744,
+            "clientWidth": 744,
+            "scrollHeight": 520,
+            "clientHeight": 520,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 30,
+            "y": 98,
+            "width": 708.25,
+            "height": 484,
+            "scrollWidth": 708,
+            "clientWidth": 708,
+            "scrollHeight": 484,
+            "clientHeight": 484,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "radial-gradient(120% 90% at 50% 45%, rgb(42, 52, 48), rgb(21, 27, 25) 70%, rgb(13, 17, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 766.25,
+            "y": 80,
+            "width": 245.75,
+            "height": 520,
+            "scrollWidth": 246,
+            "clientWidth": 246,
+            "scrollHeight": 520,
+            "clientHeight": 520,
+            "padding": "0px",
+            "gap": "7px",
+            "display": "grid",
+            "gridRows": "88px 237px 96px 78px",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "dock": [
+          {
+            "x": 12,
+            "y": 610,
+            "width": 1000,
+            "height": 146,
+            "scrollWidth": 1000,
+            "clientWidth": 1000,
+            "scrollHeight": 146,
+            "clientHeight": 146,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "environment": [
+          {
+            "x": 766.25,
+            "y": 80,
+            "width": 245.75,
+            "height": 88,
+            "scrollWidth": 246,
+            "clientWidth": 246,
+            "scrollHeight": 88,
+            "clientHeight": 88,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "switches": [
+          {
+            "x": 766.25,
+            "y": 175,
+            "width": 245.75,
+            "height": 237,
+            "scrollWidth": 246,
+            "clientWidth": 246,
+            "scrollHeight": 237,
+            "clientHeight": 237,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "map": [
+          {
+            "x": 766.25,
+            "y": 419,
+            "width": 245.75,
+            "height": 96,
+            "scrollWidth": 246,
+            "clientWidth": 246,
+            "scrollHeight": 96,
+            "clientHeight": 96,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "missions": [
+          {
+            "x": 766.25,
+            "y": 522,
+            "width": 245.75,
+            "height": 78,
+            "scrollWidth": 246,
+            "clientWidth": 246,
+            "scrollHeight": 78,
+            "clientHeight": 78,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "cards": [
+          {
+            "x": 78,
+            "y": 622,
+            "width": 349,
+            "height": 122,
+            "scrollWidth": 349,
+            "clientWidth": 349,
+            "scrollHeight": 122,
+            "clientHeight": 122,
+            "padding": "6px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 437,
+            "y": 622,
+            "width": 349,
+            "height": 122,
+            "scrollWidth": 349,
+            "clientWidth": 349,
+            "scrollHeight": 122,
+            "clientHeight": 122,
+            "padding": "6px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 796,
+            "y": 622,
+            "width": 349,
+            "height": 122,
+            "scrollWidth": 349,
+            "clientWidth": 349,
+            "scrollHeight": 122,
+            "clientHeight": 122,
+            "padding": "6px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "hud": [
+          {
+            "x": 476.25,
+            "y": 110,
+            "width": 250,
+            "height": 44,
+            "scrollWidth": 250,
+            "clientWidth": 250,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 42,
+            "y": 510,
+            "width": 248.9375,
+            "height": 60,
+            "scrollWidth": 249,
+            "clientWidth": 249,
+            "scrollHeight": 60,
+            "clientHeight": 60,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 24,
+            "y": 22,
+            "width": 149.125,
+            "height": 38,
+            "scrollWidth": 149,
+            "clientWidth": 149,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px 30px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/current/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 183.125,
+            "y": 18,
+            "width": 176.546875,
+            "height": 46,
+            "scrollWidth": 177,
+            "clientWidth": 177,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 26px",
+            "gap": "6px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 42,
+            "y": 110,
+            "width": 91.328125,
+            "height": 46,
+            "scrollWidth": 91,
+            "clientWidth": 91,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 466.25,
+            "y": 521,
+            "width": 260,
+            "height": 49,
+            "scrollWidth": 260,
+            "clientWidth": 260,
+            "scrollHeight": 49,
+            "clientHeight": 49,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 86,
+            "y": 648,
+            "width": 70,
+            "height": 70,
+            "scrollWidth": 70,
+            "clientWidth": 70,
+            "scrollHeight": 70,
+            "clientHeight": 70,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 445,
+            "y": 648,
+            "width": 70,
+            "height": 70,
+            "scrollWidth": 70,
+            "clientWidth": 70,
+            "scrollHeight": 70,
+            "clientHeight": 70,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 804,
+            "y": 648,
+            "width": 70,
+            "height": 70,
+            "scrollWidth": 70,
+            "clientWidth": 70,
+            "scrollHeight": 70,
+            "clientHeight": 70,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 162,
+            "y": 675.59375,
+            "width": 217,
+            "height": 24,
+            "scrollWidth": 217,
+            "clientWidth": 217,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 521,
+            "y": 664.796875,
+            "width": 217,
+            "height": 24,
+            "scrollWidth": 217,
+            "clientWidth": 217,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 880,
+            "y": 675.59375,
+            "width": 217,
+            "height": 24,
+            "scrollWidth": 217,
+            "clientWidth": 217,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          }
+        ],
+        "commands": [
+          {
+            "x": 162,
+            "y": 701.59375,
+            "width": 257,
+            "height": 36,
+            "scrollWidth": 257,
+            "clientWidth": 257,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 521,
+            "y": 690.796875,
+            "width": 257,
+            "height": 36,
+            "scrollWidth": 257,
+            "clientWidth": 257,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 880,
+            "y": 701.59375,
+            "width": 257,
+            "height": 36,
+            "scrollWidth": 257,
+            "clientWidth": 257,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 768,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "screenshot": "current-390x844.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 1514.234375,
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "scrollHeight": 1514,
+            "clientHeight": 1514,
+            "padding": "8px",
+            "gap": "8px",
+            "display": "grid",
+            "gridRows": "110px 388.234px 210px 714px 44px",
+            "background": "url(\"http://127.0.0.1:8040/current/ui/assets/textures/steel-brushed.jpg\"), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.024) 0px, rgba(255, 255, 255, 0.024) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 3px), radial-gradient(120% 90% at 30% 0px, rgb(44, 77, 64), rgb(19, 37, 25) 60%, rgb(8, 18, 13))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 8,
+            "y": 8,
+            "width": 374,
+            "height": 110,
+            "scrollWidth": 374,
+            "clientWidth": 374,
+            "scrollHeight": 110,
+            "clientHeight": 110,
+            "padding": "4px",
+            "gap": "6px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 8,
+            "y": 126,
+            "width": 374,
+            "height": 388.234375,
+            "scrollWidth": 374,
+            "clientWidth": 374,
+            "scrollHeight": 388,
+            "clientHeight": 388,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 20,
+            "y": 138,
+            "width": 350,
+            "height": 364.234375,
+            "scrollWidth": 350,
+            "clientWidth": 350,
+            "scrollHeight": 364,
+            "clientHeight": 364,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "radial-gradient(120% 90% at 50% 45%, rgb(42, 52, 48), rgb(21, 27, 25) 70%, rgb(13, 17, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 8,
+            "y": 740.234375,
+            "width": 374,
+            "height": 714,
+            "scrollWidth": 374,
+            "clientWidth": 374,
+            "scrollHeight": 714,
+            "clientHeight": 714,
+            "padding": "0px",
+            "gap": "8px",
+            "display": "grid",
+            "gridRows": "110px 310px 160px 110px",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "dock": [
+          {
+            "x": 8,
+            "y": 522.234375,
+            "width": 374,
+            "height": 210,
+            "scrollWidth": 374,
+            "clientWidth": 374,
+            "scrollHeight": 210,
+            "clientHeight": 210,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "environment": [
+          {
+            "x": 8,
+            "y": 740.234375,
+            "width": 374,
+            "height": 110,
+            "scrollWidth": 374,
+            "clientWidth": 374,
+            "scrollHeight": 110,
+            "clientHeight": 110,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "switches": [
+          {
+            "x": 8,
+            "y": 858.234375,
+            "width": 374,
+            "height": 310,
+            "scrollWidth": 374,
+            "clientWidth": 374,
+            "scrollHeight": 310,
+            "clientHeight": 310,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "map": [
+          {
+            "x": 8,
+            "y": 1176.234375,
+            "width": 374,
+            "height": 160,
+            "scrollWidth": 374,
+            "clientWidth": 374,
+            "scrollHeight": 160,
+            "clientHeight": 160,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "missions": [
+          {
+            "x": 8,
+            "y": 1344.234375,
+            "width": 374,
+            "height": 110,
+            "scrollWidth": 374,
+            "clientWidth": 374,
+            "scrollHeight": 110,
+            "clientHeight": 110,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "cards": [
+          {
+            "x": 52,
+            "y": 534.234375,
+            "width": 286,
+            "height": 134,
+            "scrollWidth": 286,
+            "clientWidth": 286,
+            "scrollHeight": 134,
+            "clientHeight": 134,
+            "padding": "5px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 348,
+            "y": 534.234375,
+            "width": 286,
+            "height": 134,
+            "scrollWidth": 286,
+            "clientWidth": 286,
+            "scrollHeight": 134,
+            "clientHeight": 134,
+            "padding": "5px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 644,
+            "y": 534.234375,
+            "width": 286,
+            "height": 134,
+            "scrollWidth": 286,
+            "clientWidth": 286,
+            "scrollHeight": 134,
+            "clientHeight": 134,
+            "padding": "5px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "hud": [
+          {
+            "x": 162,
+            "y": 146,
+            "width": 200,
+            "height": 46,
+            "scrollWidth": 200,
+            "clientWidth": 200,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 28,
+            "y": 440.234375,
+            "width": 198.9375,
+            "height": 54,
+            "scrollWidth": 199,
+            "clientWidth": 199,
+            "scrollHeight": 54,
+            "clientHeight": 54,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 32.828125,
+            "y": 22,
+            "width": 142.234375,
+            "height": 34,
+            "scrollWidth": 142,
+            "clientWidth": 142,
+            "scrollHeight": 34,
+            "clientHeight": 34,
+            "padding": "0px 30px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/current/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 185.0625,
+            "y": 20,
+            "width": 172.09375,
+            "height": 38,
+            "scrollWidth": 172,
+            "clientWidth": 172,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px 26px",
+            "gap": "6px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 28,
+            "y": 146,
+            "width": 80.40625,
+            "height": 50,
+            "scrollWidth": 80,
+            "clientWidth": 80,
+            "scrollHeight": 50,
+            "clientHeight": 50,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 255.125,
+            "y": 439.859375,
+            "width": 106.875,
+            "height": 54.375,
+            "scrollWidth": 107,
+            "clientWidth": 107,
+            "scrollHeight": 54,
+            "clientHeight": 54,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 60,
+            "y": 570.234375,
+            "width": 62,
+            "height": 62,
+            "scrollWidth": 62,
+            "clientWidth": 62,
+            "scrollHeight": 62,
+            "clientHeight": 62,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 356,
+            "y": 570.234375,
+            "width": 62,
+            "height": 62,
+            "scrollWidth": 62,
+            "clientWidth": 62,
+            "scrollHeight": 62,
+            "clientHeight": 62,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 652,
+            "y": 570.234375,
+            "width": 62,
+            "height": 62,
+            "scrollWidth": 62,
+            "clientWidth": 62,
+            "scrollHeight": 62,
+            "clientHeight": 62,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 127,
+            "y": 600.234375,
+            "width": 163,
+            "height": 24,
+            "scrollWidth": 163,
+            "clientWidth": 163,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 423,
+            "y": 600.234375,
+            "width": 163,
+            "height": 24,
+            "scrollWidth": 163,
+            "clientWidth": 163,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 719,
+            "y": 600.234375,
+            "width": 163,
+            "height": 24,
+            "scrollWidth": 163,
+            "clientWidth": 163,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          }
+        ],
+        "commands": [
+          {
+            "x": 127,
+            "y": 625.234375,
+            "width": 203,
+            "height": 38,
+            "scrollWidth": 203,
+            "clientWidth": 203,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 423,
+            "y": 625.234375,
+            "width": 203,
+            "height": 38,
+            "scrollWidth": 203,
+            "clientWidth": 203,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 719,
+            "y": 625.234375,
+            "width": 203,
+            "height": 38,
+            "scrollWidth": 203,
+            "clientWidth": 203,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 1514,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "screenshot": "current-768x1024.png",
+      "regions": {
+        "frame": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1032,
+            "scrollWidth": 768,
+            "clientWidth": 768,
+            "scrollHeight": 1032,
+            "clientHeight": 1032,
+            "padding": "12px",
+            "gap": "10px",
+            "display": "grid",
+            "gridRows": "72px 380px 360px 166px",
+            "background": "url(\"http://127.0.0.1:8040/current/ui/assets/textures/steel-brushed.jpg\"), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.024) 0px, rgba(255, 255, 255, 0.024) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 3px), radial-gradient(120% 90% at 30% 0px, rgb(44, 77, 64), rgb(19, 37, 25) 60%, rgb(8, 18, 13))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "header": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 744,
+            "height": 72,
+            "scrollWidth": 744,
+            "clientWidth": 744,
+            "scrollHeight": 72,
+            "clientHeight": 72,
+            "padding": "4px",
+            "gap": "12px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "viewport": [
+          {
+            "x": 12,
+            "y": 94,
+            "width": 744,
+            "height": 380,
+            "scrollWidth": 744,
+            "clientWidth": 744,
+            "scrollHeight": 380,
+            "clientHeight": 380,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "canvasViewport": [
+          {
+            "x": 30,
+            "y": 112,
+            "width": 708,
+            "height": 344,
+            "scrollWidth": 708,
+            "clientWidth": 708,
+            "scrollHeight": 344,
+            "clientHeight": 344,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "radial-gradient(120% 90% at 50% 45%, rgb(42, 52, 48), rgb(21, 27, 25) 70%, rgb(13, 17, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "sidebar": [
+          {
+            "x": 12,
+            "y": 484,
+            "width": 744,
+            "height": 360,
+            "scrollWidth": 744,
+            "clientWidth": 744,
+            "scrollHeight": 360,
+            "clientHeight": 360,
+            "padding": "0px",
+            "gap": "10px",
+            "display": "grid",
+            "gridRows": "95px 150px 95px",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "dock": [
+          {
+            "x": 12,
+            "y": 854,
+            "width": 744,
+            "height": 166,
+            "scrollWidth": 744,
+            "clientWidth": 744,
+            "scrollHeight": 166,
+            "clientHeight": 166,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "environment": [
+          {
+            "x": 12,
+            "y": 484,
+            "width": 367,
+            "height": 95,
+            "scrollWidth": 367,
+            "clientWidth": 367,
+            "scrollHeight": 95,
+            "clientHeight": 95,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "switches": [
+          {
+            "x": 389,
+            "y": 484,
+            "width": 367,
+            "height": 360,
+            "scrollWidth": 367,
+            "clientWidth": 367,
+            "scrollHeight": 360,
+            "clientHeight": 360,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "map": [
+          {
+            "x": 12,
+            "y": 589,
+            "width": 367,
+            "height": 150,
+            "scrollWidth": 367,
+            "clientWidth": 367,
+            "scrollHeight": 150,
+            "clientHeight": 150,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "missions": [
+          {
+            "x": 12,
+            "y": 749,
+            "width": 367,
+            "height": 95,
+            "scrollWidth": 367,
+            "clientWidth": 367,
+            "scrollHeight": 95,
+            "clientHeight": 95,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "cards": [
+          {
+            "x": 78,
+            "y": 866,
+            "width": 452,
+            "height": 142,
+            "scrollWidth": 452,
+            "clientWidth": 452,
+            "scrollHeight": 142,
+            "clientHeight": 142,
+            "padding": "6px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 540,
+            "y": 866,
+            "width": 452,
+            "height": 142,
+            "scrollWidth": 452,
+            "clientWidth": 452,
+            "scrollHeight": 142,
+            "clientHeight": 142,
+            "padding": "6px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 1002,
+            "y": 866,
+            "width": 452,
+            "height": 142,
+            "scrollWidth": 452,
+            "clientWidth": 452,
+            "scrollHeight": 142,
+            "clientHeight": 142,
+            "padding": "6px 8px",
+            "gap": "2px",
+            "display": "block",
+            "gridRows": "66px 22px 34px",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8040/current/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "hud": [
+          {
+            "x": 476,
+            "y": 124,
+            "width": 250,
+            "height": 44,
+            "scrollWidth": 250,
+            "clientWidth": 250,
+            "scrollHeight": 44,
+            "clientHeight": 44,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "camera": [
+          {
+            "x": 42,
+            "y": 384,
+            "width": 248.9375,
+            "height": 60,
+            "scrollWidth": 249,
+            "clientWidth": 249,
+            "scrollHeight": 60,
+            "clientHeight": 60,
+            "padding": "4px",
+            "gap": "0px",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "plaque": [
+          {
+            "x": 24,
+            "y": 29,
+            "width": 142.234375,
+            "height": 38,
+            "scrollWidth": 142,
+            "clientWidth": 142,
+            "scrollHeight": 38,
+            "clientHeight": 38,
+            "padding": "0px 30px",
+            "gap": "normal",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8040/current/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "edition": [
+          {
+            "x": 176.234375,
+            "y": 25,
+            "width": 176.546875,
+            "height": 46,
+            "scrollWidth": 177,
+            "clientWidth": 177,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "0px 26px",
+            "gap": "6px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "bell": [
+          {
+            "x": 42,
+            "y": 124,
+            "width": 91.328125,
+            "height": 46,
+            "scrollWidth": 91,
+            "clientWidth": 91,
+            "scrollHeight": 46,
+            "clientHeight": 46,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "log": [
+          {
+            "x": 466.09375,
+            "y": 395,
+            "width": 259.90625,
+            "height": 49,
+            "scrollWidth": 260,
+            "clientWidth": 260,
+            "scrollHeight": 49,
+            "clientHeight": 49,
+            "padding": "4px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8040/current/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+            "font": "12px / 15.6px Federo"
+          }
+        ],
+        "gauges": [
+          {
+            "x": 86,
+            "y": 902,
+            "width": 70,
+            "height": 70,
+            "scrollWidth": 70,
+            "clientWidth": 70,
+            "scrollHeight": 70,
+            "clientHeight": 70,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 548,
+            "y": 902,
+            "width": 70,
+            "height": 70,
+            "scrollWidth": 70,
+            "clientWidth": 70,
+            "scrollHeight": 70,
+            "clientHeight": 70,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 1010,
+            "y": 902,
+            "width": 70,
+            "height": 70,
+            "scrollWidth": 70,
+            "clientWidth": 70,
+            "scrollHeight": 70,
+            "clientHeight": 70,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ],
+        "throttles": [
+          {
+            "x": 162,
+            "y": 908.796875,
+            "width": 320,
+            "height": 24,
+            "scrollWidth": 320,
+            "clientWidth": 320,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 624,
+            "y": 908.796875,
+            "width": 320,
+            "height": 24,
+            "scrollWidth": 320,
+            "clientWidth": 320,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          },
+          {
+            "x": 1086,
+            "y": 908.796875,
+            "width": 320,
+            "height": 24,
+            "scrollWidth": 320,
+            "clientWidth": 320,
+            "scrollHeight": 24,
+            "clientHeight": 24,
+            "padding": "0px",
+            "gap": "normal",
+            "display": "block",
+            "gridRows": "none",
+            "background": "none",
+            "font": "9px Federo, Georgia, serif"
+          }
+        ],
+        "commands": [
+          {
+            "x": 162,
+            "y": 934.796875,
+            "width": 360,
+            "height": 36,
+            "scrollWidth": 360,
+            "clientWidth": 360,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 624,
+            "y": 934.796875,
+            "width": 360,
+            "height": 36,
+            "scrollWidth": 360,
+            "clientWidth": 360,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          },
+          {
+            "x": 1086,
+            "y": 934.796875,
+            "width": 360,
+            "height": 36,
+            "scrollWidth": 360,
+            "clientWidth": 360,
+            "scrollHeight": 36,
+            "clientHeight": 36,
+            "padding": "0px",
+            "gap": "4px",
+            "display": "flex",
+            "gridRows": "none",
+            "background": "none",
+            "font": "12px Federo, Georgia, serif"
+          }
+        ]
+      },
+      "overflow": false,
+      "bodyHeight": 1032,
+      "fonts": [
+        {
+          "family": "Cinzel Decorative",
+          "status": "loaded"
+        },
+        {
+          "family": "Federo",
+          "status": "loaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        }
+      ],
+      "canvas": 1
+    }
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "provenance": "Isolated original reference / actual runtime bundle with explicit local Auth bootstrap; no OAuth claim"
+}

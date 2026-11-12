@@ -1,0 +1,560 @@
+{
+  "status": "FAIL",
+  "productionBundleSHA256": "a2180267db62b7383390053fed8bb96811be930219fa231e0754d8772d726e82",
+  "observerSHA256": "0817b3dd4a4010a5d0104c5b5a98678300b2e6024a1f29783682fcb4a592b8ca",
+  "checks": [
+    "six-original-textures-HTTP200-hashes-and-computed-runtime-materials",
+    "seven-viewports-expanded-HUD-schematic-camera-popup-contained-and-real-canvas-reachable",
+    "real-daylight-presets-thresholds-secondary-settings-in-Menu-original-select-not-clone"
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "states": [
+    {
+      "state": "expanded-and-camera",
+      "viewport": [
+        1692,
+        877
+      ],
+      "hud": {
+        "x": 1060,
+        "y": 116.890625,
+        "width": 250,
+        "height": 208.96875,
+        "clientHeight": 209,
+        "scrollHeight": 209,
+        "padding": "4px"
+      },
+      "camera": {
+        "x": 42,
+        "y": 427,
+        "width": 390,
+        "height": 173,
+        "clientHeight": 169,
+        "scrollHeight": 169,
+        "padding": "12px"
+      },
+      "world": {
+        "x": 30,
+        "y": 104.890625,
+        "width": 1292,
+        "height": 576.109375,
+        "clientHeight": 576,
+        "scrollHeight": 576,
+        "padding": "0px"
+      }
+    },
+    {
+      "state": "expanded-and-camera",
+      "viewport": [
+        1648,
+        895
+      ],
+      "hud": {
+        "x": 1016,
+        "y": 118.21875,
+        "width": 250,
+        "height": 208.96875,
+        "clientHeight": 209,
+        "scrollHeight": 209,
+        "padding": "4px"
+      },
+      "camera": {
+        "x": 42,
+        "y": 445,
+        "width": 390,
+        "height": 173,
+        "clientHeight": 169,
+        "scrollHeight": 169,
+        "padding": "12px"
+      },
+      "world": {
+        "x": 30,
+        "y": 106.21875,
+        "width": 1248,
+        "height": 592.78125,
+        "clientHeight": 593,
+        "scrollHeight": 593,
+        "padding": "0px"
+      }
+    },
+    {
+      "state": "expanded-and-camera",
+      "viewport": [
+        1440,
+        900
+      ],
+      "hud": {
+        "x": 835.609375,
+        "y": 118.59375,
+        "width": 250,
+        "height": 208.96875,
+        "clientHeight": 209,
+        "scrollHeight": 209,
+        "padding": "4px"
+      },
+      "camera": {
+        "x": 42,
+        "y": 450,
+        "width": 390,
+        "height": 173,
+        "clientHeight": 169,
+        "scrollHeight": 169,
+        "padding": "12px"
+      },
+      "world": {
+        "x": 30,
+        "y": 106.59375,
+        "width": 1067.609375,
+        "height": 597.40625,
+        "clientHeight": 597,
+        "scrollHeight": 597,
+        "padding": "0px"
+      }
+    },
+    {
+      "state": "expanded-and-camera",
+      "viewport": [
+        1366,
+        768
+      ],
+      "hud": {
+        "x": 777.140625,
+        "y": 110,
+        "width": 250,
+        "height": 208.96875,
+        "clientHeight": 209,
+        "scrollHeight": 209,
+        "padding": "4px"
+      },
+      "camera": {
+        "x": 42,
+        "y": 328,
+        "width": 390,
+        "height": 173,
+        "clientHeight": 169,
+        "scrollHeight": 169,
+        "padding": "12px"
+      },
+      "world": {
+        "x": 30,
+        "y": 98,
+        "width": 1009.140625,
+        "height": 484,
+        "clientHeight": 484,
+        "scrollHeight": 484,
+        "padding": "0px"
+      }
+    },
+    {
+      "state": "expanded-and-camera",
+      "viewport": [
+        1024,
+        768
+      ],
+      "hud": {
+        "x": 476.25,
+        "y": 110,
+        "width": 250,
+        "height": 208.96875,
+        "clientHeight": 209,
+        "scrollHeight": 209,
+        "padding": "4px"
+      },
+      "camera": {
+        "x": 42,
+        "y": 328,
+        "width": 390,
+        "height": 173,
+        "clientHeight": 169,
+        "scrollHeight": 169,
+        "padding": "12px"
+      },
+      "world": {
+        "x": 30,
+        "y": 98,
+        "width": 708.25,
+        "height": 484,
+        "clientHeight": 484,
+        "scrollHeight": 484,
+        "padding": "0px"
+      }
+    },
+    {
+      "state": "expanded-and-camera",
+      "viewport": [
+        390,
+        844
+      ],
+      "hud": {
+        "x": 162,
+        "y": 142,
+        "width": 200,
+        "height": 200.96875,
+        "clientHeight": 201,
+        "scrollHeight": 201,
+        "padding": "4px"
+      },
+      "camera": {
+        "x": 28,
+        "y": 240.234375,
+        "width": 332,
+        "height": 188,
+        "clientHeight": 184,
+        "scrollHeight": 184,
+        "padding": "12px"
+      },
+      "world": {
+        "x": 20,
+        "y": 134,
+        "width": 350,
+        "height": 364.234375,
+        "clientHeight": 364,
+        "scrollHeight": 364,
+        "padding": "0px"
+      }
+    },
+    {
+      "state": "expanded-and-camera",
+      "viewport": [
+        768,
+        1024
+      ],
+      "hud": {
+        "x": 476,
+        "y": 124,
+        "width": 250,
+        "height": 208.96875,
+        "clientHeight": 209,
+        "scrollHeight": 209,
+        "padding": "4px"
+      },
+      "camera": {
+        "x": 42,
+        "y": 202,
+        "width": 390,
+        "height": 173,
+        "clientHeight": 169,
+        "scrollHeight": 169,
+        "padding": "12px"
+      },
+      "world": {
+        "x": 30,
+        "y": 112,
+        "width": 708,
+        "height": 344,
+        "clientHeight": 344,
+        "scrollHeight": 344,
+        "padding": "0px"
+      }
+    },
+    {
+      "state": "guard-warning",
+      "viewport": [
+        1692,
+        877
+      ],
+      "expanded": false,
+      "guard": {
+        "leadingExtent": 34.25,
+        "risk": "UNSAFE",
+        "reason": "misaligned",
+        "distance": 0.3708313333333229,
+        "boundary": {
+          "edge": "T47",
+          "from": 64.62083333333332,
+          "to": 0,
+          "distance": 0
+        },
+        "direction": -1,
+        "lookahead": 16.338751,
+        "stoppingDistance": 0,
+        "protectionInset": 30,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 100,
+        "requestedDelta": 0,
+        "probeDelta": null,
+        "probeKind": null
+      },
+      "warning": "BR 260: Approach blocked \u00b7 guarded stop \u00b7 UNSAFE \u00b7 misaligned"
+    },
+    {
+      "state": "guard-warning",
+      "viewport": [
+        1692,
+        877
+      ],
+      "expanded": true,
+      "guard": {
+        "leadingExtent": 34.25,
+        "risk": "UNSAFE",
+        "reason": "misaligned",
+        "distance": 0.3708313333333229,
+        "boundary": {
+          "edge": "T47",
+          "from": 64.62083333333332,
+          "to": 0,
+          "distance": 0
+        },
+        "direction": -1,
+        "lookahead": 16.338751,
+        "stoppingDistance": 0,
+        "protectionInset": 30,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 100,
+        "requestedDelta": 0,
+        "probeDelta": null,
+        "probeKind": null
+      },
+      "warning": "BR 260: Approach blocked \u00b7 guarded stop \u00b7 UNSAFE \u00b7 misaligned"
+    },
+    {
+      "state": "guard-warning",
+      "viewport": [
+        1024,
+        768
+      ],
+      "expanded": false,
+      "guard": {
+        "leadingExtent": 34.25,
+        "risk": "UNSAFE",
+        "reason": "misaligned",
+        "distance": 0.3708313333333229,
+        "boundary": {
+          "edge": "T47",
+          "from": 64.62083333333332,
+          "to": 0,
+          "distance": 0
+        },
+        "direction": -1,
+        "lookahead": 16.338751,
+        "stoppingDistance": 0,
+        "protectionInset": 30,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 100,
+        "requestedDelta": 0,
+        "probeDelta": null,
+        "probeKind": null
+      },
+      "warning": "BR 260: Approach blocked \u00b7 guarded stop \u00b7 UNSAFE \u00b7 misaligned"
+    },
+    {
+      "state": "guard-warning",
+      "viewport": [
+        1024,
+        768
+      ],
+      "expanded": true,
+      "guard": {
+        "leadingExtent": 34.25,
+        "risk": "UNSAFE",
+        "reason": "misaligned",
+        "distance": 0.3708313333333229,
+        "boundary": {
+          "edge": "T47",
+          "from": 64.62083333333332,
+          "to": 0,
+          "distance": 0
+        },
+        "direction": -1,
+        "lookahead": 16.338751,
+        "stoppingDistance": 0,
+        "protectionInset": 30,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 100,
+        "requestedDelta": 0,
+        "probeDelta": null,
+        "probeKind": null
+      },
+      "warning": "BR 260: Approach blocked \u00b7 guarded stop \u00b7 UNSAFE \u00b7 misaligned"
+    },
+    {
+      "state": "guard-warning",
+      "viewport": [
+        390,
+        844
+      ],
+      "expanded": false,
+      "guard": {
+        "leadingExtent": 34.25,
+        "risk": "UNSAFE",
+        "reason": "misaligned",
+        "distance": 0.3708313333333229,
+        "boundary": {
+          "edge": "T47",
+          "from": 64.62083333333332,
+          "to": 0,
+          "distance": 0
+        },
+        "direction": -1,
+        "lookahead": 16.338751,
+        "stoppingDistance": 0,
+        "protectionInset": 30,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 100,
+        "requestedDelta": 0,
+        "probeDelta": null,
+        "probeKind": null
+      },
+      "warning": "BR 260: Approach blocked \u00b7 guarded stop \u00b7 UNSAFE \u00b7 misaligned"
+    }
+  ],
+  "textures": [
+    {
+      "name": "brass-brushed",
+      "http": 200,
+      "sha256": "2f35a0f969fd1aeb3e93358940a404020ffd6e2c53c2ae0c1ff001a2c8c6e631"
+    },
+    {
+      "name": "brass-spun",
+      "http": 200,
+      "sha256": "5a200a54aac95ad2bd65e8cab36bbc0bc680a8aba8a11033581603c5e9bc7af6"
+    },
+    {
+      "name": "enamel-green",
+      "http": 200,
+      "sha256": "03706487306b7cd69c338536970c8a36df69c6fe1f5380034c6ad83d13b4395c"
+    },
+    {
+      "name": "mahogany",
+      "http": 200,
+      "sha256": "000a704061a15494fcaf4f52f1756eb37447172012618ff946b412dd846e2bf8"
+    },
+    {
+      "name": "parchment",
+      "http": 200,
+      "sha256": "a9019685edee996778070b9ba5833ba9df97c7ee94a6898383f063842362bee0"
+    },
+    {
+      "name": "steel-brushed",
+      "http": 200,
+      "sha256": "0ad568224698032f81d012151eb8451a8d306e73058dcff2a2053ed23155ac6d"
+    }
+  ],
+  "provenance": "Real current app with local Auth bootstrap. Observer exposes real app objects for isolated fault setup; no production Auth or visual snapshot substitute.",
+  "hudInitial": {
+    "#nextSwitchHUD": {
+      "x": 1060,
+      "y": 116.890625,
+      "width": 250,
+      "height": 44,
+      "clientHeight": 44,
+      "scrollHeight": 44,
+      "padding": "4px"
+    },
+    "#nextSwitchHUD>.mi": {
+      "x": 1064,
+      "y": 120.890625,
+      "width": 242,
+      "height": 36,
+      "clientHeight": 36,
+      "scrollHeight": 36,
+      "padding": "3px 18px"
+    },
+    ".nextSwitchHead": {
+      "x": 1082,
+      "y": 123.890625,
+      "width": 206,
+      "height": 30,
+      "clientHeight": 30,
+      "scrollHeight": 30,
+      "padding": "0px"
+    },
+    "#nextSwitchBody": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "clientHeight": 0,
+      "scrollHeight": 0,
+      "padding": "6px 0px 0px"
+    },
+    ".nextSwitchMinimize": {
+      "x": 1262,
+      "y": 125.890625,
+      "width": 26,
+      "height": 26,
+      "clientHeight": 26,
+      "scrollHeight": 26,
+      "padding": "0px"
+    }
+  },
+  "computedMaterials": {
+    ".app.st": [
+      {
+        "background": "url(\"http://127.0.0.1:8041/ui/assets/textures/steel-brushed.jpg\"), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.024) 0px, rgba(255, 255, 255, 0.024) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 3px), radial-gradient(120% 90% at 30% 0px, rgb(44, 77, 64), rgb(19, 37, 25) 60%, rgb(8, 18, 13))",
+        "href": null,
+        "font": "Federo, Georgia, serif"
+      }
+    ],
+    ".top>.mi": [
+      {
+        "background": "linear-gradient(rgba(4, 6, 9, 0.133), rgba(4, 6, 9, 0.133)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8041/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(31, 67, 55), rgb(15, 39, 31))",
+        "href": null,
+        "font": "Federo, Georgia, serif"
+      }
+    ],
+    ".plq": [
+      {
+        "background": "linear-gradient(rgba(4, 6, 9, 0.133), rgba(4, 6, 9, 0.133)), linear-gradient(rgba(255, 255, 255, 0.227), rgba(255, 255, 255, 0.05) 38%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.2)), linear-gradient(110deg, rgba(255, 255, 255, 0.133), rgba(0, 0, 0, 0) 30%), url(\"http://127.0.0.1:8041/ui/assets/textures/mahogany.jpg\"), linear-gradient(rgb(90, 38, 22), rgb(74, 30, 16))",
+        "href": null,
+        "font": "Federo, Georgia, serif"
+      }
+    ],
+    ".edp": [
+      {
+        "background": "linear-gradient(rgba(4, 6, 9, 0.133), rgba(4, 6, 9, 0.133)), url(\"http://127.0.0.1:8041/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "href": null,
+        "font": "Federo, Georgia, serif"
+      }
+    ],
+    ".m-env>.mi": [
+      {
+        "background": "linear-gradient(rgba(4, 6, 9, 0.133), rgba(4, 6, 9, 0.133)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8041/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(31, 67, 55), rgb(15, 39, 31))",
+        "href": null,
+        "font": "Federo, Georgia, serif"
+      }
+    ],
+    ".mapw": [
+      {
+        "background": "linear-gradient(rgba(255, 168, 74, 0.063), rgba(255, 168, 74, 0) 22%), linear-gradient(rgba(4, 6, 9, 0.035), rgba(4, 6, 9, 0.125)), radial-gradient(120% 100% at 50% 45%, rgba(0, 0, 0, 0) 55%, rgba(106, 74, 32, 0.44) 100%), url(\"http://127.0.0.1:8041/ui/assets/textures/parchment.jpg\")",
+        "href": null,
+        "font": "Federo, Georgia, serif"
+      }
+    ],
+    ".trainConsole": [
+      {
+        "background": "linear-gradient(rgba(4, 6, 9, 0.133), rgba(4, 6, 9, 0.133)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8041/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+        "href": null,
+        "font": "Federo, Georgia, serif"
+      },
+      {
+        "background": "linear-gradient(rgba(4, 6, 9, 0.133), rgba(4, 6, 9, 0.133)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8041/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+        "href": null,
+        "font": "Federo, Georgia, serif"
+      },
+      {
+        "background": "linear-gradient(rgba(4, 6, 9, 0.133), rgba(4, 6, 9, 0.133)), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.75'%3E%3Cstop offset='0' stop-color='%23fff7d6'/%3E%3Cstop offset='.4' stop-color='%23d9b45f'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='5.4' cy='5.5' r='4' fill='%23000' fill-opacity='.45'/%3E%3Ccircle cx='5' cy='5' r='4' fill='url(%23g)'/%3E%3C/svg%3E\"), url(\"http://127.0.0.1:8041/ui/assets/textures/enamel-green.jpg\"), linear-gradient(rgb(13, 35, 27), rgb(20, 52, 42))",
+        "href": null,
+        "font": "Federo, Georgia, serif"
+      }
+    ],
+    ".u5-gauge image": []
+  },
+  "failure": "Page.wait_for_function: Timeout 90000ms exceeded."
+}
