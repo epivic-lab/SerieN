@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "productionBundleUnchanged": "714aac5f7534702a96d01a347db25c1497739d1081af3f2ed6f702e9f2ddb7bd",
+  "CSSBeforeMissionFit": "0e7641095e48b6f7eea674e90ea6b976ca972576daf6dfe7af0574a1dda44f61",
+  "CSSFinal": "8b1a35a9fb1ae770507e17923981fcee2c012d24fb9015195d76d9ffde760b12",
+  "lastChange": "Only mission inline-size container and title/status/Next typography below 270px; no JavaScript or engine change",
+  "CSSDiff": [
+    "--- validated-before-mission-fit",
+    "+++ final",
+    "@@ -60,10 +60,13 @@",
+    " .app.st .u4-map-trains .bt{font:10px Federo;color:#3a2a17;text-align:left;padding:1px 3px;min-height:14px;background:none;box-shadow:none;letter-spacing:0}",
+    " .app.st .u4-map-trains .bt[aria-pressed=true]{background:#5a432526;box-shadow:inset 0 0 0 1px #5a432566}",
+    " .app.st .m-ms>.mi{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto;gap:3px 8px;align-content:center}",
+    "+.app.st .m-ms{container-type:inline-size}",
+    " .app.st .m-ms .sectionHeader{grid-column:1/-1;margin:0}",
+    " .app.st #missionName{font:700 13px/1.2 'Cinzel Decorative';color:var(--b1);margin:0}",
+    " .app.st #missionStatus{font:9px/1.3 'Cutive Mono';color:var(--dim);background:none;border:0;padding:0;margin:0;grid-column:1;overflow-wrap:anywhere}",
+    " .app.st #nextMission{grid-column:2;grid-row:2/4;width:auto;min-height:28px;font:10px Federo;padding:5px 8px}",
+    "+/* Full real mission titles/status must fit the 1024px sidebar too. */",
+    "+@container(max-width:270px){.app.st #missionName{font-size:11px;line-height:1.1}.app.st #missionStatus{font-size:8px;line-height:1.2}.app.st #nextMission{width:74px;font-size:9px;padding:4px;letter-spacing:0}}",
+    " ",
+    " /* The dock is one bounded row. Cards retain all callbacks, compatibility IDs,",
+    "    real gauges, thumbnails, map actions and four-train carousel semantics. */"
+  ],
+  "nativeSuiteViewportVerifiedUnaffected": {
+    "viewport": [
+      650,
+      700
+    ],
+    "missionWidth": 634,
+    "missionTitleFont": "13px"
+  },
+  "finalCSSChecks": "All 28 mission states and seven console/overflow cases plus full seven-viewport recapture"
+}

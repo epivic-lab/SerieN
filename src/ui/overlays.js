@@ -56,7 +56,9 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
     }
   });
   on(canvas, 'pointerdown', closeTools);
-  for (const id of ['viewZoomIn', 'viewZoomOut', 'viewHome']) primary.append(find(id));
+  for (const [id,icon,label] of [['viewZoomIn','zp','Zoom'],['viewZoomOut','zm','Zoom'],['viewHome','home','Recenter']]) {
+    const control=find(id);control.innerHTML=`<svg class="ic" aria-hidden="true"><use href="./ui/assets/svg/serien-sprite.svg#i-${icon}"/></svg><small>${label}</small>`;primary.append(control);
+  }
   primary.append(toggle, free);
   const select = find('cameraView');
   select.dataset.ctrl = 'CTRL-008';
@@ -98,6 +100,9 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   while (hud.firstChild) hudSurface.append(hud.firstChild);
   hud.append(hudSurface);
   hud.querySelector('button').classList.add('bt', 'd');
+  // Match the reference's compact initial HUD through its existing view action.
+  // Warning text remains in the original HUD and guarded-stop status surfaces.
+  if (!hud.classList.contains('has-warning') && !hud.classList.contains('is-minimized')) hud.querySelector('button').click();
   layer.append(hud);
 
   // Reuse the actual status and mute nodes; never derive hazards in this adapter.
@@ -130,8 +135,15 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   log.setAttribute('role', 'status');
   log.setAttribute('aria-live', 'polite');
   log.setAttribute('aria-atomic', 'true');
-  const logSurface = element('div', 'mi');
-  while (logPlate.firstChild) logSurface.append(logPlate.firstChild);
+  const logSurface = element('details', 'mi');
+  const logSummary=element('summary','','Operations log');
+  const logPreview=element('span','u3-log-preview');
+  logSummary.append(logPreview);logSurface.append(logSummary,log);
+  // The complete current engine message stays visible in the compact summary.
+  // Opening the disclosure also exposes the original diagnostic node verbatim.
+  const updateLog=()=>{logPreview.textContent=log.textContent;};updateLog();
+  const logObserver=new MutationObserver(updateLog);logObserver.observe(log,{childList:true,subtree:true,characterData:true});disposers.push(()=>logObserver.disconnect());
+  logPlate.replaceChildren();
   logPlate.append(logSurface);
   layer.append(logPlate);
 
@@ -144,6 +156,9 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
     bellMenu.textContent = muted ? 'Railway warning bell: muted' : 'Railway warning bell: on';
     bellMenu.setAttribute('aria-pressed', String(muted));
     status.classList.toggle('has-warning', !text.hidden);
+    const nextName=hud.querySelector('.nextSwitchName').textContent;
+    const heading=hud.querySelector('.nextSwitchHead>span:first-child');
+    if(heading.textContent!==nextName)heading.textContent=nextName;
     const preset = getCameraPreset();
     free.textContent = preset === 'manual' ? 'Free camera' : select.querySelector(`option[value="${preset}"]`)?.textContent ?? '';
     for (const button of presets.children) button.setAttribute('aria-pressed', String(button.dataset.preset === preset));

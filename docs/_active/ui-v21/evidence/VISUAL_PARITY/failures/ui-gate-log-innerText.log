@@ -1,0 +1,10 @@
+PASS six-original-textures-HTTP200-hashes-and-computed-runtime-materials
+PASS seven-viewports-expanded-HUD-schematic-camera-popup-contained-and-real-canvas-reachable
+PASS real-daylight-presets-thresholds-secondary-settings-in-Menu-original-select-not-clone
+PASS real-GUARDED_STOP-risk-visible-minimized-expanded-mobile-Bell-independent-from-UI-Sound
+PASS occupied-approaching-stale-history-UNKNOWN-and-braking-direction-real-engine-states-visible-and-fail-closed
+Traceback (most recent call last):
+  File "/workspace/work/visual-parity/tools/ui-gate.py", line 112, in <module>
+    assert p.locator('.u3-log-preview').inner_text()==p.locator('#log').inner_text()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
