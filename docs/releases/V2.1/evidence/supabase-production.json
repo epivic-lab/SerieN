@@ -1,0 +1,142 @@
+{
+  "window": {
+    "start": "2026-11-12T15:38:00Z",
+    "end": "2026-11-12T15:43:30Z"
+  },
+  "productionWorkflowRun": "97df5c95030348f5bb7ace0af2d16051",
+  "branch": "main",
+  "branchId": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+  "releaseSHA": "d77b8aa2710fa474fdb069b204705364b4a9e7e6",
+  "association": "Workflow logs identify production branch and project, not the SHA directly. GitHub Supabase check is attached to the exact merge SHA; main identity independently verified.",
+  "logs": [
+    {
+      "branch": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+      "event_message": "2026/11/12 15:39:45 INFO Cloning git repo... git_ref=main",
+      "timestamp": "2026-11-12T15:39:45.359306",
+      "workflow_run": "97df5c95030348f5bb7ace0af2d16051"
+    },
+    {
+      "branch": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+      "event_message": "2026/11/12 15:40:43 INFO Reading project config... project_ref=vehfrjgifzjjgamrgwze",
+      "timestamp": "2026-11-12T15:40:43.885973",
+      "workflow_run": "97df5c95030348f5bb7ace0af2d16051"
+    },
+    {
+      "branch": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+      "event_message": "2026/11/12 15:40:44 INFO Checking service health... project_ref=vehfrjgifzjjgamrgwze",
+      "timestamp": "2026-11-12T15:40:44.308819",
+      "workflow_run": "97df5c95030348f5bb7ace0af2d16051"
+    },
+    {
+      "branch": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+      "event_message": "2026/11/12 15:40:44 INFO Skipping configuration for protected branch...",
+      "timestamp": "2026-11-12T15:40:44.768405",
+      "workflow_run": "97df5c95030348f5bb7ace0af2d16051"
+    },
+    {
+      "branch": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+      "event_message": "2026/11/12 15:40:44 INFO Connecting to database... host=[DATABASE ENDPOINT REDACTED]",
+      "timestamp": "2026-11-12T15:40:44.768449",
+      "workflow_run": "97df5c95030348f5bb7ace0af2d16051"
+    },
+    {
+      "branch": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+      "event_message": "2026/11/12 15:40:45 INFO All migrations are up to date.",
+      "timestamp": "2026-11-12T15:40:45.548432",
+      "workflow_run": "97df5c95030348f5bb7ace0af2d16051"
+    },
+    {
+      "branch": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+      "event_message": "2026/11/12 15:40:45 INFO No buckets found. Try setting [storage.buckets.name] in config.toml.",
+      "timestamp": "2026-11-12T15:40:45.548654",
+      "workflow_run": "97df5c95030348f5bb7ace0af2d16051"
+    },
+    {
+      "branch": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+      "event_message": "2026/11/12 15:40:45 INFO Skipping seed data for protected branch...",
+      "timestamp": "2026-11-12T15:40:45.548779",
+      "workflow_run": "97df5c95030348f5bb7ace0af2d16051"
+    },
+    {
+      "branch": "e1607c94-3a6e-4b33-b49e-aa7438fc87bf",
+      "event_message": "2026/11/12 15:40:45 INFO No functions to deploy.",
+      "timestamp": "2026-11-12T15:40:45.598423",
+      "workflow_run": "97df5c95030348f5bb7ace0af2d16051"
+    }
+  ],
+  "checks": [
+    {
+      "id": 131294266368,
+      "name": "Supabase Preview",
+      "head_sha": "d77b8aa2710fa474fdb069b204705364b4a9e7e6",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-12T15:39:45Z",
+      "completed_at": "2026-11-12T15:40:45Z",
+      "app": "supabase",
+      "details_url": "https://supabase.com/dashboard/project/vehfrjgifzjjgamrgwze",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/epivic-lab/SerieN/check-runs/131294266368/annotations"
+      }
+    },
+    {
+      "id": 131292942015,
+      "name": "deploy",
+      "head_sha": "d77b8aa2710fa474fdb069b204705364b4a9e7e6",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-12T15:38:44Z",
+      "completed_at": "2026-11-12T15:39:43Z",
+      "app": "github-actions",
+      "details_url": "https://github.com/epivic-lab/SerieN/actions/runs/43250016350/job/131292942015",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 2,
+        "annotations_url": "https://api.github.com/repos/epivic-lab/SerieN/check-runs/131292942015/annotations"
+      }
+    }
+  ],
+  "finalHealth": {
+    "id": "vehfrjgifzjjgamrgwze",
+    "ref": "vehfrjgifzjjgamrgwze",
+    "organization_id": "ibdayhzicldukpyuobhp",
+    "organization_slug": "ibdayhzicldukpyuobhp",
+    "name": "SerieN",
+    "region": "eu-west-3",
+    "status": "ACTIVE_HEALTHY",
+    "database": {
+      "host": "db.vehfrjgifzjjgamrgwze.supabase.co",
+      "version": "17.11.0.003",
+      "postgres_engine": "17",
+      "release_channel": "ga"
+    },
+    "created_at": "2026-10-29T21:24:45.372863Z"
+  },
+  "migrations": {
+    "migrations": [
+      {
+        "version": "20261029230530",
+        "name": "serien_core_schema"
+      },
+      {
+        "version": "20261029230558",
+        "name": "serien_constraints_security"
+      },
+      {
+        "version": "20261105155420",
+        "name": "serien_verified_email_gate"
+      }
+    ]
+  },
+  "dataAPIReadOnly": [],
+  "authConfig": "NOT VERIFIED: no read-only management configuration tools or authenticated shared browser; direct project endpoint blocked by environment policy.",
+  "integrationConfig": "USER_VERIFIED: mandate and S3; no configuration changed",
+  "catalogBeforeAfter": "Exact semantic identity of approved catalog; no row data read",
+  "edgeFunctions": []
+}

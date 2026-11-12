@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "capturedAt": "2026-11-12T15:35:54.256659+00:00",
+  "base": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+  "head": "d99e4be117f4838ee6c149ad5c158f8688c40754",
+  "ahead": 26,
+  "behind": 0,
+  "changedFiles": 2354,
+  "mergeTree": "6e6703a6fac31aa58d076d81682ed2463847a32a",
+  "deliveryDocsOnly": true,
+  "supabaseAuthDependenciesUnchanged": true,
+  "u9IdenticalFiles": 269,
+  "artifact": {
+    "files": 97,
+    "bytes": 4491628,
+    "docs": 24,
+    "bundle": {
+      "bytes": 1088369,
+      "sha256": "11085af332a3636cb23e1bcca2b88d669dfd47942fedbff7c183203ce8b66bd2"
+    },
+    "exactManifestIdentity": true
+  },
+  "catalogIdenticalToHistoricalSnapshot": true,
+  "priorTestsReused": {
+    "node": 254,
+    "python": 9
+  },
+  "newBuildNode": "v24.19.0"
+}

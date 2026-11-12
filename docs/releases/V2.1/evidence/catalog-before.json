@@ -1,0 +1,4875 @@
+{
+  "columns": [
+    {
+      "acl": null,
+      "default": "'UNKNOWN'::text",
+      "generated": "",
+      "identity": "",
+      "name": "license_code",
+      "not_null": true,
+      "position": 14,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": "'draft'::text",
+      "generated": "",
+      "identity": "",
+      "name": "status",
+      "not_null": true,
+      "position": 4,
+      "schema": "public",
+      "table": "consists",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": "'pending'::text",
+      "generated": "",
+      "identity": "",
+      "name": "import_status",
+      "not_null": true,
+      "position": 16,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": "'{}'::jsonb",
+      "generated": "",
+      "identity": "",
+      "name": "journey_state",
+      "not_null": true,
+      "position": 7,
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "jsonb"
+    },
+    {
+      "acl": null,
+      "default": "'{}'::jsonb",
+      "generated": "",
+      "identity": "",
+      "name": "metadata",
+      "not_null": true,
+      "position": 17,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "jsonb"
+    },
+    {
+      "acl": null,
+      "default": "'{}'::jsonb",
+      "generated": "",
+      "identity": "",
+      "name": "metadata",
+      "not_null": true,
+      "position": 4,
+      "schema": "public",
+      "table": "layout_segments",
+      "type": "jsonb"
+    },
+    {
+      "acl": null,
+      "default": "'{}'::jsonb",
+      "generated": "",
+      "identity": "",
+      "name": "result",
+      "not_null": true,
+      "position": 5,
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "jsonb"
+    },
+    {
+      "acl": null,
+      "default": "'{}'::jsonb",
+      "generated": "",
+      "identity": "",
+      "name": "settings",
+      "not_null": true,
+      "position": 7,
+      "schema": "public",
+      "table": "stock_items",
+      "type": "jsonb"
+    },
+    {
+      "acl": null,
+      "default": "0",
+      "generated": "",
+      "identity": "",
+      "name": "revision",
+      "not_null": true,
+      "position": 5,
+      "schema": "public",
+      "table": "consists",
+      "type": "bigint"
+    },
+    {
+      "acl": null,
+      "default": "0",
+      "generated": "",
+      "identity": "",
+      "name": "state_version",
+      "not_null": true,
+      "position": 8,
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "bigint"
+    },
+    {
+      "acl": null,
+      "default": "1",
+      "generated": "",
+      "identity": "",
+      "name": "orientation",
+      "not_null": true,
+      "position": 5,
+      "schema": "public",
+      "table": "consist_members",
+      "type": "smallint"
+    },
+    {
+      "acl": null,
+      "default": "1",
+      "generated": "",
+      "identity": "",
+      "name": "orientation",
+      "not_null": true,
+      "position": 6,
+      "schema": "public",
+      "table": "consists",
+      "type": "smallint"
+    },
+    {
+      "acl": null,
+      "default": "1",
+      "generated": "",
+      "identity": "",
+      "name": "orientation",
+      "not_null": true,
+      "position": 6,
+      "schema": "public",
+      "table": "stock_items",
+      "type": "smallint"
+    },
+    {
+      "acl": null,
+      "default": "1",
+      "generated": "",
+      "identity": "",
+      "name": "schema_version",
+      "not_null": true,
+      "position": 5,
+      "schema": "public",
+      "table": "layouts",
+      "type": "integer"
+    },
+    {
+      "acl": null,
+      "default": "1",
+      "generated": "",
+      "identity": "",
+      "name": "snapshot_schema",
+      "not_null": true,
+      "position": 5,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "integer"
+    },
+    {
+      "acl": null,
+      "default": "160",
+      "generated": "",
+      "identity": "",
+      "name": "target_scale",
+      "not_null": true,
+      "position": 5,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "integer"
+    },
+    {
+      "acl": null,
+      "default": "auth.uid()",
+      "generated": "",
+      "identity": "",
+      "name": "owner_id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "auth.uid()",
+      "generated": "",
+      "identity": "",
+      "name": "owner_id",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "consist_members",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "auth.uid()",
+      "generated": "",
+      "identity": "",
+      "name": "owner_id",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "consists",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "auth.uid()",
+      "generated": "",
+      "identity": "",
+      "name": "owner_id",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "auth.uid()",
+      "generated": "",
+      "identity": "",
+      "name": "owner_id",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "auth.uid()",
+      "generated": "",
+      "identity": "",
+      "name": "owner_id",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "layouts",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "auth.uid()",
+      "generated": "",
+      "identity": "",
+      "name": "owner_id",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "auth.uid()",
+      "generated": "",
+      "identity": "",
+      "name": "owner_id",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "stock_items",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "gen_random_uuid()",
+      "generated": "",
+      "identity": "",
+      "name": "id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "consists",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "gen_random_uuid()",
+      "generated": "",
+      "identity": "",
+      "name": "id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "gen_random_uuid()",
+      "generated": "",
+      "identity": "",
+      "name": "id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "layouts",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "gen_random_uuid()",
+      "generated": "",
+      "identity": "",
+      "name": "id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "stock_items",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "gen_random_uuid()",
+      "generated": "",
+      "identity": "",
+      "name": "id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "created_at",
+      "not_null": true,
+      "position": 18,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "created_at",
+      "not_null": true,
+      "position": 2,
+      "schema": "serien_access",
+      "table": "allowed_emails",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "created_at",
+      "not_null": true,
+      "position": 6,
+      "schema": "public",
+      "table": "layouts",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "created_at",
+      "not_null": true,
+      "position": 6,
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "created_at",
+      "not_null": true,
+      "position": 7,
+      "schema": "public",
+      "table": "consists",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "created_at",
+      "not_null": true,
+      "position": 8,
+      "schema": "public",
+      "table": "stock_items",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "saved_at",
+      "not_null": true,
+      "position": 7,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "updated_at",
+      "not_null": true,
+      "position": 19,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "updated_at",
+      "not_null": true,
+      "position": 7,
+      "schema": "public",
+      "table": "layouts",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "updated_at",
+      "not_null": true,
+      "position": 7,
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "updated_at",
+      "not_null": true,
+      "position": 8,
+      "schema": "public",
+      "table": "consists",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "updated_at",
+      "not_null": true,
+      "position": 9,
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": "now()",
+      "generated": "",
+      "identity": "",
+      "name": "updated_at",
+      "not_null": true,
+      "position": 9,
+      "schema": "public",
+      "table": "stock_items",
+      "type": "timestamp with time zone"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "asset_uri",
+      "not_null": false,
+      "position": 11,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "consist_id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "consist_members",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "consist_id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "display_name",
+      "not_null": false,
+      "position": 5,
+      "schema": "public",
+      "table": "stock_items",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "edge_id",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "layout_segments",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "edge_id",
+      "not_null": true,
+      "position": 4,
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "edge_id",
+      "not_null": true,
+      "position": 4,
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "email",
+      "not_null": true,
+      "position": 1,
+      "schema": "serien_access",
+      "table": "allowed_emails",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "front_coupler_mm",
+      "not_null": false,
+      "position": 9,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "numeric(12,3)"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "heading",
+      "not_null": true,
+      "position": 6,
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "smallint"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "heading",
+      "not_null": true,
+      "position": 6,
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "smallint"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "height_mm",
+      "not_null": false,
+      "position": 8,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "numeric(12,3)"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "inventory_code",
+      "not_null": false,
+      "position": 4,
+      "schema": "public",
+      "table": "stock_items",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "kind",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "layout_id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "layout_segments",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "layout_id",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "layout_id",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "layout_id",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "length_mm",
+      "not_null": false,
+      "position": 6,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "numeric(12,3)"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "length_mm",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "layout_segments",
+      "type": "numeric(12,3)"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "model_id",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "stock_items",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "name",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "consists",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "name",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "layouts",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "name",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "op_type",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "ordinal",
+      "not_null": true,
+      "position": 4,
+      "schema": "public",
+      "table": "consist_members",
+      "type": "integer"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "payload",
+      "not_null": true,
+      "position": 6,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "jsonb"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "payload_digest",
+      "not_null": true,
+      "position": 4,
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "prototype",
+      "not_null": false,
+      "position": 4,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "rear_coupler_mm",
+      "not_null": false,
+      "position": 10,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "numeric(12,3)"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "request_id",
+      "not_null": true,
+      "position": 2,
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "revision",
+      "not_null": true,
+      "position": 4,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "bigint"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "s_mm",
+      "not_null": true,
+      "position": 5,
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "numeric(12,3)"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "s_mm",
+      "not_null": true,
+      "position": 5,
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "numeric(12,3)"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "source_format",
+      "not_null": false,
+      "position": 13,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "source_url",
+      "not_null": false,
+      "position": 15,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "stock_item_id",
+      "not_null": true,
+      "position": 1,
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "stock_item_id",
+      "not_null": true,
+      "position": 3,
+      "schema": "public",
+      "table": "consist_members",
+      "type": "uuid"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "thumbnail_uri",
+      "not_null": false,
+      "position": 12,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "topology_hash",
+      "not_null": true,
+      "position": 4,
+      "schema": "public",
+      "table": "layouts",
+      "type": "text"
+    },
+    {
+      "acl": null,
+      "default": null,
+      "generated": "",
+      "identity": "",
+      "name": "width_mm",
+      "not_null": false,
+      "position": 7,
+      "schema": "public",
+      "table": "stock_models",
+      "type": "numeric(12,3)"
+    }
+  ],
+  "constraints": [
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK (((email = lower(btrim(email))) AND (POSITION(('@'::text) IN (email)) > 1)))",
+      "name": "normalized_email",
+      "schema": "serien_access",
+      "table": "allowed_emails",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK (((length(TRIM(BOTH FROM name)) >= 1) AND (length(TRIM(BOTH FROM name)) <= 160)))",
+      "name": "consists_name_check",
+      "schema": "public",
+      "table": "consists",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK (((length(TRIM(BOTH FROM name)) >= 1) AND (length(TRIM(BOTH FROM name)) <= 160)))",
+      "name": "layouts_name_check",
+      "schema": "public",
+      "table": "layouts",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK (((length(TRIM(BOTH FROM name)) >= 1) AND (length(TRIM(BOTH FROM name)) <= 200)))",
+      "name": "stock_models_name_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK (((length(edge_id) >= 1) AND (length(edge_id) <= 120)))",
+      "name": "layout_segments_edge_id_check",
+      "schema": "public",
+      "table": "layout_segments",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK (((length(op_type) >= 1) AND (length(op_type) <= 120)))",
+      "name": "operation_receipts_op_type_check",
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK (((length(topology_hash) >= 32) AND (length(topology_hash) <= 128)))",
+      "name": "layouts_topology_hash_check",
+      "schema": "public",
+      "table": "layouts",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((front_coupler_mm >= (0)::numeric))",
+      "name": "stock_models_front_coupler_mm_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((heading = ANY (ARRAY['-1'::integer, 1])))",
+      "name": "layout_placements_heading_check",
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((heading = ANY (ARRAY['-1'::integer, 1])))",
+      "name": "loose_stock_placements_heading_check",
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((height_mm > (0)::numeric))",
+      "name": "stock_models_height_mm_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((import_status = ANY (ARRAY['pending'::text, 'verified'::text, 'converted'::text, 'blocked'::text, 'failed'::text])))",
+      "name": "stock_models_import_status_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((jsonb_typeof(journey_state) = 'object'::text))",
+      "name": "layout_placements_journey_state_check",
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((jsonb_typeof(metadata) = 'object'::text))",
+      "name": "layout_segments_metadata_check",
+      "schema": "public",
+      "table": "layout_segments",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((jsonb_typeof(metadata) = 'object'::text))",
+      "name": "stock_models_metadata_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((jsonb_typeof(payload) = 'object'::text))",
+      "name": "layout_snapshots_payload_check",
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((jsonb_typeof(result) = 'object'::text))",
+      "name": "operation_receipts_result_check",
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((jsonb_typeof(settings) = 'object'::text))",
+      "name": "stock_items_settings_check",
+      "schema": "public",
+      "table": "stock_items",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((kind = ANY (ARRAY['locomotive'::text, 'wagon'::text])))",
+      "name": "stock_models_kind_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((length_mm > (0)::numeric))",
+      "name": "layout_segments_length_mm_check",
+      "schema": "public",
+      "table": "layout_segments",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((length_mm > (0)::numeric))",
+      "name": "stock_models_length_mm_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((ordinal >= 0))",
+      "name": "consist_members_ordinal_check",
+      "schema": "public",
+      "table": "consist_members",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((orientation = ANY (ARRAY['-1'::integer, 1])))",
+      "name": "consist_members_orientation_check",
+      "schema": "public",
+      "table": "consist_members",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((orientation = ANY (ARRAY['-1'::integer, 1])))",
+      "name": "consists_orientation_check",
+      "schema": "public",
+      "table": "consists",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((orientation = ANY (ARRAY['-1'::integer, 1])))",
+      "name": "stock_items_orientation_check",
+      "schema": "public",
+      "table": "stock_items",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((payload_digest ~ '^[0-9a-f]{64}$'::text))",
+      "name": "operation_receipts_payload_digest_check",
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((rear_coupler_mm >= (0)::numeric))",
+      "name": "stock_models_rear_coupler_mm_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((revision >= 0))",
+      "name": "consists_revision_check",
+      "schema": "public",
+      "table": "consists",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((revision >= 0))",
+      "name": "layout_snapshots_revision_check",
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((s_mm >= (0)::numeric))",
+      "name": "layout_placements_s_mm_check",
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((s_mm >= (0)::numeric))",
+      "name": "loose_stock_placements_s_mm_check",
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((schema_version > 0))",
+      "name": "layouts_schema_version_check",
+      "schema": "public",
+      "table": "layouts",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((snapshot_schema > 0))",
+      "name": "layout_snapshots_snapshot_schema_check",
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((source_format = ANY (ARRAY['native'::text, 'glb'::text, 'gltf'::text, 'fbx'::text, 'obj'::text, 'zip'::text, 'other'::text])))",
+      "name": "stock_models_source_format_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((state_version >= 0))",
+      "name": "layout_placements_state_version_check",
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((status = ANY (ARRAY['draft'::text, 'ready'::text])))",
+      "name": "consists_status_check",
+      "schema": "public",
+      "table": "consists",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((target_scale > 0))",
+      "name": "stock_models_target_scale_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CHECK ((width_mm > (0)::numeric))",
+      "name": "stock_models_width_mm_check",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "c",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (consist_id, owner_id) REFERENCES consists(id, owner_id) ON DELETE CASCADE",
+      "name": "consist_members_consist_id_owner_id_fkey",
+      "schema": "public",
+      "table": "consist_members",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (consist_id, owner_id) REFERENCES consists(id, owner_id) ON DELETE CASCADE",
+      "name": "layout_placements_consist_id_owner_id_fkey",
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (layout_id) REFERENCES layouts(id) ON DELETE CASCADE",
+      "name": "layout_segments_layout_id_fkey",
+      "schema": "public",
+      "table": "layout_segments",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (layout_id, edge_id) REFERENCES layout_segments(layout_id, edge_id) ON DELETE RESTRICT",
+      "name": "layout_placements_layout_id_edge_id_fkey",
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (layout_id, edge_id) REFERENCES layout_segments(layout_id, edge_id) ON DELETE RESTRICT",
+      "name": "loose_stock_placements_layout_id_edge_id_fkey",
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (layout_id, owner_id) REFERENCES layouts(id, owner_id) ON DELETE CASCADE",
+      "name": "layout_placements_layout_id_owner_id_fkey",
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (layout_id, owner_id) REFERENCES layouts(id, owner_id) ON DELETE CASCADE",
+      "name": "layout_snapshots_layout_id_owner_id_fkey",
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (layout_id, owner_id) REFERENCES layouts(id, owner_id) ON DELETE CASCADE",
+      "name": "loose_stock_placements_layout_id_owner_id_fkey",
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (model_id) REFERENCES stock_models(id) ON DELETE RESTRICT",
+      "name": "stock_items_model_id_fkey",
+      "schema": "public",
+      "table": "stock_items",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+      "name": "consist_members_owner_id_fkey",
+      "schema": "public",
+      "table": "consist_members",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+      "name": "consists_owner_id_fkey",
+      "schema": "public",
+      "table": "consists",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+      "name": "layout_placements_owner_id_fkey",
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+      "name": "layout_snapshots_owner_id_fkey",
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+      "name": "layouts_owner_id_fkey",
+      "schema": "public",
+      "table": "layouts",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+      "name": "loose_stock_placements_owner_id_fkey",
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+      "name": "operation_receipts_owner_id_fkey",
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+      "name": "stock_items_owner_id_fkey",
+      "schema": "public",
+      "table": "stock_items",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (stock_item_id, owner_id) REFERENCES stock_items(id, owner_id) ON DELETE CASCADE",
+      "name": "loose_stock_placements_stock_item_id_owner_id_fkey",
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "FOREIGN KEY (stock_item_id, owner_id) REFERENCES stock_items(id, owner_id) ON DELETE RESTRICT",
+      "name": "consist_members_stock_item_id_owner_id_fkey",
+      "schema": "public",
+      "table": "consist_members",
+      "type": "f",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (consist_id)",
+      "name": "layout_placements_pkey",
+      "schema": "public",
+      "table": "layout_placements",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (consist_id, stock_item_id)",
+      "name": "consist_members_pkey",
+      "schema": "public",
+      "table": "consist_members",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (email)",
+      "name": "allowed_emails_pkey",
+      "schema": "serien_access",
+      "table": "allowed_emails",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (id)",
+      "name": "consists_pkey",
+      "schema": "public",
+      "table": "consists",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (id)",
+      "name": "layout_snapshots_pkey",
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (id)",
+      "name": "layouts_pkey",
+      "schema": "public",
+      "table": "layouts",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (id)",
+      "name": "stock_items_pkey",
+      "schema": "public",
+      "table": "stock_items",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (id)",
+      "name": "stock_models_pkey",
+      "schema": "public",
+      "table": "stock_models",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (layout_id, edge_id)",
+      "name": "layout_segments_pkey",
+      "schema": "public",
+      "table": "layout_segments",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (owner_id, request_id)",
+      "name": "operation_receipts_pkey",
+      "schema": "public",
+      "table": "operation_receipts",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "PRIMARY KEY (stock_item_id)",
+      "name": "loose_stock_placements_pkey",
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "type": "p",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "UNIQUE (consist_id, ordinal)",
+      "name": "consist_members_consist_id_ordinal_key",
+      "schema": "public",
+      "table": "consist_members",
+      "type": "u",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "UNIQUE (id, owner_id)",
+      "name": "consists_id_owner_id_key",
+      "schema": "public",
+      "table": "consists",
+      "type": "u",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "UNIQUE (id, owner_id)",
+      "name": "layouts_id_owner_id_key",
+      "schema": "public",
+      "table": "layouts",
+      "type": "u",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "UNIQUE (id, owner_id)",
+      "name": "stock_items_id_owner_id_key",
+      "schema": "public",
+      "table": "stock_items",
+      "type": "u",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "UNIQUE (layout_id, revision)",
+      "name": "layout_snapshots_layout_id_revision_key",
+      "schema": "public",
+      "table": "layout_snapshots",
+      "type": "u",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "UNIQUE (owner_id, inventory_code)",
+      "name": "stock_items_owner_id_inventory_code_key",
+      "schema": "public",
+      "table": "stock_items",
+      "type": "u",
+      "validated": true
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "UNIQUE (stock_item_id)",
+      "name": "consist_members_stock_item_id_key",
+      "schema": "public",
+      "table": "consist_members",
+      "type": "u",
+      "validated": true
+    },
+    {
+      "deferrable": true,
+      "deferred": true,
+      "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED",
+      "name": "consists_ready_at_commit",
+      "schema": "public",
+      "table": "consists",
+      "type": "t",
+      "validated": true
+    },
+    {
+      "deferrable": true,
+      "deferred": true,
+      "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED",
+      "name": "members_ready_at_commit",
+      "schema": "public",
+      "table": "consist_members",
+      "type": "t",
+      "validated": true
+    }
+  ],
+  "custom_roles": null,
+  "custom_schemas": [
+    "serien_access",
+    "serien_internal"
+  ],
+  "default_privileges": [
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "creator": "postgres",
+      "schema": "public",
+      "type": "r"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "creator": "postgres",
+      "schema": "public",
+      "type": "f"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "postgres",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "USAGE"
+        }
+      ],
+      "creator": "postgres",
+      "schema": "public",
+      "type": "S"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "UPDATE"
+        }
+      ],
+      "creator": "supabase_admin",
+      "schema": "public",
+      "type": "r"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "EXECUTE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "EXECUTE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "EXECUTE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "creator": "supabase_admin",
+      "schema": "public",
+      "type": "f"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "supabase_admin",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "supabase_admin",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "supabase_admin",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "supabase_admin",
+          "privilege": "USAGE"
+        }
+      ],
+      "creator": "supabase_admin",
+      "schema": "public",
+      "type": "S"
+    }
+  ],
+  "effective_privileges": [
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "consist_members",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "consists",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "layout_placements",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "layout_segments",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "layout_snapshots",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "layouts",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "loose_stock_placements",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "operation_receipts",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "stock_items",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "public",
+      "select": false,
+      "table": "stock_models",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "anon",
+      "schema": "serien_access",
+      "select": false,
+      "table": "allowed_emails",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "consist_members",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "consists",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "layout_placements",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "layout_segments",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "layout_snapshots",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "layouts",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "loose_stock_placements",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "operation_receipts",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "stock_items",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "public",
+      "select": false,
+      "table": "stock_models",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "authenticated",
+      "schema": "serien_access",
+      "select": false,
+      "table": "allowed_emails",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": false,
+      "delete": false,
+      "insert": false,
+      "role": "service_role",
+      "schema": "serien_access",
+      "select": false,
+      "table": "allowed_emails",
+      "truncate": false,
+      "update": false
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "consist_members",
+      "truncate": true,
+      "update": true
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "consists",
+      "truncate": true,
+      "update": true
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "layout_placements",
+      "truncate": true,
+      "update": true
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "layout_segments",
+      "truncate": true,
+      "update": true
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "layout_snapshots",
+      "truncate": true,
+      "update": true
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "layouts",
+      "truncate": true,
+      "update": true
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "loose_stock_placements",
+      "truncate": true,
+      "update": true
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "operation_receipts",
+      "truncate": true,
+      "update": true
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "stock_items",
+      "truncate": true,
+      "update": true
+    },
+    {
+      "column_access": true,
+      "delete": true,
+      "insert": true,
+      "role": "service_role",
+      "schema": "public",
+      "select": true,
+      "table": "stock_models",
+      "truncate": true,
+      "update": true
+    }
+  ],
+  "functions": [
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "sql",
+      "leakproof": false,
+      "name": "serien_access_allowed",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "boolean",
+      "schema": "public",
+      "security_definer": true,
+      "source": "\n  SELECT EXISTS (\n    SELECT 1 FROM auth.users AS u\n      JOIN serien_access.allowed_emails AS a\n      ON a.email = lower(btrim(u.email))\n    WHERE u.id = (SELECT auth.uid())\n      AND u.email IS NOT NULL\n      AND u.email_confirmed_at IS NOT NULL\n  )\n",
+      "strict": false,
+      "volatility": "s"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "leakproof": false,
+      "name": "check_loose_assignment",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "trigger",
+      "schema": "serien_internal",
+      "security_definer": false,
+      "source": "\nbegin\n perform 1 from public.stock_items where id=new.stock_item_id for update;\n if exists(select 1 from public.consist_members where stock_item_id=new.stock_item_id) then raise exception 'Item already in consist' using errcode='23514';end if;\n return new;\nend;",
+      "strict": false,
+      "volatility": "v"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "leakproof": false,
+      "name": "check_member_assignment",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "trigger",
+      "schema": "serien_internal",
+      "security_definer": false,
+      "source": "\ndeclare v_kind text;\nbegin\n perform 1 from public.stock_items where id=new.stock_item_id for update;\n if exists(select 1 from public.loose_stock_placements where stock_item_id=new.stock_item_id) then raise exception 'Item already loose on track' using errcode='23514';end if;\n select m.kind into v_kind from public.stock_items i join public.stock_models m on m.id=i.model_id where i.id=new.stock_item_id;\n if v_kind is null then raise exception 'Unknown item' using errcode='23503';end if;\n if (new.ordinal=0 and v_kind<>'locomotive') or (new.ordinal>0 and v_kind<>'wagon') then raise exception 'First member must be locomotive; others wagons' using errcode='23514';end if;\n return new;\nend;",
+      "strict": false,
+      "volatility": "v"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "leakproof": false,
+      "name": "check_placement",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "trigger",
+      "schema": "serien_internal",
+      "security_definer": false,
+      "source": "\ndeclare v_length numeric;v_status text;\nbegin\n select length_mm into v_length from public.layout_segments where layout_id=new.layout_id and edge_id=new.edge_id;\n if v_length is null or new.s_mm>v_length then raise exception 'Invalid track location' using errcode='23514';end if;\n if tg_table_name='layout_placements' then\n select status into v_status from public.consists where id=new.consist_id;\n if v_status<>'ready' then raise exception 'Only ready consists may be placed' using errcode='23514';end if;\n end if;\n return new;\nend;",
+      "strict": false,
+      "volatility": "v"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "leakproof": false,
+      "name": "check_ready_consist",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "trigger",
+      "schema": "serien_internal",
+      "security_definer": false,
+      "source": "\nbegin perform serien_internal.assert_ready_consist(new.id);return null;end;",
+      "strict": false,
+      "volatility": "v"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "leakproof": false,
+      "name": "check_ready_members",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "trigger",
+      "schema": "serien_internal",
+      "security_definer": false,
+      "source": "\nbegin\n if tg_op='UPDATE' and new.consist_id is distinct from old.consist_id then perform serien_internal.assert_ready_consist(old.consist_id);end if;\n perform serien_internal.assert_ready_consist(case when tg_op='DELETE' then old.consist_id else new.consist_id end);\n return null;\nend;",
+      "strict": false,
+      "volatility": "v"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "leakproof": false,
+      "name": "check_snapshot",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "trigger",
+      "schema": "serien_internal",
+      "security_definer": false,
+      "source": "\ndeclare v_hash text;v_switches jsonb;v_name text;v_count int;\nbegin\n select topology_hash into v_hash from public.layouts where id=new.layout_id;\n if new.payload->>'topologyHash' is distinct from v_hash then raise exception 'Layout hash mismatch' using errcode='23514';end if;\n if new.payload->>'resumePolicy' is distinct from 'STOPPED' then raise exception 'Resume policy must be STOPPED' using errcode='23514';end if;\n v_switches=new.payload#>'{layout,switches}';\n if jsonb_typeof(v_switches)='object' then select count(*) into v_count from jsonb_object_keys(v_switches);else v_count=0;end if;\n if v_count<>8 then raise exception 'Eight switches required' using errcode='23514';end if;\n foreach v_name in array array['WX-A','WX-B','Y-IN','Y-2','Y-3','Y-R1','Y-R2','Y-4'] loop\n if jsonb_typeof(v_switches->v_name) is distinct from 'boolean' then raise exception 'Invalid switch: %',v_name using errcode='23514';end if;\n end loop;\n return new;\nend;",
+      "strict": false,
+      "volatility": "v"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "leakproof": false,
+      "name": "lock_model_identity",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "trigger",
+      "schema": "serien_internal",
+      "security_definer": false,
+      "source": "\nbegin if old.kind is distinct from new.kind and exists(select 1 from public.stock_items where model_id=old.id) then raise exception 'Cannot change model kind when in inventory' using errcode='23514';end if;return new;end;",
+      "strict": false,
+      "volatility": "v"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "leakproof": false,
+      "name": "touch_updated_at",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "trigger",
+      "schema": "serien_internal",
+      "security_definer": false,
+      "source": "\nbegin new.updated_at=now();return new;end; ",
+      "strict": false,
+      "volatility": "v"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "EXECUTE"
+        }
+      ],
+      "arguments": "p_id uuid",
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "leakproof": false,
+      "name": "assert_ready_consist",
+      "owner": "postgres",
+      "parallel": "u",
+      "result": "void",
+      "schema": "serien_internal",
+      "security_definer": false,
+      "source": "\ndeclare v_status text; v_total bigint; v_min integer; v_max integer;\nbegin\n select status into v_status from public.consists where id=p_id;\n if v_status is distinct from 'ready' then return;end if;\n select count(*),min(ordinal),max(ordinal) into v_total,v_min,v_max from public.consist_members where consist_id=p_id;\n if v_total=0 or v_min<>0 or v_max<>v_total-1 then raise exception 'Ready consist needs consecutive ordinal positions from zero' using errcode='23514';end if;\nend;",
+      "strict": false,
+      "volatility": "v"
+    }
+  ],
+  "indexes": [
+    {
+      "definition": "CREATE INDEX consist_members_owner_idx ON public.consist_members USING btree (owner_id)",
+      "name": "consist_members_owner_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "consist_members",
+      "valid": true
+    },
+    {
+      "definition": "CREATE INDEX consist_members_stock_owner_idx ON public.consist_members USING btree (stock_item_id, owner_id)",
+      "name": "consist_members_stock_owner_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "consist_members",
+      "valid": true
+    },
+    {
+      "definition": "CREATE INDEX consists_owner_idx ON public.consists USING btree (owner_id)",
+      "name": "consists_owner_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "consists",
+      "valid": true
+    },
+    {
+      "definition": "CREATE INDEX layout_placements_layout_owner_idx ON public.layout_placements USING btree (layout_id, owner_id)",
+      "name": "layout_placements_layout_owner_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "layout_placements",
+      "valid": true
+    },
+    {
+      "definition": "CREATE INDEX layout_snapshots_recent_idx ON public.layout_snapshots USING btree (layout_id, saved_at DESC)",
+      "name": "layout_snapshots_recent_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "valid": true
+    },
+    {
+      "definition": "CREATE INDEX layouts_owner_idx ON public.layouts USING btree (owner_id)",
+      "name": "layouts_owner_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "layouts",
+      "valid": true
+    },
+    {
+      "definition": "CREATE INDEX loose_stock_layout_owner_idx ON public.loose_stock_placements USING btree (layout_id, owner_id)",
+      "name": "loose_stock_layout_owner_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "valid": true
+    },
+    {
+      "definition": "CREATE INDEX operation_receipts_recent_idx ON public.operation_receipts USING btree (owner_id, created_at DESC)",
+      "name": "operation_receipts_recent_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "operation_receipts",
+      "valid": true
+    },
+    {
+      "definition": "CREATE INDEX stock_items_model_idx ON public.stock_items USING btree (model_id)",
+      "name": "stock_items_model_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "stock_items",
+      "valid": true
+    },
+    {
+      "definition": "CREATE INDEX stock_items_owner_idx ON public.stock_items USING btree (owner_id)",
+      "name": "stock_items_owner_idx",
+      "ready": true,
+      "schema": "public",
+      "table": "stock_items",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX allowed_emails_pkey ON serien_access.allowed_emails USING btree (email)",
+      "name": "allowed_emails_pkey",
+      "ready": true,
+      "schema": "serien_access",
+      "table": "allowed_emails",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX consist_members_consist_id_ordinal_key ON public.consist_members USING btree (consist_id, ordinal)",
+      "name": "consist_members_consist_id_ordinal_key",
+      "ready": true,
+      "schema": "public",
+      "table": "consist_members",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX consist_members_pkey ON public.consist_members USING btree (consist_id, stock_item_id)",
+      "name": "consist_members_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "consist_members",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX consist_members_stock_item_id_key ON public.consist_members USING btree (stock_item_id)",
+      "name": "consist_members_stock_item_id_key",
+      "ready": true,
+      "schema": "public",
+      "table": "consist_members",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX consists_id_owner_id_key ON public.consists USING btree (id, owner_id)",
+      "name": "consists_id_owner_id_key",
+      "ready": true,
+      "schema": "public",
+      "table": "consists",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX consists_pkey ON public.consists USING btree (id)",
+      "name": "consists_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "consists",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX layout_placements_pkey ON public.layout_placements USING btree (consist_id)",
+      "name": "layout_placements_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "layout_placements",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX layout_segments_pkey ON public.layout_segments USING btree (layout_id, edge_id)",
+      "name": "layout_segments_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "layout_segments",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX layout_snapshots_layout_id_revision_key ON public.layout_snapshots USING btree (layout_id, revision)",
+      "name": "layout_snapshots_layout_id_revision_key",
+      "ready": true,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX layout_snapshots_pkey ON public.layout_snapshots USING btree (id)",
+      "name": "layout_snapshots_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "layout_snapshots",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX layouts_id_owner_id_key ON public.layouts USING btree (id, owner_id)",
+      "name": "layouts_id_owner_id_key",
+      "ready": true,
+      "schema": "public",
+      "table": "layouts",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX layouts_pkey ON public.layouts USING btree (id)",
+      "name": "layouts_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "layouts",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX loose_stock_placements_pkey ON public.loose_stock_placements USING btree (stock_item_id)",
+      "name": "loose_stock_placements_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX operation_receipts_pkey ON public.operation_receipts USING btree (owner_id, request_id)",
+      "name": "operation_receipts_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "operation_receipts",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX stock_items_id_owner_id_key ON public.stock_items USING btree (id, owner_id)",
+      "name": "stock_items_id_owner_id_key",
+      "ready": true,
+      "schema": "public",
+      "table": "stock_items",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX stock_items_owner_id_inventory_code_key ON public.stock_items USING btree (owner_id, inventory_code)",
+      "name": "stock_items_owner_id_inventory_code_key",
+      "ready": true,
+      "schema": "public",
+      "table": "stock_items",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX stock_items_pkey ON public.stock_items USING btree (id)",
+      "name": "stock_items_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "stock_items",
+      "valid": true
+    },
+    {
+      "definition": "CREATE UNIQUE INDEX stock_models_pkey ON public.stock_models USING btree (id)",
+      "name": "stock_models_pkey",
+      "ready": true,
+      "schema": "public",
+      "table": "stock_models",
+      "valid": true
+    }
+  ],
+  "policies": [
+    {
+      "check": "(( SELECT auth.uid() AS uid) = owner_id)",
+      "command": "ALL",
+      "name": "consist_members_owner_all",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "consist_members",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": "(( SELECT auth.uid() AS uid) = owner_id)",
+      "command": "ALL",
+      "name": "consists_owner_all",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "consists",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": "(( SELECT auth.uid() AS uid) = owner_id)",
+      "command": "ALL",
+      "name": "layouts_owner_all",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "layouts",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": "(( SELECT auth.uid() AS uid) = owner_id)",
+      "command": "ALL",
+      "name": "loose_owner_all",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": "(( SELECT auth.uid() AS uid) = owner_id)",
+      "command": "ALL",
+      "name": "placements_owner_all",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "layout_placements",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": "(( SELECT auth.uid() AS uid) = owner_id)",
+      "command": "ALL",
+      "name": "receipts_owner_all",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "operation_receipts",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": "(( SELECT auth.uid() AS uid) = owner_id)",
+      "command": "ALL",
+      "name": "snapshots_owner_all",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "layout_snapshots",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": "(( SELECT auth.uid() AS uid) = owner_id)",
+      "command": "INSERT",
+      "name": "stock_items_owner_insert",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "stock_items",
+      "using": null
+    },
+    {
+      "check": "(( SELECT auth.uid() AS uid) = owner_id)",
+      "command": "UPDATE",
+      "name": "stock_items_owner_update",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "stock_items",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": "(EXISTS ( SELECT 1\n   FROM layouts l\n  WHERE ((l.id = layout_segments.layout_id) AND (l.owner_id = ( SELECT auth.uid() AS uid)))))",
+      "command": "ALL",
+      "name": "segments_owner_all",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "layout_segments",
+      "using": "(EXISTS ( SELECT 1\n   FROM layouts l\n  WHERE ((l.id = layout_segments.layout_id) AND (l.owner_id = ( SELECT auth.uid() AS uid)))))"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "consist_members",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "consists",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "layout_placements",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "layout_segments",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "layout_snapshots",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "layouts",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "loose_stock_placements",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "operation_receipts",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "stock_items",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": "serien_access_allowed()",
+      "command": "ALL",
+      "name": "serien_verified_email_gate",
+      "permissive": "RESTRICTIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "stock_models",
+      "using": "serien_access_allowed()"
+    },
+    {
+      "check": null,
+      "command": "DELETE",
+      "name": "stock_items_owner_delete",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "stock_items",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": null,
+      "command": "SELECT",
+      "name": "stock_items_owner_select",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "stock_items",
+      "using": "(( SELECT auth.uid() AS uid) = owner_id)"
+    },
+    {
+      "check": null,
+      "command": "SELECT",
+      "name": "stock_models_signed_in_read",
+      "permissive": "PERMISSIVE",
+      "roles": [
+        "authenticated"
+      ],
+      "schema": "public",
+      "table": "stock_models",
+      "using": "true"
+    }
+  ],
+  "schemas": [
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "PUBLIC",
+          "grantor": "pg_database_owner",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "anon",
+          "grantor": "pg_database_owner",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "authenticated",
+          "grantor": "pg_database_owner",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "pg_database_owner",
+          "grantor": "pg_database_owner",
+          "privilege": "CREATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "pg_database_owner",
+          "grantor": "pg_database_owner",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "pg_database_owner",
+          "privilege": "USAGE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "pg_database_owner",
+          "privilege": "USAGE"
+        }
+      ],
+      "name": "public",
+      "owner": "pg_database_owner"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "CREATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "USAGE"
+        }
+      ],
+      "name": "serien_access",
+      "owner": "postgres"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "CREATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "USAGE"
+        }
+      ],
+      "name": "serien_internal",
+      "owner": "postgres"
+    }
+  ],
+  "tables": [
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "consist_members",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "consists",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "layout_placements",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "layout_segments",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "layout_snapshots",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "layouts",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "loose_stock_placements",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "operation_receipts",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "stock_items",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "service_role",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "stock_models",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "acl": [
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "DELETE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "INSERT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "MAINTAIN"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "REFERENCES"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "SELECT"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRIGGER"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "TRUNCATE"
+        },
+        {
+          "grantable": false,
+          "grantee": "postgres",
+          "grantor": "postgres",
+          "privilege": "UPDATE"
+        }
+      ],
+      "force_rls": false,
+      "kind": "r",
+      "name": "allowed_emails",
+      "options": null,
+      "owner": "postgres",
+      "rls": true,
+      "schema": "serien_access"
+    }
+  ],
+  "triggers": [
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER check_layout_placement BEFORE INSERT OR UPDATE ON public.layout_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.check_placement()",
+      "enabled": "O",
+      "name": "check_layout_placement",
+      "schema": "public",
+      "table": "layout_placements"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER check_loose_assignment BEFORE INSERT OR UPDATE ON public.loose_stock_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.check_loose_assignment()",
+      "enabled": "O",
+      "name": "check_loose_assignment",
+      "schema": "public",
+      "table": "loose_stock_placements"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER check_loose_placement BEFORE INSERT OR UPDATE ON public.loose_stock_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.check_placement()",
+      "enabled": "O",
+      "name": "check_loose_placement",
+      "schema": "public",
+      "table": "loose_stock_placements"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER check_member_assignment BEFORE INSERT OR UPDATE ON public.consist_members FOR EACH ROW EXECUTE FUNCTION serien_internal.check_member_assignment()",
+      "enabled": "O",
+      "name": "check_member_assignment",
+      "schema": "public",
+      "table": "consist_members"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER check_snapshot BEFORE INSERT OR UPDATE ON public.layout_snapshots FOR EACH ROW EXECUTE FUNCTION serien_internal.check_snapshot()",
+      "enabled": "O",
+      "name": "check_snapshot",
+      "schema": "public",
+      "table": "layout_snapshots"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER consists_touch BEFORE UPDATE ON public.consists FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()",
+      "enabled": "O",
+      "name": "consists_touch",
+      "schema": "public",
+      "table": "consists"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER layout_placements_touch BEFORE UPDATE ON public.layout_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()",
+      "enabled": "O",
+      "name": "layout_placements_touch",
+      "schema": "public",
+      "table": "layout_placements"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER layouts_touch BEFORE UPDATE ON public.layouts FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()",
+      "enabled": "O",
+      "name": "layouts_touch",
+      "schema": "public",
+      "table": "layouts"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER lock_model_kind BEFORE UPDATE OF kind ON public.stock_models FOR EACH ROW EXECUTE FUNCTION serien_internal.lock_model_identity()",
+      "enabled": "O",
+      "name": "lock_model_kind",
+      "schema": "public",
+      "table": "stock_models"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER loose_stock_touch BEFORE UPDATE ON public.loose_stock_placements FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()",
+      "enabled": "O",
+      "name": "loose_stock_touch",
+      "schema": "public",
+      "table": "loose_stock_placements"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER stock_items_touch BEFORE UPDATE ON public.stock_items FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()",
+      "enabled": "O",
+      "name": "stock_items_touch",
+      "schema": "public",
+      "table": "stock_items"
+    },
+    {
+      "deferrable": false,
+      "deferred": false,
+      "definition": "CREATE TRIGGER stock_models_touch BEFORE UPDATE ON public.stock_models FOR EACH ROW EXECUTE FUNCTION serien_internal.touch_updated_at()",
+      "enabled": "O",
+      "name": "stock_models_touch",
+      "schema": "public",
+      "table": "stock_models"
+    },
+    {
+      "deferrable": true,
+      "deferred": true,
+      "definition": "CREATE CONSTRAINT TRIGGER consists_ready_at_commit AFTER INSERT OR UPDATE OF status ON public.consists DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION serien_internal.check_ready_consist()",
+      "enabled": "O",
+      "name": "consists_ready_at_commit",
+      "schema": "public",
+      "table": "consists"
+    },
+    {
+      "deferrable": true,
+      "deferred": true,
+      "definition": "CREATE CONSTRAINT TRIGGER members_ready_at_commit AFTER INSERT OR DELETE OR UPDATE ON public.consist_members DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION serien_internal.check_ready_members()",
+      "enabled": "O",
+      "name": "members_ready_at_commit",
+      "schema": "public",
+      "table": "consist_members"
+    }
+  ]
+}
