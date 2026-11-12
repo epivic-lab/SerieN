@@ -83,7 +83,7 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
     if(next===signature)return;signature=next;
     body.setAttribute('aria-labelledby',`u6-tab-${view}`);body.dataset.u6View=view;body.classList.toggle('u6-view',view==='layout'||view==='catalog');
     const scroll=body.scrollTop,focused=document.activeElement?.dataset.composition,filterFocus=document.activeElement?.dataset.u6Filter,selection=document.activeElement?.selectionStart;
-    for(const b of dialog.querySelectorAll('[data-view]')){const active=b.dataset.view===view;b.setAttribute('aria-pressed',String(active));b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;}
+    for(const b of dialog.querySelectorAll('[data-view]')){const active=b.dataset.view===view;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;}
     dialog.querySelector('.u6-session').textContent=`Session only · ${projects.dirty?'Unconfirmed changes':projects.hasProjects||inventory.size?'Virtual data in RAM':'No virtual data'}`;
     if(view==='depot'){if(depot.root.parentNode!==body)body.replaceChildren(depot.root);depot.sync();}
     else if(view==='projects'){if(projects.root.parentNode!==body)body.replaceChildren(projects.root);projects.sync();}

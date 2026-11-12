@@ -1,0 +1,9 @@
+PASS independent-commanded-throttle-and-real-velocity-readouts
+PASS seven-viewports-main-day-night-Low-High-TM-views-scroll-and-pointer-pass-through
+PASS mobile-rail-inspector-context-and-six-vehicle-overflow-contained
+PASS depot-model-code-state-project-priority-and-expandable-full-UUIDs
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U9.py", line 77, in <module>
+    p.keyboard.press('Shift+Tab');assert js('document.activeElement.matches(".u6-guard [data-confirm]")');p.keyboard.press('Tab');assert js('document.activeElement.matches(".u6-guard [data-cancel]")');p.keyboard.press('Escape');assert p.locator('#tmD').evaluate('(e)=>e.open') and not p.locator('.u6-guard').is_visible()
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "baseline": "30c56aa28e60ce83fe0cbb36209006752325bea8",
+  "branch": "codex/ui-v2-integration",
+  "HEADBeforeCheckpoint": "30c56aa28e60ce83fe0cbb36209006752325bea8",
+  "upstream": "30c56aa28e60ce83fe0cbb36209006752325bea8",
+  "changedExistingFiles": [
+    "PROGRESS.md",
+    "docs/_active/ui-v21/README.md",
+    "docs/_active/ui-v21/STATUS.md",
+    "docs/_active/ui-v21/TEST_GATES.json",
+    "src/depot-view.js",
+    "src/train-deck.js",
+    "src/train-management.js",
+    "src/train-projects-view.js",
+    "src/ui/overlays.js",
+    "src/ui/shell.js",
+    "ui/css/serien-ui-integration.css"
+  ],
+  "protectedBaselineFiles": 266,
+  "sourceInventoryFiles": 270,
+  "unchangedBaseline": 259,
+  "items": [
+    {
+      "id": 1,
+      "invariant": "Real R1 engine and dispatcher",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 2,
+      "invariant": "Maximum four trains",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 3,
+      "invariant": "Independent LRU of three consoles",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 4,
+      "invariant": "Momentary STOP ALL, no latch",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 5,
+      "invariant": "Space acts only on selected train",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 6,
+      "invariant": "Eight protected turnouts",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 7,
+      "invariant": "Read-only Next Switch HUD",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 8,
+      "invariant": "Guarded Stop Bell independent of UI Sound",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 9,
+      "invariant": "Real persistent Operations Log",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 10,
+      "invariant": "Single renderer/canvas",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 11,
+      "invariant": "Real train/turnout picking",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 12,
+      "invariant": "Original camera and Follow",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 13,
+      "invariant": "Pause/Resume",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 14,
+      "invariant": "Protected Add Train",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 15,
+      "invariant": "R1 couple/uncouple",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 16,
+      "invariant": "Atomic Reset",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 17,
+      "invariant": "Generation and STALE",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 18,
+      "invariant": "M2 session-only Projects",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 19,
+      "invariant": "M3 session-only Depot",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    },
+    {
+      "id": 20,
+      "invariant": "No global Apply or physical Depot transfer",
+      "status": "PASS",
+      "provenance": "New Node/U2\u2013U8/native tests + verified source identity; see regression-matrix.json for new vs historical distinction"
+    }
+  ],
+  "CSS": "U8 prefix byte-identical; frozen copies and order preserved",
+  "security": "Auth/Supabase/RLS/persistence/dependencies/workflows/assets/domain unchanged; no reference/mock bundle inputs",
+  "scopeNote": "Application changes only presentation, accessible semantics, readout binding and bounded camera menu; no new railway state/controller."
+}

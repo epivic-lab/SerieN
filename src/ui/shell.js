@@ -5,7 +5,10 @@ export function mountShell({management,isPaused}){
  const on=(e,type,fn,opts)=>{e.addEventListener(type,fn,opts);disposers.push(()=>e.removeEventListener(type,fn,opts));};
  const el=(tag,cls,text)=>{const e=document.createElement(tag);e.className=cls;if(text)e.textContent=text;return e;};
  const header=document.querySelector('.top');header.classList.add('u2-region','m','hd');document.querySelector('.app').classList.add('u2-frame');
- const old=[...header.childNodes];old.forEach(n=>n.remove());const inner=el('div','mi'),plaque=el('div','plq');plaque.append(el('b','inl','SERIE N'));inner.append(plaque,el('span','u2-edition','Autumn Railways'),el('span','sp'));header.append(inner);
+ const old=[...header.childNodes];old.forEach(n=>n.remove());const inner=el('div','mi'),plaque=el('div','plq');plaque.append(el('b','inl','SERIE N'));
+ // U9-HDR: original frozen Claude .edp markup; decorative assets have no actions/name.
+ const edition=el('div','edp');edition.innerHTML='<i class="scr l" aria-hidden="true"></i><i class="scr r" aria-hidden="true"></i><svg class="lf" aria-hidden="true" focusable="false"><use href="./ui/assets/svg/serien-sprite.svg#emb-maple"/></svg>';edition.append(el('span','','Autumn Railways'));
+ inner.append(plaque,edition,el('span','sp'));header.append(inner);
  const tm=$('trainManagement');tm.className='bt tmb';tm.dataset.ctrl='CTRL-027';inner.append(tm);
  const button=(text,fn,ctrl)=>{const b=el('button','bt d',text);b.type='button';if(ctrl)b.dataset.ctrl=ctrl;on(b,'click',fn);return b;};
  const lamp=el('span','u2-running');inner.append(lamp);

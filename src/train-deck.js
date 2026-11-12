@@ -4,6 +4,7 @@ import {thumbnailKey,thumbnailURL,THUMBNAIL_FALLBACK} from "./locomotive-thumbna
 
 let deckSequence=0;
 function mountTrainDeck({host,tabs,network,getTrains,getSelected,isPaused,onSelect,onSpeed,onReverse,onStop,onLights,onUncouple,onCouple,onFocus}) {
+  tabs.setAttribute('role','group');
   const recent=new RecentConsoles(3),cards=new Map(),selectors=new Map(),symbolId=`railway-miniature-${++deckSequence}`;
   const ns="http://www.w3.org/2000/svg",definitions=document.createElementNS(ns,"svg");
   definitions.classList.add("railwayDefinitions");definitions.setAttribute("aria-hidden","true");definitions.setAttribute("width","0");definitions.setAttribute("height","0");
@@ -33,7 +34,7 @@ function mountTrainDeck({host,tabs,network,getTrains,getSelected,isPaused,onSele
     slider.oninput=()=>{const value=Number(slider.value);onSelect(train.id);onSpeed(train.id,value);};
     for(const [action,callback] of Object.entries({reverse:onReverse,stop:onStop,lights:onLights,uncouple:onUncouple,couple:onCouple}))find(`[data-command="${action}"]`).onclick=()=>{onSelect(train.id);callback(train.id);};
     map.onclick=()=>{onSelect(train.id);onFocus(train.id);};
-    return {root,img,slider,map,marker,glow,actual:find(".actualSpeed"),needle:find(".u5-needle"),gauge:find("meter"),name:find(".trainConsoleName"),state:find(".trainConsoleState"),output:find("output"),cars:find(".trainConsoleCars"),length:find(".trainConsoleLength"),description:find(".trainConsoleDescription"),route:find(".trainConsoleRoute"),commands:Object.fromEntries([...root.querySelectorAll("[data-command]")].map((b)=>[b.dataset.command,b]))};
+    return {root,img,slider,map,marker,glow,actual:find(".actualSpeed"),needle:find(".u5-needle"),gauge:find("meter"),name:find(".trainConsoleName"),state:find(".trainConsoleState"),output:find(".trainConsoleSpeed output"),cars:find(".trainConsoleCars"),length:find(".trainConsoleLength"),description:find(".trainConsoleDescription"),route:find(".trainConsoleRoute"),commands:Object.fromEntries([...root.querySelectorAll("[data-command]")].map((b)=>[b.dataset.command,b]))};
   }
   function releaseCard(card){
     card.img.onerror=null;card.root.querySelectorAll("button,img,input").forEach(e=>{e.onclick=null;e.oninput=null;e.onpointerdown=null;});card.root.remove();
@@ -68,7 +69,6 @@ function mountTrainDeck({host,tabs,network,getTrains,getSelected,isPaused,onSele
       const vehicles=[train.group,...(train.carObjs??[])].filter(Boolean).map(o=>o.userData);
       const layout=consistLayout(vehicles),length=layout.tail+(vehicles[0]?.couplers?.front?.x??38);
       card.cars.title=`${train.cars} trailing vehicles · ${length.toFixed(1)} mm (1:160)`;
-      card.cars.setAttribute('aria-label',card.cars.title);
       setText(card.length,`${length.toFixed(0)} mm`);card.length.title=card.cars.title;
       card.commands.lights.classList.toggle("active",train.lights);card.commands.lights.setAttribute("aria-pressed",String(train.lights));
       card.commands.reverse.classList.toggle("active",train.dir<0);card.commands.reverse.setAttribute("aria-pressed",String(train.dir<0));

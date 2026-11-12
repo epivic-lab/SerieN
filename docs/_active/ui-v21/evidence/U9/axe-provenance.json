@@ -1,0 +1,18 @@
+{
+  "package": "axe-core",
+  "version": "4.11.0",
+  "purpose": "test-only; no application dependency or bundle input",
+  "command": [
+    "npm",
+    "pack",
+    "axe-core@4.11.0",
+    "--pack-destination",
+    "/workspace/work/u9",
+    "--cache",
+    "/workspace/work/u9/npm-cache",
+    "--silent"
+  ],
+  "actualExitCode": 0,
+  "tarSHA256": "39bed7d72308f6d620789c169d699bfd7e8da80f65b545821a6b2215c3e83107",
+  "scriptSHA256": "e9e5863c33a874f09bc01acd9234b7e3c871479f5eef8802fa582544465e6d01"
+}

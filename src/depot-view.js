@@ -42,9 +42,10 @@ export function createDepotView({inventory,getProjects,getTrains,getDetached,get
     for(const item of items){
       const m=projectModel(item.modelId),card=el('article',undefined,'managementModel depotItem');card.dataset.depotId=item.id;card.dataset.depotState=item.state;
       const image=el('img');image.src=m.image;image.alt=m.name;image.width=320;image.height=160;image.onerror=()=>{image.onerror=null;image.src=THUMBNAIL_FALLBACK;image.alt='Model preview unavailable';};
-      card.append(image,el('strong',`${item.code} · ${m.name}`),el('small',`Virtual record · ${item.id}`),el('small',`Catalog model · ${item.modelId}`),el('strong',item.state==='available'?'Available for planning':'Reserved for planning'));
+      const identity=el('details',undefined,'u9-identity');identity.append(el('summary','Record identity'),el('small',`Virtual record · ${item.id}`),el('small',`Catalog model · ${item.modelId}`));
+      card.append(image,el('strong',m.name,'u9-model-name'),el('span',item.code,'u9-record-code'),el('strong',item.state==='available'?'Available for planning':'Reserved for planning','u9-record-state'));
       if(item.notice)card.append(el('p',item.notice,'managementMuted'));
-      if(item.assignment){const target=slots.find(s=>s.projectId===item.assignment.projectId&&s.vehicleId===item.assignment.vehicleId);card.append(el('p',`${target.projectName} · vehicle ${target.position} · slot ${target.vehicleId}`),button('Release reservation',`release-${item.id}`,()=>protect(item,'release')));}
+      if(item.assignment){const target=slots.find(s=>s.projectId===item.assignment.projectId&&s.vehicleId===item.assignment.vehicleId);card.append(el('p',`${target.projectName} · vehicle ${target.position}`,'u9-reservation'));identity.append(el('small',`Project ${target.projectId} · slot ${target.vehicleId}`));card.append(button('Release reservation',`release-${item.id}`,()=>protect(item,'release')));}
       else {
         const targets=slots.filter(s=>s.modelId===item.modelId&&!items.some(v=>v.assignment?.projectId===s.projectId&&v.assignment.vehicleId===s.vehicleId));
         const assignment=el('label',`Reserve ${item.code} for`),pick=el('select');pick.setAttribute('aria-label',`Reserve ${item.code} for`);pick.dataset.depotAction=`target-${item.id}`;
@@ -53,7 +54,7 @@ export function createDepotView({inventory,getProjects,getTrains,getDetached,get
         if(targets.some(t=>JSON.stringify([t.projectId,t.vehicleId])===choices.get(item.id)))pick.value=choices.get(item.id);
         pick.onchange=()=>choices.set(item.id,pick.value);assignment.append(pick);card.append(assignment,button('Reserve for project',`assign-${item.id}`,()=>mutate(()=>{const [p,v]=JSON.parse(pick.value);inventory.assign(item.id,p,v);choices.delete(item.id);}),!targets.length));
       }
-      card.append(button('Remove virtual item',`remove-${item.id}`,()=>protect(item,'remove'),item.state==='reserved'));grid.append(card);
+      card.append(identity,button('Remove virtual item',`remove-${item.id}`,()=>protect(item,'remove'),item.state==='reserved'));grid.append(card);
     }root.append(grid);
     const gate=el('section',undefined,'depotTransferGate');gate.dataset.ctrl='CTRL-045';gate.append(el('h3','Physical transfers · unavailable'),el('p','R1 has no generic safe depot entry/exit command. Detached vehicles remain on the track. Use the existing consoles only for supported coupling and uncoupling.'),el('p','Place on Layout · unavailable','u8-unavailable'),el('p','Withdraw from Layout · unavailable','u8-unavailable'));root.append(gate);
     const plans=el('section',undefined,'depotPlans');plans.append(el('h3',`M2 confirmed planned vehicles (virtual) · ${slots.length}`));

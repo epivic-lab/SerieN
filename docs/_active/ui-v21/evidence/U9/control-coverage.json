@@ -1,0 +1,1542 @@
+{
+  "derivedFrom": "docs/_active/ui-v21/CONTROLS.json",
+  "registrySHA256": "646f433b6191875faf7660ab035ebaa81347a881ac12b23eca0d547827eb617f",
+  "count": 66,
+  "controls": [
+    {
+      "id": "CTRL-001",
+      "name": "Login Google",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#googleSignIn",
+      "effectiveCallback": "login.addEventListener(click) \u2192 signInWithOAuth",
+      "functionalAuthority": "original Auth",
+      "enabledDisabled": "Auth phase-dependent: hidden/disabled while checking or redirecting; live provider excluded",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS_LOCAL_CONTRACT_WITH_LIMITS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [
+        "Live OAuth/provider NOT VERIFIED; unchanged Auth source, Node contracts and local locked-gate UI verified."
+      ],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-002",
+      "name": "Logout (\"Esci\")",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#signOut",
+      "effectiveCallback": "logout.addEventListener(click) \u2192 signOut + reload",
+      "functionalAuthority": "original Auth",
+      "enabledDisabled": "Visible only in authorized session; guard blocks repeat/pending sign-out",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Guard/summary/dirty/reset generation reads the same page-local M2/M3 session; no persistence"
+    },
+    {
+      "id": "CTRL-003",
+      "name": "Graphics quality",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#quality",
+      "effectiveCallback": "quality onchange \u2192 applyQuality(quality.setMode(value))",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-004",
+      "name": "Home (header)",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#viewHome, #homeView",
+      "effectiveCallback": "Original viewHome / homeView -> nav home/overview",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-005",
+      "name": "Track plan",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#planBtn, #planModal",
+      "effectiveCallback": "planBtn.onclick \u2192 canonical SVG + planModal",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-006",
+      "name": "Help",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#helpBtn, #helpModal",
+      "effectiveCallback": "helpBtn.onclick \u2192 helpModal",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-007",
+      "name": "Route preview",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#routePreview",
+      "effectiveCallback": "routePreview.onclick \u2192 highlightUntil + updateRouteHighlight",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-008",
+      "name": "View preset",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#cameraView, [data-preset]",
+      "effectiveCallback": "cameraView.onchange \u2192 nav.select(preset)",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-009",
+      "name": "Zoom in/out",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#viewZoomIn, #viewZoomOut",
+      "effectiveCallback": "mountViewControls: zoomIn/zoomOut",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-010",
+      "name": "Pan / Orbit drag mode",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#viewPan, #viewOrbit",
+      "effectiveCallback": "mountViewControls: setDragMode(pan|orbit)",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-011",
+      "name": "Home / Follow (toolbar)",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#viewHome, #viewFollow",
+      "effectiveCallback": "mountViewControls: home/follow",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-012",
+      "name": "Turnout tile",
+      "region": "Sidebar / switches / environment / map",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#switchList .sw",
+      "effectiveCallback": "requestToggle(id,panel) \u2192 turnoutCommands.requestToggle",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Disabled for occupied/approaching/unknown protected turnout; exact visible refusal reason retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U4/results.json",
+        "sha256": "290988a5ada12978b62abddcb8b86043d4bc3527fd6713939335babdc8c40ded",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-013",
+      "name": "Daylight slider",
+      "region": "Sidebar / switches / environment / map",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#day",
+      "effectiveCallback": "day.oninput \u2192 day + sun text",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U4/results.json",
+        "sha256": "290988a5ada12978b62abddcb8b86043d4bc3527fd6713939335babdc8c40ded",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-014",
+      "name": "Rolling stock source",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#rollingModels, #u2RollingModels, #u6RollingModels",
+      "effectiveCallback": "rollingModels.onchange \u2192 updateModels() with rollback",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-015",
+      "name": "Next mission",
+      "region": "Sidebar / switches / environment / map",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#nextMission",
+      "effectiveCallback": "nextMission.onclick \u2192 mission cycle",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U4/results.json",
+        "sha256": "290988a5ada12978b62abddcb8b86043d4bc3527fd6713939335babdc8c40ded",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-016",
+      "name": "Train selection tabs",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#tabs [data-train]",
+      "effectiveCallback": "Original onSelect(id); RecentConsoles(3) separate from four-card fleet",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-017",
+      "name": "Train speed slider",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": ".trainConsoleSpeed input, .trainConsoleSpeed output, .actualSpeed",
+      "effectiveCallback": "slider.oninput -> onSelect + onSpeed; throttle output distinct from abs(velocity) readout",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled on each physical train card; 0\u2013100% request distinct from measured velocity",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-018",
+      "name": "Reverse",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-command=reverse]",
+      "effectiveCallback": "onReverse \u2192 reverseTrain \u2192 fleetCommands.reverse",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled command; original R1 validates reversal",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-019",
+      "name": "Stop (single)",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-command=stop]",
+      "effectiveCallback": "onStop \u2192 stopTrain \u2192 fleetCommands.stop",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled per-train momentary Stop; active compatibility ID unique",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-020",
+      "name": "Lights",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-command=lights]",
+      "effectiveCallback": "onLights \u2192 toggleTrainLights \u2192 fleetCommands.toggleLights",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-021",
+      "name": "Uncouple tail",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-command=uncouple]",
+      "effectiveCallback": "onUncouple \u2192 uncouple \u2192 applyConsistCommand",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Button routes original command; R1 refuses motion/invalid uncouple without mutation",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-022",
+      "name": "Couple nearest",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-command=couple]",
+      "effectiveCallback": "onCouple \u2192 couple \u2192 applyConsistCommand",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Button routes original command; R1 refuses motion/invalid recouple without mutation",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-023",
+      "name": "Add train",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#addTrain",
+      "effectiveCallback": "addTrain onclick \u2192 addTrain + select",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Disabled at four trains; insertion clearance independently checked by real R1 command",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-024",
+      "name": "STOP ALL",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#stopAll",
+      "effectiveCallback": "stopAllTrains \u2192 fleetCommands.stopAll",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-025",
+      "name": "Pause / Resume",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#pause",
+      "effectiveCallback": "pause.onclick \u2192 paused toggle, bell quiet, deck update",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-026",
+      "name": "Reset",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#reset, .u5-guard",
+      "effectiveCallback": "mountDock guard.request -> unchanged original reset body -> trainManagement.invalidateReferences",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled launcher; guard pending rejects duplicate reset; revalidates identity/generation",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Guard/summary/dirty/reset generation reads the same page-local M2/M3 session; no persistence"
+    },
+    {
+      "id": "CTRL-027",
+      "name": "Train Management launcher",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#trainManagement, .u2-mobile, #dlg",
+      "effectiveCallback": "Same mountTrainManagement.open(initialView,launcher) instance",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Guard/summary/dirty/reset generation reads the same page-local M2/M3 session; no persistence"
+    },
+    {
+      "id": "CTRL-028",
+      "name": "Select composition (TM)",
+      "region": "Train Management / Layout / Catalog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-composition]",
+      "effectiveCallback": "layout button \u2192 onSelect(c.id)",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U6-adapted/results.json",
+        "sha256": "cc173e835bf97cd1ceeb0547aae377a23189b2309f9a75e77ef5027f10a5010e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-029",
+      "name": "Focus in 3D",
+      "region": "Train Management / Layout / Catalog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-ctrl=CTRL-029]",
+      "effectiveCallback": "requestAction consent -> onFocus -> dialog.close",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U6-adapted/results.json",
+        "sha256": "cc173e835bf97cd1ceeb0547aae377a23189b2309f9a75e77ef5027f10a5010e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Guard/summary/dirty/reset generation reads the same page-local M2/M3 session; no persistence"
+    },
+    {
+      "id": "CTRL-030",
+      "name": "Copy to project",
+      "region": "Train Management / Layout / Catalog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-copy-train]",
+      "effectiveCallback": "requestAction consent -> projects.copy(train) -> original M2 store.copy",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U6-adapted/results.json",
+        "sha256": "cc173e835bf97cd1ceeb0547aae377a23189b2309f9a75e77ef5027f10a5010e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-031",
+      "name": "New project",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action=new]",
+      "effectiveCallback": "action/new -> start -> intent -> store.begin",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Enabled; dirty draft requires shared consent before replacement",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-032",
+      "name": "Project name",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[aria-label=\"Project name\"]",
+      "effectiveCallback": "store.rename(name)",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-033",
+      "name": "Add model",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action=add], [data-add-model]",
+      "effectiveCallback": "store.add(modelId)",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-034",
+      "name": "Reorder trailer",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action^=up-], [data-project-action^=down-]",
+      "effectiveCallback": "store.move(vehicleId,delta)",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Earlier disabled for loco/first trailer; Later disabled for loco/last trailer; same store validation",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-035",
+      "name": "Flip planned orientation",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action^=flip-]",
+      "effectiveCallback": "store.flip(vehicleId)",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Enabled only in editable draft; confirmed preview has no edit controls",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-036",
+      "name": "Remove vehicle",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action^=remove-]",
+      "effectiveCallback": "store.remove(vehicleId)",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Loco removal disabled while trailers exist; trailer removal uses original M2 constraints",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-037",
+      "name": "Confirm project",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action=confirm]",
+      "effectiveCallback": "store.confirm; onChange \u2192 inventory.reconcile",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Disabled while validateProject returns errors; no implicit confirmation",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-038",
+      "name": "Cancel changes",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action=cancel]",
+      "effectiveCallback": "intent -> discardAfterConsent -> synchronous store.cancel",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Enabled draft action; dirty Cancel requires consent; confirmed session retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-039",
+      "name": "Compare with real train (link)",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action=link]",
+      "effectiveCallback": "draft-only action/link -> original store.link(selectedTrain,generation)",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Rendered only for draft; invokes real link selected-train/generation contract",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-040",
+      "name": "Side view zoom/Fit",
+      "region": "Train Management / Layout / Catalog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": ".sideToolbar",
+      "effectiveCallback": "internal setZoom and Fit handlers (not exported)",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U6-adapted/results.json",
+        "sha256": "cc173e835bf97cd1ceeb0547aae377a23189b2309f9a75e77ef5027f10a5010e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-041",
+      "name": "Add virtual depot record",
+      "region": "Depot",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-depot-action=add]",
+      "effectiveCallback": "inventory.add(modelId)",
+      "functionalAuthority": "original M3 inventory",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U8/results.json",
+        "sha256": "9a9f6e7813f8e976a60d34688510f85efa4ed4cf5a00f5822818bf9144862d60",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-042",
+      "name": "Reserve for project",
+      "region": "Depot",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-depot-action^=assign-]",
+      "effectiveCallback": "inventory.assign(itemId,projectId,vehicleId)",
+      "functionalAuthority": "original M3 inventory",
+      "enabledDisabled": "Disabled with no compatible unreserved confirmed slot; never draft slots",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U8/results.json",
+        "sha256": "9a9f6e7813f8e976a60d34688510f85efa4ed4cf5a00f5822818bf9144862d60",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-043",
+      "name": "Release reservation",
+      "region": "Depot",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-depot-action^=release-]",
+      "effectiveCallback": "protect release -> guard.request validation -> inventory.release -> onChange",
+      "functionalAuthority": "original M3 inventory",
+      "enabledDisabled": "Rendered only for a real Reserved assignment; consent revalidates original assignment",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U8/results.json",
+        "sha256": "9a9f6e7813f8e976a60d34688510f85efa4ed4cf5a00f5822818bf9144862d60",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-044",
+      "name": "Remove virtual record",
+      "region": "Depot",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-depot-action^=remove-]",
+      "effectiveCallback": "protect remove -> guard.request validation -> inventory.remove -> onChange",
+      "functionalAuthority": "original M3 inventory",
+      "enabledDisabled": "Disabled while Reserved; Available remove requires validated single consent",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U8/results.json",
+        "sha256": "9a9f6e7813f8e976a60d34688510f85efa4ed4cf5a00f5822818bf9144862d60",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-045",
+      "name": "Physical transfer (Place / Withdraw)",
+      "region": "Depot",
+      "registryAuthority": "REAL_BASELINE_DISABLED",
+      "implementation": "INTENTIONALLY_UNAVAILABLE",
+      "selectorOrEvent": ".depotTransferGate .u8-unavailable",
+      "effectiveCallback": "NONE: noninteractive unavailable plaques; no physical transfer dispatcher",
+      "functionalAuthority": "NONE / excluded physical transfer",
+      "enabledDisabled": "noninteractive (no buttons/handlers)",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U8/results.json",
+        "sha256": "9a9f6e7813f8e976a60d34688510f85efa4ed4cf5a00f5822818bf9144862d60",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [
+        "Intentionally non-operational: implementing transfer is excluded."
+      ],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-046",
+      "name": "Bell mute (guarded stop)",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#bellChip, #bellSeg",
+      "effectiveCallback": "mute.onclick \u2192 bell.setMuted(!bell.snapshot.muted)",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json",
+        "U3-final/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-047",
+      "name": "Guarded-stop status text",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "READ_ONLY_INFORMATION",
+      "selectorOrEvent": "#guardedStopStatus",
+      "effectiveCallback": "update \u2192 guardedStopView projections \u2192 status text (internal)",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "informational / readonly",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json",
+        "U3-final/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-048",
+      "name": "3D turnout click / hover identify",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#view3d > canvas",
+      "effectiveCallback": "canvas picking \u2192 requestToggle(id,3D) with guard",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [
+        "Trusted picking separately verified by original observer harness; observer is not the production native bundle."
+      ],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-049",
+      "name": "3D train click select",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#view3d > canvas",
+      "effectiveCallback": "canvas hit.kind=train \u2192 selectTrain(hit.id) \u2192 app select(id)",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [
+        "Trusted picking separately verified by original observer harness; observer is not the production native bundle."
+      ],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-050",
+      "name": "Keyboard Space",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "window keydown",
+      "effectiveCallback": "keydown Space \u2192 selected compatibility #stop.click()",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Active only for unmodified/non-repeated Space outside forms/buttons/editables and dialogs",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-051",
+      "name": "Escape closes modals",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "top dialog cancel / keydown",
+      "effectiveCallback": "Native top-dialog cancel; guarded draft actions; legacy Help/Plan Escape binding",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Only top dialog / guard handles Escape; underlying TM/draft preserved on guard cancel",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Guard/summary/dirty/reset generation reads the same page-local M2/M3 session; no persistence"
+    },
+    {
+      "id": "CTRL-052",
+      "name": "Next Switch HUD minimize/expand",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": ".nextSwitchMinimize",
+      "effectiveCallback": "onMinimize only; refresh/schemaSVG are read-only railway projections",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json",
+        "U3-final/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-053",
+      "name": "Console mini-map (focus)",
+      "region": "Sidebar / switches / environment / map",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": ".railwayMiniMap, .u4-map-trains",
+      "effectiveCallback": "map onclick \u2192 onSelect + onFocus \u2192 nav.focus",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U4/results.json",
+        "sha256": "290988a5ada12978b62abddcb8b86043d4bc3527fd6713939335babdc8c40ded",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [
+        "Small SVG markers have adjacent equivalent 44px map legend buttons; marker geometry retained."
+      ],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-054",
+      "name": "Console select (name/image)",
+      "region": "Train Dock / global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": ".trainConsoleSelect, .locomotiveThumbnail",
+      "effectiveCallback": "name/image onclick \u2192 onSelect(id)",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U5-adapted/results.json",
+        "sha256": "fd35658b3112d78da51c7308b47a813c938621bd88b9fe97b8184884bc41db50",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-055",
+      "name": "TM Close",
+      "region": "Train Management / Layout / Catalog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "#tmD [data-close]",
+      "effectiveCallback": "requestClose guard, cancel event, close \u2192 launcher focus",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U6-adapted/results.json",
+        "sha256": "cc173e835bf97cd1ceeb0547aae377a23189b2309f9a75e77ef5027f10a5010e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Guard/summary/dirty/reset generation reads the same page-local M2/M3 session; no persistence"
+    },
+    {
+      "id": "CTRL-056",
+      "name": "TM view tabs",
+      "region": "Train Management / Layout / Catalog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": ".managementNav [role=tab]",
+      "effectiveCallback": "onclick view/sync + ArrowLeft/Right/Home/End; role=tab with aria-selected only",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U6-adapted/results.json",
+        "sha256": "cc173e835bf97cd1ceeb0547aae377a23189b2309f9a75e77ef5027f10a5010e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Guard/summary/dirty/reset generation reads the same page-local M2/M3 session; no persistence"
+    },
+    {
+      "id": "CTRL-057",
+      "name": "Open confirmed project",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action^=open-]",
+      "effectiveCallback": "intent -> view savedId from confirmed snapshot; never opens a draft",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-058",
+      "name": "Edit confirmed project",
+      "region": "Projects / Composer / Compare",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[data-project-action=edit], [data-edit-project]",
+      "effectiveCallback": "intent -> start -> original store.open(project.id)",
+      "functionalAuthority": "original M2 project store",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U7-adapted/results.json",
+        "sha256": "aef2aec3dbd95715694437387e6bda2fb9d5940ebad9565eb595de6004830656",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-059",
+      "name": "Depot model select",
+      "region": "Depot",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "[aria-label=\"Inventory model\"]",
+      "effectiveCallback": "model onchange \u2192 modelChoice view state",
+      "functionalAuthority": "original M3 inventory",
+      "enabledDisabled": "Model picker enabled; reservation target selectors disabled when no valid confirmed target",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U8/results.json",
+        "sha256": "9a9f6e7813f8e976a60d34688510f85efa4ed4cf5a00f5822818bf9144862d60",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Page-local virtual project/inventory or preview; no storage"
+    },
+    {
+      "id": "CTRL-060",
+      "name": "Track plan XML link",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": ".scenicMapLink",
+      "effectiveCallback": "native anchor: docs/consolidation/index.html",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-061",
+      "name": "Modal backdrop click",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "native dialog/backdrop or legacy .modal",
+      "effectiveCallback": "Native dialog target check / original legacy modal backdrop",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Enabled when visible in its real applicable view; original command validation and native disabled state retained",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "Guard/summary/dirty/reset generation reads the same page-local M2/M3 session; no persistence"
+    },
+    {
+      "id": "CTRL-062",
+      "name": "Operations log",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "READ_ONLY_INFORMATION",
+      "selectorOrEvent": "#log",
+      "effectiveCallback": "log(s) \u2192 #log.textContent, no severity model",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "informational / readonly",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-063",
+      "name": "beforeunload guard",
+      "region": "Shell / Menu / dialogs",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL_IMPLEMENTED",
+      "selectorOrEvent": "window beforeunload",
+      "effectiveCallback": "beforeUnload checks projects.dirty || projects.hasProjects || inventory.size>0",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "Handler mounted; blocks unload only for dirty draft, confirmed projects or inventory records",
+      "sessionOnly": true,
+      "functionalEvidence": {
+        "path": "U2-header-final/result.json",
+        "sha256": "e12956de0dce54051e4eaef5aa094906c255af7ff37b02de9efa960756a9092e",
+        "status": "PASS_LOCAL_CONTRACT_WITH_LIMITS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [
+        "Synthetic beforeunload handler tested; native browser prompt NOT VERIFIED."
+      ],
+      "sessionOnlyDependency": "Guard/summary/dirty/reset generation reads the same page-local M2/M3 session; no persistence"
+    },
+    {
+      "id": "CTRL-064",
+      "name": "Startup / load message",
+      "region": "Viewport / camera / HUD / Bell / log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "READ_ONLY_INFORMATION",
+      "selectorOrEvent": "#loadMsg",
+      "effectiveCallback": "loadMsg + startup error/unhandledrejection text",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "informational / readonly",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U3-final/results.json",
+        "sha256": "9139d8ba73c665e7d53b31368f4c0609169b9ca09c2cb298cc46420803da2e8b",
+        "status": "PASS_LOCAL_CONTRACT_WITH_LIMITS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [
+        "Successful boot/startup visibility tested now; actual WebGL-failure platform state not newly fault-injected."
+      ],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-065",
+      "name": "Detached rolling stock list",
+      "region": "Train Management / Layout / Catalog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "READ_ONLY_INFORMATION",
+      "selectorOrEvent": "[data-detached-id]",
+      "effectiveCallback": "detachedView read-only list",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "informational / readonly",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U6-adapted/results.json",
+        "sha256": "cc173e835bf97cd1ceeb0547aae377a23189b2309f9a75e77ef5027f10a5010e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    },
+    {
+      "id": "CTRL-066",
+      "name": "Catalog card",
+      "region": "Train Management / Layout / Catalog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "READ_ONLY_INFORMATION",
+      "selectorOrEvent": ".managementCatalog [data-model-id]",
+      "effectiveCallback": "PROJECT_CATALOG \u2192 read-only catalog cards",
+      "functionalAuthority": "original R1 or presentation controller named by registry",
+      "enabledDisabled": "informational / readonly",
+      "sessionOnly": false,
+      "functionalEvidence": {
+        "path": "U6-adapted/results.json",
+        "sha256": "cc173e835bf97cd1ceeb0547aae377a23189b2309f9a75e77ef5027f10a5010e",
+        "status": "PASS",
+        "scope": "U9 execution at its recorded bundle hash (pre-header where indicated); source identity and final header/native/G-U9 integration separately verified"
+      },
+      "visualAccessibilityEvidence": [
+        "acceptance-checkpoint/results.json"
+      ],
+      "limits": [],
+      "sessionOnlyDependency": "None: physical R1 or presentation authority; no new persistence"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "status": "PASS_WITH_LIMITS",
+  "checks": [
+    {
+      "component": "Train Management / Projects",
+      "evidence": "projects-lifecycle-adapted/browser.json",
+      "method": "25 real mount/open/dispose cycles; synthetic beforeunload and launcher inertness"
+    },
+    {
+      "component": "Depot",
+      "evidence": "depot-lifecycle-adapted/result.json",
+      "additionalEvidence": "tests/regression-lifecycle.txt",
+      "method": "25 mount/open/add/dispose cycles + release/remove pending generation/double-consent checks in intents/results.json"
+    },
+    {
+      "component": "guard/shared pending",
+      "evidence": "intents/results.json",
+      "additionalEvidence": [
+        "U6-adapted/results.json",
+        "U7-adapted/results.json",
+        "U8/results.json"
+      ]
+    },
+    {
+      "component": "Dock / keyboard / Reset",
+      "evidence": "U5-adapted/results.json"
+    },
+    {
+      "component": "Viewport/Bell/picking/GPU",
+      "evidence": "picking-final/results.json",
+      "method": "original U3 observer harness; new final sources, true controllers, native trusted input, actual pagehide cleanup; isolated observer bundle"
+    }
+  ],
+  "staticScan": "No new URL.createObjectURL, renderer, GPU geometry, AudioContext or fetch sites in application delta. New window resize listener registered via existing disposer list.",
+  "limits": [
+    "No universal leak guarantee or physical GPU certification",
+    "Standalone lifecycle fixtures contain no railway scene; not substituted for native integration"
+  ]
+}

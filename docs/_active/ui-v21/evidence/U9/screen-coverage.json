@@ -1,0 +1,580 @@
+{
+  "derivedFrom": "docs/_active/ui-v21/SCREENS.json",
+  "registrySHA256": "c80008675222ef99a55b2cbba89d5fea3c76f83a6fa208428ec76e8905a29418",
+  "count": 31,
+  "screens": [
+    {
+      "id": "AUTH-01",
+      "name": "Auth gate",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real locked Auth skin / local boundary; full live provider excluded",
+      "controlIDs": [
+        "CTRL-001",
+        "CTRL-002"
+      ],
+      "visualEvidence": "U2-header-final/login-gate.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json"
+      ],
+      "limit": "Remote OAuth not tested"
+    },
+    {
+      "id": "MAIN-01",
+      "name": "Simulator shell",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real simulator shell",
+      "controlIDs": [
+        "CTRL-001",
+        "CTRL-002",
+        "CTRL-003",
+        "CTRL-004",
+        "CTRL-005",
+        "CTRL-006",
+        "CTRL-007",
+        "CTRL-008",
+        "CTRL-009",
+        "CTRL-010",
+        "CTRL-011",
+        "CTRL-012",
+        "CTRL-013",
+        "CTRL-014",
+        "CTRL-015",
+        "CTRL-016",
+        "CTRL-017",
+        "CTRL-018",
+        "CTRL-019",
+        "CTRL-020",
+        "CTRL-021",
+        "CTRL-022",
+        "CTRL-023",
+        "CTRL-024",
+        "CTRL-025",
+        "CTRL-026",
+        "CTRL-027"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1440-main.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json",
+        "U3-final/results.json",
+        "U4/results.json",
+        "U5-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-02",
+      "name": "3D viewport",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real rendered scene / one canvas",
+      "controlIDs": [
+        "CTRL-048",
+        "CTRL-049",
+        "CTRL-064"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1920-main.png",
+      "functionalEvidence": [
+        "U3-final/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-03",
+      "name": "Camera toolbar",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real camera controls",
+      "controlIDs": [
+        "CTRL-004",
+        "CTRL-005",
+        "CTRL-006",
+        "CTRL-007",
+        "CTRL-008",
+        "CTRL-009",
+        "CTRL-010",
+        "CTRL-011"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1440-camera-tools.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json",
+        "U3-final/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-04",
+      "name": "Route preview",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real expiring route",
+      "controlIDs": [
+        "CTRL-007"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1440-camera-tools.png",
+      "functionalEvidence": [
+        "U3-final/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-05",
+      "name": "Next Switch HUD",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real readonly HUD",
+      "controlIDs": [
+        "CTRL-052"
+      ],
+      "visualEvidence": "U3-final/1440-hud-warning.png",
+      "functionalEvidence": [
+        "U3-final/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-06",
+      "name": "Switches",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "eight original protected switches",
+      "controlIDs": [
+        "CTRL-012",
+        "CTRL-048"
+      ],
+      "visualEvidence": "acceptance-checkpoint/390-main.png",
+      "functionalEvidence": [
+        "U3-final/results.json",
+        "U4/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-07",
+      "name": "Daylight",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "original daylight",
+      "controlIDs": [
+        "CTRL-013"
+      ],
+      "visualEvidence": "acceptance-checkpoint/390-day-low.png",
+      "functionalEvidence": [
+        "U4/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-08",
+      "name": "Rolling models source",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "original model source / Menu",
+      "controlIDs": [
+        "CTRL-014"
+      ],
+      "visualEvidence": "U6-adapted/1440-catalog.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-09",
+      "name": "Missions + ops log",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real mission cycle and persistent log",
+      "controlIDs": [
+        "CTRL-015",
+        "CTRL-062"
+      ],
+      "visualEvidence": "acceptance-checkpoint/390-main.png",
+      "functionalEvidence": [
+        "U3-final/results.json",
+        "U4/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-10",
+      "name": "Train dock",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "physical fleet carousel, independent LRU",
+      "controlIDs": [
+        "CTRL-016",
+        "CTRL-023",
+        "CTRL-024",
+        "CTRL-025",
+        "CTRL-026",
+        "CTRL-054"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1440-main.png",
+      "functionalEvidence": [
+        "U5-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-11",
+      "name": "Single-train controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real individual operations",
+      "controlIDs": [
+        "CTRL-017",
+        "CTRL-018",
+        "CTRL-019",
+        "CTRL-020",
+        "CTRL-021",
+        "CTRL-022",
+        "CTRL-053",
+        "CTRL-054"
+      ],
+      "visualEvidence": "U5-adapted/throttle-versus-actual-moving.png",
+      "functionalEvidence": [
+        "U4/results.json",
+        "U5-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "MAIN-12",
+      "name": "Global controls",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "momentary STOP ALL / Pause",
+      "controlIDs": [
+        "CTRL-023",
+        "CTRL-024",
+        "CTRL-025",
+        "CTRL-026",
+        "CTRL-050"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1440-main.png",
+      "functionalEvidence": [
+        "U5-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "DIALOG-01",
+      "name": "Track plan",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "original canonical plan",
+      "controlIDs": [
+        "CTRL-005",
+        "CTRL-060",
+        "CTRL-061"
+      ],
+      "visualEvidence": "U2-header-final/1440-plan.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "DIALOG-02",
+      "name": "Help",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "legacy Help semantics",
+      "controlIDs": [
+        "CTRL-006",
+        "CTRL-051",
+        "CTRL-061"
+      ],
+      "visualEvidence": "U2-header-final/1440-help.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-00",
+      "name": "Train Management dialog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "single native dialog",
+      "controlIDs": [
+        "CTRL-027",
+        "CTRL-051",
+        "CTRL-055",
+        "CTRL-056",
+        "CTRL-063"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1440-layout-initial.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json",
+        "U6-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-01",
+      "name": "On the layout",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "actual compositions",
+      "controlIDs": [
+        "CTRL-028",
+        "CTRL-029",
+        "CTRL-030",
+        "CTRL-040",
+        "CTRL-065"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1440-layout-initial.png",
+      "functionalEvidence": [
+        "U6-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-02",
+      "name": "Model catalog",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "catalog definitions / filters",
+      "controlIDs": [
+        "CTRL-014",
+        "CTRL-066"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1440-catalog-initial.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json",
+        "U6-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-03",
+      "name": "Projects dashboard",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "confirmed snapshot dashboard / empty",
+      "controlIDs": [
+        "CTRL-031",
+        "CTRL-057",
+        "CTRL-058"
+      ],
+      "visualEvidence": "acceptance-checkpoint/1440-projects-initial.png",
+      "functionalEvidence": [
+        "U7-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-04",
+      "name": "Project editor",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "six real virtual slots / dirty / invalid",
+      "controlIDs": [
+        "CTRL-031",
+        "CTRL-032",
+        "CTRL-033",
+        "CTRL-034",
+        "CTRL-035",
+        "CTRL-036",
+        "CTRL-037",
+        "CTRL-038",
+        "CTRL-039",
+        "CTRL-040"
+      ],
+      "visualEvidence": "acceptance-checkpoint/390-composer.png",
+      "functionalEvidence": [
+        "U6-adapted/results.json",
+        "U7-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-05",
+      "name": "Side preview",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "original side view / contained rail scroll",
+      "controlIDs": [
+        "CTRL-040"
+      ],
+      "visualEvidence": "acceptance-checkpoint/390-rail-end.png",
+      "functionalEvidence": [
+        "U6-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-06",
+      "name": "Compare planned vs real",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "five real states; essential content before UUIDs",
+      "controlIDs": [
+        "CTRL-030",
+        "CTRL-039"
+      ],
+      "visualEvidence": "U7-adapted/compare-stale.png",
+      "functionalEvidence": [
+        "U6-adapted/results.json",
+        "U7-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-07",
+      "name": "Guards and messages",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "shared validated guard, no premature mutation",
+      "controlIDs": [
+        "CTRL-038",
+        "CTRL-051",
+        "CTRL-055",
+        "CTRL-061",
+        "CTRL-063"
+      ],
+      "visualEvidence": "acceptance-checkpoint/390-guard.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json",
+        "U6-adapted/results.json",
+        "U7-adapted/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-08",
+      "name": "Depot inventory",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "Available / Reserved / expandable complete identities",
+      "controlIDs": [
+        "CTRL-041",
+        "CTRL-042",
+        "CTRL-043",
+        "CTRL-044",
+        "CTRL-045",
+        "CTRL-059"
+      ],
+      "visualEvidence": "acceptance-checkpoint/390-depot-card.png",
+      "functionalEvidence": [
+        "U8/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "TM-09",
+      "name": "Depot physical/plan lists",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "confirmed virtual slots / readonly physical / detached",
+      "controlIDs": [
+        "CTRL-042",
+        "CTRL-045",
+        "CTRL-065"
+      ],
+      "visualEvidence": "U8/390-physical.png",
+      "functionalEvidence": [
+        "U6-adapted/results.json",
+        "U8/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "FUT-01",
+      "name": "Persistence",
+      "registryAuthority": "NOT_IMPLEMENTED_PERSISTENCE",
+      "implementation": "EXCLUDED / verified exclusion",
+      "scope": "EXCLUDED: persistence unavailable; session-only notice from real stores",
+      "controlIDs": [
+        "CTRL-063"
+      ],
+      "visualEvidence": null,
+      "functionalEvidence": [
+        "U2-header-final/result.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "REF-01",
+      "name": "UI V1 reference shell",
+      "registryAuthority": "MOCK_ONLY",
+      "implementation": "EXCLUDED / verified exclusion",
+      "scope": "EXCLUDED: reference mock scripts absent from esbuild inputs",
+      "controlIDs": [],
+      "visualEvidence": null,
+      "functionalEvidence": [],
+      "limit": null
+    },
+    {
+      "id": "SCR-028",
+      "name": "Guarded-stop overlay (3D)",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real Guarded Stop warning, Bell and scene",
+      "controlIDs": [
+        "CTRL-046",
+        "CTRL-047"
+      ],
+      "visualEvidence": "U3-final/1440-guard-muted.png",
+      "functionalEvidence": [
+        "U3-final/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "SCR-029",
+      "name": "Startup / failure",
+      "registryAuthority": "REAL_BASELINE",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "real startup hidden after load; failure strings unchanged; real startup-failure rendering not newly verified",
+      "controlIDs": [
+        "CTRL-064"
+      ],
+      "visualEvidence": null,
+      "functionalEvidence": [
+        "U3-final/results.json"
+      ],
+      "limit": "Startup failure not newly fault-injected"
+    },
+    {
+      "id": "SCR-030",
+      "name": "Menu dialog (V1)",
+      "registryAuthority": "MOCK_ONLY",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "source reference mock excluded; authorized real Menu adapter implemented U2",
+      "controlIDs": [
+        "CTRL-002",
+        "CTRL-003",
+        "CTRL-014",
+        "CTRL-027",
+        "CTRL-046"
+      ],
+      "visualEvidence": "U2-header-final/1440-menu.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json",
+        "U3-final/results.json"
+      ],
+      "limit": null
+    },
+    {
+      "id": "SCR-031",
+      "name": "Mobile navigation (V1)",
+      "registryAuthority": "MOCK_ONLY",
+      "implementation": "REAL / authorized presentation adapter",
+      "scope": "source reference mock excluded; authorized mobile navigation implemented U2",
+      "controlIDs": [
+        "CTRL-024",
+        "CTRL-027"
+      ],
+      "visualEvidence": "acceptance-checkpoint/390-main.png",
+      "functionalEvidence": [
+        "U2-header-final/result.json",
+        "U5-adapted/results.json"
+      ],
+      "limit": null
+    }
+  ]
+}

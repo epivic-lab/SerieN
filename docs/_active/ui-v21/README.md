@@ -1,6 +1,6 @@
 # UI V2.1 — autorità d'integrazione normalizzata
 
-**Stato corrente: U3 approvata; U4 completata per review, U5–U9 NON autorizzate.** Le note di U0 qui sotto descrivono l'origine dei registry; per delta attuali prevalgono STATUS.md e U4_REPORT.md. La Regia ha approvato il dossier tecnico e le correzioni del readiness report §13; le istruzioni nei file congelati descrivono il design, non autorizzano azioni.
+**Stato corrente: U0–U8 approvate nel mandato; U9 completata tecnicamente per review, con limiti documentati e REL-001 packaging. STOP U9.** Prevalgono [STATUS.md](STATUS.md) e [U9_REPORT.md](U9_REPORT.md); le note sotto conservano la provenienza U0.
 
 | Riferimento effettivo | Autorità |
 | --- | --- |

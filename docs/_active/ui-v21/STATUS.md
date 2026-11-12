@@ -1,11 +1,17 @@
-# UI V2.1 — U8 Depot Virtuale M3
+# UI V2.1 — U9 Final UI Acceptance + U9-HDR
 
-**U8 READY FOR REGIA REVIEW — STOP. U9 non avviata.** U7 approvata nel mandato U8.
+**Verdetto tecnico proposto: READY WITH DOCUMENTED LIMITATIONS. STOP U9; approvazione Regia PENDING.** U0–U8 approvate nel mandato U9. Nessuna fase successiva autorizzata.
 
-Branch `codex/ui-v2-integration`, ingresso locale/upstream/remoto pulito `cca11fb76d36e9688f41392fa1592b9a3514dce9`; main `184cc9ba93a6b35493f365b2ffcb20ef0645963d` invariata. Depot V2.1 usa inventario M3 originale: Add/Assign su slot confermati, Available/Reserved e notice reali. Release/Remove con unico coordinator condiviso e snapshot/generation/assegnazione rivalidati; consenso una volta, Cancel senza mutazioni, onChange dopo successo. Physical stock read-only con UUID fisici e detached sui binari; trasferimenti rappresentati solo da targhe non interattive. Session-only conservato a reset/close/reopen.
+Branch esclusivo `codex/ui-v2-integration`, baseline U8 `30c56aa28e60ce83fe0cbb36209006752325bea8`; U7 e main `184cc9ba93a6b35493f365b2ffcb20ef0645963d` antenati. Recuperato tutto il lavoro locale senza reset/rebase/clean. Nessun commit U9 preesistente o push anticipato.
 
-PASS eseguiti:254 Node,9 Python,build produttiva/canonico/invarianti,6 gruppi U8 e sette viewport,6 controlli intenti obsoleti,Depot storico9gruppi,lifecycle25cicli,U7/U5,U6 recuperata e smoke U2. RAF nativo finale6gruppi con3treni in movimento e input trusted mouse/touch. Bundle finale `de724284586912053126bada325953c4d86c089085c5a4dfbd369efbceb324f7`, identico in acceptance/native finale/U6 recuperata. Le regressioni Depot/U7/U5 precedono le sole correzioni etichette guard/focus; provenienza esplicita nel [rapporto](U8_REPORT.md).
+Correzioni minime: readout throttle distinto da actual speed, menu View contenuto nel canvas e sopra i controlli primari, semantica tab TM e gruppo/text Dock, leggibilità Dock/UUID, focus/reduced motion. U9-HDR ripristina la vera targa Claude `.edp`: ottone brushed, viti/SVG maple originali, Federo 400 inciso, cascata finale 46/44px. Font/asset/fogli frozen e domini intatti.
 
-Domini M2/M3/R1,Projects view,Side View,catalogo/geometria/topologia/asset,app/Auth/Supabase/dependencies/workflow intatti; solo4file applicativi autorizzati. CSS prefisso U7 identico,una sola aggiunta guard al wiring TM. [Risultati](evidence/U8/results.json), [comandi](evidence/U8/commands-final.json), [matrici](evidence/U8/guard-matrix.json), [hash](evidence/U8/source-hashes.json), [separazione fisica](evidence/U8/physical-separation.json).
+PASS:254 Node,9 Python,build/canonico,66 controlli/31 schermate/A01–A13,111 screenshot finali su7 viewport,6 scansioni axe senza violazioni,header prima/dopo5viewport,RAF nativo finale sul bundle definitivo,regressioni U2–U8/M1/M1.1/M2/M3,PhaseZero/TrainDeck,picking degli8scambi e cleanup Bell,25cicli Projects+25Depot. PASS storici e suite non rieseguite distinti nella matrice; failure/recuperi conservati,nessuna asserzione R1 indebolita.
 
-Nessun FAIL irrisolto; timeout fixture U6 documentato e recuperato con Edit esplicito U7/attesa focus. NOT VERIFIED:hardware/fluidità/audio,screen reader,altri browser,OAuth remoto,prompt beforeunload nativo,U9/release completa. SwiftShader ~0,810fps funzionale, nessuna conclusione hardware. Matrici estese immutate U3/U4/R1 riusate come PASS storici. Singolo checkpoint atomico e push normale sul branch autorizzato, SHA e verifica remota nella consegna. Nessun main/merge/deploy/Pages/persistenza. Unica prossima attività: review indipendente Regia.
+**REL-001: pacchetto Pages RELEASE BLOCKED** perché `.github/workflows/pages.yml` non copia `ui/`. Solo proposta minima per successiva autorizzazione; workflow non modificato. Nessun merge/main/deploy/PR di release/Supabase/Auth/RLS/persistenza/nuova scena.
+
+NOT VERIFIED:hardware fisico/GPU/FPS/audio/screen reader/altri browser,OAuth live,prompt beforeunload nativo,zoom chrome nativo,certificazione WCAG completa e package pubblicato. SwiftShader è sola prova funzionale; contrasto delle superfici strutturate resta verifica manuale,non certificazione automatica.
+
+[Rapporto U9](U9_REPORT.md),[risultati](evidence/U9/results.json),[comandi](evidence/U9/commands.json),[matrici](evidence/U9/control-coverage.json),[targa Claude](evidence/U9/header-engraved-plaque/delivery/results.json),[hash](evidence/U9/source-hashes.json),[release readiness](evidence/U9/release-readiness.json).
+
+Unica prossima azione: revisione indipendente della Regia. Checkpoint atomico e SHA locale/remoto verificati nel messaggio di consegna; non costituiscono approvazione.

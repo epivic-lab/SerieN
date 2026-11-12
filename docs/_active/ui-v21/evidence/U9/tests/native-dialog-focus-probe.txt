@@ -1,0 +1,44 @@
+[
+  {
+    "name": "initial",
+    "active": {
+      "tag": "BUTTON",
+      "html": "<button class=\"bt d\" data-cancel=\"\">Keep session</button>"
+    }
+  },
+  {
+    "name": "ShiftTab",
+    "active": {
+      "tag": "BODY",
+      "html": "<body><button id=\"open\">Open</button><dialog class=\"u2-region u2-guard\" aria-labelledby=\"u2GuardTitle\" open=\"\"><div class=\"m\"><div class=\"mi\"><h2 id=\"u2GuardTitle\">Sign out?</h2><p data-message=\"\"></p"
+    }
+  },
+  {
+    "name": "settled",
+    "active": {
+      "tag": "BODY",
+      "html": "<body><button id=\"open\">Open</button><dialog class=\"u2-region u2-guard\" aria-labelledby=\"u2GuardTitle\" open=\"\"><div class=\"m\"><div class=\"mi\"><h2 id=\"u2GuardTitle\">Sign out?</h2><p data-message=\"\"></p"
+    }
+  },
+  {
+    "name": "Tab",
+    "active": {
+      "tag": "BUTTON",
+      "html": "<button class=\"bt d\" data-cancel=\"\">Keep session</button>"
+    }
+  },
+  {
+    "name": "afterAxe",
+    "active": {
+      "tag": "BUTTON",
+      "html": "<button class=\"bt d\" data-cancel=\"\">Keep session</button>"
+    }
+  },
+  {
+    "name": "afterAxeShiftTab",
+    "active": {
+      "tag": "BODY",
+      "html": "<body><button id=\"open\">Open</button><dialog class=\"u2-region u2-guard\" aria-labelledby=\"u2GuardTitle\" open=\"\"><div class=\"m\"><div class=\"mi\"><h2 id=\"u2GuardTitle\">Sign out?</h2><p data-message=\"\"></p"
+    }
+  }
+]

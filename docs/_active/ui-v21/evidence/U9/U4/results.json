@@ -1,0 +1,125 @@
+{
+  "status": "PASS",
+  "bundleSHA256": "598a6cf154fb6a96f27e54971a3aec52baf89611bd4a1a2f703f719446da30e8",
+  "method": "production minified app; local Auth boundary; on-demand RAF",
+  "checks": [
+    "eight-canonical-tiles-original-hooks-one-canvas-and-one-operations-log",
+    "all-eight-original-panel-callbacks-both-positions-and-real-counter",
+    "canonical-map-live-four-physical-markers-focus-LRU-and-marker-Space-no-stop",
+    "original-four-mission-cycle-next-enabled-without-completion-no-railway-mutation",
+    "original-daylight-input-value-glyph-thresholds-42-and-72",
+    "occupied-disabled-reason-visible-dispatcher-refuses-both-panel-and-device",
+    "real-moving-approach-blocked-with-readable-engine-reason-and-no-toggle",
+    "three-real-viewports-day-night-blocked-reasons-missions-map-and-44px-targets",
+    "U2-menu-TM-and-U3-camera-dialogs-survive-sidebar-integration-no-errors"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "failedRequests": [],
+  "external": [],
+  "missions": [
+    {
+      "name": "First lap",
+      "text": "Complete one lap of the steam locomotive\u2019s loop.",
+      "status": "Completed laps: 0 / 1"
+    },
+    {
+      "name": "Change tracks",
+      "text": "Set WX-A or WX-B and drive a locomotive from one loop to another.",
+      "status": "No transfer yet"
+    },
+    {
+      "name": "The long runaround",
+      "text": "Set the yard switches and drive the shunter along either runaround route.",
+      "status": "Waiting for the shunter"
+    },
+    {
+      "name": "Build a freight train",
+      "text": "Uncouple a wagon while stopped, then couple it again on the same track.",
+      "status": "Uncouple \u25cb \u00b7 Couple \u25cb"
+    }
+  ],
+  "lightingThresholds": [
+    [
+      0,
+      "\u2600"
+    ],
+    [
+      41,
+      "\u2600"
+    ],
+    [
+      42,
+      "\u25d0"
+    ],
+    [
+      71,
+      "\u25d0"
+    ],
+    [
+      72,
+      "\u263e"
+    ],
+    [
+      100,
+      "\u263e"
+    ],
+    [
+      48,
+      "\u25d0"
+    ]
+  ],
+  "occupied": {
+    "changed": false,
+    "controlId": "Y-4",
+    "origin": "device",
+    "reason": "occupied",
+    "message": "Switch area occupied \u00b7 operation blocked"
+  },
+  "approaching": {
+    "changed": false,
+    "controlId": "Y-4",
+    "origin": "panel",
+    "reason": "approaching",
+    "message": "Train approaching \u00b7 operation blocked"
+  },
+  "visual": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "sidebar": {
+        "x": 1140,
+        "y": 97,
+        "width": 300,
+        "height": 301
+      }
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "sidebar": {
+        "x": 759,
+        "y": 72,
+        "width": 265,
+        "height": 300
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "sidebar": {
+        "x": 0,
+        "y": 1154.109375,
+        "width": 390,
+        "height": 1506.0625
+      }
+    }
+  ]
+}

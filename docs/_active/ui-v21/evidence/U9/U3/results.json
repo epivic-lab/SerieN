@@ -1,0 +1,15 @@
+{
+  "status": "FAIL",
+  "method": "real app; local Auth boundary; on-demand production RAF",
+  "bundleSHA256": "598a6cf154fb6a96f27e54971a3aec52baf89611bd4a1a2f703f719446da30e8",
+  "observer": false,
+  "checks": [
+    "single-canvas-original-startup-and-one-persistent-log"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "failedRequests": [],
+  "external": [],
+  "failure": "Locator.click: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-preset=station]\")\n    - locator resolved to <button class=\"bt d\" type=\"button\" data-ctrl=\"CTRL-008\" aria-pressed=\"false\" data-preset=\"station\">Station</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"mi\">\u2026</div> from <header class=\"top u2-region m hd\">\u2026</header> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"mi\">\u2026</div> from <header class=\"top u2-region m hd\">\u2026</header> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    86 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"mi\">\u2026</div> from <header class=\"top u2-region m hd\">\u2026</header> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+}

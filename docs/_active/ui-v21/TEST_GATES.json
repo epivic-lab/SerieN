@@ -459,7 +459,7 @@
     {
       "id": "G-U9",
       "phase": "U9",
-      "status": "PLANNED_NOT_EXECUTED_NOT_AUTHORIZED",
+      "status": "IMPLEMENTED_PASS_WITH_DOCUMENTED_LIMITATIONS",
       "title": "Responsive/accessibilità/regressioni finali",
       "entry": "U8 approvata; autorizzazione U9; font/licenze verificati",
       "files_authorizable": "CSS integration/style e markup legacy solo cleanup dimostrato; UI modules cleanup/dispose; test/evidence; nessun dominio/config/deploy",
@@ -665,7 +665,14 @@
         "SCR-030",
         "SCR-031"
       ],
-      "screen_review_rule": "Real screens: behavior+visual checks. Mock-only/future screens: verify exclusion/disabled/session-only contract, never implement mock or cloud functionality."
+      "screen_review_rule": "Real screens: behavior+visual checks. Mock-only/future screens: verify exclusion/disabled/session-only contract, never implement mock or cloud functionality.",
+      "implementation": [
+        "tests/browser-ui-v21-U9.py",
+        "tests/browser-ui-v21-U9-header.py",
+        "tests/browser-ui-v21-U9-native-checkpoint.py"
+      ],
+      "execution_evidence": "docs/_active/ui-v21/evidence/U9/results.json",
+      "regia_approval": "PENDING"
     }
   ]
 }

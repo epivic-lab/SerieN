@@ -1,0 +1,973 @@
+{
+  "status": "PASS_WITH_LIMITS",
+  "newExecutions": [
+    {
+      "name": "baseline-build",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--metafile=docs/_active/ui-v21/evidence/U9/metafile-baseline.json"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:42:11.163160+00:00",
+      "elapsedSeconds": 0.376,
+      "exitCode": 0,
+      "log": "tests/baseline-build.txt"
+    },
+    {
+      "name": "baseline-audit",
+      "command": [
+        "python3",
+        "/workspace/work/u9/audit.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:42:34.612648+00:00",
+      "elapsedSeconds": 12.497,
+      "exitCode": 0,
+      "log": "tests/baseline-audit.txt"
+    },
+    {
+      "name": "node",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:43:35.048719+00:00",
+      "elapsedSeconds": 13.785,
+      "exitCode": 0,
+      "log": "tests/node.txt"
+    },
+    {
+      "name": "python",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "*_test.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:46:46.049824+00:00",
+      "elapsedSeconds": 0.127,
+      "exitCode": 0,
+      "log": "tests/python.txt"
+    },
+    {
+      "name": "canonical",
+      "command": [
+        "python3",
+        "scripts/build-canonical-layout.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:46:46.220270+00:00",
+      "elapsedSeconds": 0.09,
+      "exitCode": 0,
+      "log": "tests/canonical.txt"
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--metafile=docs/_active/ui-v21/evidence/U9/metafile-final.json"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:46:46.335673+00:00",
+      "elapsedSeconds": 0.357,
+      "exitCode": 0,
+      "log": "tests/build.txt"
+    },
+    {
+      "name": "regression-U2",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U2.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:49:16.263996+00:00",
+      "elapsedSeconds": 42.241,
+      "exitCode": 0,
+      "log": "tests/regression-U2.txt"
+    },
+    {
+      "name": "acceptance-first",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:48:50.141937+00:00",
+      "elapsedSeconds": 98.128,
+      "exitCode": 1,
+      "log": "tests/acceptance-first.txt"
+    },
+    {
+      "name": "regression-U3",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U3.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:49:58.536350+00:00",
+      "elapsedSeconds": 61.949,
+      "exitCode": 1,
+      "log": "tests/regression-U3.txt"
+    },
+    {
+      "name": "regression-U4",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U4.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:51:00.512907+00:00",
+      "elapsedSeconds": 34.316,
+      "exitCode": 0,
+      "log": "tests/regression-U4.txt"
+    },
+    {
+      "name": "regression-U8",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U8.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:51:34.856304+00:00",
+      "elapsedSeconds": 17.734,
+      "exitCode": 0,
+      "log": "tests/regression-U8.txt"
+    },
+    {
+      "name": "build-camera-fix",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--metafile=docs/_active/ui-v21/evidence/U9/metafile-final.json"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:52:12.254786+00:00",
+      "elapsedSeconds": 0.538,
+      "exitCode": 0,
+      "log": "tests/build-camera-fix.txt"
+    },
+    {
+      "name": "regression-U5",
+      "command": [
+        "python3",
+        "/workspace/SerieN/docs/_active/ui-v21/evidence/U9/run-adapted.py",
+        "U5"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:51:52.617638+00:00",
+      "elapsedSeconds": 39.689,
+      "exitCode": 0,
+      "log": "tests/regression-U5.txt"
+    },
+    {
+      "name": "build-aria-fix",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--metafile=docs/_active/ui-v21/evidence/U9/metafile-final.json"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:52:39.039090+00:00",
+      "elapsedSeconds": 0.543,
+      "exitCode": 0,
+      "log": "tests/build-aria-fix.txt"
+    },
+    {
+      "name": "regression-U6",
+      "command": [
+        "python3",
+        "/workspace/SerieN/docs/_active/ui-v21/evidence/U9/run-adapted.py",
+        "U6"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:52:32.333924+00:00",
+      "elapsedSeconds": 36.894,
+      "exitCode": 0,
+      "log": "tests/regression-U6.txt"
+    },
+    {
+      "name": "regression-M2",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/run-projects-regression.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:53:00.885981+00:00",
+      "elapsedSeconds": 72.439,
+      "exitCode": 0,
+      "log": "tests/regression-M2.txt"
+    },
+    {
+      "name": "regression-U7",
+      "command": [
+        "python3",
+        "/workspace/SerieN/docs/_active/ui-v21/evidence/U9/run-adapted.py",
+        "U7"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:53:09.335441+00:00",
+      "elapsedSeconds": 67.69,
+      "exitCode": 0,
+      "log": "tests/regression-U7.txt"
+    },
+    {
+      "name": "regression-U3-recovery",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U3.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:52:40.495662+00:00",
+      "elapsedSeconds": 114.515,
+      "exitCode": 1,
+      "log": "tests/regression-U3-recovery.txt"
+    },
+    {
+      "name": "regression-depot",
+      "command": [
+        "python3",
+        "/workspace/SerieN/docs/_active/ui-v21/evidence/U9/run-adapted.py",
+        "depot"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:54:17.094891+00:00",
+      "elapsedSeconds": 40.785,
+      "exitCode": 0,
+      "log": "tests/regression-depot.txt"
+    },
+    {
+      "name": "regression-lifecycle",
+      "command": [
+        "python3",
+        "/workspace/SerieN/docs/_active/ui-v21/evidence/U9/run-adapted.py",
+        "lifecycle"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:54:57.911449+00:00",
+      "elapsedSeconds": 3.605,
+      "exitCode": 0,
+      "log": "tests/regression-lifecycle.txt"
+    },
+    {
+      "name": "regression-intents",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U8-intents.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:55:01.614136+00:00",
+      "elapsedSeconds": 2.322,
+      "exitCode": 0,
+      "log": "tests/regression-intents.txt"
+    },
+    {
+      "name": "release-readiness",
+      "command": [
+        "python3",
+        "/workspace/work/u9/release-check.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:55:06.339270+00:00",
+      "elapsedSeconds": 0.19,
+      "exitCode": 1,
+      "log": "tests/release-readiness.txt"
+    },
+    {
+      "name": "regression-M1",
+      "command": [
+        "python3",
+        "tests/browser-train-management.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:55:04.009822+00:00",
+      "elapsedSeconds": 48.799,
+      "exitCode": 0,
+      "log": "tests/regression-M1.txt"
+    },
+    {
+      "name": "release-readiness-recovered",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/release-check.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:56:13.610043+00:00",
+      "elapsedSeconds": 0.091,
+      "exitCode": 0,
+      "log": "tests/release-readiness-recovered.txt"
+    },
+    {
+      "name": "build-final",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--metafile=docs/_active/ui-v21/evidence/U9/metafile-final.json"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:56:13.783472+00:00",
+      "elapsedSeconds": 0.806,
+      "exitCode": 0,
+      "log": "tests/build-final.txt"
+    },
+    {
+      "name": "regression-side",
+      "command": [
+        "python3",
+        "tests/run-train-side-regression.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:55:52.911553+00:00",
+      "elapsedSeconds": 50.33,
+      "exitCode": 0,
+      "log": "tests/regression-side.txt"
+    },
+    {
+      "name": "acceptance-final",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:52:39.623265+00:00",
+      "elapsedSeconds": 254.805,
+      "exitCode": 0,
+      "log": "tests/acceptance-final.txt"
+    },
+    {
+      "name": "regression-M2-lifecycle",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/run-m2-lifecycle.py",
+        "lifecycle"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:57:18.980697+00:00",
+      "elapsedSeconds": 6.34,
+      "exitCode": 0,
+      "log": "tests/regression-M2-lifecycle.txt"
+    },
+    {
+      "name": "native-final",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9-native.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:52:59.493263+00:00",
+      "elapsedSeconds": 308.391,
+      "exitCode": -15,
+      "log": "tests/native-final.txt"
+    },
+    {
+      "name": "regression-U3-final",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U3.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:57:17.382782+00:00",
+      "elapsedSeconds": 76.635,
+      "exitCode": 0,
+      "log": "tests/regression-U3-final.txt"
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/verify.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T12:01:06.002303+00:00",
+      "elapsedSeconds": 1.43,
+      "exitCode": 0,
+      "log": "tests/invariants.txt"
+    },
+    {
+      "name": "acceptance-delivery",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:58:49.580189+00:00",
+      "elapsedSeconds": 156.603,
+      "exitCode": 0,
+      "log": "tests/acceptance-delivery.txt"
+    },
+    {
+      "name": "M3-lifecycle-final",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/run-adapted.py",
+        "lifecycle"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T12:03:28.927177+00:00",
+      "elapsedSeconds": 6.293,
+      "exitCode": 0,
+      "log": "tests/M3-lifecycle-final.txt"
+    },
+    {
+      "name": "M2-lifecycle-final",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/run-m2-lifecycle.py",
+        "lifecycle"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T12:03:35.333159+00:00",
+      "elapsedSeconds": 5.97,
+      "exitCode": 0,
+      "log": "tests/M2-lifecycle-final.txt"
+    },
+    {
+      "name": "node-final",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T12:03:30.202145+00:00",
+      "elapsedSeconds": 34.389,
+      "exitCode": 0,
+      "log": "tests/node-final.txt"
+    },
+    {
+      "name": "picking-final",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U3-picking.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T12:03:27.299431+00:00",
+      "elapsedSeconds": 44.104,
+      "exitCode": 0,
+      "log": "tests/picking-final.txt"
+    },
+    {
+      "name": "canonical-diff",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "src/canonical-layout.json",
+        "docs/jmri-layout/canonical-graph.json",
+        "docs/jmri-layout/layout-canonical.svg",
+        "docs/jmri-layout/minimap-canonical.svg"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T12:04:50.042638+00:00",
+      "elapsedSeconds": 0.035,
+      "exitCode": 0,
+      "log": "tests/canonical-diff.txt"
+    },
+    {
+      "name": "native-dialog-focus-probe",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/focus-probe.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T12:07:24.426240+00:00",
+      "elapsedSeconds": 5.06,
+      "exitCode": 0,
+      "log": "tests/native-dialog-focus-probe.txt"
+    },
+    {
+      "name": "phase-zero-final",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/run-legacy.py",
+        "tests/browser-phase-zero.py",
+        "docs/_active/ui-v21/evidence/U9/phase-zero-final"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T12:07:23.024586+00:00",
+      "elapsedSeconds": 32.111,
+      "exitCode": 0,
+      "log": "tests/phase-zero-final.txt"
+    },
+    {
+      "name": "train-deck-final",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/run-legacy.py",
+        "tests/browser-train-deck.py",
+        "docs/_active/ui-v21/evidence/U9/train-deck-final"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T12:07:55.207046+00:00",
+      "elapsedSeconds": 24.997,
+      "exitCode": 0,
+      "log": "tests/train-deck-final.txt"
+    },
+    {
+      "name": "native-delivery",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9-native.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T11:58:39.048303+00:00",
+      "elapsedSeconds": 798.481,
+      "exitCode": 0,
+      "log": "tests/native-delivery.txt"
+    },
+    {
+      "name": "header-before",
+      "command": [
+        "python3",
+        "/workspace/work/u9/capture-header-before.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:25:37.247234+00:00",
+      "elapsedSeconds": 1.703,
+      "exitCode": 1,
+      "log": "tests/header-before.txt"
+    },
+    {
+      "name": "header-before-recovered",
+      "command": [
+        "python3",
+        "/workspace/work/u9/capture-header-before.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:26:47.616144+00:00",
+      "elapsedSeconds": 21.174,
+      "exitCode": 0,
+      "log": "tests/header-before-recovered.txt"
+    },
+    {
+      "name": "build-header",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--metafile=docs/_active/ui-v21/evidence/U9/metafile-final.json"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:28:16.603241+00:00",
+      "elapsedSeconds": 0.353,
+      "exitCode": 0,
+      "log": "tests/build-header.txt"
+    },
+    {
+      "name": "header-after",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9-header.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:29:40.797709+00:00",
+      "elapsedSeconds": 21.251,
+      "exitCode": 0,
+      "log": "tests/header-after.txt"
+    },
+    {
+      "name": "shell-header-final",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U2.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:30:32.000118+00:00",
+      "elapsedSeconds": 53.523,
+      "exitCode": 0,
+      "log": "tests/shell-header-final.txt"
+    },
+    {
+      "name": "release-readiness-header",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/release-check.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:31:51.940619+00:00",
+      "elapsedSeconds": 0.135,
+      "exitCode": 0,
+      "log": "tests/release-readiness-header.txt"
+    },
+    {
+      "name": "node-header-final",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:32:13.431684+00:00",
+      "elapsedSeconds": 32.394,
+      "exitCode": 0,
+      "log": "tests/node-header-final.txt"
+    },
+    {
+      "name": "invariants-header",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/verify.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:32:45.880040+00:00",
+      "elapsedSeconds": 0.761,
+      "exitCode": 0,
+      "log": "tests/invariants-header.txt"
+    },
+    {
+      "name": "acceptance-header-final",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:32:11.987424+00:00",
+      "elapsedSeconds": 211.844,
+      "exitCode": 0,
+      "log": "tests/acceptance-header-final.txt"
+    },
+    {
+      "name": "a11y-incomplete-review",
+      "command": [
+        "python3",
+        "/workspace/work/u9/a11y-incomplete.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:39:12.323494+00:00",
+      "elapsedSeconds": 13.425,
+      "exitCode": 0,
+      "log": "tests/a11y-incomplete-review.txt"
+    },
+    {
+      "name": "native-header-final",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9-native.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:30:30.564764+00:00",
+      "elapsedSeconds": 671.423,
+      "exitCode": 0,
+      "log": "tests/native-header-final.txt"
+    },
+    {
+      "name": "build-final-semantics",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--metafile=docs/_active/ui-v21/evidence/U9/metafile-final.json"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:41:58.627229+00:00",
+      "elapsedSeconds": 0.399,
+      "exitCode": 0,
+      "log": "tests/build-final-semantics.txt"
+    },
+    {
+      "name": "invariants-checkpoint",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/verify.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:43:16.909781+00:00",
+      "elapsedSeconds": 1.525,
+      "exitCode": 0,
+      "log": "tests/invariants-checkpoint.txt"
+    },
+    {
+      "name": "native-checkpoint",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9-native-checkpoint.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:43:00.011500+00:00",
+      "elapsedSeconds": 126.419,
+      "exitCode": 1,
+      "log": "tests/native-checkpoint.txt"
+    },
+    {
+      "name": "acceptance-checkpoint",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:43:01.524634+00:00",
+      "elapsedSeconds": 159.555,
+      "exitCode": 0,
+      "log": "tests/acceptance-checkpoint.txt"
+    },
+    {
+      "name": "header-evidence-reuse",
+      "command": [
+        "node",
+        "docs/_active/ui-v21/evidence/U9/verify-reuse.mjs"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:46:35.997598+00:00",
+      "elapsedSeconds": 0.352,
+      "exitCode": 0,
+      "log": "tests/header-evidence-reuse.txt"
+    },
+    {
+      "name": "node-checkpoint",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:47:47.056088+00:00",
+      "elapsedSeconds": 14.958,
+      "exitCode": 0,
+      "log": "tests/node-checkpoint.txt"
+    },
+    {
+      "name": "native-checkpoint-recovery",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U9-native-checkpoint.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:48:20.814052+00:00",
+      "elapsedSeconds": 135.801,
+      "exitCode": 0,
+      "log": "tests/native-checkpoint-recovery.txt"
+    },
+    {
+      "name": "assemble-final-matrices",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/assemble-matrices.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:51:09.437937+00:00",
+      "elapsedSeconds": 0.082,
+      "exitCode": 1,
+      "log": "tests/assemble-final-matrices.txt"
+    },
+    {
+      "name": "assemble-final-matrices-recovered",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/assemble-matrices.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:51:47.051469+00:00",
+      "elapsedSeconds": 0.057,
+      "exitCode": 0,
+      "log": "tests/assemble-final-matrices-recovered.txt"
+    },
+    {
+      "name": "final-scope",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/verify.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:54:57.535886+00:00",
+      "elapsedSeconds": 0.558,
+      "exitCode": 0,
+      "log": "tests/final-scope.txt"
+    },
+    {
+      "name": "final-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:54:58.132535+00:00",
+      "elapsedSeconds": 0.007,
+      "exitCode": 0,
+      "log": "tests/final-diff-check.txt"
+    },
+    {
+      "name": "source-inventory-final",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/verify.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:56:53.232454+00:00",
+      "elapsedSeconds": 0.613,
+      "exitCode": 0,
+      "log": "tests/source-inventory-final.txt"
+    },
+    {
+      "name": "review-package-final",
+      "command": [
+        "python3",
+        "docs/_active/ui-v21/evidence/U9/review-gates.py"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T13:59:45.781668+00:00",
+      "elapsedSeconds": 0.063,
+      "exitCode": 0,
+      "log": "tests/review-package-final.txt"
+    },
+    {
+      "name": "staged-code-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)docs/_active/ui-v21/evidence/U9/tests/*.txt"
+      ],
+      "cwd": "/workspace/SerieN",
+      "startedUTC": "2026-11-12T14:03:50.135020+00:00",
+      "elapsedSeconds": 0.02,
+      "exitCode": 0,
+      "log": "tests/staged-code-whitespace.txt"
+    }
+  ],
+  "newProductionBundle": {
+    "sha256": "11085af332a3636cb23e1bcca2b88d669dfd47942fedbff7c183203ce8b66bd2",
+    "bytes": 1088369,
+    "metafile": "metafile-final.json",
+    "metafileSHA256": "7e8f94aa3cf0406f3d538844c60723c05aa0e6ba4d3dafddc6a9e0192780e877",
+    "inputs": [
+      "src/ui/guard-modal.js",
+      "src/ui/dock.js",
+      "src/ui/keyboard.js",
+      "src/ui/sfx.js",
+      "src/ui/shell.js",
+      "src/ui/overlays.js",
+      "src/train-deck-state.js",
+      "src/ui/sidebar.js",
+      "node_modules/three/build/three.module.js",
+      "src/canonical-layout.json",
+      "src/network.js",
+      "src/consist.js",
+      "src/next-switch.js",
+      "src/railway-state.js",
+      "src/guarded-stop-view.js",
+      "src/guarded-stop-bell.js",
+      "src/guarded-stop-scene.js",
+      "src/rolling-stock-animation.js",
+      "src/railway-guard.js",
+      "src/railway-conflicts.js",
+      "src/railway-step.js",
+      "src/fleet-commands.js",
+      "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "src/rolling-stock.js",
+      "src/graphic-foundations.js",
+      "src/simulation.js",
+      "src/turnout-routes.js",
+      "src/turnout-picking.js",
+      "src/turnout-arrow-view.js",
+      "src/turnout-arrows.js",
+      "src/turnout-arrow-approaches.js",
+      "src/turnout-glow.js",
+      "src/turnout-interaction.js",
+      "src/turnout-commands.js",
+      "assets/rolling-stock-sides/manifest.json",
+      "src/train-side-layout.js",
+      "src/train-side-view.js",
+      "src/train-projects.js",
+      "src/locomotive-thumbnails.js",
+      "src/train-projects-view.js",
+      "src/train-management-state.js",
+      "src/depot-inventory.js",
+      "src/depot-view.js",
+      "src/train-management.js",
+      "src/train-deck.js",
+      "src/next-switch-view.js",
+      "src/landscape.js",
+      "src/zone-layout.js",
+      "src/station-building.js",
+      "src/structure-layout.js",
+      "src/scenic-plan.js",
+      "src/view-controls.js",
+      "src/rail-profile.js",
+      "src/navigation.js",
+      "src/quality.js",
+      "node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+      "src/asset-placement.js",
+      "src/train-assets.js",
+      "src/rolling-stock-art.js",
+      "node_modules/three/examples/jsm/shaders/CopyShader.js",
+      "node_modules/three/examples/jsm/postprocessing/Pass.js",
+      "node_modules/three/examples/jsm/postprocessing/ShaderPass.js",
+      "node_modules/three/examples/jsm/postprocessing/MaskPass.js",
+      "node_modules/three/examples/jsm/postprocessing/EffectComposer.js",
+      "node_modules/three/examples/jsm/postprocessing/RenderPass.js",
+      "node_modules/three/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "node_modules/three/examples/jsm/math/SimplexNoise.js",
+      "node_modules/three/examples/jsm/shaders/SSAOShader.js",
+      "node_modules/three/examples/jsm/postprocessing/SSAOPass.js",
+      "node_modules/three/examples/jsm/shaders/OutputShader.js",
+      "node_modules/three/examples/jsm/postprocessing/OutputPass.js",
+      "src/presentation.js",
+      "src/station-materials.js",
+      "node_modules/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "src/station-platform.js",
+      "src/zones.js",
+      "src/railway-works.js",
+      "src/diorama.js",
+      "node_modules/three/examples/jsm/environments/RoomEnvironment.js",
+      "src/scenery.js",
+      "node_modules/three/examples/jsm/controls/OrbitControls.js",
+      "app.js"
+    ],
+    "cssSHA256": "421c56a152dc4a69d137f6b47c09fe371207f39e342758b1251a64d1de9c2375"
+  },
+  "historicalVerified": [
+    {
+      "name": "R1 / 5C eleven scenarios",
+      "evidence": "docs/_active/ui-v21/evidence/U3/regressions/railway/docs/phase-5c-close/acceptance.json",
+      "sha256": "d330019022d57af2ca2f01d989b6c2cc1cfa9e5c69a5e27bbe6a765e4471dd01",
+      "verification": "R1 engine/dispatcher/topology modules verified byte-identical to U8 and U3 where listed by inherited evidence. Current integration rechecked through U3/U4/U5/native/picking; full eleven-scenario browser matrix not newly executed."
+    },
+    {
+      "name": "Guarded Stop extended scene/audio resources",
+      "evidence": "docs/_active/ui-v21/evidence/U3/regressions/guarded-stop-final/guarded-stop/browser.json",
+      "sha256": "7fb1ef64627c284109d2b2dab2b5a8e51d59df50506a6cfc0124f648f6e3f298",
+      "verification": "Guard, Bell and scene modules byte-identical; current U3 and observer pagehide revalidate integration."
+    }
+  ],
+  "notVerified": [
+    "Physical GPU/FPS/fluidity",
+    "Screen reader / physical audio",
+    "Browsers other than Chromium",
+    "Remote OAuth/provider / live Supabase",
+    "Native beforeunload prompt",
+    "Native browser zoom chrome",
+    "New full 5D performance benchmark",
+    "Live deployable Pages package",
+    "Full original phase-1/3/4 browser suites not rerun; current applicable contracts covered by focused final UI/camera/quality/canonical acceptance."
+  ],
+  "originalGateTestRegistry": "gate-test-coverage.json",
+  "originalGateUniqueTestCount": 59,
+  "finalProductionAcceptance": [
+    "acceptance-checkpoint/results.json",
+    "native-checkpoint-recovery/results.json"
+  ],
+  "headerReuseProof": "header-evidence-reuse.json",
+  "commandsFile": "commands.json"
+}

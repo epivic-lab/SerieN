@@ -35,7 +35,8 @@ export function createTrainProjectsView({getTrains,getSelected,getGeneration,onC
       const table=el('table'),head=el('tr');for(const name of ['Position','Planned slot / source reference','Real train / physical identity'])head.append(el('th',name));table.append(head);
       const real=realComposition(train,getGeneration());
       for(let i=0;i<Math.max(project.vehicles.length,real.vehicles.length);i++){
-        const p=project.vehicles[i],r=real.vehicles[i],row=el('tr');row.append(el('th',String(i+1)),el('td',p?`${projectModel(p.modelId).name} · ${p.orientation===1?'forward':'reversed'} · slot ${p.id} · source ${p.sourceVehicleId??'unlinked'}`:'—'),el('td',r?`${PROJECT_CATALOG.find(m=>m.id===r.modelId)?.name??'Unknown model'} · physical ${r.id}`:'—'));table.append(row);
+        const p=project.vehicles[i],r=real.vehicles[i],row=el('tr'),planned=el('td',p?`${projectModel(p.modelId).name} · ${p.orientation===1?'forward':'reversed'}`:'—'),physical=el('td',r?PROJECT_CATALOG.find(m=>m.id===r.modelId)?.name??'Unknown model':'—');
+        if(p||r){const identity=el('details',undefined,'u9-identity');identity.append(el('summary','Identity details'));if(p)identity.append(el('small',`Slot ${p.id} · source ${p.sourceVehicleId??'unlinked'}`));if(r)identity.append(el('small',`Physical ${r.id}`));planned.append(identity);}row.append(el('th',String(i+1)),planned,physical);table.append(row);
       }section.append(table);
       const list=el('ul');for(const difference of result.differences)list.append(el('li',difference));section.append(list);
     }

@@ -38,10 +38,16 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
     tools.hidden = true;
     toggle.setAttribute('aria-expanded', 'false');
   };
+  // U9: bound the open menu above the primary toolbar, within the layout canvas.
+  const positionTools = () => {
+    if (!tools.hidden) tools.style.maxHeight = `${Math.max(44, Math.min(280, camera.getBoundingClientRect().top - layer.getBoundingClientRect().top - 8))}px`;
+  };
   on(toggle, 'click', () => {
     tools.hidden = !tools.hidden;
     toggle.setAttribute('aria-expanded', String(!tools.hidden));
+    positionTools();
   });
+  on(window, 'resize', positionTools);
   on(camera, 'keydown', event => {
     if (event.key === 'Escape' && !tools.hidden) {
       event.stopPropagation();

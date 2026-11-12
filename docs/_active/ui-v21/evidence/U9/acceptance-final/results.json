@@ -1,0 +1,1597 @@
+{
+  "status": "PASS",
+  "bundleSHA256": "bcff0eec2d80c883edf7103bfa06320e92bc7d4cc71a7e1344a31f34f6f19b9b",
+  "checks": [
+    "independent-commanded-throttle-and-real-velocity-readouts",
+    "seven-viewports-main-day-night-Low-High-TM-views-scroll-and-pointer-pass-through",
+    "mobile-rail-inspector-context-and-six-vehicle-overflow-contained",
+    "depot-model-code-state-project-priority-and-expandable-full-UUIDs",
+    "native-focus-trap-Tab-ShiftTab-top-Escape-return-TM-tabs-and-carousel-keyboard",
+    "reduced-motion-text-enlargement-zoom-equivalent-local-real-weights-offline-font-decode"
+  ],
+  "screenshots": [
+    {
+      "file": "1920-main.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-main"
+    },
+    {
+      "file": "1920-day-low.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-day-low"
+    },
+    {
+      "file": "1920-night-high.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-night-high"
+    },
+    {
+      "file": "1920-layout-initial.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-layout-initial"
+    },
+    {
+      "file": "1920-catalog-initial.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-catalog-initial"
+    },
+    {
+      "file": "1920-projects-initial.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-projects-initial"
+    },
+    {
+      "file": "1920-depot-initial.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-depot-initial"
+    },
+    {
+      "file": "1440-main.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-main"
+    },
+    {
+      "file": "1440-day-low.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-day-low"
+    },
+    {
+      "file": "1440-night-high.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-night-high"
+    },
+    {
+      "file": "1440-layout-initial.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-layout-initial"
+    },
+    {
+      "file": "1440-catalog-initial.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-catalog-initial"
+    },
+    {
+      "file": "1440-projects-initial.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-projects-initial"
+    },
+    {
+      "file": "1440-depot-initial.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-depot-initial"
+    },
+    {
+      "file": "1280-main.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-main"
+    },
+    {
+      "file": "1280-day-low.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-day-low"
+    },
+    {
+      "file": "1280-night-high.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-night-high"
+    },
+    {
+      "file": "1280-layout-initial.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-layout-initial"
+    },
+    {
+      "file": "1280-catalog-initial.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-catalog-initial"
+    },
+    {
+      "file": "1280-projects-initial.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-projects-initial"
+    },
+    {
+      "file": "1280-depot-initial.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-depot-initial"
+    },
+    {
+      "file": "1024-main.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-main"
+    },
+    {
+      "file": "1024-day-low.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-day-low"
+    },
+    {
+      "file": "1024-night-high.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-night-high"
+    },
+    {
+      "file": "1024-layout-initial.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-layout-initial"
+    },
+    {
+      "file": "1024-catalog-initial.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-catalog-initial"
+    },
+    {
+      "file": "1024-projects-initial.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-projects-initial"
+    },
+    {
+      "file": "1024-depot-initial.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-depot-initial"
+    },
+    {
+      "file": "820-main.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-main"
+    },
+    {
+      "file": "820-day-low.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-day-low"
+    },
+    {
+      "file": "820-night-high.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-night-high"
+    },
+    {
+      "file": "820-layout-initial.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-layout-initial"
+    },
+    {
+      "file": "820-catalog-initial.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-catalog-initial"
+    },
+    {
+      "file": "820-projects-initial.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-projects-initial"
+    },
+    {
+      "file": "820-depot-initial.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-depot-initial"
+    },
+    {
+      "file": "768-main.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-main"
+    },
+    {
+      "file": "768-day-low.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-day-low"
+    },
+    {
+      "file": "768-night-high.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-night-high"
+    },
+    {
+      "file": "768-layout-initial.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-layout-initial"
+    },
+    {
+      "file": "768-catalog-initial.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-catalog-initial"
+    },
+    {
+      "file": "768-projects-initial.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-projects-initial"
+    },
+    {
+      "file": "768-depot-initial.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-depot-initial"
+    },
+    {
+      "file": "390-main.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-main"
+    },
+    {
+      "file": "390-day-low.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-day-low"
+    },
+    {
+      "file": "390-night-high.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-night-high"
+    },
+    {
+      "file": "390-layout-initial.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-layout-initial"
+    },
+    {
+      "file": "390-catalog-initial.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-catalog-initial"
+    },
+    {
+      "file": "390-projects-initial.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-projects-initial"
+    },
+    {
+      "file": "390-depot-initial.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-depot-initial"
+    },
+    {
+      "file": "invalid-empty-project.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "invalid-empty-project"
+    },
+    {
+      "file": "1920-composer.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-composer"
+    },
+    {
+      "file": "1920-inspector.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-inspector"
+    },
+    {
+      "file": "1920-compare.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-compare"
+    },
+    {
+      "file": "1920-rail-end.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-rail-end"
+    },
+    {
+      "file": "1440-composer.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-composer"
+    },
+    {
+      "file": "1440-inspector.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-inspector"
+    },
+    {
+      "file": "1440-compare.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-compare"
+    },
+    {
+      "file": "1440-rail-end.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-rail-end"
+    },
+    {
+      "file": "1280-composer.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-composer"
+    },
+    {
+      "file": "1280-inspector.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-inspector"
+    },
+    {
+      "file": "1280-compare.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-compare"
+    },
+    {
+      "file": "1280-rail-end.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-rail-end"
+    },
+    {
+      "file": "1024-composer.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-composer"
+    },
+    {
+      "file": "1024-inspector.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-inspector"
+    },
+    {
+      "file": "1024-compare.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-compare"
+    },
+    {
+      "file": "1024-rail-end.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-rail-end"
+    },
+    {
+      "file": "820-composer.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-composer"
+    },
+    {
+      "file": "820-inspector.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-inspector"
+    },
+    {
+      "file": "820-compare.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-compare"
+    },
+    {
+      "file": "820-rail-end.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-rail-end"
+    },
+    {
+      "file": "768-composer.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-composer"
+    },
+    {
+      "file": "768-inspector.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-inspector"
+    },
+    {
+      "file": "768-compare.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-compare"
+    },
+    {
+      "file": "768-rail-end.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-rail-end"
+    },
+    {
+      "file": "390-composer.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-composer"
+    },
+    {
+      "file": "390-inspector.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-inspector"
+    },
+    {
+      "file": "390-compare.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-compare"
+    },
+    {
+      "file": "390-rail-end.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-rail-end"
+    },
+    {
+      "file": "1920-depot-reserved.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-depot-reserved"
+    },
+    {
+      "file": "1920-depot-card.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-depot-card"
+    },
+    {
+      "file": "1920-depot-identity.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "state": "1920-depot-identity"
+    },
+    {
+      "file": "1440-depot-reserved.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-depot-reserved"
+    },
+    {
+      "file": "1440-depot-card.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-depot-card"
+    },
+    {
+      "file": "1440-depot-identity.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": "1440-depot-identity"
+    },
+    {
+      "file": "1280-depot-reserved.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-depot-reserved"
+    },
+    {
+      "file": "1280-depot-card.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-depot-card"
+    },
+    {
+      "file": "1280-depot-identity.png",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "state": "1280-depot-identity"
+    },
+    {
+      "file": "1024-depot-reserved.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-depot-reserved"
+    },
+    {
+      "file": "1024-depot-card.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-depot-card"
+    },
+    {
+      "file": "1024-depot-identity.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "state": "1024-depot-identity"
+    },
+    {
+      "file": "820-depot-reserved.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-depot-reserved"
+    },
+    {
+      "file": "820-depot-card.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-depot-card"
+    },
+    {
+      "file": "820-depot-identity.png",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "state": "820-depot-identity"
+    },
+    {
+      "file": "768-depot-reserved.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-depot-reserved"
+    },
+    {
+      "file": "768-depot-card.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-depot-card"
+    },
+    {
+      "file": "768-depot-identity.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "state": "768-depot-identity"
+    },
+    {
+      "file": "390-depot-reserved.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-depot-reserved"
+    },
+    {
+      "file": "390-depot-card.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-depot-card"
+    },
+    {
+      "file": "390-depot-identity.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-depot-identity"
+    },
+    {
+      "file": "390-guard.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-guard"
+    },
+    {
+      "file": "carousel-keyboard-focus.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "carousel-keyboard-focus"
+    },
+    {
+      "file": "390-reduced-motion.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-reduced-motion"
+    },
+    {
+      "file": "390-text-200-percent.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "390-text-200-percent"
+    },
+    {
+      "file": "zoom-equivalent-200-percent.png",
+      "viewport": {
+        "width": 720,
+        "height": 450
+      },
+      "state": "zoom-equivalent-200-percent"
+    }
+  ],
+  "responsive": [
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 6.0526123046875,
+          "height": 6.0526123046875
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 6.052734375,
+          "height": 6.052734375
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 6.0526123046875,
+          "height": 6.0526123046875
+        }
+      ],
+      "state": "main",
+      "width": 1920,
+      "height": 1080,
+      "pickingSurface": {
+        "hits": 61,
+        "width": 1620,
+        "height": 481,
+        "canvases": 1,
+        "overlayPointer": "none"
+      }
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "layout",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "catalog",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "projects",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 6.0526123046875,
+          "height": 6.0526123046875
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 6.052734375,
+          "height": 6.052734375
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 6.0526123046875,
+          "height": 6.0526123046875
+        }
+      ],
+      "state": "main",
+      "width": 1440,
+      "height": 900,
+      "pickingSurface": {
+        "hits": 43,
+        "width": 1140,
+        "height": 301,
+        "canvases": 1,
+        "overlayPointer": "none"
+      }
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "layout",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "catalog",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "projects",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 6.05267333984375,
+          "height": 6.0526123046875
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 6.052734375,
+          "height": 6.052734375
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 6.0526123046875,
+          "height": 6.0526123046875
+        }
+      ],
+      "state": "main",
+      "width": 1280,
+      "height": 800,
+      "pickingSurface": {
+        "hits": 40,
+        "width": 980,
+        "height": 300,
+        "canvases": 1,
+        "overlayPointer": "none"
+      }
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "layout",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "catalog",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "projects",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 5.11962890625,
+          "height": 5.11962890625
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 5.11962890625,
+          "height": 5.11962890625
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 5.11962890625,
+          "height": 5.11962890625
+        }
+      ],
+      "state": "main",
+      "width": 1024,
+      "height": 768,
+      "pickingSurface": {
+        "hits": 31,
+        "width": 759,
+        "height": 300,
+        "canvases": 1,
+        "overlayPointer": "none"
+      }
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "layout",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "catalog",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "projects",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 9.159820556640625,
+          "height": 9.1597900390625
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 9.159820556640625,
+          "height": 9.1597900390625
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 9.159805297851562,
+          "height": 9.15966796875
+        }
+      ],
+      "state": "main",
+      "width": 820,
+      "height": 1180,
+      "pickingSurface": {
+        "hits": 55,
+        "width": 820,
+        "height": 708,
+        "canvases": 1,
+        "overlayPointer": "none"
+      }
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "layout",
+      "width": 820,
+      "height": 1180
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "catalog",
+      "width": 820,
+      "height": 1180
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "projects",
+      "width": 820,
+      "height": 1180
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot",
+      "width": 820,
+      "height": 1180
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 8.466072082519531,
+          "height": 8.466064453125
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 8.466079711914062,
+          "height": 8.466064453125
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 8.466079711914062,
+          "height": 8.4661865234375
+        }
+      ],
+      "state": "main",
+      "width": 768,
+      "height": 1024,
+      "pickingSurface": {
+        "hits": 52,
+        "width": 768,
+        "height": 614.390625,
+        "canvases": 1,
+        "overlayPointer": "none"
+      }
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "layout",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "catalog",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "projects",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 8.346427917480469,
+          "height": 8.346435546875
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 8.346435546875,
+          "height": 8.346435546875
+        },
+        {
+          "tag": "circle",
+          "id": "",
+          "text": "",
+          "width": 8.346435546875,
+          "height": 8.346435546875
+        }
+      ],
+      "state": "main",
+      "width": 390,
+      "height": 844,
+      "pickingSurface": {
+        "hits": 26,
+        "width": 390,
+        "height": 405.109375,
+        "canvases": 1,
+        "overlayPointer": "none"
+      }
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "layout",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "catalog",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "projects",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "composer",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "composer",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "composer",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "composer",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "composer",
+      "width": 820,
+      "height": 1180
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "composer",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "composer",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot-reserved",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot-reserved",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot-reserved",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot-reserved",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot-reserved",
+      "width": 820,
+      "height": 1180
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot-reserved",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "depot-reserved",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "text-200-percent",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "bodyOverflow": false,
+      "dialogOverflow": false,
+      "targets": [],
+      "state": "200-percent-zoom-equivalent",
+      "width": 720,
+      "height": 450
+    }
+  ],
+  "accessibility": [
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 133
+        }
+      ],
+      "state": "main",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 30
+        }
+      ],
+      "state": "layout",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 48
+        }
+      ],
+      "state": "catalog",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 17
+        }
+      ],
+      "state": "composer",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 15
+        }
+      ],
+      "state": "depot-reserved",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ],
+      "state": "guard",
+      "duplicateIDs": []
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "httpFailures": [],
+  "axeVersion": "4.11.0",
+  "fonts": {
+    "faces": [
+      {
+        "family": "Cinzel Decorative",
+        "weight": "700",
+        "status": "loaded"
+      },
+      {
+        "family": "Federo",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "weight": "400",
+        "status": "loaded"
+      }
+    ],
+    "computed": [
+      {
+        "selector": ".top .plq",
+        "family": "Federo, sans-serif",
+        "weight": "400"
+      },
+      {
+        "selector": ".trainConsoleName",
+        "family": "\"Cinzel Decorative\"",
+        "weight": "700"
+      },
+      {
+        "selector": ".actualSpeed",
+        "family": "\"Cutive Mono\"",
+        "weight": "400"
+      }
+    ],
+    "sheets": [
+      "http://127.0.0.1:8035/style.css?v=0.12.0",
+      null,
+      "http://127.0.0.1:8035/ui/css/tokens-u2.css",
+      "http://127.0.0.1:8035/ui/css/serien-ui-u2.css",
+      "http://127.0.0.1:8035/ui/css/tokens-tm-u2.css",
+      "http://127.0.0.1:8035/ui/css/serien-ui-train-management-u2.css",
+      "http://127.0.0.1:8035/ui/css/serien-ui-integration.css"
+    ],
+    "offline": [
+      {
+        "family": "Cinzel Decorative",
+        "weight": "700",
+        "bytes": 22460
+      },
+      {
+        "family": "Federo",
+        "weight": "400",
+        "bytes": 38704
+      },
+      {
+        "family": "Cutive Mono",
+        "weight": "400",
+        "bytes": 30780
+      }
+    ]
+  }
+}
