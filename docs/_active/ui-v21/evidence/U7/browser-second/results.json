@@ -1,0 +1,206 @@
+{
+  "status": "FAIL",
+  "bundleSHA256": "6fdd163961a006b983253b1584f2bb2b83498dfcada6f093829c17430718d836",
+  "checks": [],
+  "errors": [],
+  "nativeDialogs": [],
+  "compare": {
+    "unlinked": "Compare \u00b7 Unlinked\n\nIndependent project: no physical train is linked.\n\nRailway operations\n\nWhole-project application, arbitrary reorder and individual reversal are unsupported.\n\nUncouple: No current train.\n\nCouple: No current train.\n\nUse the existing train consoles for individual R1 operations. A detached wagon remains on the track."
+  },
+  "physicalBefore": {
+    "occupied": [
+      {
+        "edge": "T10",
+        "min": 199.48400602127208,
+        "max": 247.40000792272627
+      },
+      {
+        "edge": "T9",
+        "min": 0,
+        "max": 69.58399809854578
+      },
+      {
+        "edge": "T10",
+        "min": 133.78400602127206,
+        "max": 199.48400602127205
+      },
+      {
+        "edge": "T10",
+        "min": 68.08400602127207,
+        "max": 133.78400602127206
+      },
+      {
+        "edge": "T10",
+        "min": 2.3840060212720857,
+        "max": 68.08400602127207
+      },
+      {
+        "edge": "T5",
+        "min": 219.49636401150815,
+        "max": 221.4818200575425
+      },
+      {
+        "edge": "WX-A:upper",
+        "min": 0,
+        "max": 94.01454395396564
+      },
+      {
+        "edge": "T5",
+        "min": 151.04636401150816,
+        "max": 221.4818200575425
+      },
+      {
+        "edge": "WX-A:upper",
+        "min": 0,
+        "max": 14.01454395396565
+      },
+      {
+        "edge": "T4",
+        "min": 204.3281840690508,
+        "max": 221.48182005754262
+      },
+      {
+        "edge": "T5",
+        "min": 0,
+        "max": 151.04636401150816
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 118.66504877032324,
+        "max": 187.16504877032324
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 187.16504877032324,
+        "max": 252.86504877032323
+      },
+      {
+        "edge": "T17",
+        "min": 171.14458097208987,
+        "max": 195.56361932027332
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 252.86504877032326,
+        "max": 312.8960104221398
+      }
+    ],
+    "identities": {
+      "trains": [
+        [
+          "1f54ef2d-8bd8-4fe9-9975-6fd2b4d04b27",
+          "6e95d6ed-1544-463e-a30f-fb18f7cc81dd",
+          "493f7601-0b85-4ce1-b542-d17bef3c9c1c",
+          "bf5bb81b-e298-4d73-a4ee-a677a8227492"
+        ],
+        [
+          "d55aa5c2-9499-4edc-9aba-ecec115fcf61",
+          "6f47922c-b347-40e9-83c0-23f3c7960a28",
+          "56898329-ded0-499c-b653-ad7f227ccd73"
+        ],
+        [
+          "a8f48831-2346-4cf4-be5e-ca6eceaf4b88",
+          "319cd40b-76f0-496a-99c8-a17591beb2cf",
+          "b21435cc-6ade-4bab-86b9-7a94a1eb6626"
+        ]
+      ],
+      "detached": []
+    }
+  },
+  "physicalAfter": {
+    "occupied": [
+      {
+        "edge": "T10",
+        "min": 199.48400602127208,
+        "max": 247.40000792272627
+      },
+      {
+        "edge": "T9",
+        "min": 0,
+        "max": 69.58399809854578
+      },
+      {
+        "edge": "T10",
+        "min": 133.78400602127206,
+        "max": 199.48400602127205
+      },
+      {
+        "edge": "T10",
+        "min": 68.08400602127207,
+        "max": 133.78400602127206
+      },
+      {
+        "edge": "T10",
+        "min": 2.3840060212720857,
+        "max": 68.08400602127207
+      },
+      {
+        "edge": "WX-A:upper",
+        "min": 8.014543953965642,
+        "max": 84.01454395396564
+      },
+      {
+        "edge": "T5",
+        "min": 145.04636401150816,
+        "max": 221.4818200575425
+      },
+      {
+        "edge": "WX-A:upper",
+        "min": 0,
+        "max": 8.01454395396565
+      },
+      {
+        "edge": "T4",
+        "min": 198.3281840690508,
+        "max": 221.48182005754262
+      },
+      {
+        "edge": "T5",
+        "min": 0,
+        "max": 145.04636401150816
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 118.66504877032324,
+        "max": 187.16504877032324
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 187.16504877032324,
+        "max": 252.86504877032323
+      },
+      {
+        "edge": "T17",
+        "min": 171.14458097208987,
+        "max": 195.56361932027332
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 252.86504877032326,
+        "max": 312.8960104221398
+      }
+    ],
+    "identities": {
+      "trains": [
+        [
+          "1f54ef2d-8bd8-4fe9-9975-6fd2b4d04b27",
+          "6e95d6ed-1544-463e-a30f-fb18f7cc81dd",
+          "493f7601-0b85-4ce1-b542-d17bef3c9c1c",
+          "bf5bb81b-e298-4d73-a4ee-a677a8227492"
+        ],
+        [
+          "d55aa5c2-9499-4edc-9aba-ecec115fcf61",
+          "6f47922c-b347-40e9-83c0-23f3c7960a28",
+          "56898329-ded0-499c-b653-ad7f227ccd73"
+        ],
+        [
+          "a8f48831-2346-4cf4-be5e-ca6eceaf4b88",
+          "319cd40b-76f0-496a-99c8-a17591beb2cf",
+          "b21435cc-6ade-4bab-86b9-7a94a1eb6626"
+        ]
+      ],
+      "detached": []
+    }
+  },
+  "failure": ""
+}

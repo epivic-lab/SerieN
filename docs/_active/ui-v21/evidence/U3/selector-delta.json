@@ -1,0 +1,207 @@
+{
+  "baseline": "48a7c4d48b118877ec7edf7f4c61fba090e460b8",
+  "controls": [
+    {
+      "id": "CTRL-004",
+      "name": "Home (header)",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#homeView"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "homeView.onclick \u2192 nav.select(overview)",
+      "currentU3DOM": "#homeView (U2 header retained); #viewHome retains toolbar Home callback CTRL-011"
+    },
+    {
+      "id": "CTRL-007",
+      "name": "Route preview",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#routePreview"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "routePreview.onclick \u2192 highlightUntil + updateRouteHighlight",
+      "currentU3DOM": "#cam #routePreview; original node and 15s handler"
+    },
+    {
+      "id": "CTRL-008",
+      "name": "View preset",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#cameraView"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "cameraView.onchange \u2192 nav.select(preset)",
+      "currentU3DOM": "#cam #cameraView plus [data-preset]; original change handler"
+    },
+    {
+      "id": "CTRL-009",
+      "name": "Zoom in/out",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#viewZoomIn",
+          "#viewZoomOut"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "mountViewControls: zoomIn/zoomOut",
+      "currentU3DOM": "#viewZoomIn, #viewZoomOut; original listeners"
+    },
+    {
+      "id": "CTRL-010",
+      "name": "Pan / Orbit drag mode",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#viewPan",
+          "#viewOrbit"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "mountViewControls: setDragMode(pan|orbit)",
+      "currentU3DOM": "#viewPan, #viewOrbit; original listeners"
+    },
+    {
+      "id": "CTRL-011",
+      "name": "Home / Follow (toolbar)",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#viewHome",
+          "#viewFollow"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "mountViewControls: home/follow",
+      "currentU3DOM": "#viewHome, #viewFollow; original listeners"
+    },
+    {
+      "id": "CTRL-046",
+      "name": "Bell mute (guarded stop)",
+      "U0BaselineDOM": {
+        "kind": "accessible",
+        "css": [],
+        "accessible": {
+          "role": "button",
+          "name": "Mute railway warning bell",
+          "scope": "#view3d"
+        },
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "mute.onclick \u2192 bell.setMuted(!bell.snapshot.muted)",
+      "currentU3DOM": "#bellChip (original mute node) and #bellSeg; Menu clicks original mute node, reads same bell.snapshot"
+    },
+    {
+      "id": "CTRL-047",
+      "name": "Guarded-stop status text",
+      "U0BaselineDOM": {
+        "kind": "accessible",
+        "css": [],
+        "accessible": {
+          "role": "status",
+          "scope": "#view3d",
+          "description": "status node created inside guarded-stop-scene; do not conflate with HUD warning"
+        },
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "update \u2192 guardedStopView projections \u2192 status text (internal)",
+      "currentU3DOM": "#guardedStopStatus [data-ctrl=CTRL-047]; original text node and original engine projection"
+    },
+    {
+      "id": "CTRL-048",
+      "name": "3D turnout click / hover identify",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#view3d canvas"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "canvas picking \u2192 requestToggle(id,3D) with guard",
+      "currentU3DOM": "#view3d > canvas; original picker/dispatcher, no adapter dispatcher"
+    },
+    {
+      "id": "CTRL-049",
+      "name": "3D train click select",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#view3d canvas"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "canvas hit.kind=train \u2192 selectTrain(hit.id) \u2192 app select(id)",
+      "currentU3DOM": "#view3d > canvas; original train selection callback"
+    },
+    {
+      "id": "CTRL-052",
+      "name": "Next Switch HUD minimize/expand",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#nextSwitchHUD .nextSwitchMinimize"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "onMinimize only; refresh/schemaSVG are read-only railway projections",
+      "currentU3DOM": "#nextSwitchHUD; original DOM/renderer/minimize, wrapped in one .mi surface"
+    },
+    {
+      "id": "CTRL-062",
+      "name": "Operations log",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#log"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "log(s) \u2192 #log.textContent, no severity model",
+      "currentU3DOM": "#view3d .u3-operations #log; same node and log(s) body"
+    },
+    {
+      "id": "CTRL-064",
+      "name": "Startup / load message",
+      "U0BaselineDOM": {
+        "kind": "css",
+        "css": [
+          "#loadMsg"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "callback": "loadMsg + startup error/unhandledrejection text",
+      "currentU3DOM": "#loadMsg; same boot/failure strings and visibility"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "exit codes observed in execution sessions; raw logs retained",
+  "receipts": {
+    "baseline/node": 0,
+    "baseline/build": 0,
+    "tests/python": 0,
+    "tests/canonical": 0,
+    "regression-5c": 0,
+    "lifecycle": 0,
+    "single-projection": 0,
+    "acceptance": 0,
+    "functional-responsive": 0,
+    "deck-verified": 0
+  },
+  "deckRunnerRecovery": "verified deck subprocess exited 0 and browser-result PASS; containing Python runner then failed writing its receipt due Path+str precedence; fixed runner for remaining jobs",
+  "gitSwitchRecovery": "initial --track switch failed because origin fetch refspec covered main only, after populating target index/tree; verified index exactly target commit and no unstaged diff, then non-destructive --no-track switch created authorized branch; added scoped fetch refspec/upstream; no user files lost"
+}

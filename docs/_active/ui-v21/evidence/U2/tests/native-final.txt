@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": {
+    "CreateReserveVirtualDepotAndM2ProjectWhileThreeAdvanceWithoutPhysicalMutation": "PASS",
+    "TrustedNativeMouseReleaseAndTouchCreateRemoveDuringMovement": "PASS",
+    "R1CoupleUncoupleRefusedInMotionWithDepotOpen": "PASS",
+    "R1UncoupleRecoupleOtherTwoMovingNeverConvertsPhysicalStockToDepot": "PASS",
+    "SessionM2AndDepotSurviveCloseReopenWithThreeMoving": "PASS",
+    "NativeRAFSceneSynchronizationAndNoRuntimeErrors": "PASS"
+  },
+  "failure": null,
+  "frameStats": {
+    "frames": 74,
+    "durationMs": 113112.09999999999,
+    "fps": 0.6453774618276913
+  }
+}

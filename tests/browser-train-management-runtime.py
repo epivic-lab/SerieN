@@ -80,7 +80,7 @@ with sync_playwright() as pw:
                 current=checkpoint('open-cycle-'+str(cycle));moving(current);selected_consistent()
                 assert all(t['travel']>initial['stock'][i]['travel'] for i,t in enumerate(current['stock']))
                 if cycle==0:page.screenshot(path=str(out/'desktop-three-moving.png'))
-                page.locator('dialog [data-close]').click();phase('closed-three-moving-'+str(cycle));sample(3)
+                page.locator('dialog.trainManagement [data-close]').click();phase('closed-three-moving-'+str(cycle));sample(3)
                 current=checkpoint('closed-cycle-'+str(cycle));moving(current)
                 assert page.locator('#trainManagement').evaluate('(b)=>document.activeElement===b')
             result['checks']['openCloseThreeMoving']='PASS: 3 cycles, all three continued advancing'
@@ -117,7 +117,7 @@ with sync_playwright() as pw:
             selected_consistent();moving(checkpoint('after-recouple'),2)
             assert page.locator('[data-detached-id]').count()==0
             result['checks']['liveUncoupleRecouple']='PASS: actual commands, dialog open, other two moving'
-            page.locator('dialog [data-close]').click()
+            page.locator('dialog.trainManagement [data-close]').click()
         page.locator('[data-console-train="0"] input').evaluate('(e)=>{e.value="25";e.dispatchEvent(new Event("input",{bubbles:true}));}')
         page.wait_for_function('__serienDiagnostics.snapshot().stock.every(t=>t.velocity>.1)')
         page.locator('#trainManagement').click();phase('tablet-three-moving')
@@ -126,7 +126,7 @@ with sync_playwright() as pw:
             page.set_viewport_size({'width':width,'height':height});sample(4)
             page.evaluate("document.querySelector('dialog').scrollTop=0")
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
-            assert page.locator('dialog').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
+            assert page.locator('dialog.trainManagement').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
             page.locator('[data-zoom="in"]').click()
             box=viewport.bounding_box();x=box['x']+box['width']*.8;y=box['y']+min(70,box['height']/2)
             cdp.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':x,'y':y}]})
@@ -145,7 +145,7 @@ with sync_playwright() as pw:
         assert page.locator('.managementModel').count()==14
         page.locator('[data-view="layout"]').click();selected_consistent()
         result['checks']['catalogWhileMoving']='PASS: 14 models, return to current composition'
-        page.locator('dialog [data-close]').click();phase('final-three-moving');sample(8)
+        page.locator('dialog.trainManagement [data-close]').click();phase('final-three-moving');sample(8)
         final=checkpoint('final');moving(final)
         assert final['frameObservations']>initial['frameObservations']
         assert page.evaluate('window.requestAnimationFrame===window.__runtimeNativeRAF')

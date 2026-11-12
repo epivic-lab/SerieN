@@ -1,0 +1,151 @@
+{
+  "status": "PASS_WITH_LIMITS",
+  "axeVersion": "4.11.0",
+  "standardTags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21aa"
+  ],
+  "scans": [
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 133
+        }
+      ],
+      "state": "main",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 30
+        }
+      ],
+      "state": "layout",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 48
+        }
+      ],
+      "state": "catalog",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 17
+        }
+      ],
+      "state": "composer",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 15
+        }
+      ],
+      "state": "depot-reserved",
+      "duplicateIDs": []
+    },
+    {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ],
+      "state": "guard",
+      "duplicateIDs": []
+    }
+  ],
+  "keyboard": "Native modal Tab/ShiftTab/top Escape, focus return, TM Home/End/arrows, Dock Home/End, Composer shortcuts/input exclusion and selected Space exercised by U9/U5/U6/U7 suites.",
+  "nativeDialogBoundary": "Chromium can pass through BODY/browser chrome; no underlying application control receives focus. Native dialog behavior preserved.",
+  "fonts": {
+    "faces": [
+      {
+        "family": "Cinzel Decorative",
+        "weight": "700",
+        "status": "loaded"
+      },
+      {
+        "family": "Federo",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "weight": "400",
+        "status": "loaded"
+      }
+    ],
+    "computed": [
+      {
+        "selector": ".trainConsoleName",
+        "family": "\"Cinzel Decorative\"",
+        "weight": "700"
+      },
+      {
+        "selector": ".trainConsoleDescription",
+        "family": "Federo",
+        "weight": "400"
+      },
+      {
+        "selector": ".actualSpeed",
+        "family": "\"Cutive Mono\"",
+        "weight": "400"
+      }
+    ],
+    "sheets": [
+      "http://127.0.0.1:8035/style.css?v=0.12.0",
+      null,
+      "http://127.0.0.1:8035/ui/css/tokens-u2.css",
+      "http://127.0.0.1:8035/ui/css/serien-ui-u2.css",
+      "http://127.0.0.1:8035/ui/css/tokens-tm-u2.css",
+      "http://127.0.0.1:8035/ui/css/serien-ui-train-management-u2.css",
+      "http://127.0.0.1:8035/ui/css/serien-ui-integration.css"
+    ],
+    "offline": [
+      {
+        "family": "Cinzel Decorative",
+        "weight": "700",
+        "bytes": 22460
+      },
+      {
+        "family": "Federo",
+        "weight": "400",
+        "bytes": 38704
+      },
+      {
+        "family": "Cutive Mono",
+        "weight": "400",
+        "bytes": 30780
+      }
+    ]
+  },
+  "limits": [
+    "No WCAG certification",
+    "No screen reader or physical keyboard/touch/audio certification",
+    "axe incomplete checks require manual review; listed per scan",
+    "Native browser zoom chrome excluded; CSS equivalent and text enlargement tested"
+  ],
+  "manualReview": {
+    "ARIA": "Four generic-label candidates inspected in a11y-incomplete-details.json. Corrected: selector role=group; native cars text without inappropriate label. Final scans have no aria-prohibited-attr incomplete candidates.",
+    "contrast": "Gradient/texture/shadow surfaces remain axe incomplete; primary real screenshots manually inspected. Exact frozen inscription ink/shadows matched. No full WCAG contrast or screen-reader certification claimed."
+  }
+}

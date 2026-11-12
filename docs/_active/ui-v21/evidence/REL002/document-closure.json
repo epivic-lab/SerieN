@@ -1,0 +1,366 @@
+{
+  "paths": [
+    "docs/consolidation/FINAL-REPORT.md",
+    "docs/consolidation/INTAKE.md",
+    "docs/consolidation/README.md",
+    "docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf",
+    "docs/consolidation/browser-result.json",
+    "docs/consolidation/consist/consist-check.json",
+    "docs/consolidation/desktop.png",
+    "docs/consolidation/index.html",
+    "docs/consolidation/node-tests.txt",
+    "docs/consolidation/parser-tests.txt",
+    "docs/consolidation/smoke-result.json",
+    "docs/jmri-layout/canonical-graph.json",
+    "docs/jmri-layout/layout-canonical.svg",
+    "docs/jmri-layout/minimap-canonical.svg",
+    "docs/jmri-layout/railmodeller-original.pdf",
+    "docs/jmri-layout/source.xml",
+    "docs/phase-0/kato-parts.csv",
+    "docs/phase-1/README.md",
+    "docs/phase-1/baseline-ui.json",
+    "docs/phase-1/browser-result.json",
+    "docs/phase-1/node-tests.txt",
+    "docs/phase-1/parser-tests.txt",
+    "docs/phase-1/railway-preservation.json",
+    "docs/train-deck/browser-result.json",
+    "index.html",
+    "style.css",
+    "ui/assets/textures/brass-brushed.jpg",
+    "ui/assets/textures/enamel-green.jpg",
+    "ui/assets/textures/mahogany.jpg",
+    "ui/assets/textures/parchment.jpg",
+    "ui/assets/textures/steel-brushed.jpg",
+    "ui/css/serien-ui-integration.css",
+    "ui/css/serien-ui-train-management-u2.css",
+    "ui/css/serien-ui-u2.css",
+    "ui/css/tokens-tm-u2.css",
+    "ui/css/tokens-u2.css",
+    "ui/fonts/CinzelDecorative-700.woff2",
+    "ui/fonts/CutiveMono-400.woff2",
+    "ui/fonts/Federo-400.woff2"
+  ],
+  "edges": [
+    {
+      "source": "index.html",
+      "reference": "/SerieN/docs/jmri-layout/minimap-canonical.svg",
+      "target": "docs/jmri-layout/minimap-canonical.svg"
+    },
+    {
+      "source": "index.html",
+      "reference": "/SerieN/docs/consolidation/index.html",
+      "target": "docs/consolidation/index.html"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "../../index.html?v=0.9.0",
+      "target": "index.html"
+    },
+    {
+      "source": "index.html",
+      "reference": "./style.css?v=0.12.0",
+      "target": "style.css"
+    },
+    {
+      "source": "index.html",
+      "reference": "./ui/css/tokens-u2.css",
+      "target": "ui/css/tokens-u2.css"
+    },
+    {
+      "source": "index.html",
+      "reference": "./ui/css/serien-ui-u2.css",
+      "target": "ui/css/serien-ui-u2.css"
+    },
+    {
+      "source": "ui/css/serien-ui-u2.css",
+      "reference": "../assets/textures/brass-brushed.jpg",
+      "target": "ui/assets/textures/brass-brushed.jpg"
+    },
+    {
+      "source": "ui/css/serien-ui-u2.css",
+      "reference": "../assets/textures/enamel-green.jpg",
+      "target": "ui/assets/textures/enamel-green.jpg"
+    },
+    {
+      "source": "ui/css/serien-ui-u2.css",
+      "reference": "../assets/textures/steel-brushed.jpg",
+      "target": "ui/assets/textures/steel-brushed.jpg"
+    },
+    {
+      "source": "ui/css/serien-ui-u2.css",
+      "reference": "../assets/textures/mahogany.jpg",
+      "target": "ui/assets/textures/mahogany.jpg"
+    },
+    {
+      "source": "ui/css/serien-ui-u2.css",
+      "reference": "../assets/textures/parchment.jpg",
+      "target": "ui/assets/textures/parchment.jpg"
+    },
+    {
+      "source": "index.html",
+      "reference": "./ui/css/tokens-tm-u2.css",
+      "target": "ui/css/tokens-tm-u2.css"
+    },
+    {
+      "source": "index.html",
+      "reference": "./ui/css/serien-ui-train-management-u2.css",
+      "target": "ui/css/serien-ui-train-management-u2.css"
+    },
+    {
+      "source": "index.html",
+      "reference": "./ui/css/serien-ui-integration.css",
+      "target": "ui/css/serien-ui-integration.css"
+    },
+    {
+      "source": "ui/css/serien-ui-integration.css",
+      "reference": "../fonts/CinzelDecorative-700.woff2",
+      "target": "ui/fonts/CinzelDecorative-700.woff2"
+    },
+    {
+      "source": "ui/css/serien-ui-integration.css",
+      "reference": "../fonts/Federo-400.woff2",
+      "target": "ui/fonts/Federo-400.woff2"
+    },
+    {
+      "source": "ui/css/serien-ui-integration.css",
+      "reference": "../fonts/CutiveMono-400.woff2",
+      "target": "ui/fonts/CutiveMono-400.woff2"
+    },
+    {
+      "source": "index.html",
+      "reference": "./docs/jmri-layout/minimap-canonical.svg",
+      "target": "docs/jmri-layout/minimap-canonical.svg"
+    },
+    {
+      "source": "index.html",
+      "reference": "./docs/consolidation/index.html",
+      "target": "docs/consolidation/index.html"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "../phase-1/README.md",
+      "target": "docs/phase-1/README.md"
+    },
+    {
+      "source": "docs/phase-1/README.md",
+      "reference": "baseline-ui.json",
+      "target": "docs/phase-1/baseline-ui.json"
+    },
+    {
+      "source": "docs/phase-1/README.md",
+      "reference": "railway-preservation.json",
+      "target": "docs/phase-1/railway-preservation.json"
+    },
+    {
+      "source": "docs/phase-1/README.md",
+      "reference": "browser-result.json",
+      "target": "docs/phase-1/browser-result.json"
+    },
+    {
+      "source": "docs/phase-1/README.md",
+      "reference": "node-tests.txt",
+      "target": "docs/phase-1/node-tests.txt"
+    },
+    {
+      "source": "docs/phase-1/README.md",
+      "reference": "parser-tests.txt",
+      "target": "docs/phase-1/parser-tests.txt"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "FINAL-REPORT.md",
+      "target": "docs/consolidation/FINAL-REPORT.md"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "../phase-1/README.md",
+      "target": "docs/phase-1/README.md"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "https://epivic-lab.github.io/SerieN/?v=0.8.0",
+      "target": "index.html"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "index.html",
+      "target": "docs/consolidation/index.html"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "../jmri-layout/layout-canonical.svg",
+      "target": "docs/jmri-layout/layout-canonical.svg"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "../jmri-layout/canonical-graph.json",
+      "target": "docs/jmri-layout/canonical-graph.json"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "node-tests.txt",
+      "target": "docs/consolidation/node-tests.txt"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "parser-tests.txt",
+      "target": "docs/consolidation/parser-tests.txt"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "browser-result.json",
+      "target": "docs/consolidation/browser-result.json"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "../train-deck/browser-result.json",
+      "target": "docs/train-deck/browser-result.json"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "consist/consist-check.json",
+      "target": "docs/consolidation/consist/consist-check.json"
+    },
+    {
+      "source": "docs/consolidation/FINAL-REPORT.md",
+      "reference": "smoke-result.json",
+      "target": "docs/consolidation/smoke-result.json"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "README.md",
+      "target": "docs/consolidation/README.md"
+    },
+    {
+      "source": "docs/consolidation/README.md",
+      "reference": "../phase-1/README.md",
+      "target": "docs/phase-1/README.md"
+    },
+    {
+      "source": "docs/consolidation/README.md",
+      "reference": "../jmri-layout/layout-canonical.svg",
+      "target": "docs/jmri-layout/layout-canonical.svg"
+    },
+    {
+      "source": "docs/consolidation/README.md",
+      "reference": "../jmri-layout/canonical-graph.json",
+      "target": "docs/jmri-layout/canonical-graph.json"
+    },
+    {
+      "source": "docs/consolidation/README.md",
+      "reference": "../jmri-layout/source.xml",
+      "target": "docs/jmri-layout/source.xml"
+    },
+    {
+      "source": "docs/consolidation/README.md",
+      "reference": "../jmri-layout/railmodeller-original.pdf",
+      "target": "docs/jmri-layout/railmodeller-original.pdf"
+    },
+    {
+      "source": "docs/consolidation/README.md",
+      "reference": "SerieN_Dossier_Tecnico_Codex_REV_A.pdf",
+      "target": "docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf"
+    },
+    {
+      "source": "docs/consolidation/README.md",
+      "reference": "INTAKE.md",
+      "target": "docs/consolidation/INTAKE.md"
+    },
+    {
+      "source": "docs/consolidation/README.md",
+      "reference": "browser-result.json",
+      "target": "docs/consolidation/browser-result.json"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "INTAKE.md",
+      "target": "docs/consolidation/INTAKE.md"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "../jmri-layout/canonical-graph.json",
+      "target": "docs/jmri-layout/canonical-graph.json"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "../jmri-layout/source.xml",
+      "target": "docs/jmri-layout/source.xml"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "../jmri-layout/railmodeller-original.pdf",
+      "target": "docs/jmri-layout/railmodeller-original.pdf"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "SerieN_Dossier_Tecnico_Codex_REV_A.pdf",
+      "target": "docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "../jmri-layout/layout-canonical.svg",
+      "target": "docs/jmri-layout/layout-canonical.svg"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "../jmri-layout/layout-canonical.svg",
+      "target": "docs/jmri-layout/layout-canonical.svg"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "node-tests.txt",
+      "target": "docs/consolidation/node-tests.txt"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "parser-tests.txt",
+      "target": "docs/consolidation/parser-tests.txt"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "browser-result.json",
+      "target": "docs/consolidation/browser-result.json"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "../train-deck/browser-result.json",
+      "target": "docs/train-deck/browser-result.json"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "consist/consist-check.json",
+      "target": "docs/consolidation/consist/consist-check.json"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "desktop.png",
+      "target": "docs/consolidation/desktop.png"
+    },
+    {
+      "source": "docs/consolidation/index.html",
+      "reference": "../jmri-layout/canonical-graph.json",
+      "target": "docs/jmri-layout/canonical-graph.json"
+    },
+    {
+      "source": "dist/game.js",
+      "reference": "/SerieN/docs/jmri-layout/source.xml",
+      "target": "docs/jmri-layout/source.xml"
+    },
+    {
+      "source": "dist/game.js",
+      "reference": "/SerieN/docs/jmri-layout/railmodeller-original.pdf",
+      "target": "docs/jmri-layout/railmodeller-original.pdf"
+    },
+    {
+      "source": "dist/game.js",
+      "reference": "/SerieN/docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf",
+      "target": "docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf"
+    },
+    {
+      "source": "dist/game.js",
+      "reference": "/SerieN/docs/phase-0/kato-parts.csv",
+      "target": "docs/phase-0/kato-parts.csv"
+    }
+  ],
+  "missing": []
+}

@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "proposal": "U7 READY FOR REGIA REVIEW",
+  "approved": false,
+  "baseline": "6f8a28a4fe49875dc499872454d5128b2860bdfc",
+  "branch": "codex/ui-v2-integration",
+  "bundleSHA256": "8e6f7628c2b78fc4eb1abe6ef00ca99929ee66aae6d17cc5ac0163499c89ca6b",
+  "commands": [
+    {
+      "name": "node",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "environment": {},
+      "exitCode": 0,
+      "elapsed": 13.371610164642334
+    },
+    {
+      "name": "python",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "*_test.py"
+      ],
+      "environment": {},
+      "exitCode": 0,
+      "elapsed": 0.08391308784484863
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--metafile=/workspace/SerieN/docs/_active/ui-v21/evidence/U7/metafile.json"
+      ],
+      "environment": {},
+      "exitCode": 0,
+      "elapsed": 0.19507598876953125
+    },
+    {
+      "name": "canonical",
+      "command": [
+        "python3",
+        "scripts/build-canonical-layout.py"
+      ],
+      "environment": {},
+      "exitCode": 0,
+      "elapsed": 0.06281638145446777
+    },
+    {
+      "name": "M1",
+      "command": [
+        "python3",
+        "tests/browser-train-management.py"
+      ],
+      "environment": {
+        "M1_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U7/M1"
+      },
+      "exitCode": 0,
+      "elapsed": 20.300639152526855
+    },
+    {
+      "name": "side",
+      "command": [
+        "python3",
+        "tests/run-train-side-regression.py"
+      ],
+      "environment": {
+        "M11_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U7/side"
+      },
+      "exitCode": 0,
+      "elapsed": 24.077224016189575
+    },
+    {
+      "name": "U5",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U5.py"
+      ],
+      "environment": {
+        "U5_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U7/U5"
+      },
+      "exitCode": 0,
+      "elapsed": 37.36471390724182
+    },
+    {
+      "name": "M2-second",
+      "command": "SERIEN_URL=http://127.0.0.1:8034/ M2_OUTPUT=docs/_active/ui-v21/evidence/U7/M2-second python3 docs/_active/ui-v21/evidence/U7/run-projects-regression.py",
+      "exitCode": 0,
+      "log": "tests/M2-second.txt"
+    },
+    {
+      "name": "lifecycle-adapted",
+      "command": "python3 docs/_active/ui-v21/evidence/U7/run-adapted.py lifecycle",
+      "exitCode": 0,
+      "log": "tests/lifecycle-adapted.txt"
+    },
+    {
+      "name": "U6-adapted",
+      "command": "SERIEN_URL=http://127.0.0.1:8034/ python3 docs/_active/ui-v21/evidence/U7/run-adapted.py U6",
+      "exitCode": 0,
+      "log": "tests/U6-adapted.txt"
+    },
+    {
+      "name": "checkpoint",
+      "command": "SERIEN_URL=http://127.0.0.1:8034/ U7_OUTPUT=docs/_active/ui-v21/evidence/U7/checkpoint python3 tests/browser-ui-v21-U7.py",
+      "exitCode": 0,
+      "log": "tests/checkpoint.txt"
+    },
+    {
+      "name": "runtime",
+      "command": "SERIEN_URL=http://127.0.0.1:8034/ M2_RUNTIME_OUTPUT=docs/_active/ui-v21/evidence/U7/runtime python3 tests/browser-train-projects-runtime.py",
+      "exitCode": 0,
+      "log": "tests/runtime.txt"
+    },
+    {
+      "name": "native-checkpoint",
+      "command": "python3 - [inline Python equivalent persisted in docs/_active/ui-v21/evidence/U7/run-native-checkpoint.py]",
+      "exitCode": 0,
+      "log": "tests/native-checkpoint.txt"
+    },
+    {
+      "name": "surfaces",
+      "command": "python3 docs/_active/ui-v21/evidence/U7/capture-surfaces.py",
+      "exitCode": 0,
+      "log": "tests/surfaces.txt"
+    }
+  ],
+  "functional": "checkpoint/results.json",
+  "nativeFinal": "native-checkpoint/results.json",
+  "projectsNativeExtended": "runtime/result.json",
+  "originalFailedAttempts": "commands.json keeps lifecycle/U6 failures before input adaptation; browser-first/second/third keep initialization fixture failures; runner input failure retained",
+  "FAIL_UNRESOLVED": [],
+  "PASS_EXECUTED": [
+    "254 Node incl M2/M3 contracts",
+    "9 Python",
+    "build/canonical/invariants",
+    "M1",
+    "Side View",
+    "M2 thirteen groups",
+    "Projects lifecycle",
+    "U6 six groups",
+    "U5 eight groups",
+    "U7 five groups with seven viewports",
+    "native Projects runtime three trains/trusted mouse+touch",
+    "final native four trains + Composer",
+    "actual scroll-region captures"
+  ],
+  "PASS_HISTORICAL": [
+    "U2/U3/U4 and extended R1 beyond pertinent new checks; unchanged sources hashed against U6"
+  ],
+  "NOT_VERIFIED": [
+    "hardware GPU/touch/audio/screen reader",
+    "other browsers",
+    "remote OAuth",
+    "native beforeunload presentation",
+    "global U9"
+  ],
+  "checkpoint": "atomic containing commit and matching remote SHA supplied in final handoff"
+}

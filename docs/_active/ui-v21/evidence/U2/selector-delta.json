@@ -1,0 +1,26 @@
+{
+  "baseline_registry": "docs/_active/ui-v21/CONTROLS.json stays reference to 91722fb",
+  "preserved": [
+    "#quality original node/change handler, now inside Menu",
+    "#rollingModels original node/change handler, remains sidebar; #u2RollingModels menu proxy",
+    "#signOut original node/addEventListener, moved into Menu",
+    "#trainManagement original node, now header",
+    "#planBtn/#planModal/#helpBtn/#helpModal IDs and content maintained",
+    "#stop and selected console IDs unchanged",
+    "all TM project/depot hooks unchanged"
+  ],
+  "added": [
+    "#dlg native Menu",
+    ".u2-guard native confirmation",
+    "#tpD/#hlD panel aliases",
+    ".u2-mobile Stock and Menu launchers",
+    "trainManagement.open(view,origin) and read-only sessionSummary"
+  ],
+  "historical_test_change": "only dialog -> dialog.trainManagement and dialog [data-close] -> dialog.trainManagement [data-close], all assertions preserved",
+  "not_implemented": [
+    "Next Switch UI replacement",
+    "camera overlay migration",
+    "sidebar/dock/TM interior redesign",
+    "Reset/Composer/Depot asynchronous confirmations"
+  ]
+}

@@ -1,0 +1,1382 @@
+{
+  "status": "PASS",
+  "baseline": "48a7c4d48b118877ec7edf7f4c61fba090e460b8",
+  "unchangedU2BaselineFiles": 222,
+  "baselineFiles": 226,
+  "authorizedDeltas": [
+    "app.js",
+    "index.html",
+    "src/guarded-stop-scene.js",
+    "tests/browser-guarded-stop.py"
+  ],
+  "checks": [
+    "app delta reverses to U2 with UI bindings only",
+    "guarded-stop-scene delta is UI getter only",
+    "index delta is startup skin only",
+    "historical test differs only by View open/close and Bell locator",
+    "U2 CSS prefix intact; additions scoped to U3",
+    "all other U1/U2 UI assets/fonts/licenses byte-identical",
+    "all other baseline source/test/config/asset files byte-identical",
+    "HUD projection, topology SVG and view controller untouched",
+    "no mock/reference/test observer inputs in production bundle",
+    "no second Bell controller or global keyboard listener in adapter"
+  ],
+  "files": [
+    {
+      "path": ".github/workflows/pages.yml",
+      "sha256": "3acf30ef8fe86fbb9d7c7c3eea822480f9cf2682629c3745e17bf1c71e107769",
+      "U2sha256": "3acf30ef8fe86fbb9d7c7c3eea822480f9cf2682629c3745e17bf1c71e107769",
+      "unchangedFromU2": true
+    },
+    {
+      "path": ".github/workflows/supabase-alignment.yml",
+      "sha256": "467e29e14ad6eab49f1e18e6c4990722c1e7a771df2d1f6abee9a5f764c24ae0",
+      "U2sha256": "467e29e14ad6eab49f1e18e6c4990722c1e7a771df2d1f6abee9a5f764c24ae0",
+      "unchangedFromU2": true
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "53afb9d6d92b6fa698cc938cf79ab8c3ceba9d918aef5bab5570e9c210ce630c",
+      "U2sha256": "53afb9d6d92b6fa698cc938cf79ab8c3ceba9d918aef5bab5570e9c210ce630c",
+      "unchangedFromU2": true
+    },
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "U2sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "8cddfad679dbddeb6ea8402d677fd0dfedb91cba0d69e309e75db9af49b8989d",
+      "U2sha256": "8cddfad679dbddeb6ea8402d677fd0dfedb91cba0d69e309e75db9af49b8989d",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "app.js",
+      "sha256": "2d16f9a1e8d2072ccc2c6ded5a4d7b8a3fa05ae3a81a18a5002d05e189e3b57a",
+      "U2sha256": "3e568458f908d846d4ae22ebfe47551e2d7583dec95a51af15d26b014927258d",
+      "unchangedFromU2": false
+    },
+    {
+      "path": "assets/THREE-LICENSE.txt",
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "U2sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/kenney/License.txt",
+      "sha256": "c523382ef934eedabb4fc2b01472a9e095b8a55efe46b8bafe3e74f3c2cd4839",
+      "U2sha256": "c523382ef934eedabb4fc2b01472a9e095b8a55efe46b8bafe3e74f3c2cd4839",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/kenney/SOURCE.md",
+      "sha256": "df51fef3235e52eac5c6aa69e15e4ff0df535c043b2c69423ebf2e076d8c640b",
+      "U2sha256": "df51fef3235e52eac5c6aa69e15e4ff0df535c043b2c69423ebf2e076d8c640b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/kenney/Textures/colormap.png",
+      "sha256": "e264660f3fc9ecbd642bdb7fb7b7dc10755a061560a66651baf48274c729af09",
+      "U2sha256": "e264660f3fc9ecbd642bdb7fb7b7dc10755a061560a66651baf48274c729af09",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/kenney/train-carriage-box.glb",
+      "sha256": "6b594f3f7ef779879043219e2ee79eb37523427e2100855296a0c9662b36689c",
+      "U2sha256": "6b594f3f7ef779879043219e2ee79eb37523427e2100855296a0c9662b36689c",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/kenney/train-carriage-lumber.glb",
+      "sha256": "c205eff406b60d1c3df668c688ec5841a476568aaccc970a195287aa863b9bf6",
+      "U2sha256": "c205eff406b60d1c3df668c688ec5841a476568aaccc970a195287aa863b9bf6",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/kenney/train-carriage-tank.glb",
+      "sha256": "0de1d92587c0b4d79e6dd1dad7d4d2e8ef849330af07e2f1701b98b9e0cf4e6a",
+      "U2sha256": "0de1d92587c0b4d79e6dd1dad7d4d2e8ef849330af07e2f1701b98b9e0cf4e6a",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/kenney/train-diesel-a.glb",
+      "sha256": "20c6c7c23c005e8cda1c1e922473c0fc9c93fc7c1d1bc5a637d640424f811cc3",
+      "U2sha256": "20c6c7c23c005e8cda1c1e922473c0fc9c93fc7c1d1bc5a637d640424f811cc3",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/kenney/train-diesel-box-a.glb",
+      "sha256": "396a7d723d748efb249f16083e9ec5bf9a017a4eab3ed16a30facd3faea8d4b1",
+      "U2sha256": "396a7d723d748efb249f16083e9ec5bf9a017a4eab3ed16a30facd3faea8d4b1",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/kenney/train-locomotive-a.glb",
+      "sha256": "8dfe9d20667c1534652286149fb0e1639ff48975a4187d3ad2fd956add0bba2a",
+      "U2sha256": "8dfe9d20667c1534652286149fb0e1639ff48975a4187d3ad2fd956add0bba2a",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/locomotive-thumbnails/SOURCE.md",
+      "sha256": "2980d9ea9a64a31fb4f46fb6b5eb9e6f3b4dcc18a3dd17ddd87a8ce0adf565a0",
+      "U2sha256": "2980d9ea9a64a31fb4f46fb6b5eb9e6f3b4dcc18a3dd17ddd87a8ce0adf565a0",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/locomotive-thumbnails/kenney-diesel.png",
+      "sha256": "e100927f73a3a5c381a18d5bb4fe4f2be31563633c512a3ceffd70a42626df5c",
+      "U2sha256": "e100927f73a3a5c381a18d5bb4fe4f2be31563633c512a3ceffd70a42626df5c",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/locomotive-thumbnails/kenney-shunter.png",
+      "sha256": "93a0a78ca8677ee9d7196262c766bae7fe0c0d91185e2ceb0f3ae1e73f58b6c6",
+      "U2sha256": "93a0a78ca8677ee9d7196262c766bae7fe0c0d91185e2ceb0f3ae1e73f58b6c6",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/locomotive-thumbnails/kenney-steam.png",
+      "sha256": "c03b56393471ab347d86516e3e1057dd8b9cf3eab298b003ff091e8a417000bb",
+      "U2sha256": "c03b56393471ab347d86516e3e1057dd8b9cf3eab298b003ff091e8a417000bb",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/locomotive-thumbnails/manifest.json",
+      "sha256": "5eebd5233f0c1ec7c56b97aa2a374521cd0c602786249a096fdee65015f85f65",
+      "U2sha256": "5eebd5233f0c1ec7c56b97aa2a374521cd0c602786249a096fdee65015f85f65",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/locomotive-thumbnails/native-diesel.png",
+      "sha256": "a7bc1e8ab129fcba83d189345c217d8dca87b2c8db294f552793d22c164a3fd0",
+      "U2sha256": "a7bc1e8ab129fcba83d189345c217d8dca87b2c8db294f552793d22c164a3fd0",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/locomotive-thumbnails/native-shunter.png",
+      "sha256": "066750b1e694698cd237f4256404881f0f0c46507fdbb5249c78939a34bfef1e",
+      "U2sha256": "066750b1e694698cd237f4256404881f0f0c46507fdbb5249c78939a34bfef1e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/locomotive-thumbnails/native-steam.png",
+      "sha256": "cc3027a863d0254ec6ee906cf8a2168ceebb254f5449fc0720ea14de107aeca6",
+      "U2sha256": "cc3027a863d0254ec6ee906cf8a2168ceebb254f5449fc0720ea14de107aeca6",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/locomotive-thumbnails/unavailable.svg",
+      "sha256": "7bee19b69c8f16efb0216ed1d1f89eba5a9e6747dfe26308af5227be8cbadfc0",
+      "U2sha256": "7bee19b69c8f16efb0216ed1d1f89eba5a9e6747dfe26308af5227be8cbadfc0",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/kenney-box.png",
+      "sha256": "f83dc3981147ddcb8f3dac049cb9a4f655d6b5983d683cecb3a970c6e0844283",
+      "U2sha256": "f83dc3981147ddcb8f3dac049cb9a4f655d6b5983d683cecb3a970c6e0844283",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/kenney-diesel.png",
+      "sha256": "cc18ecb2e23ab24401f62a2b683611cc43aeb3027c3d0877d75694916759a063",
+      "U2sha256": "cc18ecb2e23ab24401f62a2b683611cc43aeb3027c3d0877d75694916759a063",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/kenney-lumber.png",
+      "sha256": "6907b0d3f2395f373e87fa621962c0ba672c085cc0b9649592614d00350bd787",
+      "U2sha256": "6907b0d3f2395f373e87fa621962c0ba672c085cc0b9649592614d00350bd787",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/kenney-shunter.png",
+      "sha256": "409890b96dd1888947d8b56fd08e711aa97ee28f6c62c403288b979e3362d83a",
+      "U2sha256": "409890b96dd1888947d8b56fd08e711aa97ee28f6c62c403288b979e3362d83a",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/kenney-steam.png",
+      "sha256": "a163abf1780ef8bc77df249a4ce476be22826ba5539f23a671e6cf1edffc5a40",
+      "U2sha256": "a163abf1780ef8bc77df249a4ce476be22826ba5539f23a671e6cf1edffc5a40",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/kenney-tank.png",
+      "sha256": "0e93fc88d03238f17abdec29b91ae8120ad5a882db6d9e1a489de8696135e0f1",
+      "U2sha256": "0e93fc88d03238f17abdec29b91ae8120ad5a882db6d9e1a489de8696135e0f1",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/manifest.json",
+      "sha256": "68958de729e9414262f062cebf4d2dbe86ea69216c1aff4d2baa14f9d3aaaacd",
+      "U2sha256": "68958de729e9414262f062cebf4d2dbe86ea69216c1aff4d2baa14f9d3aaaacd",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/native-closed.png",
+      "sha256": "42740228b045d42845607e7854174b4d6aa1bfee34f8cc88131b70e5e6759cff",
+      "U2sha256": "42740228b045d42845607e7854174b4d6aa1bfee34f8cc88131b70e5e6759cff",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/native-coach.png",
+      "sha256": "4af571b9d025b0afd323870a4d77fc43645b2caaae71506373a9e3502895da87",
+      "U2sha256": "4af571b9d025b0afd323870a4d77fc43645b2caaae71506373a9e3502895da87",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/native-diesel.png",
+      "sha256": "da3dccc9fe92db5a9e869bf4c3426d3409464661d10c33b796546e04739f22ce",
+      "U2sha256": "da3dccc9fe92db5a9e869bf4c3426d3409464661d10c33b796546e04739f22ce",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/native-flat.png",
+      "sha256": "472ff828fa1132ee56f73d290b5a406a0260e78e8b07fbe96691357defc61786",
+      "U2sha256": "472ff828fa1132ee56f73d290b5a406a0260e78e8b07fbe96691357defc61786",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/native-open.png",
+      "sha256": "da129f676d7b6693e6851ab846b3fdfee7a7e2d89960275f3166779daef36f17",
+      "U2sha256": "da129f676d7b6693e6851ab846b3fdfee7a7e2d89960275f3166779daef36f17",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/native-shunter.png",
+      "sha256": "1f965be348135b9b244df7a707ba77989a495e132a0ccd530fec597b86a74712",
+      "U2sha256": "1f965be348135b9b244df7a707ba77989a495e132a0ccd530fec597b86a74712",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/native-steam.png",
+      "sha256": "896b0b6ae3f5dc4dae819c26e36b78303f2d33156866ab7d86bbd89d26e0837e",
+      "U2sha256": "896b0b6ae3f5dc4dae819c26e36b78303f2d33156866ab7d86bbd89d26e0837e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-sides/native-tank.png",
+      "sha256": "c87c78d8a837f8a5e0e2ab8cd85bce84745ee5f4f6efa22d2202cad13ede20ee",
+      "U2sha256": "c87c78d8a837f8a5e0e2ab8cd85bce84745ee5f4f6efa22d2202cad13ede20ee",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-thumbnails/kenney-box.png",
+      "sha256": "fb8d9708d6bbbe6f805aeb39abf98be93805a84f3acb58fbca1e006e1695a8a7",
+      "U2sha256": "fb8d9708d6bbbe6f805aeb39abf98be93805a84f3acb58fbca1e006e1695a8a7",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-thumbnails/kenney-lumber.png",
+      "sha256": "bc252cea8cf47ead8aff79f06a15d877f280fcbf1a4efc6cb902676c5d3894c9",
+      "U2sha256": "bc252cea8cf47ead8aff79f06a15d877f280fcbf1a4efc6cb902676c5d3894c9",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-thumbnails/kenney-tank.png",
+      "sha256": "775a80de327fcd3feb01abde6977e3682a80b9de828eee9a8e56445466b3ecb3",
+      "U2sha256": "775a80de327fcd3feb01abde6977e3682a80b9de828eee9a8e56445466b3ecb3",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-thumbnails/native-closed.png",
+      "sha256": "7bdd899e7e48b42b37a1ba3ecca70ac40a9bd752292ded3a0164ab3ddd304812",
+      "U2sha256": "7bdd899e7e48b42b37a1ba3ecca70ac40a9bd752292ded3a0164ab3ddd304812",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-thumbnails/native-coach.png",
+      "sha256": "ce7e9ff6285b4d06129bf8b9e9b031dfe58bc520a098ef1f3f0b2afd5b3198df",
+      "U2sha256": "ce7e9ff6285b4d06129bf8b9e9b031dfe58bc520a098ef1f3f0b2afd5b3198df",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-thumbnails/native-flat.png",
+      "sha256": "a378ea3a03159d45794228cc04862c6e9866f0365bea20eb71170ee0abb76b4f",
+      "U2sha256": "a378ea3a03159d45794228cc04862c6e9866f0365bea20eb71170ee0abb76b4f",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-thumbnails/native-open.png",
+      "sha256": "dac5a3a47431983921c9f905946541997c2cf01bddb7be13042ae52567f88072",
+      "U2sha256": "dac5a3a47431983921c9f905946541997c2cf01bddb7be13042ae52567f88072",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/rolling-stock-thumbnails/native-tank.png",
+      "sha256": "1d990289253480eb8acf9ffc06274fe998938cabdc6945d6c8677179c14f0370",
+      "U2sha256": "1d990289253480eb8acf9ffc06274fe998938cabdc6945d6c8677179c14f0370",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "assets/schema-ricostruito.svg",
+      "sha256": "ff68ea77b96ae34fe324f82cf3bac303e28b272f93e7da4ed15f07fa091b6c1b",
+      "U2sha256": "ff68ea77b96ae34fe324f82cf3bac303e28b272f93e7da4ed15f07fa091b6c1b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "auth-gate-core.js",
+      "sha256": "6a66c0a6cea18001c8998c34013654758d80bcba937d59a7809848c805de3106",
+      "U2sha256": "6a66c0a6cea18001c8998c34013654758d80bcba937d59a7809848c805de3106",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "auth-gate.js",
+      "sha256": "b736d8e49a5e63f145a2a7df07436627aa3c5372acb4573413089c1a4b110c77",
+      "U2sha256": "b736d8e49a5e63f145a2a7df07436627aa3c5372acb4573413089c1a4b110c77",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "0fba9c4552e27e3c4bd0ecc9c595c318a2c1133cb9487e0ea89b8e2ffb73edbc",
+      "U2sha256": "5c5e76861fa50b98fa598244704613d2c806cfa1248ea6edc834930ec2d974ff",
+      "unchangedFromU2": false
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "cdc54245fcf16d326e11a32c1c6568f1b040bec20d1cd604913b4cdae0de58d8",
+      "U2sha256": "cdc54245fcf16d326e11a32c1c6568f1b040bec20d1cd604913b4cdae0de58d8",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "24327a8a821c19c4eee998bc4d5734df7825eee7cfcb107237a41e882048f104",
+      "U2sha256": "24327a8a821c19c4eee998bc4d5734df7825eee7cfcb107237a41e882048f104",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/analyze-jmri-layout.py",
+      "sha256": "d69c9432e6971cf9ca797330e6b6809ef545e0f13199a19dbee4d026ff2f67db",
+      "U2sha256": "d69c9432e6971cf9ca797330e6b6809ef545e0f13199a19dbee4d026ff2f67db",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/audit-rolling-stock.mjs",
+      "sha256": "184dfc4a7d1322cb60377a10ab711e545aa8b7651cf3eadb54d2ccf7cc17ab1f",
+      "U2sha256": "184dfc4a7d1322cb60377a10ab711e545aa8b7651cf3eadb54d2ccf7cc17ab1f",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/build-canonical-layout.py",
+      "sha256": "5ec5efc8fb92f770f8620b1aeace8a1fc0ca62c92f1ae5d5a87740429c1fd5ed",
+      "U2sha256": "5ec5efc8fb92f770f8620b1aeace8a1fc0ca62c92f1ae5d5a87740429c1fd5ed",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/capture-locomotives.py",
+      "sha256": "461f68cb27025085616b0ce1cb0c2a625588ea1c0c23081d7b4a7d11fbe8389b",
+      "U2sha256": "461f68cb27025085616b0ce1cb0c2a625588ea1c0c23081d7b4a7d11fbe8389b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/capture-stock-sides.js",
+      "sha256": "1d665d3e9ae5df09f057ff404107eee33c4d8e0a7162524083c820ea5ab4aef8",
+      "U2sha256": "1d665d3e9ae5df09f057ff404107eee33c4d8e0a7162524083c820ea5ab4aef8",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/capture-stock-thumbnails.js",
+      "sha256": "23cfcec8445c49f4c5920b8334a8db208a5b74ab1d599ae72c540b4af77dc2a9",
+      "U2sha256": "23cfcec8445c49f4c5920b8334a8db208a5b74ab1d599ae72c540b4af77dc2a9",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/performance/browser-benchmark.py",
+      "sha256": "ac1ae8653bafde3abb56eae8d4af1ce2eaac59822bde142ab3140a658d73362f",
+      "U2sha256": "ac1ae8653bafde3abb56eae8d4af1ce2eaac59822bde142ab3140a658d73362f",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/performance/build-profile.mjs",
+      "sha256": "55e731961a0a4ddfcd03c251c469826761da47a6ce2b3cfccc7fbba5c883dccc",
+      "U2sha256": "55e731961a0a4ddfcd03c251c469826761da47a6ce2b3cfccc7fbba5c883dccc",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/performance/finish-validation.py",
+      "sha256": "dbf2d9b57408c2c41e36aeba7d3a4d28b64201d6c34eb6242daa63b4029fd236",
+      "U2sha256": "dbf2d9b57408c2c41e36aeba7d3a4d28b64201d6c34eb6242daa63b4029fd236",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/performance/long-simulation.mjs",
+      "sha256": "8f14b9ff853347f9451a15245b55720a3a290ce3297815b99c8c23b73a8f27bb",
+      "U2sha256": "8f14b9ff853347f9451a15245b55720a3a290ce3297815b99c8c23b73a8f27bb",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/performance/pages-smoke.py",
+      "sha256": "8c3c85be9d7995ca3edd5b9e819c244c1d1cdb2fa13d1a812d761187db67842b",
+      "U2sha256": "8c3c85be9d7995ca3edd5b9e819c244c1d1cdb2fa13d1a812d761187db67842b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/performance/quality-retention.py",
+      "sha256": "d31f2ad41719577ed70a1ea00a73c4d4abb374a4cd9265f935a53d34cc0cc36d",
+      "U2sha256": "d31f2ad41719577ed70a1ea00a73c4d4abb374a4cd9265f935a53d34cc0cc36d",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/performance/summarize.py",
+      "sha256": "e2395c8202deed101451b86bc88a877c0f0840beb517bf4bd84dd60d31b84c9d",
+      "U2sha256": "e2395c8202deed101451b86bc88a877c0f0840beb517bf4bd84dd60d31b84c9d",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/performance/visual-regression.py",
+      "sha256": "a895991a180eee6bf901ac0c36cf76303b2f5891c9b64ebb51f1a6abc940b64b",
+      "U2sha256": "a895991a180eee6bf901ac0c36cf76303b2f5891c9b64ebb51f1a6abc940b64b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/phase-zero.mjs",
+      "sha256": "5e300b94b7faa6701309d19a20f23ff61a11b8f031a69cbba27f96c1823a2298",
+      "U2sha256": "5e300b94b7faa6701309d19a20f23ff61a11b8f031a69cbba27f96c1823a2298",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/qualify-supabase-cli.py",
+      "sha256": "7bd8d0bcbcaae40ade9d6860e307d6c5979d45a56c4fcf0bc1f866e75d98135e",
+      "U2sha256": "7bd8d0bcbcaae40ade9d6860e307d6c5979d45a56c4fcf0bc1f866e75d98135e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "scripts/verify-supabase-alignment.py",
+      "sha256": "6140dd818b4984f9d84742d0962f543a5f88581701f11675f7a3868c6244f5f1",
+      "U2sha256": "6140dd818b4984f9d84742d0962f543a5f88581701f11675f7a3868c6244f5f1",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/asset-placement.js",
+      "sha256": "2eeccdc841a25b926b96c5569149de1ae6dee291d5cb0fbde758bd27a121b64c",
+      "U2sha256": "2eeccdc841a25b926b96c5569149de1ae6dee291d5cb0fbde758bd27a121b64c",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/canonical-layout.json",
+      "sha256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "U2sha256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/consist.js",
+      "sha256": "17c536e5f9561d899e67a6747f50795a1506e4820789f16030d0e08a5410d3a2",
+      "U2sha256": "17c536e5f9561d899e67a6747f50795a1506e4820789f16030d0e08a5410d3a2",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/depot-inventory.js",
+      "sha256": "64de3bea5c5c951176f2bc8a5dff8996847c55d76483d031f205092b5e72bc79",
+      "U2sha256": "64de3bea5c5c951176f2bc8a5dff8996847c55d76483d031f205092b5e72bc79",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/depot-view.js",
+      "sha256": "f0c76adc2329f7110d319500832e514e6c8a9fb56d2cde5306367561059570b0",
+      "U2sha256": "f0c76adc2329f7110d319500832e514e6c8a9fb56d2cde5306367561059570b0",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/diorama.js",
+      "sha256": "cf0bbf20c9c9f3b781c01544ffb6ce69d499e8c4ec9406b37dc21fc2d372a3e6",
+      "U2sha256": "cf0bbf20c9c9f3b781c01544ffb6ce69d499e8c4ec9406b37dc21fc2d372a3e6",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/fleet-commands.js",
+      "sha256": "b87d16b53375c38dbd18bfb6376532a2af725e9ee5393590da37dd1cf82dffcd",
+      "U2sha256": "b87d16b53375c38dbd18bfb6376532a2af725e9ee5393590da37dd1cf82dffcd",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/graphic-foundations.js",
+      "sha256": "c5db3529318c0d0b21980a775a53125519bc21943061186d32b435e56f32e724",
+      "U2sha256": "c5db3529318c0d0b21980a775a53125519bc21943061186d32b435e56f32e724",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/guarded-stop-bell.js",
+      "sha256": "87183993172c1778b5c29ba50d83f77ac5f6f7ef4d570889c264dee7a681de38",
+      "U2sha256": "87183993172c1778b5c29ba50d83f77ac5f6f7ef4d570889c264dee7a681de38",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/guarded-stop-scene.js",
+      "sha256": "024cf73ec1c698ac164437664679bab4c7789d6faa611e4eeb19e0ef12f6acfa",
+      "U2sha256": "b5eda2532b6ca741d796c873f711ddbce3bdc7ed7a7e3b0e74421cba27cd1e29",
+      "unchangedFromU2": false
+    },
+    {
+      "path": "src/guarded-stop-view.js",
+      "sha256": "5802da4a07078b57e43df58eabf334deffec5f272eb735714d839a4ee4aca753",
+      "U2sha256": "5802da4a07078b57e43df58eabf334deffec5f272eb735714d839a4ee4aca753",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/landscape.js",
+      "sha256": "5028817b6de4f41ddd157a794239447851d9a6ec680c498e96dd04c88346dbfb",
+      "U2sha256": "5028817b6de4f41ddd157a794239447851d9a6ec680c498e96dd04c88346dbfb",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/locomotive-thumbnails.js",
+      "sha256": "77dfff593018a6811a39723b1989255afc6207daf23ae9e097b22179ab1179aa",
+      "U2sha256": "77dfff593018a6811a39723b1989255afc6207daf23ae9e097b22179ab1179aa",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/navigation.js",
+      "sha256": "359fad322893e51d51523f115fd3fc56f81a45c2cf6f1c69dffa88d319ed07a6",
+      "U2sha256": "359fad322893e51d51523f115fd3fc56f81a45c2cf6f1c69dffa88d319ed07a6",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/network.js",
+      "sha256": "6428b5abc00aa1fdb35202bf2d303df5c790f70dc612942e966a07a129d0f0e0",
+      "U2sha256": "6428b5abc00aa1fdb35202bf2d303df5c790f70dc612942e966a07a129d0f0e0",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/next-switch-view.js",
+      "sha256": "0853c92322a73d362def25b2294c0d2186a76a44cc5191f9d30e2fed320d7a36",
+      "U2sha256": "0853c92322a73d362def25b2294c0d2186a76a44cc5191f9d30e2fed320d7a36",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/next-switch.js",
+      "sha256": "013c26b56ae96d9b96016b935410008bfa5c56d24da051501a0429eea9df844f",
+      "U2sha256": "013c26b56ae96d9b96016b935410008bfa5c56d24da051501a0429eea9df844f",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/presentation.js",
+      "sha256": "ee5fde331b6be64f0f54fe7b68df937fbe11f7ecbab185d84dc30fbc7d0c76c8",
+      "U2sha256": "ee5fde331b6be64f0f54fe7b68df937fbe11f7ecbab185d84dc30fbc7d0c76c8",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/quality.js",
+      "sha256": "c9c68e55c440a345854b777b6ec0bdb31fa9e27e8f1d9ebb2470cc634a5a9242",
+      "U2sha256": "c9c68e55c440a345854b777b6ec0bdb31fa9e27e8f1d9ebb2470cc634a5a9242",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/rail-profile.js",
+      "sha256": "4d0bdc39741e2b77135de39f33411f56d2d25953d71c48033b35a15f4f1cdc28",
+      "U2sha256": "4d0bdc39741e2b77135de39f33411f56d2d25953d71c48033b35a15f4f1cdc28",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/railway-conflicts.js",
+      "sha256": "7dc1b44fffae951df219118d8490a4f21e015c9631f623e314931806f8b6fd62",
+      "U2sha256": "7dc1b44fffae951df219118d8490a4f21e015c9631f623e314931806f8b6fd62",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/railway-guard.js",
+      "sha256": "13815f4d8d53b827a154e0febf098bd74c00e7223c13e8effe2804c5ad8fdf15",
+      "U2sha256": "13815f4d8d53b827a154e0febf098bd74c00e7223c13e8effe2804c5ad8fdf15",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/railway-state.js",
+      "sha256": "ecc7cbbdf266fc89dd4d85999e509fb85a2e3ba62a2f4a655d1eb8795702b092",
+      "U2sha256": "ecc7cbbdf266fc89dd4d85999e509fb85a2e3ba62a2f4a655d1eb8795702b092",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/railway-step.js",
+      "sha256": "e96411470661c3767884b4574ee9121f2a7f6abac2986bd8b127fb9baa29ffbb",
+      "U2sha256": "e96411470661c3767884b4574ee9121f2a7f6abac2986bd8b127fb9baa29ffbb",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/railway-types.js",
+      "sha256": "341a80f00d4e7841cea69c5185d7cbf64cb5753afd894751aecdc3225f8f0e60",
+      "U2sha256": "341a80f00d4e7841cea69c5185d7cbf64cb5753afd894751aecdc3225f8f0e60",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/railway-works.js",
+      "sha256": "eaefd6b77a1ed3379d6baa28a368e151cb64e9e290a4e9d3cd692e97bb00ed6f",
+      "U2sha256": "eaefd6b77a1ed3379d6baa28a368e151cb64e9e290a4e9d3cd692e97bb00ed6f",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/rolling-stock-animation.js",
+      "sha256": "e0bc902d6cbe2d4c6d336b2b6de94d8f3afba4d3564fbc37ff211be6af0a07ad",
+      "U2sha256": "e0bc902d6cbe2d4c6d336b2b6de94d8f3afba4d3564fbc37ff211be6af0a07ad",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/rolling-stock-art.js",
+      "sha256": "15e1ab227ff9d6546d683ebc02abc9a5a8788a8cfd2f0b0b57e30d19be1f9314",
+      "U2sha256": "15e1ab227ff9d6546d683ebc02abc9a5a8788a8cfd2f0b0b57e30d19be1f9314",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/rolling-stock.js",
+      "sha256": "13c0727a9fdb3b5ae8888c597f25c7293b93d45b3dc685a9d6e416f06712a8db",
+      "U2sha256": "13c0727a9fdb3b5ae8888c597f25c7293b93d45b3dc685a9d6e416f06712a8db",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/scenery.js",
+      "sha256": "1c9a751a375c47d72332df023bec6e722dc3cc229ce797ca960570a51a24ac73",
+      "U2sha256": "1c9a751a375c47d72332df023bec6e722dc3cc229ce797ca960570a51a24ac73",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/scenic-plan.js",
+      "sha256": "91a743876e79cd5a52df41da057b8b6f8db04cfca7a2f9dc19700a2767d73829",
+      "U2sha256": "91a743876e79cd5a52df41da057b8b6f8db04cfca7a2f9dc19700a2767d73829",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/simulation.js",
+      "sha256": "0b243f69abc9c652adb9dff83fbba26cbe93cb8c8fa2f30716022c167d206c3c",
+      "U2sha256": "0b243f69abc9c652adb9dff83fbba26cbe93cb8c8fa2f30716022c167d206c3c",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/station-building.js",
+      "sha256": "e38e73e42ebac052294299be522b64fec71d7c444a4c3f92cee9cef5978a3e6e",
+      "U2sha256": "e38e73e42ebac052294299be522b64fec71d7c444a4c3f92cee9cef5978a3e6e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/station-materials.js",
+      "sha256": "70f10ae3b7facd21c052f6a48ced2d52edcfb36ff05da68c363de673c2424ce7",
+      "U2sha256": "70f10ae3b7facd21c052f6a48ced2d52edcfb36ff05da68c363de673c2424ce7",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/station-platform.js",
+      "sha256": "a308e2ef67a975670d2d436bae7c28179be7ad7f9f6d54318c2550b65873b79e",
+      "U2sha256": "a308e2ef67a975670d2d436bae7c28179be7ad7f9f6d54318c2550b65873b79e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/structure-layout.js",
+      "sha256": "de50578848f832b4ab848d4b1f55118828465a435df654e587c193a64551b495",
+      "U2sha256": "de50578848f832b4ab848d4b1f55118828465a435df654e587c193a64551b495",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/train-assets.js",
+      "sha256": "60d32587bc41b5347717ffa8e0c97968cca821cad7acd0c250900f88e1b3b0d1",
+      "U2sha256": "60d32587bc41b5347717ffa8e0c97968cca821cad7acd0c250900f88e1b3b0d1",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/train-deck-state.js",
+      "sha256": "96dd0faace5b6cb02a28404a98a3e4a09b07716591dc061268bdc19563a9eb0a",
+      "U2sha256": "96dd0faace5b6cb02a28404a98a3e4a09b07716591dc061268bdc19563a9eb0a",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/train-deck.js",
+      "sha256": "dd63cdb0030ce5643b0508b2e945b6f2f0e86ae0925b6008800a08d09b696c71",
+      "U2sha256": "dd63cdb0030ce5643b0508b2e945b6f2f0e86ae0925b6008800a08d09b696c71",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/train-management-state.js",
+      "sha256": "6e904e043082bfb2e6c7051051bdf4b25b980a0f105915b2aeef4d35812d2b1e",
+      "U2sha256": "6e904e043082bfb2e6c7051051bdf4b25b980a0f105915b2aeef4d35812d2b1e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/train-management.js",
+      "sha256": "66fd0e2218334ff134c6a6ad74bf21fea3be1bb89e28eeeab1dc2106552070e4",
+      "U2sha256": "66fd0e2218334ff134c6a6ad74bf21fea3be1bb89e28eeeab1dc2106552070e4",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/train-projects-view.js",
+      "sha256": "365986ed759beb0912afc1ca94d10667b06c5f305ae49a5f126c2b03ec282c81",
+      "U2sha256": "365986ed759beb0912afc1ca94d10667b06c5f305ae49a5f126c2b03ec282c81",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/train-projects.js",
+      "sha256": "c267d8da5d3698c05d6f17f65420027e1e14e119300c2a9013f2e5622a2b4a95",
+      "U2sha256": "c267d8da5d3698c05d6f17f65420027e1e14e119300c2a9013f2e5622a2b4a95",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/train-side-layout.js",
+      "sha256": "97e28667814c29d64230509bf8a5b4ced9a19795339c83af5cf617cb5aa9187d",
+      "U2sha256": "97e28667814c29d64230509bf8a5b4ced9a19795339c83af5cf617cb5aa9187d",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/train-side-view.js",
+      "sha256": "99e3634cc0c3be3076147531612ee6d3bcd1e3094bd18137981d1a97cb0086be",
+      "U2sha256": "99e3634cc0c3be3076147531612ee6d3bcd1e3094bd18137981d1a97cb0086be",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/turnout-arrow-approaches.js",
+      "sha256": "8fad3c512e2cfeff84941363ad405480cae2d05b45f473b442a6b9986af02f95",
+      "U2sha256": "8fad3c512e2cfeff84941363ad405480cae2d05b45f473b442a6b9986af02f95",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/turnout-arrow-view.js",
+      "sha256": "11b6ed8ac02ac85cce6ed3b22d062d5d52046d81b2e2b81e7c3460e692e8e38c",
+      "U2sha256": "11b6ed8ac02ac85cce6ed3b22d062d5d52046d81b2e2b81e7c3460e692e8e38c",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/turnout-arrows.js",
+      "sha256": "3083a0aebff88f3b776460b0fe90e3eed6f5130f894b83ae96f60a8f9571c261",
+      "U2sha256": "3083a0aebff88f3b776460b0fe90e3eed6f5130f894b83ae96f60a8f9571c261",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/turnout-commands.js",
+      "sha256": "f22c108f498761f6d8759f39bdcb5d30f326b45d44f9c0db4143b9a3feb17910",
+      "U2sha256": "f22c108f498761f6d8759f39bdcb5d30f326b45d44f9c0db4143b9a3feb17910",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/turnout-glow.js",
+      "sha256": "9039c7cf896db00750dda22a13161dac824d5972c94a50f6746a0d2949618327",
+      "U2sha256": "9039c7cf896db00750dda22a13161dac824d5972c94a50f6746a0d2949618327",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/turnout-interaction.js",
+      "sha256": "7ef0c4cb831858a942951519a5335a98bf6270159189eafe83dcda5fcb90041b",
+      "U2sha256": "7ef0c4cb831858a942951519a5335a98bf6270159189eafe83dcda5fcb90041b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/turnout-picking.js",
+      "sha256": "cad24777a25233fb596be963ca986dc462976cd645289bd226cb265f869282ef",
+      "U2sha256": "cad24777a25233fb596be963ca986dc462976cd645289bd226cb265f869282ef",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/turnout-routes.js",
+      "sha256": "d14adba3532c9601a568ff573b1e8a7c451a6e7fe5b35210a781556e2d4deb73",
+      "U2sha256": "d14adba3532c9601a568ff573b1e8a7c451a6e7fe5b35210a781556e2d4deb73",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/view-controls.js",
+      "sha256": "b73ebe53f305135a323c078ea02f5b1ae0aeafea3f471dc843e8d424f8c3dd04",
+      "U2sha256": "b73ebe53f305135a323c078ea02f5b1ae0aeafea3f471dc843e8d424f8c3dd04",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/zone-layout.js",
+      "sha256": "f0d189a1c36c5cb21d6198664ca3dd553ba0c09516e89659e8d0da617b588ff2",
+      "U2sha256": "f0d189a1c36c5cb21d6198664ca3dd553ba0c09516e89659e8d0da617b588ff2",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "src/zones.js",
+      "sha256": "0d1ee79d9310bf721117006b0f8a18e053ead3e3337d74df74561cea354645f9",
+      "U2sha256": "0d1ee79d9310bf721117006b0f8a18e053ead3e3337d74df74561cea354645f9",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "style.css",
+      "sha256": "e5c2acec8cdcaac9034399aca85273d293e1db43c94d5d61434a28cc6a681d19",
+      "U2sha256": "e5c2acec8cdcaac9034399aca85273d293e1db43c94d5d61434a28cc6a681d19",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "supabase/migrations/20261029230530_serien_core_schema.sql",
+      "sha256": "30cef69efb7a798152f13d33922e03192410207c5058d271bfd85c2c73d38754",
+      "U2sha256": "30cef69efb7a798152f13d33922e03192410207c5058d271bfd85c2c73d38754",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "supabase/migrations/20261029230558_serien_constraints_security.sql",
+      "sha256": "097dc090f224bbba8cd614a557d5c736b4f881b67f0ab5ac8e25f8c44fcbc849",
+      "U2sha256": "097dc090f224bbba8cd614a557d5c736b4f881b67f0ab5ac8e25f8c44fcbc849",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "supabase/migrations/20261105155420_serien_verified_email_gate.sql",
+      "sha256": "85a83a622d4b192158278663136133178826e29941c0e2585da29e7652e6e06e",
+      "U2sha256": "85a83a622d4b192158278663136133178826e29941c0e2585da29e7652e6e06e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/access-gate.test.js",
+      "sha256": "9d5013a2cfc7c28a822e96b86094be8609b99043174fdd2f9c5382958ed5c219",
+      "U2sha256": "9d5013a2cfc7c28a822e96b86094be8609b99043174fdd2f9c5382958ed5c219",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/animation-performance.test.js",
+      "sha256": "3972cc5c82ca2d6164a1c3cad8e0ce219212cb8e861c118096cb17fc12d395d7",
+      "U2sha256": "3972cc5c82ca2d6164a1c3cad8e0ce219212cb8e861c118096cb17fc12d395d7",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/assets.test.js",
+      "sha256": "a2b99f44b747e59ea3b75e344c2a670ffc09fcfdde23bf91ad059be83dfea733",
+      "U2sha256": "a2b99f44b747e59ea3b75e344c2a670ffc09fcfdde23bf91ad059be83dfea733",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-consist.py",
+      "sha256": "a3f1a72ea04248efe8aa4cd380e7da1245d92882464209b21f7f58219b9773ff",
+      "U2sha256": "a3f1a72ea04248efe8aa4cd380e7da1245d92882464209b21f7f58219b9773ff",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-depot-lifecycle.py",
+      "sha256": "54365d04fc3c6415610e7399708ed23a7b53d19bb6eb92aaf13b0cbc5fe65c91",
+      "U2sha256": "54365d04fc3c6415610e7399708ed23a7b53d19bb6eb92aaf13b0cbc5fe65c91",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-depot-runtime.py",
+      "sha256": "2c04d531529d31baeeced199be96d0f0d4d2ad933c7747ca5d560d816b228e3b",
+      "U2sha256": "2c04d531529d31baeeced199be96d0f0d4d2ad933c7747ca5d560d816b228e3b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-depot.py",
+      "sha256": "171e6dfd813ae000aa7d06d6e0952c2ef340ecc60f48bb1dc318e70492e86ab8",
+      "U2sha256": "171e6dfd813ae000aa7d06d6e0952c2ef340ecc60f48bb1dc318e70492e86ab8",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-guarded-stop.py",
+      "sha256": "4c97f19572e9b3999968b419a39590f423da0df8e674b8bdadf3d459c5cf5cc7",
+      "U2sha256": "5dec1b6876d3062924b7d2285a1cbec4e0a98c855c44ca876c436e41d344cb56",
+      "unchangedFromU2": false
+    },
+    {
+      "path": "tests/browser-phase-five-b.py",
+      "sha256": "eff5ac53d4117532d9e4cb6eac1a405ea9df9152b9cf558f6b4a9f9ff49d208d",
+      "U2sha256": "eff5ac53d4117532d9e4cb6eac1a405ea9df9152b9cf558f6b4a9f9ff49d208d",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-phase-five-c.py",
+      "sha256": "346f4e7eeefae8a3e584addf57257c75f8fa0536001ecc0122b00c368d52f04c",
+      "U2sha256": "346f4e7eeefae8a3e584addf57257c75f8fa0536001ecc0122b00c368d52f04c",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-phase-five-close.py",
+      "sha256": "8adc80f59e4a832646f72a1528bf2b6fd261f9b96a76317efa6196acf496d22e",
+      "U2sha256": "8adc80f59e4a832646f72a1528bf2b6fd261f9b96a76317efa6196acf496d22e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-phase-four.py",
+      "sha256": "0dc78125770dace97b40aa1f39eab22c1862ad97046936bbf38e87777c16e95f",
+      "U2sha256": "0dc78125770dace97b40aa1f39eab22c1862ad97046936bbf38e87777c16e95f",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-phase-one.py",
+      "sha256": "45d649d1f51ac5841ae584650f89c0f3d24c9f7ff28e72cbdc4ef363076186cb",
+      "U2sha256": "45d649d1f51ac5841ae584650f89c0f3d24c9f7ff28e72cbdc4ef363076186cb",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-phase-three.py",
+      "sha256": "7065929c9f9eaf7d28910496f3892ac5ebd650e3a32f63451b219e28dfae09a2",
+      "U2sha256": "7065929c9f9eaf7d28910496f3892ac5ebd650e3a32f63451b219e28dfae09a2",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-phase-two.py",
+      "sha256": "19c59de3ba4e456f172977fef98cd37389e4561110cab836774af970131ecdf0",
+      "U2sha256": "19c59de3ba4e456f172977fef98cd37389e4561110cab836774af970131ecdf0",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-phase-zero.py",
+      "sha256": "276cb9d18f991a666d198e4589a6370f6ea0db2f2d4292451a7c0028c75f170a",
+      "U2sha256": "276cb9d18f991a666d198e4589a6370f6ea0db2f2d4292451a7c0028c75f170a",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-railway-guard-performance.py",
+      "sha256": "65eff0908c3153dd2a91ec022ee096d001c9da7b00c6cca36ac8e361f8866623",
+      "U2sha256": "65eff0908c3153dd2a91ec022ee096d001c9da7b00c6cca36ac8e361f8866623",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-railway-guard.py",
+      "sha256": "9366edfdf9de667968fd100d55c7feb698e4c5cb3424cb7e43317b38225555a5",
+      "U2sha256": "9366edfdf9de667968fd100d55c7feb698e4c5cb3424cb7e43317b38225555a5",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-smoke.py",
+      "sha256": "b6e28efdc3c18ab8c1ec7d1766540130977f33100e8d6699f6cf769a0926e6f4",
+      "U2sha256": "b6e28efdc3c18ab8c1ec7d1766540130977f33100e8d6699f6cf769a0926e6f4",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-train-deck.py",
+      "sha256": "3d098d67dfb4b20914e9c98bcf355cbaf785b7ca2d41674b7d2297f316870ca3",
+      "U2sha256": "3d098d67dfb4b20914e9c98bcf355cbaf785b7ca2d41674b7d2297f316870ca3",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-train-management-runtime.py",
+      "sha256": "b26e974833054071d8d3344dcacbe18bac40b4f35bcf5fffcad7762eab7728be",
+      "U2sha256": "b26e974833054071d8d3344dcacbe18bac40b4f35bcf5fffcad7762eab7728be",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-train-management.py",
+      "sha256": "1dfc1ed782183238b562cb9a764571de5a405fc23c5cb24ec5bf57ac4fc38db3",
+      "U2sha256": "1dfc1ed782183238b562cb9a764571de5a405fc23c5cb24ec5bf57ac4fc38db3",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-train-project-lifecycle.py",
+      "sha256": "2eadbcc64cdb1608715f5fd9d6a88cac357c905a423d551461e7bf94b8d41ed1",
+      "U2sha256": "2eadbcc64cdb1608715f5fd9d6a88cac357c905a423d551461e7bf94b8d41ed1",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-train-projects-runtime.py",
+      "sha256": "777ff1a6da51b639dcbebd2954432b5a38269ea03ae435f3aa90d350f22aff08",
+      "U2sha256": "777ff1a6da51b639dcbebd2954432b5a38269ea03ae435f3aa90d350f22aff08",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-train-projects.py",
+      "sha256": "d606ff9bfea0d4e53573fe73b4dd7ecedd791df077f9d1f87c7e1bef242b6ad3",
+      "U2sha256": "d606ff9bfea0d4e53573fe73b4dd7ecedd791df077f9d1f87c7e1bef242b6ad3",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-train-side.py",
+      "sha256": "7646b79a20139561ad0fcf5a78b5515d28bf58e693b00bc4e241055ef448b217",
+      "U2sha256": "7646b79a20139561ad0fcf5a78b5515d28bf58e693b00bc4e241055ef448b217",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-turnout-arrows-performance.py",
+      "sha256": "81842e01c40765989633ce4b45f83fce971677436543be44c6b0961ee8cc29f1",
+      "U2sha256": "81842e01c40765989633ce4b45f83fce971677436543be44c6b0961ee8cc29f1",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-turnout-arrows-refinement.py",
+      "sha256": "4f3ffc6b9ffbbfef1ea77b2d422b85568b54c7a45756d491a0975a711796aa81",
+      "U2sha256": "4f3ffc6b9ffbbfef1ea77b2d422b85568b54c7a45756d491a0975a711796aa81",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-turnout-arrows.py",
+      "sha256": "54d9dea1cd958ffd490937064d375e1228f851d343b01feca856b83216081cdc",
+      "U2sha256": "54d9dea1cd958ffd490937064d375e1228f851d343b01feca856b83216081cdc",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-turnout-contract.py",
+      "sha256": "f5197976a13f057e4940fa7e5e9ef5395dfe065303a52089d46a1817e6078f43",
+      "U2sha256": "f5197976a13f057e4940fa7e5e9ef5395dfe065303a52089d46a1817e6078f43",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-turnout-glow-performance.py",
+      "sha256": "3f08b319a9c62d35620406d0f3eb544a9f00d0920d830b70c5c6cea6f8546d6e",
+      "U2sha256": "3f08b319a9c62d35620406d0f3eb544a9f00d0920d830b70c5c6cea6f8546d6e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-turnout-glow-views.py",
+      "sha256": "2d3f28934ba5fb1fda2cb0f4aca3b35b62600d0e357b1fe210e14114ab5327a1",
+      "U2sha256": "2d3f28934ba5fb1fda2cb0f4aca3b35b62600d0e357b1fe210e14114ab5327a1",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-turnout-glow.py",
+      "sha256": "0dd12664419e7c68c17257c4f4423c8c64abcfd43c9f697dadd9adfadade0393",
+      "U2sha256": "0dd12664419e7c68c17257c4f4423c8c64abcfd43c9f697dadd9adfadade0393",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/browser-turnout-interaction.py",
+      "sha256": "3f6ba3a888d252aa3fc6c7b947a84c255660c0196d8e124b285c4bc3bb3ed937",
+      "U2sha256": "3f6ba3a888d252aa3fc6c7b947a84c255660c0196d8e124b285c4bc3bb3ed937",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/capture-baseline.py",
+      "sha256": "ff39937cc53497b7642641dcdb6ed99ba12680c70e593738ff2ab2be26992dad",
+      "U2sha256": "ff39937cc53497b7642641dcdb6ed99ba12680c70e593738ff2ab2be26992dad",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/capture-train-management-thumbnails.py",
+      "sha256": "e637f38c8e3f933d2e447bf988e31383a14d033b8090e14c96c092824dbf3fbb",
+      "U2sha256": "e637f38c8e3f933d2e447bf988e31383a14d033b8090e14c96c092824dbf3fbb",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/capture-train-sides.py",
+      "sha256": "dc86bb32611d0b8feefc27f4fae769a354ecb602abe79b80b7f298dd36910d27",
+      "U2sha256": "dc86bb32611d0b8feefc27f4fae769a354ecb602abe79b80b7f298dd36910d27",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/capture-turnout-arrows.py",
+      "sha256": "7002975eaa1ae9b531f0479a41a19468ec746cc50eabb0454a5bcd5d6cf1d4b0",
+      "U2sha256": "7002975eaa1ae9b531f0479a41a19468ec746cc50eabb0454a5bcd5d6cf1d4b0",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/capture-turnout-baseline.py",
+      "sha256": "ea1f2086a9326e826bdf97aceefa8447adb172cb7863a9fbf1fc93281f552cbb",
+      "U2sha256": "ea1f2086a9326e826bdf97aceefa8447adb172cb7863a9fbf1fc93281f552cbb",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/capture-turnout-glow.py",
+      "sha256": "36b3c85fbddf6b367b6b919127e681f1a3179e0eb0221f0979ca4b774795d342",
+      "U2sha256": "36b3c85fbddf6b367b6b919127e681f1a3179e0eb0221f0979ca4b774795d342",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/check-turnout-arrows-captures.py",
+      "sha256": "cf2e681d5166ee8cbb54bedfe7452c9052c5526abd0a31b86d56ad65ffdabdba",
+      "U2sha256": "cf2e681d5166ee8cbb54bedfe7452c9052c5526abd0a31b86d56ad65ffdabdba",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/conflict-performance.test.js",
+      "sha256": "903b077dd46695caaccf171be32c1a0c5dd5c43f9720e731b33e9a4a2e800a49",
+      "U2sha256": "903b077dd46695caaccf171be32c1a0c5dd5c43f9720e731b33e9a4a2e800a49",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/consist.test.js",
+      "sha256": "bfb1a29e9e446d8bf3acb13a68b3fd1c086e0231a16d59b3fb826e51a820d2dc",
+      "U2sha256": "bfb1a29e9e446d8bf3acb13a68b3fd1c086e0231a16d59b3fb826e51a820d2dc",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/depot-inventory.test.js",
+      "sha256": "2d5c78cb904f09b36052567e7cfbfeefa9d5a077628dad04da678049c1754acc",
+      "U2sha256": "2d5c78cb904f09b36052567e7cfbfeefa9d5a077628dad04da678049c1754acc",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/fixtures/conflicts-5c.js",
+      "sha256": "d5438f3f0bd42746eeb68756569af9ee64bd51b65896c1fd9c514b3bbc4f37c8",
+      "U2sha256": "d5438f3f0bd42746eeb68756569af9ee64bd51b65896c1fd9c514b3bbc4f37c8",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/fixtures/fleet-commands-v012.js",
+      "sha256": "ebf3dc704e0dc0dc0b9477e80e15115926f572776f0b1a7942ea6b9dd4601442",
+      "U2sha256": "ebf3dc704e0dc0dc0b9477e80e15115926f572776f0b1a7942ea6b9dd4601442",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/fixtures/next-switch-5c.js",
+      "sha256": "95abf77a4a69c3e5bdfb51b30270869880de26e981f28a81982bce9ee5907793",
+      "U2sha256": "95abf77a4a69c3e5bdfb51b30270869880de26e981f28a81982bce9ee5907793",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/fixtures/railway-step-5c.js",
+      "sha256": "51d41d299334a2156c6cdd6e476f377e7676039b1fba49d28316c7473201c431",
+      "U2sha256": "51d41d299334a2156c6cdd6e476f377e7676039b1fba49d28316c7473201c431",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/fixtures/railway-views-v012.js",
+      "sha256": "0eda84e24b903a10c9cfef848cb0c27c7a8dacb6c5d2180067f797a2534d31d1",
+      "U2sha256": "0eda84e24b903a10c9cfef848cb0c27c7a8dacb6c5d2180067f797a2534d31d1",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/fleet-commands.test.js",
+      "sha256": "88a61bee85bc7b8fd92a7e7a4f71c3e9af1f2cfafb517a151f6b999b8508dc6d",
+      "U2sha256": "88a61bee85bc7b8fd92a7e7a4f71c3e9af1f2cfafb517a151f6b999b8508dc6d",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/graphic-foundations.test.js",
+      "sha256": "573ded9fb37b259a77573b7f2e33b78beb77c891a30c4aa0e3c133e56e976476",
+      "U2sha256": "573ded9fb37b259a77573b7f2e33b78beb77c891a30c4aa0e3c133e56e976476",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/guarded-stop.test.js",
+      "sha256": "8230e72825aa7054768c0a8fa1559d07e5370db4c8a9e951ab09b3a66a111411",
+      "U2sha256": "8230e72825aa7054768c0a8fa1559d07e5370db4c8a9e951ab09b3a66a111411",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/jmri_audit_test.py",
+      "sha256": "9d0348c40ccbe87f4fae42eddc51ed02cab944b7613ac9b222cdc6980971cc06",
+      "U2sha256": "9d0348c40ccbe87f4fae42eddc51ed02cab944b7613ac9b222cdc6980971cc06",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/landscape.test.js",
+      "sha256": "d1540a6f186cdf0e60aa947e08bc7dfe1043e7826f3118b6d70d6c340495c393",
+      "U2sha256": "d1540a6f186cdf0e60aa947e08bc7dfe1043e7826f3118b6d70d6c340495c393",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/navigation.test.js",
+      "sha256": "98a9275829f53e6586d559a389d7f7118a142334735b189eb2489b98eb5f8487",
+      "U2sha256": "98a9275829f53e6586d559a389d7f7118a142334735b189eb2489b98eb5f8487",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/network.test.js",
+      "sha256": "f8906f42c9753d8757fc63617f33ba5e4e53476b7ad15b2913de8669e46f09a8",
+      "U2sha256": "f8906f42c9753d8757fc63617f33ba5e4e53476b7ad15b2913de8669e46f09a8",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/next-switch.test.js",
+      "sha256": "64c9ccaac1466487acb66be37b6089533fb2f1514975f6a6428d36379e13ee37",
+      "U2sha256": "64c9ccaac1466487acb66be37b6089533fb2f1514975f6a6428d36379e13ee37",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/phase-three.test.js",
+      "sha256": "d14addc94b952d972e752edbe17d16539aa8b7ddc912bdea93e039b6536be603",
+      "U2sha256": "d14addc94b952d972e752edbe17d16539aa8b7ddc912bdea93e039b6536be603",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/presentation-resources.test.js",
+      "sha256": "b7469f364375bc607e2a56ea12f31688cede4a39966197bbebb476719efd0947",
+      "U2sha256": "b7469f364375bc607e2a56ea12f31688cede4a39966197bbebb476719efd0947",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/probe-train-management-gpu.py",
+      "sha256": "5326f6d13e0ba3507905e755f07a32b68d9f2ff684b18d63964741c3df3513f3",
+      "U2sha256": "5326f6d13e0ba3507905e755f07a32b68d9f2ff684b18d63964741c3df3513f3",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/quality.test.js",
+      "sha256": "e57165b0566f3d00db964f8f808eec33e7633ef3fe2d7298c8ebc69d41f29f14",
+      "U2sha256": "e57165b0566f3d00db964f8f808eec33e7633ef3fe2d7298c8ebc69d41f29f14",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/railway-guard.test.js",
+      "sha256": "e21a551198d2c8f53a64d76bed42bc42f36dd43d2d835e27ddcb10a0c7cedbf2",
+      "U2sha256": "e21a551198d2c8f53a64d76bed42bc42f36dd43d2d835e27ddcb10a0c7cedbf2",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/railway-reliability.test.js",
+      "sha256": "80d993a99759a6024296a1c0ec1135eaa30038d56513e239063bf6022c5c08b9",
+      "U2sha256": "80d993a99759a6024296a1c0ec1135eaa30038d56513e239063bf6022c5c08b9",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/railway-state.test.js",
+      "sha256": "8950b725483e2944b5199eeeee317e48f01a0acc828e004f59128248ec0772d1",
+      "U2sha256": "8950b725483e2944b5199eeeee317e48f01a0acc828e004f59128248ec0772d1",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/railway-step.test.js",
+      "sha256": "e4f0718277e203a8c7e5df42cf872e23f09ef5adc0f356672a9b1afb2581d70e",
+      "U2sha256": "e4f0718277e203a8c7e5df42cf872e23f09ef5adc0f356672a9b1afb2581d70e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/rolling-stock.test.js",
+      "sha256": "95917f2f1f9d0adcec609ec877ffd178e108d06b36466bf5ede3d4015b18f37f",
+      "U2sha256": "95917f2f1f9d0adcec609ec877ffd178e108d06b36466bf5ede3d4015b18f37f",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/route-performance.test.js",
+      "sha256": "1a3511ef42f883031569a568ef6b99356df28b75cec026d75b9537916f423815",
+      "U2sha256": "1a3511ef42f883031569a568ef6b99356df28b75cec026d75b9537916f423815",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/run-train-project-regressions.py",
+      "sha256": "f5fb59b5dbe8997c047346721bc3e333f8bc5a707cef70afa752ae7405e446c6",
+      "U2sha256": "f5fb59b5dbe8997c047346721bc3e333f8bc5a707cef70afa752ae7405e446c6",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/run-train-side-regression.py",
+      "sha256": "f6d9b665f6a4aa499582ae3d0d92d47ceff1120f40f792b7f53b82ee8285ba4d",
+      "U2sha256": "f6d9b665f6a4aa499582ae3d0d92d47ceff1120f40f792b7f53b82ee8285ba4d",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/scenic-plan.test.js",
+      "sha256": "496d7a8d24feb2bce3479e924826b4cc0a4fa6bfcafed7d5ae674ce3f18a5446",
+      "U2sha256": "496d7a8d24feb2bce3479e924826b4cc0a4fa6bfcafed7d5ae674ce3f18a5446",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/station-building.test.js",
+      "sha256": "79aa08af2863d83991179be7da9064eaf8f78f1a44081406c05188b625f65cd7",
+      "U2sha256": "79aa08af2863d83991179be7da9064eaf8f78f1a44081406c05188b625f65cd7",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/station-materials.test.js",
+      "sha256": "1fb556fc0be167077ce492893e0676fff5b447356ac983b6cf7bda6d485aa77f",
+      "U2sha256": "1fb556fc0be167077ce492893e0676fff5b447356ac983b6cf7bda6d485aa77f",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/station-platform.test.js",
+      "sha256": "96ebe79abbd7d891a3c576799e7b981901e5ff0b61ba6ae777470c8cb77592d5",
+      "U2sha256": "96ebe79abbd7d891a3c576799e7b981901e5ff0b61ba6ae777470c8cb77592d5",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/structure-mesh.test.js",
+      "sha256": "81fa08dc1713489d6ff7b7aa972244fabb809bb815de5705dbc5559697a1b173",
+      "U2sha256": "81fa08dc1713489d6ff7b7aa972244fabb809bb815de5705dbc5559697a1b173",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/structures.test.js",
+      "sha256": "97e3f1146d84a3178e6b08b9319d9a8a9f5c395388c227f258fb5597a3ce128b",
+      "U2sha256": "97e3f1146d84a3178e6b08b9319d9a8a9f5c395388c227f258fb5597a3ce128b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/supabase-alignment/bootstrap.sql",
+      "sha256": "6f335b6d5d7b017892c1644dfa2e75804933019e939ee369f6082ec47dd17f56",
+      "U2sha256": "6f335b6d5d7b017892c1644dfa2e75804933019e939ee369f6082ec47dd17f56",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/supabase-alignment/catalog.sql",
+      "sha256": "248e6c7a503f9f4ddbf4160b301ebbfd0955bc7be1ab5694aa56a78ed36ed230",
+      "U2sha256": "248e6c7a503f9f4ddbf4160b301ebbfd0955bc7be1ab5694aa56a78ed36ed230",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/supabase-alignment/compare.py",
+      "sha256": "0f1d99c42aeb69d1b85bc303ba5b5b5006f2c5b1ce79c53211fc3101b2590c9b",
+      "U2sha256": "0f1d99c42aeb69d1b85bc303ba5b5b5006f2c5b1ce79c53211fc3101b2590c9b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/supabase-alignment/deferred-commit.sql",
+      "sha256": "0f7556b43466f5b539de4b3dedf411fe5e533ad6331c91b75153a5d358298b45",
+      "U2sha256": "0f7556b43466f5b539de4b3dedf411fe5e533ad6331c91b75153a5d358298b45",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/supabase-alignment/security.sql",
+      "sha256": "36c50ffd68a389277e28c04db96ecf17353dfbef21e5e8524e1416a1ca662996",
+      "U2sha256": "36c50ffd68a389277e28c04db96ecf17353dfbef21e5e8524e1416a1ca662996",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/switch-routing-matrix.test.js",
+      "sha256": "875d24730f2ef073d5c9b29966132a0093a84673592aae5b2b2d94d2c1e3ea25",
+      "U2sha256": "875d24730f2ef073d5c9b29966132a0093a84673592aae5b2b2d94d2c1e3ea25",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/train-assets.test.js",
+      "sha256": "a265f04d0fd22ebb67f7ba3816574f64c3f3292465730afb93a260fd5e228e71",
+      "U2sha256": "a265f04d0fd22ebb67f7ba3816574f64c3f3292465730afb93a260fd5e228e71",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/train-deck.test.js",
+      "sha256": "385457b19d3be0ea2c5e2f788eb15c183fc012266189bb6a1e39f098622aab3a",
+      "U2sha256": "385457b19d3be0ea2c5e2f788eb15c183fc012266189bb6a1e39f098622aab3a",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/train-management.test.js",
+      "sha256": "45b5ac87a8fbab19e51aa33ab429be65eef088d8a6be65ea63f1d666a47b8bc2",
+      "U2sha256": "45b5ac87a8fbab19e51aa33ab429be65eef088d8a6be65ea63f1d666a47b8bc2",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/train-project-side.test.js",
+      "sha256": "9df30982958cc26f3949aa5703de423df9b4bf19351ddedce8526b6759c2eaae",
+      "U2sha256": "9df30982958cc26f3949aa5703de423df9b4bf19351ddedce8526b6759c2eaae",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/train-projects.test.js",
+      "sha256": "c51a03fe46b450ad67cf34af61bd53ed6f9f3f6fbd8e3f8e08426300a8f535bb",
+      "U2sha256": "c51a03fe46b450ad67cf34af61bd53ed6f9f3f6fbd8e3f8e08426300a8f535bb",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/train-side-layout.test.js",
+      "sha256": "e5374c562a0be41df2e51609693cc84f09d4848940af8a6ca41247847d0dfe11",
+      "U2sha256": "e5374c562a0be41df2e51609693cc84f09d4848940af8a6ca41247847d0dfe11",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/turnout-arrows.test.js",
+      "sha256": "94e50f456ae92c433d0919a89a62940c428491d44c7779b4cd88c1a4c2217b08",
+      "U2sha256": "94e50f456ae92c433d0919a89a62940c428491d44c7779b4cd88c1a4c2217b08",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/turnout-commands.test.js",
+      "sha256": "de10eda0bf82efc846d9ae09ff35a9267d702061e6edf1a403149f215678134b",
+      "U2sha256": "de10eda0bf82efc846d9ae09ff35a9267d702061e6edf1a403149f215678134b",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/turnout-glow.test.js",
+      "sha256": "5d9e2e19c8a5a8ff54027544f19ea1240e6f529138faac7553872e6da2a0a008",
+      "U2sha256": "5d9e2e19c8a5a8ff54027544f19ea1240e6f529138faac7553872e6da2a0a008",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/turnout-interaction.test.js",
+      "sha256": "2d7e2eae148bb173f6e9e430a6b7c161850700e018f805f9890ef29d0595402e",
+      "U2sha256": "2d7e2eae148bb173f6e9e430a6b7c161850700e018f805f9890ef29d0595402e",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/turnout-picking.test.js",
+      "sha256": "20aa5b5872e53a9f85fa1bb54f02dba2d05c1a0673db3777f9289286f57809f2",
+      "U2sha256": "20aa5b5872e53a9f85fa1bb54f02dba2d05c1a0673db3777f9289286f57809f2",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/turnout-routes.test.js",
+      "sha256": "ea5bf01aa6c4bcaccb47981b4d7ea2d25b7b5cc2c289f2686933f0f5b0997fe0",
+      "U2sha256": "ea5bf01aa6c4bcaccb47981b4d7ea2d25b7b5cc2c289f2686933f0f5b0997fe0",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/view-controls.test.js",
+      "sha256": "0b3827aceb97b2e6f8b17a4718c55042311c17d95dbc41563511b4057e1082ef",
+      "U2sha256": "0b3827aceb97b2e6f8b17a4718c55042311c17d95dbc41563511b4057e1082ef",
+      "unchangedFromU2": true
+    },
+    {
+      "path": "tests/zones.test.js",
+      "sha256": "9024372375f5e6ed6f0202ba63c660e648d96028a90737d5de8caa28d1621886",
+      "U2sha256": "9024372375f5e6ed6f0202ba63c660e648d96028a90737d5de8caa28d1621886",
+      "unchangedFromU2": true
+    }
+  ]
+}

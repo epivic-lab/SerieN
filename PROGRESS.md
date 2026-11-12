@@ -237,3 +237,200 @@ Aggiunti CI isolata senza segreti/deploy, manifest e documentazione/evidenze per
 ## Supabase Alignment — S3 preparazione Draft PR (2026-11-11)
 
 Regia approva tecnicamente S2 `a864de9f17c71775d60746f6432618343b8299ac` e autorizza soltanto la Draft PR di allineamento, mai il merge. Impostazioni dashboard riferite dalla Regia: repository SerieN, directory `.`, deploy produttivo attivo su main, automatic branching disattivato. CI resa permanente per PR main e push pertinenti main/S2, mantenendo replay effimero, token read-only e zero connessioni produttive. Test statici evento/ref/paths e shell PASS; preflight hash/catalogo remoto PASS; test locali e build PASS. [Rapporto S3](docs/supabase/alignment/S3.md); gli esiti reali CI/check/PR sono riportati nella consegna dopo verifica sul nuovo SHA. Nessun cambiamento SQL storico, R1/M1/M2/UI, Auth o configurazioni remote. Il merge può avviare deployment Supabase e Pages: **NON ESEGUITO; STOP per autorizzazione Regia**.
+
+## Train Management — M2, incremento dominio (2026-11-11)
+
+Mandato esplicito per tutta Milestone A, con incrementi e checkpoint, da main remoto `184cc9b` verificato; branch nuovo `codex/train-management-m2`. Nessun M3/persistenza/merge/deploy/redesign. Catalogo quattordici modelli normalizzato dal manifest esistente, store di progetti in RAM isolato, identità progettate/fisiche distinte, lifecycle/ordine/orientamento e confronto con generazione di reset. Sette nuovi test; baseline 234 Node/build PASS. [Rapporto e prove aggiornati](docs/_active/train-management/M2_REPORT.md). UI/browser M2 NOT VERIFIED in questo incremento. Prossima azione: integrare la UI M2 e la vista laterale, nel perimetro A già autorizzato.
+
+## Train Management — M2, incremento editor (2026-11-11)
+
+Primo checkpoint remoto `2743bcd`, albero identico al precursore locale d80082f, pubblicato tramite connettore con autorizzazione esplicita dell'utente. Integrata vista Projects: lifecycle, modifiche non confermate protette, anteprima M1.1 con flip, confronto e copia del reale, invalidazione riferimenti al reset. **245 Node, 9 Python, build, canonico e browser funzionale M2 (13 gruppi) PASS**; limiti e primo errore dell'harness preservati nel [rapporto M2](docs/_active/train-management/M2_REPORT.md). Solo notifica reset aggiunta ad app.js; sorgenti R1/backend/layout/deck invariati. Prossima azione: gate runtime continuo con tre treni e regressioni browser R1, senza M3/persistenza/merge/deploy.
+
+## Train Management — M2, chiusura Milestone A (2026-11-11)
+
+**M2 READY FOR REVIEW — STOP per audit Regia.** Baseline main `184cc9b`, branch `codex/train-management-m2`; dominio remoto `2743bcd`, codice completo remoto `59f54f1`. Incremento conclusivo solo test/documentazione/evidenze, SHA effettivo e checkpoint remoto verificati nella consegna. Precursori locali preservati e interi alberi identici ai checkpoint del connettore autorizzato; nessun reset/rebase/force-push.
+
+**245 Node, 9 Python, build, canonico, otto suite browser PASS**. Gate RAF nativo: 3 treni in moto, 11 gruppi/22 checkpoint/486 frame; input trusted mouse e touch nei due viewport tablet, conferma/riordino/orientamento senza effetti fisici. Comandi R1 rifiutati in marcia e sgancio/riaggancio da fermo con altri due treni in moto, identità conservate. 348 geometrie/44 texture stabili, contesto attivo, zero errori/richieste fallite. Tentativi precedenti dell'harness mantenuti con esito originale; dettagli nel [rapporto M2](docs/_active/train-management/M2_REPORT.md) e nella [matrice](docs/_active/train-management/evidence/M2/FINAL_GATES.json).
+
+Progetti solo in RAM; nessuna applicazione globale, orientamento solo progettato, comandi fisici dalle console esistenti. GPU/tablet fisici e fluidità hardware **NOT VERIFIED**; SwiftShader circa 0,375 frame/s non fluido. Backend/Auth/privilegi, motore R1, plancia, redesign, canonico e asset preservati; sola notifica di invalidazione dopo reset in app.js. Nessuna nuova dipendenza o renderer. **M3/persistenza non iniziate, nessun merge/deploy. Prossima azione unica: audit della Regia.** Proposta M3-A: contratto inventario fuori scena/ingresso-uscita fisica, separato dagli sganciati sul plastico.
+
+## Train Management — M3-A contratto (2026-11-11)
+
+Regia approva M2 `a67e0de` e autorizza M3 A/B condizionata/C sul branch esistente `codex/train-management-m2`. HEAD remoto M2 e main `184cc9b` verificati, working tree pulito. [Contratto M3-A](docs/_active/train-management/M3_CONTRACT.md): cinque identità distinte, record virtuali disponibili/prenotati per posti M2 confermati, nessuna equivalenza con materiale fisico/sganciato. R1 non espone trasferimenti generici deposito↔scena; addTrain, reset e diagnostica non saranno riutilizzati come trasferimenti. Architettura isolata fattibile senza modifiche R1: B autorizzata dal mandato a questa condizione. Prossima azione: implementare inventario/vista Depot, poi collaudo C e STOP Regia; nessuna persistenza/release/main/deploy/E1/redesign.
+
+## Train Management — M3-B inventario virtuale (2026-11-11)
+
+Contratto A remoto `afc6c00` verificato. Implementati store isolato e vista Depot, identità `depot:<UUID>`, disponibilità/prenotazione di posti M2 confermati, riconciliazione senza mutazioni M2/R1, liste virtuali/fisiche/sganciate distinte, trasferimenti fisici non disponibili. Nessun cambio ad app.js/motore/asset/renderer/backend. **254 Node, 9 Python, build/canonico, browser M3 (9 gruppi) e lifecycle 25 cicli PASS**; primo errore del predicato dell'harness preservato nel [rapporto M3](docs/_active/train-management/M3_REPORT.md). Prossima azione già autorizzata: C, regressioni e gate nativo con tre treni. Nessuna persistenza/release/main/deploy/E1/redesign.
+
+## Train Management — M3-C chiusura (2026-11-11)
+
+**M3 READY FOR REVIEW — STOP Regia.** Branch `codex/train-management-m2`; M2 approvata a67e0de, main `184cc9b` preservata. Checkpoint remoti A `afc6c00`, B `252d9c3`, C solo test/rapporto/evidenze: SHA conclusivo e verifica remota nella consegna. Alberi confrontati integralmente con precursori locali conservati, nessun reset/rebase/force-push.
+
+**254 Node, 9 Python, build/canonico, dieci suite browser conclusive PASS**. M1/M1.1/M2 e lifecycle, 11 scenari R1, console/layout preservati. Gate nativo M3: 6 gruppi, 7 checkpoint, 74 frame, input trusted mouse/touch, 3 treni in movimento durante gestione/prenotazione deposito. Aggancio/sgancio rifiutati in marcia e verificati da fermo con altri due treni in moto: stesso carro fisico, nessuna conversione in inventario, progetti/inventario conservati anche a close/reopen e reset. 348 geometrie/44 texture stabili, contesto attivo, zero errori/richieste fallite. [Rapporto M3](docs/_active/train-management/M3_REPORT.md), [matrice](docs/_active/train-management/evidence/M3/FINAL_GATES.json).
+
+Inventario solo virtuale/RAM con prenotazioni dei confermati; niente trasferimenti fisici scena↔deposito o applicazione di composizioni. App.js/R1, dominio M2/M1.1, asset/renderer, canonico, Supabase/Auth/RLS, dipendenze e workflow immutati. Hardware fisico/fluidità e presentazione prompt nativo NOT VERIFIED; software circa 0,455 frame/s non fluido. Primo errore dell'harness archiviato senza riscriverlo; prove conclusive PASS sullo stesso bundle. **Nessuna persistenza, release, E1, redesign, main, merge o deploy avviati. Prossima azione unica: audit/approvazione della Regia, nessun altro sviluppo.**
+
+## UI V2.1 — Fase 0, audit e preparazione (2026-11-11)
+
+Mandato limitato alla Fase 0. Verificati direttamente main `184cc9ba93a6b35493f365b2ffcb20ef0645963d` e M2/M3 `91722fbdf6671e69deebf645c3d8bf389212f421`; main antenato, sei commit esclusivi. Creato `codex/ui-v2-integration` da M2/M3 approvata, preservando checkout iniziale/branch originali. Nessuna modifica applicativa/Auth/Supabase/layout/V1, merge o deploy.
+
+**254 Node, 9 Python, build, canonico e dieci suite browser PASS**, incluso RAF nativo con tre treni, input mouse/touch trusted, sgancio/riaggancio reale con altri due in moto; software circa 0,524 fps, hardware fisico NOT VERIFIED. [Integration Readiness Report](docs/ui-v2-integration/REPORT.md), [stato](docs/ui-v2-integration/STATUS.md), evidenze nuove separate da quelle storiche. Checkpoint documentale sul branch dedicato, SHA e verifica remota nella consegna.
+
+**BLOCKED per integrazione UI:** ZIP V2.1 non disponibile, pacchetto tecnico definitivo Claude e relativa approvazione mancanti; Exit to title separato da logout da definire. Audit software completato senza regressioni rilevate. **STOP Fase 0; unica prossima azione: attendere pacchetto definitivo e successiva autorizzazione della Regia.**
+
+## UI V2.1 — acquisizione design: blocco trasferimento (2026-11-11)
+
+Design dichiarato approvato dalla Regia, incarico ancora limitato alla Fase 0. Allegato effettivo `serien-codex-package-ui-v21.zip` (nome citato diverso); `download_file` restituisce `file exceeds the executor transfer limit of 32 MiB`. Nessuna copia locale: contenuto, equivalenza nomi, checksum e confronto V2.1↔baseline **NOT VERIFIED**. **Acquisizione/audit design BLOCKED**, non dichiarati completati.
+
+Remote main `184cc9b`, M2/M3 `91722fb` e checkpoint dedicato iniziale `e61402c` nuovamente verificati; working tree iniziale pulito. Nuove esecuzioni: **254 Node, 9 Python, build/canonico PASS**, stesso bundle/canonico; suite browser precedenti non ripetute. Aggiornati solo [rapporto §11](docs/ui-v2-integration/REPORT.md), STATUS, PROGRESS ed evidenze. Nessuna modifica applicativa/Auth/Supabase/V1, merge o deploy.
+
+**STOP. Unica prossima azione: acquisire lo ZIP tramite URL scaricabile o parti sotto 32 MiB e completare l'audit**; pacchetto tecnico definitivo e autorizzazione all'implementazione restano separati. SHA del checkpoint documentale e allineamento remoto nella consegna.
+
+## UI V2.1 — tentativo Google Drive (2026-11-11)
+
+Metadati e raw fetch connettore PASS: file Drive `1lZ9zmhbh8HwDC1ILd5OqeKJCrV0fm2i8`, `serien-codex-package-ui-v21.zip`, application/zip dichiarato, 36.752.894 byte. **BLOCKED nella materializzazione**: host temporaneo `sdmntprnortheu.oaiusercontent.com` HTTP 403; Drive diretto CONNECT 403, domini non in allowlist enforced. Non è un diniego dei permessi Google Drive. Nessun ZIP locale: integrità/manifest/contenuto/contratti e confronto completo NOT VERIFIED.
+
+SHA main/M2-M3/V1 e checkpoint iniziale `e48dd96` confermati; nessuna modifica applicativa contro `91722fb`. Test non ripetuti come richiesto; bundle/canonico identici. Solo rapporto §12, STATUS, PROGRESS ed evidenza sicura del blocco; nessun URL firmato salvato. [Rapporto](docs/ui-v2-integration/REPORT.md).
+
+**STOP per la Regia. Prossima azione:** consentire il dominio di download nelle impostazioni rete e ripetere con riferimento fresco, oppure parti sotto 32 MiB; poi completare l'audit. Nessuna implementazione/merge/deploy.
+
+## UI V2.1 — acquisizione definitiva e readiness gate (2026-11-11)
+
+**READY FOR UI V2.1 IMPLEMENTATION GATE**, non autorizzazione applicativa. Due ZIP CRC PASS; `.aa` + `.ab` ricostruiscono l'originale di 36.752.894 byte, SHA-256 `9bd0252311ab82dd77af76f66cf9bb5251d74ce09d0815deae044ea90a58333d`. CRC originale e manifest tecnico 197/197 + design 143/143 PASS. Presenti dossier tecnico/spec/contratti/prompts U0–U9, design V2.1 congelato e V1 (40 file identici al branch design). Blocco di trasferimento RISOLTO.
+
+[Rapporto §13](docs/ui-v2-integration/REPORT.md), [mapping 66 controlli e 31 schermate / evidenze](docs/ui-v2-integration/evidence/final-package/). Confronto con M2/M3 `91722fb` completo; branch effettivo resta `codex/ui-v2-integration`, M3 già approvata/presente: riferimenti precedenti del dossier superati dal mandato, nessun merge/rebase. Adattamenti solo UI documentati (getter/launcher, conferme, DOM, cascade); engine/store/Auth congelati.
+
+Smoke nuovo reference 4 tab PASS con limiti espliciti; primo harness selettore errato registrato. Font definitivi/licenze da acquisire in U1, gate visivo/interattivo completo da eseguire nelle fasi previste. Baseline test non ripetuti come richiesto; nessuna modifica applicativa, hash bundle/canonico invariati. Aggiornati solo rapporto/stato/progresso/evidenze. **STOP per gate Regia sul pacchetto e adattamenti; nessuna U0/U1 applicativa, merge o deploy avviati.**
+
+## UI V2.1 — U0 Integration Foundation & Contract Normalization (2026-11-11)
+
+Regia approva il pacchetto tecnico e autorizza **soltanto U0 documentale**. Verificati branch locale/remoto iniziale `codex/ui-v2-integration@af67ee5c65679b7e5fa384d76a0825dff022f27d`, baseline applicativa `91722fbdf6671e69deebf645c3d8bf389212f421`, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d`; nessun altro branch/merge/rebase M3, già approvata/presente.
+
+**U0 READY FOR REGIA REVIEW.** [Rapporto](docs/ui-v2-integration/U0_REPORT.md); registry completo 66 CTRL / 31 schermate, crosswalk source/DOM/callback/test, 13 adapter futuri, 14 conflitti normalizzati, piano U1–U9, matrice test/gate, inventario/provenienza in [docs/_active/ui-v21](docs/_active/ui-v21/README.md). Nessuna copia dell'intero design, nessun runtime/test baseline modificato, niente selector migration.
+
+**PASS:** validatore isolato: 19 controlli statici, 226 file applicativi/test/config byte-identici a 91722fb, build con bundle/canonico identici. Suite browser/Node/Python baseline non ripetute; nuovi adapter/font/gate visuali NOT VERIFIED. Font/licenze Cinzel Decorative/Federo/Cutive Mono da acquisire e verificare prima U1; U0 non li installa. U1 normalizzata solo staging/fixture, attivazione CSS regionale da U2.
+
+Checkpoint atomico documentale sul branch esistente; SHA/allineamento remoto nella consegna. Nessuna modifica R1/M2/M3/Auth/Supabase/V1/dipendenze/workflow, merge o deploy. **STOP U0: attendere review Regia e autorizzazione esplicita U1 con prerequisiti font.**
+
+## UI V2.1 — PRE-U1 font preflight (2026-11-11)
+
+U0 `b9574ae71dd7ebf4039affc20d969d813b93797d` APPROVATA SENZA RISERVE. Autorizzato solo prerequisito font, non U1. **FONT GATE PASS — READY FOR U1.** Font ufficiali google/fonts@`c30b221beb0c1da59d563feb91ec8656a1fa972a`: Cinzel Decorative Bold 700, Federo Regular 400, Cutive Mono Regular 400, licenze OFL separate/copyright/RFN preservati, metadati/pesi/hash verificati. TTF→WOFF2 con FontTools già presente e Brotli integrato Node; nessuna dipendenza o installazione globale.
+
+[FONT_PREFLIGHT_REPORT](docs/_active/ui-v21/FONT_PREFLIGHT_REPORT.md), manifest/font/licenze e verifiche in docs/_active/ui-v21/font-staging. PASS conversione/roundtrip contorni e metriche/layout, browser Chromium offline senza richieste/errori, validatore invarianti 226 file e build/bundle identico. Warning kern upstream Federo documentato con coppie preservate e browser PASS; primo harness corretto prima dei check. Endpoint CSS Google Fonts CONNECT403, sorgenti ufficiali pinned su raw.githubusercontent.com accessibili, nessun aggiramento policy. Suite baseline non ripetute; UI integrata/font visual gate e altri browser/hardware NOT VERIFIED.
+
+Solo inventario/provenienza/documentazione e staging non attivo; nessun index/style/app/src/test/workflow/dipendenze/Auth/Supabase/design o ramo originale modificato, nessun merge/deploy. Checkpoint remoto sul branch codex/ui-v2-integration verificato nella consegna. **STOP per la Regia: U1 richiede autorizzazione esplicita separata.**
+
+## UI V2.1 — U1 Asset Staging & Isolated Visual Foundation (2026-11-11)
+
+Font Gate approvato; due autorizzazioni U1 ricevute identiche. Verificati locale/remoto `codex/ui-v2-integration@65b910bc25def1f0064a0758e29f8d5715314568`, baseline M2/M3 `91722fb`, main `184cc9b`, working tree iniziale pulito. **U1 READY FOR REGIA REVIEW.**
+
+19 file inattivi in ui/: CSS/token/materiali/sprite da pacchetto verificato, tre font WOFF2 PRE-U1 e licenze verbatim, manifest. Solo import remoto rimosso da copia tokens V1, sette simboli TM visivi aggiunti a copia sprite; nessuna JS reference o miniatura/renderer copiata. Ordine legacy→V1→TM→integration ultimo soltanto nella fixture isolata. [Rapporto](docs/_active/ui-v21/U1_ASSET_STAGING_REPORT.md), evidenze nuove docs/_active/ui-v21/evidence/U1/.
+
+**PASS:** hash/integrità/licenze, HTTP200 tutti asset, tre font loaded/famiglie/pesi/no synthetic, rete esterna assente, offline con risposte da file locali in contesto nuovo, zero errori, screenshot 1440×900 ispezionato. Cascade sette campioni con/senza legacy senza differenze; build/bundle identico e 226 file runtime/test/config protetti invariati. Nessuna suite storica ripetuta; UI integrata/altri viewport/browser/hardware NOT VERIFIED.
+
+Solo staging e documentazione; nessun index/style/app/src/R1/M2/M3/Auth/Supabase/V1/V2.1 congelato/test/workflow/dipendenze modificato; nessuna attivazione nuova UI, merge/rebase/reset/deploy/release. Checkpoint remoto verificato nella consegna. **STOP U1: attendere review Regia e nuova autorizzazione U2.**
+
+## UI V2.1 — U2 Shell, Header, Dialogs & TM Launchers (2026-11-11)
+
+U1 approvata; U2 autorizzata dal checkpoint `74a8d91c2feafcb826ee316862ec2e8bf7d12a56` sul branch esistente, remote/ancestor/working tree verificati. **U2 READY FOR REGIA REVIEW.** [Rapporto](docs/_active/ui-v21/U2_REPORT.md), evidence/U2 con log/exit code/screenshot/invarianti.
+
+Shell/header/Menu/Help/Plan/auth skin attivate solo in regioni CSS scoped, asset e font locali. A01/A02: Sign out sul nodo/listener Auth originale, guard con dirty/count reali e conferma one-shot; cancel/doppio evento/obsolete/dispose verificati. Una sola istanza TM per header/Menu/Stock, sessione/focus preservati. Qualità/rolling stock reali, Exit disabled; UI sound indipendente dalla Bell. Reset/Composer/Depot mantengono confirm sincrone; nessuna migrazione sidebar/dock/HUD/viste TM o motore.
+
+**PASS:** 254 Node,9 Python,build+canonico; U2 specifici10gruppi/16screenshot su3viewport e login, pointer verso OrbitControls, M1/M2/M3/lifecycle, R1/5C11scenari, deck/PhaseZero; native finale6gruppi/7checkpoint/74frame,3treni e input reali. Tutti16comandi exit0, bundle finale `3112b76b6988dc9f5932511cbe31336f0e1b2e68cff15bfff1b26e722e572fa1` verificato anche viaHTTP nel gate nativo. 215/226file baseline identici; delta autorizzati app/index/TM e8test con sole migrazioni di selettore dialog, nessuna asserzione di dominio indebolita. Iniziali errori di harness/server/selector e adattamenti CSS documentati con recupero, non occultati.
+
+OAuth reale/provider, hardware/GPU/audio e UI integrata completa NOT VERIFIED; SwiftShader circa0,645fps non fluido. Packaging ui/ su Pages da autorizzare prima della futura release, workflow invariato in U2. Nessuna modifica Auth/Supabase/R1/store/asset/layout/design frozen/dipendenze/workflow, nessun merge/main/deploy. Commit atomico e checkpoint remoto verificati nella consegna. **STOP U2, attendere audit Regia e nuova autorizzazione esplicita U3.**
+
+## UI V2.1 — ripresa controllata U2 dopo interruzione (2026-11-11)
+
+Recuperato **`19a84092131a81ee95a869218d77357723abf3a4`**, unico commit U2 dopo U1, già sul remoto del branch autorizzato `codex/ui-v2-integration`; stato iniziale pulito, nessun staged/unstaged/untracked. Implementazione/test/screenshot già completi: nessun lavoro ricreato. Ripristinato il solo tracking locale del branch con fetch esatto non-force.
+
+**PASS nuovo audit statico:** 15 hash sorgenti e 226 hash/blob baseline corrispondenti, 16 ricevute exit0, bundle finale identico al gate nativo, 16 screenshot recuperati e 114 evidenze precedenti inventariate. **PASS documentato da esecuzioni precedenti:** test Node/Python/build/canonico e suite browser U2/M1/M2/M3/R1/native sopra elencati; nessun test costoso ripetuto e nessun sorgente/test/asset modificato. NOT VERIFIED e prerequisito packaging futuro restano espliciti. [Rapporto aggiornato](docs/_active/ui-v21/U2_REPORT.md), [audit di ripresa](docs/_active/ui-v21/evidence/U2/recovery/VERIFICATION.json).
+
+Checkpoint della ripresa soltanto documentale, SHA e allineamento remoto nella consegna. **U2 READY FOR REGIA REVIEW; STOP.** Unica prossima azione: audit Regia e nuova autorizzazione esplicita U3. Nessun merge/main/deploy/Supabase o fase successiva.
+
+## UI V2.1 — U3 Real Viewport Overlays (2026-11-11)
+
+U2 APPROVATA; autorizzata soltanto U3. Verificati branch `codex/ui-v2-integration`, HEAD/upstream/remoto iniziali `48a7c4d48b118877ec7edf7f4c61fba090e460b8`, stato pulito e main `184cc9b`. **U3 READY FOR REGIA REVIEW.** [Rapporto](docs/_active/ui-v21/U3_REPORT.md), [risultati](docs/_active/ui-v21/evidence/U3/results.json).
+
+Adapter di sola presentazione riusa controlli camera/Route, HUD e SVG topologici originali, Bell/status originali e medesimo mute dal Menu. Operations Log originale completo/persistente spostato nel viewport; startup skin senza boot change. CSS U3 regionale, un canvas/picking invariato; nessuna migrazione sidebar/dock/TM. Scena Guarded Stop espone soltanto i nodi UI tramite getter; motore, proiezioni, dispatcher, Bell controller, M1/M2/M3/Auth/Supabase/asset/layout/deps/workflow invariati. Un test storico adattato solo per aprire View e localizzare Bell; tutte le asserzioni identiche.
+
+**PASS:** 254 Node,9 Python,build+canonico,9 gruppi U3 produttivo,5 gruppi picking/cleanup,17 immagini finali shell/route/native su3viewport; S2,S6,R1/5C11scenari,PhaseZero. 14 comandi finali exit0. Native RAF:3treni reali,63frame/194542,2ms (~0,319fps software), Follow+drag trusted e nessun pageerror; fluidità hardware NOT VERIFIED. 222/226 file manifest U2 identici e quattro delta autorizzati verificati per inversione; CSS U2 prefisso intatto e asset/font/licenze identici. Bundle `e45a019e20ca80b079d00fc3c8ae5b4d36111e6bb3ec87733a9bb2d1d7709cfc` identico al test nativo. Failure di fixture/timing/serializzazione/harness conservati e risolti; contrasto Route circoscritto a U3 e ricontrollato.
+
+OAuth remoto/altri browser/hardware/prompt beforeunload/UI completa NOT VERIFIED; M2/M3 complete non ripetute, contratti invariati. Packaging ui/ resta prerequisito della futura release separata. Checkpoint atomico e remoto verificati nella consegna; nessun main/merge/deploy/rebase/force. **STOP U3. Prossima attività consentita: sola revisione indipendente della Regia; U4 non avviata.**
+
+## UI V2.1 — U4 Sidebar, Switches, Environment, Missions & Map (2026-11-11)
+
+U3 APPROVATA; autorizzata esclusivamente U4. Ingresso branch `codex/ui-v2-integration`, HEAD/upstream/remoto `907a9ec4a9d570f03af9ab77d39269ff49787256`, stato pulito e main `184cc9b` verificati. **U4 READY FOR REGIA REVIEW.** [Rapporto](docs/_active/ui-v21/U4_REPORT.md), [risultati](docs/_active/ui-v21/evidence/U4/results.json).
+
+Nuovo adapter sidebar di sola presentazione: otto nodi/handler reali e motivi di blocco completi, glyph/valore daylight dal binding originale (soglie42/72), missioni/ciclo originale con Next sempre disponibile. Mappa SVG da railwayMapPath/locomotivePoint, marker fisici e focus selezione/camera esistenti, quattro treni anche con tre console LRU. Nessuna modifica a dock, miniature o file U2/U3. App.js solo mount/update/dispose/focus UI; CSS integration conserva U3 e aggiunge solo regole U4. Nessun indice/DOM hook perso, nessun log duplicato, mock, nuova safety o store.
+
+**PASS nuovi:** 254 Node,9 Python,build/canonico/invarianti,9 gruppi U4 produttivi,6 safety/camera/cleanup, S2/S5/Phase Zero;13 comandi finali exit0 e27 immagini finali su3viewport oltre alle regressioni. Occupied/approaching/unknown reali con parità tile/3D; RAF nativo3treni,16frame/24132,3ms (~0,622fps software), marker fisici sincronizzati e focus senza mutazione ferroviaria. Bundle `4d63096f8b4cdaa15e62de27ee2b70384712deed58483fa2382fcdccdcde3c27`. 225/226 file manifest U3 identici; delta app.js invertito esattamente rimuovendo solo i binding UI, asset/font/licenze/workflow e tutti gli altri src/ui/tests preesistenti invariati. Nessun test storico modificato.
+
+Failure di costruzione, aspettativa Reset/fourth train, preparazione approach e harness S5 conservati e risolti; nessuna modifica ai contratti per ottenere PASS. M2/M3 completi e certificazione estesa R1/5C non ripetuti, restano PASS storici U3 con domini invariati. Hardware/GPU/touch/audio/screen reader/altri browser/OAuth remoto/prompt beforeunload/UI completa NOT VERIFIED. Nessun main/merge/deploy/rebase/reset/clean/force, Supabase o packaging modificato. Checkpoint atomico e verifica remota nella consegna. **STOP U4: unica prossima azione, revisione indipendente Regia; U5 non avviata.**
+
+## UI V2.1 — U5 (2026-11-11)
+
+Autorizzata esclusivamente U5 da U4 approvata `1d591bbc914f74cf066666522c6692be4132a614`, branch `codex/ui-v2-integration`. Quattro card fisiche stabili/carousel, cronologia LRU separata, ID selezionati unici e selezione condivisa; throttle 0–100 distinto da actual/gauge `abs(velocity)` 0–150 layout/s. Callback ferroviarie originali, STOP ALL senza latch, Pause e Add Train preservati. Reset con coordinator, consenso una volta, contesto rivalidato e corpo ferroviario invariato; Cancel zero mutazioni, generation/STale e record/prenotazione M2/M3 conservati. Keyboard/focus e dispose verificati.
+
+**254 Node,9 Python,build/canonico/invarianti,8 gruppi U5,lifecycle,Browser Train Deck,Phase Zero,5C e smoke U2/U3/U4 PASS.** Native RAF sul bundle finale:4 treni reali,89frame/140877,644ms (~0,625fps SwiftShader), stop individuale/globale e pause/resume,zero pageerror; hardware NOT VERIFIED. Screenshot finali1440×900/1024×768/390×844. Sessione fisica singleton NOT VERIFIED: screenshot singolo proietta soltanto il vero treno0, senza rimuovere la flotta. Recuperi e limiti nel [rapporto U5](docs/_active/ui-v21/U5_REPORT.md), [stato](docs/_active/ui-v21/STATUS.md), [evidenze](docs/_active/ui-v21/evidence/U5/results.json).
+
+Bundle `8199e84ff8b0bf600013ff7b7ded3fe7d42a5a6be13468f55032e3a78add7ac3`; motore/dispatcher/topologia/M2/M3/asset/Auth/Supabase e workflow invariati. Checkpoint atomico e push normale sul solo branch autorizzato, verifica SHA nella consegna. **U5 READY FOR REGIA REVIEW — STOP; U6–U9 non avviate, nessun merge/main/deploy/Pages.**
+
+## UI V2.1 — U6 recovery (2026-11-12)
+
+Ripresa U6 autorizzata da U5 approvata `e6f152c9b5a23347cbbd5aa6898b91a11e2194e0`, branch `codex/ui-v2-integration`. Inventario prima degli interventi: quattro file applicativi parziali, due log baseline, nessun commit U6; preservato il lavoro e completati shell unica/tab/focus, Layout reale/Side View originale, Catalog definizioni/filtri e guard shell atomica. API discard originale sincrona e store/interiori U7/U8 invariati, aggiunta minima di presentazione per consumo del consenso già rivalidato. Reset/generation/STALE/session-only e beforeunload conservati.
+
+254Node,9Python,build/canonico/invarianti,M1,Side View,Projects lifecycle,6gruppi U6,smoke U2,8gruppi U5 e RAF nativo4treni con consultazione TM PASS. Cinque viewport richiesti; nessuna pretesa hardware. Bundle `8672384da7e4224342c2d6f2168132aca45d97ce49a6a1b1a6d98fe84ad2b7e7`. Disconnessione temporanea exec-server recuperata senza modifiche distruttive; failure intermedi e limiti espliciti nel [rapporto U6](docs/_active/ui-v21/U6_REPORT.md), [risultati](docs/_active/ui-v21/evidence/U6/results.json).
+
+App/motore/dispatcher/topologia/catalogo/store/asset/Auth/Supabase/dipendenze/workflow intatti; CSS limitato U6. Checkpoint atomico/push sul solo branch autorizzato e SHA remoto nella consegna. **U6 READY FOR REGIA REVIEW — STOP; U7/U8/U9 non avviate, nessun merge/main/deploy/Pages.**
+
+## UI V2.1 — U7 (2026-11-12)
+
+Autorizzata U7 da U6 approvata `6f8a28a4fe49875dc499872454d5128b2860bdfc`, branch `codex/ui-v2-integration`. Dashboard confermati read-only (selezione non apre draft), Edit esplicito, Composer rail/inspector/tray da store M2 e cinque stati Compare veri. Coordinator condiviso con shell U6 tramite un argomento, guard New/View/Edit/Copy/Cancel con rivalidazione e consenso singolo; nessuna Promise su discard o mutazione fisica. Shortcuts locali con esclusione input/dialoghi e operazioni valide; niente Space globale aggiuntivo. Side View originale, UUID slot e M3 prenotazioni/riconciliazione preservati.
+
+254Node,9Python,build/canonico/invarianti,M1,Side View,Projects M2,lifecycle,U6/U5 regression,5gruppi U7/sette viewport,Runtime nativo storico/trusted mouse+touch e native-checkpoint4treni+Composer PASS. Bundle `8e6f7628c2b78fc4eb1abe6ef00ca99929ee66aae6d17cc5ac0163499c89ca6b`. Runtime esteso480frame/929662,7ms (~0,515fps SwiftShader): non prova hardware né confronto prestazionale. Matrici, errori/recuperi e limiti nel [rapporto U7](docs/_active/ui-v21/U7_REPORT.md), [risultati](docs/_active/ui-v21/evidence/U7/results.json).
+
+Domini M2/M3, catalogo/geometria/R1/dispatcher/topologia, app/Auth/Supabase/asset/dipendenze/workflow invariati; CSS soltanto U7. Checkpoint atomico e push normale sul solo branch autorizzato, SHA remoto nella consegna. **U7 READY FOR REGIA REVIEW — STOP; U8/U9 non avviate, nessun merge/main/deploy/Pages.**
+
+## UI V2.1 — U8 Depot Virtuale M3 (2026-11-12)
+
+Autorizzata esclusivamente U8 da U7 approvata `cca11fb76d36e9688f41392fa1592b9a3514dce9`, branch `codex/ui-v2-integration`; ingresso locale/upstream/remoto pulito e ancestry verificati, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d` invariata. Depot V2.1 con Add/Assign originali, identità record/catalog/slot/physical distinte, Available/Reserved e notice vere; slot solo confermati compatibili/esclusivi. Release/Remove protetti dal coordinator condiviso Shell/Projects con snapshot/assignment/generation rivalidati e consenso unico; callback successivo alla mutazione. Physical stock read-only, detached sui binari, trasferimenti solo targhe informative; nessuna nuova persistenza.
+
+254Node,9Python,build/canonico/invarianti,6gruppi U8/sette viewport,6controlli intenti obsoleti,Depot storico9gruppi,lifecycle25cicli,U7/U5,U6 recuperata e U2 PASS. RAF nativo finale6gruppi/3treni in movimento con input trusted mouse/touch;99frame/120978,5ms (~0,810fps SwiftShader) senza pretesa hardware. Bundle finale `de724284586912053126bada325953c4d86c089085c5a4dfbd369efbceb324f7`. [Rapporto](docs/_active/ui-v21/U8_REPORT.md), [risultati](docs/_active/ui-v21/evidence/U8/results.json), [comandi](docs/_active/ui-v21/evidence/U8/commands-final.json). Distinte le regressioni pre-etichette/focus e quelle sul bundle finale; failure fixture U6 conservato e recuperato con Edit esplicito U7/attesa focus, nessuna asserzione di dominio indebolita.
+
+Solo4file applicativi autorizzati:Depot view,wiring singolo guard TM,etichette opzionali per-request coordinator e CSS append-only scoped. Domini M2/M3,Projects view,Side View,catalogo,R1/dispatcher/topologia/geometria/asset,app/Auth/Supabase/deps/workflow intatti. NOT VERIFIED:hardware/fluidità/audio,screen reader,altri browser,OAuth remoto,prompt beforeunload nativo,U9/release completa. Matrici estese immutate U3/U4/R1 riusate come PASS storici. Checkpoint atomico e push normale sul solo branch autorizzato, SHA locale/remoto verificato nella consegna; nessun main/merge/deploy/Pages. **U8 READY FOR REGIA REVIEW — STOP; prossima attività esclusivamente review indipendente Regia. U9 non avviata.**
+
+
+## UI V2.1 — U9 + recovery U9-HDR (2026-11-12)
+
+Autorizzata esclusivamente U9 da U8 approvata `30c56aa28e60ce83fe0cbb36209006752325bea8`, poi specifica correzione Regia della targa Autumn Railways. Recuperato checkout/lavoro/evidenze senza riavviare U9 o perdere modifiche. Sette file applicativi di sola presentazione: sei moduli vista/shell e appendice integration. Targa originale Claude con geometria finale/viti/maple/Federo400, readout throttle, menu View, ARIA, leggibilità/focus/motion; nessuna modifica R1/dispatcher/layout/catalogo/M2/M3/Auth/Supabase/asset/frozen/workflow/deps.
+
+**READY WITH DOCUMENTED LIMITATIONS; approvazione indipendente Regia PENDING.**254Node,9Python,build/canonico,111catture definitive/7viewport,6axe scansioni senza violazioni,header prima/dopo5viewport,66controlli/31schermate/A01–A13,RAF nativo sul bundle finale,regressioni e cleanup PASS. Evidenze storiche/nuove/non rieseguite distinte; nessuna asserzione ferroviaria indebolita. [Rapporto](docs/_active/ui-v21/U9_REPORT.md),[risultati](docs/_active/ui-v21/evidence/U9/results.json),[comandi](docs/_active/ui-v21/evidence/U9/commands.json),[recovery](docs/_active/ui-v21/evidence/U9/recovery-state.json).
+
+REL-001 confermato: Pages omette `ui/`; futura release bloccata, workflow intatto. NOT VERIFIED hardware/FPS/screen reader/audio/altri browser/OAuth live/prompt beforeunload/zoom chrome/WCAG completa/package pubblicato. Commit atomico e checkpoint normale sul solo branch autorizzato, SHA completo e allineamento remoto nella consegna. Nessun merge/main/deploy/PR release/nuova fase. **STOP U9: unica prossima attività, review indipendente della Regia.**
+
+## UI V2.1 — REL-001 Release Packaging Gate (2026-11-12)
+
+U0–U9 APPROVATE nel mandato Regia; autorizzato soltanto REL-001 dal checkpoint `50d7c744e4b9dbbe20197ec8f959fdccb16edb5b`, locale/remoto coincidenti, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d`. Unica modifica workflow: nello step Prepare site, `cp -R dist assets ui _site/`. Sorgenti/UI/R1/M1/M2/M3/Auth/Supabase/asset/frozen/test/dipendenze intatti; bundle identico a U9.
+
+PASS build Node22, preparazione reale da `_site` vuoto, chiusura83riferimenti,67file asset byte-identici,9CSS inclusi/5runtime caricati,3WOFF2+3OFL,6texture/sprite,79HTTP200,base `/SerieN/`,browser sul solo pacchetto con bootstrap Auth locale,zero richieste esterne/errori runtime. Targa Autumn Railways con brass/Federo effettivo e catture desktop/mobile ispezionate. Due timeout dell'harness conservati e recuperati senza modificare l'app. Misura finale include tutta docs/rapporto/evidenze; pacchetto e tar locale inferiori a1GiB,non committati. Matrice U9 non ripetuta; OAuth reale e pubblicazione NOT VERIFIED.
+
+[REL001_REPORT](docs/_active/ui-v21/REL001_REPORT.md),[evidenze](docs/_active/ui-v21/evidence/REL001/). **READY FOR REGIA RELEASE REVIEW**, subordinato al checkpoint remoto verificato nella consegna; non è approvazione al rilascio. Commit atomico e push normale sul solo branch autorizzato. **STOP REL-001: unica prossima azione, review indipendente della Regia. Nessun merge/main/deploy/PR release/avvio manuale Pages o nuova fase.**
+
+
+## UI V2.1 — REL-002 (2026-11-12)
+
+REL001 approvato `06a01c5ae70bfd4147e2c866f06803139904f264`; autorizzata esclusivamente ottimizzazione packaging sul branch `codex/ui-v2-integration`. Solo Prepare site: pulizia controllata `_site` e whitelist esplicita di24documenti con chiusura transitiva pubblica. Nessun documento Git rimosso. 718.776.848→4.491.628byte (−99,375101%),97file,docs1.723.266byte,tar4.577.280byte.
+
+Build e bundle U9 identico PASS;73file applicativi preservati,269identità U9 per riuso storico senza ripetere matrice ferroviaria.97HTTP200 incluse le79richieste REL001;3465esclusioni404attese;browser desktop1440×900/mobile390×844 con bootstrap Auth locale,Menu/Dock/WebGL/font/brass/targa e apertura documento pubblico PASS,zero errori runtime o richieste esterne. Preparazioni con residui e destinazione assente identiche. OAuth/cloud/GPUfisica/Pages pubblicata NOT VERIFIED.
+
+[REL002_REPORT](docs/_active/ui-v21/REL002_REPORT.md),[evidenze](docs/_active/ui-v21/evidence/REL002/). **READY FOR REGIA RELEASE REVIEW**, subordinato al checkpoint remoto verificato nella consegna;nessuna approvazione al rilascio implicita. **STOP REL002:review indipendente Regia;nessun merge/main/deploy/PRrelease/nuova fase.**
+
+
+## UI V2.1 — release candidate pre-merge gate (2026-11-12)
+
+U0–U9 e REL001/002 approvate dalla Regia; autorizzata soltanto preparazione PR DRAFT verso main, nessun merge/deploy. Checkpoint applicativo `29b55b40dfa37c51fae827bdf25ded94948a3a45`, main invariata `184cc9ba93a6b35493f365b2ffcb20ef0645963d`: 25 commit avanti/0 indietro, delta Git completo di 2.321 file e merge-tree senza conflitti. Consegna aggiunge soltanto un checkpoint documentale.
+
+PASS Node22.23.5/npm ci, 254 Node, 9 Python, canonico senza diff, build, ricetta REL002 esatta e identità completa dei 97 file/4.491.628 byte. Bundle U9 identico, 269 identità sorgenti/test/asset, domini M2/M3/R1 e Auth preservati con adapter di presentazione approvati distinti. HTTP: 97 risposte200 e 3.470 esclusioni404 attese. Scansione di 1.758 nuovi blob Git senza candidati ai pattern di credenziali. Browser/ferrovia U9 e REL002 riusati per identità, non rieseguiti indiscriminatamente.
+
+[Rapporto RC](docs/_active/ui-v21/RC_PREMERGE_REPORT.md), [evidenze](docs/_active/ui-v21/evidence/RC_PREMERGE/). **READY FOR REGIA MERGE REVIEW**, subordinato alla PR DRAFT e verifica HEAD/base nella consegna. NOT VERIFIED OAuth/cloud live, Pages pubblicata, hardware fisico e altri browser. Procedura post-deploy e rollback soltanto documentati. Il merge su main attiverà automaticamente Pages. **STOP dopo la PR: nessun auto-merge/merge/workflow_dispatch/deploy/nuova fase; serve autorizzazione esplicita Regia al merge.**

@@ -1,0 +1,7 @@
+single-canvas-original-startup-and-one-persistent-log: PASS
+real-presets-home-follow-zoom-pan-orbit-escape-and-trusted-drag-breaks-follow: PASS
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U3.py", line 99, in <module>
+    assert page.locator('#routePreview').get_attribute('aria-pressed') == 'true'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

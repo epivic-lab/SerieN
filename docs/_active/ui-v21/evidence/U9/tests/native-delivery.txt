@@ -1,0 +1,42 @@
+BOOT ready
+ACTION #addTrain
+PASS three-native-moving-real-trains-and-permitted-fourth-insertion
+ACTION [data-train="3"]
+ACTION #stopAll
+ACTION #pause
+ACTION #pause
+PASS Dock-selected-Space-individual-restart-momentary-STOP-ALL-Pause-Resume
+ACTION #camt
+ACTION [data-preset=follow]
+ACTION #viewHome
+PASS real-protected-switch-HUD-and-original-camera-Follow-Home
+ACTION #trainManagement
+ACTION [data-view="layout"]
+ACTION [data-composition="0"]
+ACTION [data-copy-train="0"]
+ACTION [data-project-action="confirm"]
+ACTION [data-view="depot"]
+ACTION [data-depot-action=add]
+ACTION [data-depot-action^=remove-]
+ACTION .u6-guard [data-cancel]
+ACTION [data-depot-action=add]
+ACTION [data-depot-action="remove-depot:d7f34bc8-d387-4f69-a126-200ec4b76d05"]
+ACTION .u6-guard [data-confirm]
+ACTION [data-view="projects"]
+ACTION [data-project-action="edit"]
+ACTION [data-project-action="new"]
+ACTION [data-project-action="cancel"]
+ACTION .u6-guard [data-confirm]
+ACTION [data-view="depot"]
+ACTION dialog.trainManagement [data-close]
+ACTION #trainManagement
+ACTION [data-view="depot"]
+PASS TM-Composer-Depot-trusted-mouse-touch-pending-Cancel-consent-session-and-identities
+ACTION dialog.trainManagement [data-close]
+ACTION #reset
+ACTION .u5-guard [data-confirm]
+ACTION #trainManagement
+ACTION [data-view="depot"]
+ACTION [data-view="projects"]
+PASS atomic-reset-generation-STALE-and-coherent-virtual-records-slots
+PASS one-renderer-actual-geometric-scene-synchronization-native-RAF-no-runtime-errors

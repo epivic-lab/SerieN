@@ -1,0 +1,70 @@
+{
+  "status": "FAIL",
+  "bundleSHA256": "4d63096f8b4cdaa15e62de27ee2b70384712deed58483fa2382fcdccdcde3c27",
+  "method": "production minified app; local Auth boundary; on-demand RAF",
+  "checks": [
+    "eight-canonical-tiles-original-hooks-one-canvas-and-one-operations-log",
+    "all-eight-original-panel-callbacks-both-positions-and-real-counter",
+    "canonical-map-live-four-physical-markers-focus-LRU-and-marker-Space-no-stop",
+    "original-four-mission-cycle-next-enabled-without-completion-no-railway-mutation",
+    "original-daylight-input-value-glyph-thresholds-42-and-72"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "failedRequests": [],
+  "external": [],
+  "missions": [
+    {
+      "name": "First lap",
+      "text": "Complete one lap of the steam locomotive\u2019s loop.",
+      "status": "Completed laps: 0 / 1"
+    },
+    {
+      "name": "Change tracks",
+      "text": "Set WX-A or WX-B and drive a locomotive from one loop to another.",
+      "status": "No transfer yet"
+    },
+    {
+      "name": "The long runaround",
+      "text": "Set the yard switches and drive the shunter along either runaround route.",
+      "status": "Waiting for the shunter"
+    },
+    {
+      "name": "Build a freight train",
+      "text": "Uncouple a wagon while stopped, then couple it again on the same track.",
+      "status": "Uncouple \u25cb \u00b7 Couple \u25cb"
+    }
+  ],
+  "lightingThresholds": [
+    [
+      0,
+      "\u2600"
+    ],
+    [
+      41,
+      "\u2600"
+    ],
+    [
+      42,
+      "\u25d0"
+    ],
+    [
+      71,
+      "\u25d0"
+    ],
+    [
+      72,
+      "\u263e"
+    ],
+    [
+      100,
+      "\u263e"
+    ],
+    [
+      48,
+      "\u25d0"
+    ]
+  ],
+  "failure": ""
+}

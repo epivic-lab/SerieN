@@ -1,0 +1,246 @@
+/* CTRL-001/027: local approved fonts; no remote imports, synthetic faces or UI activation. */
+@font-face{font-family:'Cinzel Decorative';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/CinzelDecorative-700.woff2') format('woff2')}
+@font-face{font-family:'Federo';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/Federo-400.woff2') format('woff2')}
+@font-face{font-family:'Cutive Mono';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/CutiveMono-400.woff2') format('woff2')}
+/* CTRL-027: enable exact font weights in isolated foundation; no synthetic bold/italic. */
+#u1-fixture{font-synthesis:none}
+/* CTRL-001/027: U2-only regions. Frozen U1 CSS remains intact; scoped copies contain cascade. */
+.u2-region{font:400 14px Federo,sans-serif;font-synthesis:none;color:#f2e8d0}
+.top.u2-region{padding:4px;min-height:72px;display:block}.top.u2-region>.mi{width:100%;gap:10px}.u2-edition{font:400 13px 'Cutive Mono';color:#a9bfae}.u2-running{font:400 13px Federo;white-space:nowrap}
+.u2-region button.bt{min-height:44px;font-weight:400}.u2-region button:disabled{opacity:.5;cursor:not-allowed}
+/* CTRL-002/003/014: native dialogs preserve modal focus/top-layer; readable local settings. */
+dialog.u2-region{padding:4px;max-width:min(520px,calc(100vw - 24px));width:100%;border:0;border-radius:14px;background:#a9802f;color:#f2e8d0;max-height:calc(100dvh - 24px);overflow:auto}
+dialog.u2-region::backdrop{background:#030705b0}dialog.u2-region .mi{height:auto;overflow:visible}dialog.u2-region h2{font:700 22px 'Cinzel Decorative';color:#d9b45f;margin:6px 0 18px}.u2-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.u2-settings{display:grid;gap:16px}.u2-setting{display:grid;gap:8px}.u2-setting select{min-height:44px;width:100%;font:400 15px Federo;background:#173328;color:#f2e8d0;border:1px solid #d9b45f;border-radius:5px;padding:6px}.u2-note{font:400 14px Federo;line-height:1.5;color:#a9bfae}
+/* CTRL-005/006: preserve the existing real modal IDs, generated plan and content. */
+.u2-modal .dialog{padding:4px;background:#a9802f;border-radius:14px;max-height:90dvh;overflow:auto}.u2-modal .dialog>.mi{height:auto;overflow:visible}.u2-modal p{font:400 15px Federo;line-height:1.5}.u2-modal h2{font:700 22px 'Cinzel Decorative';color:#d9b45f}.u2-modal a{color:#f6e2a4}.u2-modal[hidden]{display:none}
+/* CTRL-001: skin only; original gate states and original inline display/visibility rules win. */
+#authGate .authPanel{background:linear-gradient(#1f4337,#0f271f);border:3px solid #a9802f;color:#f2e8d0;font:400 16px Federo}#authGate h1{font:700 24px 'Cinzel Decorative'}#authGate button{font:400 16px Federo;min-height:44px;background:linear-gradient(#f6e2a4,#a9802f);color:#2a1d08}
+/* CTRL-027: mobile application navigation is shell-only, no invisible viewport overlay. */
+.u2-mobile{display:none}@media(max-width:700px){.top.u2-region>.mi{flex-wrap:wrap;padding:8px;gap:8px}.u2-edition,.u2-running{display:none}.top.u2-region #homeView{display:none}.top.u2-region .plq{margin-right:auto}.top.u2-region .sp{display:none}.top.u2-region #trainManagement{font-size:13px}.top.u2-region #planBtn,.top.u2-region #helpBtn{display:none}.u2-mobile{display:flex;gap:6px;flex-wrap:wrap;padding:6px;background:#132519}.u2-mobile .bt{flex:1;min-height:44px;font-size:14px}}
+/* CTRL-002/027: scope roots are not .st; explicitly supply the design's zero-night surface and bounded plaque. */
+.u2-region{--n:0;--k:0;--dk:linear-gradient(#0000,#0000);--dk2:linear-gradient(#0000,#0000)}
+.top.u2-region .plq{position:relative;inset:auto;width:auto;flex:0 0 auto;transform:none;padding:8px 12px}
+.top.u2-region>.mi{min-height:60px;height:auto}.u2-menu .mi,.u2-guard .mi,.u2-modal .mi{background:linear-gradient(180deg,#1f4337,#0f271f)}
+.app.u2-frame{grid-template-rows:auto minmax(300px,1fr) auto}
+@media(max-width:700px){.top.u2-region .plq{padding:6px 12px}.top.u2-region>.mi{min-height:56px}.u2-region .u2-note{font-size:15px}}
+/* CTRL-002/027: explicit scope-root flex and native-dialog panels (V1 .dlgp animation coordinator is not imported). */
+.top.u2-region>.mi{display:flex;align-items:center;flex-wrap:nowrap}.u2-menu .m,.u2-guard .m{animation:none}
+@media(max-width:700px){.top.u2-region>.mi{flex-wrap:wrap}}
+/* CTRL-027: brass launcher uses the approved dark ink for readable contrast, shell only. */
+.top.u2-region #trainManagement{color:#2a1d08}
+/* U3 / A12: only viewport regions reuse the approved scoped tokens/materials.
+   The layout layer passes pointers through; only visible plates receive input. */
+.u3-overlays{position:absolute;inset:10px;z-index:4;display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,260px);grid-template-rows:minmax(0,1fr) auto auto;gap:8px;pointer-events:none}
+.u3-overlays>.u3-region{pointer-events:auto;position:relative;inset:auto;min-width:0;max-width:100%;margin:0;animation:none;font:400 14px/1.4 Federo;color:#f2e8d0;text-shadow:none;backdrop-filter:none;background:linear-gradient(135deg,#f6e2a4,#a9802f 35%,#5f4416 55%,#d9b45f 80%,#f6e2a4);border-radius:14px;box-shadow:0 4px 10px #0006,inset 0 1px 0 #fff7}
+.u3-region>.mi{height:auto;min-height:0;background:linear-gradient(180deg,#1f4337f5,#0f271ff5);padding:10px 14px}
+.u3-region .bt{min-width:44px;min-height:44px;font:400 14px Federo;letter-spacing:.03em}
+.u3-region .bt:focus-visible,.u3-region select:focus-visible{outline:2px solid #f6e2a4;outline-offset:2px}
+.u3-region .bt[aria-pressed=true]{background:linear-gradient(#f6e2a4,#a9802f);color:#2a1d08}
+/* CTRL-007/008/009/010/011: the existing controls and handlers, in a bounded View panel. */
+.u3-overlays>.cameraToolbar{grid-column:1/-1;grid-row:2;justify-self:start;z-index:6;display:block;overflow:visible;padding:4px}
+.u3-region #viewControls{display:block;overflow:visible}
+.u3-camera-primary,.u3-camera-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.u3-camera-primary small,.u3-camera-actions small{font:400 12px Federo;line-height:1.3}
+.u3-camera-primary .bt,.u3-camera-actions .bt{font-size:16px;padding:4px 9px}
+.u3-camera-state{font:400 12px 'Cutive Mono';color:#f6e2a4;padding:0 4px}
+.u3-camera-tools{position:absolute;bottom:calc(100% + 8px);left:0;width:min(420px,calc(100vw - 28px));max-height:min(280px,45dvh);overflow:auto;padding:14px;background:linear-gradient(#1f4337,#0f271f);border:2px solid #d9b45f;border-radius:10px;box-shadow:0 5px 18px #0009}
+.u3-camera-tools[hidden]{display:none}
+.u3-camera-tools label{display:flex;gap:10px;align-items:center;font-size:14px;margin-bottom:10px}
+.u3-camera-tools select{font:400 14px Federo;color:#f2e8d0;background:#173328;border:1px solid #d9b45f;min-height:44px;min-width:0;max-width:100%;flex:1}
+.u3-presets{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+.u3-camera-actions .bt{flex:1}
+/* CTRL-007: legacy pink text on the active brass surface failed contrast review. */
+#cam #routePreview[aria-pressed=true]{color:#2a1d08;border-color:#ff5668}
+/* CTRL-052 / A08: topology SVG and every real warning retained, no actuating control. */
+.u3-overlays>.nextSwitchHUD{grid-column:2;grid-row:1;align-self:start;width:260px;max-height:100%;padding:4px;border:0;overflow:auto}
+.u3-region .nextSwitchHead{padding:0 0 6px;font:400 12px Federo;letter-spacing:.04em;color:#f6e2a4}
+.u3-region .nextSwitchMinimize{flex:0 0 44px;padding:0;font-size:20px}
+.u3-region #nextSwitchBody{padding:5px 0 0}
+.u3-region .nextSwitchTrain{font:400 12px 'Cutive Mono';white-space:normal;color:#a9bfae}
+.u3-region .nextSwitchName{font:700 16px/1.4 'Cinzel Decorative';text-transform:none;letter-spacing:0;margin:5px 0;color:#f6e2a4}
+.u3-region .nextSwitchCompact,.u3-region .nextSwitchDistance{font:400 12px 'Cutive Mono';color:#f2e8d0}
+.u3-region .nextSwitchPosition,.u3-region .nextSwitchDestination{font:400 14px/1.4 Federo;color:#f2e8d0}
+.u3-region .nextSwitchWarning{font:400 14px/1.4 Federo;background:#6d3b204d;color:#ffe0af;padding:7px;margin:8px 0 0;border-left:2px solid #d9b45f}
+.u3-region .nextSwitchScheme svg{height:70px;max-width:100%}
+.u3-overlays>.nextSwitchHUD.is-minimized{width:230px}
+/* CTRL-046/047 / A06: existing engine status node + mute button, independent from UI Sound. */
+.u3-overlays>#guardedStopStatus{grid-column:1;grid-row:1;align-self:start;justify-self:start;max-height:100%;overflow:auto;width:min(100%,340px);padding:4px}
+#guardedStopStatus>.mi{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+#guardedStopStatus [data-ctrl=CTRL-047]{font:400 14px/1.4 Federo;color:#ffe0af;overflow-wrap:anywhere}
+#guardedStopStatus [hidden]{display:none}
+#guardedStopStatus.has-warning{background:linear-gradient(135deg,#ffe0af,#a97538,#5f4416)}
+#bellSeg{min-height:44px;font-size:15px}
+/* CTRL-062 / A09: move the one original log plate; full exact text, scroll instead of truncation. */
+.u3-overlays>.u3-operations{grid-column:1/-1;grid-row:3;padding:4px;border:0;max-height:104px;overflow:auto}
+.u3-operations .eyebrow{font:400 12px Federo;letter-spacing:.1em;color:#d9b45f}
+.u3-operations #log{font:400 14px/1.4 Federo;white-space:pre-wrap;overflow-wrap:anywhere;color:#f2e8d0;margin:4px 0 0}
+/* CTRL-064: original startup/failure messages and hidden state, no synthetic progress. */
+#loadMsg.u3-region{font:400 16px/1.5 Federo;color:#f6e2a4;background:linear-gradient(#1f4337,#0f271f);border:2px solid #d9b45f;pointer-events:none}
+@media(max-width:700px){
+ .u3-overlays{inset:8px;grid-template-columns:minmax(0,1fr) minmax(172px,52%);gap:6px}
+ .u3-region>.mi{padding:6px 8px}
+ .u3-overlays>.nextSwitchHUD,.u3-overlays>.nextSwitchHUD.is-minimized{width:100%}
+ .u3-region .nextSwitchHead{font-size:11px;gap:3px;letter-spacing:0}
+ .u3-region .nextSwitchCompact{display:none}
+ .u3-region .nextSwitchName{font-size:14px}
+ .u3-region .nextSwitchScheme svg{height:60px}
+ .u3-camera-state{display:none}
+ .u3-camera-primary .bt{padding:4px 7px}
+ .u3-overlays>.u3-operations{max-height:96px}
+}
+@media(prefers-reduced-motion:reduce){.u3-region *{animation:none!important;transition:none!important}}
+/* U4 / A12: the sidebar alone adopts the frozen materials; other regions stay scoped. */
+.sidebar.u4-region{display:flex;flex-direction:column;gap:12px;min-width:0;padding:12px;overflow:auto;background:linear-gradient(#183328,#10251c);font:400 14px/1.4 Federo}
+.u4-region>.m{flex:none;min-width:0;max-width:100%;animation:none}
+.u4-region>.m>.mi{height:auto;min-width:0;padding:12px;background-color:#173328}
+.u4-region .sectionHeader{gap:8px;margin:0 0 10px;min-width:0}
+.u4-region .sectionHeader h2{font:700 16px/1.4 'Cinzel Decorative';color:#f6e2a4;letter-spacing:0;text-transform:none;margin:0}
+.u4-region .eyebrow{font:400 12px Federo;letter-spacing:.08em;color:#a9bfae}
+.u4-region .pill{font:400 12px 'Cutive Mono';color:#f6e2a4;background:#243d2b;padding:5px;white-space:nowrap}
+.u4-region p,.u4-region .note{font:400 14px/1.45 Federo;color:#c8d8c7}
+/* CTRL-012: original eight cells/hooks/disabled bindings, exact safety reasons without hover. */
+.u4-region #switchList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.u4-region #switchList .switchCell{display:flex;flex-direction:column;gap:4px;min-width:0}
+.u4-region #switchList .sw{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:4px;width:100%;height:auto;min-height:94px;padding:9px;text-align:left;border:1px solid #66816a}
+.u4-region #switchList .sw b{font:400 14px 'Cutive Mono';color:#f6e2a4}
+.u4-region #switchList .sw small{display:block;font:400 13px/1.4 Federo;letter-spacing:0;white-space:normal;text-transform:none;color:#c8d8c7}
+.u4-region #switchList .sw.active{border-color:#d9b45f;background-color:#4f4a2c;box-shadow:inset 0 -2px #d9b45f}
+.u4-region #switchList .sw:disabled{opacity:1;border-style:dashed}
+.u4-region .u4-switch-position{font:400 13px Federo;color:#f2e8d0}
+.u4-region .u4-switch-reason{margin:0;padding:6px;border-left:2px solid #d9b45f;background:#513a214d;color:#ffe0af;font:400 14px/1.4 Federo;overflow-wrap:anywhere}
+.u4-region [hidden]{display:none}
+.u4-region .switchCell:focus-visible{outline:2px solid #f6e2a4;outline-offset:2px;border-radius:5px}
+/* CTRL-013/015: actual slider/glyph and mission strings, no progress or completion gate. */
+.u4-region #day{width:100%;min-height:44px;margin:0;accent-color:#d9b45f;cursor:pointer}
+.u4-region #sun{font:400 24px Federo;color:#f6e2a4}
+.u4-region .u4-day-value{display:block;font:400 14px 'Cutive Mono';color:#f6e2a4}
+.u4-region .ticks{font:400 13px Federo;margin-top:6px;color:#a9bfae}
+.u4-region .rollingLabel{display:grid;gap:6px;font:400 14px Federo;margin-top:14px;color:#f2e8d0}
+.u4-region #rollingModels{width:100%;max-width:100%;min-height:44px;font:400 14px Federo}
+.u4-region #missionName{font:700 16px/1.4 'Cinzel Decorative';color:#f6e2a4;margin:0 0 8px}
+.u4-region #missionText{display:block;font:400 14px/1.45 Federo;margin:0 0 8px}
+.u4-region #missionStatus{font:400 14px/1.4 Federo;color:#f6e2a4;padding:9px;margin:0 0 10px}
+.u4-region #nextMission{min-height:44px;width:100%;font:400 14px Federo;color:#2a1d08}
+/* CTRL-053: canonical SVG + actual physical markers; 44px legend is an equivalent focus action. */
+.u4-region .m-lg .mi{display:block}
+.u4-region .mapw{min-height:0;padding:8px;background-color:#e6d6af}
+.u4-region #sidebarRailwayMap{display:block;width:100%;height:auto;aspect-ratio:15/7;overflow:visible}
+.u4-region #sidebarRailwayMap circle{fill:#d9b45f;stroke:#4a2a16;stroke-width:6;cursor:pointer}
+.u4-region #sidebarRailwayMap circle[aria-pressed=true]{fill:#e73b50;stroke:#ffe0af}
+.u4-region #sidebarRailwayMap circle:focus-visible{outline:4px solid #283f30}
+.u4-region .u4-map-trains{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:10px}
+.u4-region .u4-map-trains .bt{min-width:44px;min-height:44px;font:400 14px Federo;letter-spacing:0;padding:7px;overflow-wrap:anywhere}
+.u4-region .u4-map-trains .bt[aria-pressed=true]{background:linear-gradient(#f6e2a4,#a9802f);color:#2a1d08}
+@media(max-width:930px){.sidebar.u4-region{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;overflow:visible}}
+@media(max-width:700px){.sidebar.u4-region{display:flex;flex-direction:column;padding:12px}.u4-region>.m>.mi{padding:14px}.u4-region #switchList .sw{min-height:90px}}
+@media(prefers-reduced-motion:reduce){.u4-region *{animation:none!important;transition:none!important}}
+/* U5 / CTRL-016–026, 050, 053–054: Train Dock only. Frozen enamel/brass,
+   snap carousel and momentary mushroom, native controls and real engine readouts. */
+.u5-dock{padding:10px 12px;background:linear-gradient(135deg,#d9b45f,#5f4416 40%,#f6e2a4 80%,#a9802f);border:0;border-radius:12px;color:#f2e8d0;min-width:0;font:400 14px Federo}
+.u5-dock .consoleHead{display:flex;flex-wrap:wrap;gap:10px;padding:8px 10px;background:linear-gradient(#1f4337,#0f271f);border-radius:8px}
+.u5-dock h2{font:700 18px 'Cinzel Decorative';color:#f6e2a4;margin:0}
+.u5-dock .consoleHeading{flex:0 0 auto}.u5-dock .trainTabs{flex:1;min-width:180px;gap:6px;overflow:auto}
+.u5-dock button{min-width:44px;min-height:44px;border:1px solid #a9802f;border-radius:6px;background:linear-gradient(#285543,#0f271f);color:#f2e8d0;font:400 14px Federo;cursor:pointer}
+.u5-dock button:disabled{opacity:.5;cursor:not-allowed}.u5-dock :focus-visible{outline:2px solid #f6e2a4;outline-offset:2px}
+.u5-dock .trainTabs .tab{padding:4px 8px;flex:0 0 auto}.u5-dock .tab.active{background:linear-gradient(#f6e2a4,#a9802f);color:#2a1d08}.u5-dock .tab small{color:inherit}
+.u5-dock .allButtons{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.u5-dock #stopAll{width:68px;height:68px;border-radius:50%;color:white;font-size:12px;font-weight:bold;background:radial-gradient(circle at 35% 28%,#ffa08c,#d4452f 40%,#7c1b0e 88%);box-shadow:0 0 0 2px #d9b45f,inset 0 -6px 10px #0006,inset 0 4px 6px #fff5}
+.u5-dock #stopAll:active{transform:translateY(2px)}
+.u5-carousel-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#0f271f;padding:4px 8px;margin-top:6px;color:#d9b45f;letter-spacing:.08em}
+.u5-dock .trainDeck{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 3px;scroll-padding:3px;grid-template-columns:none}
+.u5-dock .trainConsole{flex:0 0 calc((100% - 20px)/3);min-width:310px;max-width:none;scroll-snap-align:start;padding:10px 12px;border:1px solid #a9802f66;border-radius:8px;background:linear-gradient(180deg,#0d231b,#14342a);box-shadow:inset 0 2px 6px #000c;color:#f2e8d0}
+.u5-dock .trainConsole.is-active{border-color:#f6e2a4;box-shadow:inset 0 2px 6px #000c,0 0 10px #d9b45f55}
+.u5-dock .trainConsoleHeading{grid-template-columns:minmax(0,1fr) 90px;gap:4px}.u5-dock .trainConsoleSelect{grid-column:1;grid-row:1;padding:3px 0;background:none;border:0;text-align:left}
+.u5-dock .trainConsoleName{font:700 15px 'Cinzel Decorative';color:#f6e2a4}.u5-dock .trainConsoleDescription{font:400 12px Federo;color:#a9bfae}
+.u5-dock .locomotiveThumbnail{grid-column:2;grid-row:1;width:90px;height:52px;object-fit:contain}.u5-dock .railwayMiniMap{grid-column:2;grid-row:2;width:90px;height:48px;background:#e4e7d9}.u5-dock .trainConsoleStatus{grid-column:1;grid-row:2;color:#a9bfae}
+.u5-dock .trainActual{display:grid;grid-template-columns:1fr auto;gap:3px 10px;margin:7px 0;color:#d9b45f}.u5-dock .trainActual output{font:400 15px 'Cutive Mono';color:#f6e2a4}.u5-dock meter{grid-column:1/-1;width:100%;height:12px;accent-color:#d9b45f}.u5-dock .trainActual small{font:400 11px 'Cutive Mono';color:#a9bfae}
+.u5-dock .trainConsoleSpeed{margin:4px 0}.u5-dock input[type=range]{min-height:44px;accent-color:#d9b45f}.u5-dock .trainConsoleSpeed label{color:#f2e8d0}.u5-dock .trainConsoleSpeed output{font:400 15px 'Cutive Mono';color:#f6e2a4}
+.u5-dock .trainConsoleCommands{display:flex;flex-wrap:wrap;gap:4px}.u5-dock .trainConsoleCommands button{flex:1;padding:4px;min-width:52px}.u5-dock .trainConsoleCommands button span{display:block;font-size:12px}.u5-dock .trainConsoleCommands button.active{background:linear-gradient(#f6e2a4,#a9802f);color:#2a1d08}.u5-dock [data-command=stop]{background:linear-gradient(#983b2b,#551e14)}
+@media(max-width:1100px){.u5-dock .trainConsole{flex-basis:calc((100% - 10px)/2)}.u5-dock .allButtons{margin-left:auto}}
+@media(max-width:700px){.u5-dock{padding:8px}.u5-dock .trainTabs{flex-basis:100%}.u5-dock .allButtons{margin:0;justify-content:space-between;width:100%}.u5-dock .trainConsole{flex-basis:100%;min-width:0}.u5-dock .consoleHead{padding:8px}.u5-carousel-nav{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.u5-dock *{scroll-behavior:auto;transition:none}}
+/* U5: replace the legacy fixed three-row geometry for the extra actual-speed row. */
+.u5-dock .trainConsole{grid-template-rows:auto auto auto auto;gap:4px}
+.u5-dock .trainConsoleHeading{grid-template-rows:52px 48px}
+.u5-dock .trainConsoleStatus{align-items:flex-start;line-height:15px}.u5-dock .trainConsoleState,.u5-dock .trainConsoleCars{font:400 12px/15px Federo}
+.u5-dock .trainConsoleDescription{line-height:16px}.u5-dock .trainConsoleSpeed label{height:auto;min-height:44px;font-size:13px;grid-template-columns:auto minmax(0,1fr) 42px}
+.u5-dock .trainConsoleSpeed input{height:44px}.u5-dock .trainConsoleSpeed output{font-size:15px}
+/* A03: reset shares the coordinator, while Sign out keeps its existing selectors. */
+.u5-guard .mi{background:linear-gradient(#1f4337,#0f271f)}.u5-guard .m{animation:none}
+/* A07: needle and readout both read abs(train.velocity), 150 = MOTION.maxSpeed × speedScale. */
+.u5-dock .trainActual{grid-template-columns:64px minmax(0,1fr) auto;align-items:center;margin:2px 0}
+.u5-dock .u5-gauge{width:64px;height:64px;grid-column:1;grid-row:1/3}.u5-gauge text{font:12px 'Cutive Mono';fill:#5f4416}
+.u5-dock .trainActual meter{position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden}
+.u5-dock .trainActual small{grid-column:2/4}
+/* Contain the accessible meter's clipped absolute box inside its own readout. */
+.u5-dock .trainActual{position:relative}.u5-dock .trainActual meter{left:0;top:0}
+/* U6 / A02,A03,A05,A10,A12. Shell + layout/catalog only; Projects/Depot interiors retain legacy styles. */
+dialog.u6-tm{width:min(1180px,calc(100vw - 32px));height:min(840px,calc(100dvh - 32px));max-width:none;max-height:none;padding:16px 20px;border:3px solid #a9802f;border-radius:14px;background:linear-gradient(#1f4337,#0f271f);box-shadow:0 16px 60px #000b,inset 0 0 0 1px #f6e2a4;color:#f2e8d0;overflow:hidden}
+dialog.u6-tm[open]{display:flex;flex-direction:column;gap:10px}dialog.u6-tm::backdrop{background:#030705bb}
+.u6-tm>.managementHead{flex:none;border:0;align-items:center;padding:0;gap:12px}.u6-tm>.managementHead h2{font:700 clamp(18px,2vw,24px) 'Cinzel Decorative';color:#f6e2a4;margin:4px 0}.u6-tm>.managementHead .eyebrow{font:400 11px Federo;letter-spacing:.22em;color:#a9bfae}
+.u6-tm>.managementIntro,.u6-tm>.u6-session,.u6-tm>.u6-notice{flex:none;font:400 14px/1.4 Federo;margin:0;color:#a9bfae}.u6-tm>.u6-session{color:#d9b45f}.u6-tm>.u6-notice:empty{display:none}.u6-tm>.u6-notice{color:#f0b866}
+.u6-tm>.managementNav{display:flex;flex:none;gap:4px;overflow-x:auto;padding:4px;background:#06100b;border-radius:8px;margin:0}.u6-tm>.managementNav button{white-space:nowrap;flex:1;font:400 15px Federo;border:0;min-height:44px;border-radius:5px;background:transparent;color:#a9bfae}.u6-tm>.managementNav [aria-selected=true]{color:#2a1d08;background:linear-gradient(#f6e2a4,#a9802f);box-shadow:inset 0 1px 0 #fffa}
+.u6-tm>.managementHead button,.u6-tm .u6-view button{min-height:44px;min-width:44px;border:1px solid #a9802f;border-radius:6px;color:#f2e8d0;background:linear-gradient(#285543,#0f271f);font:400 15px Federo}
+.u6-tm>.managementHead button:focus-visible,.u6-tm>.managementNav button:focus-visible,.u6-tm .u6-view :focus-visible{outline:2px solid #f6e2a4;outline-offset:2px}
+.u6-tm>.managementBody{flex:1;min-height:0;min-width:0;overflow:auto;padding:4px;overscroll-behavior:contain;scrollbar-color:#a9802f #06100b}
+.u6-tm .u6-view{font:400 15px/1.45 Federo}.u6-tm .u6-view h3{font:400 17px Federo;color:#d9b45f}.u6-tm .u6-view .managementMuted{font:400 14px/1.45 Federo;color:#a9bfae}
+.u6-tm .u6-view .managementColumns{grid-template-columns:250px minmax(0,1fr);gap:16px}.u6-tm .u6-view .managementDetail,.u6-tm .u6-view .managementDetached{min-width:0;padding:14px;border-radius:9px;background:linear-gradient(#081510cc,#06100bcc);box-shadow:inset 0 2px 7px #000d,0 0 0 1px #d9b45f33}
+.u6-tm .u6-view .managementTrain{width:100%;margin-bottom:8px;display:grid;grid-template-columns:80px minmax(0,1fr);gap:4px 8px;padding:10px;text-align:left;background:linear-gradient(#244a3e,#15302a);border:1px solid #d9b45f44;border-radius:8px}.u6-tm .u6-view .managementTrain.active{border-color:#f6e2a4;box-shadow:inset 0 0 0 1px #d9b45f}
+.u6-tm .u6-view .managementTrain img{grid-column:1;grid-row:1/4;width:80px;height:60px;object-fit:contain;background:radial-gradient(#f0e4c2,#d3c294);border-radius:6px}.u6-tm .u6-view .managementTrain strong{color:#f6e2a4}.u6-tm .u6-view .managementTrain small{font:400 12px 'Cutive Mono'}.u6-tm .u6-state{color:#a9bfae;font:400 12px Federo}
+.u6-tm .u6-view .managementSummary{color:#f6e2a4}.u6-tm .u6-view [data-consist]{padding-left:20px;overflow-wrap:anywhere}.u6-tm .u6-view [data-consist] small{display:block;color:#a9bfae}.u6-tm .u6-view .managementDetached{margin-top:16px;overflow-wrap:anywhere}.u6-tm .u6-view .managementDetached p{margin:8px 0}
+.u6-tm .u6-view .sideToolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.u6-tm .u6-view .sideToolbar label{flex:1;min-width:150px}.u6-tm .u6-view .sideToolbar input{min-height:44px;accent-color:#d9b45f}.u6-tm .u6-view .sideToolbar output{font:400 14px 'Cutive Mono';color:#f6e2a4}.u6-tm .u6-view .sideViewport{background:radial-gradient(#f0e4c2,#d3c294);border:1px solid #a9802f;min-width:0;max-width:100%;border-radius:7px}.u6-tm .u6-view .sideHeading{display:flex;gap:8px;flex-wrap:wrap;color:#f6e2a4}.u6-tm .u6-view .sideStatus{font-size:13px}
+.u6-tm .u6-view .u6-catalog-filters{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px}.u6-tm .u6-view .u6-catalog-filters label{display:grid;gap:4px;flex:1;min-width:140px}.u6-tm .u6-view select,.u6-tm .u6-view input[type=search]{width:100%;min-height:44px;min-width:0;padding:8px;color:#f2e8d0;background:#06100b;border:1px solid #a9802f;border-radius:6px;font:400 15px Federo}
+.u6-tm .u6-view .managementCatalog{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}.u6-tm .u6-view .managementModel{display:grid;gap:6px;border:1px solid #d9b45f44;border-radius:9px;padding:10px;background:linear-gradient(#244a3e,#15302a);color:#f2e8d0}.u6-tm .u6-view .managementModel img{width:100%;height:120px;object-fit:contain;background:radial-gradient(#f0e4c2,#d3c294);border-radius:6px}.u6-tm .u6-view .managementModel strong{font:400 16px Federo;color:#f6e2a4}.u6-tm .u6-view .managementModel small{font:400 12px 'Cutive Mono';color:#a9bfae}
+.u6-guard .mi{background:linear-gradient(#1f4337,#0f271f)}.u6-guard .m{animation:none}
+@media(max-width:900px){.u6-tm .u6-view .managementColumns{grid-template-columns:190px minmax(0,1fr)}.u6-tm .u6-view .managementTrain{display:flex;flex-direction:column}.u6-tm .u6-view .managementTrain img{width:100%;height:80px}}
+@media(max-width:600px){dialog.u6-tm{width:calc(100vw - 12px);height:calc(100dvh - 12px);padding:12px 8px}.u6-tm>.managementHead{align-items:flex-start}.u6-tm>.managementIntro{font-size:13px}.u6-tm .u6-view .managementColumns{display:flex;flex-direction:column}.u6-tm .u6-view .managementColumns>section{width:100%}.u6-tm .u6-view .managementTrain{display:grid;grid-template-columns:80px minmax(0,1fr)}.u6-tm .u6-view .managementTrain img{width:80px;height:60px}.u6-tm .u6-view .managementCatalog{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.u6-tm .u6-view .managementModel img{height:90px}.u6-tm .u6-view .managementModel small{overflow-wrap:anywhere}.u6-tm .u6-view .managementDetail{padding:10px}}
+/* U7 / A03–A05,A10,A12: Projects dashboard, virtual composer and real Compare only. */
+.u7-projects{min-width:0;font:400 15px/1.45 Federo;color:#f2e8d0}.u7-projects h3,.u7-projects h4{font:400 17px Federo;color:#d9b45f}.u7-projects h3{font-family:'Cinzel Decorative';font-weight:700}
+.u7-projects .projectNotice{background:#06100b;color:#f6e2a4;border:1px solid #a9802f;border-radius:7px;font:400 14px/1.5 Federo}.u7-projects .projectColumns{grid-template-columns:220px minmax(0,1fr);gap:14px;align-items:start}.u7-projects .projectList{min-width:0;padding:12px;border-radius:9px;background:linear-gradient(#081510cc,#06100bcc)}
+.u7-projects button{min-width:44px;min-height:44px;font:400 14px Federo;color:#f2e8d0;background:linear-gradient(#244a3e,#15302a);border:1px solid #d9b45f66;border-radius:6px;padding:8px}.u7-projects button[aria-pressed=true],.u7-projects .u7-selected{border-color:#f6e2a4;box-shadow:inset 0 0 0 1px #d9b45f}.u7-projects button:disabled{opacity:.45}
+.u7-projects :focus-visible{outline:2px solid #f6e2a4;outline-offset:2px}.u7-projects .projectEditor{min-width:0;padding:14px;background:linear-gradient(#081510cc,#06100bcc);border-radius:9px}.u7-projects input,.u7-projects select{min-height:44px;max-width:100%;font:400 15px Federo;color:#f2e8d0;background:#06100b;border:1px solid #a9802f;border-radius:6px;padding:8px}.u7-projects .projectEditor>label{display:grid;gap:6px}
+.u7-projects .projectVehicles{display:flex;gap:10px;overflow-x:auto;max-width:100%;padding:12px;list-style:none;border-radius:8px;background:repeating-linear-gradient(90deg,#d3c294 0 10px,#e4d6ae 10px 20px);color:#2a1d08}.u7-projects .projectVehicles>li{flex:0 0 190px;min-width:0;padding:10px;display:flex;flex-direction:column;gap:6px;background:#f0e4c2;border:2px solid #a9802f;border-radius:8px;overflow-wrap:anywhere}.u7-projects .projectVehicles img{width:100%;height:72px;object-fit:contain}.u7-projects .projectVehicles small{color:#5f4416}.u7-projects .projectVehicles .projectToolbar{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.u7-projects .u7-inspector{padding:12px;margin:12px 0;border:1px solid #d9b45f44;border-radius:8px;background:#10261e;overflow-wrap:anywhere}.u7-projects .u7-inspector p{margin:6px 0}.u7-projects .u7-tray{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;padding:12px;margin:12px 0;background:#10261e;border-radius:8px}.u7-projects .u7-tray h4{grid-column:1/-1}.u7-projects .u7-tray img{display:block;width:100%;height:64px;object-fit:contain;background:radial-gradient(#f0e4c2,#d3c294);border-radius:5px}
+.u7-projects .projectComparison{padding:12px;overflow:auto;background:#10261e;border:1px solid #d9b45f44;border-radius:9px;overflow-wrap:anywhere}.u7-projects .projectComparison table{width:100%;table-layout:fixed;border-collapse:collapse}.u7-projects .projectComparison th,.u7-projects .projectComparison td{padding:8px;border:1px solid #a9802f55;font:400 13px/1.5 Federo;vertical-align:top;overflow-wrap:anywhere}.u7-projects .projectComparison th:first-child{width:64px}.u7-projects [data-comparison=matching]{border-color:#7fe08f}.u7-projects [data-comparison=different],.u7-projects [data-comparison=changed]{border-color:#f0b866}.u7-projects [data-comparison=stale]{border-color:#c8bcb0}
+.u7-projects .sideToolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.u7-projects .sideToolbar label{flex:1;min-width:130px}.u7-projects .sideToolbar input{min-height:44px;accent-color:#d9b45f}.u7-projects .sideViewport{background:radial-gradient(#f0e4c2,#d3c294);border:1px solid #a9802f;border-radius:6px}.u7-projects .sideHeading{display:flex;gap:8px;flex-wrap:wrap;color:#f6e2a4}.u7-projects .managementMuted{color:#a9bfae;font:400 14px Federo}
+@media(max-width:900px){.u7-projects .projectColumns{grid-template-columns:170px minmax(0,1fr)}}@media(max-width:600px){.u7-projects .projectColumns{display:flex;flex-direction:column}.u7-projects .projectColumns>section{width:100%}.u7-projects .projectEditor{padding:8px}.u7-projects .projectVehicles>li{flex-basis:170px}.u7-projects .u7-tray{grid-template-columns:repeat(2,minmax(0,1fr));padding:8px}.u7-projects .projectComparison{padding:8px}.u7-projects .projectComparison td,.u7-projects .projectComparison th{font-size:12px;padding:4px}}
+/* U8 / A03,A11,A12 / CTRL-041–045,059: virtual Depot only. U2–U7 unchanged. */
+.u8-depot{min-width:0;font:400 15px/1.45 Federo;color:#f2e8d0}.u8-depot h3{font:700 18px 'Cinzel Decorative';color:#d9b45f}.u8-depot .projectNotice{font:400 14px/1.5 Federo;background:#06100b;color:#f6e2a4;border:1px solid #a9802f;border-radius:7px;padding:12px}.u8-depot .managementMuted{font:400 14px/1.5 Federo;color:#a9bfae}
+.u8-depot button,.u8-depot select{min-width:44px;min-height:44px;font:400 15px Federo;border:1px solid #a9802f;border-radius:6px;color:#f2e8d0;background:linear-gradient(#244a3e,#15302a);padding:8px}.u8-depot button:disabled{opacity:.45}.u8-depot :focus-visible{outline:2px solid #f6e2a4;outline-offset:2px}.u8-depot select{width:100%;min-width:0;background:#06100b}.u8-depot label{display:grid;gap:6px;min-width:0}
+.u8-depot .depotCreate{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:12px 0}.u8-depot .depotCreate>label{flex:1;min-width:160px}.u8-depot .depotItems{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}.u8-depot .depotItem{display:flex;flex-direction:column;gap:8px;min-width:0;padding:14px;border:1px solid #d9b45f66;border-radius:9px;background:linear-gradient(#244a3e,#15302a);overflow-wrap:anywhere}.u8-depot .depotItem[data-depot-state=reserved]{border-color:#f6e2a4}.u8-depot .depotItem img{width:100%;height:120px;object-fit:contain;background:radial-gradient(#f0e4c2,#d3c294);border-radius:6px}.u8-depot .depotItem strong{font:400 17px Federo;color:#f6e2a4}.u8-depot .depotItem small{font:400 12px 'Cutive Mono';color:#a9bfae;overflow-wrap:anywhere}.u8-depot .depotItem p{margin:0}.u8-depot .u8-no-slot{font:400 14px Federo;color:#f0b866}
+.u8-depot .depotTransferGate,.u8-depot .depotPlans,.u8-depot .depotRailway{padding:14px;margin-top:16px;min-width:0;border:1px solid #d9b45f44;border-radius:9px;background:linear-gradient(#081510cc,#06100bcc);overflow-wrap:anywhere}.u8-depot .depotRailway{border-color:#a9bfae}.u8-depot .depotRailway [data-depot-physical-id]{padding:10px;border-left:3px solid #a9bfae;background:#132b24}.u8-depot [data-depot-physical-state=detached-on-track]{border-left-color:#f0b866}.u8-depot .u8-unavailable{padding:10px;background:#26251f;color:#c8bcb0;border:1px solid #7a7566;border-radius:5px;font:400 13px Federo}.u8-depot .depotPlans [data-depot-planned-id]{padding:10px;border-left:3px solid #d9b45f;background:#132b24}
+@media(max-width:600px){.u8-depot .depotItems{grid-template-columns:minmax(0,1fr)}.u8-depot .depotItem,.u8-depot .depotTransferGate,.u8-depot .depotPlans,.u8-depot .depotRailway{padding:10px}.u8-depot .depotCreate{align-items:stretch}.u8-depot .depotCreate>button{width:100%}}
+/* U9 / CTRL-016–022: remove legacy ellipsis from operational labels. Keep card geometry. */
+.u5-dock .trainConsoleName,.u5-dock .trainConsoleDescription,.u5-dock .trainConsoleState,.u5-dock .trainConsoleCars{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+.u5-dock .trainConsoleDescription,.u5-dock .trainConsoleState,.u5-dock .trainConsoleCars{font:400 14px/1.35 Federo}
+.u5-dock .trainConsoleHeading{grid-template-rows:minmax(52px,auto) minmax(58px,auto)}
+.u5-dock .trainActual small{font-size:13px;letter-spacing:0}
+/* U9 / A10: visible keyboard focus across the remaining shell and legacy dialogs. */
+.u2-region :focus-visible,.u4-region :focus-visible{outline:2px solid #f6e2a4;outline-offset:3px}
+.u2-region .dialog button{min-height:44px;min-width:44px}
+/* U9 / CTRL-034–044: essential model/state first; complete identifiers remain native details. */
+.u9-identity{font:400 13px/1.5 'Cutive Mono';overflow-wrap:anywhere;border-top:1px solid #d9b45f44;margin-top:8px}
+.u9-identity summary{min-height:44px;display:list-item;align-content:center;cursor:pointer;font:400 14px Federo;color:#f6e2a4;padding:10px 4px}
+.u9-identity small{display:block;margin:6px 0;font:inherit}
+.u8-depot .u9-record-code{font:400 14px 'Cutive Mono';color:#d9b45f}
+.u8-depot .u9-record-state{font:400 15px Federo;color:#c8d8c7}
+.u8-depot .u9-model-name{font-size:19px}.u8-depot .u9-reservation{font-size:16px;color:#f6e2a4}
+.u7-projects .projectComparison>h4:first-child{padding:8px;border-left:4px solid #a9bfae;background:#06100b}
+.u7-projects [data-comparison=matching]>h4:first-child{border-color:#7fe08f}
+.u7-projects [data-comparison=different]>h4:first-child{border-color:#f0b866}
+.u7-projects [data-comparison=changed]>h4:first-child{border-color:#ffb9a1}
+.u7-projects [data-comparison=stale]>h4:first-child{border-color:#c8bcb0}
+/* U9 / A12: all scoped regions respect reduced motion, including shell/guards/TM. */
+@media(prefers-reduced-motion:reduce){.u2-region *,.u6-tm *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* U9 / CTRL-008–011: bound the open View menu to the railway viewport.
+   The previous upward popup escaped beneath the header at short desktop heights. */
+.u3-overlays>.cameraToolbar,.u3-region #viewControls{position:static}
+.u3-camera-tools{top:0;bottom:auto;max-height:min(280px,100%);z-index:6}
+/* U9-HDR: reuse frozen .edp material/46px/engraving/filet/screws/leaf.
+   Mirror only final .hd refinements into the mounted shell scope; no frozen edits. */
+.top.u2-region>.mi{flex-wrap:wrap}
+.top.u2-region .edp{flex:none;padding:0 34px}
+.top.u2-region .edp span{min-width:0;white-space:nowrap}
+@media(max-width:1400px){.top.u2-region .edp{padding:0 30px}.top.u2-region .edp span{letter-spacing:.16em}}
+@media(max-width:1180px) and (min-width:701px){.top.u2-region .edp{gap:7px}.top.u2-region .edp span{font-size:10.5px;letter-spacing:.06em}}
+@media(max-width:700px),(max-height:480px){.top.u2-region .edp{flex:1 1 150px;min-width:0;padding:0 26px}.top.u2-region .edp span{overflow:hidden;text-overflow:ellipsis}}

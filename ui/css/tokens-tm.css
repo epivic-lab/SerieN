@@ -1,0 +1,38 @@
+/*! SerieN UI V2 — Train Management integrative tokens v2.0.0-design
+ * Load AFTER tokens.css and serien-ui.css (V1), BEFORE serien-ui-train-management.css.
+ * Adds tokens only; never redefines a V1 token. Values derive from the V1 palette. */
+:root{
+  /* comparison status (engine statuses: unlinked / matching / different / changed / stale) */
+  --tm-status-unlinked:#a9bfae;   /* = --sn-color-text-secondary */
+  --tm-status-matching:#3fbf5a;   /* = --sn-color-signal-go */
+  --tm-status-different:#eca23a;  /* = --sn-color-signal-warn */
+  --tm-status-changed:#e0703a;    /* warn → alarm midpoint */
+  --tm-status-stale:#8f8378;      /* faded sepia: reference invalidated */
+  /* identity scopes (M3 contract: virtual / planned / physical) */
+  --tm-virtual-paper:#f0e4c2;     /* = --sn-color-paper-parchmentLight: index-card records */
+  --tm-virtual-paperDark:#d3c294;
+  --tm-virtual-ink:#3a2a17;       /* = --sn-color-paper-inkSepia */
+  --tm-virtual-stamp:#9a3b22;
+  --tm-physical-plate:#20282b;    /* steel plate: read-only railway stock */
+  --tm-physical-ink:#c9d1cf;
+  --tm-locked-plate:#3c3b35;      /* engraved locked gate: unavailable functions */
+  --tm-locked-ink:#9b9583;
+  /* drawing rail */
+  --tm-rail-steel:#4d5254;
+  --tm-rail-sleeper:#7a5a2a;      /* = --sn-color-paper-rule */
+  --tm-rail-dim:#5a4325;
+  /* capacity meter (1 loco + 5 trailers) */
+  --tm-cap-loco:#d9b45f;
+  --tm-cap-trailer:#a9bfae;
+  --tm-cap-empty:#06100b;
+  /* layout */
+  --tm-dialog-w:1260px;
+  --tm-dialog-h:900px;
+  --tm-list-w:272px;
+  --tm-thumb-h:64px;
+  --tm-touch:44px;
+  --tm-z-guard:70;
+  --tm-z-ref:90;
+  /* review annotations (reference only — deliberately outside the V1 palette) */
+  --tm-note:#7fd3e6;
+}

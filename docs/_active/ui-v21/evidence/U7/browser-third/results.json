@@ -1,0 +1,11 @@
+{
+  "status": "FAIL",
+  "bundleSHA256": "6fdd163961a006b983253b1584f2bb2b83498dfcada6f093829c17430718d836",
+  "checks": [],
+  "errors": [
+    "Cannot read properties of undefined (reading 'front')"
+  ],
+  "nativeDialogs": [],
+  "compare": {},
+  "failure": "Page.wait_for_function: TypeError: Cannot read properties of undefined (reading 'front')\n    at eval (eval at predicate (eval at evaluate (:311:30)), <anonymous>:1:61)\n    at eval (<anonymous>)\n    at predicate (eval at evaluate (:311:30), <anonymous>:4:60)\n    at next (eval at evaluate (:311:30), <anonymous>:29:33)\n    at eval (eval at evaluate (:311:30), <anonymous>:42:13)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+}

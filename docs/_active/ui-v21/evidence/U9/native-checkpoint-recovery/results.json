@@ -1,0 +1,2953 @@
+{
+  "status": "PASS",
+  "bundleSHA256": "11085af332a3636cb23e1bcca2b88d669dfd47942fedbff7c183203ce8b66bd2",
+  "cssSHA256": "421c56a152dc4a69d137f6b47c09fe371207f39e342758b1251a64d1de9c2375",
+  "method": "unchanged native RAF; batched actual DOM commands; trusted Dock keyboard/TM pointer/Depot touch; no manual frame or simulation step",
+  "checks": [
+    "three-moving-real-trains-permitted-fourth-and-exact-scene-identity",
+    "Dock-Space-individual-controls-momentary-STOP-ALL-restart-and-Pause-Resume",
+    "real-switch-HUD-camera-TM-Composer-Depot-trusted-mouse-touch-consent-and-virtual-reservations",
+    "reset-cancel-confirm-generation-STALE-virtual-UUIDs-reservations-and-single-renderer"
+  ],
+  "checkpoints": [
+    {
+      "native": true,
+      "visible": true,
+      "stock": [
+        {
+          "id": 0,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 8.0625,
+          "vehicles": [
+            {
+              "x": 64.2481002473053,
+              "z": 321.99052791215627,
+              "rendered": {
+                "x": 64.2481002473053,
+                "z": 321.99052791215627
+              },
+              "edge": "T9",
+              "s": 28.046498098545783,
+              "couplers": {
+                "front": {
+                  "x": 49.6,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -67.89999999999999,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-055-study",
+                "name": "BR 055 \u00b7 study",
+                "length": 114.3,
+                "front": 48,
+                "width": 18.5,
+                "prototypeMm": 18285,
+                "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+                "kind": "steam"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 71.35452086961273,
+              "z": 422.0594846963747,
+              "rendered": {
+                "x": 71.35452086961273,
+                "z": 422.0594846963747
+              },
+              "edge": "T10",
+              "s": 174.69650602127206,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-closed",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era two-axle covered wagon; 10m design length",
+                "kind": "closed"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 92.92101564014047,
+              "z": 483.9927058445393,
+              "rendered": {
+                "x": 92.92101564014047,
+                "z": 483.9927058445393
+              },
+              "edge": "T10",
+              "s": 108.99650602127207,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-open",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era open wagon; 10m design length",
+                "kind": "open"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 126.8441416937268,
+              "z": 540.1181214430771,
+              "rendered": {
+                "x": 126.8441416937268,
+                "z": 540.1181214430771
+              },
+              "edge": "T10",
+              "s": 43.29650602127208,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 8.0625,
+          "vehicles": [
+            {
+              "x": 432.07704395396564,
+              "z": 68,
+              "rendered": {
+                "x": 432.07704395396564,
+                "z": 68
+              },
+              "edge": "WX-A:upper",
+              "s": 54.07704395396564,
+              "couplers": null,
+              "stock": null,
+              "dimensions": null
+            },
+            {
+              "x": 357.86918448580195,
+              "z": 68.72006864721584,
+              "rendered": {
+                "x": 357.86918448580195,
+                "z": 68.72006864721584
+              },
+              "edge": "T5",
+              "s": 201.33386401150815,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 238.02537125253815,
+              "z": 105.19366470987141,
+              "rendered": {
+                "x": 238.02537125253815,
+                "z": 105.19366470987141
+              },
+              "edge": "T5",
+              "s": 75.00886401150817,
+              "couplers": {
+                "front": {
+                  "x": 84.1,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -84.1,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-coach",
+                "length": 165,
+                "width": 17.7,
+                "description": "Generic DB-era bogie passenger coach; 26.4m design length",
+                "kind": "coach"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 8.0625,
+          "vehicles": [
+            {
+              "x": 955.3941582668901,
+              "z": 582.579241547992,
+              "rendered": {
+                "x": 955.3941582668901,
+                "z": 582.579241547992
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 144.85254877032324,
+              "couplers": {
+                "front": {
+                  "x": 34.25,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -34.25,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-v60-study",
+                "name": "BR 260 \u00b7 study",
+                "length": 65.3,
+                "front": 32.65,
+                "width": 19.4,
+                "prototypeMm": 10450,
+                "description": "DB era IV V60, three coupled axles; original dimensional study",
+                "kind": "shunter"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 1021.2039719494261,
+              "z": 595.3924461969362,
+              "rendered": {
+                "x": 1021.2039719494261,
+                "z": 595.3924461969362
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 211.95254877032323,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 1096.1315383481838,
+              "z": 598.9999999999999,
+              "rendered": {
+                "x": 1096.1315383481838,
+                "z": 598.9999999999999
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 287.0275487703233,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            }
+          ]
+        }
+      ],
+      "identities": {
+        "trains": [
+          [
+            "8ead9431-ba8f-4051-bce9-3cfdcd2facc8",
+            "48f81faa-2800-48a3-949e-a51c2555658e",
+            "af9c98e3-c6a2-4372-ab1b-92568b4afdc7",
+            "3cd7fadc-27e0-4235-8d83-20bfa71a2078"
+          ],
+          [
+            "63d15fdb-f60f-4ac3-aba5-45b96979a42c",
+            "4ed83191-c813-41d5-8442-17ec4b0a8bf9",
+            "5777ae6d-8447-4a07-b820-41f0628df246"
+          ],
+          [
+            "7f4954f7-52ec-4be5-95a5-f52ea4df74a3",
+            "9a703704-f15a-4a0a-9043-eb5352bebbb0",
+            "27a4143c-bd8e-4136-87f1-7fe68b105e8e"
+          ]
+        ],
+        "detached": []
+      },
+      "render": {
+        "calls": 353,
+        "triangles": 467856,
+        "geometries": 348,
+        "textures": 44
+      },
+      "canvasCount": 1,
+      "inventory": [],
+      "slots": [],
+      "generation": [],
+      "name": "three-moving"
+    },
+    {
+      "native": true,
+      "visible": true,
+      "stock": [
+        {
+          "id": 0,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 26.0625,
+          "vehicles": [
+            {
+              "x": 66.36000143173364,
+              "z": 304.1173085067471,
+              "rendered": {
+                "x": 66.36000143173364,
+                "z": 304.1173085067471
+              },
+              "edge": "T9",
+              "s": 46.04649809854578,
+              "couplers": {
+                "front": {
+                  "x": 49.6,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -67.89999999999999,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-055-study",
+                "name": "BR 055 \u00b7 study",
+                "length": 114.3,
+                "front": 48,
+                "width": 18.5,
+                "prototypeMm": 18285,
+                "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+                "kind": "steam"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 67.73956153345593,
+              "z": 404.42877792538263,
+              "rendered": {
+                "x": 67.73956153345593,
+                "z": 404.42877792538263
+              },
+              "edge": "T10",
+              "s": 192.69650602127206,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-closed",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era two-axle covered wagon; 10m design length",
+                "kind": "closed"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 85.73371684407138,
+              "z": 467.49262459050834,
+              "rendered": {
+                "x": 85.73371684407138,
+                "z": 467.49262459050834
+              },
+              "edge": "T10",
+              "s": 126.99650602127207,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-open",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era open wagon; 10m design length",
+                "kind": "open"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 116.39603392738266,
+              "z": 525.4638623167347,
+              "rendered": {
+                "x": 116.39603392738266,
+                "z": 525.4638623167347
+              },
+              "edge": "T10",
+              "s": 61.29650602127208,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 26.0625,
+          "vehicles": [
+            {
+              "x": 450.07704395396564,
+              "z": 68,
+              "rendered": {
+                "x": 450.07704395396564,
+                "z": 68
+              },
+              "edge": "WX-A:upper",
+              "s": 72.07704395396564,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            },
+            {
+              "x": 369.85317728192416,
+              "z": 68.11824364750323,
+              "rendered": {
+                "x": 369.85317728192416,
+                "z": 68.11824364750323
+              },
+              "edge": "T5",
+              "s": 213.33386401150815,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 248.5662439093272,
+              "z": 99.46067701188197,
+              "rendered": {
+                "x": 248.5662439093272,
+                "z": 99.46067701188197
+              },
+              "edge": "T5",
+              "s": 87.00886401150817,
+              "couplers": {
+                "front": {
+                  "x": 84.1,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -84.1,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-coach",
+                "length": 165,
+                "width": 17.7,
+                "description": "Generic DB-era bogie passenger coach; 26.4m design length",
+                "kind": "coach"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 26.0625,
+          "vehicles": [
+            {
+              "x": 937.9307799609164,
+              "z": 578.2210980439336,
+              "rendered": {
+                "x": 937.9307799609164,
+                "z": 578.2210980439336
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 126.85254877032324,
+              "couplers": {
+                "front": {
+                  "x": 34.25,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -34.25,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-v60-study",
+                "name": "BR 260 \u00b7 study",
+                "length": 65.3,
+                "front": 32.65,
+                "width": 19.4,
+                "prototypeMm": 10450,
+                "description": "DB era IV V60, three coupled axles; original dimensional study",
+                "kind": "shunter"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 1003.3842327653324,
+              "z": 592.8588473350587,
+              "rendered": {
+                "x": 1003.3842327653324,
+                "z": 592.8588473350587
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 193.95254877032323,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 1078.1315422827938,
+              "z": 598.9961655090707,
+              "rendered": {
+                "x": 1078.1315422827938,
+                "z": 598.9961655090707
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 269.0275487703233,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 8.0625,
+          "vehicles": [
+            {
+              "x": 798.0625,
+              "z": 254.00000000000006,
+              "rendered": {
+                "x": 798.0625,
+                "z": 254.00000000000006
+              },
+              "edge": "T47",
+              "s": 88.0625,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            }
+          ]
+        }
+      ],
+      "identities": {
+        "trains": [
+          [
+            "8ead9431-ba8f-4051-bce9-3cfdcd2facc8",
+            "48f81faa-2800-48a3-949e-a51c2555658e",
+            "af9c98e3-c6a2-4372-ab1b-92568b4afdc7",
+            "3cd7fadc-27e0-4235-8d83-20bfa71a2078"
+          ],
+          [
+            "63d15fdb-f60f-4ac3-aba5-45b96979a42c",
+            "4ed83191-c813-41d5-8442-17ec4b0a8bf9",
+            "5777ae6d-8447-4a07-b820-41f0628df246"
+          ],
+          [
+            "7f4954f7-52ec-4be5-95a5-f52ea4df74a3",
+            "9a703704-f15a-4a0a-9043-eb5352bebbb0",
+            "27a4143c-bd8e-4136-87f1-7fe68b105e8e"
+          ],
+          [
+            "cac05212-0477-46dd-97ec-e71ce8b291bd"
+          ]
+        ],
+        "detached": []
+      },
+      "render": {
+        "calls": 371,
+        "triangles": 469736,
+        "geometries": 366,
+        "textures": 44
+      },
+      "canvasCount": 1,
+      "inventory": [],
+      "slots": [],
+      "generation": [],
+      "name": "four-moving"
+    },
+    {
+      "native": true,
+      "visible": true,
+      "stock": [
+        {
+          "id": 0,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 71.0625,
+          "vehicles": [
+            {
+              "x": 76.06798182865036,
+              "z": 260.21619109523306,
+              "rendered": {
+                "x": 76.06798182865036,
+                "z": 260.21619109523306
+              },
+              "edge": "T9",
+              "s": 91.04649809854578,
+              "couplers": {
+                "front": {
+                  "x": 49.6,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -67.89999999999999,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-055-study",
+                "name": "BR 055 \u00b7 study",
+                "length": 114.3,
+                "front": 48,
+                "width": 18.5,
+                "prototypeMm": 18285,
+                "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+                "kind": "steam"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 63.15019009632696,
+              "z": 359.7019617300057,
+              "rendered": {
+                "x": 63.15019009632696,
+                "z": 359.7019617300057
+              },
+              "edge": "T10",
+              "s": 237.69650602127206,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-closed",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era two-axle covered wagon; 10m design length",
+                "kind": "closed"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 71.98292648416137,
+              "z": 424.68532464551066,
+              "rendered": {
+                "x": 71.98292648416137,
+                "z": 424.68532464551066
+              },
+              "edge": "T10",
+              "s": 171.99650602127207,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-open",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era open wagon; 10m design length",
+                "kind": "open"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 94.07979956524734,
+              "z": 486.43138315850973,
+              "rendered": {
+                "x": 94.07979956524734,
+                "z": 486.43138315850973
+              },
+              "edge": "T10",
+              "s": 106.29650602127208,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 71.0625,
+          "vehicles": [
+            {
+              "x": 495.07704395396564,
+              "z": 67.99999999999999,
+              "rendered": {
+                "x": 495.07704395396564,
+                "z": 67.99999999999999
+              },
+              "edge": "WX-A:upper",
+              "s": 117.07704395396564,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            },
+            {
+              "x": 414.8520439539657,
+              "z": 68,
+              "rendered": {
+                "x": 414.8520439539657,
+                "z": 68
+              },
+              "edge": "WX-A:upper",
+              "s": 36.85204395396565,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 290.02077795586496,
+              "z": 82.07627112025041,
+              "rendered": {
+                "x": 290.02077795586496,
+                "z": 82.07627112025041
+              },
+              "edge": "T5",
+              "s": 132.00886401150817,
+              "couplers": {
+                "front": {
+                  "x": 84.1,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -84.1,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-coach",
+                "length": 165,
+                "width": 17.7,
+                "description": "Generic DB-era bogie passenger coach; 26.4m design length",
+                "kind": "coach"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 71.0625,
+          "vehicles": [
+            {
+              "x": 893.6668215365756,
+              "z": 570.2070782472593,
+              "rendered": {
+                "x": 893.6668215365756,
+                "z": 570.2070782472593
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 81.85254877032324,
+              "couplers": {
+                "front": {
+                  "x": 34.25,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -34.25,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-v60-study",
+                "name": "BR 260 \u00b7 study",
+                "length": 65.3,
+                "front": 32.65,
+                "width": 19.4,
+                "prototypeMm": 10450,
+                "description": "DB era IV V60, three coupled axles; original dimensional study",
+                "kind": "shunter"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 959.3587184596222,
+              "z": 583.624296676674,
+              "rendered": {
+                "x": 959.3587184596222,
+                "z": 583.624296676674
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 148.95254877032323,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 1033.2057110068713,
+              "z": 596.7176043987981,
+              "rendered": {
+                "x": 1033.2057110068713,
+                "z": 596.7176043987981
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 224.02754877032325,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 39.5625,
+          "vehicles": [
+            {
+              "x": 829.5625,
+              "z": 254.00000000000006,
+              "rendered": {
+                "x": 829.5625,
+                "z": 254.00000000000006
+              },
+              "edge": "T47",
+              "s": 119.5625,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            }
+          ]
+        }
+      ],
+      "identities": {
+        "trains": [
+          [
+            "8ead9431-ba8f-4051-bce9-3cfdcd2facc8",
+            "48f81faa-2800-48a3-949e-a51c2555658e",
+            "af9c98e3-c6a2-4372-ab1b-92568b4afdc7",
+            "3cd7fadc-27e0-4235-8d83-20bfa71a2078"
+          ],
+          [
+            "63d15fdb-f60f-4ac3-aba5-45b96979a42c",
+            "4ed83191-c813-41d5-8442-17ec4b0a8bf9",
+            "5777ae6d-8447-4a07-b820-41f0628df246"
+          ],
+          [
+            "7f4954f7-52ec-4be5-95a5-f52ea4df74a3",
+            "9a703704-f15a-4a0a-9043-eb5352bebbb0",
+            "27a4143c-bd8e-4136-87f1-7fe68b105e8e"
+          ],
+          [
+            "cac05212-0477-46dd-97ec-e71ce8b291bd"
+          ]
+        ],
+        "detached": []
+      },
+      "render": {
+        "calls": 371,
+        "triangles": 469736,
+        "geometries": 366,
+        "textures": 44
+      },
+      "canvasCount": 1,
+      "inventory": [],
+      "slots": [],
+      "generation": [],
+      "name": "all-stopped"
+    },
+    {
+      "native": true,
+      "visible": true,
+      "stock": [
+        {
+          "id": 0,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 164.625,
+          "vehicles": [
+            {
+              "x": 115.5667566613934,
+              "z": 175.7794477564203,
+              "rendered": {
+                "x": 115.5667566613934,
+                "z": 175.7794477564203
+              },
+              "edge": "T9",
+              "s": 184.60899809854578,
+              "couplers": {
+                "front": {
+                  "x": 49.6,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -67.89999999999999,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-055-study",
+                "name": "BR 055 \u00b7 study",
+                "length": 114.3,
+                "front": 48,
+                "width": 18.5,
+                "prototypeMm": 18285,
+                "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+                "kind": "steam"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 74.09688170152947,
+              "z": 267.12796359102987,
+              "rendered": {
+                "x": 74.09688170152947,
+                "z": 267.12796359102987
+              },
+              "edge": "T9",
+              "s": 83.85899809854578,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-closed",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era two-axle covered wagon; 10m design length",
+                "kind": "closed"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 63.52384357605097,
+              "z": 331.8510619073027,
+              "rendered": {
+                "x": 63.52384357605097,
+                "z": 331.8510619073027
+              },
+              "edge": "T9",
+              "s": 18.158998098545794,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-open",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era open wagon; 10m design length",
+                "kind": "open"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 66.58163128722775,
+              "z": 397.36067045929457,
+              "rendered": {
+                "x": 66.58163128722775,
+                "z": 397.36067045929457
+              },
+              "edge": "T10",
+              "s": 199.85900602127208,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 164.625,
+          "vehicles": [
+            {
+              "x": 588.6395439539656,
+              "z": 67.99999999999999,
+              "rendered": {
+                "x": 588.6395439539656,
+                "z": 67.99999999999999
+              },
+              "edge": "WX-A:upper",
+              "s": 210.63954395396564,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            },
+            {
+              "x": 508.4145439539657,
+              "z": 67.99999999999999,
+              "rendered": {
+                "x": 508.4145439539657,
+                "z": 67.99999999999999
+              },
+              "edge": "WX-A:upper",
+              "s": 130.41454395396565,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 382.08954395396563,
+              "z": 68,
+              "rendered": {
+                "x": 382.08954395396563,
+                "z": 68
+              },
+              "edge": "WX-A:upper",
+              "s": 4.089543953965659,
+              "couplers": {
+                "front": {
+                  "x": 84.1,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -84.1,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-coach",
+                "length": 165,
+                "width": 17.7,
+                "description": "Generic DB-era bogie passenger coach; 26.4m design length",
+                "kind": "coach"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 164.625,
+          "vehicles": [
+            {
+              "x": 800.2900487703232,
+              "z": 566.0000000000001,
+              "rendered": {
+                "x": 800.2900487703232,
+                "z": 566.0000000000001
+              },
+              "edge": "T34",
+              "s": 112.29004877032327,
+              "couplers": {
+                "front": {
+                  "x": 34.25,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -34.25,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-v60-study",
+                "name": "BR 260 \u00b7 study",
+                "length": 65.3,
+                "front": 32.65,
+                "width": 19.4,
+                "prototypeMm": 10450,
+                "description": "DB era IV V60, three coupled axles; original dimensional study",
+                "kind": "shunter"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 867.352972442425,
+              "z": 567.4380181671906,
+              "rendered": {
+                "x": 867.352972442425,
+                "z": 567.4380181671906
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 55.39004877032329,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 941.4483534372777,
+              "z": 579.0437633890875,
+              "rendered": {
+                "x": 941.4483534372777,
+                "z": 579.0437633890875
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 130.46504877032328,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 39.5625,
+          "vehicles": [
+            {
+              "x": 829.5625,
+              "z": 254.00000000000006,
+              "rendered": {
+                "x": 829.5625,
+                "z": 254.00000000000006
+              },
+              "edge": "T47",
+              "s": 119.5625,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            }
+          ]
+        }
+      ],
+      "identities": {
+        "trains": [
+          [
+            "8ead9431-ba8f-4051-bce9-3cfdcd2facc8",
+            "48f81faa-2800-48a3-949e-a51c2555658e",
+            "af9c98e3-c6a2-4372-ab1b-92568b4afdc7",
+            "3cd7fadc-27e0-4235-8d83-20bfa71a2078"
+          ],
+          [
+            "63d15fdb-f60f-4ac3-aba5-45b96979a42c",
+            "4ed83191-c813-41d5-8442-17ec4b0a8bf9",
+            "5777ae6d-8447-4a07-b820-41f0628df246"
+          ],
+          [
+            "7f4954f7-52ec-4be5-95a5-f52ea4df74a3",
+            "9a703704-f15a-4a0a-9043-eb5352bebbb0",
+            "27a4143c-bd8e-4136-87f1-7fe68b105e8e"
+          ],
+          [
+            "cac05212-0477-46dd-97ec-e71ce8b291bd"
+          ]
+        ],
+        "detached": []
+      },
+      "render": {
+        "calls": 371,
+        "triangles": 469736,
+        "geometries": 366,
+        "textures": 44
+      },
+      "canvasCount": 1,
+      "inventory": [
+        {
+          "id": "depot:1f330ea9-efb8-48ec-b9d9-b89576ede593",
+          "state": "reserved"
+        },
+        {
+          "id": "depot:eef29a11-dcfd-4429-9112-ff9313a1b620",
+          "state": "reserved"
+        }
+      ],
+      "slots": [
+        "bd6cf7bf-5953-4579-bcd1-d41ad07fb1c6",
+        "98a7c1eb-4069-4fab-bc30-a01c82dc7138",
+        "701203c2-02a6-4e42-9d5a-1778804b2dfb"
+      ],
+      "generation": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "name": "Composer-Depot-three-moving"
+    },
+    {
+      "native": true,
+      "visible": true,
+      "stock": [
+        {
+          "id": 0,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 236.625,
+          "vehicles": [
+            {
+              "x": 161.86839157971875,
+              "z": 120.84680685943663,
+              "rendered": {
+                "x": 161.86839157971875,
+                "z": 120.84680685943663
+              },
+              "edge": "T8",
+              "s": 9.20899017581931,
+              "couplers": {
+                "front": {
+                  "x": 49.6,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -67.89999999999999,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-055-study",
+                "name": "BR 055 \u00b7 study",
+                "length": 114.3,
+                "front": 48,
+                "width": 18.5,
+                "prototypeMm": 18285,
+                "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+                "kind": "steam"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 100.77921353307491,
+              "z": 200.42319778624727,
+              "rendered": {
+                "x": 100.77921353307491,
+                "z": 200.42319778624727
+              },
+              "edge": "T9",
+              "s": 155.85899809854578,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-closed",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era two-axle covered wagon; 10m design length",
+                "kind": "closed"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 75.81573855548406,
+              "z": 261.0670903731398,
+              "rendered": {
+                "x": 75.81573855548406,
+                "z": 261.0670903731398
+              },
+              "edge": "T9",
+              "s": 90.1589980985458,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-open",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era open wagon; 10m design length",
+                "kind": "open"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 63.95032695082309,
+              "z": 325.5656268989175,
+              "rendered": {
+                "x": 63.95032695082309,
+                "z": 325.5656268989175
+              },
+              "edge": "T9",
+              "s": 24.458998098545806,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 236.625,
+          "vehicles": [
+            {
+              "x": 660.6395439539656,
+              "z": 67.99999999999997,
+              "rendered": {
+                "x": 660.6395439539656,
+                "z": 67.99999999999997
+              },
+              "edge": "WX-A:upper",
+              "s": 282.63954395396564,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            },
+            {
+              "x": 580.4145439539657,
+              "z": 67.99999999999999,
+              "rendered": {
+                "x": 580.4145439539657,
+                "z": 67.99999999999999
+              },
+              "edge": "WX-A:upper",
+              "s": 202.41454395396565,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 454.08954395396563,
+              "z": 68,
+              "rendered": {
+                "x": 454.08954395396563,
+                "z": 68
+              },
+              "edge": "WX-A:upper",
+              "s": 76.08954395396566,
+              "couplers": {
+                "front": {
+                  "x": 84.1,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -84.1,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-coach",
+                "length": 165,
+                "width": 17.7,
+                "description": "Generic DB-era bogie passenger coach; 26.4m design length",
+                "kind": "coach"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 236.625,
+          "vehicles": [
+            {
+              "x": 728.2900487703232,
+              "z": 566.0000000000001,
+              "rendered": {
+                "x": 728.2900487703232,
+                "z": 566.0000000000001
+              },
+              "edge": "T34",
+              "s": 40.29004877032327,
+              "couplers": {
+                "front": {
+                  "x": 34.25,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -34.25,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-v60-study",
+                "name": "BR 260 \u00b7 study",
+                "length": 65.3,
+                "front": 32.65,
+                "width": 19.4,
+                "prototypeMm": 10450,
+                "description": "DB era IV V60, three coupled axles; original dimensional study",
+                "kind": "shunter"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 795.3900487703233,
+              "z": 566.0000000000001,
+              "rendered": {
+                "x": 795.3900487703233,
+                "z": 566.0000000000001
+              },
+              "edge": "T34",
+              "s": 107.39004877032329,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 870.4179646282832,
+              "z": 567.685797561839,
+              "rendered": {
+                "x": 870.4179646282832,
+                "z": 567.685797561839
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 58.46504877032328,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 39.5625,
+          "vehicles": [
+            {
+              "x": 829.5625,
+              "z": 254.00000000000006,
+              "rendered": {
+                "x": 829.5625,
+                "z": 254.00000000000006
+              },
+              "edge": "T47",
+              "s": 119.5625,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            }
+          ]
+        }
+      ],
+      "identities": {
+        "trains": [
+          [
+            "8ead9431-ba8f-4051-bce9-3cfdcd2facc8",
+            "48f81faa-2800-48a3-949e-a51c2555658e",
+            "af9c98e3-c6a2-4372-ab1b-92568b4afdc7",
+            "3cd7fadc-27e0-4235-8d83-20bfa71a2078"
+          ],
+          [
+            "63d15fdb-f60f-4ac3-aba5-45b96979a42c",
+            "4ed83191-c813-41d5-8442-17ec4b0a8bf9",
+            "5777ae6d-8447-4a07-b820-41f0628df246"
+          ],
+          [
+            "7f4954f7-52ec-4be5-95a5-f52ea4df74a3",
+            "9a703704-f15a-4a0a-9043-eb5352bebbb0",
+            "27a4143c-bd8e-4136-87f1-7fe68b105e8e"
+          ],
+          [
+            "cac05212-0477-46dd-97ec-e71ce8b291bd"
+          ]
+        ],
+        "detached": []
+      },
+      "render": {
+        "calls": 371,
+        "triangles": 469736,
+        "geometries": 366,
+        "textures": 44
+      },
+      "canvasCount": 1,
+      "inventory": [
+        {
+          "id": "depot:1f330ea9-efb8-48ec-b9d9-b89576ede593",
+          "state": "reserved"
+        },
+        {
+          "id": "depot:eef29a11-dcfd-4429-9112-ff9313a1b620",
+          "state": "reserved"
+        }
+      ],
+      "slots": [
+        "bd6cf7bf-5953-4579-bcd1-d41ad07fb1c6",
+        "98a7c1eb-4069-4fab-bc30-a01c82dc7138",
+        "701203c2-02a6-4e42-9d5a-1778804b2dfb"
+      ],
+      "generation": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "name": "virtual-consent-cancel"
+    },
+    {
+      "native": true,
+      "visible": true,
+      "stock": [
+        {
+          "id": 0,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 272.625,
+          "vehicles": [
+            {
+              "x": 189.410294300514,
+              "z": 97.69457244885396,
+              "rendered": {
+                "x": 189.410294300514,
+                "z": 97.69457244885396
+              },
+              "edge": "T8",
+              "s": 45.20899017581931,
+              "couplers": {
+                "front": {
+                  "x": 49.6,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -67.89999999999999,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-055-study",
+                "name": "BR 055 \u00b7 study",
+                "length": 114.3,
+                "front": 48,
+                "width": 18.5,
+                "prototypeMm": 18285,
+                "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+                "kind": "steam"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 119.64516587707492,
+              "z": 169.78557523895032,
+              "rendered": {
+                "x": 119.64516587707492,
+                "z": 169.78557523895032
+              },
+              "edge": "T9",
+              "s": 191.85899809854578,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-closed",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era two-axle covered wagon; 10m design length",
+                "kind": "closed"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 87.92886055697919,
+              "z": 227.18703740307086,
+              "rendered": {
+                "x": 87.92886055697919,
+                "z": 227.18703740307086
+              },
+              "edge": "T9",
+              "s": 126.1589980985458,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-open",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era open wagon; 10m design length",
+                "kind": "open"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 68.78558719570897,
+              "z": 289.91167726830435,
+              "rendered": {
+                "x": 68.78558719570897,
+                "z": 289.91167726830435
+              },
+              "edge": "T9",
+              "s": 60.458998098545806,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 272.625,
+          "vehicles": [
+            {
+              "x": 696.6395439539656,
+              "z": 67.99999999999997,
+              "rendered": {
+                "x": 696.6395439539656,
+                "z": 67.99999999999997
+              },
+              "edge": "T33",
+              "s": 8.639543953965642,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            },
+            {
+              "x": 616.4145439539657,
+              "z": 67.99999999999997,
+              "rendered": {
+                "x": 616.4145439539657,
+                "z": 67.99999999999997
+              },
+              "edge": "WX-A:upper",
+              "s": 238.41454395396565,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 490.08954395396563,
+              "z": 67.99999999999999,
+              "rendered": {
+                "x": 490.08954395396563,
+                "z": 67.99999999999999
+              },
+              "edge": "WX-A:upper",
+              "s": 112.08954395396566,
+              "couplers": {
+                "front": {
+                  "x": 84.1,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -84.1,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-coach",
+                "length": 165,
+                "width": 17.7,
+                "description": "Generic DB-era bogie passenger coach; 26.4m design length",
+                "kind": "coach"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "speed": 15,
+          "velocity": 22.5,
+          "travel": 272.625,
+          "vehicles": [
+            {
+              "x": 692.2900487703232,
+              "z": 566.0000000000001,
+              "rendered": {
+                "x": 692.2900487703232,
+                "z": 566.0000000000001
+              },
+              "edge": "T34",
+              "s": 4.290048770323267,
+              "couplers": {
+                "front": {
+                  "x": 34.25,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -34.25,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-v60-study",
+                "name": "BR 260 \u00b7 study",
+                "length": 65.3,
+                "front": 32.65,
+                "width": 19.4,
+                "prototypeMm": 10450,
+                "description": "DB era IV V60, three coupled axles; original dimensional study",
+                "kind": "shunter"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 759.3900487703233,
+              "z": 566.0000000000001,
+              "rendered": {
+                "x": 759.3900487703233,
+                "z": 566.0000000000001
+              },
+              "edge": "T34",
+              "s": 71.39004877032329,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 834.4649902187889,
+              "z": 566.019515370673,
+              "rendered": {
+                "x": 834.4649902187889,
+                "z": 566.019515370673
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 22.46504877032328,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 39.5625,
+          "vehicles": [
+            {
+              "x": 829.5625,
+              "z": 254.00000000000006,
+              "rendered": {
+                "x": 829.5625,
+                "z": 254.00000000000006
+              },
+              "edge": "T47",
+              "s": 119.5625,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            }
+          ]
+        }
+      ],
+      "identities": {
+        "trains": [
+          [
+            "8ead9431-ba8f-4051-bce9-3cfdcd2facc8",
+            "48f81faa-2800-48a3-949e-a51c2555658e",
+            "af9c98e3-c6a2-4372-ab1b-92568b4afdc7",
+            "3cd7fadc-27e0-4235-8d83-20bfa71a2078"
+          ],
+          [
+            "63d15fdb-f60f-4ac3-aba5-45b96979a42c",
+            "4ed83191-c813-41d5-8442-17ec4b0a8bf9",
+            "5777ae6d-8447-4a07-b820-41f0628df246"
+          ],
+          [
+            "7f4954f7-52ec-4be5-95a5-f52ea4df74a3",
+            "9a703704-f15a-4a0a-9043-eb5352bebbb0",
+            "27a4143c-bd8e-4136-87f1-7fe68b105e8e"
+          ],
+          [
+            "cac05212-0477-46dd-97ec-e71ce8b291bd"
+          ]
+        ],
+        "detached": []
+      },
+      "render": {
+        "calls": 371,
+        "triangles": 469736,
+        "geometries": 366,
+        "textures": 44
+      },
+      "canvasCount": 1,
+      "inventory": [
+        {
+          "id": "depot:1f330ea9-efb8-48ec-b9d9-b89576ede593",
+          "state": "reserved"
+        },
+        {
+          "id": "depot:eef29a11-dcfd-4429-9112-ff9313a1b620",
+          "state": "reserved"
+        }
+      ],
+      "slots": [
+        "bd6cf7bf-5953-4579-bcd1-d41ad07fb1c6",
+        "98a7c1eb-4069-4fab-bc30-a01c82dc7138",
+        "701203c2-02a6-4e42-9d5a-1778804b2dfb"
+      ],
+      "generation": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "name": "close-reopen"
+    },
+    {
+      "native": true,
+      "visible": true,
+      "stock": [
+        {
+          "id": 0,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "vehicles": [
+            {
+              "x": 63.63379526119932,
+              "z": 330.0293777145888,
+              "rendered": {
+                "x": 63.63379526119932,
+                "z": 330.0293777145888
+              },
+              "edge": "T9",
+              "s": 19.983998098545783,
+              "couplers": {
+                "front": {
+                  "x": 49.6,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -67.89999999999999,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-055-study",
+                "name": "BR 055 \u00b7 study",
+                "length": 114.3,
+                "front": 48,
+                "width": 18.5,
+                "prototypeMm": 18285,
+                "description": "DB era III, G 8.1 with tender; original dimensional study, not a certified replica",
+                "kind": "steam"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 73.2991612259927,
+              "z": 429.88369752154625,
+              "rendered": {
+                "x": 73.2991612259927,
+                "z": 429.88369752154625
+              },
+              "edge": "T10",
+              "s": 166.63400602127206,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-closed",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era two-axle covered wagon; 10m design length",
+                "kind": "closed"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 96.44364831524211,
+              "z": 491.2446723604361,
+              "rendered": {
+                "x": 96.44364831524211,
+                "z": 491.2446723604361
+              },
+              "edge": "T10",
+              "s": 100.93400602127207,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-open",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era open wagon; 10m design length",
+                "kind": "open"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 131.79207417971799,
+              "z": 546.4834946108447,
+              "rendered": {
+                "x": 131.79207417971799,
+                "z": 546.4834946108447
+              },
+              "edge": "T10",
+              "s": 35.23400602127208,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "vehicles": [
+            {
+              "x": 424.01454395396564,
+              "z": 68,
+              "rendered": {
+                "x": 424.01454395396564,
+                "z": 68
+              },
+              "edge": "WX-A:upper",
+              "s": 46.01454395396564,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            },
+            {
+              "x": 343.87343149244134,
+              "z": 70.07343278132903,
+              "rendered": {
+                "x": 343.87343149244134,
+                "z": 70.07343278132903
+              },
+              "edge": "T5",
+              "s": 187.27136401150815,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 225.99666999890667,
+              "z": 112.47526400938638,
+              "rendered": {
+                "x": 225.99666999890667,
+                "z": 112.47526400938638
+              },
+              "edge": "T5",
+              "s": 60.946364011508166,
+              "couplers": {
+                "front": {
+                  "x": 84.1,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -84.1,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-coach",
+                "length": 165,
+                "width": 17.7,
+                "description": "Generic DB-era bogie passenger coach; 26.4m design length",
+                "kind": "coach"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "vehicles": [
+            {
+              "x": 963.1986093794917,
+              "z": 584.6023199611101,
+              "rendered": {
+                "x": 963.1986093794917,
+                "z": 584.6023199611101
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 152.91504877032324,
+              "couplers": {
+                "front": {
+                  "x": 34.25,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -34.25,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-v60-study",
+                "name": "BR 260 \u00b7 study",
+                "length": 65.3,
+                "front": 32.65,
+                "width": 19.4,
+                "prototypeMm": 10450,
+                "description": "DB era IV V60, three coupled axles; original dimensional study",
+                "kind": "shunter"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 1029.2139152984864,
+              "z": 596.3106612262781,
+              "rendered": {
+                "x": 1029.2139152984864,
+                "z": 596.3106612262781
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 220.01504877032323,
+              "couplers": {
+                "front": {
+                  "x": 32.85,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -32.85,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-tank",
+                "length": 62.5,
+                "width": 18,
+                "description": "Generic DB-era tank wagon; 10m design length",
+                "kind": "tank"
+              },
+              "dimensions": null
+            },
+            {
+              "x": 1104.1940383481838,
+              "z": 599,
+              "rendered": {
+                "x": 1104.1940383481838,
+                "z": 599
+              },
+              "edge": "WIDEN-R:offset",
+              "s": 295.0900487703233,
+              "couplers": {
+                "front": {
+                  "x": 42.225,
+                  "y": 8,
+                  "z": 0
+                },
+                "back": {
+                  "x": -42.225,
+                  "y": 8,
+                  "z": 0
+                }
+              },
+              "stock": {
+                "id": "db-era-flat",
+                "length": 81.25,
+                "width": 18,
+                "description": "Generic DB-era bogie flat wagon; 13m design length",
+                "kind": "flat"
+              },
+              "dimensions": null
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "speed": 0,
+          "velocity": 0,
+          "travel": 0,
+          "vehicles": [
+            {
+              "x": 790,
+              "z": 254.00000000000006,
+              "rendered": {
+                "x": 790,
+                "z": 254.00000000000006
+              },
+              "edge": "T47",
+              "s": 80,
+              "couplers": {
+                "front": {
+                  "x": 38,
+                  "y": 6,
+                  "z": 0
+                },
+                "back": {
+                  "x": -38,
+                  "y": 6,
+                  "z": 0
+                }
+              },
+              "stock": null,
+              "dimensions": null
+            }
+          ]
+        }
+      ],
+      "identities": {
+        "trains": [
+          [
+            "8ead9431-ba8f-4051-bce9-3cfdcd2facc8",
+            "a59b3363-aebd-472f-ab07-f198708546a0",
+            "148ba97d-ab38-430c-9997-af24e9d25eea",
+            "b7dfff25-296c-48a0-934b-dd9dea4b8dec"
+          ],
+          [
+            "63d15fdb-f60f-4ac3-aba5-45b96979a42c",
+            "fc49009b-5680-4404-bbd6-206b112b1294",
+            "d1448a0f-373c-4f64-af4e-98db88999813"
+          ],
+          [
+            "7f4954f7-52ec-4be5-95a5-f52ea4df74a3",
+            "4906bb9f-afb2-4d23-ad92-12a7217d767b",
+            "0b3f4bb6-438e-4070-a1db-5a14cd72a141"
+          ],
+          [
+            "cac05212-0477-46dd-97ec-e71ce8b291bd"
+          ]
+        ],
+        "detached": []
+      },
+      "render": {
+        "calls": 371,
+        "triangles": 469736,
+        "geometries": 366,
+        "textures": 44
+      },
+      "canvasCount": 1,
+      "inventory": [
+        {
+          "id": "depot:1f330ea9-efb8-48ec-b9d9-b89576ede593",
+          "state": "reserved"
+        },
+        {
+          "id": "depot:eef29a11-dcfd-4429-9112-ff9313a1b620",
+          "state": "reserved"
+        }
+      ],
+      "slots": [
+        "bd6cf7bf-5953-4579-bcd1-d41ad07fb1c6",
+        "98a7c1eb-4069-4fab-bc30-a01c82dc7138",
+        "701203c2-02a6-4e42-9d5a-1778804b2dfb"
+      ],
+      "generation": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "name": "reset-generation"
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "external": [],
+  "cameraSwitch": {
+    "id": "WX-B",
+    "before": false,
+    "after": true,
+    "follow": "follow",
+    "hud": true
+  },
+  "trusted": [
+    "mouse",
+    "touch"
+  ],
+  "frames": [
+    195.2,
+    261.8,
+    295.2,
+    445.1,
+    495.1,
+    9844.8,
+    11194.7,
+    12561.3,
+    13994.6,
+    15361.2,
+    16844.5,
+    18261.1,
+    19877.6,
+    21544.3,
+    23060.9,
+    24544.2,
+    25977.4,
+    27394.1,
+    28894,
+    30310.6,
+    31860.6,
+    33243.8,
+    34743.8,
+    36260.4,
+    37660.3,
+    39093.6,
+    40593.6,
+    42043.5,
+    43476.7,
+    45093.3,
+    46543.3,
+    47993.3,
+    49476.5,
+    50859.8,
+    52493.1,
+    54176.3,
+    55759.6,
+    57276.2,
+    59576.1,
+    61076,
+    62542.6,
+    64742.5,
+    66575.9,
+    68259,
+    69909,
+    71508.9,
+    72875.6,
+    74358.9,
+    75692.2,
+    77208.7,
+    78742,
+    80141.9,
+    81375.2,
+    82791.9,
+    84108.4,
+    85475,
+    86975,
+    88391.6,
+    89841.6,
+    91191.5,
+    92691.5,
+    94174.7,
+    95458,
+    96841.3,
+    97957.9,
+    99274.5,
+    100591.1,
+    101891.1,
+    103157.7,
+    104457.6,
+    105890.9,
+    107374.2,
+    108740.8,
+    110174.1,
+    111490.7,
+    112907.3,
+    114257.3,
+    115557.2,
+    116990.5,
+    118307.1,
+    119657,
+    121157,
+    122806.9,
+    124440.1,
+    126040.1,
+    127390.1,
+    128773.3,
+    130289.9,
+    131706.6
+  ],
+  "hardware": "SwiftShader functional validation only; physical GPU/FPS/audio/touch NOT VERIFIED"
+}

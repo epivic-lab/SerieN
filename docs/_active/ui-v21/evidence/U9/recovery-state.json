@@ -1,0 +1,78 @@
+{
+  "branch": "codex/ui-v2-integration",
+  "HEAD": "30c56aa28e60ce83fe0cbb36209006752325bea8",
+  "staged": [],
+  "unstaged": [
+    "src/depot-view.js",
+    "src/train-deck.js",
+    "src/train-management.js",
+    "src/train-projects-view.js",
+    "src/ui/overlays.js",
+    "ui/css/serien-ui-integration.css"
+  ],
+  "untrackedCount": 401,
+  "noLocalU9Commit": true,
+  "worktree": "single existing checkout; no destructive recovery",
+  "activities": [
+    {
+      "activity": "Core/UI fixes",
+      "classification": "Complete",
+      "evidence": "issues.json; five modules + integration CSS local diff"
+    },
+    {
+      "activity": "Node/Python/build/canonical",
+      "classification": "Complete",
+      "evidence": "254 Node,9 Python, build and canonical logs"
+    },
+    {
+      "activity": "Responsive/a11y/keyboard",
+      "classification": "Complete (pre-header correction)",
+      "evidence": "acceptance-delivery/results.json:104 captures, six axe states"
+    },
+    {
+      "activity": "Native RAF integrated",
+      "classification": "Complete (pre-header correction)",
+      "evidence": "native-delivery/results.json: PASS,418 observed frames"
+    },
+    {
+      "activity": "Original browser regressions/lifecycle/picking",
+      "classification": "Complete",
+      "evidence": "commands.json current successful recovery receipts"
+    },
+    {
+      "activity": "66/31/A01\u2013A13 matrices",
+      "classification": "Partial",
+      "evidence": "assemble-matrices.py exists; final JSON generation pending"
+    },
+    {
+      "activity": "Final report/status",
+      "classification": "Partial",
+      "evidence": "U9_REPORT.md draft; STATUS/PROGRESS not yet updated"
+    },
+    {
+      "activity": "Autumn Railways plaque",
+      "classification": "Not started",
+      "evidence": "new Regia mandate; current .u2-edition nonconformity"
+    },
+    {
+      "activity": "Header authoritative reference comparison",
+      "classification": "Partial",
+      "evidence": "frozen CSS available; original ZIP not materialized, proxy403"
+    },
+    {
+      "activity": "Final post-header gates/checkpoint",
+      "classification": "Not started",
+      "evidence": "no U9 commit, local/remote U8"
+    },
+    {
+      "activity": "Physical hardware/live OAuth/native prompt/other browsers",
+      "classification": "Not verified",
+      "evidence": "explicit limits in U9 report"
+    },
+    {
+      "activity": "Earlier camera/ARIA/harness attempts",
+      "classification": "Failed then recovered",
+      "evidence": "failure-recovery.json + successful U3-final/acceptance-delivery"
+    }
+  ]
+}

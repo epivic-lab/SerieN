@@ -1,3 +1,8 @@
+import {mountDock} from './src/ui/dock.js';
+import {mountKeyboard} from './src/ui/keyboard.js';
+import {mountShell} from './src/ui/shell.js';
+import {mountViewportOverlays} from './src/ui/overlays.js';
+import {mountSidebar} from './src/ui/sidebar.js';
 import {createGuardedStops} from './src/guarded-stop-scene.js';
 import {animateAuxiliaryWheels} from './src/rolling-stock-animation.js';
 import {stepRailway} from './src/railway-step.js';
@@ -34,7 +39,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 const $ = (id) => document.getElementById(id);
 const host = $("view3d");
-let nextSwitchHUD = null, trainDeck = null, trainManagement = null;
+let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null, viewportOverlays = null, sidebarUI = null, dockUI = null, keyboardUI = null;
 let highlightUntil=0,highlightUpdated=0;
 importedTrains($("rollingModels").value === "kenney");
 const scene = new THREE.Scene();
@@ -439,6 +444,7 @@ function ui() {
   $("missionText").textContent = statuses[mission].body;
   missionUI();
   nextSwitchHUD?.refresh(true);
+  sidebarUI?.update();
 }
 function missionUI() {
   $("missionStatus").textContent = statuses[mission].done() ? "\u2713 Mission completed" : statuses[mission].detail();
@@ -568,7 +574,6 @@ function removeWagon(group) {
 }
 function reset() {
   guardedStops.clear();
-  if (!confirm("Reset locomotives, switches and missions?")) return;
   for (const d of detached) removeWagon(d.group);
   detached.length = 0;
   switchSpecs.forEach((s) => {
@@ -591,6 +596,7 @@ function reset() {
   transferred = visitedRunaround = didDetach = didAttach = false;
   $("pause").textContent = "\u2161 Pause";
   ui();
+  trainManagement?.invalidateReferences();
   log("Reset completed.");
 }
 function setTrainSpeed(id,value) {
@@ -652,9 +658,9 @@ $("pause").onclick = () => {
   paused = !paused;
   $("pause").textContent = paused ? "\u25B6 Resume" : "\u2161 Pause";
   log(paused ? "Simulation paused." : "Simulation resumed.");
-  trainDeck?.update();
+  trainDeck?.update();uiShell?.update();
 };
-$("reset").onclick = reset;
+// Reset intent is mounted after the real Train Management generation is available.
 $("homeView").onclick = () => {
   nav.select("overview");
   $("cameraView").value = "overview";
@@ -696,6 +702,10 @@ trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains
 trainManagement=mountTrainManagement({button:$("trainManagement"),getTrains:()=>trains,getDetached:()=>detached,getSelected:()=>selected,getImportedCatalog:getTrainAssetCatalog,
   onSelect:select,onFocus:(id)=>{select(id);nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
 });
+dockUI=mountDock({host:$("trainDeck"),tabs:$("tabs"),button:$("reset"),getTrains:()=>trains,getSelected:()=>selected,onSelect:select,
+  getGeneration:()=>trainManagement.sessionSummary.generation,onReset:reset});
+keyboardUI=mountKeyboard({onStop:()=>$("stop")?.click()});
+uiShell=mountShell({management:trainManagement,isPaused:()=>paused});
 nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState});
 const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
 function applyQuality(profile) {
@@ -710,12 +720,6 @@ quality.setMode("auto");
 applyQuality(quality.profile);
 document.addEventListener("visibilitychange", () => {
   if (document.hidden){quality.update(0, false);turnoutInteraction.clear(); }
-});
-window.addEventListener("keydown", (e) => {
-  if (e.code === "Space" && !["INPUT", "SELECT", "BUTTON"].includes(e.target.tagName)) {
-    e.preventDefault();
-    $("stop").click();
-  }
 });
 const observer = new ResizeObserver(resize);
 observer.observe(host);
@@ -744,7 +748,12 @@ window.addEventListener("pagehide", (e) => {
   guardedStops.dispose();
   turnoutArrows.dispose();
   turnoutPicking.dispose();
+  viewportOverlays?.dispose();
+  sidebarUI?.dispose();
+  uiShell?.dispose();
   trainManagement?.dispose();
+  dockUI?.dispose();
+  keyboardUI?.dispose();
   trainDeck?.dispose();
   nav.dispose();
   effects.dispose();
@@ -777,7 +786,7 @@ function tick(now) {
   frame++;
   trainManagement?.update(now);
   renderVehicles();
-  trainDeck?.update();
+  trainDeck?.update();uiShell?.update();
   const night = clamp((day - 35) / 65, 0, 1);
   sun.intensity = lerp(2.65, 0.16, night);
   sun.color.copy(new THREE.Color(day>40?"#f4cd9d":"#fff0d5").lerp(new THREE.Color("#a9bee4"),night));
@@ -798,6 +807,7 @@ function tick(now) {
   nav.update(realDt, trains[selected].journey.locate());
   views.update();
   nextSwitchHUD?.refresh();
+  sidebarUI?.update();
   updateRouteHighlight();
   if ($("cameraView").value !== nav.preset && nav.preset === "manual") $("cameraView").value = "manual";
   const nextQuality = quality.update(realDt, !document.hidden);
@@ -809,6 +819,7 @@ function tick(now) {
   turnoutGlow.update(now);
   turnoutArrows.update(now);
   guardedStops.update(now);
+  viewportOverlays?.update();
   effects.render(quality.profile === "cinema");
   if (frame % 35 === 0) {
     missionUI();
@@ -825,6 +836,11 @@ const turnoutArrows=createTurnoutArrows(scene,turnoutModel,{getState:id=>switchS
   getApproaches:()=>turnoutArrowApproaches({network,topology:switchTopology,trains,choose:route}),reducedMotion:motionPreference.matches});
 turnoutArrows.update(performance.now());
 const guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:()=>detached,host,isPaused:()=>paused,reducedMotion:motionPreference.matches});
+viewportOverlays=mountViewportOverlays({host,guardedStops,getCameraPreset:()=>nav.preset});
+sidebarUI=mountSidebar({host:document.querySelector('.sidebar'),network,controlOrder,
+  getSwitches:()=>switchSpecs.map(({id,on})=>({id,on})),getTrains:()=>trains,getSelected:()=>selected,
+  onFocus:(id)=>{select(id);nav.focus(trains[id].journey.locate());$('cameraView').value='manual';}
+});
 const onMotionPreference=()=>{guardedStops.setReducedMotion(motionPreference.matches);turnoutGlow.setReducedMotion(motionPreference.matches);turnoutArrows.setReducedMotion(motionPreference.matches);};
 motionPreference.addEventListener('change',onMotionPreference);
 const turnoutInteraction=mountTurnoutInteraction({canvas:renderer.domElement,camera,scene,controls,
@@ -866,15 +882,16 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
       advanceFleet(dt);
     }
     renderVehicles();
-    trainDeck?.update();
+    trainDeck?.update();uiShell?.update();
     nextSwitchHUD?.refresh(true);
+    sidebarUI?.update();
     updateRouteHighlight(true);
   },
   frames(intervals) {
     if(!Array.isArray(intervals)||intervals.length>10000||intervals.some(dt=>!Number.isFinite(dt)||dt<0))throw new RangeError("Invalid diagnostic frames");
     const frameClock=new FixedClock();
     for(const elapsed of intervals)frameClock.update(elapsed,advanceFleet);
-    renderVehicles();trainDeck?.update();nextSwitchHUD?.refresh(true);updateRouteHighlight(true);
+    renderVehicles();trainDeck?.update();uiShell?.update();nextSwitchHUD?.refresh(true);sidebarUI?.update();updateRouteHighlight(true);
   },
   setSwitches(on) {
     if(!Array.isArray(on)||on.some((id)=>!switchSpecs.some((s)=>s.id===id)))throw new RangeError("Unknown diagnostic control");

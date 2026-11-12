@@ -1,0 +1,24 @@
+{
+  "controls": {
+    "CTRL-031": "New \u2192 guarded begin",
+    "CTRL-032": "name \u2192 rename",
+    "CTRL-033": "tray or model select \u2192 add",
+    "CTRL-034": "rail Earlier/Later, Alt+Left/Right \u2192 move (trailers only)",
+    "CTRL-035": "Reverse/F \u2192 flip planned orientation",
+    "CTRL-036": "Remove/Delete \u2192 remove when valid",
+    "CTRL-037": "Confirm \u2192 store.confirm then original onChange/reconcile",
+    "CTRL-038": "Cancel \u2192 guarded store.cancel",
+    "CTRL-039": "draft-only link \u2192 store.link; never auto-confirm",
+    "CTRL-040": "original createTrainSideView zoom/Fit/scroll",
+    "CTRL-057": "confirmed selection \u2192 savedId UI only, no store.open",
+    "CTRL-058": "explicit Edit \u2192 guarded store.open"
+  },
+  "compatibility": "existing data-project-action and data-planned-vehicle retained; data-ctrl added; per-project Edit has own edit-UUID key",
+  "keyboard": "root-local listener, only connected active TM/Composer, no native controls/editables/other dialogs, no global Space handler",
+  "TM_wiring": "one added guard argument; all other U6 source identical",
+  "historicalHarnesses": [
+    "native accept/dismiss translated to actual custom modal clicks, assertions unchanged",
+    "U6 fixture explicitly Edit after readonly project selection; native close focus wait",
+    "M2 lifecycle custom Cancel consent click; all original assertions retained"
+  ]
+}

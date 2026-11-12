@@ -1,0 +1,32 @@
+[
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "canonical",
+    "command": [
+      "python",
+      "scripts/build-canonical-layout.py"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "canonical-diff",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "48a7c4d",
+      "--",
+      "src/canonical-layout.json",
+      "docs/jmri-layout"
+    ],
+    "exit": 0
+  }
+]

@@ -1,0 +1,237 @@
+{
+  "status": "PASS",
+  "method": "real app; local Auth boundary; on-demand production RAF",
+  "bundleSHA256": "e45a019e20ca80b079d00fc3c8ae5b4d36111e6bb3ec87733a9bb2d1d7709cfc",
+  "observer": false,
+  "checks": [
+    "single-canvas-original-startup-and-one-persistent-log",
+    "real-presets-home-follow-zoom-pan-orbit-escape-and-trusted-drag-breaks-follow",
+    "real-15-second-route-expiry-second-click-hides-and-disclaimer",
+    "read-only-hud-no-switch-actions-real-train-name-route-and-topology-svg",
+    "real-guard-risk-retained-muted-single-bell-menu-chip-and-independent-ui-sound",
+    "exact-engine-refusal-message-retained-in-operations-log",
+    "real-app-three-viewport-screenshots-risk-muted-active-hud-camera-log-touch-targets",
+    "real-terminal-no-next-switch-state-with-distance",
+    "keyboard-space-selected-stop-form-exclusion-and-u2-escape-preserved"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "failedRequests": [],
+  "external": [],
+  "routeBoundary": {
+    "at0": "true",
+    "before14999ms": "true",
+    "at15000ms": "false",
+    "secondClickHides": true
+  },
+  "hudStates": [
+    {
+      "site": "WX-B",
+      "controls": [
+        "WX-B"
+      ],
+      "name": "WX310 east",
+      "distance": 908.816017746907,
+      "outgoing": {
+        "edge": "WX-B:upper",
+        "end": 0
+      },
+      "destination": "Outer loop",
+      "stop": "cycle",
+      "uncertain": false,
+      "safety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "highlighted": false,
+      "minimized": false
+    },
+    {
+      "site": "WX-A",
+      "controls": [
+        "WX-A"
+      ],
+      "name": "WX310 west",
+      "distance": 263.98545604603436,
+      "outgoing": {
+        "edge": "T33",
+        "end": 0
+      },
+      "destination": "Middle loop",
+      "stop": "cycle",
+      "uncertain": false,
+      "safety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied \u00b7 operation blocked"
+      },
+      "highlighted": false,
+      "minimized": false
+    },
+    {
+      "site": "WX-A",
+      "controls": [
+        "WX-A"
+      ],
+      "name": "WX310 west",
+      "distance": 1372.0655364735567,
+      "outgoing": {
+        "edge": "WX-A:lower",
+        "end": 0
+      },
+      "destination": "Inner loop",
+      "stop": "cycle",
+      "uncertain": false,
+      "safety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied \u00b7 operation blocked"
+      },
+      "highlighted": false,
+      "minimized": false
+    }
+  ],
+  "refusalMessage": "Switch area occupied \u00b7 operation blocked",
+  "guard": {
+    "leadingExtent": 34.25,
+    "risk": "UNSAFE",
+    "reason": "misaligned",
+    "distance": 0.3708313333333229,
+    "boundary": {
+      "edge": "T47",
+      "from": 64.62083333333332,
+      "to": 0,
+      "distance": 0
+    },
+    "direction": -1,
+    "lookahead": 16.338751,
+    "stoppingDistance": 0,
+    "protectionInset": 30,
+    "state": "GUARDED_STOP",
+    "delta": 0,
+    "velocity": 0,
+    "intervened": true,
+    "requestedSpeed": 100,
+    "requestedDelta": 0,
+    "probeDelta": null,
+    "probeKind": null
+  },
+  "visual": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "boxes": {
+        "#view3d": {
+          "x": 0,
+          "y": 97,
+          "width": 1140,
+          "height": 620
+        },
+        "#cam": {
+          "x": 10,
+          "y": 553.8125,
+          "width": 331.46875,
+          "height": 74
+        },
+        "#nextSwitchHUD": {
+          "x": 870,
+          "y": 107,
+          "width": 260,
+          "height": 300.171875
+        },
+        "#guardedStopStatus": {
+          "x": 10,
+          "y": 107,
+          "width": 340,
+          "height": 119.1875
+        },
+        ".u3-operations": {
+          "x": 10,
+          "y": 635.8125,
+          "width": 1120,
+          "height": 71.1875
+        }
+      }
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "boxes": {
+        "#view3d": {
+          "x": 0,
+          "y": 97,
+          "width": 759,
+          "height": 488
+        },
+        "#cam": {
+          "x": 10,
+          "y": 421.8125,
+          "width": 331.46875,
+          "height": 74
+        },
+        "#nextSwitchHUD": {
+          "x": 489,
+          "y": 107,
+          "width": 260,
+          "height": 300.171875
+        },
+        "#guardedStopStatus": {
+          "x": 10,
+          "y": 107,
+          "width": 340,
+          "height": 119.1875
+        },
+        ".u3-operations": {
+          "x": 10,
+          "y": 503.8125,
+          "width": 739,
+          "height": 71.1875
+        }
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "boxes": {
+        "#view3d": {
+          "x": 0,
+          "y": 197,
+          "width": 390,
+          "height": 405.109375
+        },
+        "#cam": {
+          "x": 8,
+          "y": 456.921875,
+          "width": 243.34375,
+          "height": 68
+        },
+        "#nextSwitchHUD": {
+          "x": 187.53125,
+          "y": 205,
+          "width": 194.46875,
+          "height": 245.921875
+        },
+        "#guardedStopStatus": {
+          "x": 8,
+          "y": 205,
+          "width": 173.53125,
+          "height": 130.78125
+        },
+        ".u3-operations": {
+          "x": 8,
+          "y": 530.921875,
+          "width": 374,
+          "height": 63.1875
+        }
+      }
+    }
+  ]
+}

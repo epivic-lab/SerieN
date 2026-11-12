@@ -1,0 +1,549 @@
+{
+  "status": "PASS",
+  "bundleSHA256": "a14d1667d6e26b90c4a03711b8795f06efce914ee8261f093d9780bc2e40b523",
+  "cssSHA256": "421c56a152dc4a69d137f6b47c09fe371207f39e342758b1251a64d1de9c2375",
+  "checks": [
+    "unique plaque and accessible text; no free subtitle",
+    "original SERIE N plaque and critical controls preserved",
+    "frozen final geometry/cascade matched on five viewports",
+    "local brass and SVG screw/leaf assets",
+    "real Federo 400 and original engraving ink/shadows",
+    "no clipped lettering or horizontal overflow; header buttons reachable"
+  ],
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "actual": {
+        "box": {
+          "x": 169.265625,
+          "y": 25,
+          "width": 254.25,
+          "height": 46,
+          "top": 25,
+          "right": 423.515625,
+          "bottom": 71,
+          "left": 169.265625
+        },
+        "height": "46px",
+        "paddingLeft": "34px",
+        "gap": "12px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "12px",
+        "tracking": "3.12px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": false
+      },
+      "frozenReference": {
+        "box": {
+          "x": 237.265625,
+          "y": 25,
+          "width": 254.25,
+          "height": 46,
+          "top": 25,
+          "right": 491.515625,
+          "bottom": 71,
+          "left": 237.265625
+        },
+        "height": "46px",
+        "paddingLeft": "34px",
+        "gap": "12px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "12px",
+        "tracking": "3.12px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": false
+      },
+      "headerAccessibleSnapshot": "- banner:\n  - text: SERIE N Autumn Railways\n  - button \"\u25a4 Train Management\"\n  - text: Paused\n  - button \"\u2316 Home\"\n  - button \"\u25a6 Track plan\"\n  - button \"? Help\"\n  - button \"Menu\""
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "actual": {
+        "box": {
+          "x": 169.265625,
+          "y": 25,
+          "width": 254.25,
+          "height": 46,
+          "top": 25,
+          "right": 423.515625,
+          "bottom": 71,
+          "left": 169.265625
+        },
+        "height": "46px",
+        "paddingLeft": "34px",
+        "gap": "12px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "12px",
+        "tracking": "3.12px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": false
+      },
+      "frozenReference": {
+        "box": {
+          "x": 237.265625,
+          "y": 22.296875,
+          "width": 254.25,
+          "height": 46,
+          "top": 22.296875,
+          "right": 491.515625,
+          "bottom": 68.296875,
+          "left": 237.265625
+        },
+        "height": "46px",
+        "paddingLeft": "34px",
+        "gap": "12px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "12px",
+        "tracking": "3.12px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": false
+      },
+      "headerAccessibleSnapshot": "- banner:\n  - text: SERIE N Autumn Railways\n  - button \"\u25a4 Train Management\"\n  - text: Paused\n  - button \"\u2316 Home\"\n  - button \"\u25a6 Track plan\"\n  - button \"? Help\"\n  - button \"Menu\""
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "actual": {
+        "box": {
+          "x": 147.125,
+          "y": 25,
+          "width": 190.46875,
+          "height": 46,
+          "top": 25,
+          "right": 337.59375,
+          "bottom": 71,
+          "left": 147.125
+        },
+        "height": "46px",
+        "paddingLeft": "30px",
+        "gap": "7px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "10.5px",
+        "tracking": "0.63px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": false
+      },
+      "frozenReference": {
+        "box": {
+          "x": 175.125,
+          "y": 18,
+          "width": 190.46875,
+          "height": 46,
+          "top": 18,
+          "right": 365.59375,
+          "bottom": 64,
+          "left": 175.125
+        },
+        "height": "46px",
+        "paddingLeft": "30px",
+        "gap": "7px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "10.5px",
+        "tracking": "0.63px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": false
+      },
+      "headerAccessibleSnapshot": "- banner:\n  - text: SERIE N Autumn Railways\n  - button \"\u25a4 Train Management\"\n  - text: Paused\n  - button \"\u2316 Home\"\n  - button \"\u25a6 Track plan\"\n  - button \"? Help\"\n  - button \"Menu\""
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "actual": {
+        "box": {
+          "x": 140.234375,
+          "y": 25,
+          "width": 190.46875,
+          "height": 46,
+          "top": 25,
+          "right": 330.703125,
+          "bottom": 71,
+          "left": 140.234375
+        },
+        "height": "46px",
+        "paddingLeft": "30px",
+        "gap": "7px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "10.5px",
+        "tracking": "0.63px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": false
+      },
+      "frozenReference": {
+        "box": {
+          "x": 168.234375,
+          "y": 25,
+          "width": 190.46875,
+          "height": 46,
+          "top": 25,
+          "right": 358.703125,
+          "bottom": 71,
+          "left": 168.234375
+        },
+        "height": "46px",
+        "paddingLeft": "30px",
+        "gap": "7px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "10.5px",
+        "tracking": "0.63px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "15px",
+            "height": "15px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": false
+      },
+      "headerAccessibleSnapshot": "- banner:\n  - text: SERIE N Autumn Railways\n  - button \"\u25a4 Train Management\"\n  - text: Paused\n  - button \"\u2316 Home\"\n  - button \"\u25a6 Track plan\"\n  - button \"? Help\"\n  - button \"Menu\""
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "actual": {
+        "box": {
+          "x": 128.234375,
+          "y": 12,
+          "width": 249.765625,
+          "height": 44,
+          "top": 12,
+          "right": 378,
+          "bottom": 56,
+          "left": 128.234375
+        },
+        "height": "44px",
+        "paddingLeft": "26px",
+        "gap": "12px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "12px",
+        "tracking": "1.92px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "11px",
+            "height": "11px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "11px",
+            "height": "11px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": false
+      },
+      "frozenReference": {
+        "box": {
+          "x": 176.234375,
+          "y": 17,
+          "width": 189.765625,
+          "height": 44,
+          "top": 17,
+          "right": 366,
+          "bottom": 61,
+          "left": 176.234375
+        },
+        "height": "44px",
+        "paddingLeft": "26px",
+        "gap": "12px",
+        "borderRadius": "8px",
+        "backgroundImage": "linear-gradient(rgba(4, 6, 9, 0), rgba(4, 6, 9, 0)), url(\"http://127.0.0.1:8035/ui/assets/textures/brass-brushed.jpg\"), linear-gradient(rgb(248, 230, 174), rgb(220, 184, 101) 45%, rgb(180, 139, 69) 55%, rgb(227, 197, 119))",
+        "blend": "normal, overlay, normal",
+        "shadow": "rgb(95, 68, 22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.667) 0px 6px 10px 0px, rgba(255, 255, 255, 0.8) 0px 1px 1px 0px inset, rgba(106, 76, 24, 0.667) 0px -2px 3px 0px inset",
+        "animation": "none",
+        "font": "Federo",
+        "weight": "400",
+        "size": "12px",
+        "tracking": "1.92px",
+        "ink": "rgb(90, 61, 16)",
+        "textTransform": "uppercase",
+        "textShadow": "rgba(255, 255, 255, 0.533) 0px 1px 0px, rgba(58, 38, 10, 0.333) 0px -1px 0px",
+        "before": {
+          "content": "\"\"",
+          "inset": "4px",
+          "border": "1px solid rgba(106, 76, 24, 0.55)",
+          "borderRadius": "5px"
+        },
+        "screws": [
+          {
+            "width": "11px",
+            "height": "11px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(38 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          },
+          {
+            "width": "11px",
+            "height": "11px",
+            "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff8dc'/%3E%3Cstop offset='.45' stop-color='%23d6b05a'/%3E%3Cstop offset='1' stop-color='%235a3f12'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1c05'/%3E%3Cstop offset='1' stop-color='%236a4c18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='10.6' cy='10.8' r='8.6' fill='%23000' fill-opacity='.35'/%3E%3Ccircle cx='10' cy='10' r='8.4' fill='%235a3f12'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='url(%23r)'/%3E%3Ccircle cx='10' cy='10' r='7.6' fill='none' stroke='%23fff6d0' stroke-opacity='.5' stroke-width='.5'/%3E%3Cg transform='rotate(-61 10 10)'%3E%3Crect x='2.8' y='8.9' width='14.4' height='2.2' rx='.6' fill='url(%23s)'/%3E%3Cpath d='M3.2 11.2H16.8' stroke='%23fff3c4' stroke-opacity='.55' stroke-width='.5'/%3E%3C/g%3E%3C/svg%3E\")"
+          }
+        ],
+        "leaf": {
+          "width": "20px",
+          "height": "20px"
+        },
+        "textClipped": true
+      },
+      "headerAccessibleSnapshot": "- banner:\n  - text: SERIE N Autumn Railways\n  - button \"\u25a4 Train Management\"\n  - button \"Menu\""
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "httpFailures": [],
+  "texture": {
+    "path": "ui/assets/textures/brass-brushed.jpg",
+    "httpStatus": 200,
+    "sha256": "2f35a0f969fd1aeb3e93358940a404020ffd6e2c53c2ae0c1ff001a2c8c6e631"
+  },
+  "comparisonLimit": "Computed final cascade and original markup compared; original archived screenshot also reviewed. No whole-header pixel parity claimed: functional shell has different real controls and definitive local fonts."
+}

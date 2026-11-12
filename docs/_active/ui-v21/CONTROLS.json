@@ -1,0 +1,3946 @@
+{
+  "meta": {
+    "schema_version": 1,
+    "branch": "codex/ui-v2-integration",
+    "application_baseline": "91722fbdf6671e69deebf645c3d8bf389212f421",
+    "readiness_checkpoint": "af67ee5c65679b7e5fa384d76a0825dff022f27d",
+    "main": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+    "source_archive_sha256": "9bd0252311ab82dd77af76f66cf9bb5251d74ce09d0815deae044ea90a58333d",
+    "authorization": "U0 documentation/contracts only; no selector migration or app mutation",
+    "frozen_source": "docs/ui-v2-integration/evidence/final-package/SOURCE_CODE_DOM_MAP.json"
+  },
+  "controls": [
+    {
+      "id": "CTRL-001",
+      "name": "Login Google",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "auth-gate.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "auth-gate.js",
+          "contains": "login.addEventListener"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#googleSignIn"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "login.addEventListener(click) → signInWithOAuth",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "auth session",
+      "state_modified": "none locally (redirect)",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#authGate .authPanel #googleSignIn (unchanged id, brass skin)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-001",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U2"
+      ],
+      "acceptance": "All six auth states render; no simulator DOM visible while locked; no credential in UI package.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Preservare gate e ID; nessuna modifica Auth.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-001",
+        "design_record": "CTRL-001"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-002",
+      "name": "Logout (\"Esci\")",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "auth-gate.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "auth-gate.js",
+          "contains": "logout.addEventListener"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#signOut"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "logout.addEventListener(click) → signOut + reload",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "auth",
+      "state_modified": "session ended, page reloaded (all RAM projects/depot lost)",
+      "constraints": [
+        "Reload discards M2 projects and M3 records (session-only).",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#dlg Menu > button#signOut (moved) + guard modal",
+      "future_hooks": {
+        "data_ctrl": "CTRL-002",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U2"
+      ],
+      "acceptance": "Sign out asks first when session data exists; Exit to title is disabled and says why.",
+      "adapter_ids": [
+        "A01",
+        "A02"
+      ],
+      "compatibility_resolution": "A01/A02: real addEventListener; snapshot summary not exposed today, create read-only getter in future UI. Never call logout.onclick.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-002",
+        "design_record": "CTRL-002"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-003",
+      "name": "Graphics quality",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "quality.setMode"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#quality"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "quality onchange → applyQuality(quality.setMode(value))",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "quality.mode/profile",
+      "state_modified": "renderer pixel ratio, shadows, scenic quality, effects (Cinema = AO etc.)",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#dlg #qsg [data-q=auto|low|high|cinema]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-003",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U2"
+      ],
+      "acceptance": "Four modes selectable; Cinema reaches the engine profile \"cinema\".",
+      "adapter_ids": [],
+      "compatibility_resolution": "Proxy select originale al percorso applyQuality; nessuna modalità o persistenza nuova.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-003",
+        "design_record": "CTRL-003"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-004",
+      "name": "Home (header)",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "nav.select(\"overview\")"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#homeView"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "homeView.onclick → nav.select(overview)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "nav",
+      "state_modified": "camera only",
+      "constraints": [
+        "Camera never mutates railway state.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#cam button[data-ctrl=CTRL-004] \"Recenter\"",
+      "future_hooks": {
+        "data_ctrl": "CTRL-004",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "Recenter returns to Overview preset exactly as header Home did.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-004",
+        "design_record": "CTRL-004"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-005",
+      "name": "Track plan",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "$(\"planBtn\").onclick"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#planBtn",
+          "#planModal"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "planBtn.onclick → canonical SVG + planModal",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "network.edges",
+      "state_modified": "none",
+      "constraints": [
+        "Static plan; never mutates geometry.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".hd #tpB → dialog #tpD",
+      "future_hooks": {
+        "data_ctrl": "CTRL-005",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U2"
+      ],
+      "acceptance": "Plan opens/closes; a label click on a protected switch shows the same blocked message as the tile.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-005",
+        "design_record": "CTRL-005"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-006",
+      "name": "Help",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "$(\"helpBtn\").onclick"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#helpBtn",
+          "#helpModal"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "helpBtn.onclick → helpModal",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "none",
+      "state_modified": "none",
+      "constraints": [
+        "Contains safety wording (route preview is not authority).",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".hd #hlB → dialog #hlD",
+      "future_hooks": {
+        "data_ctrl": "CTRL-006",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U2"
+      ],
+      "acceptance": "Every topic of the old help is present in #hlD (checklist in FUNCTIONAL_COVERAGE).",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-006",
+        "design_record": "CTRL-006"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-007",
+      "name": "Route preview",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "$(\"routePreview\").onclick"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#routePreview"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "routePreview.onclick → highlightUntil + updateRouteHighlight",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "switch assistance preview",
+      "state_modified": "routeHighlight visibility only",
+      "constraints": [
+        "\"this is not movement authority\" (title).",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#cam > View > button[data-ctrl=CTRL-007] Route",
+      "future_hooks": {
+        "data_ctrl": "CTRL-007",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "15 s timer and disclaimer preserved; second click hides.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-007",
+        "design_record": "CTRL-007"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-008",
+      "name": "View preset",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "$(\"cameraView\").onchange"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#cameraView"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "cameraView.onchange → nav.select(preset)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "nav.preset",
+      "state_modified": "camera",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#cam > View segmented [data-preset=overview|station|yard|follow] + .free-camera state",
+      "future_hooks": {
+        "data_ctrl": "CTRL-008",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "Four engine presets reachable; manual gesture shows Free camera.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-008",
+        "design_record": "CTRL-008"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-009",
+      "name": "Zoom in/out",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/view-controls.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/view-controls.js",
+          "contains": "zoomIn:"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#viewZoomIn",
+          "#viewZoomOut"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "mountViewControls: zoomIn/zoomOut",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "camera",
+      "state_modified": "camera",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#cam zoom buttons",
+      "future_hooks": {
+        "data_ctrl": "CTRL-009",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/navigation.test.js",
+        "tests/view-controls.test.js",
+        "tests/browser-phase-three.py",
+        "tests/browser-phase-four.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "Same step as today.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-009",
+        "design_record": "CTRL-009"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-010",
+      "name": "Pan / Orbit drag mode",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/view-controls.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/view-controls.js",
+          "contains": "setDragMode"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#viewPan",
+          "#viewOrbit"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "mountViewControls: setDragMode(pan|orbit)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "camera",
+      "state_modified": "camera mode",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#cam > View Pan / Orbit",
+      "future_hooks": {
+        "data_ctrl": "CTRL-010",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/navigation.test.js",
+        "tests/view-controls.test.js",
+        "tests/browser-phase-three.py",
+        "tests/browser-phase-four.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "Mode toggles and pressed state reflects engine.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-010",
+        "design_record": "CTRL-010"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-011",
+      "name": "Home / Follow (toolbar)",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/view-controls.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/view-controls.js",
+          "contains": "follow:"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#viewHome",
+          "#viewFollow"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "mountViewControls: home/follow",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "selected train",
+      "state_modified": "camera",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#cam Recenter (home) + View > Follow",
+      "future_hooks": {
+        "data_ctrl": "CTRL-011",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/navigation.test.js",
+        "tests/view-controls.test.js",
+        "tests/browser-phase-three.py",
+        "tests/browser-phase-four.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "Follow tracks the selected train; manual gesture stops follow.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-011",
+        "design_record": "CTRL-011"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-012",
+      "name": "Turnout tile",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js",
+        "src/turnout-commands.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function requestToggle"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#switchList button.sw[data-switch]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "requestToggle(id,panel) → turnoutCommands.requestToggle",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "switchSpecs, safetyByControl",
+      "state_modified": "switchSpecs[i].on via turnoutCommands (guarded)",
+      "constraints": [
+        "R1 guard: occupied/approaching/uncertain switches protected; WX310 double crossovers WX-A/WX-B.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".side .m-sw #sws .sw[data-switch-id] (8 tiles from switchSpecs/controlOrder)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-012",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U4"
+      ],
+      "existing_tests": [
+        "tests/turnout-commands.test.js",
+        "tests/railway-guard.test.js",
+        "tests/browser-turnout-interaction.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U4"
+      ],
+      "acceptance": "8 tiles with real IDs; blocked reason readable without hover; counter diverging/total.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Mantenere data-switch/data-switch-hover e parent focus finché tutti i consumer sono migrati; otto ID dal registro.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-012",
+        "design_record": "CTRL-012"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-013",
+      "name": "Daylight slider",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "$(\"day\").oninput"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#day",
+          "#sun"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "day.oninput → day + sun text",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "day",
+      "state_modified": "day (lighting/shaders only)",
+      "constraints": [
+        "Affects rendering, not physics.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".side .m-env input#day",
+      "future_hooks": {
+        "data_ctrl": "CTRL-013",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U4"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U4"
+      ],
+      "acceptance": "Thresholds 42/72 kept for engine glyph semantics.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-013",
+        "design_record": "CTRL-013"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-014",
+      "name": "Rolling stock source",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function updateModels"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#rollingModels"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "rollingModels.onchange → updateModels() with rollback",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "trains, detached, route",
+      "state_modified": "existing updateModels validated asset/model/history changes only; rollback on clearance conflict",
+      "constraints": [
+        "Clearance and route history checked before swapping models.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "TM Catalog toolbar segmented + Menu segmented ([data-roll=native|kenney])",
+      "future_hooks": {
+        "data_ctrl": "CTRL-014",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2",
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U2",
+        "G-U6"
+      ],
+      "acceptance": "Switch available; blocked change shows the engine message and reverts the control.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-014",
+        "design_record": "CTRL-014"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-015",
+      "name": "Next mission",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "$(\"nextMission\").onclick"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#nextMission"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "nextMission.onclick → mission cycle",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "mission",
+      "state_modified": "mission index",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".side .m-ms #nextMission",
+      "future_hooks": {
+        "data_ctrl": "CTRL-015",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U4"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U4"
+      ],
+      "acceptance": "Next mission enabled even when the mission is not complete.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-015",
+        "design_record": "CTRL-015"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-016",
+      "name": "Train selection tabs",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-deck.js",
+          "contains": "onSelect(train.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#tabs .tab[data-train]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "tabs onclick → onSelect(id) + RecentConsoles",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "trains, selected",
+      "state_modified": "selected; RecentConsoles LRU (3 slots)",
+      "constraints": [
+        "Hidden (4th) train keeps running.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".dk carousel #trk article.tr[data-train] (all trains)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-016",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Every engine train reachable in ≤1 click; 4 trains on 1024 width visible via carousel arrows.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Carosello quattro card sostituisce tre console LRU; conservare selezione e migrare asserzioni di presentazione senza indebolire capacità flotta.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-016",
+        "design_record": "CTRL-016"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-017",
+      "name": "Train speed slider",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-deck.js",
+        "src/fleet-commands.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-deck.js",
+          "contains": "onSpeed(train.id,value)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".trainConsoleSpeed input"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "slider oninput → onSelect + onSpeed → setTrainSpeed",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "train.speed (0..100 command), requestedSpeed; velocity separate, MOTION.speedScale real",
+      "state_modified": "requestedSpeed=train.speed via fleetCommands.setSpeed; needle read-only velocity",
+      "constraints": [
+        "Inertia in engine; guarded stops can override.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "article.tr input.thr (commanded) + gauge needle (actual)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-017",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Slider never shows actual; needle never shows commanded.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "velocity disponibile ma unità diverse da speed (%). Scala gauge da dati/scala motore, nessuna velocità fisica fittizia.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-017",
+        "design_record": "CTRL-017"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-018",
+      "name": "Reverse",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function reverseTrain"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-command=\"reverse\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "onReverse → reverseTrain → fleetCommands.reverse",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "train.dir",
+      "state_modified": "train.dir",
+      "constraints": [
+        "Reversing preserves wagon order.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "article.tr [data-command=reverse]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-018",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Pressed state mirrors dir<0.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-018",
+        "design_record": "CTRL-018"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-019",
+      "name": "Stop (single)",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function stopTrain"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-command=\"stop\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "onStop → stopTrain → fleetCommands.stop",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "train",
+      "state_modified": "speed, velocity",
+      "constraints": [
+        "Immediate stop.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "article.tr [data-command=stop]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-019",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Stops only that train.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-019",
+        "design_record": "CTRL-019"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-020",
+      "name": "Lights",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function toggleTrainLights"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-command=\"lights\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "onLights → toggleTrainLights → fleetCommands.toggleLights",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "train.lights",
+      "state_modified": "train.lights",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "article.tr [data-command=lights]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-020",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Pressed state from engine.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-020",
+        "design_record": "CTRL-020"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-021",
+      "name": "Uncouple tail",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function uncouple"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-command=\"uncouple\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "onUncouple → uncouple → applyConsistCommand",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "train.velocity/speed/cars",
+      "state_modified": "carObjs, detached[]",
+      "constraints": [
+        "R1 authority: stopped, same group identity, Journey copied.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "article.tr [data-command=uncouple]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-021",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Engine message shown; detached wagon appears in TM On the Layout > Detached.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-021",
+        "design_record": "CTRL-021"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-022",
+      "name": "Couple nearest",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function couple"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-command=\"couple\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "onCouple → couple → applyConsistCommand",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "train, detached",
+      "state_modified": "carObjs, detached",
+      "constraints": [
+        "Max five wagons; alignment, route history, space verified by R1.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "article.tr [data-command=couple]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-022",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "All four engine messages surfaced.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-022",
+        "design_record": "CTRL-022"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-023",
+      "name": "Add train",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function addTrain"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#addTrain"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "addTrain onclick → addTrain + select",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "trains, detached",
+      "state_modified": "trains[] (+1)",
+      "constraints": [
+        "Insertion point collision check; fixed locomotive model.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".dk .cc #addTrain \"+ Train\"",
+      "future_hooks": {
+        "data_ctrl": "CTRL-023",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "5th press impossible; blocked insertion message visible.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-023",
+        "design_record": "CTRL-023"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-024",
+      "name": "STOP ALL",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js",
+        "src/fleet-commands.js",
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function stopAllTrains"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#stopAll"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "stopAllTrains → fleetCommands.stopAll",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "trains",
+      "state_modified": "all speeds",
+      "constraints": [
+        "Stops all trains incl. hidden.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".dk .cc button#stopAll.mush (+ mobile nav)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-024",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "One press stops all trains; the button never turns into RELEASE.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-024",
+        "design_record": "CTRL-024"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-025",
+      "name": "Pause / Resume",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "$(\"pause\").onclick"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#pause"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "pause.onclick → paused toggle, bell quiet, deck update",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "paused",
+      "state_modified": "paused",
+      "constraints": [
+        "Independent of STOP.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".dk .cc #pause",
+      "future_hooks": {
+        "data_ctrl": "CTRL-025",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Label and annunciator follow engine.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-025",
+        "design_record": "CTRL-025"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-026",
+      "name": "Reset",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function reset"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#reset"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "reset() confirm → existing reset body → invalidateReferences",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "confirm result; trains.initial, detached, switchSpecs, mission flags, trainManagement generation",
+      "state_modified": "existing reset body: train poses/speeds/consists/detached/switches/missions/paused; invalidateReferences increments TM generation, projects/depot virtual preserved",
+      "constraints": [
+        "Detached wagons removed; wagon identities recreated.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".dk .cc #reset + guard modal",
+      "future_hooks": {
+        "data_ctrl": "CTRL-026",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Reset only after confirming; STALE warning in the modal; projects/depot survive.",
+      "adapter_ids": [
+        "A03"
+      ],
+      "compatibility_resolution": "Estrarre sola conferma UI con callback; vietati doppio reset/confirm e modifica corpo ferroviario; generazione incrementata solo dopo conferma.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-026",
+        "design_record": "CTRL-026"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-027",
+      "name": "Train Management launcher",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-management.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-management.js",
+          "contains": "dialog.showModal()"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#trainManagement"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "button.onclick → dialog.showModal + sync",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "all TM sources",
+      "state_modified": "dialog open",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".hd #trainManagement (brass) + Menu entry + .nav [data-tm]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-027",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U2"
+      ],
+      "acceptance": "TM reachable from header (≥1024), Menu (all), mobile nav (≤600).",
+      "adapter_ids": [
+        "A02"
+      ],
+      "compatibility_resolution": "mountTrainManagement non espone open/launcher: aggiungere adapter UI unico con ritorno focus al launcher effettivo.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-027",
+        "design_record": "CTRL-027"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-028",
+      "name": "Select composition (TM)",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-management.js",
+        "src/train-management-state.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-management.js",
+          "contains": "onSelect(c.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-composition]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "layout button → onSelect(c.id)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "trains, selected",
+      "state_modified": "selected (global)",
+      "constraints": [
+        "Read-only projection.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#tmD layout list .tm-train[data-composition]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-028",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U6"
+      ],
+      "acceptance": "Selection mirrored in dock.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-028",
+        "design_record": "CTRL-028"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-029",
+      "name": "Focus in 3D",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-management.js",
+        "src/train-management-state.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-management.js",
+          "contains": "onFocus(c.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "accessible",
+        "css": [],
+        "accessible": {
+          "role": "button",
+          "name": "◎ Focus in 3D",
+          "scope": "dialog.trainManagement"
+        },
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "projects.discard guard → onFocus + dialog.close",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "projects.dirty",
+      "state_modified": "selected, camera",
+      "constraints": [
+        "Camera only.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#tmD layout detail button[data-ctrl=CTRL-029]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-029",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U6"
+      ],
+      "acceptance": "Dirty draft guard fires before closing.",
+      "adapter_ids": [
+        "A03"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-029",
+        "design_record": "CTRL-029"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-030",
+      "name": "Copy to project",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-management.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-management.js",
+          "contains": "projects.copy(train)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-copy-train]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "projects.copy(train) → store.copy(train,generation)",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "train, generation",
+      "state_modified": "draft",
+      "constraints": [
+        "Snapshot, not physical assignment.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#tmD layout detail [data-copy-train]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-030",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U6"
+      ],
+      "acceptance": "Copied project shows MATCHING until something changes.",
+      "adapter_ids": [
+        "A03"
+      ],
+      "compatibility_resolution": "copy() della vista applica già guard e generation, non il mirror mock.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-030",
+        "design_record": "CTRL-030"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-031",
+      "name": "New project",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.begin()"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-project-action=\"new\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "start(discard) → store.begin",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "draft",
+      "state_modified": "draft",
+      "constraints": [
+        "Session only.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Projects list CTA [data-project-action=new]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-031",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "Only one draft at a time.",
+      "adapter_ids": [
+        "A03"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-031",
+        "design_record": "CTRL-031"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-032",
+      "name": "Project name",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.rename(input.value)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "input[data-project-action=\"name\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "store.rename(name)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "draft.name",
+      "state_modified": "draft.name",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Composer name field (aria-label \"Project name\") + 0/80 counter",
+      "future_hooks": {
+        "data_ctrl": "CTRL-032",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "81st char impossible; empty name blocks Confirm with message.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-032",
+        "design_record": "CTRL-032"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-033",
+      "name": "Add model",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.add(select.value)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "select[data-project-action=\"model\"]",
+          "[data-project-action=\"add\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "store.add(modelId)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "draft",
+      "state_modified": "draft.vehicles",
+      "constraints": [
+        "1 loco + ≤5 trailers.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Model tray cards [data-project-action=add][data-model-id]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-033",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "Invalid role never addable; reason visible.",
+      "adapter_ids": [
+        "A04"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-033",
+        "design_record": "CTRL-033"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-034",
+      "name": "Reorder trailer",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.move(v.id,-1)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-project-action^=\"up-\"]",
+          "[data-project-action^=\"down-\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "store.move(vehicleId,delta)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "draft",
+      "state_modified": "order",
+      "constraints": [
+        "Planned only.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Inspector Earlier/Later [data-project-action=up-<id>|down-<id>] + Alt+←/→",
+      "future_hooks": {
+        "data_ctrl": "CTRL-034",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "Loco never moves; keyboard Alt+←/→ works.",
+      "adapter_ids": [
+        "A04",
+        "A10"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-034",
+        "design_record": "CTRL-034"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-035",
+      "name": "Flip planned orientation",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.flip(v.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-project-action^=\"flip-\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "store.flip(vehicleId)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "draft",
+      "state_modified": "orientation",
+      "constraints": [
+        "R1 has no individual reversal command; compare shows \"planned reversal\".",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Inspector \"Flip in design\" [data-project-action=flip-<id>] + F",
+      "future_hooks": {
+        "data_ctrl": "CTRL-035",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "Label never says \"Reverse train\".",
+      "adapter_ids": [
+        "A04",
+        "A10"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-035",
+        "design_record": "CTRL-035"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-036",
+      "name": "Remove vehicle",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.remove(v.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-project-action^=\"remove-\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "store.remove(vehicleId)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "draft",
+      "state_modified": "vehicles",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Inspector Remove [data-project-action=remove-<id>] + Delete",
+      "future_hooks": {
+        "data_ctrl": "CTRL-036",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "Loco remove disabled with reason while trailers exist.",
+      "adapter_ids": [
+        "A04",
+        "A10"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-036",
+        "design_record": "CTRL-036"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-037",
+      "name": "Confirm project",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js",
+        "src/train-management.js",
+        "src/depot-inventory.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.confirm()"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-project-action=\"confirm\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "store.confirm; onChange → inventory.reconcile",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "draft",
+      "state_modified": "confirmed projects; M3 reconcile",
+      "constraints": [
+        "Does NOT place a train.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Action bar [data-project-action=confirm] \"Confirm project\"",
+      "future_hooks": {
+        "data_ctrl": "CTRL-037",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "Never labelled \"Save\"; no cloud wording.",
+      "adapter_ids": [
+        "A03",
+        "A04"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-037",
+        "design_record": "CTRL-037"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-038",
+      "name": "Cancel changes",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "function discard()"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-project-action=\"cancel\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "discard(): confirm when dirty then store.cancel",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "dirty",
+      "state_modified": "draft cleared",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Action bar [data-project-action=cancel] + guard modal",
+      "future_hooks": {
+        "data_ctrl": "CTRL-038",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "Dirty → modal; clean → immediate.",
+      "adapter_ids": [
+        "A03"
+      ],
+      "compatibility_resolution": "discard è sincrono e chiamato da close/copy/start/focus. Migrare tutti i call site alla guard UI, non modificare store.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-038",
+        "design_record": "CTRL-038"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-039",
+      "name": "Compare with real train (link)",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.link("
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-project-action=\"link\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "store.link(selectedTrain,generation) on draft",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "trains, generation, selected",
+      "state_modified": "draft.source",
+      "constraints": [
+        "Reset invalidates link (STALE).",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Compare tab: train picker + [data-project-action=link]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-039",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "All five statuses rendered distinctly; STALE offers \"Copy current train\".",
+      "adapter_ids": [
+        "A04"
+      ],
+      "compatibility_resolution": "store.link requires a draft; reference picker is editable-only. Keep confirmed project read-only; Edit before Link; no silent confirm.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-039",
+        "design_record": "CTRL-039"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-040",
+      "name": "Side view zoom/Fit",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-side-view.js",
+        "src/train-side-layout.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-side-view.js",
+          "contains": "function setZoom("
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".trainSideView [data-zoom]",
+          ".trainSideView input[type=\"range\"]",
+          ".trainSideView [data-fit]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "internal setZoom and Fit handlers (not exported)",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "zoom",
+      "state_modified": "view only",
+      "constraints": [
+        "No extra renderer.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Rail toolbar (− slider + Fit)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-040",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U6",
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U6",
+        "G-U7"
+      ],
+      "acceptance": "Limits 100–600 %.",
+      "adapter_ids": [
+        "A05"
+      ],
+      "compatibility_resolution": "Internal setZoom only; reuse existing handlers or introduce a separately reviewed UI adapter; no exported setZoom assumed.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-040",
+        "design_record": "CTRL-040"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-041",
+      "name": "Add virtual depot record",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/depot-view.js",
+        "src/depot-inventory.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/depot-view.js",
+          "contains": "inventory.add(select.value)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "select[data-depot-action=\"model\"]",
+          "[data-depot-action=\"add\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "inventory.add(modelId)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "catalog",
+      "state_modified": "inventory",
+      "constraints": [
+        "Virtual, no position.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Depot add bar [data-depot-action=add]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-041",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U8"
+      ],
+      "existing_tests": [
+        "tests/depot-inventory.test.js",
+        "tests/browser-depot.py",
+        "tests/browser-depot-lifecycle.py",
+        "tests/browser-depot-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U8"
+      ],
+      "acceptance": "Records numbered D001…; label VIRTUAL always visible.",
+      "adapter_ids": [
+        "A11"
+      ],
+      "compatibility_resolution": "M3 finale già approvato e presente nella baseline 91722fb; non eseguire merge/rebase proposto dal pacchetto.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-041",
+        "design_record": "CTRL-041"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-042",
+      "name": "Reserve for project",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/depot-view.js",
+        "src/depot-inventory.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/depot-view.js",
+          "contains": "inventory.assign(item.id,p,v)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-depot-action^=\"assign-\"]",
+          "select[data-depot-action^=\"target-\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "inventory.assign(itemId,projectId,vehicleId)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "confirmed projects, items",
+      "state_modified": "assignment",
+      "constraints": [
+        "Planning only.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Record card reserve select + [data-depot-action=assign-<id>]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-042",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U8"
+      ],
+      "existing_tests": [
+        "tests/depot-inventory.test.js",
+        "tests/browser-depot.py",
+        "tests/browser-depot-lifecycle.py",
+        "tests/browser-depot-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U8"
+      ],
+      "acceptance": "Never reserves a draft slot.",
+      "adapter_ids": [
+        "A11"
+      ],
+      "compatibility_resolution": "assign(itemId,projectId,vehicleId), solo posti confermati stesso modelId liberi. Nessun binding a UUID fisico.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-042",
+        "design_record": "CTRL-042"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-043",
+      "name": "Release reservation",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/depot-view.js",
+        "src/depot-inventory.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/depot-view.js",
+          "contains": "inventory.release(item.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-depot-action^=\"release-\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "inventory.release(itemId)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "item",
+      "state_modified": "assignment",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Record card [data-depot-action=release-<id>]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-043",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U8"
+      ],
+      "existing_tests": [
+        "tests/depot-inventory.test.js",
+        "tests/browser-depot.py",
+        "tests/browser-depot-lifecycle.py",
+        "tests/browser-depot-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U8"
+      ],
+      "acceptance": "Notice shown.",
+      "adapter_ids": [
+        "A11"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-043",
+        "design_record": "CTRL-043"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-044",
+      "name": "Remove virtual record",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/depot-view.js",
+        "src/depot-inventory.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/depot-view.js",
+          "contains": "inventory.remove(item.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-depot-action^=\"remove-\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "inventory.remove(itemId)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "item",
+      "state_modified": "inventory",
+      "constraints": [
+        "none",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Record card [data-depot-action=remove-<id>] + confirm modal (O-08)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-044",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U8"
+      ],
+      "existing_tests": [
+        "tests/depot-inventory.test.js",
+        "tests/browser-depot.py",
+        "tests/browser-depot-lifecycle.py",
+        "tests/browser-depot-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U8"
+      ],
+      "acceptance": "Disabled while Reserved with reason.",
+      "adapter_ids": [
+        "A03",
+        "A11"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-044",
+        "design_record": "CTRL-044"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-045",
+      "name": "Physical transfer (Place / Withdraw)",
+      "authority": "REAL_BASELINE_DISABLED",
+      "source_modules": [
+        "src/depot-view.js",
+        "src/depot-inventory.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/depot-view.js",
+          "contains": "'enter'"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-depot-action=\"enter\"]",
+          "[data-depot-action=\"exit\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "NONE: disabled buttons, no physical dispatcher",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "none",
+      "state_modified": "none",
+      "constraints": [
+        "No safe R1 contract for depot↔layout transfer.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Locked gate plate (no buttons)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-045",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U8"
+      ],
+      "existing_tests": [
+        "tests/depot-inventory.test.js",
+        "tests/browser-depot.py",
+        "tests/browser-depot-lifecycle.py",
+        "tests/browser-depot-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U8"
+      ],
+      "acceptance": "Nothing in the band looks clickable.",
+      "adapter_ids": [
+        "A11"
+      ],
+      "compatibility_resolution": "Rimpiazzare soli pulsanti disabilitati enter/exit con targa non interattiva; nessun dispatcher fisico.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-045",
+        "design_record": "CTRL-045"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-046",
+      "name": "Bell mute (guarded stop)",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/guarded-stop-scene.js",
+        "src/guarded-stop-bell.js",
+        "src/guarded-stop-view.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/guarded-stop-scene.js",
+          "contains": "mute.onclick"
+        }
+      ],
+      "current_dom": {
+        "kind": "accessible",
+        "css": [],
+        "accessible": {
+          "role": "button",
+          "name": "Mute railway warning bell",
+          "scope": "#view3d"
+        },
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "mute.onclick → bell.setMuted(!bell.snapshot.muted)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "bell.snapshot",
+      "state_modified": "bell muted",
+      "constraints": [
+        "Bell is the audible companion of R1 guarded stops.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".vp .win #bellChip + Menu #bellSeg",
+      "future_hooks": {
+        "data_ctrl": "CTRL-046",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/guarded-stop.test.js",
+        "tests/browser-guarded-stop.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "Two distinct controls; bell state visible on the layout view; hazard text remains visible when muted.",
+      "adapter_ids": [
+        "A06"
+      ],
+      "compatibility_resolution": "bell esposto e snapshot reale disponibili; chip e menu usano stesso controller, UI Sound separato.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-046",
+        "design_record": "CTRL-046"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-047",
+      "name": "Guarded-stop status text",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/guarded-stop-scene.js",
+        "src/guarded-stop-bell.js",
+        "src/guarded-stop-view.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/guarded-stop-scene.js",
+          "contains": "text.textContent!==message"
+        }
+      ],
+      "current_dom": {
+        "kind": "accessible",
+        "css": [],
+        "accessible": {
+          "role": "status",
+          "scope": "#view3d",
+          "description": "status node created inside guarded-stop-scene; do not conflate with HUD warning"
+        },
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "update → guardedStopView projections → status text (internal)",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "guardedStopView",
+      "state_modified": "none",
+      "constraints": [
+        "R1 guarded stop observation.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".vp .win guarded-stop text next to Bell",
+      "future_hooks": {
+        "data_ctrl": "CTRL-047",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/guarded-stop.test.js",
+        "tests/browser-guarded-stop.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "Only engine-sourced warnings appear; no lamp without real data.",
+      "adapter_ids": [
+        "A06"
+      ],
+      "compatibility_resolution": "hazards/text sono interni a guarded-stop-scene; conservare nodo status esistente o sola proiezione UI, mai rifare sicurezza.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-047",
+        "design_record": "CTRL-047"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-048",
+      "name": "3D turnout click / hover identify",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/turnout-interaction.js",
+        "src/turnout-commands.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/turnout-interaction.js",
+          "contains": "requestToggle"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#view3d canvas"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "canvas picking → requestToggle(id,3D) with guard",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "picker",
+      "state_modified": "switch via guard",
+      "constraints": [
+        "Same guard as tile.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "canvas inside .win (first child)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-048",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/turnout-commands.test.js",
+        "tests/railway-guard.test.js",
+        "tests/browser-turnout-interaction.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "3D tap works with V2 overlays present.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-048",
+        "design_record": "CTRL-048"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-049",
+      "name": "3D train click select",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/turnout-interaction.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/turnout-interaction.js",
+          "contains": "selectTrain(hit.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#view3d canvas"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "canvas hit.kind=train → selectTrain(hit.id) → app select(id)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "selected,trains,picking",
+      "state_modified": "selected via selectTrain callback; no Journey mutation",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "canvas",
+      "future_hooks": {
+        "data_ctrl": "CTRL-049",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/turnout-commands.test.js",
+        "tests/railway-guard.test.js",
+        "tests/browser-turnout-interaction.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "Card highlights after 3D tap.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-049",
+        "design_record": "CTRL-049"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-050",
+      "name": "Keyboard Space",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "e.code === \"Space\""
+        }
+      ],
+      "current_dom": {
+        "kind": "event",
+        "css": [],
+        "accessible": null,
+        "event": "window keydown Space",
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "keydown Space → selected compatibility #stop.click()",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "selected,focused element",
+      "state_modified": "selected train requestedSpeed/speed/velocity via stop callback",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "global",
+      "future_hooks": {
+        "data_ctrl": "CTRL-050",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Space never stops all trains.",
+      "adapter_ids": [
+        "A07",
+        "A10"
+      ],
+      "compatibility_resolution": "ID stop segue console selezionata; preservarlo; evitare doppio listener e conflitti scorciatoie Composer/editabili.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-050",
+        "design_record": "CTRL-050"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-051",
+      "name": "Escape closes modals",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "e.key === \"Escape\""
+        }
+      ],
+      "current_dom": {
+        "kind": "event",
+        "css": [],
+        "accessible": null,
+        "event": "window keydown Escape + dialog cancel",
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "Escape hides .modal; TM cancel → requestClose/discard",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "top modal,TM draft dirty",
+      "state_modified": "visibility; TM draft canceled only after discard accepted",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "global",
+      "future_hooks": {
+        "data_ctrl": "CTRL-051",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2",
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U2",
+        "G-U6"
+      ],
+      "acceptance": "Dirty draft never lost by Esc.",
+      "adapter_ids": [
+        "A03",
+        "A10"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-051",
+        "design_record": "CTRL-051"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-052",
+      "name": "Next Switch HUD minimize/expand",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/next-switch-view.js",
+        "src/next-switch.js",
+        "src/railway-state.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/next-switch-view.js",
+          "contains": "const onMinimize"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#nextSwitchHUD .nextSwitchMinimize"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "onMinimize only; refresh/schemaSVG are read-only railway projections",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "switch assistance",
+      "state_modified": "HUD minimized",
+      "constraints": [
+        "Read-only; never permission.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".vp #nx (compact/expanded)",
+      "future_hooks": {
+        "data_ctrl": "CTRL-052",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/next-switch.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-train-deck.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "HUD shows diagram, exit and warnings; it has no actuating control.",
+      "adapter_ids": [
+        "A08"
+      ],
+      "compatibility_resolution": "mountNextSwitchHUD conserva schemaSVG/topologia reale; vietati hudDiagram mock e requestToggle HUD.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-052",
+        "design_record": "CTRL-052"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-053",
+      "name": "Console mini-map (focus)",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-deck.js",
+          "contains": "onFocus(train.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".railwayMiniMap"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "map onclick → onSelect + onFocus → nav.focus",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "Journey position,selected",
+      "state_modified": "camera",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".side .m-lg map marker (select) + card Focus action",
+      "future_hooks": {
+        "data_ctrl": "CTRL-053",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U4",
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U4",
+        "G-U5"
+      ],
+      "acceptance": "Focus reachable from card or marker.",
+      "adapter_ids": [],
+      "compatibility_resolution": "railwayMapPath/locomotivePoint e nav.focus reali; no KPI inventati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-053",
+        "design_record": "CTRL-053"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-054",
+      "name": "Console select (name/image)",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-deck.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-deck.js",
+          "contains": "trainConsoleSelect"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".trainConsoleSelect",
+          ".trainConsole .locomotiveThumbnail"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "name/image onclick → onSelect(id)",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "selected,trains",
+      "state_modified": "selected, LRU",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "article.tr header",
+      "future_hooks": {
+        "data_ctrl": "CTRL-054",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U5"
+      ],
+      "existing_tests": [
+        "tests/fleet-commands.test.js",
+        "tests/train-deck.test.js",
+        "tests/browser-train-deck.py",
+        "tests/browser-phase-five-close.py"
+      ],
+      "future_test_ids": [
+        "G-U5"
+      ],
+      "acceptance": "Clicking name or image selects the train; card shows is-active; desk, map marker and TM selection agree.",
+      "adapter_ids": [
+        "A07"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-054",
+        "design_record": "CTRL-054"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-055",
+      "name": "TM Close",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-management.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-management.js",
+          "contains": "function requestClose()"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "dialog.trainManagement [data-close]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "requestClose guard, cancel event, close → launcher focus",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "dirty",
+      "state_modified": "dialog closed; draft canceled only after discard accepted",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#tmD Close",
+      "future_hooks": {
+        "data_ctrl": "CTRL-055",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U6"
+      ],
+      "acceptance": "Focus returns to the launcher used.",
+      "adapter_ids": [
+        "A02",
+        "A03"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-055",
+        "design_record": "CTRL-055"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-056",
+      "name": "TM view tabs",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-management.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-management.js",
+          "contains": "view=b.dataset.view"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".managementNav [data-view]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "view=dataset.view; sync; draft retained",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "view,projects.dirty",
+      "state_modified": "view",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#tmD tabs [data-view] role=tab",
+      "future_hooks": {
+        "data_ctrl": "CTRL-056",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U6"
+      ],
+      "acceptance": "Arrow keys move between tabs.",
+      "adapter_ids": [
+        "A02",
+        "A10"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-056",
+        "design_record": "CTRL-056"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-057",
+      "name": "Open confirmed project",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.open(p.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-project-action^=\"open-\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "confirmed card currently starts store.open(id) draft; future readonly selection is view-only",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "confirmed projects,draft dirty",
+      "state_modified": "draft",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Project cards [data-project-action=open-<id>][data-project-id]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-057",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "Clicking a confirmed project shows it read-only; a dirty draft triggers the discard guard first; a clean draft is closed silently.",
+      "adapter_ids": [
+        "A03",
+        "A04"
+      ],
+      "compatibility_resolution": "Selezionare snapshot confermato nella vista senza store.open; Edit richiama open dopo guard. Preservare draft prima del cambio.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-057",
+        "design_record": "CTRL-057"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-058",
+      "name": "Edit confirmed project",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-projects-view.js",
+        "src/train-projects.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-projects-view.js",
+          "contains": "store.open(project.id)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "[data-project-action=\"edit\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "Edit → start(discard) → store.open(project.id)",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "savedId,confirmed,draft dirty",
+      "state_modified": "draft",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Confirmed view \"Edit project\"",
+      "future_hooks": {
+        "data_ctrl": "CTRL-058",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U7"
+      ],
+      "existing_tests": [
+        "tests/train-projects.test.js",
+        "tests/train-project-side.test.js",
+        "tests/browser-train-projects.py",
+        "tests/browser-train-project-lifecycle.py",
+        "tests/browser-train-projects-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U7"
+      ],
+      "acceptance": "\"Edit project\" opens the confirmed project as a draft; Cancel returns to the unchanged confirmed version.",
+      "adapter_ids": [
+        "A03",
+        "A04"
+      ],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-058",
+        "design_record": "CTRL-058"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-059",
+      "name": "Depot model select",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/depot-view.js",
+        "src/depot-inventory.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/depot-view.js",
+          "contains": "modelChoice=select.value"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "select[data-depot-action=\"model\"]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "model onchange → modelChoice view state",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "modelChoice,PROJECT_CATALOG",
+      "state_modified": "modelChoice only",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "Depot model picker",
+      "future_hooks": {
+        "data_ctrl": "CTRL-059",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U8"
+      ],
+      "existing_tests": [
+        "tests/depot-inventory.test.js",
+        "tests/browser-depot.py",
+        "tests/browser-depot-lifecycle.py",
+        "tests/browser-depot-runtime.py"
+      ],
+      "future_test_ids": [
+        "G-U8"
+      ],
+      "acceptance": "All 14 catalog models selectable; the choice persists while the Depot view re-renders.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-059",
+        "design_record": "CTRL-059"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-060",
+      "name": "Track plan XML link",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "index.html"
+      ],
+      "source_anchors": [
+        {
+          "file": "index.html",
+          "contains": "scenicMapLink"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".scenicMapLink"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "native anchor: docs/consolidation/index.html",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "none (static link)",
+      "state_modified": "browser opens reference link",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#tpD footer link",
+      "future_hooks": {
+        "data_ctrl": "CTRL-060",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U2"
+      ],
+      "acceptance": "Link present.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-060",
+        "design_record": "CTRL-060"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-061",
+      "name": "Modal backdrop click",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "e.target === el"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".modal"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "backdrop closes .modal only; TM has no backdrop handler today",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "event.target,modal",
+      "state_modified": "non-TM modal.hidden only",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".dlg backdrop",
+      "future_hooks": {
+        "data_ctrl": "CTRL-061",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U2"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U2"
+      ],
+      "acceptance": "Backdrop click closes plan/help/menu; on Train Management it behaves like Close (dirty guard).",
+      "adapter_ids": [
+        "A03"
+      ],
+      "compatibility_resolution": "TM attuale non ha backdrop close equivalente: aggiungere handler view-level con guard e top-dialog, non chiusura globale.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-061",
+        "design_record": "CTRL-061"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-062",
+      "name": "Operations log",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "app.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "app.js",
+          "contains": "function log(s)"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#log"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "log(s) → #log.textContent, no severity model",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "last message supplied to log",
+      "state_modified": "#log.textContent only",
+      "constraints": [
+        "Primary channel for R1 refusal messages.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".vp .win #lastOperation (role=status) — keep id \"log\" on the text node",
+      "future_hooks": {
+        "data_ctrl": "CTRL-062",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "After any refusal (e.g. couple while moving) the full engine text stays visible until the next operation.",
+      "adapter_ids": [
+        "A09"
+      ],
+      "compatibility_resolution": "log() espone solo stringa: classificazione colore UI conservativa senza modificare messaggio o inventare allarmi.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-062",
+        "design_record": "CTRL-062"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-063",
+      "name": "beforeunload guard",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-management.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-management.js",
+          "contains": "function beforeUnload(event)"
+        }
+      ],
+      "current_dom": {
+        "kind": "event",
+        "css": [],
+        "accessible": null,
+        "event": "window beforeunload",
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "beforeunload if projects.dirty || projects.hasProjects || inventory.size>0",
+      "callback_visibility": "internal UI closure; not an invented exported API",
+      "state_read": "projects.dirty,projects.hasProjects,inventory.size",
+      "state_modified": "event.preventDefault/returnValue; no store mutation",
+      "constraints": [
+        "Session-only data.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "global",
+      "future_hooks": {
+        "data_ctrl": "CTRL-063",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U6"
+      ],
+      "acceptance": "With a draft, confirmed projects or depot records, reload/close triggers the native prompt; with none it does not.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Exact real condition: projects.dirty || projects.hasProjects || inventory.size>0; never mock hasSession.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-063",
+        "design_record": "CTRL-063"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-064",
+      "name": "Startup / load message",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "index.html"
+      ],
+      "source_anchors": [
+        {
+          "file": "index.html",
+          "contains": "window.addEventListener('unhandledrejection'"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#loadMsg"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "loadMsg + startup error/unhandledrejection text",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "loadMsg.hidden,startup errors",
+      "state_modified": "loadMsg text only",
+      "constraints": [
+        "No railway mutation except existing validated commands.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": ".vp .win #loadMsg plate",
+      "future_hooks": {
+        "data_ctrl": "CTRL-064",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U3"
+      ],
+      "existing_tests": [
+        "tests/access-gate.test.js",
+        "tests/quality.test.js",
+        "tests/browser-phase-zero.py",
+        "tests/browser-phase-one.py"
+      ],
+      "future_test_ids": [
+        "G-U3"
+      ],
+      "acceptance": "3 states designed.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-064",
+        "design_record": "CTRL-064"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-065",
+      "name": "Detached rolling stock list",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-management.js",
+        "src/train-management-state.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-management.js",
+          "contains": "row.dataset.detachedId"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".managementDetached [data-detached-id]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "detachedView read-only list",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "detached",
+      "state_modified": "DOM only",
+      "constraints": [
+        "Detached vehicles stay on track.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#tmD detached band [data-detached-id]",
+      "future_hooks": {
+        "data_ctrl": "CTRL-065",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U6"
+      ],
+      "acceptance": "Uncoupling on the desk adds a row \"<name> · Track <edge> · <mm>\" with Detached chip; coupling removes it; empty text when none.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-065",
+        "design_record": "CTRL-065"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    },
+    {
+      "id": "CTRL-066",
+      "name": "Catalog card",
+      "authority": "REAL_BASELINE",
+      "source_modules": [
+        "src/train-management.js"
+      ],
+      "source_anchors": [
+        {
+          "file": "src/train-management.js",
+          "contains": "function catalog()"
+        }
+      ],
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".managementCatalog article.managementModel"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "effective_callback": "PROJECT_CATALOG → read-only catalog cards",
+      "callback_visibility": "existing event binding or injected callback",
+      "state_read": "catalog",
+      "state_modified": "DOM only",
+      "constraints": [
+        "Models are definitions, not stock.",
+        "Frozen baseline 91722fb; preserve R1 identity/safety, session-only M2/M3."
+      ],
+      "new_dom": "#tmD catalog grid + filters + preview",
+      "future_hooks": {
+        "data_ctrl": "CTRL-066",
+        "existing_hooks_preserved": true
+      },
+      "integration_phases": [
+        "U6"
+      ],
+      "existing_tests": [
+        "tests/train-management.test.js",
+        "tests/train-side-layout.test.js",
+        "tests/browser-train-management.py",
+        "tests/run-train-side-regression.py"
+      ],
+      "future_test_ids": [
+        "G-U6"
+      ],
+      "acceptance": "No stock quantity ever shown in catalog.",
+      "adapter_ids": [],
+      "compatibility_resolution": "Dati/callback esistenti coerenti; adattare soltanto vista/DOM e relativi selettori; conservare test semantici indicati.",
+      "implementation_status": "NOT_IMPLEMENTED: V2.1 presentation, new adapters and data-ctrl absent from runtime; reference scripts excluded",
+      "provenance": {
+        "technical_record": "CTRL-066",
+        "design_record": "CTRL-066"
+      },
+      "design_mock_authority": "NONE: tm-reference.js, tm-catalog.js, tm-shell-v21.js and V1 inline simulation must not be imported"
+    }
+  ]
+}

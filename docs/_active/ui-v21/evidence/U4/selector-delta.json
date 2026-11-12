@@ -1,0 +1,91 @@
+{
+  "baseline": "907a9ec4a9d570f03af9ab77d39269ff49787256",
+  "historicalTestSelectorsChanged": false,
+  "controls": [
+    {
+      "id": "CTRL-012",
+      "name": "Turnout tile",
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#switchList button.sw[data-switch]"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "new_dom": ".side .m-sw #sws .sw[data-switch-id] (8 tiles from switchSpecs/controlOrder)",
+      "effective_callback": "requestToggle(id,panel) \u2192 turnoutCommands.requestToggle",
+      "acceptance": "8 tiles with real IDs; blocked reason readable without hover; counter diverging/total.",
+      "U4": {
+        "dom": "#switchList .switchCell[data-switch-hover][data-switch-id] > button.sw[data-switch][data-switch-id] + .u4-switch-reason",
+        "callback": "unchanged original onclick \u2192 requestToggle(switchSpecs[index].id,panel)",
+        "state": "button.disabled/title from original switchHUDState; state labels from real switchSpecs snapshot"
+      }
+    },
+    {
+      "id": "CTRL-013",
+      "name": "Daylight slider",
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#day",
+          "#sun"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "new_dom": ".side .m-env input#day",
+      "effective_callback": "day.oninput \u2192 day + sun text",
+      "acceptance": "Thresholds 42/72 kept for engine glyph semantics.",
+      "U4": {
+        "dom": ".u4-region .m-env #day/#sun/#dayValue",
+        "callback": "original #day.oninput; new listener reads original glyph/value only",
+        "state": "existing handler invoked once after reattachment; value remains48, glyph synchronizes toSunset"
+      }
+    },
+    {
+      "id": "CTRL-015",
+      "name": "Next mission",
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          "#nextMission"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "new_dom": ".side .m-ms #nextMission",
+      "effective_callback": "nextMission.onclick \u2192 mission cycle",
+      "acceptance": "Next mission enabled even when the mission is not complete.",
+      "U4": {
+        "dom": ".u4-region .m-ms #missionIndex/#missionName/#missionText/#missionStatus/#nextMission",
+        "callback": "original nextMission.onclick; no completion guard added",
+        "state": "original statuses/mission cycle"
+      }
+    },
+    {
+      "id": "CTRL-053",
+      "name": "Console mini-map (focus)",
+      "current_dom": {
+        "kind": "css",
+        "css": [
+          ".railwayMiniMap"
+        ],
+        "accessible": null,
+        "event": null,
+        "lifecycle": "Present only in the applicable view/draft/selection; selector presence is not universal."
+      },
+      "new_dom": ".side .m-lg map marker (select) + card Focus action",
+      "effective_callback": "map onclick \u2192 onSelect + onFocus \u2192 nav.focus",
+      "acceptance": "Focus reachable from card or marker.",
+      "U4": {
+        "dom": ".u4-region .m-lg #sidebarRailwayMap [data-map-train] + .u4-map-trains button[data-map-train]",
+        "callback": "validated current physical ID \u2192 existing select(id), nav.focus(actualJourney.locate()), cameraView manual",
+        "state": "railwayMapPath/MAP_VIEWBOX/locomotivePoint reused from train-deck-state; original dock map nodes/callbacks untouched"
+      }
+    }
+  ]
+}

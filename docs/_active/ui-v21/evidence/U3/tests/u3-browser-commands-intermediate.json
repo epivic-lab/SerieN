@@ -1,0 +1,26 @@
+[
+  {
+    "name": "u3-production",
+    "command": [
+      "python",
+      "tests/browser-ui-v21-U3.py"
+    ],
+    "env": {
+      "U3_OUTPUT": "/workspace/work/ui-v21-u3/production"
+    },
+    "exit": 0
+  },
+  {
+    "name": "guarded-stop",
+    "command": [
+      "python",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/run-regression.py",
+      "tests/browser-guarded-stop.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/regressions/guarded-stop-final"
+    ],
+    "env": {
+      "U3_OBSERVER": "/workspace/work/ui-v21-u3/observer.js"
+    },
+    "exit": 1
+  }
+]

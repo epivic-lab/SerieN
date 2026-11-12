@@ -1,0 +1,130 @@
+{
+  "status": "RELEASE_BLOCKED",
+  "uiCodeAcceptance": "separate from deployable package",
+  "workflow": ".github/workflows/pages.yml",
+  "workflowSHA256": "3acf30ef8fe86fbb9d7c7c3eea822480f9cf2682629c3745e17bf1c71e107769",
+  "workflowUnchangedSinceU8": true,
+  "directCSSAndAssetClosure": [
+    {
+      "path": "style.css",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": true,
+      "sha256": "e5c2acec8cdcaac9034399aca85273d293e1db43c94d5d61434a28cc6a681d19"
+    },
+    {
+      "path": "ui/assets/svg/serien-sprite.svg",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "cf507f856627868e1ec96c1287eb302b99db6036b8d4274c9fb78023c89b6129"
+    },
+    {
+      "path": "ui/assets/textures/brass-brushed.jpg",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "2f35a0f969fd1aeb3e93358940a404020ffd6e2c53c2ae0c1ff001a2c8c6e631"
+    },
+    {
+      "path": "ui/assets/textures/enamel-green.jpg",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "03706487306b7cd69c338536970c8a36df69c6fe1f5380034c6ad83d13b4395c"
+    },
+    {
+      "path": "ui/assets/textures/mahogany.jpg",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "000a704061a15494fcaf4f52f1756eb37447172012618ff946b412dd846e2bf8"
+    },
+    {
+      "path": "ui/assets/textures/parchment.jpg",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "a9019685edee996778070b9ba5833ba9df97c7ee94a6898383f063842362bee0"
+    },
+    {
+      "path": "ui/assets/textures/steel-brushed.jpg",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "0ad568224698032f81d012151eb8451a8d306e73058dcff2a2053ed23155ac6d"
+    },
+    {
+      "path": "ui/css/serien-ui-integration.css",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "421c56a152dc4a69d137f6b47c09fe371207f39e342758b1251a64d1de9c2375"
+    },
+    {
+      "path": "ui/css/serien-ui-train-management-u2.css",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "f0ac063fc9d1a3d5e5a99120d191c8bed2836133e73d45a708e2c6ce3f7deaba"
+    },
+    {
+      "path": "ui/css/serien-ui-u2.css",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "3e232010eca1e5574c75a7ae89737726ceb30586f6f54cc87562ef1cde0a6990"
+    },
+    {
+      "path": "ui/css/tokens-tm-u2.css",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "61500bb11dbc0fd583f5baaa1f3a45cfa9bb2e6760e0f1dcfb3b79fbdd3a1e4f"
+    },
+    {
+      "path": "ui/css/tokens-u2.css",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "aebbee44140775f75502d27bcdd9e39ebba01321f910943cf60343927d0530db"
+    },
+    {
+      "path": "ui/fonts/CinzelDecorative-700.woff2",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "da243cadfd41afd6eae0518f60d2eb1c326d4f9c383fd76abdf1aca0ea0402a3"
+    },
+    {
+      "path": "ui/fonts/CutiveMono-400.woff2",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "838a23082061b6eef65b292c3fe2083d88b3051dc0551f5525f512020ab660c2"
+    },
+    {
+      "path": "ui/fonts/Federo-400.woff2",
+      "existsInCheckout": true,
+      "includedByCurrentWorkflow": false,
+      "sha256": "4ba9047f6d98614d6dd1849e42803e55a383bd153cc47221b692d53eb9e5cbd1"
+    }
+  ],
+  "missingFromPackage": [
+    "ui/assets/svg/serien-sprite.svg",
+    "ui/assets/textures/brass-brushed.jpg",
+    "ui/assets/textures/enamel-green.jpg",
+    "ui/assets/textures/mahogany.jpg",
+    "ui/assets/textures/parchment.jpg",
+    "ui/assets/textures/steel-brushed.jpg",
+    "ui/css/serien-ui-integration.css",
+    "ui/css/serien-ui-train-management-u2.css",
+    "ui/css/serien-ui-u2.css",
+    "ui/css/tokens-tm-u2.css",
+    "ui/css/tokens-u2.css",
+    "ui/fonts/CinzelDecorative-700.woff2",
+    "ui/fonts/CutiveMono-400.woff2",
+    "ui/fonts/Federo-400.woff2"
+  ],
+  "minimumProposedFutureDelta": "In Prepare site change cp -R dist assets _site/ to cp -R dist assets ui _site/. Requires separate authorization; not applied.",
+  "blockers": [
+    {
+      "id": "REL-001",
+      "severity": "release-blocker",
+      "file": ".github/workflows/pages.yml",
+      "reason": "Prepare site omits ui/ including all five runtime CSS copies, fonts and textures; dist/game.js does not embed these assets."
+    }
+  ],
+  "otherRisks": [
+    "Workflow copies all docs including large audit evidence; monitor Pages artifact size before release. No workflow change authorized."
+  ],
+  "paths": "HTML/CSS uses relative ./ui and ../fonts / ../assets; compatible with a /SerieN/ prefix once ui/ included. Live deployment NOT VERIFIED.",
+  "externalFonts": "No remote @import in runtime CSS. Auth network is an explicit preexisting boundary; live OAuth NOT VERIFIED.",
+  "deploymentPerformed": false
+}

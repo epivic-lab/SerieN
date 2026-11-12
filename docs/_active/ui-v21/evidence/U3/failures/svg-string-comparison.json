@@ -1,0 +1,22 @@
+{
+  "status": "FAIL",
+  "observerSHA256": "1618f13765884fd47b7135f11b17c16b6ac76d2cb13d83c2e486e023f0aa785e",
+  "method": "same app plus object observer; trusted CDP/mouse; on-demand RAF",
+  "checks": [
+    "all-eight-real-3D-turnout-clicks-reach-original-dispatcher",
+    "trusted-real-train-hit-selects-same-console",
+    "trusted-pan-and-touch-orbit-after-view-panel-closes"
+  ],
+  "errors": [],
+  "switches": [
+    "WX-A",
+    "WX-B",
+    "Y-IN",
+    "Y-2",
+    "Y-3",
+    "Y-R1",
+    "Y-R2",
+    "Y-4"
+  ],
+  "failure": ""
+}

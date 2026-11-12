@@ -1,0 +1,96 @@
+/* U2 scope adapter: original U1 file unchanged; only :root -> :scope. */
+@scope (.u2-region) {
+/*! SerieN UI tokens v1.0.0 — generated from tokens.json. Load BEFORE serien-ui.css. */
+:scope{
+  --sn-color-brass-100: #f6e2a4;
+  --sn-color-brass-300: #d9b45f;
+  --sn-color-brass-500: #a9802f;
+  --sn-color-brass-700: #5f4416;
+  --sn-color-brass-screw: #4a3410;
+  --sn-color-brass-specular: #fff7d6;
+  --sn-color-enamel-top: #1f4337;
+  --sn-color-enamel-bottom: #0f271f;
+  --sn-color-enamel-buttonTop: #285044;
+  --sn-color-enamel-buttonBottom: #173328;
+  --sn-color-enamel-well: #06100b;
+  --sn-color-enamel-plateTop: #2c4d40;
+  --sn-color-enamel-plateMid: #132519;
+  --sn-color-enamel-plateEdge: #08120d;
+  --sn-color-text-primary: #f2e8d0;
+  --sn-color-text-secondary: #a9bfae;
+  --sn-color-text-onBrass: #2a1d08;
+  --sn-color-text-nightLabel: #c99a52;
+  --sn-color-signal-go: #3fbf5a;
+  --sn-color-signal-goGlow: #4cff7c;
+  --sn-color-signal-warn: #eca23a;
+  --sn-color-signal-alarm: #dc432e;
+  --sn-color-signal-stopButton: #d4452f;
+  --sn-color-wood-mahoganyTop: #5a2616;
+  --sn-color-wood-mahoganyBottom: #4a1e10;
+  --sn-color-paper-parchmentLight: #f0e4c2;
+  --sn-color-paper-parchmentDark: #d3c294;
+  --sn-color-paper-inkSepia: #3a2a17;
+  --sn-color-paper-inkSepiaLight: #5a4325;
+  --sn-color-paper-rule: #7a5a2a;
+  --sn-color-train-list-0: #e8893f;
+  --sn-color-train-list-1: #5fa8e0;
+  --sn-color-train-list-2: #b07be0;
+  --sn-color-train-list-3: #e86f9b;
+  --sn-color-train-list-4: #4fd1c5;
+  --sn-color-train-list-5: #c9d85a;
+  --sn-color-train-list-6: #9aa7ff;
+  --sn-color-train-list-7: #f2c14e;
+  --sn-font-family-display: 'Cinzel Decorative', serif;
+  --sn-font-family-label: Federo, Georgia, serif;
+  --sn-font-family-data: 'Cutive Mono', monospace;
+  --sn-font-source: https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Federo&family=Cutive+Mono&display=swap;
+  --sn-font-size-plaque: clamp(20px,2.3vw,30px);
+  --sn-font-size-trainName: 16px;
+  --sn-font-size-panelTitle: 12px;
+  --sn-font-size-button: 12px;
+  --sn-font-size-segmented: 11px;
+  --sn-font-size-caption: 11px;
+  --sn-font-size-data: 11px;
+  --sn-font-size-speedReadout: 15px;
+  --sn-space-plateGap: 10px;
+  --sn-space-platePadding: 12px;
+  --sn-space-moduleFrame: 4px;
+  --sn-space-modulePaddingY: 14px;
+  --sn-space-modulePaddingX: 18px;
+  --sn-space-rivetInset: 6px;
+  --sn-space-rivetSize: 9px;
+  --sn-radius-moduleOuter: 14px;
+  --sn-radius-moduleInner: 10px;
+  --sn-radius-button: 6px;
+  --sn-radius-segmentedOuter: 8px;
+  --sn-radius-segmentedInner: 5px;
+  --sn-radius-trainCard: 8px;
+  --sn-radius-plaque: 8px;
+  --sn-radius-pill: 9px;
+  --sn-shadow-module: 0 10px 22px #000b, inset 0 1px 0 #fff7;
+  --sn-shadow-moduleInner: inset 0 2px 8px #000d, inset 0 -1px 0 #ffffff14;
+  --sn-shadow-buttonBrass: 0 3px 0 #5f4416, 0 6px 9px #0009, inset 0 1px 0 #fffa;
+  --sn-shadow-buttonEnamel: 0 3px 0 #06100b, 0 6px 9px #0009, inset 0 1px 0 #ffffff30, inset 0 0 0 1px #d9b45f55;
+  --sn-shadow-buttonPressed: translateY(3px); 0 1px 3px #000a, inset 0 2px 5px #0007;
+  --sn-shadow-well: inset 0 2px 5px #000;
+  --sn-motion-press: 120ms;
+  --sn-motion-state: 250ms;
+  --sn-motion-sheenSweep: 700ms;
+  --sn-motion-needle: 1000ms cubic-bezier(.34,1.56,.64,1);
+  --sn-motion-moduleIntro: 700ms cubic-bezier(.2,.8,.2,1), stagger 80ms;
+  --sn-motion-hudExpand: 350ms cubic-bezier(.2,.8,.2,1);
+  --sn-motion-cameraExpand: 400ms cubic-bezier(.2,.8,.2,1);
+  --sn-motion-nightTransition: 1200ms cubic-bezier(.35,0,.25,1);
+  --sn-motion-lampBlink: 1100ms;
+  --sn-motion-reducedMotion: all animations and transitions disabled under prefers-reduced-motion;
+  --sn-zIndex-overlay: 3;
+  --sn-zIndex-alarmSlip: 4;
+  --sn-zIndex-mobileNav: 20;
+  --sn-zIndex-lightingCanvas: 30;
+  --sn-zIndex-dialog: 60;
+  /* core shorthands used by serien-ui.css (identical values) */
+  --b1:#f6e2a4; --b2:#d9b45f; --b3:#a9802f; --b4:#5f4416;
+  --e1:#1f4337; --e2:#0f271f; --ink:#f2e8d0; --dim:#a9bfae;
+}
+
+}

@@ -1,0 +1,26 @@
+{
+  "approvedM2": "a67e0de7fa01a968152cf47af3a744ea39034bcc",
+  "implementationCheckpoint": "252d9c30e8497b16d3f3f10e39d6e0e09f879a63",
+  "unexpectedPathChanges": [],
+  "allLockedFilesByteIdentical": true,
+  "lockedSHA256": {
+    "app.js": "4fcb422a7059bd8ac8e11308af76e5356aa1bf7a299127bb8325a512b88e0e16",
+    "auth-gate.js": "b736d8e49a5e63f145a2a7df07436627aa3c5372acb4573413089c1a4b110c77",
+    "src/canonical-layout.json": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+    "src/fleet-commands.js": "b87d16b53375c38dbd18bfb6376532a2af725e9ee5393590da37dd1cf82dffcd",
+    "src/railway-state.js": "ecc7cbbdf266fc89dd4d85999e509fb85a2e3ba62a2f4a655d1eb8795702b092",
+    "src/railway-step.js": "e96411470661c3767884b4574ee9121f2a7f6abac2986bd8b127fb9baa29ffbb",
+    "src/train-projects.js": "c267d8da5d3698c05d6f17f65420027e1e14e119300c2a9013f2e5622a2b4a95",
+    "src/train-side-layout.js": "97e28667814c29d64230509bf8a5b4ced9a19795339c83af5cf617cb5aa9187d",
+    "src/train-side-view.js": "99e3634cc0c3be3076147531612ee6d3bcd1e3094bd18137981d1a97cb0086be",
+    "src/train-management-state.js": "6e904e043082bfb2e6c7051051bdf4b25b980a0f105915b2aeef4d35812d2b1e",
+    "src/train-deck.js": "dd63cdb0030ce5643b0508b2e945b6f2f0e86ae0925b6008800a08d09b696c71",
+    "package.json": "24327a8a821c19c4eee998bc4d5734df7825eee7cfcb107237a41e882048f104",
+    "package-lock.json": "cdc54245fcf16d326e11a32c1c6568f1b040bec20d1cd604913b4cdae0de58d8"
+  },
+  "existingCSSPrefixPreserved": true,
+  "supabaseAuthRLSAssetsWorkflows": "No changed paths; no Supabase/Auth operations performed",
+  "credentialPatternFindings": [],
+  "scope": "M3 only; no main, deploy, E1, redesign or persistence",
+  "limit": "Pattern scan is not a full cybersecurity audit."
+}

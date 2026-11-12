@@ -1,0 +1,992 @@
+[
+  {
+    "path": "FILE_INDEX.md",
+    "size": 20632,
+    "sha256": "89f13b528c20773ea895eb1ce529a7f82e13d91a318124b2411442f9dcc0a964"
+  },
+  {
+    "path": "README.md",
+    "size": 3697,
+    "sha256": "bf95fe5a9536ed55097962aa569a96b8c5018c3d532b5eb6fc091dc189cce899"
+  },
+  {
+    "path": "contracts/ACCEPTANCE_BY_MICROPHASE.md",
+    "size": 10562,
+    "sha256": "a0dcfb2bb69b911a5f54814c7541a2faea1a0ec9399c520eb8c75bf50837f9b5"
+  },
+  {
+    "path": "contracts/CODE_DOM_MAP.csv",
+    "size": 30768,
+    "sha256": "c8e3e62050dc1d0e8ca7adbb4e9d2f102314917e36e72df57e3e2fe7dcc66786"
+  },
+  {
+    "path": "contracts/CODE_DOM_MAP.json",
+    "size": 59197,
+    "sha256": "e2ef727e6a2aa850f7aa2b14111fb046b8b59ab874a8a9a0e823a626f3ba010e"
+  },
+  {
+    "path": "contracts/STATE_MACHINES.json",
+    "size": 2275,
+    "sha256": "5589a1192a6b7c3a06952e408608ec9d6961ea43f16f84e3a825a230c3768722"
+  },
+  {
+    "path": "contracts/UI_CONTRACTS.json",
+    "size": 13232,
+    "sha256": "cc3e9d22a64a8560fd7765ca0125867051a512c1c26809f457acc98c98a95202"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/AGENTS.md",
+    "size": 4191,
+    "sha256": "7f686eac9ccfe913e94b3476f4a3247bb49caa7f38f102e813801530b8e78c34"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/README.md",
+    "size": 3132,
+    "sha256": "3a8f1ba5d2510f3645109989731b5cc60727cb2fe49ada97b3b85d5f407abc11"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/assets/svg/serien-sprite.svg",
+    "size": 7446,
+    "sha256": "0f9f91a78f1c3eea722b44be3354c1653755ce1325ad269867c6027fd33d2d99"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/assets/textures/brass-brushed.jpg",
+    "size": 18733,
+    "sha256": "2f35a0f969fd1aeb3e93358940a404020ffd6e2c53c2ae0c1ff001a2c8c6e631"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/assets/textures/brass-spun.jpg",
+    "size": 22837,
+    "sha256": "5a200a54aac95ad2bd65e8cab36bbc0bc680a8aba8a11033581603c5e9bc7af6"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/assets/textures/enamel-green.jpg",
+    "size": 16123,
+    "sha256": "03706487306b7cd69c338536970c8a36df69c6fe1f5380034c6ad83d13b4395c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/assets/textures/mahogany.jpg",
+    "size": 20131,
+    "sha256": "000a704061a15494fcaf4f52f1756eb37447172012618ff946b412dd846e2bf8"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/assets/textures/parchment.jpg",
+    "size": 47511,
+    "sha256": "a9019685edee996778070b9ba5833ba9df97c7ee94a6898383f063842362bee0"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/assets/textures/steel-brushed.jpg",
+    "size": 12285,
+    "sha256": "0ad568224698032f81d012151eb8451a8d306e73058dcff2a2053ed23155ac6d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/css/serien-ui.css",
+    "size": 57405,
+    "sha256": "469ad1201812e909913b35c37f195fcc44b1412246210e2fb4cfec6147445653"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/docs/CODEX-PROMPTS.md",
+    "size": 7238,
+    "sha256": "b23e24113eed67f056010e48234afbbd6bf61308433e3562b3b3d6b658b3a88f"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/docs/SerieN-UI-Blueprint.pdf",
+    "size": 3941191,
+    "sha256": "eda7ed88f5ea6dd0b6a10438f9129703ff482fb58d4db25e56937f3a9bcff03e"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/library/serien-ui-library.html",
+    "size": 138497,
+    "sha256": "d1a24c4605691d95c5649dc9cca177e52ce11de4553aea78b1c60f86cbdac9e8"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/reference/serien-ui-reference.html",
+    "size": 263999,
+    "sha256": "0d72edbc55fb5946206090f77e17f2569d206a2ca16067395ced070e93a08e82"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/00-current-prototype.png",
+    "size": 886649,
+    "sha256": "99260b17ab96b58f017401e988263b32b536e7cf313e743d3bfd735f24d577c1"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/01-desktop-day.jpg",
+    "size": 667159,
+    "sha256": "b861646e9dcff1582fae3bd22168c392a0f129d25c57a4247e7f60eb7563a686"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/02-desktop-sunset.jpg",
+    "size": 648209,
+    "sha256": "676fa3e54efa22e32f0cf534c462304f9d17bbe211e9a30cf19aad9eccd32f8b"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/03-desktop-night.jpg",
+    "size": 578847,
+    "sha256": "9fcc51758cca702114ed4c14e74431b2a0bb780e22760f379cdd24e1dd35406a"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/04-alarm-collision.jpg",
+    "size": 700227,
+    "sha256": "bed48e4ae63583caf3b5e2f49640873de6b8a962fd3433f9b0cf764c2ab96634"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/05-emergency-stop.jpg",
+    "size": 686842,
+    "sha256": "75c32ac2173cf5061ce7c467737e2560d16abf622adfd67952c6ae4761e7d1e1"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/06-hud-camera-expanded.jpg",
+    "size": 697847,
+    "sha256": "3118e7f05f5ba44ab0a19090c155617976a2c698fe7d9c18f6f8a1355f337cd2"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/07-menu.jpg",
+    "size": 504786,
+    "sha256": "f029112bfe79ea1bbfcdfdea470dfff7e726c84a8e2999d61f92d99325d1eabf"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/08-track-plan.jpg",
+    "size": 770539,
+    "sha256": "fd70b25ec3324aa1b5902ec0da5b701e0fe96bae804c491a6e9c3ab9c12f269c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/09-help.jpg",
+    "size": 527678,
+    "sha256": "90b9985657b41d4066ebb736aef66a0fc7dfc57fff5a3c7c178510a74e7f1247"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/10-tablet-1024x768.jpg",
+    "size": 473804,
+    "sha256": "3c32b9b8608e02743b37e782d6a7593b8ff57de44234d9d3d2cc2f264a8f67f0"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/11-tablet-portrait.jpg",
+    "size": 606766,
+    "sha256": "5769130633651e9830ed481b9138055f7d325a44e9f2c9c61bbb1c73d743d7eb"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/12-phone-trains.jpg",
+    "size": 272103,
+    "sha256": "94226ecd6c8a43c5cd889111d8d8cc8e016b37d4dc2426d159c426047b7f1b2c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/13-phone-switches.jpg",
+    "size": 239523,
+    "sha256": "9ddd5d8cdd571b4a37723d44ddc4b54f116718cdd24737ec2b4e27e0cf3a4186"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/14-empty-state.jpg",
+    "size": 589643,
+    "sha256": "3e4569fda4f49a2f429a7703ea0cea9c0d1d6126f61b203c3354f8032f3a761e"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/15-eight-trains.jpg",
+    "size": 698239,
+    "sha256": "9203691f06776a66d65febd4624cf2e78450bf4efa99eec8165288f0e235d44c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/16-low-quality.jpg",
+    "size": 553110,
+    "sha256": "fe2a19d41a7e129e11c4a59fdc90ce16ce9d09a9b9d97c974f7363f9c10c8c14"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/17-desktop-1920.jpg",
+    "size": 321181,
+    "sha256": "7c6097c983f27383874b1f1dc4624d21b2606a231f12ca4088a40646869a9a46"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/18-desktop-1280x800.jpg",
+    "size": 544184,
+    "sha256": "d7a85ba29c7ca975cd99ce812773333232f268a3c38e596ab256e0e97cdd2038"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/c-dock-night.jpg",
+    "size": 302570,
+    "sha256": "4397712d751e055e73a3bcb1c151711d23fe3a89626eba600a0042bde63955cb"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/c-dock.jpg",
+    "size": 356691,
+    "sha256": "c6d74de5d2285cb0ccc01d32c00a18a10176228232e52ee3b8e3a15b013711e6"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/c-header.jpg",
+    "size": 159114,
+    "sha256": "4c2056b7c7ed28312cdf3c782f159746e7569931e9bd090f5457d521bde73e5b"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/screenshots/c-side.jpg",
+    "size": 340634,
+    "sha256": "6041d8bffe49df8047c46dc9c29c01016ba0d03c775fe9206aa4e593cccb8127"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/spec/ui-spec.json",
+    "size": 26725,
+    "sha256": "02181690cc12377256d0a18be5e08d2c5af557c532f7a85cb3c2a3c77038cec3"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/tokens/tokens.css",
+    "size": 4008,
+    "sha256": "93f7933b782dd8c238325f7d67a4b0c8ee4723c87fcaf567599752ff08100fe3"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v1/tokens/tokens.json",
+    "size": 11296,
+    "sha256": "c3e824d226caa6f2c5bb5dec3b520c4d7944dc99f1a335896c091b845c47852a"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/FILE_INDEX.md",
+    "size": 11652,
+    "sha256": "e0ad6706be8cb50d6f14735f1bb801cb7c05d9410dbeec701aba0548cacde9dd"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/README.md",
+    "size": 4422,
+    "sha256": "3a37ec2480fb6a2d8d9ba7921f6ffd7863c8aea53a60b4760fb496bd32299a4b"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/AS_IS_AUDIT.md",
+    "size": 47522,
+    "sha256": "f41e7dfe3c893c71c31785a17f4ada63fc5e5976b823136e33f3442a899bdc05"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/CHANGELOG-DESIGN.md",
+    "size": 2066,
+    "sha256": "d0ccf15bad6ad14df43c8c487f021097f93df70587b855980d4d95f2507f38c2"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/COVERAGE_CHECKLIST.md",
+    "size": 2770,
+    "sha256": "472f82b15b47d9e0b3011b9ed705a1236891e63049fc6c697581a2e445e85c41"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/DATA_AND_EVENT_CONTRACTS.json",
+    "size": 13232,
+    "sha256": "cc3e9d22a64a8560fd7765ca0125867051a512c1c26809f457acc98c98a95202"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/DESIGN_DECISIONS.md",
+    "size": 8883,
+    "sha256": "4ca4380eae9ccb4aa63d403905802e8e737aae6a35d2636e1dd357d3f5493bf2"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/FUNCTIONAL_COVERAGE.md",
+    "size": 21605,
+    "sha256": "c2647f9a01b29105b54fb01a9b857e9f198a2d3d0ae8b9fb839efcaaccd89c6c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/OPEN_ISSUES.md",
+    "size": 3716,
+    "sha256": "fb83edd078458924266a6a0011b306dbfa9b07a1aa0cbf1413f85e4c05c52fce"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/SCREEN_STATE_MATRIX.json",
+    "size": 3036,
+    "sha256": "6baf9834665d852aa16430b987ba5643ba4e71b0b60bd2d8fb263b676443a12e"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/UI_MAPPING_MASTER.csv",
+    "size": 69325,
+    "sha256": "2685d3a4f1f22eb4a6abfa4305ae77831c422ce43cc5b17dade93a0f9d147492"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/UI_MAPPING_MASTER.json",
+    "size": 169908,
+    "sha256": "8c1a5a07dc74404f3b4adecc55e973e4ce2e020cb37243a83b0ce8a998c424d3"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/coverage-summary.json",
+    "size": 635,
+    "sha256": "bd2a7504a38659e33f6a41c8dee5915603d42941fcde8fcf1ed000581451ba12"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/analysis/state-events.json",
+    "size": 2275,
+    "sha256": "5589a1192a6b7c3a06952e408608ec9d6961ea43f16f84e3a825a230c3768722"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/SOURCE-locomotive-thumbnails.md",
+    "size": 1194,
+    "sha256": "2980d9ea9a64a31fb4f46fb6b5eb9e6f3b4dcc18a3dd17ddd87a8ce0adf565a0"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/kenney-box.png",
+    "size": 13471,
+    "sha256": "97d6a285bf2b4fb2b8a38b15f988d2f739a0b962dc5d4969e8ca3ba327b0a51a"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/kenney-diesel.png",
+    "size": 14466,
+    "sha256": "f0d4d1ab298374051d053a96e47caebaf8072326eeebe55562ced6b8314034a9"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/kenney-lumber.png",
+    "size": 14761,
+    "sha256": "629bd694c56de974051b2a23e9ce2791c48ee267aaba9f96a9d060a527a3f7c3"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/kenney-shunter.png",
+    "size": 16872,
+    "sha256": "ef8a74a8f423ffd42fa10f888be330f5ed6ea9750ed2e38774a5d5ad94555b9b"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/kenney-steam.png",
+    "size": 19809,
+    "sha256": "ec426f9d0c6e01cc9e54711974e369b323addb4899bd273dd848dd0a3ca3c9d1"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/kenney-tank.png",
+    "size": 15401,
+    "sha256": "6f4e4506433479e324a400c94172f878741267c8a14645a75f5e2f970511c6a2"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/native-closed.png",
+    "size": 11013,
+    "sha256": "a599a824851c824b1f7a10403d816cfc9086490956944e97b34b9779f5c7041f"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/native-coach.png",
+    "size": 15150,
+    "sha256": "caa2eea7df132a5d3d82e94d13644313eabcbc10b80612930e3b463876958a03"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/native-diesel.png",
+    "size": 14600,
+    "sha256": "fab8b45f1e1b660e5662bde884e17c0ba859e003b5f573cd3a0ce5b4dcf28ce6"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/native-flat.png",
+    "size": 10369,
+    "sha256": "80d8f89afa68a3b3d80659daefaf524adb0933aa5b1d1a27034459b0fc166f57"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/native-open.png",
+    "size": 9785,
+    "sha256": "14caac1bffacabd7ac6339829daed98faf358fa9c4c5442899b08b0ad3f2a62e"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/native-shunter.png",
+    "size": 12406,
+    "sha256": "a68fc45f9891f2b1153a522a3228677345b856e20719d47b1200e10a5963bc7d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/native-steam.png",
+    "size": 18965,
+    "sha256": "09542207da9843a61307524a63f22351f436ff9d5ee28858b3d0764c2eb4cafe"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/sides/native-tank.png",
+    "size": 12804,
+    "sha256": "0a94030741c12a341ddfa731a464bacd466b6ea05d7abfcee31c2898b25f66de"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/kenney-box.png",
+    "size": 26120,
+    "sha256": "664476da5872f9de604d249bfd309727a06749a4778d2fd8372c73b3c2ae1a6c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/kenney-diesel.png",
+    "size": 22786,
+    "sha256": "e54de3723a5ffa85044b50beb20fd065ac6a6699c8005cb01cf53ce1ad620589"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/kenney-lumber.png",
+    "size": 31707,
+    "sha256": "2c9e986eb3ca5245e9b5b8394e08cf8773f3c82d1b282b40d8f68b9bdf13c473"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/kenney-shunter.png",
+    "size": 26180,
+    "sha256": "0c5d5f0489c98c7ac98bf6d8d48a31a2ca76784f79c8959a46aa2ecd03619364"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/kenney-steam.png",
+    "size": 27157,
+    "sha256": "04f2f621d5bf2db096456f83eb00dbd05be72f2f3285f4f3af61e54a0d74f1d4"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/kenney-tank.png",
+    "size": 23542,
+    "sha256": "912e80fac9dfc10a10808d020e9d95be934e932c9dd15f4c313c8966f8e9b8e1"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/native-closed.png",
+    "size": 10472,
+    "sha256": "1cfa3e95d60e07283b1ee0dc19d3a6319044ed5608d85bf031f5c8b7c760f071"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/native-coach.png",
+    "size": 10810,
+    "sha256": "5ce2d2dfeebc9aeefd49715b2f8a1f0b975c802c445af127c493ccea1ded4c35"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/native-diesel.png",
+    "size": 14511,
+    "sha256": "3def3900bcb120e365c9113f317b2ad07ccfd5918ce5d5947af92d61e6f65519"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/native-flat.png",
+    "size": 10769,
+    "sha256": "cf2c965a798efec9c62586f589c8a05102dd5d6dbbc9861cfba3027bb4e972fd"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/native-open.png",
+    "size": 11248,
+    "sha256": "400c6688406045eb3a149eebad060944527ccfcb1bb657c8d956fbf6f069ce8d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/native-shunter.png",
+    "size": 11216,
+    "sha256": "80e7e0107f790e770f1973715df232db5351e7be23244b5037355a0bac20f75f"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/native-steam.png",
+    "size": 18040,
+    "sha256": "3920a65404bd302a3acab73e6e4be41c45c8e46f477ab775794f96f1f85d3ee8"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/native-tank.png",
+    "size": 18273,
+    "sha256": "2c8f9d0f509b5e80dbac84a5fe9875807fa825662584e10c312f329e07891ebf"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/assets/rolling-stock/thumbs/unavailable.svg",
+    "size": 8246,
+    "sha256": "3edd41dd0a6a3f81251451bcb0c9a67c37ad51b4f425ed1e7ffd03b8899b79f6"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/css/serien-ui-train-management.css",
+    "size": 35524,
+    "sha256": "cd72e70111d99d663dba5f914ccfe3e7b1940c18cd56308f358c1c8a3e05c853"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/docs/TM_COMPONENTS.md",
+    "size": 4890,
+    "sha256": "7842a199ad3e730e6b349be2a4d54d0be96459ca45274b6a9644d3265ced82c3"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/docs/TM_STATES_AND_INTERACTIONS.md",
+    "size": 5513,
+    "sha256": "3176ef743ab4ab6f8fc2506261e8bb06cd43811d1f08d0c59ea08d2e6e4999b9"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/library/serien-ui-tm-library.html",
+    "size": 4663,
+    "sha256": "fea6c0b91366cad34c8533044f22846966d7e1c8d9552446aee4c1fad0962c1f"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/reference/js/tm-catalog.js",
+    "size": 8023,
+    "sha256": "39d1bd5f474c01b36752ca05a6456729173a6e4826880d99b9deaeea62fd4251"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/reference/js/tm-reference.js",
+    "size": 69836,
+    "sha256": "5c644876adad72491e5d9b0fe95029f1c28a3faf8885173d3c3ebc0aad1ce4ab"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/reference/js/tm-shell-v21.js",
+    "size": 17766,
+    "sha256": "472bf937d59608e8c0bd123a57caf5afe4de0a2bf55ccf12fc8145ed62d14660"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/reference/serien-ui-v2-reference.html",
+    "size": 264546,
+    "sha256": "842b369ba1c5fb786c56cdd41ed78de11b99232b709d7fa312182898a067e7fd"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/tokens/tokens-tm.css",
+    "size": 1721,
+    "sha256": "a4bb92eb84fb066e890632a923bf91d5a6966b2bbe292daa0d5db826c15117d6"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/tokens/tokens-tm.json",
+    "size": 2319,
+    "sha256": "65d8367709c9e0e28bf92de13510bc43d26eefecfe5f9195fc8fb9452bbb1e35"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/README-v1.md",
+    "size": 3132,
+    "sha256": "3a8f1ba5d2510f3645109989731b5cc60727cb2fe49ada97b3b85d5f407abc11"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/assets/svg/serien-sprite.svg",
+    "size": 7446,
+    "sha256": "0f9f91a78f1c3eea722b44be3354c1653755ce1325ad269867c6027fd33d2d99"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/assets/textures/brass-brushed.jpg",
+    "size": 18733,
+    "sha256": "2f35a0f969fd1aeb3e93358940a404020ffd6e2c53c2ae0c1ff001a2c8c6e631"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/assets/textures/brass-spun.jpg",
+    "size": 22837,
+    "sha256": "5a200a54aac95ad2bd65e8cab36bbc0bc680a8aba8a11033581603c5e9bc7af6"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/assets/textures/enamel-green.jpg",
+    "size": 16123,
+    "sha256": "03706487306b7cd69c338536970c8a36df69c6fe1f5380034c6ad83d13b4395c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/assets/textures/mahogany.jpg",
+    "size": 20131,
+    "sha256": "000a704061a15494fcaf4f52f1756eb37447172012618ff946b412dd846e2bf8"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/assets/textures/parchment.jpg",
+    "size": 47511,
+    "sha256": "a9019685edee996778070b9ba5833ba9df97c7ee94a6898383f063842362bee0"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/assets/textures/steel-brushed.jpg",
+    "size": 12285,
+    "sha256": "0ad568224698032f81d012151eb8451a8d306e73058dcff2a2053ed23155ac6d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/css/serien-ui.css",
+    "size": 57405,
+    "sha256": "469ad1201812e909913b35c37f195fcc44b1412246210e2fb4cfec6147445653"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/serien-ui-reference-v1.html",
+    "size": 263999,
+    "sha256": "0d72edbc55fb5946206090f77e17f2569d206a2ca16067395ced070e93a08e82"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/tokens/tokens.css",
+    "size": 4008,
+    "sha256": "93f7933b782dd8c238325f7d67a4b0c8ee4723c87fcaf567599752ff08100fe3"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/design/v1-baseline/tokens/tokens.json",
+    "size": 11296,
+    "sha256": "c3e824d226caa6f2c5bb5dec3b520c4d7944dc99f1a335896c091b845c47852a"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/docs/SerieN-TM-V2-Design.pdf",
+    "size": 6576067,
+    "sha256": "c33b87a908f673472600478a57ff85e5e6e15b6ba361a80e1416514cfb52801d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/docs/SerieN-UI-V2-Mapping.pdf",
+    "size": 1246497,
+    "sha256": "25eb4f76cb1d32e8c6e433ad32ecc317c794691f08a74bae2b08449a32300a1d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/SCREENSHOT_INDEX.json",
+    "size": 12824,
+    "sha256": "53a135e7598f17f0382a5aa507d6ca8b2a307c84fb019e3b6dc29f7fcc1e1ab6"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/01-main-1440x900.jpg",
+    "size": 187725,
+    "sha256": "9b0e74a0f949f9b0aa9b8e6b3dce5563035c28047d2c90bda5f55c2aaee5bb22"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/02-layout-1440x900.jpg",
+    "size": 209012,
+    "sha256": "4e4046e0a17003b07ff9b23e2009cef5eddf9f4deadf90fbcc6005e000f1a93a"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/03-catalog-1440x900.jpg",
+    "size": 253372,
+    "sha256": "f7007db8bb260210799ea50ede1b3f996574fb0d406df16da3663937fe5ef42c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/04-projects-empty-1440x900.jpg",
+    "size": 176947,
+    "sha256": "17010056a6c0310f3a0f4d7cc6a8ee4b621675d1aebf9b2a92e23a39d644edfb"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/05-projects-full-1440x900.jpg",
+    "size": 232296,
+    "sha256": "f1e12b97e2921baa70854dc8ac152a07eba5f59583d0ce2704bdfdeb3be4aa2b"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/06-editor-6-1440x900.jpg",
+    "size": 232933,
+    "sha256": "8d98c3112491a2154ade18e8b5b237c1adb462a52b70b840c8888e8894bda07e"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/07-editor-orient-1440x900.jpg",
+    "size": 243255,
+    "sha256": "6e1ef2204a79746f8aa8ad3ce577c7bc85e9362690d3c3252827330d76df3a54"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/08-compare-1440x900.jpg",
+    "size": 248227,
+    "sha256": "76ef061510a03448e8396c1187af1c2433bf8426d242e8f6e136d240209817cb"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/09-compare-stale-1440x900.jpg",
+    "size": 233730,
+    "sha256": "19b492e307a4d530504856c3e678fcac880109dbd47087589b9146010f343957"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/10-depot-empty-1440x900.jpg",
+    "size": 215840,
+    "sha256": "0067933f0a7c280388b3b36cedf31cf7efb1ff21335728b6572748c01d67bf86"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/11-depot-inventory-1440x900.jpg",
+    "size": 234093,
+    "sha256": "a09140e12d7fedaf4919dabe4087589566b85963bad8953617e26b026d499278"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/12-depot-reserved-1440x900.jpg",
+    "size": 241649,
+    "sha256": "d6f122952a0c038d645605f110a8980cf56f3af8e2be780f8ff3a142467b7b76"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/13-depot-physical-1440x900.jpg",
+    "size": 221739,
+    "sha256": "7814ea70d49787e8a37f44e8603a05245f93ec48cc22af87df57c32e399ce21f"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/14-editor-6-1024x768.jpg",
+    "size": 159896,
+    "sha256": "816f4cbaf369c3e7edfd080b82755f4753aa7728c6456fc4c48702fa04420410"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/15-editor-6-768x1024.jpg",
+    "size": 155839,
+    "sha256": "b4672aeb28ef66050436afc8beccadd6ef8bfd2e936b06e01428ef4bace77f52"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/15b-compare-820x1180.jpg",
+    "size": 197964,
+    "sha256": "3837787e113742fd52be9ecc044f214bff18df856817f6224cf6608bce3e6bc5"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/16-editor-6-390x844.jpg",
+    "size": 81935,
+    "sha256": "2a6382c1a882d76c21601ebe3436c8c61e66221734b7e490a0917388ca506ca7"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/16b-depot-reserved-390x844.jpg",
+    "size": 81478,
+    "sha256": "a5a6e159207a957d1d3971f62ee72cd1dc72f21d0b46b5b6000712a4c3a235e3"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/16c-guard-390x844.jpg",
+    "size": 64272,
+    "sha256": "21f87012c27587111ea5888578803d0048a3ab9d04b344555d12190d452b8462"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/17a-guard-1440x900.jpg",
+    "size": 161210,
+    "sha256": "1a214f5d68fbf1f5b6437920a1cba389d9d0debed031cf18345a6827da7c2ad2"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/17b-error-1440x900.jpg",
+    "size": 236304,
+    "sha256": "b2aeb6eac68d76f5f4fbe41ae7d18b103bf4e72aa0b03636a35606182a3dce96"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/17c-invalid-1440x900.jpg",
+    "size": 226895,
+    "sha256": "2e5afb706df30e62730710f10ef142a2fcd16e3f24849c682c5f08da6d28639c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/18-compare-changed-1440x900.jpg",
+    "size": 239586,
+    "sha256": "ddf276f3b91bacc08d72341684450421cf17f85cb70e616af1bca8bcf9c01628"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/19-compare-match-1440x900.jpg",
+    "size": 231126,
+    "sha256": "9ff1c2a405a254e26932ca5db8a37d7fd3d6b0cc7f93c563314a2373d5b731ea"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/20-layout-detached-1440x900.jpg",
+    "size": 213928,
+    "sha256": "de33fa86423cce6a73cc0bf74c184157b458dc3be663d4d45f74a707314ce45a"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/21-catalog-missing-1440x900.jpg",
+    "size": 210494,
+    "sha256": "e0c5ba1f9723947a7ae68280ba358ead9471ae576ecb0917940021d6fca9fee4"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/22-editor-empty-1440x900.jpg",
+    "size": 209709,
+    "sha256": "fea9001c646e8bf15340689abcf114334bddc4ccbbe7642b9fab59d82e0df577"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/23-shell-menu-1440x900.jpg",
+    "size": 184065,
+    "sha256": "6f60e91b8bd571cba2e4545d5e424c4d15f878376ff75f088412ac59a5eb2e2d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/24-shell-hud-1440x900.jpg",
+    "size": 221272,
+    "sha256": "24186b9746dd64f82567aaadc8bc96b04bdfbcc936e0203cec5522108969c1c8"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/25-shell-reset-1440x900.jpg",
+    "size": 154170,
+    "sha256": "1dd2724c9f62a6e3b504821129afe0e7a0762d9b223c4f6c07395e1dd1612df4"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/26-shell-guarded-1440x900.jpg",
+    "size": 228346,
+    "sha256": "607103a31bfa4b09ae35d0ff459e0ded69cf9f218ea6119674a76508d02089e4"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/27-shell-help-1440x900.jpg",
+    "size": 187316,
+    "sha256": "c0fc93b3bb4d9001278011cc4343ce798d6590b376f12bd316a583ba06081654"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/key/28-shell-plan-1440x900.jpg",
+    "size": 253567,
+    "sha256": "5db434db6e489e617fccc625da0888ff794d65facba0c96e09dd01420093fad5"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1024x768-catalog.jpg",
+    "size": 141507,
+    "sha256": "0a0049a8a93a6af8066c344253d486d997e4f02e8d92620276e9449c26eb02ea"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1024x768-depot-reserved.jpg",
+    "size": 161033,
+    "sha256": "f8d48c7e9318968bca6ececf193e3f3ceae5c241d595c5e7b406f8aa0220fdf7"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1024x768-editor-6.jpg",
+    "size": 159779,
+    "sha256": "29a80291642139ade19e4c5003697f4cbd06399527007dafcbd989682a495377"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1024x768-layout.jpg",
+    "size": 144013,
+    "sha256": "bbbf43b2d2c58efa3294c73010766eae7177460a8f6bcecccd9363f543a20243"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1024x768-main.jpg",
+    "size": 134546,
+    "sha256": "285ff4781ceab186c59caf78e5c5a1c21f63a05af96d124db06187af02b4720d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1024x768-shell-guarded.jpg",
+    "size": 167026,
+    "sha256": "6d81411103aba4bbb325500e611947f7d098a0a08751e86fa28bb57962c9d904"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1280x800-catalog.jpg",
+    "size": 209854,
+    "sha256": "e4437de7d808e9bb72d3aae07041eaa4a9d1fe2059ae5c8ddefb94c7546ff1b1"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1280x800-depot-reserved.jpg",
+    "size": 201274,
+    "sha256": "d680b1da0bff2858eed3bbc2514f84f7070868d998526bf57e90f0231b14a42f"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1280x800-editor-6.jpg",
+    "size": 193466,
+    "sha256": "1ee589075b0e0218997393fc85d39e825174db7b961bc2208684d4f223a320e4"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1280x800-layout.jpg",
+    "size": 172379,
+    "sha256": "eadb30e87286d07fcefa1595853e8a18361e77d257c98933c3b6a09900a3bcc0"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1280x800-main.jpg",
+    "size": 154496,
+    "sha256": "a3b595df820cdd6f5489b8987212ff4c3d2adae1cb1dfa710144d6c043f8011f"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1280x800-shell-guarded.jpg",
+    "size": 188825,
+    "sha256": "dce37e604f1c84b57f7ec7706955e2880679614c6a5d7b1ccc962dd36bac9f5b"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1440x900-catalog.jpg",
+    "size": 228313,
+    "sha256": "b7ab176d3e9fce4f82d92f0b75b11a5eb371f1898d0b7ee11e7f3e5420296495"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1440x900-depot-reserved.jpg",
+    "size": 241564,
+    "sha256": "2387fc3b417bbbac3bb931994a76e3ce287e8e0c3ce55d0397a581637b56b1e4"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1440x900-editor-6.jpg",
+    "size": 232912,
+    "sha256": "609c0d249697092ed2608799212471be48bd7e681b4419bdbdac01ece6f064fd"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1440x900-layout.jpg",
+    "size": 209047,
+    "sha256": "28632a3bc731af1b51a372dcb67ebd558e46fe83b5571013ac5c58afb0fd8520"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1440x900-main.jpg",
+    "size": 215424,
+    "sha256": "cd2bf9fd2c26a5271a02338e67b38d6df7e1b2987052a039f9e1340d013aebbd"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1440x900-shell-guarded.jpg",
+    "size": 228646,
+    "sha256": "09303ac16a59e43be327a5a86e54ba34d6a61acad84f87b9326f860e99942798"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1920x1080-catalog.jpg",
+    "size": 343951,
+    "sha256": "1729d52419ca8915aa8fa32e5db2e2b5a72d8e3c1a6bb2e7e89b9f588cbc9a69"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1920x1080-depot-reserved.jpg",
+    "size": 332467,
+    "sha256": "4e019ae4f9c9318770d11c8c804ae3b5961bbde28829ae87bcc8fea7b800fc31"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1920x1080-editor-6.jpg",
+    "size": 313540,
+    "sha256": "9d6b574187c08c2290f08b266eeaf5411297e2b984dcc0669e17748d72f8b8cb"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1920x1080-layout.jpg",
+    "size": 297284,
+    "sha256": "89d2c4d3454b053c5b0ee0b01f33f7f2ddaba48b75e91de71c07c810b70419d1"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1920x1080-main.jpg",
+    "size": 254310,
+    "sha256": "a28d1d90c7ad8fe39f9de2386be586e6691ffe9d8999bf81f1dd750259787022"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/1920x1080-shell-guarded.jpg",
+    "size": 294080,
+    "sha256": "c2c05abfba13ef4eef6906a993c704c783f39dd64b5a0e91133b4c49f2cb359a"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/390x844-catalog.jpg",
+    "size": 84532,
+    "sha256": "35f979ec55fe6f322d6558b0782f65f63fcf9af861d0c5667f494d7ea3bef256"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/390x844-depot-reserved.jpg",
+    "size": 81509,
+    "sha256": "d5f8529a714b9268244b909a1483e0f38a786e6abfac053e8261ae7f49772119"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/390x844-editor-6.jpg",
+    "size": 82035,
+    "sha256": "e2e3883512d939929f55cd2ae751e16e2bcc17b645707c50baba5dd3ed1d61d8"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/390x844-layout.jpg",
+    "size": 86365,
+    "sha256": "734b49b5b4b6e30c9ad2c3d9c90efa8e054bd9fabe6a82ec7c41d716e54a6dca"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/390x844-main.jpg",
+    "size": 76633,
+    "sha256": "a80b0fd868fa43ae1e68630662e104f823d2ae2e731ae36b339e248b3f2c81ec"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/390x844-shell-guarded.jpg",
+    "size": 89510,
+    "sha256": "428a1b2985b51a368e2c2195ed6f0776f90182d69537cfecb04efbe017696c35"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/768x1024-catalog.jpg",
+    "size": 159394,
+    "sha256": "75544070727bea5384e93510827086ee8a19dcb79aa5a0ab71d0b814ae8148c9"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/768x1024-depot-reserved.jpg",
+    "size": 183816,
+    "sha256": "07797cc1d2f7c3994672268a6ed0cfa586d3fcc18d34f77f5048248e6a0c166d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/768x1024-editor-6.jpg",
+    "size": 155745,
+    "sha256": "4a2ef4fee36035d32b50d533fad5c4e7baf296164c65221420fb4786b1b2e2f8"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/768x1024-layout.jpg",
+    "size": 145604,
+    "sha256": "72ca8a4e384ac090a1b99472e07a73b4a41eafdb297d60767a55a479f98f018e"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/768x1024-main.jpg",
+    "size": 148056,
+    "sha256": "8693b6bdfcd133718602f3e7f6a7434a1d94bfd3d042e525453101f7f22167e0"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/768x1024-shell-guarded.jpg",
+    "size": 177923,
+    "sha256": "7e93bf3d7b7414d6206357f008eee66a915589a6cc7957fdfbd379916883ce6c"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/820x1180-catalog.jpg",
+    "size": 196790,
+    "sha256": "5799f20355f69df6cd5ebf513cdc801bd4bdcd9ccfc54a4f1dc2449f0047783d"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/820x1180-depot-reserved.jpg",
+    "size": 216756,
+    "sha256": "4e5f79d298d8c8d866b2d71c9b16e80d5a65c49da3dec72240723f78b8ef52ab"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/820x1180-editor-6.jpg",
+    "size": 182828,
+    "sha256": "b72b637e75058e1268bbf203c4dcd9222b8e85b5c155bf62faadf155c31efce6"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/820x1180-layout.jpg",
+    "size": 170381,
+    "sha256": "1eced884db54b9e1ea8bf87130f971f832432d0b71da0e41e3a1a7cb12a18001"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/820x1180-main.jpg",
+    "size": 174807,
+    "sha256": "a4111f2111a2fe5243b3a336f1bbc62a0bc2a08e45dc10bbe6ec17a35ffb0fcd"
+  },
+  {
+    "path": "design-baseline/serien-mainui-v21/screenshots/responsive/820x1180-shell-guarded.jpg",
+    "size": 208918,
+    "sha256": "1e5ec3e9e434dd0d67cb6d9b7df82958b4c9181b803ca9e8fb97fadced716893"
+  },
+  {
+    "path": "prompts/CODEX_PROMPTS.md",
+    "size": 10327,
+    "sha256": "8018508cfafa968e56040c8bf9246aa9d0e749f6ee895a59f1aaed94f874fe55"
+  },
+  {
+    "path": "spec/AGENTS-UI-V21.md",
+    "size": 2074,
+    "sha256": "f04191d1427c82601b4ce74d74b3578b4274b6b8a8d5037f82df734a90306aee"
+  },
+  {
+    "path": "spec/ASSET_LAYOUT.md",
+    "size": 2329,
+    "sha256": "dfbb0c9f57ee1de3fac6278aa811567c5e57b888f49641c911e342028f718db5"
+  },
+  {
+    "path": "spec/RAILWAY_CONSTRAINTS.md",
+    "size": 3171,
+    "sha256": "14e205f2a4415fe7a26e4e3996fbadb0fa93cdcbff8e5ad2914d761ef800ef9e"
+  },
+  {
+    "path": "spec/SPEC_UI_V21.md",
+    "size": 13077,
+    "sha256": "ab648c59e67f1c117c7f39f7df0b296bf66515a22a99d41771397e147f826ff1"
+  },
+  {
+    "path": "spec/STATUS_TEMPLATE.md",
+    "size": 971,
+    "sha256": "7810f97063f332a9a9653e032b4ff8bfefb2b9bc2d5016dde6be862a948b6191"
+  },
+  {
+    "path": "spec/TEST_PLAN.md",
+    "size": 5049,
+    "sha256": "6145048e2d8a56e4de45442164de54d0a68c555462330f8f82b8014d94374fd1"
+  }
+]

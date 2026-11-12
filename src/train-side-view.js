@@ -1,5 +1,5 @@
 import manifest from '../assets/rolling-stock-sides/manifest.json' with {type:'json'};
-import {compositionSideLayout} from './train-side-layout.js';
+import {compositionSideLayout,projectSideLayout} from './train-side-layout.js';
 
 // DOM/SVG and cached PNGs only. No canvas, GPU resource, animation or railway state.
 export function createTrainSideView() {
@@ -15,17 +15,20 @@ export function createTrainSideView() {
   slider.oninput=()=>setZoom(Number(slider.value));
   root.querySelector('[data-fit]').onclick=()=>{setZoom(1);viewport.scrollLeft=0;viewport.scrollTop=0;};
   setZoom(1);
-  function update(train) {
-    const model=compositionSideLayout(train,manifest),next=JSON.stringify(model);
+  function updateModel(model) {
+    const next=JSON.stringify(model);
     if(next===signature)return;signature=next;
-    if(selected!==train.id){selected=train.id;setZoom(1);viewport.scrollLeft=0;viewport.scrollTop=0;}
+    if(selected!==model.id){selected=model.id;setZoom(1);viewport.scrollLeft=0;viewport.scrollTop=0;}
     root.querySelector('.sideSummary').textContent=`${model.vehicles.length} vehicles · ${model.length.toFixed(1)} mm · N scale`;
-    const svg=svgElement('svg',{viewBox:model.viewBox.join(' '),role:'img','aria-label':`${train.name}, complete side view, locomotive to tail, ${model.vehicles.length} vehicles, ${model.length.toFixed(1)} millimetres at N scale`});
-    const title=svgElement('title');title.textContent=`${train.name} · locomotive to tail`;svg.append(title);
+    const svg=svgElement('svg',{viewBox:model.viewBox.join(' '),role:'img','aria-label':`${model.name}, complete side view, locomotive to tail, ${model.vehicles.length} vehicles, ${model.length.toFixed(1)} millimetres at N scale`});
+    const title=svgElement('title');title.textContent=`${model.name} · locomotive to tail`;svg.append(title);
+    root.querySelector('.sideHeading strong').textContent=model.planned?'Planned train · side view':'Complete train · side view';
     const missing=model.vehicles.filter(v=>!v.asset);
     status.textContent=missing.length?'Side view incomplete: a model preview is unavailable. See the vehicle list below.':'Locomotive to tail · travel direction preserves this order. Scroll horizontally after zooming.';
+    if(model.planned)status.textContent='Planned orientation and order only. No effect on the trains on the layout. Scroll horizontally after zooming.';
     for(const v of model.vehicles)if(v.asset){
       const image=svgElement('image',{href:v.asset.url,x:v.x,y:v.y,width:v.width,height:v.height,'data-side-vehicle':v.id,'data-side-key':v.key,'data-offset-mm':v.offset,'data-origin-mm':v.origin,'data-orientation':v.orientation,preserveAspectRatio:'xMidYMid meet'});
+      if(v.orientation==='model-reversed')image.setAttribute('transform',`translate(${2*v.x+v.width} 0) scale(-1 1)`);
       image.addEventListener('error',()=>{status.textContent='Side view incomplete: a model preview is unavailable. See the vehicle list below.';});svg.append(image);
     }
     const y=model.dimensionY;
@@ -33,5 +36,5 @@ export function createTrainSideView() {
     const label=svgElement('text',{x:model.length/2,y:y+7,'text-anchor':'middle',class:'sideDimensionLabel','aria-hidden':'true'});label.textContent=`${model.length.toFixed(1)} mm`;svg.append(label);
     stage.replaceChildren(svg);
   }
-  return {root,update,dispose(){root.remove();stage.replaceChildren();}};
+  return {root,update:train=>updateModel(compositionSideLayout(train,manifest)),updateProject:project=>updateModel(projectSideLayout(project,manifest)),dispose(){root.remove();stage.replaceChildren();}};
 }

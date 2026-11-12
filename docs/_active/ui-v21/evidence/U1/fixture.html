@@ -1,0 +1,35 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>SerieN U1 — isolated visual foundation</title>
+<style id="fixture-layout">
+/* Fixture-only framing. No application selectors or styling of specimens overridden. */
+#u1-fixture{margin:0;padding:16px;overflow:auto;background:#0b1712}
+#fixture-label{font:400 13px 'Cutive Mono';color:#a9bfae;margin:0 0 12px}
+#st.u1-sample{height:250px;min-height:250px;grid-template-rows:64px minmax(0,1fr);grid-template-areas:'h h' 'v s';padding:8px;margin-bottom:16px}
+#st.u1-sample .vp{height:auto;min-height:0}#st.u1-sample .win{height:100%;padding:14px}
+#foundation{display:grid;grid-template-columns:1.05fr 1fr;gap:16px}
+#foundation h2{font:700 18px 'Cinzel Decorative';color:var(--b1);margin:0 0 10px}
+#foundation .tm-tabs{display:flex;gap:3px;margin-bottom:12px}
+#states{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+#material-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.material{margin:0;font:400 11px 'Cutive Mono';color:var(--dim)}.material img{display:block;width:100%;height:55px;object-fit:cover;border-radius:5px;margin-bottom:4px}
+#button-specimens{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+#font-cinzel{font:700 21px 'Cinzel Decorative';margin:8px 0;color:var(--b1)}
+#font-federo{font:400 19px Federo;margin:8px 0}#font-cutive{font:400 14px 'Cutive Mono';margin:8px 0}
+#record-sample{padding:14px;background:url('../../../../../ui/assets/textures/parchment.jpg');color:#3a2a17;border-radius:6px;font:400 14px Federo;margin-top:12px}
+</style>
+<link rel="stylesheet" href="../../../../../style.css" data-order="legacy">
+<link rel="stylesheet" href="../../../../../ui/css/tokens.css" data-order="tokens-v1">
+<link rel="stylesheet" href="../../../../../ui/css/serien-ui.css" data-order="css-v1">
+<link rel="stylesheet" href="../../../../../ui/css/tokens-tm.css" data-order="tokens-tm">
+<link rel="stylesheet" href="../../../../../ui/css/serien-ui-train-management.css" data-order="css-tm">
+<link rel="stylesheet" href="../../../../../ui/css/serien-ui-integration.css" data-order="integration">
+</head><body id="u1-fixture">
+<p id="fixture-label">U1 · FIXTURE DI DESIGN ISOLATA · nessun boot del simulatore, nessun dato o comando ferroviario</p>
+<div id="st" class="st v21 u1-sample"><header class="m hd"><div class="mi"><div class="plq"><b class="inl">SERIE N</b></div><span class="sp"></span><button class="bt tmb" id="header-tm"><svg class="ic"><use href="../../../../../ui/assets/svg/serien-sprite.svg#tm-i-wagon"/></svg>Train Management</button><button class="bt d">Menu</button></div></header>
+<section class="m vp"><div class="mi win"><p class="tm-lab">Campione shell · canvas non avviato</p><div id="button-specimens"><button class="bt d"><svg class="ic"><use href="../../../../../ui/assets/svg/serien-sprite.svg#i-home"/></svg>Recenter</button><button class="bt d"><svg class="ic"><use href="../../../../../ui/assets/svg/serien-sprite.svg#tm-i-lock"/></svg>Read only</button><span class="tm-chip avail">Stato visuale</span></div><p class="tm-muted">Ottone · smalto · mogano. I controlli sono campioni senza handler.</p></div></section><aside class="m side"><div class="mi"><p class="tm-lab">Palette</p><span class="tm-chip matching">Selected</span> <span class="tm-chip stale">Stale</span><p class="tm-muted">Nessuna telemetria simulata.</p></div></aside></div>
+<main id="foundation"><section class="m"><div class="mi"><h2>Train Management · specimens</h2><p class="tm-session">Session only · campione tipografico</p><nav class="tm-tabs tm-seg" aria-label="Campioni tab"><button class="on" aria-selected="true">On the Layout</button><button>Catalog</button><button>Projects</button><button>Depot</button></nav>
+<div id="states"><button class="tm-card" id="card-normal"><b>Normal</b><small>Campione enamel</small></button><button class="tm-card on" id="card-selected"><b>Selected</b><small>Brass outline</small></button><button class="tm-card" disabled id="card-disabled"><b>Disabled</b><small>Motivo visibile</small></button></div>
+<div class="tm-well"><div class="tm-chips"><span class="tm-chip cmp-unlinked">Independent</span><span class="tm-chip cmp-matching">Matching</span><span class="tm-chip cmp-different">Different</span><span class="tm-chip cmp-changed">Changed</span><span class="tm-chip cmp-stale">Stale</span></div><p class="tm-alert" role="alert">Campione messaggio · testo dimostrativo, non allarme R1</p><div class="tm-toast on" role="status">Campione di feedback</div></div>
+<div id="record-sample"><svg class="ic"><use href="../../../../../ui/assets/svg/serien-sprite.svg#tm-i-clock"/></svg>Superficie pergamena · VIRTUAL · nessun record applicativo</div></div></section>
+<section class="m"><div class="mi"><h2>Typography &amp; materials</h2><p id="font-cinzel">Cinzel Decorative 700 · SerieN</p><p id="font-federo">Federo 400 · ÀÈÌÒÙ àèìòù 012345</p><p id="font-cutive">Cutive Mono 400 · 0123456789</p><div id="material-grid">
+<figure class="material"><img src="../../../../../ui/assets/textures/brass-brushed.jpg" alt="Ottone spazzolato">Brass brushed</figure><figure class="material"><img src="../../../../../ui/assets/textures/brass-spun.jpg" alt="Ottone tornito">Brass spun</figure><figure class="material"><img src="../../../../../ui/assets/textures/enamel-green.jpg" alt="Smalto verde">Enamel green</figure><figure class="material"><img src="../../../../../ui/assets/textures/mahogany.jpg" alt="Mogano">Mahogany</figure><figure class="material"><img src="../../../../../ui/assets/textures/parchment.jpg" alt="Pergamena">Parchment</figure><figure class="material"><img src="../../../../../ui/assets/textures/steel-brushed.jpg" alt="Acciaio spazzolato">Steel brushed</figure></div></div></section></main>
+</body></html>

@@ -1,0 +1,159 @@
+{
+  "status": "FAIL",
+  "method": "real app; local Auth boundary; on-demand production RAF",
+  "bundleSHA256": "ed56d323ffb4f8b184e95c5ea410b2b2821e7a787898eef33d697336aaa6cb7c",
+  "observer": false,
+  "checks": [
+    "single-canvas-original-startup-and-one-persistent-log",
+    "real-presets-home-follow-zoom-pan-orbit-escape-and-trusted-drag-breaks-follow",
+    "real-15-second-route-expiry-second-click-hides-and-disclaimer",
+    "read-only-hud-no-switch-actions-real-train-name-route-and-topology-svg",
+    "real-guard-risk-retained-muted-single-bell-menu-chip-and-independent-ui-sound",
+    "exact-engine-refusal-message-retained-in-operations-log"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "failedRequests": [],
+  "external": [],
+  "routeBoundary": {
+    "at0": "true",
+    "before14999ms": "true",
+    "at15000ms": "false",
+    "secondClickHides": true
+  },
+  "hudStates": [
+    {
+      "site": "WX-B",
+      "controls": [
+        "WX-B"
+      ],
+      "name": "WX310 east",
+      "distance": 908.816017746907,
+      "outgoing": {
+        "edge": "WX-B:upper",
+        "end": 0
+      },
+      "destination": "Outer loop",
+      "stop": "cycle",
+      "uncertain": false,
+      "safety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "highlighted": false,
+      "minimized": false
+    },
+    {
+      "site": "WX-A",
+      "controls": [
+        "WX-A"
+      ],
+      "name": "WX310 west",
+      "distance": 263.98545604603436,
+      "outgoing": {
+        "edge": "T33",
+        "end": 0
+      },
+      "destination": "Middle loop",
+      "stop": "cycle",
+      "uncertain": false,
+      "safety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied \u00b7 operation blocked"
+      },
+      "highlighted": false,
+      "minimized": false
+    },
+    {
+      "site": "WX-A",
+      "controls": [
+        "WX-A"
+      ],
+      "name": "WX310 west",
+      "distance": 1372.0655364735567,
+      "outgoing": {
+        "edge": "WX-A:lower",
+        "end": 0
+      },
+      "destination": "Inner loop",
+      "stop": "cycle",
+      "uncertain": false,
+      "safety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied \u00b7 operation blocked"
+      },
+      "highlighted": false,
+      "minimized": false
+    }
+  ],
+  "refusalMessage": "Switch area occupied \u00b7 operation blocked",
+  "guard": {
+    "leadingExtent": 34.25,
+    "risk": "UNSAFE",
+    "reason": "misaligned",
+    "distance": 0.3708313333333229,
+    "boundary": {
+      "edge": "T47",
+      "from": 64.62083333333332,
+      "to": 0,
+      "distance": 0
+    },
+    "direction": -1,
+    "lookahead": 16.338751,
+    "stoppingDistance": 0,
+    "protectionInset": 30,
+    "state": "GUARDED_STOP",
+    "delta": 0,
+    "velocity": 0,
+    "intervened": true,
+    "requestedSpeed": 100,
+    "requestedDelta": 0,
+    "probeDelta": null,
+    "probeKind": null
+  },
+  "visual": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "boxes": {
+        "#view3d": {
+          "x": 0,
+          "y": 97,
+          "width": 1140,
+          "height": 311
+        },
+        "#cam": {
+          "x": 10,
+          "y": 244.8125,
+          "width": 331.46875,
+          "height": 74
+        },
+        "#nextSwitchHUD": {
+          "x": 870,
+          "y": 107,
+          "width": 260,
+          "height": 129.8125
+        },
+        "#guardedStopStatus": {
+          "x": 10,
+          "y": 107,
+          "width": 340,
+          "height": 119.1875
+        },
+        ".u3-operations": {
+          "x": 10,
+          "y": 326.8125,
+          "width": 1120,
+          "height": 71.1875
+        }
+      }
+    }
+  ],
+  "failure": ""
+}

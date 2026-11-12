@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "scope": "DOM adapter lifecycle and callback boundary only",
+  "checks": [
+    "obsolete generation rejected",
+    "replaced identity rejected",
+    "pending dispose no callback",
+    "removed reset handler inert",
+    "keyboard removed and remounted once",
+    "held Space one callback",
+    "double confirm one callback",
+    "navigation/dialog cleanup"
+  ]
+}

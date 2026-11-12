@@ -1,0 +1,21 @@
+{
+  "HEAD": "e6f152c9b5a23347cbbd5aa6898b91a11e2194e0",
+  "status": " M src/train-management.js\n M src/train-projects-view.js\n M src/ui/guard-modal.js\n M ui/css/serien-ui-integration.css\n?? docs/_active/ui-v21/evidence/U6/\n",
+  "checkpoint": "None U6; remote/local U5",
+  "components": {
+    "shell": "Partial, implemented not browser verified",
+    "layout": "Partial, implemented not browser verified",
+    "catalog": "Partial, filters implemented not browser verified",
+    "side": "original component reused, styling partial",
+    "guards": "Partial, custom coordinator + consent API implemented not verified",
+    "responsive": "Partial, CSS written not verified",
+    "tests": "Only baseline Node254/build logs, no exit receipts; repeat final pertinent gates",
+    "evidence": "Partial baseline logs only"
+  },
+  "preservedFiles": {
+    "src/train-management.js": "31081a6328d79eb61f5a1ec8f69fba668abd3b5e1fdb6f238b4b6b1e5489a9ac",
+    "src/train-projects-view.js": "032bc095670bd2fcc14554c27b4f930fd796ec6ad3e88ff98ba0b098084c5a16",
+    "src/ui/guard-modal.js": "f8fa841a2eadfdfb0ede39a02d5cbe0bf6f37c3ee331ee14ad2ee65310ba81b4",
+    "ui/css/serien-ui-integration.css": "fe45d86b36f60762b679facbb5e9bdaf3222a60c14f1fece0654688e30f529dd"
+  }
+}

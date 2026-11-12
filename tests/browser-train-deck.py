@@ -24,8 +24,8 @@ with sync_playwright() as p:
       check(new Set(all('.railwayMiniMap svg').map(e=>e.getAttribute('viewBox'))).size===1,'map framing');
       check(new Set(all('.railwayMiniMap use').map(e=>e.getAttribute('href'))).size===1,'same original geometry');
       check(!$('.nextSwitchPreview')&&!$('.nextSwitchLegend'),'removed HUD section');
-      check($('.nextSwitchHUD').getBoundingClientRect().width<=215,'compact HUD');
-      const background=getComputedStyle($('.nextSwitchHUD')).backgroundImage;check(background.includes('0.64')||background.includes('0.639'),'translucent HUD');
+      check($('.nextSwitchHUD').getBoundingClientRect().width<=innerWidth*.55,'bounded U3 HUD');
+      const background=getComputedStyle($('.nextSwitchHUD')).backgroundImage;check(getComputedStyle($('.nextSwitchHUD .mi')).backgroundImage.includes('gradient'),'U3 enamel HUD');
       const keys=all('.locomotiveThumbnail').map(i=>i.dataset.thumbnailKey);check(keys.join(',')==='native-steam,native-diesel,native-shunter','actual native identity');
       const speed=(id,value)=>{const input=$('[data-console-train="'+id+'"] input');input.value=value;input.dispatchEvent(new Event('input'));};
       const command=(id,name)=>$('[data-console-train="'+id+'"] [data-command="'+name+'"]').click();
@@ -54,7 +54,7 @@ with sync_playwright() as p:
     hidden=page.evaluate('''()=>{
       const api=__serienDiagnostics,check=(ok,msg)=>{if(!ok)throw Error(msg)},select=id=>document.querySelector('[data-train="'+id+'"]').click();
       select(0);const input=document.getElementById('speed');input.value=20;input.dispatchEvent(new Event('input'));
-      [1,2,3].forEach(select);let s=api.snapshot();check(!s.consoles.visible.includes(0)&&s.consoles.visible.length===3,'recent-window eviction');
+      [1,2,3].forEach(select);let s=api.snapshot();check(s.consoles.visible.includes(0)&&s.consoles.visible.length===4,'all four carousel cards available');
       const before=s.stock[0].vehicles[0],srcBefore='./assets/locomotive-thumbnails/native-steam.png';api.step(2);s=api.snapshot();
       check(s.stock[0].speed===20&&s.stock[0].velocity>0,'hidden train still running');check(Math.hypot(s.stock[0].vehicles[0].x-before.x,s.stock[0].vehicles[0].z-before.z)>1,'hidden train position advances');
       select(0);s=api.snapshot();const card=document.querySelector('[data-console-train="0"]'),m=card.querySelector('.trainMapMarker');
@@ -64,7 +64,7 @@ with sync_playwright() as p:
       return {visible:s.consoles.visible,recent:s.consoles.recent,hiddenTrainAdvanced:true};
     }''')
     result['fourTrainScenario']=hidden
-    print('PASS: Kenney/native identity and a real fourth train continuing outside the three visible consoles',flush=True)
+    print('PASS: Kenney/native identity and a real fourth train continuing outside the carousel viewport',flush=True)
     # A deliberate missing image checks the neutral placeholder, then restore it.
     fallback=page.evaluate("const i=document.querySelector('.locomotiveThumbnail');const original=i.src;i.src='./assets/locomotive-thumbnails/deliberately-missing.png';original")
     page.wait_for_function("document.querySelector('.locomotiveThumbnail').dataset.fallback==='true'")

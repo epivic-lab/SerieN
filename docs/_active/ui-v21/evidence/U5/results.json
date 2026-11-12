@@ -1,0 +1,162 @@
+{
+  "status": "PASS",
+  "proposal": "U5 READY FOR REGIA REVIEW",
+  "approved": false,
+  "branch": "codex/ui-v2-integration",
+  "approvedU4": "1d591bbc914f74cf066666522c6692be4132a614",
+  "bundleSHA256": "8199e84ff8b0bf600013ff7b7ded3fe7d42a5a6be13468f55032e3a78add7ac3",
+  "commands": [
+    {
+      "name": "node",
+      "command": "npm test",
+      "exitCode": 0,
+      "log": "tests/node-current.txt"
+    },
+    {
+      "name": "python",
+      "command": "python3 -m unittest discover -s tests -p '*_test.py'",
+      "exitCode": 0,
+      "log": "tests/python.txt"
+    },
+    {
+      "name": "build",
+      "command": "npm run build -- --metafile=docs/_active/ui-v21/evidence/U5/artifacts/production-meta.json",
+      "exitCode": 0,
+      "log": "tests/build-current.txt"
+    },
+    {
+      "name": "canonical",
+      "command": "python3 scripts/build-canonical-layout.py",
+      "exitCode": 0,
+      "log": "tests/canonical.txt"
+    },
+    {
+      "name": "canonical-diff",
+      "command": "git diff --exit-code 1d591bbc -- src/canonical-layout.json docs/jmri-layout",
+      "exitCode": 0,
+      "log": null
+    },
+    {
+      "name": "functional",
+      "command": "U5_OUTPUT=docs/_active/ui-v21/evidence/U5/delivery python3 tests/browser-ui-v21-U5.py",
+      "exitCode": 0,
+      "log": "tests/delivery.txt"
+    },
+    {
+      "name": "native",
+      "command": "U5_NATIVE_OUTPUT=docs/_active/ui-v21/evidence/U5/native-current python3 tests/browser-ui-v21-U5-native.py",
+      "exitCode": 0,
+      "log": "tests/native-current.txt"
+    },
+    {
+      "name": "lifecycle",
+      "command": "U5_LIFECYCLE_OUTPUT=docs/_active/ui-v21/evidence/U5/lifecycle-delivery python3 tests/browser-ui-v21-U5-lifecycle.py",
+      "exitCode": 0,
+      "log": "tests/lifecycle-delivery.txt"
+    },
+    {
+      "name": "deck",
+      "command": "python3 docs/_active/ui-v21/evidence/U5/run-regression.py tests/browser-train-deck.py docs/_active/ui-v21/evidence/U5/verified/deck",
+      "exitCode": 0,
+      "log": "deck-verified-gate.log"
+    },
+    {
+      "name": "5C",
+      "command": "python3 docs/_active/ui-v21/evidence/U5/run-regression.py tests/browser-phase-five-close.py docs/_active/ui-v21/evidence/U5/regression-5c",
+      "exitCode": 0,
+      "log": "execution-logs/u5-5c.txt"
+    },
+    {
+      "name": "single-projection",
+      "command": "node docs/_active/ui-v21/evidence/U5/build-single-projection.mjs && python3 docs/_active/ui-v21/evidence/U5/capture-single-projection.py",
+      "exitCode": 0,
+      "log": "tests/single-projection-settled.txt"
+    },
+    {
+      "name": "invariants",
+      "command": "python3 docs/_active/ui-v21/evidence/U5/check-invariants.py",
+      "exitCode": 0,
+      "log": "invariants.json"
+    },
+    {
+      "name": "phase-zero",
+      "command": [
+        "python3",
+        "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/run-regression.py",
+        "tests/browser-phase-zero.py",
+        "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/verified-remaining/phase-zero"
+      ],
+      "environment": {},
+      "exitCode": 0,
+      "elapsedSeconds": 24.061281204223633
+    },
+    {
+      "name": "U2",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U2.py"
+      ],
+      "environment": {
+        "U2_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/verified-remaining/U2"
+      },
+      "exitCode": 0,
+      "elapsedSeconds": 87.2179307937622
+    },
+    {
+      "name": "U3",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U3.py"
+      ],
+      "environment": {
+        "U3_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/verified-remaining/U3"
+      },
+      "exitCode": 0,
+      "elapsedSeconds": 58.28279662132263
+    },
+    {
+      "name": "U4",
+      "command": [
+        "python3",
+        "tests/browser-ui-v21-U4.py"
+      ],
+      "environment": {
+        "U4_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/final/U4"
+      },
+      "exitCode": 0,
+      "elapsedSeconds": 48.42211985588074
+    }
+  ],
+  "functional": "delivery/results.json",
+  "native": "native-current/results.json",
+  "lifecycle": "lifecycle-delivery/results.json",
+  "sourceInvariants": "invariants.json",
+  "selectorsAndCallbacks": "selector-delta.json",
+  "PASS_EXECUTED": [
+    "254 Node",
+    "9 Python",
+    "build/canonical/invariants",
+    "8 U5 functional groups",
+    "lifecycle callback boundary",
+    "native four physical trains",
+    "Browser Train Deck",
+    "Phase Zero",
+    "5C matrix",
+    "U2/U3/U4 smoke"
+  ],
+  "PASS_PREVIOUSLY_DOCUMENTED": [
+    "complete M2/M3 suites",
+    "extended R1/S2/S5 matrices beyond pertinent reruns"
+  ],
+  "NOT_VERIFIED": [
+    "physical singleton fleet (single screenshot is real train0 UI projection only)",
+    "hardware GPU/touch/audio/screen reader",
+    "other browsers",
+    "remote OAuth",
+    "native beforeunload prompt",
+    "U9 integrated acceptance"
+  ],
+  "FAIL_UNRESOLVED": [],
+  "FAIL_RECOVERED": "Intermediate results/logs kept in functional*, acceptance*, execution-logs, initial gate-commands and tests; report enumerates recoveries. No overwriting U0\u2013U4 evidence.",
+  "checkpoint": "Atomic containing commit and verified remote SHA supplied in final handoff; cannot embed own commit hash."
+}

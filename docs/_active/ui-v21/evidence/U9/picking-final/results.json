@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "observerSHA256": "14026b109aa80896b9aa26d9de52e17fd2a63a693f03be416afe7aa4ba0acd44",
+  "method": "same app plus object observer; trusted CDP/mouse; on-demand RAF",
+  "checks": [
+    "all-eight-real-3D-turnout-clicks-reach-original-dispatcher",
+    "trusted-real-train-hit-selects-same-console",
+    "trusted-pan-and-touch-orbit-after-view-panel-closes",
+    "real-generated-topology-svg-identical-and-hud-read-only",
+    "actual-pagehide-cleans-active-bell-timer-voices-and-all-overlay-listeners"
+  ],
+  "errors": [],
+  "switches": [
+    "WX-A",
+    "WX-B",
+    "Y-IN",
+    "Y-2",
+    "Y-3",
+    "Y-R1",
+    "Y-R2",
+    "Y-4"
+  ]
+}

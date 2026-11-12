@@ -1,0 +1,50 @@
+[
+  {
+    "name": "node-final",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "build-final",
+    "command": [
+      "npm",
+      "run",
+      "build",
+      "--",
+      "--metafile=docs/_active/ui-v21/evidence/U4/bundle-inputs.json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "canonical",
+    "command": [
+      "python",
+      "scripts/build-canonical-layout.py"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "canonical-diff",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "907a9ec",
+      "--",
+      "src/canonical-layout.json",
+      "docs/jmri-layout"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "invariants",
+    "command": [
+      "python",
+      "docs/_active/ui-v21/evidence/U4/verify-invariants.py"
+    ],
+    "exit": 0
+  }
+]

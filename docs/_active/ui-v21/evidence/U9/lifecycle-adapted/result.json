@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "checks": [
+    "virtual inventory guard without M2 projects",
+    "close/reopen preserves records",
+    "removing last record clears guard",
+    "dispose removes guard and dialog",
+    "25 create/open/add/dispose cycles leave no observable residue"
+  ],
+  "pageErrors": [],
+  "limit": "Synthetic cancelable beforeunload tests the handler, not physical browser prompt presentation."
+}

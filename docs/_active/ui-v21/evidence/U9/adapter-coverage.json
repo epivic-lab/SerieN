@@ -1,0 +1,225 @@
+{
+  "count": 13,
+  "adapters": [
+    {
+      "id": "A01",
+      "status": "PASS_LOCAL_CONTRACT_WITH_LIMITS",
+      "controls": [
+        "CTRL-002"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": "Live provider excluded"
+    },
+    {
+      "id": "A02",
+      "status": "PASS",
+      "controls": [
+        "CTRL-002",
+        "CTRL-027",
+        "CTRL-055",
+        "CTRL-056"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A03",
+      "status": "PASS",
+      "controls": [
+        "CTRL-026",
+        "CTRL-029",
+        "CTRL-030",
+        "CTRL-031",
+        "CTRL-037",
+        "CTRL-038",
+        "CTRL-044",
+        "CTRL-051",
+        "CTRL-055",
+        "CTRL-057",
+        "CTRL-058",
+        "CTRL-061"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A04",
+      "status": "PASS",
+      "controls": [
+        "CTRL-033",
+        "CTRL-034",
+        "CTRL-035",
+        "CTRL-036",
+        "CTRL-037",
+        "CTRL-039",
+        "CTRL-057",
+        "CTRL-058"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A05",
+      "status": "PASS",
+      "controls": [
+        "CTRL-040"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A06",
+      "status": "PASS",
+      "controls": [
+        "CTRL-046",
+        "CTRL-047"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A07",
+      "status": "PASS",
+      "controls": [
+        "CTRL-016",
+        "CTRL-017",
+        "CTRL-018",
+        "CTRL-019",
+        "CTRL-020",
+        "CTRL-021",
+        "CTRL-022",
+        "CTRL-023",
+        "CTRL-024",
+        "CTRL-025",
+        "CTRL-050",
+        "CTRL-054"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A08",
+      "status": "PASS",
+      "controls": [
+        "CTRL-052"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A09",
+      "status": "PASS",
+      "controls": [
+        "CTRL-062"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A10",
+      "status": "PASS",
+      "controls": [
+        "CTRL-034",
+        "CTRL-035",
+        "CTRL-036",
+        "CTRL-050",
+        "CTRL-051",
+        "CTRL-056"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A11",
+      "status": "PASS",
+      "controls": [
+        "CTRL-041",
+        "CTRL-042",
+        "CTRL-043",
+        "CTRL-044",
+        "CTRL-045"
+      ],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A12",
+      "status": "PASS",
+      "controls": [],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": null
+    },
+    {
+      "id": "A13",
+      "status": "PASS_LOCAL_CONTRACT_WITH_LIMITS",
+      "controls": [],
+      "evidence": [
+        "control-coverage.json",
+        "regression-matrix.json",
+        "accessibility-matrix.json",
+        "invariants.json"
+      ],
+      "limits": "Local fonts decoded offline; offline live Auth cold start not claimed"
+    }
+  ]
+}

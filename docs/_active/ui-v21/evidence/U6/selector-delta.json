@@ -1,0 +1,16 @@
+{
+  "controls": {
+    "CTRL-014": "clone u6RollingModels \u2192 original rollingModels change once; re-read rollback",
+    "CTRL-028": "data-composition \u2192 onSelect",
+    "CTRL-029": "requestAction \u2192 validated consent \u2192 onFocus + close",
+    "CTRL-030": "requestAction \u2192 projects.copy(train), original generation",
+    "CTRL-040": "original Side View internal zoom/Fit/scroll",
+    "CTRL-051": "native dialog cancel/Escape \u2192 requestClose; top guard captures Escape",
+    "CTRL-055": "requestClose + launcher focus",
+    "CTRL-056": "role tab; Arrow/Home/End; panel data-u6-view",
+    "CTRL-063": "exact dirty || hasProjects || inventory.size > 0",
+    "CTRL-065": "detachedView read-only; UUID/traccia/misure",
+    "CTRL-066": "PROJECT_CATALOG definitions; role/source/text filters only"
+  },
+  "ProjectsAdapter": "discardAfterConsent(expected JSON) only; original discard sync unchanged"
+}

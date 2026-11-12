@@ -1,0 +1,12 @@
+[
+  {
+    "name": "node",
+    "command": "npm test",
+    "exit": 0
+  },
+  {
+    "name": "python",
+    "command": "python -m unittest discover -s tests -p \"*_test.py\"",
+    "exit": 0
+  }
+]

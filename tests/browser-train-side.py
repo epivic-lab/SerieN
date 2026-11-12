@@ -61,7 +61,7 @@ with sync_playwright() as p:
         page.set_viewport_size({'width':width,'height':height})
         page.evaluate("__sideFrame(performance.now());document.querySelector('dialog').scrollTop=0")
         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
-        assert page.locator('dialog').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
+        assert page.locator('dialog.trainManagement').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
         assert page.locator('.sideViewport').evaluate('(v)=>v.scrollWidth<=v.clientWidth+1')
         page.screenshot(path=str(out/(name+'.png')))
     page.evaluate("document.getElementById('rollingModels').value='kenney';document.getElementById('rollingModels').dispatchEvent(new Event('change'))")
@@ -69,7 +69,7 @@ with sync_playwright() as p:
     ready()
     page.screenshot(path=str(out/'tablet-kenney-complete.png'))
     result['kenneyVehicles']=page.locator('.sideStage image').evaluate_all('(nodes)=>nodes.map(n=>n.dataset.sideKey)')
-    page.locator('dialog [data-close]').click()
+    page.locator('dialog.trainManagement [data-close]').click()
     assert page.locator('#trainManagement').evaluate('(b)=>document.activeElement===b')
     # A separate pure UI fixture stresses six long vehicles, with no simulator mutation.
     entry=Path('work/long-side-entry.js')

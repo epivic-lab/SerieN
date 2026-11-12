@@ -1,0 +1,26 @@
+{
+  "unresolved": [],
+  "events": [
+    {
+      "event": "environment startup returned canceled configuration",
+      "recovery": "execution tools subsequently became available; continued same workspace without reset"
+    },
+    {
+      "event": "previous local HTTP server returned empty responses",
+      "recovery": "fresh local server on port 8035; browser tests then passed"
+    },
+    {
+      "event": "historical U6 fixture selected a confirmed project then expected an editable draft",
+      "evidence": "U6-adapted/results.json; tests/U6.txt; commands.json exit1 retained",
+      "recovery": "U7 approved contract makes selection read-only; adapter adds explicit original Edit and waits for native close focus restoration. Domain assertions unchanged. U6-recovered-adapted/results.json exit0 on final bundle"
+    },
+    {
+      "event": "first U8 presentation review exposed shared guard default draft title and focus after replaced controls",
+      "recovery": "optional per-request labels with defaults reset each request; Depot focus fallback. Final delivery/native/U6/U2 passed; no domain changes"
+    },
+    {
+      "event": "earlier regression suites used pre-label/focus bundle e70eb73532bf02dd3cbfd220a9d431c37efed1820d85b3585d16315fd0228f8c",
+      "recovery": "retain exact bundle provenance; final delivery/native/U6/U2 and standalone intents cover final shared labels/focus behavior. Unchanged historical domain assertions remain in run-adapted.py; no test source modified"
+    }
+  ]
+}

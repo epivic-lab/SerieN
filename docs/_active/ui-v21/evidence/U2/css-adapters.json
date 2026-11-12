@@ -1,0 +1,30 @@
+[
+  {
+    "source": "ui/css/tokens.css",
+    "source_sha256": "9f40e115e316031dbe2ee9751f416caad4060228ceb0c17ae10f95582f56543e",
+    "active_copy": "ui/css/tokens-u2.css",
+    "sha256": "aebbee44140775f75502d27bcdd9e39ebba01321f910943cf60343927d0530db",
+    "transformation": "wrap @scope (.u2-region); :root -> :scope only"
+  },
+  {
+    "source": "ui/css/serien-ui.css",
+    "source_sha256": "469ad1201812e909913b35c37f195fcc44b1412246210e2fb4cfec6147445653",
+    "active_copy": "ui/css/serien-ui-u2.css",
+    "sha256": "3e232010eca1e5574c75a7ae89737726ceb30586f6f54cc87562ef1cde0a6990",
+    "transformation": "wrap @scope (.u2-region); :root -> :scope only"
+  },
+  {
+    "source": "ui/css/tokens-tm.css",
+    "source_sha256": "a4bb92eb84fb066e890632a923bf91d5a6966b2bbe292daa0d5db826c15117d6",
+    "active_copy": "ui/css/tokens-tm-u2.css",
+    "sha256": "61500bb11dbc0fd583f5baaa1f3a45cfa9bb2e6760e0f1dcfb3b79fbdd3a1e4f",
+    "transformation": "wrap @scope (.u2-region); :root -> :scope only"
+  },
+  {
+    "source": "ui/css/serien-ui-train-management.css",
+    "source_sha256": "cd72e70111d99d663dba5f914ccfe3e7b1940c18cd56308f358c1c8a3e05c853",
+    "active_copy": "ui/css/serien-ui-train-management-u2.css",
+    "sha256": "f0ac063fc9d1a3d5e5a99120d191c8bed2836133e73d45a708e2c6ce3f7deaba",
+    "transformation": "wrap @scope (.u2-region); :root -> :scope only"
+  }
+]

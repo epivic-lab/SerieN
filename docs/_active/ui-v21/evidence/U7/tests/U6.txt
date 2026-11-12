@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U6.py", line 32, in <module>
+    click('dialog.trainManagement [data-close]');assert p.locator('#trainManagement').evaluate('(e)=>e===document.activeElement')
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

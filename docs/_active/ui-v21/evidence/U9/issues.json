@@ -1,0 +1,162 @@
+[
+  {
+    "id": "U9-001",
+    "component": "Train Dock",
+    "severity": "medium",
+    "evidence": "Throttle percentage was written to the first output (actual speed), leaving throttle output empty.",
+    "reproduction": "Set throttle 37 while paused; real velocity stays zero.",
+    "rootCause": "First output selector became ambiguous when actual-speed row was added.",
+    "files": [
+      "src/train-deck.js"
+    ],
+    "minimalFix": "Select .trainConsoleSpeed output explicitly.",
+    "regressionEvidence": [
+      "acceptance-delivery/results.json",
+      "U5-adapted/results.json"
+    ],
+    "finalStatus": "FIXED / PASS; pending independent Regia review"
+  },
+  {
+    "id": "U9-002",
+    "component": "Camera View menu",
+    "severity": "high",
+    "evidence": "U3 trusted preset click timed out: header intercepted Station; first attempted fix then covered Zoom.",
+    "reproduction": "Open View at desktop short canvas; try Station and Zoom.",
+    "rootCause": "Absolute popup positioned above toolbar without respecting the canvas or primary controls.",
+    "files": [
+      "src/ui/overlays.js",
+      "ui/css/serien-ui-integration.css"
+    ],
+    "minimalFix": "Anchor within canvas; calculate max-height above primary toolbar only on open/resize; use existing disposer list.",
+    "regressionEvidence": [
+      "U3-final/results.json",
+      "picking-final/results.json",
+      "native-delivery/results.json"
+    ],
+    "finalStatus": "FIXED / PASS; pending independent Regia review"
+  },
+  {
+    "id": "U9-003",
+    "component": "TM tab semantics",
+    "severity": "high",
+    "evidence": "axe aria-allowed-attr: four role=tab controls exposed aria-pressed.",
+    "reproduction": "Run axe WCAG rules on open TM.",
+    "rootCause": "Role changed to tab in U6 but old pressed state was retained.",
+    "files": [
+      "src/train-management.js"
+    ],
+    "minimalFix": "Keep aria-selected and roving tabindex; remove unsupported aria-pressed.",
+    "regressionEvidence": [
+      "acceptance-delivery/results.json",
+      "U6-adapted/results.json"
+    ],
+    "finalStatus": "FIXED / PASS; pending independent Regia review"
+  },
+  {
+    "id": "U9-004",
+    "component": "Dock readability",
+    "severity": "low",
+    "evidence": "Operational labels inherited ellipsis/nowrap and 12px status; secondary scale was 11px.",
+    "reproduction": "Inspect mobile/short desktop operational card.",
+    "rootCause": "Legacy one-line rules remained in cascade under scoped skin.",
+    "files": [
+      "ui/css/serien-ui-integration.css"
+    ],
+    "minimalFix": "Wrap labels; 14px status/description, 13px scale; bounded auto heading rows.",
+    "regressionEvidence": [
+      "acceptance-delivery/results.json",
+      "U5-adapted/results.json"
+    ],
+    "finalStatus": "FIXED / PASS; pending independent Regia review"
+  },
+  {
+    "id": "U9-005",
+    "component": "Compare and Depot hierarchy",
+    "severity": "medium",
+    "evidence": "Full record/slot/physical UUIDs dominated before operational card actions.",
+    "reproduction": "Inspect a Reserved record and long Compare rows at 390px.",
+    "rootCause": "Technical identities were rendered inline at the same hierarchy as model and assignment.",
+    "files": [
+      "src/train-projects-view.js",
+      "src/depot-view.js",
+      "ui/css/serien-ui-integration.css"
+    ],
+    "minimalFix": "Native details retain full IDs; show model/code/state/project/position first; emphasize distinct textual Compare state labels.",
+    "regressionEvidence": [
+      "acceptance-delivery/results.json",
+      "U7-adapted/results.json",
+      "U8/results.json",
+      "M2/browser.json"
+    ],
+    "finalStatus": "FIXED / PASS; pending independent Regia review"
+  },
+  {
+    "id": "U9-006",
+    "component": "Focus / motion preferences",
+    "severity": "low",
+    "evidence": "Shell and legacy Help/Plan focus styling and TM reduced-motion coverage were not uniform.",
+    "reproduction": "Keyboard navigate shell/Help/Plan; enable reduced motion in TM.",
+    "rootCause": "Incomplete scoped CSS coverage",
+    "files": [
+      "ui/css/serien-ui-integration.css"
+    ],
+    "minimalFix": "Add scoped focus, 44px legacy dialog buttons/native summaries and reduced-motion coverage.",
+    "regressionEvidence": [
+      "acceptance-delivery/results.json",
+      "U2/result.json"
+    ],
+    "finalStatus": "FIXED / PASS; pending independent Regia review"
+  },
+  {
+    "id": "REL-001",
+    "component": "GitHub Pages packaging",
+    "severity": "release-blocker",
+    "evidence": "Prepare site copies dist/assets/docs, omits all runtime ui/.",
+    "reproduction": "Inspect Prepare site and follow runtime CSS URL closure.",
+    "rootCause": "Workflow predates U1\u2013U8 UI asset directory.",
+    "files": [
+      ".github/workflows/pages.yml"
+    ],
+    "minimalFix": "Proposed future-only: cp -R dist assets ui _site/. Not applied.",
+    "regressionEvidence": [
+      "release-readiness.json"
+    ],
+    "finalStatus": "DOCUMENTED / OUT OF SCOPE"
+  },
+  {
+    "id": "U9-HDR",
+    "component": "Autumn Railways header plate",
+    "severity": "Regia-confirmed design nonconformity",
+    "evidence": "header-engraved-plaque/before.json: no .edp, free 13px Cutive Mono text, hidden at 390px",
+    "reproduction": "Inspect header at desktop/mobile before correction",
+    "rootCause": "U2 mountShell replaced original .edp brass component with a plain .u2-edition span",
+    "files": [
+      "src/ui/shell.js",
+      "ui/css/serien-ui-integration.css"
+    ],
+    "minimalFix": "Restore original frozen .edp markup with original .scr screws and emb-maple; final responsive HD refinements scoped in integration; native flex wrap keeps real shell controls reachable",
+    "regressionEvidence": [
+      "header-engraved-plaque/delivery/results.json",
+      "U2-header-final/result.json",
+      "acceptance-header-final/results.json",
+      "native-header-final/results.json"
+    ],
+    "finalStatus": "FIXED / PASS; pending independent Regia review"
+  },
+  {
+    "id": "U9-007",
+    "component": "Dock accessible semantics",
+    "severity": "low",
+    "evidence": "a11y-incomplete-details.json: generic tabs div and three cars spans carry unsupported aria-label",
+    "rootCause": "Labels survived legacy markup without a named semantic group or text-only projection",
+    "files": [
+      "src/train-deck.js"
+    ],
+    "minimalFix": "role=group on real train selector cluster; cars count remains native text with its existing title, removing inappropriate aria-label",
+    "regressionEvidence": [
+      "acceptance-checkpoint/results.json",
+      "native-checkpoint/results.json"
+    ],
+    "finalStatus": "FIXED / PASS; pending independent Regia review"
+  }
+]

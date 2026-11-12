@@ -1,0 +1,457 @@
+{
+  "gate": "G-U9",
+  "uniqueExistingTests": 59,
+  "rules": "Deduplicated original gate registry; execution provenance is explicit. Current G-U9, Node and native are final acceptance, not blind reruns of all historical harnesses.",
+  "tests": [
+    {
+      "test": "tests/access-gate.test.js",
+      "testSHA256": "9d5013a2cfc7c28a822e96b86094be8609b99043174fdd2f9c5382958ed5c219",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/animation-performance.test.js",
+      "testSHA256": "3972cc5c82ca2d6164a1c3cad8e0ce219212cb8e861c118096cb17fc12d395d7",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/assets.test.js",
+      "testSHA256": "a2b99f44b747e59ea3b75e344c2a670ffc09fcfdde23bf91ad059be83dfea733",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/browser-depot-lifecycle.py",
+      "testSHA256": "54365d04fc3c6415610e7399708ed23a7b53d19bb6eb92aaf13b0cbc5fe65c91",
+      "status": "PASS_EXECUTED_PRE_FINAL_PRESENTATION",
+      "evidence": "docs/_active/ui-v21/evidence/U9/depot-lifecycle-adapted/result.json",
+      "evidenceExists": true,
+      "scope": "Actual U9 execution with original approved adapter, at recorded source/bundle; final remaining presentation changes independently covered"
+    },
+    {
+      "test": "tests/browser-depot-runtime.py",
+      "testSHA256": "2c04d531529d31baeeced199be96d0f0d4d2ad933c7747ca5d560d816b228e3b",
+      "status": "NOT_RERUN_ORIGINAL_RUNTIME",
+      "replacement": [
+        "native-delivery/results.json",
+        "native-header-final/results.json",
+        "native-checkpoint/results.json"
+      ],
+      "scope": "Current native production scenario covers original M2/M3 coexistence contracts; original standalone runtime suite not newly executed"
+    },
+    {
+      "test": "tests/browser-depot.py",
+      "testSHA256": "171e6dfd813ae000aa7d06d6e0952c2ef340ecc60f48bb1dc318e70492e86ab8",
+      "status": "PASS_EXECUTED_PRE_FINAL_PRESENTATION",
+      "evidence": "docs/_active/ui-v21/evidence/U9/depot-adapted/result.json",
+      "evidenceExists": true,
+      "scope": "Actual U9 execution with original approved adapter, at recorded source/bundle; final remaining presentation changes independently covered"
+    },
+    {
+      "test": "tests/browser-guarded-stop.py",
+      "testSHA256": "4c97f19572e9b3999968b419a39590f423da0df8e674b8bdadf3d459c5cf5cc7",
+      "status": "PASS_HISTORICAL_DOMAIN_IDENTITY",
+      "evidence": "docs/_active/ui-v21/evidence/U3/regressions/guarded-stop-final/guarded-stop/browser.json",
+      "evidenceSHA256": "7fb1ef64627c284109d2b2dab2b5a8e51d59df50506a6cfc0124f648f6e3f298",
+      "scope": "Historical original suite; exact protected domain identities in historical-source-identity.json; current integration in G-U9/native/U3/picking"
+    },
+    {
+      "test": "tests/browser-phase-five-close.py",
+      "testSHA256": "8adc80f59e4a832646f72a1528bf2b6fd261f9b96a76317efa6196acf496d22e",
+      "status": "PASS_HISTORICAL_DOMAIN_IDENTITY",
+      "evidence": "docs/_active/ui-v21/evidence/U3/regressions/railway/docs/phase-5c-close/acceptance.json",
+      "evidenceSHA256": "d330019022d57af2ca2f01d989b6c2cc1cfa9e5c69a5e27bbe6a765e4471dd01",
+      "scope": "Historical original suite; exact protected domain identities in historical-source-identity.json; current integration in G-U9/native/U3/picking"
+    },
+    {
+      "test": "tests/browser-phase-four.py",
+      "testSHA256": "0dc78125770dace97b40aa1f39eab22c1862ad97046936bbf38e87777c16e95f",
+      "status": "NOT_RERUN_OVERLAPPING_LEGACY_SUITE",
+      "replacement": [
+        "acceptance-checkpoint/results.json",
+        "U2-header-final/result.json",
+        "U3-final/results.json",
+        "U4/results.json",
+        "tests/phase-zero-final.txt"
+      ],
+      "scope": "Full original phase-1/3/4 suite not newly executed; current applicable Auth/UI/camera/Low/High/day/night/canonical behavior verified by focused integrated suites. No new PASS claimed for original full legacy suite."
+    },
+    {
+      "test": "tests/browser-phase-one.py",
+      "testSHA256": "45d649d1f51ac5841ae584650f89c0f3d24c9f7ff28e72cbdc4ef363076186cb",
+      "status": "NOT_RERUN_OVERLAPPING_LEGACY_SUITE",
+      "replacement": [
+        "acceptance-checkpoint/results.json",
+        "U2-header-final/result.json",
+        "U3-final/results.json",
+        "U4/results.json",
+        "tests/phase-zero-final.txt"
+      ],
+      "scope": "Full original phase-1/3/4 suite not newly executed; current applicable Auth/UI/camera/Low/High/day/night/canonical behavior verified by focused integrated suites. No new PASS claimed for original full legacy suite."
+    },
+    {
+      "test": "tests/browser-phase-three.py",
+      "testSHA256": "7065929c9f9eaf7d28910496f3892ac5ebd650e3a32f63451b219e28dfae09a2",
+      "status": "NOT_RERUN_OVERLAPPING_LEGACY_SUITE",
+      "replacement": [
+        "acceptance-checkpoint/results.json",
+        "U2-header-final/result.json",
+        "U3-final/results.json",
+        "U4/results.json",
+        "tests/phase-zero-final.txt"
+      ],
+      "scope": "Full original phase-1/3/4 suite not newly executed; current applicable Auth/UI/camera/Low/High/day/night/canonical behavior verified by focused integrated suites. No new PASS claimed for original full legacy suite."
+    },
+    {
+      "test": "tests/browser-phase-zero.py",
+      "testSHA256": "2877d8a9a30878646ef2fb925ca573423f5b3f21b8b6f99af9ce4c2380b7bb77",
+      "status": "PASS_EXECUTED_PRE_FINAL_PRESENTATION",
+      "evidence": "docs/_active/ui-v21/evidence/U9/phase-zero-final/docs/consolidation/browser-result.json",
+      "evidenceExists": true,
+      "scope": "Actual U9 execution with original approved adapter, at recorded source/bundle; final remaining presentation changes independently covered"
+    },
+    {
+      "test": "tests/browser-train-deck.py",
+      "testSHA256": "ae83d2618d20800cbdd94745b7fb0dc5668fb8aa3117102e83d5518c174e4cc6",
+      "status": "PASS_EXECUTED_PRE_FINAL_PRESENTATION",
+      "evidence": "docs/_active/ui-v21/evidence/U9/train-deck-final/docs/train-deck/browser-result.json",
+      "evidenceExists": true,
+      "scope": "Actual U9 execution with original approved adapter, at recorded source/bundle; final remaining presentation changes independently covered"
+    },
+    {
+      "test": "tests/browser-train-management.py",
+      "testSHA256": "1dfc1ed782183238b562cb9a764571de5a405fc23c5cb24ec5bf57ac4fc38db3",
+      "status": "PASS_EXECUTED_PRE_FINAL_PRESENTATION",
+      "evidence": "docs/_active/ui-v21/evidence/U9/M1/browser.json",
+      "evidenceExists": true,
+      "scope": "Actual U9 execution with original approved adapter, at recorded source/bundle; final remaining presentation changes independently covered"
+    },
+    {
+      "test": "tests/browser-train-project-lifecycle.py",
+      "testSHA256": "2eadbcc64cdb1608715f5fd9d6a88cac357c905a423d551461e7bf94b8d41ed1",
+      "status": "PASS_EXECUTED_PRE_FINAL_PRESENTATION",
+      "evidence": "docs/_active/ui-v21/evidence/U9/projects-lifecycle-adapted/browser.json",
+      "evidenceExists": true,
+      "scope": "Actual U9 execution with original approved adapter, at recorded source/bundle; final remaining presentation changes independently covered"
+    },
+    {
+      "test": "tests/browser-train-projects-runtime.py",
+      "testSHA256": "777ff1a6da51b639dcbebd2954432b5a38269ea03ae435f3aa90d350f22aff08",
+      "status": "NOT_RERUN_ORIGINAL_RUNTIME",
+      "replacement": [
+        "native-delivery/results.json",
+        "native-header-final/results.json",
+        "native-checkpoint/results.json"
+      ],
+      "scope": "Current native production scenario covers original M2/M3 coexistence contracts; original standalone runtime suite not newly executed"
+    },
+    {
+      "test": "tests/browser-train-projects.py",
+      "testSHA256": "d606ff9bfea0d4e53573fe73b4dd7ecedd791df077f9d1f87c7e1bef242b6ad3",
+      "status": "PASS_EXECUTED_PRE_FINAL_PRESENTATION",
+      "evidence": "docs/_active/ui-v21/evidence/U9/M2/browser.json",
+      "evidenceExists": true,
+      "scope": "Actual U9 execution with original approved adapter, at recorded source/bundle; final remaining presentation changes independently covered"
+    },
+    {
+      "test": "tests/browser-turnout-interaction.py",
+      "testSHA256": "3f6ba3a888d252aa3fc6c7b947a84c255660c0196d8e124b285c4bc3bb3ed937",
+      "status": "PASS_HISTORICAL_DOMAIN_IDENTITY",
+      "evidence": "docs/_active/ui-v21/evidence/U3/regressions/interaction/interaction/interaction.json",
+      "evidenceSHA256": "39d61458630ea7a31a359fa7a99bc3b9da5181d807eed03405c734fb4224f413",
+      "scope": "Historical original suite; exact protected domain identities in historical-source-identity.json; current integration in G-U9/native/U3/picking"
+    },
+    {
+      "test": "tests/conflict-performance.test.js",
+      "testSHA256": "903b077dd46695caaccf171be32c1a0c5dd5c43f9720e731b33e9a4a2e800a49",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/consist.test.js",
+      "testSHA256": "bfb1a29e9e446d8bf3acb13a68b3fd1c086e0231a16d59b3fb826e51a820d2dc",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/depot-inventory.test.js",
+      "testSHA256": "2d5c78cb904f09b36052567e7cfbfeefa9d5a077628dad04da678049c1754acc",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/fleet-commands.test.js",
+      "testSHA256": "88a61bee85bc7b8fd92a7e7a4f71c3e9af1f2cfafb517a151f6b999b8508dc6d",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/graphic-foundations.test.js",
+      "testSHA256": "573ded9fb37b259a77573b7f2e33b78beb77c891a30c4aa0e3c133e56e976476",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/guarded-stop.test.js",
+      "testSHA256": "8230e72825aa7054768c0a8fa1559d07e5370db4c8a9e951ab09b3a66a111411",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/landscape.test.js",
+      "testSHA256": "d1540a6f186cdf0e60aa947e08bc7dfe1043e7826f3118b6d70d6c340495c393",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/navigation.test.js",
+      "testSHA256": "98a9275829f53e6586d559a389d7f7118a142334735b189eb2489b98eb5f8487",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/network.test.js",
+      "testSHA256": "f8906f42c9753d8757fc63617f33ba5e4e53476b7ad15b2913de8669e46f09a8",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/next-switch.test.js",
+      "testSHA256": "64c9ccaac1466487acb66be37b6089533fb2f1514975f6a6428d36379e13ee37",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/phase-three.test.js",
+      "testSHA256": "d14addc94b952d972e752edbe17d16539aa8b7ddc912bdea93e039b6536be603",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/presentation-resources.test.js",
+      "testSHA256": "b7469f364375bc607e2a56ea12f31688cede4a39966197bbebb476719efd0947",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/quality.test.js",
+      "testSHA256": "e57165b0566f3d00db964f8f808eec33e7633ef3fe2d7298c8ebc69d41f29f14",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/railway-guard.test.js",
+      "testSHA256": "e21a551198d2c8f53a64d76bed42bc42f36dd43d2d835e27ddcb10a0c7cedbf2",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/railway-reliability.test.js",
+      "testSHA256": "80d993a99759a6024296a1c0ec1135eaa30038d56513e239063bf6022c5c08b9",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/railway-state.test.js",
+      "testSHA256": "8950b725483e2944b5199eeeee317e48f01a0acc828e004f59128248ec0772d1",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/railway-step.test.js",
+      "testSHA256": "e4f0718277e203a8c7e5df42cf872e23f09ef5adc0f356672a9b1afb2581d70e",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/rolling-stock.test.js",
+      "testSHA256": "95917f2f1f9d0adcec609ec877ffd178e108d06b36466bf5ede3d4015b18f37f",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/route-performance.test.js",
+      "testSHA256": "1a3511ef42f883031569a568ef6b99356df28b75cec026d75b9537916f423815",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/run-train-side-regression.py",
+      "testSHA256": "f6d9b665f6a4aa499582ae3d0d92d47ceff1120f40f792b7f53b82ee8285ba4d",
+      "status": "PASS_EXECUTED_PRE_FINAL_PRESENTATION",
+      "evidence": "docs/_active/ui-v21/evidence/U9/side/browser.json",
+      "evidenceExists": true,
+      "scope": "Actual U9 execution with original approved adapter, at recorded source/bundle; final remaining presentation changes independently covered"
+    },
+    {
+      "test": "tests/scenic-plan.test.js",
+      "testSHA256": "496d7a8d24feb2bce3479e924826b4cc0a4fa6bfcafed7d5ae674ce3f18a5446",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/station-building.test.js",
+      "testSHA256": "79aa08af2863d83991179be7da9064eaf8f78f1a44081406c05188b625f65cd7",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/station-materials.test.js",
+      "testSHA256": "1fb556fc0be167077ce492893e0676fff5b447356ac983b6cf7bda6d485aa77f",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/station-platform.test.js",
+      "testSHA256": "96ebe79abbd7d891a3c576799e7b981901e5ff0b61ba6ae777470c8cb77592d5",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/structure-mesh.test.js",
+      "testSHA256": "81fa08dc1713489d6ff7b7aa972244fabb809bb815de5705dbc5559697a1b173",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/structures.test.js",
+      "testSHA256": "97e3f1146d84a3178e6b08b9319d9a8a9f5c395388c227f258fb5597a3ce128b",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/switch-routing-matrix.test.js",
+      "testSHA256": "875d24730f2ef073d5c9b29966132a0093a84673592aae5b2b2d94d2c1e3ea25",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/train-assets.test.js",
+      "testSHA256": "a265f04d0fd22ebb67f7ba3816574f64c3f3292465730afb93a260fd5e228e71",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/train-deck.test.js",
+      "testSHA256": "385457b19d3be0ea2c5e2f788eb15c183fc012266189bb6a1e39f098622aab3a",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/train-management.test.js",
+      "testSHA256": "45b5ac87a8fbab19e51aa33ab429be65eef088d8a6be65ea63f1d666a47b8bc2",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/train-project-side.test.js",
+      "testSHA256": "9df30982958cc26f3949aa5703de423df9b4bf19351ddedce8526b6759c2eaae",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/train-projects.test.js",
+      "testSHA256": "c51a03fe46b450ad67cf34af61bd53ed6f9f3f6fbd8e3f8e08426300a8f535bb",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/train-side-layout.test.js",
+      "testSHA256": "e5374c562a0be41df2e51609693cc84f09d4848940af8a6ca41247847d0dfe11",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/turnout-arrows.test.js",
+      "testSHA256": "94e50f456ae92c433d0919a89a62940c428491d44c7779b4cd88c1a4c2217b08",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/turnout-commands.test.js",
+      "testSHA256": "de10eda0bf82efc846d9ae09ff35a9267d702061e6edf1a403149f215678134b",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/turnout-glow.test.js",
+      "testSHA256": "5d9e2e19c8a5a8ff54027544f19ea1240e6f529138faac7553872e6da2a0a008",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/turnout-interaction.test.js",
+      "testSHA256": "2d7e2eae148bb173f6e9e430a6b7c161850700e018f805f9890ef29d0595402e",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/turnout-picking.test.js",
+      "testSHA256": "20aa5b5872e53a9f85fa1bb54f02dba2d05c1a0673db3777f9289286f57809f2",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/turnout-routes.test.js",
+      "testSHA256": "ea5bf01aa6c4bcaccb47981b4d7ea2d25b7b5cc2c289f2686933f0f5b0997fe0",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/view-controls.test.js",
+      "testSHA256": "0b3827aceb97b2e6f8b17a4718c55042311c17d95dbc41563511b4057e1082ef",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    },
+    {
+      "test": "tests/zones.test.js",
+      "testSHA256": "9024372375f5e6ed6f0202ba63c660e648d96028a90737d5de8caa28d1621886",
+      "status": "PASS_EXECUTED",
+      "evidence": "tests/node-checkpoint.txt",
+      "scope": "npm test includes every current tests/*.test.js; 254 assertions"
+    }
+  ]
+}

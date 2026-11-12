@@ -1,0 +1,118 @@
+[
+  {
+    "name": "versions",
+    "argv": [
+      "bash",
+      "-c",
+      "node --version && npm --version && python3 --version"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "npm-ci",
+    "argv": [
+      "npm",
+      "ci"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "canonical",
+    "argv": [
+      "python3",
+      "scripts/build-canonical-layout.py"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "canonical-diff",
+    "argv": [
+      "git",
+      "diff",
+      "--exit-code",
+      "--",
+      "src/canonical-layout.json",
+      "docs/jmri-layout/canonical-graph.json",
+      "docs/jmri-layout/layout-canonical.svg",
+      "docs/jmri-layout/minimap-canonical.svg"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "python-audit",
+    "argv": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "jmri_audit_test.py"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "npm-test",
+    "argv": [
+      "npm",
+      "test"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "build",
+    "argv": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "prepare-site",
+    "argv": [
+      "bash",
+      "-euo",
+      "pipefail",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/RC_PREMERGE/prepare-site.sh"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "inventory-ancestry-domains-merge-workflow",
+    "argv": [
+      "python3",
+      "docs/_active/ui-v21/evidence/RC_PREMERGE/inventory.py"
+    ],
+    "exitCode": 0,
+    "result": "2321 files,25 commits,269 U9 identities; all original src files unchanged except five approved presentation adapters; merge-tree equals candidate tree."
+  },
+  {
+    "name": "secret-scan",
+    "argv": [
+      "python3",
+      "docs/_active/ui-v21/evidence/RC_PREMERGE/scan-secrets.py"
+    ],
+    "exitCode": 0,
+    "result": "1758 newly reachable blobs,328533842 bytes,0 candidates."
+  },
+  {
+    "name": "runtime-audit",
+    "argv": [
+      "python3",
+      "docs/_active/ui-v21/evidence/RC_PREMERGE/audit-package.py"
+    ],
+    "exitCode": 0,
+    "result": "83 refs;67 assets;79 targets;3 fonts/licences."
+  },
+  {
+    "name": "artifact-http",
+    "argv": [
+      "python3",
+      "docs/_active/ui-v21/evidence/RC_PREMERGE/artifact-http.py"
+    ],
+    "exitCode": 0,
+    "result": "97 HTTP200;3470 expected404;public closure preserved."
+  }
+]

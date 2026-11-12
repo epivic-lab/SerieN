@@ -28,13 +28,13 @@ with sync_playwright() as pw:
   data=p.evaluate("()=>{const p=__serienProfile;"+code+"p.effects.render(false);p.renderer.getContext().finish();return p.renderer.domElement.toDataURL().split(',')[1];}")
   (out/(name+'.png')).write_bytes(base64.b64decode(data))
  capture('home-wide',"p.renderFixed();__s6.update(performance.now()+500);")
- p.select_option('#cameraView','follow');p.evaluate('__s6Tick(performance.now()+1500);__serienProfile.stop()');capture('follow-train')
+ p.locator('#camt').click();p.select_option('#cameraView','follow');p.keyboard.press('Escape');p.evaluate('__s6Tick(performance.now()+1500);__serienProfile.stop()');capture('follow-train')
  p.evaluate("()=>{const p=__serienProfile,o=__s6.snapshot.units.find(u=>u.visible).pose;p.controls.minDistance=1;p.controls.target.set(o.x,o.y+17,o.z);p.camera.position.set(o.x-60,o.y+45,o.z+15);p.controls.update();}")
  results['animation']=p.evaluate('''()=>{__s6.clear();const t=performance.now()+2000;window.__s6Clock=t;__s6.update(t);return __s6.snapshot;}''')
  for delta in [0,200,400]:
   p.evaluate('d=>__s6.update(__s6Clock+d)',delta);capture('emergence-'+str(delta))
  p.evaluate('__s6.setReducedMotion(true);__s6.clear();__s6.update(performance.now()+3000)');capture('reduced-motion');assert p.evaluate('__s6.snapshot.units.find(u=>u.id===2).value')==1
- button=p.get_by_role('button',name='Mute railway warning bell');button.click();assert p.evaluate('__s6.bell.snapshot.initialized');assert p.evaluate('__s6.bell.snapshot.muted')
+ button=p.locator('#bellChip');button.click();assert p.evaluate('__s6.bell.snapshot.initialized');assert p.evaluate('__s6.bell.snapshot.muted')
  button.focus();p.keyboard.press('Enter');assert not p.evaluate('__s6.bell.snapshot.muted')
  touch=p.context.new_cdp_session(p);touch.send('Emulation.setTouchEmulationEnabled',{'enabled':True});rect=button.bounding_box();touch.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':rect['x']+rect['width']/2,'y':rect['y']+rect['height']/2}]});touch.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]});p.wait_for_function('__s6.bell.snapshot.muted',timeout=3000);results['muteInputs']=['mouse','keyboard Enter','CDP touch']
  p.locator('#pause').click();button.click();p.evaluate('__s6.update(performance.now()+3500)');p.wait_for_function('__s6.bell.snapshot.timer',timeout=10000);results['audioEnabled']=p.evaluate('__s6.bell.snapshot')

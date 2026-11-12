@@ -1,0 +1,20 @@
+[
+  {
+    "name": "u3-picking",
+    "command": [
+      "python",
+      "tests/browser-ui-v21-U3-picking.py"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "guarded-stop",
+    "command": [
+      "python",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/run-regression.py",
+      "tests/browser-guarded-stop.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U3/regressions/guarded-stop-final"
+    ],
+    "exit": 0
+  }
+]

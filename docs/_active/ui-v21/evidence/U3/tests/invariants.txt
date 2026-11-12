@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "baseline": "48a7c4d48b118877ec7edf7f4c61fba090e460b8",
+  "unchangedU2BaselineFiles": 222,
+  "baselineFiles": 226,
+  "authorizedDeltas": [
+    "app.js",
+    "index.html",
+    "src/guarded-stop-scene.js",
+    "tests/browser-guarded-stop.py"
+  ],
+  "checks": [
+    "app delta reverses to U2 with UI bindings only",
+    "guarded-stop-scene delta is UI getter only",
+    "index delta is startup skin only",
+    "historical test differs only by View open/close and Bell locator",
+    "U2 CSS prefix intact; additions scoped to U3",
+    "all other U1/U2 UI assets/fonts/licenses byte-identical",
+    "all other baseline source/test/config/asset files byte-identical",
+    "HUD projection, topology SVG and view controller untouched",
+    "no mock/reference/test observer inputs in production bundle",
+    "no second Bell controller or global keyboard listener in adapter"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "scope": "independent reference smoke, not simulator regression or full interactive acceptance",
+  "pageErrors": [],
+  "localHttpFailures": [],
+  "externalBlocked": [
+    "https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Federo&family=Cutive+Mono&display=swap"
+  ],
+  "tabs": [
+    {
+      "view": "layout",
+      "selected": "true",
+      "textExcerpt": "ROLLING STOCK \u00b7 1:160\nTrain Management\nSession only \u00b7 lost on reload\nCLOSE\nON THE LAYOUT\n3\nMODEL CATALOG\n14\nPROJECTS\n4\nDEPOT\n5\n3 COMPOSITIONS ON THE LAYOUT\nBR 055\n4 vehicles \u00b7 315 "
+    },
+    {
+      "view": "catalog",
+      "selected": "true",
+      "textExcerpt": "ROLLING STOCK \u00b7 1:160\nTrain Management\nSession only \u00b7 lost on reload\nCLOSE\nON THE LAYOUT\n3\nMODEL CATALOG\n14\nPROJECTS\n4\nDEPOT\n5\nALL\n14\nLOCOMOTIVES\n6\nTRAILERS\n8\nALL SOURCES\nSERIEN\nKE"
+    },
+    {
+      "view": "projects",
+      "selected": "true",
+      "textExcerpt": "ROLLING STOCK \u00b7 1:160\nTrain Management\nSession only \u00b7 lost on reload\nCLOSE\nON THE LAYOUT\n3\nMODEL CATALOG\n14\nPROJECTS\n4\nDEPOT\n5\nPROJECTS\n4\n+ NEW PROJECT\nCOPY A REAL TRAIN\nBR 055\nBR "
+    },
+    {
+      "view": "depot",
+      "selected": "true",
+      "textExcerpt": "ROLLING STOCK \u00b7 1:160\nTrain Management\nSession only \u00b7 lost on reload\nCLOSE\nON THE LAYOUT\n3\nMODEL CATALOG\n14\nPROJECTS\n4\nDEPOT\n5\n5\nVIRTUAL RECORDS\n3\nAVAILABLE\n2\nRESERVED\n2/17\nPROJECT"
+    }
+  ],
+  "tabControls": [
+    {
+      "text": "On the Layout3",
+      "attrs": [
+        [
+          "role",
+          "tab"
+        ],
+        [
+          "id",
+          "tmtab-layout"
+        ],
+        [
+          "aria-controls",
+          "tmBody"
+        ],
+        [
+          "aria-selected",
+          "true"
+        ],
+        [
+          "tabindex",
+          "0"
+        ],
+        [
+          "class",
+          "on"
+        ],
+        [
+          "data-view",
+          "layout"
+        ]
+      ]
+    },
+    {
+      "text": "Model Catalog14",
+      "attrs": [
+        [
+          "role",
+          "tab"
+        ],
+        [
+          "id",
+          "tmtab-catalog"
+        ],
+        [
+          "aria-controls",
+          "tmBody"
+        ],
+        [
+          "aria-selected",
+          "false"
+        ],
+        [
+          "tabindex",
+          "-1"
+        ],
+        [
+          "class",
+          ""
+        ],
+        [
+          "data-view",
+          "catalog"
+        ]
+      ]
+    },
+    {
+      "text": "Projects4",
+      "attrs": [
+        [
+          "role",
+          "tab"
+        ],
+        [
+          "id",
+          "tmtab-projects"
+        ],
+        [
+          "aria-controls",
+          "tmBody"
+        ],
+        [
+          "aria-selected",
+          "false"
+        ],
+        [
+          "tabindex",
+          "-1"
+        ],
+        [
+          "class",
+          ""
+        ],
+        [
+          "data-view",
+          "projects"
+        ]
+      ]
+    },
+    {
+      "text": "Depot5",
+      "attrs": [
+        [
+          "role",
+          "tab"
+        ],
+        [
+          "id",
+          "tmtab-depot"
+        ],
+        [
+          "aria-controls",
+          "tmBody"
+        ],
+        [
+          "aria-selected",
+          "false"
+        ],
+        [
+          "tabindex",
+          "-1"
+        ],
+        [
+          "class",
+          ""
+        ],
+        [
+          "data-view",
+          "depot"
+        ]
+      ]
+    }
+  ],
+  "status": "PASS"
+}

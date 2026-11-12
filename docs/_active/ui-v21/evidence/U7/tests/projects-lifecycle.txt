@@ -1,0 +1,9 @@
+
+  work/m2-lifecycle-bundle.js  274.3kb
+
+⚡ Done in 70ms
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-train-project-lifecycle.py", line 23, in <module>
+    page.once('dialog',lambda d:d.accept());page.locator('[data-project-action="cancel"]').click();assert not page.evaluate(guard)
+                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,87 @@
+[
+  {
+    "name": "node",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsed": 13.534773588180542
+  },
+  {
+    "name": "python",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "*_test.py"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsed": 0.11466693878173828
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build",
+      "--",
+      "--metafile=/workspace/SerieN/docs/_active/ui-v21/evidence/U6/metafile.json"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsed": 0.24788260459899902
+  },
+  {
+    "name": "canonical",
+    "command": [
+      "python3",
+      "scripts/build-canonical-layout.py"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsed": 0.06793427467346191
+  },
+  {
+    "name": "M1",
+    "command": [
+      "python3",
+      "tests/browser-train-management.py"
+    ],
+    "environment": {
+      "M1_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U6/M1"
+    },
+    "exitCode": 0,
+    "elapsed": 27.851234436035156
+  },
+  {
+    "name": "side",
+    "command": [
+      "python3",
+      "tests/run-train-side-regression.py"
+    ],
+    "environment": {
+      "M11_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U6/side"
+    },
+    "exitCode": 0,
+    "elapsed": 36.12367296218872
+  },
+  {
+    "name": "projects-lifecycle",
+    "command": [
+      "python3",
+      "tests/browser-train-project-lifecycle.py"
+    ],
+    "environment": {
+      "M2_LIFECYCLE_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U6/projects-lifecycle"
+    },
+    "exitCode": 0,
+    "elapsed": 6.047950506210327
+  }
+]

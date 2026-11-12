@@ -1,0 +1,7 @@
+PASS three-moving-real-trains-permitted-fourth-and-exact-scene-identity
+PASS Dock-Space-individual-controls-momentary-STOP-ALL-restart-and-Pause-Resume
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U9-native-checkpoint.py", line 41, in <module>
+    saved=snap('Composer-Depot-three-moving',3);assert len(saved['slots'])==3 and len(saved['inventory'])==2 and all(i['state']=='reserved'for i in saved['inventory']);assert saved['identities']==four['identities'];assert all(saved['stock'][i]['travel']>three['stock'][i]['travel']for i in range(3))
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

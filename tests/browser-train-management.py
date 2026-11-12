@@ -31,26 +31,26 @@ with sync_playwright() as p:
     assert page.locator('.trainConsole.is-active').get_attribute('data-console-train')=='2'
     assert page.locator('[data-consist="2"] li').count()==3
     assert page.evaluate('__serienDiagnostics.railwayState()')==before
-    page.locator('dialog [data-close]').click()
+    page.locator('dialog.trainManagement [data-close]').click()
     page.locator('#reverse').click()
     page.locator('#trainManagement').click()
     assert 'Reverse' in page.locator('.managementSummary').inner_text()
     reversed_ids=page.locator('[data-consist] li').evaluate_all('(rows)=>rows.map(r=>r.dataset.vehicleId)')
     assert reversed_ids==before['identities']['trains'][2]
-    page.locator('dialog [data-close]').click()
+    page.locator('dialog.trainManagement [data-close]').click()
     page.locator('#uncouple').click()
     page.locator('#trainManagement').click()
     assert page.locator('[data-detached-id]').count()==1
     assert page.locator('[data-consist] li').count()==2
     assert page.locator('[data-detached-id]').get_attribute('data-detached-id')==reversed_ids[-1]
-    page.locator('dialog [data-close]').click()
+    page.locator('dialog.trainManagement [data-close]').click()
     page.locator('[data-train="1"]').click()
     page.locator('#trainManagement').click()
     assert page.locator('[data-composition="1"]').get_attribute('aria-pressed')=='true'
     for width,height,name in [(1440,1000,'desktop'),(1024,768,'tablet-landscape'),(768,1024,'tablet-portrait')]:
         page.set_viewport_size({'width':width,'height':height})
         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
-        assert page.locator('dialog').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
+        assert page.locator('dialog.trainManagement').evaluate('(d)=>d.scrollWidth<=d.clientWidth')
         page.evaluate('__m1Frame(performance.now())')
         page.screenshot(path=str(output/(name+'.png')))
     page.locator('[data-view="catalog"]').click()
@@ -58,7 +58,7 @@ with sync_playwright() as p:
     page.wait_for_function("[...document.querySelectorAll('.managementModel img')].every(i=>i.complete&&i.naturalWidth===320)")
     assert page.locator('.managementModel').count()==14
     page.screenshot(path=str(output/'catalog-tablet.png'))
-    page.locator('dialog [data-close]').click()
+    page.locator('dialog.trainManagement [data-close]').click()
     page.select_option('#rollingModels','kenney')
     page.locator('#trainManagement').click()
     page.wait_for_function("document.querySelectorAll('.managementModel').length===14")
@@ -67,7 +67,7 @@ with sync_playwright() as p:
     assert page.evaluate('__serienDiagnostics.snapshot().camera.preset')=='manual'
     assert page.locator('#trainManagement').evaluate('(b)=>document.activeElement===b')
     page.locator('#trainManagement').click();page.keyboard.press('Escape')
-    assert not page.locator('dialog').evaluate('(d)=>d.open')
+    assert not page.locator('dialog.trainManagement').evaluate('(d)=>d.open')
     assert page.locator('#trainManagement').evaluate('(b)=>document.activeElement===b')
     assert not errors,errors
     assert not failed,failed
@@ -87,8 +87,8 @@ with sync_playwright() as p:
     assert touch.locator('[data-composition="1"]').get_attribute('aria-pressed')=='true'
     touch.locator('[data-view="catalog"]').tap()
     assert touch.locator('.managementCatalog').is_visible()
-    touch.locator('dialog [data-close]').tap()
-    assert not touch.locator('dialog').evaluate('(d)=>d.open')
+    touch.locator('dialog.trainManagement [data-close]').tap()
+    assert not touch.locator('dialog.trainManagement').evaluate('(d)=>d.open')
     assert not errors,errors
     assert not failed,failed
     result['productionMinifiedTouch']='PASS'

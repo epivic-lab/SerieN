@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "baseline": "907a9ec4a9d570f03af9ab77d39269ff49787256",
+  "unchangedManifestFiles": 225,
+  "manifestFiles": 226,
+  "authorizedExistingRuntimeFiles": [
+    "app.js",
+    "ui/css/serien-ui-integration.css"
+  ],
+  "checks": [
+    "app.js inverses byte-for-byte to U3 after removing only mount/update/dispose/map focus binding",
+    "all existing src/ui/tests files unchanged",
+    "all existing UI assets/fonts/licenses unchanged",
+    "U3 integration CSS retained as exact prefix",
+    "no domain state assignment/new dispatcher/Bell/renderer/global key handler in new adapter",
+    "production bundle excludes mocks/reference/test observers",
+    "all previous U2/U3 evidence manifest hashes still match"
+  ]
+}

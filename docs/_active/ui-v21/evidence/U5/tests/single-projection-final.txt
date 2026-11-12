@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/SerieN/docs/_active/ui-v21/evidence/U5/capture-single-projection.py", line 10, in <module>
+    p.goto('http://127.0.0.1:8033/?diagnostics=1');p.wait_for_function('Boolean(window.__singleProjection)');before=p.evaluate('__serienDiagnostics.railwayState()');p.evaluate('document.getElementById("reset").click()');p.locator('dialog.u5-guard [data-cancel]').click();assert before==p.evaluate('__serienDiagnostics.railwayState()');p.evaluate('__frame(performance.now())');p.screenshot(path=str(out/'reset-cancelled-full.png'));result=p.evaluate('__singleProjection()');assert result=={'unchanged':True,'physicalFleet':3,'cards':1}
+                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

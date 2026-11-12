@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "bundleSHA256": "bcff0eec2d80c883edf7103bfa06320e92bc7d4cc71a7e1344a31f34f6f19b9b",
+  "method": "production minified, local auth fixture, on-demand renderer",
+  "checks": {
+    "duplicateVirtualInventorySeparateFromCatalogPhysicalAndBeforeUnload": "PASS",
+    "exclusiveMatchingConfirmedSlotsAndReservedRemovalGuard": "PASS",
+    "M2ReorderKeepsIdentityAndReservation": "PASS",
+    "DraftChangesAndCancellationDoNotReleaseConfirmedReservations": "PASS",
+    "ConfirmationReleasesObsoleteSlotWithoutAutomaticSameModelRebinding": "PASS",
+    "R1UncoupleRecoupleKeepsPhysicalIdentityAndDepotUnchanged": "PASS",
+    "ResetRefreshesPhysicalReferencesAndPreservesM2AndVirtualReservations": "PASS",
+    "DesktopTabletTouchCreateRemoveAvailabilityAndNoOverflow": "PASS",
+    "M2ProjectNamesRemainTextInDepot": "PASS"
+  },
+  "pageErrors": [],
+  "httpFailures": [],
+  "failedRequests": []
+}

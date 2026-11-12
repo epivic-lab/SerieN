@@ -1,0 +1,71 @@
+{
+  "verdict": "M2 READY FOR REVIEW - technical gates passed; final remote checkpoint verified in delivery",
+  "baseline": "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+  "testedCodeCheckpoint": "59f54f1fac0c3a837b4f059d582320ac574b96e8",
+  "bundleSHA256": "0e644a6d36243e591a75332574eb1bfe0256940548aeeff634ec27ff741d1941",
+  "node": {
+    "status": "PASS",
+    "tests": 245
+  },
+  "python": {
+    "status": "PASS",
+    "tests": 9
+  },
+  "build": "PASS",
+  "canonical": "PASS - unchanged",
+  "browserSuites": {
+    "M2 functional": {
+      "status": "PASS",
+      "evidence": "ui/browser.json"
+    },
+    "lifecycle": {
+      "status": "PASS",
+      "evidence": "final/lifecycle.json"
+    },
+    "R1 5C": {
+      "status": "PASS",
+      "evidence": "final/regressions/railway/docs/phase-5c-close/acceptance.json"
+    },
+    "train deck": {
+      "status": "PASS",
+      "evidence": "final/regressions/deck/docs/train-deck/browser-result.json"
+    },
+    "Phase Zero": {
+      "status": "PASS",
+      "evidence": "final/regressions/phase-zero/docs/consolidation/browser-result.json"
+    },
+    "M1": {
+      "status": "PASS",
+      "evidence": "final/m1/browser.json"
+    },
+    "M1.1": {
+      "status": "PASS",
+      "evidence": "final/side/browser.json"
+    },
+    "native RAF / trusted input": {
+      "status": "PASS",
+      "evidence": "final/native/result.json"
+    }
+  },
+  "nativeChecks": 11,
+  "nativeCheckpoints": 22,
+  "nativeFrames": {
+    "frames": 486,
+    "durationMs": 1291681.7,
+    "fps": 0.3754795008708415,
+    "p50Ms": 2533.2000000000116,
+    "p95Ms": 3316.5
+  },
+  "trustedInputEvents": 13,
+  "stableThreeResources": [
+    [
+      348,
+      44
+    ]
+  ],
+  "physicalGPUAndTabletHardware": "NOT VERIFIED",
+  "fluidityOnPhysicalHardware": "NOT VERIFIED",
+  "nativeBeforeUnloadPromptPresentation": "NOT VERIFIED - handler behavior tested with cancelable event",
+  "historicalFailedAttempts": "Retained without rewriting; see M2_REPORT.md. These do not count as PASS runs.",
+  "scope": "A only; no M3, persistence, merge or deploy"
+}

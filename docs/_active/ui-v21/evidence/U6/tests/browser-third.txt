@@ -1,0 +1,7 @@
+PASS three-launchers-one-instance-shared-selection-identities-tab-arrows-and-focus-return
+PASS draft-tab-preservation-close-Escape-backdrop-focus-copy-cancel-and-double-consent-no-physical-mutation
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U6.py", line 48, in <module>
+    pa('edit');click('dialog.trainManagement [data-close]');assert not p.locator('#tmD').evaluate('(d)=>d.open');click('#trainManagement');tab('projects');assert planned()==ids
+                                                                                                                                                                  ^^^^^^^^^^^^^^
+AssertionError

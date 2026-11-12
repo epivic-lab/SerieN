@@ -1,0 +1,67 @@
+{
+  "checks": [
+    [
+      "Release",
+      "pending / Cancel / Escape",
+      "no mutation",
+      "delivery/results.json"
+    ],
+    [
+      "Release",
+      "valid confirm twice",
+      "one release; same id/model; other reservation retained",
+      "delivery/results.json"
+    ],
+    [
+      "Release",
+      "assignment replaced with equal-model different UUID while pending",
+      "reject; new assignment retained; zero onChange",
+      "intents/results.json"
+    ],
+    [
+      "Remove",
+      "pending / Cancel / Escape / backdrop",
+      "no mutation",
+      "delivery/results.json"
+    ],
+    [
+      "Remove",
+      "valid confirm twice",
+      "one removal and one onChange",
+      "intents/results.json"
+    ],
+    [
+      "Remove",
+      "Reserved",
+      "UI disabled; original domain rejects",
+      "delivery/results.json; node.txt; depot-adapted/result.json"
+    ],
+    [
+      "Remove",
+      "Available becomes Reserved while pending",
+      "reject; record retained; zero onChange",
+      "intents/results.json"
+    ],
+    [
+      "Remove",
+      "generation changes while pending",
+      "reject; zero onChange",
+      "intents/results.json"
+    ],
+    [
+      "Remove",
+      "R1 Reset supersedes pending",
+      "cancel shared pending; virtual records/reservation retained",
+      "delivery/results.json"
+    ],
+    [
+      "Remove",
+      "dispose pending",
+      "no mutation; owned guard removed / shared guard canceled",
+      "intents/results.json; delivery/results.json"
+    ]
+  ],
+  "validation": "snapshot of entire original M3 item + generation; existence/exact current record; Remove Available and no assignment; Release same confirmed projectId/vehicleId and compatible modelId; coordinator consumes pending before callback",
+  "focus": "Cancel origin restored; sync restores same enabled control or Assign/Release counterpart; after removal Add fallback; shared guard top Escape and cleanup unchanged",
+  "proofScope": "synthetic duplicate clicks verify one mutation; trusted mouse/touch tested separately in native runtime; physical keyboard hardware NOT VERIFIED"
+}

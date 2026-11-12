@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "proposal": "U4 READY FOR REGIA REVIEW",
+  "approved": false,
+  "branch": "codex/ui-v2-integration",
+  "approvedU3": "907a9ec4a9d570f03af9ab77d39269ff49787256",
+  "bundleSHA256": "4d63096f8b4cdaa15e62de27ee2b70384712deed58483fa2382fcdccdcde3c27",
+  "commands": [
+    {
+      "name": "node-final",
+      "command": "npm test",
+      "exit": 0,
+      "log": "tests/node-final.txt",
+      "receipt": "tests/node-final.exit"
+    },
+    {
+      "name": "python",
+      "command": "python -m unittest discover -s tests -p \"*_test.py\"",
+      "exit": 0,
+      "log": "tests/python.txt",
+      "receipt": "tests/python.exit"
+    },
+    {
+      "name": "build-final",
+      "command": "npm run build -- --metafile=docs/_active/ui-v21/evidence/U4/bundle-inputs.json",
+      "exit": 0,
+      "log": "tests/build-final.txt",
+      "receipt": "tests/build-final.exit"
+    },
+    {
+      "name": "canonical",
+      "command": "python scripts/build-canonical-layout.py",
+      "exit": 0,
+      "log": "tests/canonical.txt",
+      "receipt": "tests/canonical.exit"
+    },
+    {
+      "name": "canonical-diff",
+      "command": "git diff --exit-code 907a9ec -- src/canonical-layout.json docs/jmri-layout",
+      "exit": 0,
+      "log": "tests/canonical-diff.txt",
+      "receipt": "tests/canonical-diff.exit"
+    },
+    {
+      "name": "invariants",
+      "command": "python docs/_active/ui-v21/evidence/U4/verify-invariants.py",
+      "exit": 0,
+      "log": "tests/invariants.txt",
+      "receipt": "tests/invariants.exit"
+    },
+    {
+      "name": "u4-production",
+      "command": "U4_OUTPUT=/workspace/work/ui-v21-u4/production-delivery python tests/browser-ui-v21-U4.py",
+      "exit": 0,
+      "log": "tests/u4-production.txt",
+      "receipt": "tests/u4-production.exit"
+    },
+    {
+      "name": "u4-safety",
+      "command": "U4_OBSERVER=/workspace/work/ui-v21-u4/observer.js U4_SAFETY_OUTPUT=/workspace/work/ui-v21-u4/safety-delivery python tests/browser-ui-v21-U4-safety.py",
+      "exit": 0,
+      "log": "tests/u4-safety.txt",
+      "receipt": "tests/u4-safety.exit"
+    },
+    {
+      "name": "native",
+      "command": "python docs/_active/ui-v21/evidence/U4/native-smoke.py",
+      "exit": 0,
+      "log": "tests/native.txt",
+      "receipt": "tests/native.exit"
+    },
+    {
+      "name": "overview",
+      "command": "python docs/_active/ui-v21/evidence/U4/capture-overview.py",
+      "exit": 0,
+      "log": "tests/overview.txt",
+      "receipt": "tests/overview.exit"
+    },
+    {
+      "name": "phase-zero",
+      "command": "python docs/_active/ui-v21/evidence/U4/run-regression.py tests/browser-phase-zero.py docs/_active/ui-v21/evidence/U4/regressions/phase-zero",
+      "exit": 0,
+      "log": "tests/phase-zero.txt",
+      "receipt": "tests/phase-zero.exit"
+    },
+    {
+      "name": "interaction",
+      "command": "U4_OBSERVER=/workspace/work/ui-v21-u4/observer.js python docs/_active/ui-v21/evidence/U4/run-regression.py tests/browser-turnout-interaction.py docs/_active/ui-v21/evidence/U4/regressions/interaction",
+      "exit": 0,
+      "log": "tests/interaction.txt",
+      "receipt": "tests/interaction.exit"
+    },
+    {
+      "name": "railway-guard",
+      "command": "U4_OBSERVER=/workspace/work/ui-v21-u4/observer-native.js python docs/_active/ui-v21/evidence/U4/run-regression.py tests/browser-railway-guard.py docs/_active/ui-v21/evidence/U4/regressions/railway-guard-final",
+      "exit": 0,
+      "log": "tests/railway-guard.txt",
+      "receipt": "tests/railway-guard.exit"
+    }
+  ],
+  "NodePass": 254,
+  "PythonPass": 9,
+  "U4ProductionGroups": 9,
+  "U4SafetyGroups": 6,
+  "newScreenshots": 27,
+  "native": {
+    "frames": 16,
+    "durationMs": 24132.3,
+    "fpsSoftware": 0.6215735756641514,
+    "markerPhysicalCoordinatesMatch": true,
+    "focusNoRailwayMutation": true
+  },
+  "sourceProtection": "225/226 manifest files identical to U3; app.js UI-only binding delta; all other existing src/ui/tests files identical; integration CSS append only",
+  "historicalEvidence": "Full M2/M3 and broad R1/5C certification from U3 retained; not repeated; fresh S2/S5/Phase Zero and unit/build gates cover current UI delta",
+  "notVerified": [
+    "Physical GPU fluidity and touch/audio hardware",
+    "Screen reader and browsers other than Chromium / @scope support",
+    "Remote OAuth provider login/logout",
+    "Full U9 responsive/visual acceptance",
+    "Native beforeunload prompt presentation"
+  ],
+  "nextAction": "Independent Regia review; U5 not started"
+}

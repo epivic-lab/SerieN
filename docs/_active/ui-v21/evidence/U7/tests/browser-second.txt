@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/SerieN/tests/browser-ui-v21-U7.py", line 38, in <module>
+    r['physicalBefore']=before;r['physicalAfter']=rail();save();assert rail()==before
+                                                                       ^^^^^^^^^^^^^^
+AssertionError

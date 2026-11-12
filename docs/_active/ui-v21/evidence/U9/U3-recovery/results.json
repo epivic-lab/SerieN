@@ -1,0 +1,15 @@
+{
+  "status": "FAIL",
+  "method": "real app; local Auth boundary; on-demand production RAF",
+  "bundleSHA256": "bcff0eec2d80c883edf7103bfa06320e92bc7d4cc71a7e1344a31f34f6f19b9b",
+  "observer": false,
+  "checks": [
+    "single-canvas-original-startup-and-one-persistent-log"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "failedRequests": [],
+  "external": [],
+  "failure": "Locator.click: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator(\"#viewZoomIn\")\n    - locator resolved to <button class=\"bt d\" type=\"button\" id=\"viewZoomIn\" data-ctrl=\"CTRL-009\" title=\"Zoom in on the layout\" aria-label=\"Zoom in on the layout\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button id=\"viewPan\" class=\"bt d\" type=\"button\" aria-pressed=\"false\" data-ctrl=\"CTRL-010\" title=\"Drag to pan the layout\" aria-label=\"Drag to pan the layout\">\u2026</button> from <div id=\"u3CameraTools\" class=\"u3-camera-tools\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button id=\"viewPan\" class=\"bt d\" type=\"button\" aria-pressed=\"false\" data-ctrl=\"CTRL-010\" title=\"Drag to pan the layout\" aria-label=\"Drag to pan the layout\">\u2026</button> from <div id=\"u3CameraTools\" class=\"u3-camera-tools\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    83 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <button id=\"viewPan\" class=\"bt d\" type=\"button\" aria-pressed=\"false\" data-ctrl=\"CTRL-010\" title=\"Drag to pan the layout\" aria-label=\"Drag to pan the layout\">\u2026</button> from <div id=\"u3CameraTools\" class=\"u3-camera-tools\">\u2026</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+}

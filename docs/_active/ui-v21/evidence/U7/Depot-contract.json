@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "UI": "exact confirmed slot reservation persists during draft removal and after Cancel; Confirm removal releases the reserved slot even though same-model slot remains; zero railway mutation",
+  "Node": "tests/depot-inventory.test.js also executed in npm test: confirmed reorder/name/flip retain reservation, replacement same-model slot never silently rebinds",
+  "store": "src/depot-inventory.js byte-identical to U6"
+}

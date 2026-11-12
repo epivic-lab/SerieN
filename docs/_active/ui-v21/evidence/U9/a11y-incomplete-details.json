@@ -1,0 +1,38 @@
+{
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "aria-prohibited-attr",
+      "nodes": [
+        {
+          "target": [
+            "#tabs"
+          ],
+          "html": "<div id=\"tabs\" class=\"trainTabs\" aria-label=\"Select any locomotive\">",
+          "summary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute."
+        },
+        {
+          "target": [
+            "#cars"
+          ],
+          "html": "<span class=\"trainConsoleCars\" title=\"3 trailing vehicles \u00b7 314.6 mm (1:160)\" aria-label=\"3 trailing vehicles \u00b7 314.6 mm (1:160)\" id=\"cars\">3 wagons</span>",
+          "summary": "Fix all of the following:\n  aria-label attribute is not well supported on a span with no valid role attribute."
+        },
+        {
+          "target": [
+            "article[data-console-train=\"1\"] > .trainConsoleHeading > .trainConsoleStatus > .trainConsoleCars:nth-child(2)"
+          ],
+          "html": "<span class=\"trainConsoleCars\" title=\"2 trailing vehicles \u00b7 328.6 mm (1:160)\" aria-label=\"2 trailing vehicles \u00b7 328.6 mm (1:160)\">2 wagons</span>",
+          "summary": "Fix all of the following:\n  aria-label attribute is not well supported on a span with no valid role attribute."
+        },
+        {
+          "target": [
+            "article[data-console-train=\"2\"] > .trainConsoleHeading > .trainConsoleStatus > .trainConsoleCars:nth-child(2)"
+          ],
+          "html": "<span class=\"trainConsoleCars\" title=\"2 trailing vehicles \u00b7 218.7 mm (1:160)\" aria-label=\"2 trailing vehicles \u00b7 218.7 mm (1:160)\">2 wagons</span>",
+          "summary": "Fix all of the following:\n  aria-label attribute is not well supported on a span with no valid role attribute."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/work/u9/release-check.py", line 14, in <module>
+    assert all(x['existsInCheckout'] for x in rows)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

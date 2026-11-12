@@ -1,0 +1,42 @@
+{
+  "source": "src/depot-view.js; same M3 instance from src/train-management.js",
+  "coordinator": "one shared shell/Projects/Depot guard; standalone owned fallback only",
+  "controls": [
+    {
+      "id": "CTRL-041",
+      "DOM": "[data-depot-action=add]",
+      "callback": "inventory.add(modelId)",
+      "identity": "new M3 id and progressive code, Available; no position"
+    },
+    {
+      "id": "CTRL-042",
+      "DOM": "[data-depot-action^=assign-]",
+      "callback": "inventory.assign(itemId,projectId,vehicleId)",
+      "targets": "projectSlots(getProjects().confirmed), matching modelId and unreserved UUID only; selected target is presentation state"
+    },
+    {
+      "id": "CTRL-043",
+      "DOM": "[data-depot-action^=release-]",
+      "callback": "shared guard → revalidate → inventory.release(itemId)"
+    },
+    {
+      "id": "CTRL-044",
+      "DOM": "[data-depot-action^=remove-]",
+      "callback": "shared guard → revalidate Available/unassigned → inventory.remove(itemId)"
+    },
+    {
+      "id": "CTRL-045",
+      "DOM": ".depotTransferGate; .depotRailway [data-depot-physical-id]",
+      "callback": "none; plaques and read-only railwayInventoryView(getTrains(),getDetached(),getGeneration())"
+    },
+    {
+      "id": "CTRL-059",
+      "DOM": "[data-depot-action=model]",
+      "callback": "presentation modelChoice only; PROJECT_CATALOG definitions unchanged"
+    }
+  ],
+  "onChange": "only after successful mutation; no callback on pending/cancel/rejected obsolete consent",
+  "reconcile": "existing inventory.reconcile() on sync; same original domain and confirmed-only project source",
+  "CSS": "append .u8-depot scopes; U7 prefix byte-identical; integration remains last stylesheet",
+  "guardExtension": "optional request title/cancelLabel/confirmLabel; absent fields reset to constructor defaults for every request"
+}

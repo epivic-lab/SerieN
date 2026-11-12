@@ -1,0 +1,210 @@
+{
+  "status": "PASS",
+  "bundleSHA256": "c9a912f636038a7b8f1861c87b88d1a68f693edcb355be6f5e2c1cdb786a9668",
+  "checks": [
+    "new-max-six-unique-slots-reorder-flip-local-keyboard-input-exclusion-atomic-error-no-physical-mutation",
+    "confirmed-selection-readonly-explicit-edit-guard-new-view-cancel-Escape-and-once-only-consent",
+    "Depot-reservation-draft-and-cancel-preserved-confirm-reconciles-by-slot-not-model-no-rail-transfer",
+    "five-real-Compare-states-draft-only-link-no-confirmed-relink-real-R1-change-reset-STALE",
+    "seven-viewports-native-Kenney-preview-zoom-Fit-fallback-session-reopen-and-pending-dispose"
+  ],
+  "errors": [],
+  "nativeDialogs": [],
+  "compare": {
+    "unlinked": "Compare \u00b7 Unlinked\n\nIndependent project: no physical train is linked.\n\nRailway operations\n\nWhole-project application, arbitrary reorder and individual reversal are unsupported.\n\nUncouple: No current train.\n\nCouple: No current train.\n\nUse the existing train consoles for individual R1 operations. A detached wagon remains on the track.",
+    "matching": "Compare \u00b7 Matching\n\nProject matches the current real composition.\n\nPosition\tPlanned slot / source reference\tReal train / physical identity\n1\tDiesel locomotive \u00b7 forward \u00b7 slot 0c9400ee-ddbb-41a1-b925-b6afdb2e210c \u00b7 source c04fc762-c69a-4ab2-81ed-af2fce78acd9\tDiesel locomotive \u00b7 physical c04fc762-c69a-4ab2-81ed-af2fce78acd9\n2\tflat \u00b7 forward \u00b7 slot 7bbc3bde-cc6a-4d2e-aaaf-818b9068b55b \u00b7 source 87bdf6a3-78ee-46da-8f2a-936ae19e6c4b\tflat \u00b7 physical 87bdf6a3-78ee-46da-8f2a-936ae19e6c4b\n3\tcoach \u00b7 forward \u00b7 slot 9fd6f3ae-3027-4f6a-859f-144fea3d1cf7 \u00b7 source 5ec5fc9f-0e04-4625-aa2f-86d3a8594608\tcoach \u00b7 physical 5ec5fc9f-0e04-4625-aa2f-86d3a8594608\nRailway operations\n\nWhole-project application, arbitrary reorder and individual reversal are unsupported.\n\nUncouple: Tail uncoupling supported by R1; the vehicle stays on the track.\n\nCouple: R1 must verify a nearby rear vehicle, alignment, route history and space at execution.\n\nUse the existing train consoles for individual R1 operations. A detached wagon remains on the track.",
+    "different": "Compare \u00b7 Different\n\nProject differs from the real composition.\n\nPosition\tPlanned slot / source reference\tReal train / physical identity\n1\tDiesel locomotive \u00b7 forward \u00b7 slot 0c9400ee-ddbb-41a1-b925-b6afdb2e210c \u00b7 source c04fc762-c69a-4ab2-81ed-af2fce78acd9\tDiesel locomotive \u00b7 physical c04fc762-c69a-4ab2-81ed-af2fce78acd9\n2\tflat \u00b7 reversed \u00b7 slot 7bbc3bde-cc6a-4d2e-aaaf-818b9068b55b \u00b7 source 87bdf6a3-78ee-46da-8f2a-936ae19e6c4b\tflat \u00b7 physical 87bdf6a3-78ee-46da-8f2a-936ae19e6c4b\n3\tcoach \u00b7 forward \u00b7 slot 9fd6f3ae-3027-4f6a-859f-144fea3d1cf7 \u00b7 source 5ec5fc9f-0e04-4625-aa2f-86d3a8594608\tcoach \u00b7 physical 5ec5fc9f-0e04-4625-aa2f-86d3a8594608\nPosition 2: planned reversal; R1 has no individual reversal command.\nRailway operations\n\nWhole-project application, arbitrary reorder and individual reversal are unsupported.\n\nUncouple: Tail uncoupling supported by R1; the vehicle stays on the track.\n\nCouple: R1 must verify a nearby rear vehicle, alignment, route history and space at execution.\n\nUse the existing train consoles for individual R1 operations. A detached wagon remains on the track.",
+    "changed": "Compare \u00b7 Changed\n\nReal composition changed since the copy. Review the current comparison.\n\nPosition\tPlanned slot / source reference\tReal train / physical identity\n1\tDiesel locomotive \u00b7 forward \u00b7 slot 0c9400ee-ddbb-41a1-b925-b6afdb2e210c \u00b7 source c04fc762-c69a-4ab2-81ed-af2fce78acd9\tDiesel locomotive \u00b7 physical c04fc762-c69a-4ab2-81ed-af2fce78acd9\n2\tflat \u00b7 forward \u00b7 slot 7bbc3bde-cc6a-4d2e-aaaf-818b9068b55b \u00b7 source 87bdf6a3-78ee-46da-8f2a-936ae19e6c4b\tflat \u00b7 physical 87bdf6a3-78ee-46da-8f2a-936ae19e6c4b\n3\tcoach \u00b7 forward \u00b7 slot 9fd6f3ae-3027-4f6a-859f-144fea3d1cf7 \u00b7 source 5ec5fc9f-0e04-4625-aa2f-86d3a8594608\t\u2014\nPosition 3: planned vehicle only.\nRailway operations\n\nWhole-project application, arbitrary reorder and individual reversal are unsupported.\n\nUncouple: Tail uncoupling supported by R1; the vehicle stays on the track.\n\nCouple: R1 must verify a nearby rear vehicle, alignment, route history and space at execution.\n\nUse the existing train consoles for individual R1 operations. A detached wagon remains on the track.",
+    "stale": "Compare \u00b7 Stale\n\nSource reference invalidated. Copy the current train into a new project.\n\nRailway operations\n\nWhole-project application, arbitrary reorder and individual reversal are unsupported.\n\nUncouple: Tail uncoupling supported by R1; the vehicle stays on the track.\n\nCouple: R1 must verify a nearby rear vehicle, alignment, route history and space at execution.\n\nUse the existing train consoles for individual R1 operations. A detached wagon remains on the track."
+  },
+  "physicalBefore": {
+    "occupied": [
+      {
+        "edge": "T10",
+        "min": 199.48400602127208,
+        "max": 247.40000792272627
+      },
+      {
+        "edge": "T9",
+        "min": 0,
+        "max": 69.58399809854578
+      },
+      {
+        "edge": "T10",
+        "min": 133.78400602127206,
+        "max": 199.48400602127205
+      },
+      {
+        "edge": "T10",
+        "min": 68.08400602127207,
+        "max": 133.78400602127206
+      },
+      {
+        "edge": "T10",
+        "min": 2.3840060212720857,
+        "max": 68.08400602127207
+      },
+      {
+        "edge": "WX-A:upper",
+        "min": 8.014543953965642,
+        "max": 84.01454395396564
+      },
+      {
+        "edge": "T5",
+        "min": 145.04636401150816,
+        "max": 221.4818200575425
+      },
+      {
+        "edge": "WX-A:upper",
+        "min": 0,
+        "max": 8.01454395396565
+      },
+      {
+        "edge": "T4",
+        "min": 198.3281840690508,
+        "max": 221.48182005754262
+      },
+      {
+        "edge": "T5",
+        "min": 0,
+        "max": 145.04636401150816
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 118.66504877032324,
+        "max": 187.16504877032324
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 187.16504877032324,
+        "max": 252.86504877032323
+      },
+      {
+        "edge": "T17",
+        "min": 171.14458097208987,
+        "max": 195.56361932027332
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 252.86504877032326,
+        "max": 312.8960104221398
+      }
+    ],
+    "identities": {
+      "trains": [
+        [
+          "ee21877c-b593-4e4c-ae33-2dc8bfb90e20",
+          "da47ce07-a1b5-4f17-9265-4c31cb65746a",
+          "b0208f01-ee7e-4206-a4b6-979d663cbe1b",
+          "54e4e979-4a73-4298-ba68-63f3dae94ef0"
+        ],
+        [
+          "c04fc762-c69a-4ab2-81ed-af2fce78acd9",
+          "87bdf6a3-78ee-46da-8f2a-936ae19e6c4b",
+          "5ec5fc9f-0e04-4625-aa2f-86d3a8594608"
+        ],
+        [
+          "4fa37b05-eb8f-4c15-8eb8-8167d3884258",
+          "24fecaa3-0f04-4899-af01-5506ac02d874",
+          "ed550daf-b3c9-45b1-b7ed-0be9c6d52252"
+        ]
+      ],
+      "detached": []
+    }
+  },
+  "physicalAfter": {
+    "occupied": [
+      {
+        "edge": "T10",
+        "min": 199.48400602127208,
+        "max": 247.40000792272627
+      },
+      {
+        "edge": "T9",
+        "min": 0,
+        "max": 69.58399809854578
+      },
+      {
+        "edge": "T10",
+        "min": 133.78400602127206,
+        "max": 199.48400602127205
+      },
+      {
+        "edge": "T10",
+        "min": 68.08400602127207,
+        "max": 133.78400602127206
+      },
+      {
+        "edge": "T10",
+        "min": 2.3840060212720857,
+        "max": 68.08400602127207
+      },
+      {
+        "edge": "WX-A:upper",
+        "min": 8.014543953965642,
+        "max": 84.01454395396564
+      },
+      {
+        "edge": "T5",
+        "min": 145.04636401150816,
+        "max": 221.4818200575425
+      },
+      {
+        "edge": "WX-A:upper",
+        "min": 0,
+        "max": 8.01454395396565
+      },
+      {
+        "edge": "T4",
+        "min": 198.3281840690508,
+        "max": 221.48182005754262
+      },
+      {
+        "edge": "T5",
+        "min": 0,
+        "max": 145.04636401150816
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 118.66504877032324,
+        "max": 187.16504877032324
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 187.16504877032324,
+        "max": 252.86504877032323
+      },
+      {
+        "edge": "T17",
+        "min": 171.14458097208987,
+        "max": 195.56361932027332
+      },
+      {
+        "edge": "WIDEN-R:offset",
+        "min": 252.86504877032326,
+        "max": 312.8960104221398
+      }
+    ],
+    "identities": {
+      "trains": [
+        [
+          "ee21877c-b593-4e4c-ae33-2dc8bfb90e20",
+          "da47ce07-a1b5-4f17-9265-4c31cb65746a",
+          "b0208f01-ee7e-4206-a4b6-979d663cbe1b",
+          "54e4e979-4a73-4298-ba68-63f3dae94ef0"
+        ],
+        [
+          "c04fc762-c69a-4ab2-81ed-af2fce78acd9",
+          "87bdf6a3-78ee-46da-8f2a-936ae19e6c4b",
+          "5ec5fc9f-0e04-4625-aa2f-86d3a8594608"
+        ],
+        [
+          "4fa37b05-eb8f-4c15-8eb8-8167d3884258",
+          "24fecaa3-0f04-4899-af01-5506ac02d874",
+          "ed550daf-b3c9-45b1-b7ed-0be9c6d52252"
+        ]
+      ],
+      "detached": []
+    }
+  }
+}

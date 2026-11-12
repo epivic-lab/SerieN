@@ -1,0 +1,7 @@
+{
+  "status": "FAIL",
+  "bundleSHA256": "828e56e218731dc85b8a8ffa86836aff143db869050ec65ca8c3d2c8cac06303",
+  "checks": [],
+  "errors": [],
+  "failure": "Page.wait_for_function: RangeError: Invalid glow time\n    at m (http://127.0.0.1:8033/dist/game.js:3813:623)\n    at Object.v [as update] (http://127.0.0.1:8033/dist/game.js:3813:1099)\n    at E3 (http://127.0.0.1:8033/dist/game.js:4201:43636)\n    at predicate (eval at evaluate (:311:30), <anonymous>:13:29)\n    at next (eval at evaluate (:311:30), <anonymous>:29:33)"
+}

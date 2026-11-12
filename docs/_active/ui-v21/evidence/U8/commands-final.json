@@ -1,0 +1,152 @@
+[
+  {
+    "name": "node",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exitCode": 0,
+    "elapsed": 13.255964517593384
+  },
+  {
+    "name": "python",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "*_test.py"
+    ],
+    "exitCode": 0,
+    "elapsed": 0.08098340034484863
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build",
+      "--",
+      "--metafile=/workspace/SerieN/docs/_active/ui-v21/evidence/U8/metafile-final.json"
+    ],
+    "exitCode": 0,
+    "elapsed": 0.17686676979064941
+  },
+  {
+    "name": "canonical",
+    "command": [
+      "python3",
+      "scripts/build-canonical-layout.py"
+    ],
+    "exitCode": 0,
+    "elapsed": 0.059912681579589844
+  },
+  {
+    "name": "depot",
+    "command": [
+      "python3",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U8/run-adapted.py",
+      "depot"
+    ],
+    "exitCode": 0,
+    "elapsed": 16.41131591796875
+  },
+  {
+    "name": "lifecycle",
+    "command": [
+      "python3",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U8/run-adapted.py",
+      "lifecycle"
+    ],
+    "exitCode": 0,
+    "elapsed": 1.517343282699585
+  },
+  {
+    "name": "U7",
+    "command": [
+      "python3",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U8/run-adapted.py",
+      "U7"
+    ],
+    "exitCode": 0,
+    "elapsed": 20.041346073150635
+  },
+  {
+    "name": "U6",
+    "command": [
+      "python3",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U8/run-adapted.py",
+      "U6"
+    ],
+    "exitCode": 1,
+    "elapsed": 56.149173736572266
+  },
+  {
+    "name": "U5",
+    "command": [
+      "python3",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U8/run-adapted.py",
+      "U5"
+    ],
+    "exitCode": 0,
+    "elapsed": 72.01485347747803
+  },
+  {
+    "name": "delivery",
+    "command": "SERIEN_URL=http://127.0.0.1:8035/ U8_OUTPUT=docs/_active/ui-v21/evidence/U8/delivery python3 tests/browser-ui-v21-U8.py",
+    "exitCode": 0,
+    "log": "tests/delivery.txt"
+  },
+  {
+    "name": "intents",
+    "command": "U8_INTENTS_OUTPUT=docs/_active/ui-v21/evidence/U8/intents python3 tests/browser-ui-v21-U8-intents.py",
+    "exitCode": 0,
+    "log": "tests/intents.txt"
+  },
+  {
+    "name": "U6-recovered",
+    "command": "U8_RUN_SUFFIX=-recovered python3 docs/_active/ui-v21/evidence/U8/run-adapted.py U6",
+    "exitCode": 0,
+    "log": "tests/U6-recovered.txt"
+  },
+  {
+    "name": "runtime-final",
+    "command": "U8_RUN_SUFFIX=-final python3 docs/_active/ui-v21/evidence/U8/run-adapted.py runtime",
+    "exitCode": 0,
+    "log": "tests/runtime-final.txt"
+  },
+  {
+    "name": "U2-smoke",
+    "command": "SERIEN_URL=http://127.0.0.1:8035/ U2_OUTPUT=docs/_active/ui-v21/evidence/U8/U2-smoke python3 tests/browser-ui-v21-U2.py",
+    "exitCode": 0,
+    "log": "tests/U2-smoke.txt"
+  },
+  {
+    "name": "build-final",
+    "command": "npm run build -- --metafile=docs/_active/ui-v21/evidence/U8/metafile-final.json",
+    "exitCode": 0,
+    "log": "tests/build-final.txt"
+  },
+  {
+    "name": "invariants",
+    "command": [
+      "python3",
+      "docs/_active/ui-v21/evidence/U8/verify.py"
+    ],
+    "exitCode": 0,
+    "log": "tests/invariants.txt"
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "log": "tests/diff-check.txt"
+  }
+]

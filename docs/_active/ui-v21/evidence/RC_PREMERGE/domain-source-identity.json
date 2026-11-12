@@ -1,0 +1,399 @@
+{
+  "baseline": "91722fbdf6671e69deebf645c3d8bf389212f421",
+  "files": [
+    {
+      "path": "src/asset-placement.js",
+      "M3SHA256": "2eeccdc841a25b926b96c5569149de1ae6dee291d5cb0fbde758bd27a121b64c",
+      "candidateSHA256": "2eeccdc841a25b926b96c5569149de1ae6dee291d5cb0fbde758bd27a121b64c",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/canonical-layout.json",
+      "M3SHA256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "candidateSHA256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/consist.js",
+      "M3SHA256": "17c536e5f9561d899e67a6747f50795a1506e4820789f16030d0e08a5410d3a2",
+      "candidateSHA256": "17c536e5f9561d899e67a6747f50795a1506e4820789f16030d0e08a5410d3a2",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/depot-inventory.js",
+      "M3SHA256": "64de3bea5c5c951176f2bc8a5dff8996847c55d76483d031f205092b5e72bc79",
+      "candidateSHA256": "64de3bea5c5c951176f2bc8a5dff8996847c55d76483d031f205092b5e72bc79",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/depot-view.js",
+      "M3SHA256": "f0c76adc2329f7110d319500832e514e6c8a9fb56d2cde5306367561059570b0",
+      "candidateSHA256": "2e9d54755f8ab18493d9f5237bbcb124f2f52405f0f238caadbc8cfb5af54d1a",
+      "identical": false,
+      "classification": "approved U2-U9 presentation adapter"
+    },
+    {
+      "path": "src/diorama.js",
+      "M3SHA256": "cf0bbf20c9c9f3b781c01544ffb6ce69d499e8c4ec9406b37dc21fc2d372a3e6",
+      "candidateSHA256": "cf0bbf20c9c9f3b781c01544ffb6ce69d499e8c4ec9406b37dc21fc2d372a3e6",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/fleet-commands.js",
+      "M3SHA256": "b87d16b53375c38dbd18bfb6376532a2af725e9ee5393590da37dd1cf82dffcd",
+      "candidateSHA256": "b87d16b53375c38dbd18bfb6376532a2af725e9ee5393590da37dd1cf82dffcd",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/graphic-foundations.js",
+      "M3SHA256": "c5db3529318c0d0b21980a775a53125519bc21943061186d32b435e56f32e724",
+      "candidateSHA256": "c5db3529318c0d0b21980a775a53125519bc21943061186d32b435e56f32e724",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/guarded-stop-bell.js",
+      "M3SHA256": "87183993172c1778b5c29ba50d83f77ac5f6f7ef4d570889c264dee7a681de38",
+      "candidateSHA256": "87183993172c1778b5c29ba50d83f77ac5f6f7ef4d570889c264dee7a681de38",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/guarded-stop-scene.js",
+      "M3SHA256": "b5eda2532b6ca741d796c873f711ddbce3bdc7ed7a7e3b0e74421cba27cd1e29",
+      "candidateSHA256": "024cf73ec1c698ac164437664679bab4c7789d6faa611e4eeb19e0ef12f6acfa",
+      "identical": false,
+      "classification": "approved U2-U9 presentation adapter"
+    },
+    {
+      "path": "src/guarded-stop-view.js",
+      "M3SHA256": "5802da4a07078b57e43df58eabf334deffec5f272eb735714d839a4ee4aca753",
+      "candidateSHA256": "5802da4a07078b57e43df58eabf334deffec5f272eb735714d839a4ee4aca753",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/landscape.js",
+      "M3SHA256": "5028817b6de4f41ddd157a794239447851d9a6ec680c498e96dd04c88346dbfb",
+      "candidateSHA256": "5028817b6de4f41ddd157a794239447851d9a6ec680c498e96dd04c88346dbfb",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/locomotive-thumbnails.js",
+      "M3SHA256": "77dfff593018a6811a39723b1989255afc6207daf23ae9e097b22179ab1179aa",
+      "candidateSHA256": "77dfff593018a6811a39723b1989255afc6207daf23ae9e097b22179ab1179aa",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/navigation.js",
+      "M3SHA256": "359fad322893e51d51523f115fd3fc56f81a45c2cf6f1c69dffa88d319ed07a6",
+      "candidateSHA256": "359fad322893e51d51523f115fd3fc56f81a45c2cf6f1c69dffa88d319ed07a6",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/network.js",
+      "M3SHA256": "6428b5abc00aa1fdb35202bf2d303df5c790f70dc612942e966a07a129d0f0e0",
+      "candidateSHA256": "6428b5abc00aa1fdb35202bf2d303df5c790f70dc612942e966a07a129d0f0e0",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/next-switch-view.js",
+      "M3SHA256": "0853c92322a73d362def25b2294c0d2186a76a44cc5191f9d30e2fed320d7a36",
+      "candidateSHA256": "0853c92322a73d362def25b2294c0d2186a76a44cc5191f9d30e2fed320d7a36",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/next-switch.js",
+      "M3SHA256": "013c26b56ae96d9b96016b935410008bfa5c56d24da051501a0429eea9df844f",
+      "candidateSHA256": "013c26b56ae96d9b96016b935410008bfa5c56d24da051501a0429eea9df844f",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/presentation.js",
+      "M3SHA256": "ee5fde331b6be64f0f54fe7b68df937fbe11f7ecbab185d84dc30fbc7d0c76c8",
+      "candidateSHA256": "ee5fde331b6be64f0f54fe7b68df937fbe11f7ecbab185d84dc30fbc7d0c76c8",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/quality.js",
+      "M3SHA256": "c9c68e55c440a345854b777b6ec0bdb31fa9e27e8f1d9ebb2470cc634a5a9242",
+      "candidateSHA256": "c9c68e55c440a345854b777b6ec0bdb31fa9e27e8f1d9ebb2470cc634a5a9242",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/rail-profile.js",
+      "M3SHA256": "4d0bdc39741e2b77135de39f33411f56d2d25953d71c48033b35a15f4f1cdc28",
+      "candidateSHA256": "4d0bdc39741e2b77135de39f33411f56d2d25953d71c48033b35a15f4f1cdc28",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/railway-conflicts.js",
+      "M3SHA256": "7dc1b44fffae951df219118d8490a4f21e015c9631f623e314931806f8b6fd62",
+      "candidateSHA256": "7dc1b44fffae951df219118d8490a4f21e015c9631f623e314931806f8b6fd62",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/railway-guard.js",
+      "M3SHA256": "13815f4d8d53b827a154e0febf098bd74c00e7223c13e8effe2804c5ad8fdf15",
+      "candidateSHA256": "13815f4d8d53b827a154e0febf098bd74c00e7223c13e8effe2804c5ad8fdf15",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/railway-state.js",
+      "M3SHA256": "ecc7cbbdf266fc89dd4d85999e509fb85a2e3ba62a2f4a655d1eb8795702b092",
+      "candidateSHA256": "ecc7cbbdf266fc89dd4d85999e509fb85a2e3ba62a2f4a655d1eb8795702b092",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/railway-step.js",
+      "M3SHA256": "e96411470661c3767884b4574ee9121f2a7f6abac2986bd8b127fb9baa29ffbb",
+      "candidateSHA256": "e96411470661c3767884b4574ee9121f2a7f6abac2986bd8b127fb9baa29ffbb",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/railway-types.js",
+      "M3SHA256": "341a80f00d4e7841cea69c5185d7cbf64cb5753afd894751aecdc3225f8f0e60",
+      "candidateSHA256": "341a80f00d4e7841cea69c5185d7cbf64cb5753afd894751aecdc3225f8f0e60",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/railway-works.js",
+      "M3SHA256": "eaefd6b77a1ed3379d6baa28a368e151cb64e9e290a4e9d3cd692e97bb00ed6f",
+      "candidateSHA256": "eaefd6b77a1ed3379d6baa28a368e151cb64e9e290a4e9d3cd692e97bb00ed6f",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/rolling-stock-animation.js",
+      "M3SHA256": "e0bc902d6cbe2d4c6d336b2b6de94d8f3afba4d3564fbc37ff211be6af0a07ad",
+      "candidateSHA256": "e0bc902d6cbe2d4c6d336b2b6de94d8f3afba4d3564fbc37ff211be6af0a07ad",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/rolling-stock-art.js",
+      "M3SHA256": "15e1ab227ff9d6546d683ebc02abc9a5a8788a8cfd2f0b0b57e30d19be1f9314",
+      "candidateSHA256": "15e1ab227ff9d6546d683ebc02abc9a5a8788a8cfd2f0b0b57e30d19be1f9314",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/rolling-stock.js",
+      "M3SHA256": "13c0727a9fdb3b5ae8888c597f25c7293b93d45b3dc685a9d6e416f06712a8db",
+      "candidateSHA256": "13c0727a9fdb3b5ae8888c597f25c7293b93d45b3dc685a9d6e416f06712a8db",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/scenery.js",
+      "M3SHA256": "1c9a751a375c47d72332df023bec6e722dc3cc229ce797ca960570a51a24ac73",
+      "candidateSHA256": "1c9a751a375c47d72332df023bec6e722dc3cc229ce797ca960570a51a24ac73",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/scenic-plan.js",
+      "M3SHA256": "91a743876e79cd5a52df41da057b8b6f8db04cfca7a2f9dc19700a2767d73829",
+      "candidateSHA256": "91a743876e79cd5a52df41da057b8b6f8db04cfca7a2f9dc19700a2767d73829",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/simulation.js",
+      "M3SHA256": "0b243f69abc9c652adb9dff83fbba26cbe93cb8c8fa2f30716022c167d206c3c",
+      "candidateSHA256": "0b243f69abc9c652adb9dff83fbba26cbe93cb8c8fa2f30716022c167d206c3c",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/station-building.js",
+      "M3SHA256": "e38e73e42ebac052294299be522b64fec71d7c444a4c3f92cee9cef5978a3e6e",
+      "candidateSHA256": "e38e73e42ebac052294299be522b64fec71d7c444a4c3f92cee9cef5978a3e6e",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/station-materials.js",
+      "M3SHA256": "70f10ae3b7facd21c052f6a48ced2d52edcfb36ff05da68c363de673c2424ce7",
+      "candidateSHA256": "70f10ae3b7facd21c052f6a48ced2d52edcfb36ff05da68c363de673c2424ce7",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/station-platform.js",
+      "M3SHA256": "a308e2ef67a975670d2d436bae7c28179be7ad7f9f6d54318c2550b65873b79e",
+      "candidateSHA256": "a308e2ef67a975670d2d436bae7c28179be7ad7f9f6d54318c2550b65873b79e",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/structure-layout.js",
+      "M3SHA256": "de50578848f832b4ab848d4b1f55118828465a435df654e587c193a64551b495",
+      "candidateSHA256": "de50578848f832b4ab848d4b1f55118828465a435df654e587c193a64551b495",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/train-assets.js",
+      "M3SHA256": "60d32587bc41b5347717ffa8e0c97968cca821cad7acd0c250900f88e1b3b0d1",
+      "candidateSHA256": "60d32587bc41b5347717ffa8e0c97968cca821cad7acd0c250900f88e1b3b0d1",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/train-deck-state.js",
+      "M3SHA256": "96dd0faace5b6cb02a28404a98a3e4a09b07716591dc061268bdc19563a9eb0a",
+      "candidateSHA256": "96dd0faace5b6cb02a28404a98a3e4a09b07716591dc061268bdc19563a9eb0a",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/train-deck.js",
+      "M3SHA256": "dd63cdb0030ce5643b0508b2e945b6f2f0e86ae0925b6008800a08d09b696c71",
+      "candidateSHA256": "7182b6c84063e89a93e8dddad3c153d46ac3d0c8e4a7bfb7a49f63ac45fa3ecd",
+      "identical": false,
+      "classification": "approved U2-U9 presentation adapter"
+    },
+    {
+      "path": "src/train-management-state.js",
+      "M3SHA256": "6e904e043082bfb2e6c7051051bdf4b25b980a0f105915b2aeef4d35812d2b1e",
+      "candidateSHA256": "6e904e043082bfb2e6c7051051bdf4b25b980a0f105915b2aeef4d35812d2b1e",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/train-management.js",
+      "M3SHA256": "7274fdf8f2a4e48aefc5bb66acfc9ae8e9bf99a99b0a89b813d18089e0601817",
+      "candidateSHA256": "5f7ff7084ccd08fab46a533d0b92f9f2c0cdfc61625d5f34205fb4156b4f4b04",
+      "identical": false,
+      "classification": "approved U2-U9 presentation adapter"
+    },
+    {
+      "path": "src/train-projects-view.js",
+      "M3SHA256": "365986ed759beb0912afc1ca94d10667b06c5f305ae49a5f126c2b03ec282c81",
+      "candidateSHA256": "c7c1e800931e4b5c1205505ac575707e9c5253da07825b674bfbb9513834cd1f",
+      "identical": false,
+      "classification": "approved U2-U9 presentation adapter"
+    },
+    {
+      "path": "src/train-projects.js",
+      "M3SHA256": "c267d8da5d3698c05d6f17f65420027e1e14e119300c2a9013f2e5622a2b4a95",
+      "candidateSHA256": "c267d8da5d3698c05d6f17f65420027e1e14e119300c2a9013f2e5622a2b4a95",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/train-side-layout.js",
+      "M3SHA256": "97e28667814c29d64230509bf8a5b4ced9a19795339c83af5cf617cb5aa9187d",
+      "candidateSHA256": "97e28667814c29d64230509bf8a5b4ced9a19795339c83af5cf617cb5aa9187d",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/train-side-view.js",
+      "M3SHA256": "99e3634cc0c3be3076147531612ee6d3bcd1e3094bd18137981d1a97cb0086be",
+      "candidateSHA256": "99e3634cc0c3be3076147531612ee6d3bcd1e3094bd18137981d1a97cb0086be",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/turnout-arrow-approaches.js",
+      "M3SHA256": "8fad3c512e2cfeff84941363ad405480cae2d05b45f473b442a6b9986af02f95",
+      "candidateSHA256": "8fad3c512e2cfeff84941363ad405480cae2d05b45f473b442a6b9986af02f95",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/turnout-arrow-view.js",
+      "M3SHA256": "11b6ed8ac02ac85cce6ed3b22d062d5d52046d81b2e2b81e7c3460e692e8e38c",
+      "candidateSHA256": "11b6ed8ac02ac85cce6ed3b22d062d5d52046d81b2e2b81e7c3460e692e8e38c",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/turnout-arrows.js",
+      "M3SHA256": "3083a0aebff88f3b776460b0fe90e3eed6f5130f894b83ae96f60a8f9571c261",
+      "candidateSHA256": "3083a0aebff88f3b776460b0fe90e3eed6f5130f894b83ae96f60a8f9571c261",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/turnout-commands.js",
+      "M3SHA256": "f22c108f498761f6d8759f39bdcb5d30f326b45d44f9c0db4143b9a3feb17910",
+      "candidateSHA256": "f22c108f498761f6d8759f39bdcb5d30f326b45d44f9c0db4143b9a3feb17910",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/turnout-glow.js",
+      "M3SHA256": "9039c7cf896db00750dda22a13161dac824d5972c94a50f6746a0d2949618327",
+      "candidateSHA256": "9039c7cf896db00750dda22a13161dac824d5972c94a50f6746a0d2949618327",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/turnout-interaction.js",
+      "M3SHA256": "7ef0c4cb831858a942951519a5335a98bf6270159189eafe83dcda5fcb90041b",
+      "candidateSHA256": "7ef0c4cb831858a942951519a5335a98bf6270159189eafe83dcda5fcb90041b",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/turnout-picking.js",
+      "M3SHA256": "cad24777a25233fb596be963ca986dc462976cd645289bd226cb265f869282ef",
+      "candidateSHA256": "cad24777a25233fb596be963ca986dc462976cd645289bd226cb265f869282ef",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/turnout-routes.js",
+      "M3SHA256": "d14adba3532c9601a568ff573b1e8a7c451a6e7fe5b35210a781556e2d4deb73",
+      "candidateSHA256": "d14adba3532c9601a568ff573b1e8a7c451a6e7fe5b35210a781556e2d4deb73",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/view-controls.js",
+      "M3SHA256": "b73ebe53f305135a323c078ea02f5b1ae0aeafea3f471dc843e8d424f8c3dd04",
+      "candidateSHA256": "b73ebe53f305135a323c078ea02f5b1ae0aeafea3f471dc843e8d424f8c3dd04",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/zone-layout.js",
+      "M3SHA256": "f0d189a1c36c5cb21d6198664ca3dd553ba0c09516e89659e8d0da617b588ff2",
+      "candidateSHA256": "f0d189a1c36c5cb21d6198664ca3dd553ba0c09516e89659e8d0da617b588ff2",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    },
+    {
+      "path": "src/zones.js",
+      "M3SHA256": "0d1ee79d9310bf721117006b0f8a18e053ead3e3337d74df74561cea354645f9",
+      "candidateSHA256": "0d1ee79d9310bf721117006b0f8a18e053ead3e3337d74df74561cea354645f9",
+      "identical": true,
+      "classification": "unchanged M2/M3/R1 source"
+    }
+  ],
+  "authAndDependenciesIdenticalToMain": true,
+  "newUiModules": "src/ui/* approved U2-U9; app.js boot wiring is approved U2-U9, not a railway-domain baseline byte comparison."
+}

@@ -1,0 +1,191 @@
+[
+  {
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exitCode": 0,
+    "log": "branch.txt"
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exitCode": 0,
+    "log": "baseline-head.txt"
+  },
+  {
+    "command": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/main",
+      "refs/heads/codex/ui-v2-integration"
+    ],
+    "exitCode": 0,
+    "log": "remote-baseline.txt"
+  },
+  {
+    "command": [
+      "git",
+      "merge-base",
+      "--is-ancestor",
+      "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+      "50d7c744e4b9dbbe20197ec8f959fdccb16edb5b"
+    ],
+    "exitCode": 0,
+    "log": "main-ancestor.txt"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "50d7c744e4b9dbbe20197ec8f959fdccb16edb5b",
+      "--",
+      "app.js",
+      "index.html",
+      "style.css",
+      "auth-gate.js",
+      "auth-gate-core.js",
+      "src",
+      "ui",
+      "assets",
+      "tests",
+      "scripts",
+      "package.json",
+      "package-lock.json"
+    ],
+    "exitCode": 0,
+    "log": "protected-files.txt"
+  },
+  {
+    "command": [
+      "bash",
+      "-c",
+      "node --version && npm --version && python3 --version && chromium --version"
+    ],
+    "exitCode": 0,
+    "log": "versions.txt"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "log": "build.txt"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--",
+      ".github/workflows/pages.yml"
+    ],
+    "exitCode": 0,
+    "log": "workflow-diff.txt"
+  },
+  {
+    "command": [
+      "bash",
+      "-euo",
+      "pipefail",
+      "-c",
+      "mkdir -p _site\ncp index.html style.css auth-gate.js auth-gate-core.js legacy-v0.1.html .nojekyll _site/\ncp -R dist assets ui _site/\ncp -R docs _site/docs\n"
+    ],
+    "exitCode": 0,
+    "log": "prepare-site.txt"
+  },
+  {
+    "command": [
+      "python3",
+      "docs/_active/ui-v21/evidence/REL001/audit-package.py"
+    ],
+    "exitCode": 0,
+    "log": "package-audit.json"
+  },
+  {
+    "command": [
+      "node",
+      "docs/_active/ui-v21/evidence/REL001/check-browser.mjs"
+    ],
+    "exitCode": 1,
+    "log": "browser-first.txt"
+  },
+  {
+    "command": [
+      "node",
+      "docs/_active/ui-v21/evidence/REL001/check-browser.mjs"
+    ],
+    "exitCode": 1,
+    "log": "browser-second.txt"
+  },
+  {
+    "command": [
+      "node",
+      "docs/_active/ui-v21/evidence/REL001/check-browser.mjs"
+    ],
+    "exitCode": 0,
+    "log": "browser.txt"
+  },
+  {
+    "command": [
+      "npm",
+      "ls",
+      "--depth=0"
+    ],
+    "exitCode": 0,
+    "log": "npm-ls.txt"
+  },
+  {
+    "command": [
+      "python3",
+      "docs/_active/ui-v21/evidence/REL001/finalize-package.py"
+    ],
+    "exitCode": 0,
+    "log": "artifact-size.json"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "log": "final-checks.json"
+  },
+  {
+    "command": [
+      "python3",
+      "docs/_active/ui-v21/evidence/REL001/audit-package.py"
+    ],
+    "exitCode": 0,
+    "log": "package-audit.json",
+    "phase": "final package recheck"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exitCode": 2,
+    "note": "Extra blank line at EOF in npm-ls.txt; normalized the command receipt only."
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exitCode": 0,
+    "log": "final-checks.json"
+  }
+]

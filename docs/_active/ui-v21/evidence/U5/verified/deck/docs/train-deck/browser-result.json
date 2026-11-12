@@ -1,0 +1,121 @@
+{
+  "nativeThumbnailKeys": [
+    "native-steam",
+    "native-diesel",
+    "native-shunter"
+  ],
+  "background": "linear-gradient(135deg, rgb(246, 226, 164), rgb(169, 128, 47) 35%, rgb(95, 68, 22) 55%, rgb(217, 180, 95) 80%, rgb(246, 226, 164))",
+  "webglContexts": 1,
+  "kenneyThumbnailKeys": [
+    "kenney-steam",
+    "kenney-diesel",
+    "kenney-shunter"
+  ],
+  "fourTrainScenario": {
+    "visible": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "recent": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "hiddenTrainAdvanced": true
+  },
+  "minimapFocus": true,
+  "desktop": {
+    "overflow": false,
+    "cards": [
+      {
+        "width": 463.328125,
+        "height": 306
+      },
+      {
+        "width": 463.328125,
+        "height": 306
+      },
+      {
+        "width": 463.328125,
+        "height": 306
+      },
+      {
+        "width": 463.328125,
+        "height": 306
+      }
+    ],
+    "contexts": 1
+  },
+  "tablet": {
+    "overflow": false,
+    "cards": [
+      {
+        "width": 492,
+        "height": 306
+      },
+      {
+        "width": 492,
+        "height": 306
+      },
+      {
+        "width": 492,
+        "height": 306
+      },
+      {
+        "width": 492,
+        "height": 306
+      }
+    ],
+    "contexts": 1
+  },
+  "tablet-portrait": {
+    "overflow": false,
+    "cards": [
+      {
+        "width": 364,
+        "height": 306
+      },
+      {
+        "width": 364,
+        "height": 306
+      },
+      {
+        "width": 364,
+        "height": 306
+      },
+      {
+        "width": 364,
+        "height": 306
+      }
+    ],
+    "contexts": 1
+  },
+  "mobile": {
+    "overflow": false,
+    "cards": [
+      {
+        "width": 368,
+        "height": 306
+      },
+      {
+        "width": 368,
+        "height": 306
+      },
+      {
+        "width": 368,
+        "height": 306
+      },
+      {
+        "width": 368,
+        "height": 306
+      }
+    ],
+    "contexts": 1
+  },
+  "errors": [],
+  "result": "PASS",
+  "performanceNote": "Chromium software renderer; desktop/tablet viewport checks, not certification on physical iPad hardware."
+}

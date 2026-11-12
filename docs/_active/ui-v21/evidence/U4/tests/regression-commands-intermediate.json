@@ -1,0 +1,35 @@
+[
+  {
+    "name": "phase-zero",
+    "command": [
+      "python",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U4/run-regression.py",
+      "tests/browser-phase-zero.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U4/regressions/phase-zero"
+    ],
+    "observer": false,
+    "exit": 0
+  },
+  {
+    "name": "interaction",
+    "command": [
+      "python",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U4/run-regression.py",
+      "tests/browser-turnout-interaction.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U4/regressions/interaction"
+    ],
+    "observer": true,
+    "exit": 0
+  },
+  {
+    "name": "railway-guard",
+    "command": [
+      "python",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U4/run-regression.py",
+      "tests/browser-railway-guard.py",
+      "/workspace/SerieN/docs/_active/ui-v21/evidence/U4/regressions/railway-guard"
+    ],
+    "observer": true,
+    "exit": 1
+  }
+]
