@@ -1,0 +1,10 @@
+{
+  "status": "FAIL",
+  "bundleSHA256": "dc91d2c1e7d675b1f3104a062955e751edce44acf2203662c1c428ed46259120",
+  "checks": [
+    "three-launchers-one-instance-shared-selection-identities-tab-arrows-and-focus-return"
+  ],
+  "errors": [],
+  "nativeDialogs": [],
+  "failure": "Page.evaluate: TypeError: Cannot read properties of null (reading 'click')\n    at eval (eval at evaluate (:311:30), <anonymous>:1:31)\n    at UtilityScript.evaluate (<anonymous>:318:18)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+}

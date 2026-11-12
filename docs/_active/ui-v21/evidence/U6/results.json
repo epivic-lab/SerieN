@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "proposal": "U6 READY FOR REGIA REVIEW",
+  "approved": false,
+  "branch": "codex/ui-v2-integration",
+  "base": "e6f152c9b5a23347cbbd5aa6898b91a11e2194e0",
+  "bundleSHA256": "8672384da7e4224342c2d6f2168132aca45d97ce49a6a1b1a6d98fe84ad2b7e7",
+  "commands": [
+    {
+      "name": "node",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "environment": {},
+      "exitCode": 0,
+      "elapsed": 13.534773588180542
+    },
+    {
+      "name": "python",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "*_test.py"
+      ],
+      "environment": {},
+      "exitCode": 0,
+      "elapsed": 0.11466693878173828
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--metafile=/workspace/SerieN/docs/_active/ui-v21/evidence/U6/metafile.json"
+      ],
+      "environment": {},
+      "exitCode": 0,
+      "elapsed": 0.24788260459899902
+    },
+    {
+      "name": "canonical",
+      "command": [
+        "python3",
+        "scripts/build-canonical-layout.py"
+      ],
+      "environment": {},
+      "exitCode": 0,
+      "elapsed": 0.06793427467346191
+    },
+    {
+      "name": "M1",
+      "command": [
+        "python3",
+        "tests/browser-train-management.py"
+      ],
+      "environment": {
+        "M1_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U6/M1"
+      },
+      "exitCode": 0,
+      "elapsed": 27.851234436035156
+    },
+    {
+      "name": "side",
+      "command": [
+        "python3",
+        "tests/run-train-side-regression.py"
+      ],
+      "environment": {
+        "M11_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U6/side"
+      },
+      "exitCode": 0,
+      "elapsed": 36.12367296218872
+    },
+    {
+      "name": "projects-lifecycle",
+      "command": [
+        "python3",
+        "tests/browser-train-project-lifecycle.py"
+      ],
+      "environment": {
+        "M2_LIFECYCLE_OUTPUT": "/workspace/SerieN/docs/_active/ui-v21/evidence/U6/projects-lifecycle"
+      },
+      "exitCode": 0,
+      "elapsed": 6.047950506210327
+    },
+    {
+      "name": "delivery",
+      "command": "U6_OUTPUT=docs/_active/ui-v21/evidence/U6/delivery python3 tests/browser-ui-v21-U6.py",
+      "exitCode": 0,
+      "log": "tests/delivery.txt"
+    },
+    {
+      "name": "native-final",
+      "command": "U6_NATIVE_NAME=native-final python3 docs/_active/ui-v21/evidence/U6/run-native.py",
+      "exitCode": 0,
+      "log": "tests/native-final.txt"
+    },
+    {
+      "name": "U2-smoke",
+      "command": "python3 work/run-u6-u2.py",
+      "exitCode": 0,
+      "log": "tests/U2-smoke.txt"
+    },
+    {
+      "name": "U5-regression",
+      "command": "U5_OUTPUT=docs/_active/ui-v21/evidence/U6/U5-regression python3 tests/browser-ui-v21-U5.py",
+      "exitCode": 0,
+      "log": "tests/U5-regression.txt"
+    }
+  ],
+  "functional": "delivery/results.json",
+  "native": "native-final/results.json",
+  "PASS_EXECUTED": [
+    "254 Node",
+    "9 Python",
+    "build/canonical",
+    "M1",
+    "Side View",
+    "Projects lifecycle",
+    "6 U6 groups",
+    "U2 smoke",
+    "U5 full regression",
+    "native four trains + TM",
+    "source invariants"
+  ],
+  "PASS_HISTORICAL": [
+    "extended U3/U4/R1/M2/M3 matrices, sources unchanged"
+  ],
+  "NOT_VERIFIED": [
+    "native beforeunload prompt presentation",
+    "physical GPU/touch/audio/screen reader",
+    "other browsers",
+    "remote OAuth",
+    "global U9"
+  ],
+  "FAIL_UNRESOLVED": [],
+  "recoveries": "See recovery-inventory.json, intermediate browser directories and U6_REPORT.md. Exec-server temporarily disconnected before report creation; recovered non-destructively."
+}

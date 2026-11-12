@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "bundleSHA256": "4eda91cebb1f78aa2587b661496f7c3990544e3dde6d3797e6a75134e00cb7bf",
+  "checks": [],
+  "errors": [],
+  "nativeDialogs": [],
+  "failure": "Locator.focus: Error: strict mode violation: locator(\"[data-view=\\\"layout\\\"]\") resolved to 2 elements:\n    1) <button role=\"tab\" tabindex=\"0\" type=\"button\" data-view=\"layout\" id=\"u6-tab-layout\" aria-pressed=\"true\" data-ctrl=\"CTRL-056\" aria-selected=\"true\" aria-controls=\"u6-panel\">On the layout</button> aka get_by_role(\"tab\", name=\"On the layout\")\n    2) <div tabindex=\"0\" id=\"u6-panel\" role=\"tabpanel\" data-view=\"layout\" aria-pressed=\"true\" aria-selected=\"true\" class=\"managementBody u6-view\" aria-labelledby=\"u6-tab-layout\">\u2026</div> aka get_by_role(\"tabpanel\", name=\"On the layout\")\n\nCall log:\n  - waiting for locator(\"[data-view=\\\"layout\\\"]\")\n"
+}

@@ -1,13 +1,13 @@
-# UI V2.1 — U5 Train Dock, Carousel, Global Commands & Reset
+# UI V2.1 — U6 Train Management
 
-**U5 READY FOR REGIA REVIEW — STOP. U6–U9 non avviate.** U4 approvata nel mandato U5.
+**U6 READY FOR REGIA REVIEW — STOP. U7/U8/U9 non avviate.** U5 approvata nel mandato U6.
 
-Branch `codex/ui-v2-integration`, ingresso U4 `1d591bbc914f74cf066666522c6692be4132a614`, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d` conservata. Quattro card fisiche stabili, LRU recente conservata, selezione condivisa/ID unici, throttle distinto da actual/gauge 0–150 layout/s. Comandi, STOP ALL momentaneo, Pause e Add Train originali. Reset coordinato con consenso atomico, contesto rivalidato, generation/STale e sessioni/prenotazioni M2/M3 conservate. Keyboard/focus e dispose verificati; CSS solo U5.
+Branch `codex/ui-v2-integration`, baseline `e6f152c9b5a23347cbbd5aa6898b91a11e2194e0`, main produttiva invariata. Recovery locale documentata prima delle modifiche; conservati i quattro file parziali e completata la fase senza reset/clean/rebase.
 
-**PASS eseguiti:** 254 Node, 9 Python, build/canonico/invarianti, 8 gruppi U5 produttivi, lifecycle callback, Browser Train Deck, Phase Zero, matrice 5C e smoke U2/U3/U4. RAF nativo definitivo: 4 treni, 89 frame/140877,644 ms (~0,625 fps SwiftShader), selezione/stop/pause/resume reali, zero pageerror. Nessuna certificazione hardware.
+Shell unica, quattro tab/accessibilità/focus, Layout con proiezioni fisiche reali e Side View originale, Catalog da PROJECT_CATALOG con filtri di presentazione. Guard shell atomica con generation/draft/identità rivalidati, nessuna Promise su discard. Sola API aggiuntiva di presentazione nella vista Projects; store e interni U7/U8 invariati. beforeunload mantiene la condizione reale.
 
-Bundle SHA-256 `8199e84ff8b0bf600013ff7b7ded3fe7d42a5a6be13468f55032e3a78add7ac3`. Motore/dispatcher/topologia/asset/font/dep/Auth/Supabase intatti; CSS U4 prefisso conservato. Failure/recovery, limiti e provenienza espliciti nel [rapporto U5](U5_REPORT.md) e [risultati](evidence/U5/results.json).
+**PASS:** 254 Node,9 Python,build/canonico/invarianti,M1,Side View,Projects lifecycle,6 gruppi U6,smoke U2,8 gruppi regressione U5 e RAF nativo con4 treni/apertura-selezione-chiusura TM. Bundle definitivo `8672384da7e4224342c2d6f2168132aca45d97ce49a6a1b1a6d98fe84ad2b7e7`, identico in acceptance e native finali.
 
-**NOT VERIFIED:** hardware/touch/audio/screen reader/altri browser/OAuth remoto/U9; sessione fisica singleton (cattura singola = proiezione del vero treno 0, non rimozione fisica). M2/M3 completi e matrici estese precedenti restano PASS documentati, non rieseguiti indiscriminatamente.
+Screenshot a1440×900/1024×768/820×1180/768×1024/390×844; recuperi/failure separati, nessun riutilizzo fittizio dei log di baseline. U3/U4/R1 e M2/M3 estesi restano PASS storici ove non rieseguiti; font/asset/engine/dispatcher/app/Auth/workflow/dep immutati. NOT VERIFIED: prompt beforeunload nativo, hardware fisico, altri browser, OAuth remoto e U9.
 
-Checkpoint normale sul solo branch autorizzato; SHA locale/remoto verificati nella consegna. Unica prossima attività: revisione indipendente della Regia. Nessun merge/main/deploy/Pages o U6.
+[Rapporto](U6_REPORT.md), [risultati e comandi](evidence/U6/results.json), [recovery](evidence/U6/recovery-inventory.json). Checkpoint atomico e verifica remoto nella consegna. Unica prossima attività: revisione indipendente della Regia; nessun merge/main/deploy/Pages/Supabase o U7.
