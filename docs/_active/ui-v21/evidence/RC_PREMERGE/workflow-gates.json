@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "onlyPagesPrepareSiteChanged": true,
+  "pagesTriggersUnchanged": [
+    "push branches:[main]",
+    "workflow_dispatch (preexisting; not invoked)"
+  ],
+  "supabaseWorkflowAndSchemaUnchanged": true,
+  "newTriggers": [],
+  "noDeployFromDraftPR": true
+}

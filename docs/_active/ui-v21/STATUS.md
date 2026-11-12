@@ -36,3 +36,12 @@ REL001 approvato `06a01c5ae70bfd4147e2c866f06803139904f264`; autorizzata esclusi
 Build e bundle U9 identico PASS;73file applicativi preservati,269identità U9 per riuso storico senza ripetere matrice ferroviaria.97HTTP200 incluse le79richieste REL001;3465esclusioni404attese;browser desktop1440×900/mobile390×844 con bootstrap Auth locale,Menu/Dock/WebGL/font/brass/targa e apertura documento pubblico PASS,zero errori runtime o richieste esterne. Preparazioni con residui e destinazione assente identiche. OAuth/cloud/GPUfisica/Pages pubblicata NOT VERIFIED.
 
 [REL002_REPORT](REL002_REPORT.md),[evidenze](evidence/REL002/). **READY FOR REGIA RELEASE REVIEW**, subordinato al checkpoint remoto verificato nella consegna;nessuna approvazione al rilascio implicita. **STOP REL002:review indipendente Regia;nessun merge/main/deploy/PRrelease/nuova fase.**
+
+
+## UI V2.1 — release candidate pre-merge gate (2026-11-12)
+
+U0–U9 e REL001/002 approvate dalla Regia; autorizzata soltanto preparazione PR DRAFT verso main, nessun merge/deploy. Checkpoint applicativo `29b55b40dfa37c51fae827bdf25ded94948a3a45`, main invariata `184cc9ba93a6b35493f365b2ffcb20ef0645963d`: 25 commit avanti/0 indietro, delta Git completo di 2.321 file e merge-tree senza conflitti. Consegna aggiunge soltanto un checkpoint documentale.
+
+PASS Node22.23.5/npm ci, 254 Node, 9 Python, canonico senza diff, build, ricetta REL002 esatta e identità completa dei 97 file/4.491.628 byte. Bundle U9 identico, 269 identità sorgenti/test/asset, domini M2/M3/R1 e Auth preservati con adapter di presentazione approvati distinti. HTTP: 97 risposte200 e 3.470 esclusioni404 attese. Scansione di 1.758 nuovi blob Git senza candidati ai pattern di credenziali. Browser/ferrovia U9 e REL002 riusati per identità, non rieseguiti indiscriminatamente.
+
+[Rapporto RC](RC_PREMERGE_REPORT.md), [evidenze](evidence/RC_PREMERGE/). **READY FOR REGIA MERGE REVIEW**, subordinato alla PR DRAFT e verifica HEAD/base nella consegna. NOT VERIFIED OAuth/cloud live, Pages pubblicata, hardware fisico e altri browser. Procedura post-deploy e rollback soltanto documentati. Il merge su main attiverà automaticamente Pages. **STOP dopo la PR: nessun auto-merge/merge/workflow_dispatch/deploy/nuova fase; serve autorizzazione esplicita Regia al merge.**
