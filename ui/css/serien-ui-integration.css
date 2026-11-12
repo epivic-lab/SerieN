@@ -156,6 +156,17 @@ dialog.u2-region,.u6-tm,#authGate{--n:0;--k:0;--dk:linear-gradient(#0000,#0000);
 .u3-operations details[open] .u3-log-preview{display:none}
 .u3-operations #log{font:11px/1.5 'Cutive Mono';color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere;margin:6px 0 0}
 .u3-camera-tools[hidden],.u3-region [hidden],.u4-region [hidden]{display:none}
+/* Only while coordinating View on narrow screens: keep the original warning
+   and Bell surfaces above the scrollable camera menu, never behind it. */
+.app.st .u3-overlays.is-camera-coordinated>.nextSwitchHUD{left:0;right:0;width:auto;max-width:none;max-height:none}
+.is-camera-coordinated .nextSwitchHUD>.mi>.nextSwitchWarning{font-size:10px;line-height:1.2;margin:4px 0 0;padding:4px}
+.u3-overlays.is-camera-coordinated>#guardedStopStatus,.u3-overlays.is-camera-coordinated>#guardedStopStatus.has-warning{left:0;right:0;width:auto;max-width:none;max-height:none;overflow:visible}
+.is-camera-coordinated>#guardedStopStatus>.mi{flex-direction:row;align-items:center}
+.is-camera-coordinated #guardedStopStatus [data-ctrl=CTRL-047]{font-size:10px;line-height:1.2}
+.is-camera-coordinated #guardedStopStatus .bt{flex:none}
+/* The mobile grid already reserves at least 300px for this row. While View is
+   open, use that row also in short landscape instead of the frozen 46dvh box. */
+.app.st:has(.is-camera-coordinated) .vp{height:auto}
 #loadMsg{z-index:6;color:var(--b1);font:14px Federo}
 
 /* Native dialogs retain their existing state, consent and focus coordinators. */

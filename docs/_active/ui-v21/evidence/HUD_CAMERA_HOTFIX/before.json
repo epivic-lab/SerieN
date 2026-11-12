@@ -1,0 +1,331 @@
+{
+  "head": "6e62967356df836df27de59f352496511769d591",
+  "bundleSHA256": "714aac5f7534702a96d01a347db25c1497739d1081af3f2ed6f702e9f2ddb7bd",
+  "provenance": "Exact local production bundle; Auth bootstrap only on localhost, RAF suppressed for static geometry, no observer bundle or railway fault setup. Trusted clicks open existing HUD and View controls.",
+  "cases": [
+    {
+      "hud": {
+        "x": 162,
+        "y": 146,
+        "width": 200,
+        "height": 46,
+        "right": 362,
+        "bottom": 192
+      },
+      "camera": {
+        "x": 28,
+        "y": 244.234375,
+        "width": 332,
+        "height": 188,
+        "right": 360,
+        "bottom": 432.234375
+      },
+      "overlap": {
+        "width": 198,
+        "height": 0
+      },
+      "controls": [
+        {
+          "id": "cameraView",
+          "preset": null,
+          "text": "OverviewStationFreight yardFollow trainFree camera",
+          "box": {
+            "x": 109.890625,
+            "y": 258.234375,
+            "width": 236.109375,
+            "height": 30,
+            "right": 346,
+            "bottom": 288.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<select id=\"cameraView\" data-ctrl=\"CTRL-008\" aria-label=\"Camera preset\"><option value=\"overview\">Overview</option><option value=\"station\">Station</option><option value=\"yard\">Freight yard</option><option value=\"follow\">F"
+        },
+        {
+          "id": "",
+          "preset": "overview",
+          "text": "Overview",
+          "box": {
+            "x": 42,
+            "y": 296.234375,
+            "width": 149,
+            "height": 36,
+            "right": 191,
+            "bottom": 332.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button class=\"bt d\" type=\"button\" data-preset=\"overview\" data-ctrl=\"CTRL-008\" aria-pressed=\"true\">Overview</button>"
+        },
+        {
+          "id": "",
+          "preset": "station",
+          "text": "Station",
+          "box": {
+            "x": 197,
+            "y": 296.234375,
+            "width": 149,
+            "height": 36,
+            "right": 346,
+            "bottom": 332.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button class=\"bt d\" type=\"button\" data-preset=\"station\" data-ctrl=\"CTRL-008\" aria-pressed=\"false\">Station</button>"
+        },
+        {
+          "id": "",
+          "preset": "yard",
+          "text": "Freight yard",
+          "box": {
+            "x": 42,
+            "y": 338.234375,
+            "width": 149,
+            "height": 36,
+            "right": 191,
+            "bottom": 374.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button class=\"bt d\" type=\"button\" data-preset=\"yard\" data-ctrl=\"CTRL-008\" aria-pressed=\"false\">Freight yard</button>"
+        },
+        {
+          "id": "",
+          "preset": "follow",
+          "text": "Follow train",
+          "box": {
+            "x": 197,
+            "y": 338.234375,
+            "width": 149,
+            "height": 36,
+            "right": 346,
+            "bottom": 374.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button class=\"bt d\" type=\"button\" data-preset=\"follow\" data-ctrl=\"CTRL-008\" aria-pressed=\"false\">Follow train</button>"
+        },
+        {
+          "id": "viewPan",
+          "preset": null,
+          "text": "\u270bPan",
+          "box": {
+            "x": 42,
+            "y": 382.234375,
+            "width": 71.5,
+            "height": 36,
+            "right": 113.5,
+            "bottom": 418.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button id=\"viewPan\" type=\"button\" aria-label=\"Drag to pan the layout\" title=\"Drag to pan the layout\" aria-pressed=\"false\" class=\"bt d\" data-ctrl=\"CTRL-010\">\u270b<small>Pan</small></button>"
+        },
+        {
+          "id": "viewOrbit",
+          "preset": null,
+          "text": "\u293eOrbit",
+          "box": {
+            "x": 119.5,
+            "y": 382.234375,
+            "width": 71.5,
+            "height": 36,
+            "right": 191,
+            "bottom": 418.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button id=\"viewOrbit\" type=\"button\" aria-label=\"Drag to orbit the layout\" title=\"Drag to orbit the layout\" aria-pressed=\"true\" class=\"active bt d\" data-ctrl=\"CTRL-010\">\u293e<small>Orbit</small></button>"
+        },
+        {
+          "id": "viewFollow",
+          "preset": null,
+          "text": "\u25b7Follow",
+          "box": {
+            "x": 197,
+            "y": 382.234375,
+            "width": 71.5,
+            "height": 36,
+            "right": 268.5,
+            "bottom": 418.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button id=\"viewFollow\" type=\"button\" aria-label=\"Follow the selected train\" title=\"Follow the selected train\" aria-pressed=\"false\" class=\"bt d\" data-ctrl=\"CTRL-011\">\u25b7<small>Follow</small></button>"
+        },
+        {
+          "id": "routePreview",
+          "preset": null,
+          "text": "Route",
+          "box": {
+            "x": 274.5,
+            "y": 382.234375,
+            "width": 71.5,
+            "height": 36,
+            "right": 346,
+            "bottom": 418.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button id=\"routePreview\" class=\"secondary bt d\" aria-pressed=\"false\" title=\"Show the predicted route for 15 seconds; this is not movement authority\" data-ctrl=\"CTRL-007\">Route</button>"
+        }
+      ],
+      "expanded": false,
+      "stationTrustedClickTrial": "PASS"
+    },
+    {
+      "hud": {
+        "x": 162,
+        "y": 146,
+        "width": 200,
+        "height": 200.96875,
+        "right": 362,
+        "bottom": 346.96875
+      },
+      "camera": {
+        "x": 28,
+        "y": 244.234375,
+        "width": 332,
+        "height": 188,
+        "right": 360,
+        "bottom": 432.234375
+      },
+      "overlap": {
+        "width": 198,
+        "height": 102.734375
+      },
+      "controls": [
+        {
+          "id": "cameraView",
+          "preset": null,
+          "text": "OverviewStationFreight yardFollow trainFree camera",
+          "box": {
+            "x": 109.890625,
+            "y": 258.234375,
+            "width": 236.109375,
+            "height": 30,
+            "right": 346,
+            "bottom": 288.234375
+          },
+          "centerHitInside": false,
+          "centerHitElement": "<svg viewBox=\"0 0 232 92\" role=\"img\" aria-label=\"Actual connections; predicted route red, other routes grey\"><defs><marker id=\"nextSwitchArrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"4\" markerHeight=\"4\" orien"
+        },
+        {
+          "id": "",
+          "preset": "overview",
+          "text": "Overview",
+          "box": {
+            "x": 42,
+            "y": 296.234375,
+            "width": 149,
+            "height": 36,
+            "right": 191,
+            "bottom": 332.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button class=\"bt d\" type=\"button\" data-preset=\"overview\" data-ctrl=\"CTRL-008\" aria-pressed=\"true\">Overview</button>"
+        },
+        {
+          "id": "",
+          "preset": "station",
+          "text": "Station",
+          "box": {
+            "x": 197,
+            "y": 296.234375,
+            "width": 149,
+            "height": 36,
+            "right": 346,
+            "bottom": 332.234375
+          },
+          "centerHitInside": false,
+          "centerHitElement": "<div class=\"nextSwitchPosition\">WX-B: straight</div>"
+        },
+        {
+          "id": "",
+          "preset": "yard",
+          "text": "Freight yard",
+          "box": {
+            "x": 42,
+            "y": 338.234375,
+            "width": 149,
+            "height": 36,
+            "right": 191,
+            "bottom": 374.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button class=\"bt d\" type=\"button\" data-preset=\"yard\" data-ctrl=\"CTRL-008\" aria-pressed=\"false\">Freight yard</button>"
+        },
+        {
+          "id": "",
+          "preset": "follow",
+          "text": "Follow train",
+          "box": {
+            "x": 197,
+            "y": 338.234375,
+            "width": 149,
+            "height": 36,
+            "right": 346,
+            "bottom": 374.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button class=\"bt d\" type=\"button\" data-preset=\"follow\" data-ctrl=\"CTRL-008\" aria-pressed=\"false\">Follow train</button>"
+        },
+        {
+          "id": "viewPan",
+          "preset": null,
+          "text": "\u270bPan",
+          "box": {
+            "x": 42,
+            "y": 382.234375,
+            "width": 71.5,
+            "height": 36,
+            "right": 113.5,
+            "bottom": 418.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button id=\"viewPan\" type=\"button\" aria-label=\"Drag to pan the layout\" title=\"Drag to pan the layout\" aria-pressed=\"false\" class=\"bt d\" data-ctrl=\"CTRL-010\">\u270b<small>Pan</small></button>"
+        },
+        {
+          "id": "viewOrbit",
+          "preset": null,
+          "text": "\u293eOrbit",
+          "box": {
+            "x": 119.5,
+            "y": 382.234375,
+            "width": 71.5,
+            "height": 36,
+            "right": 191,
+            "bottom": 418.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button id=\"viewOrbit\" type=\"button\" aria-label=\"Drag to orbit the layout\" title=\"Drag to orbit the layout\" aria-pressed=\"true\" class=\"active bt d\" data-ctrl=\"CTRL-010\">\u293e<small>Orbit</small></button>"
+        },
+        {
+          "id": "viewFollow",
+          "preset": null,
+          "text": "\u25b7Follow",
+          "box": {
+            "x": 197,
+            "y": 382.234375,
+            "width": 71.5,
+            "height": 36,
+            "right": 268.5,
+            "bottom": 418.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button id=\"viewFollow\" type=\"button\" aria-label=\"Follow the selected train\" title=\"Follow the selected train\" aria-pressed=\"false\" class=\"bt d\" data-ctrl=\"CTRL-011\">\u25b7<small>Follow</small></button>"
+        },
+        {
+          "id": "routePreview",
+          "preset": null,
+          "text": "Route",
+          "box": {
+            "x": 274.5,
+            "y": 382.234375,
+            "width": 71.5,
+            "height": 36,
+            "right": 346,
+            "bottom": 418.234375
+          },
+          "centerHitInside": true,
+          "centerHitElement": "<button id=\"routePreview\" class=\"secondary bt d\" aria-pressed=\"false\" title=\"Show the predicted route for 15 seconds; this is not movement authority\" data-ctrl=\"CTRL-007\">Route</button>"
+        }
+      ],
+      "expanded": true,
+      "stationTrustedClickTrial": "BLOCKED",
+      "stationClickError": "Locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-preset=station]\")\n    - locator resolved to <button class=\"bt d\" type=\"button\" data-ctrl=\"CTRL-008\" aria-pressed=\"false\" data-preset=\"station\">Station</button>\n  - attempting click action (trial run)\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"nextSwitchPosition\">WX-B: straight</div> from <section id=\"nextSwitchHUD\" data-ctrl=\"CTRL-052\" aria-label=\"Next Switch HUD\" class=\"nextSwitchHUD u2-region u3-region m\">\u2026</section> subtree intercepts pointer events\n    - retrying click action (trial run)\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"nextSwitchPosition\">WX-B: straight</div> from <section id=\"nextSwitchHUD\" data-ctrl=\"CTRL-052\" aria-label=\"Next Switch HUD\" class=\"nextSwitchHUD u2-region u3-region m\">\u2026</section> subtree intercepts pointer events\n    - retrying click action (trial run)\n      - waiting 100ms\n    4 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"nextSwitchPosition\">WX-B: straight</div> from <section id=\"nextSwitchHUD\" data-ctrl=\"CTRL-052\" aria-label=\"Next Switch HUD\" class=\"nextSwitchHUD u2-region u3-region m\">\u2026</section> subtree intercepts pointer events\n    - retrying click action (trial run)\n      - waiting 500ms\n"
+    }
+  ],
+  "visualGate": "FAIL"
+}

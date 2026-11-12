@@ -3,9 +3,9 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   const find = id => document.getElementById(id);
   const disposers = [];
   let disposed = false;
-  const on = (node, type, listener) => {
-    node.addEventListener(type, listener);
-    disposers.push(() => node.removeEventListener(type, listener));
+  const on = (node, type, listener, options) => {
+    node.addEventListener(type, listener, options);
+    disposers.push(() => node.removeEventListener(type, listener, options));
   };
   const element = (tag, className, text) => {
     const node = document.createElement(tag);
@@ -34,21 +34,17 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   toggle.setAttribute('aria-controls', tools.id);
   toggle.setAttribute('aria-expanded', 'false');
   const free = element('span', 'u3-camera-state');
-  const closeTools = () => {
-    tools.hidden = true;
-    toggle.setAttribute('aria-expanded', 'false');
-  };
-  // U9: bound the open menu above the primary toolbar, within the layout canvas.
-  const positionTools = () => {
-    if (!tools.hidden) tools.style.maxHeight = `${Math.max(44, Math.min(280, camera.getBoundingClientRect().top - layer.getBoundingClientRect().top - 8))}px`;
-  };
   on(toggle, 'click', () => {
-    tools.hidden = !tools.hidden;
-    toggle.setAttribute('aria-expanded', String(!tools.hidden));
-    positionTools();
+    if (!tools.hidden) closeTools();
+    else {
+      tools.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      coordinateTools();
+    }
   });
-  on(window, 'resize', positionTools);
-  on(camera, 'keydown', event => {
+  on(window, 'resize', coordinateTools);
+  on(window, 'orientationchange', coordinateTools);
+  on(layer, 'keydown', event => {
     if (event.key === 'Escape' && !tools.hidden) {
       event.stopPropagation();
       closeTools();
@@ -147,6 +143,63 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   logPlate.append(logSurface);
   layer.append(logPlate);
 
+  // Presentation-only ownership: the original HUD button remains its sole
+  // state controller. A user HUD action cancels our temporary restoration.
+  const narrow = window.matchMedia('(max-width:700px), (max-height:480px)');
+  const minimize = hud.querySelector('.nextSwitchMinimize');
+  const warning = hud.querySelector('.nextSwitchWarning');
+  const warningHome = warning.parentElement;
+  let restoreExpanded = false;
+  let coordinated = false;
+  let hudCommand = false;
+  const expanded = () => minimize.getAttribute('aria-expanded') === 'true';
+  const setExpanded = value => {
+    if (expanded() === value) return;
+    hudCommand = true;
+    try { minimize.click(); } finally { hudCommand = false; }
+  };
+  function releaseHUD(restore = true) {
+    if (!coordinated) return;
+    coordinated = false;
+    warningHome.append(warning);
+    layer.classList.remove('is-camera-coordinated');
+    status.style.removeProperty('top');
+    if (restore && restoreExpanded) setExpanded(true);
+    restoreExpanded = false;
+  }
+  function closeTools(restore = true) {
+    const returnFocus = tools.contains(document.activeElement);
+    tools.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    releaseHUD(restore);
+    if (returnFocus) toggle.focus();
+  }
+  function coordinateTools() {
+    if (disposed || tools.hidden) return;
+    if (narrow.matches && !coordinated) {
+      restoreExpanded = expanded();
+      coordinated = true;
+      setExpanded(false);
+      // Keep the original, engine-updated warning outside the hidden HUD body.
+      hudSurface.append(warning);
+      layer.classList.add('is-camera-coordinated');
+    } else if (!narrow.matches) releaseHUD();
+    const top = layer.getBoundingClientRect().top;
+    let reserved = 0;
+    if (coordinated) {
+      status.style.top = `${hud.getBoundingClientRect().bottom - top + 6}px`;
+      reserved = status.getBoundingClientRect().bottom - top + 8;
+    }
+    tools.style.maxHeight = `${Math.max(44, Math.min(280, camera.getBoundingClientRect().top - top - reserved - 8))}px`;
+  }
+  on(minimize, 'click', () => {
+    if (!hudCommand && coordinated) closeTools(false);
+  }, true); // Close View before the original target listener expands the HUD.
+  const overlaySizes = new ResizeObserver(coordinateTools);
+  overlaySizes.observe(hud);
+  overlaySizes.observe(status);
+  disposers.push(() => overlaySizes.disconnect());
+
   function update() {
     if (disposed) return;
     const {muted} = guardedStops.bell.snapshot;
@@ -167,6 +220,7 @@ export function mountViewportOverlays({host, guardedStops, getCameraPreset}) {
   return {update, dispose() {
     if (disposed) return;
     disposed = true;
+    closeTools();
     disposers.splice(0).forEach(dispose => dispose());
     bellMenu.remove();
     layer.remove();

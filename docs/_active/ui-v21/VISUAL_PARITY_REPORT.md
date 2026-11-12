@@ -1,6 +1,32 @@
 # UI V2.1 — Visual Parity Hotfix
 
-**READY FOR REGIA VISUAL REVIEW — PR DRAFT.** Gate tecnici completati; accettazione visiva riservata alla Regia. Nessun merge o deploy autorizzato/eseguito in questo hotfix.
+**HUD/CAMERA MOBILE COLLISION HOTFIX — PASS TECNICO / REGIA REVIEW PENDING. PR #8 DRAFT.** Il mandato successivo autorizza solo la rimozione del blocker mobile, i relativi test e il checkpoint sullo stesso branch. Nessun merge o deploy autorizzato/eseguito.
+
+## Correzione conclusiva — collisione HUD / View mobile
+
+Baseline iniziale locale/remota `6e62967356df836df27de59f352496511769d591`, main `d77b8aa2710fa474fdb069b204705364b4a9e7e6`, PR #8 Draft. PR #7 invariata a `310f39f94448a30f986c5a1801400fa732b65a64`. Questa sezione aggiorna lo stato corrente; rapporto, bundle e catture seguenti restano le evidenze storiche della prima consegna.
+
+**Root cause definitiva.** Gli ancoraggi assoluti indipendenti di HUD e popup camera erano entrambi contenuti nel viewport, ma non coordinati. A390×844, HUD expanded e View si intersecavano per198×102,734375px; Station era completamente coperto e il nodo originale `.nextSwitchPosition` intercettava il pointer. Lo script precedente controllava il contenimento dei pannelli e l'accesso a una parte del canvas, senza verificare la disgiunzione HUD/camera o il click di Station in quello stato. Difetto nuovamente riprodotto sul bundle autorizzato prima della modifica.
+
+**Correzione di sola presentazione.** `src/ui/overlays.js` coordina gli overlay quando `(max-width:700px), (max-height:480px)` è attivo. Aprire View registra se HUD era expanded e lo minimizza con il suo unico pulsante originale. Chiudere View ripristina soltanto quell'intenzione ancora valida. Un'azione sul controllo HUD chiude View in capture, prima del toggle originale, e annulla il ripristino temporaneo. Escape funziona nell'intero layer, incluso il focus sull'HUD; il focus ritorna al toggle View. Resize/orientation ricalcolano il coordinamento e il ritorno al desktop ripristina lo stato precedente. Un ResizeObserver, scollegato al dispose, reagisce alle dimensioni delle superfici di avviso; nessun timer né lavoro aggiunto al tick ferroviario.
+
+**Avvisi reali preservati.** La minimizzazione originale nasconde il body HUD, che contiene anche il warning. Durante View mobile viene quindi spostato **lo stesso nodo** `.nextSwitchWarning`, mantenendo ruolo `status`, identità e aggiornamenti originali del motore, nella superficie HUD fuori dal body nascosto. Alla chiusura torna nella posizione originale. Non si calcola, copia o simula alcun rischio. HUD compatto/warning e Bell/Guarded Stop sono disposti in due fasce superiori; il popup camera occupa lo spazio inferiore disponibile e scorre quando necessario. Occupazione e motivi di blocco della sidebar rimangono originali. Nessun allarme è nascosto per liberare spazio ai preset.
+
+**CSS strettamente contestuale.** Solo `ui/css/serien-ui-integration.css`, selettori subordinati a `.is-camera-coordinated`: nessun aumento z-index, pointer-events disabilitato, texture nuova o modifica frozen. In landscape corto la riga mobile già riserva almeno300px, ma il riquadro frozen `.vp` manteneva46dvh: mentre View è aperto, `height:auto` usa la riga esistente, permettendo la compresenza di avvisi e menu. Al termine il contesto viene rimosso. Non cambia la griglia, l'altezza del Train Dock o il desktop conforme.
+
+**Regressione automatizzata:** [tests/browser-ui-v21-overlay-collision.py](../../../tests/browser-ui-v21-overlay-collision.py). Il test esegue il vero bundle di produzione con bootstrap Auth esclusivamente localhost e RAF reale controllato; nessun observer bundle o mock di camera/HUD/snapshot. Misura `getBoundingClientRect`, usa `elementFromPoint` e click trusted, poi verifica `snapshot().camera.preset`, `aria-pressed` e il cambiamento reale di posizione/target per Station. Nessuna prova OAuth implicita. Le sole predisposizioni ferroviarie sono comandi diagnostici sugli oggetti reali del laboratorio.
+
+Prove correnti e prima/dopo: [HUD_CAMERA_HOTFIX](evidence/HUD_CAMERA_HOTFIX/README.md). SHA del bundle conclusivo **`1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378`**, **1.092.265byte**. Non attribuire a questo candidato il bundle714aac… o il manifest della consegna precedente. Non è stato pubblicato alcun nuovo pacchetto Pages.
+
+**Gate finali nuovi PASS:**254Node,9Python/JMRI,build;11gruppi browser sul bundle conclusivo. Sequenze A/B a320×700,375×812,390×844,430×932,768×1024,1692×877; tutti e quattro i preset con click trusted e camera originale; Escape anche con focus HUD,12cicli, intenzione compact/expanded, resize e rotazione844×390. Occupazione reale, arrivo di Guarded Stop aView già aperto, warning originale mantenuto e successivi sei viewport con allarme attivo. **42misure: tutte le aree d'intersezione camera/HUD e camera/Bell pari a0px²**, con controllo `elementFromPoint` dei preset e assenza di mutazioni ferroviarie nei segmenti di sola UI. Cleanup effettivo durante View aperto: listener osservati rimossi, ResizeObserver scollegato e nessun overlay residuo/pageerror/HTTP failure.
+
+**Invarianti PASS:**132file del manifest originale e controllo esteso di138file protetti byte-identici al checkpoint iniziale, con hash per-file; canonico `e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc`. Desktop1692×877 e tablet768×1024: zero differenze di geometria, testi e stili calcolati nelle regioni confrontate, sia normali sia HUD expanded/View. Raster diagnostico finale:832pixel UI divergenti a1692 e0a768; non viene dichiarata identità pixel-perfect fra frame nativi indipendenti. Le catture sono state ispezionate direttamente. Le matrici ferroviarie estese precedenti restano storiche, non sono state rieseguite né attribuite a queste prove.
+
+Lo SHA del nuovo commit atomico si risolve con `git log -1 --format=%H -- docs/_active/ui-v21/VISUAL_PARITY_REPORT.md`; lo SHA completo e il confronto con il checkpoint remoto sono consegnati nel rapporto operativo, evitando un'autoreferenza nel commit. **PR #8 deve restare Draft; PR #7, main e produzione non sono oggetto di intervento.** OAuth live, hardware fisico, altri browser, screen reader, WCAG completa e audit5E restano NOT VERIFIED e non avviati.
+
+---
+
+## Rapporto storico — prima consegna Visual Parity
 
 Data: 2026-11-12, Europe/Rome. Repository `epivic-lab/SerieN`. Branch **`codex/ui-v21-visual-parity`**, derivato esattamente dalla baseline pubblicata **`d77b8aa2710fa474fdb069b204705364b4a9e7e6`**. Riferimento originale vincolante: **`cf2c29a8112b37a53c62cb84fca44061942aea31`**, branch `design/main-ui-redesign`.
 

@@ -1,0 +1,28 @@
+/workspace/work/hud-camera/desktop-regression.py:47: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels=sum(any(p) and m>0 for p,m in zip(diff.getdata(),mask.getdata()))
+[
+  {
+    "width": 1692,
+    "state": "normal",
+    "geometryEqual": true,
+    "UIChangedPixels": 832
+  },
+  {
+    "width": 1692,
+    "state": "expanded-view",
+    "geometryEqual": true,
+    "UIChangedPixels": 832
+  },
+  {
+    "width": 768,
+    "state": "normal",
+    "geometryEqual": true,
+    "UIChangedPixels": 0
+  },
+  {
+    "width": 768,
+    "state": "expanded-view",
+    "geometryEqual": true,
+    "UIChangedPixels": 0
+  }
+]
