@@ -18,7 +18,7 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
   let generation=0,inventory,launcher=button;
   const projects=createTrainProjectsView({guard,getTrains,getSelected,getGeneration:()=>generation,onChange:()=>{inventory?.reconcile();signature='';sync();}});
   inventory=createDepotInventory({getProjects:()=>projects.snapshot.confirmed});
-  const depot=createDepotView({inventory,getProjects:()=>projects.snapshot,getTrains,getDetached,getGeneration:()=>generation,onChange:()=>{signature='';sync();}});
+  const depot=createDepotView({guard,inventory,getProjects:()=>projects.snapshot,getTrains,getDetached,getGeneration:()=>generation,onChange:()=>{signature='';sync();}});
   const body=dialog.querySelector('.managementBody');let view='layout',signature='',disposed=false,lastSync=0;
   const element=(tag,text,className)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;};
   const mm=n=>Number.isFinite(n)?`${n.toFixed(1)} mm`:'Not measured';

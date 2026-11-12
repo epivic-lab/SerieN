@@ -1,0 +1,45 @@
+{
+  "source": "original projectSlots and reconcile, unmodified",
+  "checks": [
+    [
+      "duplicate same model",
+      "distinct virtual IDs and codes; two exclusive real slot UUIDs",
+      "delivery/results.json"
+    ],
+    [
+      "draft-only slots",
+      "unavailable; no target options",
+      "delivery/results.json"
+    ],
+    [
+      "different model / occupied slot / already reserved record",
+      "original domain rejects; UI filters incompatible/occupied slots and omits Assign for Reserved",
+      "tests/node.txt; depot-adapted/result.json"
+    ],
+    [
+      "dirty draft remove / Cancel",
+      "confirmed reservation retained until Confirm; Cancel retains",
+      "delivery/results.json"
+    ],
+    [
+      "reorder/name/orientation same slot",
+      "same projectId/vehicleId remains reserved",
+      "delivery/results.json"
+    ],
+    [
+      "remove slot / add same model new UUID / Confirm",
+      "old reservation released with original notice; new UUID does not inherit",
+      "delivery/results.json"
+    ],
+    [
+      "Reset generation + close/reopen",
+      "virtual IDs, confirmed projects and compatible reservations retained in RAM",
+      "delivery/results.json; runtime-final-adapted/result.json"
+    ],
+    [
+      "reload",
+      "session-only by unchanged stores; no added persistence; no claim of persistent stock",
+      "source-hashes.json"
+    ]
+  ]
+}

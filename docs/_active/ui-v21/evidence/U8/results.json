@@ -1,0 +1,56 @@
+{
+  "status": "READY FOR REGIA REVIEW",
+  "technicalGates": "PASS; independent Regia approval pending",
+  "microphase": "U8 only; U9 not started",
+  "date": "2026-11-12",
+  "baseline": "cca11fb76d36e9688f41392fa1592b9a3514dce9",
+  "branch": "codex/ui-v2-integration",
+  "bundleSHA256": "de724284586912053126bada325953c4d86c089085c5a4dfbd369efbceb324f7",
+  "executedPASS": {
+    "node": "254/254 incl. depot-inventory; commands.json node exit0",
+    "python": "9/9; commands.json python exit0",
+    "build": "final production, metafile-final.json, build-final.exit0",
+    "canonical": "70 nodes/75 edges/1 component/cycleRank6/4 terminals; no source diff",
+    "newU8": "delivery/results.json six groups, seven viewports; exact final bundle",
+    "staleIntents": "intents/results.json six consent/callback/lifecycle checks; final modules",
+    "nativeRAF": "runtime-final-adapted/result.json six groups, exact final bundle, trusted CDP mouse/touch",
+    "U2": "U2-smoke/result.json ten groups final coordinator regression",
+    "U6": "U6-recovered-adapted/results.json six groups final bundle",
+    "depot": "depot-adapted/result.json nine groups pre-label/focus bundle",
+    "lifecycle": "lifecycle-adapted/result.json 25 create/dispose cycles",
+    "U7": "U7-adapted/results.json five groups, pre-label/focus bundle",
+    "U5": "U5-adapted/results.json eight groups, pre-label/focus bundle",
+    "invariants": "verify.py/source-hashes.json; protected modules identical to approved U7, one TM guard argument, scoped appended CSS, no mock/reference inputs"
+  },
+  "historicalPASS": {
+    "source": "approved U7 report and source hashes",
+    "limits": "U3/U4 extended camera/sidebar/mission/turnout matrices and independent R1 extended certification not rerun; source/contract unchanged; previous results are not new executions"
+  },
+  "FAIL": {
+    "unresolved": [],
+    "recovered": [
+      "U6 fixture timeout, retained and resolved by explicit Edit/focus wait; see failure-recovery.json"
+    ]
+  },
+  "NOT_VERIFIED": [
+    "physical GPU/tablet/touch/keyboard hardware and smoothness",
+    "screen reader and non-Chromium browsers",
+    "audio hardware and remote OAuth/provider",
+    "native beforeunload prompt presentation (synthetic handler guard covered)",
+    "U9 and full integrated final UI release"
+  ],
+  "artifacts": {
+    "commands": "commands-final.json (includes initial failure and successful recovery)",
+    "hashes": "source-hashes.json",
+    "metafile": "metafile-final.json",
+    "git": "git-baseline.json and invariants.json; final exact checkpoint SHA/remote equality in delivery",
+    "controls": "mapping.json",
+    "guard": "guard-matrix.json",
+    "reservationUUID": "reservation-matrix.json",
+    "physical": "physical-separation.json",
+    "screenshots": "delivery/*.png; all seven Depot and physical views plus required states",
+    "failures": "failure-recovery.json"
+  },
+  "security": "no Auth/Supabase/RLS/network/persistence/credential/dependency/workflow changes; data rendered as textContent; record IDs and model/slot validation remain original domain; no unsafe reference scripts",
+  "checkpoint": "one atomic commit and normal fast-forward push to authorized branch, exact SHA verified in final delivery; main and Pages untouched; STOP after U8"
+}

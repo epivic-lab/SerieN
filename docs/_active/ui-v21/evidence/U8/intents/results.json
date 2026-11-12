@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "real M2/M3 store + DOM adapter; no railway simulation",
+  "checks": [
+    "no onChange before consent",
+    "Available\u2192Reserved invalidates pending Remove",
+    "changed assignment invalidates pending Release",
+    "generation mismatch refuses operation",
+    "double consent exactly one mutation/callback",
+    "pending dispose leaves inventory unchanged and removes owned dialog"
+  ]
+}

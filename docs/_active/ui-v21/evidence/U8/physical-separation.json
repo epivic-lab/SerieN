@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "identities": [
+    "immutable catalog modelId",
+    "virtual M3 record id/code",
+    "confirmed M2 projectId/vehicleId slot",
+    "physical R1 UUID + generation"
+  ],
+  "deterministic": "delivery asserts exact railwayState equality across Add/Assign/Release/Remove and draft/confirmed edits while paused; after explicit original Reset a new physical baseline is used for viewport checks",
+  "native": "runtime-final-adapted/result.json: ordinary RAF, three real moving trains, no manual steps/RAF replacement. Stable physical IDs, unchanged planned/physical separation, positions advance through original engine and scene stays synchronized; supported original R1 uncouple/recouple exercised separately, not a Depot transfer",
+  "trustedInput": "original native test CDP mouse Release, touch Add and Remove, trusted mouse consent; trustedEvents retained",
+  "detached": "original R1 uncouple gives one detached-on-track row with original physical identity; inventory unchanged; recouple same wagon tested in native suite",
+  "readOnly": "no button in physical/planned/transfer sections; two unavailable plaques, no dispatch/transfer callback",
+  "bundleSHA256": "de724284586912053126bada325953c4d86c089085c5a4dfbd369efbceb324f7",
+  "errors": "delivery zero pageerrors/native dialogs; native zero pageErrors, consoleErrors, failedRequests, httpFailures, contextLost",
+  "performanceLimit": "SwiftShader/native final 99 frames in 120978.5ms (~0.810fps); functional synchronization evidence only, no hardware smoothness or comparison claim"
+}
