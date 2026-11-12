@@ -1,5 +1,19 @@
 # SerieN — Stato e ripresa
 
+## Stato corrente — UI V2.1 pubblicata, acceptance pending (12 novembre 2026)
+
+**RELEASED — ACCEPTANCE PENDING.** [Rapporto operativo finale](RELEASE_V21_FINAL_REPORT.md). Il mandato Final Release Execution e la successiva conferma esplicita in chat hanno autorizzato Ready, merge commit della [PR #6](https://github.com/epivic-lab/SerieN/pull/6) e i deployment automatici. Main precedente `184cc9ba93a6b35493f365b2ffcb20ef0645963d`, candidata congelata `d99e4be117f4838ee6c149ad5c158f8688c40754`, merge **`d77b8aa2710fa474fdb069b204705364b4a9e7e6`**: parent esatti e albero candidato identico.
+
+**Nuove prove:** [Pages 43250016350 SUCCESS](https://github.com/epivic-lab/SerieN/actions/runs/43250016350), 254 Node/9 Python/canonico/build/upload/deploy PASS; sito pubblico 97/97 HTTP200 con ogni hash REL002, 4.491.628 byte, 24 documenti, 11 esclusioni404 attese. Supabase production osservato nel workflow `97df5c95030348f5bb7ace0af2d16051`: migrazioni aggiornate, configurazione/seed protetti saltati, nessuna funzione da distribuire; check sul merge SUCCESS, progetto ACTIVE_HEALTHY, tre migrazioni e catalogo prima/dopo invariati. Non è stato eseguito alcun intervento manuale produttivo.
+
+**Aperti:** OAuth Google reale e smoke autenticato desktop1440×900/mobile390×844 **BLOCKED — USER ACTION REQUIRED**. Browser sulla vera URL: documento/CSS e gate pre-login verificati, zero pageerror; rete dell'ambiente blocca SDK esm.sh e dominio Supabase. Nessuna fixture/bypass usata. Auth/Data API complete NOT VERIFIED; lettura parziale dei parametri DB vuota, senza inferire default. Le prove operative U9/REL002 locali sono riusate per identità e restano distinte dallo smoke pubblico.
+
+Documentazione/evidenze su `codex/release-v21-final-report`, branch separato derivato dal merge; PR documentale Draft, nessuna seconda integrazione autorizzata. Rapporti storici conservati. Invarianti R1/M1/M2/M3, layout/150rail meshes, protezioni e session-only preservati; nessuna modifica applicativa/schema/Auth/RLS/dipendenze. Rollback soltanto documentato e subordinato a nuova autorizzazione. 5E, hardware/browser/accessibilità completi, evoluzioni simulazione e scenario Claude restano backlog futuro.
+
+**Unica prossima azione operativa:** completare e registrare le prove autenticate reali e le letture Auth/Data API indicate nel rapporto, senza avviare nuovi sviluppi o integrare automaticamente la PR documentale.
+
+## Registro storico — gli stati di fase sotto non sostituiscono quello corrente
+
 **5A, 5B, 5C e 5D concluse. Pubblicazione su main autorizzata dall’utente il 30 ottobre 2026. 5E non iniziata.**
 
 La richiesta del 30 ottobre ha autorizzato il completamento della 5D dal checkpoint pulito `5ae8ee9`. Controllato GitHub: `main` a `f582b12`, due commit di soli asset/file di sistema rispetto alla base pubblica, preservati. Repository `first` e `SerieN Control` non modificati.

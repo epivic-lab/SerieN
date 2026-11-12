@@ -1,0 +1,2158 @@
+﻿2026-11-12T15:38:44.8716190Z Current runner version: '2.338.2'
+2026-11-12T15:38:44.8743317Z ##[group]Runner Image Provisioner
+2026-11-12T15:38:44.8744476Z Hosted Compute Agent
+2026-11-12T15:38:44.8745402Z Version: 20261028.624
+2026-11-12T15:38:44.8746303Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-12T15:38:44.8747143Z Build Date: 2026-10-28T21:51:42Z
+2026-11-12T15:38:44.8748042Z Worker ID: {e5935015-f65c-448d-93ab-72a99492cce9}
+2026-11-12T15:38:44.8748893Z Region: centralus
+2026-11-12T15:38:44.8749776Z Cloud: Azure
+2026-11-12T15:38:44.8750485Z ##[endgroup]
+2026-11-12T15:38:44.8752032Z ##[group]Operating System
+2026-11-12T15:38:44.8752908Z Ubuntu
+2026-11-12T15:38:44.8753514Z 26.04.1
+2026-11-12T15:38:44.8754383Z LTS
+2026-11-12T15:38:44.8755116Z ##[endgroup]
+2026-11-12T15:38:44.8755776Z ##[group]Runner Image
+2026-11-12T15:38:44.8756608Z Image: ubuntu-26.04
+2026-11-12T15:38:44.8757304Z Version: 20261101.186.1
+2026-11-12T15:38:44.8758950Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-12T15:38:44.8760862Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+2026-11-12T15:38:44.8762140Z ##[endgroup]
+2026-11-12T15:38:44.8763500Z ##[group]GITHUB_TOKEN Permissions
+2026-11-12T15:38:44.8766063Z Contents: read
+2026-11-12T15:38:44.8766807Z Metadata: read
+2026-11-12T15:38:44.8767550Z Pages: write
+2026-11-12T15:38:44.8768215Z ##[endgroup]
+2026-11-12T15:38:44.8770350Z Secret source: Actions
+2026-11-12T15:38:44.8771488Z Cache mode: write
+2026-11-12T15:38:44.8772428Z Prepare workflow directory
+2026-11-12T15:38:44.9049668Z Prepare all required actions
+2026-11-12T15:38:44.9087481Z Getting action download info
+2026-11-12T15:38:45.1829109Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-12T15:38:45.3853933Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-11-12T15:38:45.4875715Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-12T15:38:45.5736583Z Download action repository 'actions/configure-pages@v5' (SHA:983d7736d9b0ae728b81ab479565c72886d7745b)
+2026-11-12T15:38:45.9200775Z Download action repository 'actions/upload-pages-artifact@v3' (SHA:56afc609e74202658d3ffba0e8f6dda462b719fa)
+2026-11-12T15:38:46.1190042Z Download action repository 'actions/deploy-pages@v4' (SHA:d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e)
+2026-11-12T15:38:46.6414363Z Getting action download info
+2026-11-12T15:38:46.7573452Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-12T15:38:46.9001024Z Complete job name: deploy
+2026-11-12T15:38:46.9791861Z ##[group]Run actions/checkout@v4
+2026-11-12T15:38:46.9792363Z with:
+2026-11-12T15:38:46.9792599Z   repository: epivic-lab/SerieN
+2026-11-12T15:38:46.9794870Z   token: ***
+2026-11-12T15:38:46.9795105Z   ssh-strict: true
+2026-11-12T15:38:46.9795326Z   ssh-user: git
+2026-11-12T15:38:46.9795555Z   persist-credentials: true
+2026-11-12T15:38:46.9795821Z   clean: true
+2026-11-12T15:38:46.9796050Z   sparse-checkout-cone-mode: true
+2026-11-12T15:38:46.9796326Z   fetch-depth: 1
+2026-11-12T15:38:46.9796544Z   fetch-tags: false
+2026-11-12T15:38:46.9796777Z   show-progress: true
+2026-11-12T15:38:46.9796993Z   lfs: false
+2026-11-12T15:38:46.9797195Z   submodules: false
+2026-11-12T15:38:46.9797415Z   set-safe-directory: true
+2026-11-12T15:38:46.9797675Z   allow-unsafe-pr-checkout: false
+2026-11-12T15:38:46.9798074Z ##[endgroup]
+2026-11-12T15:38:47.5917537Z Syncing repository: epivic-lab/SerieN
+2026-11-12T15:38:47.5919233Z ##[group]Getting Git version info
+2026-11-12T15:38:47.5919784Z Working directory is '/home/runner/work/SerieN/SerieN'
+2026-11-12T15:38:47.5920450Z [command]/usr/bin/git version
+2026-11-12T15:38:47.5920802Z git version 2.56.0
+2026-11-12T15:38:47.5936169Z ##[endgroup]
+2026-11-12T15:38:47.5948336Z Temporarily overriding HOME='/home/runner/work/_temp/a366414a-bb56-46a0-be40-d00b287130e7' before making global git config changes
+2026-11-12T15:38:47.5949788Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T15:38:47.5952990Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/SerieN/SerieN
+2026-11-12T15:38:47.6014954Z Deleting the contents of '/home/runner/work/SerieN/SerieN'
+2026-11-12T15:38:47.6016321Z ##[group]Initializing the repository
+2026-11-12T15:38:47.6019131Z [command]/usr/bin/git init /home/runner/work/SerieN/SerieN
+2026-11-12T15:38:47.6159798Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-12T15:38:47.6168923Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-12T15:38:47.6169602Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-12T15:38:47.6170107Z hint: call:
+2026-11-12T15:38:47.6170363Z hint:
+2026-11-12T15:38:47.6170720Z hint: 	git config --global init.defaultBranch <name>
+2026-11-12T15:38:47.6171122Z hint:
+2026-11-12T15:38:47.6171514Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-12T15:38:47.6172150Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-12T15:38:47.6172628Z hint:
+2026-11-12T15:38:47.6172874Z hint: 	git branch -m <name>
+2026-11-12T15:38:47.6173160Z hint:
+2026-11-12T15:38:47.6173579Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-12T15:38:47.6174371Z Initialized empty Git repository in /home/runner/work/SerieN/SerieN/.git/
+2026-11-12T15:38:47.6179869Z [command]/usr/bin/git remote add origin https://github.com/epivic-lab/SerieN
+2026-11-12T15:38:47.6227732Z ##[endgroup]
+2026-11-12T15:38:47.6228295Z ##[group]Disabling automatic garbage collection
+2026-11-12T15:38:47.6231617Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-12T15:38:47.6262441Z ##[endgroup]
+2026-11-12T15:38:47.6262925Z ##[group]Setting up auth
+2026-11-12T15:38:47.6268677Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T15:38:47.6308563Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T15:38:47.6685358Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T15:38:47.6715064Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T15:38:47.6956219Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T15:38:47.6987625Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T15:38:47.7238118Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-12T15:38:47.7276213Z ##[endgroup]
+2026-11-12T15:38:47.7276769Z ##[group]Fetching the repository
+2026-11-12T15:38:47.7284382Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d77b8aa2710fa474fdb069b204705364b4a9e7e6:refs/remotes/origin/main
+2026-11-12T15:39:15.8516752Z From https://github.com/epivic-lab/SerieN
+2026-11-12T15:39:15.8517254Z  * [new ref]         d77b8aa2710fa474fdb069b204705364b4a9e7e6 -> origin/main
+2026-11-12T15:39:15.8524195Z ##[endgroup]
+2026-11-12T15:39:15.8525154Z ##[group]Determining the checkout info
+2026-11-12T15:39:15.8526637Z ##[endgroup]
+2026-11-12T15:39:15.8539431Z [command]/usr/bin/git sparse-checkout disable
+2026-11-12T15:39:15.8592006Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-12T15:39:15.9066598Z ##[group]Checking out the ref
+2026-11-12T15:39:15.9071471Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-12T15:39:17.3635561Z Updating files:   1% (44/3874)
+2026-11-12T15:39:17.3658697Z Updating files:   2% (78/3874)
+2026-11-12T15:39:17.3753203Z Updating files:   3% (117/3874)
+2026-11-12T15:39:17.3782090Z Updating files:   4% (155/3874)
+2026-11-12T15:39:17.3821900Z Updating files:   5% (194/3874)
+2026-11-12T15:39:17.3850834Z Updating files:   6% (233/3874)
+2026-11-12T15:39:17.3911591Z Updating files:   7% (272/3874)
+2026-11-12T15:39:17.4003041Z Updating files:   8% (310/3874)
+2026-11-12T15:39:17.4096423Z Updating files:   9% (349/3874)
+2026-11-12T15:39:17.4193030Z Updating files:  10% (388/3874)
+2026-11-12T15:39:17.4367405Z Updating files:  11% (427/3874)
+2026-11-12T15:39:17.4550942Z Updating files:  12% (465/3874)
+2026-11-12T15:39:17.4655471Z Updating files:  13% (504/3874)
+2026-11-12T15:39:17.4971464Z Updating files:  14% (543/3874)
+2026-11-12T15:39:17.5246496Z Updating files:  15% (582/3874)
+2026-11-12T15:39:17.5444467Z Updating files:  16% (620/3874)
+2026-11-12T15:39:17.5569736Z Updating files:  17% (659/3874)
+2026-11-12T15:39:17.5923077Z Updating files:  18% (698/3874)
+2026-11-12T15:39:17.6246266Z Updating files:  19% (737/3874)
+2026-11-12T15:39:17.6397981Z Updating files:  20% (775/3874)
+2026-11-12T15:39:17.6772264Z Updating files:  21% (814/3874)
+2026-11-12T15:39:17.7067392Z Updating files:  22% (853/3874)
+2026-11-12T15:39:17.7125667Z Updating files:  23% (892/3874)
+2026-11-12T15:39:17.7155485Z Updating files:  24% (930/3874)
+2026-11-12T15:39:17.7304927Z Updating files:  25% (969/3874)
+2026-11-12T15:39:17.7377933Z Updating files:  26% (1008/3874)
+2026-11-12T15:39:17.7485173Z Updating files:  27% (1046/3874)
+2026-11-12T15:39:17.7534068Z Updating files:  28% (1085/3874)
+2026-11-12T15:39:17.7571528Z Updating files:  29% (1124/3874)
+2026-11-12T15:39:17.7653453Z Updating files:  30% (1163/3874)
+2026-11-12T15:39:17.7787617Z Updating files:  31% (1201/3874)
+2026-11-12T15:39:17.7912741Z Updating files:  32% (1240/3874)
+2026-11-12T15:39:17.7923920Z Updating files:  33% (1279/3874)
+2026-11-12T15:39:17.8093031Z Updating files:  34% (1318/3874)
+2026-11-12T15:39:17.8217377Z Updating files:  35% (1356/3874)
+2026-11-12T15:39:17.8235252Z Updating files:  36% (1395/3874)
+2026-11-12T15:39:17.8389152Z Updating files:  37% (1434/3874)
+2026-11-12T15:39:17.8564885Z Updating files:  38% (1473/3874)
+2026-11-12T15:39:17.8684921Z Updating files:  39% (1511/3874)
+2026-11-12T15:39:17.9074133Z Updating files:  40% (1550/3874)
+2026-11-12T15:39:17.9141095Z Updating files:  41% (1589/3874)
+2026-11-12T15:39:17.9316687Z Updating files:  41% (1597/3874)
+2026-11-12T15:39:17.9458770Z Updating files:  42% (1628/3874)
+2026-11-12T15:39:17.9851160Z Updating files:  43% (1666/3874)
+2026-11-12T15:39:18.0244742Z Updating files:  44% (1705/3874)
+2026-11-12T15:39:18.0332699Z Updating files:  45% (1744/3874)
+2026-11-12T15:39:18.0391279Z Updating files:  46% (1783/3874)
+2026-11-12T15:39:18.0666863Z Updating files:  47% (1821/3874)
+2026-11-12T15:39:18.0893375Z Updating files:  48% (1860/3874)
+2026-11-12T15:39:18.1182873Z Updating files:  49% (1899/3874)
+2026-11-12T15:39:18.1383037Z Updating files:  50% (1937/3874)
+2026-11-12T15:39:18.1448798Z Updating files:  51% (1976/3874)
+2026-11-12T15:39:18.1698482Z Updating files:  52% (2015/3874)
+2026-11-12T15:39:18.1938336Z Updating files:  53% (2054/3874)
+2026-11-12T15:39:18.2306413Z Updating files:  54% (2092/3874)
+2026-11-12T15:39:18.2598385Z Updating files:  55% (2131/3874)
+2026-11-12T15:39:18.2869444Z Updating files:  56% (2170/3874)
+2026-11-12T15:39:18.3094388Z Updating files:  57% (2209/3874)
+2026-11-12T15:39:18.3193846Z Updating files:  58% (2247/3874)
+2026-11-12T15:39:18.3307271Z Updating files:  59% (2286/3874)
+2026-11-12T15:39:18.3413097Z Updating files:  60% (2325/3874)
+2026-11-12T15:39:18.3614554Z Updating files:  61% (2364/3874)
+2026-11-12T15:39:18.3866627Z Updating files:  62% (2402/3874)
+2026-11-12T15:39:18.4190598Z Updating files:  63% (2441/3874)
+2026-11-12T15:39:18.4406418Z Updating files:  64% (2480/3874)
+2026-11-12T15:39:18.4428075Z Updating files:  65% (2519/3874)
+2026-11-12T15:39:18.4589261Z Updating files:  66% (2557/3874)
+2026-11-12T15:39:18.4843851Z Updating files:  67% (2596/3874)
+2026-11-12T15:39:18.5125197Z Updating files:  68% (2635/3874)
+2026-11-12T15:39:18.5392185Z Updating files:  69% (2674/3874)
+2026-11-12T15:39:18.5724802Z Updating files:  70% (2712/3874)
+2026-11-12T15:39:18.6004545Z Updating files:  71% (2751/3874)
+2026-11-12T15:39:18.6527552Z Updating files:  72% (2790/3874)
+2026-11-12T15:39:18.6769861Z Updating files:  73% (2829/3874)
+2026-11-12T15:39:18.6936601Z Updating files:  74% (2867/3874)
+2026-11-12T15:39:18.7104914Z Updating files:  75% (2906/3874)
+2026-11-12T15:39:18.7200895Z Updating files:  76% (2945/3874)
+2026-11-12T15:39:18.7266661Z Updating files:  77% (2983/3874)
+2026-11-12T15:39:18.7279241Z Updating files:  78% (3022/3874)
+2026-11-12T15:39:18.7350001Z Updating files:  79% (3061/3874)
+2026-11-12T15:39:18.7453626Z Updating files:  80% (3100/3874)
+2026-11-12T15:39:18.7648860Z Updating files:  81% (3138/3874)
+2026-11-12T15:39:18.7800367Z Updating files:  82% (3177/3874)
+2026-11-12T15:39:18.7810122Z Updating files:  83% (3216/3874)
+2026-11-12T15:39:18.7838696Z Updating files:  84% (3255/3874)
+2026-11-12T15:39:18.7856237Z Updating files:  85% (3293/3874)
+2026-11-12T15:39:18.7896140Z Updating files:  86% (3332/3874)
+2026-11-12T15:39:18.7997296Z Updating files:  87% (3371/3874)
+2026-11-12T15:39:18.8058026Z Updating files:  88% (3410/3874)
+2026-11-12T15:39:18.8196177Z Updating files:  89% (3448/3874)
+2026-11-12T15:39:18.8240339Z Updating files:  90% (3487/3874)
+2026-11-12T15:39:18.8291357Z Updating files:  91% (3526/3874)
+2026-11-12T15:39:18.8377986Z Updating files:  92% (3565/3874)
+2026-11-12T15:39:18.8434836Z Updating files:  93% (3603/3874)
+2026-11-12T15:39:18.8681460Z Updating files:  94% (3642/3874)
+2026-11-12T15:39:18.8698429Z Updating files:  95% (3681/3874)
+2026-11-12T15:39:18.8717479Z Updating files:  96% (3720/3874)
+2026-11-12T15:39:18.8737136Z Updating files:  97% (3758/3874)
+2026-11-12T15:39:18.8754183Z Updating files:  98% (3797/3874)
+2026-11-12T15:39:18.8779858Z Updating files:  99% (3836/3874)
+2026-11-12T15:39:18.8780562Z Updating files: 100% (3874/3874)
+2026-11-12T15:39:18.8780875Z Updating files: 100% (3874/3874), done.
+2026-11-12T15:39:18.8820432Z Switched to a new branch 'main'
+2026-11-12T15:39:18.8825070Z branch 'main' set up to track 'origin/main'.
+2026-11-12T15:39:18.8991728Z ##[endgroup]
+2026-11-12T15:39:18.9033021Z [command]/usr/bin/git log -1 --format=%H
+2026-11-12T15:39:18.9055466Z d77b8aa2710fa474fdb069b204705364b4a9e7e6
+2026-11-12T15:39:18.9302273Z ##[group]Run actions/setup-node@v4
+2026-11-12T15:39:18.9302513Z with:
+2026-11-12T15:39:18.9302679Z   node-version: 22
+2026-11-12T15:39:18.9302853Z   cache: npm
+2026-11-12T15:39:18.9303022Z   always-auth: false
+2026-11-12T15:39:18.9303207Z   check-latest: false
+2026-11-12T15:39:18.9305547Z   token: ***
+2026-11-12T15:39:18.9305737Z ##[endgroup]
+2026-11-12T15:39:19.0482897Z (node:2296) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T15:39:19.0483472Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T15:39:19.0484373Z Found in cache @ /opt/hostedtoolcache/node/22.23.4/x64
+2026-11-12T15:39:19.0485676Z ##[group]Environment details
+2026-11-12T15:39:19.3782417Z node: v22.23.4
+2026-11-12T15:39:19.3782746Z npm: 10.9.9
+2026-11-12T15:39:19.3783022Z yarn: 1.22.22
+2026-11-12T15:39:19.3783692Z ##[endgroup]
+2026-11-12T15:39:19.3799519Z [command]/opt/hostedtoolcache/node/22.23.4/x64/bin/npm config get cache
+2026-11-12T15:39:19.4706566Z /home/runner/.npm
+2026-11-12T15:39:19.7360097Z Cache hit for: node-cache-Linux-x64-npm-e9eab6ddc39584d5dbaef06c02a723d65a1933451025d01d184c9b54ac34bc32
+2026-11-12T15:39:19.7445742Z (node:2296) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-12T15:39:20.3954972Z Received 10308390 of 10308390 (100.0%), 19.9 MBs/sec
+2026-11-12T15:39:20.3955436Z Cache Size: ~10 MB (10308390 B)
+2026-11-12T15:39:20.3975720Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3f502dd0-4925-4bc1-a9e8-da077d9a4a09/cache.tzst -P -C /home/runner/work/SerieN/SerieN --use-compress-program unzstd
+2026-11-12T15:39:20.4153394Z Cache restored successfully
+2026-11-12T15:39:20.4161904Z Cache restored from key: node-cache-Linux-x64-npm-e9eab6ddc39584d5dbaef06c02a723d65a1933451025d01d184c9b54ac34bc32
+2026-11-12T15:39:20.4361450Z ##[group]Run npm ci
+2026-11-12T15:39:20.4361722Z [36;1mnpm ci[0m
+2026-11-12T15:39:20.4415260Z shell: /usr/bin/bash -e {0}
+2026-11-12T15:39:20.4415496Z ##[endgroup]
+2026-11-12T15:39:21.5006923Z
+2026-11-12T15:39:21.5012631Z added 3 packages, and audited 4 packages in 1s
+2026-11-12T15:39:21.5013027Z
+2026-11-12T15:39:21.5013179Z found 0 vulnerabilities
+2026-11-12T15:39:21.5422482Z ##[group]Run actions/setup-python@v5
+2026-11-12T15:39:21.5422724Z with:
+2026-11-12T15:39:21.5422897Z   python-version: 3.12
+2026-11-12T15:39:21.5423092Z   check-latest: false
+2026-11-12T15:39:21.5425265Z   token: ***
+2026-11-12T15:39:21.5425457Z   update-environment: true
+2026-11-12T15:39:21.5425661Z   allow-prereleases: false
+2026-11-12T15:39:21.5425851Z   freethreaded: false
+2026-11-12T15:39:21.5426040Z ##[endgroup]
+2026-11-12T15:39:21.6518255Z ##[group]Installed versions
+2026-11-12T15:39:21.6711816Z (node:2371) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T15:39:21.6712683Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T15:39:21.6713318Z Successfully set up CPython (3.12.16)
+2026-11-12T15:39:21.6714032Z ##[endgroup]
+2026-11-12T15:39:21.6864355Z ##[group]Run python3 scripts/build-canonical-layout.py
+2026-11-12T15:39:21.6864935Z [36;1mpython3 scripts/build-canonical-layout.py[0m
+2026-11-12T15:39:21.6865992Z [36;1mgit diff --exit-code -- src/canonical-layout.json docs/jmri-layout/canonical-graph.json docs/jmri-layout/layout-canonical.svg docs/jmri-layout/minimap-canonical.svg[0m
+2026-11-12T15:39:21.6867114Z [36;1mpython3 -m unittest discover -s tests -p 'jmri_audit_test.py'[0m
+2026-11-12T15:39:21.6939086Z shell: /usr/bin/bash -e {0}
+2026-11-12T15:39:21.6939450Z env:
+2026-11-12T15:39:21.6939797Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:21.6940377Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-12T15:39:21.6940925Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:21.6941403Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:21.6941935Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:21.6942574Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-12T15:39:21.6942994Z ##[endgroup]
+2026-11-12T15:39:21.8242715Z {"nodes": 70, "edges": 75, "components": 1, "cycleRank": 6, "terminals": 4}
+2026-11-12T15:39:22.9728105Z .........
+2026-11-12T15:39:22.9728798Z ----------------------------------------------------------------------
+2026-11-12T15:39:22.9729364Z Ran 9 tests in 0.022s
+2026-11-12T15:39:22.9729542Z
+2026-11-12T15:39:22.9729673Z OK
+2026-11-12T15:39:22.9836962Z ##[group]Run npm test
+2026-11-12T15:39:22.9837260Z [36;1mnpm test[0m
+2026-11-12T15:39:22.9882714Z shell: /usr/bin/bash -e {0}
+2026-11-12T15:39:22.9882927Z env:
+2026-11-12T15:39:22.9883169Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:22.9883536Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-12T15:39:22.9883975Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:22.9884295Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:22.9884614Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:22.9884930Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-12T15:39:22.9885192Z ##[endgroup]
+2026-11-12T15:39:23.0705991Z
+2026-11-12T15:39:23.0706657Z > serien@0.12.0 test
+2026-11-12T15:39:23.0707009Z > node --test tests/*.test.js
+2026-11-12T15:39:23.0707430Z
+2026-11-12T15:39:23.1198949Z TAP version 13
+2026-11-12T15:39:23.1594766Z # Subtest: unauthenticated never calls authorization RPC
+2026-11-12T15:39:23.1624903Z ok 1 - unauthenticated never calls authorization RPC
+2026-11-12T15:39:23.1625596Z   ---
+2026-11-12T15:39:23.1630301Z   duration_ms: 0.986747
+2026-11-12T15:39:23.1630778Z   type: 'test'
+2026-11-12T15:39:23.1631181Z   ...
+2026-11-12T15:39:23.1631749Z # Subtest: server-authorized, verified session unlocks
+2026-11-12T15:39:23.1632456Z ok 2 - server-authorized, verified session unlocks
+2026-11-12T15:39:23.1633012Z   ---
+2026-11-12T15:39:23.1633429Z   duration_ms: 0.29555
+2026-11-12T15:39:23.1634084Z   type: 'test'
+2026-11-12T15:39:23.1634475Z   ...
+2026-11-12T15:39:23.1634989Z # Subtest: server-denied identity cannot unlock
+2026-11-12T15:39:23.1635598Z ok 3 - server-denied identity cannot unlock
+2026-11-12T15:39:23.1636152Z   ---
+2026-11-12T15:39:23.1636584Z   duration_ms: 0.175471
+2026-11-12T15:39:23.1637033Z   type: 'test'
+2026-11-12T15:39:23.1637497Z   ...
+2026-11-12T15:39:23.1638034Z # Subtest: RPC errors are fail-closed
+2026-11-12T15:39:23.1638743Z ok 4 - RPC errors are fail-closed
+2026-11-12T15:39:23.1639274Z   ---
+2026-11-12T15:39:23.1639833Z   duration_ms: 1.053867
+2026-11-12T15:39:23.1640325Z   type: 'test'
+2026-11-12T15:39:23.1640761Z   ...
+2026-11-12T15:39:23.1641337Z # Subtest: identity errors are fail-closed
+2026-11-12T15:39:23.1642014Z ok 5 - identity errors are fail-closed
+2026-11-12T15:39:23.1642562Z   ---
+2026-11-12T15:39:23.1642991Z   duration_ms: 0.297693
+2026-11-12T15:39:23.1643485Z   type: 'test'
+2026-11-12T15:39:23.1644029Z   ...
+2026-11-12T15:39:23.1644544Z # Subtest: a missing session is fail-closed
+2026-11-12T15:39:23.1645177Z ok 6 - a missing session is fail-closed
+2026-11-12T15:39:23.1645689Z   ---
+2026-11-12T15:39:23.1646101Z   duration_ms: 0.18196
+2026-11-12T15:39:23.1646612Z   type: 'test'
+2026-11-12T15:39:23.1646995Z   ...
+2026-11-12T15:39:23.1825795Z # Subtest: bound auxiliary wheels match 5C signed rotations through loading, release and same-size child replacement
+2026-11-12T15:39:23.1827352Z ok 7 - bound auxiliary wheels match 5C signed rotations through loading, release and same-size child replacement
+2026-11-12T15:39:23.1828154Z   ---
+2026-11-12T15:39:23.1828623Z   duration_ms: 5.020976
+2026-11-12T15:39:23.1829049Z   type: 'test'
+2026-11-12T15:39:23.1829390Z   ...
+2026-11-12T15:39:23.1945331Z # Subtest: Kenney assets include the CC0 license and all referenced local textures
+2026-11-12T15:39:23.1946717Z ok 8 - Kenney assets include the CC0 license and all referenced local textures
+2026-11-12T15:39:23.1947489Z   ---
+2026-11-12T15:39:23.1947897Z   duration_ms: 5.364376
+2026-11-12T15:39:23.1948332Z   type: 'test'
+2026-11-12T15:39:23.1948728Z   ...
+2026-11-12T15:39:24.7380380Z # Subtest: prepared broad phase agrees with the frozen 5C SAT for rotations, corners, contact, crossing and separated envelopes
+2026-11-12T15:39:24.7382313Z ok 9 - prepared broad phase agrees with the frozen 5C SAT for rotations, corners, contact, crossing and separated envelopes
+2026-11-12T15:39:24.7383409Z   ---
+2026-11-12T15:39:24.7384682Z   duration_ms: 131.768091
+2026-11-12T15:39:24.7385263Z   type: 'test'
+2026-11-12T15:39:24.7385694Z   ...
+2026-11-12T15:39:24.7386554Z # Subtest: prepared per-step geometry preserves 5C fleet trajectories, atomic rollback and commands
+2026-11-12T15:39:24.7387719Z ok 10 - prepared per-step geometry preserves 5C fleet trajectories, atomic rollback and commands
+2026-11-12T15:39:24.7388408Z   ---
+2026-11-12T15:39:24.7388762Z   duration_ms: 1389.414714
+2026-11-12T15:39:24.7389168Z   type: 'test'
+2026-11-12T15:39:24.7389535Z   ...
+2026-11-12T15:39:24.7390206Z # Subtest: broad bounds retain the 5C corner contact within its SAT tolerance
+2026-11-12T15:39:24.7391092Z ok 11 - broad bounds retain the 5C corner contact within its SAT tolerance
+2026-11-12T15:39:24.7431877Z   ---
+2026-11-12T15:39:24.7432444Z   duration_ms: 0.286256
+2026-11-12T15:39:24.7445756Z   type: 'test'
+2026-11-12T15:39:24.7446179Z   ...
+2026-11-12T15:39:24.7583328Z # Subtest: native pitch stays unchanged; imported pairs compact to their individual couplers
+2026-11-12T15:39:24.7604339Z ok 12 - native pitch stays unchanged; imported pairs compact to their individual couplers
+2026-11-12T15:39:24.7634791Z   ---
+2026-11-12T15:39:24.7685690Z   duration_ms: 2.075807
+2026-11-12T15:39:24.7716762Z   type: 'test'
+2026-11-12T15:39:24.7750791Z   ...
+2026-11-12T15:39:24.7751750Z # Subtest: partial loading and switching back use active metadata without a fixed imported pitch
+2026-11-12T15:39:24.7752968Z ok 13 - partial loading and switching back use active metadata without a fixed imported pitch
+2026-11-12T15:39:24.7753897Z   ---
+2026-11-12T15:39:24.7754347Z   duration_ms: 0.455046
+2026-11-12T15:39:24.7754801Z   type: 'test'
+2026-11-12T15:39:24.7755436Z   ...
+2026-11-12T15:39:24.7756321Z # Subtest: compact consists stay on the route across crossovers and reverse to the same positions
+2026-11-12T15:39:24.7776717Z ok 14 - compact consists stay on the route across crossovers and reverse to the same positions
+2026-11-12T15:39:24.7777586Z   ---
+2026-11-12T15:39:24.7778042Z   duration_ms: 10.824346
+2026-11-12T15:39:24.7778506Z   type: 'test'
+2026-11-12T15:39:24.7778918Z   ...
+2026-11-12T15:39:24.7779618Z # Subtest: detach and immediate recouple preserve the compact wagon position
+2026-11-12T15:39:24.7780555Z ok 15 - detach and immediate recouple preserve the compact wagon position
+2026-11-12T15:39:24.7781192Z   ---
+2026-11-12T15:39:24.7781628Z   duration_ms: 1.615953
+2026-11-12T15:39:24.7782073Z   type: 'test'
+2026-11-12T15:39:24.7782468Z   ...
+2026-11-12T15:39:24.7783170Z # Subtest: compact maximum-sized Kenney bodies remain separate on the R249 curve
+2026-11-12T15:39:24.7784306Z ok 16 - compact maximum-sized Kenney bodies remain separate on the R249 curve
+2026-11-12T15:39:24.7785073Z   ---
+2026-11-12T15:39:24.7785475Z   duration_ms: 0.22172
+2026-11-12T15:39:24.7785910Z   type: 'test'
+2026-11-12T15:39:24.7786317Z   ...
+2026-11-12T15:39:24.7787315Z # Subtest: catalog definitions, planned vehicles, physical groups and duplicate off-scene records never share identities or state
+2026-11-12T15:39:24.7788830Z ok 17 - catalog definitions, planned vehicles, physical groups and duplicate off-scene records never share identities or state
+2026-11-12T15:39:24.7789730Z   ---
+2026-11-12T15:39:24.7790131Z   duration_ms: 2.747316
+2026-11-12T15:39:24.7790569Z   type: 'test'
+2026-11-12T15:39:24.7790982Z   ...
+2026-11-12T15:39:24.7791873Z # Subtest: reservations are exclusive for an exact confirmed project slot, with same-model instances independent
+2026-11-12T15:39:24.7793166Z ok 18 - reservations are exclusive for an exact confirmed project slot, with same-model instances independent
+2026-11-12T15:39:24.7794136Z   ---
+2026-11-12T15:39:24.7794544Z   duration_ms: 0.902773
+2026-11-12T15:39:24.7794976Z   type: 'test'
+2026-11-12T15:39:24.7795381Z   ...
+2026-11-12T15:39:24.7796379Z # Subtest: invalid models, identities, wrong model and non-confirmed targets reject without partial mutations
+2026-11-12T15:39:24.7798214Z ok 19 - invalid models, identities, wrong model and non-confirmed targets reject without partial mutations
+2026-11-12T15:39:24.7799040Z   ---
+2026-11-12T15:39:24.7799442Z   duration_ms: 2.051631
+2026-11-12T15:39:24.7799873Z   type: 'test'
+2026-11-12T15:39:24.7800404Z   ...
+2026-11-12T15:39:24.7801417Z # Subtest: cancelled M2 edits keep reservations; confirmed reorder, name and orientation retain the original slot identity
+2026-11-12T15:39:24.7802836Z ok 20 - cancelled M2 edits keep reservations; confirmed reorder, name and orientation retain the original slot identity
+2026-11-12T15:39:24.7803674Z   ---
+2026-11-12T15:39:24.7804274Z   duration_ms: 1.246703
+2026-11-12T15:39:24.7804717Z   type: 'test'
+2026-11-12T15:39:24.7805112Z   ...
+2026-11-12T15:39:24.7805958Z # Subtest: confirmed removal releases only obsolete references and never rebinds to an identical model
+2026-11-12T15:39:24.7807169Z ok 21 - confirmed removal releases only obsolete references and never rebinds to an identical model
+2026-11-12T15:39:24.7808159Z   ---
+2026-11-12T15:39:24.7808568Z   duration_ms: 0.678098
+2026-11-12T15:39:24.7809006Z   type: 'test'
+2026-11-12T15:39:24.7809398Z   ...
+2026-11-12T15:39:24.7810195Z # Subtest: a missing project or changed model releases a reservation without changing project data
+2026-11-12T15:39:24.7811316Z ok 22 - a missing project or changed model releases a reservation without changing project data
+2026-11-12T15:39:24.7812226Z   ---
+2026-11-12T15:39:24.7814864Z   duration_ms: 0.420285
+2026-11-12T15:39:24.7815347Z   type: 'test'
+2026-11-12T15:39:24.7815774Z   ...
+2026-11-12T15:39:24.7816730Z # Subtest: copied real projects keep physical source references while the depot holds only a virtual planning relation
+2026-11-12T15:39:24.7818109Z ok 23 - copied real projects keep physical source references while the depot holds only a virtual planning relation
+2026-11-12T15:39:24.7818947Z   ---
+2026-11-12T15:39:24.7819461Z   duration_ms: 0.627423
+2026-11-12T15:39:24.7819930Z   type: 'test'
+2026-11-12T15:39:24.7820342Z   ...
+2026-11-12T15:39:24.7821357Z # Subtest: railway projection preserves UUID through detach/recouple and reset refreshes generations, without absorbing real stock
+2026-11-12T15:39:24.7822895Z ok 24 - railway projection preserves UUID through detach/recouple and reset refreshes generations, without absorbing real stock
+2026-11-12T15:39:24.7823930Z   ---
+2026-11-12T15:39:24.7824348Z   duration_ms: 0.734822
+2026-11-12T15:39:24.7824795Z   type: 'test'
+2026-11-12T15:39:24.7825187Z   ...
+2026-11-12T15:39:24.7826075Z # Subtest: duplicate/generated wrong-namespace IDs are rejected atomically and dispose releases inventory state
+2026-11-12T15:39:24.7827393Z ok 25 - duplicate/generated wrong-namespace IDs are rejected atomically and dispose releases inventory state
+2026-11-12T15:39:24.7828206Z   ---
+2026-11-12T15:39:24.7828639Z   duration_ms: 0.550999
+2026-11-12T15:39:24.7829071Z   type: 'test'
+2026-11-12T15:39:24.7829465Z   ...
+2026-11-12T15:39:24.7830286Z # Subtest: fleet commands match historical state transitions/messages for legacy and catalogued consists
+2026-11-12T15:39:24.7831541Z ok 26 - fleet commands match historical state transitions/messages for legacy and catalogued consists
+2026-11-12T15:39:24.7832314Z   ---
+2026-11-12T15:39:24.7832717Z   duration_ms: 4.360864
+2026-11-12T15:39:24.7833167Z   type: 'test'
+2026-11-12T15:39:24.7833567Z   ...
+2026-11-12T15:39:24.7834487Z # Subtest: detach/recouple transfers exactly the same physical group at the same route position
+2026-11-12T15:39:24.7835721Z ok 27 - detach/recouple transfers exactly the same physical group at the same route position
+2026-11-12T15:39:24.7836454Z   ---
+2026-11-12T15:39:24.7836857Z   duration_ms: 0.431071
+2026-11-12T15:39:24.7837288Z   type: 'test'
+2026-11-12T15:39:24.7837686Z   ...
+2026-11-12T15:39:24.7838523Z # Subtest: blocked coupling preserves identities and counts when distant, reversed, full or without room
+2026-11-12T15:39:24.7839744Z ok 28 - blocked coupling preserves identities and counts when distant, reversed, full or without room
+2026-11-12T15:39:24.7840514Z   ---
+2026-11-12T15:39:24.7841144Z   duration_ms: 0.576658
+2026-11-12T15:39:24.7841586Z   type: 'test'
+2026-11-12T15:39:24.7841981Z   ...
+2026-11-12T15:39:24.7842696Z # Subtest: simple commands preserve missing-ID behavior and stop every fleet member
+2026-11-12T15:39:24.7843690Z ok 29 - simple commands preserve missing-ID behavior and stop every fleet member
+2026-11-12T15:39:24.7844482Z   ---
+2026-11-12T15:39:24.7844885Z   duration_ms: 0.278434
+2026-11-12T15:39:24.7845309Z   type: 'test'
+2026-11-12T15:39:24.7845696Z   ...
+2026-11-12T15:39:24.7846619Z # Subtest: Home framing contains all eight physical base corners, including the previously clipped lower right corner
+2026-11-12T15:39:24.7847978Z ok 30 - Home framing contains all eight physical base corners, including the previously clipped lower right corner
+2026-11-12T15:39:24.7848799Z   ---
+2026-11-12T15:39:24.7849198Z   duration_ms: 3.056054
+2026-11-12T15:39:24.7849633Z   type: 'test'
+2026-11-12T15:39:24.7850239Z   ...
+2026-11-12T15:39:24.7851086Z # Subtest: polished rail heads and weathered webs have distinct PBR properties without moving rail geometry
+2026-11-12T15:39:24.7852328Z ok 31 - polished rail heads and weathered webs have distinct PBR properties without moving rail geometry
+2026-11-12T15:39:24.7853105Z   ---
+2026-11-12T15:39:24.7853506Z   duration_ms: 6.276903
+2026-11-12T15:39:24.7854083Z   type: 'test'
+2026-11-12T15:39:24.7854486Z   ...
+2026-11-12T15:39:24.7855381Z # Subtest: ballast and terrain textures are reproducible and distinguish sRGB albedo from linear height/roughness
+2026-11-12T15:39:24.7856689Z ok 32 - ballast and terrain textures are reproducible and distinguish sRGB albedo from linear height/roughness
+2026-11-12T15:39:24.7857507Z   ---
+2026-11-12T15:39:24.7857915Z   duration_ms: 143.958812
+2026-11-12T15:39:24.7858352Z   type: 'test'
+2026-11-12T15:39:24.7858763Z   ...
+2026-11-12T15:39:24.7859603Z # Subtest: tightened shadow camera contains the complete table and tallest scenery with a low contact bias
+2026-11-12T15:39:24.7860871Z ok 33 - tightened shadow camera contains the complete table and tallest scenery with a low contact bias
+2026-11-12T15:39:24.7862077Z   ---
+2026-11-12T15:39:24.7862648Z   duration_ms: 1.135669
+2026-11-12T15:39:24.7863265Z   type: 'test'
+2026-11-12T15:39:24.7863904Z   ...
+2026-11-12T15:39:24.7865190Z # Subtest: STOP observation is read only and distinguishes braking, parked/manual, unknown position and physical guards
+2026-11-12T15:39:24.7866700Z ok 34 - STOP observation is read only and distinguishes braking, parked/manual, unknown position and physical guards
+2026-11-12T15:39:24.7867931Z   ---
+2026-11-12T15:39:24.7868588Z   duration_ms: 12.739553
+2026-11-12T15:39:24.7869157Z   type: 'test'
+2026-11-12T15:39:24.7869809Z   ...
+2026-11-12T15:39:24.7870671Z # Subtest: STOP transition durations, continuity, reduced motion and bounded micro overshoot
+2026-11-12T15:39:24.7871854Z ok 35 - STOP transition durations, continuity, reduced motion and bounded micro overshoot
+2026-11-12T15:39:24.7872839Z   ---
+2026-11-12T15:39:24.7873372Z   duration_ms: 0.638469
+2026-11-12T15:39:24.7874234Z   type: 'test'
+2026-11-12T15:39:24.7874761Z   ...
+2026-11-12T15:39:24.7875783Z # Subtest: one global bell, gesture gate, mute, immediate silence, interrupted resume and idempotent cleanup
+2026-11-12T15:39:24.7877289Z ok 36 - one global bell, gesture gate, mute, immediate silence, interrupted resume and idempotent cleanup
+2026-11-12T15:39:24.7896962Z   ---
+2026-11-12T15:39:24.7897643Z   duration_ms: 0.785949
+2026-11-12T15:39:24.7898131Z   type: 'test'
+2026-11-12T15:39:24.7898556Z   ...
+2026-11-12T15:39:25.4435386Z # Subtest: forest generation is deterministic with railway and building clearance
+2026-11-12T15:39:25.4454309Z ok 37 - forest generation is deterministic with railway and building clearance
+2026-11-12T15:39:25.4476106Z   ---
+2026-11-12T15:39:25.4479310Z   duration_ms: 842.469281
+2026-11-12T15:39:25.4479672Z   type: 'test'
+2026-11-12T15:39:25.4479929Z   ...
+2026-11-12T15:39:25.4480401Z # Subtest: terrain stays flat on tracks and underneath buildings
+2026-11-12T15:39:25.4498805Z ok 38 - terrain stays flat on tracks and underneath buildings
+2026-11-12T15:39:25.4499450Z   ---
+2026-11-12T15:39:25.4499931Z   duration_ms: 642.112812
+2026-11-12T15:39:25.4500354Z   type: 'test'
+2026-11-12T15:39:25.4500732Z   ...
+2026-11-12T15:39:25.4501300Z # Subtest: landscape heights remain finite and below scenic ceiling
+2026-11-12T15:39:25.4502062Z ok 39 - landscape heights remain finite and below scenic ceiling
+2026-11-12T15:39:25.4502628Z   ---
+2026-11-12T15:39:25.4503103Z   duration_ms: 472.731223
+2026-11-12T15:39:25.4503607Z   type: 'test'
+2026-11-12T15:39:25.4504076Z   ...
+2026-11-12T15:39:25.4504551Z # Subtest: seeded random does not depend on frame rate or browser random state
+2026-11-12T15:39:25.4505652Z ok 40 - seeded random does not depend on frame rate or browser random state
+2026-11-12T15:39:25.4506122Z   ---
+2026-11-12T15:39:25.4506521Z   duration_ms: 0.215731
+2026-11-12T15:39:25.4506819Z   type: 'test'
+2026-11-12T15:39:25.4507786Z   ...
+2026-11-12T15:39:25.4629926Z # Subtest: station and yard presets converge without touching the railway
+2026-11-12T15:39:25.4631035Z ok 41 - station and yard presets converge without touching the railway
+2026-11-12T15:39:25.4631612Z   ---
+2026-11-12T15:39:25.4631961Z   duration_ms: 17.588333
+2026-11-12T15:39:25.4632351Z   type: 'test'
+2026-11-12T15:39:25.4632697Z   ...
+2026-11-12T15:39:25.4633381Z # Subtest: camera transitions use elapsed real time, independent of frame frequency
+2026-11-12T15:39:25.4634614Z ok 42 - camera transitions use elapsed real time, independent of frame frequency
+2026-11-12T15:39:25.4635224Z   ---
+2026-11-12T15:39:25.4635564Z   duration_ms: 2.00445
+2026-11-12T15:39:25.4635936Z   type: 'test'
+2026-11-12T15:39:25.4636266Z   ...
+2026-11-12T15:39:25.4636892Z # Subtest: follow changes target for the selected train; a manual orbit cancels it
+2026-11-12T15:39:25.4637817Z ok 43 - follow changes target for the selected train; a manual orbit cancels it
+2026-11-12T15:39:25.4638438Z   ---
+2026-11-12T15:39:25.4638776Z   duration_ms: 6.338605
+2026-11-12T15:39:25.4639173Z   type: 'test'
+2026-11-12T15:39:25.4639496Z   ...
+2026-11-12T15:39:25.4640196Z # Subtest: eye stays above terrain and rotated building footprints, while target pan is bounded
+2026-11-12T15:39:25.4641234Z ok 44 - eye stays above terrain and rotated building footprints, while target pan is bounded
+2026-11-12T15:39:25.4641870Z   ---
+2026-11-12T15:39:25.4642193Z   duration_ms: 0.24213
+2026-11-12T15:39:25.4642556Z   type: 'test'
+2026-11-12T15:39:25.4642885Z   ...
+2026-11-12T15:39:25.4643478Z # Subtest: invalid poses cannot produce NaNs, and dispose removes gesture handling
+2026-11-12T15:39:25.4644493Z ok 45 - invalid poses cannot produce NaNs, and dispose removes gesture handling
+2026-11-12T15:39:25.4645094Z   ---
+2026-11-12T15:39:25.4645414Z   duration_ms: 0.266787
+2026-11-12T15:39:25.4645789Z   type: 'test'
+2026-11-12T15:39:25.4646117Z   ...
+2026-11-12T15:39:25.4646765Z # Subtest: perspective camera supports all presets and follow with finite projections
+2026-11-12T15:39:25.4647740Z ok 46 - perspective camera supports all presets and follow with finite projections
+2026-11-12T15:39:25.4648337Z   ---
+2026-11-12T15:39:25.4648664Z   duration_ms: 5.973662
+2026-11-12T15:39:25.4649021Z   type: 'test'
+2026-11-12T15:39:25.4649344Z   ...
+2026-11-12T15:39:25.4650023Z # Subtest: minimap focus centres once on the clicked locomotive and preserves manual control
+2026-11-12T15:39:25.4650995Z ok 47 - minimap focus centres once on the clicked locomotive and preserves manual control
+2026-11-12T15:39:25.4651611Z   ---
+2026-11-12T15:39:25.4651938Z   duration_ms: 4.017313
+2026-11-12T15:39:25.4652295Z   type: 'test'
+2026-11-12T15:39:25.4652612Z   ...
+2026-11-12T15:39:25.4699585Z # Subtest: canonical source preserves all XML identifiers, contracts only two zero connectors and documents small joins
+2026-11-12T15:39:25.4701014Z ok 48 - canonical source preserves all XML identifiers, contracts only two zero connectors and documents small joins
+2026-11-12T15:39:25.4701930Z   ---
+2026-11-12T15:39:25.4702337Z   duration_ms: 3.282151
+2026-11-12T15:39:25.4703185Z   type: 'test'
+2026-11-12T15:39:25.4703593Z   ...
+2026-11-12T15:39:25.4704562Z # Subtest: all three nominal Kato loops close in both senses for three complete laps without jumps
+2026-11-12T15:39:25.4705654Z ok 49 - all three nominal Kato loops close in both senses for three complete laps without jumps
+2026-11-12T15:39:25.4706326Z   ---
+2026-11-12T15:39:25.4706719Z   duration_ms: 52.708164
+2026-11-12T15:39:25.4707134Z   type: 'test'
+2026-11-12T15:39:25.4707501Z   ...
+2026-11-12T15:39:25.4708299Z # Subtest: all eight switches route every entrance in both states; single turnout B-C traversal is impossible
+2026-11-12T15:39:25.4709438Z ok 50 - all eight switches route every entrance in both states; single turnout B-C traversal is impossible
+2026-11-12T15:39:25.4710141Z   ---
+2026-11-12T15:39:25.4710507Z   duration_ms: 0.911705
+2026-11-12T15:39:25.4710903Z   type: 'test'
+2026-11-12T15:39:25.4711489Z   ...
+2026-11-12T15:39:25.4712281Z # Subtest: both crossover diagonals are traversable in either sense and do not join at the diamond
+2026-11-12T15:39:25.4713351Z ok 51 - both crossover diagonals are traversable in either sense and do not join at the diamond
+2026-11-12T15:39:25.4714169Z   ---
+2026-11-12T15:39:25.4714527Z   duration_ms: 1.318891
+2026-11-12T15:39:25.4714927Z   type: 'test'
+2026-11-12T15:39:25.4715301Z   ...
+2026-11-12T15:39:25.4716159Z # Subtest: every terminal is accessible from the inner mainline with a documented static switch setting and can reverse
+2026-11-12T15:39:25.4717413Z ok 52 - every terminal is accessible from the inner mainline with a documented static switch setting and can reverse
+2026-11-12T15:39:25.4718261Z   ---
+2026-11-12T15:39:25.4718634Z   duration_ms: 30.053598
+2026-11-12T15:39:25.4719062Z   type: 'test'
+2026-11-12T15:39:25.4719429Z   ...
+2026-11-12T15:39:25.4720248Z # Subtest: runaround main and alternate paths connect the same two toe leads with legal reversing maneuvers
+2026-11-12T15:39:25.4721470Z ok 53 - runaround main and alternate paths connect the same two toe leads with legal reversing maneuvers
+2026-11-12T15:39:25.4722187Z   ---
+2026-11-12T15:39:25.4722563Z   duration_ms: 2.089597
+2026-11-12T15:39:25.4722982Z   type: 'test'
+2026-11-12T15:39:25.4723372Z   ...
+2026-11-12T15:39:25.4724213Z # Subtest: no parallel-track proximity or drawn crossing creates a graph junction
+2026-11-12T15:39:25.4754868Z ok 54 - no parallel-track proximity or drawn crossing creates a graph junction
+2026-11-12T15:39:25.4784485Z   ---
+2026-11-12T15:39:25.4785012Z   duration_ms: 75.219195
+2026-11-12T15:39:25.4794622Z   type: 'test'
+2026-11-12T15:39:25.4795044Z   ...
+2026-11-12T15:39:25.4795931Z # Subtest: buffer stopping protects the complete consist and safe switch change trims only unoccupied cached ribbon
+2026-11-12T15:39:25.4797342Z ok 55 - buffer stopping protects the complete consist and safe switch change trims only unoccupied cached ribbon
+2026-11-12T15:39:25.4798152Z   ---
+2026-11-12T15:39:25.4798584Z   duration_ms: 0.313236
+2026-11-12T15:39:25.4799033Z   type: 'test'
+2026-11-12T15:39:25.4799442Z   ...
+2026-11-12T15:39:25.4800160Z # Subtest: fixed-step simulation gives the same distance at different rendering rates
+2026-11-12T15:39:25.4801168Z ok 56 - fixed-step simulation gives the same distance at different rendering rates
+2026-11-12T15:39:25.4801877Z   ---
+2026-11-12T15:39:25.4802289Z   duration_ms: 1.177911
+2026-11-12T15:39:25.4802728Z   type: 'test'
+2026-11-12T15:39:25.4803111Z   ...
+2026-11-12T15:39:25.4804059Z # Subtest: eight controls represent six distinct single turnouts and two complete crossover units
+2026-11-12T15:39:25.4805209Z ok 57 - eight controls represent six distinct single turnouts and two complete crossover units
+2026-11-12T15:39:25.4805929Z   ---
+2026-11-12T15:39:25.4806336Z   duration_ms: 1.320334
+2026-11-12T15:39:25.4806772Z   type: 'test'
+2026-11-12T15:39:25.4807167Z   ...
+2026-11-12T15:39:25.4807902Z # Subtest: each loop previews the first real switch by graph distance in either direction
+2026-11-12T15:39:25.4809325Z ok 58 - each loop previews the first real switch by graph distance in either direction
+2026-11-12T15:39:25.4810035Z   ---
+2026-11-12T15:39:25.4810490Z   duration_ms: 64.332038
+2026-11-12T15:39:25.4810947Z   type: 'test'
+2026-11-12T15:39:25.4811339Z   ...
+2026-11-12T15:39:25.4812161Z # Subtest: every WX entrance uses the real selection in both states, with exact five millimetre approach
+2026-11-12T15:39:25.4813321Z ok 59 - every WX entrance uses the real selection in both states, with exact five millimetre approach
+2026-11-12T15:39:25.4814213Z   ---
+2026-11-12T15:39:25.4814614Z   duration_ms: 6.850386
+2026-11-12T15:39:25.4815060Z   type: 'test'
+2026-11-12T15:39:25.4815452Z   ...
+2026-11-12T15:39:25.4816241Z # Subtest: four terminals are real end nodes; reverse preview and wagon offsets follow actual ribbon
+2026-11-12T15:39:25.4817396Z ok 60 - four terminals are real end nodes; reverse preview and wagon offsets follow actual ribbon
+2026-11-12T15:39:25.4818409Z   ---
+2026-11-12T15:39:25.4818797Z   duration_ms: 0.513113
+2026-11-12T15:39:25.4819253Z   type: 'test'
+2026-11-12T15:39:25.4819647Z   ...
+2026-11-12T15:39:25.4820553Z # Subtest: yard topology identifies both accesses and runaround branch switch states rather than old five-way junctions
+2026-11-12T15:39:25.4821901Z ok 61 - yard topology identifies both accesses and runaround branch switch states rather than old five-way junctions
+2026-11-12T15:39:25.4822700Z   ---
+2026-11-12T15:39:25.4823103Z   duration_ms: 0.445572
+2026-11-12T15:39:25.4823521Z   type: 'test'
+2026-11-12T15:39:25.4824057Z   ...
+2026-11-12T15:39:25.4824945Z # Subtest: cached route conflicts stop prediction; safe reconciliation makes the current selection authoritative
+2026-11-12T15:39:25.4826215Z ok 62 - cached route conflicts stop prediction; safe reconciliation makes the current selection authoritative
+2026-11-12T15:39:25.4827085Z   ---
+2026-11-12T15:39:25.4827489Z   duration_ms: 10.661193
+2026-11-12T15:39:25.4827924Z   type: 'test'
+2026-11-12T15:39:25.4828325Z   ...
+2026-11-12T15:39:25.4828996Z # Subtest: missing mapping and unavailable routing never invent destinations
+2026-11-12T15:39:25.4829900Z ok 63 - missing mapping and unavailable routing never invent destinations
+2026-11-12T15:39:25.4830513Z   ---
+2026-11-12T15:39:25.4830916Z   duration_ms: 0.260047
+2026-11-12T15:39:25.4831344Z   type: 'test'
+2026-11-12T15:39:25.4831726Z   ...
+2026-11-12T15:39:25.4832504Z # Subtest: occupied switch bodies, incident tracks and braking envelopes block unsafe commands
+2026-11-12T15:39:25.4833665Z ok 64 - occupied switch bodies, incident tracks and braking envelopes block unsafe commands
+2026-11-12T15:39:25.4834546Z   ---
+2026-11-12T15:39:25.4834944Z   duration_ms: 0.466213
+2026-11-12T15:39:25.4835384Z   type: 'test'
+2026-11-12T15:39:25.4835781Z   ...
+2026-11-12T15:39:25.4836592Z # Subtest: schematic and temporary red ribbon derive exactly from canonical paths without mutating rails
+2026-11-12T15:39:25.4837768Z ok 65 - schematic and temporary red ribbon derive exactly from canonical paths without mutating rails
+2026-11-12T15:39:25.4838526Z   ---
+2026-11-12T15:39:25.4838921Z   duration_ms: 47.054688
+2026-11-12T15:39:25.4839403Z   type: 'test'
+2026-11-12T15:39:25.4839835Z   ...
+2026-11-12T15:39:28.3198545Z # Subtest: forest crown envelopes clear railway, landmarks, buildings and working surfaces
+2026-11-12T15:39:28.3225374Z ok 66 - forest crown envelopes clear railway, landmarks, buildings and working surfaces
+2026-11-12T15:39:28.3255177Z   ---
+2026-11-12T15:39:28.3268836Z   duration_ms: 1393.957694
+2026-11-12T15:39:28.3271478Z   type: 'test'
+2026-11-12T15:39:28.3271976Z   ...
+2026-11-12T15:39:28.3272871Z # Subtest: hard surfaces are level across their footprint and stay outside the railway envelope
+2026-11-12T15:39:28.3274181Z ok 67 - hard surfaces are level across their footprint and stay outside the railway envelope
+2026-11-12T15:39:28.3274956Z   ---
+2026-11-12T15:39:28.3275390Z   duration_ms: 14.951562
+2026-11-12T15:39:28.3275868Z   type: 'test'
+2026-11-12T15:39:28.3276350Z   ...
+2026-11-12T15:39:28.3277545Z # Subtest: rear countryside and loading aisle integrate without moving railway or station
+2026-11-12T15:39:28.3278656Z ok 68 - rear countryside and loading aisle integrate without moving railway or station
+2026-11-12T15:39:28.3279381Z   ---
+2026-11-12T15:39:28.3279806Z   duration_ms: 41.730531
+2026-11-12T15:39:28.3280294Z   type: 'test'
+2026-11-12T15:39:28.3280725Z   ...
+2026-11-12T15:39:28.3395425Z # Subtest: leaving Cinema releases the actual Bloom high-pass material from the renderer shader cache
+2026-11-12T15:39:28.3426976Z ok 69 - leaving Cinema releases the actual Bloom high-pass material from the renderer shader cache
+2026-11-12T15:39:28.3457306Z   ---
+2026-11-12T15:39:28.3529186Z   duration_ms: 2.69708
+2026-11-12T15:39:28.3639697Z   type: 'test'
+2026-11-12T15:39:28.3694823Z   ...
+2026-11-12T15:39:28.3704744Z # Subtest: two sustained slow windows reduce high quality, a short spike does not
+2026-11-12T15:39:28.3723184Z ok 70 - two sustained slow windows reduce high quality, a short spike does not
+2026-11-12T15:39:28.3733078Z   ---
+2026-11-12T15:39:28.3794610Z   duration_ms: 1.791934
+2026-11-12T15:39:28.3815459Z   type: 'test'
+2026-11-12T15:39:28.3909223Z   ...
+2026-11-12T15:39:28.3914789Z # Subtest: quality only recovers after sustained fast windows and does not oscillate with mixed load
+2026-11-12T15:39:28.3944773Z ok 71 - quality only recovers after sustained fast windows and does not oscillate with mixed load
+2026-11-12T15:39:28.3974212Z   ---
+2026-11-12T15:39:28.3974498Z   duration_ms: 3.057356
+2026-11-12T15:39:28.3974783Z   type: 'test'
+2026-11-12T15:39:28.3975064Z   ...
+2026-11-12T15:39:28.3975629Z # Subtest: manual profiles including cinema always override automatic adaptation
+2026-11-12T15:39:28.3976435Z ok 72 - manual profiles including cinema always override automatic adaptation
+2026-11-12T15:39:28.3976945Z   ---
+2026-11-12T15:39:28.3977208Z   duration_ms: 3.654875
+2026-11-12T15:39:28.3977499Z   type: 'test'
+2026-11-12T15:39:28.3977749Z   ...
+2026-11-12T15:39:28.3978335Z # Subtest: tab invisibility and first return frame cannot trigger a quality change
+2026-11-12T15:39:28.3979131Z ok 73 - tab invisibility and first return frame cannot trigger a quality change
+2026-11-12T15:39:28.3979628Z   ---
+2026-11-12T15:39:28.3979875Z   duration_ms: 0.303992
+2026-11-12T15:39:28.3980147Z   type: 'test'
+2026-11-12T15:39:28.3980384Z   ...
+2026-11-12T15:39:28.3980877Z # Subtest: invalid timing samples are ignored and mode names are validated
+2026-11-12T15:39:28.3981589Z ok 74 - invalid timing samples are ignored and mode names are validated
+2026-11-12T15:39:28.3982046Z   ---
+2026-11-12T15:39:28.3982305Z   duration_ms: 0.499853
+2026-11-12T15:39:28.3982581Z   type: 'test'
+2026-11-12T15:39:28.3982825Z   ...
+2026-11-12T15:39:28.3983371Z # Subtest: S5 Y-IN: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3984301Z ok 75 - S5 Y-IN: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3984766Z   ---
+2026-11-12T15:39:28.3985027Z   duration_ms: 102.520948
+2026-11-12T15:39:28.3985315Z   type: 'test'
+2026-11-12T15:39:28.3985560Z   ...
+2026-11-12T15:39:28.3986150Z # Subtest: S5 Y-R1: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3986935Z ok 76 - S5 Y-R1: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3987414Z   ---
+2026-11-12T15:39:28.3987665Z   duration_ms: 52.089534
+2026-11-12T15:39:28.3987962Z   type: 'test'
+2026-11-12T15:39:28.3988193Z   ...
+2026-11-12T15:39:28.3988692Z # Subtest: S5 Y-R2: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3989442Z ok 77 - S5 Y-R2: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3989900Z   ---
+2026-11-12T15:39:28.3990147Z   duration_ms: 31.989757
+2026-11-12T15:39:28.3990432Z   type: 'test'
+2026-11-12T15:39:28.3990684Z   ...
+2026-11-12T15:39:28.3991185Z # Subtest: S5 Y-3: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3991907Z ok 78 - S5 Y-3: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3992804Z   ---
+2026-11-12T15:39:28.3993069Z   duration_ms: 26.8338
+2026-11-12T15:39:28.3993360Z   type: 'test'
+2026-11-12T15:39:28.3993618Z   ...
+2026-11-12T15:39:28.3994308Z # Subtest: S5 Y-4: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3995057Z ok 79 - S5 Y-4: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3995533Z   ---
+2026-11-12T15:39:28.3995786Z   duration_ms: 27.189519
+2026-11-12T15:39:28.3996073Z   type: 'test'
+2026-11-12T15:39:28.3996322Z   ...
+2026-11-12T15:39:28.3996816Z # Subtest: S5 Y-2: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3997540Z ok 80 - S5 Y-2: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.3997991Z   ---
+2026-11-12T15:39:28.3998265Z   duration_ms: 23.07439
+2026-11-12T15:39:28.3998548Z   type: 'test'
+2026-11-12T15:39:28.3999050Z   ...
+2026-11-12T15:39:28.3999562Z # Subtest: S5 WX-A: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.4000285Z ok 81 - S5 WX-A: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.4000746Z   ---
+2026-11-12T15:39:28.4000985Z   duration_ms: 70.345159
+2026-11-12T15:39:28.4001251Z   type: 'test'
+2026-11-12T15:39:28.4001482Z   ...
+2026-11-12T15:39:28.4001977Z # Subtest: S5 WX-B: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.4002701Z ok 82 - S5 WX-B: every port/state and both Journey axes respect actual routing
+2026-11-12T15:39:28.4003175Z   ---
+2026-11-12T15:39:28.4003419Z   duration_ms: 61.190897
+2026-11-12T15:39:28.4029474Z   type: 'test'
+2026-11-12T15:39:28.4029853Z   ...
+2026-11-12T15:39:28.4030609Z # Subtest: S5 high speed, tiny residual gap: bumper never crosses the first forbidden port, even with cached history
+2026-11-12T15:39:28.4031714Z ok 83 - S5 high speed, tiny residual gap: bumper never crosses the first forbidden port, even with cached history
+2026-11-12T15:39:28.4032338Z   ---
+2026-11-12T15:39:28.4032596Z   duration_ms: 1.180455
+2026-11-12T15:39:28.4032877Z   type: 'test'
+2026-11-12T15:39:28.4033129Z   ...
+2026-11-12T15:39:28.4034046Z # Subtest: S5 cached unused route is revalidated and refreshed after a legal state change; no invented central WX junction
+2026-11-12T15:39:28.4035190Z ok 84 - S5 cached unused route is revalidated and refreshed after a legal state change; no invented central WX junction
+2026-11-12T15:39:28.4035846Z   ---
+2026-11-12T15:39:28.4036098Z   duration_ms: 0.897765
+2026-11-12T15:39:28.4036385Z   type: 'test'
+2026-11-12T15:39:28.4036647Z   ...
+2026-11-12T15:39:28.4037360Z # Subtest: S5 UNKNOWN fails closed for raw unknown states, ambiguous/missing routes and malformed reservations
+2026-11-12T15:39:28.4038439Z ok 85 - S5 UNKNOWN fails closed for raw unknown states, ambiguous/missing routes and malformed reservations
+2026-11-12T15:39:28.4039061Z   ---
+2026-11-12T15:39:28.4039309Z   duration_ms: 0.65234
+2026-11-12T15:39:28.4039594Z   type: 'test'
+2026-11-12T15:39:28.4039849Z   ...
+2026-11-12T15:39:28.4040638Z # Subtest: S5 foreign reservations stop before their interval, own reservations admit transit, release requires explicit rearm
+2026-11-12T15:39:28.4041847Z ok 86 - S5 foreign reservations stop before their interval, own reservations admit transit, release requires explicit rearm
+2026-11-12T15:39:28.4042521Z   ---
+2026-11-12T15:39:28.4042755Z   duration_ms: 2.195555
+2026-11-12T15:39:28.4043022Z   type: 'test'
+2026-11-12T15:39:28.4043254Z   ...
+2026-11-12T15:39:28.4044118Z # Subtest: S5 recovery: aligned turnout and reverse away clear guard, manual stop and STOP ALL never auto-restart
+2026-11-12T15:39:28.4045163Z ok 87 - S5 recovery: aligned turnout and reverse away clear guard, manual stop and STOP ALL never auto-restart
+2026-11-12T15:39:28.4045763Z   ---
+2026-11-12T15:39:28.4045999Z   duration_ms: 1.39908
+2026-11-12T15:39:28.4046267Z   type: 'test'
+2026-11-12T15:39:28.4046500Z   ...
+2026-11-12T15:39:28.4047423Z # Subtest: S5 large dt, background resume and frame rates cannot bypass admission; invalid dt rejected atomically
+2026-11-12T15:39:28.4048480Z ok 88 - S5 large dt, background resume and frame rates cannot bypass admission; invalid dt rejected atomically
+2026-11-12T15:39:28.4049063Z   ---
+2026-11-12T15:39:28.4049309Z   duration_ms: 30.530332
+2026-11-12T15:39:28.4049595Z   type: 'test'
+2026-11-12T15:39:28.4049834Z   ...
+2026-11-12T15:39:28.4050506Z # Subtest: S5 terminal braking covers short and long consists in both directions; reversal leaves the buffer
+2026-11-12T15:39:28.4051517Z ok 89 - S5 terminal braking covers short and long consists in both directions; reversal leaves the buffer
+2026-11-12T15:39:28.4052099Z   ---
+2026-11-12T15:39:28.4052352Z   duration_ms: 11.397467
+2026-11-12T15:39:28.4052637Z   type: 'test'
+2026-11-12T15:39:28.4052872Z   ...
+2026-11-12T15:39:28.4053574Z # Subtest: S5 predictive margin uses graph distance, not geometric proximity; full legal loops keep exact motion
+2026-11-12T15:39:28.4085925Z ok 90 - S5 predictive margin uses graph distance, not geometric proximity; full legal loops keep exact motion
+2026-11-12T15:39:28.4086578Z   ---
+2026-11-12T15:39:28.4086860Z   duration_ms: 174.504082
+2026-11-12T15:39:28.4087177Z   type: 'test'
+2026-11-12T15:39:28.4087436Z   ...
+2026-11-12T15:39:28.4088071Z # Subtest: S5 reproduces and prevents the stale-history crossing admitted by the old engine
+2026-11-12T15:39:28.4089005Z ok 91 - S5 reproduces and prevents the stale-history crossing admitted by the old engine
+2026-11-12T15:39:28.4089550Z   ---
+2026-11-12T15:39:28.4089800Z   duration_ms: 0.822023
+2026-11-12T15:39:28.4090103Z   type: 'test'
+2026-11-12T15:39:28.4090357Z   ...
+2026-11-12T15:39:28.4091115Z # Subtest: S5 occupation conflicts retain authoritative 5C rollback, including conflict introduced during approach
+2026-11-12T15:39:28.4092295Z ok 92 - S5 occupation conflicts retain authoritative 5C rollback, including conflict introduced during approach
+2026-11-12T15:39:28.4092967Z   ---
+2026-11-12T15:39:28.4093219Z   duration_ms: 1.898293
+2026-11-12T15:39:28.4093521Z   type: 'test'
+2026-11-12T15:39:28.4093904Z   ...
+2026-11-12T15:39:28.4094745Z # Subtest: S5 predictive stop preserves existing operation locks and leaves a blocked switch correctable through the real dispatcher
+2026-11-12T15:39:28.4096113Z ok 93 - S5 predictive stop preserves existing operation locks and leaves a blocked switch correctable through the real dispatcher
+2026-11-12T15:39:28.4096858Z   ---
+2026-11-12T15:39:28.4097111Z   duration_ms: 5.727717
+2026-11-12T15:39:28.4097413Z   type: 'test'
+2026-11-12T15:39:28.4097670Z   ...
+2026-11-12T15:39:28.4098427Z # Subtest: S5 UNKNOWN takes precedence at the same boundary, including inactive ports and directly touching turnouts
+2026-11-12T15:39:28.4099595Z ok 94 - S5 UNKNOWN takes precedence at the same boundary, including inactive ports and directly touching turnouts
+2026-11-12T15:39:28.4100243Z   ---
+2026-11-12T15:39:28.4100499Z   duration_ms: 5.008417
+2026-11-12T15:39:28.4100793Z   type: 'test'
+2026-11-12T15:39:28.4101059Z   ...
+2026-11-12T15:39:28.4101753Z # Subtest: S5 assessment and admission are deterministic read-only core APIs, independent of graphics
+2026-11-12T15:39:28.4102781Z ok 95 - S5 assessment and admission are deterministic read-only core APIs, independent of graphics
+2026-11-12T15:39:28.4103372Z   ---
+2026-11-12T15:39:28.4103617Z   duration_ms: 13.48409
+2026-11-12T15:39:28.4104022Z   type: 'test'
+2026-11-12T15:39:28.4104277Z   ...
+2026-11-12T15:39:28.4104969Z # Subtest: S5 occupation warning persists at rest and releases on departure without a phantom reservation
+2026-11-12T15:39:28.4106002Z ok 96 - S5 occupation warning persists at rest and releases on departure without a phantom reservation
+2026-11-12T15:39:28.4106616Z   ---
+2026-11-12T15:39:28.4106856Z   duration_ms: 7.830643
+2026-11-12T15:39:28.4107138Z   type: 'test'
+2026-11-12T15:39:28.4107398Z   ...
+2026-11-12T15:39:28.4108051Z # Subtest: R01: adjacent-segment overlapping bodies conflict; parallel tracks remain independent
+2026-11-12T15:39:28.4109262Z ok 97 - R01: adjacent-segment overlapping bodies conflict; parallel tracks remain independent
+2026-11-12T15:39:28.4109848Z   ---
+2026-11-12T15:39:28.4110110Z   duration_ms: 1.383538
+2026-11-12T15:39:28.4110406Z   type: 'test'
+2026-11-12T15:39:28.4110642Z   ...
+2026-11-12T15:39:28.4111275Z # Subtest: R02: detached coach keeps independent route history and occupation across turnout joint
+2026-11-12T15:39:28.4112237Z ok 98 - R02: detached coach keeps independent route history and occupation across turnout joint
+2026-11-12T15:39:28.4112804Z   ---
+2026-11-12T15:39:28.4113053Z   duration_ms: 0.894389
+2026-11-12T15:39:28.4113398Z   type: 'test'
+2026-11-12T15:39:28.4113642Z   ...
+2026-11-12T15:39:28.4174592Z # Subtest: R03: invalid inputs reject before mutation and valid clock updates still work
+2026-11-12T15:39:28.4175512Z ok 99 - R03: invalid inputs reject before mutation and valid clock updates still work
+2026-11-12T15:39:28.4176062Z   ---
+2026-11-12T15:39:28.4176589Z   duration_ms: 12.132771
+2026-11-12T15:39:28.4176901Z   type: 'test'
+2026-11-12T15:39:28.4177177Z   ...
+2026-11-12T15:39:28.4177840Z # Subtest: derived layouts, positions, switch routes and safety match v0.12 across 180 fleet states
+2026-11-12T15:39:28.4178856Z ok 100 - derived layouts, positions, switch routes and safety match v0.12 across 180 fleet states
+2026-11-12T15:39:28.4179439Z   ---
+2026-11-12T15:39:28.4179702Z   duration_ms: 263.847379
+2026-11-12T15:39:28.4180016Z   type: 'test'
+2026-11-12T15:39:28.4180271Z   ...
+2026-11-12T15:39:28.4181037Z # Subtest: read-only assistance can inspect frozen Journey ribbons and keeps actual velocity direction when braking
+2026-11-12T15:39:28.4182224Z ok 101 - read-only assistance can inspect frozen Journey ribbons and keeps actual velocity direction when braking
+2026-11-12T15:39:28.4182887Z   ---
+2026-11-12T15:39:28.4183144Z   duration_ms: 1.474412
+2026-11-12T15:39:28.4183450Z   type: 'test'
+2026-11-12T15:39:28.4183706Z   ...
+2026-11-12T15:39:28.4184720Z # Subtest: A1: native front-on reproduction stops before any adjacent-edge envelope overlap, preserving rejected history and identity
+2026-11-12T15:39:28.4186075Z ok 102 - A1: native front-on reproduction stops before any adjacent-edge envelope overlap, preserving rejected history and identity
+2026-11-12T15:39:28.4186816Z   ---
+2026-11-12T15:39:28.4187072Z   duration_ms: 42.138738
+2026-11-12T15:39:28.4187371Z   type: 'test'
+2026-11-12T15:39:28.4187619Z   ...
+2026-11-12T15:39:28.4188389Z # Subtest: frontals and following conflicts include short/long consists, stationary trains and both approach directions
+2026-11-12T15:39:28.4189624Z ok 103 - frontals and following conflicts include short/long consists, stationary trains and both approach directions
+2026-11-12T15:39:28.4190308Z   ---
+2026-11-12T15:39:28.4190562Z   duration_ms: 793.342171
+2026-11-12T15:39:28.4190867Z   type: 'test'
+2026-11-12T15:39:28.4191118Z   ...
+2026-11-12T15:39:28.4191752Z # Subtest: candidate rollback cascades to followers and is independent of fleet iteration order
+2026-11-12T15:39:28.4192737Z ok 104 - candidate rollback cascades to followers and is independent of fleet iteration order
+2026-11-12T15:39:28.4193326Z   ---
+2026-11-12T15:39:28.4193575Z   duration_ms: 95.447935
+2026-11-12T15:39:28.4194008Z   type: 'test'
+2026-11-12T15:39:28.4194273Z   ...
+2026-11-12T15:39:28.4194962Z # Subtest: swept envelopes detect a crossing between separated endpoints; parallel movement stays clear
+2026-11-12T15:39:28.4196008Z ok 105 - swept envelopes detect a crossing between separated endpoints; parallel movement stays clear
+2026-11-12T15:39:28.4196620Z   ---
+2026-11-12T15:39:28.4196871Z   duration_ms: 0.467355
+2026-11-12T15:39:28.4197194Z   type: 'test'
+2026-11-12T15:39:28.4197446Z   ...
+2026-11-12T15:39:28.4198201Z # Subtest: three canonical loops allow simultaneous mixed directions and complete laps with no false parallel stop
+2026-11-12T15:39:28.4199365Z ok 106 - three canonical loops allow simultaneous mixed directions and complete laps with no false parallel stop
+2026-11-12T15:39:28.4200026Z   ---
+2026-11-12T15:39:28.4200460Z   duration_ms: 812.06391
+2026-11-12T15:39:28.4200773Z   type: 'test'
+2026-11-12T15:39:28.4201019Z   ...
+2026-11-12T15:39:28.4201827Z # Subtest: detached wagons stop approach without penetration, permit departure and recouple without lost identities in curves
+2026-11-12T15:39:28.4203128Z ok 107 - detached wagons stop approach without penetration, permit departure and recouple without lost identities in curves
+2026-11-12T15:39:28.4264250Z   ---
+2026-11-12T15:39:28.4264555Z   duration_ms: 72.894109
+2026-11-12T15:39:28.4264871Z   type: 'test'
+2026-11-12T15:39:28.4265137Z   ...
+2026-11-12T15:39:28.4265803Z # Subtest: full fleet, occupation, direction and HUD routes agree at 20/60/120 Hz and irregular frames
+2026-11-12T15:39:28.4266766Z ok 108 - full fleet, occupation, direction and HUD routes agree at 20/60/120 Hz and irregular frames
+2026-11-12T15:39:28.4267339Z   ---
+2026-11-12T15:39:28.4267591Z   duration_ms: 338.316124
+2026-11-12T15:39:28.4268220Z   type: 'test'
+2026-11-12T15:39:28.4268472Z   ...
+2026-11-12T15:39:28.4269148Z # Subtest: all four terminal envelopes stop and reverse short and five-wagon consists with legal route history
+2026-11-12T15:39:28.4270204Z ok 109 - all four terminal envelopes stop and reverse short and five-wagon consists with legal route history
+2026-11-12T15:39:28.4270826Z   ---
+2026-11-12T15:39:28.4271061Z   duration_ms: 42.398644
+2026-11-12T15:39:28.4271332Z   type: 'test'
+2026-11-12T15:39:28.4271586Z   ...
+2026-11-12T15:39:28.4272189Z # Subtest: only the detached coach body across a joint protects TO4 after the locomotive clears
+2026-11-12T15:39:28.4272979Z ok 110 - only the detached coach body across a joint protects TO4 after the locomotive clears
+2026-11-12T15:39:28.4273464Z   ---
+2026-11-12T15:39:28.4273699Z   duration_ms: 0.863404
+2026-11-12T15:39:28.4274121Z   type: 'test'
+2026-11-12T15:39:28.4274373Z   ...
+2026-11-12T15:39:28.4275178Z # Subtest: two trains requesting each WX diamond are stopped before overlap, while its straight parallel routes remain independent
+2026-11-12T15:39:28.4276518Z ok 111 - two trains requesting each WX diamond are stopped before overlap, while its straight parallel routes remain independent
+2026-11-12T15:39:28.4277224Z   ---
+2026-11-12T15:39:28.4277456Z   duration_ms: 83.879854
+2026-11-12T15:39:28.4277734Z   type: 'test'
+2026-11-12T15:39:28.4277978Z   ...
+2026-11-12T15:39:28.4278727Z # Subtest: adjacent-edge parked coach can overlap the insertion point despite passing the historical centre-only guard
+2026-11-12T15:39:28.4279871Z ok 112 - adjacent-edge parked coach can overlap the insertion point despite passing the historical centre-only guard
+2026-11-12T15:39:28.4280535Z   ---
+2026-11-12T15:39:28.4280794Z   duration_ms: 0.441507
+2026-11-12T15:39:28.4281083Z   type: 'test'
+2026-11-12T15:39:28.4281332Z   ...
+2026-11-12T15:39:28.4281901Z # Subtest: elapsed-time cap and invalid step inputs have explicit, atomic semantics
+2026-11-12T15:39:28.4282692Z ok 113 - elapsed-time cap and invalid step inputs have explicit, atomic semantics
+2026-11-12T15:39:28.4283177Z   ---
+2026-11-12T15:39:28.4283422Z   duration_ms: 1.041619
+2026-11-12T15:39:28.4283680Z   type: 'test'
+2026-11-12T15:39:28.4284098Z   ...
+2026-11-12T15:39:28.4284692Z # Subtest: growth of a frozen detached body cannot claim an old branch after a legal turnout change
+2026-11-12T15:39:28.4285571Z ok 114 - growth of a frozen detached body cannot claim an old branch after a legal turnout change
+2026-11-12T15:39:28.4286079Z   ---
+2026-11-12T15:39:28.4286302Z   duration_ms: 0.258023
+2026-11-12T15:39:28.4286562Z   type: 'test'
+2026-11-12T15:39:28.4286788Z   ...
+2026-11-12T15:39:28.4287505Z # Subtest: recoupling across a joint extends the candidate centre before matching, even after old train history was pruned
+2026-11-12T15:39:28.4288678Z ok 115 - recoupling across a joint extends the candidate centre before matching, even after old train history was pruned
+2026-11-12T15:39:28.4289331Z   ---
+2026-11-12T15:39:28.4289570Z   duration_ms: 0.240267
+2026-11-12T15:39:28.4289861Z   type: 'test'
+2026-11-12T15:39:28.4290095Z   ...
+2026-11-12T15:39:28.4290987Z # Subtest: a misaligned joint cannot be invented to recouple; rejected candidate leaves the real Journey unchanged
+2026-11-12T15:39:28.4292128Z ok 116 - a misaligned joint cannot be invented to recouple; rejected candidate leaves the real Journey unchanged
+2026-11-12T15:39:28.4292766Z   ---
+2026-11-12T15:39:28.4293018Z   duration_ms: 3.353246
+2026-11-12T15:39:28.4293316Z   type: 'test'
+2026-11-12T15:39:28.4293568Z   ...
+2026-11-12T15:39:28.4334656Z # Subtest: stock catalog creates finite original geometry and full coupling envelopes without fixed pitch
+2026-11-12T15:39:28.4335771Z ok 117 - stock catalog creates finite original geometry and full coupling envelopes without fixed pitch
+2026-11-12T15:39:28.4336395Z   ---
+2026-11-12T15:39:28.4336661Z   duration_ms: 106.038313
+2026-11-12T15:39:28.4336973Z   type: 'test'
+2026-11-12T15:39:28.4337238Z   ...
+2026-11-12T15:39:28.4337934Z # Subtest: wheel phases and rods follow signed travelled distance, freeze when stopped, and reverse exactly
+2026-11-12T15:39:28.4339260Z ok 118 - wheel phases and rods follow signed travelled distance, freeze when stopped, and reverse exactly
+2026-11-12T15:39:28.4339871Z   ---
+2026-11-12T15:39:28.4340119Z   duration_ms: 19.379868
+2026-11-12T15:39:28.4340425Z   type: 'test'
+2026-11-12T15:39:28.4340688Z   ...
+2026-11-12T15:39:28.4341337Z # Subtest: coach bogies pivot along actual R249 track chords without changing canonical coordinates
+2026-11-12T15:39:28.4342299Z ok 119 - coach bogies pivot along actual R249 track chords without changing canonical coordinates
+2026-11-12T15:39:28.4342860Z   ---
+2026-11-12T15:39:28.4343109Z   duration_ms: 21.596242
+2026-11-12T15:39:28.4343402Z   type: 'test'
+2026-11-12T15:39:28.4343662Z   ...
+2026-11-12T15:39:28.4344453Z # Subtest: coupling rejects distant, parallel-track and opposite-facing vehicles
+2026-11-12T15:39:28.4345251Z ok 120 - coupling rejects distant, parallel-track and opposite-facing vehicles
+2026-11-12T15:39:28.4345770Z   ---
+2026-11-12T15:39:28.4346013Z   duration_ms: 0.303932
+2026-11-12T15:39:28.4346306Z   type: 'test'
+2026-11-12T15:39:28.4346558Z   ...
+2026-11-12T15:39:28.4347163Z # Subtest: all native adjacent body envelopes have a separating axis on the tight R249 curve
+2026-11-12T15:39:28.4348057Z ok 121 - all native adjacent body envelopes have a separating axis on the tight R249 curve
+2026-11-12T15:39:28.4348606Z   ---
+2026-11-12T15:39:28.4348875Z   duration_ms: 295.156298
+2026-11-12T15:39:28.4349170Z   type: 'test'
+2026-11-12T15:39:28.4349416Z   ...
+2026-11-12T15:39:28.4350220Z # Subtest: lean route projections preserve every 5C range, encounter, graph distance and highlight; full API remains identical
+2026-11-12T15:39:28.4351449Z ok 122 - lean route projections preserve every 5C range, encounter, graph distance and highlight; full API remains identical
+2026-11-12T15:39:28.4352132Z   ---
+2026-11-12T15:39:28.4352394Z   duration_ms: 55.971708
+2026-11-12T15:39:28.4352686Z   type: 'test'
+2026-11-12T15:39:28.4352939Z   ...
+2026-11-12T15:39:31.7812842Z # Subtest: phase 0 protects the exact railway and simulation baseline
+2026-11-12T15:39:31.7813705Z ok 123 - phase 0 protects the exact railway and simulation baseline
+2026-11-12T15:39:31.7814318Z   ---
+2026-11-12T15:39:31.7814597Z   duration_ms: 6.242062
+2026-11-12T15:39:31.7814900Z   type: 'test'
+2026-11-12T15:39:31.7815179Z   ...
+2026-11-12T15:39:31.7816317Z # Subtest: five stable zones inventory the current scene and explicitly exclude tunnels
+2026-11-12T15:39:31.7817222Z ok 124 - five stable zones inventory the current scene and explicitly exclude tunnels
+2026-11-12T15:39:31.7817772Z   ---
+2026-11-12T15:39:31.7818040Z   duration_ms: 0.364603
+2026-11-12T15:39:31.7818339Z   type: 'test'
+2026-11-12T15:39:31.7818594Z   ...
+2026-11-12T15:39:31.7821367Z # Subtest: candidate prop centres respect tracks, buildings, switch landmarks and existing trees
+2026-11-12T15:39:31.7822396Z ok 125 - candidate prop centres respect tracks, buildings, switch landmarks and existing trees
+2026-11-12T15:39:31.7823004Z   ---
+2026-11-12T15:39:31.7823865Z   duration_ms: 2180.057547
+2026-11-12T15:39:31.7824214Z   type: 'test'
+2026-11-12T15:39:31.7824477Z   ...
+2026-11-12T15:39:31.7825093Z # Subtest: the audit reports existing conflicts, including a segment crossing a footprint
+2026-11-12T15:39:31.7825996Z ok 126 - the audit reports existing conflicts, including a segment crossing a footprint
+2026-11-12T15:39:31.7826525Z   ---
+2026-11-12T15:39:31.7826772Z   duration_ms: 0.389343
+2026-11-12T15:39:31.7827058Z   type: 'test'
+2026-11-12T15:39:31.7827283Z   ...
+2026-11-12T15:39:31.7984060Z # Subtest: station occupies the existing site with a credible central body and two lower wings
+2026-11-12T15:39:31.7985092Z ok 127 - station occupies the existing site with a credible central body and two lower wings
+2026-11-12T15:39:31.7985648Z   ---
+2026-11-12T15:39:31.7985926Z   duration_ms: 183.856244
+2026-11-12T15:39:31.7986236Z   type: 'test'
+2026-11-12T15:39:31.7986488Z   ...
+2026-11-12T15:39:31.7987430Z # Subtest: ground floor windows and entry are real openings through structural walls
+2026-11-12T15:39:31.7988257Z ok 128 - ground floor windows and entry are real openings through structural walls
+2026-11-12T15:39:31.7988755Z   ---
+2026-11-12T15:39:31.7989020Z   duration_ms: 111.818257
+2026-11-12T15:39:31.7989315Z   type: 'test'
+2026-11-12T15:39:31.7989582Z   ...
+2026-11-12T15:39:31.7990137Z # Subtest: full building and roofing envelope remain outside the railway loading gauge
+2026-11-12T15:39:31.7990979Z ok 129 - full building and roofing envelope remain outside the railway loading gauge
+2026-11-12T15:39:31.7991487Z   ---
+2026-11-12T15:39:31.7991736Z   duration_ms: 372.191627
+2026-11-12T15:39:31.7992038Z   type: 'test'
+2026-11-12T15:39:31.7992288Z   ...
+2026-11-12T15:39:31.7992863Z # Subtest: terracotta roof uses shared instanced tiles and no unbounded per-tile objects
+2026-11-12T15:39:31.7993945Z ok 130 - terracotta roof uses shared instanced tiles and no unbounded per-tile objects
+2026-11-12T15:39:31.7994495Z   ---
+2026-11-12T15:39:31.7994783Z   duration_ms: 41.742928
+2026-11-12T15:39:31.7995103Z   type: 'test'
+2026-11-12T15:39:31.7995350Z   ...
+2026-11-12T15:39:31.7995920Z # Subtest: station surface data is deterministic, opaque and valid for all material types
+2026-11-12T15:39:31.7996809Z ok 131 - station surface data is deterministic, opaque and valid for all material types
+2026-11-12T15:39:31.7997333Z   ---
+2026-11-12T15:39:31.7997585Z   duration_ms: 133.900401
+2026-11-12T15:39:31.7997906Z   type: 'test'
+2026-11-12T15:39:31.7998164Z   ...
+2026-11-12T15:39:31.7998659Z # Subtest: roof curvature data drives both relief and physical roughness
+2026-11-12T15:39:31.7999396Z ok 132 - roof curvature data drives both relief and physical roughness
+2026-11-12T15:39:31.7999859Z   ---
+2026-11-12T15:39:31.8000117Z   duration_ms: 23.266276
+2026-11-12T15:39:31.8000407Z   type: 'test'
+2026-11-12T15:39:31.8000664Z   ...
+2026-11-12T15:39:31.8001297Z # Subtest: texture footprint remains bounded and uses millimetres independently of geometry size
+2026-11-12T15:39:31.8002287Z ok 133 - texture footprint remains bounded and uses millimetres independently of geometry size
+2026-11-12T15:39:31.8002879Z   ---
+2026-11-12T15:39:31.8003208Z   duration_ms: 0.69944
+2026-11-12T15:39:31.8004068Z   type: 'test'
+2026-11-12T15:39:31.8004495Z   ...
+2026-11-12T15:39:31.8005302Z # Subtest: shared station maps respect the texture budget and cleanup is idempotent
+2026-11-12T15:39:31.8006256Z ok 134 - shared station maps respect the texture budget and cleanup is idempotent
+2026-11-12T15:39:31.8006861Z   ---
+2026-11-12T15:39:31.8007361Z   duration_ms: 382.302761
+2026-11-12T15:39:31.8007787Z   type: 'test'
+2026-11-12T15:39:31.8025860Z   ...
+2026-11-12T15:39:31.8026530Z # Subtest: crafted paving covers the existing platform with physical joints inside its footprint
+2026-11-12T15:39:31.8027508Z ok 135 - crafted paving covers the existing platform with physical joints inside its footprint
+2026-11-12T15:39:31.8028052Z   ---
+2026-11-12T15:39:31.8028298Z   duration_ms: 3.81328
+2026-11-12T15:39:31.8028583Z   type: 'test'
+2026-11-12T15:39:31.8029090Z   ...
+2026-11-12T15:39:31.8029628Z # Subtest: canopy columns and furniture do not invade the train side of the platform
+2026-11-12T15:39:31.8030423Z ok 136 - canopy columns and furniture do not invade the train side of the platform
+2026-11-12T15:39:31.8030931Z   ---
+2026-11-12T15:39:31.8031197Z   duration_ms: 18.437075
+2026-11-12T15:39:31.8031507Z   type: 'test'
+2026-11-12T15:39:31.8031779Z   ...
+2026-11-12T15:39:31.8032300Z # Subtest: real platform mesh respects rail clearance above the platform edge
+2026-11-12T15:39:31.8033057Z ok 137 - real platform mesh respects rail clearance above the platform edge
+2026-11-12T15:39:31.8033563Z   ---
+2026-11-12T15:39:31.8033968Z   duration_ms: 144.837764
+2026-11-12T15:39:31.8034265Z   type: 'test'
+2026-11-12T15:39:31.8034530Z   ...
+2026-11-12T15:39:31.8035066Z # Subtest: night lights have bounded intensity and do not require external assets
+2026-11-12T15:39:31.8036071Z ok 138 - night lights have bounded intensity and do not require external assets
+2026-11-12T15:39:31.8036578Z   ---
+2026-11-12T15:39:31.8036834Z   duration_ms: 25.252119
+2026-11-12T15:39:31.8037184Z   type: 'test'
+2026-11-12T15:39:31.8037448Z   ...
+2026-11-12T15:39:31.8037944Z # Subtest: right curves have no tunnel walls, roof or camera obstruction
+2026-11-12T15:39:31.8038645Z ok 139 - right curves have no tunnel walls, roof or camera obstruction
+2026-11-12T15:39:31.8039094Z   ---
+2026-11-12T15:39:31.8039358Z   duration_ms: 21.459679
+2026-11-12T15:39:31.8039653Z   type: 'test'
+2026-11-12T15:39:31.8039905Z   ...
+2026-11-12T15:39:31.8040426Z # Subtest: bridge spans an open space below deck, not a hidden solid foundation
+2026-11-12T15:39:31.8041170Z ok 140 - bridge spans an open space below deck, not a hidden solid foundation
+2026-11-12T15:39:31.8041643Z   ---
+2026-11-12T15:39:31.8041895Z   duration_ms: 5.659365
+2026-11-12T15:39:31.8042182Z   type: 'test'
+2026-11-12T15:39:31.8042427Z   ...
+2026-11-12T15:39:31.8042975Z # Subtest: rail profile rests on sleepers and preserves original railhead height
+2026-11-12T15:39:31.8043926Z ok 141 - rail profile rests on sleepers and preserves original railhead height
+2026-11-12T15:39:31.8044420Z   ---
+2026-11-12T15:39:31.8044673Z   duration_ms: 9.653563
+2026-11-12T15:39:31.8044962Z   type: 'test'
+2026-11-12T15:39:31.8045213Z   ...
+2026-11-12T15:39:31.8045796Z # Subtest: level bridge spans an actual lowering of the terrain without changing track data
+2026-11-12T15:39:31.8046680Z ok 142 - level bridge spans an actual lowering of the terrain without changing track data
+2026-11-12T15:39:31.8047206Z   ---
+2026-11-12T15:39:31.8047454Z   duration_ms: 11.749901
+2026-11-12T15:39:31.8047755Z   type: 'test'
+2026-11-12T15:39:31.8048002Z   ...
+2026-11-12T15:39:31.8048946Z # Subtest: explicit expected port table requires every legal entrance of all eight switches in both states and traverses it bidirectionally
+2026-11-12T15:39:31.8050310Z ok 143 - explicit expected port table requires every legal entrance of all eight switches in both states and traverses it bidirectionally
+2026-11-12T15:39:31.8051060Z   ---
+2026-11-12T15:39:31.8051316Z   duration_ms: 2.778541
+2026-11-12T15:39:31.8051620Z   type: 'test'
+2026-11-12T15:39:31.8051869Z   ...
+2026-11-12T15:39:31.8052432Z # Subtest: uniform fitting preserves source proportions within the N-scale envelope
+2026-11-12T15:39:31.8053279Z ok 144 - uniform fitting preserves source proportions within the N-scale envelope
+2026-11-12T15:39:31.8053925Z   ---
+2026-11-12T15:39:31.8054209Z   duration_ms: 1.186464
+2026-11-12T15:39:31.8054503Z   type: 'test'
+2026-11-12T15:39:31.8054753Z   ...
+2026-11-12T15:39:31.8055361Z # Subtest: twenty vehicle replacements share template resources and release registry records
+2026-11-12T15:39:31.8056284Z ok 145 - twenty vehicle replacements share template resources and release registry records
+2026-11-12T15:39:31.8056854Z   ---
+2026-11-12T15:39:31.8057107Z   duration_ms: 12.049867
+2026-11-12T15:39:31.8057397Z   type: 'test'
+2026-11-12T15:39:31.8057664Z   ...
+2026-11-12T15:39:31.8058488Z # Subtest: releasing one clone does not invalidate another and visibility restores native children
+2026-11-12T15:39:31.8059445Z ok 146 - releasing one clone does not invalidate another and visibility restores native children
+2026-11-12T15:39:31.8060021Z   ---
+2026-11-12T15:39:31.8060269Z   duration_ms: 1.041218
+2026-11-12T15:39:31.8060557Z   type: 'test'
+2026-11-12T15:39:31.8060812Z   ...
+2026-11-12T15:39:31.8061341Z # Subtest: release during asynchronous loading never reattaches an obsolete model
+2026-11-12T15:39:31.8062137Z ok 147 - release during asynchronous loading never reattaches an obsolete model
+2026-11-12T15:39:31.8062640Z   ---
+2026-11-12T15:39:31.8062885Z   duration_ms: 0.651529
+2026-11-12T15:39:31.8063166Z   type: 'test'
+2026-11-12T15:39:31.8063406Z   ...
+2026-11-12T15:39:31.8064159Z # Subtest: global disposal also frees templates arriving after cancellation exactly once
+2026-11-12T15:39:31.8065032Z ok 148 - global disposal also frees templates arriving after cancellation exactly once
+2026-11-12T15:39:31.8065779Z   ---
+2026-11-12T15:39:31.8066039Z   duration_ms: 0.75299
+2026-11-12T15:39:31.8066326Z   type: 'test'
+2026-11-12T15:39:31.8066566Z   ...
+2026-11-12T15:39:31.8067102Z # Subtest: failed loading leaves the original playable and permits a later retry
+2026-11-12T15:39:31.8067908Z ok 149 - failed loading leaves the original playable and permits a later retry
+2026-11-12T15:39:31.8068407Z   ---
+2026-11-12T15:39:31.8068656Z   duration_ms: 1.633509
+2026-11-12T15:39:31.8068948Z   type: 'test'
+2026-11-12T15:39:31.8069197Z   ...
+2026-11-12T15:39:31.8069784Z # Subtest: a newer attach supersedes an older pending request without duplicating the model
+2026-11-12T15:39:31.8070679Z ok 150 - a newer attach supersedes an older pending request without duplicating the model
+2026-11-12T15:39:31.8071226Z   ---
+2026-11-12T15:39:31.8071474Z   duration_ms: 0.747511
+2026-11-12T15:39:31.8071766Z   type: 'test'
+2026-11-12T15:39:31.8072015Z   ...
+2026-11-12T15:39:31.8072640Z # Subtest: management catalog reuses loaded templates and returns independent measured metadata
+2026-11-12T15:39:31.8073597Z ok 151 - management catalog reuses loaded templates and returns independent measured metadata
+2026-11-12T15:39:31.8074346Z   ---
+2026-11-12T15:39:31.8074600Z   duration_ms: 0.890835
+2026-11-12T15:39:31.8074888Z   type: 'test'
+2026-11-12T15:39:31.8075146Z   ...
+2026-11-12T15:39:31.8075772Z # Subtest: three recent consoles retain slots, replace the least recent, and handle smaller fleets
+2026-11-12T15:39:31.8076722Z ok 152 - three recent consoles retain slots, replace the least recent, and handle smaller fleets
+2026-11-12T15:39:31.8077296Z   ---
+2026-11-12T15:39:31.8077543Z   duration_ms: 1.785946
+2026-11-12T15:39:31.8077825Z   type: 'test'
+2026-11-12T15:39:31.8078085Z   ...
+2026-11-12T15:39:31.8078676Z # Subtest: console selection and eviction do not modify any actual train Journey or controls
+2026-11-12T15:39:31.8079617Z ok 153 - console selection and eviction do not modify any actual train Journey or controls
+2026-11-12T15:39:31.8080184Z   ---
+2026-11-12T15:39:31.8080442Z   duration_ms: 61.294331
+2026-11-12T15:39:31.8080743Z   type: 'test'
+2026-11-12T15:39:31.8080997Z   ...
+2026-11-12T15:39:31.8081656Z # Subtest: minimap geometry uses every original railway point with one unmodified coordinate system
+2026-11-12T15:39:31.8082660Z ok 154 - minimap geometry uses every original railway point with one unmodified coordinate system
+2026-11-12T15:39:31.8083242Z   ---
+2026-11-12T15:39:31.8083507Z   duration_ms: 128.547272
+2026-11-12T15:39:31.8083961Z   type: 'test'
+2026-11-12T15:39:31.8084217Z   ...
+2026-11-12T15:39:31.8084860Z # Subtest: independent markers follow locomotive centres through curves, crossovers and reversal
+2026-11-12T15:39:31.8085838Z ok 155 - independent markers follow locomotive centres through curves, crossovers and reversal
+2026-11-12T15:39:31.8086412Z   ---
+2026-11-12T15:39:31.8086676Z   duration_ms: 14.671917
+2026-11-12T15:39:31.8086975Z   type: 'test'
+2026-11-12T15:39:31.8087240Z   ...
+2026-11-12T15:39:31.8088060Z # Subtest: sidings and runaround markers use actual locomotive position rather than the tail
+2026-11-12T15:39:31.8088934Z ok 156 - sidings and runaround markers use actual locomotive position rather than the tail
+2026-11-12T15:39:31.8089441Z   ---
+2026-11-12T15:39:31.8089677Z   duration_ms: 0.905526
+2026-11-12T15:39:31.8089953Z   type: 'test'
+2026-11-12T15:39:31.8090191Z   ...
+2026-11-12T15:39:31.8090870Z # Subtest: thumbnail identity follows the actual visible model, including fallback after failed GLB loading
+2026-11-12T15:39:31.8091900Z ok 157 - thumbnail identity follows the actual visible model, including fallback after failed GLB loading
+2026-11-12T15:39:31.8092506Z   ---
+2026-11-12T15:39:31.8092751Z   duration_ms: 0.223893
+2026-11-12T15:39:31.8093041Z   type: 'test'
+2026-11-12T15:39:31.8093287Z   ...
+2026-11-12T15:39:31.8093994Z # Subtest: six distinct transparent thumbnails are tied to their real model sources
+2026-11-12T15:39:31.8094803Z ok 158 - six distinct transparent thumbnails are tied to their real model sources
+2026-11-12T15:39:31.8095535Z   ---
+2026-11-12T15:39:31.8095784Z   duration_ms: 2.58887
+2026-11-12T15:39:31.8096071Z   type: 'test'
+2026-11-12T15:39:31.8096317Z   ...
+2026-11-12T15:39:31.8097023Z # Subtest: management projects identities and railway length without mutating or reordering a reversed consist
+2026-11-12T15:39:31.8098135Z ok 159 - management projects identities and railway length without mutating or reordering a reversed consist
+2026-11-12T15:39:31.8098744Z   ---
+2026-11-12T15:39:31.8098990Z   duration_ms: 1.865825
+2026-11-12T15:39:31.8099233Z   type: 'test'
+2026-11-12T15:39:31.8099445Z   ...
+2026-11-12T15:39:31.8099943Z # Subtest: management follows actual imported dimensions and detached identity
+2026-11-12T15:39:31.8100687Z ok 160 - management follows actual imported dimensions and detached identity
+2026-11-12T15:39:31.8101170Z   ---
+2026-11-12T15:39:31.8101395Z   duration_ms: 0.34263
+2026-11-12T15:39:31.8101651Z   type: 'test'
+2026-11-12T15:39:31.8101891Z   ...
+2026-11-12T15:39:31.8102561Z # Subtest: project preview matches M1.1 real geometry for the same models without touching source data
+2026-11-12T15:39:31.8103618Z ok 161 - project preview matches M1.1 real geometry for the same models without touching source data
+2026-11-12T15:39:31.8104401Z   ---
+2026-11-12T15:39:31.8104665Z   duration_ms: 3.401958
+2026-11-12T15:39:31.8104959Z   type: 'test'
+2026-11-12T15:39:31.8105233Z   ...
+2026-11-12T15:39:31.8105992Z # Subtest: all model orientations preserve coupler continuity, scale, total length and asymmetric locomotive origin
+2026-11-12T15:39:31.8107189Z ok 162 - all model orientations preserve coupler continuity, scale, total length and asymmetric locomotive origin
+2026-11-12T15:39:31.8107957Z   ---
+2026-11-12T15:39:31.8108217Z   duration_ms: 4.009692
+2026-11-12T15:39:31.8108503Z   type: 'test'
+2026-11-12T15:39:31.8108745Z   ...
+2026-11-12T15:39:31.8109372Z # Subtest: empty project preview stays finite and invalid catalog or orientation fails explicitly
+2026-11-12T15:39:31.8110381Z ok 163 - empty project preview stays finite and invalid catalog or orientation fails explicitly
+2026-11-12T15:39:31.8110981Z   ---
+2026-11-12T15:39:31.8111259Z   duration_ms: 0.346054
+2026-11-12T15:39:31.8111582Z   type: 'test'
+2026-11-12T15:39:31.8111821Z   ...
+2026-11-12T15:39:31.8112544Z # Subtest: normalized catalog has the fourteen existing M1 identities, six locomotives and eight trailers
+2026-11-12T15:39:31.8113681Z ok 164 - normalized catalog has the fourteen existing M1 identities, six locomotives and eight trailers
+2026-11-12T15:39:31.8114470Z   ---
+2026-11-12T15:39:31.8114766Z   duration_ms: 1.006457
+2026-11-12T15:39:31.8115045Z   type: 'test'
+2026-11-12T15:39:31.8115305Z   ...
+2026-11-12T15:39:31.8116118Z # Subtest: project lifecycle is isolated, confirmation has no railway effect and cancellation restores saved version
+2026-11-12T15:39:31.8117322Z ok 165 - project lifecycle is isolated, confirmation has no railway effect and cancellation restores saved version
+2026-11-12T15:39:31.8118020Z   ---
+2026-11-12T15:39:31.8118598Z   duration_ms: 1.597225
+2026-11-12T15:39:31.8118928Z   type: 'test'
+2026-11-12T15:39:31.8119236Z   ...
+2026-11-12T15:39:31.8119908Z # Subtest: same-model instances retain separate identities through reorder, orientation and removal
+2026-11-12T15:39:31.8120953Z ok 166 - same-model instances retain separate identities through reorder, orientation and removal
+2026-11-12T15:39:31.8121560Z   ---
+2026-11-12T15:39:31.8121812Z   duration_ms: 0.526713
+2026-11-12T15:39:31.8122110Z   type: 'test'
+2026-11-12T15:39:31.8122342Z   ...
+2026-11-12T15:39:31.8123113Z # Subtest: sixth trailer, second locomotive, invalid model, malformed orientation and invalid moves fail atomically
+2026-11-12T15:39:31.8124414Z ok 167 - sixth trailer, second locomotive, invalid model, malformed orientation and invalid moves fail atomically
+2026-11-12T15:39:31.8125083Z   ---
+2026-11-12T15:39:31.8125308Z   duration_ms: 1.127136
+2026-11-12T15:39:31.8125578Z   type: 'test'
+2026-11-12T15:39:31.8126010Z   ...
+2026-11-12T15:39:31.8126795Z # Subtest: copy preserves physical references as value snapshots and catches external changes and reset even with same locomotive
+2026-11-12T15:39:31.8127869Z ok 168 - copy preserves physical references as value snapshots and catches external changes and reset even with same locomotive
+2026-11-12T15:39:31.8128592Z   ---
+2026-11-12T15:39:31.8128815Z   duration_ms: 0.782914
+2026-11-12T15:39:31.8129134Z   type: 'test'
+2026-11-12T15:39:31.8129374Z   ...
+2026-11-12T15:39:31.8130049Z # Subtest: conservative capabilities never grant a whole-project or spatial coupling permission
+2026-11-12T15:39:31.8131023Z ok 169 - conservative capabilities never grant a whole-project or spatial coupling permission
+2026-11-12T15:39:31.8131548Z   ---
+2026-11-12T15:39:31.8131775Z   duration_ms: 0.322319
+2026-11-12T15:39:31.8132031Z   type: 'test'
+2026-11-12T15:39:31.8132262Z   ...
+2026-11-12T15:39:31.8132973Z # Subtest: draft lifecycle rejects implicit replacement and copy rejects unknown physical models without partial draft
+2026-11-12T15:39:31.8134349Z ok 170 - draft lifecycle rejects implicit replacement and copy rejects unknown physical models without partial draft
+2026-11-12T15:39:31.8135016Z   ---
+2026-11-12T15:39:31.8135261Z   duration_ms: 0.327708
+2026-11-12T15:39:31.8135548Z   type: 'test'
+2026-11-12T15:39:31.8135792Z   ...
+2026-11-12T15:39:31.8136504Z # Subtest: linking an independent design compares model, order and orientation without assigning a physical identity
+2026-11-12T15:39:31.8137624Z ok 171 - linking an independent design compares model, order and orientation without assigning a physical identity
+2026-11-12T15:39:31.8138228Z   ---
+2026-11-12T15:39:31.8138461Z   duration_ms: 0.302169
+2026-11-12T15:39:31.8138727Z   type: 'test'
+2026-11-12T15:39:31.8138964Z   ...
+2026-11-12T15:39:31.8139508Z # Subtest: side images share a physical scale and preserve original asymmetrical origins
+2026-11-12T15:39:31.8140300Z ok 172 - side images share a physical scale and preserve original asymmetrical origins
+2026-11-12T15:39:31.8140817Z   ---
+2026-11-12T15:39:31.8141058Z   duration_ms: 3.246477
+2026-11-12T15:39:31.8141326Z   type: 'test'
+2026-11-12T15:39:31.8141557Z   ...
+2026-11-12T15:39:31.8142162Z # Subtest: native, imported and mixed compositions meet at real couplers with common image scaling
+2026-11-12T15:39:31.8143085Z ok 173 - native, imported and mixed compositions meet at real couplers with common image scaling
+2026-11-12T15:39:31.8143645Z   ---
+2026-11-12T15:39:31.8144010Z   duration_ms: 2.638162
+2026-11-12T15:39:31.8144284Z   type: 'test'
+2026-11-12T15:39:31.8144520Z   ...
+2026-11-12T15:39:31.8145070Z # Subtest: travel reversal and world yaw never reorder or flip the straightened side view
+2026-11-12T15:39:31.8145917Z ok 174 - travel reversal and world yaw never reorder or flip the straightened side view
+2026-11-12T15:39:31.8146423Z   ---
+2026-11-12T15:39:31.8146657Z   duration_ms: 0.414066
+2026-11-12T15:39:31.8146932Z   type: 'test'
+2026-11-12T15:39:31.8147176Z   ...
+2026-11-12T15:39:31.8147922Z # Subtest: detach, recouple and long consists derive fresh positions from the same identities
+2026-11-12T15:39:31.8148820Z ok 175 - detach, recouple and long consists derive fresh positions from the same identities
+2026-11-12T15:39:31.8149344Z   ---
+2026-11-12T15:39:31.8149574Z   duration_ms: 0.523569
+2026-11-12T15:39:31.8149848Z   type: 'test'
+2026-11-12T15:39:31.8150079Z   ...
+2026-11-12T15:39:31.8150727Z # Subtest: unavailable side assets stay explicit without guessing a different model or orientation
+2026-11-12T15:39:31.8151693Z ok 176 - unavailable side assets stay explicit without guessing a different model or orientation
+2026-11-12T15:39:31.8152265Z   ---
+2026-11-12T15:39:31.8152501Z   duration_ms: 0.313836
+2026-11-12T15:39:31.8152764Z   type: 'test'
+2026-11-12T15:39:31.8153001Z   ...
+2026-11-12T15:39:31.8153508Z # Subtest: Y-IN/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8154413Z ok 177 - Y-IN/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8155036Z   ---
+2026-11-12T15:39:31.8155312Z   duration_ms: 15.660606
+2026-11-12T15:39:31.8155603Z   type: 'test'
+2026-11-12T15:39:31.8155852Z   ...
+2026-11-12T15:39:31.8156379Z # Subtest: Y-IN/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8157175Z ok 178 - Y-IN/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8157656Z   ---
+2026-11-12T15:39:31.8157878Z   duration_ms: 12.732733
+2026-11-12T15:39:31.8158132Z   type: 'test'
+2026-11-12T15:39:31.8158359Z   ...
+2026-11-12T15:39:31.8158753Z # Subtest: Y-R1/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8159250Z ok 179 - Y-R1/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8159579Z   ---
+2026-11-12T15:39:31.8159762Z   duration_ms: 9.745722
+2026-11-12T15:39:31.8160013Z   type: 'test'
+2026-11-12T15:39:31.8160248Z   ...
+2026-11-12T15:39:31.8160735Z # Subtest: Y-R1/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8161484Z ok 180 - Y-R1/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8161925Z   ---
+2026-11-12T15:39:31.8162179Z   duration_ms: 10.751587
+2026-11-12T15:39:31.8162465Z   type: 'test'
+2026-11-12T15:39:31.8162707Z   ...
+2026-11-12T15:39:31.8163211Z # Subtest: Y-R2/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8164204Z ok 181 - Y-R2/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8164714Z   ---
+2026-11-12T15:39:31.8164958Z   duration_ms: 10.063784
+2026-11-12T15:39:31.8165241Z   type: 'test'
+2026-11-12T15:39:31.8165485Z   ...
+2026-11-12T15:39:31.8165985Z # Subtest: Y-R2/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8166730Z ok 182 - Y-R2/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8167210Z   ---
+2026-11-12T15:39:31.8167464Z   duration_ms: 13.608645
+2026-11-12T15:39:31.8167754Z   type: 'test'
+2026-11-12T15:39:31.8168018Z   ...
+2026-11-12T15:39:31.8168535Z # Subtest: Y-3/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8169309Z ok 183 - Y-3/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8169801Z   ---
+2026-11-12T15:39:31.8170056Z   duration_ms: 9.797468
+2026-11-12T15:39:31.8170339Z   type: 'test'
+2026-11-12T15:39:31.8170593Z   ...
+2026-11-12T15:39:31.8171086Z # Subtest: Y-3/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8171845Z ok 184 - Y-3/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8172347Z   ---
+2026-11-12T15:39:31.8172600Z   duration_ms: 12.94593
+2026-11-12T15:39:31.8172883Z   type: 'test'
+2026-11-12T15:39:31.8173131Z   ...
+2026-11-12T15:39:31.8173660Z # Subtest: Y-4/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8174612Z ok 185 - Y-4/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8175291Z   ---
+2026-11-12T15:39:31.8175542Z   duration_ms: 10.919847
+2026-11-12T15:39:31.8175833Z   type: 'test'
+2026-11-12T15:39:31.8176056Z   ...
+2026-11-12T15:39:31.8176552Z # Subtest: Y-4/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8177328Z ok 186 - Y-4/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8177812Z   ---
+2026-11-12T15:39:31.8178073Z   duration_ms: 10.604969
+2026-11-12T15:39:31.8178366Z   type: 'test'
+2026-11-12T15:39:31.8178605Z   ...
+2026-11-12T15:39:31.8179133Z # Subtest: Y-2/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8179908Z ok 187 - Y-2/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8180424Z   ---
+2026-11-12T15:39:31.8180643Z   duration_ms: 9.511042
+2026-11-12T15:39:31.8180909Z   type: 'test'
+2026-11-12T15:39:31.8181303Z   ...
+2026-11-12T15:39:31.8181809Z # Subtest: Y-2/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8182557Z ok 188 - Y-2/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8183034Z   ---
+2026-11-12T15:39:31.8183251Z   duration_ms: 10.84788
+2026-11-12T15:39:31.8183518Z   type: 'test'
+2026-11-12T15:39:31.8183948Z   ...
+2026-11-12T15:39:31.8184469Z # Subtest: WX-A/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8185211Z ok 189 - WX-A/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8185715Z   ---
+2026-11-12T15:39:31.8185954Z   duration_ms: 13.449599
+2026-11-12T15:39:31.8186152Z   type: 'test'
+2026-11-12T15:39:31.8186367Z   ...
+2026-11-12T15:39:31.8186918Z # Subtest: WX-A/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8187500Z ok 190 - WX-A/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8187854Z   ---
+2026-11-12T15:39:31.8188045Z   duration_ms: 10.926778
+2026-11-12T15:39:31.8188234Z   type: 'test'
+2026-11-12T15:39:31.8188401Z   ...
+2026-11-12T15:39:31.8188789Z # Subtest: WX-B/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8189338Z ok 191 - WX-B/false: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8189664Z   ---
+2026-11-12T15:39:31.8189836Z   duration_ms: 11.651195
+2026-11-12T15:39:31.8190033Z   type: 'test'
+2026-11-12T15:39:31.8190200Z   ...
+2026-11-12T15:39:31.8190532Z # Subtest: WX-B/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8191009Z ok 192 - WX-B/true: arrows match physical port oracle and both travel directions
+2026-11-12T15:39:31.8191315Z   ---
+2026-11-12T15:39:31.8191481Z   duration_ms: 11.781318
+2026-11-12T15:39:31.8191667Z   type: 'test'
+2026-11-12T15:39:31.8191827Z   ...
+2026-11-12T15:39:31.8192428Z # Subtest: unknown selection/network entry suppresses routes; blocked branch retains only actual selected paths; conflicting arrivals use bidirectional heads
+2026-11-12T15:39:31.8193356Z ok 193 - unknown selection/network entry suppresses routes; blocked branch retains only actual selected paths; conflicting arrivals use bidirectional heads
+2026-11-12T15:39:31.8194066Z   ---
+2026-11-12T15:39:31.8194293Z   duration_ms: 3.638761
+2026-11-12T15:39:31.8194567Z   type: 'test'
+2026-11-12T15:39:31.8194732Z   ...
+2026-11-12T15:39:31.8195185Z # Subtest: read-only approach observes actual velocity and last wagon for reverse, independent of commanded direction
+2026-11-12T15:39:31.8195864Z ok 194 - read-only approach observes actual velocity and last wagon for reverse, independent of commanded direction
+2026-11-12T15:39:31.8196255Z   ---
+2026-11-12T15:39:31.8196425Z   duration_ms: 41.426809
+2026-11-12T15:39:31.8196701Z   type: 'test'
+2026-11-12T15:39:31.8196942Z   ...
+2026-11-12T15:39:31.8197780Z # Subtest: cached renderer animates state change, keeps refused/no-change idle, reduced motion settles, and releases every resource once
+2026-11-12T15:39:31.8199309Z ok 195 - cached renderer animates state change, keeps refused/no-change idle, reduced motion settles, and releases every resource once
+2026-11-12T15:39:31.8200038Z   ---
+2026-11-12T15:39:31.8200280Z   duration_ms: 7.059968
+2026-11-12T15:39:31.8200553Z   type: 'test'
+2026-11-12T15:39:31.8200785Z   ...
+2026-11-12T15:39:31.8201379Z # Subtest: both arrowhead bisectors follow the canonical tangent on all twenty physical paths
+2026-11-12T15:39:31.8202287Z ok 196 - both arrowhead bisectors follow the canonical tangent on all twenty physical paths
+2026-11-12T15:39:31.8202825Z   ---
+2026-11-12T15:39:31.8203052Z   duration_ms: 6.769386
+2026-11-12T15:39:31.8203326Z   type: 'test'
+2026-11-12T15:39:31.8203560Z   ...
+2026-11-12T15:39:31.8204487Z # Subtest: panel and device apply the historical state/reconciliation transition for all eight controls and both positions
+2026-11-12T15:39:31.8205718Z ok 197 - panel and device apply the historical state/reconciliation transition for all eight controls and both positions
+2026-11-12T15:39:31.8206604Z   ---
+2026-11-12T15:39:31.8206852Z   duration_ms: 79.025707
+2026-11-12T15:39:31.8207148Z   type: 'test'
+2026-11-12T15:39:31.8207394Z   ...
+2026-11-12T15:39:31.8208005Z # Subtest: every safety rejection is identical on both surfaces and leaves state and Journey intact
+2026-11-12T15:39:31.8208971Z ok 198 - every safety rejection is identical on both surfaces and leaves state and Journey intact
+2026-11-12T15:39:31.8209530Z   ---
+2026-11-12T15:39:31.8209773Z   duration_ms: 100.631503
+2026-11-12T15:39:31.8210066Z   type: 'test'
+2026-11-12T15:39:31.8210302Z   ...
+2026-11-12T15:39:31.8210973Z # Subtest: invalid IDs, origins and non-boolean state are rejected before asking safety or reconciling
+2026-11-12T15:39:31.8211968Z ok 199 - invalid IDs, origins and non-boolean state are rejected before asking safety or reconciling
+2026-11-12T15:39:31.8212548Z   ---
+2026-11-12T15:39:31.8212788Z   duration_ms: 1.426131
+2026-11-12T15:39:31.8213073Z   type: 'test'
+2026-11-12T15:39:31.8213312Z   ...
+2026-11-12T15:39:31.8214085Z # Subtest: fresh engine guards block occupied, detached and approaching vehicles on either command surface
+2026-11-12T15:39:31.8215081Z ok 200 - fresh engine guards block occupied, detached and approaching vehicles on either command surface
+2026-11-12T15:39:31.8215656Z   ---
+2026-11-12T15:39:31.8215884Z   duration_ms: 11.537926
+2026-11-12T15:39:31.8216145Z   type: 'test'
+2026-11-12T15:39:31.8216377Z   ...
+2026-11-12T15:39:31.8216929Z # Subtest: successive requests recheck the guard rather than reusing an unlocked snapshot
+2026-11-12T15:39:31.8217767Z ok 201 - successive requests recheck the guard rather than reusing an unlocked snapshot
+2026-11-12T15:39:31.8218282Z   ---
+2026-11-12T15:39:31.8218510Z   duration_ms: 0.789975
+2026-11-12T15:39:31.8218772Z   type: 'test'
+2026-11-12T15:39:31.8218995Z   ...
+2026-11-12T15:39:31.8219705Z # Subtest: Y-IN: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8220664Z ok 202 - Y-IN: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8221267Z   ---
+2026-11-12T15:39:31.8221513Z   duration_ms: 45.26105
+2026-11-12T15:39:31.8221783Z   type: 'test'
+2026-11-12T15:39:31.8222017Z   ...
+2026-11-12T15:39:31.8222638Z # Subtest: Y-R1: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8223582Z ok 203 - Y-R1: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8224267Z   ---
+2026-11-12T15:39:31.8224520Z   duration_ms: 21.530212
+2026-11-12T15:39:31.8224799Z   type: 'test'
+2026-11-12T15:39:31.8225038Z   ...
+2026-11-12T15:39:31.8225587Z # Subtest: Y-R2: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8226398Z ok 204 - Y-R2: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8226883Z   ---
+2026-11-12T15:39:31.8227095Z   duration_ms: 18.818066
+2026-11-12T15:39:31.8227479Z   type: 'test'
+2026-11-12T15:39:31.8227684Z   ...
+2026-11-12T15:39:31.8228217Z # Subtest: Y-3: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8229165Z ok 205 - Y-3: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8229711Z   ---
+2026-11-12T15:39:31.8229985Z   duration_ms: 20.097285
+2026-11-12T15:39:31.8230259Z   type: 'test'
+2026-11-12T15:39:31.8230480Z   ...
+2026-11-12T15:39:31.8231050Z # Subtest: Y-4: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8231932Z ok 206 - Y-4: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8232363Z   ---
+2026-11-12T15:39:31.8232537Z   duration_ms: 30.77675
+2026-11-12T15:39:31.8232722Z   type: 'test'
+2026-11-12T15:39:31.8232888Z   ...
+2026-11-12T15:39:31.8233263Z # Subtest: Y-2: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8234207Z ok 207 - Y-2: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8234558Z   ---
+2026-11-12T15:39:31.8234720Z   duration_ms: 22.4121
+2026-11-12T15:39:31.8234913Z   type: 'test'
+2026-11-12T15:39:31.8235077Z   ...
+2026-11-12T15:39:31.8235662Z # Subtest: WX-A: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8236613Z ok 208 - WX-A: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8237186Z   ---
+2026-11-12T15:39:31.8237431Z   duration_ms: 111.152999
+2026-11-12T15:39:31.8237716Z   type: 'test'
+2026-11-12T15:39:31.8237962Z   ...
+2026-11-12T15:39:31.8238406Z # Subtest: WX-B: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8238985Z ok 209 - WX-B: overlay references every canonical device path without mutating graph or materials
+2026-11-12T15:39:31.8239344Z   ---
+2026-11-12T15:39:31.8239513Z   duration_ms: 96.018978
+2026-11-12T15:39:31.8239704Z   type: 'test'
+2026-11-12T15:39:31.8239876Z   ...
+2026-11-12T15:39:31.8240294Z # Subtest: smooth 160 ms entry/exit and 1400 ms periodic pulse stay bounded; a different device never cross-fades
+2026-11-12T15:39:31.8240934Z ok 210 - smooth 160 ms entry/exit and 1400 ms periodic pulse stay bounded; a different device never cross-fades
+2026-11-12T15:39:31.8241316Z   ---
+2026-11-12T15:39:31.8241484Z   duration_ms: 86.083981
+2026-11-12T15:39:31.8241672Z   type: 'test'
+2026-11-12T15:39:31.8241848Z   ...
+2026-11-12T15:39:31.8242256Z # Subtest: re-entry into the same fading device preserves opacity; reduced-motion stays static after fade
+2026-11-12T15:39:31.8242862Z ok 211 - re-entry into the same fading device preserves opacity; reduced-motion stays static after fade
+2026-11-12T15:39:31.8243225Z   ---
+2026-11-12T15:39:31.8243388Z   duration_ms: 63.231331
+2026-11-12T15:39:31.8243576Z   type: 'test'
+2026-11-12T15:39:31.8243926Z   ...
+2026-11-12T15:39:31.8244351Z # Subtest: A/B share all geometry and one material; no lights, shadows, depth bypass, or picking interception
+2026-11-12T15:39:31.8244967Z ok 212 - A/B share all geometry and one material; no lights, shadows, depth bypass, or picking interception
+2026-11-12T15:39:31.8245333Z   ---
+2026-11-12T15:39:31.8245500Z   duration_ms: 65.00381
+2026-11-12T15:39:31.8245683Z   type: 'test'
+2026-11-12T15:39:31.8245840Z   ...
+2026-11-12T15:39:31.8246314Z # Subtest: numeric inputs, IDs, variant and preferences reject invalid values; invalid construction leaves the scene untouched
+2026-11-12T15:39:31.8247040Z ok 213 - numeric inputs, IDs, variant and preferences reject invalid values; invalid construction leaves the scene untouched
+2026-11-12T15:39:31.8247449Z   ---
+2026-11-12T15:39:31.8247618Z   duration_ms: 63.360476
+2026-11-12T15:39:31.8247802Z   type: 'test'
+2026-11-12T15:39:31.8247961Z   ...
+2026-11-12T15:39:31.8248564Z # Subtest: every CPU geometry and the single GPU material are disposed exactly once; update after disposal is inert
+2026-11-12T15:39:31.8249230Z ok 214 - every CPU geometry and the single GPU material are disposed exactly once; update after disposal is inert
+2026-11-12T15:39:31.8249609Z   ---
+2026-11-12T15:39:31.8249776Z   duration_ms: 75.906274
+2026-11-12T15:39:31.8249964Z   type: 'test'
+2026-11-12T15:39:31.8250131Z   ...
+2026-11-12T15:39:31.8250547Z # Subtest: all eight identities synchronize with deterministic focus/hover priority and never own route state
+2026-11-12T15:39:31.8251199Z ok 215 - all eight identities synchronize with deterministic focus/hover priority and never own route state
+2026-11-12T15:39:31.8251578Z   ---
+2026-11-12T15:39:31.8251739Z   duration_ms: 1.224371
+2026-11-12T15:39:31.8251926Z   type: 'test'
+2026-11-12T15:39:31.8252085Z   ...
+2026-11-12T15:39:31.8252469Z # Subtest: mouse, pen and touch intentional single taps are accepted; a release without press is inert
+2026-11-12T15:39:31.8253181Z ok 216 - mouse, pen and touch intentional single taps are accepted; a release without press is inert
+2026-11-12T15:39:31.8253541Z   ---
+2026-11-12T15:39:31.8253700Z   duration_ms: 0.454917
+2026-11-12T15:39:31.8254061Z   type: 'test'
+2026-11-12T15:39:31.8254230Z   ...
+2026-11-12T15:39:31.8254661Z # Subtest: out-and-back drag, swipe, multitouch, cancellation, blur and nonfinite/unmatched inputs cannot actuate
+2026-11-12T15:39:31.8255318Z ok 217 - out-and-back drag, swipe, multitouch, cancellation, blur and nonfinite/unmatched inputs cannot actuate
+2026-11-12T15:39:31.8255700Z   ---
+2026-11-12T15:39:31.8255862Z   duration_ms: 0.49137
+2026-11-12T15:39:31.8256057Z   type: 'test'
+2026-11-12T15:39:31.8256217Z   ...
+2026-11-12T15:39:31.8256641Z # Subtest: one hundred mount/dispose cycles leave no listener, RAF, cursor, identity or event-response residue
+2026-11-12T15:39:31.8257281Z ok 218 - one hundred mount/dispose cycles leave no listener, RAF, cursor, identity or event-response residue
+2026-11-12T15:39:31.8257659Z   ---
+2026-11-12T15:39:31.8257825Z   duration_ms: 49.819609
+2026-11-12T15:39:31.8258012Z   type: 'test'
+2026-11-12T15:39:31.8258180Z   ...
+2026-11-12T15:39:31.8258620Z # Subtest: a released pending capture cannot click; only confirmed captures can actuate, and capture loss aborts them
+2026-11-12T15:39:31.8259298Z ok 219 - a released pending capture cannot click; only confirmed captures can actuate, and capture loss aborts them
+2026-11-12T15:39:31.8259690Z   ---
+2026-11-12T15:39:31.8259852Z   duration_ms: 2.298994
+2026-11-12T15:39:31.8260029Z   type: 'test'
+2026-11-12T15:39:31.8260198Z   ...
+2026-11-12T15:39:31.8260659Z # Subtest: optional brief touch identity expires and its timer is cancelled on teardown; invalid duration adds no listeners
+2026-11-12T15:39:31.8261363Z ok 220 - optional brief touch identity expires and its timer is cancelled on teardown; invalid duration adds no listeners
+2026-11-12T15:39:31.8261778Z   ---
+2026-11-12T15:39:31.8261940Z   duration_ms: 0.976277
+2026-11-12T15:39:31.8262119Z   type: 'test'
+2026-11-12T15:39:31.8262288Z   ...
+2026-11-12T15:39:31.8262677Z # Subtest: Y-IN: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8263237Z ok 221 - Y-IN: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8263594Z   ---
+2026-11-12T15:39:31.8263912Z   duration_ms: 29.219628
+2026-11-12T15:39:31.8264102Z   type: 'test'
+2026-11-12T15:39:31.8264266Z   ...
+2026-11-12T15:39:31.8264634Z # Subtest: Y-R1: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8265175Z ok 222 - Y-R1: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8265503Z   ---
+2026-11-12T15:39:31.8265676Z   duration_ms: 14.283789
+2026-11-12T15:39:31.8265860Z   type: 'test'
+2026-11-12T15:39:31.8266022Z   ...
+2026-11-12T15:39:31.8266391Z # Subtest: Y-R2: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8267063Z ok 223 - Y-R2: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8267412Z   ---
+2026-11-12T15:39:31.8267579Z   duration_ms: 17.691303
+2026-11-12T15:39:31.8267766Z   type: 'test'
+2026-11-12T15:39:31.8267927Z   ...
+2026-11-12T15:39:31.8268299Z # Subtest: Y-3: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8268844Z ok 224 - Y-3: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8269175Z   ---
+2026-11-12T15:39:31.8269344Z   duration_ms: 14.523683
+2026-11-12T15:39:31.8269528Z   type: 'test'
+2026-11-12T15:39:31.8269689Z   ...
+2026-11-12T15:39:31.8270041Z # Subtest: Y-4: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8270582Z ok 225 - Y-4: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8270908Z   ---
+2026-11-12T15:39:31.8271064Z   duration_ms: 15.437758
+2026-11-12T15:39:31.8271356Z   type: 'test'
+2026-11-12T15:39:31.8271515Z   ...
+2026-11-12T15:39:31.8271876Z # Subtest: Y-2: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8272427Z ok 226 - Y-2: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8272763Z   ---
+2026-11-12T15:39:31.8272925Z   duration_ms: 15.558696
+2026-11-12T15:39:31.8273113Z   type: 'test'
+2026-11-12T15:39:31.8273276Z   ...
+2026-11-12T15:39:31.8273640Z # Subtest: WX-A: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8274405Z ok 227 - WX-A: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8274760Z   ---
+2026-11-12T15:39:31.8274926Z   duration_ms: 11.921915
+2026-11-12T15:39:31.8275114Z   type: 'test'
+2026-11-12T15:39:31.8275284Z   ...
+2026-11-12T15:39:31.8275653Z # Subtest: WX-B: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8276216Z ok 228 - WX-B: conformal hit geometry covers every real branch, independently of selected state
+2026-11-12T15:39:31.8276563Z   ---
+2026-11-12T15:39:31.8276726Z   duration_ms: 12.384926
+2026-11-12T15:39:31.8276928Z   type: 'test'
+2026-11-12T15:39:31.8277101Z   ...
+2026-11-12T15:39:31.8277565Z # Subtest: adjacent-device overlap resolves deterministically regardless of mesh order; plain track is not a turnout
+2026-11-12T15:39:31.8278271Z ok 229 - adjacent-device overlap resolves deterministically regardless of mesh order; plain track is not a turnout
+2026-11-12T15:39:31.8278687Z   ---
+2026-11-12T15:39:31.8278855Z   duration_ms: 4.281591
+2026-11-12T15:39:31.8279044Z   type: 'test'
+2026-11-12T15:39:31.8279218Z   ...
+2026-11-12T15:39:31.8279661Z # Subtest: visible scenery and cars occlude the device, locomotives retain selection, invisible helpers do not occlude
+2026-11-12T15:39:31.8280332Z ok 230 - visible scenery and cars occlude the device, locomotives retain selection, invisible helpers do not occlude
+2026-11-12T15:39:31.8280736Z   ---
+2026-11-12T15:39:31.8280901Z   duration_ms: 8.298232
+2026-11-12T15:39:31.8281088Z   type: 'test'
+2026-11-12T15:39:31.8281252Z   ...
+2026-11-12T15:39:31.8281697Z # Subtest: picking disposal releases exactly eight geometries and one shared material once, and makes queries inert
+2026-11-12T15:39:31.8282371Z ok 231 - picking disposal releases exactly eight geometries and one shared material once, and makes queries inert
+2026-11-12T15:39:31.8282763Z   ---
+2026-11-12T15:39:31.8282930Z   duration_ms: 1.981355
+2026-11-12T15:39:31.8283113Z   type: 'test'
+2026-11-12T15:39:31.8283288Z   ...
+2026-11-12T15:39:31.8283626Z # Subtest: Y-IN: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8284468Z ok 232 - Y-IN: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8284852Z   ---
+2026-11-12T15:39:31.8285025Z   duration_ms: 8.463695
+2026-11-12T15:39:31.8285217Z   type: 'test'
+2026-11-12T15:39:31.8285379Z   ...
+2026-11-12T15:39:31.8285827Z # Subtest: Y-R1: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8286308Z ok 233 - Y-R1: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8286616Z   ---
+2026-11-12T15:39:31.8286787Z   duration_ms: 0.802271
+2026-11-12T15:39:31.8286967Z   type: 'test'
+2026-11-12T15:39:31.8287130Z   ...
+2026-11-12T15:39:31.8287449Z # Subtest: Y-R2: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8287933Z ok 234 - Y-R2: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8288246Z   ---
+2026-11-12T15:39:31.8288407Z   duration_ms: 0.511853
+2026-11-12T15:39:31.8288599Z   type: 'test'
+2026-11-12T15:39:31.8288756Z   ...
+2026-11-12T15:39:31.8289078Z # Subtest: Y-3: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8289553Z ok 235 - Y-3: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8289962Z   ---
+2026-11-12T15:39:31.8290121Z   duration_ms: 1.558313
+2026-11-12T15:39:31.8290304Z   type: 'test'
+2026-11-12T15:39:31.8290467Z   ...
+2026-11-12T15:39:31.8290782Z # Subtest: Y-4: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8305639Z ok 236 - Y-4: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8306154Z   ---
+2026-11-12T15:39:31.8306378Z   duration_ms: 0.792066
+2026-11-12T15:39:31.8306636Z   type: 'test'
+2026-11-12T15:39:31.8306858Z   ...
+2026-11-12T15:39:31.8307346Z # Subtest: Y-2: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8308093Z ok 237 - Y-2: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8308555Z   ---
+2026-11-12T15:39:31.8308790Z   duration_ms: 1.525816
+2026-11-12T15:39:31.8309049Z   type: 'test'
+2026-11-12T15:39:31.8309295Z   ...
+2026-11-12T15:39:31.8309832Z # Subtest: WX-A: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8310572Z ok 238 - WX-A: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8311046Z   ---
+2026-11-12T15:39:31.8311287Z   duration_ms: 3.049799
+2026-11-12T15:39:31.8311556Z   type: 'test'
+2026-11-12T15:39:31.8311791Z   ...
+2026-11-12T15:39:31.8312322Z # Subtest: WX-B: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8313104Z ok 239 - WX-B: both states, every entrance, exact canonical path and reverse Journey
+2026-11-12T15:39:31.8313581Z   ---
+2026-11-12T15:39:31.8314036Z   duration_ms: 2.971523
+2026-11-12T15:39:31.8314321Z   type: 'test'
+2026-11-12T15:39:31.8314547Z   ...
+2026-11-12T15:39:31.8315292Z # Subtest: actual-network approaches match router over all 256 eight-controller configurations, including closed neighbours
+2026-11-12T15:39:31.8316433Z ok 240 - actual-network approaches match router over all 256 eight-controller configurations, including closed neighbours
+2026-11-12T15:39:31.8316878Z   ---
+2026-11-12T15:39:31.8317051Z   duration_ms: 53.966247
+2026-11-12T15:39:31.8317239Z   type: 'test'
+2026-11-12T15:39:31.8317406Z   ...
+2026-11-12T15:39:31.8317826Z # Subtest: unknown/nonfinite IDs, state, ports and unresolved network entries never invent an active path
+2026-11-12T15:39:31.8318437Z ok 241 - unknown/nonfinite IDs, state, ports and unresolved network entries never invent an active path
+2026-11-12T15:39:31.8318801Z   ---
+2026-11-12T15:39:31.8318973Z   duration_ms: 4.338244
+2026-11-12T15:39:31.8319159Z   type: 'test'
+2026-11-12T15:39:31.8319318Z   ...
+2026-11-12T15:39:31.8319767Z # Subtest: immutable views cannot mutate canonical paths, state, Journey or subsequent reads; static paths are reused
+2026-11-12T15:39:31.8320441Z ok 242 - immutable views cannot mutate canonical paths, state, Journey or subsequent reads; static paths are reused
+2026-11-12T15:39:31.8320822Z   ---
+2026-11-12T15:39:31.8320989Z   duration_ms: 33.969009
+2026-11-12T15:39:31.8321177Z   type: 'test'
+2026-11-12T15:39:31.8321336Z   ...
+2026-11-12T15:39:31.8321911Z # Subtest: route selection, operation lock and engine hazard observations have independent semantics
+2026-11-12T15:39:31.8322531Z ok 243 - route selection, operation lock and engine hazard observations have independent semantics
+2026-11-12T15:39:31.8322890Z   ---
+2026-11-12T15:39:31.8323063Z   duration_ms: 0.364296
+2026-11-12T15:39:31.8323247Z   type: 'test'
+2026-11-12T15:39:31.8323411Z   ...
+2026-11-12T15:39:31.8324031Z # Subtest: progressive perspective zoom preserves target and viewing direction, with distance limits
+2026-11-12T15:39:31.8324652Z ok 244 - progressive perspective zoom preserves target and viewing direction, with distance limits
+2026-11-12T15:39:31.8325013Z   ---
+2026-11-12T15:39:31.8325175Z   duration_ms: 3.469425
+2026-11-12T15:39:31.8325369Z   type: 'test'
+2026-11-12T15:39:31.8325531Z   ...
+2026-11-12T15:39:31.8325876Z # Subtest: zoom cancels follow while home and follow use the existing navigation presets
+2026-11-12T15:39:31.8326517Z ok 245 - zoom cancels follow while home and follow use the existing navigation presets
+2026-11-12T15:39:31.8326839Z   ---
+2026-11-12T15:39:31.8326997Z   duration_ms: 6.648464
+2026-11-12T15:39:31.8327180Z   type: 'test'
+2026-11-12T15:39:31.8327339Z   ...
+2026-11-12T15:39:31.8327731Z # Subtest: pan and orbit modes support mouse and single touch while retaining pinch and right-button pan
+2026-11-12T15:39:31.8328331Z ok 246 - pan and orbit modes support mouse and single touch while retaining pinch and right-button pan
+2026-11-12T15:39:31.8328686Z   ---
+2026-11-12T15:39:31.8328847Z   duration_ms: 0.72023
+2026-11-12T15:39:31.8329028Z   type: 'test'
+2026-11-12T15:39:31.8329196Z   ...
+2026-11-12T15:39:31.8329523Z # Subtest: zero distance remains finite and orthographic zoom has equivalent limits
+2026-11-12T15:39:31.8330003Z ok 247 - zero distance remains finite and orthographic zoom has equivalent limits
+2026-11-12T15:39:31.8330317Z   ---
+2026-11-12T15:39:31.8330479Z   duration_ms: 1.777466
+2026-11-12T15:39:31.8330662Z   type: 'test'
+2026-11-12T15:39:31.8330830Z   ...
+2026-11-12T15:39:31.8331202Z # Subtest: toolbar buttons mount accessibly, reflect follow state and remove listeners on dispose
+2026-11-12T15:39:31.8331759Z ok 248 - toolbar buttons mount accessibly, reflect follow state and remove listeners on dispose
+2026-11-12T15:39:31.8332106Z   ---
+2026-11-12T15:39:31.8332262Z   duration_ms: 0.57727
+2026-11-12T15:39:31.8332448Z   type: 'test'
+2026-11-12T15:39:31.8332621Z   ...
+2026-11-12T15:39:31.8332929Z # Subtest: zone planning is deterministic and does not modify track geometry
+2026-11-12T15:39:31.8333378Z ok 249 - zone planning is deterministic and does not modify track geometry
+2026-11-12T15:39:31.8333679Z   ---
+2026-11-12T15:39:31.8333998Z   duration_ms: 42.096219
+2026-11-12T15:39:31.8334192Z   type: 'test'
+2026-11-12T15:39:31.8334351Z   ...
+2026-11-12T15:39:31.8334669Z # Subtest: farmhouse and goods office footprints have full railway clearance
+2026-11-12T15:39:31.8335119Z ok 250 - farmhouse and goods office footprints have full railway clearance
+2026-11-12T15:39:31.8335400Z   ---
+2026-11-12T15:39:31.8335572Z   duration_ms: 168.152724
+2026-11-12T15:39:31.8335759Z   type: 'test'
+2026-11-12T15:39:31.8335914Z   ...
+2026-11-12T15:39:31.8336251Z # Subtest: yard props respect running tracks, moving switches and building footprints
+2026-11-12T15:39:31.8336795Z ok 251 - yard props respect running tracks, moving switches and building footprints
+2026-11-12T15:39:31.8337127Z   ---
+2026-11-12T15:39:31.8337298Z   duration_ms: 3.367545
+2026-11-12T15:39:31.8337473Z   type: 'test'
+2026-11-12T15:39:31.8337631Z   ...
+2026-11-12T15:39:31.8337926Z # Subtest: vineyard follows existing hills without invading railway or roads
+2026-11-12T15:39:31.8338369Z ok 252 - vineyard follows existing hills without invading railway or roads
+2026-11-12T15:39:31.8338649Z   ---
+2026-11-12T15:39:31.8338813Z   duration_ms: 15.31013
+2026-11-12T15:39:31.8338994Z   type: 'test'
+2026-11-12T15:39:31.8339159Z   ...
+2026-11-12T15:39:31.8339636Z # Subtest: all four buffers coincide with real canonical terminals without invented extensions
+2026-11-12T15:39:31.8340199Z ok 253 - all four buffers coincide with real canonical terminals without invented extensions
+2026-11-12T15:39:31.8340530Z   ---
+2026-11-12T15:39:31.8340684Z   duration_ms: 0.272421
+2026-11-12T15:39:31.8340866Z   type: 'test'
+2026-11-12T15:39:31.8341022Z   ...
+2026-11-12T15:39:31.8341331Z # Subtest: passengers remain N-scale and on the reserved passenger platform
+2026-11-12T15:39:31.8341785Z ok 254 - passengers remain N-scale and on the reserved passenger platform
+2026-11-12T15:39:31.8342084Z   ---
+2026-11-12T15:39:31.8342243Z   duration_ms: 0.585221
+2026-11-12T15:39:31.8342418Z   type: 'test'
+2026-11-12T15:39:31.8342580Z   ...
+2026-11-12T15:39:31.8342732Z 1..254
+2026-11-12T15:39:31.8342890Z # tests 254
+2026-11-12T15:39:31.8343052Z # suites 0
+2026-11-12T15:39:31.8343214Z # pass 254
+2026-11-12T15:39:31.8343371Z # fail 0
+2026-11-12T15:39:31.8343636Z # cancelled 0
+2026-11-12T15:39:31.8343965Z # skipped 0
+2026-11-12T15:39:31.8344126Z # todo 0
+2026-11-12T15:39:31.8344304Z # duration_ms 8698.490996
+2026-11-12T15:39:31.8388764Z ##[group]Run npm run build
+2026-11-12T15:39:31.8389137Z [36;1mnpm run build[0m
+2026-11-12T15:39:31.8451054Z shell: /usr/bin/bash -e {0}
+2026-11-12T15:39:31.8451288Z env:
+2026-11-12T15:39:31.8451528Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:31.8451914Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-12T15:39:31.8452270Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:31.8452582Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:31.8452900Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:31.8453209Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-12T15:39:31.8453477Z ##[endgroup]
+2026-11-12T15:39:31.9267386Z
+2026-11-12T15:39:31.9267983Z > serien@0.12.0 build
+2026-11-12T15:39:31.9268740Z > esbuild app.js --bundle --minify --format=esm --outfile=dist/game.js
+2026-11-12T15:39:31.9269148Z
+2026-11-12T15:39:32.0148225Z
+2026-11-12T15:39:32.0148918Z   dist/game.js  1.0mb ⚠️
+2026-11-12T15:39:32.0149136Z
+2026-11-12T15:39:32.0149248Z ⚡ Done in 82ms
+2026-11-12T15:39:32.0295957Z ##[group]Run # Clean only the verified temporary destination, including stale docs.
+2026-11-12T15:39:32.0296463Z [36;1m# Clean only the verified temporary destination, including stale docs.[0m
+2026-11-12T15:39:32.0296793Z [36;1mtest ! -L _site[0m
+2026-11-12T15:39:32.0297037Z [36;1mtest "$(realpath -m _site)" = "$(pwd -P)/_site"[0m
+2026-11-12T15:39:32.0297297Z [36;1mrm -rf -- _site[0m
+2026-11-12T15:39:32.0297495Z [36;1mmkdir -p _site[0m
+2026-11-12T15:39:32.0297836Z [36;1mcp index.html style.css auth-gate.js auth-gate-core.js legacy-v0.1.html .nojekyll _site/[0m
+2026-11-12T15:39:32.0298202Z [36;1mcp -R dist assets ui _site/[0m
+2026-11-12T15:39:32.0298501Z [36;1m# Public dependency closure: docs/_active/ui-v21/REL002_REPORT.md[0m
+2026-11-12T15:39:32.0298927Z [36;1m# Keep linked reports/evidence; exclude unreferenced development archives.[0m
+2026-11-12T15:39:32.0299256Z [36;1mfor doc in \[0m
+2026-11-12T15:39:32.0299496Z [36;1m  docs/consolidation/FINAL-REPORT.md \[0m
+2026-11-12T15:39:32.0299754Z [36;1m  docs/consolidation/INTAKE.md \[0m
+2026-11-12T15:39:32.0299990Z [36;1m  docs/consolidation/README.md \[0m
+2026-11-12T15:39:32.0300282Z [36;1m  docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf \[0m
+2026-11-12T15:39:32.0300621Z [36;1m  docs/consolidation/browser-result.json \[0m
+2026-11-12T15:39:32.0300915Z [36;1m  docs/consolidation/consist/consist-check.json \[0m
+2026-11-12T15:39:32.0301214Z [36;1m  docs/consolidation/desktop.png \[0m
+2026-11-12T15:39:32.0301457Z [36;1m  docs/consolidation/index.html \[0m
+2026-11-12T15:39:32.0301708Z [36;1m  docs/consolidation/node-tests.txt \[0m
+2026-11-12T15:39:32.0301965Z [36;1m  docs/consolidation/parser-tests.txt \[0m
+2026-11-12T15:39:32.0302262Z [36;1m  docs/consolidation/smoke-result.json \[0m
+2026-11-12T15:39:32.0302541Z [36;1m  docs/jmri-layout/canonical-graph.json \[0m
+2026-11-12T15:39:32.0302808Z [36;1m  docs/jmri-layout/layout-canonical.svg \[0m
+2026-11-12T15:39:32.0303077Z [36;1m  docs/jmri-layout/minimap-canonical.svg \[0m
+2026-11-12T15:39:32.0303366Z [36;1m  docs/jmri-layout/railmodeller-original.pdf \[0m
+2026-11-12T15:39:32.0303627Z [36;1m  docs/jmri-layout/source.xml \[0m
+2026-11-12T15:39:32.0304081Z [36;1m  docs/phase-0/kato-parts.csv \[0m
+2026-11-12T15:39:32.0304306Z [36;1m  docs/phase-1/README.md \[0m
+2026-11-12T15:39:32.0304543Z [36;1m  docs/phase-1/baseline-ui.json \[0m
+2026-11-12T15:39:32.0304791Z [36;1m  docs/phase-1/browser-result.json \[0m
+2026-11-12T15:39:32.0305029Z [36;1m  docs/phase-1/node-tests.txt \[0m
+2026-11-12T15:39:32.0305255Z [36;1m  docs/phase-1/parser-tests.txt \[0m
+2026-11-12T15:39:32.0305512Z [36;1m  docs/phase-1/railway-preservation.json \[0m
+2026-11-12T15:39:32.0305937Z [36;1m  docs/train-deck/browser-result.json \[0m
+2026-11-12T15:39:32.0306166Z [36;1m; do[0m
+2026-11-12T15:39:32.0306346Z [36;1m  cp --parents "$doc" _site/[0m
+2026-11-12T15:39:32.0306566Z [36;1mdone[0m
+2026-11-12T15:39:32.0351555Z shell: /usr/bin/bash -e {0}
+2026-11-12T15:39:32.0351773Z env:
+2026-11-12T15:39:32.0352005Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.0352366Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-12T15:39:32.0352706Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.0353010Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.0353325Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.0353637Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-12T15:39:32.0354066Z ##[endgroup]
+2026-11-12T15:39:32.0873567Z ##[group]Run actions/configure-pages@v5
+2026-11-12T15:39:32.0874023Z with:
+2026-11-12T15:39:32.0875951Z   token: ***
+2026-11-12T15:39:32.0876127Z   enablement: false
+2026-11-12T15:39:32.0876302Z env:
+2026-11-12T15:39:32.0876516Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.0876867Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-12T15:39:32.0877210Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.0877530Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.0877839Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.0878169Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-12T15:39:32.0878435Z ##[endgroup]
+2026-11-12T15:39:32.7689835Z ##[group]Run actions/upload-pages-artifact@v3
+2026-11-12T15:39:32.7690103Z with:
+2026-11-12T15:39:32.7690266Z   path: _site
+2026-11-12T15:39:32.7690440Z   name: github-pages
+2026-11-12T15:39:32.7690622Z   retention-days: 1
+2026-11-12T15:39:32.7690809Z env:
+2026-11-12T15:39:32.7691027Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.7691395Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-12T15:39:32.7691730Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.7692037Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.7692339Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.7692640Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-12T15:39:32.7692904Z   GITHUB_PAGES: true
+2026-11-12T15:39:32.7693088Z ##[endgroup]
+2026-11-12T15:39:32.7743155Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run]
+2026-11-12T15:39:32.7767992Z ##[group]Run echo ::group::Archive artifact
+2026-11-12T15:39:32.7768302Z [36;1mecho ::group::Archive artifact[0m
+2026-11-12T15:39:32.7768523Z [36;1mtar \[0m
+2026-11-12T15:39:32.7768739Z [36;1m  --dereference --hard-dereference \[0m
+2026-11-12T15:39:32.7769001Z [36;1m  --directory "$INPUT_PATH" \[0m
+2026-11-12T15:39:32.7769278Z [36;1m  -cvf "$RUNNER_TEMP/artifact.tar" \[0m
+2026-11-12T15:39:32.7769518Z [36;1m  --exclude=.git \[0m
+2026-11-12T15:39:32.7769730Z [36;1m  --exclude=.github \[0m
+2026-11-12T15:39:32.7769928Z [36;1m  .[0m
+2026-11-12T15:39:32.7770110Z [36;1mecho ::endgroup::[0m
+2026-11-12T15:39:32.7837938Z shell: /usr/bin/sh -e {0}
+2026-11-12T15:39:32.7838162Z env:
+2026-11-12T15:39:32.7838409Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.7838778Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-12T15:39:32.7839122Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.7839452Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.7840118Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.7840558Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-12T15:39:32.7840946Z   GITHUB_PAGES: true
+2026-11-12T15:39:32.7858404Z   INPUT_PATH: _site
+2026-11-12T15:39:32.7858632Z ##[endgroup]
+2026-11-12T15:39:32.7931060Z ##[group]Archive artifact
+2026-11-12T15:39:32.7943430Z ./
+2026-11-12T15:39:32.7943862Z ./ui/
+2026-11-12T15:39:32.7944060Z ./ui/fonts/
+2026-11-12T15:39:32.7944284Z ./ui/fonts/OFL-Federo.txt
+2026-11-12T15:39:32.7944535Z ./ui/fonts/OFL-CutiveMono.txt
+2026-11-12T15:39:32.7944975Z ./ui/fonts/CinzelDecorative-700.woff2
+2026-11-12T15:39:32.7945252Z ./ui/fonts/OFL-CinzelDecorative.txt
+2026-11-12T15:39:32.7945617Z ./ui/fonts/Federo-400.woff2
+2026-11-12T15:39:32.7945883Z ./ui/fonts/manifest.json
+2026-11-12T15:39:32.7946117Z ./ui/fonts/CutiveMono-400.woff2
+2026-11-12T15:39:32.7946431Z ./ui/assets/
+2026-11-12T15:39:32.7946742Z ./ui/assets/textures/
+2026-11-12T15:39:32.7947044Z ./ui/assets/textures/brass-brushed.jpg
+2026-11-12T15:39:32.7947428Z ./ui/assets/textures/steel-brushed.jpg
+2026-11-12T15:39:32.7947772Z ./ui/assets/textures/mahogany.jpg
+2026-11-12T15:39:32.7948117Z ./ui/assets/textures/brass-spun.jpg
+2026-11-12T15:39:32.7948383Z ./ui/assets/textures/parchment.jpg
+2026-11-12T15:39:32.7948729Z ./ui/assets/textures/enamel-green.jpg
+2026-11-12T15:39:32.7949085Z ./ui/assets/svg/
+2026-11-12T15:39:32.7949392Z ./ui/assets/svg/serien-sprite.svg
+2026-11-12T15:39:32.7949760Z ./ui/css/
+2026-11-12T15:39:32.7950033Z ./ui/css/tokens-tm-u2.css
+2026-11-12T15:39:32.7950369Z ./ui/css/tokens-u2.css
+2026-11-12T15:39:32.7950640Z ./ui/css/tokens-tm.css
+2026-11-12T15:39:32.7950873Z ./ui/css/serien-ui-train-management.css
+2026-11-12T15:39:32.7954914Z ./ui/css/serien-ui.css
+2026-11-12T15:39:32.7955416Z ./ui/css/serien-ui-train-management-u2.css
+2026-11-12T15:39:32.7955882Z ./ui/css/tokens.css
+2026-11-12T15:39:32.7956492Z ./ui/css/serien-ui-integration.css
+2026-11-12T15:39:32.7956918Z ./ui/css/serien-ui-u2.css
+2026-11-12T15:39:32.7957277Z ./legacy-v0.1.html
+2026-11-12T15:39:32.7957593Z ./index.html
+2026-11-12T15:39:32.7957891Z ./auth-gate.js
+2026-11-12T15:39:32.7958186Z ./.nojekyll
+2026-11-12T15:39:32.7958469Z ./style.css
+2026-11-12T15:39:32.7958784Z ./auth-gate-core.js
+2026-11-12T15:39:32.7959104Z ./assets/
+2026-11-12T15:39:32.7959443Z ./assets/rolling-stock-sides/
+2026-11-12T15:39:32.7959922Z ./assets/rolling-stock-sides/kenney-steam.png
+2026-11-12T15:39:32.7960414Z ./assets/rolling-stock-sides/kenney-diesel.png
+2026-11-12T15:39:32.7960880Z ./assets/rolling-stock-sides/native-open.png
+2026-11-12T15:39:32.7961357Z ./assets/rolling-stock-sides/native-diesel.png
+2026-11-12T15:39:32.7961805Z ./assets/rolling-stock-sides/native-steam.png
+2026-11-12T15:39:32.7962257Z ./assets/rolling-stock-sides/kenney-box.png
+2026-11-12T15:39:32.7962730Z ./assets/rolling-stock-sides/native-shunter.png
+2026-11-12T15:39:32.7963208Z ./assets/rolling-stock-sides/native-tank.png
+2026-11-12T15:39:32.7963652Z ./assets/rolling-stock-sides/native-coach.png
+2026-11-12T15:39:32.7964283Z ./assets/rolling-stock-sides/kenney-tank.png
+2026-11-12T15:39:32.7964732Z ./assets/rolling-stock-sides/manifest.json
+2026-11-12T15:39:32.7965185Z ./assets/rolling-stock-sides/kenney-lumber.png
+2026-11-12T15:39:32.7965654Z ./assets/rolling-stock-sides/native-closed.png
+2026-11-12T15:39:32.7966133Z ./assets/rolling-stock-sides/kenney-shunter.png
+2026-11-12T15:39:32.7966591Z ./assets/rolling-stock-sides/native-flat.png
+2026-11-12T15:39:32.7967005Z ./assets/schema-ricostruito.svg
+2026-11-12T15:39:32.7967415Z ./assets/rolling-stock-thumbnails/
+2026-11-12T15:39:32.7967881Z ./assets/rolling-stock-thumbnails/native-open.png
+2026-11-12T15:39:32.7968381Z ./assets/rolling-stock-thumbnails/kenney-box.png
+2026-11-12T15:39:32.7968871Z ./assets/rolling-stock-thumbnails/native-tank.png
+2026-11-12T15:39:32.7969359Z ./assets/rolling-stock-thumbnails/native-coach.png
+2026-11-12T15:39:32.7969873Z ./assets/rolling-stock-thumbnails/kenney-tank.png
+2026-11-12T15:39:32.7970389Z ./assets/rolling-stock-thumbnails/kenney-lumber.png
+2026-11-12T15:39:32.7970912Z ./assets/rolling-stock-thumbnails/native-closed.png
+2026-11-12T15:39:32.7971415Z ./assets/rolling-stock-thumbnails/native-flat.png
+2026-11-12T15:39:32.7971794Z ./assets/kenney/
+2026-11-12T15:39:32.7972320Z ./assets/kenney/train-carriage-lumber.glb
+2026-11-12T15:39:32.7972757Z ./assets/kenney/train-diesel-box-a.glb
+2026-11-12T15:39:32.7973182Z ./assets/kenney/train-locomotive-a.glb
+2026-11-12T15:39:32.7973598Z ./assets/kenney/train-carriage-tank.glb
+2026-11-12T15:39:32.7974129Z ./assets/kenney/Textures/
+2026-11-12T15:39:32.7974493Z ./assets/kenney/Textures/colormap.png
+2026-11-12T15:39:32.7974864Z ./assets/kenney/License.txt
+2026-11-12T15:39:32.7975227Z ./assets/kenney/train-diesel-a.glb
+2026-11-12T15:39:32.7975623Z ./assets/kenney/train-carriage-box.glb
+2026-11-12T15:39:32.7975991Z ./assets/kenney/SOURCE.md
+2026-11-12T15:39:32.7976312Z ./assets/THREE-LICENSE.txt
+2026-11-12T15:39:32.7976682Z ./assets/locomotive-thumbnails/
+2026-11-12T15:39:32.7977116Z ./assets/locomotive-thumbnails/kenney-steam.png
+2026-11-12T15:39:32.7977608Z ./assets/locomotive-thumbnails/kenney-diesel.png
+2026-11-12T15:39:32.7978093Z ./assets/locomotive-thumbnails/native-diesel.png
+2026-11-12T15:39:32.7978587Z ./assets/locomotive-thumbnails/native-steam.png
+2026-11-12T15:39:32.7979063Z ./assets/locomotive-thumbnails/native-shunter.png
+2026-11-12T15:39:32.7979534Z ./assets/locomotive-thumbnails/manifest.json
+2026-11-12T15:39:32.7980005Z ./assets/locomotive-thumbnails/unavailable.svg
+2026-11-12T15:39:32.7980485Z ./assets/locomotive-thumbnails/kenney-shunter.png
+2026-11-12T15:39:32.7980938Z ./assets/locomotive-thumbnails/SOURCE.md
+2026-11-12T15:39:32.7981277Z ./docs/
+2026-11-12T15:39:32.7981541Z ./docs/consolidation/
+2026-11-12T15:39:32.7981871Z ./docs/consolidation/index.html
+2026-11-12T15:39:32.7982214Z ./docs/consolidation/consist/
+2026-11-12T15:39:32.7982774Z ./docs/consolidation/consist/consist-check.json
+2026-11-12T15:39:32.7983227Z ./docs/consolidation/parser-tests.txt
+2026-11-12T15:39:32.7983855Z ./docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf
+2026-11-12T15:39:32.7984358Z ./docs/consolidation/FINAL-REPORT.md
+2026-11-12T15:39:32.7984731Z ./docs/consolidation/README.md
+2026-11-12T15:39:32.7985109Z ./docs/consolidation/node-tests.txt
+2026-11-12T15:39:32.7985508Z ./docs/consolidation/desktop.png
+2026-11-12T15:39:32.7985914Z ./docs/consolidation/browser-result.json
+2026-11-12T15:39:32.7986313Z ./docs/consolidation/INTAKE.md
+2026-11-12T15:39:32.7986709Z ./docs/consolidation/smoke-result.json
+2026-11-12T15:39:32.7987073Z ./docs/phase-0/
+2026-11-12T15:39:32.7987369Z ./docs/phase-0/kato-parts.csv
+2026-11-12T15:39:32.7987685Z ./docs/jmri-layout/
+2026-11-12T15:39:32.7988065Z ./docs/jmri-layout/railmodeller-original.pdf
+2026-11-12T15:39:32.7988508Z ./docs/jmri-layout/canonical-graph.json
+2026-11-12T15:39:32.7989651Z ./docs/jmri-layout/minimap-canonical.svg
+2026-11-12T15:39:32.7990785Z ./docs/jmri-layout/source.xml
+2026-11-12T15:39:32.7991305Z ./docs/jmri-layout/layout-canonical.svg
+2026-11-12T15:39:32.7992527Z ./docs/phase-1/
+2026-11-12T15:39:32.7992878Z ./docs/phase-1/parser-tests.txt
+2026-11-12T15:39:32.7993190Z ./docs/phase-1/README.md
+2026-11-12T15:39:32.7993454Z ./docs/phase-1/railway-preservation.json
+2026-11-12T15:39:32.7993859Z ./docs/phase-1/node-tests.txt
+2026-11-12T15:39:32.7994342Z ./docs/phase-1/browser-result.json
+2026-11-12T15:39:32.7994731Z ./docs/phase-1/baseline-ui.json
+2026-11-12T15:39:32.7995062Z ./docs/train-deck/
+2026-11-12T15:39:32.7995395Z ./docs/train-deck/browser-result.json
+2026-11-12T15:39:32.7995690Z ./dist/
+2026-11-12T15:39:32.7995854Z ./dist/game.js
+2026-11-12T15:39:32.8005550Z ##[endgroup]
+2026-11-12T15:39:32.8016760Z ##[end-action id=__actions_upload-pages-artifact.__run;outcome=success;conclusion=success;duration_ms=27]
+2026-11-12T15:39:32.8020345Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_2]
+2026-11-12T15:39:32.8025794Z ##[end-action id=__actions_upload-pages-artifact.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-12T15:39:32.8027992Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_3]
+2026-11-12T15:39:32.8030853Z ##[end-action id=__actions_upload-pages-artifact.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-12T15:39:32.8032587Z ##[start-action display=Upload artifact;id=__actions_upload-pages-artifact.upload-artifact]
+2026-11-12T15:39:32.8077843Z ##[group]Run actions/upload-artifact@v4
+2026-11-12T15:39:32.8078085Z with:
+2026-11-12T15:39:32.8078254Z   name: github-pages
+2026-11-12T15:39:32.8078478Z   path: /home/runner/work/_temp/artifact.tar
+2026-11-12T15:39:32.8078716Z   retention-days: 1
+2026-11-12T15:39:32.8078894Z   if-no-files-found: error
+2026-11-12T15:39:32.8079090Z   compression-level: 6
+2026-11-12T15:39:32.8079275Z   overwrite: false
+2026-11-12T15:39:32.8079453Z   include-hidden-files: false
+2026-11-12T15:39:32.8079651Z env:
+2026-11-12T15:39:32.8079872Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.8080226Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-12T15:39:32.8080557Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.8080863Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.8081179Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:32.8081488Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-12T15:39:32.8081751Z   GITHUB_PAGES: true
+2026-11-12T15:39:32.8081930Z ##[endgroup]
+2026-11-12T15:39:32.9445741Z (node:2783) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T15:39:32.9446409Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T15:39:32.9485586Z With the provided path, there will be 1 file uploaded
+2026-11-12T15:39:32.9507100Z Artifact name is valid!
+2026-11-12T15:39:32.9508269Z Root directory input is valid!
+2026-11-12T15:39:33.2463244Z Beginning upload of artifact content to blob storage
+2026-11-12T15:39:33.3646229Z (node:2783) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-12T15:39:33.7134415Z Uploaded bytes 2319118
+2026-11-12T15:39:33.7512681Z Finished uploading artifact content to blob storage!
+2026-11-12T15:39:33.7513308Z SHA256 digest of uploaded artifact zip is 8f588b5111ab72a45182ff956b0f9f00ccf5cd9be4a42705dd28bf853353d862
+2026-11-12T15:39:33.7514902Z Finalizing artifact upload
+2026-11-12T15:39:34.1336037Z Artifact github-pages.zip successfully finalized. Artifact ID 13958513755
+2026-11-12T15:39:34.1337176Z Artifact github-pages has been successfully uploaded! Final size is 2319118 bytes. Artifact ID is 13958513755
+2026-11-12T15:39:34.1342477Z Artifact download URL: https://github.com/epivic-lab/SerieN/actions/runs/43250016350/artifacts/13958513755
+2026-11-12T15:39:34.1475931Z ##[end-action id=__actions_upload-pages-artifact.upload-artifact;outcome=success;conclusion=success;duration_ms=1344]
+2026-11-12T15:39:34.1540563Z ##[group]Run actions/deploy-pages@v4
+2026-11-12T15:39:34.1540804Z with:
+2026-11-12T15:39:34.1542718Z   token: ***
+2026-11-12T15:39:34.1542900Z   timeout: 600000
+2026-11-12T15:39:34.1543084Z   error_count: 10
+2026-11-12T15:39:34.1543263Z   reporting_interval: 5000
+2026-11-12T15:39:34.1543477Z   artifact_name: github-pages
+2026-11-12T15:39:34.1543692Z   preview: false
+2026-11-12T15:39:34.1544062Z env:
+2026-11-12T15:39:34.1544282Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:34.1544639Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-12T15:39:34.1544984Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:34.1545302Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:34.1545612Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-12T15:39:34.1545936Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-12T15:39:34.1546254Z   GITHUB_PAGES: true
+2026-11-12T15:39:34.1546440Z ##[endgroup]
+2026-11-12T15:39:34.3122560Z (node:2795) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T15:39:34.3123649Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T15:39:34.4601502Z Fetching artifact metadata for "github-pages" in this workflow run
+2026-11-12T15:39:34.6036477Z Found 1 artifact(s)
+2026-11-12T15:39:34.6051020Z Creating Pages deployment with payload:
+2026-11-12T15:39:34.6051467Z {
+2026-11-12T15:39:34.6051755Z 	"artifact_id": 13958513755,
+2026-11-12T15:39:34.6052257Z 	"pages_build_version": "d77b8aa2710fa474fdb069b204705364b4a9e7e6",
+2026-11-12T15:39:34.6081954Z 	"oidc_token": "***"
+2026-11-12T15:39:34.6082213Z }
+2026-11-12T15:39:35.8614046Z Created deployment for d77b8aa2710fa474fdb069b204705364b4a9e7e6, ID: d77b8aa2710fa474fdb069b204705364b4a9e7e6
+2026-11-12T15:39:40.8630098Z Getting Pages deployment status...
+2026-11-12T15:39:41.0595211Z Reported success!
+2026-11-12T15:39:41.0840865Z Post job cleanup.
+2026-11-12T15:39:41.1849696Z (node:2808) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T15:39:41.1850425Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T15:39:41.1956495Z Post job cleanup.
+2026-11-12T15:39:41.2994782Z (node:2816) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T15:39:41.2996034Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T15:39:41.2997896Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-e9eab6ddc39584d5dbaef06c02a723d65a1933451025d01d184c9b54ac34bc32, not saving cache.
+2026-11-12T15:39:41.3125449Z Post job cleanup.
+2026-11-12T15:39:41.3831674Z [command]/usr/bin/git version
+2026-11-12T15:39:41.3872768Z git version 2.56.0
+2026-11-12T15:39:41.3907319Z Temporarily overriding HOME='/home/runner/work/_temp/2c42fce2-f1f4-4e85-975d-60ba815f1e8c' before making global git config changes
+2026-11-12T15:39:41.3908215Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T15:39:41.3912193Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/SerieN/SerieN
+2026-11-12T15:39:41.3949011Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T15:39:41.3986538Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T15:39:41.4258111Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T15:39:41.4282903Z http.https://github.com/.extraheader
+2026-11-12T15:39:41.4301686Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-12T15:39:41.4331881Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T15:39:41.4607398Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T15:39:41.4637918Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T15:39:41.5021466Z Evaluate and set environment url
+2026-11-12T15:39:41.5024736Z Evaluated environment url: https://epivic-lab.github.io/SerieN/
+2026-11-12T15:39:41.5025511Z Cleaning up orphan processes
+2026-11-12T15:39:41.5349133Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/configure-pages@v5, actions/deploy-pages@v4, actions/setup-node@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

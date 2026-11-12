@@ -1,4 +1,19 @@
-# UI V2.1 — REL-001 Release Packaging Gate
+# UI V2.1 — stato corrente del rilascio
+
+**12 novembre 2026 — RELEASED — ACCEPTANCE PENDING.** [Rapporto operativo finale](../../../RELEASE_V21_FINAL_REPORT.md).
+
+- [PR #6](https://github.com/epivic-lab/SerieN/pull/6) portata Ready e integrata con merge commit **`d77b8aa2710fa474fdb069b204705364b4a9e7e6`**; parent `184cc9ba93a6b35493f365b2ffcb20ef0645963d` e `d99e4be117f4838ee6c149ad5c158f8688c40754`, albero identico alla candidata. Mandato e conferma esplicita della Regia registrati; STOP pre-merge superato.
+- **Nuova esecuzione Pages:** [run43250016350 SUCCESS](https://github.com/epivic-lab/SerieN/actions/runs/43250016350), push-main sul merge esatto; 254Node/9Python/canonico/build/upload/deploy PASS. Sito pubblico97/97hash REL002,4.491.628byte,24documenti;11esclusioni404attese. REL001 superato dal packaging finale REL002.
+- **Nuovo processo Supabase:** workflow `97df5c95030348f5bb7ace0af2d16051` su main, check merge SUCCESS; ACTIVE_HEALTHY, tre migrazioni e catalogo immutati, nessuna migrazione/funzione nuova. Preview skipped pre-merge correttamente distinto dal processo produttivo riuscito.
+- **BLOCKED — USER ACTION REQUIRED:** OAuth reale/login/sessione/logout e smoke completo autenticato a1440×900/390×844. Provato il gate pubblico senza fixture: HTTP/CSS PASS, zero pageerror,SDK esm.sh bloccato dalla rete dell'ambiente; nessun PASS inventato su shell/scena/controlli non avviati. Auth/Data API complete NOT VERIFIED, limite read-only documentato.
+- Prove operative locali U9/REL002 riusate per identità; R1/M1/M2/M3 e session-only preservati. Nessun nuovo scenario Claude, hardening5E o altra attività futura implementata. Rollback solo conservato, non eseguito.
+- Rapporto/evidenze e registri aggiornati su branch documentale `codex/release-v21-final-report`, con PR Draft separata; nessuna seconda integrazione/deploy autorizzati.
+
+**Prossima azione:** completare le prove autenticate e le letture di configurazione indicate nel rapporto. I rapporti U0–U9/REL/RC restano storici intatti. Le vecchie approvazioni PENDING/READY/STOP sotto sono superate dal mandato dove applicabile; i limiti autentici restano aperti nella matrice finale.
+
+---
+
+## Registro storico — REL-001 Release Packaging Gate
 
 **U0–U9 APPROVATE dalla Regia. REL-001: READY FOR REGIA RELEASE REVIEW — STOP.**
 

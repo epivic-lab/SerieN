@@ -1,6 +1,6 @@
 # UI V2.1 — autorità d'integrazione normalizzata
 
-**Stato corrente: U0–U8 approvate nel mandato; U9 completata tecnicamente per review, con limiti documentati e REL-001 packaging. STOP U9.** Prevalgono [STATUS.md](STATUS.md) e [U9_REPORT.md](U9_REPORT.md); le note sotto conservano la provenienza U0.
+**Stato corrente: RELEASED — ACCEPTANCE PENDING (12 novembre 2026).** PR #6 integrata con merge commit `d77b8aa2710fa474fdb069b204705364b4a9e7e6`; Pages e processo Supabase riusciti, 97 hash pubblici REL002 verificati. OAuth e smoke autenticato reali restano BLOCKED — USER ACTION REQUIRED; Auth/Data API complete NOT VERIFIED. Prevalgono [rapporto operativo finale](../../../RELEASE_V21_FINAL_REPORT.md) e [STATUS.md](STATUS.md). La documentazione corrente è consegnata su branch/PR separati, senza secondo merge. Le note e la tabella sotto conservano la provenienza U0, non descrivono lo stato produttivo attuale.
 
 | Riferimento effettivo | Autorità |
 | --- | --- |

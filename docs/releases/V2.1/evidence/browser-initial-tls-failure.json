@@ -1,0 +1,39 @@
+{
+  "capturedAt": "2026-11-12T15:38:11.775Z",
+  "url": "https://epivic-lab.github.io/SerieN/",
+  "provenance": "New public URL execution, fresh unauthenticated contexts; no routes, fixtures, session/token injection or login bypass",
+  "viewports": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "responses": [],
+      "failedRequests": [
+        {
+          "url": "https://epivic-lab.github.io/SerieN/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "navigationError": "Error: page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://epivic-lab.github.io/SerieN/?release-audit=1794497892207\nCall log:\n\u001b[2m  - navigating to \"https://epivic-lab.github.io/SerieN/?release-audit=1794497892207\", waiting until \"networkidle\"\u001b[22m\n"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "responses": [],
+      "failedRequests": [
+        {
+          "url": "https://epivic-lab.github.io/SerieN/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "navigationError": "Error: page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://epivic-lab.github.io/SerieN/?release-audit=1794497892656\nCall log:\n\u001b[2m  - navigating to \"https://epivic-lab.github.io/SerieN/?release-audit=1794497892656\", waiting until \"networkidle\"\u001b[22m\n"
+    }
+  ]
+}
