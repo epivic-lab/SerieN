@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "checkedAtUTC": "2026-11-12T19:40:53.559489+00:00",
+  "repository": "epivic-lab/SerieN",
+  "branch": "codex/ui-v21-visual-parity",
+  "applicationCheckpoint": "637a140950d3047c5c7926193f6b312dadc464f1",
+  "localAndRemoteApplicationCheckpointEqual": true,
+  "pullRequest": {
+    "number": 8,
+    "url": "https://github.com/epivic-lab/SerieN/pull/8",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "mergeable": true,
+    "head": "637a140950d3047c5c7926193f6b312dadc464f1",
+    "base": "d77b8aa2710fa474fdb069b204705364b4a9e7e6"
+  },
+  "mainUnchanged": "d77b8aa2710fa474fdb069b204705364b4a9e7e6",
+  "previousIntegrationBranchUnchanged": "d99e4be117f4838ee6c149ad5c158f8688c40754",
+  "PR7Unchanged": {
+    "number": 7,
+    "draft": true,
+    "head": "310f39f94448a30f986c5a1801400fa732b65a64"
+  },
+  "automaticPRCheck": {
+    "name": "Supabase Preview",
+    "id": 131441940402,
+    "status": "completed",
+    "conclusion": "skipped",
+    "reason": "Creating a new preview branch per PR is disabled."
+  },
+  "pages": "Existing workflow only pushes main or manual dispatch; neither performed by this hotfix",
+  "nextCheckpoint": "Documentation-only recording of actual PR URL/application SHA; final SHA is resolved by Git and verified in the delivery"
+}

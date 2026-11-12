@@ -4,7 +4,7 @@
 
 Data: 2026-11-12, Europe/Rome. Repository `epivic-lab/SerieN`. Branch **`codex/ui-v21-visual-parity`**, derivato esattamente dalla baseline pubblicata **`d77b8aa2710fa474fdb069b204705364b4a9e7e6`**. Riferimento originale vincolante: **`cf2c29a8112b37a53c62cb84fca44061942aea31`**, branch `design/main-ui-redesign`.
 
-PR Draft hotfix: **PENDING — creazione dopo il primo checkpoint verificato**. Checkpoint applicativo: **checkpoint che introduce questa ricostruzione; SHA aggiornato dopo il commit**. Lo SHA dell'ultimo checkpoint documentale si risolve con `git log -1 --format=%H -- docs/_active/ui-v21/VISUAL_PARITY_REPORT.md` ed è consegnato nella PR e nel messaggio operativo, evitando autoreferenze nel proprio commit. La PR #7 e il suo branch documentale non sono stati modificati.
+PR Draft hotfix: **[PR #8](https://github.com/epivic-lab/SerieN/pull/8)**. Checkpoint applicativo: **`637a140950d3047c5c7926193f6b312dadc464f1`**. Lo SHA dell'ultimo checkpoint documentale si risolve con `git log -1 --format=%H -- docs/_active/ui-v21/VISUAL_PARITY_REPORT.md` ed è consegnato nella PR e nel messaggio operativo, evitando autoreferenze nel proprio commit. La PR #7 e il suo branch documentale non sono stati modificati.
 
 ## Prove visive e risultato geometrico
 
@@ -132,6 +132,6 @@ File applicativi: `index.html`, `src/train-deck.js`, `src/ui/shell.js`, `src/ui/
 
 **132file applicativi/frozen/backend sono byte-identici alla baseline**, inclusi `app.js`, domini R1/M1/M2/M3, canonico/topologia/mesh/asset, Auth, Supabase, package/lock e workflow. Nessuna nuova scrittura persistente: progetti e Depot restano session-only. Nessuna password, token/sessione cloud o riga utente nelle prove. Nessun cambio SQL/Auth/RLS, dipendenza o workflow di deploy.
 
-Il branch dedicato viene pubblicato con push normale e checkpoint remoto verificato; niente force-push/rebase/reset, nessun lavoro sul vecchio branch d'integrazione o sul branch della PR #7. La PR è Draft verso main e **non viene integrata**. La produzione resta alla baseline pubblicata; un eventuale futuro merge/deploy richiede l'approvazione visiva e una distinta autorizzazione. 5E, certificazioni hardware/altri browser e nuovo scenario Claude non sono avviati.
+Il branch dedicato viene pubblicato con push normale e checkpoint remoto verificato; niente force-push/rebase/reset, nessun lavoro sul vecchio branch d'integrazione o sul branch della PR #7. La [PR #8](https://github.com/epivic-lab/SerieN/pull/8) è aperta in Draft verso main, senza conflitti al controllo, e **non viene integrata**. Il check automatico Supabase Preview è SKIPPED perché la creazione di preview per PR è già disabilitata; Pages pubblica soltanto su push main e non è stato avviato. [Ricevuta checkpoint remoto](evidence/VISUAL_PARITY/remote-checkpoint.json). La produzione resta alla baseline pubblicata; un eventuale futuro merge/deploy richiede l'approvazione visiva e una distinta autorizzazione. 5E, certificazioni hardware/altri browser e nuovo scenario Claude non sono avviati.
 
 **Verdetto tecnico: READY FOR REGIA VISUAL REVIEW.** La ricostruzione grafica originale è trasferita al runtime con geometria e materiali verificabili; le prove funzionali passano nel laboratorio dichiarato. La decisione di accettazione visiva e di rilascio resta alla Regia sulla PR Draft e sui confronti completi.
