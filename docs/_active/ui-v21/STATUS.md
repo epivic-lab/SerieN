@@ -1,4 +1,16 @@
-# UI V2.1 — U9 Final UI Acceptance + U9-HDR
+# UI V2.1 — REL-001 Release Packaging Gate
+
+**U0–U9 APPROVATE dalla Regia. REL-001: READY FOR REGIA RELEASE REVIEW — STOP.**
+
+Baseline locale/remota `50d7c744e4b9dbbe20197ec8f959fdccb16edb5b`, main `184cc9ba93a6b35493f365b2ffcb20ef0645963d`. Unico branch autorizzato: `codex/ui-v2-integration`. Unica correzione workflow: aggiunta `ui` a `cp -R dist assets ui _site/` nello step Prepare site.
+
+PASS build Node22 con bundle identico U9, preparazione reale del pacchetto, chiusura riferimenti/HTTP200 sotto `/SerieN/`,CSS/font locali/licenze/texture/sprite,targa Autumn Railways brass/Federo dal pacchetto in Chromium desktop/mobile,assenza richieste esterne. Artefatto completo di docs e prove inferiore a1GiB. Due failure di timeout dell'harness conservati e recuperati. Tutti i sorgenti applicativi,asset originali,CSS frozen,domini e test ferroviari intatti; matrice U9 non ripetuta.
+
+[Rapporto REL-001](REL001_REPORT.md),[evidenze e ricette](evidence/REL001/),[dimensioni finali](evidence/REL001/artifact-size.json). SHA effettivo e verifica HEAD locale/remoto nella consegna del commit atomico. OAuth remoto e sito pubblicato NOT VERIFIED. Nessun merge,deploy,PR release,avvio manuale Pages o ulteriore sviluppo. **Unica prossima azione: revisione indipendente della Regia e sua eventuale autorizzazione al rilascio.**
+
+---
+
+## Registro U9 precedente — storico, superato dallo stato REL-001 sopra
 
 **Verdetto tecnico proposto: READY WITH DOCUMENTED LIMITATIONS. STOP U9; approvazione Regia PENDING.** U0–U8 approvate nel mandato U9. Nessuna fase successiva autorizzata.
 

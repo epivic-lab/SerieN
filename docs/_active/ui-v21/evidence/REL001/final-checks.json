@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "50d7c744e4b9dbbe20197ec8f959fdccb16edb5b",
+        "--",
+        "app.js",
+        "src",
+        "ui",
+        "assets",
+        "tests",
+        "scripts",
+        "auth-gate.js",
+        "auth-gate-core.js",
+        "index.html",
+        "style.css",
+        "package.json",
+        "package-lock.json"
+      ],
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "exitCode": 0,
+      "output": ".github/workflows/pages.yml\nPROGRESS.md\ndocs/_active/ui-v21/REL001_REPORT.md\ndocs/_active/ui-v21/STATUS.md\ndocs/_active/ui-v21/evidence/REL001/README.md\ndocs/_active/ui-v21/evidence/REL001/artifact-size.json\ndocs/_active/ui-v21/evidence/REL001/audit-package.py\ndocs/_active/ui-v21/evidence/REL001/autumn-railways-desktop.png\ndocs/_active/ui-v21/evidence/REL001/autumn-railways-mobile.png\ndocs/_active/ui-v21/evidence/REL001/baseline-head.txt\ndocs/_active/ui-v21/evidence/REL001/branch.txt\ndocs/_active/ui-v21/evidence/REL001/browser-first.txt\ndocs/_active/ui-v21/evidence/REL001/browser-results-first.json\ndocs/_active/ui-v21/evidence/REL001/browser-results-second.json\ndocs/_active/ui-v21/evidence/REL001/browser-results.json\ndocs/_active/ui-v21/evidence/REL001/browser-second.txt\ndocs/_active/ui-v21/evidence/REL001/browser.txt\ndocs/_active/ui-v21/evidence/REL001/build.txt\ndocs/_active/ui-v21/evidence/REL001/bundle.json\ndocs/_active/ui-v21/evidence/REL001/check-browser.mjs\ndocs/_active/ui-v21/evidence/REL001/commands.json\ndocs/_active/ui-v21/evidence/REL001/final-checks.json\ndocs/_active/ui-v21/evidence/REL001/finalize-package.py\ndocs/_active/ui-v21/evidence/REL001/http-assets.json\ndocs/_active/ui-v21/evidence/REL001/main-ancestor.txt\ndocs/_active/ui-v21/evidence/REL001/npm-ls.txt\ndocs/_active/ui-v21/evidence/REL001/package-audit.json\ndocs/_active/ui-v21/evidence/REL001/prepare-site.sh\ndocs/_active/ui-v21/evidence/REL001/prepare-site.txt\ndocs/_active/ui-v21/evidence/REL001/prepare.py\ndocs/_active/ui-v21/evidence/REL001/protected-files.txt\ndocs/_active/ui-v21/evidence/REL001/remote-baseline.txt\ndocs/_active/ui-v21/evidence/REL001/versions.txt\ndocs/_active/ui-v21/evidence/REL001/workflow-diff.txt\n"
+    },
+    {
+      "command": [
+        "git",
+        "ls-files",
+        "_site",
+        "work"
+      ],
+      "exitCode": 0,
+      "output": ""
+    }
+  ],
+  "stagedFiles": [
+    ".github/workflows/pages.yml",
+    "PROGRESS.md",
+    "docs/_active/ui-v21/REL001_REPORT.md",
+    "docs/_active/ui-v21/STATUS.md",
+    "docs/_active/ui-v21/evidence/REL001/README.md",
+    "docs/_active/ui-v21/evidence/REL001/artifact-size.json",
+    "docs/_active/ui-v21/evidence/REL001/audit-package.py",
+    "docs/_active/ui-v21/evidence/REL001/autumn-railways-desktop.png",
+    "docs/_active/ui-v21/evidence/REL001/autumn-railways-mobile.png",
+    "docs/_active/ui-v21/evidence/REL001/baseline-head.txt",
+    "docs/_active/ui-v21/evidence/REL001/branch.txt",
+    "docs/_active/ui-v21/evidence/REL001/browser-first.txt",
+    "docs/_active/ui-v21/evidence/REL001/browser-results-first.json",
+    "docs/_active/ui-v21/evidence/REL001/browser-results-second.json",
+    "docs/_active/ui-v21/evidence/REL001/browser-results.json",
+    "docs/_active/ui-v21/evidence/REL001/browser-second.txt",
+    "docs/_active/ui-v21/evidence/REL001/browser.txt",
+    "docs/_active/ui-v21/evidence/REL001/build.txt",
+    "docs/_active/ui-v21/evidence/REL001/bundle.json",
+    "docs/_active/ui-v21/evidence/REL001/check-browser.mjs",
+    "docs/_active/ui-v21/evidence/REL001/commands.json",
+    "docs/_active/ui-v21/evidence/REL001/final-checks.json",
+    "docs/_active/ui-v21/evidence/REL001/finalize-package.py",
+    "docs/_active/ui-v21/evidence/REL001/http-assets.json",
+    "docs/_active/ui-v21/evidence/REL001/main-ancestor.txt",
+    "docs/_active/ui-v21/evidence/REL001/npm-ls.txt",
+    "docs/_active/ui-v21/evidence/REL001/package-audit.json",
+    "docs/_active/ui-v21/evidence/REL001/prepare-site.sh",
+    "docs/_active/ui-v21/evidence/REL001/prepare-site.txt",
+    "docs/_active/ui-v21/evidence/REL001/prepare.py",
+    "docs/_active/ui-v21/evidence/REL001/protected-files.txt",
+    "docs/_active/ui-v21/evidence/REL001/remote-baseline.txt",
+    "docs/_active/ui-v21/evidence/REL001/versions.txt",
+    "docs/_active/ui-v21/evidence/REL001/workflow-diff.txt"
+  ],
+  "onlyAuthorizedFiles": true
+}
