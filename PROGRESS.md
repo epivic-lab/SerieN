@@ -416,3 +416,12 @@ U0–U9 APPROVATE nel mandato Regia; autorizzato soltanto REL-001 dal checkpoint
 PASS build Node22, preparazione reale da `_site` vuoto, chiusura83riferimenti,67file asset byte-identici,9CSS inclusi/5runtime caricati,3WOFF2+3OFL,6texture/sprite,79HTTP200,base `/SerieN/`,browser sul solo pacchetto con bootstrap Auth locale,zero richieste esterne/errori runtime. Targa Autumn Railways con brass/Federo effettivo e catture desktop/mobile ispezionate. Due timeout dell'harness conservati e recuperati senza modificare l'app. Misura finale include tutta docs/rapporto/evidenze; pacchetto e tar locale inferiori a1GiB,non committati. Matrice U9 non ripetuta; OAuth reale e pubblicazione NOT VERIFIED.
 
 [REL001_REPORT](docs/_active/ui-v21/REL001_REPORT.md),[evidenze](docs/_active/ui-v21/evidence/REL001/). **READY FOR REGIA RELEASE REVIEW**, subordinato al checkpoint remoto verificato nella consegna; non è approvazione al rilascio. Commit atomico e push normale sul solo branch autorizzato. **STOP REL-001: unica prossima azione, review indipendente della Regia. Nessun merge/main/deploy/PR release/avvio manuale Pages o nuova fase.**
+
+
+## UI V2.1 — REL-002 (2026-11-12)
+
+REL001 approvato `06a01c5ae70bfd4147e2c866f06803139904f264`; autorizzata esclusivamente ottimizzazione packaging sul branch `codex/ui-v2-integration`. Solo Prepare site: pulizia controllata `_site` e whitelist esplicita di24documenti con chiusura transitiva pubblica. Nessun documento Git rimosso. 718.776.848→4.491.628byte (−99,375101%),97file,docs1.723.266byte,tar4.577.280byte.
+
+Build e bundle U9 identico PASS;73file applicativi preservati,269identità U9 per riuso storico senza ripetere matrice ferroviaria.97HTTP200 incluse le79richieste REL001;3465esclusioni404attese;browser desktop1440×900/mobile390×844 con bootstrap Auth locale,Menu/Dock/WebGL/font/brass/targa e apertura documento pubblico PASS,zero errori runtime o richieste esterne. Preparazioni con residui e destinazione assente identiche. OAuth/cloud/GPUfisica/Pages pubblicata NOT VERIFIED.
+
+[REL002_REPORT](docs/_active/ui-v21/REL002_REPORT.md),[evidenze](docs/_active/ui-v21/evidence/REL002/). **READY FOR REGIA RELEASE REVIEW**, subordinato al checkpoint remoto verificato nella consegna;nessuna approvazione al rilascio implicita. **STOP REL002:review indipendente Regia;nessun merge/main/deploy/PRrelease/nuova fase.**

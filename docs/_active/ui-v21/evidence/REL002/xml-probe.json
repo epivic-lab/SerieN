@@ -1,0 +1,17 @@
+{
+  "requests": [
+    {
+      "url": "/SerieN/docs/jmri-layout/source.xml",
+      "status": 200
+    },
+    {
+      "url": "/SerieN/docs/jmri-layout/source.xml",
+      "status": 200
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404
+    }
+  ],
+  "text": "<layout-config xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://jmri.org/xml/schema/layout-4-19-2.xsd\">\n    <jmriversion>\n        <major>4</major>\n        <minor>26</minor>\n        <test>0</test>\n        <modifier/>\n    </jmriversion>\n    <blocks class=\"jmri.configurexml.BlockManagerXml\">\n        <defaultspeed>Normal</defaultspeed>\n        <block systemName=\"IB0\" length=\"0.0\" curve=\"0\" userName=\"RM Block\">\n            <systemName>IB0</systemName>\n            <userName>RM Block</userName>\n            <permissive>no</permissive>\n        </block>\n    </blocks>\n    <layoutblocks class=\"jmri.jmrit.display.layoutEditor.configurexml.LayoutBlockManagerXml\">\n        <layoutblock trackcolor=\"black\" systemName=\"IB0\" occupiedsense=\"2\" extracolor=\"orange\" occupiedcolor=\"red\" userName=\"RM Block\">\n            <systemName>IB0</systemName>\n            <userName>RM Block</userName>\n        </layoutblock>\n    </layoutblocks>\n    <signalmastlogics class=\"jmri.managers.configurexml.DefaultSignalMastLogicManagerXml\">\n        <logicDelay>500</logicDelay>\n    </signalmastlogics>\n    <LayoutEditor class=\"jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml"
+}

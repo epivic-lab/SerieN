@@ -27,3 +27,12 @@ NOT VERIFIED:hardware fisico/GPU/FPS/audio/screen reader/altri browser,OAuth liv
 [Rapporto U9](U9_REPORT.md),[risultati](evidence/U9/results.json),[comandi](evidence/U9/commands.json),[matrici](evidence/U9/control-coverage.json),[targa Claude](evidence/U9/header-engraved-plaque/delivery/results.json),[hash](evidence/U9/source-hashes.json),[release readiness](evidence/U9/release-readiness.json).
 
 Unica prossima azione: revisione indipendente della Regia. Checkpoint atomico e SHA locale/remoto verificati nel messaggio di consegna; non costituiscono approvazione.
+
+
+## UI V2.1 — REL-002 (2026-11-12)
+
+REL001 approvato `06a01c5ae70bfd4147e2c866f06803139904f264`; autorizzata esclusivamente ottimizzazione packaging sul branch `codex/ui-v2-integration`. Solo Prepare site: pulizia controllata `_site` e whitelist esplicita di24documenti con chiusura transitiva pubblica. Nessun documento Git rimosso. 718.776.848→4.491.628byte (−99,375101%),97file,docs1.723.266byte,tar4.577.280byte.
+
+Build e bundle U9 identico PASS;73file applicativi preservati,269identità U9 per riuso storico senza ripetere matrice ferroviaria.97HTTP200 incluse le79richieste REL001;3465esclusioni404attese;browser desktop1440×900/mobile390×844 con bootstrap Auth locale,Menu/Dock/WebGL/font/brass/targa e apertura documento pubblico PASS,zero errori runtime o richieste esterne. Preparazioni con residui e destinazione assente identiche. OAuth/cloud/GPUfisica/Pages pubblicata NOT VERIFIED.
+
+[REL002_REPORT](REL002_REPORT.md),[evidenze](evidence/REL002/). **READY FOR REGIA RELEASE REVIEW**, subordinato al checkpoint remoto verificato nella consegna;nessuna approvazione al rilascio implicita. **STOP REL002:review indipendente Regia;nessun merge/main/deploy/PRrelease/nuova fase.**

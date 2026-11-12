@@ -1,0 +1,155 @@
+[
+  {
+    "argv": [
+      "bash",
+      "-euo",
+      "pipefail",
+      "-c",
+      "# Clean only the verified temporary destination, including stale docs.\ntest ! -L _site\ntest \"$(realpath -m _site)\" = \"$(pwd -P)/_site\"\nrm -rf -- _site\nmkdir -p _site\ncp index.html style.css auth-gate.js auth-gate-core.js legacy-v0.1.html .nojekyll _site/\ncp -R dist assets ui _site/\n# Public dependency closure: docs/_active/ui-v21/REL002_REPORT.md\n# Keep linked reports/evidence; exclude unreferenced development archives.\nfor doc in \\\n  docs/consolidation/FINAL-REPORT.md \\\n  docs/consolidation/INTAKE.md \\\n  docs/consolidation/README.md \\\n  docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf \\\n  docs/consolidation/browser-result.json \\\n  docs/consolidation/consist/consist-check.json \\\n  docs/consolidation/desktop.png \\\n  docs/consolidation/index.html \\\n  docs/consolidation/node-tests.txt \\\n  docs/consolidation/parser-tests.txt \\\n  docs/consolidation/smoke-result.json \\\n  docs/jmri-layout/canonical-graph.json \\\n  docs/jmri-layout/layout-canonical.svg \\\n  docs/jmri-layout/minimap-canonical.svg \\\n  docs/jmri-layout/railmodeller-original.pdf \\\n  docs/jmri-layout/source.xml \\\n  docs/phase-0/kato-parts.csv \\\n  docs/phase-1/README.md \\\n  docs/phase-1/baseline-ui.json \\\n  docs/phase-1/browser-result.json \\\n  docs/phase-1/node-tests.txt \\\n  docs/phase-1/parser-tests.txt \\\n  docs/phase-1/railway-preservation.json \\\n  docs/train-deck/browser-result.json \\\n; do\n  cp --parents \"$doc\" _site/\ndone\n"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "bash",
+      "-euo",
+      "pipefail",
+      "-c",
+      "# Clean only the verified temporary destination, including stale docs.\ntest ! -L _site\ntest \"$(realpath -m _site)\" = \"$(pwd -P)/_site\"\nrm -rf -- _site\nmkdir -p _site\ncp index.html style.css auth-gate.js auth-gate-core.js legacy-v0.1.html .nojekyll _site/\ncp -R dist assets ui _site/\n# Public dependency closure: docs/_active/ui-v21/REL002_REPORT.md\n# Keep linked reports/evidence; exclude unreferenced development archives.\nfor doc in \\\n  docs/consolidation/FINAL-REPORT.md \\\n  docs/consolidation/INTAKE.md \\\n  docs/consolidation/README.md \\\n  docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf \\\n  docs/consolidation/browser-result.json \\\n  docs/consolidation/consist/consist-check.json \\\n  docs/consolidation/desktop.png \\\n  docs/consolidation/index.html \\\n  docs/consolidation/node-tests.txt \\\n  docs/consolidation/parser-tests.txt \\\n  docs/consolidation/smoke-result.json \\\n  docs/jmri-layout/canonical-graph.json \\\n  docs/jmri-layout/layout-canonical.svg \\\n  docs/jmri-layout/minimap-canonical.svg \\\n  docs/jmri-layout/railmodeller-original.pdf \\\n  docs/jmri-layout/source.xml \\\n  docs/phase-0/kato-parts.csv \\\n  docs/phase-1/README.md \\\n  docs/phase-1/baseline-ui.json \\\n  docs/phase-1/browser-result.json \\\n  docs/phase-1/node-tests.txt \\\n  docs/phase-1/parser-tests.txt \\\n  docs/phase-1/railway-preservation.json \\\n  docs/train-deck/browser-result.json \\\n; do\n  cp --parents \"$doc\" _site/\ndone\n"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "bash",
+      "-euo",
+      "pipefail",
+      "-c",
+      "# Clean only the verified temporary destination, including stale docs.\ntest ! -L _site\ntest \"$(realpath -m _site)\" = \"$(pwd -P)/_site\"\nrm -rf -- _site\nmkdir -p _site\ncp index.html style.css auth-gate.js auth-gate-core.js legacy-v0.1.html .nojekyll _site/\ncp -R dist assets ui _site/\n# Public dependency closure: docs/_active/ui-v21/REL002_REPORT.md\n# Keep linked reports/evidence; exclude unreferenced development archives.\nfor doc in \\\n  docs/consolidation/FINAL-REPORT.md \\\n  docs/consolidation/INTAKE.md \\\n  docs/consolidation/README.md \\\n  docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf \\\n  docs/consolidation/browser-result.json \\\n  docs/consolidation/consist/consist-check.json \\\n  docs/consolidation/desktop.png \\\n  docs/consolidation/index.html \\\n  docs/consolidation/node-tests.txt \\\n  docs/consolidation/parser-tests.txt \\\n  docs/consolidation/smoke-result.json \\\n  docs/jmri-layout/canonical-graph.json \\\n  docs/jmri-layout/layout-canonical.svg \\\n  docs/jmri-layout/minimap-canonical.svg \\\n  docs/jmri-layout/railmodeller-original.pdf \\\n  docs/jmri-layout/source.xml \\\n  docs/phase-0/kato-parts.csv \\\n  docs/phase-1/README.md \\\n  docs/phase-1/baseline-ui.json \\\n  docs/phase-1/browser-result.json \\\n  docs/phase-1/node-tests.txt \\\n  docs/phase-1/parser-tests.txt \\\n  docs/phase-1/railway-preservation.json \\\n  docs/train-deck/browser-result.json \\\n; do\n  cp --parents \"$doc\" _site/\ndone\n"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--exit-code",
+      "06a01c5ae70bfd4147e2c866f06803139904f264",
+      "--",
+      "app.js",
+      "src",
+      "ui",
+      "assets",
+      "index.html",
+      "auth-gate.js",
+      "auth-gate-core.js",
+      "style.css",
+      "legacy-v0.1.html",
+      "tests",
+      "package.json",
+      "package-lock.json"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "tar",
+      "--format=gnu",
+      "--dereference",
+      "--hard-dereference",
+      "-cf",
+      "work/rel002/pages.tar",
+      "-C",
+      "_site",
+      "."
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--",
+      ".github/workflows/pages.yml"
+    ],
+    "exitCode": 0,
+    "stdout": "diff --git a/.github/workflows/pages.yml b/.github/workflows/pages.yml\nindex 999e2a9..3eaf5f9 100644\n--- a/.github/workflows/pages.yml\n+++ b/.github/workflows/pages.yml\n@@ -36,10 +36,43 @@ jobs:\n       - run: npm run build\n       - name: Prepare site\n         run: |\n+          # Clean only the verified temporary destination, including stale docs.\n+          test ! -L _site\n+          test \"$(realpath -m _site)\" = \"$(pwd -P)/_site\"\n+          rm -rf -- _site\n           mkdir -p _site\n           cp index.html style.css auth-gate.js auth-gate-core.js legacy-v0.1.html .nojekyll _site/\n           cp -R dist assets ui _site/\n-          cp -R docs _site/docs\n+          # Public dependency closure: docs/_active/ui-v21/REL002_REPORT.md\n+          # Keep linked reports/evidence; exclude unreferenced development archives.\n+          for doc in \\\n+            docs/consolidation/FINAL-REPORT.md \\\n+            docs/consolidation/INTAKE.md \\\n+            docs/consolidation/README.md \\\n+            docs/consolidation/SerieN_Dossier_Tecnico_Codex_REV_A.pdf \\\n+            docs/consolidation/browser-result.json \\\n+            docs/consolidation/consist/consist-check.json \\\n+            docs/consolidation/desktop.png \\\n+            docs/consolidation/index.html \\\n+            docs/consolidation/node-tests.txt \\\n+            docs/consolidation/parser-tests.txt \\\n+            docs/consolidation/smoke-result.json \\\n+            docs/jmri-layout/canonical-graph.json \\\n+            docs/jmri-layout/layout-canonical.svg \\\n+            docs/jmri-layout/minimap-canonical.svg \\\n+            docs/jmri-layout/railmodeller-original.pdf \\\n+            docs/jmri-layout/source.xml \\\n+            docs/phase-0/kato-parts.csv \\\n+            docs/phase-1/README.md \\\n+            docs/phase-1/baseline-ui.json \\\n+            docs/phase-1/browser-result.json \\\n+            docs/phase-1/node-tests.txt \\\n+            docs/phase-1/parser-tests.txt \\\n+            docs/phase-1/railway-preservation.json \\\n+            docs/train-deck/browser-result.json \\\n+          ; do\n+            cp --parents \"$doc\" _site/\n+          done\n       - name: Configure Pages\n         uses: actions/configure-pages@v5\n       - name: Upload static site\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "result": "1,088,369 bytes; SHA256 identical to approved U9/REL001; Node24.19.0/esbuild0.25.12"
+  },
+  {
+    "argv": [
+      "python3",
+      "docs/_active/ui-v21/evidence/REL002/audit-package.py"
+    ],
+    "exitCode": 0,
+    "result": "83 references; 67 asset files; 79 targets; 3 fonts/licenses"
+  },
+  {
+    "argv": [
+      "node",
+      "docs/_active/ui-v21/evidence/REL002/check-browser.mjs"
+    ],
+    "exitCode": 0,
+    "stdout": "PASS package HTTP, CSS, three decoded local fonts, brass texture, SVG and real compiled header\n"
+  },
+  {
+    "argv": [
+      "node",
+      "docs/_active/ui-v21/evidence/REL002/xml-probe.mjs"
+    ],
+    "exitCode": 0,
+    "result": "Standalone XML probe; incidental favicon404 distinguished in report."
+  },
+  {
+    "argv": [
+      "bash",
+      "-euo",
+      "pipefail",
+      "docs/_active/ui-v21/evidence/REL002/prepare-site.sh"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "merge-base",
+      "--is-ancestor",
+      "184cc9ba93a6b35493f365b2ffcb20ef0645963d",
+      "HEAD"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]
