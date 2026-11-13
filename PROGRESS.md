@@ -1,3 +1,38 @@
+# Stato corrente — Scenario V06 R2A
+
+**PASS numerico R2A con limite operativo R2A-ADJ-01; QUALITY GATE REGIA PENDING.**
+R1C accettata a `b49320c6be4d9f149bb2c5473858c616925a5f6c` dal
+[Quality Gate della PR #16](https://github.com/epivic-lab/SerieN/pull/16#issuecomment-6857567423).
+Branch dedicato `codex/scenario-v06-r2a-dynamic-circulation`, worktree separato,
+nuova Draft con base R1C. SHA/URL e verifica local=remote nella ricevuta finale.
+
+Harness solo Node basato sulla sessione R1C immutata, vero stepRailway/Journey/
+routing/FixedClock/guard/preview/state/fleet commands. Sei giri A/B/C nei due
+versi:100 giunti; due giri C con loco e due carri corti:38 giunti. Posa e ganci
+contro testimone indipendente a ogni tick, tutti9 segmenti nascosti, frenatura,
+STOP/ripartenza/inversione, history e comandi protetti. UNKNOWN vieta ogni tick.
+24 nuovi test; **395/395 Node, 9/9 JMRI,build/canonico PASS**.
+
+**R2A-ADJ-01 APERTO:** presso WX-A/C13 la guard arresta prima del giunto
+misaligned ma lascia la composizione nella fascia operativa C13; throw rifiutato
+come occupied. TraceJourney non enumera C13 alla bocca condivisa e protectionInset
+resta 0. Nessun superamento del giunto o aggiramento del lock; correzione soltanto
+dopo STOP/inversione/arretramento protetto e liberazione. Nessun fix del core.
+Recovery automatica e Next Switch completo in tale caso NON CERTIFICATI.
+
+[Rapporto R2A](docs/_active/scenario-v06/R2A_DYNAMIC_LOOP_REPORT.md),[prove](docs/_active/scenario-v06/evidence/R2A/README.md),
+[sintesi numerica](docs/_active/scenario-v06/evidence/R2A/summary.json).4186 blob R1C protetti identici;
+src/app/UI/renderer/asset/backend/deps/workflow intatti. Bundle identico R1C,
+85 input e zero V06/laboratorio. runtimeAdmission sempre false.
+
+**STOP R2A: unica prossima azione Quality Gate Regia, inclusa classificazione
+ADJ-01 prima di un eventuale R2B.** Nessun merge/deploy/browser V06 o nuova fase.
+N07/N16/scalo/quarto treno/traffico simultaneo/agganci dinamici non certificati.
+
+---
+
+## Stato storico precedente
+
 # Stato corrente — Scenario V06 R1C
 
 **PASS tecnico del laboratorio R1C / QUALITY GATE REGIA PENDING.**

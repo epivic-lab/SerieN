@@ -1,0 +1,955 @@
+{
+  "status": "PASS_NUMERICAL_R2A_WITH_ADJACENT_OPERATION_LIMIT",
+  "seed": "none: deterministic 1/60 ticks",
+  "baseline": "b49320c6be4d9f149bb2c5473858c616925a5f6c",
+  "runtimeAdmission": false,
+  "loops": [
+    {
+      "name": "A",
+      "direction": 1,
+      "vehicles": [
+        {
+          "length": 40,
+          "width": 16,
+          "front": 22,
+          "rear": 22
+        }
+      ],
+      "spawn": {
+        "edge": "V06-P056",
+        "s": 124.05050000000003,
+        "sign": -1,
+        "window": {
+          "min": 0,
+          "max": 248.10100000000006
+        },
+        "extent": {
+          "min": 102.05050000000003,
+          "max": 146.05050000000003,
+          "front": 22,
+          "tail": 22
+        }
+      },
+      "length": 3468.1641163464137,
+      "lap": {
+        "tick": 2372,
+        "distance": 3468.75,
+        "odometer": 3468.75,
+        "velocity": 90,
+        "position": {
+          "edge": "V06-P056",
+          "s": 123.46461634641395,
+          "x": 471.09761634641393,
+          "z": 665.262,
+          "angle": 3.141592653589793
+        },
+        "residual": 0.5858836535862793,
+        "returnError": 0.5858836535860519
+      },
+      "braking": {
+        "ticks": 54,
+        "startTick": 2372,
+        "distance": 39.75,
+        "velocity": 0,
+        "stopTick": 2426
+      },
+      "hidden": [
+        "V06-P010",
+        "V06-P022",
+        "V06-P023"
+      ],
+      "devices": [
+        "WX-B"
+      ],
+      "maxPositionError": 4.582862941503293e-13,
+      "maxJumpExcess": 2.204902926905561e-13,
+      "maxAngleError": 0.023913366499050934,
+      "maxHistory": 7,
+      "previewChecks": 36,
+      "crossings": 16,
+      "constantTicks": 2253
+    },
+    {
+      "name": "A",
+      "direction": -1,
+      "vehicles": [
+        {
+          "length": 40,
+          "width": 16,
+          "front": 22,
+          "rear": 22
+        }
+      ],
+      "spawn": {
+        "edge": "V06-P056",
+        "s": 124.05050000000003,
+        "sign": -1,
+        "window": {
+          "min": 0,
+          "max": 248.10100000000006
+        },
+        "extent": {
+          "min": 102.05050000000003,
+          "max": 146.05050000000003,
+          "front": 22,
+          "tail": 22
+        }
+      },
+      "length": 3468.1641163464137,
+      "lap": {
+        "tick": 2372,
+        "distance": 3468.75,
+        "odometer": -3468.75,
+        "velocity": -90,
+        "position": {
+          "edge": "V06-P056",
+          "s": 124.6363836535856,
+          "x": 472.2693836535856,
+          "z": 665.262,
+          "angle": 3.141592653589793
+        },
+        "residual": 0.5858836535862793,
+        "returnError": 0.5858836535855971
+      },
+      "braking": {
+        "ticks": 54,
+        "startTick": 2372,
+        "distance": 39.75,
+        "velocity": 0,
+        "stopTick": 2426
+      },
+      "hidden": [
+        "V06-P010",
+        "V06-P022",
+        "V06-P023"
+      ],
+      "devices": [
+        "WX-B"
+      ],
+      "maxPositionError": 5.859285502108464e-13,
+      "maxJumpExcess": 2.0672352718520415e-13,
+      "maxAngleError": 0.02402721830306093,
+      "maxHistory": 7,
+      "previewChecks": 35,
+      "crossings": 16,
+      "constantTicks": 2253
+    },
+    {
+      "name": "B",
+      "direction": 1,
+      "vehicles": [
+        {
+          "length": 40,
+          "width": 16,
+          "front": 22,
+          "rear": 22
+        }
+      ],
+      "spawn": {
+        "edge": "V06-P065",
+        "s": 124.05050000000003,
+        "sign": -1,
+        "window": {
+          "min": 0,
+          "max": 248.10100000000006
+        },
+        "extent": {
+          "min": 102.05050000000003,
+          "max": 146.05050000000003,
+          "front": 22,
+          "tail": 22
+        }
+      },
+      "length": 3260.781635120074,
+      "lap": {
+        "tick": 2234,
+        "distance": 3261.75,
+        "odometer": 3261.75,
+        "velocity": 90,
+        "position": {
+          "edge": "V06-P065",
+          "s": 123.08213512007381,
+          "x": 470.7151351200738,
+          "z": 632.248,
+          "angle": 3.141592653589793
+        },
+        "residual": 0.9683648799259572,
+        "returnError": 0.9683648799261846
+      },
+      "braking": {
+        "ticks": 54,
+        "startTick": 2234,
+        "distance": 39.75,
+        "velocity": 0,
+        "stopTick": 2288
+      },
+      "hidden": [
+        "V06-P000",
+        "V06-P018",
+        "V06-P019"
+      ],
+      "devices": [
+        "WX-A",
+        "WX-B"
+      ],
+      "maxPositionError": 8.526512829121202e-13,
+      "maxJumpExcess": 2.5357493882438575e-13,
+      "maxAngleError": 0.025430886867984604,
+      "maxHistory": 6,
+      "previewChecks": 30,
+      "crossings": 15,
+      "constantTicks": 2115
+    },
+    {
+      "name": "B",
+      "direction": -1,
+      "vehicles": [
+        {
+          "length": 40,
+          "width": 16,
+          "front": 22,
+          "rear": 22
+        }
+      ],
+      "spawn": {
+        "edge": "V06-P065",
+        "s": 124.05050000000003,
+        "sign": -1,
+        "window": {
+          "min": 0,
+          "max": 248.10100000000006
+        },
+        "extent": {
+          "min": 102.05050000000003,
+          "max": 146.05050000000003,
+          "front": 22,
+          "tail": 22
+        }
+      },
+      "length": 3260.781635120074,
+      "lap": {
+        "tick": 2234,
+        "distance": 3261.75,
+        "odometer": -3261.75,
+        "velocity": -90,
+        "position": {
+          "edge": "V06-P065",
+          "s": 125.01886487992618,
+          "x": 472.65186487992617,
+          "z": 632.248,
+          "angle": 3.141592653589793
+        },
+        "residual": 0.9683648799259572,
+        "returnError": 0.9683648799261846
+      },
+      "braking": {
+        "ticks": 54,
+        "startTick": 2234,
+        "distance": 39.75,
+        "velocity": 0,
+        "stopTick": 2288
+      },
+      "hidden": [
+        "V06-P000",
+        "V06-P018",
+        "V06-P019"
+      ],
+      "devices": [
+        "WX-A",
+        "WX-B"
+      ],
+      "maxPositionError": 6.252776074688882e-13,
+      "maxJumpExcess": 2.2737367544323206e-13,
+      "maxAngleError": 0.024196760109423034,
+      "maxHistory": 6,
+      "previewChecks": 29,
+      "crossings": 15,
+      "constantTicks": 2115
+    },
+    {
+      "name": "C",
+      "direction": 1,
+      "vehicles": [
+        {
+          "length": 40,
+          "width": 16,
+          "front": 22,
+          "rear": 22
+        }
+      ],
+      "spawn": {
+        "edge": "V06-P064",
+        "s": 124.0505,
+        "sign": -1,
+        "window": {
+          "min": 0,
+          "max": 248.101
+        },
+        "extent": {
+          "min": 102.0505,
+          "max": 146.0505,
+          "front": 22,
+          "tail": 22
+        }
+      },
+      "length": 2933.7907004119847,
+      "lap": {
+        "tick": 2016,
+        "distance": 2934.75,
+        "odometer": 2934.75,
+        "velocity": 90,
+        "position": {
+          "edge": "V06-P064",
+          "s": 123.091200411984,
+          "x": 437.711200411984,
+          "z": 566.221,
+          "angle": 3.141592653589793
+        },
+        "residual": 0.9592995880152557,
+        "returnError": 0.9592995880159947
+      },
+      "braking": {
+        "ticks": 54,
+        "startTick": 2016,
+        "distance": 39.75,
+        "velocity": 0,
+        "stopTick": 2070
+      },
+      "hidden": [
+        "V06-P026",
+        "V06-P028",
+        "V06-P029"
+      ],
+      "devices": [
+        "V06-C07",
+        "V06-C12",
+        "V06-C13",
+        "WX-A"
+      ],
+      "maxPositionError": 5.684341886080801e-13,
+      "maxJumpExcess": 2.3803181647963356e-13,
+      "maxAngleError": 0.025984298260013323,
+      "maxHistory": 9,
+      "previewChecks": 25,
+      "crossings": 19,
+      "constantTicks": 1897
+    },
+    {
+      "name": "C",
+      "direction": -1,
+      "vehicles": [
+        {
+          "length": 40,
+          "width": 16,
+          "front": 22,
+          "rear": 22
+        }
+      ],
+      "spawn": {
+        "edge": "V06-P064",
+        "s": 124.0505,
+        "sign": -1,
+        "window": {
+          "min": 0,
+          "max": 248.101
+        },
+        "extent": {
+          "min": 102.0505,
+          "max": 146.0505,
+          "front": 22,
+          "tail": 22
+        }
+      },
+      "length": 2933.7907004119847,
+      "lap": {
+        "tick": 2016,
+        "distance": 2934.75,
+        "odometer": -2934.75,
+        "velocity": -90,
+        "position": {
+          "edge": "V06-P064",
+          "s": 125.00979958801452,
+          "x": 439.6297995880145,
+          "z": 566.221,
+          "angle": 3.141592653589793
+        },
+        "residual": 0.9592995880152557,
+        "returnError": 0.9592995880145168
+      },
+      "braking": {
+        "ticks": 54,
+        "startTick": 2016,
+        "distance": 39.75,
+        "velocity": 0,
+        "stopTick": 2070
+      },
+      "hidden": [
+        "V06-P026",
+        "V06-P028",
+        "V06-P029"
+      ],
+      "devices": [
+        "V06-C07",
+        "V06-C12",
+        "V06-C13",
+        "WX-A"
+      ],
+      "maxPositionError": 1.1368683772161603e-12,
+      "maxJumpExcess": 2.2737367544323206e-13,
+      "maxAngleError": 0.025076455356083847,
+      "maxHistory": 9,
+      "previewChecks": 23,
+      "crossings": 19,
+      "constantTicks": 1897
+    }
+  ],
+  "consists": [
+    {
+      "name": "C",
+      "direction": 1,
+      "vehicles": [
+        {
+          "length": 40,
+          "width": 16,
+          "front": 22,
+          "rear": 22
+        },
+        {
+          "length": 30,
+          "width": 14,
+          "front": 17,
+          "rear": 17
+        },
+        {
+          "length": 30,
+          "width": 14,
+          "front": 17,
+          "rear": 17
+        }
+      ],
+      "spawn": {
+        "edge": "V06-P064",
+        "s": 124.0505,
+        "sign": -1,
+        "window": {
+          "min": 0,
+          "max": 248.101
+        },
+        "extent": {
+          "min": 102.0505,
+          "max": 214.0505,
+          "front": 22,
+          "tail": 90
+        }
+      },
+      "length": 2933.7907004119847,
+      "lap": {
+        "tick": 2016,
+        "distance": 2934.75,
+        "odometer": 2934.75,
+        "velocity": 90,
+        "position": {
+          "edge": "V06-P064",
+          "s": 123.091200411984,
+          "x": 437.711200411984,
+          "z": 566.221,
+          "angle": 3.141592653589793
+        },
+        "residual": 0.9592995880152557,
+        "returnError": 0.9592995880159947
+      },
+      "braking": {
+        "ticks": 54,
+        "startTick": 2016,
+        "distance": 39.75,
+        "velocity": 0,
+        "stopTick": 2070
+      },
+      "hidden": [
+        "V06-P026",
+        "V06-P028",
+        "V06-P029"
+      ],
+      "devices": [
+        "V06-C07",
+        "V06-C12",
+        "V06-C13",
+        "WX-A"
+      ],
+      "maxPositionError": 5.684341886080801e-13,
+      "maxJumpExcess": 2.3803181647963356e-13,
+      "maxAngleError": 0.025984298260013323,
+      "maxHistory": 9,
+      "previewChecks": 25,
+      "crossings": 19,
+      "constantTicks": 1897
+    },
+    {
+      "name": "C",
+      "direction": -1,
+      "vehicles": [
+        {
+          "length": 40,
+          "width": 16,
+          "front": 22,
+          "rear": 22
+        },
+        {
+          "length": 30,
+          "width": 14,
+          "front": 17,
+          "rear": 17
+        },
+        {
+          "length": 30,
+          "width": 14,
+          "front": 17,
+          "rear": 17
+        }
+      ],
+      "spawn": {
+        "edge": "V06-P064",
+        "s": 124.0505,
+        "sign": -1,
+        "window": {
+          "min": 0,
+          "max": 248.101
+        },
+        "extent": {
+          "min": 102.0505,
+          "max": 214.0505,
+          "front": 22,
+          "tail": 90
+        }
+      },
+      "length": 2933.7907004119847,
+      "lap": {
+        "tick": 2016,
+        "distance": 2934.75,
+        "odometer": -2934.75,
+        "velocity": -90,
+        "position": {
+          "edge": "V06-P064",
+          "s": 125.00979958801452,
+          "x": 439.6297995880145,
+          "z": 566.221,
+          "angle": 3.141592653589793
+        },
+        "residual": 0.9592995880152557,
+        "returnError": 0.9592995880145168
+      },
+      "braking": {
+        "ticks": 54,
+        "startTick": 2016,
+        "distance": 39.75,
+        "velocity": 0,
+        "stopTick": 2070
+      },
+      "hidden": [
+        "V06-P026",
+        "V06-P028",
+        "V06-P029"
+      ],
+      "devices": [
+        "V06-C07",
+        "V06-C12",
+        "V06-C13",
+        "WX-A"
+      ],
+      "maxPositionError": 1.1368683772161603e-12,
+      "maxJumpExcess": 2.2737367544323206e-13,
+      "maxAngleError": 0.025076455356083847,
+      "maxHistory": 9,
+      "previewChecks": 23,
+      "crossings": 19,
+      "constantTicks": 1897
+    }
+  ],
+  "dynamics": [
+    {
+      "phase": "accelerated",
+      "tick": 40,
+      "velocity": 30,
+      "travel": 10.25,
+      "point": {
+        "x": 428.4205,
+        "z": 566.221,
+        "angle": 3.141592653589793,
+        "edge": "V06-P064",
+        "s": 113.8005
+      }
+    },
+    {
+      "phase": "decelerated",
+      "tick": 79,
+      "velocity": 15,
+      "travel": 28.5,
+      "point": {
+        "x": 410.1705,
+        "z": 566.221,
+        "angle": 3.141592653589793,
+        "edge": "V06-P064",
+        "s": 95.5505
+      }
+    },
+    {
+      "phase": "STOP",
+      "tick": 79,
+      "velocity": 0,
+      "travel": 28.5,
+      "point": {
+        "x": 410.1705,
+        "z": 566.221,
+        "angle": 3.141592653589793,
+        "edge": "V06-P064",
+        "s": 95.5505
+      }
+    },
+    {
+      "phase": "reverse-restart",
+      "tick": 129,
+      "velocity": -30,
+      "travel": 38.75,
+      "point": {
+        "x": 420.4205,
+        "z": 566.221,
+        "angle": 3.141592653589793,
+        "edge": "V06-P064",
+        "s": 105.8005
+      }
+    },
+    {
+      "phase": "controlled-stop",
+      "tick": 147,
+      "velocity": 0,
+      "travel": 43,
+      "point": {
+        "x": 424.6705,
+        "z": 566.221,
+        "angle": 3.141592653589793,
+        "edge": "V06-P064",
+        "s": 110.0505
+      }
+    },
+    {
+      "phase": "forward-restart",
+      "tick": 187,
+      "velocity": 30,
+      "travel": 53.25,
+      "point": {
+        "x": 414.4205,
+        "z": 566.221,
+        "angle": 3.141592653589793,
+        "edge": "V06-P064",
+        "s": 99.8005
+      }
+    }
+  ],
+  "protectedStops": [
+    {
+      "direction": 1,
+      "control": "V06-C13",
+      "preview": {
+        "stop": "misaligned",
+        "distance": 1226.753263435215,
+        "boundary": {
+          "edge": "V06-P060",
+          "from": 310.126,
+          "to": 0,
+          "distance": 916.6272634352151
+        }
+      },
+      "firstInterventionTick": 836,
+      "firstVelocity": 88.33333333333333,
+      "stopTick": 889,
+      "distance": 1203,
+      "clearance": 1.7532634352151035,
+      "velocity": 0,
+      "stopSafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "retreatSamples": 8,
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C13",
+        "origin": "device",
+        "on": false
+      }
+    },
+    {
+      "direction": -1,
+      "control": "V06-C07",
+      "preview": {
+        "stop": "misaligned",
+        "distance": 525.2333702111997,
+        "boundary": {
+          "edge": "V06-P036",
+          "from": 125.97029704451339,
+          "to": 0,
+          "distance": 399.2630731666863
+        }
+      },
+      "firstInterventionTick": 326,
+      "firstVelocity": -88.33333333333333,
+      "stopTick": 379,
+      "distance": 438,
+      "clearance": 31.233370211199713,
+      "velocity": 0,
+      "stopSafety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "retreatSamples": 0,
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C07",
+        "origin": "device",
+        "on": false
+      }
+    }
+  ],
+  "protection": [
+    {
+      "loop": "C",
+      "control": "WX-A",
+      "kind": "approaching",
+      "tick": 580,
+      "velocity": 90,
+      "point": {
+        "x": 274.8559156177025,
+        "z": 111.95097403123731,
+        "angle": 0.3178705945597474,
+        "edge": "V06-P014",
+        "s": 121.7475159314447
+      },
+      "previewNext": "WX-A",
+      "result": {
+        "changed": false,
+        "controlId": "WX-A",
+        "origin": "panel",
+        "reason": "approaching",
+        "message": "Train approaching · operation blocked"
+      }
+    },
+    {
+      "loop": "C",
+      "control": "WX-A",
+      "kind": "occupied",
+      "tick": 636,
+      "velocity": 90,
+      "point": {
+        "x": 357.78173656478504,
+        "z": 101.032,
+        "angle": 0,
+        "edge": "V06-P078",
+        "s": 51.87726343521496
+      },
+      "previewNext": "WX-A",
+      "result": {
+        "changed": false,
+        "controlId": "WX-A",
+        "origin": "panel",
+        "reason": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      }
+    },
+    {
+      "loop": "C",
+      "control": "V06-C13",
+      "kind": "approaching",
+      "tick": 787,
+      "velocity": 90,
+      "point": {
+        "x": 584.2817365647851,
+        "z": 101.032,
+        "angle": 0,
+        "edge": "V06-P060",
+        "s": 135.50326343521488
+      },
+      "previewNext": "V06-C13",
+      "result": {
+        "changed": false,
+        "controlId": "V06-C13",
+        "origin": "panel",
+        "reason": "approaching",
+        "message": "Train approaching · operation blocked"
+      }
+    },
+    {
+      "loop": "C",
+      "control": "V06-C13",
+      "kind": "occupied",
+      "tick": 843,
+      "velocity": 90,
+      "point": {
+        "x": 668.2817365647851,
+        "z": 101.032,
+        "angle": 0,
+        "edge": "V06-P060",
+        "s": 51.503263435214876
+      },
+      "previewNext": "V06-C13",
+      "result": {
+        "changed": false,
+        "controlId": "V06-C13",
+        "origin": "panel",
+        "reason": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      }
+    },
+    {
+      "loop": "C",
+      "control": "V06-C12",
+      "kind": "approaching",
+      "tick": 911,
+      "velocity": 90,
+      "point": {
+        "x": 770.2817365647851,
+        "z": 101.032,
+        "angle": 0,
+        "edge": "V06-P069",
+        "s": 135.5792634352149
+      },
+      "previewNext": "V06-C12",
+      "result": {
+        "changed": false,
+        "controlId": "V06-C12",
+        "origin": "panel",
+        "reason": "approaching",
+        "message": "Train approaching · operation blocked"
+      }
+    },
+    {
+      "loop": "C",
+      "control": "V06-C12",
+      "kind": "occupied",
+      "tick": 967,
+      "velocity": 90,
+      "point": {
+        "x": 854.2817365647851,
+        "z": 101.032,
+        "angle": 0,
+        "edge": "V06-P069",
+        "s": 51.5792634352149
+      },
+      "previewNext": "V06-C12",
+      "result": {
+        "changed": false,
+        "controlId": "V06-C12",
+        "origin": "panel",
+        "reason": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      }
+    },
+    {
+      "loop": "C",
+      "control": "V06-C07",
+      "kind": "approaching",
+      "tick": 1487,
+      "velocity": 90,
+      "point": {
+        "x": 1219.408784528245,
+        "z": 491.5158925926117,
+        "angle": -2.528062568379262,
+        "edge": "V06-P037",
+        "s": 33.31653147198631
+      },
+      "previewNext": "V06-C07",
+      "result": {
+        "changed": false,
+        "controlId": "V06-C07",
+        "origin": "panel",
+        "reason": "approaching",
+        "message": "Train approaching · operation blocked"
+      }
+    },
+    {
+      "loop": "C",
+      "control": "V06-C07",
+      "kind": "occupied",
+      "tick": 1544,
+      "velocity": 90,
+      "point": {
+        "x": 1142.3214680747578,
+        "z": 527.1680132066425,
+        "angle": -2.9207657614244162,
+        "edge": "V06-P037",
+        "s": 118.81653147198631
+      },
+      "previewNext": "V06-C07",
+      "result": {
+        "changed": false,
+        "controlId": "V06-C07",
+        "origin": "panel",
+        "reason": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      }
+    },
+    {
+      "loop": "A",
+      "control": "WX-B",
+      "kind": "approaching",
+      "tick": 1001,
+      "velocity": 90,
+      "point": {
+        "x": 646.0544342230918,
+        "z": 35.005,
+        "angle": 0,
+        "edge": "V06-P057",
+        "s": 11.705565776908202
+      },
+      "previewNext": "WX-B",
+      "result": {
+        "changed": false,
+        "controlId": "WX-B",
+        "origin": "panel",
+        "reason": "approaching",
+        "message": "Train approaching · operation blocked"
+      }
+    },
+    {
+      "loop": "A",
+      "control": "WX-B",
+      "kind": "occupied",
+      "tick": 1057,
+      "velocity": 90,
+      "point": {
+        "x": 730.0544342230918,
+        "z": 35.005,
+        "angle": 0,
+        "edge": "V06-P076",
+        "s": 51.755565776908156
+      },
+      "previewNext": "WX-B",
+      "result": {
+        "changed": false,
+        "controlId": "WX-B",
+        "origin": "panel",
+        "reason": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      }
+    }
+  ],
+  "limitation": {
+    "id": "R2A-ADJ-01",
+    "control": "V06-C13",
+    "safeRoutingStop": true,
+    "operationProtectionRemainsOccupied": true,
+    "automaticRecoveryCertified": false,
+    "nextSwitchAtSharedNodeRequiresReview": true
+  },
+  "excluded": [
+    "N07 manoeuvre",
+    "N16 terminal admission",
+    "yard",
+    "fourth train",
+    "simultaneous trains",
+    "dynamic coupling",
+    "browser V06",
+    "physical envelopes",
+    "R2B"
+  ]
+}
