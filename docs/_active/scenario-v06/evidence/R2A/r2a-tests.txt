@@ -1,0 +1,32 @@
+✔ R2A A direction 1: full dynamic lap and controlled stop (506.28815ms)
+✔ R2A A direction -1: full dynamic lap and controlled stop (386.769298ms)
+✔ R2A B direction 1: full dynamic lap and controlled stop (414.418363ms)
+✔ R2A B direction -1: full dynamic lap and controlled stop (356.205885ms)
+✔ R2A C direction 1: full dynamic lap and controlled stop (317.595475ms)
+✔ R2A C direction -1: full dynamic lap and controlled stop (284.900034ms)
+✔ R2A short locomotive + two cars direction 1: complete C lap, joints, couplers, envelope (333.356802ms)
+✔ R2A short locomotive + two cars direction -1: complete C lap, joints, couplers, envelope (381.868161ms)
+✔ R2A acceleration, cruise, deceleration, immediate STOP, reverse and restart with a short car (21.518312ms)
+✔ R2A protected misalignment braking direction 1, no boundary crossing, protected correction (57.937126ms)
+✔ R2A protected misalignment braking direction -1, no boundary crossing, protected correction (32.312374ms)
+✔ R2A fresh operation safety rejects panel/device during actual approach and occupation on all five loop devices (960.546845ms)
+✔ R2A UNKNOWN forbids any movement tick, clock accumulation and spawn (15.535072ms)
+✔ R2A incomplete/nonboolean configuration is rejected atomically before ticks (15.37139ms)
+✔ R2A explicit profile, foreign IDs and foreign Journey fail without movement (33.800217ms)
+✔ R2A speed limits use real clamping; invalid motion never enters stepRailway (34.941938ms)
+✔ R2A unavailable endpoint/triangle/yard and overlong consists cannot acquire a movement tick (14.676171ms)
+✔ R2A reset and reverse refuse movement or pending throttle; full stop permits a fresh legacy session (23.446686ms)
+✔ R2A cached future history is reconciled by protected command, observations remain read-only (139.305015ms)
+✔ R2A frozen witnesses are sensitive to wrong direction, distance and loop identity (4.142784ms)
+✔ R2A independent monitor detects injected coordinate drift and foreign history (16.89114ms)
+✔ R2A unreachable N16 in the static ring asset is observed as a cycle, never an invented route (18.459292ms)
+✔ R2A legacy movement and Legacy → V06 → Legacy lifecycle preserve defaults and revoke callbacks (61.794202ms)
+✔ R2A UNKNOWN guard decision itself remains zero-displacement fail-closed (0.220426ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4567.834437
