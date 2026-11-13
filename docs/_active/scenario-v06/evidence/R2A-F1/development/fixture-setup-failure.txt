@@ -1,0 +1,16 @@
+file:///workspace/SerieN/tools/scenario-v06/railway-session.js:100
+    if(journey.position-tail<0 || journey.position+front>network.edges[edge].length) throw new RangeError('Lab fixture does not fit edge');
+                                                                                           ^
+
+RangeError: Lab fixture does not fit edge
+    at Object.createLabTrainFixture (file:///workspace/SerieN/tools/scenario-v06/railway-session.js:100:92)
+    at sharedFixture (file:///workspace/SerieN/tools/scenario-v06/shared-junction-validation.js:35:23)
+    at validateSharedCase (file:///workspace/SerieN/tools/scenario-v06/shared-junction-validation.js:53:11)
+    at Array.map (<anonymous>)
+    at runSharedMatrix (file:///workspace/SerieN/tools/scenario-v06/shared-junction-validation.js:119:21)
+    at file:///workspace/SerieN/tools/scenario-v06/shared-junction-validation.js:129:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0

@@ -53,7 +53,10 @@ export function assessRailwayGuard(train, journey, route, dt, reservations=[]) {
   };
   if (!['limit','cycle'].includes(preview.stop)) prohibit(preview.distance,
     ['misaligned','no-route','terminal'].includes(preview.stop)?'UNSAFE':'UNKNOWN',preview.stop,preview.ranges.at(-1)??null,
-    inset(preview.encounters.find(e=>Math.abs(e.distance-preview.distance)<epsilon)?.site,preview.ranges.at(-1)));
+    // A shared boundary can be internal to one unit and external to another.
+    // Stop outside the largest existing operation envelope of all encounters.
+    Math.max(0,...preview.encounters.filter(e=>Math.abs(e.distance-preview.distance)<epsilon)
+      .map(e=>inset(e.site,preview.ranges.at(-1)))));
   // Router continues to own boolean route selection; a missing control state
   // must never be silently admitted as the router's legacy false fallback.
   if (route.controlState) {

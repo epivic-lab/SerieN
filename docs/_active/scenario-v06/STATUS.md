@@ -1,3 +1,38 @@
+# Scenario V06 — R2A-F1
+
+**PASS tecnico / QUALITY GATE INDIPENDENTE REGIA PENDING.** Baseline R2A approvata
+per il perimetro numerico `7bf4f1e04aef3ad0bc64ed8fb8fd82e3cbc43003` e
+[mandato F1 della #17](https://github.com/epivic-lab/SerieN/pull/17#issuecomment-6858353142).
+Nuovo branch `codex/scenario-v06-r2a-f1-shared-junction-interlocking`, un commit
+atomico e Draft con base R2A; SHA/URL e verifica remota nella consegna finale.
+
+ADJ-01 **confermato dinamicamente e risolto nel perimetro numerico provato**.
+Prima:tick836,88,333 mm/s,gancio40,031 su P060,fasciaC13[0,30],safety unlocked,
+panel/device accettati in sessioni isolate. Tre test rossi prima del fix.
+Dopo:encounters WX-A+C13,approach-lock invariato ora efficace,inset30 derivato
+dalla fascia esistente,stop tick869 a31,753 mm dal giunto,1,753 mm fuori fascia;
+correzione protetta a riposo e ripartenza solo con comando esplicito.
+
+Solo next-switch.js e railway-guard.js applicativi modificati; test storico
+full/lean adeguato al completamento degli incontri, fixture5C immutato.
+**412/412 Node,9/9 JMRI,build/canonico PASS.**112 casi noti+56 UNKNOWN su cinque
+giunti condivisi V06/Legacy.58.624 preview con primary/routing/ranges/stop
+identici. Sei giri e due composizioni R2A,dinamica e138giunti preservati;
+4209blob protetti identici,bundle+91byte,stessi85input,zero V06/laboratorio.
+
+[Rapporto](R2A_F1_SHARED_JUNCTION_REPORT.md),[evidenze](evidence/R2A-F1/README.md).
+runtimeAdmission:false e flag di certificazione fisica/runtime invariati.
+Geometrie/dataset,Step/collisioni/cinematica,UI/renderer/HUD/bootstrap/asset,
+Auth/Supabase/backend,dipendenze e workflow preservati. Nessun nuovo PASS browser.
+
+**STOP R2A-F1: richiesta valutazione indipendente Regia. Nessun R2B,merge,deploy
+o attivazione browser V06.** Traffico simultaneo,priorità,N07/N16/scalo,quarto
+treno,agganci dinamici e sagome fisiche restano fuori perimetro.
+
+---
+
+## Stato storico precedente — R2A prima del Gate Regia e di F1
+
 # Scenario V06 — R2A
 
 **PASS numerico R2A con limite operativo R2A-ADJ-01; QUALITY GATE REGIA PENDING.**

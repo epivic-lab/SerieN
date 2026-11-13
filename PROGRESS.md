@@ -1,3 +1,33 @@
+# Stato corrente — Scenario V06 R2A-F1
+
+**PASS tecnico R2A-F1; QUALITY GATE INDIPENDENTE REGIA PENDING.** Baseline e parent
+unico `7bf4f1e04aef3ad0bc64ed8fb8fd82e3cbc43003`, nuovo branch
+`codex/scenario-v06-r2a-f1-shared-junction-interlocking`, Draft con base R2A e
+collegamento alla #17. SHA/URL e checkpoint local=remote nella ricevuta finale.
+
+Rischio ADJ-01 confermato con vero step/comandi: al tick836,88,333 mm/s e gancio
+10,031 mm fuori dalla fascia, panel/device commutavano C13. Tre negativi rossi
+prima del fix, riproducibili sul parent. Correzione minima in next-switch/guard:
+incontri di tutte le unità sul nodo condiviso, maggiore inset esistente30 mm.
+Ora approach rifiutato; stop tick869 con gancio31,753 mm dal giunto,1,753 mm fuori
+dalla fascia, correzione protetta consentita a riposo e riarmo esplicito.
+
+**412/412 Node =395 precedenti+17 nuovi,9/9 JMRI,build/canonico PASS.**112 casi
+noti+56 UNKNOWN su tutti i giunti condivisi V06/Legacy;58.624 preview primari
+identici al parent. Sei giri+due composizioni R2A e dinamica numericamente
+identici.4209 blob protetti identici; bundle+91byte,stessi85input,zero V06/lab.
+Step/collisioni/cinematica/dataset/UI/HUD/renderer/bootstrap/asset/backend/deps
+preservati. runtimeAdmission:false. Nessuna prova browser nuova.
+
+[Rapporto F1](docs/_active/scenario-v06/R2A_F1_SHARED_JUNCTION_REPORT.md),
+[evidenze/riproduzione](docs/_active/scenario-v06/evidence/R2A-F1/README.md).
+**STOP: unica prossima azione Quality Gate Regia. R2B non iniziata/autorizzata;
+nessun merge, deploy o browser V06.**
+
+---
+
+## Stato storico precedente — R2A prima del Gate Regia e di F1
+
 # Stato corrente — Scenario V06 R2A
 
 **PASS numerico R2A con limite operativo R2A-ADJ-01; QUALITY GATE REGIA PENDING.**
