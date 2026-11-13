@@ -1,0 +1,88 @@
+{
+  "baseline": "9aa9656b1f40dec15215d4df366aae2e2e540904",
+  "status": "PASS_FINAL_WITH_PREPARATION_FAILURE_DOCUMENTED",
+  "commands": [
+    {
+      "command": "npm test (baseline, before new code)",
+      "exit": 0,
+      "evidence": "baseline-node.txt",
+      "tests": 412
+    },
+    {
+      "command": "npm run build (baseline F1)",
+      "exit": 0,
+      "evidence": "baseline-build.txt"
+    },
+    {
+      "command": "node --test tests/v06-r2b1.test.js (first preparation)",
+      "exit": 1,
+      "evidence": "development/focused-first.txt",
+      "tests": 64,
+      "passed": 63,
+      "cause": "negative width100 did not overlap, input corrected to150; no core change"
+    },
+    {
+      "command": "node --test --test-name-pattern='overlapping|UNKNOWN two-train' tests/v06-r2b1.test.js",
+      "exit": 0,
+      "evidence": "development/focused-corrected.txt",
+      "tests": 2
+    },
+    {
+      "command": "npm test (final conservative oracle)",
+      "exit": 0,
+      "evidence": "final-node.txt",
+      "tests": 477,
+      "newR2B1Tests": 65
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p jmri_audit_test.py",
+      "exit": 0,
+      "evidence": "final-jmri.txt",
+      "tests": 9
+    },
+    {
+      "command": "npm run build (final)",
+      "exit": 0,
+      "evidence": "final-build.txt"
+    },
+    {
+      "command": "python3 scripts/build-canonical-layout.py; git diff --exit-code -- four canonical artifacts",
+      "exit": 0,
+      "evidence": "canonical.txt",
+      "canonicalDiffEmpty": true
+    },
+    {
+      "command": "node tools/scenario-v06/run-r2b1.js /workspace/work/r2b1/conservative",
+      "exit": 0,
+      "evidence": "matrix-first.txt",
+      "scenarios": 55,
+      "ticks": 60917
+    },
+    {
+      "command": "node tools/scenario-v06/run-r2b1.js /workspace/work/r2b1/conservative-repeat",
+      "exit": 0,
+      "evidence": "matrix-repeat.txt",
+      "scenarios": 55,
+      "ticks": 60917
+    },
+    {
+      "command": "compare all 56 JSON files from both matrix runs and published gzip payloads",
+      "exit": 0,
+      "evidence": "determinism.json"
+    },
+    {
+      "command": "node tools/scenario-v06/audit-r2b1.js docs/_active/scenario-v06/evidence/R2B1/audit.json",
+      "exit": 0,
+      "evidence": "audit.json"
+    },
+    {
+      "command": "python3 tools/scenario-v06/check-r2b1-scope.py",
+      "exit": 0,
+      "evidence": "preservation.json"
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    }
+  ]
+}

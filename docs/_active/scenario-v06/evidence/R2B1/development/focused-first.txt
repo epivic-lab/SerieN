@@ -1,0 +1,92 @@
+✔ R2B1 simultaneous full laps A/B 1/1 (1293.497921ms)
+✔ R2B1 simultaneous full laps A/B 1/-1 (1169.188695ms)
+✔ R2B1 simultaneous full laps A/B -1/1 (1030.921576ms)
+✔ R2B1 simultaneous full laps A/B -1/-1 (979.074669ms)
+✔ R2B1 simultaneous full laps A/C 1/1 (1306.201574ms)
+✔ R2B1 simultaneous full laps A/C 1/-1 (1113.70199ms)
+✔ R2B1 simultaneous full laps A/C -1/1 (1306.261655ms)
+✔ R2B1 simultaneous full laps A/C -1/-1 (1199.497412ms)
+✔ R2B1 simultaneous full laps B/C 1/1 (1114.545457ms)
+✔ R2B1 simultaneous full laps B/C 1/-1 (1211.132643ms)
+✔ R2B1 simultaneous full laps B/C -1/1 (1363.045961ms)
+✔ R2B1 simultaneous full laps B/C -1/-1 (1146.522188ms)
+✔ R2B1 two consists on A/B (1280.654279ms)
+✔ R2B1 two consists on A/C (1390.651022ms)
+✔ R2B1 two consists on B/C (1177.41739ms)
+✔ R2B1 following 1 cars=false brake (409.398175ms)
+✔ R2B1 following 1 cars=false STOP (417.033972ms)
+✔ R2B1 following 1 cars=false stationary (397.016079ms)
+✔ R2B1 following 1 cars=true brake (488.279343ms)
+✔ R2B1 following 1 cars=true STOP (726.672546ms)
+✔ R2B1 following 1 cars=true stationary (877.734529ms)
+✔ R2B1 following -1 cars=false brake (465.534095ms)
+✔ R2B1 following -1 cars=false STOP (409.643388ms)
+✔ R2B1 following -1 cars=false stationary (407.175774ms)
+✔ R2B1 following -1 cars=true brake (502.348927ms)
+✔ R2B1 following -1 cars=true STOP (515.322199ms)
+✔ R2B1 following -1 cars=true stationary (493.387823ms)
+✔ R2B1 reachable opposed trains stop safely and remain deadlocked (262.13819ms)
+✔ R2B1 opposite departure control progresses (253.905774ms)
+✔ R2B1 WX-A state=false direction=1,1 (450.691875ms)
+✔ R2B1 WX-A state=false direction=-1,-1 (318.201891ms)
+✔ R2B1 WX-A state=false direction=1,-1 (454.103669ms)
+✔ R2B1 WX-A state=false direction=-1,1 (439.915062ms)
+✔ R2B1 WX-A state=true direction=1,1 (571.531078ms)
+✔ R2B1 WX-A state=true direction=-1,-1 (341.063923ms)
+✔ R2B1 WX-A state=true direction=1,-1 (640.80787ms)
+✔ R2B1 WX-A state=true direction=-1,1 (609.132746ms)
+✔ R2B1 WX-B state=false direction=1,1 (254.520183ms)
+✔ R2B1 WX-B state=false direction=-1,-1 (378.369433ms)
+✔ R2B1 WX-B state=false direction=1,-1 (390.432405ms)
+✔ R2B1 WX-B state=false direction=-1,1 (286.973047ms)
+✔ R2B1 WX-B state=true direction=1,1 (290.347522ms)
+✔ R2B1 WX-B state=true direction=-1,-1 (500.23729ms)
+✔ R2B1 WX-B state=true direction=1,-1 (480.304784ms)
+✔ R2B1 WX-B state=true direction=-1,1 (290.87874ms)
+✔ R2B1 WX-A diamond with two short consists (345.199302ms)
+✔ R2B1 WX-B diamond with two short consists (578.91951ms)
+✔ R2B1 F1 adjacent-unit stop and protected correction with second moving train (386.470756ms)
+✔ R2B1 owner reservation, fresh release and explicit restart 1 (213.004955ms)
+✔ R2B1 owner reservation, fresh release and explicit restart -1 (202.734551ms)
+✔ R2B1 rejected moving proposals rechecked after departure swapped=false immediate=false (204.086187ms)
+✔ R2B1 rejected moving proposals rechecked after departure swapped=false immediate=true (175.787805ms)
+✔ R2B1 rejected moving proposals rechecked after departure swapped=true immediate=false (187.441258ms)
+✔ R2B1 rejected moving proposals rechecked after departure swapped=true immediate=true (171.495143ms)
+✔ R2B1 UNKNOWN blocks admission, both switch surfaces and clock before any transaction (17.844446ms)
+✔ R2B1 incomplete or nonboolean initialization is rejected atomically (30.497495ms)
+✔ R2B1 exact pair, unique IDs and Journey ownership are mandatory (20.176019ms)
+✔ R2B1 another session Journey never enters clock (34.696554ms)
+✖ R2B1 overlapping, cross-track wide and inactive-path admission are rejected (14.0112ms)
+✔ R2B1 reservation admission and foreign/invalid owners fail closed (25.005061ms)
+✔ R2B1 invalid speed and reversal in motion cannot mutate tick or direction (23.588062ms)
+✔ R2B1 independent oracle detects teleport, stale occupations, forbidden history and overlap (72.613495ms)
+✔ R2B1 independent polygon witness recognizes actual crossing and separated rectangles (0.221048ms)
+✔ R2B1 deterministic numeric traces exclude private session UUID (382.517788ms)
+ℹ tests 64
+ℹ suites 0
+ℹ pass 63
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 34736.281418
+
+✖ failing tests:
+
+test at tests/v06-r2b1.test.js:23:1
+✖ R2B1 overlapping, cross-track wide and inactive-path admission are rejected (14.0112ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/v06-r2b1.test.js:23:248)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /envelope/,
+    operator: 'throws',
+    diff: 'simple'
+  }

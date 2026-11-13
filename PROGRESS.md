@@ -642,3 +642,33 @@ Autorizzata solo R0.2 dall'esatto checkpoint R01 `65ec1675510700fef503c16af2cfbe
 PASS offline: A/B/C,64casiWX,90semplici,128configurazioni/17.920arrivi,terminali/manovra triangolo,intersezioni e primitiveG0/G1,9mutanti rifiutati. Baseline/finale254Node,9JMRI,build e bundle legacy identico. MetadatiGLB verificati, binario oltre32MiB non trasferibile/proxy403; piano di variante locale con rimozione esclusiva dagli aggregati, parti mobili e profilo ferroviario. Sagome/ruote solo preliminari; circolazioneV06 non verificata.
 
 **R0.2 PASS GEOMETRICO/OFFLINE — CONDITIONAL GO R1, REGIA QUALITY GATE PENDING.** Checkpoint atomico e push normale sul solo branch dedicato; PR Draft collegata alla#12, URL/SHA effettivi e verifica remota nella consegna. Core/UI/HUD/backend/legacy/asset originali/test/dipendenze/workflow invariati. Prossima e unica azione: Quality Gate Regia sul candidato e lock; R1 non iniziata, nessun merge/deploy.
+
+
+## Scenario V06 — R2B1: two-train dynamic safety (2026-11-13)
+
+R2A-F1 approvata nel Gate Regia della [#18, commento6859221401](https://github.com/epivic-lab/SerieN/pull/18#issuecomment-6859221401).
+Unica microfase R2B1 dalla baseline esatta `9aa9656b1f40dec15215d4df366aae2e2e540904`,
+branch `codex/scenario-v06-r2b1-two-train-safety`, Draft con base R2A-F1.
+
+**PASS tecnico di safety numerica / QUALITY GATE REGIA PENDING.** Unica sessione,
+rete e clock, due Journey/owner distinti, unica stepRailway per tick e comandi
+originali.55scenari/60.917tick:15 indipendenti A/B,A/C,B/C (tutti i versi e giri
+completi per entrambi),12 inseguimenti con STOP/frenata/ripartenza,2 frontali/
+divergenti,19WX/F1,7 prenotazioni/condizione fresca/UNKNOWN. Oracolo esterno R02/R1A
+su pose/ganci/history/giunti, poligoni e inviluppi continui conservativi,
+occupazioni effettive/prenotazioni/sette controller. Nessuna collisione,
+penetrazione,teleport o autorizzazione stale osservata.11deadlock sicuri distinti
+dal progresso; nessuna policy di priorità. Margini numerici, non fisici certificati.
+
+Baseline412Node; finale477/477Node (65nuovi),9/9JMRI,build/canonico PASS.
+Due esecuzioni complete byte-identiche;4246blob protetti immutati, entrambi i
+moduli F1 e laboratorio R2A byte-identici, bundle identico F1 con85input e zero
+V06/laboratorio. Core/app/UI/asset/backend/Supabase/deps/workflow invariati,
+runtimeAdmission:false. [Rapporto](docs/_active/scenario-v06/R2B1_TWO_TRAIN_SAFETY_REPORT.md),
+[matrice](docs/_active/scenario-v06/evidence/R2B1/SCENARIO_MATRIX.md),
+[evidenze](docs/_active/scenario-v06/evidence/R2B1/README.md).
+
+Commit atomico, checkpoint remoto verificato e Draft collegata alla#18 nella
+ricevuta finale. **STOP R2B1: unica prossima azione, Quality Gate indipendente
+Regia. Nessun merge/deploy/browser V06 o avvio R2B2.** Equità generale,sagome
+fisiche,N07/N16/scalo,coupling dinamico e terzo/quarto treno non verificati.
