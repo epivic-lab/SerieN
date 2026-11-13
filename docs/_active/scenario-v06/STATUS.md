@@ -1,3 +1,48 @@
+# Scenario V06 — R2B2
+
+**PASS tecnico di safety numerica / QUALITY GATE INDIPENDENTE REGIA PENDING.**
+Mandato esclusivo dal [Gate #19 /6860875610](https://github.com/epivic-lab/SerieN/pull/19#issuecomment-6860875610).
+Baseline e parent unico `ab9c9bacdba652209b2ffc14b7c70856645601ba`;
+branch `codex/scenario-v06-r2b2-three-train-safety`, Draft con base R2B1/#19.
+SHA atomico, URL e checkpoint local=remote nella ricevuta finale.
+
+Una sessione R1C, una rete V06, tre Journey/owner ID 0/1/2, un solo
+FixedClock(1/60) e una transazione stepRailway originale per tick. Ammissione
+integrale e atomica, tre coppie/ogni veicolo verificate dall'oracolo R2B1.
+Due sole estensioni ai moduli di laboratorio, nessuna modifica applicativa.
+
+**75 scenari /57.649 tick /172.947 coppia-tick /887 giunti** per esecuzione.
+10 casi S1 (otto versi A/B/C e stock con uno/due carri),26 inseguimenti con
+permutazioni/riarmi/immediato-differito,28 WX (inclusi due conflitti reali a3),
+F1 con due treni in moto,10 dinamici/UNKNOWN/near-touch.
+**20 righe DEADLOCK sicuro** (12 configurazioni WX di riferimento e8 perturbate),
+8 arresti near-touch controllati: separazione PASS, progresso distinto.
+Terzo effettivamente in moto nei conflitti della coppia WX; nessun dispatcher.
+Margine minimo stress0,0001 mm, minimo dinamico WX0,017742613 mm;
+non sono tolleranze fisiche certificate. Equità generale NON CERTIFICATA.
+
+Baseline477/477; finale**559/559 Node,9/9 JMRI,build/canonico PASS**.
+Due matrici finali/76JSON byte-identici. Tutte le55prove R2B1 riprodotte con
+risultati e digest tick identici, salvo nuovo contatore di coppie nel risultato.
+**4328 blob protetti identici**; sole eccezioni PROGRESS/STATUS e2harnessNode.
+Core/Step/Journey/routing/guard/collisioni,F1 e testimone geometrico invariati.
+Bundle F1 byte-identico,85input,zeroV06/laboratorio. Dataset/topologia,Legacy,
+UI/HUD/renderer/bootstrap/asset,backend/Supabase/deps/workflow intatti.
+`runtimeAdmission:false` e certificazioni fisiche/runtime false preservati.
+
+[Rapporto R2B2](R2B2_THREE_TRAIN_SAFETY_REPORT.md),
+[matrice](evidence/R2B2/SCENARIO_MATRIX.md),[evidenze e riproduzione](evidence/R2B2/README.md).
+NOT VERIFIED browser Legacy nuovo/browser V06,hardware/sagome fisiche,
+equità generale,N07/N16/scalo,coupling dinamico/quarto treno e48coppie WX vietate
+come circolazione. Nessuna rotta impossibile inventata.
+
+**STOP R2B2. Unica prossima azione: Quality Gate indipendente Regia sulla Draft.
+Nessun R2B3/R2C, browser V06, integrazione visuale, merge o deploy.**
+
+---
+
+## Stato storico precedente — R2B1 prima del Gate Regia #19
+
 # Scenario V06 — R2B1
 
 **PASS tecnico di safety numerica / QUALITY GATE INDIPENDENTE REGIA PENDING.**

@@ -1,0 +1,21 @@
+{
+  "baseline": [
+    "git fetch origin codex/scenario-v06-r2b1-two-train-safety",
+    "git switch -c codex/scenario-v06-r2b2-three-train-safety ab9c9bacdba652209b2ffc14b7c70856645601ba",
+    "npm test",
+    "npm run build"
+  ],
+  "final": [
+    "npm test",
+    "node --test --test-name-pattern=S5-near- tests/v06-r2b2.test.js",
+    "node tools/scenario-v06/run-r2b2.js /workspace/work/r2b2/review1",
+    "node tools/scenario-v06/run-r2b2.js /workspace/work/r2b2/review2",
+    "node tools/scenario-v06/run-r2b1.js /workspace/work/r2b2/compatibility",
+    "python3 -m unittest discover -s tests -p jmri_audit_test.py",
+    "python3 scripts/build-canonical-layout.py",
+    "git diff --exit-code -- src/canonical-layout.json docs/jmri-layout/canonical-graph.json docs/jmri-layout/layout-canonical.svg docs/jmri-layout/minimap-canonical.svg",
+    "npm run build",
+    "node tools/scenario-v06/audit-r2b2.js docs/_active/scenario-v06/evidence/R2B2/audit.json",
+    "python3 tools/scenario-v06/check-r2b2-scope.py"
+  ]
+}
