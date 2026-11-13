@@ -1,4 +1,30 @@
-# Scenario V06 — R0.2
+# Scenario V06 — R1A
+
+**PASS tecnico R1A / QUALITY GATE REGIA PENDING.** Dataset operativo isolato,
+nessuna attivazione o circolazione V06. Branch dedicato
+`codex/scenario-v06-r1a-operational-dataset`, base approvata
+`7118c99a9367da61f0042dfe40240fe78dc0d7c6` e mandato nella
+[PR #13](https://github.com/epivic-lab/SerieN/pull/13#issuecomment-6851925629).
+
+79 archi/74 nodi/sette controller/tre terminali, 79 geometrie R02 preservate,
+G1/G2/G3, A/B/C, scalo e triangolo coerenti. Adapter minimo della factory con
+default legacy; V06 non incluso nel bootstrap/bundle. Oracolo esterno e digest
+pin, 64 casi WX/90 semplici, 128 configurazioni/20.224 arrivi totali/17.920 attivi,
+stati sconosciuti bloccati dalla guardia originale. 44 nuovi test con 34 mutanti
+semantici e digest negativo; **298 Node (254 legacy +44), 9 JMRI e build PASS**.
+4.127 file preesistenti protetti identici; sola factory applicativa modificata.
+
+[Rapporto R1A](R1A_OPERATIONAL_DATASET_REPORT.md), [prove](evidence/R1A/README.md).
+`physical_profile_certified:false`, `runtime_circulation_verified:false`.
+Anchor/capienze N07/N16, consumer/comandi, aghi/GLB, sagome e circolazione restano
+gate successivi. Checkpoint remoto e Draft PR verificati nella consegna finale.
+
+**STOP R1A: unica prossima azione, review indipendente Regia. R1B richiede mandato
+separato; nessun merge/deploy o attivazione.**
+
+---
+
+## Stato storico R0.2 (precedente al Quality Gate della PR #13)
 
 **PASS GEOMETRICO/OFFLINE. CONDITIONAL GO R1 — QUALITY GATE REGIA PENDING.** Nessuna attivazione, certificazione manifatturiera o prova di circolazione runtime.
 
