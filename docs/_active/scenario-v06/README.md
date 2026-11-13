@@ -1,13 +1,15 @@
-# Scenario V06 — audit M0.1 e revisione M0.1-R
+# Scenario V06 — contratto ferroviario R0
 
-Il [rapporto completo M01_AUDIT_REPORT.md](M01_AUDIT_REPORT.md) contiene l'audit M0.1 e l'addendum M0.1-R sulla migrazione della geometria ferroviaria operativa.
+La Regia ha accettato M0.1-R e autorizzato esclusivamente R0. Il [rapporto R0](R0_TRACK_CONTRACT_REPORT.md) contiene la matrice dei 79 pezzi, la classificazione delle 17 estremità non coincidenti, il registro proposto dei cinque semplici/Y e due WX, le transizioni, i controlli di continuità e la richiesta delle integrazioni sorgente.
 
-**Decisione vigente:** V06 sostituirà anche assi e grafo operativo. La raccomandazione iniziale di mantenere la vecchia geometria è superata dall'addendum §15. Funzionalità e regole ferroviarie consolidate restano da preservare.
+**Esito corrente:** analisi R0 consegnata; contratto operativo non certificato, **NO-GO R1**. Mapping e collegamenti dedotti sono marcati esplicitamente. Nessuna connessione per vicinanza o correzione alle coordinate.
 
-**Esito tecnico:** NO-GO all'avvio dell'implementazione con i soli dati verificati. Prima del codice occorrono il contratto AS-BUILT di porte/connessioni, percorsi WX completi, registro degli scambi e matrici degli stati, più revisione e integrità delle fonti. La roadmap R0–R7 è una proposta, non un'autorizzazione.
+**Decisione vigente:** V06 sostituirà assi visuali e grafo operativo, preservando funzionalità e logiche consolidate. L'addendum §15 del [rapporto M01](M01_AUDIT_REPORT.md) prevale sulla precedente strategia visuale; il documento accettato è conservato byte per byte.
 
-- [Stato della consegna documentale](STATUS.md).
-- [Rapporto: audit storico e addendum prevalente](M01_AUDIT_REPORT.md).
-- [Ricevute delle verifiche M0.1-R e della pubblicazione](evidence/M01R/README.md).
+- [Rapporto R0 e Quality Gate](R0_TRACK_CONTRACT_REPORT.md).
+- [Evidenze R0, matrici CSV/JSON e diagramma](evidence/R0/README.md).
+- [Stato corrente e condizioni aperte](STATUS.md).
+- [Audit M0.1 / addendum M0.1-R accettato](M01_AUDIT_REPORT.md).
+- [Evidenze storiche M0.1-R](evidence/M01R/README.md).
 
-La richiesta successiva della Regia autorizza il completamento delle pubblicazioni: commit e checkpoint sul solo branch `codex/scenario-v06-audit-m01r`, con PR Draft verso main. Le dichiarazioni «nessun commit/push» nel rapporto fotografano le fasi di audit precedenti a questo mandato di pubblicazione. Il contenuto tecnico del rapporto è conservato byte per byte; questa pubblicazione non avvia M0.2, non modifica il codice/UI e non autorizza merge o deploy.
+Checkpoint R0 sul branch dedicato `codex/scenario-v06-r0-contract`, dalla base M0.1-R `ffba29fd40dcda874124ca4d8f6b8b169d7b2298`. Le precedenti dichiarazioni di attesa approvazione M0.1-R e di assenza commit/push sono registrazioni storiche: accettazione e mandato R0 sono successivi. Nessun merge, deploy, cambiamento UI V2.1, codice, asset o backend; R1 e M0.2 non avviate. Unica prossima azione: Quality Gate Regia su R0.

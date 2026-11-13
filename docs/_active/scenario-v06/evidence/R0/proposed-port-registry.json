@@ -1,0 +1,805 @@
+{
+  "status": "PROPOSED_NOT_CERTIFIED_NOT_RUNTIME_DATA",
+  "controllers": [
+    {
+      "id": "V06-C07",
+      "manual_component": "C07",
+      "type": "Y",
+      "kato_code": "20-222",
+      "reference": "toe, PLAN_MM, rail top Z=8.4",
+      "reference_point_plan_mm": [
+        1091.936,
+        533.208
+      ],
+      "ports_plan_mm": {
+        "A": [
+          1091.936,
+          533.208
+        ],
+        "B": [
+          962.474,
+          550.252
+        ],
+        "C": [
+          962.474,
+          516.164
+        ]
+      },
+      "states": {
+        "S0": {
+          "path_piece": 35,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "S1": {
+          "path_piece": 34,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      },
+      "mapping_status": "PROPOSED_NOT_CERTIFIED",
+      "masterplan_label_candidate": "Y-R2",
+      "physical_command_polarity": "MISSING",
+      "blade_geometry_by_state": "MISSING",
+      "default_state": "S0_PROPOSED"
+    },
+    {
+      "id": "V06-C12",
+      "manual_component": "C12",
+      "type": "#6 SX",
+      "kato_code": "20-202",
+      "reference": "toe, PLAN_MM, rail top Z=8.4",
+      "reference_point_plan_mm": [
+        1091.936,
+        101.032
+      ],
+      "ports_plan_mm": {
+        "A": [
+          1091.936,
+          101.032
+        ],
+        "B": [
+          905.861,
+          101.032
+        ],
+        "C": [
+          906.029,
+          125.507
+        ]
+      },
+      "states": {
+        "S0": {
+          "path_piece": 68,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "S1": {
+          "path_piece": 30,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      },
+      "mapping_status": "PROPOSED_NOT_CERTIFIED",
+      "masterplan_label_candidate": "Y-IN",
+      "physical_command_polarity": "MISSING",
+      "blade_geometry_by_state": "MISSING",
+      "default_state": "S0_PROPOSED"
+    },
+    {
+      "id": "V06-C13",
+      "manual_component": "C13",
+      "type": "#6 SX",
+      "kato_code": "20-202",
+      "reference": "toe, PLAN_MM, rail top Z=8.4",
+      "reference_point_plan_mm": [
+        905.861,
+        101.032
+      ],
+      "ports_plan_mm": {
+        "A": [
+          905.861,
+          101.032
+        ],
+        "B": [
+          719.785,
+          101.032
+        ],
+        "C": [
+          719.953,
+          125.507
+        ]
+      },
+      "states": {
+        "S0": {
+          "path_piece": 69,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "S1": {
+          "path_piece": 33,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      },
+      "mapping_status": "PROPOSED_NOT_CERTIFIED",
+      "masterplan_label_candidate": null,
+      "physical_command_polarity": "MISSING",
+      "blade_geometry_by_state": "MISSING",
+      "default_state": "S0_PROPOSED"
+    },
+    {
+      "id": "V06-N07",
+      "manual_component": "N07",
+      "type": "#6 DX",
+      "kato_code": "20-203",
+      "reference": "toe, PLAN_MM, rail top Z=8.4",
+      "reference_point_plan_mm": [
+        415.412,
+        256.772
+      ],
+      "ports_plan_mm": {
+        "A": [
+          415.412,
+          256.772
+        ],
+        "B": [
+          595.148,
+          208.612
+        ],
+        "C": [
+          601.32,
+          232.297
+        ]
+      },
+      "states": {
+        "S0": {
+          "path_piece": 31,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "S1": {
+          "path_piece": 32,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      },
+      "mapping_status": "PROPOSED_NOT_CERTIFIED",
+      "masterplan_label_candidate": "Y-R1",
+      "physical_command_polarity": "MISSING",
+      "blade_geometry_by_state": "MISSING",
+      "default_state": "S0_PROPOSED"
+    },
+    {
+      "id": "V06-N14",
+      "manual_component": "N14",
+      "type": "#6 DX",
+      "kato_code": "20-203",
+      "reference": "toe, PLAN_MM, rail top Z=8.4",
+      "reference_point_plan_mm": [
+        726.293,
+        173.667
+      ],
+      "ports_plan_mm": {
+        "A": [
+          726.293,
+          173.667
+        ],
+        "B": [
+          906.029,
+          125.507
+        ],
+        "C": [
+          912.201,
+          149.192
+        ]
+      },
+      "states": {
+        "S0": {
+          "path_piece": 41,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "S1": {
+          "path_piece": 42,
+          "allowed_directed_pairs": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      },
+      "mapping_status": "PROPOSED_NOT_CERTIFIED",
+      "masterplan_label_candidate": null,
+      "physical_command_polarity": "MISSING",
+      "blade_geometry_by_state": "MISSING",
+      "default_state": "S0_PROPOSED"
+    },
+    {
+      "id": "WX-A",
+      "manual_component": "C14",
+      "type": "WX310",
+      "kato_code": "20-210",
+      "ports_plan_mm": {
+        "UL": [
+          409.659,
+          68.018
+        ],
+        "UR": [
+          719.785,
+          68.018
+        ],
+        "LL": [
+          409.659,
+          101.032
+        ],
+        "LR": [
+          719.785,
+          101.032
+        ]
+      },
+      "reference_point_plan_mm": [
+        564.722,
+        84.525
+      ],
+      "paths_by_state": {
+        "N": {
+          "UL-UR": 59,
+          "LL-LR": 60
+        },
+        "X": {
+          "UL-LR": 12,
+          "LL-UR": 13
+        }
+      },
+      "transition_matrix": {
+        "N": [
+          {
+            "entry": "UL",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "UR",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "UL",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "LR",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "LL",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          }
+        ],
+        "X": [
+          {
+            "entry": "UL",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "LR",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "LL",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "UR",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "UL",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          }
+        ]
+      },
+      "physical_command_polarity": "MISSING",
+      "four_point_sets_by_state": {
+        "N": {
+          "UL": "UR",
+          "UR": "UL",
+          "LL": "LR",
+          "LR": "LL"
+        },
+        "X": {
+          "UL": "LR",
+          "LR": "UL",
+          "LL": "UR",
+          "UR": "LL"
+        }
+      },
+      "point_tip_positions_and_throws_mm": "MISSING",
+      "full_crossover_geometry": "MISSING_LEADS_AND_SOURCE_PRECISION",
+      "default_state": "N_PROPOSED",
+      "mapping_status": "PROPOSED_NOT_CERTIFIED"
+    },
+    {
+      "id": "WX-B",
+      "manual_component": "B08",
+      "type": "WX310",
+      "kato_code": "20-210",
+      "ports_plan_mm": {
+        "UL": [
+          781.81,
+          35.005
+        ],
+        "UR": [
+          1091.936,
+          35.005
+        ],
+        "LL": [
+          781.81,
+          68.018
+        ],
+        "LR": [
+          1091.936,
+          68.018
+        ]
+      },
+      "reference_point_plan_mm": [
+        936.8729999999999,
+        51.5115
+      ],
+      "paths_by_state": {
+        "N": {
+          "UL-UR": 61,
+          "LL-LR": 62
+        },
+        "X": {
+          "UL-LR": 16,
+          "LL-UR": 17
+        }
+      },
+      "transition_matrix": {
+        "N": [
+          {
+            "entry": "UL",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "UR",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "UL",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "LR",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "LL",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          }
+        ],
+        "X": [
+          {
+            "entry": "UL",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UL",
+            "exit": "LR",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "LL",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "UR",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "UL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "UR",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LL",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "UL",
+            "allowed": true,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "UR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "LL",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          },
+          {
+            "entry": "LR",
+            "exit": "LR",
+            "allowed": false,
+            "status": "PROPOSED_NOT_CERTIFIED"
+          }
+        ]
+      },
+      "physical_command_polarity": "MISSING",
+      "four_point_sets_by_state": {
+        "N": {
+          "UL": "UR",
+          "UR": "UL",
+          "LL": "LR",
+          "LR": "LL"
+        },
+        "X": {
+          "UL": "LR",
+          "LR": "UL",
+          "LL": "UR",
+          "UR": "LL"
+        }
+      },
+      "point_tip_positions_and_throws_mm": "MISSING",
+      "full_crossover_geometry": "MISSING_LEADS_AND_SOURCE_PRECISION",
+      "default_state": "N_PROPOSED",
+      "mapping_status": "PROPOSED_NOT_CERTIFIED"
+    }
+  ]
+}

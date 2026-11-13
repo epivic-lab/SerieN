@@ -1,0 +1,15 @@
+{
+  "status": "CONDITIONAL_ABSTRACT_CONNECTIVITY_ONLY_NOT_RUNTIME_GRAPH",
+  "assumptions": [
+    "G1,G2,G3 intentionally linked for analysis only, raw coordinates unchanged",
+    "four WX cross routes semantically reach external ports; full lead geometry remains missing",
+    "physical/controller mapping deduced from manual, not producer-certified"
+  ],
+  "nodes_under_assumptions": 74,
+  "edges_under_assumptions": 79,
+  "components_under_assumptions": [
+    74
+  ],
+  "cycle_rank_of_union_of_all_states": 6,
+  "warning": "Union of switch states is not a simultaneous operational route; no direct branch-to-branch reversal at N07."
+}
