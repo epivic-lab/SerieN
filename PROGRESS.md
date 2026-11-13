@@ -488,3 +488,12 @@ A/B chiusi metricamente sui dati; C conserva G3, triangolo G1/G2 e passaggio ram
 254 test Node, 9 JMRI e build di nuova esecuzione PASS; audit riproducibile e invarianti PASS. Bundle `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378` identico. [Evidenze](docs/_active/scenario-v06/evidence/R0/README.md). Browser/circolazione V06 NOT VERIFIED. Solo documenti/evidenze e questa appendice; M01 byte-identico, codice/geometria/renderer/UI V2.1/asset/backend/dipendenze/workflow intatti. Checkpoint atomico e push normale sul solo branch dedicato, SHA remoto verificato nella consegna.
 
 **R0 ANALISI CONSEGNATA CON DIPENDENZE APERTE; CONTRATTO NON CERTIFICATO, NO-GO R1. STOP per Quality Gate Regia e assegnazione integrazioni. Nessun merge/main/deploy/M0.2/R1.**
+
+
+## Scenario V06 — R0.2: validazione WX310 (2026-11-13)
+
+Autorizzata solo R0.2 dall'esatto checkpoint R01 `65ec1675510700fef503c16af2cfbe725817568a`, branch `codex/scenario-v06-r02-wx-validation`. [Rapporto](docs/_active/scenario-v06/R02_WX_GEOMETRY_VALIDATION_REPORT.md), [dataset separato](docs/_active/scenario-v06/candidate/R02/README.md), [prove](docs/_active/scenario-v06/evidence/R02/README.md). Confrontati record XTrackCAD pin e documentazione TRAX/Kato, distinguendo dati ufficiali, ricostruzione CAD e parametri non acquisiti. Scelto R01 continuo R583,184/centro17,924429: tutti79record pezzo/74nodi/porte/stati/gap identici, solo metadati di versione/validazione. Eccezione locale al master autorizzata; misura analitica più fitta3,334762mm senza modifiche della forma.
+
+PASS offline: A/B/C,64casiWX,90semplici,128configurazioni/17.920arrivi,terminali/manovra triangolo,intersezioni e primitiveG0/G1,9mutanti rifiutati. Baseline/finale254Node,9JMRI,build e bundle legacy identico. MetadatiGLB verificati, binario oltre32MiB non trasferibile/proxy403; piano di variante locale con rimozione esclusiva dagli aggregati, parti mobili e profilo ferroviario. Sagome/ruote solo preliminari; circolazioneV06 non verificata.
+
+**R0.2 PASS GEOMETRICO/OFFLINE — CONDITIONAL GO R1, REGIA QUALITY GATE PENDING.** Checkpoint atomico e push normale sul solo branch dedicato; PR Draft collegata alla#12, URL/SHA effettivi e verifica remota nella consegna. Core/UI/HUD/backend/legacy/asset originali/test/dipendenze/workflow invariati. Prossima e unica azione: Quality Gate Regia sul candidato e lock; R1 non iniziata, nessun merge/deploy.

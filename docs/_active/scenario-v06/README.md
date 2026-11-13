@@ -1,3 +1,5 @@
+> **Aggiornamento prevalente R0.2:** [rapporto WX](R02_WX_GEOMETRY_VALIDATION_REPORT.md), [candidato offline R02](candidate/R02/README.md), [prove](evidence/R02/README.md). PASS geometrico, CONDITIONAL GO subordinato al Quality Gate Regia. Eccezione locale WX ammessa; 79 pezzi e correzioni R01 integralmente preservati. Nessuna attivazione o R1 avviata. Le indicazioni R01/R0 seguenti sono storiche; stato corrente in [STATUS.md](STATUS.md).
+
 > **Aggiornamento prevalente R0.1:** [rapporto di continuità](R01_CONTINUITY_RESOLUTION_REPORT.md), [candidato offline](candidate/R01/README.md), [evidenze](evidence/R01/README.md). G1/G2/G3 chiusi e A/B/C continui; fedeltà WX ancora aperta (scarto fino a 3,335 mm), NO-GO R1. Stato corrente in [STATUS.md](STATUS.md). Quanto segue resta come indice storico.
 
 # Scenario V06 — contratto ferroviario R0
