@@ -1,3 +1,18 @@
+# Stato corrente — V06-INTEGRATION, 13 novembre 2026
+
+**BLOCKED — integrazione applicativa non completata.** La nuova direttiva
+autorizza l'intera integrazione e supera i vecchi STOP di fase sottostanti.
+Ripresa dal checkpoint esatto R2B2 `f592a12131b9b7236cbe79506cd23a03dacadd9f`,
+branch `codex/scenario-v06-integration`, catena Draft #20 preservata.
+Il terreno originale necessario supera il limite di materializzazione 32 MiB;
+download alternativo negato dal proxy di rete 403. Sette altri moduli recuperati
+e verificati. Nessun asset mancante inventato; nessun codice applicativo cambiato.
+559 Node, 9 JMRI, build e smoke **Legacy** desktop/mobile PASS; V06 browser e
+otto criteri di accettazione NON VERIFICATI. Nessun merge/deploy/Supabase.
+[Rapporto e modalità di ripresa](V06_INTEGRATION_REPORT.md).
+
+---
+
 # Scenario V06 — R2B2
 
 **PASS tecnico di safety numerica / QUALITY GATE INDIPENDENTE REGIA PENDING.**

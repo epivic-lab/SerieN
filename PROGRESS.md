@@ -1,3 +1,17 @@
+# V06-INTEGRATION — ripresa 13 novembre 2026
+
+**BLOCKED, non completata.** Recuperato checkpoint R2B2 esatto `f592a12131b9b7236cbe79506cd23a03dacadd9f`
+su nuovo branch `codex/scenario-v06-integration`, collegato alla Draft #20.
+559 Node, 9 JMRI, build e smoke Legacy desktop/mobile PASS. Sette GLB originali
+(95.603.172 byte) recuperati e verificati contro il manifest; cache locale
+`/workspace/work/v06/assets/`. Terreno indispensabile 41 MB non materializzabile:
+limite executor 32 MiB, download autenticato alternativo negato dal proxy 403.
+Stop asset previsto dalla direttiva dell'utente, nessuna pausa per microfase.
+Nessun codice di integrazione, merge, deploy o modifica Supabase.
+[Rapporto di ripresa](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md).
+Prossima azione: sbloccare l'acquisizione degli asset e riprendere la medesima
+integrazione già autorizzata. Non dichiarare V06 giocabile o PASS BROWSER V06.
+
 # Serie N — Stato corrente R2B2 (13 novembre 2026)
 
 **PASS tecnico di safety numerica / QUALITY GATE INDIPENDENTE REGIA PENDING.**
