@@ -1,3 +1,41 @@
+# Scenario V06 — R1C
+
+**PASS tecnico del laboratorio Node R1C / QUALITY GATE REGIA PENDING.**
+Mandato esclusivo dal [Quality Gate R1B nella PR #15](https://github.com/epivic-lab/SerieN/pull/15#issuecomment-6856806189).
+Baseline esatta `b8f4f3cb98a3c5f49aa8713a96d2c10b445fb67b`, branch dedicato
+`codex/scenario-v06-r1c-session-readiness`, nuova Draft PR contro R1B.
+URL/SHA e checkpoint remoto effettivi nella consegna finale.
+
+Session factory solo in tools/scenario-v06: selezione esplicita, ammissione
+hash/schema/semantica prima di createNetwork, una rete immutabile per istanza,
+registry/stati/router/modello/topologia coerenti, Journey/flotta di fixture
+statiche, occupazioni/prenotazioni, cache/callback/timer e disposal. UNKNOWN
+iniziale sui sette V06, rifiuto profili/istanze misti e hot swap in movimento.
+Readiness di laboratorio distinta da runtimeAdmission, che resta sempre false.
+
+**371/371 Node =336 precedenti+35 R1C,9/9 JMRI,build/canonico PASS.**
+Legacy→V06→Legacy riparte da zero, ingressi stale revocati, prenotazioni/cache
+svuotate e timer/callback isolati. Tre candidati statici C/B/A verificati per
+lunghezza e ingombro; terminali/scalo/quarto slot/triangolo non configurati
+rifiutati. Nessuna posizione operativa o capienza inventata. Matrice completa
+consumer e piano di rollback nel [rapporto](R1C_SESSION_READINESS_REPORT.md).
+[Prove e comandi](evidence/R1C/README.md).
+
+4.168 blob preesistenti protetti identici; tutti src/app/test precedenti,
+UI V2.1/renderer/asset/core/dataset/backend/deps/workflow invariati.
+Bundle legacy identico R1B:1.095.990byte,85input,zero V06/laboratorio.
+physical_profile_certified:false e runtime_circulation_verified:false immutati.
+Browser V06, circolazione completa, arresti/manovre/sagome/fouling e teardown
+applicativo NOT VERIFIED; nessun nuovo PASS visuale dedotto dal laboratorio.
+
+**STOP R1C: unica prossima azione Quality Gate Regia.** R2 dinamica solo
+proposta, nessuna esecuzione o autorizzazione implicita. Nessun merge/deploy,
+attivazione browser, modifica Supabase o circolazione operativa.
+
+---
+
+## Stato storico precedente
+
 # Scenario V06 — R1B
 
 **PASS tecnico R1B / QUALITY GATE REGIA PENDING.** Mandato esclusivo dalla

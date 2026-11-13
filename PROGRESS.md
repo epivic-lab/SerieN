@@ -1,3 +1,37 @@
+# Stato corrente — Scenario V06 R1C
+
+**PASS tecnico del laboratorio R1C / QUALITY GATE REGIA PENDING.**
+R1B approvata a `b8f4f3cb98a3c5f49aa8713a96d2c10b445fb67b` dalla
+[Regia nella PR #15](https://github.com/epivic-lab/SerieN/pull/15#issuecomment-6856806189).
+Branch dedicato `codex/scenario-v06-r1c-session-readiness`, worktree isolato.
+Factory solo Node con ammissione hash/schema prima della rete, identità per
+istanza, registry/controller/stati/router/topologia coerenti, flotta statica,
+occupazioni/prenotazioni, cache/callback/timer e teardown. V06 iniziale null,
+UNKNOWN fail-closed; nessuna API di avanzamento o attivazione nel bootstrap.
+
+**371 Node = 336 precedenti +35 R1C, 9 JMRI, build/canonico PASS.**
+Legacy→V06→Legacy da zero, ownership e WX omonimi, no hot swap in movimento,
+spawn statici dei tre anelli, negativi lunghezza/ingombro/prenotazioni, slot
+quarto e terminali/manovre sconosciuti rifiutati. Matrice consumer completa.
+4.168 blob protetti identici; tutti i sorgenti applicativi/test precedenti,
+UI V2.1/renderer/asset/core/dataset/backend/deps/workflow invariati.
+Bundle identico R1B, zero input V06/laboratorio; runtimeAdmission sempre false.
+
+[Rapporto R1C](docs/_active/scenario-v06/R1C_SESSION_READINESS_REPORT.md),
+[stato](docs/_active/scenario-v06/STATUS.md),
+[prove e riproduzione](docs/_active/scenario-v06/evidence/R1C/README.md).
+Circolazione completa, browser V06, arresti/capacità/fouling e lifecycle
+applicativo NOT VERIFIED. SHA/URL effettivi della Draft PR contro R1B nella
+ricevuta finale dopo verifica local=remote.
+
+**Unica prossima azione: Quality Gate indipendente Regia su R1C. STOP.**
+R2 dinamica solo proposta, serve nuovo mandato; nessun merge/deploy,
+attivazione V06 o autorizzazione alla circolazione.
+
+---
+
+## Registro precedente — storico; stato corrente sopra
+
 # Stato corrente — Scenario V06 R1B
 
 **PASS tecnico R1B / QUALITY GATE REGIA PENDING.** R1A approvata nella

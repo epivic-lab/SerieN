@@ -1,0 +1,463 @@
+{
+  "status": "PASS_R1C_STATIC_LAB_ONLY",
+  "baseline": "b8f4f3cb98a3c5f49aa8713a96d2c10b445fb67b",
+  "node": "v24.19.0",
+  "bundle": {
+    "bytes": 1095990,
+    "sha256": "9eaa6b7273bc8597040a24febae71334c0f08cefd4f384151ff458f4543e2a66",
+    "inputs": 85,
+    "prohibitedInputs": []
+  },
+  "legacyNetwork": {
+    "bytes": 533232,
+    "sha256": "ec5c0309f3b7aee5e8af9a996b0bd3b5b3bd03d31ee732cc75286bc2b0904413"
+  },
+  "profiles": [
+    {
+      "identity": {
+        "sessionId": "1353a9d7-ad6f-4b1c-a715-84333670606b",
+        "profile": "legacy",
+        "profileId": "legacy",
+        "schema": "legacy-canonical",
+        "version": 1,
+        "datasetSha256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "networkVersion": "legacy@e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc"
+      },
+      "admission": {
+        "status": "LEGACY_LOCAL_CANONICAL",
+        "edges": 75,
+        "deadEnds": 4
+      },
+      "readiness": {
+        "sessionId": "1353a9d7-ad6f-4b1c-a715-84333670606b",
+        "live": true,
+        "statesKnown": true,
+        "labReady": true,
+        "runtimeAdmission": false,
+        "reasons": [
+          "dynamic-gate-not-authorized"
+        ]
+      },
+      "ids": [
+        "Y-IN",
+        "Y-R1",
+        "Y-R2",
+        "Y-3",
+        "Y-4",
+        "Y-2",
+        "WX-A",
+        "WX-B"
+      ],
+      "spawnPlan": {
+        "sessionId": "1353a9d7-ad6f-4b1c-a715-84333670606b",
+        "networkVersion": "legacy@e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+        "scope": "NODE_STATIC_LAB_ONLY",
+        "loops": [
+          {
+            "id": "C",
+            "lane": 0,
+            "length": 3058.300975406467,
+            "candidate": {
+              "edge": "WIDEN-L:offset",
+              "sign": -1,
+              "window": {
+                "min": 0,
+                "max": 312.8960104221398
+              },
+              "s": 156.4480052110699
+            },
+            "stopAnchor": null,
+            "usefulCapacityMm": null,
+            "foulingCertified": false,
+            "runtimeAdmission": false
+          },
+          {
+            "id": "B",
+            "lane": 1,
+            "length": 3259.8545604603405,
+            "candidate": {
+              "edge": "WIDEN-L:straight",
+              "sign": -1,
+              "window": {
+                "min": 0,
+                "max": 310
+              },
+              "s": 155
+            },
+            "stopAnchor": null,
+            "usefulCapacityMm": null,
+            "foulingCertified": false,
+            "runtimeAdmission": false
+          },
+          {
+            "id": "A",
+            "lane": 2,
+            "length": 3467.200063381812,
+            "candidate": {
+              "edge": "T14",
+              "sign": 1,
+              "window": {
+                "min": 0,
+                "max": 248.0000000000001
+              },
+              "s": 124.00000000000006
+            },
+            "stopAnchor": null,
+            "usefulCapacityMm": null,
+            "foulingCertified": false,
+            "runtimeAdmission": false
+          }
+        ],
+        "unavailable": [
+          "N07",
+          "N16",
+          "scalo",
+          "fourth-train",
+          "triangle"
+        ],
+        "runtimeAdmission": false
+      }
+    },
+    {
+      "identity": {
+        "sessionId": "e2f7f281-eb39-4a37-a4a6-2911452f2061",
+        "profile": "v06",
+        "profileId": "V06-R1A",
+        "schema": "serien-v06-operational-1",
+        "version": 1,
+        "datasetSha256": "4fd022e1173ef5517a7c826f4163dd10ab1ff776e1ecfaf144f53d40473ccef7",
+        "networkVersion": "V06-R1A@4fd022e1173ef5517a7c826f4163dd10ab1ff776e1ecfaf144f53d40473ccef7"
+      },
+      "admission": {
+        "status": "PASS_DATASET_ONLY",
+        "edges": 79,
+        "nodes": 74,
+        "controllers": 7,
+        "terminals": 3,
+        "wxCases": 64,
+        "simpleCases": 90,
+        "stateConfigurations": 128,
+        "activeArrivals": 17920,
+        "allArrivals": 20224,
+        "maxTangentDegrees": 3.3911562282900016,
+        "deadEnds": 3
+      },
+      "readiness": {
+        "sessionId": "e2f7f281-eb39-4a37-a4a6-2911452f2061",
+        "live": true,
+        "statesKnown": false,
+        "labReady": false,
+        "runtimeAdmission": false,
+        "reasons": [
+          "unknown-control"
+        ]
+      },
+      "ids": [
+        "V06-C07",
+        "V06-C12",
+        "V06-C13",
+        "V06-N07",
+        "V06-N14",
+        "WX-A",
+        "WX-B"
+      ],
+      "spawnPlan": {
+        "sessionId": "e2f7f281-eb39-4a37-a4a6-2911452f2061",
+        "networkVersion": "V06-R1A@4fd022e1173ef5517a7c826f4163dd10ab1ff776e1ecfaf144f53d40473ccef7",
+        "scope": "NODE_STATIC_LAB_ONLY",
+        "loops": [
+          {
+            "id": "C",
+            "lane": 0,
+            "length": 2933.790700411985,
+            "candidate": {
+              "edge": "V06-P064",
+              "sign": -1,
+              "window": {
+                "min": 0,
+                "max": 248.101
+              },
+              "s": 124.0505
+            },
+            "stopAnchor": null,
+            "usefulCapacityMm": null,
+            "foulingCertified": false,
+            "runtimeAdmission": false
+          },
+          {
+            "id": "B",
+            "lane": 1,
+            "length": 3260.781635120074,
+            "candidate": {
+              "edge": "V06-P065",
+              "sign": -1,
+              "window": {
+                "min": 0,
+                "max": 248.10100000000006
+              },
+              "s": 124.05050000000003
+            },
+            "stopAnchor": null,
+            "usefulCapacityMm": null,
+            "foulingCertified": false,
+            "runtimeAdmission": false
+          },
+          {
+            "id": "A",
+            "lane": 2,
+            "length": 3468.164116346414,
+            "candidate": {
+              "edge": "V06-P056",
+              "sign": -1,
+              "window": {
+                "min": 0,
+                "max": 248.10100000000006
+              },
+              "s": 124.05050000000003
+            },
+            "stopAnchor": null,
+            "usefulCapacityMm": null,
+            "foulingCertified": false,
+            "runtimeAdmission": false
+          }
+        ],
+        "unavailable": [
+          "N07",
+          "N16",
+          "scalo",
+          "fourth-train",
+          "triangle"
+        ],
+        "runtimeAdmission": false
+      }
+    }
+  ],
+  "directCanonicalImports": [
+    {
+      "file": "src/landscape.js",
+      "line": 1,
+      "source": "import canonical from \"./canonical-layout.json\" with {type:\"json\"};"
+    },
+    {
+      "file": "src/network.js",
+      "line": 1,
+      "source": "import canonical from \"./canonical-layout.json\" with { type: \"json\" };"
+    },
+    {
+      "file": "src/scenic-plan.js",
+      "line": 1,
+      "source": "import canonical from \"./canonical-layout.json\" with {type:\"json\"};"
+    },
+    {
+      "file": "src/turnout-registry.js",
+      "line": 1,
+      "source": "import canonical from './canonical-layout.json' with {type:'json'};"
+    },
+    {
+      "file": "src/zone-layout.js",
+      "line": 5,
+      "source": "import canonical from \"./canonical-layout.json\" with {type:\"json\"};"
+    }
+  ],
+  "legacyReferences": [
+    {
+      "file": "app.js",
+      "line": 148,
+      "source": "const loops = network.mainLoops;"
+    },
+    {
+      "file": "app.js",
+      "line": 285,
+      "source": "const controlOrder=[\"WX-A\",\"WX-B\",\"Y-IN\",\"Y-2\",\"Y-3\",\"Y-R1\",\"Y-R2\",\"Y-4\"];"
+    },
+    {
+      "file": "app.js",
+      "line": 286,
+      "source": "const switchSpecs=controlOrder.map((id)=>({...network.controllers.find((c)=>c.id===id),on:false}));"
+    },
+    {
+      "file": "app.js",
+      "line": 425,
+      "source": "{ title: \"The long runaround\", body: \"Set the yard switches and drive the shunter along either runaround route.\", done: () => visitedRunaround, detail: () => visitedRunaround ? \"Runaround completed\" : \"Waiting for the shunter\" },"
+    },
+    {
+      "file": "app.js",
+      "line": 501,
+      "source": "t.previousLane = t.loop;"
+    },
+    {
+      "file": "app.js",
+      "line": 541,
+      "source": "if (edge.lane !== t.previousLane) {"
+    },
+    {
+      "file": "app.js",
+      "line": 543,
+      "source": "t.previousLane = edge.lane;"
+    },
+    {
+      "file": "app.js",
+      "line": 552,
+      "source": "if (edge.role?.startsWith(\"runaround\")) visitedRunaround = true;"
+    },
+    {
+      "file": "app.js",
+      "line": 620,
+      "source": "const insertion={...new Journey(network,'T47',80).locate(),vehicle:{userData:{}}};"
+    },
+    {
+      "file": "app.js",
+      "line": 621,
+      "source": "if(trains.some(t=>vehiclePositions(t).some(p=>(p.edge===\"T47\"&&Math.abs(p.s-80)<120)||vehiclesConflict(insertion,p)))||detached.some(d=>(d.point.edge===\"T47\"&&Math.abs(d.point.s-80)<120)||vehiclesConflict(insertion,{...d.point,vehicle:d.group}))){"
+    },
+    {
+      "file": "app.js",
+      "line": 625,
+      "source": "const t={id,name:`BR 216 · ${id+1}`,nativeName:`BR 216 · ${id+1}`,desc:\"Diesel DB · additional locomotive\",nativeDescription:\"Diesel DB · additional locomotive\",modelKey:\"diesel\",initial:{loop:2,cars:0,edge:\"T47\",s:80},loop:2,speed:0,dir:1,cars:0,lights:false,laps:0,mode:\"loop\",group:locoModel(1,id),carObjs:[]};"
+    },
+    {
+      "file": "app.js",
+      "line": 840,
+      "source": "sidebarUI=mountSidebar({host:document.querySelector('.sidebar'),network,controlOrder,"
+    },
+    {
+      "file": "app.js",
+      "line": 847,
+      "source": "picker:turnoutPicking,panel:$(\"switchList\"),controlIds:controlOrder,requestToggle,selectTrain:select,"
+    },
+    {
+      "file": "app.js",
+      "line": 875,
+      "source": "if(track.lane!==undefined){t.loop=track.lane;t.previousLane=track.lane;t.mode=\"loop\";}else{t.mode=\"yard\";t.section=edge;}"
+    },
+    {
+      "file": "src/network.js",
+      "line": 30,
+      "source": "network.mainLoops = [0,1,2].map((lane) => {"
+    },
+    {
+      "file": "src/network.js",
+      "line": 52,
+      "source": "const loop=network.mainLoops[lane];"
+    },
+    {
+      "file": "src/scenic-plan.js",
+      "line": 18,
+      "source": "{ id: \"Z2\", name: \"Scalo e runaround\", color: \"#a58b50\", polygons: [[[140,180],[480,140],[835,90],[1300,210],[1300,400],[140,400]]] },"
+    },
+    {
+      "file": "src/scenic-plan.js",
+      "line": 82,
+      "source": "...Object.values(network.edges).filter(e=>e.role?.startsWith(\"runaround\")||e.terminal).map(e=>object(`Z2.track.${e.id}`,\"Z2\",{edge:e.id},null,{status:\"canonical railway; protected\",clearance:\"entire edge and connected switches\"})),"
+    },
+    {
+      "file": "src/train-deck.js",
+      "line": 68,
+      "source": "setThumbnail(card.img,train);setText(card.name,train.name);card.root.querySelector(\".trainConsoleSelect\").title=train.name;setText(card.description,train.desc);card.description.title=train.desc;setText(card.route,train.mode===\"loop\"?`LOOP ${train.loop+1}`:network.edges[train.section]?.role?.startsWith(\"runaround\")?\"RUNAROUND\":\"FREIGHT YARD\");"
+    },
+    {
+      "file": "src/turnout-arrow-view.js",
+      "line": 1,
+      "source": "import {TURNOUT_IDS,isTurnoutId} from './turnout-routes.js';"
+    },
+    {
+      "file": "src/turnout-arrow-view.js",
+      "line": 6,
+      "source": "if(!isTurnoutId(id))throw new RangeError('Unknown arrow control');"
+    },
+    {
+      "file": "src/turnout-arrow-view.js",
+      "line": 10,
+      "source": "if(!isTurnoutId(a.controlId)||!Number.isFinite(a.distance)||a.distance<0)throw new RangeError('Invalid arrow approach');"
+    },
+    {
+      "file": "src/turnout-arrow-view.js",
+      "line": 21,
+      "source": "export {TURNOUT_IDS};"
+    },
+    {
+      "file": "src/turnout-arrows.js",
+      "line": 2,
+      "source": "import {TURNOUT_IDS,turnoutArrowView} from './turnout-arrow-view.js';"
+    },
+    {
+      "file": "src/turnout-arrows.js",
+      "line": 44,
+      "source": "for(const id of TURNOUT_IDS){const material=arrowMaterial(),paths=new Map();for(const path of model.read(id,false).paths){const mesh=new THREE.Mesh(arrowGeometry(path),material);mesh.visible=false;mesh.renderOrder=3;mesh.raycast=noop;mesh.name=path.edge;mesh.onBeforeRender=()=>{material.uniforms.sign.value=mesh.userData.sign??0;material.uniformsNeedUpdate=true;};root.add(mesh);paths.set(path.edge,mesh);}units.set(id,{material,paths,state:undefined,view:null,started:null});}"
+    },
+    {
+      "file": "src/turnout-glow.js",
+      "line": 2,
+      "source": "import {TURNOUT_IDS,isTurnoutId} from './turnout-routes.js';"
+    },
+    {
+      "file": "src/turnout-glow.js",
+      "line": 106,
+      "source": "for(const id of TURNOUT_IDS) {"
+    },
+    {
+      "file": "src/turnout-glow.js",
+      "line": 119,
+      "source": "time(at);if(id!==null&&!isTurnoutId(id))throw new RangeError('Unknown glow control');"
+    },
+    {
+      "file": "src/turnout-interaction.js",
+      "line": 2,
+      "source": "import {isTurnoutId} from './turnout-routes.js';"
+    },
+    {
+      "file": "src/turnout-interaction.js",
+      "line": 13,
+      "source": "if(!Object.hasOwn(sources,key)||value!==null&&!isTurnoutId(value))return false;"
+    },
+    {
+      "file": "src/turnout-picking.js",
+      "line": 2,
+      "source": "import {TURNOUT_IDS} from './turnout-routes.js';"
+    },
+    {
+      "file": "src/turnout-picking.js",
+      "line": 47,
+      "source": "for(const id of TURNOUT_IDS) {"
+    },
+    {
+      "file": "src/turnout-picking.js",
+      "line": 65,
+      "source": "const id=hit.object.userData.controlId,d=centreDistance(pathsById.get(id),hit.point),r=TURNOUT_IDS.indexOf(id);"
+    },
+    {
+      "file": "src/turnout-registry.js",
+      "line": 6,
+      "source": "export const TURNOUT_IDS = Object.freeze(canonical.controllers.map(c => c.id));"
+    },
+    {
+      "file": "src/turnout-registry.js",
+      "line": 17,
+      "source": "export function isTurnoutId(id, registry = null) {"
+    },
+    {
+      "file": "src/turnout-registry.js",
+      "line": 19,
+      "source": "? TURNOUT_IDS.includes(id) : assertTurnoutRegistry(registry).has(id));"
+    },
+    {
+      "file": "src/turnout-routes.js",
+      "line": 3,
+      "source": "export {TURNOUT_IDS,isTurnoutId} from './turnout-registry.js';"
+    },
+    {
+      "file": "src/ui/sidebar.js",
+      "line": 4,
+      "source": "export function mountSidebar({host, network, controlOrder, getSwitches, getTrains, getSelected, onFocus}) {"
+    },
+    {
+      "file": "src/ui/sidebar.js",
+      "line": 34,
+      "source": "const tiles = controlOrder.map(id => {"
+    }
+  ],
+  "lifecycle": "legacy -> v06 -> new legacy; disposed resources; no motion executed",
+  "runtimeAdmission": false,
+  "browserV06": "NOT_EXECUTED",
+  "dynamicV06": "NOT_AUTHORIZED"
+}
