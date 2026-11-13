@@ -1,3 +1,35 @@
+# Scenario V06 — R1B
+
+**PASS tecnico R1B / QUALITY GATE REGIA PENDING.** Mandato esclusivo dalla
+[PR #14](https://github.com/epivic-lab/SerieN/pull/14#issuecomment-6852401319),
+R1A approvata a `6a976749d5630c0abf858e64795210183a947f5e`.
+Branch `codex/scenario-v06-r1b-turnout-domain`, nuova Draft PR contro R1A;
+URL/SHA effettivi e verifica remota nella consegna finale.
+
+Registro per istanza di rete e profilo,8legacy/7V06, contratti del modello e
+comandi adattati senza riscrivere gli algoritmi. Stati V06 iniziali null,
+unknown fail-closed, safety riletta sincronicamente, WX protetti come unità
+complete. Rifiuto dei profili misti e dei Journey di altra rete; cache isolate.
+**336Node=298precedenti+38R1B,9JMRI,build/canonico PASS.**7.168ingressi legacy,
+3.200V06,64WX/90semplici,38attraversamenti+ritorno, occupazioni/avvicinamenti e
+richieste consecutive da superfici diverse.4.148file protetti byte-identici.
+
+[Rapporto R1B](R1B_TURNOUT_DOMAIN_REPORT.md),
+[evidenze](evidence/R1B/README.md). UI/picking/glow/frecce/Next Switch e altri
+consumer ancora legacy inventariati per i gate futuri, senza modifiche.
+Dataset/geometria/bootstrap, Journey/router/guard/fisica/collision prevention,
+renderer/UI V2.1/HUD/minimappe/scenografia, backend e workflow preservati.
+Zero input V06 nella build; nessuna attivazione visuale od operativa.
+`physical_profile_certified:false`, `runtime_circulation_verified:false`.
+Circolazione completa, sagome/manovre/anchor e nuove prove browser NOT VERIFIED.
+
+**STOP R1B: unica prossima azione, Quality Gate Regia.** Proposta R1C di audit
+consumer/contratto, non avviata; nessun merge/deploy o passaggio automatico.
+
+---
+
+## Stato storico precedente
+
 # Scenario V06 — R1A
 
 **PASS tecnico R1A / QUALITY GATE REGIA PENDING.** Dataset operativo isolato,
