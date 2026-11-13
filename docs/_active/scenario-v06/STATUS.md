@@ -1,3 +1,41 @@
+# Scenario V06 — R2B1
+
+**PASS tecnico di safety numerica / QUALITY GATE INDIPENDENTE REGIA PENDING.**
+F1 approvata nel [Gate #18 / 6859221401](https://github.com/epivic-lab/SerieN/pull/18#issuecomment-6859221401).
+Baseline e parent unico `9aa9656b1f40dec15215d4df366aae2e2e540904`;
+nuovo branch `codex/scenario-v06-r2b1-two-train-safety`, Draft con base R2A-F1.
+SHA effettivo, URL e checkpoint local=remote nella ricevuta finale.
+
+Laboratorio Node dedicato: una sessione/rete/clock, due Journey e owner,
+una transazione stepRailway originale per tick. Nuova ammissione preventiva,
+comandi/routing/guard/SAT/sweeps/prenotazioni originali, occupazioni fresche.
+Oracolo indipendente R02/R1A: pose/ganci/history/giunti, geometria di corpi e
+invilluppi conservativi continui, occupazioni e sette stati controller.
+
+**55 scenari /60.917tick**, due esecuzioni complete deterministiche.15casi S1
+con giri completi per entrambi,12inseguimenti,2frontale/divergente,19WX/F1,
+7prenotazioni/condizione fresca/UNKNOWN. Nessuna penetrazione o movimento fantasma.
+**11deadlock sicuri**, non una prova di risoluzione/equità. Zero priorità inventate.
+64coppie topologiche WX verificate:16ammesse,48vietate non percorse.
+
+Baseline412/412Node; finale**477/477Node,9/9JMRI,build/canonico PASS**.
+4246blob baseline protetti identici; F1 e R2A intatti, bundle F1 byte-identico,
+85input,zeroV06/laboratorio. Core/app/geometrie/UI/asset/backend/Supabase/deps/
+workflow intatti; runtimeAdmission:false e certificazioni fisiche/runtime false.
+
+[Rapporto](R2B1_TWO_TRAIN_SAFETY_REPORT.md),
+[matrice effettiva](evidence/R2B1/SCENARIO_MATRIX.md),
+[evidenze e riproduzione](evidence/R2B1/README.md).
+NOT VERIFIED nuove prove browser Legacy/browserV06/hardware/sagomefisiche,
+equità generale,N07/N16/scalo,coupling dinamico,terzo/quarto treno.
+
+**STOP R2B1. Unica prossima azione: Quality Gate indipendente Regia.
+Nessun merge,deploy,browser V06 o avvio R2B2.**
+
+---
+
+## Stato storico precedente — R2A-F1 prima del Gate Regia #18
+
 # Scenario V06 — R2A-F1
 
 **PASS tecnico / QUALITY GATE INDIPENDENTE REGIA PENDING.** Baseline R2A approvata
