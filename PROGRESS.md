@@ -1,4 +1,28 @@
-# V06-INTEGRATION — ripresa 13 novembre 2026
+# V06-INTEGRATION — seconda ripresa dalla PR #21
+
+**BLOCKED: nuovo dominio del download del terreno non autorizzato.** Verificato
+il checkpoint remoto esatto `7d235e147b7d50536dd8189fd10ad74ffeaf5b5c` sul branch
+esistente `codex/scenario-v06-integration`; checkout iniziale pulito e preservato.
+Cache precedente assente. Recuperati nuovamente sette GLB e scaricati adesso
+railway_visual e village_buildings via dominio Denmark autorizzato: **9 GLB,
+227.339.628 byte**, dimensioni/header/SHA conformi al manifest originale corrente.
+Il nuovo riferimento terrain usa `sdmntprpolandcentral.oaiusercontent.com`:
+proxy 403; stesso host per sawmill e railway_service_buildings. Non ripetuti
+tentativi identici. Serve aggiungere quel dominio alla rete dell'ambiente.
+Nessuna integrazione applicativa; runtimeAdmission:false, Legacy/Core/UI intatti.
+Prove e risultati correnti nel [rapporto](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md)
+e nelle evidenze `resume-*`. Nessun merge/deploy/Supabase o nuova PR.
+Prossima azione: applicare il dominio mancante e riprendere la medesima
+integrazione end-to-end già autorizzata; Quality Gate Regia sul recupero/blocco,
+senza dichiarare PASS browser V06.
+
+Verifiche correnti: **559/559 Node, 9/9 JMRI, build e smoke Legacy
+desktop/mobile PASS**; screenshot `resume-legacy-1440.png` e
+`resume-legacy-390.png`. Browser V06 NON VERIFICATO.
+
+---
+
+# Storico — prima ripresa V06-INTEGRATION, 13 novembre 2026
 
 **BLOCKED, non completata.** Recuperato checkpoint R2B2 esatto `f592a12131b9b7236cbe79506cd23a03dacadd9f`
 su nuovo branch `codex/scenario-v06-integration`, collegato alla Draft #20.

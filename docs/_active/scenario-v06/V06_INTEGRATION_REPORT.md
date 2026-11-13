@@ -1,4 +1,83 @@
-# V06-INTEGRATION — recupero del task e blocco asset
+# V06-INTEGRATION — ripresa dalla PR #21
+
+13 novembre 2026, Europe/Rome. **BLOCKED sugli asset indispensabili;
+integrazione applicativa non completata.** Questa sezione descrive la ripresa
+corrente; il rapporto precedente, sotto, rimane storico.
+
+## Checkpoint e acquisizione correnti
+
+Checkout iniziale pulito su `work`, HEAD `f33377c3460ddf99bc5f5303f3fe0aa2a3da7fc1`.
+Verificati con `git ls-remote`, fetch e API della Draft [PR #21](https://github.com/epivic-lab/SerieN/pull/21):
+branch `codex/scenario-v06-integration`, checkpoint esatto
+`7d235e147b7d50536dd8189fd10ad74ffeaf5b5c`, parent R2B2
+`f592a12131b9b7236cbe79506cd23a03dacadd9f`. Checkout effettuato sul checkpoint,
+senza reset/rebase o modifica del branch iniziale. Letti AGENTS.md, PROGRESS,
+STATUS e le evidenze del blocco. La direttiva corrente autorizza la medesima
+integrazione end-to-end, senza nuove pause ordinarie per microfase.
+
+La cache del precedente ambiente **non è presente**. Nuovamente elencate le
+cartelle Drive originali e recuperato `metadata/scene_manifest.json`;
+ottenuti nuovi riferimenti autenticati per tutti i cinque moduli prioritari.
+La configurazione osservata è corrente, revisione applicata `1`, policy
+`enforced`; il dominio Denmark richiesto nel task precedente è autorizzato.
+
+- `railway_visual.glb`: download HTTP **200**, 40.139.988 byte, SHA-256 conforme.
+- `village_buildings.glb`: download HTTP **200**, 91.596.468 byte, SHA-256 conforme.
+- Recuperati nuovamente i sette moduli precedenti con materializzazione
+  diretta: mountain, mountain_rocks, tunnels_portals, station_platform,
+  scenery_details, gardens_allotments, vegetation.
+- Totale locale: **9 GLB originali, 227.339.628 byte**. Dimensione, header GLB v2
+  e SHA-256 di ogni file verificati contro il manifest appena acquisito.
+  Cache corrente `/workspace/work/v06/assets/`, esterna al repository;
+  nessun binario applicativo aggiunto.
+
+## Blocco di rete effettivo
+
+Il nuovo riferimento del terreno usa **`sdmntprpolandcentral.oaiusercontent.com`**,
+diverso dal dominio Denmark autorizzato. Il tentativo di download con il proxy
+ereditato restituisce `URLError: Tunnel connection failed: 403 Forbidden`;
+nessun payload del terreno acquisito e nessuna verifica SHA locale possibile.
+Anche i nuovi riferimenti di `sawmill.glb` e `railway_service_buildings.glb`
+usano il dominio Poland; non si ripete lo stesso tentativo su quel dominio.
+Dimensioni e hash attesi sono nell'inventario corrente. Il riferimento tecnico
+è opzionale e non è stato acquisito.
+
+Non è disponibile il tool `cloud_environment.request_changes`. Per sbloccare
+questa stessa integrazione occorre aggiungere nelle impostazioni dell'ambiente
+`sdmntprpolandcentral.oaiusercontent.com`, mantenendo i domini esistenti,
+applicare la modifica e verificare la policy osservata con una nuova connessione.
+I riferimenti scaduti vanno riacquisiti da Drive; non va riscritto il loro host.
+Nessun URL firmato o token è salvato nei file del repository.
+
+**Stop per asset indispensabile irraggiungibile**, previsto esplicitamente
+dal mandato. Non sono stati inventati terreno o altri sostituti. Il recupero
+parziale non attesta un'integrazione V06: tutti gli otto criteri browser V06
+restano **NON VERIFICATI**, `runtimeAdmission:false` preservato.
+
+## Verifiche di questa ripresa
+
+Risultati e log correnti in [evidence/V06_INTEGRATION](evidence/V06_INTEGRATION/):
+`resume-asset-recovery.json`, `resume-network-blocker.json` e ricevuta test.
+**559/559 Node PASS, 9/9 JMRI PASS, build PASS**, nuova esecuzione della suite
+esistente senza ampliamenti R2. Log `resume-node.txt`, `resume-jmri.txt`,
+`resume-build.txt` e riepilogo `resume-verification.json`.
+Smoke browser Legacy desktop 1440×900 e mobile 390×844 eseguito con la fixture
+preesistente: scena renderizzata, tre treni, otto controller, nessun errore
+JS/console. Screenshot reali acquisiti e ispezionati, soltanto Legacy;
+Auth sostituito nella fixture locale e RAF controllato, nessuna attestazione
+OAuth, dinamica browser V06 o prestazioni hardware.
+
+Sorgenti applicativi, Railway Core/F1, dataset, UI, asset tracciati,
+dipendenze e workflow preservati; nessun merge, deploy o modifica Supabase.
+Il checkpoint finale è registrato nella ricevuta di pubblicazione della
+PR #21 dopo push fast-forward e verifica locale/remoto. Richiesto alla Regia
+il Quality Gate **del recupero e del blocco**, senza dichiarare l'integrazione
+completata o ammissibile al runtime. Unica prossima azione: applicare il dominio
+mancante e riprendere la stessa implementazione già autorizzata.
+
+---
+
+# Storico — recupero del task e primo blocco asset
 
 13 novembre 2026, Europe/Rome. **BLOCKED — integrazione non completata.**
 Questo checkpoint registra il recupero e un impedimento concreto; non consegna

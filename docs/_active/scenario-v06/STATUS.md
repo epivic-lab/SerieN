@@ -1,4 +1,28 @@
-# Stato corrente — V06-INTEGRATION, 13 novembre 2026
+# Stato corrente — V06-INTEGRATION, seconda ripresa PR #21
+
+**BLOCKED sugli asset indispensabili.** Checkpoint iniziale remoto verificato
+`7d235e147b7d50536dd8189fd10ad74ffeaf5b5c`, branch esistente
+`codex/scenario-v06-integration`, Draft #21 mantenuta. Nuovi riferimenti Drive:
+railway_visual e village_buildings scaricati con HTTP 200 dal dominio Denmark;
+sette GLB riacquisiti perché la cache precedente è assente. Nove asset locali
+originali, 227.339.628 byte, header/dimensioni/SHA conformi al manifest corrente.
+Terrain usa ora `sdmntprpolandcentral.oaiusercontent.com`: proxy 403, host
+non nella policy applicata. Stesso host per sawmill e servizi ferroviari.
+Richiesta aggiunta nelle impostazioni rete, nessun retry identico o sostituto.
+Integrazione applicativa e otto criteri browser V06 **NON VERIFICATI**;
+runtimeAdmission:false, codice/dataset/Core/UI/Legacy invariati. Risultati
+regressione e smoke Legacy correnti nel [rapporto](V06_INTEGRATION_REPORT.md)
+e nelle evidenze `resume-*`. Nessun merge/deploy/Supabase.
+Prossima azione: applicare il dominio mancante e riprendere l'integrazione
+già autorizzata. Gate Regia richiesto sul recupero/blocco, non sul runtime V06.
+
+Verifiche correnti: **559/559 Node, 9/9 JMRI, build e smoke Legacy
+desktop/mobile PASS**; screenshot `resume-legacy-1440.png` e
+`resume-legacy-390.png`. Browser V06 NON VERIFICATO.
+
+---
+
+# Storico — prima ripresa V06-INTEGRATION, 13 novembre 2026
 
 **BLOCKED — integrazione applicativa non completata.** La nuova direttiva
 autorizza l'intera integrazione e supera i vecchi STOP di fase sottostanti.

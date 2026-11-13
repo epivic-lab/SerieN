@@ -1,0 +1,25 @@
+{
+  "node": {
+    "pass": 559,
+    "fail": 0,
+    "log": "resume-node.txt"
+  },
+  "jmri": {
+    "pass": 9,
+    "fail": 0,
+    "log": "resume-jmri.txt"
+  },
+  "build": "PASS",
+  "bundleSHA256": "89d732feafef5914078d5ef83885e5b9b68ff3abe967e8c4863a08e20a3063c7",
+  "legacySmoke": "PASS_LEGACY_ONLY",
+  "legacyScreenshots": [
+    "resume-legacy-1440.png",
+    "resume-legacy-390.png"
+  ],
+  "browserV06": "NOT VERIFIED",
+  "runtimeAdmission": false,
+  "applicationSourceChanges": false,
+  "merge": false,
+  "deploy": false,
+  "supabaseChanges": false
+}
