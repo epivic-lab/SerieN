@@ -456,3 +456,12 @@ Nuovi254Node,9Python/JMRI,build e11gruppi browser PASS sul bundle definitivo: se
 Bundle1.092.265byte, SHA256 `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378`. [Rapporto aggiornato](docs/_active/ui-v21/VISUAL_PARITY_REPORT.md), [prove prima/dopo e regressione](docs/_active/ui-v21/evidence/HUD_CAMERA_HOTFIX/README.md). Checkpoint atomico/push normale sul solo branch autorizzato; SHA effettivo e coincidenza remota nella consegna. PR #8 Draft; main `d77b8aa2710fa474fdb069b204705364b4a9e7e6` e PR #7 `310f39f94448a30f986c5a1801400fa732b65a64` preservate. Nessun merge/deploy/Auth/Supabase/workflow o nuovo sviluppo. OAuth, dispositivi fisici, screen reader, altri browser e5E non attestati.
 
 **Unica prossima azione: revisione della Regia sul checkpoint correttivo. STOP; nessuna ripresa automatica del precedente mandato di rilascio.**
+
+
+## Scenario V06 — M0.1 / M0.1-R: consegna documentale (2026-11-13)
+
+Audit e addendum completati; la Regia ha successivamente richiesto di finire le pubblicazioni. Checkpoint documentale sul solo branch `codex/scenario-v06-audit-m01r`, in worktree separato dalla UI, con PR Draft verso main. [Indice](docs/_active/scenario-v06/README.md), [rapporto integrale](docs/_active/scenario-v06/M01_AUDIT_REPORT.md), [stato](docs/_active/scenario-v06/STATUS.md), [ricevute](docs/_active/scenario-v06/evidence/M01R/README.md). SHA effettivo e verifica del checkpoint remoto nella consegna finale; nessuna pubblicazione è attestata completa se il push fallisce.
+
+V06 deve sostituire anche assi e grafo operativo, riutilizzando le logiche consolidate: addendum §15 prevalente sulle strategie iniziali. **NO-GO all'implementazione con i soli dati verificati**: prima contratto AS-BUILT di porte/giunzioni, percorsi WX completi, registro scambi/stati, terminali/circuiti/anchor e revisione delle fonti. Roadmap R0–R7 proposta, non eseguita.
+
+254 Node,9 JMRI,build PASS di M0.1-R, riusati per identità della baseline; nessuna nuova pretesa browser V06/FPS/hardware. Bundle `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378`. Pubblicazione di soli documenti ed evidenze: codice/ferrovia/UI V2.1/asset/Auth/Supabase/dipendenze/workflow invariati. **STOP: review indipendente Regia; M0.2 non iniziata, nessun merge/main/deploy.**

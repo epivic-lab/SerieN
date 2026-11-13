@@ -1,0 +1,379 @@
+{
+  "scope": "read-only metadata analysis, not an inferred operational graph",
+  "metadata_sha256": "6a494928707609f1cf6aa9b535a510ca721b9a3458eca0910dfc250c978f46ea",
+  "piece_count": 79,
+  "vertices": 615,
+  "piece_kinds": {
+    "curva (poligonale del master)": 35,
+    "rettilineo": 44
+  },
+  "hidden_piece_ids": [
+    0,
+    10,
+    18,
+    19,
+    22,
+    23,
+    26,
+    28,
+    29
+  ],
+  "all_glTF_rail_y_m": [
+    0.0084
+  ],
+  "exact_endpoint_coordinate_groups": 85,
+  "exact_endpoint_multiplicity": {
+    "2": 63,
+    "1": 17,
+    "3": 5
+  },
+  "unmatched_endpoints_if_exact_coordinates_only": [
+    {
+      "point_mm": [
+        688.703,
+        100.848
+      ],
+      "piece_end": [
+        12,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        440.741,
+        68.203
+      ],
+      "piece_end": [
+        12,
+        "end"
+      ]
+    },
+    {
+      "point_mm": [
+        688.703,
+        68.203
+      ],
+      "piece_end": [
+        13,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        440.741,
+        100.848
+      ],
+      "piece_end": [
+        13,
+        "end"
+      ]
+    },
+    {
+      "point_mm": [
+        1060.855,
+        67.834
+      ],
+      "piece_end": [
+        16,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        812.892,
+        35.189
+      ],
+      "piece_end": [
+        16,
+        "end"
+      ]
+    },
+    {
+      "point_mm": [
+        1060.855,
+        35.189
+      ],
+      "piece_end": [
+        17,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        812.892,
+        67.834
+      ],
+      "piece_end": [
+        17,
+        "end"
+      ]
+    },
+    {
+      "point_mm": [
+        180.747,
+        269.987
+      ],
+      "piece_end": [
+        20,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        831.264,
+        415.483
+      ],
+      "piece_end": [
+        27,
+        "end"
+      ]
+    },
+    {
+      "point_mm": [
+        666.382,
+        189.72
+      ],
+      "piece_end": [
+        38,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        667.139,
+        189.322
+      ],
+      "piece_end": [
+        40,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        173.833,
+        321.503
+      ],
+      "piece_end": [
+        43,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        831.976,
+        415.716
+      ],
+      "piece_end": [
+        48,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        1219.918,
+        353.727
+      ],
+      "piece_end": [
+        51,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        748.797,
+        566.221
+      ],
+      "piece_end": [
+        70,
+        "start"
+      ]
+    },
+    {
+      "point_mm": [
+        750.896,
+        566.648
+      ],
+      "piece_end": [
+        71,
+        "end"
+      ]
+    }
+  ],
+  "wx_endpoint_diagnostics": [
+    {
+      "hosts": [
+        59,
+        60
+      ],
+      "diags": [
+        12,
+        13
+      ],
+      "endpoint_diagnostics": [
+        {
+          "diag": 12,
+          "end": "start",
+          "point_mm": [
+            688.703,
+            100.848
+          ],
+          "nearest_host": {
+            "host": 60,
+            "distance_mm": 0.1839999999999975,
+            "station_from_host_start_mm": 31.081999999999994
+          }
+        },
+        {
+          "diag": 12,
+          "end": "end",
+          "point_mm": [
+            440.741,
+            68.203
+          ],
+          "nearest_host": {
+            "host": 59,
+            "distance_mm": 0.18500000000000227,
+            "station_from_host_start_mm": 279.044
+          }
+        },
+        {
+          "diag": 13,
+          "end": "start",
+          "point_mm": [
+            688.703,
+            68.203
+          ],
+          "nearest_host": {
+            "host": 59,
+            "distance_mm": 0.18500000000000227,
+            "station_from_host_start_mm": 31.081999999999994
+          }
+        },
+        {
+          "diag": 13,
+          "end": "end",
+          "point_mm": [
+            440.741,
+            100.848
+          ],
+          "nearest_host": {
+            "host": 60,
+            "distance_mm": 0.1839999999999975,
+            "station_from_host_start_mm": 279.044
+          }
+        }
+      ]
+    },
+    {
+      "hosts": [
+        61,
+        62
+      ],
+      "diags": [
+        16,
+        17
+      ],
+      "endpoint_diagnostics": [
+        {
+          "diag": 16,
+          "end": "start",
+          "point_mm": [
+            1060.855,
+            67.834
+          ],
+          "nearest_host": {
+            "host": 62,
+            "distance_mm": 0.1839999999999975,
+            "station_from_host_start_mm": 31.080999999999907
+          }
+        },
+        {
+          "diag": 16,
+          "end": "end",
+          "point_mm": [
+            812.892,
+            35.189
+          ],
+          "nearest_host": {
+            "host": 61,
+            "distance_mm": 0.1839999999999975,
+            "station_from_host_start_mm": 279.04399999999987
+          }
+        },
+        {
+          "diag": 17,
+          "end": "start",
+          "point_mm": [
+            1060.855,
+            35.189
+          ],
+          "nearest_host": {
+            "host": 61,
+            "distance_mm": 0.1839999999999975,
+            "station_from_host_start_mm": 31.080999999999907
+          }
+        },
+        {
+          "diag": 17,
+          "end": "end",
+          "point_mm": [
+            812.892,
+            67.834
+          ],
+          "nearest_host": {
+            "host": 62,
+            "distance_mm": 0.1839999999999975,
+            "station_from_host_start_mm": 279.04399999999987
+          }
+        }
+      ]
+    }
+  ],
+  "runtime_edges": 75,
+  "runtime_controllers": 8,
+  "runtime_internal_edges": 20,
+  "runtime_non_internal_edges": 55,
+  "runtime_role_counts": {
+    "mainline": 46,
+    "yard": 16,
+    "runaround-main": 2,
+    "runaround-alternate": 2,
+    "runaround": 5,
+    "crossover": 4
+  },
+  "unjoined_endpoint_pairs_under_3mm": [
+    {
+      "a": [
+        27,
+        "end"
+      ],
+      "b": [
+        48,
+        "start"
+      ],
+      "distance_mm": 0.7491548571557061
+    },
+    {
+      "a": [
+        38,
+        "start"
+      ],
+      "b": [
+        40,
+        "start"
+      ],
+      "distance_mm": 0.8552502557731805
+    },
+    {
+      "a": [
+        70,
+        "start"
+      ],
+      "b": [
+        71,
+        "end"
+      ],
+      "distance_mm": 2.1419920634772986
+    }
+  ]
+}
