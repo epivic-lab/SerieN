@@ -1,0 +1,107 @@
+{
+  "cwd": "repository root",
+  "commands": [
+    {
+      "command": "npm test (baseline before new tests/code)",
+      "evidence": "baseline-node.txt",
+      "exitCode": 0,
+      "result": "395/395"
+    },
+    {
+      "command": "npm run build (baseline)",
+      "evidence": "baseline-build.txt",
+      "exitCode": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "node --test tests/v06-r2a-f1.test.js (three negative tests before fix)",
+      "evidence": "red-tests.txt",
+      "exitCode": 1,
+      "result": "3 expected failures"
+    },
+    {
+      "command": "node tools/scenario-v06/shared-junction-lab.js <output> (baseline)",
+      "evidence": "before-summary.json",
+      "exitCode": 0,
+      "result": "unsafe requests reproduced"
+    },
+    {
+      "command": "node tools/scenario-v06/shared-junction-lab.js <output> (candidate)",
+      "evidence": "after-summary.json",
+      "exitCode": 0,
+      "result": "approach requests denied; safe stop released"
+    },
+    {
+      "command": "node --test tests/v06-r2a-f1.test.js",
+      "evidence": "focused-tests.txt",
+      "exitCode": 0,
+      "result": "17/17"
+    },
+    {
+      "command": "npm test (first full candidate)",
+      "evidence": "first-full-regression.txt",
+      "exitCode": 1,
+      "result": "411/412: historical encounter contract"
+    },
+    {
+      "command": "node --test tests/route-performance.test.js",
+      "evidence": "route-contract-tests.txt",
+      "exitCode": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "npm test (final candidate)",
+      "evidence": "final-node.txt",
+      "exitCode": 0,
+      "result": "412/412"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p jmri_audit_test.py",
+      "evidence": "final-jmri.txt",
+      "exitCode": 0,
+      "result": "9/9"
+    },
+    {
+      "command": "npm run build",
+      "evidence": "final-build.txt",
+      "exitCode": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python3 scripts/build-canonical-layout.py && git diff --exit-code -- src/canonical-layout.json docs/jmri-layout/canonical-graph.json docs/jmri-layout/layout-canonical.svg docs/jmri-layout/minimap-canonical.svg",
+      "evidence": "canonical.txt",
+      "exitCode": 0,
+      "result": "no changes"
+    },
+    {
+      "command": "node tools/scenario-v06/shared-junction-validation.js <output> --r2a-regression",
+      "evidence": "r2a-regression.json",
+      "exitCode": 0,
+      "result": "112 known +56 UNKNOWN; R2A preserved"
+    },
+    {
+      "command": "node tools/scenario-v06/audit-r2a-f1.js <scratch> --reproduce-baseline",
+      "evidence": "audit.json",
+      "exitCode": 0,
+      "result": "58624 primary previews identical, bundle audit, baseline diagnostic identical; negative runner expected exit1"
+    },
+    {
+      "command": "python3 tools/scenario-v06/check-r2a-f1-scope.py",
+      "evidence": "preservation.json",
+      "exitCode": 0,
+      "result": "4209 protected blobs identical"
+    },
+    {
+      "command": "repeat diagnostic/matrix and cmp; compare baseline reconstruction",
+      "evidence": "determinism.json",
+      "exitCode": 0,
+      "result": "byte-identical"
+    },
+    {
+      "command": "git diff --check",
+      "evidence": null,
+      "exitCode": 0,
+      "result": "PASS"
+    }
+  ]
+}
