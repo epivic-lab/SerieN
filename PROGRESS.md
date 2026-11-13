@@ -465,3 +465,14 @@ Audit e addendum completati; la Regia ha successivamente richiesto di finire le 
 V06 deve sostituire anche assi e grafo operativo, riutilizzando le logiche consolidate: addendum §15 prevalente sulle strategie iniziali. **NO-GO all'implementazione con i soli dati verificati**: prima contratto AS-BUILT di porte/giunzioni, percorsi WX completi, registro scambi/stati, terminali/circuiti/anchor e revisione delle fonti. Roadmap R0–R7 proposta, non eseguita.
 
 254 Node,9 JMRI,build PASS di M0.1-R, riusati per identità della baseline; nessuna nuova pretesa browser V06/FPS/hardware. Bundle `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378`. Pubblicazione di soli documenti ed evidenze: codice/ferrovia/UI V2.1/asset/Auth/Supabase/dipendenze/workflow invariati. **STOP: review indipendente Regia; M0.2 non iniziata, nessun merge/main/deploy.**
+
+
+## Scenario V06 — R0 contratto ferroviario (2026-11-13)
+
+M0.1-R accettato; autorizzata esclusivamente R0 dalla base `ffba29fd40dcda874124ca4d8f6b8b169d7b2298`, branch `codex/scenario-v06-r0-contract`. Recuperati i byte di 13 fonti, distinta manuale di 68 componenti confrontata, matrice 79/79 pezzi e classificazione 17/17 estremità. Registro proposto di cinque semplici/Y e due WX con 64 casi di transizione; dati verificati, dedotti e mancanti separati. Nessun collegamento per vicinanza o correzione geometrica.
+
+A/B chiusi metricamente sui dati; C conserva G3, triangolo G1/G2 e passaggio ramo→ramo N07 vietato: necessaria manovra nel comune con capacità utile da certificare. Sorgenti track_centrelines/porte/giunti non recuperati, `.layout` acquisito ma non decodificato, raccordi e aghi WX mancanti; N16 aperto nel manuale vs paraurti dedotto export. Due mismatch manifest/rapporto confermati, una sola revisione Drive accessibile ciascuno: causa non accertata, originali immutati. F01–F08/D01–D08 nel [rapporto R0](docs/_active/scenario-v06/R0_TRACK_CONTRACT_REPORT.md).
+
+254 test Node, 9 JMRI e build di nuova esecuzione PASS; audit riproducibile e invarianti PASS. Bundle `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378` identico. [Evidenze](docs/_active/scenario-v06/evidence/R0/README.md). Browser/circolazione V06 NOT VERIFIED. Solo documenti/evidenze e questa appendice; M01 byte-identico, codice/geometria/renderer/UI V2.1/asset/backend/dipendenze/workflow intatti. Checkpoint atomico e push normale sul solo branch dedicato, SHA remoto verificato nella consegna.
+
+**R0 ANALISI CONSEGNATA CON DIPENDENZE APERTE; CONTRATTO NON CERTIFICATO, NO-GO R1. STOP per Quality Gate Regia e assegnazione integrazioni. Nessun merge/main/deploy/M0.2/R1.**

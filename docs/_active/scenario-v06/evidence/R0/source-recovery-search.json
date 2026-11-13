@@ -1,0 +1,32 @@
+{
+  "observed_date_utc": "2026-11-13",
+  "scope": "Accessible connected Drive and attached workspace only; empty search is not proof of universal absence.",
+  "searches": [
+    {
+      "query": "trashed = false and (name = 'track_centrelines_mm.json' or name = 'roadbed_mm.json' or name = 'masks_1mm.npz' or name = 'master-plan-v1.json' or name = 'tracciato.pdf')",
+      "exact_named_files_returned": 0
+    },
+    {
+      "query": "build_data",
+      "item_type": "folder",
+      "items_returned": 0
+    },
+    {
+      "query": "track_centrelines",
+      "result": "References in master PDF and EXPORT_REPORT only; source JSON not returned"
+    }
+  ],
+  "metadata_folder_id": "1Ao267YTB39OwFtEPl5-6J7S8V_Fhj4an",
+  "metadata_folder_result": "7 metadata JSONs; source build_data files absent from listing",
+  "local_workspace_exact_name_search": "No source track_centrelines_mm.json, roadbed_mm.json, masks_1mm.npz, master-plan-v1.json or tracciato.pdf found",
+  "native_layout": {
+    "available": true,
+    "bytes": 87878,
+    "prefix_hex": "576b53740000000f772dc840001daf81",
+    "recognized_readable_container": false,
+    "supported_decoder_used": false,
+    "component_port_join_records_decoded": false,
+    "bounded_checks": "Not XML/ZIP/plist; no valid zlib stream found by bounded scan, no gzip/BZh signature; binary encoding remains unidentified, not asserted encrypted."
+  },
+  "external_messages_sent": false
+}

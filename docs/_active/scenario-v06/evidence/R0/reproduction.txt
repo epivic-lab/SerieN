@@ -1,0 +1,102 @@
+{
+  "piece_count": 79,
+  "physical_component_mapping_count": 68,
+  "simple_controller_count_proposed": 5,
+  "wx_count": 2,
+  "exact_coordinate_group_count": 85,
+  "endpoint_multiplicities": {
+    "2": 63,
+    "1": 17,
+    "3": 5
+  },
+  "unmatched_endpoint_count": 17,
+  "unmatched_classification_count": {
+    "WX_CROSSOVER_ENDPOINT_NEAR_HOST_INTERIOR_NOT_A_TERMINAL": 8,
+    "SOURCE_SUPPORTED_TERMINAL_INTENT": 3,
+    "SOURCE_SUPPORTED_JOIN_INTENT_BUT_METRIC_GAP": 6
+  },
+  "all_geometry_pieces_covered_once": true,
+  "all_17_endpoints_classified": true,
+  "geometry_raw_source_sha256": "6a494928707609f1cf6aa9b535a510ca721b9a3458eca0910dfc250c978f46ea",
+  "source_not_modified": true,
+  "none_of_these_connections_is_certified": true,
+  "conditional_skeleton": {
+    "status": "CONDITIONAL_ABSTRACT_CONNECTIVITY_ONLY_NOT_RUNTIME_GRAPH",
+    "assumptions": [
+      "G1,G2,G3 intentionally linked for analysis only, raw coordinates unchanged",
+      "four WX cross routes semantically reach external ports; full lead geometry remains missing",
+      "physical/controller mapping deduced from manual, not producer-certified"
+    ],
+    "nodes_under_assumptions": 74,
+    "edges_under_assumptions": 79,
+    "components_under_assumptions": [
+      74
+    ],
+    "cycle_rank_of_union_of_all_states": 6,
+    "warning": "Union of switch states is not a simultaneous operational route; no direct branch-to-branch reversal at N07."
+  }
+}
+ROUTES {
+  "A": {
+    "length": 3468.162,
+    "gaps": []
+  },
+  "B": {
+    "length": 3260.781,
+    "gaps": []
+  },
+  "C": {
+    "length": 2931.69,
+    "gaps": [
+      {
+        "a_piece": 70,
+        "a_end": "S",
+        "b_piece": 71,
+        "b_end": "E",
+        "gap_mm": 2.1419920634772986
+      }
+    ]
+  },
+  "S1_FROM_N07_COMMON": {
+    "length": 250.101,
+    "gaps": []
+  },
+  "S2_FROM_C13_COMMON": {
+    "length": 746.2669999999999,
+    "gaps": []
+  },
+  "TSEG_FROM_N14_COMMON": {
+    "length": 569.7149999999999,
+    "gaps": []
+  },
+  "TRIANGLE_GEOMETRIC_CYCLE": {
+    "length": 2177.389,
+    "gaps": [
+      {
+        "a_piece": 27,
+        "a_end": "E",
+        "b_piece": 48,
+        "b_end": "S",
+        "gap_mm": 0.7491548571557061
+      },
+      {
+        "a_piece": 40,
+        "a_end": "S",
+        "b_piece": 38,
+        "b_end": "S",
+        "gap_mm": 0.8552502557731805
+      }
+    ]
+  }
+}
+
+PASS: all 9 generated files byte-identical to delivered evidence / report source table.
+component-mapping.json
+conditional-connectivity.json
+endpoint-classification.csv
+gap-classification.json
+piece-matrix.csv
+piece-matrix.md
+proposed-port-registry.json
+route-checks.json
+validation-summary.json

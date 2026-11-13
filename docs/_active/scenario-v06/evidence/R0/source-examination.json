@@ -1,0 +1,103 @@
+{
+  "manual_pdf_sha256": "8d930b0960f3cad57cc1651b6be65269abcab39321ca5f431f461f299cf531d3",
+  "page_1_based": 19,
+  "components_parsed": 68,
+  "code_and_type_comparison": "PASS for all 68",
+  "geometry_to_manual_association": "DEDUCED_NOT_CERTIFIED",
+  "tool": "PyMuPDF 1.26.6",
+  "source_embedded_files": {
+    "master.pdf": [],
+    "manual.pdf": [
+      "Content Credentials"
+    ],
+    "layout-drawing.pdf": []
+  },
+  "svg_sha256": "868751dc5d17885161e7ff1a7dac46d556d2af2dee578c787db80a6f5e489022",
+  "svg_board_rect_paper_mm": {
+    "x": 20,
+    "y": 30,
+    "width": 559.95,
+    "height": 261.31
+  },
+  "svg_scale_paper_mm_per_plan_mm": 0.3733,
+  "svg_leaders": [
+    {
+      "svg_text": "WX-A (WX310)",
+      "leader_endpoint_paper_mm": [
+        230.91,
+        68.82
+      ],
+      "approx_plan_mm": [
+        564.9879453522635,
+        103.99142780605409
+      ],
+      "component_candidate": "WX-A/C14",
+      "status": "SOURCE_COORDINATES_VERIFIED_ASSOCIATION_DEDUCED_NOT_CERTIFIED"
+    },
+    {
+      "svg_text": "WX-B (WX310)",
+      "leader_endpoint_paper_mm": [
+        374.64,
+        49.41
+      ],
+      "approx_plan_mm": [
+        950.0133940530403,
+        51.995713903027045
+      ],
+      "component_candidate": "WX-B/B08",
+      "status": "SOURCE_COORDINATES_VERIFIED_ASSOCIATION_DEDUCED_NOT_CERTIFIED"
+    },
+    {
+      "svg_text": "Y-IN",
+      "leader_endpoint_paper_mm": [
+        425.03,
+        68.08
+      ],
+      "approx_plan_mm": [
+        1084.9986605946958,
+        102.0091079560675
+      ],
+      "component_candidate": "V06-C12",
+      "status": "SOURCE_COORDINATES_VERIFIED_ASSOCIATION_DEDUCED_NOT_CERTIFIED"
+    },
+    {
+      "svg_text": "T-SEG",
+      "leader_endpoint_paper_mm": [
+        475.16,
+        161.92
+      ],
+      "approx_plan_mm": [
+        1219.287436378248,
+        353.3886954192338
+      ],
+      "component_candidate": "N16 terminal",
+      "status": "SOURCE_COORDINATES_VERIFIED_ASSOCIATION_DEDUCED_NOT_CERTIFIED"
+    },
+    {
+      "svg_text": "Y-R1",
+      "leader_endpoint_paper_mm": [
+        175.03,
+        125.83
+      ],
+      "approx_plan_mm": [
+        415.2960085721939,
+        256.7104205732654
+      ],
+      "component_candidate": "V06-N07",
+      "status": "SOURCE_COORDINATES_VERIFIED_ASSOCIATION_DEDUCED_NOT_CERTIFIED"
+    },
+    {
+      "svg_text": "Y-R2",
+      "leader_endpoint_paper_mm": [
+        427.46,
+        229.01
+      ],
+      "approx_plan_mm": [
+        1091.5081703723545,
+        533.1100991159924
+      ],
+      "component_candidate": "V06-C07",
+      "status": "SOURCE_COORDINATES_VERIFIED_ASSOCIATION_DEDUCED_NOT_CERTIFIED"
+    }
+  ]
+}
