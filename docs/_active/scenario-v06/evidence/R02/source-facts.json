@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "65ec1675510700fef503c16af2cfbe725817568a",
+  "XTrackCAD": {
+    "url": "https://github.com/ankon/xtrkcad/blob/236f93e4a0b35429dfae2d292ef4407b462f1f01/app/lib/params/N-Kato%20Track%20and%20Structures.xtp",
+    "full_file_sha256": "7724f7ae4c246bbaf7f84f910e51a99a2758c9484f2ecd4088e558aecd9fe25d",
+    "record_sha256_LF": "ba02f04b85239595f77ac71977be43cff045b98fa57f1b74003622aecff02194",
+    "radius_inches": 22.96,
+    "central_straight_vector_inches": [0.688,0.157],
+    "accuracy": "independent CAD source, not manufacturer geometry; rounded joints measured in metrology.json"
+  },
+  "TRAX3D": {
+    "url": "https://trax3d.com/documentation/opbouw-van-railstukken",
+    "library_index_url": "https://trax3d.com/documentation/railbibliotheken",
+    "observed": "documentation specifies centred arc-straight-counterarc crossovers; gives middle length about 11.6 mm for Kato 20-210",
+    "central_straight_mm_rounded": 11.6,
+    "radius_mm": null,
+    "angle_deg": null,
+    "limits": "full numerical article record not acquired; direct HTTP proxy 403 and attempted JSON URL unavailable through web; radius/angle cannot be inferred uniquely from the one middle-length scalar",
+    "comparison_scope": "6.324429248 mm difference in middle length; same-R sensitivity is explicitly an assumption, not a reconstructed TRAX library record",
+    "manufacturer_certification": false
+  },
+  "Kato": {
+    "article_url": "https://www.unitrack-kato.com/line-up-pocket-line-en-3",
+    "standard_spacing_url": "https://unitrack.katomodels.com/products/line_single/double_track_line",
+    "japanese_article_url": "https://unitrack.katomodels.com/products/line_single/branch_cross",
+    "article": "20-210 / WX310",
+    "nominal_length_mm": 310,
+    "standard_spacing_mm": 33,
+    "accuracy": "official nominal length and Unitrack standard spacing confirmed; exact crossover radius, central straight, blade geometry and manufacturing tolerances not supplied by the acquired official pages"
+  },
+  "Drive_sources": [
+    {"id":"14Hb5zkGRUZaQMSbqGTCEVdAQe5hEW7DP","name":"railway_alignment.json","bytes":85535,"sha256":"6a494928707609f1cf6aa9b535a510ca721b9a3458eca0910dfc250c978f46ea"},
+    {"id":"1zLrS0Lu1AEU5GS2xVim7zui4W5ikEZ-z","name":"master.svg","bytes":3757460,"sha256":"868751dc5d17885161e7ff1a7dac46d556d2af2dee578c787db80a6f5e489022"},
+    {"id":"1nwaU09WPDZ5HL3fYAkrchkll5LU7ClnH","name":"object_inventory.json","bytes":118236,"sha256":"a89687ee6010ba251e070091765270c038aa3ddcbb37b750126deed2ad315425"},
+    {"id":"1wjpWfFwvorgs8H4LcJrJ1EiwEV0kzHe4","name":"scene_manifest.json","bytes":14262,"sha256":"234d93ac089d1c23a1c07c9e35160cc1e78608ad27ff0753986e97a77648c6c2"}
+  ],
+  "GLB_observation": {
+    "id":"1hiQANlwHzoCtBVWaDEhhklTzrTlIXfxC",
+    "name":"railway_visual.glb",
+    "drive_size_bytes":40139988,
+    "binary_local":false,
+    "attempts":["authenticated raw file reference obtained","Sediment materialization refused: exceeds 32 MiB executor transfer limit","authenticated raw reference retrieval failed: outbound proxy 403"],
+    "scope":"metadata read only; neither binary checksum nor primitive/triangle contents verified"
+  },
+  "provenance":"detached observation lock, original producer manifest and previous discrepancies unchanged; no signed download URLs retained"
+}

@@ -1,0 +1,53 @@
+{
+  "status": "PASS_OFFLINE_SCOPE_AND_TESTS",
+  "baseline_commit": "65ec1675510700fef503c16af2cfbe725817568a",
+  "branch": "codex/scenario-v06-r02-wx-validation",
+  "new_runs": {
+    "baseline": {
+      "node": 254,
+      "jmri": 9,
+      "build": "PASS"
+    },
+    "final": {
+      "node": 254,
+      "jmri": 9,
+      "build": "PASS"
+    }
+  },
+  "bundle_sha256": "1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378",
+  "candidate_sha256": "99a5019f6ea4b8a99d18dcf6aff4a9b841ea2c49c5bb4eff9edd36825eead460",
+  "deterministic_rebuild_byte_equal": true,
+  "all_R01_piece_records_and_geometry_equal": true,
+  "protected_existing_blobs_verified": 4100,
+  "allowed_existing_file_changes": [
+    "PROGRESS.md",
+    "docs/_active/scenario-v06/README.md",
+    "docs/_active/scenario-v06/STATUS.md"
+  ],
+  "new_file_scope": "only R02 documents, evidence, candidate and two offline tools",
+  "credential_pattern_scan": "PASS: no candidates in changed text",
+  "new_markdown_relative_links": "PASS",
+  "visual_figures_inspected": [
+    "wx-validation.png",
+    "cad-comparison.png",
+    "masterplan-overlay.png"
+  ],
+  "original_negative_mutations": 6,
+  "new_analytic_negative_mutations": 3,
+  "runtime_V06": "NOT VERIFIED",
+  "GLB_binary": "NOT VERIFIED; size limit / proxy403",
+  "new_dependencies": false,
+  "core_ui_backend_assets_legacy_workflows_changed": false,
+  "merge_deploy_R1_started": false,
+  "python": "3.12.14",
+  "log_sha256": {
+    "baseline-build.txt": "239145ff7d0c7c719a5bbb6fda27a78b479892cf592824d34a7fa6e5cd96786c",
+    "baseline-jmri.txt": "b1e2df9be5b3e954c2d2d25efcf39cb02fe4e10735e67c33a5bb9488485289d7",
+    "baseline-node.txt": "33db676fdde8f7bf1c8fa31eeeb28098369b454e3f751455dee70155ce8c7feb",
+    "final-build.txt": "4e997f9da4c571df076ceac8b270f5e7830e16ab278697a311531c605e91572f",
+    "final-jmri.txt": "092f3ef0c082b5e2a61888b77b1f68ffbd0afb7284e19601ea6250cb7141c478",
+    "final-node.txt": "a1113244f069e30d92f1d8095452f31e5a708e5b52ad7c638f768e646a156c40",
+    "regression.txt": "d57e72477cc5e20a714b71686d80463400f42bf8def020f1af2dec1d335c1056",
+    "validation.txt": "55fa15ae683426c4f6399290db9733cabe517b71d520d2a77f37a2e277418294"
+  }
+}
