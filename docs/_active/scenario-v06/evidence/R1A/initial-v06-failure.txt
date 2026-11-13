@@ -1,0 +1,72 @@
+✔ R1A independent admission, exact geometry, provenance, nodes and 154 truth rows (19.121478ms)
+✔ R1A builder reproduces bytes in a separate output and cannot overwrite legacy by default (92.912039ms)
+✔ R1A factory: explicit legacy fallback, default legacy, independent graph instances and no mixed IDs (17.651272ms)
+✔ R1A actual router against frozen WX 64 ordered cases (0.815547ms)
+✖ R1A actual router against frozen simple 90 ordered cases (0.815788ms)
+✔ R1A all 128 configurations: 20224 arrivals, 17920 active, actual router agrees with external topology oracle (20.380832ms)
+✔ R1A rings A/B/C, terminal branches and triangle legs in both directions; forbidden direct N07 remains blocked (3.004899ms)
+✔ R1A diamonds have no node and all seven units retain complete protected internal paths (0.847064ms)
+✔ R1A existing guard rejects unknown controller state on every unit without changing routing or guard (3.036435ms)
+✔ R1A negative: missing hidden piece (4.016576ms)
+✔ R1A negative: duplicate edge (2.662802ms)
+✔ R1A negative: unknown legacy edge (2.164024ms)
+✔ R1A negative: mixed legacy node (2.784272ms)
+✔ R1A negative: fake diamond (2.142461ms)
+✔ R1A negative: broken G1 (19.69668ms)
+✔ R1A negative: broken G2 (9.554515ms)
+✔ R1A negative: broken G3 (16.723258ms)
+✔ R1A negative: interior vertex moved (11.763425ms)
+✔ R1A negative: nonfinite coordinate (5.053061ms)
+✔ R1A negative: zero length segment (6.434296ms)
+✔ R1A negative: length corruption (5.839626ms)
+✔ R1A negative: hidden out of range (7.542937ms)
+✔ R1A negative: source hidden lost (4.155601ms)
+✔ R1A negative: wrong WX state (2.487213ms)
+✔ R1A negative: nonboolean state (2.622222ms)
+✔ R1A negative: wrong simple state (3.653368ms)
+✔ R1A negative: split unit identity (2.511278ms)
+✔ R1A negative: missing control path (5.589034ms)
+✔ R1A negative: wrong port (5.186398ms)
+✔ R1A negative: invented default (5.256221ms)
+✔ R1A negative: wrong terminal (5.758054ms)
+✔ R1A negative: invented stopping anchor (5.914656ms)
+✔ R1A negative: open ring (5.377972ms)
+✔ R1A negative: wrong ring direction (5.304953ms)
+✔ R1A negative: triangle direct admission (4.7145ms)
+✔ R1A negative: wrong source hash (2.278693ms)
+✔ R1A negative: wrong baseline (2.610696ms)
+✔ R1A negative: false certification (1.996125ms)
+✔ R1A negative: false circulation claim (1.71575ms)
+✔ R1A negative: unknown schema (2.044557ms)
+✔ R1A negative: implicit legacy reference (2.027792ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 40
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 463.561984
+
+✖ failing tests:
+
+test at tests/v06-r1a.test.js:56:76
+✖ R1A actual router against frozen simple 90 ordered cases (0.815788ms)
+  AssertionError [ERR_ASSERTION]: one external approach per physical port
+
+  2 !== 1
+
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/v06-r1a.test.js:61:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

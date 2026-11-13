@@ -12,6 +12,20 @@
 
 # SerieN — Stato e ripresa
 
+**Stato corrente — Scenario V06 R1A: PASS tecnico, review indipendente Regia pending.**
+Mandato limitato della [PR #13](https://github.com/epivic-lab/SerieN/pull/13#issuecomment-6851925629),
+baseline `7118c99a9367da61f0042dfe40240fe78dc0d7c6`, branch
+`codex/scenario-v06-r1a-operational-dataset`. Dataset isolato 79 archi/74 nodi/
+sette controller/tre terminali, geometrie R02 e G1–3 preservati; factory opt-in
+con default legacy, nessuna attivazione. PASS298Node=254legacy+44V06,9JMRI,build;
+64WX/90semplici/128configurazioni,34mutanti semantici e digest negativo, UNKNOWN
+bloccato dalla guardia esistente. 4.127 blob preesistenti protetti identici.
+[Rapporto](docs/_active/scenario-v06/R1A_OPERATIONAL_DATASET_REPORT.md),
+[prove](docs/_active/scenario-v06/evidence/R1A/README.md),
+[stato](docs/_active/scenario-v06/STATUS.md). Checkpoint remoto e Draft PR nella
+ricevuta finale. **STOP R1A; unica prossima azione: Quality Gate Regia. Nessuna
+R1B, attivazione, merge o deploy.** Le sezioni seguenti conservano lo storico.
+
 **Stato corrente — UI V2.1 VISUAL PARITY HOTFIX: READY FOR REGIA VISUAL REVIEW.** [PR Draft #8](https://github.com/epivic-lab/SerieN/pull/8); checkpoint applicativo `637a140950d3047c5c7926193f6b312dadc464f1` verificato su remoto. Il mandato completo autorizza la ricostruzione sul solo branch `codex/ui-v21-visual-parity`, derivato dalla produzione `d77b8aa2710fa474fdb069b204705364b4a9e7e6`, e la consegna in PR Draft. La UI pubblicata resta in attesa di accettazione visiva; i precedenti verdetti tecnici non valgono come approvazione estetica.
 
 Ripristinate la griglia Claude e le superfici originali: a1692×877 dock502→156px e viewport300→612,11px, tre console visibili e quattro pannelli sidebar. Cinque viewport desktop con scarto0px dei bounding box esterni rispetto al vero HTML `cf2c29a`; sette confronti completi, adattamenti mobile/tablet dichiarati. PASS254Node,9Python,build/canonico,11scenari5C,6gruppi UI/HUD con16stati,5gruppi RAF nativo/125frame,5gruppi picking/cleanup,28stati missione e sette controlli console/overflow. Ultimo affinamento solo CSS delle missioni strette, con provenienza e verifica mirata distinte.
