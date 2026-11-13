@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-13T10:05:56.779028+01:00",
+  "phase": "M0.1-R audit addendum only",
+  "branch": "work",
+  "HEAD": "f33377c3460ddf99bc5f5303f3fe0aa2a3da7fc1",
+  "tracked_baseline_count": 4037,
+  "changed_tracked_files": [],
+  "historical_sections_1_to_14_identical": true,
+  "report_before_sha256": "de61cf99b5f11542f6643b263f1de8db9d34dde8fe0b1022b9c78c91a57ad758",
+  "report_after_sha256": "e32d7a4d7113e7b6b29a359d9ea2e2581d69f669daeed8a228f1f70830ee0980",
+  "report_bytes": 119118,
+  "report_lines": 687,
+  "node_tests": {
+    "pass": 254,
+    "fail": 0
+  },
+  "python_tests": {
+    "pass": 9
+  },
+  "build": "PASS",
+  "bundle_sha256": "1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378",
+  "working_tree": "?? docs/_active/scenario-v06/M01_AUDIT_REPORT.md\n",
+  "app_code_changed": false,
+  "UI_changed": false,
+  "operational_graph_created": false,
+  "M02_started": false,
+  "deployment": false,
+  "new_commit": false,
+  "push": false,
+  "V06_browser_or_performance_tests_run": false,
+  "current_verdict": "NO-GO implementation pending approved AS-BUILT topology contract"
+}
