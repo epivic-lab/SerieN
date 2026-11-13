@@ -1,3 +1,39 @@
+# Serie N — Stato corrente R2B2 (13 novembre 2026)
+
+**PASS tecnico di safety numerica / QUALITY GATE INDIPENDENTE REGIA PENDING.**
+Autorizzata soltanto R2B2 dal [Gate della PR #19 /6860875610](https://github.com/epivic-lab/SerieN/pull/19#issuecomment-6860875610),
+base esatta `ab9c9bacdba652209b2ffc14b7c70856645601ba`, branch
+`codex/scenario-v06-r2b2-three-train-safety`, Draft con base R2B1.
+
+Tre convogli nella stessa sessione/rete V06, un clock e una stepRailway per tick.
+Oracolo R2B1 esteso a tutte le coppie e ogni veicolo; ammissione integrale atomica.
+75 scenari,57.649 tick,887 giunti: otto versi A/B/C e composizioni corte,
+inseguimenti/ID permutati/riarmo,WX con terzo realmente in moto e due conflitti
+WX reali a3,F1/C13 con traffico aggiuntivo,prenotazioni/UNKNOWN/near-touch.
+Separazione PASS;20 scenari WX in deadlock (12 configurazioni+8 perturbazioni),
+8 arresti near-touch controllati. Nessuna priorità o risoluzione automatica;
+equità generale NON CERTIFICATA. Nessuna penetrazione osservata.
+
+Baseline477Node; finale559/559Node (82nuovi),9/9JMRI,build/canonico PASS.
+Due esecuzioni finali/76JSON byte-identici;55scenari R2B1 con risultati e digest
+originali identici salvo contatori aggiunti.4328blob protetti preservati,
+soli2harnessNode estesi ePROGRESS/STATUS modificati;nessun test storico cambiato.
+Core/Step/Journey/routing/guard/collisioni,F1,dataset/topologia/Legacy/UI/HUD/
+renderer/asset,backend/Supabase/dipendenze/workflow invariati. Bundle identico,
+85input,zeroV06/laboratorio;runtimeAdmission:false e flag fisici/runtime false.
+
+[Rapporto](docs/_active/scenario-v06/R2B2_THREE_TRAIN_SAFETY_REPORT.md),
+[matrice](docs/_active/scenario-v06/evidence/R2B2/SCENARIO_MATRIX.md),
+[evidenze](docs/_active/scenario-v06/evidence/R2B2/README.md).
+Commit atomico,push normale e verifica SHA remoto nella ricevuta finale.
+**STOP R2B2: unica prossima azione Quality Gate indipendente Regia.
+Nessun R2B3/R2C,browser V06,merge o deploy.** Sagome fisiche,equità generale,
+N07/N16/scalo,coupling dinamico/quarto treno e48coppie WX vietate non verificati.
+
+---
+
+## Registro storico precedente — lo stato corrente è R2B2 sopra
+
 # Stato corrente — Scenario V06 R2A-F1
 
 **PASS tecnico R2A-F1; QUALITY GATE INDIPENDENTE REGIA PENDING.** Baseline e parent

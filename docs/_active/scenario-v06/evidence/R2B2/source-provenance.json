@@ -1,0 +1,27 @@
+{
+  "baseline": "ab9c9bacdba652209b2ffc14b7c70856645601ba",
+  "branch": "codex/scenario-v06-r2b2-three-train-safety",
+  "initialCheckout": {
+    "branch": "work",
+    "HEAD": "f33377c3460ddf99bc5f5303f3fe0aa2a3da7fc1",
+    "clean": true
+  },
+  "origin": "https://github.com/epivic-lab/SerieN.git",
+  "regiaGate": "https://github.com/epivic-lab/SerieN/pull/19#issuecomment-6860875610",
+  "node": "v24.19.0",
+  "runtimeAdmission": false,
+  "sourceSha256": {
+    "tools/scenario-v06/two-train-lab.js": "fe19b21e9f6b4519ec5ce9384cd51306e249cbc9b18398a60c8b61ed963de286",
+    "tools/scenario-v06/two-train-validation.js": "a3d9e88a42d854ef1dcc8a79a470e51e420a48401426a4d1375b075add362288",
+    "tools/scenario-v06/two-train-oracle.js": "8dbcc1e4034e03022b6bdaeef134c98e370250bfebccb5474364381c46131709",
+    "tools/scenario-v06/three-train-validation.js": "cfec7e44c33fb918f420e8796b30b8e620a4e5b655a89f8c7ef62c7be9c1bb8e",
+    "tools/scenario-v06/run-r2b2.js": "b540a81944222dc382e64249dc555a6a7842b2ade1621cbb149e65cbbf873245",
+    "tests/v06-r2b2.test.js": "9f9e83d04bdcfff07bd19ea63edf052dced4da770b93e65b20692ed4997e4753"
+  },
+  "validationProvenance": {
+    "baseline": "477 tests before source edits",
+    "finalRegression": "559 tests, zero fail/skip; subsequent change only renamed the near-touch progress label, then targeted 8/8 passed",
+    "finalMatrix": "two full runs after final source/label, 75 scenarios and 57649 ticks each",
+    "r2b1Compatibility": "55 original JSON results byte-identical after removal of new result-only pairChecks"
+  }
+}
