@@ -1,0 +1,42 @@
+{
+  "baseline_R0": "c527134ebcd51c18b5714177946535d325499dc2",
+  "regia_decision_url": "https://github.com/epivic-lab/SerieN/pull/11#issuecomment-6850569493",
+  "as_received_alignment": {
+    "drive_id": "14Hb5zkGRUZaQMSbqGTCEVdAQe5hEW7DP",
+    "bytes": 85535,
+    "sha256": "6a494928707609f1cf6aa9b535a510ca721b9a3458eca0910dfc250c978f46ea",
+    "matches_R0_lock": true,
+    "all_615_points_and_hidden_intervals_extracted_exactly": true
+  },
+  "source_axes_sha256": "b140214d52977ea62be422882bbcf2b2e3fcf16fee6d1d0f429f03e2d4304cab",
+  "master_svg": {
+    "drive_id": "1zLrS0Lu1AEU5GS2xVim7zui4W5ikEZ-z",
+    "bytes": 3757460,
+    "sha256": "868751dc5d17885161e7ff1a7dac46d556d2af2dee578c787db80a6f5e489022",
+    "renderer": "Inkscape, width 2200px, original untouched; board-only crop in evidence"
+  },
+  "layout_drawing_pdf": {
+    "drive_id": "17mx-0Wc5BE-Blwegco7WvOv7XDE53027",
+    "bytes": 43432,
+    "sha256": "2cca66a03e1c77265c27fe7817ccc4b1abcf457a574cb1a8000c0bb0f0189d5d"
+  },
+  "secondary_kato_catalog": {
+    "url": "https://github.com/ankon/xtrkcad/blob/236f93e4a0b35429dfae2d292ef4407b462f1f01/app/lib/params/N-Kato%20Track%20and%20Structures.xtp",
+    "git_blob": "9fdff5303f12fd38d1db09fd130abbccf77ff0a8",
+    "pinned_content_matches_fetched_branch_content": true,
+    "excerpt_sha256_LF_normalized": "ba02f04b85239595f77ac71977be43cff045b98fa57f1b74003622aecff02194",
+    "authority": "SECONDARY; not manufacturer CAD or native V06 geometry"
+  },
+  "R0_sources_reused_without_redownload": [
+    "manual.pdf evidence and mapping",
+    "R0 proposed port registry, 64 ordered WX cases and route lists"
+  ],
+  "unresolved": [
+    "R0 manifest self-hash mismatch",
+    "R0 EXPORT_REPORT mismatch",
+    "native/export revision relation",
+    "source centrelines full precision",
+    "physical WX geometry and blade actuation"
+  ],
+  "note": "Detached evidence lock; does not replace or repair producer manifest."
+}

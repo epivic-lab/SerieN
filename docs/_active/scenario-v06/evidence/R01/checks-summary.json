@@ -1,0 +1,28 @@
+{
+  "result": "CANDIDATE_CONTINUITY_PASS; PHYSICAL_WX_FIDELITY_BLOCKED; NO_GO_R1",
+  "candidate_sha256": "48903b40a54250181dfbc5d7d1c75e6d2fc72ae499dfd9b6972fe1f289fdc113",
+  "rebuild_byte_identical": true,
+  "legacy_node_tests_baseline_and_final": 254,
+  "legacy_jmri_tests_baseline_and_final": 9,
+  "legacy_build": "PASS; identical bundle",
+  "standalone": {
+    "wx_ordered_cases": 64,
+    "simple_ordered_cases": 90,
+    "state_configurations": 128,
+    "oriented_arrivals": 17920,
+    "negative_mutants_rejected": [
+      "reopen-G2",
+      "fake-diamond-node",
+      "wrong-WX-state",
+      "drop-hidden-piece",
+      "move-legacy-source-piece",
+      "wrong-node-reference"
+    ]
+  },
+  "figures_visually_inspected": [
+    "gaps-before-after.png",
+    "wx-before-after.png",
+    "masterplan-overlay.png"
+  ],
+  "remaining_block": "WX fit differs up to 3.334752mm from source/master core; authoritative full profile or designer confirmation required. Runtime and blade geometry not certified."
+}
