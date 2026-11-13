@@ -1,15 +1,14 @@
 import {routing} from './simulation.js';
-
-export const TURNOUT_IDS = Object.freeze(['Y-IN','Y-R1','Y-R2','Y-3','Y-4','Y-2','WX-A','WX-B']);
-export const isTurnoutId = id => typeof id === 'string' && TURNOUT_IDS.includes(id);
+import {createTurnoutRegistry,assertTurnoutRegistry} from './turnout-registry.js';
+export {TURNOUT_IDS,isTurnoutId} from './turnout-registry.js';
 
 // A local selection is not a clearance. Immutable geometry comes from the
 // canonical edges; legal entrances are projected by the existing router.
-export function createTurnoutModel(network) {
+export function createTurnoutModel(network, registry = createTurnoutRegistry(network)) {
+  assertTurnoutRegistry(registry,network);
   const units = new Map();
-  for (const id of TURNOUT_IDS) {
-    const control = network.controllers.find(c => c.id === id);
-    if (!control) continue;
+  for (const control of registry.controllers) {
+    const {id} = control;
     const ports = Object.freeze({...control.ports});
     const portFor = node => Object.keys(ports).find(port => ports[port] === node);
     const paths = control.internal.map(edgeId => {
@@ -48,12 +47,13 @@ export function createTurnoutModel(network) {
     units.set(id,{ports,paths:Object.freeze(paths),selections});
   }
   return Object.freeze({
+    registry,
     /** Fresh context, immutable cached paths. No state/graph/Journey mutations.
      * operationLock and hazardStatus are observations supplied by the engine;
      * ROUTABLE only means local connectivity, never permission to move. */
     read(controlId,on,{incomingPort=null,incomingEdge=null,incomingEnd=null,choose=null,
       operationLock=null,hazardStatus='UNKNOWN'} = {}) {
-      const unit = isTurnoutId(controlId) ? units.get(controlId) : null;
+      const unit = registry.has(controlId) ? units.get(controlId) : null;
       const selection = unit && typeof on === 'boolean' ? unit.selections[Number(on)] : null;
       let approach = selection && typeof incomingPort === 'string' && Object.hasOwn(selection.entrances,incomingPort)
         ? selection.entrances[incomingPort] : null;
@@ -61,7 +61,12 @@ export function createTurnoutModel(network) {
       if (networkEntry) {
         approach = null;
         const edge = typeof incomingEdge === 'string' && Object.hasOwn(network.edges,incomingEdge) ? network.edges[incomingEdge] : null;
-        if (selection && edge && [0,1].includes(incomingEnd) && typeof choose === 'function') {
+        // The historical router coerces state to Boolean. Its raw state hook
+        // must remain boolean for both this unit and an adjacent incoming unit;
+        // coercion of UNKNOWN cannot establish a network approach.
+        const statesKnown = selection && edge && (typeof choose?.controlState !== 'function' ||
+          [controlId,edge.switchId].filter(Boolean).every(id => typeof choose.controlState(id) === 'boolean'));
+        if (selection && edge && statesKnown && [0,1].includes(incomingEnd) && typeof choose === 'function') {
           const node = incomingEnd ? edge.to : edge.from;
           const port = Object.keys(unit.ports).find(p => unit.ports[p] === node);
           const local = selection.entrances[port];
@@ -79,7 +84,7 @@ export function createTurnoutModel(network) {
       const unknown = !selection || selection.unknown || (hasEntry && !approach);
       const lockKnown = typeof operationLock?.blocked === 'boolean' &&
         (operationLock.blocked || operationLock.kind === 'unlocked');
-      return Object.freeze({controlId:isTurnoutId(controlId) ? controlId : null,
+      return Object.freeze({controlId:registry.has(controlId) ? controlId : null,
         state:typeof on === 'boolean' ? on : null,position:selection ? on ? 'diverging' : 'straight' : 'unknown',
         unknown,routeStatus:unknown ? 'UNKNOWN' : 'KNOWN',
         reason:!unit ? 'invalid-control' : !selection ? 'unknown-state' : unknown ? 'unknown-entry' : null,

@@ -1,3 +1,35 @@
+# Stato corrente — Scenario V06 R1B
+
+**PASS tecnico R1B / QUALITY GATE REGIA PENDING.** R1A approvata nella
+[PR #14](https://github.com/epivic-lab/SerieN/pull/14#issuecomment-6852401319),
+baseline esatta `6a976749d5630c0abf858e64795210183a947f5e`, branch dedicato
+`codex/scenario-v06-r1b-turnout-domain`. Registro immutabile per istanza di rete,
+8 controller legacy / 7 V06; modello e comandi parametrizzati, default legacy.
+ID/profili/Journey estranei rifiutati, safety sincrona a ogni comando,
+UNKNOWN fail-closed, WX protetti come unità complete. Nessuna attivazione V06.
+
+**336 Node (298 preesistenti +38 R1B), 9 JMRI, build e canonico PASS.**
+7.168 ingressi legacy /3.200 V06, matrici indipendenti64WX/90semplici,
+38 attraversamenti Journey e ritorni, occupazione/approcci/comandi consecutivi,
+cache e callback isolate.4.148blob protetti identici; unici sorgenti precedenti
+modificati:turnout-routes e turnout-commands. Bootstrap/UI/renderer/algoritmi
+ferroviari/dataset/backend/deps/workflow invariati; zero input V06 nella build.
+
+[Rapporto R1B](docs/_active/scenario-v06/R1B_TURNOUT_DOMAIN_REPORT.md),
+[stato](docs/_active/scenario-v06/STATUS.md),
+[prove e riproduzione](docs/_active/scenario-v06/evidence/R1B/README.md).
+`physical_profile_certified:false`, `runtime_circulation_verified:false`;
+nuove prove browser e circolazione V06 completa NOT VERIFIED.
+SHA e URL della nuova Draft PR nella consegna dopo verifica del checkpoint remoto.
+
+**Unica prossima azione: Quality Gate indipendente Regia su R1B. STOP.**
+R1C audit/contratto consumer è soltanto una proposta; nessun merge/deploy,
+attivazione o fase successiva eseguita.
+
+---
+
+## Registro precedente — storico; stato corrente sopra
+
 # Stato corrente — Scenario V06 R0.1
 
 **Gap G1/G2/G3 chiusi nel candidato; continuità geometrica/offline verificata. Fedeltà fisica WX aperta: NO-GO R1.** Branch `codex/scenario-v06-r01-continuity` da R0 `c527134ebcd51c18b5714177946535d325499dc2`; checkpoint remoto effettivo nella consegna. [Rapporto](docs/_active/scenario-v06/R01_CONTINUITY_RESOLUTION_REPORT.md), [stato](docs/_active/scenario-v06/STATUS.md), [prove](docs/_active/scenario-v06/evidence/R01/README.md).
