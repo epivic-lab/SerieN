@@ -1,0 +1,314 @@
+{
+  "gap_corrections": [
+    {
+      "piece": 27,
+      "end": "E",
+      "original_mm": [
+        831.264,
+        415.483
+      ],
+      "new_mm": [
+        831.62,
+        415.59950000000003
+      ],
+      "delta_mm": [
+        0.35599999999999454,
+        0.11650000000003047
+      ],
+      "endpoint_displacement_mm": 0.37457742857786186,
+      "sampled_max_displacement_mm": 0.37457742857786186,
+      "support_original_arclength_mm": 62.026,
+      "original_tangent_SE": [
+        -0.5226814560725063,
+        -0.8525280614020425
+      ],
+      "new_analytic_tangent_SE": [
+        -0.5113862159279796,
+        -0.8593509982299793
+      ],
+      "displacement_derivative_SE": [
+        0.011295240144526653,
+        -0.006822936827936776
+      ],
+      "method": "raw polyline + compact quintic Hermite displacement; C2 displacement, original interior corners retained",
+      "length_before_mm": 169.6763014256213,
+      "length_after_mm": 169.38863274826383,
+      "max_added_smooth_segment_curvature_per_mm": 0.0005095588651917006,
+      "minimum_radius_smooth_interiors_mm": 1962.4818020265254,
+      "min_speed_in_original_arclength_parameter": 0.991284289361284,
+      "caveat": "excludes inherited source polygon corners; displacement is C2, source is not"
+    },
+    {
+      "piece": 38,
+      "end": "S",
+      "original_mm": [
+        666.382,
+        189.72
+      ],
+      "new_mm": [
+        666.7605,
+        189.52100000000002
+      ],
+      "delta_mm": [
+        0.3785000000000309,
+        -0.19899999999998386
+      ],
+      "endpoint_displacement_mm": 0.4276251278865836,
+      "sampled_max_displacement_mm": 0.4276251278865836,
+      "support_original_arclength_mm": 62.02440430991665,
+      "original_tangent_SE": [
+        0.9659262457506796,
+        -0.25881747964540136
+      ],
+      "new_analytic_tangent_SE": [
+        0.9659265580319617,
+        -0.2588163141854229
+      ],
+      "displacement_derivative_SE": [
+        3.122812820555154e-07,
+        1.1654599784693964e-06
+      ],
+      "method": "raw polyline + compact quintic Hermite displacement; C2 displacement, original interior corners retained",
+      "length_before_mm": 62.02440430991665,
+      "length_after_mm": 61.607399929821554,
+      "max_added_smooth_segment_curvature_per_mm": 0.00014385307135402007,
+      "minimum_radius_smooth_interiors_mm": 6951.5373609161,
+      "min_speed_in_original_arclength_parameter": 0.9873949269780379,
+      "caveat": "excludes inherited source polygon corners; displacement is C2, source is not"
+    },
+    {
+      "piece": 40,
+      "end": "S",
+      "original_mm": [
+        667.139,
+        189.322
+      ],
+      "new_mm": [
+        666.7605,
+        189.52100000000002
+      ],
+      "delta_mm": [
+        -0.3785000000000309,
+        0.19900000000001228
+      ],
+      "endpoint_displacement_mm": 0.42762512788659685,
+      "sampled_max_displacement_mm": 0.42762512788659685,
+      "support_original_arclength_mm": 45.518973901000855,
+      "original_tangent_SE": [
+        -0.9659268703118372,
+        0.25881514872506756
+      ],
+      "new_analytic_tangent_SE": [
+        -0.9659265580319617,
+        0.2588163141854229
+      ],
+      "displacement_derivative_SE": [
+        3.122798755139655e-07,
+        1.1654603553346021e-06
+      ],
+      "method": "raw polyline + compact quintic Hermite displacement; C2 displacement, original interior corners retained",
+      "length_before_mm": 45.518973901000855,
+      "length_after_mm": 45.10200784384994,
+      "max_added_smooth_segment_curvature_per_mm": 0.00026895586896557796,
+      "minimum_radius_smooth_interiors_mm": 3718.0820922260073,
+      "min_speed_in_original_arclength_parameter": 0.9828263386977216,
+      "caveat": "excludes inherited source polygon corners; displacement is C2, source is not"
+    },
+    {
+      "piece": 48,
+      "end": "S",
+      "original_mm": [
+        831.976,
+        415.716
+      ],
+      "new_mm": [
+        831.62,
+        415.59950000000003
+      ],
+      "delta_mm": [
+        -0.35599999999999454,
+        -0.11649999999997362
+      ],
+      "endpoint_displacement_mm": 0.3745774285778442,
+      "sampled_max_displacement_mm": 0.40035877253094004,
+      "support_original_arclength_mm": 29.011888270155723,
+      "original_tangent_SE": [
+        -0.5000019255872485,
+        -0.8660242920432679
+      ],
+      "new_analytic_tangent_SE": [
+        -0.5113862159279796,
+        -0.8593509982299793
+      ],
+      "displacement_derivative_SE": [
+        -0.011384290340731074,
+        0.006673293813288628
+      ],
+      "method": "raw polyline + compact quintic Hermite displacement; C2 displacement, original interior corners retained",
+      "length_before_mm": 29.011888270155723,
+      "length_after_mm": 28.735859764217672,
+      "max_added_smooth_segment_curvature_per_mm": 0.003562854900407669,
+      "minimum_radius_smooth_interiors_mm": 280.6737933351083,
+      "min_speed_in_original_arclength_parameter": 0.9822579681193571,
+      "caveat": "excludes inherited source polygon corners; displacement is C2, source is not"
+    },
+    {
+      "piece": 70,
+      "end": "S",
+      "original_mm": [
+        748.797,
+        566.221
+      ],
+      "new_mm": [
+        749.8465,
+        566.4345000000001
+      ],
+      "delta_mm": [
+        1.0494999999999663,
+        0.2135000000000673
+      ],
+      "endpoint_displacement_mm": 1.0709960317386606,
+      "sampled_max_displacement_mm": 1.0709960317386606,
+      "support_original_arclength_mm": 62.026,
+      "original_tangent_SE": [
+        -1.0,
+        0.0
+      ],
+      "new_analytic_tangent_SE": [
+        -1.0,
+        0.0
+      ],
+      "displacement_derivative_SE": [
+        0.0,
+        0.0
+      ],
+      "method": "raw polyline + compact quintic Hermite displacement; C2 displacement, original interior corners retained",
+      "length_before_mm": 186.07600000000002,
+      "length_after_mm": 187.12601131292666,
+      "max_added_smooth_segment_curvature_per_mm": 0.00030756803358102233,
+      "minimum_radius_smooth_interiors_mm": 3251.3131756801085,
+      "min_speed_in_original_arclength_parameter": 1.0,
+      "caveat": "excludes inherited source polygon corners; displacement is C2, source is not"
+    },
+    {
+      "piece": 71,
+      "end": "E",
+      "original_mm": [
+        750.896,
+        566.648
+      ],
+      "new_mm": [
+        749.8465,
+        566.4345000000001
+      ],
+      "delta_mm": [
+        -1.0494999999999663,
+        -0.21349999999995362
+      ],
+      "endpoint_displacement_mm": 1.070996031738638,
+      "sampled_max_displacement_mm": 1.070996031738638,
+      "support_original_arclength_mm": 29.012000000000057,
+      "original_tangent_SE": [
+        -0.9999999999999999,
+        0.0
+      ],
+      "new_analytic_tangent_SE": [
+        -1.0,
+        0.0
+      ],
+      "displacement_derivative_SE": [
+        -1.1102230246251565e-16,
+        0.0
+      ],
+      "method": "raw polyline + compact quintic Hermite displacement; C2 displacement, original interior corners retained",
+      "length_before_mm": 29.012000000000057,
+      "length_after_mm": 30.06256185375963,
+      "max_added_smooth_segment_curvature_per_mm": 0.0013463326729944952,
+      "minimum_radius_smooth_interiors_mm": 742.7584727449371,
+      "min_speed_in_original_arclength_parameter": 1.0,
+      "caveat": "excludes inherited source polygon corners; displacement is C2, source is not"
+    }
+  ],
+  "wx_comparison": [
+    {
+      "piece": 12,
+      "master_rail_pair": 12,
+      "source_to_SVG_max_mm": 0.008654235289932219,
+      "candidate_overlap_to_original_core_max_mm": 3.334751874461749,
+      "original_core_endpoints_to_candidate_max_mm": 0.014948807785547294,
+      "length_before_mm": 250.10167826106243,
+      "length_after_mm": 312.74037597156297,
+      "source_core_angle_deg": 7.500041654114066,
+      "profile": {
+        "kind": "fitted-secondary-Kato-20-210-profile",
+        "radius_mm": 583.184,
+        "center_straight_mm": 17.924429248374967,
+        "sweep_degrees": 12.812013572560025,
+        "symmetric_lead_mm": 17.00114133523337,
+        "physical_profile_certified": false,
+        "visual_blades": "OPEN: not inferred from route primitives",
+        "curvature_note": "G1 at line/arc joins; finite 0\u21941/R curvature steps as circular catalog profile; not C2/clothoid"
+      }
+    },
+    {
+      "piece": 13,
+      "master_rail_pair": 13,
+      "source_to_SVG_max_mm": 0.007596068736652003,
+      "candidate_overlap_to_original_core_max_mm": 3.334751874461727,
+      "original_core_endpoints_to_candidate_max_mm": 0.014948807785543644,
+      "length_before_mm": 250.10167826106243,
+      "length_after_mm": 312.74037597156297,
+      "source_core_angle_deg": 7.500041654114066,
+      "profile": {
+        "kind": "fitted-secondary-Kato-20-210-profile",
+        "radius_mm": 583.184,
+        "center_straight_mm": 17.924429248374967,
+        "sweep_degrees": 12.812013572560025,
+        "symmetric_lead_mm": 17.00114133523337,
+        "physical_profile_certified": false,
+        "visual_blades": "OPEN: not inferred from route primitives",
+        "curvature_note": "G1 at line/arc joins; finite 0\u21941/R curvature steps as circular catalog profile; not C2/clothoid"
+      }
+    },
+    {
+      "piece": 16,
+      "master_rail_pair": 16,
+      "source_to_SVG_max_mm": 0.00580199194742979,
+      "candidate_overlap_to_original_core_max_mm": 3.3341265728275173,
+      "original_core_endpoints_to_candidate_max_mm": 0.01402356538861461,
+      "length_before_mm": 250.10266970586295,
+      "length_after_mm": 312.7402564105254,
+      "source_core_angle_deg": 7.500011751829393,
+      "profile": {
+        "kind": "fitted-secondary-Kato-20-210-profile",
+        "radius_mm": 583.184,
+        "center_straight_mm": 17.924429248374967,
+        "sweep_degrees": 12.811806070626035,
+        "symmetric_lead_mm": 17.00319360900158,
+        "physical_profile_certified": false,
+        "visual_blades": "OPEN: not inferred from route primitives",
+        "curvature_note": "G1 at line/arc joins; finite 0\u21941/R curvature steps as circular catalog profile; not C2/clothoid"
+      }
+    },
+    {
+      "piece": 17,
+      "master_rail_pair": 17,
+      "source_to_SVG_max_mm": 0.005889847540046916,
+      "candidate_overlap_to_original_core_max_mm": 3.334126572827496,
+      "original_core_endpoints_to_candidate_max_mm": 0.014023565388593302,
+      "length_before_mm": 250.10266970586295,
+      "length_after_mm": 312.7402564105254,
+      "source_core_angle_deg": 7.500011751829393,
+      "profile": {
+        "kind": "fitted-secondary-Kato-20-210-profile",
+        "radius_mm": 583.184,
+        "center_straight_mm": 17.924429248374967,
+        "sweep_degrees": 12.811806070626035,
+        "symmetric_lead_mm": 17.00319360900158,
+        "physical_profile_certified": false,
+        "visual_blades": "OPEN: not inferred from route primitives",
+        "curvature_note": "G1 at line/arc joins; finite 0\u21941/R curvature steps as circular catalog profile; not C2/clothoid"
+      }
+    }
+  ]
+}

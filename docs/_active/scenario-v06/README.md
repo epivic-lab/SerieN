@@ -1,3 +1,5 @@
+> **Aggiornamento prevalente R0.1:** [rapporto di continuità](R01_CONTINUITY_RESOLUTION_REPORT.md), [candidato offline](candidate/R01/README.md), [evidenze](evidence/R01/README.md). G1/G2/G3 chiusi e A/B/C continui; fedeltà WX ancora aperta (scarto fino a 3,335 mm), NO-GO R1. Stato corrente in [STATUS.md](STATUS.md). Quanto segue resta come indice storico.
+
 # Scenario V06 — contratto ferroviario R0
 
 La Regia ha accettato M0.1-R e autorizzato esclusivamente R0. Il [rapporto R0](R0_TRACK_CONTRACT_REPORT.md) contiene la matrice dei 79 pezzi, la classificazione delle 17 estremità non coincidenti, il registro proposto dei cinque semplici/Y e due WX, le transizioni, i controlli di continuità e la richiesta delle integrazioni sorgente.

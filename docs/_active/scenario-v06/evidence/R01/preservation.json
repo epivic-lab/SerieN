@@ -1,0 +1,46 @@
+{
+  "R0_base": "c527134ebcd51c18b5714177946535d325499dc2",
+  "tracked_baseline_count": 4070,
+  "protected_tracked_files_compared": 4067,
+  "protected_files_changed": [],
+  "allowed_existing_documents_changed": [
+    "PROGRESS.md",
+    "docs/_active/scenario-v06/README.md",
+    "docs/_active/scenario-v06/STATUS.md"
+  ],
+  "originals_after_analysis": [
+    {
+      "name": "railway_alignment.json",
+      "bytes": 85535,
+      "sha256": "6a494928707609f1cf6aa9b535a510ca721b9a3458eca0910dfc250c978f46ea"
+    },
+    {
+      "name": "SERIE_N_V3_MASTERPLAN_2D_V06.svg",
+      "bytes": 3757460,
+      "sha256": "868751dc5d17885161e7ff1a7dac46d556d2af2dee578c787db80a6f5e489022"
+    },
+    {
+      "name": "3 anelli 3 tronchini 1 Triangolo V3.pdf",
+      "bytes": 43432,
+      "sha256": "2cca66a03e1c77265c27fe7817ccc4b1abcf457a574cb1a8000c0bb0f0189d5d"
+    }
+  ],
+  "legacy_bundle_sha256": "1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378",
+  "original_axes_extraction_verified": true,
+  "R01_modified_pieces": [
+    12,
+    13,
+    16,
+    17,
+    27,
+    38,
+    40,
+    48,
+    70,
+    71
+  ],
+  "source_axes_unchanged_pieces": 69,
+  "original_M01_report_sha256": "e32d7a4d7113e7b6b29a359d9ea2e2581d69f669daeed8a228f1f70830ee0980",
+  "original_R0_report_sha256": "2b4602c74f49035889a16f8e00d636456497da255392c5d67e746aa0d140f144",
+  "security_scope": "No runtime/UI/backend/auth/asset/dependency/workflow writes; no merge or deploy; no new egress in application."
+}

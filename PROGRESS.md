@@ -1,3 +1,15 @@
+# Stato corrente — Scenario V06 R0.1
+
+**Gap G1/G2/G3 chiusi nel candidato; continuità geometrica/offline verificata. Fedeltà fisica WX aperta: NO-GO R1.** Branch `codex/scenario-v06-r01-continuity` da R0 `c527134ebcd51c18b5714177946535d325499dc2`; checkpoint remoto effettivo nella consegna. [Rapporto](docs/_active/scenario-v06/R01_CONTINUITY_RESOLUTION_REPORT.md), [stato](docs/_active/scenario-v06/STATUS.md), [prove](docs/_active/scenario-v06/evidence/R01/README.md).
+
+79 pezzi coperti, 69 assi immutati, A/B/C chiusi, tre terminali, triangolo con manovra sul comune N07. WX porta→porta continui, 64 casi R0 preservati, nessun nodo al diamond; fit da catalogo secondario con scarto massimo 3,335 mm dal nucleo V06, da confermare tecnicamente. 254 Node/9 JMRI/build PASS, builder riproducibile e validatore indipendente con sei mutanti rifiutati. Core, UI, rete attiva, sicurezza, fonti artistiche e backend intatti. Nessun merge/deploy/R1.
+
+**Unica prossima azione:** revisione Regia e chiusura del riscontro tecnico WX. Nessuna fase successiva avviata o implicitamente autorizzata.
+
+---
+
+## Registro precedente — storico; stato corrente sopra
+
 # SerieN — Stato e ripresa
 
 **Stato corrente — UI V2.1 VISUAL PARITY HOTFIX: READY FOR REGIA VISUAL REVIEW.** [PR Draft #8](https://github.com/epivic-lab/SerieN/pull/8); checkpoint applicativo `637a140950d3047c5c7926193f6b312dadc464f1` verificato su remoto. Il mandato completo autorizza la ricostruzione sul solo branch `codex/ui-v21-visual-parity`, derivato dalla produzione `d77b8aa2710fa474fdb069b204705364b4a9e7e6`, e la consegna in PR Draft. La UI pubblicata resta in attesa di accettazione visiva; i precedenti verdetti tecnici non valgono come approvazione estetica.
