@@ -1,3 +1,42 @@
+# V06-INTEGRATION — verifica dopo aggiornamento dominio, 14 novembre 2026
+
+**ASSET QUASI COMPLETI; BLOCKED sull'ultimo modulo obbligatorio.** Ripresa da
+`ea20cc2d9a36636afa29e49922cc65df8373171d` sul medesimo branch
+`codex/scenario-v06-integration`, PR Draft #21. L'utente segnala il dominio
+aggiornato; lo stato osservato della macchina corrente risulta però ancora
+revisione1, `observations_current:true`, policy enforced e soli domini
+personalizzati Denmark/epivic-lab.github.io. Verificato nuovamente a fine recupero.
+
+Nuovi link Drive: **railway_visual** (40.139.988 byte) e **village_buildings**
+(91.596.468 byte) scaricati HTTP200 da Denmark. Anche technical_reference
+opzionale recuperato dal connettore. Libreria ora **12 originali/327.862.948 byte**,
+header GLB v2, dimensioni e SHA tutti conformi al lock. Salvati nel repository,
+senza import nell'app o inclusione nella ricetta Pages.
+
+**Unico obbligatorio mancante: railway_service_buildings.glb,36.688.380 byte.**
+Il nuovo link usa `sdmntprukwest.oaiusercontent.com`: richiesta concreta con
+nuova connessione respinta dal proxy 403. Il dominio richiesto in precedenza,
+Northeu, non compare nella configurazione osservata e non è l'host corrente
+dell'ultimo file. Chiesto di applicare alla macchina della chat la regola
+`*.oaiusercontent.com`, oppure almeno UKwest se il campo non accetta wildcard,
+per evitare di inseguire i datacenter dei riferimenti autenticati. Nessuna
+riscrittura degli host, retry identico, modifica locale della policy o rifiuto
+della revisione automatica delle approvazioni.
+
+**Verifiche correnti:** controllo dei12file PASS; completezza INCOMPLETE/uscita2
+attesa; build rieseguita PASS e bundle identico; sorgenti applicativi, test,
+UI, canonico, asset runtime, dipendenze e workflow invariati.559Node/9JMRI
+riusati dalla ripresa immediatamente precedente per identità degli input,
+NON rieseguiti. BrowserV06 NON VERIFICATO; nessuna attivazione/merge/deploy.
+Prove: `docs/_active/scenario-v06/evidence/V06_INTEGRATION/domain-update-2026-11-14/`.
+
+Unica prossima azione: applicare il grant alla macchina corrente, scaricare
+l'ultimo modulo e proseguire la medesima integrazione già autorizzata.
+
+---
+
+## Registrazioni precedenti — storiche
+
 # V06-INTEGRATION — ripresa 14 novembre 2026
 
 **RECUPERO PARZIALE; integrazione ancora BLOCKED dalla rete.** Ripresa dal
