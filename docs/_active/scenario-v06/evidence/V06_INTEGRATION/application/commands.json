@@ -1,0 +1,18 @@
+{
+  "cwd": "/workspace/SerieN",
+  "baseline": "642f8eb58eef84cc6474fbe8adacbd4a04e1f27e",
+  "commands": [
+    "npm test",
+    "python3 -m unittest discover -s tests -p jmri_audit_test.py",
+    "python3 scripts/build-canonical-layout.py",
+    "git diff --exit-code -- src/canonical-layout.json docs/jmri-layout/canonical-graph.json docs/jmri-layout/layout-canonical.svg docs/jmri-layout/minimap-canonical.svg",
+    "npm run build",
+    "python3 tools/scenario-v06/check-local-assets.py --require-complete",
+    "node --test tests/static-raycast.test.js tests/v06-browser-profile.test.js",
+    "python3 -m http.server 8022",
+    "python3 docs/_active/scenario-v06/evidence/V06_INTEGRATION/application/browser-integration.py",
+    "bash docs/_active/scenario-v06/evidence/V06_INTEGRATION/application/prepare-site-exact.sh"
+  ],
+  "runtimeDependenciesChanged": false,
+  "workOnlyOptimizerProbesNotUsedInProduct": true
+}

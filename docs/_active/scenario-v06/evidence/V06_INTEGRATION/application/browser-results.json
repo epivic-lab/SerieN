@@ -1,0 +1,502 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "V06 cold load and coherent identities",
+      "detail": {
+        "seconds": 38.398683071136475,
+        "scenario": {
+          "id": "v06",
+          "sessionId": "a2439bec-e488-4c18-aeeb-1a9717d1b9ba",
+          "layoutId": "V06-R1A",
+          "railTop": 8.4,
+          "controllers": [
+            "V06-C07",
+            "V06-C12",
+            "V06-C13",
+            "V06-N07",
+            "V06-N14",
+            "WX-A",
+            "WX-B"
+          ],
+          "edges": 79,
+          "scenery": {
+            "modules": [
+              {
+                "path": "modules/gardens_allotments.glb",
+                "bytes": 5601128,
+                "sha256": "bfb5c6fae303167a0e5eb30e453ef4e3a87ecdb9ea67c34c1b00efc70a4c7938"
+              },
+              {
+                "path": "modules/mountain.glb",
+                "bytes": 16779656,
+                "sha256": "118f85af2b2bbe50a7cb8202a278537d6e3ee6562204d68f490923fe668fb2bc"
+              },
+              {
+                "path": "modules/mountain_rocks.glb",
+                "bytes": 6179932,
+                "sha256": "5f87c8cbf23014740170db6815090da235565596e94e14440b73268aac5adc78"
+              },
+              {
+                "path": "modules/railway_service_buildings.glb",
+                "bytes": 36688380,
+                "sha256": "2b8852f389063488602e9a3f6bcfd7c8fc2808dbd58cb2f8dadd292e4a286f50"
+              },
+              {
+                "path": "modules/sawmill.glb",
+                "bytes": 59400628,
+                "sha256": "c9a9f5ef23a9c41c736d61b5a5b235f053196c2664bd31f81530e41be6899246"
+              },
+              {
+                "path": "modules/scenery_details.glb",
+                "bytes": 5005664,
+                "sha256": "d4f226522cede862a66036b21bd59ff302e5784b6a6e6f2f5337cf387a6db9d0"
+              },
+              {
+                "path": "modules/station_platform.glb",
+                "bytes": 16690996,
+                "sha256": "e720a57e4aabbf84eaf7d805781171c5d7b7899b88a542dceeeca95c47032b87"
+              },
+              {
+                "path": "modules/technical_reference.glb",
+                "bytes": 99864,
+                "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899"
+              },
+              {
+                "path": "modules/terrain.glb",
+                "bytes": 41022828,
+                "sha256": "20b77d659b5f31c3ccd3f7b0804f88122217439690a41c19bcad25ce08af7654"
+              },
+              {
+                "path": "modules/tunnels_portals.glb",
+                "bytes": 17432076,
+                "sha256": "073ad80c2821e64b5362f23fe69f7613418369af55e9309fc8557a428afa7c90"
+              },
+              {
+                "path": "modules/vegetation.glb",
+                "bytes": 27913720,
+                "sha256": "d9af56d13ce05d78811f95485558a91a6b0fa98742e7a996a31a1e2be59567a6"
+              },
+              {
+                "path": "modules/village_buildings.glb",
+                "bytes": 91596468,
+                "sha256": "46c725adb27be069d9e2ee533334850eceba3be676bd755207037a21d15ce73d"
+              }
+            ],
+            "loadMs": 12039.200000000186,
+            "edges": 79,
+            "railTop": 8.4,
+            "gauge": 9,
+            "railCentreOffset": 4.725,
+            "bedCells": 301786,
+            "bedRectangles": 3714,
+            "bedResolutionMm": 1,
+            "originalRailwayAttached": false,
+            "variant": "complete-procedural-R02",
+            "bladeActuatorsCertified": false,
+            "technical": false,
+            "quality": "low",
+            "decorativeInstanceDensity": 0.3,
+            "raycastObjects": 253,
+            "materialModel": "Lambert"
+          }
+        },
+        "render": {
+          "calls": 401,
+          "triangles": 10272270,
+          "geometries": 319,
+          "textures": 38
+        }
+      }
+    },
+    {
+      "name": "mobile and desktop surfaces",
+      "detail": true
+    },
+    {
+      "name": "seven trusted panel controls, both states",
+      "detail": true
+    },
+    {
+      "name": "seven trusted device picks",
+      "detail": [
+        {
+          "id": "V06-C07",
+          "point": {
+            "x": 1059.222,
+            "z": 532.136
+          },
+          "pixel": {
+            "x": 647.8937314172174,
+            "y": 460.51255828633487,
+            "depth": 0.9991499502619824
+          }
+        },
+        {
+          "id": "V06-C12",
+          "point": {
+            "x": 951.805,
+            "z": 114.835
+          },
+          "pixel": {
+            "x": 702.2048163587907,
+            "y": 336.5683698937827,
+            "depth": 0.9993307836173381
+          }
+        },
+        {
+          "id": "V06-C13",
+          "point": {
+            "x": 765.729,
+            "z": 114.835
+          },
+          "pixel": {
+            "x": 628.4865321519217,
+            "y": 310.61578804004205,
+            "depth": 0.999368648179748
+          }
+        },
+        {
+          "id": "V06-N07",
+          "point": {
+            "x": 530.915,
+            "z": 235.757
+          },
+          "pixel": {
+            "x": 512.6168503173274,
+            "y": 303.05402287682773,
+            "depth": 0.9993796807209636
+          }
+        },
+        {
+          "id": "V06-N14",
+          "point": {
+            "x": 772.069,
+            "z": 162.995
+          },
+          "pixel": {
+            "x": 619.6771787153587,
+            "y": 321.1251590799043,
+            "depth": 0.9993533151104653
+          }
+        },
+        {
+          "id": "WX-A",
+          "point": {
+            "x": 611.2298415139069,
+            "z": 93.80063676759062
+          },
+          "pixel": {
+            "x": 576.4985063103966,
+            "y": 286.6817440378731,
+            "depth": 0.9994035677152283
+          }
+        },
+        {
+          "id": "WX-B",
+          "point": {
+            "x": 983.3802597356091,
+            "z": 60.78687051712188
+          },
+          "pixel": {
+            "x": 726.6346468885023,
+            "y": 329.6940471074985,
+            "depth": 0.9993408131868673
+          }
+        }
+      ]
+    },
+    {
+      "name": "trusted mobile touch device command",
+      "detail": {
+        "point": {
+          "x": 983.3802597356091,
+          "z": 60.78687051712188
+        },
+        "pixel": {
+          "x": 260.7107903663018,
+          "y": 289.6195878593205,
+          "depth": 0.9993408131868673
+        }
+      }
+    },
+    {
+      "name": "technical toggle preserves railway state",
+      "detail": true
+    },
+    {
+      "name": "three native consists moving on real browser core",
+      "detail": [
+        {
+          "id": 0,
+          "odometer": 7041,
+          "vehicles": 4,
+          "guard": {
+            "leadingExtent": 49.6,
+            "risk": "SAFE",
+            "reason": "available",
+            "distance": "inf",
+            "boundary": null,
+            "direction": 1,
+            "lookahead": 74.012501,
+            "stoppingDistance": 72,
+            "state": "SAFE",
+            "delta": 2,
+            "velocity": 120,
+            "intervened": false,
+            "requestedSpeed": 80,
+            "requestedDelta": 2,
+            "probeDelta": null,
+            "probeKind": null
+          }
+        },
+        {
+          "id": 1,
+          "odometer": 7041,
+          "vehicles": 3,
+          "guard": {
+            "leadingExtent": 38,
+            "risk": "SAFE",
+            "reason": "available",
+            "distance": "inf",
+            "boundary": null,
+            "direction": 1,
+            "lookahead": 74.012501,
+            "stoppingDistance": 72,
+            "state": "SAFE",
+            "delta": 2,
+            "velocity": 120,
+            "intervened": false,
+            "requestedSpeed": 80,
+            "requestedDelta": 2,
+            "probeDelta": null,
+            "probeKind": null
+          }
+        },
+        {
+          "id": 2,
+          "odometer": 7041,
+          "vehicles": 3,
+          "guard": {
+            "leadingExtent": 34.25,
+            "risk": "SAFE",
+            "reason": "available",
+            "distance": "inf",
+            "boundary": null,
+            "direction": 1,
+            "lookahead": 74.012501,
+            "stoppingDistance": 72,
+            "state": "SAFE",
+            "delta": 2,
+            "velocity": 120,
+            "intervened": false,
+            "requestedSpeed": 80,
+            "requestedDelta": 2,
+            "probeDelta": null,
+            "probeKind": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "four native RAF callbacks advance the engine",
+      "detail": [
+        {
+          "now": 141892.246,
+          "odometer": 7065
+        },
+        {
+          "now": 159874.8,
+          "odometer": 7089
+        },
+        {
+          "now": 177224.1,
+          "odometer": 7113
+        },
+        {
+          "now": 191840.1,
+          "odometer": 7137
+        }
+      ]
+    },
+    {
+      "name": "STOP ALL, vehicles, Journey and minimaps coherent",
+      "detail": true
+    },
+    {
+      "name": "uncouple/couple identity and reverse",
+      "detail": true
+    },
+    {
+      "name": "occupied WX rejects device command and disables panel",
+      "detail": {
+        "changed": false,
+        "controlId": "WX-A",
+        "origin": "device",
+        "reason": "occupied",
+        "message": "Switch area occupied \u00b7 operation blocked"
+      }
+    },
+    {
+      "name": "fourth locomotive moves through the real browser core",
+      "detail": {
+        "odometer": 127.3125,
+        "guard": {
+          "leadingExtent": 38,
+          "risk": "SAFE",
+          "reason": "available",
+          "distance": "inf",
+          "boundary": null,
+          "direction": 1,
+          "lookahead": 14.668750999999999,
+          "stoppingDistance": 13.78125,
+          "state": "SAFE",
+          "delta": 0.875,
+          "velocity": 52.5,
+          "intervened": false,
+          "requestedSpeed": 35,
+          "requestedDelta": 0.875,
+          "probeDelta": null,
+          "probeKind": null
+        }
+      }
+    },
+    {
+      "name": "fourth complete locomotive and reset on V06",
+      "detail": true
+    },
+    {
+      "name": "Train Management project and Depot preserve physical fleet",
+      "detail": true
+    },
+    {
+      "name": "High rendering",
+      "detail": {
+        "secondsForFrameAndCapture": 53.099037647247314,
+        "render": {
+          "calls": 419,
+          "triangles": 18064133,
+          "geometries": 420,
+          "textures": 105
+        },
+        "scenery": {
+          "modules": [
+            {
+              "path": "modules/gardens_allotments.glb",
+              "bytes": 5601128,
+              "sha256": "bfb5c6fae303167a0e5eb30e453ef4e3a87ecdb9ea67c34c1b00efc70a4c7938"
+            },
+            {
+              "path": "modules/mountain.glb",
+              "bytes": 16779656,
+              "sha256": "118f85af2b2bbe50a7cb8202a278537d6e3ee6562204d68f490923fe668fb2bc"
+            },
+            {
+              "path": "modules/mountain_rocks.glb",
+              "bytes": 6179932,
+              "sha256": "5f87c8cbf23014740170db6815090da235565596e94e14440b73268aac5adc78"
+            },
+            {
+              "path": "modules/railway_service_buildings.glb",
+              "bytes": 36688380,
+              "sha256": "2b8852f389063488602e9a3f6bcfd7c8fc2808dbd58cb2f8dadd292e4a286f50"
+            },
+            {
+              "path": "modules/sawmill.glb",
+              "bytes": 59400628,
+              "sha256": "c9a9f5ef23a9c41c736d61b5a5b235f053196c2664bd31f81530e41be6899246"
+            },
+            {
+              "path": "modules/scenery_details.glb",
+              "bytes": 5005664,
+              "sha256": "d4f226522cede862a66036b21bd59ff302e5784b6a6e6f2f5337cf387a6db9d0"
+            },
+            {
+              "path": "modules/station_platform.glb",
+              "bytes": 16690996,
+              "sha256": "e720a57e4aabbf84eaf7d805781171c5d7b7899b88a542dceeeca95c47032b87"
+            },
+            {
+              "path": "modules/technical_reference.glb",
+              "bytes": 99864,
+              "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899"
+            },
+            {
+              "path": "modules/terrain.glb",
+              "bytes": 41022828,
+              "sha256": "20b77d659b5f31c3ccd3f7b0804f88122217439690a41c19bcad25ce08af7654"
+            },
+            {
+              "path": "modules/tunnels_portals.glb",
+              "bytes": 17432076,
+              "sha256": "073ad80c2821e64b5362f23fe69f7613418369af55e9309fc8557a428afa7c90"
+            },
+            {
+              "path": "modules/vegetation.glb",
+              "bytes": 27913720,
+              "sha256": "d9af56d13ce05d78811f95485558a91a6b0fa98742e7a996a31a1e2be59567a6"
+            },
+            {
+              "path": "modules/village_buildings.glb",
+              "bytes": 91596468,
+              "sha256": "46c725adb27be069d9e2ee533334850eceba3be676bd755207037a21d15ce73d"
+            }
+          ],
+          "loadMs": 12039.200000000186,
+          "edges": 79,
+          "railTop": 8.4,
+          "gauge": 9,
+          "railCentreOffset": 4.725,
+          "bedCells": 301786,
+          "bedRectangles": 3714,
+          "bedResolutionMm": 1,
+          "originalRailwayAttached": false,
+          "variant": "complete-procedural-R02",
+          "bladeActuatorsCertified": false,
+          "technical": false,
+          "quality": "high",
+          "decorativeInstanceDensity": 1,
+          "raycastObjects": 253,
+          "materialModel": "original glTF PBR"
+        }
+      }
+    },
+    {
+      "name": "profile reload cancellation preserves session data",
+      "detail": true
+    },
+    {
+      "name": "confirmed reload returns to coherent Legacy",
+      "detail": {
+        "id": "legacy",
+        "sessionId": "faf5f1c5-b246-4ea4-953d-87ade3773299",
+        "layoutId": "legacy",
+        "railTop": 5.95,
+        "controllers": [
+          "WX-A",
+          "WX-B",
+          "Y-IN",
+          "Y-2",
+          "Y-3",
+          "Y-R1",
+          "Y-R2",
+          "Y-4"
+        ],
+        "edges": 75,
+        "scenery": null
+      }
+    },
+    {
+      "name": "confirmed session-data loss is explicit and complete",
+      "detail": true
+    },
+    {
+      "name": "integrity failure has recovery and no partial runtime",
+      "detail": true
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "auth": "local fixture only",
+  "renderer": "Chromium SwiftShader"
+}

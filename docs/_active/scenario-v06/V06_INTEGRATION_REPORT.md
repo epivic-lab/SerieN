@@ -1,3 +1,150 @@
+# V06-INTEGRATION — candidata browser, 14 novembre 2026
+
+**Integrazione funzionale implementata e verificata. QUALITY GATE indipendente
+visivo/prestazionale PENDING; nessuna approvazione al rilascio.** Il blocco di
+trasferimento è chiuso. Branch `codex/scenario-v06-integration`, stessa Draft
+[PR #21](https://github.com/epivic-lab/SerieN/pull/21), dalla base esatta
+`642f8eb58eef84cc6474fbe8adacbd4a04e1f27e`. Il mandato di integrazione end-to-end
+recuperato nelle precedenti riprese prevale sulle pause ordinarie di microfase.
+Nessun merge/main/deploy o nuovo lavoro di backend.
+
+## Asset e ammissione
+
+L'ultimo originale, railway_service_buildings, è arrivato con HTTP200 dal nuovo
+riferimento Denmark; header GLB2,36.688.380byte eSHA256 conforme. Non si attesta
+che la modifica rete sia stata applicata: lo stato osservato mostrava ancora
+revisione1 con Denmark/epivic-lab.github.io. Non è servito aggirare il proxy.
+
+**Tredici originali/364.551.328byte**, inclusa technical_reference opzionale,
+ora in `assets/scenario-v06/modules/`. I dodici già versionati sono trasferiti
+senza modificarne i byte; l'ultimo si aggiunge. Il lock separato SHA256
+`9ede69547d5da2e35eef63d4051d610d13d0647feb9413750f5510172a127499`
+è immutato. Il dataset pubblico è copia byte-identica dell'R1A, SHA256
+`4fd022e1173ef5517a7c826f4163dd10ab1ff776e1ecfaf144f53d40473ccef7`.
+Controllo ripetibile: `python3 tools/scenario-v06/check-local-assets.py --require-complete`.
+
+Il browser verifica SHA e dimensione prima del parse; dataset e lock hanno
+pin nel codice. URL/file inattesi,HTTPfallito,hash o dimensione errati impediscono
+l'avvio. Tutti i moduli vengono preparati prima di costruire WebGL/flotta/UI;
+un errore presenta Retry/Return to Legacy, senza fallback automatico o mezzo
+scenario attivo. Nessun URL Drive firmato è nel prodotto o nei file versionati.
+
+## Uso e confine della sessione
+
+Avvio ordinario del repository (`npm ci`, `npm start`). **Menu → Scenario → V06**,
+o `?scenario=v06`; senza parametro il default rimane Legacy. La selezione chiede
+conferma della perdita di treni/progetti/Depot, osserva la generation reale,
+ferma la flotta e ricarica l'intera pagina. Annullare conserva sessione e dati.
+Il ritorno a Legacy ricostruisce75archi/8controller/3treni con identità nuova;
+nessuna proiezione di Journey o di riferimenti di V06 sulla vecchia rete.
+L'autenticazione reale resta obbligatoria e invariata: la fixture locale delle
+prove browser non è parte del prodotto. OAuth live NON VERIFICATO.
+
+V06 usa79archi,74nodi e7controller dello stesso dataset e registro validato.
+Nuova sessione software inizializzata esplicitamente in S0/N, non una lettura
+fisica degli stati null del master. Spawn iniziale e quarto treno verificano
+l'intera composizione, storia instradata, visibilità, aree protette e altri
+veicoli prima di ammettere la posa. Nessun T47 legacy viene usato da V06.
+Reset ricostruisce le pose del profilo e invalida i riferimenti TM come prima.
+UNKNOWN e scambi occupati restano protetti dai confini esistenti.
+
+## Scena, ferrovia e UI
+
+La scenografia carica gli undici moduli originali non ferroviari con sola
+conversione metri→millimetri1000, senza spostare il piano. Technical_reference
+resta nascosta nella vista normale. Il toggle tecnico mostra riferimenti e
+assi operativi senza mutare velocità,Journey,occupazione o controller.
+Nessuna scenografia/rotaia Legacy è attaccata alla scena V06.
+
+**Variante ferroviaria procedurale completa**, esclusiva del profilo V06:
+assi degli79archi R02, piano ferro8,4mm, centri rotaie±4,725mm e testa nominale
+0,45mm (scartamento interno9mm). Il GLB railway_visual originale rimane
+immutato come riferimento e non viene sovrapposto alla variante. Due tamponi
+sui soli terminali buffer-N20/N10; nessun tampone inventato su open-N16.
+Massicciata nominale con una sola ownership per cella1mm, unita in3714rettangoli
+senza superposizioni di strip; nessuna modifica del tracciato per incastrare
+il paesaggio. Il renderer conserva i79assi; non crea nodi al diamond.
+
+**Limite esplicito:** è una rappresentazione nominale del simulatore. Non sono
+ricostruiti/certificati aghi mobili e attuatori, cuori e flangeway AS-BUILT;
+non si dichiara chiuso il gate di fedeltà fisica R02. La commutazione è osservata
+dalle frecce di selezione, non da una falsa animazione meccanica. La scelta
+procedurale e l'aspetto richiedono review Regia; nessun PASS estetico implicito.
+
+Picking,focus,glow e frecce ricevono il registro effettivo e la quota del profilo;
+sette dispositivi V06 e otto Legacy, nessun ottavo controller fittizio. Panel e
+canvas chiamano lo stesso comando protetto. Tile e HUD distinguono S0/S1 e N/X;
+la missione del runaround legacy diventa esplorazione di un ramo V06.
+Minimappe,layoutplan e marker derivano dalla stessa rete dei veicoli.
+Layout/CSS V2.1,tre console,camera,HUD,Bell,TrainManagement,progetti eDepot
+restano gli stessi, con selettore e toggle nel Menu esistente.
+
+L'indice statico per il raycast scarta solo bounding box non interessati e poi
+interseca veri triangoli. Gli oggetti dinamici usano le trasformazioni correnti;
+prefissi di densità,occlusione e disposal sono coperti dai nuovi test. Non è
+un bypass dei controlli o una nuova geometria di picking renderizzata.
+
+## Verifiche effettive
+
+**567/567 Node PASS** =559storici invariati+8nuovi; **9/9 JMRI PASS**;
+build e rigenerazione canonico senza diff PASS. **19 gruppi browser PASS**
+sul bundle finale: caricamento,desktop/mobile,7panel×2stati,7picking reali,touch
+trusted suWX-B,toggle tecnico,3composizioni native oltre7m,4callbackRAF nativi,
+STOP/pose,sgancio-riaggancio/UUID,inversione,WXoccupato,quarto treno in moto e
+reset4,progettoTM/Depot,High,annullamento/conferma cambio profilo,Legacy pulito,
+perdita dati confermata ed errore d'integrità senza runtime parziale.
+Nessun pageerror/consoleerror o richiesta fallita nella campagna positiva.
+
+La campagna usa Chromium/SwiftShader,Auth sostituito nella sola fixture locale,
+RAF del gioco controllato per molte verifiche e quattro callback RAF originali
+esplicitamente distinti. Non è un collaudo OAuth,hardware fisico o di tutti i
+browser. Non è una nuova campagna numerica R2B3/R2C o una certificazione generale
+di sicurezza/equità a4treni: riusa il core e le suite già esistenti.
+Una prima fixture tentava di posare il convoglio sul ramo WX P012 inattivo;
+il rifiuto era corretto. La fixture finale occupa il ramo selezionato P059:
+nessuna guardia o asserzione di sicurezza applicativa è stata indebolita.
+
+Bundle finale1.116.370byte, SHA256
+`5ac4580ea02ab205d75914a7a9eda84a5203680077a8a31f8860ab7ac0612e32`.
+[Prove,script,log e screenshot](evidence/V06_INTEGRATION/application/README.md).
+Ricetta Prepare site invariata eseguita localmente:113file/369.517.260byte,
+sotto1GiB,13HEAD200 e SHA delle copie identici. Non è una verifica Pages live.
+
+## Prestazioni: limite materiale della candidata
+
+Gli originali sono molto densi. Il profilo Low usa materiali Lambert e il30%
+delle istanze decorative distribuite sull'ordine originale; High ripristina
+materiali PBR e tutte le istanze, senza cambiare le coordinate. Nessun GLB è
+semplificato/riscritto e nessuna dipendenza runtime è aggiunta. L'indice per il
+picking non risolve il costo GPU di milioni di triangoli.
+
+Nel run finale locale: caricamento completo circa38,4s (moduli circa12,0s),
+Low401draw/10.272.270triangoli,High419draw/18.064.133triangoli nella scena con4
+treni. Quattro callback native separati da circa17,98/17,35/14,62secondi;
+High frame+cattura circa53,1s. Questi sono dati di SwiftShader software in
+questo ambiente, non FPS su GPU fisica, né un benchmark hardware generalizzabile.
+**Su questa macchina la fluidità non è soddisfacente.** I miglioramenti Low
+non sono una prova di budget superato. Non dichiarare V06 fluida/pronta alla
+produzione: costo asset e prestazioni restano oggetto prioritario del Gate.
+
+## Invarianti, consegna e stop
+
+Core/FixedClock/Journey/routing/F1/guard/collisioni,canonico,artifactR1A,
+rotabili/assetmanager,TM/M2/M3,Auth/Supabase,UI CSS/camera e workflow/deps
+byte-identici alla base. Funzione addRail legacy identica e150railmesh originali
+preservate nel profilo Legacy. Le modifiche condivise sono adapter di registro,
+quota,terreno e presentazione; vedere `preservation.json` per i percorsi esatti.
+Nessun segreto,eval,nuovo egress o comando realeZ21. Nessun merge/main/deploy.
+
+Commit atomico,push normale e verifica locale=remoto nella ricevuta finale;
+la Draft #21 resta aperta con base R2B2, senza rilasci o nuovi tag.
+**Unica prossima azione: review indipendente Regia della candidata funzionale,
+con gate visivo/prestazionale ancora aperto.** Non è autorizzazione a pubblicare.
+
+---
+
+## Archivio delle riprese precedenti
+
 # V06-INTEGRATION — verifica dopo aggiornamento dominio, 14 novembre 2026
 
 **ASSET QUASI COMPLETI; BLOCKED sull'ultimo modulo obbligatorio.** Ripresa da

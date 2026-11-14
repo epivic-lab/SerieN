@@ -7,7 +7,7 @@ from pathlib import Path
 import struct
 
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[2] / 'asset-library/scenario-v06')
+parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[2] / 'assets/scenario-v06')
 parser.add_argument('--require-complete', action='store_true')
 args = parser.parse_args()
 lock = json.loads((args.root / 'asset-lock.json').read_text())

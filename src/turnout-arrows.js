@@ -37,11 +37,12 @@ function arrowMaterial(){return new THREE.ShaderMaterial({name:'Selected route Â
 
 /** Cache only presentation buffers. Observe state, never request or authorize
  * a change. Throttle read-only approach scans; idle frames allocate nothing. */
-export function createTurnoutArrows(scene,model,{getState,getApproaches=()=>[],choose=null,reducedMotion=false,now=()=>performance.now()}={}) {
+export function createTurnoutArrows(scene,model,{getState,getApproaches=()=>[],choose=null,reducedMotion=false,now=()=>performance.now(),heightOffset=0}={}) {
   if(typeof getState!=='function'||typeof getApproaches!=='function'||typeof now!=='function'||typeof reducedMotion!=='boolean')throw new TypeError('Invalid arrow options');
   const root=new THREE.Group(),units=new Map();let disposed=false,lastRead=-Infinity;
+  root.position.y=heightOffset;
   root.name='Selected turnout routes';root.userData.dynamic=true;root.userData.pickThrough=true;scene.add(root);
-  for(const id of TURNOUT_IDS){const material=arrowMaterial(),paths=new Map();for(const path of model.read(id,false).paths){const mesh=new THREE.Mesh(arrowGeometry(path),material);mesh.visible=false;mesh.renderOrder=3;mesh.raycast=noop;mesh.name=path.edge;mesh.onBeforeRender=()=>{material.uniforms.sign.value=mesh.userData.sign??0;material.uniformsNeedUpdate=true;};root.add(mesh);paths.set(path.edge,mesh);}units.set(id,{material,paths,state:undefined,view:null,started:null});}
+  for(const id of model.registry?.ids??TURNOUT_IDS){const material=arrowMaterial(),paths=new Map();for(const path of model.read(id,false).paths){const mesh=new THREE.Mesh(arrowGeometry(path),material);mesh.visible=false;mesh.renderOrder=3;mesh.raycast=noop;mesh.name=path.edge;mesh.onBeforeRender=()=>{material.uniforms.sign.value=mesh.userData.sign??0;material.uniformsNeedUpdate=true;};root.add(mesh);paths.set(path.edge,mesh);}units.set(id,{material,paths,state:undefined,view:null,started:null});}
   function update(at=now(),force=false){if(disposed)return;if(typeof force!=='boolean')throw new TypeError('Invalid arrow refresh');if(!Number.isFinite(at)||at<0)throw new RangeError('Invalid arrow time');
     let changed=false;for(const [id,u] of units)if(getState(id)!==u.state){changed=true;break;}
     if(force||changed||at-lastRead>=ARROW_CONFIG.refreshMs){const approaches=getApproaches();lastRead=at;

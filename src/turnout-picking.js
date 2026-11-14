@@ -39,12 +39,13 @@ function trainId(object) {
 
 /** Independent CPU-only hit geometry. The root is deliberately never added to
  * the rendered scene; no rail/material mutation and no GPU upload/draw calls. */
-export function createTurnoutPicking(model) {
+export function createTurnoutPicking(model,{heightOffset=0,raycastOccluders=null}={}) {
   const root=new THREE.Group(),material=new THREE.MeshBasicMaterial({side:THREE.DoubleSide});
   const pathsById=new Map(),meshes=[],deviceHits=[],sceneHits=[];
   let disposed=false;
-  root.name='Turnout picking only';root.visible=false;
-  for(const id of TURNOUT_IDS) {
+  root.name='Turnout picking only';root.visible=false;root.position.y=heightOffset;
+  const ids=model.registry?.ids??TURNOUT_IDS;
+  for(const id of ids) {
     const paths=model.read(id,false).paths;
     if(!paths.length)throw new Error('Missing canonical turnout paths: '+id);
     pathsById.set(id,paths);
@@ -62,11 +63,12 @@ export function createTurnoutPicking(model) {
       const first=deviceHits[0]?.distance??Infinity;
       for(const hit of deviceHits) {
         if(hit.distance>first+EPS)break;
-        const id=hit.object.userData.controlId,d=centreDistance(pathsById.get(id),hit.point),r=TURNOUT_IDS.indexOf(id);
+        const id=hit.object.userData.controlId,d=centreDistance(pathsById.get(id),hit.point),r=ids.indexOf(id);
         if(d<best-EPS||Math.abs(d-best)<=EPS&&r<rank){device={kind:'turnout',id,distance:hit.distance};best=d;rank=r;}
       }
       scene.updateMatrixWorld(true);
-      raycaster.intersectObject(scene,true,sceneHits);
+      if(raycastOccluders)raycastOccluders(raycaster,scene,device?.distance??Infinity,sceneHits);
+      else raycaster.intersectObject(scene,true,sceneHits);
       const surface=sceneHits.find(visibleSurface);
       if(surface && (!device || surface.distance<device.distance-EPS)) {
         const id=trainId(surface.object);

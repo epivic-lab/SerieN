@@ -1,3 +1,32 @@
+# V06-INTEGRATION — candidata browser, 14 novembre 2026
+
+**Integrazione funzionale implementata; Quality Gate visivo/prestazionale PENDING.**
+Blocco asset chiuso:13originali/364.551.328byte verificati e conservati in
+`assets/scenario-v06/`. Menu→Scenario→V06, selezione opt-in con conferma della
+perdita dati e reload; default e rollback Legacy preservati.79archi/7controller,
+scenografia originale,pose/quote/picking/HUD,spawn completo/quarto treno/reset,
+TM/progetti/Depot e toggle tecnico nello stesso profilo. Variante ferroviaria
+procedurale esclusivaR02;GLB ferroviario originale non sovrapposto.
+
+**567/567Node,9/9JMRI,build/canonico e19gruppi browser PASS**,con fixtureAuth locale,
+comandi mouse/touch trusted,3composizioni oltre7m,quarto in moto,WXoccupato e
+rollback reale. Core/F1/dati/rotabili/TM/Auth/backend/CSS/workflow/deps preservati.
+Nessun merge/deploy. Branch esistente `codex/scenario-v06-integration`,Draft#21.
+
+**Limiti aperti:** niente attestazione di aghi/attuatori/frogs fisici o PASS
+estetico; originali molto densi,fluidità insoddisfacente suSwiftShader (callback
+nativi separati da14–18s),GPUfisica/OAuthlive/altri browser non verificati.
+Non dichiarare pronta alla produzione o budget prestazionale superato.
+
+[Rapporto](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md),
+[prove](docs/_active/scenario-v06/evidence/V06_INTEGRATION/application/README.md).
+Checkpoint atomico e SHA remoto nella consegna. **Unica prossima azione:
+Quality Gate indipendente Regia sulla candidata; nessuna pubblicazione automatica.**
+
+---
+
+## Archivio delle riprese precedenti
+
 # V06-INTEGRATION — verifica dopo aggiornamento dominio, 14 novembre 2026
 
 **ASSET QUASI COMPLETI; BLOCKED sull'ultimo modulo obbligatorio.** Ripresa da
