@@ -1,0 +1,718 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "V06 cold load and coherent identities",
+      "detail": {
+        "seconds": 25.289308071136475,
+        "scenario": {
+          "id": "v06",
+          "sessionId": "206c29c6-fd42-4eaf-9e26-b177f3610559",
+          "layoutId": "V06-R1A",
+          "railTop": 8.4,
+          "controllers": [
+            "V06-C07",
+            "V06-C12",
+            "V06-C13",
+            "V06-N07",
+            "V06-N14",
+            "WX-A",
+            "WX-B"
+          ],
+          "edges": 79,
+          "scenery": {
+            "modules": [
+              {
+                "path": "modules/gardens_allotments.glb",
+                "loadedPath": "optimized/gardens_allotments.glb",
+                "bytes": 5390084,
+                "sha256": "24871e96d5d2efcc023a634e83900674075167eacbc28875e1bff3d183446046",
+                "originalBytes": 5601128,
+                "fetchVerifyMs": 133.39999999990687,
+                "parseMs": 197.89999999990687
+              },
+              {
+                "path": "modules/mountain.glb",
+                "loadedPath": "optimized/mountain.glb",
+                "bytes": 7749372,
+                "sha256": "4b6836f85647b7c79a206f1688cbb9f2279788268b1fe301e693b2688cdbaf51",
+                "originalBytes": 16779656,
+                "fetchVerifyMs": 144.5999999998603,
+                "parseMs": 318.10000000009313
+              },
+              {
+                "path": "modules/mountain_rocks.glb",
+                "loadedPath": "optimized/mountain_rocks.glb",
+                "bytes": 6047352,
+                "sha256": "735cbdd6505ce38fce1518c638879ac2781d39d84794a043bebc2f3f8359699b",
+                "originalBytes": 6179932,
+                "fetchVerifyMs": 83.4000000001397,
+                "parseMs": 115.5999999998603
+              },
+              {
+                "path": "modules/railway_service_buildings.glb",
+                "loadedPath": "optimized/railway_service_buildings.glb",
+                "bytes": 24184300,
+                "sha256": "d97f4a889f55c9294047c03a9c65ae538122225ccc09bb52795b2d5af4dfdab7",
+                "originalBytes": 36688380,
+                "fetchVerifyMs": 247.20000000018626,
+                "parseMs": 1383.3999999999069
+              },
+              {
+                "path": "modules/sawmill.glb",
+                "loadedPath": "optimized/sawmill.glb",
+                "bytes": 17757716,
+                "sha256": "6c99b18bb3755440fcae13526bf6e4d984036caca61b75223d9de174382ab57d",
+                "originalBytes": 59400628,
+                "fetchVerifyMs": 147.89999999990687,
+                "parseMs": 196.60000000009313
+              },
+              {
+                "path": "modules/scenery_details.glb",
+                "loadedPath": "optimized/scenery_details.glb",
+                "bytes": 4973036,
+                "sha256": "4018b77c5bcce5fc97fcfb3d5d2935379906ca390619a072f72148dbb7c77862",
+                "originalBytes": 5005664,
+                "fetchVerifyMs": 66.5,
+                "parseMs": 196.5
+              },
+              {
+                "path": "modules/station_platform.glb",
+                "loadedPath": "optimized/station_platform.glb",
+                "bytes": 16690856,
+                "sha256": "08be6472a3859da042008d981d887822c6cc6bcad77467832d10875900c25e17",
+                "originalBytes": 16690996,
+                "fetchVerifyMs": 269.29999999981374,
+                "parseMs": 1122.5
+              },
+              {
+                "path": "modules/technical_reference.glb",
+                "loadedPath": "modules/technical_reference.glb",
+                "bytes": 99864,
+                "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899",
+                "originalBytes": 99864,
+                "fetchVerifyMs": 9.099999999860302,
+                "parseMs": 3.199999999953434
+              },
+              {
+                "path": "modules/terrain.glb",
+                "loadedPath": "optimized/terrain.glb",
+                "bytes": 26642148,
+                "sha256": "30d1d90462e1eb7cac0ff3115691cb4c6fa6943a655c472eaf0698fe0b202c46",
+                "originalBytes": 41022828,
+                "fetchVerifyMs": 203.39999999990687,
+                "parseMs": 624
+              },
+              {
+                "path": "modules/tunnels_portals.glb",
+                "loadedPath": "optimized/tunnels_portals.glb",
+                "bytes": 14950712,
+                "sha256": "8e04efdd06d363fe99b7c3f661cef87b881e1a46058a15660846f4636786d772",
+                "originalBytes": 17432076,
+                "fetchVerifyMs": 241.69999999995343,
+                "parseMs": 569.8000000000466
+              },
+              {
+                "path": "modules/vegetation.glb",
+                "loadedPath": "optimized/vegetation.glb",
+                "bytes": 26966720,
+                "sha256": "25083e797e94c91aac68ae2467b643165068c9f39a8a33e24555c72367c88730",
+                "originalBytes": 27913720,
+                "fetchVerifyMs": 113.89999999990687,
+                "parseMs": 177.4000000001397
+              },
+              {
+                "path": "modules/village_buildings.glb",
+                "loadedPath": "optimized/village_buildings.glb",
+                "bytes": 65292692,
+                "sha256": "2d110bdf0ef612aae4611561a07d01fd0d48adbdc2ec11a2ec1126cab5aca3ad",
+                "originalBytes": 91596468,
+                "fetchVerifyMs": 385.5,
+                "parseMs": 2365.4000000001397
+              }
+            ],
+            "loadMs": 10260.800000000047,
+            "railwayBuildMs": 754.8000000000466,
+            "assetVariant": "optimized",
+            "edges": 79,
+            "railTop": 8.4,
+            "gauge": 9,
+            "railCentreOffset": 4.725,
+            "bedCells": 301786,
+            "bedRectangles": 3714,
+            "bedResolutionMm": 1,
+            "originalRailwayAttached": false,
+            "variant": "complete-procedural-R02",
+            "bladeActuatorsCertified": false,
+            "technical": false,
+            "quality": "low",
+            "decorativeInstanceDensity": 0.3,
+            "raycastBuildMs": 357.5,
+            "raycastObjects": 253,
+            "materialModel": "Lambert",
+            "grassVisible": false
+          }
+        },
+        "render": {
+          "calls": 369,
+          "triangles": 3259097,
+          "geometries": 311,
+          "textures": 38
+        }
+      }
+    },
+    {
+      "name": "mobile and desktop surfaces",
+      "detail": true
+    },
+    {
+      "name": "seven trusted panel controls and visible selected bands, both states",
+      "detail": [
+        {
+          "id": "V06-C07",
+          "on": true,
+          "paths": [
+            "V06-P034"
+          ]
+        },
+        {
+          "id": "V06-C07",
+          "on": false,
+          "paths": [
+            "V06-P035"
+          ]
+        },
+        {
+          "id": "V06-C12",
+          "on": true,
+          "paths": [
+            "V06-P030"
+          ]
+        },
+        {
+          "id": "V06-C12",
+          "on": false,
+          "paths": [
+            "V06-P068"
+          ]
+        },
+        {
+          "id": "V06-C13",
+          "on": true,
+          "paths": [
+            "V06-P033"
+          ]
+        },
+        {
+          "id": "V06-C13",
+          "on": false,
+          "paths": [
+            "V06-P069"
+          ]
+        },
+        {
+          "id": "V06-N07",
+          "on": true,
+          "paths": [
+            "V06-P032"
+          ]
+        },
+        {
+          "id": "V06-N07",
+          "on": false,
+          "paths": [
+            "V06-P031"
+          ]
+        },
+        {
+          "id": "V06-N14",
+          "on": true,
+          "paths": [
+            "V06-P042"
+          ]
+        },
+        {
+          "id": "V06-N14",
+          "on": false,
+          "paths": [
+            "V06-P041"
+          ]
+        },
+        {
+          "id": "WX-A",
+          "on": true,
+          "paths": [
+            "V06-P012",
+            "V06-P013"
+          ]
+        },
+        {
+          "id": "WX-A",
+          "on": false,
+          "paths": [
+            "V06-P059",
+            "V06-P060"
+          ]
+        },
+        {
+          "id": "WX-B",
+          "on": true,
+          "paths": [
+            "V06-P016",
+            "V06-P017"
+          ]
+        },
+        {
+          "id": "WX-B",
+          "on": false,
+          "paths": [
+            "V06-P061",
+            "V06-P062"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "seven trusted device picks",
+      "detail": [
+        {
+          "id": "V06-C07",
+          "point": {
+            "x": 1059.222,
+            "z": 532.136
+          },
+          "pixel": {
+            "x": 647.8937314172174,
+            "y": 460.51255828633487,
+            "depth": 0.9991499502619824
+          }
+        },
+        {
+          "id": "V06-C12",
+          "point": {
+            "x": 951.805,
+            "z": 114.835
+          },
+          "pixel": {
+            "x": 702.2048163587907,
+            "y": 336.5683698937827,
+            "depth": 0.9993307836173381
+          }
+        },
+        {
+          "id": "V06-C13",
+          "point": {
+            "x": 765.729,
+            "z": 114.835
+          },
+          "pixel": {
+            "x": 628.4865321519217,
+            "y": 310.61578804004205,
+            "depth": 0.999368648179748
+          }
+        },
+        {
+          "id": "V06-N07",
+          "point": {
+            "x": 530.915,
+            "z": 235.757
+          },
+          "pixel": {
+            "x": 512.6168503173274,
+            "y": 303.05402287682773,
+            "depth": 0.9993796807209636
+          }
+        },
+        {
+          "id": "V06-N14",
+          "point": {
+            "x": 772.069,
+            "z": 162.995
+          },
+          "pixel": {
+            "x": 619.6771787153587,
+            "y": 321.1251590799043,
+            "depth": 0.9993533151104653
+          }
+        },
+        {
+          "id": "WX-A",
+          "point": {
+            "x": 611.2298415139069,
+            "z": 93.80063676759062
+          },
+          "pixel": {
+            "x": 576.4985063103966,
+            "y": 286.6817440378731,
+            "depth": 0.9994035677152283
+          }
+        },
+        {
+          "id": "WX-B",
+          "point": {
+            "x": 983.3802597356091,
+            "z": 60.78687051712188
+          },
+          "pixel": {
+            "x": 726.6346468885023,
+            "y": 329.6940471074985,
+            "depth": 0.9993408131868673
+          }
+        }
+      ]
+    },
+    {
+      "name": "trusted mobile touch device command",
+      "detail": {
+        "point": {
+          "x": 983.3802597356091,
+          "z": 60.78687051712188
+        },
+        "pixel": {
+          "x": 260.7107903663018,
+          "y": 289.6195878593205,
+          "depth": 0.9993408131868673
+        }
+      }
+    },
+    {
+      "name": "technical toggle preserves railway state",
+      "detail": true
+    },
+    {
+      "name": "three native consists moving on real browser core",
+      "detail": [
+        {
+          "id": 0,
+          "odometer": 7041,
+          "vehicles": 4,
+          "guard": {
+            "leadingExtent": 49.6,
+            "risk": "SAFE",
+            "reason": "available",
+            "distance": Infinity,
+            "boundary": null,
+            "direction": 1,
+            "lookahead": 74.012501,
+            "stoppingDistance": 72,
+            "state": "SAFE",
+            "delta": 2,
+            "velocity": 120,
+            "intervened": false,
+            "requestedSpeed": 80,
+            "requestedDelta": 2,
+            "probeDelta": null,
+            "probeKind": null
+          }
+        },
+        {
+          "id": 1,
+          "odometer": 7041,
+          "vehicles": 3,
+          "guard": {
+            "leadingExtent": 38,
+            "risk": "SAFE",
+            "reason": "available",
+            "distance": Infinity,
+            "boundary": null,
+            "direction": 1,
+            "lookahead": 74.012501,
+            "stoppingDistance": 72,
+            "state": "SAFE",
+            "delta": 2,
+            "velocity": 120,
+            "intervened": false,
+            "requestedSpeed": 80,
+            "requestedDelta": 2,
+            "probeDelta": null,
+            "probeKind": null
+          }
+        },
+        {
+          "id": 2,
+          "odometer": 7041,
+          "vehicles": 3,
+          "guard": {
+            "leadingExtent": 34.25,
+            "risk": "SAFE",
+            "reason": "available",
+            "distance": Infinity,
+            "boundary": null,
+            "direction": 1,
+            "lookahead": 74.012501,
+            "stoppingDistance": 72,
+            "state": "SAFE",
+            "delta": 2,
+            "velocity": 120,
+            "intervened": false,
+            "requestedSpeed": 80,
+            "requestedDelta": 2,
+            "probeDelta": null,
+            "probeKind": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "four native RAF callbacks advance the engine",
+      "detail": [
+        {
+          "now": 67753.782,
+          "odometer": 7065
+        },
+        {
+          "now": 71353.6,
+          "odometer": 7089
+        },
+        {
+          "now": 74736.8,
+          "odometer": 7113
+        },
+        {
+          "now": 78220,
+          "odometer": 7137
+        }
+      ]
+    },
+    {
+      "name": "STOP ALL, vehicles, Journey and minimaps coherent",
+      "detail": true
+    },
+    {
+      "name": "uncouple/couple identity and reverse",
+      "detail": true
+    },
+    {
+      "name": "occupied WX rejects command, disables panel and preserves selected bands",
+      "detail": {
+        "changed": false,
+        "controlId": "WX-A",
+        "origin": "device",
+        "reason": "occupied",
+        "message": "Switch area occupied \u00b7 operation blocked"
+      }
+    },
+    {
+      "name": "fourth locomotive moves through the real browser core",
+      "detail": {
+        "odometer": 127.3125,
+        "guard": {
+          "leadingExtent": 38,
+          "risk": "SAFE",
+          "reason": "available",
+          "distance": Infinity,
+          "boundary": null,
+          "direction": 1,
+          "lookahead": 14.668750999999999,
+          "stoppingDistance": 13.78125,
+          "state": "SAFE",
+          "delta": 0.875,
+          "velocity": 52.5,
+          "intervened": false,
+          "requestedSpeed": 35,
+          "requestedDelta": 0.875,
+          "probeDelta": null,
+          "probeKind": null
+        }
+      }
+    },
+    {
+      "name": "fourth complete locomotive and reset on V06",
+      "detail": true
+    },
+    {
+      "name": "Train Management project and Depot add/remove preserve physical fleet",
+      "detail": true
+    },
+    {
+      "name": "High rendering",
+      "detail": {
+        "secondsForFrameAndCapture": 28.947295427322388,
+        "render": {
+          "calls": 419,
+          "triangles": 11911658,
+          "geometries": 429,
+          "textures": 103
+        },
+        "scenery": {
+          "modules": [
+            {
+              "path": "modules/gardens_allotments.glb",
+              "loadedPath": "optimized/gardens_allotments.glb",
+              "bytes": 5390084,
+              "sha256": "24871e96d5d2efcc023a634e83900674075167eacbc28875e1bff3d183446046",
+              "originalBytes": 5601128,
+              "fetchVerifyMs": 133.39999999990687,
+              "parseMs": 197.89999999990687
+            },
+            {
+              "path": "modules/mountain.glb",
+              "loadedPath": "optimized/mountain.glb",
+              "bytes": 7749372,
+              "sha256": "4b6836f85647b7c79a206f1688cbb9f2279788268b1fe301e693b2688cdbaf51",
+              "originalBytes": 16779656,
+              "fetchVerifyMs": 144.5999999998603,
+              "parseMs": 318.10000000009313
+            },
+            {
+              "path": "modules/mountain_rocks.glb",
+              "loadedPath": "optimized/mountain_rocks.glb",
+              "bytes": 6047352,
+              "sha256": "735cbdd6505ce38fce1518c638879ac2781d39d84794a043bebc2f3f8359699b",
+              "originalBytes": 6179932,
+              "fetchVerifyMs": 83.4000000001397,
+              "parseMs": 115.5999999998603
+            },
+            {
+              "path": "modules/railway_service_buildings.glb",
+              "loadedPath": "optimized/railway_service_buildings.glb",
+              "bytes": 24184300,
+              "sha256": "d97f4a889f55c9294047c03a9c65ae538122225ccc09bb52795b2d5af4dfdab7",
+              "originalBytes": 36688380,
+              "fetchVerifyMs": 247.20000000018626,
+              "parseMs": 1383.3999999999069
+            },
+            {
+              "path": "modules/sawmill.glb",
+              "loadedPath": "optimized/sawmill.glb",
+              "bytes": 17757716,
+              "sha256": "6c99b18bb3755440fcae13526bf6e4d984036caca61b75223d9de174382ab57d",
+              "originalBytes": 59400628,
+              "fetchVerifyMs": 147.89999999990687,
+              "parseMs": 196.60000000009313
+            },
+            {
+              "path": "modules/scenery_details.glb",
+              "loadedPath": "optimized/scenery_details.glb",
+              "bytes": 4973036,
+              "sha256": "4018b77c5bcce5fc97fcfb3d5d2935379906ca390619a072f72148dbb7c77862",
+              "originalBytes": 5005664,
+              "fetchVerifyMs": 66.5,
+              "parseMs": 196.5
+            },
+            {
+              "path": "modules/station_platform.glb",
+              "loadedPath": "optimized/station_platform.glb",
+              "bytes": 16690856,
+              "sha256": "08be6472a3859da042008d981d887822c6cc6bcad77467832d10875900c25e17",
+              "originalBytes": 16690996,
+              "fetchVerifyMs": 269.29999999981374,
+              "parseMs": 1122.5
+            },
+            {
+              "path": "modules/technical_reference.glb",
+              "loadedPath": "modules/technical_reference.glb",
+              "bytes": 99864,
+              "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899",
+              "originalBytes": 99864,
+              "fetchVerifyMs": 9.099999999860302,
+              "parseMs": 3.199999999953434
+            },
+            {
+              "path": "modules/terrain.glb",
+              "loadedPath": "optimized/terrain.glb",
+              "bytes": 26642148,
+              "sha256": "30d1d90462e1eb7cac0ff3115691cb4c6fa6943a655c472eaf0698fe0b202c46",
+              "originalBytes": 41022828,
+              "fetchVerifyMs": 203.39999999990687,
+              "parseMs": 624
+            },
+            {
+              "path": "modules/tunnels_portals.glb",
+              "loadedPath": "optimized/tunnels_portals.glb",
+              "bytes": 14950712,
+              "sha256": "8e04efdd06d363fe99b7c3f661cef87b881e1a46058a15660846f4636786d772",
+              "originalBytes": 17432076,
+              "fetchVerifyMs": 241.69999999995343,
+              "parseMs": 569.8000000000466
+            },
+            {
+              "path": "modules/vegetation.glb",
+              "loadedPath": "optimized/vegetation.glb",
+              "bytes": 26966720,
+              "sha256": "25083e797e94c91aac68ae2467b643165068c9f39a8a33e24555c72367c88730",
+              "originalBytes": 27913720,
+              "fetchVerifyMs": 113.89999999990687,
+              "parseMs": 177.4000000001397
+            },
+            {
+              "path": "modules/village_buildings.glb",
+              "loadedPath": "optimized/village_buildings.glb",
+              "bytes": 65292692,
+              "sha256": "2d110bdf0ef612aae4611561a07d01fd0d48adbdc2ec11a2ec1126cab5aca3ad",
+              "originalBytes": 91596468,
+              "fetchVerifyMs": 385.5,
+              "parseMs": 2365.4000000001397
+            }
+          ],
+          "loadMs": 10260.800000000047,
+          "railwayBuildMs": 754.8000000000466,
+          "assetVariant": "optimized",
+          "edges": 79,
+          "railTop": 8.4,
+          "gauge": 9,
+          "railCentreOffset": 4.725,
+          "bedCells": 301786,
+          "bedRectangles": 3714,
+          "bedResolutionMm": 1,
+          "originalRailwayAttached": false,
+          "variant": "complete-procedural-R02",
+          "bladeActuatorsCertified": false,
+          "technical": false,
+          "quality": "high",
+          "decorativeInstanceDensity": 1,
+          "raycastBuildMs": 357.5,
+          "raycastObjects": 253,
+          "materialModel": "original glTF PBR",
+          "grassVisible": true,
+          "lastRaycastMs": 1.8000000000465661
+        }
+      }
+    },
+    {
+      "name": "profile reload cancellation preserves session data",
+      "detail": true
+    },
+    {
+      "name": "confirmed reload returns to coherent Legacy",
+      "detail": {
+        "id": "legacy",
+        "sessionId": "c5bcdd44-a0ea-4bd2-b4b1-36eb42330d3b",
+        "layoutId": "legacy",
+        "railTop": 5.95,
+        "controllers": [
+          "WX-A",
+          "WX-B",
+          "Y-IN",
+          "Y-2",
+          "Y-3",
+          "Y-R1",
+          "Y-R2",
+          "Y-4"
+        ],
+        "edges": 75,
+        "scenery": null
+      }
+    },
+    {
+      "name": "confirmed session-data loss is explicit and complete",
+      "detail": true
+    },
+    {
+      "name": "Legacy default loads zero V06 assets; actual menu enters V06",
+      "detail": true
+    },
+    {
+      "name": "integrity failure has recovery and no partial runtime",
+      "detail": true
+    },
+    {
+      "name": "corrupted optimized asset fails closed with Legacy recovery",
+      "detail": true
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "auth": "local fixture only",
+  "renderer": "Chromium SwiftShader"
+}

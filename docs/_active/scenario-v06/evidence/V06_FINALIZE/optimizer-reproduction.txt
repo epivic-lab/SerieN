@@ -1,0 +1,19 @@
+
+> build
+> node build.mjs
+
+prune: Removed types... Primitive (1)
+optimized/gardens_allotments.glb 11903 → 3817 triangles; 5601128 → 5390084 bytes; bounds Δ 0 mm
+optimized/mountain.glb 360761 → 18035 triangles; 16779656 → 7749372 bytes; bounds Δ 0 mm
+optimized/mountain_rocks.glb 10118 → 5052 triangles; 6179932 → 6047352 bytes; bounds Δ 0.6591901183128357 mm
+optimized/railway_service_buildings.glb 476467 → 71730 triangles; 36688380 → 24184300 bytes; bounds Δ 0.0032699076655262616 mm
+optimized/sawmill.glb 1567363 → 181970 triangles; 59400628 → 17757716 bytes; bounds Δ 0.04381955175891683 mm
+prune: Removed types... Texture (1)
+optimized/scenery_details.glb 28732 → 28732 triangles; 5005664 → 4973036 bytes; bounds Δ 0 mm
+optimized/station_platform.glb 24874 → 24874 triangles; 16690996 → 16690856 bytes; bounds Δ 0 mm
+optimized/terrain.glb 583765 → 29195 triangles; 41022828 → 26642148 bytes; bounds Δ 0 mm
+optimized/tunnels_portals.glb 125000 → 12260 triangles; 17432076 → 14950712 bytes; bounds Δ 0 mm
+prune: Removed types... Primitive (1), Accessor (19)
+optimized/vegetation.glb 477283 → 457100 triangles; 27913720 → 26966720 bytes; bounds Δ 0 mm
+optimized/village_buildings.glb 1093527 → 459744 triangles; 91596468 → 65292692 bytes; bounds Δ 0.004187226295471191 mm
+Optimized inventory SHA256 c6054e760c79833cb06e20b4f353d82123fb78177f25fbb2ad985cb3ab24b8fd

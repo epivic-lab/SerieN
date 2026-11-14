@@ -1,0 +1,234 @@
+{
+  "status": "PASS",
+  "desktopV06Default": "Auto Low",
+  "Legacy": "default, three moving trains, eight controllers, desktop/mobile",
+  "views": [
+    {
+      "reducedMotion": false,
+      "units": [
+        {
+          "id": "V06-C07",
+          "state": false,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P035",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "V06-C12",
+          "state": false,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P068",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "V06-C13",
+          "state": false,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P069",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "V06-N07",
+          "state": false,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P031",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "V06-N14",
+          "state": false,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P041",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "WX-A",
+          "state": false,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P059",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            },
+            {
+              "edge": "V06-P060",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "WX-B",
+          "state": false,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P061",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            },
+            {
+              "edge": "V06-P062",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        }
+      ]
+    },
+    {
+      "reducedMotion": false,
+      "units": [
+        {
+          "id": "V06-C07",
+          "state": false,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P035",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "V06-C12",
+          "state": true,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P030",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "V06-C13",
+          "state": true,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P033",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "V06-N07",
+          "state": true,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P032",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "V06-N14",
+          "state": true,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P042",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "WX-A",
+          "state": true,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P012",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            },
+            {
+              "edge": "V06-P013",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        },
+        {
+          "id": "WX-B",
+          "state": true,
+          "unknown": false,
+          "paths": [
+            {
+              "edge": "V06-P016",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            },
+            {
+              "edge": "V06-P017",
+              "sign": 0,
+              "source": "BIDIRECTIONAL"
+            }
+          ],
+          "progress": 1,
+          "opacity": 0.94
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

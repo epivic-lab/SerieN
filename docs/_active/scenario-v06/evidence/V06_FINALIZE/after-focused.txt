@@ -1,0 +1,38 @@
+✔ static instance BVH returns exactly the normal triangle intersections under transformed roots (26.733423ms)
+✔ density prefixes, hidden parent and pick-through retain normal visibility semantics (2.023236ms)
+✔ moving trains use current transforms; device distance bounds occlusion; raycaster far is restored (1.896855ms)
+✔ Y-IN/false: arrows match physical port oracle and both travel directions (17.03029ms)
+✔ Y-IN/true: arrows match physical port oracle and both travel directions (14.829327ms)
+✔ Y-R1/false: arrows match physical port oracle and both travel directions (13.154867ms)
+✔ Y-R1/true: arrows match physical port oracle and both travel directions (11.78752ms)
+✔ Y-R2/false: arrows match physical port oracle and both travel directions (10.89739ms)
+✔ Y-R2/true: arrows match physical port oracle and both travel directions (8.528766ms)
+✔ Y-3/false: arrows match physical port oracle and both travel directions (7.682152ms)
+✔ Y-3/true: arrows match physical port oracle and both travel directions (7.545516ms)
+✔ Y-4/false: arrows match physical port oracle and both travel directions (9.614289ms)
+✔ Y-4/true: arrows match physical port oracle and both travel directions (10.155143ms)
+✔ Y-2/false: arrows match physical port oracle and both travel directions (10.687384ms)
+✔ Y-2/true: arrows match physical port oracle and both travel directions (9.905789ms)
+✔ WX-A/false: arrows match physical port oracle and both travel directions (8.733414ms)
+✔ WX-A/true: arrows match physical port oracle and both travel directions (9.265223ms)
+✔ WX-B/false: arrows match physical port oracle and both travel directions (8.010275ms)
+✔ WX-B/true: arrows match physical port oracle and both travel directions (16.144157ms)
+✔ unknown selection/network entry suppresses routes; blocked branch retains only actual selected paths; conflicting arrivals use bidirectional heads (0.865673ms)
+✔ read-only approach observes actual velocity and last wagon for reverse, independent of commanded direction (34.556977ms)
+✔ cached renderer animates state change, keeps refused/no-change idle, reduced motion settles, and releases every resource once (6.150106ms)
+✔ both arrowhead bisectors follow the canonical tangent on all twenty physical paths (3.749082ms)
+✔ optimized V06 inventory is pinned; all derivatives and their untouched originals match their hashes (2289.079522ms)
+✔ V06 legible route bands show both real WX paths and each simple selected route; UNKNOWN hides selection (37.750878ms)
+✔ browser selection defaults to Legacy; unknown profiles fail closed; new sessions never share networks (13.054586ms)
+✔ pinned browser admission rejects HTTP failure, truncated bytes and a tampered R1A artifact (13.025482ms)
+✔ all seven V06 devices own picking, focus, glow and selected route arrows; Legacy-only IDs are rejected (199.572099ms)
+✔ full native initial fleet and fourth locomotive admit only complete visible nonoverlapping consists; failure preserves Journey (129.432151ms)
+✔ V06 running surfaces have 9mm inner gauge and 8.4mm rail top; source axes stay immutable; N16 has no invented buffer (1031.146573ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4503.183292

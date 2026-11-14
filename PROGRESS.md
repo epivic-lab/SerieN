@@ -859,3 +859,31 @@ Commit atomico, checkpoint remoto verificato e Draft collegata alla#18 nella
 ricevuta finale. **STOP R2B1: unica prossima azione, Quality Gate indipendente
 Regia. Nessun merge/deploy/browser V06 o avvio R2B2.** Equità generale,sagome
 fisiche,N07/N16/scalo,coupling dinamico e terzo/quarto treno non verificati.
+
+
+## Scenario V06 — V06-FINALIZE (15 novembre 2026)
+
+Mandato unico Regia [6885640859](https://github.com/epivic-lab/SerieN/pull/21#issuecomment-6885640859),
+stessa Draft #21 e branch `codex/scenario-v06-integration`, da `0d54ce096…`.
+**PASS tecnico / candidata READY TO RELEASE; Gate Regia finale PENDING.**
+Undici derivati separati riproducibili, 13 originali intatti, bordi/allineamenti
+protetti. Low 10.272.270 → 3.259.097 triangoli (−68,27%), 401 → 369 draw;
+High 18.062.253 → 11.909.778. Auto Low iniziale V06; bande rosse immediate di
+selezione per tutti i sette controller e due percorsi per WX. Core/F1/R02,
+UI V2.1, Auth/Supabase e workflow preservati.
+
+569/569 Node, 9/9 JMRI, build/canonico, 21 gruppi browser desktop/mobile e
+close-up PASS; zero errori/richieste fallite finali. Treni/composizioni/TM,
+quarto treno, device/panel/touch, WX occupato, HUD/minimappe/camere, menu,
+rollback Legacy e fail-closed sui derivati verificati. GPU fisica/OAuth live
+NOT VERIFIED; limite SwiftShader e tentativo concorrente OOM documentati.
+Nessun nuovo ciclo numerico R2 o meccanismo ferroviario autonomo.
+
+Main `f33377c…`, inclusivo dell'hotfix UI `217629c`, è antenato della candidata.
+Piano: Gate + autorizzazione finale a merge/pubblicazione → retarget stessa
+#21 a main → unico merge commit → workflow Pages e verifica pubblica.
+Nessun merge/deploy eseguito. Checkpoint remoto e SHA effettivo nella ricevuta
+PR; [rapporto](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md),
+[galleria](docs/_active/scenario-v06/evidence/V06_FINALIZE/README.md),
+[piano](docs/_active/scenario-v06/evidence/V06_FINALIZE/RELEASE_PLAN.md).
+**Unico prossimo passo: Quality Gate conclusivo Regia. STOP.**

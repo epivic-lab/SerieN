@@ -1,3 +1,37 @@
+# V06-FINALIZE — 15 novembre 2026
+
+**PASS tecnico / candidata READY TO RELEASE; Quality Gate conclusivo Regia
+PENDING.** Mandato unico 6885640859, stessa Draft #21 e branch
+`codex/scenario-v06-integration`, checkpoint iniziale `0d54ce096…` preservato.
+
+Low: 10.272.270 → 3.259.097 triangoli (−68,27%), 401 → 369 draw call;
+High: 18.062.253 → 11.909.778 triangoli. Undici derivati riproducibili e pin
+verificati, originali intatti, bordi/ingombri di terreno, montagna, portali e
+stazione invariati. V06 parte in Auto Low; bande rosse immediate sulla
+selezione reale di sette controller, due percorsi per WX, senza mutare safety.
+
+569/569 Node, 9/9 JMRI, build/canonico, 21 gruppi browser e close-up PASS;
+zero errori/richieste fallite nello smoke finale. Movimento/composizioni,
+quarto treno, panel/device/touch, WX occupato, TM add/remove, HUD/minimappe,
+camere, errore dataset/derivato, menu e rollback Legacy verificati. Fixture
+Auth locale; GPU fisica/OAuth live NOT VERIFIED. OOM del tentativo con due
+renderer Cloud documentato, ripetizione sequenziale PASS senza nuovi OOM.
+
+Main remoto `f33377c…` e hotfix UI `217629c` sono antenati. Piano unico:
+dopo Gate e autorizzazione finale a merge+pubblicazione, retarget della stessa
+#21 a main e un solo merge commit con Pages esistente. Nessuna integrazione
+intermedia delle #10–#20. Nessun merge/deploy eseguito. Nessun bloccante tecnico
+residuo osservato nel perimetro verificato; non è l'approvazione della Regia.
+
+[Rapporto](V06_INTEGRATION_REPORT.md) ·
+[Galleria e prove](evidence/V06_FINALIZE/README.md) ·
+[Piano esatto](evidence/V06_FINALIZE/RELEASE_PLAN.md).
+SHA remoto nella ricevuta PR. **STOP: unico prossimo passo, Quality Gate conclusivo.**
+
+---
+
+## Archivio — stato precedente
+
 # V06-INTEGRATION — candidata browser, 14 novembre 2026
 
 **Integrazione funzionale implementata; Quality Gate visivo/prestazionale PENDING.**

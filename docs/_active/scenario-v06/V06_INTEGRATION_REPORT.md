@@ -1,3 +1,64 @@
+# V06-FINALIZE — release readiness, 15 novembre 2026
+
+**PASS tecnico / candidata READY TO RELEASE; Quality Gate conclusivo Regia PENDING.** Mandato
+[6885640859](https://github.com/epivic-lab/SerieN/pull/21#issuecomment-6885640859),
+stesso branch `codex/scenario-v06-integration` e stessa Draft #21, checkpoint
+iniziale `0d54ce096000920c11b6c6e71e01a416ce21f34d`. Nessun merge o deploy.
+
+**Interventi effettivi.** Undici GLB derivati separati e riproducibili, con pin e
+verifica SHA/byte prima del parse. Tutti i 13 originali/364.551.328 byte intatti.
+Matrici e trasformazioni delle istanze invariate; bordi bloccati e ingombro
+identico per terreno, montagna, portali e stazione. Scarto massimo degli altri
+ingombri 0,6592 mm sulle rocce. Nessuna modifica a R02, quote o ferrovia.
+Low mantiene terreno texturizzato e oggetti di picking, esclude i ciuffi d'erba
+e applica la densità esistente anche ai piccoli gruppi decorativi. V06 parte
+in Auto Low anche su desktop; High rimane disponibile. Bande rosse più larghe,
+persistenti e immediate sui percorsi selezionati dei sette controller, due per
+ogni WX; UNKNOWN non inventa una selezione. Sono selezioni, non autorizzazioni
+di marcia; lock, WX, F1 e core non cambiano.
+
+| Stessa fixture, 1440×900 / 3 composizioni iniziali | Prima | Dopo |
+| --- | ---: | ---: |
+| Low, triangoli | 10.272.270 | **3.259.097 (−68,27%)** |
+| Low, draw call | 401 | **369 (−7,98%)** |
+| High, triangoli | 18.062.253 | **11.909.778 (−34,06%)** |
+| Payload moduli richiesti | 324.411.340 B | **216.744.852 B** |
+| Moduli + costruzione ferrovia, locale | 8,59 s | 7,09 s |
+| Intervalli RAF nativi Low, osservati | 26,78 / 15,50 / 16,53 s | 3,20 / 3,40 / 3,90 s |
+
+Tempi **SwiftShader**, non FPS reali; host condiviso e attività CPU concomitanti
+nella baseline. I conteggi geometrici sono il confronto strutturale affidabile.
+GPU fisica e OAuth live **NOT VERIFIED**. Parse derivati 4,69 s, fetch/verifica
+1,48 s, costruzione ferrovia 0,76 s, indice raycast 0,35 s; ultimo raycast dello
+smoke 1,9 ms: singole osservazioni, non percentili o budget certificati.
+
+**Verifiche PASS: 569/569 Node, 9/9 JMRI, build/canonico, 21 gruppi browser,**
+close-up e smoke Legacy. Risultati finali e galleria in
+[evidence/V06_FINALIZE](evidence/V06_FINALIZE/README.md). Suite esistenti
+Node/JMRI, build/canonico; smoke V06/Legacy desktop/mobile con Auth fixture
+locale, treni in moto, composizioni, sette panel/device/touch, WX occupato,
+TM add/remove, HUD/minimappe/camere, reload/rollback ed errori di integrità.
+Un tentativo con due renderer simultanei ha saturato gli 8 GiB Cloud
+(`oom_kill=2`); ripetizione sequenziale PASS senza nuovi OOM, nessuna
+estrapolazione a hardware utente. Nessuna campagna numerica nuova.
+
+**Release proposta:** main `f33377c…` è antenato della candidata e contiene già
+l'hotfix UI V2.1 `217629c`. Dopo Gate e autorizzazione finale dell'utente:
+retarget **della stessa #21 a main**, review dell'intera catena e **un solo merge
+commit**, che avvia il workflow Pages esistente. Nessun merge preliminare delle
+#10–#20, nessun cherry-pick/rebase. Legacy default, V06 opt-in, zero richieste
+V06 in Legacy, recovery fail-closed e rollback di sessione verificati. Rollback
+della pubblicazione tramite revert del solo merge. Sequenza, prerequisiti e
+condizioni esatte nel [piano](evidence/V06_FINALIZE/RELEASE_PLAN.md).
+
+**Nessun bloccante tecnico residuo osservato nel perimetro verificato.**
+Unico prossimo passo: **Quality Gate conclusivo Regia**. SHA remoto verificato
+nella ricevuta della PR; la presente consegna non autorizza pubblicazione.
+
+---
+
+## Archivio — integrazione funzionale precedente
+
 # V06-INTEGRATION — candidata browser, 14 novembre 2026
 
 **Integrazione funzionale implementata e verificata. QUALITY GATE indipendente

@@ -5,6 +5,7 @@ import {sample} from './network.js';
 import {createStaticRaycast} from './static-raycast.js';
 import {verifiedBytes} from './scenario-profile.js';
 
+export const V06_OPTIMIZED_LOCK_SHA256='c6054e760c79833cb06e20b4f353d82123fb78177f25fbb2ad985cb3ab24b8fd';
 const HEAD=8.4,OFFSET=4.725;
 // Nominal N running surface. This is a simulator rendering, not a certified
 // manufacturing section or a reconstruction of undocumented blade actuators.
@@ -82,18 +83,25 @@ export async function loadV06Scene(profile,{baseURL,onProgress=()=>{},signal}={}
   const root=new THREE.Group();root.name='V06 original scenery';root.scale.setScalar(1000);
   const technical=new THREE.Group();technical.name='V06 technical references';technical.scale.setScalar(1000);technical.visible=false;technical.userData.pickThrough=true;
   let terrain=null;
-  const densityMeshes=[],materialMeshes=[],lowMaterials=new Map();
+  const densityMeshes=[],detailMeshes=[],materialMeshes=[],lowMaterials=new Map();
   const ownedMaterials=()=>[...lowMaterials.keys(),...lowMaterials.values()];
   const loader=new GLTFLoader(),modules=[],started=performance.now(),heightBounds=[],buildings=[];
   try {
     const lockBytes=await verifiedBytes(new URL('./assets/scenario-v06/asset-lock.json',baseURL),{sha256:'9ede69547d5da2e35eef63d4051d610d13d0647feb9413750f5510172a127499'},{signal});
     const lock=JSON.parse(new TextDecoder().decode(lockBytes));
+    const optimizedBytes=await verifiedBytes(new URL('./assets/scenario-v06/optimized-lock.json',baseURL),{sha256:V06_OPTIMIZED_LOCK_SHA256},{signal});
+    const optimized=JSON.parse(new TextDecoder().decode(optimizedBytes));
     const entries=lock.files.filter(f=>f.path!=='modules/railway_visual.glb');
     for(const [i,entry] of entries.entries()) {
       if(!/^modules\/[a-z_]+\.glb$/.test(entry.path)||!Number.isSafeInteger(entry.bytes)||entry.bytes<=0||!/^[a-f0-9]{64}$/.test(entry.sha256))throw new Error('Invalid scenario inventory');
       onProgress(`Loading V06 · ${i+1} / ${entries.length}`);
-      const bytes=await verifiedBytes(new URL('./assets/scenario-v06/'+entry.path,baseURL),entry,{signal});
+      const asset=entry.path.includes('technical_reference')?entry:optimized.files.find(f=>f.original===entry.path&&f.originalSha256===entry.sha256);
+      if(!asset||!/^(modules|optimized)\/[a-z_]+\.glb$/.test(asset.path)||!Number.isSafeInteger(asset.bytes)||asset.bytes<=0||!/^[a-f0-9]{64}$/.test(asset.sha256))throw new Error('Invalid optimized scenario inventory');
+      const fetchStart=performance.now();
+      const bytes=await verifiedBytes(new URL('./assets/scenario-v06/'+asset.path,baseURL),asset,{signal});
+      const parseStart=performance.now();
       const gltf=await loader.parseAsync(bytes,'');
+      const parseMs=performance.now()-parseStart;
       if(signal?.aborted){disposeRoot(gltf.scene);throw new DOMException('Scenario load cancelled','AbortError');}
       if(entry.path==='modules/terrain.glb')terrain=gltf.scene;
       const target=entry.path.includes('technical_reference')?technical:root;target.add(gltf.scene);
@@ -103,8 +111,11 @@ export async function loadV06Scene(profile,{baseURL,onProgress=()=>{},signal}={}
           materialMeshes.push({mesh:o,original:o.material,low:Array.isArray(o.material)?o.material.map(convert):convert(o.material)});
         }
         const decorative=/vegetation|mountain_rocks|gardens_allotments/.test(entry.path);
+        // Grass tufts cost millions of tiny triangles; textured terrain and
+        // all trees/buildings/portals remain in Low. High restores the tufts.
+        if(entry.path.includes('vegetation')&&/tuft/i.test(o.name))detailMeshes.push(o);
         if(decorative)for(const m of Array.isArray(o.material)?o.material:[o.material])if(m.transparent&&m.side===THREE.DoubleSide)m.forceSinglePass=true;
-        if(decorative&&o.isInstancedMesh&&o.count>12){
+        if(decorative&&o.isInstancedMesh&&o.count>1){
           const full=o.count,order=Array.from({length:full},(_,i)=>i);
           // Bit-reversed order distributes each density prefix across the
           // original instance sequence. Every original transform is retained.
@@ -115,7 +126,7 @@ export async function loadV06Scene(profile,{baseURL,onProgress=()=>{},signal}={}
           densityMeshes.push({mesh:o,full});
         }
       }});
-      modules.push({path:entry.path,bytes:entry.bytes,sha256:entry.sha256});
+      modules.push({path:entry.path,loadedPath:asset.path,bytes:asset.bytes,sha256:asset.sha256,originalBytes:entry.bytes,fetchVerifyMs:parseStart-fetchStart,parseMs});
     }
     root.updateMatrixWorld(true);technical.updateMatrixWorld(true);
     for(const module of root.children) {
@@ -123,18 +134,19 @@ export async function loadV06Scene(profile,{baseURL,onProgress=()=>{},signal}={}
       heightBounds.push(bounds);
       if(module.userData.module?.includes('building'))buildings.push({x:(bounds.min.x+bounds.max.x)/2,z:(bounds.min.z+bounds.max.z)/2,w:bounds.max.x-bounds.min.x,d:bounds.max.z-bounds.min.z,h:bounds.max.y-bounds.min.y,y:bounds.min.y});
     }
-    const railway=createV06Railway(profile.network);
+    const railwayStart=performance.now(),railway=createV06Railway(profile.network);
+    const railwayBuildMs=performance.now()-railwayStart;
     const axes=new THREE.Group();axes.name='V06 operational axes';axes.visible=false;axes.userData.pickThrough=true;
     const material=new THREE.LineBasicMaterial({color:'#00e5dc',depthTest:true});
     for(const edge of Object.values(profile.network.edges))axes.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(edge.points.map(p=>new THREE.Vector3(p.x,HEAD+.3,p.z))),material));
     let attached=false,disposed=false,raycastIndex=null;
-    const diagnostics={modules,loadMs:performance.now()-started,...railway.stats,technical:false,quality:null,decorativeInstanceDensity:1};
+    const diagnostics={modules,loadMs:performance.now()-started,railwayBuildMs,assetVariant:'optimized',...railway.stats,technical:false,quality:null,decorativeInstanceDensity:1};
     return {root,terrain,diagnostics,trees:[],buildings,environment:{dispose(){}},
       cameraHeight:(x,z)=>heightBounds.reduce((height,b)=>x>=b.min.x&&x<=b.max.x&&z>=b.min.z&&z<=b.max.z?Math.max(height,b.max.y):height,0),
       zones:{pendingStops:[],update(){}},station:{update(){}},
-      setQuality(value){const density=value==='low'?.3:1;for(const {mesh,full} of densityMeshes)mesh.count=Math.max(1,Math.ceil(full*density));for(const item of materialMeshes)item.mesh.material=value==='low'?item.low:item.original;diagnostics.materialModel=value==='low'?'Lambert':'original glTF PBR';diagnostics.quality=value;diagnostics.decorativeInstanceDensity=density;},update(){},
-      attach(scene){if(disposed||attached)throw new Error('Invalid scenery lifecycle');scene.add(root,technical,railway.root,axes);raycastIndex=createStaticRaycast([root,technical,railway.root]);diagnostics.raycastObjects=raycastIndex.objectCount;attached=true;},
-      raycastOccluders:(raycaster,scene,limit,hits)=>raycastIndex.cast(raycaster,scene,limit,hits),
+      setQuality(value){const density=value==='low'?.3:1;for(const {mesh,full} of densityMeshes)mesh.count=Math.max(1,Math.ceil(full*density));for(const mesh of detailMeshes)mesh.visible=value!=='low';for(const item of materialMeshes)item.mesh.material=value==='low'?item.low:item.original;diagnostics.materialModel=value==='low'?'Lambert':'original glTF PBR';diagnostics.quality=value;diagnostics.decorativeInstanceDensity=density;diagnostics.grassVisible=value!=='low';},update(){},
+      attach(scene){if(disposed||attached)throw new Error('Invalid scenery lifecycle');scene.add(root,technical,railway.root,axes);const start=performance.now();raycastIndex=createStaticRaycast([root,technical,railway.root]);diagnostics.raycastBuildMs=performance.now()-start;diagnostics.raycastObjects=raycastIndex.objectCount;attached=true;},
+      raycastOccluders(raycaster,scene,limit,hits){const start=performance.now();raycastIndex.cast(raycaster,scene,limit,hits);diagnostics.lastRaycastMs=performance.now()-start;},
       setTechnical(value){if(disposed)return;technical.visible=axes.visible=Boolean(value);diagnostics.technical=Boolean(value);},
       dispose(){if(disposed)return;disposed=true;raycastIndex?.dispose();disposeRoot(root,ownedMaterials());[technical,railway.root,axes].forEach(g=>disposeRoot(g));}};
   } catch(error) {disposeRoot(root,ownedMaterials());disposeRoot(technical);throw error;}

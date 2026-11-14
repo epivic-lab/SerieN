@@ -745,7 +745,7 @@ keyboardUI=mountKeyboard({onStop:()=>$("stop")?.click()});
 uiShell=mountShell({management:trainManagement,isPaused:()=>paused});
 scenarioControls=mountScenarioControls({profile,scenic,management:trainManagement,stopAll:stopAllTrains});
 nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState});
-const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
+const quality = new QualityController({ profile: isV06 || innerWidth < 700 ? "low" : "high" });
 function applyQuality(profile) {
   $("quality").querySelector("[value=auto]").textContent = "Auto \xB7 " + (profile === "low" ? "Low" : "High");
   renderer.setPixelRatio(profile === "low" ? 1 : Math.min(devicePixelRatio || 1, 1.5));
@@ -873,7 +873,7 @@ const turnoutPicking=createTurnoutPicking(turnoutModel,{heightOffset:railHeightO
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 const requestedGlow=new URLSearchParams(location.search).get('turnoutGlow');
 const turnoutGlow=createTurnoutGlow(scene,turnoutModel,{heightOffset:railHeightOffset,variant:requestedGlow==='A'?'A':'B',reducedMotion:motionPreference.matches});
-const turnoutArrows=createTurnoutArrows(scene,turnoutModel,{heightOffset:railHeightOffset,getState:id=>switchSpecs.find(s=>s.id===id)?.on,choose:route,
+const turnoutArrows=createTurnoutArrows(scene,turnoutModel,{heightOffset:railHeightOffset,emphasizeSelection:isV06,getState:id=>switchSpecs.find(s=>s.id===id)?.on,choose:route,
   getApproaches:()=>turnoutArrowApproaches({network,topology:switchTopology,trains,choose:route}),reducedMotion:motionPreference.matches});
 turnoutArrows.update(performance.now());
 guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:()=>detached,host,terrainRoot:isV06?scenic.terrain:null,isPaused:()=>paused,reducedMotion:motionPreference.matches});

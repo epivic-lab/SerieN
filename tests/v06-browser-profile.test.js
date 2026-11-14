@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 import * as THREE from 'three';
 import {selectScenario,createScenarioProfile,verifiedBytes,findScenarioSpawn,V06_DATASET_SHA256} from '../src/scenario-profile.js';
 import {createSwitchTopology} from '../src/next-switch.js';
@@ -13,10 +14,38 @@ import {createTurnoutArrows} from '../src/turnout-arrows.js';
 import {createTurnoutFocus} from '../src/turnout-interaction.js';
 import {vehiclePositions} from '../src/railway-state.js';
 import {vehiclesConflict} from '../src/railway-conflicts.js';
-import {v06RailGeometry,createV06Railway} from '../src/scenario-v06-scene.js';
+import {v06RailGeometry,createV06Railway,V06_OPTIMIZED_LOCK_SHA256} from '../src/scenario-v06-scene.js';
 const bytes=readFileSync('src/datasets/v06-r1a.json');
 const data=JSON.parse(bytes);
 const fresh=()=>createScenarioProfile('v06',data);
+
+test('optimized V06 inventory is pinned; all derivatives and their untouched originals match their hashes',()=>{
+  const hash=b=>createHash('sha256').update(b).digest('hex');
+  const manifest=readFileSync('assets/scenario-v06/optimized-lock.json');
+  assert.equal(hash(manifest),V06_OPTIMIZED_LOCK_SHA256);
+  const entries=JSON.parse(manifest).files;assert.equal(entries.length,11);
+  for(const f of entries){
+    assert.equal(hash(readFileSync('assets/scenario-v06/'+f.original)),f.originalSha256);
+    const bytes=readFileSync('assets/scenario-v06/'+f.path);assert.equal(bytes.length,f.bytes);assert.equal(hash(bytes),f.sha256);
+    assert.ok(f.boundsDeltaMm<=1);assert.equal(f.transformsUnchanged,true);
+    if(/\/(terrain|mountain|tunnels_portals|station_platform)\.glb$/.test(f.path)){assert.equal(f.options.lockBorder,true);assert.equal(f.boundsDeltaMm,0);}
+  }
+});
+test('V06 legible route bands show both real WX paths and each simple selected route; UNKNOWN hides selection',()=>{
+  const p=fresh(),model=createTurnoutModel(p.network,p.registry),scene=new THREE.Scene();let on=false;
+  const arrows=createTurnoutArrows(scene,model,{emphasizeSelection:true,getState:()=>on,
+    getApproaches:()=>p.registry.ids.map(controlId=>({controlId,distance:0,incomingEdge:'unknown-arrival',incomingEnd:0}))});
+  for(const state of [false,true]){
+    on=state;arrows.update(100,true);
+    for(const unit of arrows.snapshot.units){
+      assert.deepEqual(unit.paths.map(x=>x.edge).sort(),model.read(unit.id,on).activePaths.map(x=>x.edge).sort());
+      assert.equal(unit.paths.length,unit.id.startsWith('WX-')?2:1);assert.ok(unit.opacity>=.94);assert.equal(unit.progress,1);
+    }
+    assert.deepEqual(arrows.root.children.filter(x=>x.visible).map(x=>x.name).sort(),arrows.snapshot.units.flatMap(u=>u.paths.map(x=>x.edge)).sort());
+  }
+  on=null;arrows.update(200,true);assert.equal(arrows.root.children.filter(x=>x.visible).length,0);
+  arrows.dispose();assert.equal(scene.children.length,0);
+});
 
 test('browser selection defaults to Legacy; unknown profiles fail closed; new sessions never share networks',()=>{
   assert.equal(selectScenario(''),'legacy');assert.equal(selectScenario('?scenario=v06'),'v06');

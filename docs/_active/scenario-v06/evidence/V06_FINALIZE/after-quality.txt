@@ -1,0 +1,13 @@
+✔ two sustained slow windows reduce high quality, a short spike does not (4.94303ms)
+✔ quality only recovers after sustained fast windows and does not oscillate with mixed load (39.00229ms)
+✔ manual profiles including cinema always override automatic adaptation (1.912329ms)
+✔ tab invisibility and first return frame cannot trigger a quality change (2.86997ms)
+✔ invalid timing samples are ignored and mode names are validated (2.065388ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 191.176845
