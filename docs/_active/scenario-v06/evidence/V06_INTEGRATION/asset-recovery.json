@@ -1,0 +1,96 @@
+{
+  "package": "SERIE_N_V3_SCENARIO_V06_V1",
+  "recovered": [
+    {
+      "file": "mountain.glb",
+      "bytes": 16779656,
+      "sha256": "118f85af2b2bbe50a7cb8202a278537d6e3ee6562204d68f490923fe668fb2bc",
+      "manifestMatch": true
+    },
+    {
+      "file": "vegetation.glb",
+      "bytes": 27913720,
+      "sha256": "d9af56d13ce05d78811f95485558a91a6b0fa98742e7a996a31a1e2be59567a6",
+      "manifestMatch": true
+    },
+    {
+      "file": "tunnels_portals.glb",
+      "bytes": 17432076,
+      "sha256": "073ad80c2821e64b5362f23fe69f7613418369af55e9309fc8557a428afa7c90",
+      "manifestMatch": true
+    },
+    {
+      "file": "gardens_allotments.glb",
+      "bytes": 5601128,
+      "sha256": "bfb5c6fae303167a0e5eb30e453ef4e3a87ecdb9ea67c34c1b00efc70a4c7938",
+      "manifestMatch": true
+    },
+    {
+      "file": "scenery_details.glb",
+      "bytes": 5005664,
+      "sha256": "d4f226522cede862a66036b21bd59ff302e5784b6a6e6f2f5337cf387a6db9d0",
+      "manifestMatch": true
+    },
+    {
+      "file": "station_platform.glb",
+      "bytes": 16690996,
+      "sha256": "e720a57e4aabbf84eaf7d805781171c5d7b7899b88a542dceeeca95c47032b87",
+      "manifestMatch": true
+    },
+    {
+      "file": "mountain_rocks.glb",
+      "bytes": 6179932,
+      "sha256": "5f87c8cbf23014740170db6815090da235565596e94e14440b73268aac5adc78",
+      "manifestMatch": true
+    }
+  ],
+  "totalRecoveredBytes": 95603172,
+  "unmaterialized": [
+    {
+      "file": "railway_service_buildings.glb",
+      "bytes": 36688380,
+      "sha256": "2b8852f389063488602e9a3f6bcfd7c8fc2808dbd58cb2f8dadd292e4a286f50"
+    },
+    {
+      "file": "railway_visual.glb",
+      "bytes": 40139988,
+      "sha256": "cda79aa44fa8b521d0b3fd5b95b0c2c20378600082920920d61c9b0cc45facf2"
+    },
+    {
+      "file": "sawmill.glb",
+      "bytes": 59400628,
+      "sha256": "c9a9f5ef23a9c41c736d61b5a5b235f053196c2664bd31f81530e41be6899246"
+    },
+    {
+      "file": "technical_reference.glb",
+      "bytes": 99864,
+      "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899"
+    },
+    {
+      "file": "terrain.glb",
+      "bytes": 41022828,
+      "sha256": "20b77d659b5f31c3ccd3f7b0804f88122217439690a41c19bcad25ce08af7654"
+    },
+    {
+      "file": "village_buildings.glb",
+      "bytes": 91596468,
+      "sha256": "46c725adb27be069d9e2ee533334850eceba3be676bd755207037a21d15ce73d"
+    }
+  ],
+  "dependencies": {
+    "load_together": [
+      [
+        "terrain",
+        "mountain",
+        "mountain_rocks",
+        "tunnels_portals",
+        "railway_visual"
+      ],
+      [
+        "station_platform",
+        "railway_visual"
+      ]
+    ],
+    "reason": "terreno, montagna, portali e sedimi si chiudono fra loro (bordi condivisi); la banchina E2 e la stazione E1 sono adiacenti alla sagoma dei binari"
+  }
+}

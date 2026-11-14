@@ -37,7 +37,17 @@ import { createNetwork, validateNetwork, loopPosition } from "./src/network.js";
 import { Journey, routing, FixedClock } from "./src/simulation.js";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import {loadScenarioProfile,findScenarioSpawn} from './src/scenario-profile.js';
+import {loadV06Scene} from './src/scenario-v06-scene.js';
+import {mountScenarioControls} from './src/ui/scenario-controls.js';
+async function start() {
 const $ = (id) => document.getElementById(id);
+const scenarioAbort=new AbortController();
+window.addEventListener('pagehide',e=>{if(!e.persisted)scenarioAbort.abort();});
+const profile=await loadScenarioProfile(location.search,{baseURL:document.baseURI,signal:scenarioAbort.signal});
+const isV06=profile.id==='v06',railHeightOffset=profile.railTop-5.95;
+let scenarioControls=null,guardedStops=null;
+const v06Scene=isV06?await loadV06Scene(profile,{baseURL:document.baseURI,signal:scenarioAbort.signal,onProgress:text=>{$('loadMsg').textContent=text;}}):null;
 const host = $("view3d");
 let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null, viewportOverlays = null, sidebarUI = null, dockUI = null, keyboardUI = null;
 let highlightUntil=0,highlightUpdated=0;
@@ -87,19 +97,19 @@ const shadowCast = (o) => {
 const box = (w, h, d, m, parent = scene, x = 0, y = 0, z = 0) => {
   const o = shadowCast(new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m));
   o.position.set(x, y, z);
-  parent.add(o);
+  if(!isV06||parent!==scene)parent.add(o);
   return o;
 };
 const sphere = (r, m, parent = scene, x = 0, y = 0, z = 0) => {
   const o = shadowCast(new THREE.Mesh(new THREE.IcosahedronGeometry(r, 1), m));
   o.position.set(x, y, z);
-  parent.add(o);
+  if(!isV06||parent!==scene)parent.add(o);
   return o;
 };
 const cylinder = (r1, r2, h, m, parent = scene, x = 0, y = 0, z = 0, n = 10) => {
   const o = shadowCast(new THREE.Mesh(new THREE.CylinderGeometry(r1, r2, h, n), m));
   o.position.set(x, y, z);
-  parent.add(o);
+  if(!isV06||parent!==scene)parent.add(o);
   return o;
 };
 const PI = Math.PI, lerp = (a, b, t) => a + (b - a) * t, clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -133,7 +143,7 @@ function ellipse(x, z, rx, rz, y, color) {
   o.position.set(x, -4, z);
   o.castShadow = true;
   o.receiveShadow = true;
-  scene.add(o);
+  if(!isV06)scene.add(o);
   return o;
 }
 box(1510, 30, 8, wood, scene, 750, -16, 702);
@@ -141,7 +151,7 @@ box(1510, 30, 8, wood, scene, 750, -16, -2);
 box(8, 30, 706, wood, scene, -5, -16, 350);
 box(8, 30, 706, wood, scene, 1505, -16, 350);
 const routeHighlight=createRouteHighlight(scene);
-const network = createNetwork();
+const network = profile.network;
 validateNetwork(network);
 const toPath = (p) => ({ ...p, points: p.points.map((v) => new THREE.Vector3(v.x, 3.5, v.z)) });
 const railPaths = Object.fromEntries(Object.entries(network.edges).map(([id, p]) => [id, toPath(p)]));
@@ -200,14 +210,14 @@ function addRail(path, label) {
   scene.add(ties);
   return { mesh: bedMesh, label };
 }
-Object.values(railPaths).forEach((p) => addRail(p, p.id));
+if(!isV06)Object.values(railPaths).forEach((p) => addRail(p, p.id));
 const windowDay = mat("#3f5d62"), windowNight = new THREE.MeshStandardMaterial({ color: "#ebc174", emissive: "#ffbb58", emissiveIntensity: 0.2, roughness: 0.9 });
 function buildHouse(x, z, w, d, h, wall, roof, type = "house", orientation = 0) {
   const g = new THREE.Group();
   g.position.set(x, 1.5, z);
   g.userData.building = { w, d, h };
   g.rotation.y = orientation;
-  scene.add(g);
+  if(!isV06)scene.add(g);
   const base = box(w, h, d, wall, g, 0, h / 2, 0);
   const pitch = type === "factory" ? 0.19 : 0.36, roofHeight = w * pitch * 0.5;
   const roofA = box(Math.hypot(w * 0.5, roofHeight) + 7, 3, d + 10, roof, g, -w * 0.25, h + roofHeight * 0.54, 0);
@@ -282,13 +292,15 @@ for (let x = 520; x <= 915; x += 78) {
   const ball = sphere(2.3, glow, scene, x, 29, 522);
   lamps.push(ball);
 }
-const controlOrder=["WX-A","WX-B","Y-IN","Y-2","Y-3","Y-R1","Y-R2","Y-4"];
-const switchSpecs=controlOrder.map((id)=>({...network.controllers.find((c)=>c.id===id),on:false}));
+const controlOrder=isV06?profile.registry.ids:["WX-A","WX-B","Y-IN","Y-2","Y-3","Y-R1","Y-R2","Y-4"];
+const profileSpecs=profile.registry.createSpecs();
+const switchSpecs=controlOrder.map(id=>profileSpecs.find(s=>s.id===id));
+switchSpecs.forEach(s=>{s.on=profile.initialStates[s.id];});
 const turnoutModel=createTurnoutModel(network);
 const switchTopology = createSwitchTopology(network, switchSpecs);
 // Compatibility snapshot for existing railway diagnostics; no indicator meshes.
 function switchIndicatorState(){return {active:turnoutInteraction.active,source:turnoutInteraction.source,markers:0,
-  states:switchSpecs.map(s=>({id:s.id,on:s.on,position:[s.x,6.08,s.z]}))};}
+  states:switchSpecs.map(s=>({id:s.id,on:s.on,position:[s.x,6.08+railHeightOffset,s.z]}))};}
 const railWheel = mat("#292c2a", 0.8), chassisRed = mat("#9a3a30");
 const locoBlack = mat("#323736", 0.62, 0.16), locoCrimson = mat("#b94334"), locoCream = mat("#d8c49a");
 function wheelSet(group, len) {
@@ -425,6 +437,7 @@ const statuses = [
   { title: "The long runaround", body: "Set the yard switches and drive the shunter along either runaround route.", done: () => visitedRunaround, detail: () => visitedRunaround ? "Runaround completed" : "Waiting for the shunter" },
   { title: "Build a freight train", body: "Uncouple a wagon while stopped, then couple it again on the same track.", done: () => didDetach && didAttach, detail: () => "Uncouple " + (didDetach ? "\u2713" : "\u25CB") + " \xB7 Couple " + (didAttach ? "\u2713" : "\u25CB") }
 ];
+if(isV06)Object.assign(statuses[2],{title:'Explore a branch',body:'Set the V06 switches and drive a locomotive onto a branch.',detail:()=>visitedRunaround?'Branch explored':'Waiting for a branch movement'});
 function log(s) {
   $("log").textContent = s;
 }
@@ -469,7 +482,7 @@ function requestToggle(controlId,origin) {
   return result;
 }
 const route = routing(network, (id) => switchSpecs.find((s) => s.id === id)?.on);
-const turnoutCommands=createTurnoutCommands({switchSpecs,trains,route,
+const turnoutCommands=createTurnoutCommands({registry:profile.registry,switchSpecs,trains,route,
   getSafety:id=>getSwitchAssistance().safetyByControl.get(id)});
 const fleetCommands=createFleetCommands({trains,detached,route});
 function getSwitchAssistance() {
@@ -488,8 +501,8 @@ function switchHUDState() {
   return state;
 }
 function initializeJourney(t) {
-  const start=t.initial?.edge?{edge:t.initial.edge,s:t.initial.s,sign:1}:loopPosition(network,t.loop,t.initial?.fraction??.45);
-  if(t.initial?.edge){t.mode="yard";t.section=t.initial.edge;}
+  const start=t.initial?.edge?{edge:t.initial.edge,s:t.initial.s,sign:t.initial.sign??1}:loopPosition(network,t.loop,t.initial?.fraction??.45);
+  if(t.initial?.edge){t.mode=network.edges[t.initial.edge].lane!==undefined?"loop":"yard";t.section=t.initial.edge;}
   t.journey = new Journey(network,start.edge,start.s);
   // Journey coordinates increase in the chosen circuit direction, regardless
   // of the source segment's endpoint order.
@@ -501,7 +514,14 @@ function initializeJourney(t) {
   t.previousLane = t.loop;
   t.journey.ensure(t.journey.position - layoutFor(t).tail, route);
 }
-trains.forEach(initializeJourney);
+for(const t of trains) {
+  if(isV06) {
+    const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t,lane:t.loop});
+    if(!spawn)throw new Error('No safe initial V06 composition position');
+    t.initial={...t.initial,...spawn};
+  }
+  initializeJourney(t);
+}
 function vehicleLocation(t, behind = 0) {
   return t.journey.locate(t.journey.position - behind);
 }
@@ -513,17 +533,17 @@ function renderVehicles() {
     for(let i=0;i<vehicles.length;i++) {
       const group=vehicles[i],coordinate=t.journey.position-layout.offsets[i],pose=vehicleLocation(t,layout.offsets[i]);
       if(i)group.visible=true;
-      group.position.set(pose.x,3.5+(i?0:group.stockRig&&!group.userData.assetDimensions?0:3.6),pose.z);
+      group.position.set(pose.x,3.5+railHeightOffset+(i?0:group.stockRig&&!group.userData.assetDimensions?0:3.6),pose.z);
       group.rotation.y=pose.angle;
       animateStock(group,t.journey,coordinate,t.odometer,pose);
       animateAuxiliaryWheels(group,t.odometer);
     }
   }
   const selectedPoint=vehicleLocation(trains[selected]);
-  selectRing.position.set(selectedPoint.x,5.2,selectedPoint.z);
+  selectRing.position.set(selectedPoint.x,isV06?profile.railTop+.5:5.2,selectedPoint.z);
   for (const d of detached) {
     d.group.visible = true;
-    d.group.position.set(d.point.x, 3.5, d.point.z);
+    d.group.position.set(d.point.x, 3.5+railHeightOffset, d.point.z);
     d.group.rotation.y = d.point.angle;
   }
 }
@@ -549,7 +569,7 @@ function advanceFleet(dt) {
     } else {
       t.mode = "yard";
       t.section = edge.id;
-      if (edge.role?.startsWith("runaround")) visitedRunaround = true;
+      if (edge.role?.startsWith("runaround")||isV06&&edge.role==="branch") visitedRunaround = true;
     }
     t.laps = Math.floor(t.journey.travel / loops[t.loop].length);
     if (previousRoute !== t.mode + "/" + t.loop + "/" + t.section) ui();
@@ -577,8 +597,9 @@ function reset() {
   for (const d of detached) removeWagon(d.group);
   detached.length = 0;
   switchSpecs.forEach((s) => {
-    s.on = false;
+    s.on = profile.initialStates[s.id];
   });
+  if(isV06)trains.forEach(t=>{delete t.journey;});
   trains.forEach((t, i) => {
     t.carObjs.forEach(removeWagon);
     t.carObjs = [];
@@ -587,6 +608,11 @@ function reset() {
       const o = freightWagon(i===1?j+3:j+i);
       scene.add(o);
       t.carObjs.push(o);
+    }
+    if(isV06) {
+      const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t,lane:i<3?t.initial.loop:null});
+      if(!spawn)throw new Error('No safe V06 reset position');
+      t.initial={...t.initial,...spawn};t.loop=spawn.loop;
     }
     initializeJourney(t);
   });
@@ -617,6 +643,16 @@ function stopAllTrains() {
 }
 function addTrain() {
   if(trains.length>=4){log("A session supports up to four trains.");return null;}
+  if(isV06) {
+    const id=trains.length,group=locoModel(1,id);
+    const t={id,name:`BR 216 · ${id+1}`,nativeName:`BR 216 · ${id+1}`,desc:'Diesel DB · additional locomotive',nativeDescription:'Diesel DB · additional locomotive',modelKey:'diesel',loop:0,speed:0,requestedSpeed:0,velocity:0,dir:1,cars:0,lights:false,laps:0,mode:'loop',group,carObjs:[]};
+    const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t});
+    if(!spawn){removeWagon(group);log('No free visible track section for the complete locomotive.');return null;}
+    t.initial={...spawn,cars:0};t.loop=spawn.loop;initializeJourney(t);trains.push(t);
+    $('addTrain').disabled=trains.length>=4;
+    attachTrainAsset(group,'diesel',true).then(loaded=>{t.assetLoaded=loaded;updateModels();});
+    renderVehicles();ui();return id;
+  }
   const insertion={...new Journey(network,'T47',80).locate(),vehicle:{userData:{}}};
   if(trains.some(t=>vehiclePositions(t).some(p=>(p.edge==="T47"&&Math.abs(p.s-80)<120)||vehiclesConflict(insertion,p)))||detached.some(d=>(d.point.edge==="T47"&&Math.abs(d.point.s-80)<120)||vehiclesConflict(insertion,{...d.point,vehicle:d.group}))){
     log("Clear the insertion point in the east siding first.");return null;
@@ -690,7 +726,8 @@ trains.forEach((t) => {
 selectRing.userData.dynamic = true;
 selectRing.userData.pickThrough = true;
 routeHighlight.root.userData.pickThrough = true;
-const scenic = enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials: [roofRed, roofGray], wallMaterials: [hstyle, hbrick, hboard, cream], foundation: ballastLayer });
+const scenic = v06Scene??enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials: [roofRed, roofGray], wallMaterials: [hstyle, hbrick, hboard, cream], foundation: ballastLayer });
+if(isV06){scenic.attach(scene);routeHighlight.root.position.y=.3;}
 const nav = navigation(camera, controls, { height: scenic.cameraHeight, buildings: scenic.buildings });
 const views = mountViewControls({ camera, controls, navigation: nav, host: $("viewControls"), onViewChange: (preset) => {
   $("cameraView").value = preset;
@@ -706,12 +743,14 @@ dockUI=mountDock({host:$("trainDeck"),tabs:$("tabs"),button:$("reset"),getTrains
   getGeneration:()=>trainManagement.sessionSummary.generation,onReset:reset});
 keyboardUI=mountKeyboard({onStop:()=>$("stop")?.click()});
 uiShell=mountShell({management:trainManagement,isPaused:()=>paused});
+scenarioControls=mountScenarioControls({profile,scenic,management:trainManagement,stopAll:stopAllTrains});
 nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState});
 const quality = new QualityController({ profile: innerWidth < 700 ? "low" : "high" });
 function applyQuality(profile) {
   $("quality").querySelector("[value=auto]").textContent = "Auto \xB7 " + (profile === "low" ? "Low" : "High");
   renderer.setPixelRatio(profile === "low" ? 1 : Math.min(devicePixelRatio || 1, 1.5));
   renderer.shadowMap.enabled = profile !== "low";
+  if(isV06)guardedStops?.clear();
   scenic.setQuality(profile);
   resize();
 }
@@ -758,6 +797,7 @@ window.addEventListener("pagehide", (e) => {
   nav.dispose();
   effects.dispose();
   disposeTrainAssets();
+  if(isV06)scenic.dispose();
   const gs = /* @__PURE__ */ new Set(), ms = /* @__PURE__ */ new Set(), ts = /* @__PURE__ */ new Set();
   scene.traverse((o) => {
     if (o.geometry) gs.add(o.geometry);
@@ -769,6 +809,7 @@ window.addEventListener("pagehide", (e) => {
   gs.forEach((g) => g.dispose());
   ms.forEach((m) => m.dispose());
   ts.forEach((t) => t.dispose());
+  scenarioControls?.dispose();
   scenic.environment.dispose();
   renderer.dispose();
 });
@@ -828,14 +869,14 @@ function tick(now) {
 }
 resize();
 ui();
-const turnoutPicking=createTurnoutPicking(turnoutModel);
+const turnoutPicking=createTurnoutPicking(turnoutModel,{heightOffset:railHeightOffset,raycastOccluders:isV06?scenic.raycastOccluders:null});
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 const requestedGlow=new URLSearchParams(location.search).get('turnoutGlow');
-const turnoutGlow=createTurnoutGlow(scene,turnoutModel,{variant:requestedGlow==='A'?'A':'B',reducedMotion:motionPreference.matches});
-const turnoutArrows=createTurnoutArrows(scene,turnoutModel,{getState:id=>switchSpecs.find(s=>s.id===id)?.on,choose:route,
+const turnoutGlow=createTurnoutGlow(scene,turnoutModel,{heightOffset:railHeightOffset,variant:requestedGlow==='A'?'A':'B',reducedMotion:motionPreference.matches});
+const turnoutArrows=createTurnoutArrows(scene,turnoutModel,{heightOffset:railHeightOffset,getState:id=>switchSpecs.find(s=>s.id===id)?.on,choose:route,
   getApproaches:()=>turnoutArrowApproaches({network,topology:switchTopology,trains,choose:route}),reducedMotion:motionPreference.matches});
 turnoutArrows.update(performance.now());
-const guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:()=>detached,host,isPaused:()=>paused,reducedMotion:motionPreference.matches});
+guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:()=>detached,host,terrainRoot:isV06?scenic.terrain:null,isPaused:()=>paused,reducedMotion:motionPreference.matches});
 viewportOverlays=mountViewportOverlays({host,guardedStops,getCameraPreset:()=>nav.preset});
 sidebarUI=mountSidebar({host:document.querySelector('.sidebar'),network,controlOrder,
   getSwitches:()=>switchSpecs.map(({id,on})=>({id,on})),getTrains:()=>trains,getSelected:()=>selected,
@@ -845,11 +886,15 @@ const onMotionPreference=()=>{guardedStops.setReducedMotion(motionPreference.mat
 motionPreference.addEventListener('change',onMotionPreference);
 const turnoutInteraction=mountTurnoutInteraction({canvas:renderer.domElement,camera,scene,controls,
   picker:turnoutPicking,panel:$("switchList"),controlIds:controlOrder,requestToggle,selectTrain:select,
-  onIdentify:id=>turnoutGlow.identify(id),touchIdentifyMs:GLOW_CONFIG.touchHoldMs});
+  onIdentify:id=>turnoutGlow.identify(id),touchIdentifyMs:GLOW_CONFIG.touchHoldMs,registry:profile.registry});
 $("loadMsg").hidden = true;
 animationHandle = requestAnimationFrame(tick);
 if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiagnostics = {
   guardedStopState:()=>guardedStops.snapshot,
+  projectPoint(x,y,z) {
+    const r=renderer.domElement.getBoundingClientRect(),p=new THREE.Vector3(x,y,z).project(camera);
+    return {x:r.left+(p.x+1)*r.width/2,y:r.top+(1-p.y)*r.height/2,depth:p.z};
+  },
   indicatorState:switchIndicatorState,
   turnoutGlowState:()=>turnoutGlow.snapshot,
   turnoutArrowsState:()=>{turnoutArrows.update(performance.now(),true);return turnoutArrows.snapshot;},
@@ -924,5 +969,13 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   };
   const assistance = getSwitchAssistance();
   const next = assistance.preview.next;
-  return { consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray(),fov:camera.fov,aspect:camera.aspect,projectedBase:[-10,1510].flatMap(x=>[-34,0].flatMap(y=>[-10,710].map(z=>new THREE.Vector3(x,y,z).project(camera).toArray()))) },switchIndicators:switchIndicatorState(), render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, requestedSpeed:t.requestedSpeed,guard:t.guard, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, journey:{position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments.map(p=>({...p}))}, odometer:t.odometer,animation:t.group.stockRig?{wheels:t.group.stockRig.wheels.map(w=>({angle:w.node.rotation.z,radius:w.radius})),rods:t.group.stockRig.rods.map(r=>r.node.position.toArray()),bogies:t.group.stockRig.bogies.map(b=>b.node.rotation.y)}:null,hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, stock:p.vehicle.userData.stock??null, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
+  return { scenario:{id:profile.id,sessionId:profile.sessionId,layoutId:profile.layoutId,railTop:profile.railTop,controllers:controlOrder,edges:Object.keys(network.edges).length,scenery:scenic.diagnostics??null}, consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray(),fov:camera.fov,aspect:camera.aspect,projectedBase:[-10,1510].flatMap(x=>[-34,0].flatMap(y=>[-10,710].map(z=>new THREE.Vector3(x,y,z).project(camera).toArray()))) },switchIndicators:switchIndicatorState(), render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, requestedSpeed:t.requestedSpeed,guard:t.guard, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, journey:{position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments.map(p=>({...p}))}, odometer:t.odometer,animation:t.group.stockRig?{wheels:t.group.stockRig.wheels.map(w=>({angle:w.node.rotation.z,radius:w.radius})),rods:t.group.stockRig.rods.map(r=>r.node.position.toArray()),bogies:t.group.stockRig.bogies.map(b=>b.node.rotation.y)}:null,hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, stock:p.vehicle.userData.stock??null, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
 } };
+
+}
+start().catch(error=>{
+  console.error('Scenario initialization failed:',error.message);
+  const message=document.getElementById('loadMsg');message.hidden=false;message.textContent='This scenario could not be loaded. Retry, or return to Legacy.';
+  const retry=document.createElement('button');retry.type='button';retry.textContent='Retry';retry.onclick=()=>location.reload();
+  const legacy=document.createElement('a');legacy.textContent='Return to Legacy';const url=new URL(location.href);url.searchParams.delete('scenario');legacy.href=url.href;message.append(document.createElement('br'),retry,document.createTextNode(' '),legacy);
+});

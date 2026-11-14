@@ -1,3 +1,10 @@
+> **Stato prevalente,14novembre2026 — candidata V06 browser:** integrazione funzionale
+> verificata,Quality Gate visivo/prestazionale PENDING. Tutti13originali recuperati;
+> Menu→Scenario→V06,default/rollbackLegacy.567Node,9JMRI e19gruppi browser PASS.
+> Scena molto densa e meccanica degli scambi non certificata:nessuna approvazione
+> al rilascio. [Rapporto](V06_INTEGRATION_REPORT.md),[prove](evidence/V06_INTEGRATION/application/README.md),[stato](STATUS.md).
+> I gate R0/R1/R2 sottostanti sono storico; non sostituiscono questo stato.
+
 > **Aggiornamento prevalente R0.2:** [rapporto WX](R02_WX_GEOMETRY_VALIDATION_REPORT.md), [candidato offline R02](candidate/R02/README.md), [prove](evidence/R02/README.md). PASS geometrico, CONDITIONAL GO subordinato al Quality Gate Regia. Eccezione locale WX ammessa; 79 pezzi e correzioni R01 integralmente preservati. Nessuna attivazione o R1 avviata. Le indicazioni R01/R0 seguenti sono storiche; stato corrente in [STATUS.md](STATUS.md).
 
 > **Aggiornamento prevalente R0.1:** [rapporto di continuità](R01_CONTINUITY_RESOLUTION_REPORT.md), [candidato offline](candidate/R01/README.md), [evidenze](evidence/R01/README.md). G1/G2/G3 chiusi e A/B/C continui; fedeltà WX ancora aperta (scarto fino a 3,335 mm), NO-GO R1. Stato corrente in [STATUS.md](STATUS.md). Quanto segue resta come indice storico.
