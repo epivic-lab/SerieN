@@ -1,0 +1,29 @@
+{
+  "status": "BLOCKED",
+  "environmentRevision": "1",
+  "observationsCurrent": true,
+  "policyState": "enforced",
+  "configuredCustomHosts": [
+    "epivic-lab.github.io",
+    "sdmntprdenmarkeast.oaiusercontent.com"
+  ],
+  "requiredHost": "sdmntprnortheu.oaiusercontent.com",
+  "attemptedFile": "railway_service_buildings.glb",
+  "result": "URLError: Tunnel connection failed: 403 Forbidden",
+  "sameHostFilesNotRetried": [
+    "railway_visual.glb",
+    "village_buildings.glb"
+  ],
+  "smallFilesTransferredThroughConnector": 7,
+  "terrain": {
+    "httpStatus": 200,
+    "bytes": 41022828
+  },
+  "sawmill": {
+    "httpStatus": 200,
+    "bytes": 59400628
+  },
+  "signedURLsStored": false,
+  "automaticApprovalRejection": false,
+  "settingsChangeToolAvailable": false
+}

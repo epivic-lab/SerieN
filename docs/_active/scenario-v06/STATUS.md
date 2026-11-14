@@ -1,3 +1,48 @@
+# V06-INTEGRATION — ripresa 14 novembre 2026
+
+**RECUPERO PARZIALE; integrazione ancora BLOCKED dalla rete.** Ripresa dal
+checkpoint verificato `301dceb64a3c034a1832d43bc6885d17604cc5a4`, PR Draft #21,
+branch `codex/scenario-v06-integration`. Il mandato di integrazione già vigente
+rimane valido; non è richiesta una nuova approvazione di microfase.
+
+Terreno e segheria ora acquisiti con HTTP 200 dal dominio Denmark autorizzato.
+Sette moduli piccoli recuperati dal connettore. **Nove originali, 196.026.628
+byte**, header GLB v2/dimensioni/SHA verificati contro il manifest Drive
+appena recuperato. Salvati questa volta nel repository in
+`asset-library/scenario-v06/modules/`, con lock separato e ricetta
+`python3 tools/scenario-v06/check-local-assets.py`, per non dipendere soltanto
+dalla cache temporanea di un task. La libreria non è importata dall'app né
+copiata dalla ricetta Pages. Nessun originale modificato.
+
+La cache precedente era assente: questi nove file NON sono i nove della ripresa
+precedente. Mancano ancora **village_buildings, railway_service_buildings e
+railway_visual**; technical_reference è opzionale e assente. I riferimenti dei
+tre grandi usano ora `sdmntprnortheu.oaiusercontent.com`. Tentato il trasferimento
+degli edifici ferroviari: proxy 403. Nessun retry identico per gli altri file
+sullo stesso host; occorre aggiungere questo dominio nelle impostazioni di rete
+e applicare la modifica. La configurazione osservata resta revisione1, enforced,
+con solo Denmark ed epivic-lab.github.io fra i domini personalizzati. Nessun
+rifiuto della revisione automatica delle approvazioni. Host dei link mai riscritti.
+
+**559/559 Node, 9/9 JMRI, build PASS** in questa ripresa. Bundle invariato:
+`89d732feafef5914078d5ef83885e5b9b68ff3abe967e8c4863a08e20a3063c7`.
+Controllo completezza asset `--require-complete`: uscita2 attesa, INCOMPLETE.
+App/Core/F1/dataset/canonico/UI/Legacy/asset runtime/test storici/dipendenze/
+workflow byte-identici al checkpoint iniziale. Browser V06 NON VERIFICATO;
+smoke Legacy precedente non rieseguito e non presentato come nuova prova.
+Nessun codice di attivazione o sostituto scenografico, runtimeAdmission:false.
+Nessun URL firmato/token salvato; nessuna modifica Auth/Supabase, merge o deploy.
+
+Prove correnti: `docs/_active/scenario-v06/evidence/V06_INTEGRATION/recovery-2026-11-14/`.
+Checkpoint atomico e push normale sul branch esistente; SHA e uguaglianza remota
+nella ricevuta finale. **Unica prossima azione: sbloccare il dominio indicato,
+riacquisire i tre originali e continuare la medesima integrazione già autorizzata.**
+Non è una consegna V06 giocabile o un PASS di integrazione.
+
+---
+
+## Registrazioni precedenti — storiche
+
 # Stato corrente — V06-INTEGRATION, seconda ripresa PR #21
 
 **BLOCKED sugli asset indispensabili.** Checkpoint iniziale remoto verificato
