@@ -1,0 +1,117 @@
+{
+  "checkedAtUTC": "2026-11-14 17:17:45 UTC",
+  "pullRequest": {
+    "url": "https://github.com/epivic-lab/SerieN/pull/8",
+    "number": 8,
+    "state": "closed",
+    "merged": true,
+    "draft": false,
+    "base": "main",
+    "head": "codex/ui-v21-visual-parity",
+    "head_sha": "217629c970c691c201ee8b1778b49c24bcff684d",
+    "merge_commit_sha": "f33377c3460ddf99bc5f5303f3fe0aa2a3da7fc1"
+  },
+  "workflowRuns": [
+    {
+      "id": 43313306675,
+      "name": "Deploy SerieN to GitHub Pages",
+      "head_sha": "f33377c3460ddf99bc5f5303f3fe0aa2a3da7fc1",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/epivic-lab/SerieN/actions/runs/43313306675",
+      "created_at": "2026-11-12T21:45:04Z",
+      "updated_at": "2026-11-12T21:46:17Z"
+    }
+  ],
+  "workflowJobs": [
+    {
+      "id": 131514712689,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Validate reproducible canonical layout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run build",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prepare site",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure Pages",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload static site",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Deploy Pages",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "html_url": "https://github.com/epivic-lab/SerieN/actions/runs/43313306675/job/131514712689"
+    }
+  ]
+}

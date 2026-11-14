@@ -1,5 +1,15 @@
 # SerieN — Stato e ripresa
 
+**Stato corrente — ripresa consegna UI V2.1, 2026-11-14: pubblicazione verificata.** La PR #8 risulta già chiusa e integrata; `origin/main` e il checkout iniziale coincidono con `f33377c3460ddf99bc5f5303f3fe0aa2a3da7fc1`. Il workflow Pages [43313306675](https://github.com/epivic-lab/SerieN/actions/runs/43313306675), attivato dal merge del 12 novembre, è concluso con successo. Sito: **https://epivic-lab.github.io/SerieN/**. Le diciture Draft / produzione invariata sotto sono storiche.
+
+Ripresa di verifica e chiusura documentale sul branch già autorizzato `codex/ui-v21-visual-parity`, dalla HEAD remota `217629c970c691c201ee8b1778b49c24bcff684d`, con albero identico al merge pubblicato. Nessun nuovo intervento applicativo. Nuovi controlli: 254 Node, 9 Python, build/canonico senza diff; 97 file pubblici HTTP200 e byte-identici al checkout/build; 138 file protetti verificati. Bundle `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378`, 1.092.265 byte.
+
+[Rapporto conclusivo](docs/_active/ui-v21/DELIVERY_RECOVERY_REPORT.md), con prove browser e limiti. Commit documentale: `git log -1 --format=%H -- docs/_active/ui-v21/DELIVERY_RECOVERY_REPORT.md`; SHA effettivo e coincidenza remota nella consegna. **Prossima attività: revisione indipendente della Regia; nessuna nuova fase avviata.**
+
+---
+
+## Stato precedente — storico, prima del merge
+
 **Stato corrente — UI V2.1 VISUAL PARITY HOTFIX: READY FOR REGIA VISUAL REVIEW.** [PR Draft #8](https://github.com/epivic-lab/SerieN/pull/8); checkpoint applicativo `637a140950d3047c5c7926193f6b312dadc464f1` verificato su remoto. Il mandato completo autorizza la ricostruzione sul solo branch `codex/ui-v21-visual-parity`, derivato dalla produzione `d77b8aa2710fa474fdb069b204705364b4a9e7e6`, e la consegna in PR Draft. La UI pubblicata resta in attesa di accettazione visiva; i precedenti verdetti tecnici non valgono come approvazione estetica.
 
 Ripristinate la griglia Claude e le superfici originali: a1692×877 dock502→156px e viewport300→612,11px, tre console visibili e quattro pannelli sidebar. Cinque viewport desktop con scarto0px dei bounding box esterni rispetto al vero HTML `cf2c29a`; sette confronti completi, adattamenti mobile/tablet dichiarati. PASS254Node,9Python,build/canonico,11scenari5C,6gruppi UI/HUD con16stati,5gruppi RAF nativo/125frame,5gruppi picking/cleanup,28stati missione e sette controlli console/overflow. Ultimo affinamento solo CSS delle missioni strette, con provenienza e verifica mirata distinte.

@@ -1,5 +1,11 @@
 # UI V2.1 — Visual Parity Hotfix
 
+**Aggiornamento della consegna, 2026-11-14:** PR #8 successivamente integrata in `main` a `f33377c3460ddf99bc5f5303f3fe0aa2a3da7fc1`; Pages `43313306675` SUCCESS e sito pubblico verificato. Le dichiarazioni Draft / nessuna pubblicazione sotto registrano il checkpoint applicativo `217629c970c691c201ee8b1778b49c24bcff684d` prima del merge. Per stato effettivo, nuovi controlli e chiusura vedere [DELIVERY_RECOVERY_REPORT.md](DELIVERY_RECOVERY_REPORT.md). Nessuna nuova modifica applicativa o operazione di rilascio nella ripresa.
+
+---
+
+## Stato precedente — storico, prima del merge
+
 **HUD/CAMERA MOBILE COLLISION HOTFIX — PASS TECNICO / REGIA REVIEW PENDING. PR #8 DRAFT.** Il mandato successivo autorizza solo la rimozione del blocker mobile, i relativi test e il checkpoint sullo stesso branch. Nessun merge o deploy autorizzato/eseguito.
 
 ## Correzione conclusiva — collisione HUD / View mobile

@@ -1,5 +1,11 @@
 # UI V2.1 — Visual Parity Hotfix
 
+**Stato corrente, 2026-11-14 — consegna ripresa e pubblicazione verificata.** [PR #8](https://github.com/epivic-lab/SerieN/pull/8) già integrata in `main` a `f33377c3460ddf99bc5f5303f3fe0aa2a3da7fc1`; [Pages 43313306675](https://github.com/epivic-lab/SerieN/actions/runs/43313306675) SUCCESS. Sito **https://epivic-lab.github.io/SerieN/**; 97 file del pacchetto HTTP200 e byte-identici al checkout/build. Nuovi 254 Node, 9 Python, build/canonico e 138 file protetti PASS. Checkpoint documentale sul solo `codex/ui-v21-visual-parity`; nessuna modifica applicativa, nuovo merge o avvio deployment. [Rapporto e prove correnti](DELIVERY_RECOVERY_REPORT.md). La verifica tecnica non attribuisce un'approvazione estetica indipendente.
+
+---
+
+## Stato precedente — storico, prima del merge
+
 **Aggiornamento corrente — HUD/CAMERA MOBILE COLLISION HOTFIX: PASS tecnico, REGIA REVIEW PENDING.** Dal checkpoint `6e62967356df836df27de59f352496511769d591`, sul solo `codex/ui-v21-visual-parity`. PR #8 rimane Draft; PR #7 e main `d77b8aa2710fa474fdb069b204705364b4a9e7e6` non modificate. Il nuovo mandato autorizza esclusivamente correzione, verifiche e checkpoint remoto, senza merge/deploy.
 
 Riprodotta l'occlusione198×102,734375px. Coordinamento mediante pulsante HUD originale; ripristino dell'intenzione, chiusura View prima dell'espansione utente, Escape/focus/resize/orientation/dispose. Stesso nodo warning aggiornato dal motore disponibile durante la minimizzazione, insieme al Guarded Stop originale. Modifiche applicative solo `src/ui/overlays.js` e CSS contestuale di integrazione; desktop, Train Dock, materiali/frozen e domini invariati.

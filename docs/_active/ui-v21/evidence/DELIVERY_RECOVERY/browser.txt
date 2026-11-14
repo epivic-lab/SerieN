@@ -1,0 +1,11 @@
+PASS 320x700: A/B, real Station and all presets, ARIA/focus, no railway mutation
+PASS 375x812: A/B, real Station and all presets, ARIA/focus, no railway mutation
+PASS 390x844: A/B, real Station and all presets, ARIA/focus, no railway mutation
+PASS 430x932: A/B, real Station and all presets, ARIA/focus, no railway mutation
+PASS 768x1024: A/B, real Station and all presets, ARIA/focus, no railway mutation
+PASS 1692x877: A/B, real Station and all presets, ARIA/focus, no railway mutation
+PASS keyboard Escape/focus, twelve repeated cycles, compact intent and user cancellation
+PASS open-menu resize, portrait/landscape, desktop exit and narrow reentry restore state
+PASS real occupied switch remains disabled; original reasons and HUD warning available
+PASS real Guarded Stop and original live warning remain visible with all presets at six viewports
+PASS pagehide during coordinated View: listeners removed, ResizeObserver disconnected, no residual overlay/errors
