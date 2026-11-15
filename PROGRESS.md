@@ -1,3 +1,11 @@
+# BR01-B — BLOCKED, STOP per Quality Gate Regia
+
+Il controllo per veicolo misura 4,625 mm di deficit longitudinale complessivo tra corpi rigidi e inviluppi. Riconfermati 1,678 mm oltre l’unione su V06-P006 a +89,25 mm e rilevati 3,604 mm su R216. Intersezioni cabina–tender verificate sui triangoli. 522 pose diagnostiche e registrazione reale di marcia, STOP e inversione. Nessuna modifica a modello, quote o protezioni. [Misure, prove e proposta](docs/_active/br01/STATUS.md).
+
+Prossima azione: decisione della Regia sul rilievo quotato del giunto e sullo studio separato di articolazione e sagome.
+
+---
+
 # BR01-A — BLOCKED, STOP per la Regia
 
 Il candidato BR 01 + tender circola nel browser e segue la distanza accettata. In curva la cabina sporge di 1,678 mm oltre entrambi gli inviluppi ferroviari; riprodotto dopo 89,25 mm di avanzamento. Motore e margini di protezione invariati. Gate di sagoma FAIL. Suite 570/570, JMRI 9/9, build PASS. [Stato, video reale, screenshot e misure](docs/_active/br01/STATUS.md).

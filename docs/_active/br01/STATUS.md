@@ -1,3 +1,36 @@
+# BR01-B — BLOCKED, gate geometrico FAIL
+
+Checkpoint iniziale verificato: `a15aed0d511f53d1d84a13dbed10123a5a18073f` su `codex/br01-animated`. Il mandato prevede lo stop prima di modifiche sostanziali alle quote di sicurezza. La B consegna il controllo separato per veicolo, la prova di intersezione e la proposta per la Regia. Nessuna correzione dimensionale o di posa è stata applicata al runtime.
+
+### Geometria del giunto
+
+Il piano nominale è X = −5,55 nelle coordinate del GLB. Le origini longitudinali di locomotiva e tender sono rispettivamente +7,2580675 e −12,6426195. Ciascun corpo assume la tangente della Journey al proprio centro; i carrelli assumono la posa della corda fra i loro assi. Gli agganci logici dei due veicoli hanno quota 8 mm, offset laterale zero e coincidono in ascissa lungo la Journey. In curva le tangenti ai due centri differiscono e gli estremi dei corpi rigidi non coincidono nello spazio.
+
+| Veicolo | Inviluppo L × W prima e dopo (mm) | Agganci X locali (mm) | Estremi rigidi X locali (mm) |
+|---|---:|---:|---:|
+| Locomotiva | 96,299 × 21,744 | ±48,149 | −51,753 / +48,149 |
+| Tender | 53,326 × 19,661 | ±26,663 | −26,663 / +27,684 |
+
+La cabina è una componente connessa del corpo `engine_haus`. Il retro oltrepassa l’aggancio di 3,604 mm. Sul tender la piattaforma anteriore e i gradini sono solidali a `tender_kohletender`; il punto più avanzato oltrepassa l’aggancio di 1,021 mm. Gli estremi opposti sono sui rispettivi telai/respingenti. Le lunghezze rigide individuali misurano 99,902 e 54,348 mm, somma **154,250 mm**. I due rettangoli contigui dispongono in totale di **149,625 mm**. Spostare l’origine non cambia la lunghezza di un corpo rigido; spostare il piano comune redistribuisce la lunghezza disponibile. A modello e scala invariati mancano dunque **4,625 mm** per la copertura longitudinale separata, già sul rettilineo con i corpi allineati. Questa è una misura delle proiezioni delle geometrie, non una certificazione del raggio minimo.
+
+### Misure in Chrome
+
+Il controllo usa le matrici mondo dei due corpi Three.js e i limiti letti dai loro metadati ferroviari. Per ogni vertice misura lo scarto sul rettangolo del proprietario e il minimo scarto sui due rettangoli. Tolleranza 0,05 mm. Incluse le geometrie generate a runtime di bielle, perni, pistoni e fanali: 70.851 vertici locomotiva e 27.994 tender. Il controllo delle interferenze restituisce un testimone quando un segmento di un triangolo attraversa un triangolo dell’altro corpo nell’area del giunto. Non misura la profondità di penetrazione.
+
+- V06-P006 a +89,25 mm rispetto allo spawn BR01-A, ascissa arco 100,088 mm. Rotazione relativa −13,926°, distanza fra i punti nominali degli agganci 2,433 mm. Eccesso massimo sull’unione **1,678 mm**, 442 vertici fuori tolleranza, riproduzione della A. Sui propri veicoli rispettivamente **3,604 mm / 566 vertici** e **1,021 mm / 438 vertici**. Intersezione confermata fra triangolo 28 della cabina e 2625 del tender.
+- 522 pose diagnostiche sul grafo V06: 29 archi di curva con designazione R nel censimento pezzi, estremi compresi e sette posizioni interne, percorrenza campionata in ordine diretto e inverso con fase firmata. Sono rappresentati R216, R249, R282, R315 e R481 nominali. Per i rami si costruisce una Journey di prova con un assetto ammesso dal router senza azionare gli scambi della sessione. Tutte le pose richieste sono valutate. È un campionamento geometrico, non una corsa reale su ciascun arco.
+- Un massimo osservato sull’unione è **3,604 mm** su V06-P029 (R216 nominale), al 37,5% dell’arco. Rotazione relativa −16,821°, agganci a 4,739 mm. I triangoli 324 della cabina e 3489 del tender si intersecano. [Dettaglio del giunto](evidence/BR01-B/joint.png) nella posa misurata, con scena d’ispezione separata per visibilità, inviluppo locomotiva azzurro e tender ambra.
+- La [registrazione Chrome](evidence/BR01-B/joint.webm) usa i comandi della plancia in V06, clock e odometro effettivi. Le trasformazioni registrate coincidono con fase della motrice, perni, centro biella e asta pistone calcolati dall’odometro sui due lati. STOP, sosta e comando d’inversione da fermo mantengono identiche le trasformazioni campionate. La marcia successiva inverte il segno della velocità. [Telemetria](evidence/BR01-B/live.json).
+- [Confronto prima/dopo](evidence/BR01-B/comparison.json) a runtime invariato, [pose e testimoni di intersezione](evidence/BR01-B/samples.json). La sporgenza non è stata corretta. PASS 42/42 test ferroviari mirati, 570/570 Node, 9/9 JMRI, build tramite script package.json/pnpm, controllo whitespace. Protocollo geometrico con esito atteso del candidato corrente: codice di uscita 1. [Test ferroviari](evidence/BR01-B/railway.txt) · [Suite completa](evidence/BR01-B/node.txt).
+
+### Proposta sottoposta alla Regia
+
+Prima di variare la protezione, ricavare da una tavola quotata della variante BR 01 con il suo tender le posizioni dei due perni della barra di accoppiamento, la luce fra cabina e tender e la corsa degli elementi di passaggio. Usare queste quote in uno studio isolato per riprodurre il giunto e provare che le superfici non si intersechino. Se le lunghezze rigide misurate sono confermate, il modello ferroviario corrente usa gli stessi estremi per distanziamento e inviluppi. La rappresentazione distinta di barra, punti di aggancio e sagome protette richiede una proposta separata con impatto su occupazione e anticollisione. Allargare i rettangoli non risolverebbe l’intersezione dei triangoli. Nessuna modifica di questo tipo applicata.
+
+Riproduzione: dopo la build, servire il repository su loopback; con Playwright disponibile e `CHROME_BIN` impostato, eseguire `node scripts/verify-br01-joint.cjs` (server predefinito 127.0.0.1:8193), quindi `python3 scripts/summarize-br01-joint.py`. I risultati sono scritti esclusivamente nella cartella B. Conservate le evidenze A. Nessun intervento su UI, flotta, geometria V06, sicurezza ferroviaria, backend, main o deploy. STOP per Quality Gate della Regia.
+
+---
+
 # BR01-A — BLOCKED al Quality Gate della Regia
 
 15 novembre 2026. Base verificata su GitHub e in locale: `b82def8f449980ff1ab3eca1fe129ee1fc34e763`, branch `codex/br01-animated`. Il checkpoint contiene un candidato di sviluppo con difetto di sagoma misurato. L’integrazione resta incompleta.
