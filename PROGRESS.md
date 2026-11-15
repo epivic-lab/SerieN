@@ -1,3 +1,17 @@
+# Follow Train — comandi A/Z e quota libera
+
+Rilascio autorizzato del controllo continuo della distanza e della discesa sotto il plastico, insieme alla correzione delle curve. Guida e test aggiornati. [Rapporto Follow Train](docs/_active/follow-train/STATUS.md).
+
+---
+
+# Follow Train — correzione della rotazione in curva
+
+Dal rilascio `4279b8bc`, ridotto il picco di rotazione della camera su V06-P006 da 2,747° a 0,260° per millimetro. Verificati entrambi i versi. [Misure e video](docs/_active/follow-train/STATUS.md).
+
+Prossima azione: verifica Regia sul branch `codex/follow-curve` prima della pubblicazione.
+
+---
+
 # Follow Train — controllo camera con le frecce
 
 Verificati i quattro comandi su V06 e Legacy dalla base BR 01 `0de0b2df`. Node 574/574, JMRI 9/9, build e verifiche browser PASS. [Prove e video](docs/_active/follow-train/STATUS.md).

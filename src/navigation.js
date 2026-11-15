@@ -34,16 +34,28 @@ function safeView(position, target, { height = () => 0, buildings = [] } = {}) {
 }
 const standardElevation = Math.atan2(272, Math.hypot(260, 210));
 const followRadius = Math.hypot(260, 210, 272);
-const followKeys = new Set(["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]);
+const followKeys = new Set(["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "a", "z"]);
 
-function followingView(pose, azimuthOffset = 0, elevationOffset = 0) {
+// A chord spanning several track samples gives the camera a continuous heading
+// through a bend. Both ends use the selected train's existing route history.
+function followPose(journey) {
+  if (!journey) return null;
+  const center = journey.locate();
+  const rear = journey.locate(journey.position - 16);
+  const front = journey.locate(journey.position + 16);
+  const dx = front.x - rear.x, dz = front.z - rear.z;
+  if (Math.hypot(dx, dz) > 1e-6) center.angle = -Math.atan2(dz, dx);
+  return center;
+}
+
+function followingView(pose, azimuthOffset = 0, elevationOffset = 0, radius = followRadius) {
   if (!pose || !Number.isFinite(pose.x) || !Number.isFinite(pose.z)) return null;
   const bearing = finite(pose.angle, 0) + Math.atan2(-260, 210) + azimuthOffset;
   const elevation = standardElevation + elevationOffset;
-  const horizontal = followRadius * Math.cos(elevation);
+  const horizontal = radius * Math.cos(elevation);
   const y = finite(pose.y, 3.5);
   return {
-    position: { x: pose.x + horizontal * Math.sin(bearing), y: y + 13 + followRadius * Math.sin(elevation), z: pose.z + horizontal * Math.cos(bearing) },
+    position: { x: pose.x + horizontal * Math.sin(bearing), y: y + 13 + radius * Math.sin(elevation), z: pose.z + horizontal * Math.cos(bearing) },
     target: { x: pose.x, y: y + 13, z: pose.z },
     zoom: 2.7
   };
@@ -51,7 +63,7 @@ function followingView(pose, azimuthOffset = 0, elevationOffset = 0) {
 function navigation(camera, controls, options = {}) {
   let mode = "overview", goal = null, disposed = false;
   const held = new Set();
-  let azimuth = 0, elevation = 0;
+  let azimuth = 0, elevation = 0, radius = followRadius;
   const cancelOnGesture = () => {
     held.clear();
     mode = "manual";
@@ -76,6 +88,7 @@ function navigation(camera, controls, options = {}) {
         held.clear();
         azimuth = 0;
         elevation = 0;
+        radius = followRadius;
       }
       mode = preset;
       if (preset === "follow") goal = null;
@@ -89,14 +102,14 @@ function navigation(camera, controls, options = {}) {
       setGoal({position:[view.position.x,view.position.y,view.position.z],target:[view.target.x,view.target.y,view.target.z],zoom:view.zoom});
       return true;
     },
-    pressArrow(key, repeat = false) {
+    pressFollowKey(key, repeat = false) {
       if (disposed || mode !== "follow" || !followKeys.has(key)) return false;
       if (repeat) return held.has(key);
       held.add(key);
       return true;
     },
-    releaseArrow(key) { held.delete(key); },
-    clearArrows() { held.clear(); },
+    releaseFollowKey(key) { held.delete(key); },
+    clearFollowKeys() { held.clear(); },
     update(dt, trainPose) {
       if (disposed) return;
       const elapsed = clamp(finite(dt, 0), 0, 0.2);
@@ -104,8 +117,10 @@ function navigation(camera, controls, options = {}) {
         const seconds = Math.max(0, finite(dt, 0));
         azimuth = (azimuth + (held.has("ArrowRight") - held.has("ArrowLeft")) * seconds * 1.2) % (2 * Math.PI);
         elevation = clamp(elevation + (held.has("ArrowUp") - held.has("ArrowDown")) * seconds * 0.7,
-          0.22 - standardElevation, 1.28 - standardElevation);
-        const view = followingView(trainPose, azimuth, elevation);
+          -Math.PI / 2 - standardElevation, 1.28 - standardElevation);
+        const dolly = Number(held.has("z")) - Number(held.has("a"));
+        radius = clamp(radius * Math.exp(dolly * seconds * 0.9), 30, controls.maxDistance ?? 3600);
+        const view = followingView(trainPose, azimuth, elevation, radius);
         if (view) {
           camera.position.copy(view.position);
           controls.target.copy(view.target);
@@ -133,9 +148,11 @@ function navigation(camera, controls, options = {}) {
           goal = null;
         }
       }
-      const safe = safeView(camera.position, controls.target, options);
-      camera.position.set(safe.position.x, safe.position.y, safe.position.z);
-      controls.target.set(safe.target.x, safe.target.y, safe.target.z);
+      if (mode !== "follow") {
+        const safe = safeView(camera.position, controls.target, options);
+        camera.position.copy(safe.position);
+        controls.target.copy(safe.target);
+      }
       camera.lookAt(controls.target);
       camera.updateMatrixWorld();
     },
@@ -150,6 +167,7 @@ function navigation(camera, controls, options = {}) {
 }
 export {
   CAMERA_PRESETS,
+  followPose,
   followingView,
   navigation,
   safeView
