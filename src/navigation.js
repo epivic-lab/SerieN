@@ -32,21 +32,28 @@ function safeView(position, target, { height = () => 0, buildings = [] } = {}) {
   }
   return { position: nextPosition, target: nextTarget };
 }
-function followingView(pose) {
+const standardElevation = Math.atan2(272, Math.hypot(260, 210));
+const followRadius = Math.hypot(260, 210, 272);
+const followKeys = new Set(["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]);
+
+function followingView(pose, azimuthOffset = 0, elevationOffset = 0) {
   if (!pose || !Number.isFinite(pose.x) || !Number.isFinite(pose.z)) return null;
-  const angle = finite(pose.angle, 0);
-  const dx = Math.cos(angle), dz = -Math.sin(angle);
-  const rightX = Math.sin(angle), rightZ = Math.cos(angle);
+  const bearing = finite(pose.angle, 0) + Math.atan2(-260, 210) + azimuthOffset;
+  const elevation = standardElevation + elevationOffset;
+  const horizontal = followRadius * Math.cos(elevation);
   const y = finite(pose.y, 3.5);
   return {
-    position: { x: pose.x - dx * 260 + rightX * 210, y: y + 285, z: pose.z - dz * 260 + rightZ * 210 },
+    position: { x: pose.x + horizontal * Math.sin(bearing), y: y + 13 + followRadius * Math.sin(elevation), z: pose.z + horizontal * Math.cos(bearing) },
     target: { x: pose.x, y: y + 13, z: pose.z },
     zoom: 2.7
   };
 }
 function navigation(camera, controls, options = {}) {
   let mode = "overview", goal = null, disposed = false;
+  const held = new Set();
+  let azimuth = 0, elevation = 0;
   const cancelOnGesture = () => {
+    held.clear();
     mode = "manual";
     goal = null;
   };
@@ -65,6 +72,11 @@ function navigation(camera, controls, options = {}) {
     select(preset) {
       if (disposed) return;
       if (preset !== "follow" && !CAMERA_PRESETS[preset]) throw new RangeError("Unknown camera preset: " + preset);
+      if (mode !== preset) {
+        held.clear();
+        azimuth = 0;
+        elevation = 0;
+      }
       mode = preset;
       if (preset === "follow") goal = null;
       else setGoal(CAMERA_PRESETS[preset]);
@@ -73,23 +85,39 @@ function navigation(camera, controls, options = {}) {
       if(disposed)return false;
       const view=followingView(pose);
       if(!view)return false;
-      mode="manual";
+      cancelOnGesture();
       setGoal({position:[view.position.x,view.position.y,view.position.z],target:[view.target.x,view.target.y,view.target.z],zoom:view.zoom});
       return true;
     },
+    pressArrow(key, repeat = false) {
+      if (disposed || mode !== "follow" || !followKeys.has(key)) return false;
+      if (repeat) return held.has(key);
+      held.add(key);
+      return true;
+    },
+    releaseArrow(key) { held.delete(key); },
+    clearArrows() { held.clear(); },
     update(dt, trainPose) {
       if (disposed) return;
       const elapsed = clamp(finite(dt, 0), 0, 0.2);
       if (mode === "follow") {
-        const view = followingView(trainPose);
-        if (view) goal = {
-          position: new Vector3(view.position.x, view.position.y, view.position.z),
-          target: new Vector3(view.target.x, view.target.y, view.target.z),
-          zoom: view.zoom
-        };
+        const seconds = Math.max(0, finite(dt, 0));
+        azimuth = (azimuth + (held.has("ArrowRight") - held.has("ArrowLeft")) * seconds * 1.2) % (2 * Math.PI);
+        elevation = clamp(elevation + (held.has("ArrowUp") - held.has("ArrowDown")) * seconds * 0.7,
+          0.22 - standardElevation, 1.28 - standardElevation);
+        const view = followingView(trainPose, azimuth, elevation);
+        if (view) {
+          camera.position.copy(view.position);
+          controls.target.copy(view.target);
+          const zoom = camera.zoom + (view.zoom - camera.zoom) * (1 - Math.exp(-4 * elapsed));
+          if (Math.abs(zoom - camera.zoom) > 1e-6) {
+            camera.zoom = zoom;
+            camera.updateProjectionMatrix();
+          }
+        } else held.clear();
       }
       if (goal) {
-        const blend = 1 - Math.exp(-elapsed * (mode === "follow" ? 4 : 5));
+        const blend = 1 - Math.exp(-elapsed * 5);
         camera.position.lerp(goal.position, blend);
         controls.target.lerp(goal.target, blend);
         const zoom = camera.zoom + (goal.zoom - camera.zoom) * blend;
@@ -97,7 +125,7 @@ function navigation(camera, controls, options = {}) {
           camera.zoom = clamp(zoom, controls.minZoom ?? 0.65, controls.maxZoom ?? 3.4);
           camera.updateProjectionMatrix();
         }
-        if (mode !== "follow" && camera.position.distanceToSquared(goal.position) < 0.01 && controls.target.distanceToSquared(goal.target) < 0.01 && Math.abs(camera.zoom - goal.zoom) < 1e-4) {
+        if (camera.position.distanceToSquared(goal.position) < 0.01 && controls.target.distanceToSquared(goal.target) < 0.01 && Math.abs(camera.zoom - goal.zoom) < 1e-4) {
           camera.position.copy(goal.position);
           controls.target.copy(goal.target);
           camera.zoom=goal.zoom;
@@ -113,6 +141,7 @@ function navigation(camera, controls, options = {}) {
     },
     dispose() {
       if (disposed) return;
+      held.clear();
       disposed = true;
       goal = null;
       controls.removeEventListener("start", cancelOnGesture);
