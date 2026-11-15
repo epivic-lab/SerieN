@@ -315,10 +315,10 @@ const br01Source = await loadBR01();
 function brTrain(id,loop){
   const group=buildBR01(br01Source,'engine',id),tender=buildBR01(br01Source,'tender',id);
   return {id,name:`BR 01 · ${id+1}`,desc:'BR 01 + tender · Tom Zimmermann',modelKey:'br01-engine',
-    group,carObjs:[tender],loop,cars:1,initial:{loop,cars:1,fraction:[.22,.65,.45][id]??.45},
+    group,carObjs:[tender],loop,cars:1,initial:{loop,cars:1,fraction:.22},
     speed:0,requestedSpeed:0,velocity:0,dir:1,lights:id===0,laps:0,mode:'loop'};
 }
-const trains=[brTrain(0,2),brTrain(1,1),brTrain(2,0)];
+const trains=[brTrain(0,isV06?network.metadata.mainLoops.find(loop=>loop.circuit==='C').lane:2)];
 for(const t of trains)scene.add(t.group,...t.carObjs);
 let nextTrainId = trains.length;
 const trainById = id => trains.find(train => train.id === id);
@@ -326,12 +326,11 @@ const detached = [];
 const selectRing = new THREE.Mesh(new THREE.TorusGeometry(25, 1.5, 5, 34), new THREE.MeshBasicMaterial({ color: "#efdc9d" }));
 selectRing.rotation.x = PI / 2;
 scene.add(selectRing);
-let selected = 0, paused = false, day = 48, changes = 0, transferred = false, visitedRunaround = false, didDetach = false, didAttach = false, mission = 0;
+let selected = 0, paused = false, day = 48, changes = 0, transferred = false, visitedRunaround = false, mission = 0;
 const statuses = [
   { title: "First lap", body: "Complete one lap of the steam locomotive’s loop.", done: () => (trains[0]?.laps ?? 0) >= 1, detail: () => "Completed laps: " + (trains[0]?.laps ?? 0) + " / 1" },
   { title: "Change tracks", body: "Set WX-A or WX-B and drive a locomotive from one loop to another.", done: () => transferred, detail: () => transferred ? "Transfer completed" : "No transfer yet" },
-  { title: "The long runaround", body: "Set the yard switches and drive the shunter along either runaround route.", done: () => visitedRunaround, detail: () => visitedRunaround ? "Runaround completed" : "Waiting for the shunter" },
-  { title: "Build a freight train", body: "Uncouple a wagon while stopped, then couple it again on the same track.", done: () => didDetach && didAttach, detail: () => "Uncouple " + (didDetach ? "\u2713" : "\u25CB") + " \xB7 Couple " + (didAttach ? "\u2713" : "\u25CB") }
+  { title: "The long runaround", body: "Set the yard switches and drive the locomotive along either runaround route.", done: () => visitedRunaround, detail: () => visitedRunaround ? "Runaround completed" : "Waiting for the locomotive" },
 ];
 if(isV06)Object.assign(statuses[2],{title:'Explore a branch',body:'Set the V06 switches and drive a locomotive onto a branch.',detail:()=>visitedRunaround?'Branch explored':'Waiting for a branch movement'});
 function log(s) {
@@ -348,7 +347,7 @@ function ui() {
     });
   }
   $("switchList").querySelectorAll("button").forEach((b,i)=>b.classList.toggle("active",switchSpecs[i].on));
-  $("missionIndex").textContent = mission + 1 + " / 4";
+  $("missionIndex").textContent = mission + 1 + " / " + statuses.length;
   $("missionName").textContent = statuses[mission].title;
   $("missionText").textContent = statuses[mission].body;
   missionUI();
@@ -412,7 +411,7 @@ function initializeJourney(t) {
 }
 for(const t of trains) {
   if(isV06) {
-    const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t,lane:t.loop});
+    const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t,station:true});
     if(!spawn)throw new Error('No safe initial V06 composition position');
     t.initial={...t.initial,...spawn};
   }
@@ -475,8 +474,6 @@ function advanceFleet(dt) {
 }
 function applyConsistCommand(result) {
   if (!result.changed) {if(result.message)log(result.message);return;}
-  if(result.kind==='uncoupled')didDetach=true;
-  if(result.kind==='coupled')didAttach=true;
   renderVehicles();ui();log(result.message);
 }
 function uncouple() {applyConsistCommand(fleetCommands.uncouple(selected));}
@@ -492,14 +489,14 @@ function reset() {
     s.on = profile.initialStates[s.id];
   });
   if(isV06)trains.forEach(t=>{delete t.journey;});
-  trains.forEach((t, i) => {
+  trains.forEach(t => {
     if(!t.carObjs.length){
       const tender=buildBR01(br01Source,'tender',t.id);
       scene.add(tender);t.carObjs.push(tender);
     }
     Object.assign(t,{loop:t.initial.loop,speed:0,dir:1,cars:t.carObjs.length,laps:0,mode:'loop'});
     if(isV06) {
-      const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t,lane:i<3?t.initial.loop:null});
+      const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t,station:t.id===0,lane:t.initial.loop});
       if(!spawn)throw new Error('No safe V06 reset position');
       t.initial={...t.initial,...spawn};t.loop=spawn.loop;
     }
@@ -508,7 +505,7 @@ function reset() {
   guardedStops.clear();
   paused = false;
   mission = 0;
-  transferred = visitedRunaround = didDetach = didAttach = false;
+  transferred = visitedRunaround = false;
   $("pause").textContent = "\u2161 Pause";
   ui();
   trainManagement?.invalidateReferences();
@@ -629,6 +626,19 @@ routeHighlight.root.userData.pickThrough = true;
 const scenic = v06Scene??enrich(scene, renderer, { ballast, ground, wood, network, roofMaterials: [roofRed, roofGray], wallMaterials: [hstyle, hbrick, hboard, cream], foundation: ballastLayer });
 if(isV06){scenic.attach(scene);routeHighlight.root.position.y=.3;}
 const nav = navigation(camera, controls, { height: scenic.cameraHeight, buildings: scenic.buildings });
+if(isV06){
+  const train=trains[0],journey=train.journey;
+  const centre=(train.group.userData.couplers.front.x-layoutFor(train).tail)/2;
+  const point=journey.locate(journey.position+centre);
+  const station=CAMERA_PRESETS.station;
+  controls.target.set(point.x,station.target[1],point.z);
+  camera.position.fromArray(station.position).sub(new THREE.Vector3(...station.target)).add(controls.target);
+  camera.zoom=2;
+  camera.updateProjectionMatrix();
+  controls.update();
+  controls.dispatchEvent({type:"start"});
+  $("cameraView").value="manual";
+}
 const views = mountViewControls({ camera, controls, navigation: nav, host: $("viewControls"), onViewChange: (preset) => {
   $("cameraView").value = preset;
 } });

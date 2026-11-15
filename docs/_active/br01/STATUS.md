@@ -1,3 +1,11 @@
+# BR01 RELEASE — collaudo locale
+
+Checkpoint approvato `fe4f1ac3e958c68e2d7a88ce0a7f470b82d2d5d2`. Il dataset V06 assegna esplicitamente P070 al circuito C. Nel GLB di stazione E2 occupa x 414–985 mm e z 583–616 mm. Motrice e tender sono entrambi centrati su P070 a z 566,221 mm. Le estremità occupano P070 e P064 sullo stesso circuito. L’ammissione controlla l’intero convoglio. La camera iniziale usa l’orientamento della vista stazione e centra la composizione.
+
+573/573 test Node, 9/9 audit Python/JMRI, build di distribuzione e controllo whitespace PASS. Chrome locale, build di distribuzione e fixture di accesso locale. V06 predefinito e Legacy partono con una BR 01 selezionata a trazione e velocità zero. Verificati marcia, STOP, inversione, blocco rimozione in marcia, annullamento, conferma, liberazione delle occupazioni, flotta vuota, reinserimento, HUD, minimappe e comando scambio. Prove del biellismo e del gancio riutilizzate da BR01-C e dell’arresto protetto da BR01-D. Sorgenti di cinematica, sicurezza, rete e autenticazione identici al checkpoint D.
+
+[Scena iniziale](evidence/RELEASE/station.png) · [V06](evidence/RELEASE/v06.json) · [Legacy](evidence/RELEASE/legacy.json). Esito della pubblicazione da verificare dopo il merge.
+
 # BR01-D — Chiusura funzionale per il Quality Gate Regia
 
 Branch `codex/br01-animated`, base BR01-C `edffa54e6fd7fff113ffdc85c0302582c6d0c194`.

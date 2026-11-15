@@ -961,3 +961,7 @@ PR; [rapporto](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md),
 [galleria](docs/_active/scenario-v06/evidence/V06_FINALIZE/README.md),
 [piano](docs/_active/scenario-v06/evidence/V06_FINALIZE/RELEASE_PLAN.md).
 **Unico prossimo passo: Quality Gate conclusivo Regia. STOP.**
+
+## BR01 RELEASE — configurazione di avvio
+
+Una BR 01 con tender selezionata e ferma davanti alla banchina E2 sul circuito C in V06. Legacy parte con una composizione. Rimosso l’obiettivo merci e aggiornato il testo dello smistamento. Rimozione e reinserimento verificati in Chrome su entrambe le scene. [Rapporto e screenshot](docs/_active/br01/STATUS.md). Unica azione prevista dopo i gate locali: integrazione autorizzata tramite PR, Pages e verifica pubblica.
