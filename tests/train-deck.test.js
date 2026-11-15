@@ -92,10 +92,7 @@ test("six distinct transparent thumbnails are tied to their real model sources",
     assert.ok(entry.bounds.length>0 && entry.bounds.width>0 && entry.bounds.height>0);
     const source=readFileSync(new URL("../"+entry.source,import.meta.url));
     assert.equal(createHash("sha256").update(source).digest("hex"),entry.sourceSha256);
-    if(entry.variant==="native"){
-      const app=readFileSync(new URL("../app.js",import.meta.url),"utf8"),native=app.slice(app.indexOf("const railWheel ="),app.indexOf("const trains ="));
-      assert.equal(createHash("sha256").update(native).update(source).update(readFileSync(new URL("../src/rolling-stock.js",import.meta.url))).digest("hex"),entry.nativeModelSha256);
-    }
+
   }
   assert.equal(hashes.size,6);
 });

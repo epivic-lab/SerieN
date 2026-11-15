@@ -34,7 +34,7 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
     const toolbar=element('div',undefined,'u6-catalog-filters');
     function filter(label,key,options,value,change){const l=element('label',label),select=element('select');select.setAttribute('aria-label',label);select.dataset.u6Filter=key;for(const [v,text]of options){const o=element('option',text);o.value=v;select.append(o);}select.value=value;select.onchange=()=>{change(select.value);render();};l.append(select);toolbar.append(l);}
     filter('Model role','role',[['all','All roles'],['locomotive','Locomotive'],['trailer','Trailer']],roleFilter,v=>roleFilter=v);
-    filter('Model source','source',[['all','All sources'],['native','SerieN'],['kenney','Kenney']],sourceFilter,v=>sourceFilter=v);
+    filter('Model source','source',[['all','All sources'],['native','Tom Zimmermann']],sourceFilter,v=>sourceFilter=v);
     const label=element('label','Find model'),search=element('input');search.type='search';search.value=searchFilter;search.dataset.u6Filter='search';search.setAttribute('aria-label','Find model');search.oninput=()=>{searchFilter=search.value;render();};label.append(search);toolbar.append(label);
     // CTRL-014: one event to the original validated model binding; re-read rollback.
     const original=document.getElementById('rollingModels');

@@ -1,3 +1,27 @@
+# BR01-A — BLOCKED al Quality Gate della Regia
+
+15 novembre 2026. Base verificata su GitHub e in locale: `b82def8f449980ff1ab3eca1fe129ee1fc34e763`, branch `codex/br01-animated`. Il checkpoint contiene un candidato di sviluppo con difetto di sagoma misurato. L’integrazione resta incompleta.
+
+## Motivo dello stop
+
+Con Chrome sul simulatore V06, dopo 50,325 mm di avanzamento accettato sull’arco V06-P006, 392 vertici delle mesh superavano di oltre 0,05 mm entrambi i rettangoli orientati dei veicoli. Sporgenza massima 1,163 mm sulla cabina. La registrazione conclusiva riproduce il difetto dopo 89,25 mm: 442 vertici, massimo **1,678 mm** sulla cabina, 0,888 mm sul tender. Il controllo usa le trasformazioni world effettive, gli stessi estremi longitudinali degli agganci e le semilarghezze lette dal modello ferroviario. Il massimo è lo scarto orizzontale su un asse locale, minimizzato sui due rettangoli. Il rilievo dimostra una parte di sagoma scoperta; non documenta una collisione fra treni. Le regole e i margini di protezione sono intatti. Il modello attribuisce al giunto cabina–tender una coordinata longitudinale comune, mentre le geometrie originali si estendono oltre questa sezione. In curva i due corpi ruotano separatamente.
+
+[Prima misura](evidence/BR01-A/clearance.json) · [Ripetizione durante la registrazione](evidence/BR01-A/clearance-final.json).
+
+## Implementazione verificata e limiti
+
+- Derivato riproducibile con `python scripts/prepare-br01.py ORIGINALE assets/br01/locomotive.glb` (NumPy e Pillow). Conservato l’originale fuori dal worktree di sviluppo e verificato il suo SHA-256. Rimossi binari e terreno espositivi. Separate le geometrie per veicolo, assi e carrelli. Base colore ricampionata a 1024 px, mappe aggiuntive sostituite da fattori di materiale. [Attribuzione e modifiche](../../../assets/br01/ATTRIBUTION.md).
+- Locomotiva e tender usano due veicoli del motore esistente, agganci coincidenti lungo la Journey e lunghezza nominale totale 149,625 mm a 1:160. Un caricamento GLB condiviso per la flotta. Comune asse locale +X in avanti. Angolo delle ruote pari a −odometro/raggio di rotolamento. Manovelle dei lati sfasate di 90°, bielle e cursori calcolati rispetto ai perni. La cinematica usa il delta firmato solo dopo l’accettazione del passo da parte del simulatore. La distribuzione resta una ricostruzione semplificata. Durata GPU e correttezza cinematica completa non qualificate.
+- Registrazione MediaRecorder del canvas Chrome con comandi reali della plancia. Il bundle di misura usa il fixture locale di autenticazione del progetto e una camera di ispezione laterale. Clock, render loop, odometro e comandi di marcia sono quelli applicativi. In curva la corsa passa da 0 a 93,5 mm; dopo la frenatura resta a 93,5 mm durante STOP e sosta, poi torna a 3,75 mm in retromarcia. Prova di contatto degli assi limitata al campione acquisito; i minimi di quota in `wheel-contact.json` comprendono i bordini. [Screenshot](evidence/BR01-A/on-track.png) · [Video](evidence/BR01-A/motion.webm) · [Telemetria](evidence/BR01-A/motion.json).
+- Nel GLB originale: 123.724.664 byte, 121.942 triangoli, 37 primitive, 12 materiali, 38 immagini. Derivato: 4.458.300 byte (−96,40%), 84.246 triangoli, 23 primitive, 9 materiali, 9 immagini. Stima RGBA8 prima dei mipmap: da 716,0 a 36,0 MiB. Le primitive GLB escludono la distribuzione generata in JavaScript. Nel browser con tre composizioni, qualità Low e registrazione attiva: 288–375 draw call e 2.669.387–3.509.881 triangoli per la scena nelle istantanee, media di 50,1 frame/s tra primo e ultimo campione. Ultimo campione: 180 geometrie e 46 texture della scena. Nessun confronto FPS controllato con l’originale. [Misure asset](evidence/BR01-A/asset-metrics.json).
+- Il catalogo attivo espone BR 01 e tender. I vecchi identificativi restano riconoscibili al validatore, che segnala il modello incompatibile conservando i dati. Test di dominio eseguito. Il gestore progetti di questa baseline è di sessione. Recupero di una composizione preesistente e verifica dei percorsi UI di creazione, selezione e rimozione end-to-end: **NOT VERIFIED**. Rimozione di una locomotiva fisica tramite UI non implementata. Non consegnate funzionalità di migrazione persistente. Nessuna carrozza aggiunta.
+- Baseline 569/569; candidato 570/570 test Node, 9/9 audit JMRI, build con lo script di package.json tramite pnpm, diff check PASS. I fixture di catalogo sono stati adattati ai due modelli attivi. Nessuna modifica a dati canonici, grafo, binari, scenografia V06, motore di frenatura, conflitti, protezioni, backend o configurazione di produzione. Regressioni browser complete di HUD, minimappe, camera e Train Management, rettilineo e arresto protetto in conflitto tra treni: **NOT VERIFIED**. Nessuna qualifica sicurezza generale. [Suite Node](evidence/BR01-A/node.txt).
+- Riproduzione della registrazione e del controllo: servire il worktree compilato in loopback, eseguire `node scripts/verify-br01.cjs` con Playwright disponibile, `CHROME_BIN` e `SERIEN_URL` del server locale. Lo script scrive le acquisizioni nel worktree. Il controllo misura lo scostamento; il gate è FAIL se i vertici fisici escono dai rettangoli. L’attuale candidato riproduce il difetto.
+
+**STOP per Quality Gate della Regia.** Da riesaminare l’articolazione e la geometria al giunto cabina–tender prima della qualifica successiva. Nessun merge o deploy.
+
+---
+
 # BR 01 — baseline PASS, locomotiva ancora da integrare
 
 Al 15 novembre 2026 il GLB locale di 123.724.664 byte ha SHA-256

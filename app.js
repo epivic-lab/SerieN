@@ -9,7 +9,7 @@ import {stepRailway} from './src/railway-step.js';
 import {vehiclesConflict,envelopeGap} from './src/railway-conflicts.js';
 import {createFleetCommands} from './src/fleet-commands.js';
 import {layoutFor,vehiclePositions,deriveSwitchAssistance,collectRailwayState} from './src/railway-state.js';
-import {buildStock,animateStock} from './src/rolling-stock.js';
+import {buildBR01,loadBR01} from './src/br01.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
 import {createTurnoutPicking} from "./src/turnout-picking.js";
 import {createTurnoutArrows} from './src/turnout-arrows.js';
@@ -29,7 +29,7 @@ import { couplingDistance } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
 import { navigation, CAMERA_PRESETS } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
-import { getTrainAssetCatalog, attachTrainAsset, importedTrains, releaseTrainAsset, disposeTrainAssets } from "./src/train-assets.js";
+
 import { locomotiveDetails, steam } from "./src/rolling-stock-art.js";
 import { presentation } from "./src/presentation.js";
 import { enrich } from "./src/scenery.js";
@@ -51,7 +51,7 @@ const v06Scene=isV06?await loadV06Scene(profile,{baseURL:document.baseURI,signal
 const host = $("view3d");
 let nextSwitchHUD = null, trainDeck = null, trainManagement = null, uiShell = null, viewportOverlays = null, sidebarUI = null, dockUI = null, keyboardUI = null;
 let highlightUntil=0,highlightUpdated=0;
-importedTrains($("rollingModels").value === "kenney");
+
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("#9fbcc5");
 scene.fog = new THREE.Fog("#b8c3af", 1900, 3700);
@@ -310,122 +310,15 @@ function wheelSet(group, len) {
     o.userData.wheel = true;
   }
 }
-function freightWagon(i) {
-  const kind=['closed','open','tank','flat','coach'][i%5];
-  const g=buildStock(kind);
-  attachTrainAsset(g, ['box','lumber','tank','lumber','box'][i%5]);
-  return g;
+const br01Source = await loadBR01();
+function brTrain(id,loop){
+  const group=buildBR01(br01Source,'engine',id),tender=buildBR01(br01Source,'tender',id);
+  return {id,name:`BR 01 · ${id+1}`,desc:'BR 01 + tender · Tom Zimmermann',modelKey:'br01-engine',
+    group,carObjs:[tender],loop,cars:1,initial:{loop,cars:1,fraction:[.22,.65,.45][id]??.45},
+    speed:0,requestedSpeed:0,velocity:0,dir:1,lights:id===0,laps:0,mode:'loop'};
 }
-function locoModel(id,trainId=id) {
-  const g = id===0||id===2 ? buildStock(id===0?'steam':'shunter') : new THREE.Group();
-  g.userData.trainId = trainId;
-  if(id===1) {
-    const long = 61;
-    box(long, 4, 15, chassisRed, g, 0, 8, 0);
-    wheelSet(g, long * 0.85);
-    box(long - 6, id === 1 ? 19 : 16, 14, id === 1 ? locoCrimson : locoCrimson, g, 0, id === 1 ? 22 : 21, 0);
-    if (id === 1) {
-      box(long - 5, 5, 15, mat("#a72d28"), g, 0, 34, 0);
-      for (let x of [-24, 24]) box(9, 8, 1, locoCream, g, x, 26, 7.6);
-    } else {
-      box(18, 8, 15, locoBlack, g, 0, 31, 0);
-      box(16, 3, 16, locoBlack, g, 0, 37, 0);
-    }
-    for (let x of [-13, 0, 13]) {
-      box(7, 3, 0.5, mat("#e8c6aa"), g, x, 28, -7.6);
-    }
-  }
-  const headMaterial = new THREE.MeshStandardMaterial({ color: "#faf0cb", emissive: "#ffe6a2", emissiveIntensity: 0.05 });
-  for (const side of [-1, 1]) {
-    const lampX=id===0?43:id===1?31:28,lampY=id===0?18:id===1?24:17;
-    if(id!==1){
-      const housing=cylinder(1.5,1.5,1.4,locoBlack,g,lampX-.8,lampY,side*4,12);housing.rotation.z=PI/2;
-      if(id===0)cylinder(.6,.6,8,locoBlack,g,lampX-1,14,side*4,8);
-    }
-    const p = sphere(id===1?2:1.2, headMaterial, g, lampX, lampY, side * 4);
-    p.userData.trainId = trainId;
-  }
-  const beam = new THREE.SpotLight("#ffe4a2", 2, 320, 0.38, 0.65, 0);
-  beam.position.set(32, 18, 0);
-  beam.target.position.set(200, 0, 0);
-  g.add(beam, beam.target);
-  g.userData.beam = beam;
-  g.userData.headMaterial = headMaterial;
-  g.traverse((o) => {
-    if (o.isMesh) o.userData.trainId = trainId;
-  });
-  if(id===1)locomotiveDetails(g, id);
-  scene.add(g);
-  return g;
-}
-const trains = [
-  { id: 0, name: "BR 055", desc: "DB era III · dimensional study", loop: 2, speed: 0, dir: 1, cars: 3, lights: true, laps: 0, mode: "loop", group: locoModel(0), carObjs: [] },
-  { id: 1, name: "BR 216", desc: "Diesel DB \xB7 Era IV", loop: 1, speed: 0, dir: 1, cars: 2, lights: false, laps: 0, mode: "loop", group: locoModel(1), carObjs: [] },
-  { id: 2, name: "BR 260", desc: "DB era IV · V60 dimensional study", loop: 0, speed: 0, dir: 1, cars: 2, lights: false, laps: 0, mode: "loop", group: locoModel(2), carObjs: [] }
-];
-for (let t of trains) {
-  for (let i = 0; i < t.cars; i++) {
-    let g = freightWagon(t.id===1?i+3:i+t.id);
-    scene.add(g);
-    t.carObjs.push(g);
-  }
-}
-trains.forEach((t) => {
-  t.modelKey = ["steam", "diesel", "shunter"][t.id];
-  t.initial = {loop:t.loop,cars:t.cars,fraction:[.22,.65,.45][t.id]};
-  t.nativeName = t.name;
-  t.nativeDescription = t.desc;
-});
-const kenneyNames = ["Steam K1", "Diesel K2", "Shunter K3"];
-let rollingModelMode = $("rollingModels").value;
-const startupTrains = [...trains];
-const assetReady = Promise.all(startupTrains.map((t) => attachTrainAsset(t.group, t.modelKey, true)));
-assetReady.then((loaded) => {
-  startupTrains.forEach((t, i) => t.assetLoaded = loaded[i]);
-  updateModels();
-});
-function updateModels() {
-  const active = $("rollingModels").value === "kenney";
-  const histories=trains.filter(t=>t.journey).map(t=>({journey:t.journey,segments:[...t.journey.segments],lastBlock:t.journey.lastBlock}));
-  const clearances=()=>{
-    const bodies=[...trains.filter(t=>t.journey).map(vehiclePositions),...detached.map(d=>[{...d.point,vehicle:d.group}])],pairs=new Map();
-    bodies.forEach((a,i)=>bodies.slice(i+1).forEach(b=>a.forEach(p=>b.forEach(q=>pairs.set(p.vehicle.uuid+'/'+q.vehicle.uuid,{conflict:vehiclesConflict(p,q),gap:envelopeGap(p,q)})))));
-    return pairs;
-  };
-  const previousClearances=clearances();
-  importedTrains(active);
-  const noRoom=trains.some((t) => t.journey && (!t.journey.ensure(t.journey.position - layoutFor(t).tail, route) || !t.journey.ensure(t.journey.position+(t.group.userData.couplers?.front?.x??48),route))) || detached.some(d=>{
-    // A stationary vehicle may grow only inside its known route history;
-    // never invent the missing branch of a frozen detached Journey.
-    const j=d.journey,c=d.group.userData.couplers;
-    return j&&(j.position+(c?.back?.x??-48)<j.segments[0].start||j.position+(c?.front?.x??48)>j.segments.at(-1).end||[[-1,-(c?.back?.x??-48)],[1,c?.front?.x??48]].some(([direction,extent])=>{
-      // Cached unoccupied history may predate a legal switch change. New
-      // body occupation must still agree with today's actual selected route.
-      const preview=traceJourney(network,switchTopology,j,direction,0,route,extent);
-      return preview.uncertain||preview.stop!=="limit";
-    }));
-  });
-  // Existing coupler contact between dropped wagons may stay unchanged or
-  // improve. Reject every new conflict, and every worsening existing one.
-  const conflict=[...clearances()].some(([key,next])=>{
-    const previous=previousClearances.get(key);
-    return next.conflict&&(!previous?.conflict||next.gap<previous.gap-1e-7);
-  });
-  if (noRoom || conflict) {
-    for(const h of histories){h.journey.segments.splice(0,h.journey.segments.length,...h.segments);if(h.lastBlock===undefined)delete h.journey.lastBlock;else h.journey.lastBlock=h.lastBlock;}
-    importedTrains(rollingModelMode === "kenney");
-    $("rollingModels").value = rollingModelMode;
-    log(conflict?"Rolling stock change blocked: another vehicle occupies the required clearance.":"Not enough room for longer rolling stock. Move the train first.");
-    return;
-  }
-  rollingModelMode = $("rollingModels").value;
-  for (const t of trains) {
-    t.name = active && t.assetLoaded ? kenneyNames[["steam","diesel","shunter"].indexOf(t.modelKey)]+(t.id>=3?` · ${t.id+1}`:"") : t.nativeName;
-    t.desc = active && t.assetLoaded ? "Kenney Train Kit \xB7 stylized model" : t.nativeDescription;
-  }
-  renderVehicles();ui();
-}
-$("rollingModels").onchange = updateModels;
+const trains=[brTrain(0,2),brTrain(1,1),brTrain(2,0)];
+for(const t of trains)scene.add(t.group,...t.carObjs);
 const detached = [];
 const selectRing = new THREE.Mesh(new THREE.TorusGeometry(25, 1.5, 5, 34), new THREE.MeshBasicMaterial({ color: "#efdc9d" }));
 selectRing.rotation.x = PI / 2;
@@ -533,17 +426,16 @@ function renderVehicles() {
     for(let i=0;i<vehicles.length;i++) {
       const group=vehicles[i],coordinate=t.journey.position-layout.offsets[i],pose=vehicleLocation(t,layout.offsets[i]);
       if(i)group.visible=true;
-      group.position.set(pose.x,3.5+railHeightOffset+(i?0:group.stockRig&&!group.userData.assetDimensions?0:3.6),pose.z);
+      group.position.set(pose.x,profile.railTop,pose.z);
       group.rotation.y=pose.angle;
-      animateStock(group,t.journey,coordinate,t.odometer,pose);
-      animateAuxiliaryWheels(group,t.odometer);
+      group.br01Pose(t.odometer,t.journey,coordinate,pose);
     }
   }
   const selectedPoint=vehicleLocation(trains[selected]);
   selectRing.position.set(selectedPoint.x,isV06?profile.railTop+.5:5.2,selectedPoint.z);
   for (const d of detached) {
     d.group.visible = true;
-    d.group.position.set(d.point.x, 3.5+railHeightOffset, d.point.z);
+    d.group.position.set(d.point.x,profile.railTop,d.point.z);
     d.group.rotation.y = d.point.angle;
   }
 }
@@ -584,12 +476,6 @@ function applyConsistCommand(result) {
 function uncouple() {applyConsistCommand(fleetCommands.uncouple(selected));}
 function couple() {applyConsistCommand(fleetCommands.couple(selected));}
 function removeWagon(group) {
-  releaseTrainAsset(group);
-  const geometries = /* @__PURE__ */ new Set();
-  group.traverse((o) => {
-    if (o.isMesh) geometries.add(o.geometry);
-  });
-  geometries.forEach((g) => g.dispose());
   scene.remove(group);
 }
 function reset() {
@@ -601,14 +487,11 @@ function reset() {
   });
   if(isV06)trains.forEach(t=>{delete t.journey;});
   trains.forEach((t, i) => {
-    t.carObjs.forEach(removeWagon);
-    t.carObjs = [];
-    Object.assign(t, { loop: t.initial.loop, speed: 0, dir: 1, cars: t.initial.cars, laps: 0, mode: "loop" });
-    for (let j = 0; j < t.cars; j++) {
-      const o = freightWagon(i===1?j+3:j+i);
-      scene.add(o);
-      t.carObjs.push(o);
+    if(!t.carObjs.length){
+      const tender=buildBR01(br01Source,'tender',t.id);
+      scene.add(tender);t.carObjs.push(tender);
     }
+    Object.assign(t,{loop:t.initial.loop,speed:0,dir:1,cars:t.carObjs.length,laps:0,mode:'loop'});
     if(isV06) {
       const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t,lane:i<3?t.initial.loop:null});
       if(!spawn)throw new Error('No safe V06 reset position');
@@ -643,26 +526,13 @@ function stopAllTrains() {
 }
 function addTrain() {
   if(trains.length>=4){log("A session supports up to four trains.");return null;}
-  if(isV06) {
-    const id=trains.length,group=locoModel(1,id);
-    const t={id,name:`BR 216 · ${id+1}`,nativeName:`BR 216 · ${id+1}`,desc:'Diesel DB · additional locomotive',nativeDescription:'Diesel DB · additional locomotive',modelKey:'diesel',loop:0,speed:0,requestedSpeed:0,velocity:0,dir:1,cars:0,lights:false,laps:0,mode:'loop',group,carObjs:[]};
-    const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t});
-    if(!spawn){removeWagon(group);log('No free visible track section for the complete locomotive.');return null;}
-    t.initial={...spawn,cars:0};t.loop=spawn.loop;initializeJourney(t);trains.push(t);
-    $('addTrain').disabled=trains.length>=4;
-    attachTrainAsset(group,'diesel',true).then(loaded=>{t.assetLoaded=loaded;updateModels();});
-    renderVehicles();ui();return id;
-  }
-  const insertion={...new Journey(network,'T47',80).locate(),vehicle:{userData:{}}};
-  if(trains.some(t=>vehiclePositions(t).some(p=>(p.edge==="T47"&&Math.abs(p.s-80)<120)||vehiclesConflict(insertion,p)))||detached.some(d=>(d.point.edge==="T47"&&Math.abs(d.point.s-80)<120)||vehiclesConflict(insertion,{...d.point,vehicle:d.group}))){
-    log("Clear the insertion point in the east siding first.");return null;
-  }
-  const id=trains.length;
-  const t={id,name:`BR 216 · ${id+1}`,nativeName:`BR 216 · ${id+1}`,desc:"Diesel DB · additional locomotive",nativeDescription:"Diesel DB · additional locomotive",modelKey:"diesel",initial:{loop:2,cars:0,edge:"T47",s:80},loop:2,speed:0,dir:1,cars:0,lights:false,laps:0,mode:"loop",group:locoModel(1,id),carObjs:[]};
-  trains.push(t);initializeJourney(t);
-  $("addTrain").disabled=trains.length>=4;
-  attachTrainAsset(t.group,"diesel",true).then((loaded)=>{t.assetLoaded=loaded;updateModels();});
-  renderVehicles();ui();return id;
+  const t=brTrain(trains.length,0);
+  const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t});
+  if(!spawn){t.group.userData.headMaterial.dispose();log('No free track section for the complete BR 01 and tender.');return null;}
+  t.initial={...spawn,cars:1};t.loop=spawn.loop;initializeJourney(t);
+  trains.push(t);scene.add(t.group,...t.carObjs);
+  $('addTrain').disabled=trains.length>=4;
+  renderVehicles();ui();return t.id;
 }
 $("stopAll").onclick=stopAllTrains;
 $("addTrain").onclick=()=>{const id=addTrain();if(id!==null)select(id);};
@@ -736,7 +606,7 @@ trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains
   onSelect:select,onSpeed:setTrainSpeed,onReverse:reverseTrain,onStop:stopTrain,onLights:toggleTrainLights,onUncouple:uncouple,onCouple:couple,
   onFocus:(id)=>{nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
 });
-trainManagement=mountTrainManagement({button:$("trainManagement"),getTrains:()=>trains,getDetached:()=>detached,getSelected:()=>selected,getImportedCatalog:getTrainAssetCatalog,
+trainManagement=mountTrainManagement({button:$("trainManagement"),getTrains:()=>trains,getDetached:()=>detached,getSelected:()=>selected,getImportedCatalog:()=>[],
   onSelect:select,onFocus:(id)=>{select(id);nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
 });
 dockUI=mountDock({host:$("trainDeck"),tabs:$("tabs"),button:$("reset"),getTrains:()=>trains,getSelected:()=>selected,onSelect:select,
@@ -796,7 +666,7 @@ window.addEventListener("pagehide", (e) => {
   trainDeck?.dispose();
   nav.dispose();
   effects.dispose();
-  disposeTrainAssets();
+
   if(isV06)scenic.dispose();
   const gs = /* @__PURE__ */ new Set(), ms = /* @__PURE__ */ new Set(), ts = /* @__PURE__ */ new Set();
   scene.traverse((o) => {

@@ -1,3 +1,11 @@
+# BR01-A — BLOCKED, STOP per la Regia
+
+Il candidato BR 01 + tender circola nel browser e segue la distanza accettata. In curva la cabina sporge di 1,678 mm oltre entrambi gli inviluppi ferroviari; riprodotto dopo 89,25 mm di avanzamento. Motore e margini di protezione invariati. Gate di sagoma FAIL. Suite 570/570, JMRI 9/9, build PASS. [Stato, video reale, screenshot e misure](docs/_active/br01/STATUS.md).
+
+Prossima azione: revisione della Regia sul difetto del giunto cabina–tender. Il checkpoint resta sul branch dedicato, senza merge o deploy.
+
+---
+
 # BR 01 — baseline risolta (15 novembre 2026)
 
 Il GLB originale è disponibile nel checkout SerieN-persistence. Il controllo
