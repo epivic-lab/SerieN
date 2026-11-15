@@ -7,7 +7,7 @@ import {createDepotView} from './depot-view.js';
 import {compositionView,detachedView} from './train-management-state.js';
 import {THUMBNAIL_FALLBACK,thumbnailURL} from './locomotive-thumbnails.js';
 
-export function mountTrainManagement({button,getTrains,getDetached,getSelected,getImportedCatalog,onSelect,onFocus}) {
+export function mountTrainManagement({button,getTrains,getDetached,getSelected,getImportedCatalog,onSelect,onFocus,onAdd,onRemove,canRemove}) {
   const dialog=document.createElement('dialog');dialog.className='trainManagement u6-tm';dialog.id='tmD';
   dialog.setAttribute('aria-labelledby','managementTitle');
   dialog.innerHTML=`<header class="managementHead"><div><span class="eyebrow">ROLLING STOCK · 1:160</span><h2 id="managementTitle">Train Management</h2></div><button type="button" data-close>✕ Close</button></header><p class="managementIntro">Explore available models, inspect real trains and design independent projects.</p><p class="u6-session">Session only · no cloud storage</p><p class="u6-notice" role="status"></p><nav class="managementNav" role="tablist" aria-label="Train Management views"><button type="button" data-view="layout">On the layout</button><button type="button" data-view="catalog">Model catalog</button><button type="button" data-view="projects">Projects</button><button type="button" data-view="depot">Depot</button></nav><div class="managementBody"></div>`;
@@ -21,7 +21,7 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
   const depot=createDepotView({guard,inventory,getProjects:()=>projects.snapshot,getTrains,getDetached,getGeneration:()=>generation,onChange:()=>{signature='';sync();}});
   const body=dialog.querySelector('.managementBody');let view='layout',signature='',disposed=false,lastSync=0;
   const element=(tag,text,className)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;};
-  const mm=n=>Number.isFinite(n)?`${n.toFixed(1)} mm`:'Not measured';
+  const mm=n=>Number.isFinite(n)?`${Number(n.toFixed(3))} mm`:'Not measured';
   function image(src,alt) {
     const img=element('img');img.src=src;img.alt=alt;img.width=320;img.height=160;img.decoding='async';
     img.onerror=()=>{img.onerror=null;img.src=THUMBNAIL_FALLBACK;img.alt=`Preview unavailable: ${alt}`;};return img;
@@ -34,7 +34,7 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
     const toolbar=element('div',undefined,'u6-catalog-filters');
     function filter(label,key,options,value,change){const l=element('label',label),select=element('select');select.setAttribute('aria-label',label);select.dataset.u6Filter=key;for(const [v,text]of options){const o=element('option',text);o.value=v;select.append(o);}select.value=value;select.onchange=()=>{change(select.value);render();};l.append(select);toolbar.append(l);}
     filter('Model role','role',[['all','All roles'],['locomotive','Locomotive'],['trailer','Trailer']],roleFilter,v=>roleFilter=v);
-    filter('Model source','source',[['all','All sources'],['native','SerieN'],['kenney','Kenney']],sourceFilter,v=>sourceFilter=v);
+    filter('Model source','source',[['all','All sources'],['native','Tom Zimmermann']],sourceFilter,v=>sourceFilter=v);
     const label=element('label','Find model'),search=element('input');search.type='search';search.value=searchFilter;search.dataset.u6Filter='search';search.setAttribute('aria-label','Find model');search.oninput=()=>{searchFilter=search.value;render();};label.append(search);toolbar.append(label);
     // CTRL-014: one event to the original validated model binding; re-read rollback.
     const original=document.getElementById('rollingModels');
@@ -62,13 +62,27 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
   function layout() {
     const trains=getTrains(),selected=getSelected(),columns=element('div',undefined,'managementColumns'),list=element('section'),detail=element('section',undefined,'managementDetail');
     heading(list,`${trains.length} compositions on the layout`);
+    const add=element('button','Add BR 01 + tender');add.type='button';add.disabled=trains.length>=4;
+    add.onclick=()=>{const id=onAdd();notice.textContent=id===null?'No free track section for a complete composition.':'Composition added to the layout.';};list.append(add);
     for(const train of trains){const c=compositionView(train),b=element('button',undefined,'managementTrain');b.type='button';b.dataset.composition=String(c.id);b.dataset.ctrl='CTRL-028';b.setAttribute('aria-pressed',String(c.id===selected));b.classList.toggle('active',c.id===selected);b.append(image(thumbnailURL(train),c.name),element('strong',c.name),element('small',`${c.vehicles.length} vehicles · ${mm(c.length)}`),element('span',train.guard?.intervened?'Guarded stop':Math.abs(train.velocity??0)>.1?'Moving':train.speed>0?'Starting':'Stopped','u6-state'));b.onclick=()=>onSelect(c.id);list.append(b);}
     const train=trains.find(t=>t.id===selected);
     if(train){const c=compositionView(train);heading(detail,c.name);detail.append(element('p',c.description),element('p',`${c.reverse?'Reverse':'Forward'} · ${mm(c.length)} overall`,'managementSummary'),element('small','Order from locomotive to tail. Reversing preserves this order.'));
       sideView.update(train);sideView.root.dataset.ctrl='CTRL-040';detail.append(sideView.root);
       const ordered=element('ol');ordered.dataset.consist=String(c.id);
-      for(const [i,v] of c.vehicles.entries()){const row=element('li');row.dataset.vehicleId=v.id;row.append(element('strong',`${i===0?'Locomotive':`Wagon ${i}`} · ${i===0?c.name:v.name}`),element('small',`${dimensions(v.length,v.width)} · ${v.imported?'Kenney':'SerieN'}`));ordered.append(row);}detail.append(ordered);
-      const focus=element('button','◎ Focus in 3D');focus.type='button';focus.dataset.ctrl='CTRL-029';focus.onclick=()=>requestAction(()=>{onFocus(c.id);dialog.close();},focus,train);detail.append(focus);
+      for(const [i,v] of c.vehicles.entries()){const row=element('li');row.dataset.vehicleId=v.id;row.append(element('strong',`${i===0?'Locomotive':`Wagon ${i}`} · ${i===0?c.name:v.name}`),element('small',`${dimensions(v.length,v.width)} · ${v.kind.startsWith('br01-')?'Tom Zimmermann':v.imported?'Kenney':'SerieN'}`));ordered.append(row);}detail.append(ordered);
+      const remove=element('button','Remove from layout');remove.type='button';remove.disabled=!canRemove(train);
+      remove.title='Stop the composition completely before removing it.';
+      const sameConsist=()=>{
+        const vehicles=[train.group,...train.carObjs];
+        return vehicles.length===c.vehicles.length&&vehicles.every((v,i)=>v.uuid===c.vehicles[i].id);
+      };
+      remove.onclick=()=>guard.request({origin:remove,title:'Remove composition?',cancelLabel:'Cancel',confirmLabel:'Remove composition',
+        message:`Remove ${c.name} and all its attached vehicles from the layout?`,
+        valid:()=>dialog.open&&getSelected()===c.id&&getTrains().includes(train)&&canRemove(train)&&sameConsist(),
+        confirm:()=>{if(onRemove(train))notice.textContent=`${c.name} removed from the layout.`;},
+        invalid:()=>{notice.textContent='The composition changed. Check its selection and speed.';}});
+      detail.append(remove);
+      const focus=element('button','◎ Focus in 3D');focus.type='button';focus.dataset.ctrl='CTRL-029';focus.onclick=()=>requestAction(()=>{onFocus(c.id);dialog.close();launcher?.closest('dialog')?.close();},focus,train);detail.append(focus);
       const copy=element('button','Copy to project');copy.type='button';copy.dataset.copyTrain=String(c.id);copy.dataset.ctrl='CTRL-030';copy.onclick=()=>requestAction(()=>{projects.copy(train);view='projects';signature='';sync();},copy,train);detail.append(copy);
     }else detail.append(element('p','Select a composition to inspect it.'));
     columns.append(list,detail);body.append(columns);
@@ -79,7 +93,7 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
   function sync() {
     if(disposed||!dialog.open)return;
     // No per-frame DOM rebuilding: only structural/model/selection changes.
-    const next=JSON.stringify([view,getSelected(),getTrains().map(compositionView),getDetached().map(detachedView),getImportedCatalog(),generation,getTrains().map(t=>Boolean(t.speed||Math.abs(t.velocity)>.1)),inventory.items,projects.snapshot]);
+    const next=JSON.stringify([view,getSelected(),getTrains().map(compositionView),getDetached().map(detachedView),getImportedCatalog(),generation,getTrains().map(t=>[canRemove(t),Boolean(t.speed||Math.abs(t.velocity)>.1)]),inventory.items,projects.snapshot]);
     if(next===signature)return;signature=next;
     body.setAttribute('aria-labelledby',`u6-tab-${view}`);body.dataset.u6View=view;body.classList.toggle('u6-view',view==='layout'||view==='catalog');
     const scroll=body.scrollTop,focused=document.activeElement?.dataset.composition,filterFocus=document.activeElement?.dataset.u6Filter,selection=document.activeElement?.selectionStart;

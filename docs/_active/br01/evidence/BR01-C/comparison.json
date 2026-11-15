@@ -1,0 +1,277 @@
+{
+  "gate": "PASS",
+  "originalCheckpoint": "9bbe397847e936c7d6d302caa98199445353fd97",
+  "before": {
+    "dimensions": {
+      "engine": {
+        "originSourceX": 7.258067499999999,
+        "lengthMm": 96.29853982867527,
+        "widthMm": 21.74374683647856,
+        "couplerXmm": [
+          -48.14926991433764,
+          48.14926991433764
+        ],
+        "couplerYmm": 8,
+        "rigidExtentXmm": [
+          -51.753052112562976,
+          48.14927144246794
+        ],
+        "rigidSpanMm": 99.90232355503092,
+        "extentWitnessMeshes": [
+          "engine_haus",
+          "engine_rader"
+        ]
+      },
+      "tender": {
+        "originSourceX": -12.6426195,
+        "lengthMm": 53.32646017132474,
+        "widthMm": 19.66109888568169,
+        "couplerXmm": [
+          -26.66323008566237,
+          26.66323008566237
+        ],
+        "couplerYmm": 8,
+        "rigidExtentXmm": [
+          -26.663230194421192,
+          27.684361646067533
+        ],
+        "rigidSpanMm": 54.347591840488725,
+        "extentWitnessMeshes": [
+          "tender_rader",
+          "tender_kohletender"
+        ]
+      }
+    },
+    "lengthMm": 149.625,
+    "originalCurve": {
+      "distance": 89.25,
+      "pose": {
+        "x": 205.6196511654112,
+        "z": 68.96756391258032,
+        "angle": 0.467522437794991,
+        "edge": "V06-P006",
+        "s": 100.08801286358269
+      },
+      "bodies": [
+        {
+          "max": 3.6037821982253178,
+          "count": 566,
+          "vertices": 70851,
+          "part": "engine_haus"
+        },
+        {
+          "max": 1.0211315604051627,
+          "count": 438,
+          "vertices": 27994,
+          "part": "tender_kohletender"
+        }
+      ],
+      "union": {
+        "max": 1.6777008700619724,
+        "count": 442
+      },
+      "relativeYawDegrees": -13.925939251607256,
+      "nominalPinSeparation": 2.433190272599678,
+      "triangleIntersection": {
+        "engine": [
+          "engine_haus",
+          28
+        ],
+        "tender": [
+          "tender_kohletender",
+          2625
+        ],
+        "world": [
+          165.70009389759207,
+          26.537623713565416,
+          99.01096688560419
+        ]
+      }
+    },
+    "R216": {
+      "edge": "V06-P029",
+      "type": "R216-45",
+      "fraction": 0.375,
+      "sign": 1,
+      "d": 63.628963134271494,
+      "bodies": [
+        {
+          "max": 3.6037821982254314,
+          "count": 566,
+          "vertices": 70851,
+          "part": "engine_haus"
+        },
+        {
+          "max": 1.0211315604050633,
+          "count": 438,
+          "vertices": 27994,
+          "part": "tender_kohletender"
+        }
+      ],
+      "union": {
+        "max": 3.6037821982254314,
+        "count": 643
+      },
+      "relativeYawDegrees": -16.821128577455486,
+      "nominalPinSeparation": 4.739360359464332,
+      "triangleIntersection": {
+        "engine": [
+          "engine_haus",
+          324
+        ],
+        "tender": [
+          "tender_kohletender",
+          3489
+        ],
+        "world": [
+          1107.0587216534204,
+          18.74179744660762,
+          105.89896482677788
+        ]
+      }
+    }
+  },
+  "after": {
+    "dimensions": {
+      "engine": {
+        "frontMm": 48.14927144246794,
+        "backMm": -51.753052112562976,
+        "lengthMm": 99.90232355503092,
+        "widthMm": 21.74374683647856
+      },
+      "tender": {
+        "frontMm": 30.309749657185037,
+        "backMm": -26.663230194421192,
+        "lengthMm": 56.972979851606226,
+        "widthMm": 20.4
+      }
+    },
+    "ribbonPitchMm": 77.0125,
+    "trainLengthMm": 151.82500163688914,
+    "originalCurve": {
+      "distance": 89.25,
+      "pose": {
+        "x": 205.6196511654112,
+        "z": 68.96756391258032,
+        "angle": 0.467522437794991,
+        "edge": "V06-P006",
+        "s": 100.08801286358269
+      },
+      "bodies": [
+        {
+          "max": 2.1316282072803006e-14,
+          "count": 0,
+          "vertices": 71767,
+          "part": "engine_rader"
+        },
+        {
+          "max": 1.7763568394002505e-14,
+          "count": 0,
+          "vertices": 28790,
+          "part": "tender_rader"
+        }
+      ],
+      "union": {
+        "max": 2.1316282072803006e-14,
+        "count": 0
+      },
+      "relativeYawDegrees": -13.92593925160664,
+      "nominalPinSeparation": 5.359234087461407,
+      "triangleIntersection": null,
+      "gear": {
+        "slide": 0.879757189769494,
+        "pinDistance": 6.229757189769499,
+        "overlap": 3.350242810230501,
+        "eyeErrors": [
+          0,
+          0
+        ],
+        "axisError": 1.5987211554602254e-14,
+        "insideStops": true,
+        "bodyHit": null,
+        "plateHit": null,
+        "carriageHit": null,
+        "runningGearHit": null,
+        "oppositeMountHit": null
+      }
+    },
+    "sameR216": {
+      "edge": "V06-P029",
+      "type": "R216-45",
+      "fraction": 0.375,
+      "sign": 1,
+      "d": 63.628963134271494,
+      "bodies": [
+        {
+          "max": 9.237055564881302e-14,
+          "count": 0,
+          "vertices": 71767,
+          "part": "engine_haus"
+        },
+        {
+          "max": 9.592326932761353e-14,
+          "count": 0,
+          "vertices": 28790,
+          "part": "tender_rader"
+        }
+      ],
+      "union": {
+        "max": 9.592326932761353e-14,
+        "count": 0
+      },
+      "relativeYawDegrees": -16.821128577455486,
+      "nominalPinSeparation": 6.771144086784173,
+      "gear": {
+        "slide": 2.2195563699409213,
+        "pinDistance": 7.569556369940926,
+        "overlap": 2.010443630059074,
+        "eyeErrors": [
+          0,
+          0
+        ],
+        "axisError": 4.440892098500626e-15,
+        "insideStops": true,
+        "bodyHit": null,
+        "plateHit": null,
+        "carriageHit": null,
+        "runningGearHit": null,
+        "oppositeMountHit": null
+      }
+    },
+    "extraMm": 2.2,
+    "straightCabTenderMm": {
+      "before": 0.5271666136111853,
+      "after": 1.9430380630873934
+    },
+    "membersPinToTipMm": [
+      4.79,
+      4.79
+    ],
+    "pinSpacingObservedMm": [
+      5.348382118527822,
+      9.111372654555078
+    ],
+    "mechanicalPinSpacingLimitsMm": [
+      5.29,
+      9.23
+    ],
+    "overlapObservedMm": [
+      0.4686273454449612,
+      4.231617881472179
+    ]
+  },
+  "verification": {
+    "allBCasesRepeated": 522,
+    "browserGeometricSamples": 1376,
+    "otherUnavailableRequests": 46,
+    "V06IndependentPoses": 19933,
+    "legacyIndependentPoses": 20768,
+    "maximumOwnedExcessMm": 3.765876499528531e-13,
+    "outsideToleranceVertices": 0,
+    "detectedIntersections": 0,
+    "maxLiveLinkageErrorMm": 7.131941203587914e-15,
+    "stopPhaseHeld": true,
+    "guardedStopGapMm": 5.339662914460035,
+    "guardedStopDistanceMm": 65.66250000000001
+  }
+}

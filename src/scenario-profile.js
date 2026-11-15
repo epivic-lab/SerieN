@@ -41,14 +41,18 @@ export async function loadScenarioProfile(search,{baseURL,fetcher=fetch,signal}=
 
 /** Full-consist admission for a new browser session. No nearest-edge mapping,
  * invisible spawn, overlap, occupied turnout, or unselected cached history. */
-export function findScenarioSpawn({network,switchTopology,trains,detached,route,train,lane=null}) {
+export function findScenarioSpawn({network,switchTopology,trains,detached,route,train,lane=null,station=false}) {
   const other=trains.filter(t=>t!==train&&t.journey).flatMap(vehiclePositions)
     .concat(detached.map(d=>({...d.point,vehicle:d.group})));
-  const lanes=lane===null?network.mainLoops.map(l=>l.lane):[lane];
+  // E2_Banchina_Pensilina spans x=414..985 mm, z=583..616 mm.
+  // P070 is the straight alongside its centre on the canonical C circuit.
+  const platformLoop=station && network.metadata.mainLoops.find(loop=>loop.circuit==='C');
+  const platformTrack=station && platformLoop.segments.find(segment=>segment.id==='V06-P070');
+  const lanes=station?[platformLoop.lane]:lane===null?network.mainLoops.map(l=>l.lane):[lane];
   const original=train.journey;
   try {
-    for(const candidateLane of lanes)for(let i=0;i<160;i++) {
-      const position=loopPosition(network,candidateLane,(i+.5)/160);
+    for(const candidateLane of lanes)for(let i=0;i<(station?1:160);i++) {
+      const position=station?{edge:platformTrack.id,sign:platformTrack.sign,s:network.edges[platformTrack.id].length/2}:loopPosition(network,candidateLane,(i+.5)/160);
       const journey=new Journey(network,position.edge,position.s);
       if(position.sign<0){journey.segments[0].sign=-1;journey.position=network.edges[position.edge].length-position.s;}
       const front=train.group.userData.couplers?.front?.x??48,tail=layoutFor(train).tail;

@@ -9,7 +9,7 @@ function vehicle(key,id=key){const asset=manifest[key],imported=key.startsWith('
 function train(keys){return {id:3,name:'Side test',modelKey:keys[0].split('-')[1],dir:1,group:vehicle(keys[0]),carObjs:keys.slice(1).map((k,i)=>vehicle(k,k+i))};}
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,`${a} != ${b}`);
 test('side images share a physical scale and preserve original asymmetrical origins',()=>{
-  assert.equal(Object.keys(manifest).length,14);
+  assert.equal(Object.keys(manifest).length,16);
   for(const [key,asset] of Object.entries(manifest)){
     near(asset.width/(asset.bounds.maxX-asset.bounds.minX),8);
     near(asset.height/(asset.bounds.maxY-asset.bounds.minY),8);

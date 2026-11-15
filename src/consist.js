@@ -10,7 +10,15 @@ function couplingDistance(a, b) {
 }
 function consistLayout(vehicles) {
   const offsets = vehicles.map(() => 0);
-  for (let i = 1; i < vehicles.length; i++) offsets[i] = offsets[i - 1] + couplingDistance(vehicles[i - 1], vehicles[i]);
+  for (let i = 1; i < vehicles.length; i++) {
+    const previous=vehicles[i-1],next=vehicles[i];
+    // The drawbar and the tender guide occupy overlapping protected extents.
+    // Their measured mounting pitch sets the ribbon origins for this pair.
+    const pitch=previous.stock?.id==='br01-engine' && next.stock?.id==='br01-tender'
+      ? previous.stock.tenderPitch : undefined;
+    if(pitch!==undefined && (!Number.isFinite(pitch)||pitch<=0))throw new RangeError("Invalid drawbar pitch");
+    offsets[i]=offsets[i-1]+(pitch??couplingDistance(previous,next));
+  }
   const last = vehicles.at(-1);
   const rear = (last?.assetDimensions || last?.stock) ? -(last.couplers?.back?.x ?? -32) : 38;
   return { offsets, tail: (offsets.at(-1) ?? 0) + rear };

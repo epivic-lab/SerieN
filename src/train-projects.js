@@ -4,14 +4,21 @@ import {STOCK} from './rolling-stock.js';
 const locomotives=new Set(['steam','diesel','shunter']);
 const importedNames={steam:'train-locomotive-a',diesel:'train-diesel-a',shunter:'train-diesel-box-a',lumber:'train-carriage-lumber',tank:'train-carriage-tank',box:'train-carriage-box'};
 // One immutable catalog identity for each of M1's fourteen existing models.
-export const PROJECT_CATALOG=Object.freeze(Object.entries(manifest).map(([id,asset])=>{
+const retiredModels=Object.freeze(Object.entries(manifest).filter(([id])=>!id.startsWith("native-br01-")).map(([id,asset])=>{
   const split=id.indexOf('-'),source=id.slice(0,split),kind=id.slice(split+1),spec=source==='native'?STOCK[kind]:null;
   return Object.freeze({id,kind,role:locomotives.has(kind)?'locomotive':'trailer',source:source==='native'?'SerieN':'Kenney CC0 · stylized',
     name:source==='native'?(spec?.name??(kind==='diesel'?'Diesel locomotive':kind)):importedNames[kind],
     length:spec?.length??asset.bounds.maxX-asset.bounds.minX,width:spec?.width,
     image:`./assets/${locomotives.has(kind)?'locomotive':'rolling-stock'}-thumbnails/${id}.png`,asset});
 }));
-const models=new Map(PROJECT_CATALOG.map(m=>[m.id,m]));
+export const PROJECT_CATALOG=Object.freeze(['engine','tender'].map(kind=>{
+  const id='native-br01-'+kind,asset=manifest[id];
+  return Object.freeze({id,kind:'br01-'+kind,role:kind==='engine'?'locomotive':'trailer',
+    source:'Tom Zimmermann · CC BY 4.0',name:kind==='engine'?'BR 01':'BR 01 · Tender',
+    length:asset.couplers.front.x-asset.couplers.back.x,width:asset.stock.width,
+    image:'./assets/br01/'+kind+'.png',asset});
+}));
+const models=new Map([...retiredModels.map(m=>({...m,retired:true})),...PROJECT_CATALOG].map(m=>[m.id,m]));
 export function projectModel(id){const m=models.get(id);if(!m)throw new RangeError('Unknown catalog model');return m;}
 export function realComposition(train,generation=0){
   if(!train)return null;
@@ -25,6 +32,7 @@ export function validateProject(project){
   const ids=new Set();
   project.vehicles.forEach((v,i)=>{
     const m=models.get(v.modelId);
+    if(m?.retired)errors.push(`Unavailable rolling stock: ${v.modelId}. Original vehicle identity retained.`);
     if(!m||m.role!==(i===0?'locomotive':'trailer'))errors.push('Keep one locomotive first, followed by up to five trailers.');
     if(typeof v.id!=='string'||!v.id||ids.has(v.id))errors.push('Every planned vehicle needs its own identity.');ids.add(v.id);
     if(![1,-1].includes(v.orientation))errors.push('Invalid planned orientation.');
@@ -74,7 +82,7 @@ export function createTrainProjects({newId=()=>crypto.randomUUID()}={}){
     open(id){if(draft)throw new Error('Finish or cancel the open draft first.');if(!confirmed.has(id))throw new RangeError('Unknown project');draft=clone(confirmed.get(id));original=clone(draft);return clone(draft);},
     link(train,generation=0){const source=realComposition(train,generation);if(!source)throw new RangeError('Comparison train unavailable.');requireDraft().source=source;},
     rename(name){if(typeof name!=='string'||name.length>80)throw new RangeError('Project name too long.');requireDraft().name=name;},
-    add(modelId){const model=projectModel(modelId);return edit(p=>{if(model.role==='locomotive'){if(p.vehicles.length)throw new RangeError('Remove the existing composition before choosing another locomotive.');}
+    add(modelId){const model=projectModel(modelId);if(model.retired)throw new RangeError("Unavailable rolling stock");return edit(p=>{if(model.role==='locomotive'){if(p.vehicles.length)throw new RangeError('Remove the existing composition before choosing another locomotive.');}
       else if(!p.vehicles.length)throw new RangeError('Choose a locomotive first.');p.vehicles.push({id:newId(),modelId,orientation:1});});},
     remove(id){return edit(p=>{const i=p.vehicles.findIndex(v=>v.id===id);if(i<0)throw new RangeError('Unknown planned vehicle');if(i===0&&p.vehicles.length>1)throw new RangeError('Remove trailers before removing the locomotive.');p.vehicles.splice(i,1);});},
     move(id,delta){return edit(p=>{const i=p.vehicles.findIndex(v=>v.id===id),target=i+delta;if(![-1,1].includes(delta)||i<1||target<1||target>=p.vehicles.length)throw new RangeError('Only trailers can move within the trailer order.');[p.vehicles[i],p.vehicles[target]]=[p.vehicles[target],p.vehicles[i]];});},

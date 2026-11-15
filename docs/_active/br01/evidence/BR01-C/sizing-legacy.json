@@ -1,0 +1,48 @@
+{
+  "distinctPathPoses": 20768,
+  "triangleContactAtMm": 1.72265625,
+  "firstClearMm": 1.7265625,
+  "witness": {
+    "edge": "T16",
+    "fraction": 0,
+    "heading": 1,
+    "mask": 0,
+    "hit": {
+      "a": "engine_haus",
+      "b": "tender_kohletender",
+      "faces": [
+        331,
+        3490
+      ]
+    }
+  },
+  "minimumGearExtraMm": [
+    1.7265625,
+    1.726701259613037
+  ],
+  "extra": 2.2,
+  "pins": {
+    "min": 5.349831852683317,
+    "max": 7.527239228939448,
+    "capacity": 1.6824244764271845
+  },
+  "minOverlap": 2.0527607710605436,
+  "maxOverlap": 4.230168147316614,
+  "maxEyeError": 0,
+  "maxAxisError": 2.362554596402333e-13,
+  "maxZ": [
+    10.871728069471846,
+    9.819768064794937
+  ],
+  "weakest": {
+    "edge": "T18",
+    "f": 0.7653061224489796,
+    "heading": -1,
+    "mask": 64
+  },
+  "hits": {},
+  "straightCabTenderMm": {
+    "before": 0.5271666136111853,
+    "after": 1.9430380630873934
+  }
+}

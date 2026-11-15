@@ -22,7 +22,7 @@ export function createDepotInventory({getProjects=()=>[],newId=()=>`depot:${cryp
   return {
     get size(){return items.size;},
     get items(){return [...items.values()].map(v=>({...copy(v),category:'off-scene-virtual',state:v.assignment?'reserved':'available'}));},
-    add(modelId){active();projectModel(modelId);const id=newId();if(typeof id!=='string'||!id.startsWith('depot:')||id.length<=6||items.has(id))throw new RangeError('Invalid or duplicate depot identity.');
+    add(modelId){active();if(projectModel(modelId).retired)throw new RangeError("Unavailable rolling stock");const id=newId();if(typeof id!=='string'||!id.startsWith('depot:')||id.length<=6||items.has(id))throw new RangeError('Invalid or duplicate depot identity.');
       const value={id,code:`D${String(++serial).padStart(3,'0')}`,modelId,assignment:null,notice:null};items.set(id,value);return copy(value);},
     assign(id,projectId,vehicleId){const value=item(id);if(value.assignment)throw new RangeError('Release the existing virtual reservation first.');
       const target=slot(getProjects(),projectId,vehicleId);if(!target)throw new RangeError('Choose a vehicle in a confirmed M2 project.');

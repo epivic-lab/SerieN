@@ -28,7 +28,7 @@ export function projectSideLayout(project,manifest){
     const asset=manifest[v.modelId];if(!asset)throw new RangeError('Unknown project side model');
     if(![1,-1].includes(v.orientation))throw new RangeError('Invalid planned orientation');
     const couplers=v.orientation===1?asset.couplers:{front:{x:-asset.couplers.back.x},back:{x:-asset.couplers.front.x}};
-    return {id:v.id,key:v.modelId,orientation:v.orientation,data:{stock:{},couplers}};
+    return {id:v.id,key:v.modelId,orientation:v.orientation,data:{stock:v.orientation===1?(asset.stock??{}):{},couplers}};
   });
   return sideLayout(project.id,project.name,items,manifest,true);
 }

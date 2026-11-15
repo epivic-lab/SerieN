@@ -1,3 +1,47 @@
+# BR01-D — Chiusura funzionale per il Quality Gate Regia
+
+Train Management crea, seleziona e rimuove composizioni fisiche BR 01 + tender. La rimozione richiede convoglio fermo e conferma. Verificati in Chrome su V06 e Legacy la guida, la flotta vuota e il ripristino esatto delle occupazioni superstiti. In Legacy verificati anche arresto anticollisione e blocco della commutazione su WX-A occupato. Catalogo, viste e compatibilità dei progetti verificati in sessione. 573/573 Node, 9/9 JMRI e build PASS. [Rapporto BR01-D con video e risultati](docs/_active/br01/STATUS.md).
+
+Prossima azione: Quality Gate Regia sul checkpoint di `codex/br01-animated`.
+
+---
+
+# BR01-C — PASS tecnico, STOP per Quality Gate Regia
+
+BR 01 + tender con gancio telescopico a perni fissi e passo allungato di 2,200 mm. Lunghezza finale sul plastico 151,825 mm. Chrome: 522/522 pose BR01-B ripetute su 1.376 pose valide complessive; zero intersezioni rilevate e zero vertici oltre 0,05 mm. Verificati marcia, STOP, retromarcia e arresto anticollisione con 5,340 mm di margine. 573/573 Node, 9/9 JMRI e build PASS. [Rapporto, quote, JSON, video e screenshot](docs/_active/br01/STATUS.md).
+
+Prossima azione: Quality Gate indipendente della Regia sul checkpoint BR01-C.
+
+---
+
+# BR01-B — BLOCKED, STOP per Quality Gate Regia
+
+Il controllo per veicolo misura 4,625 mm di deficit longitudinale complessivo tra corpi rigidi e inviluppi. Riconfermati 1,678 mm oltre l’unione su V06-P006 a +89,25 mm e rilevati 3,604 mm su R216. Intersezioni cabina–tender verificate sui triangoli. 522 pose diagnostiche e registrazione reale di marcia, STOP e inversione. Nessuna modifica a modello, quote o protezioni. [Misure, prove e proposta](docs/_active/br01/STATUS.md).
+
+Prossima azione: decisione della Regia sul rilievo quotato del giunto e sullo studio separato di articolazione e sagome.
+
+---
+
+# BR01-A — BLOCKED, STOP per la Regia
+
+Il candidato BR 01 + tender circola nel browser e segue la distanza accettata. In curva la cabina sporge di 1,678 mm oltre entrambi gli inviluppi ferroviari; riprodotto dopo 89,25 mm di avanzamento. Motore e margini di protezione invariati. Gate di sagoma FAIL. Suite 570/570, JMRI 9/9, build PASS. [Stato, video reale, screenshot e misure](docs/_active/br01/STATUS.md).
+
+Prossima azione: revisione della Regia sul difetto del giunto cabina–tender. Il checkpoint resta sul branch dedicato, senza merge o deploy.
+
+---
+
+# BR 01 — baseline risolta (15 novembre 2026)
+
+Il GLB originale è disponibile nel checkout SerieN-persistence. Il controllo
+del grafo storico passa sul Mac con il digest originale. Suite Node 569/569,
+audit JMRI 9/9 e build PASS. [Diagnosi e limiti](docs/_active/br01/STATUS.md).
+Prossima azione: dimostrare ruote, bielle e pistoni della BR 01 sincronizzati
+con la distanza percorsa, prima dell’integrazione nel simulatore.
+
+---
+
+## Stato precedente (conservato)
+
 # V06 DEFAULT / TRACK — 15 novembre 2026
 
 Implementata la richiesta utente di V06 predefinito e finitura ferroviaria più
@@ -917,3 +961,7 @@ PR; [rapporto](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md),
 [galleria](docs/_active/scenario-v06/evidence/V06_FINALIZE/README.md),
 [piano](docs/_active/scenario-v06/evidence/V06_FINALIZE/RELEASE_PLAN.md).
 **Unico prossimo passo: Quality Gate conclusivo Regia. STOP.**
+
+## BR01 RELEASE — configurazione di avvio
+
+Una BR 01 con tender selezionata e ferma davanti alla banchina E2 sul circuito C in V06. Legacy parte con una composizione. Rimosso l’obiettivo merci e aggiornato il testo dello smistamento. Rimozione e reinserimento verificati in Chrome su entrambe le scene. [Rapporto e screenshot](docs/_active/br01/STATUS.md). Unica azione prevista dopo i gate locali: integrazione autorizzata tramite PR, Pages e verifica pubblica.

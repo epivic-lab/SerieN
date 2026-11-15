@@ -55,7 +55,10 @@ export function deriveSwitchAssistance(context) {
     const safety=siteSafety(site,occupied,moving);
     for (const id of site.controls)safetyByControl.set(id,safety);
   }
-  const preview=moving[selected].preview,train=trains[selected];
+  const index=trains.findIndex(t=>t.id===selected),train=trains[index];
+  if(!train)return {preview:{next:null,ranges:[],stop:'no-train',distance:0,uncertain:false},safety:null,
+    safetyByControl,trainName:'No train on the layout',controls:switchSpecs,inverting:false};
+  const preview=moving[index].preview;
   return {preview,safety:preview.next?safetyByControl.get(preview.next.site.controls[0]):null,
     safetyByControl,trainName:train.name,controls:switchSpecs,
     inverting:Math.abs(train.velocity)>.1&&Math.sign(train.velocity)!==train.dir};

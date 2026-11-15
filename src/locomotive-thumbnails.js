@@ -6,7 +6,7 @@ function thumbnailKey(train) {
   const kind=train.modelKey??modelKinds[train.id]??"shunter";
   return `${train.group.userData.assetDimensions?"kenney":"native"}-${kind}`;
 }
-function thumbnailURL(train) { return `./assets/locomotive-thumbnails/${thumbnailKey(train)}.png`; }
+function thumbnailURL(train) { if(train.modelKey==="br01-engine")return "./assets/br01/engine.png";return `./assets/locomotive-thumbnails/${thumbnailKey(train)}.png`; }
 const THUMBNAIL_FALLBACK="./assets/locomotive-thumbnails/unavailable.svg";
 
 // Build-time/diagnostic capture only. Reuse the main WebGL context and one

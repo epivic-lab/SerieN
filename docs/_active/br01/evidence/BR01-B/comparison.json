@@ -1,0 +1,207 @@
+{
+  "status": "BLOCKED",
+  "geometryGate": "FAIL",
+  "toleranceMm": 0.05,
+  "runtimeChanged": false,
+  "dimensionUnits": "mm unless labelled source",
+  "sourceToMm": 3.7592923299582575,
+  "beforeDimensions": {
+    "engine": {
+      "originSourceX": 7.258067499999999,
+      "lengthMm": 96.29853982867527,
+      "widthMm": 21.74374683647856,
+      "couplerXmm": [
+        -48.14926991433764,
+        48.14926991433764
+      ],
+      "couplerYmm": 8,
+      "rigidExtentXmm": [
+        -51.753052112562976,
+        48.14927144246794
+      ],
+      "rigidSpanMm": 99.90232355503092,
+      "extentWitnessMeshes": [
+        "engine_haus",
+        "engine_rader"
+      ]
+    },
+    "tender": {
+      "originSourceX": -12.6426195,
+      "lengthMm": 53.32646017132474,
+      "widthMm": 19.66109888568169,
+      "couplerXmm": [
+        -26.66323008566237,
+        26.66323008566237
+      ],
+      "couplerYmm": 8,
+      "rigidExtentXmm": [
+        -26.663230194421192,
+        27.684361646067533
+      ],
+      "rigidSpanMm": 54.347591840488725,
+      "extentWitnessMeshes": [
+        "tender_rader",
+        "tender_kohletender"
+      ]
+    }
+  },
+  "afterDimensions": {
+    "engine": {
+      "originSourceX": 7.258067499999999,
+      "lengthMm": 96.29853982867527,
+      "widthMm": 21.74374683647856,
+      "couplerXmm": [
+        -48.14926991433764,
+        48.14926991433764
+      ],
+      "couplerYmm": 8,
+      "rigidExtentXmm": [
+        -51.753052112562976,
+        48.14927144246794
+      ],
+      "rigidSpanMm": 99.90232355503092,
+      "extentWitnessMeshes": [
+        "engine_haus",
+        "engine_rader"
+      ]
+    },
+    "tender": {
+      "originSourceX": -12.6426195,
+      "lengthMm": 53.32646017132474,
+      "widthMm": 19.66109888568169,
+      "couplerXmm": [
+        -26.66323008566237,
+        26.66323008566237
+      ],
+      "couplerYmm": 8,
+      "rigidExtentXmm": [
+        -26.663230194421192,
+        27.684361646067533
+      ],
+      "rigidSpanMm": 54.347591840488725,
+      "extentWitnessMeshes": [
+        "tender_rader",
+        "tender_kohletender"
+      ]
+    }
+  },
+  "sumRigidSpansMm": 154.24991539551965,
+  "BR01_A_at89_25": {
+    "measurement": "Maximum horizontal excess outside the union of actual vehicle rectangles (mm)",
+    "edge": "V06-P006",
+    "odometer": 89.25,
+    "count": 442,
+    "maximum": 1.677700870061944,
+    "example": {
+      "mesh": "engine_haus",
+      "point": [
+        155.8244860728539,
+        32.11761712026599,
+        84.43941433660481
+      ]
+    },
+    "byPart": {
+      "engine_rader": 0.41429652245490445,
+      "engine_haus": 1.677700870061944,
+      "tender_kohletender": 0.8876836665454206,
+      "tender_rader": 0.09444123464452048
+    }
+  },
+  "BR01_B_at89_25": {
+    "distance": 89.25,
+    "pose": {
+      "x": 205.6196511654112,
+      "z": 68.96756391258032,
+      "angle": 0.467522437794991,
+      "edge": "V06-P006",
+      "s": 100.08801286358269
+    },
+    "bodies": [
+      {
+        "max": 3.6037821982253178,
+        "count": 566,
+        "vertices": 70851,
+        "part": "engine_haus"
+      },
+      {
+        "max": 1.0211315604051627,
+        "count": 438,
+        "vertices": 27994,
+        "part": "tender_kohletender"
+      }
+    ],
+    "union": {
+      "max": 1.6777008700619724,
+      "count": 442
+    },
+    "relativeYawDegrees": -13.925939251607256,
+    "nominalPinSeparation": 2.433190272599678,
+    "triangleIntersection": {
+      "engine": [
+        "engine_haus",
+        28
+      ],
+      "tender": [
+        "tender_kohletender",
+        2625
+      ],
+      "world": [
+        165.70009389759207,
+        26.537623713565416,
+        99.01096688560419
+      ]
+    }
+  },
+  "worstSample": {
+    "edge": "V06-P029",
+    "type": "R216-45",
+    "fraction": 0.375,
+    "sign": 1,
+    "d": 63.628963134271494,
+    "bodies": [
+      {
+        "max": 3.6037821982254314,
+        "count": 566,
+        "vertices": 70851,
+        "part": "engine_haus"
+      },
+      {
+        "max": 1.0211315604050633,
+        "count": 438,
+        "vertices": 27994,
+        "part": "tender_kohletender"
+      }
+    ],
+    "union": {
+      "max": 3.6037821982254314,
+      "count": 643
+    },
+    "relativeYawDegrees": -16.821128577455486,
+    "nominalPinSeparation": 4.739360359464332,
+    "triangleIntersection": {
+      "engine": [
+        "engine_haus",
+        324
+      ],
+      "tender": [
+        "tender_kohletender",
+        3489
+      ],
+      "world": [
+        1107.0587216534204,
+        18.74179744660762,
+        105.89896482677788
+      ]
+    }
+  },
+  "sampleCount": 522,
+  "unavailable": [],
+  "allVerticesInsideOwnEnvelope": false,
+  "liveKinematicError": {
+    "wheelRadians": 0,
+    "crankPinMm": 0,
+    "rodCenterMm": 0,
+    "pistonCenterMm": 0
+  },
+  "stopAndReversalHeld": true
+}
