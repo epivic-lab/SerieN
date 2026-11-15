@@ -1,0 +1,40 @@
+{
+  "baseline": "b49320c6be4d9f149bb2c5473858c616925a5f6c",
+  "protectedIdentical": 4186,
+  "identicalTotal": 4186,
+  "allowedChanged": [
+    "PROGRESS.md",
+    "docs/_active/scenario-v06/STATUS.md"
+  ],
+  "unexpectedChanged": [],
+  "newFiles": [
+    "docs/_active/scenario-v06/R2A_DYNAMIC_LOOP_REPORT.md",
+    "docs/_active/scenario-v06/evidence/R2A/README.md",
+    "docs/_active/scenario-v06/evidence/R2A/REGIA_R1C_GATE.md",
+    "docs/_active/scenario-v06/evidence/R2A/adjacent-stop-diagnostic.json",
+    "docs/_active/scenario-v06/evidence/R2A/audit.json",
+    "docs/_active/scenario-v06/evidence/R2A/baseline-build.txt",
+    "docs/_active/scenario-v06/evidence/R2A/baseline-jmri.txt",
+    "docs/_active/scenario-v06/evidence/R2A/baseline-node.txt",
+    "docs/_active/scenario-v06/evidence/R2A/canonical.txt",
+    "docs/_active/scenario-v06/evidence/R2A/final-build.txt",
+    "docs/_active/scenario-v06/evidence/R2A/final-jmri.txt",
+    "docs/_active/scenario-v06/evidence/R2A/final-node.txt",
+    "docs/_active/scenario-v06/evidence/R2A/first-regression-dependency-path.txt",
+    "docs/_active/scenario-v06/evidence/R2A/initial-fixture-failures.txt",
+    "docs/_active/scenario-v06/evidence/R2A/preservation.json",
+    "docs/_active/scenario-v06/evidence/R2A/r2a-tests.txt",
+    "docs/_active/scenario-v06/evidence/R2A/summary.json",
+    "docs/_active/scenario-v06/evidence/R2A/trajectories.json",
+    "docs/_active/scenario-v06/evidence/R2A/verification.txt",
+    "tests/v06-r2a.test.js",
+    "tools/scenario-v06/audit-r2a.js",
+    "tools/scenario-v06/check-r2a-scope.py",
+    "tools/scenario-v06/dynamic-lab.js",
+    "tools/scenario-v06/dynamic-oracle.js",
+    "tools/scenario-v06/dynamic-validation.js",
+    "tools/scenario-v06/run-r2a.js"
+  ],
+  "unexpectedNew": [],
+  "status": "PASS"
+}

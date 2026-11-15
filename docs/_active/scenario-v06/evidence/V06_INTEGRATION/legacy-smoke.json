@@ -1,0 +1,36 @@
+{
+  "profile": "legacy",
+  "checks": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "trains": 3,
+      "controllers": 8,
+      "render": {
+        "calls": 353,
+        "triangles": 467856,
+        "geometries": 348,
+        "textures": 44
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "trains": 3,
+      "controllers": 8,
+      "render": {
+        "calls": 353,
+        "triangles": 467856,
+        "geometries": 348,
+        "textures": 44
+      }
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "status": "PASS_LEGACY_ONLY"
+}

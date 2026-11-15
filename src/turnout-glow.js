@@ -98,12 +98,13 @@ function material() {
       }`});
 }
 
-export function createTurnoutGlow(scene,model,{variant='A',reducedMotion=false,now=()=>performance.now()}={}) {
+export function createTurnoutGlow(scene,model,{variant='A',reducedMotion=false,now=()=>performance.now(),heightOffset=0}={}) {
   if(typeof variant!=='string'||!Object.hasOwn(GLOW_STYLES,variant))throw new RangeError('Unknown glow variant');
   if(typeof reducedMotion!=='boolean'||typeof now!=='function')throw new TypeError('Invalid glow preferences');
   const root=new THREE.Group(),shared=material(),meshes=new Map();let disposed=false,active=null,shown=null,changed=0,pulseStarted=0,opacity=0,fadeFrom=0,style;
+  root.position.y=heightOffset;
   root.name='Turnout identity overlay';root.userData.dynamic=true;root.userData.pickThrough=true;root.visible=false;scene.add(root);
-  for(const id of TURNOUT_IDS) {
+  for(const id of model.registry?.ids??TURNOUT_IDS) {
     const mesh=new THREE.Mesh(turnoutGlowGeometry(model.read(id,false).paths),shared);
     mesh.name=id;mesh.visible=false;mesh.renderOrder=2;mesh.raycast=ignoreRaycast;root.add(mesh);meshes.set(id,mesh);
   }
@@ -116,7 +117,7 @@ export function createTurnoutGlow(scene,model,{variant='A',reducedMotion=false,n
   setVariant(variant);
   function identify(id,at=now()) {
     if(disposed)return;
-    time(at);if(id!==null&&!isTurnoutId(id))throw new RangeError('Unknown glow control');
+    time(at);if(id!==null&&!isTurnoutId(id,model.registry??null))throw new RangeError('Unknown glow control');
     if(id===active)return;
     // Never cross-fade different devices: one identity may be illuminated.
     if(id!==null&&id!==shown){if(shown!==null)meshes.get(shown).visible=false;shown=id;meshes.get(id).visible=true;opacity=0;pulseStarted=at;}

@@ -3,11 +3,11 @@ import {TURNOUT_IDS,isTurnoutId} from './turnout-routes.js';
 /** Presentation only. Selected paths are owned by S1; direction is a separate
  * observation, never a clearance or a restriction on reverse travel. */
 export function turnoutArrowView(model,id,on,approaches=[],choose=null) {
-  if(!isTurnoutId(id))throw new RangeError('Unknown arrow control');
+  if(!isTurnoutId(id,model.registry??null))throw new RangeError('Unknown arrow control');
   if(!Array.isArray(approaches))throw new TypeError('Invalid approaches');
   const local=model.read(id,on),directions=new Map();let uncertain=local.unknown;
   for(const a of approaches) {
-    if(!isTurnoutId(a.controlId)||!Number.isFinite(a.distance)||a.distance<0)throw new RangeError('Invalid arrow approach');
+    if(!isTurnoutId(a.controlId,model.registry??null)||!Number.isFinite(a.distance)||a.distance<0)throw new RangeError('Invalid arrow approach');
     if(a.controlId!==id)continue;
     const entry=model.read(id,on,{incomingEdge:a.incomingEdge,incomingEnd:a.incomingEnd,choose});
     if(entry.unknown){uncertain=true;continue;}

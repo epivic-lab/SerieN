@@ -1,0 +1,97 @@
+✔ R2A A direction 1: full dynamic lap and controlled stop (263.650574ms)
+✔ R2A A direction -1: full dynamic lap and controlled stop (150.784566ms)
+✔ R2A B direction 1: full dynamic lap and controlled stop (163.124263ms)
+✔ R2A B direction -1: full dynamic lap and controlled stop (98.089548ms)
+✔ R2A C direction 1: full dynamic lap and controlled stop (120.902359ms)
+✔ R2A C direction -1: full dynamic lap and controlled stop (108.134649ms)
+✖ R2A short locomotive + two cars direction 1: complete C lap, joints, couplers, envelope (180.315943ms)
+✖ R2A short locomotive + two cars direction -1: complete C lap, joints, couplers, envelope (227.29566ms)
+✔ R2A acceleration, cruise, deceleration, immediate STOP, reverse and restart with a short car (23.600848ms)
+✖ R2A protected misalignment braking direction 1, no boundary crossing, protected correction (51.387763ms)
+✔ R2A protected misalignment braking direction -1, no boundary crossing, protected correction (36.560433ms)
+✔ R2A fresh operation safety rejects panel/device during actual approach and occupation on all five loop devices (968.697515ms)
+✔ R2A UNKNOWN forbids any movement tick, clock accumulation and spawn (14.669636ms)
+✔ R2A incomplete/nonboolean configuration is rejected atomically before ticks (14.157137ms)
+✔ R2A explicit profile, foreign IDs and foreign Journey fail without movement (35.277634ms)
+✔ R2A speed limits use real clamping; invalid motion never enters stepRailway (19.510763ms)
+✔ R2A unavailable endpoint/triangle/yard and overlong consists cannot acquire a movement tick (13.173742ms)
+✔ R2A reset and reverse refuse movement or pending throttle; full stop permits a fresh legacy session (36.153931ms)
+✔ R2A cached future history is reconciled by protected command, observations remain read-only (259.850714ms)
+✔ R2A frozen witnesses are sensitive to wrong direction, distance and loop identity (10.530309ms)
+✔ R2A UNKNOWN guard decision itself remains zero-displacement fail-closed (0.192815ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 18
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2979.17706
+
+✖ failing tests:
+
+test at tests/v06-r2a.test.js:13:31
+✖ R2A short locomotive + two cars direction 1: complete C lap, joints, couplers, envelope (180.315943ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  90 !== 95
+
+      at TestContext.<anonymous> (file:///workspace/work/SerieN-r2a/tests/v06-r2a.test.js:15:36)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 90,
+    expected: 95,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/v06-r2a.test.js:13:31
+✖ R2A short locomotive + two cars direction -1: complete C lap, joints, couplers, envelope (227.29566ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  90 !== 95
+
+      at TestContext.<anonymous> (file:///workspace/work/SerieN-r2a/tests/v06-r2a.test.js:15:36)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 90,
+    expected: 95,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/v06-r2a.test.js:18:31
+✖ R2A protected misalignment braking direction 1, no boundary crossing, protected correction (51.387763ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'occupied'
+  - 'unlocked'
+
+      at runProtectedStop (file:///workspace/work/SerieN-r2a/tools/scenario-v06/dynamic-validation.js:139:10)
+      at TestContext.<anonymous> (file:///workspace/work/SerieN-r2a/tests/v06-r2a.test.js:18:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'occupied',
+    expected: 'unlocked',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

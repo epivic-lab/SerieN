@@ -1,0 +1,115 @@
+✔ R1B legacy: registry identity, source order, ports, boolean states and immutable unit paths (4.110585ms)
+✔ R1B legacy: real network entrances for every global configuration and both directions (21.387511ms)
+✔ R1B legacy/Y-IN: command parity, both states and surfaces, reconciliation after permission only (14.332418ms)
+✔ R1B legacy/Y-R1: command parity, both states and surfaces, reconciliation after permission only (20.837927ms)
+✔ R1B legacy/Y-R2: command parity, both states and surfaces, reconciliation after permission only (21.263237ms)
+✔ R1B legacy/Y-3: command parity, both states and surfaces, reconciliation after permission only (4.101662ms)
+✔ R1B legacy/Y-4: command parity, both states and surfaces, reconciliation after permission only (21.598353ms)
+✔ R1B legacy/Y-2: command parity, both states and surfaces, reconciliation after permission only (24.733475ms)
+✔ R1B legacy/WX-A: command parity, both states and surfaces, reconciliation after permission only (20.351187ms)
+✔ R1B legacy/WX-B: command parity, both states and surfaces, reconciliation after permission only (3.927003ms)
+✔ R1B legacy: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation (8.654542ms)
+✔ R1B legacy: every internal arc, including inactive WX diagonals, locks the entire unit (86.117765ms)
+✖ R1B legacy: every port and actual neighbour blocks approach on both surfaces using the existing guard (3.977698ms)
+✔ R1B legacy: consecutive cross-surface commands read fresh engine occupancy and approach (18.677489ms)
+✔ R1B legacy: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN (26.401043ms)
+✔ R1B V06-R1A: registry identity, source order, ports, boolean states and immutable unit paths (1.318081ms)
+✖ R1B V06-R1A: real network entrances for every global configuration and both directions (12.209856ms)
+✔ R1B V06-R1A/V06-C07: command parity, both states and surfaces, reconciliation after permission only (4.3972ms)
+✔ R1B V06-R1A/V06-C12: command parity, both states and surfaces, reconciliation after permission only (27.501793ms)
+✔ R1B V06-R1A/V06-C13: command parity, both states and surfaces, reconciliation after permission only (4.918592ms)
+✔ R1B V06-R1A/V06-N07: command parity, both states and surfaces, reconciliation after permission only (5.160309ms)
+✔ R1B V06-R1A/V06-N14: command parity, both states and surfaces, reconciliation after permission only (4.922878ms)
+✔ R1B V06-R1A/WX-A: command parity, both states and surfaces, reconciliation after permission only (12.357424ms)
+✔ R1B V06-R1A/WX-B: command parity, both states and surfaces, reconciliation after permission only (22.420511ms)
+✔ R1B V06-R1A: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation (8.176505ms)
+✔ R1B V06-R1A: every internal arc, including inactive WX diagonals, locks the entire unit (82.493781ms)
+✖ R1B V06-R1A: every port and actual neighbour blocks approach on both surfaces using the existing guard (7.408678ms)
+✖ R1B V06-R1A: consecutive cross-surface commands read fresh engine occupancy and approach (7.798434ms)
+✔ R1B V06-R1A: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN (7.091408ms)
+✔ R1B V06 model versus independent frozen WX 64 truth table (6.89653ms)
+✔ R1B V06 model versus independent frozen simple 90 truth table (5.392202ms)
+✔ R1B C12/C13 adjacent ports: both incoming alternatives, closed neighbour and unknown neighbour remain distinct (4.634921ms)
+✔ R1B registries reject incomplete, duplicate, mixed, nonboolean and broken-unit configuration (106.644262ms)
+✔ R1B commands reject profile/instance mixing even for shared WX IDs, and revalidate mutable specs on each request (13.295162ms)
+✔ R1B reset/profile isolation: independent caches, callbacks, state and geometry across alternating new instances (3.105237ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 31
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 804.632779
+
+✖ failing tests:
+
+test at tests/v06-r1b.test.js:134:3
+✖ R1B legacy: every port and actual neighbour blocks approach on both surfaces using the existing guard (3.977698ms)
+  RangeError: Invalid initial railway position
+      at new Journey (file:///workspace/SerieN/src/simulation.js:4:91)
+      at Object.train (file:///workspace/SerieN/tests/v06-r1b.test.js:23:91)
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/v06-r1b.test.js:142:32)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/v06-r1b.test.js:57:3
+✖ R1B V06-R1A: real network entrances for every global configuration and both directions (12.209856ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  3200 !== 3072
+
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/v06-r1b.test.js:73:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3200,
+    expected: 3072,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/v06-r1b.test.js:134:3
+✖ R1B V06-R1A: every port and actual neighbour blocks approach on both surfaces using the existing guard (7.408678ms)
+  AssertionError [ERR_ASSERTION]: V06-C12/V06-P041
+  + actual - expected
+
+  + 'unlocked'
+  - 'approaching'
+
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/v06-r1b.test.js:145:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'unlocked',
+    expected: 'approaching',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/v06-r1b.test.js:152:3
+✖ R1B V06-R1A: consecutive cross-surface commands read fresh engine occupancy and approach (7.798434ms)
+  RangeError: Invalid initial railway position
+      at new Journey (file:///workspace/SerieN/src/simulation.js:4:91)
+      at Object.train (file:///workspace/SerieN/tests/v06-r1b.test.js:23:91)
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/v06-r1b.test.js:163:19)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

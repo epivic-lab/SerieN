@@ -41,6 +41,7 @@ export function mountSidebar({host, network, controlOrder, getSwitches, getTrain
     button.dataset.ctrl = 'CTRL-012';
     const position = create('span', 'u4-switch-position');
     const straight=create('span','u4-route-straight','Straight'),diverging=create('span','u4-route-diverging','Diverging'),positionText=create('span','sr-only');
+    if(network.metadata.layoutId==='V06-R1A'){const c=network.controllers.find(c=>c.id===id);straight.textContent=c.kind==='cross'?'Normal':'S0';diverging.textContent=c.kind==='cross'?'Crossover':'S1';}
     straight.setAttribute('aria-hidden','true');diverging.setAttribute('aria-hidden','true');position.append(straight,diverging,positionText);
     const lamp = create('i', 'lp');lamp.setAttribute('aria-hidden','true');button.prepend(lamp);
     button.append(position);
@@ -133,7 +134,7 @@ export function mountSidebar({host, network, controlOrder, getSwitches, getTrain
     const states = getSwitches();
     for (const tile of tiles) {
       const state = states.find(s => s.id === tile.id)?.on;
-      setText(tile.positionText, state === true ? 'Diverging' : state === false ? 'Straight' : 'Unknown');
+      setText(tile.positionText, state === true ? tile.diverging.textContent : state === false ? tile.straight.textContent : 'Unknown');
       tile.straight.classList.toggle('on',state===false);tile.diverging.classList.toggle('on',state===true);
       setAttribute(tile.button,'aria-pressed',state===true);
       // The original HUD binding owns disabled/title; this is its visible, exact reason.

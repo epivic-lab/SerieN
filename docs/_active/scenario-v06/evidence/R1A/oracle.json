@@ -1,0 +1,2829 @@
+{
+  "origin": "Frozen pre-R1A R0/R02 evidence, independent of build-r1a.py",
+  "baseline": "7118c99a9367da61f0042dfe40240fe78dc0d7c6",
+  "candidateSha256": "99a5019f6ea4b8a99d18dcf6aff4a9b841ea2c49c5bb4eff9edd36825eead460",
+  "routes": {
+    "A": {
+      "piece_walk": [
+        [
+          56,
+          1
+        ],
+        [
+          63,
+          1
+        ],
+        [
+          58,
+          1
+        ],
+        [
+          11,
+          -1
+        ],
+        [
+          10,
+          -1
+        ],
+        [
+          23,
+          -1
+        ],
+        [
+          22,
+          -1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          76,
+          1
+        ],
+        [
+          75,
+          1
+        ],
+        [
+          57,
+          1
+        ],
+        [
+          55,
+          1
+        ],
+        [
+          6,
+          -1
+        ],
+        [
+          7,
+          -1
+        ],
+        [
+          8,
+          -1
+        ],
+        [
+          9,
+          -1
+        ]
+      ],
+      "sum_of_exported_lengths_mm": 3468.162,
+      "closed_walk_required": true,
+      "noncoincident_joins": [],
+      "metric_continuity_of_published_vertices": true,
+      "status": "ANALYTICAL_PROPOSAL_NOT_OPERATIONAL_CERTIFICATION"
+    },
+    "B": {
+      "piece_walk": [
+        [
+          65,
+          1
+        ],
+        [
+          66,
+          -1
+        ],
+        [
+          67,
+          -1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          19,
+          -1
+        ],
+        [
+          18,
+          -1
+        ],
+        [
+          62,
+          1
+        ],
+        [
+          74,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          77,
+          1
+        ],
+        [
+          5,
+          -1
+        ],
+        [
+          4,
+          -1
+        ],
+        [
+          3,
+          -1
+        ],
+        [
+          2,
+          -1
+        ]
+      ],
+      "sum_of_exported_lengths_mm": 3260.781,
+      "closed_walk_required": true,
+      "noncoincident_joins": [],
+      "metric_continuity_of_published_vertices": true,
+      "status": "ANALYTICAL_PROPOSAL_NOT_OPERATIONAL_CERTIFICATION"
+    },
+    "C": {
+      "piece_walk": [
+        [
+          64,
+          1
+        ],
+        [
+          70,
+          -1
+        ],
+        [
+          71,
+          -1
+        ],
+        [
+          73,
+          -1
+        ],
+        [
+          72,
+          -1
+        ],
+        [
+          36,
+          -1
+        ],
+        [
+          35,
+          1
+        ],
+        [
+          37,
+          -1
+        ],
+        [
+          26,
+          -1
+        ],
+        [
+          28,
+          -1
+        ],
+        [
+          29,
+          -1
+        ],
+        [
+          68,
+          1
+        ],
+        [
+          69,
+          1
+        ],
+        [
+          60,
+          1
+        ],
+        [
+          78,
+          1
+        ],
+        [
+          14,
+          -1
+        ],
+        [
+          15,
+          -1
+        ],
+        [
+          24,
+          -1
+        ],
+        [
+          25,
+          -1
+        ]
+      ],
+      "sum_of_exported_lengths_mm": 2931.69,
+      "closed_walk_required": true,
+      "noncoincident_joins": [
+        {
+          "a_piece": 70,
+          "a_end": "S",
+          "b_piece": 71,
+          "b_end": "E",
+          "gap_mm": 2.1419920634772986
+        }
+      ],
+      "metric_continuity_of_published_vertices": false,
+      "status": "ANALYTICAL_PROPOSAL_NOT_OPERATIONAL_CERTIFICATION"
+    },
+    "S1_FROM_N07_COMMON": {
+      "piece_walk": [
+        [
+          53,
+          -1
+        ],
+        [
+          44,
+          1
+        ],
+        [
+          43,
+          -1
+        ]
+      ],
+      "sum_of_exported_lengths_mm": 250.101,
+      "closed_walk_required": false,
+      "noncoincident_joins": [],
+      "metric_continuity_of_published_vertices": true,
+      "status": "ANALYTICAL_PROPOSAL_NOT_OPERATIONAL_CERTIFICATION"
+    },
+    "S2_FROM_C13_COMMON": {
+      "piece_walk": [
+        [
+          33,
+          -1
+        ],
+        [
+          45,
+          -1
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          54,
+          1
+        ],
+        [
+          20,
+          -1
+        ]
+      ],
+      "sum_of_exported_lengths_mm": 746.2669999999999,
+      "closed_walk_required": false,
+      "noncoincident_joins": [],
+      "metric_continuity_of_published_vertices": true,
+      "status": "ANALYTICAL_PROPOSAL_NOT_OPERATIONAL_CERTIFICATION"
+    },
+    "TSEG_FROM_N14_COMMON": {
+      "piece_walk": [
+        [
+          42,
+          1
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          51,
+          -1
+        ]
+      ],
+      "sum_of_exported_lengths_mm": 569.7149999999999,
+      "closed_walk_required": false,
+      "noncoincident_joins": [],
+      "metric_continuity_of_published_vertices": true,
+      "status": "ANALYTICAL_PROPOSAL_NOT_OPERATIONAL_CERTIFICATION"
+    },
+    "TRIANGLE_GEOMETRIC_CYCLE": {
+      "piece_walk": [
+        [
+          34,
+          1
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          48,
+          1
+        ],
+        [
+          46,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          52,
+          -1
+        ],
+        [
+          50,
+          -1
+        ],
+        [
+          32,
+          -1
+        ],
+        [
+          31,
+          -1
+        ],
+        [
+          39,
+          -1
+        ],
+        [
+          40,
+          -1
+        ],
+        [
+          38,
+          1
+        ],
+        [
+          41,
+          -1
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          37,
+          1
+        ]
+      ],
+      "sum_of_exported_lengths_mm": 2177.389,
+      "closed_walk_required": true,
+      "noncoincident_joins": [
+        {
+          "a_piece": 27,
+          "a_end": "E",
+          "b_piece": 48,
+          "b_end": "S",
+          "gap_mm": 0.7491548571557061
+        },
+        {
+          "a_piece": 40,
+          "a_end": "S",
+          "b_piece": 38,
+          "b_end": "S",
+          "gap_mm": 0.8552502557731805
+        }
+      ],
+      "metric_continuity_of_published_vertices": false,
+      "status": "ANALYTICAL_PROPOSAL_NOT_OPERATIONAL_CERTIFICATION",
+      "routing_obstacle": "32 -> 31 is C-to-B inside V06-N07; forbidden as a direct transit. Requires clearance in common lead S1, stop, throw and reversal."
+    }
+  },
+  "wx": [
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "UL",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "UL",
+      "exit": "UR",
+      "allowed": true,
+      "piece": 59
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "UL",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "UL",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "UR",
+      "exit": "UL",
+      "allowed": true,
+      "piece": 59
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "UR",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "UR",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "UR",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "LL",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "LL",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "LL",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "LL",
+      "exit": "LR",
+      "allowed": true,
+      "piece": 60
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "LR",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "LR",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "LR",
+      "exit": "LL",
+      "allowed": true,
+      "piece": 60
+    },
+    {
+      "unit": "WX-A",
+      "state": "N",
+      "entry": "LR",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "UL",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "UL",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "UL",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "UL",
+      "exit": "LR",
+      "allowed": true,
+      "piece": 12
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "UR",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "UR",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "UR",
+      "exit": "LL",
+      "allowed": true,
+      "piece": 13
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "UR",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "LL",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "LL",
+      "exit": "UR",
+      "allowed": true,
+      "piece": 13
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "LL",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "LL",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "LR",
+      "exit": "UL",
+      "allowed": true,
+      "piece": 12
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "LR",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "LR",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-A",
+      "state": "X",
+      "entry": "LR",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "UL",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "UL",
+      "exit": "UR",
+      "allowed": true,
+      "piece": 61
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "UL",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "UL",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "UR",
+      "exit": "UL",
+      "allowed": true,
+      "piece": 61
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "UR",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "UR",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "UR",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "LL",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "LL",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "LL",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "LL",
+      "exit": "LR",
+      "allowed": true,
+      "piece": 62
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "LR",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "LR",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "LR",
+      "exit": "LL",
+      "allowed": true,
+      "piece": 62
+    },
+    {
+      "unit": "WX-B",
+      "state": "N",
+      "entry": "LR",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "UL",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "UL",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "UL",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "UL",
+      "exit": "LR",
+      "allowed": true,
+      "piece": 16
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "UR",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "UR",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "UR",
+      "exit": "LL",
+      "allowed": true,
+      "piece": 17
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "UR",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "LL",
+      "exit": "UL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "LL",
+      "exit": "UR",
+      "allowed": true,
+      "piece": 17
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "LL",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "LL",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "LR",
+      "exit": "UL",
+      "allowed": true,
+      "piece": 16
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "LR",
+      "exit": "UR",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "LR",
+      "exit": "LL",
+      "allowed": false,
+      "piece": null
+    },
+    {
+      "unit": "WX-B",
+      "state": "X",
+      "entry": "LR",
+      "exit": "LR",
+      "allowed": false,
+      "piece": null
+    }
+  ],
+  "simple": [
+    {
+      "unit": "V06-C07",
+      "state": "S0",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S0",
+      "entry": "A",
+      "exit": "B",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S0",
+      "entry": "A",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S0",
+      "entry": "B",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S0",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S0",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S0",
+      "entry": "C",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S0",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S0",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S1",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S1",
+      "entry": "A",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S1",
+      "entry": "A",
+      "exit": "C",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S1",
+      "entry": "B",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S1",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S1",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S1",
+      "entry": "C",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S1",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C07",
+      "state": "S1",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S0",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S0",
+      "entry": "A",
+      "exit": "B",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S0",
+      "entry": "A",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S0",
+      "entry": "B",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S0",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S0",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S0",
+      "entry": "C",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S0",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S0",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S1",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S1",
+      "entry": "A",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S1",
+      "entry": "A",
+      "exit": "C",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S1",
+      "entry": "B",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S1",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S1",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S1",
+      "entry": "C",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S1",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C12",
+      "state": "S1",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S0",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S0",
+      "entry": "A",
+      "exit": "B",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S0",
+      "entry": "A",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S0",
+      "entry": "B",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S0",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S0",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S0",
+      "entry": "C",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S0",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S0",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S1",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S1",
+      "entry": "A",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S1",
+      "entry": "A",
+      "exit": "C",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S1",
+      "entry": "B",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S1",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S1",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S1",
+      "entry": "C",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S1",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-C13",
+      "state": "S1",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S0",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S0",
+      "entry": "A",
+      "exit": "B",
+      "allowed": true
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S0",
+      "entry": "A",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S0",
+      "entry": "B",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S0",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S0",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S0",
+      "entry": "C",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S0",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S0",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S1",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S1",
+      "entry": "A",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S1",
+      "entry": "A",
+      "exit": "C",
+      "allowed": true
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S1",
+      "entry": "B",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S1",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S1",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S1",
+      "entry": "C",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S1",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N07",
+      "state": "S1",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S0",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S0",
+      "entry": "A",
+      "exit": "B",
+      "allowed": true
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S0",
+      "entry": "A",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S0",
+      "entry": "B",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S0",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S0",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S0",
+      "entry": "C",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S0",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S0",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S1",
+      "entry": "A",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S1",
+      "entry": "A",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S1",
+      "entry": "A",
+      "exit": "C",
+      "allowed": true
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S1",
+      "entry": "B",
+      "exit": "A",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S1",
+      "entry": "B",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S1",
+      "entry": "B",
+      "exit": "C",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S1",
+      "entry": "C",
+      "exit": "A",
+      "allowed": true
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S1",
+      "entry": "C",
+      "exit": "B",
+      "allowed": false
+    },
+    {
+      "unit": "V06-N14",
+      "state": "S1",
+      "entry": "C",
+      "exit": "C",
+      "allowed": false
+    }
+  ],
+  "junctions": [
+    {
+      "a": "0.S",
+      "b": "19.E",
+      "x_mm": 1374.051,
+      "y_mm": 350.133,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0212945222403786
+    },
+    {
+      "a": "0.E",
+      "b": "1.S",
+      "x_mm": 1291.422,
+      "y_mm": 549.619,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0261106481887667
+    },
+    {
+      "a": "1.E",
+      "b": "67.S",
+      "x_mm": 1091.936,
+      "y_mm": 632.248,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5105927129726957
+    },
+    {
+      "a": "2.S",
+      "b": "65.S",
+      "x_mm": 347.633,
+      "y_mm": 632.248,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5107018092676703
+    },
+    {
+      "a": "2.E",
+      "b": "3.S",
+      "x_mm": 148.148,
+      "y_mm": 549.619,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0261106481886904
+    },
+    {
+      "a": "3.E",
+      "b": "4.S",
+      "x_mm": 65.519,
+      "y_mm": 350.133,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.021294522240261
+    },
+    {
+      "a": "4.E",
+      "b": "5.S",
+      "x_mm": 148.148,
+      "y_mm": 150.648,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0261106481886144
+    },
+    {
+      "a": "5.E",
+      "b": "77.E",
+      "x_mm": 347.633,
+      "y_mm": 68.018,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5148387924585716
+    },
+    {
+      "a": "6.S",
+      "b": "7.E",
+      "x_mm": 124.804,
+      "y_mm": 127.304,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0235550874661614
+    },
+    {
+      "a": "6.E",
+      "b": "55.E",
+      "x_mm": 347.633,
+      "y_mm": 35.005,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5117240148609177
+    },
+    {
+      "a": "7.S",
+      "b": "8.E",
+      "x_mm": 32.505,
+      "y_mm": 350.133,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.023545773590017
+    },
+    {
+      "a": "8.S",
+      "b": "9.E",
+      "x_mm": 124.804,
+      "y_mm": 572.963,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.023555087465869
+    },
+    {
+      "a": "9.S",
+      "b": "56.S",
+      "x_mm": 347.633,
+      "y_mm": 665.262,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5117240148605755
+    },
+    {
+      "a": "10.S",
+      "b": "23.E",
+      "x_mm": 1407.065,
+      "y_mm": 350.133,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.023545773591017
+    },
+    {
+      "a": "10.E",
+      "b": "11.S",
+      "x_mm": 1314.766,
+      "y_mm": 572.963,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0235550874658617
+    },
+    {
+      "a": "11.E",
+      "b": "58.E",
+      "x_mm": 1091.936,
+      "y_mm": 665.262,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.51172401486057
+    },
+    {
+      "a": "12.S",
+      "b": "60.S",
+      "x_mm": 719.785,
+      "y_mm": 101.032,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "12.S",
+      "b": "69.E",
+      "x_mm": 719.785,
+      "y_mm": 101.032,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 5.028680613375785e-12
+    },
+    {
+      "a": "60.S",
+      "b": "69.E",
+      "x_mm": 719.785,
+      "y_mm": 101.032,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "12.E",
+      "b": "59.E",
+      "x_mm": 409.659,
+      "y_mm": 68.018,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "12.E",
+      "b": "77.S",
+      "x_mm": 409.659,
+      "y_mm": 68.018,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "59.E",
+      "b": "77.S",
+      "x_mm": 409.659,
+      "y_mm": 68.018,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "13.S",
+      "b": "59.S",
+      "x_mm": 719.785,
+      "y_mm": 68.018,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "13.S",
+      "b": "74.E",
+      "x_mm": 719.785,
+      "y_mm": 68.018,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.3524537422505234e-12
+    },
+    {
+      "a": "59.S",
+      "b": "74.E",
+      "x_mm": 719.785,
+      "y_mm": 68.018,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "13.E",
+      "b": "60.E",
+      "x_mm": 409.659,
+      "y_mm": 101.032,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "13.E",
+      "b": "78.S",
+      "x_mm": 409.659,
+      "y_mm": 101.032,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "60.E",
+      "b": "78.S",
+      "x_mm": 409.659,
+      "y_mm": 101.032,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "14.S",
+      "b": "15.E",
+      "x_mm": 171.492,
+      "y_mm": 173.992,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0228925709525036
+    },
+    {
+      "a": "14.E",
+      "b": "78.E",
+      "x_mm": 347.633,
+      "y_mm": 101.032,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.509408575608533
+    },
+    {
+      "a": "15.S",
+      "b": "24.E",
+      "x_mm": 98.532,
+      "y_mm": 350.133,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.022387464171903
+    },
+    {
+      "a": "16.S",
+      "b": "18.S",
+      "x_mm": 1091.936,
+      "y_mm": 68.018,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5147293976633391
+    },
+    {
+      "a": "16.S",
+      "b": "62.S",
+      "x_mm": 1091.936,
+      "y_mm": 68.018,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "18.S",
+      "b": "62.S",
+      "x_mm": 1091.936,
+      "y_mm": 68.018,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5147293976868037
+    },
+    {
+      "a": "16.E",
+      "b": "61.E",
+      "x_mm": 781.81,
+      "y_mm": 35.005,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "16.E",
+      "b": "76.S",
+      "x_mm": 781.81,
+      "y_mm": 35.005,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "61.E",
+      "b": "76.S",
+      "x_mm": 781.81,
+      "y_mm": 35.005,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "17.S",
+      "b": "22.S",
+      "x_mm": 1091.936,
+      "y_mm": 35.005,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5117240148868907
+    },
+    {
+      "a": "17.S",
+      "b": "61.S",
+      "x_mm": 1091.936,
+      "y_mm": 35.005,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "22.S",
+      "b": "61.S",
+      "x_mm": 1091.936,
+      "y_mm": 35.005,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5117240148609121
+    },
+    {
+      "a": "17.E",
+      "b": "62.E",
+      "x_mm": 781.81,
+      "y_mm": 68.018,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "17.E",
+      "b": "74.S",
+      "x_mm": 781.81,
+      "y_mm": 68.018,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "62.E",
+      "b": "74.S",
+      "x_mm": 781.81,
+      "y_mm": 68.018,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "18.E",
+      "b": "19.S",
+      "x_mm": 1291.422,
+      "y_mm": 150.648,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0261106481886904
+    },
+    {
+      "a": "20.E",
+      "b": "54.E",
+      "x_mm": 240.659,
+      "y_mm": 253.934,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.00037711850158622326
+    },
+    {
+      "a": "21.S",
+      "b": "45.S",
+      "x_mm": 480.306,
+      "y_mm": 189.72,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0006094306032068392
+    },
+    {
+      "a": "21.E",
+      "b": "54.S",
+      "x_mm": 420.394,
+      "y_mm": 205.774,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0005151507090972455
+    },
+    {
+      "a": "22.E",
+      "b": "23.S",
+      "x_mm": 1314.766,
+      "y_mm": 127.304,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.023555087466157
+    },
+    {
+      "a": "24.S",
+      "b": "25.E",
+      "x_mm": 161.823,
+      "y_mm": 502.931,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0184896341471514
+    },
+    {
+      "a": "25.S",
+      "b": "64.S",
+      "x_mm": 314.62,
+      "y_mm": 566.221,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5075778906610084
+    },
+    {
+      "a": "26.S",
+      "b": "28.E",
+      "x_mm": 1308.024,
+      "y_mm": 317.12,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0151557813220173
+    },
+    {
+      "a": "26.E",
+      "b": "37.S",
+      "x_mm": 1244.734,
+      "y_mm": 469.917,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.022208103015975
+    },
+    {
+      "a": "27.S",
+      "b": "34.E",
+      "x_mm": 962.474,
+      "y_mm": 516.164,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 2.4541029564092147
+    },
+    {
+      "a": "27.E",
+      "b": "48.S",
+      "x_mm": 831.62,
+      "y_mm": 415.59950000000003,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0007147903460196766
+    },
+    {
+      "a": "28.S",
+      "b": "29.E",
+      "x_mm": 1244.734,
+      "y_mm": 164.323,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.0184896341471514
+    },
+    {
+      "a": "29.S",
+      "b": "30.E",
+      "x_mm": 1091.936,
+      "y_mm": 101.032,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 2.4538252448559073
+    },
+    {
+      "a": "29.S",
+      "b": "68.S",
+      "x_mm": 1091.936,
+      "y_mm": 101.032,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5128362479529704
+    },
+    {
+      "a": "30.E",
+      "b": "68.S",
+      "x_mm": 1091.936,
+      "y_mm": 101.032,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "30.S",
+      "b": "41.S",
+      "x_mm": 906.029,
+      "y_mm": 125.507,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.9400729491820763
+    },
+    {
+      "a": "31.S",
+      "b": "39.E",
+      "x_mm": 595.148,
+      "y_mm": 208.612,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0005300817776965757
+    },
+    {
+      "a": "31.E",
+      "b": "32.S",
+      "x_mm": 415.412,
+      "y_mm": 256.772,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "31.E",
+      "b": "53.E",
+      "x_mm": 415.412,
+      "y_mm": 256.772,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0008558128837192468
+    },
+    {
+      "a": "32.S",
+      "b": "53.E",
+      "x_mm": 415.412,
+      "y_mm": 256.772,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.9415209403502749
+    },
+    {
+      "a": "32.E",
+      "b": "50.S",
+      "x_mm": 601.32,
+      "y_mm": 232.297,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 2.8172994794789346
+    },
+    {
+      "a": "33.S",
+      "b": "45.E",
+      "x_mm": 719.953,
+      "y_mm": 125.507,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.9406505421763709
+    },
+    {
+      "a": "33.E",
+      "b": "68.E",
+      "x_mm": 905.861,
+      "y_mm": 101.032,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.9409489654243277
+    },
+    {
+      "a": "33.E",
+      "b": "69.S",
+      "x_mm": 905.861,
+      "y_mm": 101.032,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "68.E",
+      "b": "69.S",
+      "x_mm": 905.861,
+      "y_mm": 101.032,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "34.S",
+      "b": "35.E",
+      "x_mm": 1091.936,
+      "y_mm": 533.208,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "34.S",
+      "b": "37.E",
+      "x_mm": 1091.936,
+      "y_mm": 533.208,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 2.4544943786007587
+    },
+    {
+      "a": "35.E",
+      "b": "37.E",
+      "x_mm": 1091.936,
+      "y_mm": 533.208,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.5711781173048752
+    },
+    {
+      "a": "35.S",
+      "b": "36.S",
+      "x_mm": 962.474,
+      "y_mm": 550.252,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.1114833885562747e-05
+    },
+    {
+      "a": "36.E",
+      "b": "72.S",
+      "x_mm": 837.932,
+      "y_mm": 566.648,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.9388330864321744
+    },
+    {
+      "a": "38.S",
+      "b": "40.S",
+      "x_mm": 666.7605,
+      "y_mm": 189.52100000000002,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 2.1197926193959314e-05
+    },
+    {
+      "a": "38.E",
+      "b": "41.E",
+      "x_mm": 726.293,
+      "y_mm": 173.667,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 7.229649937487473e-05
+    },
+    {
+      "a": "38.E",
+      "b": "42.S",
+      "x_mm": 726.293,
+      "y_mm": 173.667,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.9405928309671178
+    },
+    {
+      "a": "41.E",
+      "b": "42.S",
+      "x_mm": 726.293,
+      "y_mm": 173.667,
+      "direct_transit": false,
+      "reason": "same device: reverse/throw required or alternate route",
+      "sampled_tangent_mismatch_deg": null
+    },
+    {
+      "a": "39.S",
+      "b": "40.E",
+      "x_mm": 623.171,
+      "y_mm": 201.103,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0007618331228358646
+    },
+    {
+      "a": "42.E",
+      "b": "49.S",
+      "x_mm": 912.201,
+      "y_mm": 149.192,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 2.450234088746518
+    },
+    {
+      "a": "43.E",
+      "b": "44.E",
+      "x_mm": 233.744,
+      "y_mm": 305.45,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.00023908199485449773
+    },
+    {
+      "a": "44.S",
+      "b": "53.S",
+      "x_mm": 353.568,
+      "y_mm": 273.344,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0011532367813425748
+    },
+    {
+      "a": "46.S",
+      "b": "48.E",
+      "x_mm": 817.47,
+      "y_mm": 390.591,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0005737797717977649
+    },
+    {
+      "a": "46.E",
+      "b": "47.S",
+      "x_mm": 802.964,
+      "y_mm": 365.466,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.9734267317411012e-13
+    },
+    {
+      "a": "47.E",
+      "b": "52.E",
+      "x_mm": 788.458,
+      "y_mm": 340.341,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5121633595036494
+    },
+    {
+      "a": "49.E",
+      "b": "51.E",
+      "x_mm": 1088.342,
+      "y_mm": 222.152,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 1.5112285558100835
+    },
+    {
+      "a": "50.E",
+      "b": "52.S",
+      "x_mm": 657.248,
+      "y_mm": 239.66,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 3.391156228290001
+    },
+    {
+      "a": "55.S",
+      "b": "57.E",
+      "x_mm": 409.659,
+      "y_mm": 35.005,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "56.E",
+      "b": "63.S",
+      "x_mm": 595.734,
+      "y_mm": 665.262,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "57.S",
+      "b": "75.E",
+      "x_mm": 657.76,
+      "y_mm": 35.005,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "58.S",
+      "b": "63.E",
+      "x_mm": 843.835,
+      "y_mm": 665.262,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "64.E",
+      "b": "70.E",
+      "x_mm": 562.721,
+      "y_mm": 566.221,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "65.E",
+      "b": "66.E",
+      "x_mm": 595.734,
+      "y_mm": 632.248,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "66.S",
+      "b": "67.E",
+      "x_mm": 843.835,
+      "y_mm": 632.248,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "70.S",
+      "b": "71.E",
+      "x_mm": 749.8465,
+      "y_mm": 566.4345000000001,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.00027245366543531067
+    },
+    {
+      "a": "71.S",
+      "b": "73.E",
+      "x_mm": 779.908,
+      "y_mm": 566.648,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0003040711253860597
+    },
+    {
+      "a": "72.E",
+      "b": "73.S",
+      "x_mm": 808.92,
+      "y_mm": 566.648,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    },
+    {
+      "a": "75.S",
+      "b": "76.E",
+      "x_mm": 719.785,
+      "y_mm": 35.005,
+      "direct_transit": true,
+      "reason": "external joint",
+      "sampled_tangent_mismatch_deg": 0.0
+    }
+  ],
+  "walks": {
+    "A": {
+      "length_mm": 3468.164116346414,
+      "states": {
+        "WX-B": "N"
+      },
+      "joins_exact": true
+    },
+    "B": {
+      "length_mm": 3260.7816351200745,
+      "states": {
+        "WX-B": "N",
+        "WX-A": "N"
+      },
+      "joins_exact": true
+    },
+    "C": {
+      "length_mm": 2933.790700411985,
+      "states": {
+        "V06-C07": "S0",
+        "V06-C12": "S0",
+        "V06-C13": "S0",
+        "WX-A": "N"
+      },
+      "joins_exact": true
+    },
+    "S1_FROM_N07_COMMON": {
+      "length_mm": 250.10101080635917,
+      "states": {},
+      "joins_exact": true
+    },
+    "S2_FROM_C13_COMMON": {
+      "length_mm": 746.2672300418101,
+      "states": {
+        "V06-C13": "S1"
+      },
+      "joins_exact": true
+    },
+    "TSEG_FROM_N14_COMMON": {
+      "length_mm": 569.7148810906164,
+      "states": {
+        "V06-N14": "S1"
+      },
+      "joins_exact": true
+    },
+    "TRIANGLE_MANOEUVRE": {
+      "approach": [
+        [
+          34,
+          1
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          48,
+          1
+        ],
+        [
+          46,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          52,
+          -1
+        ],
+        [
+          50,
+          -1
+        ],
+        [
+          32,
+          -1
+        ],
+        [
+          53,
+          -1
+        ],
+        [
+          44,
+          1
+        ],
+        [
+          43,
+          -1
+        ]
+      ],
+      "departure": [
+        [
+          43,
+          1
+        ],
+        [
+          44,
+          -1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          31,
+          -1
+        ],
+        [
+          39,
+          -1
+        ],
+        [
+          40,
+          -1
+        ],
+        [
+          38,
+          1
+        ],
+        [
+          41,
+          -1
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          37,
+          1
+        ]
+      ],
+      "required_event": "stop before terminal with whole consist clear of N07; S1\u2192S0; reverse",
+      "capacity_upper_bound_mm": 250.10101080635917,
+      "safe_stopping_point": "OPEN; terminal witness is NOT a stopping instruction"
+    }
+  },
+  "terminalWitnesses": {
+    "20.S": [
+      [
+        64,
+        1
+      ],
+      [
+        70,
+        -1
+      ],
+      [
+        71,
+        -1
+      ],
+      [
+        73,
+        -1
+      ],
+      [
+        72,
+        -1
+      ],
+      [
+        36,
+        -1
+      ],
+      [
+        35,
+        1
+      ],
+      [
+        37,
+        -1
+      ],
+      [
+        26,
+        -1
+      ],
+      [
+        28,
+        -1
+      ],
+      [
+        29,
+        -1
+      ],
+      [
+        68,
+        1
+      ],
+      [
+        33,
+        -1
+      ],
+      [
+        45,
+        -1
+      ],
+      [
+        21,
+        1
+      ],
+      [
+        54,
+        1
+      ],
+      [
+        20,
+        -1
+      ]
+    ],
+    "43.S": [
+      [
+        64,
+        1
+      ],
+      [
+        70,
+        -1
+      ],
+      [
+        71,
+        -1
+      ],
+      [
+        73,
+        -1
+      ],
+      [
+        72,
+        -1
+      ],
+      [
+        36,
+        -1
+      ],
+      [
+        35,
+        1
+      ],
+      [
+        37,
+        -1
+      ],
+      [
+        26,
+        -1
+      ],
+      [
+        28,
+        -1
+      ],
+      [
+        29,
+        -1
+      ],
+      [
+        30,
+        -1
+      ],
+      [
+        41,
+        1
+      ],
+      [
+        38,
+        -1
+      ],
+      [
+        40,
+        1
+      ],
+      [
+        39,
+        1
+      ],
+      [
+        31,
+        1
+      ],
+      [
+        53,
+        -1
+      ],
+      [
+        44,
+        1
+      ],
+      [
+        43,
+        -1
+      ]
+    ],
+    "51.S": {
+      "approach_via_N07_C": [
+        [
+          34,
+          1
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          48,
+          1
+        ],
+        [
+          46,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          52,
+          -1
+        ],
+        [
+          50,
+          -1
+        ],
+        [
+          32,
+          -1
+        ],
+        [
+          53,
+          -1
+        ],
+        [
+          44,
+          1
+        ],
+        [
+          43,
+          -1
+        ]
+      ],
+      "stop_throw_reverse": true,
+      "departure_via_N07_B_N14_C": [
+        [
+          43,
+          1
+        ],
+        [
+          44,
+          -1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          31,
+          -1
+        ],
+        [
+          39,
+          -1
+        ],
+        [
+          40,
+          -1
+        ],
+        [
+          38,
+          1
+        ],
+        [
+          42,
+          1
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          51,
+          -1
+        ]
+      ],
+      "safe_capacity_and_stop": "OPEN"
+    }
+  },
+  "maxTangentDegrees": 3.391156228290001
+}

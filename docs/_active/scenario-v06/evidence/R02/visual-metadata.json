@@ -1,0 +1,242 @@
+{
+  "alignment_master": {
+    "file": "build_data/track_centrelines_mm.json",
+    "sha256": "b52b732166db502d4d906a5b471bfe4344f6bfdab632514ffc6775102a800ec7",
+    "pieces": 79,
+    "roadbed_file": "build_data/roadbed_mm.json",
+    "roadbed_sha256": "7aa208bd5104e5e38669c1e920f20773c1d30ffcbecfc7af91e8485ae9c05552",
+    "rail_top_z_mm": 8.4,
+    "rule": "ogni rotaia del modulo railway_visual e' l'offset esatto (+/- 4,725 mm) dell'asse del pezzo indicato; nessun asse e' stato ricampionato"
+  },
+  "alignment_WX": [
+    {
+      "hosts": [
+        59,
+        60
+      ],
+      "diags": [
+        12,
+        13
+      ],
+      "x0": 409.659,
+      "x1": 719.785,
+      "length": 310.126,
+      "pitch": 3.925645569620253,
+      "sleepers": 125,
+      "timbers": 89,
+      "frogs": 8,
+      "gaps": 16,
+      "checks": 16,
+      "blades": 4,
+      "wings": 12,
+      "acute": 6,
+      "obtuse": 2
+    },
+    {
+      "hosts": [
+        61,
+        62
+      ],
+      "diags": [
+        16,
+        17
+      ],
+      "x0": 781.81,
+      "x1": 1091.936,
+      "length": 310.126,
+      "pitch": 3.925645569620253,
+      "sleepers": 125,
+      "timbers": 89,
+      "frogs": 8,
+      "gaps": 16,
+      "checks": 16,
+      "blades": 4,
+      "wings": 12,
+      "acute": 6,
+      "obtuse": 2
+    }
+  ],
+  "visual_nodes": {
+    "RAIL_rails": "rotaie di corsa, controrotaie, zampe di lepre, aghi (piano del ferro 8,40 mm)",
+    "RAIL_sleepers": "traverse e traversoni",
+    "RAIL_base_plates": "piastre",
+    "RAIL_throw_bars": "tiranti degli aghi",
+    "RAIL_buffer_stops": "paraurti dei tronchini (dedotti)",
+    "RAIL_ballast_open": "massicciata a vista",
+    "RAIL_ballast_tunnel": "massicciata in galleria (sotto la montagna)"
+  },
+  "objects": [
+    {
+      "sn_id": "RAIL_ballast_open",
+      "bbox_plan_mm": {
+        "min": [
+          20.0,
+          22.0,
+          0.04
+        ],
+        "max": [
+          1350.5,
+          678.0,
+          6.074
+        ]
+      },
+      "triangles": 542634,
+      "vertices": 282784,
+      "materials": [
+        "RAIL_ballast_MAT.001"
+      ],
+      "masterplan_ref": null
+    },
+    {
+      "sn_id": "RAIL_ballast_tunnel",
+      "bbox_plan_mm": {
+        "min": [
+          1122.0,
+          25.0,
+          0.04
+        ],
+        "max": [
+          1420.0,
+          551.0,
+          6.069
+        ]
+      },
+      "triangles": 80253,
+      "vertices": 43378,
+      "materials": [
+        "RAIL_ballast_MAT.003"
+      ],
+      "masterplan_ref": null
+    },
+    {
+      "sn_id": "RAIL_sleepers",
+      "bbox_plan_mm": {
+        "min": [
+          24.413,
+          26.88,
+          5.05
+        ],
+        "max": [
+          1415.157,
+          673.387,
+          6.38
+        ]
+      },
+      "triangles": 29770,
+      "vertices": 23816,
+      "materials": [
+        "RAIL_sleeper_MAT"
+      ],
+      "masterplan_ref": null
+    },
+    {
+      "sn_id": "RAIL_rails",
+      "bbox_plan_mm": {
+        "min": [
+          27.309,
+          29.81,
+          6.35
+        ],
+        "max": [
+          1412.261,
+          670.457,
+          8.4
+        ]
+      },
+      "triangles": 264076,
+      "vertices": 149904,
+      "materials": [
+        "RAIL_rail_MAT"
+      ],
+      "masterplan_ref": null
+    },
+    {
+      "sn_id": "RAIL_base_plates",
+      "bbox_plan_mm": {
+        "min": [
+          26.633,
+          29.092,
+          6.3
+        ],
+        "max": [
+          1412.937,
+          671.175,
+          6.47
+        ]
+      },
+      "triangles": 52940,
+      "vertices": 42352,
+      "materials": [
+        "RAIL_base_plates_MAT"
+      ],
+      "masterplan_ref": null
+    },
+    {
+      "sn_id": "RAIL_throw_bars",
+      "bbox_plan_mm": {
+        "min": [
+          412.422,
+          28.78,
+          6.25
+        ],
+        "max": [
+          1093.462,
+          539.433,
+          6.7
+        ]
+      },
+      "triangles": 130,
+      "vertices": 104,
+      "materials": [
+        "RAIL_throw_bars_MAT"
+      ],
+      "masterplan_ref": null
+    },
+    {
+      "sn_id": "RAIL_buffer_stops",
+      "bbox_plan_mm": {
+        "min": [
+          172.41,
+          261.776,
+          5.75
+        ],
+        "max": [
+          1225.062,
+          358.871,
+          15.0
+        ]
+      },
+      "triangles": 390,
+      "vertices": 312,
+      "materials": [
+        "RAIL_buffer_stops_MAT"
+      ],
+      "masterplan_ref": null
+    }
+  ],
+  "declared_GLB": {
+    "path": "modules/railway_visual.glb",
+    "bytes": 40139988,
+    "sha256": "cda79aa44fa8b521d0b3fd5b95b0c2c20378600082920920d61c9b0cc45facf2",
+    "stats": {
+      "bytes": 40139988,
+      "nodes": 8,
+      "meshes": 7,
+      "materials": 7,
+      "textures": 3,
+      "images": 2,
+      "image_bytes": 2205828,
+      "vertices_stored": 743837,
+      "triangles_stored": 970193,
+      "triangles_drawn": 970193,
+      "gpu_instances": 0,
+      "extensionsUsed": []
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "binary_verified": false,
+  "limit": "raw reference obtained; 32 MiB transfer limit; signed download proxy 403",
+  "inventory_sha256": "a89687ee6010ba251e070091765270c038aa3ddcbb37b750126deed2ad315425",
+  "manifest_received_sha256": "234d93ac089d1c23a1c07c9e35160cc1e78608ad27ff0753986e97a77648c6c2"
+}

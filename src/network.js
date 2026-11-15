@@ -15,15 +15,18 @@ function sample(path, s) {
   const a = path.points[lo], b = path.points[hi], q = (s - path.distance[lo]) / (path.distance[hi] - path.distance[lo] || 1);
   return { x: a.x + (b.x - a.x) * q, z: a.z + (b.z - a.z) * q };
 }
-function createNetwork() {
+// Explicit data injection only. The application keeps calling createNetwork().
+function createNetwork(dataset = canonical) {
+  if (!dataset || !Array.isArray(dataset.edges) || !Array.isArray(dataset.controllers) || !dataset.nodes) throw new TypeError("Invalid railway dataset");
   const edges = {}, nodes = {};
-  for (const source of canonical.edges) {
-    const edge = measured(source.points.map((p) => ({...p})), {...source});
+  for (const source of dataset.edges) {
+    const {points, ...metadata} = source;
+    const edge = measured(points.map((p) => ({...p})), metadata);
     edges[edge.id] = edge;
     (nodes[edge.from] ??= []).push({edge:edge.id,end:0});
     (nodes[edge.to] ??= []).push({edge:edge.id,end:1});
   }
-  const network = {edges,nodes,canonical:true,metadata:canonical,controllers:canonical.controllers};
+  const network = {edges,nodes,canonical:true,metadata:dataset,controllers:dataset.controllers};
   network.mainLoops = [0,1,2].map((lane) => {
     const members = Object.values(edges).filter((e) => e.lane === lane && !e.requiredState);
     if (!members.length) throw Error("Missing mainline "+lane);

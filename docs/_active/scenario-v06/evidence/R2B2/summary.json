@@ -1,0 +1,4060 @@
+{
+  "status": "PASS_NUMERICAL_MATRIX",
+  "scenarios": 75,
+  "ticks": 57649,
+  "matrix": [
+    {
+      "id": "S1-1_1_1",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "37f30c50a548e49277c20ec22e580923d89bac55dbd1399de00d8bd34728d613",
+      "ticks": 2372,
+      "joints": 54,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 15.50511124205626,
+      "minConservativeSweepClearanceMm": 14.250722281077076,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        1,
+        1,
+        1
+      ],
+      "cars": 0,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "31a18694ff323c2fd4a53739ea91875f36821973aed896f5e1f279096c317726"
+    },
+    {
+      "id": "S1-1_1_-1",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "1c1288ffb2547d456585b8aae348de41f2cb879c9e0568ba36ddd25bb056fe34",
+      "ticks": 2372,
+      "joints": 57,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 15.50511124205626,
+      "minConservativeSweepClearanceMm": 14.250722281077076,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        1,
+        1,
+        -1
+      ],
+      "cars": 0,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "0327c20b67cf3472ae720a69239060a07e932e34ebd9d8c0266b0df7b671b7c0"
+    },
+    {
+      "id": "S1-1_-1_1",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "5d2fc1377a0ab7ff92cef9e93bf51773cd8a914f126613368c7571941cb1cd57",
+      "ticks": 2372,
+      "joints": 54,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 17.012999999999998,
+      "minConservativeSweepClearanceMm": 17.012996,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        1,
+        -1,
+        1
+      ],
+      "cars": 0,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "4ae4a86d096fe37895f615e3c0e5fe218066cc91706b9af481e1d408df5c86d3"
+    },
+    {
+      "id": "S1-1_-1_-1",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "9853e4e2ca914edeb352e9ac1a8e9784e9427bcb3ba2e6592f5fe0e0930b8ecc",
+      "ticks": 2372,
+      "joints": 57,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 17.012999999999998,
+      "minConservativeSweepClearanceMm": 17.012996,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        1,
+        -1,
+        -1
+      ],
+      "cars": 0,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "74bd8115789128b27181e7059e26811db8691a1e784fe13fb3f1f25289baac87"
+    },
+    {
+      "id": "S1--1_1_1",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "262dc14a5fe739c1e9c403053704d3422a3420da6506e7de3e7cf7b427afd47d",
+      "ticks": 2372,
+      "joints": 54,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 16.474160126000584,
+      "minConservativeSweepClearanceMm": 15.819546958878192,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        -1,
+        1,
+        1
+      ],
+      "cars": 0,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "264a7dcc8e1c3b58592d777e6396ca48bb3b46f8f5f868d204da0483a58f28ef"
+    },
+    {
+      "id": "S1--1_1_-1",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "b9633c2525c6e09e68bc6fc49faa490f99ce1c6f5e789493dcd942589281acf4",
+      "ticks": 2372,
+      "joints": 57,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 16.474160126000584,
+      "minConservativeSweepClearanceMm": 15.819546958878192,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        -1,
+        1,
+        -1
+      ],
+      "cars": 0,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "85d4083e8b596626a812ec6c10b926938280aa88a0e8b075c67fe2f287db8f36"
+    },
+    {
+      "id": "S1--1_-1_1",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "eae2b995a93a84fc4a1279e79223a86fec4cdc37bd43050b0fe577a2ffc80457",
+      "ticks": 2372,
+      "joints": 54,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 15.535142277986296,
+      "minConservativeSweepClearanceMm": 14.250722078851311,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        -1,
+        -1,
+        1
+      ],
+      "cars": 0,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "b0a61f24b14c575bcc4b29d1f2300cbfd040a08d185f9a7f45c43942b4a47a55"
+    },
+    {
+      "id": "S1--1_-1_-1",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "0bdb0ebd9bf91bb1e042a7367ada0acfd2707cc6e0216eca965a45e81e4b0d9a",
+      "ticks": 2372,
+      "joints": 57,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 15.535142277986296,
+      "minConservativeSweepClearanceMm": 14.250722078851311,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        -1,
+        -1,
+        -1
+      ],
+      "cars": 0,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "79c260d41cd031f3ec83107dfcdaf2b5be86afcac1932fc83f88015b89563a0c"
+    },
+    {
+      "id": "S1-cars-1",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "0b6e34e9a61cf571cf57ecfe515852f520d5b8fb55053117f0db84ea04a20ced",
+      "ticks": 2372,
+      "joints": 54,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 17.012999999999998,
+      "minConservativeSweepClearanceMm": 17.012996,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        1,
+        -1,
+        1
+      ],
+      "cars": 1,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "fc9d066f94002b4a14221ae24eb319ab1cf483cc0c2060219a30c1bcc3e8b9c5"
+    },
+    {
+      "id": "S1-cars-2",
+      "name": "S1-three-loops",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 2372,
+        "0:2": 2372,
+        "1:2": 2372
+      },
+      "everyTickTraceSha256": "95d018466b45f1750330fa7ff34141cfb25dc5776c4e3f28e210770526cfb09e",
+      "ticks": 2372,
+      "joints": 54,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 2372,
+      "minBodyDistanceMm": 17.012999999999998,
+      "minConservativeSweepClearanceMm": 17.012996,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "laps": [
+        1.000168931928805,
+        1.0637786850367452,
+        1.182344057302006
+      ],
+      "directions": [
+        1,
+        -1,
+        1
+      ],
+      "cars": 2,
+      "finalTravelMm": [
+        3468.75,
+        3468.75,
+        3468.75
+      ],
+      "sha256": "9e065fb94f8e316ad9d56e08c513ea0719a20dec4cf512adce1ea0707ec70c5a"
+    },
+    {
+      "id": "S2-012-moving-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 587,
+        "0:2": 587,
+        "1:2": 587
+      },
+      "everyTickTraceSha256": "3bc7594692e74cb396bdd99a954aaa0bee17aed189205b7f47a843a91fcbe093",
+      "ticks": 587,
+      "joints": 5,
+      "collisionStops": 413,
+      "guardStops": 413,
+      "simultaneousMoving": 234,
+      "minBodyDistanceMm": 1.1071323569569245,
+      "minConservativeSweepClearanceMm": 0.6073014299084579,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "mode": "moving",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 137,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 37.988751,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.4375,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.249999999999986
+      ],
+      "finalTravelMm": [
+        457.75,
+        312.4375,
+        166.7
+      ],
+      "sha256": "7ad2d2e632a77a13c6d3999738a7b7e6db57b09f2cce9cb9b324fd5d2996f00b"
+    },
+    {
+      "id": "S2-012-moving-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 617,
+        "0:2": 617,
+        "1:2": 617
+      },
+      "everyTickTraceSha256": "46cc9371ed3cffa8ad2e5291478c0216d8e7e49263526a85ee73f9423c845a49",
+      "ticks": 617,
+      "joints": 5,
+      "collisionStops": 503,
+      "guardStops": 503,
+      "simultaneousMoving": 234,
+      "minBodyDistanceMm": 1.1071323569569245,
+      "minConservativeSweepClearanceMm": 0.6073014299084579,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "mode": "moving",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 137,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 37.988751,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.4375,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.249999999999986
+      ],
+      "finalTravelMm": [
+        457.75,
+        312.4375,
+        166.7
+      ],
+      "sha256": "ac3ab4a49ca16031b340e669f73a7ab31af92b7751c022f99eb43c87e1fcf986"
+    },
+    {
+      "id": "S2-012-brake-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 563,
+        "0:2": 563,
+        "1:2": 563
+      },
+      "everyTickTraceSha256": "cce2571dff1b555c81673d6cef98e578cf84e988d03a36c065050ae6c642ed73",
+      "ticks": 563,
+      "joints": 4,
+      "collisionStops": 404,
+      "guardStops": 404,
+      "simultaneousMoving": 163,
+      "minBodyDistanceMm": 0.4749999999999659,
+      "minConservativeSweepClearanceMm": 0.4749979999999659,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "mode": "brake",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 113,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 20.4253135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.05,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.250000000000014
+      ],
+      "finalTravelMm": [
+        418.65972222222223,
+        274.075,
+        129.35000000000002
+      ],
+      "sha256": "4573d44fa4db3e8df00b0bb053b085aef400d3182376d270ae1d901a94da43a0"
+    },
+    {
+      "id": "S2-012-brake-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 593,
+        "0:2": 593,
+        "1:2": 593
+      },
+      "everyTickTraceSha256": "6326a162d8ceb1780d67932314f6aaa62ea59b3a45c0ab8750df89ae4788128d",
+      "ticks": 593,
+      "joints": 4,
+      "collisionStops": 464,
+      "guardStops": 464,
+      "simultaneousMoving": 163,
+      "minBodyDistanceMm": 0.4749999999999659,
+      "minConservativeSweepClearanceMm": 0.4749979999999659,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "mode": "brake",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 113,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 20.4253135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.05,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.250000000000014
+      ],
+      "finalTravelMm": [
+        418.65972222222223,
+        274.075,
+        129.35000000000002
+      ],
+      "sha256": "9f02c22c0f204683b47ff7c7847ccee3761442a8fa8b917febb2384b6503099c"
+    },
+    {
+      "id": "S2-012-STOP-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 561,
+        "0:2": 561,
+        "1:2": 561
+      },
+      "everyTickTraceSha256": "e1f3dac9146e289977fc328d4ec2ed470cc49704e7ca4d184e110631f0bca4c0",
+      "ticks": 561,
+      "joints": 4,
+      "collisionStops": 398,
+      "guardStops": 398,
+      "simultaneousMoving": 150,
+      "minBodyDistanceMm": 0.30000000000001137,
+      "minConservativeSweepClearanceMm": 0.29999800000001137,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "mode": "STOP",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 111,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 19.4778135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.025,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        416.3125,
+        272.0125,
+        126.5625
+      ],
+      "sha256": "6ca13f1df55581b5cb88128fa4b52420e07c211d96af0af8224bf598954bbe6c"
+    },
+    {
+      "id": "S2-012-STOP-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 591,
+        "0:2": 591,
+        "1:2": 591
+      },
+      "everyTickTraceSha256": "045d59f18b8f990ba1a5c0b72488e61cff1a351d781edc0b98de4b022ac9abb3",
+      "ticks": 591,
+      "joints": 4,
+      "collisionStops": 458,
+      "guardStops": 458,
+      "simultaneousMoving": 150,
+      "minBodyDistanceMm": 0.30000000000001137,
+      "minConservativeSweepClearanceMm": 0.29999800000001137,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "mode": "STOP",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 111,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 19.4778135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.025,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        416.3125,
+        272.0125,
+        126.5625
+      ],
+      "sha256": "9118018591dde459ebe31ff08843134dee190ba636b21fec0d2f483eb4b06c15"
+    },
+    {
+      "id": "S2-012-stationary-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 557,
+        "0:2": 557,
+        "1:2": 557
+      },
+      "everyTickTraceSha256": "7ffcc4a46983d53d19414f663655b9f284adab409a9b16f894f064769675fea3",
+      "ticks": 557,
+      "joints": 4,
+      "collisionStops": 404,
+      "guardStops": 404,
+      "simultaneousMoving": 120,
+      "minBodyDistanceMm": 0.375,
+      "minConservativeSweepClearanceMm": 0.374998,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "mode": "stationary",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 107,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 16.7703135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 0.95,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        410.5,
+        266.125,
+        121.1375
+      ],
+      "sha256": "5b603baa0014593fb9430fedaa0986fbeb672b0dfb8e0e87d456ddc8b2b60404"
+    },
+    {
+      "id": "S2-012-stationary-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 587,
+        "0:2": 587,
+        "1:2": 587
+      },
+      "everyTickTraceSha256": "d6538f8e815ad92b3cdd65fe86957cd1de4b4886290215778a614cdece9fdf68",
+      "ticks": 587,
+      "joints": 4,
+      "collisionStops": 464,
+      "guardStops": 464,
+      "simultaneousMoving": 120,
+      "minBodyDistanceMm": 0.375,
+      "minConservativeSweepClearanceMm": 0.374998,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "mode": "stationary",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 107,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 16.7703135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 0.95,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        410.5,
+        266.125,
+        121.1375
+      ],
+      "sha256": "8899978144cceab55502ade410e19b9bb5f18dd27221ccc645656dfa489089b9"
+    },
+    {
+      "id": "S2-201-moving-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 587,
+        "0:2": 587,
+        "1:2": 587
+      },
+      "everyTickTraceSha256": "524f57dfaf975329fedce801d18addd67caefa5c44c8b88a34bd5c4b2080396e",
+      "ticks": 587,
+      "joints": 5,
+      "collisionStops": 413,
+      "guardStops": 413,
+      "simultaneousMoving": 234,
+      "minBodyDistanceMm": 1.1071323569569245,
+      "minConservativeSweepClearanceMm": 0.6073014299084579,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "mode": "moving",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 137,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 37.988751,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.4375,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.249999999999986
+      ],
+      "finalTravelMm": [
+        312.4375,
+        166.7,
+        457.75
+      ],
+      "sha256": "6c8e6ca020b313387e95725f43650db664437a7ad03f0cd40557e435c3bc5895"
+    },
+    {
+      "id": "S2-201-moving-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 617,
+        "0:2": 617,
+        "1:2": 617
+      },
+      "everyTickTraceSha256": "b3f0fe60a27a7b617c22fb74708a735713658682d84d541b9537e9770001de03",
+      "ticks": 617,
+      "joints": 5,
+      "collisionStops": 503,
+      "guardStops": 503,
+      "simultaneousMoving": 234,
+      "minBodyDistanceMm": 1.1071323569569245,
+      "minConservativeSweepClearanceMm": 0.6073014299084579,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "mode": "moving",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 137,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 37.988751,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.4375,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.249999999999986
+      ],
+      "finalTravelMm": [
+        312.4375,
+        166.7,
+        457.75
+      ],
+      "sha256": "d7d448d99ea680f81f1b2436a480bb3cc59557c2b7450fcb52247c14b2281a93"
+    },
+    {
+      "id": "S2-201-brake-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 563,
+        "0:2": 563,
+        "1:2": 563
+      },
+      "everyTickTraceSha256": "ebe1c0df075ac78d0f3a80432022fd96b9c3abc1feee8a73bd5613a7abff107a",
+      "ticks": 563,
+      "joints": 4,
+      "collisionStops": 404,
+      "guardStops": 404,
+      "simultaneousMoving": 163,
+      "minBodyDistanceMm": 0.4749999999999659,
+      "minConservativeSweepClearanceMm": 0.4749979999999659,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "mode": "brake",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 113,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 20.4253135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.05,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.250000000000014
+      ],
+      "finalTravelMm": [
+        274.075,
+        129.35000000000002,
+        418.65972222222223
+      ],
+      "sha256": "c5c895e44115e7b452b9575fe72544525704ffc28ef51d659c66b0ab440d7337"
+    },
+    {
+      "id": "S2-201-brake-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 593,
+        "0:2": 593,
+        "1:2": 593
+      },
+      "everyTickTraceSha256": "9c5963ca36199504d61e2a5fa9d841f5dab50e286668aedac06bc517c006b9fc",
+      "ticks": 593,
+      "joints": 4,
+      "collisionStops": 464,
+      "guardStops": 464,
+      "simultaneousMoving": 163,
+      "minBodyDistanceMm": 0.4749999999999659,
+      "minConservativeSweepClearanceMm": 0.4749979999999659,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "mode": "brake",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 113,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 20.4253135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.05,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.250000000000014
+      ],
+      "finalTravelMm": [
+        274.075,
+        129.35000000000002,
+        418.65972222222223
+      ],
+      "sha256": "bf6a7e553529b430cfb6ffa9cf77296b40e60fa4908858c6c9d80a4f1c064b4a"
+    },
+    {
+      "id": "S2-201-STOP-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 561,
+        "0:2": 561,
+        "1:2": 561
+      },
+      "everyTickTraceSha256": "f5fe8b0f1c0a54961b734aa816b0e88ecabe421320f5abff3205c13a7854b83c",
+      "ticks": 561,
+      "joints": 4,
+      "collisionStops": 398,
+      "guardStops": 398,
+      "simultaneousMoving": 150,
+      "minBodyDistanceMm": 0.30000000000001137,
+      "minConservativeSweepClearanceMm": 0.29999800000001137,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "mode": "STOP",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 111,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 19.4778135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.025,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        272.0125,
+        126.5625,
+        416.3125
+      ],
+      "sha256": "21c192edb9e95a88014e1fe2504000da89cd7a024b3995d4e1ca9ff3964334a5"
+    },
+    {
+      "id": "S2-201-STOP-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 591,
+        "0:2": 591,
+        "1:2": 591
+      },
+      "everyTickTraceSha256": "2f65cf8ff2c06661a2775cfbe622a408bf38a6510e7c2134c079d9608e353538",
+      "ticks": 591,
+      "joints": 4,
+      "collisionStops": 458,
+      "guardStops": 458,
+      "simultaneousMoving": 150,
+      "minBodyDistanceMm": 0.30000000000001137,
+      "minConservativeSweepClearanceMm": 0.29999800000001137,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "mode": "STOP",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 111,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 19.4778135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.025,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        272.0125,
+        126.5625,
+        416.3125
+      ],
+      "sha256": "df294e7ee0fb72fa81d685280289bb7d4e05e30195985c6a65f9643a9ce8dae9"
+    },
+    {
+      "id": "S2-201-stationary-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 557,
+        "0:2": 557,
+        "1:2": 557
+      },
+      "everyTickTraceSha256": "738e90bfd7a8430637c9ff54d6dc14d725fc4d7e5160d8a06d6038e8ce2566fc",
+      "ticks": 557,
+      "joints": 4,
+      "collisionStops": 404,
+      "guardStops": 404,
+      "simultaneousMoving": 120,
+      "minBodyDistanceMm": 0.375,
+      "minConservativeSweepClearanceMm": 0.374998,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "mode": "stationary",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 107,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 16.7703135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 0.95,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        266.125,
+        121.1375,
+        410.5
+      ],
+      "sha256": "12baabb87dc0099efedf31ad8cd4dc74e763dcf59ead7a05482dcb5b156ad64f"
+    },
+    {
+      "id": "S2-201-stationary-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 587,
+        "0:2": 587,
+        "1:2": 587
+      },
+      "everyTickTraceSha256": "1edbe7bf07c3be1f06fd0c738bdbc11ebe0145d84378bfa69d69a13ae8285326",
+      "ticks": 587,
+      "joints": 4,
+      "collisionStops": 464,
+      "guardStops": 464,
+      "simultaneousMoving": 120,
+      "minBodyDistanceMm": 0.375,
+      "minConservativeSweepClearanceMm": 0.374998,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "mode": "stationary",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 107,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 16.7703135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 0.95,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        266.125,
+        121.1375,
+        410.5
+      ],
+      "sha256": "fb03152ae7d4ccf99514096f6d15b659a6e79564a8766800e2ba34b92c3f54fd"
+    },
+    {
+      "id": "S2-120-moving-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 587,
+        "0:2": 587,
+        "1:2": 587
+      },
+      "everyTickTraceSha256": "29883e8f1c9b54d3e5c2af02bf9e651750f64b1b153a81916917cc4f54253bbf",
+      "ticks": 587,
+      "joints": 5,
+      "collisionStops": 413,
+      "guardStops": 413,
+      "simultaneousMoving": 234,
+      "minBodyDistanceMm": 1.1071323569569245,
+      "minConservativeSweepClearanceMm": 0.6073014299084579,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "mode": "moving",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 137,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 37.988751,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.4375,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.249999999999986
+      ],
+      "finalTravelMm": [
+        166.7,
+        457.75,
+        312.4375
+      ],
+      "sha256": "dbc6256d230dd82470dc5a8a76c54e172b516034ea6007c70a52d2d91017e66b"
+    },
+    {
+      "id": "S2-120-moving-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 617,
+        "0:2": 617,
+        "1:2": 617
+      },
+      "everyTickTraceSha256": "081d53dd8624ed2e06ade808b29c881b2455e2ffc62edfaea10d41a3ebf909eb",
+      "ticks": 617,
+      "joints": 5,
+      "collisionStops": 503,
+      "guardStops": 503,
+      "simultaneousMoving": 234,
+      "minBodyDistanceMm": 1.1071323569569245,
+      "minConservativeSweepClearanceMm": 0.6073014299084579,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "mode": "moving",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 137,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 37.988751,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.4375,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.249999999999986
+      ],
+      "finalTravelMm": [
+        166.7,
+        457.75,
+        312.4375
+      ],
+      "sha256": "f796973d34f152c4b07252e9de16db52950bdcd6c63d47e99bc74e2a2fafb40e"
+    },
+    {
+      "id": "S2-120-brake-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 563,
+        "0:2": 563,
+        "1:2": 563
+      },
+      "everyTickTraceSha256": "eef7111723844a2f0383c5dde037cf0a2680123241e11521064c3ba21aefe614",
+      "ticks": 563,
+      "joints": 4,
+      "collisionStops": 404,
+      "guardStops": 404,
+      "simultaneousMoving": 163,
+      "minBodyDistanceMm": 0.4749999999999659,
+      "minConservativeSweepClearanceMm": 0.4749979999999659,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "mode": "brake",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 113,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 20.4253135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.05,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.250000000000014
+      ],
+      "finalTravelMm": [
+        129.35000000000002,
+        418.65972222222223,
+        274.075
+      ],
+      "sha256": "ee62e43360f1440fa00df53e42749ae212ec46d75514eb0d03d39274b2b7706d"
+    },
+    {
+      "id": "S2-120-brake-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 593,
+        "0:2": 593,
+        "1:2": 593
+      },
+      "everyTickTraceSha256": "2ea32d001e8d9a408bc24441fbd4051f599211eadd56a880a5fe94b3c592f212",
+      "ticks": 593,
+      "joints": 4,
+      "collisionStops": 464,
+      "guardStops": 464,
+      "simultaneousMoving": 163,
+      "minBodyDistanceMm": 0.4749999999999659,
+      "minConservativeSweepClearanceMm": 0.4749979999999659,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "mode": "brake",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 113,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 20.4253135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.05,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.250000000000014
+      ],
+      "finalTravelMm": [
+        129.35000000000002,
+        418.65972222222223,
+        274.075
+      ],
+      "sha256": "574194f81244f1db439f28c28fb66817e5e7c6ba52814b3db2dbfb505235bbcc"
+    },
+    {
+      "id": "S2-120-STOP-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 561,
+        "0:2": 561,
+        "1:2": 561
+      },
+      "everyTickTraceSha256": "a14da97b3c6d095b5c1f5e13dd6e3f9a274ac208a0d2123d2ca307f6a19ac877",
+      "ticks": 561,
+      "joints": 4,
+      "collisionStops": 398,
+      "guardStops": 398,
+      "simultaneousMoving": 150,
+      "minBodyDistanceMm": 0.30000000000001137,
+      "minConservativeSweepClearanceMm": 0.29999800000001137,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "mode": "STOP",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 111,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 19.4778135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.025,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        126.5625,
+        416.3125,
+        272.0125
+      ],
+      "sha256": "f335fde605298b8f266884ab8624bd2d5ce6443ff467c4f8ae5d23f732696acd"
+    },
+    {
+      "id": "S2-120-STOP-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 591,
+        "0:2": 591,
+        "1:2": 591
+      },
+      "everyTickTraceSha256": "b56cb6ff1606b9c2cc8221f05ce80784297862612e52657173a361e61749a24d",
+      "ticks": 591,
+      "joints": 4,
+      "collisionStops": 458,
+      "guardStops": 458,
+      "simultaneousMoving": 150,
+      "minBodyDistanceMm": 0.30000000000001137,
+      "minConservativeSweepClearanceMm": 0.29999800000001137,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "mode": "STOP",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 111,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 19.4778135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 1.025,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        126.5625,
+        416.3125,
+        272.0125
+      ],
+      "sha256": "12d5b83e48ab475b582b667fd42ea882402ee58916ebdeecefb8fbf485f60a06"
+    },
+    {
+      "id": "S2-120-stationary-0",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 557,
+        "0:2": 557,
+        "1:2": 557
+      },
+      "everyTickTraceSha256": "86222d5af0bf3232789db5fb7e960949e93f734038431087dd4c3f0ecd029fc9",
+      "ticks": 557,
+      "joints": 4,
+      "collisionStops": 404,
+      "guardStops": 404,
+      "simultaneousMoving": 120,
+      "minBodyDistanceMm": 0.375,
+      "minConservativeSweepClearanceMm": 0.374998,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "mode": "stationary",
+      "sign": -1,
+      "cars": false,
+      "delay": 0,
+      "firstAllStoppedTick": 107,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 16.7703135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 0.95,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        121.1375,
+        410.5,
+        266.125
+      ],
+      "sha256": "34b608613b284e4754e7938b09afd8731c11ed08812c67ac0ff7504c355590d0"
+    },
+    {
+      "id": "S2-120-stationary-30",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 587,
+        "0:2": 587,
+        "1:2": 587
+      },
+      "everyTickTraceSha256": "8441cf0ad7ad5f3aec623a19f590479bb294937fc21f55db5b8940f608d01ce2",
+      "ticks": 587,
+      "joints": 4,
+      "collisionStops": 464,
+      "guardStops": 464,
+      "simultaneousMoving": 120,
+      "minBodyDistanceMm": 0.375,
+      "minConservativeSweepClearanceMm": 0.374998,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "mode": "stationary",
+      "sign": -1,
+      "cars": false,
+      "delay": 30,
+      "firstAllStoppedTick": 107,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 16.7703135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 0.95,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        121.1375,
+        410.5,
+        266.125
+      ],
+      "sha256": "c81fd226fa5cb6a94fbb7f4c467b254c4a87b07a76744acb9efcab0835e59a20"
+    },
+    {
+      "id": "S2-cars-1",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 511,
+        "0:2": 511,
+        "1:2": 511
+      },
+      "everyTickTraceSha256": "ddf53dc8879053b7c6ad71d300cc1f4f29a93f6fd782a8b974232ad04cb5d467",
+      "ticks": 511,
+      "joints": 6,
+      "collisionStops": 395,
+      "guardStops": 395,
+      "simultaneousMoving": 163,
+      "minBodyDistanceMm": 0.05000000000001137,
+      "minConservativeSweepClearanceMm": 0.04999800000001137,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 1.1368683772161603e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "mode": "brake",
+      "sign": 1,
+      "cars": true,
+      "delay": 0,
+      "firstAllStoppedTick": 61,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 6.2703135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 0.575,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        68.1375,
+        243.4375,
+        418.65972222222223
+      ],
+      "sha256": "09b3374e5da62582f52958e5c76176ce218bd457e6ea8b4fb8c024e0440029c0"
+    },
+    {
+      "id": "S2-cars--1",
+      "name": "S2-three-following",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 511,
+        "0:2": 511,
+        "1:2": 511
+      },
+      "everyTickTraceSha256": "c145fa00eb4c4a12fc07497c2cd3f4d40faac1418bc090a755b9719683260f31",
+      "ticks": 511,
+      "joints": 4,
+      "collisionStops": 395,
+      "guardStops": 395,
+      "simultaneousMoving": 163,
+      "minBodyDistanceMm": 0.05000000000001137,
+      "minConservativeSweepClearanceMm": 0.04999800000001137,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 9.237055564881302e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "mode": "brake",
+      "sign": -1,
+      "cars": true,
+      "delay": 0,
+      "firstAllStoppedTick": 61,
+      "centralGuardBeforeCommand": {
+        "leadingExtent": 22,
+        "risk": "UNSAFE",
+        "reason": "train",
+        "distance": 0,
+        "boundary": null,
+        "direction": 1,
+        "lookahead": 6.2703135,
+        "stoppingDistance": 0,
+        "state": "GUARDED_STOP",
+        "delta": 0,
+        "velocity": 0,
+        "intervened": true,
+        "requestedSpeed": 60,
+        "requestedDelta": 0,
+        "probeDelta": 0.575,
+        "probeKind": "train"
+      },
+      "restartMm": [
+        410.5,
+        230.5,
+        50.25
+      ],
+      "finalTravelMm": [
+        68.1375,
+        243.4375,
+        418.65972222222223
+      ],
+      "sha256": "03b76be7ed106d373b9068cb4272329566b70cd03f84d6afd71282ca84ace926"
+    },
+    {
+      "id": "S3-WX-A-false-1_1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 870,
+        "0:2": 870,
+        "1:2": 870
+      },
+      "everyTickTraceSha256": "c4cdeda75d537ee35e47cc6e65a7245b9120c8d3365c93d87d79116ea6198e52",
+      "ticks": 870,
+      "joints": 12,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 870,
+      "minBodyDistanceMm": 15.973336953760903,
+      "minConservativeSweepClearanceMm": 15.186515469160415,
+      "maxPoseErrorMm": 2.278173318171838e-13,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "unit": "WX-A",
+      "state": false,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "thirdTravelMm": 425.25,
+      "finalTravelMm": [
+        830.5,
+        830.5,
+        425.25
+      ],
+      "sha256": "d7878034c163307cebb4b8db94dd49cbf242a8ee9095832ba8f58e6aaf405197"
+    },
+    {
+      "id": "S3-WX-A-false--1_-1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 570,
+        "0:2": 570,
+        "1:2": 570
+      },
+      "everyTickTraceSha256": "3354bf836a3c7b2beda49c2d472e8813e6cc8baa127844a87bb161aa0ab7715c",
+      "ticks": 570,
+      "joints": 8,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 570,
+      "minBodyDistanceMm": 15.968229904785497,
+      "minConservativeSweepClearanceMm": 15.18947979634251,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 7.016609515630989e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "unit": "WX-A",
+      "state": false,
+      "signs": [
+        -1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "thirdTravelMm": 275.25,
+      "finalTravelMm": [
+        530.5,
+        530.5,
+        275.25
+      ],
+      "sha256": "b937d7d03b845e6a0ea6d63df5400d39ba2b1ff596d70c7aab3b6cd57e1d603c"
+    },
+    {
+      "id": "S3-WX-A-false-1_-1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 870,
+        "0:2": 870,
+        "1:2": 870
+      },
+      "everyTickTraceSha256": "fcfa261593c94178dffb942d841859be3956719883ca1dc2040bbd0ef0e00227",
+      "ticks": 870,
+      "joints": 11,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 870,
+      "minBodyDistanceMm": 17.013999999999996,
+      "minConservativeSweepClearanceMm": 17.013996,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "unit": "WX-A",
+      "state": false,
+      "signs": [
+        1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "thirdTravelMm": 425.25,
+      "finalTravelMm": [
+        830.5,
+        830.5,
+        425.25
+      ],
+      "sha256": "9a3f054c45c7e4965e80448a8f9c756d886751bb93458f3d5e5f54756c793190"
+    },
+    {
+      "id": "S3-WX-A-false--1_1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 870,
+        "0:2": 870,
+        "1:2": 870
+      },
+      "everyTickTraceSha256": "842d5aea6b491f0a24b1cf9a3e1f5c3c9f62d200fe3880568d96d76ac7d76486",
+      "ticks": 870,
+      "joints": 12,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 870,
+      "minBodyDistanceMm": 17.013999999999996,
+      "minConservativeSweepClearanceMm": 17.013996,
+      "maxPoseErrorMm": 2.278173318171838e-13,
+      "maxJumpExcessMm": 1.927624726505428e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "unit": "WX-A",
+      "state": false,
+      "signs": [
+        -1,
+        1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "thirdTravelMm": 425.25,
+      "finalTravelMm": [
+        830.5,
+        830.5,
+        425.25
+      ],
+      "sha256": "2abdc33bdca857912bd8f6904642831cb81f29bafb2127b09bda199ec9169f30"
+    },
+    {
+      "id": "S3-WX-A-true-1_1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 658,
+        "0:2": 658,
+        "1:2": 658
+      },
+      "everyTickTraceSha256": "eb7d2544f54131a22189e105c655cf599cff2a2b4ae92e1a633a3ea216a5f5ab",
+      "ticks": 658,
+      "joints": 8,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 537,
+      "minBodyDistanceMm": 0.01803199948881229,
+      "minConservativeSweepClearanceMm": 0.013013996787353176,
+      "maxPoseErrorMm": 2.278173318171838e-13,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-A",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 319.25,
+      "finalTravelMm": [
+        497.5,
+        497.5,
+        319.25
+      ],
+      "sha256": "b4bcb31839c396f8138726d7c7e855d3378f44a6b619ffbcfb72c9642e6518b7"
+    },
+    {
+      "id": "S3-WX-A-true--1_-1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 358,
+        "0:2": 358,
+        "1:2": 358
+      },
+      "everyTickTraceSha256": "03f8098a1261be04e74e78139d139e92de374086b0005d66d826ccdd8291d5c6",
+      "ticks": 358,
+      "joints": 5,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 237,
+      "minBodyDistanceMm": 0.018031999489608097,
+      "minConservativeSweepClearanceMm": 0.013013996787785129,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 6.616929226765933e-14,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-A",
+      "state": true,
+      "signs": [
+        -1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 169.25,
+      "finalTravelMm": [
+        197.5,
+        197.5,
+        169.25
+      ],
+      "sha256": "b6cbccf255fb008139851023beb34f3a2ec44fad1378fe9d4471da17fcb969e3"
+    },
+    {
+      "id": "S3-WX-A-true-1_-1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 693,
+        "0:2": 693,
+        "1:2": 693
+      },
+      "everyTickTraceSha256": "7ebb88bac719c7ba0c03f7e177be63dac9331c6b56a6cc8aff63466908ad7825",
+      "ticks": 693,
+      "joints": 8,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 572,
+      "minBodyDistanceMm": 0.3451170139566102,
+      "minConservativeSweepClearanceMm": 0.34009901124810726,
+      "maxPoseErrorMm": 2.278173318171838e-13,
+      "maxJumpExcessMm": 1.927624726505428e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-A",
+      "state": true,
+      "signs": [
+        1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 336.75,
+      "finalTravelMm": [
+        532.5,
+        532.5,
+        336.75
+      ],
+      "sha256": "7d69bfa588fefce9dd5cbea6eac5b23e9a27a66f24c5ff039b55a04d28b23021"
+    },
+    {
+      "id": "S3-WX-A-true--1_1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 693,
+        "0:2": 693,
+        "1:2": 693
+      },
+      "everyTickTraceSha256": "2eb887f502b9067ba25fd05b0ec3328c8fba5dc3f3ed7d5245b02fab6e139f1d",
+      "ticks": 693,
+      "joints": 8,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 572,
+      "minBodyDistanceMm": 0.3451170139566102,
+      "minConservativeSweepClearanceMm": 0.34009901124803515,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-A",
+      "state": true,
+      "signs": [
+        -1,
+        1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 336.75,
+      "finalTravelMm": [
+        532.5,
+        532.5,
+        336.75
+      ],
+      "sha256": "5f17e1cdd5e7dce06613f0e18233a8308b3f8f04a1e6fd94a96165426e0c6fc0"
+    },
+    {
+      "id": "S3-WX-B-false-1_1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 570,
+        "0:2": 570,
+        "1:2": 570
+      },
+      "everyTickTraceSha256": "97174e0c1efcbe4545b244b5120e429f21e03a8d0e457ed22cc3187d83170be0",
+      "ticks": 570,
+      "joints": 7,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 570,
+      "minBodyDistanceMm": 15.969316427048321,
+      "minConservativeSweepClearanceMm": 15.186806372961197,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.084998840246044e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "unit": "WX-B",
+      "state": false,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "thirdTravelMm": 275.25,
+      "finalTravelMm": [
+        530.5,
+        530.5,
+        275.25
+      ],
+      "sha256": "07b4a99002b937f49dcad0135b2925bbd40a21635fb7cc8a7b7e717c9ed45eff"
+    },
+    {
+      "id": "S3-WX-B-false--1_-1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 870,
+        "0:2": 870,
+        "1:2": 870
+      },
+      "everyTickTraceSha256": "443d7848fe5d3b60a23b6464a7dca32d4d4362871c39399cb563912489761c56",
+      "ticks": 870,
+      "joints": 11,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 870,
+      "minBodyDistanceMm": 15.885617018520483,
+      "minConservativeSweepClearanceMm": 15.18522299809749,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.1271873151818e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "unit": "WX-B",
+      "state": false,
+      "signs": [
+        -1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "thirdTravelMm": 425.25,
+      "finalTravelMm": [
+        830.5,
+        830.5,
+        425.25
+      ],
+      "sha256": "aa1aaecfa7c16e747a3af9113a7d7a093acbb0389526e59c1078cd4c98f7c020"
+    },
+    {
+      "id": "S3-WX-B-false-1_-1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 870,
+        "0:2": 870,
+        "1:2": 870
+      },
+      "everyTickTraceSha256": "c267d71bf200bd248ad6afaf2a697c21b0fd78c0a1e39cc49eaf2baaf635da43",
+      "ticks": 870,
+      "joints": 10,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 870,
+      "minBodyDistanceMm": 17.012999999999998,
+      "minConservativeSweepClearanceMm": 17.012996,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 1.9761969838327786e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "unit": "WX-B",
+      "state": false,
+      "signs": [
+        1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "thirdTravelMm": 425.25,
+      "finalTravelMm": [
+        830.5,
+        830.5,
+        425.25
+      ],
+      "sha256": "8eb505397a79cd0d8a13a6dc914ac215fb25dd925f1d823c9d52c0147da1f437"
+    },
+    {
+      "id": "S3-WX-B-false--1_1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 570,
+        "0:2": 570,
+        "1:2": 570
+      },
+      "everyTickTraceSha256": "005568a191d8029316f3af9a6272987e1228e6a6856fdcf5079df16b0b13f5bd",
+      "ticks": 570,
+      "joints": 7,
+      "collisionStops": 0,
+      "guardStops": 0,
+      "simultaneousMoving": 570,
+      "minBodyDistanceMm": 17.012999999999998,
+      "minConservativeSweepClearanceMm": 17.012996,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.1271873151818e-13,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "unit": "WX-B",
+      "state": false,
+      "signs": [
+        -1,
+        1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": false,
+        "kind": "unlocked",
+        "message": "No switch operation lock detected"
+      },
+      "thirdTravelMm": 275.25,
+      "finalTravelMm": [
+        530.5,
+        530.5,
+        275.25
+      ],
+      "sha256": "e28de9286eb06c3c802e92453c2c6cde83092dba70112ea84d0ddd3b699d443b"
+    },
+    {
+      "id": "S3-WX-B-true-1_1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 358,
+        "0:2": 358,
+        "1:2": 358
+      },
+      "everyTickTraceSha256": "a3020d63c589d0b9a9b59ea86ad68aa4d2f661c9c0f1b2d44d26c95082511e75",
+      "ticks": 358,
+      "joints": 3,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 237,
+      "minBodyDistanceMm": 0.017742612700800464,
+      "minConservativeSweepClearanceMm": 0.012724691204381237,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.084998840246044e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-B",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 169.25,
+      "finalTravelMm": [
+        197.5,
+        197.5,
+        169.25
+      ],
+      "sha256": "27ecbc9f1df516a2bcd6afca41f6bb2c8b29a47ab00129877e3a79494deb02bb"
+    },
+    {
+      "id": "S3-WX-B-true--1_-1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 658,
+        "0:2": 658,
+        "1:2": 658
+      },
+      "everyTickTraceSha256": "78b561d28e2e03be5d81afd695a8948bc19ec67aa1fc651c7f09e46817869a0c",
+      "ticks": 658,
+      "joints": 9,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 537,
+      "minBodyDistanceMm": 0.01774261270173838,
+      "minConservativeSweepClearanceMm": 0.012724691205616735,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 7.016609515630989e-14,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-B",
+      "state": true,
+      "signs": [
+        -1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 319.25,
+      "finalTravelMm": [
+        497.5,
+        497.5,
+        319.25
+      ],
+      "sha256": "8bd28d1784cbf2a22faa49633fd0f8f74737482168fee929ead29a1496af0c0a"
+    },
+    {
+      "id": "S3-WX-B-true-1_-1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 693,
+        "0:2": 693,
+        "1:2": 693
+      },
+      "everyTickTraceSha256": "7e628ca7a08aa2f818d433e5e236fc2ff4975b6316431af5dd6dd276c682acf2",
+      "ticks": 693,
+      "joints": 7,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 572,
+      "minBodyDistanceMm": 0.3450614650669195,
+      "minConservativeSweepClearanceMm": 0.34004354356425237,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.084998840246044e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-B",
+      "state": true,
+      "signs": [
+        1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 336.75,
+      "finalTravelMm": [
+        532.5,
+        532.5,
+        336.75
+      ],
+      "sha256": "6c06cc4bcf807db33ed52de01d08f4365d048eb9625a31ea2bb469979ff2c982"
+    },
+    {
+      "id": "S3-WX-B-true--1_1",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 393,
+        "0:2": 393,
+        "1:2": 393
+      },
+      "everyTickTraceSha256": "b693b12c73a8c0342a66d3c70a6fa8eba5c64ee18de656f7b8aa226f8c56a5bf",
+      "ticks": 393,
+      "joints": 4,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 272,
+      "minBodyDistanceMm": 0.3450614650666921,
+      "minConservativeSweepClearanceMm": 0.3400435435633388,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.0550228185811648e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-B",
+      "state": true,
+      "signs": [
+        -1,
+        1
+      ],
+      "perturb": 0,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 186.75,
+      "finalTravelMm": [
+        232.5,
+        232.5,
+        186.75
+      ],
+      "sha256": "fc8e6dbdaba1947c7809f6e1d10f07231a7df1220e4804c3624e92425397cf38"
+    },
+    {
+      "id": "S3-WX-A-cars",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 358,
+        "0:2": 358,
+        "1:2": 358
+      },
+      "everyTickTraceSha256": "5df6f8e7da688826b3ed178c54a702cc5bfbc5cc945a0a46921a85c305c89ed8",
+      "ticks": 358,
+      "joints": 5,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 237,
+      "minBodyDistanceMm": 0.018031999489608097,
+      "minConservativeSweepClearanceMm": 0.013013996787785129,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 6.616929226765933e-14,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-A",
+      "state": true,
+      "signs": [
+        -1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": true,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 169.25,
+      "finalTravelMm": [
+        197.5,
+        197.5,
+        169.25
+      ],
+      "sha256": "a98d743685918e4fc3a892d81fd6264d82cf1b9abeecb2c59370345d716023c2"
+    },
+    {
+      "id": "S3-WX-A-perturb--0.01",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 658,
+        "0:2": 658,
+        "1:2": 658
+      },
+      "everyTickTraceSha256": "dbdbc2c6b0788d475175c7030de99dca76b8cda6e183369913d0b19618abebfc",
+      "ticks": 658,
+      "joints": 8,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 537,
+      "minBodyDistanceMm": 0.02053475325060111,
+      "minConservativeSweepClearanceMm": 0.01550236740462807,
+      "maxPoseErrorMm": 2.278173318171838e-13,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-A",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": -0.01,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 319.25,
+      "finalTravelMm": [
+        497.5,
+        497.5,
+        319.25
+      ],
+      "sha256": "450417c7e54aec048651902f445a80c2b0eb6471d4b88b194b566fa1f9db4e08"
+    },
+    {
+      "id": "S3-WX-A-perturb--0.001",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 658,
+        "0:2": 658,
+        "1:2": 658
+      },
+      "everyTickTraceSha256": "d8b36aae5f2767aa23e401d5bf1c5f84b1b67ecedb072455d2c996901792a7e7",
+      "ticks": 658,
+      "joints": 8,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 537,
+      "minBodyDistanceMm": 0.018136417537935996,
+      "minConservativeSweepClearanceMm": 0.0131184148354269,
+      "maxPoseErrorMm": 2.278173318171838e-13,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-A",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": -0.001,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 319.25,
+      "finalTravelMm": [
+        497.5,
+        497.5,
+        319.25
+      ],
+      "sha256": "a6c283795df003829f7352b258129d3782adf1b4840b72a62c61b8e6946ac81d"
+    },
+    {
+      "id": "S3-WX-A-perturb-0.001",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 658,
+        "0:2": 658,
+        "1:2": 658
+      },
+      "everyTickTraceSha256": "0e08e216b105ea69074d51c9508309adbb68788136f007da7b27fb73f9eb5b21",
+      "ticks": 658,
+      "joints": 8,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 537,
+      "minBodyDistanceMm": 0.018136417537935996,
+      "minConservativeSweepClearanceMm": 0.0131184148354269,
+      "maxPoseErrorMm": 2.278173318171838e-13,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-A",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": 0.001,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 319.25,
+      "finalTravelMm": [
+        497.5,
+        497.5,
+        319.25
+      ],
+      "sha256": "dad99a1ac8ddfd56d6ee10a34ecc5199c726113cc2cbe35a1f029f3ca78077e5"
+    },
+    {
+      "id": "S3-WX-A-perturb-0.01",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 658,
+        "0:2": 658,
+        "1:2": 658
+      },
+      "everyTickTraceSha256": "d2816e7c24f4ef46d3f36f3ae6945d30dedafba9217a8cb013955cc84616aa14",
+      "ticks": 658,
+      "joints": 8,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 537,
+      "minBodyDistanceMm": 0.020534753250601483,
+      "minConservativeSweepClearanceMm": 0.015502367404628313,
+      "maxPoseErrorMm": 2.278173318171838e-13,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-A",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": 0.01,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 319.25,
+      "finalTravelMm": [
+        497.5,
+        497.5,
+        319.25
+      ],
+      "sha256": "208a084a2a4197e42dafc6cfd67e6d183c9c85499c825c7f48a432c9b4e409f4"
+    },
+    {
+      "id": "S3-WX-B-cars",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 718,
+        "0:2": 718,
+        "1:2": 718
+      },
+      "everyTickTraceSha256": "d2d7cb22487606785a0a4ae202cd98a1d5fa2edf2b34fcd377fbbb925c830832",
+      "ticks": 718,
+      "joints": 11,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 597,
+      "minBodyDistanceMm": 0.01774261270108468,
+      "minConservativeSweepClearanceMm": 0.012724691204484825,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 1.1368683772161603e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-B",
+      "state": true,
+      "signs": [
+        -1,
+        -1
+      ],
+      "perturb": 0,
+      "cars": true,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 349.25,
+      "finalTravelMm": [
+        557.5,
+        557.5,
+        349.25
+      ],
+      "sha256": "81ecdd549bc9d15d6707396fdf8d32a32b9b7e327a83c9cd9fa653b822f7084f"
+    },
+    {
+      "id": "S3-WX-B-perturb--0.01",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 358,
+        "0:2": 358,
+        "1:2": 358
+      },
+      "everyTickTraceSha256": "5cfa83652f125ebca9966dda28abf05f5ce4ab612a68315412a69bdbbd8b6b0f",
+      "ticks": 358,
+      "joints": 3,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 237,
+      "minBodyDistanceMm": 0.020248062639966414,
+      "minConservativeSweepClearanceMm": 0.015215723889463037,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.0539125955565396e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-B",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": -0.01,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 169.25,
+      "finalTravelMm": [
+        197.5,
+        197.5,
+        169.25
+      ],
+      "sha256": "0df144adca82f1263a567399dd942d960257eb69d733a1d0ef31362345e125fb"
+    },
+    {
+      "id": "S3-WX-B-perturb--0.001",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 358,
+        "0:2": 358,
+        "1:2": 358
+      },
+      "everyTickTraceSha256": "369d88ad672b8a03c3cf5f165906ed69fbcf5f94f383bf6ba7d553ced2a78f9b",
+      "ticks": 358,
+      "joints": 3,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 237,
+      "minBodyDistanceMm": 0.01784872395173678,
+      "minConservativeSweepClearanceMm": 0.01283080245497449,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.084998840246044e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-B",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": -0.001,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 169.25,
+      "finalTravelMm": [
+        197.5,
+        197.5,
+        169.25
+      ],
+      "sha256": "9d36e1dd9016c1337f23ad2072246360a45bce76d711622bcacdd080e43e21ee"
+    },
+    {
+      "id": "S3-WX-B-perturb-0.001",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 358,
+        "0:2": 358,
+        "1:2": 358
+      },
+      "everyTickTraceSha256": "dbd300e9c7e60e944be6c2f72c1e817bf797351dcdc04ad71e3884220f6d60cb",
+      "ticks": 358,
+      "joints": 3,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 237,
+      "minBodyDistanceMm": 0.017848723951902727,
+      "minConservativeSweepClearanceMm": 0.012830802455140436,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.084998840246044e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-B",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": 0.001,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 169.25,
+      "finalTravelMm": [
+        197.5,
+        197.5,
+        169.25
+      ],
+      "sha256": "0ec2eae8b585c5f4a5c8a5383826eac763675332a33a4135ee42cf006719bff2"
+    },
+    {
+      "id": "S3-WX-B-perturb-0.01",
+      "name": "S3-three-WX",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 358,
+        "0:2": 358,
+        "1:2": 358
+      },
+      "everyTickTraceSha256": "73ee3b695d0d78ec0f6613f58ecf3d136cd8a3b0962bde0fa931ecb617d3feec",
+      "ticks": 358,
+      "joints": 3,
+      "collisionStops": 242,
+      "guardStops": 242,
+      "simultaneousMoving": 237,
+      "minBodyDistanceMm": 0.020248062640004606,
+      "minConservativeSweepClearanceMm": 0.015215723889511317,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.0539125955565396e-13,
+      "consecutiveStoppedTicks": [
+        121,
+        121,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (2); terzo in progresso",
+      "unit": "WX-B",
+      "state": true,
+      "signs": [
+        1,
+        1
+      ],
+      "perturb": 0.01,
+      "cars": false,
+      "entered": [
+        true,
+        true
+      ],
+      "stationarySafety": {
+        "blocked": true,
+        "kind": "occupied",
+        "message": "Switch area occupied · operation blocked"
+      },
+      "thirdTravelMm": 169.25,
+      "finalTravelMm": [
+        197.5,
+        197.5,
+        169.25
+      ],
+      "sha256": "2da3e736d18209debb19610c352c0e6b0b5eda01bdf54cd1c05d1105023085c8"
+    },
+    {
+      "id": "S3-WX-A-queued-three",
+      "name": "S3-queued-three-WX-A",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 693,
+        "0:2": 693,
+        "1:2": 693
+      },
+      "everyTickTraceSha256": "38cb988e92506ab5cdd52a18ada5dd995b12e953e78be616019e5949e199f56b",
+      "ticks": 693,
+      "joints": 9,
+      "collisionStops": 433,
+      "guardStops": 433,
+      "simultaneousMoving": 537,
+      "minBodyDistanceMm": 0.01803199948881229,
+      "minConservativeSweepClearanceMm": 0.013013996787353176,
+      "maxPoseErrorMm": 2.278173318171838e-13,
+      "maxJumpExcessMm": 2.2737367544323206e-13,
+      "consecutiveStoppedTicks": [
+        156,
+        156,
+        121
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (3); due vie X e coda sulla prima",
+      "unit": "WX-A",
+      "placement": {
+        "id": 2,
+        "edge": "V06-P029",
+        "s": 107.8490000000001,
+        "sign": -1,
+        "spacing": 80,
+        "history": [
+          {
+            "id": "V06-P028",
+            "sign": -1,
+            "start": -711.5042507361618,
+            "end": -541.8282350247239
+          },
+          {
+            "id": "V06-P029",
+            "sign": -1,
+            "start": -541.8282350247239,
+            "end": -372.15099999999995
+          },
+          {
+            "id": "V06-P068",
+            "sign": 1,
+            "start": -372.15099999999995,
+            "end": -186.07600000000002
+          },
+          {
+            "id": "V06-P069",
+            "sign": 1,
+            "start": -186.07600000000002,
+            "end": 0
+          },
+          {
+            "id": "V06-P012",
+            "sign": 1,
+            "start": 0,
+            "end": 312.74037597156297
+          }
+        ]
+      },
+      "entered": [
+        true,
+        true,
+        true
+      ],
+      "finalTravelMm": [
+        497.5,
+        497.5,
+        532.5
+      ],
+      "sha256": "361d95ed633a1cd0e886627b87ecc61ac008f53006b0fda3553e03612a00c8ff"
+    },
+    {
+      "id": "S3-WX-B-queued-three",
+      "name": "S3-queued-three-WX-B",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 393,
+        "0:2": 393,
+        "1:2": 393
+      },
+      "everyTickTraceSha256": "1f5eb3cf12ae36a3fc87fb617b0552abfaa1b064ea0edd8db780924faf032ad0",
+      "ticks": 393,
+      "joints": 3,
+      "collisionStops": 433,
+      "guardStops": 433,
+      "simultaneousMoving": 237,
+      "minBodyDistanceMm": 0.017742612700800464,
+      "minConservativeSweepClearanceMm": 0.012724691204381237,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 2.084998840246044e-13,
+      "consecutiveStoppedTicks": [
+        156,
+        156,
+        121
+      ],
+      "separation": "PASS",
+      "progress": "DEADLOCK sicuro (3); due vie X e coda sulla prima",
+      "unit": "WX-B",
+      "placement": {
+        "id": 2,
+        "edge": "V06-P018",
+        "s": 180,
+        "sign": -1,
+        "spacing": 80,
+        "history": [
+          {
+            "id": "V06-P019",
+            "sign": -1,
+            "start": -443.04394675011224,
+            "end": -221.5225194788061
+          },
+          {
+            "id": "V06-P018",
+            "sign": -1,
+            "start": -221.5225194788061,
+            "end": 0
+          },
+          {
+            "id": "V06-P016",
+            "sign": 1,
+            "start": 0,
+            "end": 312.7402564105254
+          }
+        ]
+      },
+      "entered": [
+        true,
+        true,
+        true
+      ],
+      "finalTravelMm": [
+        197.5,
+        197.5,
+        232.5
+      ],
+      "sha256": "e3e56538a9c3467ff394123f7d0ad4449a1872892f5ef339e5d8b4fd8700c790"
+    },
+    {
+      "id": "S4-F1",
+      "name": "S4-F1-three",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 999,
+        "0:2": 999,
+        "1:2": 999
+      },
+      "everyTickTraceSha256": "bfb554507457af69f6b9cc28bd65eb1e44334d2782a53c029ecf3ab6673b0b0f",
+      "ticks": 999,
+      "joints": 19,
+      "collisionStops": 0,
+      "guardStops": 54,
+      "simultaneousMoving": 988,
+      "minBodyDistanceMm": 15.50511124205626,
+      "minConservativeSweepClearanceMm": 14.250722281077076,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 8.681944052568724e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "clearanceOutsideC13Mm": 1.7532634352148762,
+      "stopTick": 869,
+      "finalTravelMm": [
+        1223.25,
+        1409.25,
+        1409.25
+      ],
+      "sha256": "b16c051144a4987a4524c58d415dad0a0116a4e02b3e326601c80063e2826c44"
+    },
+    {
+      "id": "S5-reservations",
+      "name": "S5-overlapping-reservations",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 430,
+        "0:2": 430,
+        "1:2": 430
+      },
+      "everyTickTraceSha256": "38497e3c159fcd005830096bc0dbed4888b463a6e137b2a3d901b345d423aa8a",
+      "ticks": 430,
+      "joints": 2,
+      "collisionStops": 0,
+      "guardStops": 458,
+      "simultaneousMoving": 222,
+      "minBodyDistanceMm": 26.21943451430621,
+      "minConservativeSweepClearanceMm": 25.550652351647738,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 8.526512829121202e-14,
+      "consecutiveStoppedTicks": [
+        0,
+        0,
+        0
+      ],
+      "separation": "PASS",
+      "progress": "PASS",
+      "reservations": [
+        {
+          "edge": "V06-P064",
+          "min": 110,
+          "max": 120
+        },
+        {
+          "edge": "V06-P065",
+          "min": 110,
+          "max": 120
+        }
+      ],
+      "released": 4,
+      "finalTravelMm": [
+        555.75,
+        95.93472222222223,
+        95.93472222222223
+      ],
+      "sha256": "84044d790610576e6729185c6d2acb6466b9b5c463c239ab71992a98d5f1afaf"
+    },
+    {
+      "id": "S5-UNKNOWN",
+      "name": "S5-UNKNOWN-three",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 240,
+        "0:2": 240,
+        "1:2": 240
+      },
+      "everyTickTraceSha256": "895820f1577333078e6e92ad1ad53d5fe292e07c921b08307bb100d6d473db5f",
+      "ticks": 240,
+      "joints": 0,
+      "collisionStops": 0,
+      "guardStops": 598,
+      "simultaneousMoving": 42,
+      "minBodyDistanceMm": 15.955607237197706,
+      "minConservativeSweepClearanceMm": 15.929494993094787,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 1.887379141862766e-13,
+      "consecutiveStoppedTicks": [
+        198,
+        198,
+        148
+      ],
+      "separation": "PASS",
+      "progress": "arresto fail-closed UNKNOWN",
+      "finalTravelMm": [
+        7.622222222222222,
+        7.622222222222222,
+        37.122222222222234
+      ],
+      "sha256": "98d17b326354cfed94adc6da1449ba28557988f9999397871803c28b10f61d61"
+    },
+    {
+      "id": "S5-near-0.0001-012",
+      "name": "S5-near-touch",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 60,
+        "0:2": 60,
+        "1:2": 60
+      },
+      "everyTickTraceSha256": "a9c72b31c27b6837e09244f1d9d20315aa59ee30b1c64306898d4bc5c423fa9e",
+      "ticks": 60,
+      "joints": 0,
+      "collisionStops": 121,
+      "guardStops": 121,
+      "simultaneousMoving": 0,
+      "minBodyDistanceMm": 0.00009999999997489795,
+      "minConservativeSweepClearanceMm": 0.00009999999997489795,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 0,
+      "consecutiveStoppedTicks": [
+        60,
+        60,
+        60
+      ],
+      "separation": "PASS",
+      "progress": "ARRESTO SICURO: leader fermo, follower protetti",
+      "gap": 0.0001,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "finalTravelMm": [
+        0,
+        0,
+        0
+      ],
+      "sha256": "5512b715c4a6c18d31740816a08adaff4930937464857dba6e2d2cc57f6b883b"
+    },
+    {
+      "id": "S5-near-0.0001-210",
+      "name": "S5-near-touch",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 60,
+        "0:2": 60,
+        "1:2": 60
+      },
+      "everyTickTraceSha256": "b013750db68d17f68205353eb28503082445fef393af3283b361968ead6265fb",
+      "ticks": 60,
+      "joints": 0,
+      "collisionStops": 121,
+      "guardStops": 121,
+      "simultaneousMoving": 0,
+      "minBodyDistanceMm": 0.00009999999997489795,
+      "minConservativeSweepClearanceMm": 0.00009999999997489795,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 0,
+      "consecutiveStoppedTicks": [
+        60,
+        60,
+        60
+      ],
+      "separation": "PASS",
+      "progress": "ARRESTO SICURO: leader fermo, follower protetti",
+      "gap": 0.0001,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "finalTravelMm": [
+        0,
+        0,
+        0
+      ],
+      "sha256": "e0d26474127c08bc8b7afd4377be9743d87cb86bc4398effdbe7246fb0281725"
+    },
+    {
+      "id": "S5-near-0.001-012",
+      "name": "S5-near-touch",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 60,
+        "0:2": 60,
+        "1:2": 60
+      },
+      "everyTickTraceSha256": "1f7061f4dd077be251d5ef4164791ff4e28e90e49be6841d20bcdfcc2767a22b",
+      "ticks": 60,
+      "joints": 0,
+      "collisionStops": 121,
+      "guardStops": 121,
+      "simultaneousMoving": 0,
+      "minBodyDistanceMm": 0.0009999999999763531,
+      "minConservativeSweepClearanceMm": 0.0009999999999763531,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 0,
+      "consecutiveStoppedTicks": [
+        60,
+        60,
+        60
+      ],
+      "separation": "PASS",
+      "progress": "ARRESTO SICURO: leader fermo, follower protetti",
+      "gap": 0.001,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "finalTravelMm": [
+        0,
+        0,
+        0
+      ],
+      "sha256": "4cd94ce289628b1011c13825a17b34cb9e54c04c7ee8263349fbc56828c24257"
+    },
+    {
+      "id": "S5-near-0.001-210",
+      "name": "S5-near-touch",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 60,
+        "0:2": 60,
+        "1:2": 60
+      },
+      "everyTickTraceSha256": "05acb929178d900ef46c81351771c249104bcd7813491a82d2908f81002620ec",
+      "ticks": 60,
+      "joints": 0,
+      "collisionStops": 121,
+      "guardStops": 121,
+      "simultaneousMoving": 0,
+      "minBodyDistanceMm": 0.0009999999999763531,
+      "minConservativeSweepClearanceMm": 0.0009999999999763531,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 0,
+      "consecutiveStoppedTicks": [
+        60,
+        60,
+        60
+      ],
+      "separation": "PASS",
+      "progress": "ARRESTO SICURO: leader fermo, follower protetti",
+      "gap": 0.001,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "finalTravelMm": [
+        0,
+        0,
+        0
+      ],
+      "sha256": "cf32ee06f10dba2dd1f651aa2e46b4b555aee78e7e7ab4cdf426471672560435"
+    },
+    {
+      "id": "S5-near-0.01-012",
+      "name": "S5-near-touch",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 60,
+        "0:2": 60,
+        "1:2": 60
+      },
+      "everyTickTraceSha256": "35392ef8b78fa7870a9d4faf8eb76ceea773cd856826a332722489664dcf6d47",
+      "ticks": 60,
+      "joints": 0,
+      "collisionStops": 121,
+      "guardStops": 121,
+      "simultaneousMoving": 0,
+      "minBodyDistanceMm": 0.009999999999990905,
+      "minConservativeSweepClearanceMm": 0.009999999999990905,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 0,
+      "consecutiveStoppedTicks": [
+        60,
+        60,
+        60
+      ],
+      "separation": "PASS",
+      "progress": "ARRESTO SICURO: leader fermo, follower protetti",
+      "gap": 0.01,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "finalTravelMm": [
+        0,
+        0,
+        0
+      ],
+      "sha256": "9ba7f623fe4c75030f2e025155f84d6e2bf084bf178005e56488fad40e85f812"
+    },
+    {
+      "id": "S5-near-0.01-210",
+      "name": "S5-near-touch",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 60,
+        "0:2": 60,
+        "1:2": 60
+      },
+      "everyTickTraceSha256": "ccb47e5cf64649bc547b17486d7b03e97eb946841a6268a08588c4f18b758662",
+      "ticks": 60,
+      "joints": 0,
+      "collisionStops": 121,
+      "guardStops": 121,
+      "simultaneousMoving": 0,
+      "minBodyDistanceMm": 0.009999999999990905,
+      "minConservativeSweepClearanceMm": 0.009999999999990905,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 0,
+      "consecutiveStoppedTicks": [
+        60,
+        60,
+        60
+      ],
+      "separation": "PASS",
+      "progress": "ARRESTO SICURO: leader fermo, follower protetti",
+      "gap": 0.01,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "finalTravelMm": [
+        0,
+        0,
+        0
+      ],
+      "sha256": "b7392ce23e8496f24ea16d3ab4bd3d770673a335871520d7032dcd2b2e2d9804"
+    },
+    {
+      "id": "S5-near-0.1-012",
+      "name": "S5-near-touch",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 60,
+        "0:2": 60,
+        "1:2": 60
+      },
+      "everyTickTraceSha256": "02dcbc82d9afdb141a175b3ad5c171a8f2f809d9e58f413849ed9868d0af2d47",
+      "ticks": 60,
+      "joints": 0,
+      "collisionStops": 114,
+      "guardStops": 114,
+      "simultaneousMoving": 0,
+      "minBodyDistanceMm": 0.024999999999977263,
+      "minConservativeSweepClearanceMm": 0.024997999999977264,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 5.684341886080802e-14,
+      "consecutiveStoppedTicks": [
+        60,
+        57,
+        56
+      ],
+      "separation": "PASS",
+      "progress": "ARRESTO SICURO: leader fermo, follower protetti",
+      "gap": 0.1,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "finalTravelMm": [
+        0,
+        0.07500000000000001,
+        0.125
+      ],
+      "sha256": "a78916ab9933ab133c309da4b9c60280e2fb6487226119dbecbbf6ffeacd61ed"
+    },
+    {
+      "id": "S5-near-0.1-210",
+      "name": "S5-near-touch",
+      "status": "PASS",
+      "pairChecks": {
+        "0:1": 60,
+        "0:2": 60,
+        "1:2": 60
+      },
+      "everyTickTraceSha256": "518cf0861bcf00ccbd02c74a449da1f0289e0bc73e0654dd8c3201ffa7e8db45",
+      "ticks": 60,
+      "joints": 0,
+      "collisionStops": 114,
+      "guardStops": 114,
+      "simultaneousMoving": 0,
+      "minBodyDistanceMm": 0.024999999999977263,
+      "minConservativeSweepClearanceMm": 0.024997999999977264,
+      "maxPoseErrorMm": 0,
+      "maxJumpExcessMm": 5.684341886080802e-14,
+      "consecutiveStoppedTicks": [
+        56,
+        57,
+        60
+      ],
+      "separation": "PASS",
+      "progress": "ARRESTO SICURO: leader fermo, follower protetti",
+      "gap": 0.1,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "finalTravelMm": [
+        0.125,
+        0.07500000000000001,
+        0
+      ],
+      "sha256": "51e33e7d0a2e45ae98b5dd76ae8fc873f8c2b34b111e461be5ed0b79b0398720"
+    }
+  ],
+  "runtimeAdmission": false
+}

@@ -1,0 +1,46 @@
+✔ R1B legacy: registry identity, source order, ports, boolean states and immutable unit paths (5.603446ms)
+✔ R1B legacy: real network entrances for every global configuration and both directions (22.407794ms)
+✔ R1B legacy/Y-IN: command parity, both states and surfaces, reconciliation after permission only (19.454752ms)
+✔ R1B legacy/Y-R1: command parity, both states and surfaces, reconciliation after permission only (29.990851ms)
+✔ R1B legacy/Y-R2: command parity, both states and surfaces, reconciliation after permission only (27.818949ms)
+✔ R1B legacy/Y-3: command parity, both states and surfaces, reconciliation after permission only (15.512366ms)
+✔ R1B legacy/Y-4: command parity, both states and surfaces, reconciliation after permission only (42.06076ms)
+✔ R1B legacy/Y-2: command parity, both states and surfaces, reconciliation after permission only (37.115729ms)
+✔ R1B legacy/WX-A: command parity, both states and surfaces, reconciliation after permission only (32.194013ms)
+✔ R1B legacy/WX-B: command parity, both states and surfaces, reconciliation after permission only (14.533927ms)
+✔ R1B legacy: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation (16.117451ms)
+✔ R1B legacy: every internal arc, including inactive WX diagonals, locks the entire unit (150.780187ms)
+✔ R1B legacy: every port and actual neighbour blocks approach on both surfaces using the existing guard (70.422794ms)
+✔ R1B legacy: consecutive cross-surface commands read fresh engine occupancy and approach (4.185657ms)
+✔ R1B legacy: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN (1.9659ms)
+✔ R1B legacy: actual uncertain approach snapshot and safety callback failure never authorize a command (0.98626ms)
+✔ R1B V06-R1A: registry identity, source order, ports, boolean states and immutable unit paths (1.339433ms)
+✔ R1B V06-R1A: real network entrances for every global configuration and both directions (47.783302ms)
+✔ R1B V06-R1A/V06-C07: command parity, both states and surfaces, reconciliation after permission only (5.814969ms)
+✔ R1B V06-R1A/V06-C12: command parity, both states and surfaces, reconciliation after permission only (4.493713ms)
+✔ R1B V06-R1A/V06-C13: command parity, both states and surfaces, reconciliation after permission only (4.817782ms)
+✔ R1B V06-R1A/V06-N07: command parity, both states and surfaces, reconciliation after permission only (17.348615ms)
+✔ R1B V06-R1A/V06-N14: command parity, both states and surfaces, reconciliation after permission only (5.777294ms)
+✔ R1B V06-R1A/WX-A: command parity, both states and surfaces, reconciliation after permission only (6.350502ms)
+✔ R1B V06-R1A/WX-B: command parity, both states and surfaces, reconciliation after permission only (5.219306ms)
+✔ R1B V06-R1A: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation (3.401956ms)
+✔ R1B V06-R1A: every internal arc, including inactive WX diagonals, locks the entire unit (51.583298ms)
+✔ R1B V06-R1A: every port and actual neighbour blocks approach on both surfaces using the existing guard (14.864387ms)
+✔ R1B V06-R1A: consecutive cross-surface commands read fresh engine occupancy and approach (34.149718ms)
+✔ R1B V06-R1A: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN (2.058727ms)
+✔ R1B V06-R1A: actual uncertain approach snapshot and safety callback failure never authorize a command (0.759074ms)
+✔ R1B V06 model versus independent frozen WX 64 truth table (1.83732ms)
+✔ R1B V06 model versus independent frozen simple 90 truth table (1.37815ms)
+✔ R1B C12/C13 adjacent ports: both incoming alternatives, closed neighbour and unknown neighbour remain distinct (1.52656ms)
+✔ R1B V06 actual Journey traverses every permitted unit path and reverse, including both adjacent incoming alternatives (1.824241ms)
+✔ R1B registries reject incomplete, duplicate, mixed, nonboolean and broken-unit configuration (32.825885ms)
+✔ R1B commands reject profile/instance mixing even for shared WX IDs, and revalidate mutable specs on each request (4.050143ms)
+✔ R1B reset/profile isolation: independent caches, callbacks, state and geometry across alternating new instances (3.223686ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1001.670076

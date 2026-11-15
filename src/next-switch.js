@@ -22,8 +22,8 @@ function createSwitchTopology(network, specs) {
         site.protectedRanges.push({edge:id,min:0,max:edge.length});
       }
       sites.push(site);byControl.set(unit.id,site);
-      // At directly touching switches a node belongs to both units. Resolve
-      // the encounter using the actual outgoing/internal route below.
+      // At directly touching switches a node belongs to both units. Keep all
+      // members for protection; the actual route still selects the next site.
       for(const node of site.nodes) {
         const members=byNode.get(node)??[];members.push(site);byNode.set(node,members);
         for(const port of network.nodes[node]) {
@@ -87,9 +87,13 @@ function traceJourney(network, topology, journey, direction, offset, choose, max
     const wanted = choose(edge.id, choices, direction > 0);
     if(Array.isArray(members))site=members.find((s)=>wanted&&s.internal.includes(wanted.edge))??members.find((s)=>s.internal.includes(edge.id))??site;
     const valid = wanted && choices.some((p) => p.edge === wanted.edge && p.end === wanted.end);
-    if (site && !seenSites.has(site.id)) {
-      const encounter = { site, node, distance: result.distance, incoming: edge.id, outgoing: valid ? wanted : null, destination: valid ? destinationFor(network, wanted) : null };
-      seenSites.add(site.id);
+    // A shared routing boundary protects every incident unit, including when
+    // the router rejects the outgoing path. Preserve the route-selected site
+    // first for Next Switch, but never hide its neighbour from approach locks.
+    const encounterSites = site ? [site, ...(Array.isArray(members) ? members.filter(s=>s!==site) : [])] : [];
+    for (const member of encounterSites) if (!seenSites.has(member.id)) {
+      const encounter = { site: member, node, distance: result.distance, incoming: edge.id, outgoing: valid ? wanted : null, destination: valid ? destinationFor(network, wanted) : null };
+      seenSites.add(member.id);
       result.encounters.push(encounter);
       result.next ??= encounter;
     }

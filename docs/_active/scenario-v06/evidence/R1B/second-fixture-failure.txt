@@ -1,0 +1,66 @@
+✔ R1B legacy: registry identity, source order, ports, boolean states and immutable unit paths (4.462958ms)
+✔ R1B legacy: real network entrances for every global configuration and both directions (23.44453ms)
+✔ R1B legacy/Y-IN: command parity, both states and surfaces, reconciliation after permission only (12.364125ms)
+✔ R1B legacy/Y-R1: command parity, both states and surfaces, reconciliation after permission only (16.87265ms)
+✔ R1B legacy/Y-R2: command parity, both states and surfaces, reconciliation after permission only (21.464809ms)
+✔ R1B legacy/Y-3: command parity, both states and surfaces, reconciliation after permission only (4.228971ms)
+✔ R1B legacy/Y-4: command parity, both states and surfaces, reconciliation after permission only (18.53399ms)
+✔ R1B legacy/Y-2: command parity, both states and surfaces, reconciliation after permission only (24.381868ms)
+✔ R1B legacy/WX-A: command parity, both states and surfaces, reconciliation after permission only (20.721929ms)
+✔ R1B legacy/WX-B: command parity, both states and surfaces, reconciliation after permission only (4.020162ms)
+✔ R1B legacy: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation (7.194972ms)
+✔ R1B legacy: every internal arc, including inactive WX diagonals, locks the entire unit (85.303613ms)
+✖ R1B legacy: every port and actual neighbour blocks approach on both surfaces using the existing guard (14.086776ms)
+✔ R1B legacy: consecutive cross-surface commands read fresh engine occupancy and approach (28.859136ms)
+✔ R1B legacy: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN (1.879272ms)
+✔ R1B V06-R1A: registry identity, source order, ports, boolean states and immutable unit paths (1.395045ms)
+✔ R1B V06-R1A: real network entrances for every global configuration and both directions (11.307911ms)
+✔ R1B V06-R1A/V06-C07: command parity, both states and surfaces, reconciliation after permission only (4.320186ms)
+✔ R1B V06-R1A/V06-C12: command parity, both states and surfaces, reconciliation after permission only (26.223204ms)
+✔ R1B V06-R1A/V06-C13: command parity, both states and surfaces, reconciliation after permission only (4.330321ms)
+✔ R1B V06-R1A/V06-N07: command parity, both states and surfaces, reconciliation after permission only (3.947624ms)
+✔ R1B V06-R1A/V06-N14: command parity, both states and surfaces, reconciliation after permission only (5.702793ms)
+✔ R1B V06-R1A/WX-A: command parity, both states and surfaces, reconciliation after permission only (19.669381ms)
+✔ R1B V06-R1A/WX-B: command parity, both states and surfaces, reconciliation after permission only (22.852884ms)
+✔ R1B V06-R1A: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation (7.977811ms)
+✔ R1B V06-R1A: every internal arc, including inactive WX diagonals, locks the entire unit (70.133724ms)
+✔ R1B V06-R1A: every port and actual neighbour blocks approach on both surfaces using the existing guard (37.179715ms)
+✔ R1B V06-R1A: consecutive cross-surface commands read fresh engine occupancy and approach (20.799284ms)
+✔ R1B V06-R1A: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN (5.78813ms)
+✔ R1B V06 model versus independent frozen WX 64 truth table (7.448788ms)
+✔ R1B V06 model versus independent frozen simple 90 truth table (5.879554ms)
+✔ R1B C12/C13 adjacent ports: both incoming alternatives, closed neighbour and unknown neighbour remain distinct (4.564879ms)
+✔ R1B registries reject incomplete, duplicate, mixed, nonboolean and broken-unit configuration (98.372823ms)
+✔ R1B commands reject profile/instance mixing even for shared WX IDs, and revalidate mutable specs on each request (8.36862ms)
+✔ R1B reset/profile isolation: independent caches, callbacks, state and geometry across alternating new instances (3.455996ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 34
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 808.210725
+
+✖ failing tests:
+
+test at tests/v06-r1b.test.js:134:3
+✖ R1B legacy: every port and actual neighbour blocks approach on both surfaces using the existing guard (14.086776ms)
+  AssertionError [ERR_ASSERTION]: Y-R2/T45: outward fixture
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/v06-r1b.test.js:145:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

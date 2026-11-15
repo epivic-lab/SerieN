@@ -1,0 +1,431 @@
+{
+  "status": "PASS_OFFLINE_GEOMETRY; CONDITIONAL_GO_REGIA_REVIEW; NOT_MANUFACTURER_CERTIFIED",
+  "candidate_sha256": "99a5019f6ea4b8a99d18dcf6aff4a9b841ea2c49c5bb4eff9edd36825eead460",
+  "preserved_R01_pieces": 79,
+  "preserved_nodes": 74,
+  "profiles": [
+    {
+      "piece": 12,
+      "radius_mm": 583.184,
+      "middle_mm": 17.924429248374967,
+      "theta_deg": 12.812013572560007,
+      "lead_mm": 17.00114133523357,
+      "analytic_length_mm": 312.7403839483433,
+      "polyline_length_mm": 312.74037597156297,
+      "max_point_locus_error_mm": 1.8474111129762605e-13,
+      "max_primitive_G0_error_mm": 0.0,
+      "max_primitive_G1_error_deg": 7.951386703658792e-15,
+      "max_sample_step_mm": 0.49964303458397064,
+      "max_arc_sagitta_bound_mm": 5.350866388198483e-05,
+      "curvature_per_mm": [
+        0,
+        0.0017147246838047684,
+        0,
+        -0.0017147246838047684,
+        0
+      ],
+      "curvature_class": "G1, piecewise constant curvature; not G2/C2"
+    },
+    {
+      "piece": 13,
+      "radius_mm": 583.184,
+      "middle_mm": 17.924429248374967,
+      "theta_deg": 12.812013572560007,
+      "lead_mm": 17.00114133523357,
+      "analytic_length_mm": 312.7403839483433,
+      "polyline_length_mm": 312.74037597156297,
+      "max_point_locus_error_mm": 2.5579538487363607e-13,
+      "max_primitive_G0_error_mm": 0.0,
+      "max_primitive_G1_error_deg": 7.951386703658792e-15,
+      "max_sample_step_mm": 0.49964303458397064,
+      "max_arc_sagitta_bound_mm": 5.350866388198483e-05,
+      "curvature_per_mm": [
+        0,
+        -0.0017147246838047684,
+        0,
+        0.0017147246838047684,
+        0
+      ],
+      "curvature_class": "G1, piecewise constant curvature; not G2/C2"
+    },
+    {
+      "piece": 16,
+      "radius_mm": 583.184,
+      "middle_mm": 17.924429248374967,
+      "theta_deg": 12.811806070626032,
+      "lead_mm": 17.00319360900161,
+      "analytic_length_mm": 312.74026438691743,
+      "polyline_length_mm": 312.7402564105254,
+      "max_point_locus_error_mm": 3.126388037344441e-13,
+      "max_primitive_G0_error_mm": 0.0,
+      "max_primitive_G1_error_deg": 7.951386703658792e-15,
+      "max_sample_step_mm": 0.49963494242195683,
+      "max_arc_sagitta_bound_mm": 5.3506930726143764e-05,
+      "curvature_per_mm": [
+        0,
+        0.0017147246838047684,
+        0,
+        -0.0017147246838047684,
+        0
+      ],
+      "curvature_class": "G1, piecewise constant curvature; not G2/C2"
+    },
+    {
+      "piece": 17,
+      "radius_mm": 583.184,
+      "middle_mm": 17.924429248374967,
+      "theta_deg": 12.811806070626032,
+      "lead_mm": 17.00319360900161,
+      "analytic_length_mm": 312.74026438691743,
+      "polyline_length_mm": 312.7402564105254,
+      "max_point_locus_error_mm": 3.339550858072471e-13,
+      "max_primitive_G0_error_mm": 0.0,
+      "max_primitive_G1_error_deg": 7.951386703658792e-15,
+      "max_sample_step_mm": 0.49963494242195683,
+      "max_arc_sagitta_bound_mm": 5.3506930726143764e-05,
+      "curvature_per_mm": [
+        0,
+        -0.0017147246838047684,
+        0,
+        0.0017147246838047684,
+        0
+      ],
+      "curvature_class": "G1, piecewise constant curvature; not G2/C2"
+    }
+  ],
+  "XTrackCAD": {
+    "file_sha256": "7724f7ae4c246bbaf7f84f910e51a99a2758c9484f2ecd4088e558aecd9fe25d",
+    "record_sha256": "ba02f04b85239595f77ac71977be43cff045b98fa57f1b74003622aecff02194",
+    "nominal_ports_mm": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        309.9999896,
+        0.0
+      ],
+      [
+        0.0,
+        -32.9999848
+      ],
+      [
+        309.9999896,
+        -32.9999848
+      ]
+    ],
+    "routes": [
+      {
+        "route": "upper-to-lower",
+        "internal_G0_gaps_mm": [
+          0.005135442883122071,
+          0.00471695950570808,
+          0.007229816682150416,
+          0.00773102503703234
+        ],
+        "internal_G1_kinks_deg": [
+          0.003,
+          0.028351376680871246,
+          0.12564862331914958,
+          0.14500000000002344
+        ],
+        "max_gap_mm": 0.00773102503703234,
+        "max_kink_deg": 0.14500000000002344
+      },
+      {
+        "route": "lower-to-upper",
+        "internal_G0_gaps_mm": [
+          0.0076775155237881155,
+          0.007229816682157889,
+          0.004716959505513094,
+          9.243133804633688e-05
+        ],
+        "internal_G1_kinks_deg": [
+          0.14699999999997876,
+          0.1256486233191098,
+          0.028351376680852164,
+          0.004999999999988278
+        ],
+        "max_gap_mm": 0.0076775155237881155,
+        "max_kink_deg": 0.14699999999997876
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "unit": "WX-A",
+      "piece": 12,
+      "dense_overlap_to_original_core_max_mm": 3.334761554732933,
+      "R01_to_R02_max_mm": 0,
+      "XTP_port_registered_sampled_Hausdorff_mm": 0.2246458745465185,
+      "XTP_registration": "diagonal scale x/y to fixed V06 ports; not adopted as geometry",
+      "SVG_pair": 12,
+      "original_endpoints_to_SVG_max_mm": 0.008654235289932219
+    },
+    {
+      "unit": "WX-A",
+      "piece": 13,
+      "dense_overlap_to_original_core_max_mm": 3.3347615547329297,
+      "R01_to_R02_max_mm": 0,
+      "XTP_port_registered_sampled_Hausdorff_mm": 0.13051618134332818,
+      "XTP_registration": "diagonal scale x/y to fixed V06 ports; not adopted as geometry",
+      "SVG_pair": 13,
+      "original_endpoints_to_SVG_max_mm": 0.007596068736652003
+    },
+    {
+      "unit": "WX-B",
+      "piece": 16,
+      "dense_overlap_to_original_core_max_mm": 3.3341360891642093,
+      "R01_to_R02_max_mm": 0,
+      "XTP_port_registered_sampled_Hausdorff_mm": 0.22461364441070492,
+      "XTP_registration": "diagonal scale x/y to fixed V06 ports; not adopted as geometry",
+      "SVG_pair": 16,
+      "original_endpoints_to_SVG_max_mm": 0.0056127447182228235
+    },
+    {
+      "unit": "WX-B",
+      "piece": 17,
+      "dense_overlap_to_original_core_max_mm": 3.3341360891642093,
+      "R01_to_R02_max_mm": 0,
+      "XTP_port_registered_sampled_Hausdorff_mm": 0.13048544375525617,
+      "XTP_registration": "diagonal scale x/y to fixed V06 ports; not adopted as geometry",
+      "SVG_pair": 17,
+      "original_endpoints_to_SVG_max_mm": 0.005715062516871793
+    }
+  ],
+  "envelopes": [
+    {
+      "unit": "WX-A",
+      "ports_mm": {
+        "UL": [
+          409.659,
+          68.018
+        ],
+        "UR": [
+          719.785,
+          68.018
+        ],
+        "LL": [
+          409.659,
+          101.032
+        ],
+        "LR": [
+          719.785,
+          101.032
+        ]
+      },
+      "width_mm": 310.126,
+      "spacing_mm": 33.013999999999996,
+      "nominal_width_delta_mm": 0.12599999999997635,
+      "nominal_spacing_delta_mm": 0.013999999999995794,
+      "axis_bbox_mm": [
+        409.659,
+        68.018,
+        719.785,
+        101.032
+      ],
+      "rail_center_corridor_mm": [
+        409.659,
+        63.293,
+        719.785,
+        105.75699999999999
+      ],
+      "rail_offset_inner_radius_mm": 578.459,
+      "offset_jacobian_min": 0.9918979258690225,
+      "diamond_mm": [
+        564.7219999999999,
+        84.525
+      ],
+      "diamond_angle_deg": 25.624027145120014,
+      "TRAX_11_6_same_R_sensitivity_NOT_library": {
+        "theta_deg": 13.106492989181037,
+        "lead_mm": 17.170304301496948,
+        "max_equal_x_difference_mm": 0.0384701733320405,
+        "note": "TRAX radius/angle not recovered; 11.6 rounded; this is a controlled sensitivity only"
+      }
+    },
+    {
+      "unit": "WX-B",
+      "ports_mm": {
+        "UL": [
+          781.81,
+          35.005
+        ],
+        "UR": [
+          1091.936,
+          35.005
+        ],
+        "LL": [
+          781.81,
+          68.018
+        ],
+        "LR": [
+          1091.936,
+          68.018
+        ]
+      },
+      "width_mm": 310.126,
+      "spacing_mm": 33.013,
+      "nominal_width_delta_mm": 0.12599999999997635,
+      "nominal_spacing_delta_mm": 0.012999999999998124,
+      "axis_bbox_mm": [
+        781.81,
+        35.005,
+        1091.936,
+        68.018
+      ],
+      "rail_center_corridor_mm": [
+        781.81,
+        30.28,
+        1091.936,
+        72.743
+      ],
+      "rail_offset_inner_radius_mm": 578.459,
+      "offset_jacobian_min": 0.9918979258690225,
+      "diamond_mm": [
+        936.8730000000004,
+        51.51150000000001
+      ],
+      "diamond_angle_deg": 25.623612141252064,
+      "TRAX_11_6_same_R_sensitivity_NOT_library": {
+        "theta_deg": 13.106285232685606,
+        "lead_mm": 17.172359092975487,
+        "max_equal_x_difference_mm": 0.03847010159538122,
+        "note": "TRAX radius/angle not recovered; 11.6 rounded; this is a controlled sensitivity only"
+      }
+    }
+  ],
+  "interference": [
+    {
+      "piece": 12,
+      "unexpected_foreign_intersections": 0,
+      "expected_external_joins": [
+        {
+          "piece": 69,
+          "shared_endpoint_intersections": 1
+        },
+        {
+          "piece": 77,
+          "shared_endpoint_intersections": 1
+        }
+      ]
+    },
+    {
+      "piece": 13,
+      "unexpected_foreign_intersections": 0,
+      "expected_external_joins": [
+        {
+          "piece": 74,
+          "shared_endpoint_intersections": 1
+        },
+        {
+          "piece": 78,
+          "shared_endpoint_intersections": 1
+        }
+      ]
+    },
+    {
+      "piece": 16,
+      "unexpected_foreign_intersections": 0,
+      "expected_external_joins": [
+        {
+          "piece": 18,
+          "shared_endpoint_intersections": 1
+        },
+        {
+          "piece": 76,
+          "shared_endpoint_intersections": 1
+        }
+      ]
+    },
+    {
+      "piece": 17,
+      "unexpected_foreign_intersections": 0,
+      "expected_external_joins": [
+        {
+          "piece": 22,
+          "shared_endpoint_intersections": 1
+        },
+        {
+          "piece": 74,
+          "shared_endpoint_intersections": 1
+        }
+      ]
+    }
+  ],
+  "additional_mutations_rejected": [
+    "interior-point-off-analytic-axis",
+    "false-arc-center",
+    "wrong-sweep"
+  ],
+  "master_svg_rail_center_separation_mm": {
+    "min": 8.970216419381133,
+    "max": 9.029022454615662,
+    "median": 9.000803643182424,
+    "note": "schematic strokes; do not confuse with GLB rail centres declared 9.45 mm apart"
+  },
+  "source_locks": {
+    "svg_sha256": "868751dc5d17885161e7ff1a7dac46d556d2af2dee578c787db80a6f5e489022",
+    "alignment_sha256": "6a494928707609f1cf6aa9b535a510ca721b9a3458eca0910dfc250c978f46ea"
+  },
+  "runtime_circulation": "NOT VERIFIED",
+  "GLB_binary": "NOT VERIFIED: 40139988 bytes exceeds transfer 32 MiB; signed raw retrieval proxy 403",
+  "preliminary_stock": {
+    "native_specs": [
+      {
+        "kind": "steam",
+        "length": 114.3,
+        "front": 48.0,
+        "width": 18.5,
+        "tangent_rectangle_outer_excursion_mm": 12.948312793057767
+      },
+      {
+        "kind": "shunter",
+        "length": 65.3,
+        "front": 32.65,
+        "width": 19.4,
+        "tangent_rectangle_outer_excursion_mm": 10.598333819388813
+      },
+      {
+        "kind": "closed",
+        "length": 62.5,
+        "width": 18.0,
+        "tangent_rectangle_outer_excursion_mm": 9.823969892479568
+      },
+      {
+        "kind": "open",
+        "length": 62.5,
+        "width": 18.0,
+        "tangent_rectangle_outer_excursion_mm": 9.823969892479568
+      },
+      {
+        "kind": "tank",
+        "length": 62.5,
+        "width": 18.0,
+        "tangent_rectangle_outer_excursion_mm": 9.823969892479568
+      },
+      {
+        "kind": "flat",
+        "length": 81.25,
+        "width": 18.0,
+        "tangent_rectangle_outer_excursion_mm": 10.391842231639316
+      },
+      {
+        "kind": "coach",
+        "length": 165.0,
+        "width": 17.7,
+        "tangent_rectangle_outer_excursion_mm": 14.570554274578512
+      }
+    ],
+    "source_sha256": "13c0727a9fdb3b5ae8888c597f25c7293b93d45b3dc685a9d6e416f06712a8db",
+    "two_worst_rectangles_margin_at_33_013_mm": 3.8718914508429734,
+    "scope": "local circular tangent rectangle bound, not a swept S-curve or runtime clearance certificate; Kenney assets excluded",
+    "wheel_center_offset_mm": 4.7,
+    "wheel_tread_width_mm": 1.1,
+    "declared_rail_center_offset_mm": 4.725,
+    "wheel_to_rail_center_delta_mm": 0.025,
+    "assumed_rail_head_width_for_9mm_inner_gauge_mm": 0.45,
+    "rail_section_certified": false,
+    "rail_top_delta_legacy_to_V06_mm": 2.45
+  }
+}

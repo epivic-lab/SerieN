@@ -1,0 +1,15 @@
+✔ R2B2 third admission validates entire consist, position, route, reservation and all other trains atomically (75.00778ms)
+✔ R2B2 missing third and foreign IDs/Journeys refuse transaction without partial movement (211.176483ms)
+✔ R2B2 UNKNOWN readiness refuses all three admissions, surfaces and clock (37.965059ms)
+✔ R2B2 reset/rollback only after explicit STOP; invalid replacement preserves context (35.506947ms)
+✔ R2B2 reservation ownership and invalid ranges cannot mutate context (85.091516ms)
+✔ R2B2 oracle detects corruption of the third consist and returns prior/current/inputs (200.934949ms)
+✔ R2B2 near-touch traces are deterministic (179.591183ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 937.28604

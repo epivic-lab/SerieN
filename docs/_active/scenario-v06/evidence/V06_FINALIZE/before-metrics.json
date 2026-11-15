@@ -1,0 +1,335 @@
+{
+  "renderer": "Chromium/SwiftShader, software GPU; physical GPU NOT VERIFIED",
+  "errors": [],
+  "coldReadySeconds": 10.518515284999978,
+  "low": {
+    "render": {
+      "calls": 401,
+      "triangles": 10272270,
+      "geometries": 319,
+      "textures": 38
+    },
+    "scenery": {
+      "modules": [
+        {
+          "path": "modules/gardens_allotments.glb",
+          "bytes": 5601128,
+          "sha256": "bfb5c6fae303167a0e5eb30e453ef4e3a87ecdb9ea67c34c1b00efc70a4c7938"
+        },
+        {
+          "path": "modules/mountain.glb",
+          "bytes": 16779656,
+          "sha256": "118f85af2b2bbe50a7cb8202a278537d6e3ee6562204d68f490923fe668fb2bc"
+        },
+        {
+          "path": "modules/mountain_rocks.glb",
+          "bytes": 6179932,
+          "sha256": "5f87c8cbf23014740170db6815090da235565596e94e14440b73268aac5adc78"
+        },
+        {
+          "path": "modules/railway_service_buildings.glb",
+          "bytes": 36688380,
+          "sha256": "2b8852f389063488602e9a3f6bcfd7c8fc2808dbd58cb2f8dadd292e4a286f50"
+        },
+        {
+          "path": "modules/sawmill.glb",
+          "bytes": 59400628,
+          "sha256": "c9a9f5ef23a9c41c736d61b5a5b235f053196c2664bd31f81530e41be6899246"
+        },
+        {
+          "path": "modules/scenery_details.glb",
+          "bytes": 5005664,
+          "sha256": "d4f226522cede862a66036b21bd59ff302e5784b6a6e6f2f5337cf387a6db9d0"
+        },
+        {
+          "path": "modules/station_platform.glb",
+          "bytes": 16690996,
+          "sha256": "e720a57e4aabbf84eaf7d805781171c5d7b7899b88a542dceeeca95c47032b87"
+        },
+        {
+          "path": "modules/technical_reference.glb",
+          "bytes": 99864,
+          "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899"
+        },
+        {
+          "path": "modules/terrain.glb",
+          "bytes": 41022828,
+          "sha256": "20b77d659b5f31c3ccd3f7b0804f88122217439690a41c19bcad25ce08af7654"
+        },
+        {
+          "path": "modules/tunnels_portals.glb",
+          "bytes": 17432076,
+          "sha256": "073ad80c2821e64b5362f23fe69f7613418369af55e9309fc8557a428afa7c90"
+        },
+        {
+          "path": "modules/vegetation.glb",
+          "bytes": 27913720,
+          "sha256": "d9af56d13ce05d78811f95485558a91a6b0fa98742e7a996a31a1e2be59567a6"
+        },
+        {
+          "path": "modules/village_buildings.glb",
+          "bytes": 91596468,
+          "sha256": "46c725adb27be069d9e2ee533334850eceba3be676bd755207037a21d15ce73d"
+        }
+      ],
+      "loadMs": 8588.200000000012,
+      "edges": 79,
+      "railTop": 8.4,
+      "gauge": 9,
+      "railCentreOffset": 4.725,
+      "bedCells": 301786,
+      "bedRectangles": 3714,
+      "bedResolutionMm": 1,
+      "originalRailwayAttached": false,
+      "variant": "complete-procedural-R02",
+      "bladeActuatorsCertified": false,
+      "technical": false,
+      "quality": "low",
+      "decorativeInstanceDensity": 0.3,
+      "raycastObjects": 253,
+      "materialModel": "Lambert"
+    },
+    "resources": [
+      {
+        "path": "dataset.json",
+        "durationMs": 7.5,
+        "bytes": 437822
+      },
+      {
+        "path": "asset-lock.json",
+        "durationMs": 11.099999999976717,
+        "bytes": 3634
+      },
+      {
+        "path": "modules/gardens_allotments.glb",
+        "durationMs": 156.90000000002328,
+        "bytes": 5601128
+      },
+      {
+        "path": "modules/mountain.glb",
+        "durationMs": 74.60000000003492,
+        "bytes": 16779656
+      },
+      {
+        "path": "modules/mountain_rocks.glb",
+        "durationMs": 41.70000000001164,
+        "bytes": 6179932
+      },
+      {
+        "path": "modules/railway_service_buildings.glb",
+        "durationMs": 118,
+        "bytes": 36688380
+      },
+      {
+        "path": "modules/sawmill.glb",
+        "durationMs": 135.60000000003492,
+        "bytes": 59400628
+      },
+      {
+        "path": "modules/scenery_details.glb",
+        "durationMs": 19.5,
+        "bytes": 5005664
+      },
+      {
+        "path": "modules/station_platform.glb",
+        "durationMs": 69.10000000003492,
+        "bytes": 16690996
+      },
+      {
+        "path": "modules/technical_reference.glb",
+        "durationMs": 11.200000000011642,
+        "bytes": 99864
+      },
+      {
+        "path": "modules/terrain.glb",
+        "durationMs": 88.5,
+        "bytes": 41022828
+      },
+      {
+        "path": "modules/tunnels_portals.glb",
+        "durationMs": 94.5,
+        "bytes": 17432076
+      },
+      {
+        "path": "modules/vegetation.glb",
+        "durationMs": 73.09999999997672,
+        "bytes": 27913720
+      },
+      {
+        "path": "modules/village_buildings.glb",
+        "durationMs": 204.70000000001164,
+        "bytes": 91596468
+      }
+    ],
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "captureSeconds": 8.808781037000017,
+    "nativeRAF": [
+      41771.8,
+      68554.1,
+      84053.5,
+      100586.1
+    ]
+  },
+  "high": {
+    "render": {
+      "calls": 401,
+      "triangles": 18062253,
+      "geometries": 319,
+      "textures": 105
+    },
+    "scenery": {
+      "modules": [
+        {
+          "path": "modules/gardens_allotments.glb",
+          "bytes": 5601128,
+          "sha256": "bfb5c6fae303167a0e5eb30e453ef4e3a87ecdb9ea67c34c1b00efc70a4c7938"
+        },
+        {
+          "path": "modules/mountain.glb",
+          "bytes": 16779656,
+          "sha256": "118f85af2b2bbe50a7cb8202a278537d6e3ee6562204d68f490923fe668fb2bc"
+        },
+        {
+          "path": "modules/mountain_rocks.glb",
+          "bytes": 6179932,
+          "sha256": "5f87c8cbf23014740170db6815090da235565596e94e14440b73268aac5adc78"
+        },
+        {
+          "path": "modules/railway_service_buildings.glb",
+          "bytes": 36688380,
+          "sha256": "2b8852f389063488602e9a3f6bcfd7c8fc2808dbd58cb2f8dadd292e4a286f50"
+        },
+        {
+          "path": "modules/sawmill.glb",
+          "bytes": 59400628,
+          "sha256": "c9a9f5ef23a9c41c736d61b5a5b235f053196c2664bd31f81530e41be6899246"
+        },
+        {
+          "path": "modules/scenery_details.glb",
+          "bytes": 5005664,
+          "sha256": "d4f226522cede862a66036b21bd59ff302e5784b6a6e6f2f5337cf387a6db9d0"
+        },
+        {
+          "path": "modules/station_platform.glb",
+          "bytes": 16690996,
+          "sha256": "e720a57e4aabbf84eaf7d805781171c5d7b7899b88a542dceeeca95c47032b87"
+        },
+        {
+          "path": "modules/technical_reference.glb",
+          "bytes": 99864,
+          "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899"
+        },
+        {
+          "path": "modules/terrain.glb",
+          "bytes": 41022828,
+          "sha256": "20b77d659b5f31c3ccd3f7b0804f88122217439690a41c19bcad25ce08af7654"
+        },
+        {
+          "path": "modules/tunnels_portals.glb",
+          "bytes": 17432076,
+          "sha256": "073ad80c2821e64b5362f23fe69f7613418369af55e9309fc8557a428afa7c90"
+        },
+        {
+          "path": "modules/vegetation.glb",
+          "bytes": 27913720,
+          "sha256": "d9af56d13ce05d78811f95485558a91a6b0fa98742e7a996a31a1e2be59567a6"
+        },
+        {
+          "path": "modules/village_buildings.glb",
+          "bytes": 91596468,
+          "sha256": "46c725adb27be069d9e2ee533334850eceba3be676bd755207037a21d15ce73d"
+        }
+      ],
+      "loadMs": 8734.799999999988,
+      "edges": 79,
+      "railTop": 8.4,
+      "gauge": 9,
+      "railCentreOffset": 4.725,
+      "bedCells": 301786,
+      "bedRectangles": 3714,
+      "bedResolutionMm": 1,
+      "originalRailwayAttached": false,
+      "variant": "complete-procedural-R02",
+      "bladeActuatorsCertified": false,
+      "technical": false,
+      "quality": "high",
+      "decorativeInstanceDensity": 1,
+      "raycastObjects": 253,
+      "materialModel": "original glTF PBR"
+    },
+    "resources": [
+      {
+        "path": "dataset.json",
+        "durationMs": 13.299999999988358,
+        "bytes": 437822
+      },
+      {
+        "path": "asset-lock.json",
+        "durationMs": 11.200000000011642,
+        "bytes": 3634
+      },
+      {
+        "path": "modules/gardens_allotments.glb",
+        "durationMs": 32.09999999997672,
+        "bytes": 5601128
+      },
+      {
+        "path": "modules/mountain.glb",
+        "durationMs": 85.29999999998836,
+        "bytes": 16779656
+      },
+      {
+        "path": "modules/mountain_rocks.glb",
+        "durationMs": 42.5,
+        "bytes": 6179932
+      },
+      {
+        "path": "modules/railway_service_buildings.glb",
+        "durationMs": 132.5,
+        "bytes": 36688380
+      },
+      {
+        "path": "modules/sawmill.glb",
+        "durationMs": 175.09999999997672,
+        "bytes": 59400628
+      },
+      {
+        "path": "modules/scenery_details.glb",
+        "durationMs": 17.79999999998836,
+        "bytes": 5005664
+      },
+      {
+        "path": "modules/station_platform.glb",
+        "durationMs": 40.20000000001164,
+        "bytes": 16690996
+      },
+      {
+        "path": "modules/technical_reference.glb",
+        "durationMs": 9.600000000034925,
+        "bytes": 99864
+      },
+      {
+        "path": "modules/terrain.glb",
+        "durationMs": 121.19999999995343,
+        "bytes": 41022828
+      },
+      {
+        "path": "modules/tunnels_portals.glb",
+        "durationMs": 58.300000000046566,
+        "bytes": 17432076
+      },
+      {
+        "path": "modules/vegetation.glb",
+        "durationMs": 236,
+        "bytes": 27913720
+      },
+      {
+        "path": "modules/village_buildings.glb",
+        "durationMs": 232.60000000003492,
+        "bytes": 91596468
+      }
+    ],
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "captureSeconds": 1.8698639950000597
+  }
+}

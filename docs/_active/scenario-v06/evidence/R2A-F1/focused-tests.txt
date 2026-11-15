@@ -1,0 +1,25 @@
+✔ R2A-F1 negative: panel cannot throw C13 on actual tick 836 before occupation (115.425313ms)
+✔ R2A-F1 negative: device cannot throw C13 on actual tick 836 before occupation (94.908709ms)
+✔ R2A-F1 negative: guarded stop leaves the full C13 operational margin clear for protected correction (107.466941ms)
+✔ R2A-F1 v06 1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm (1191.044124ms)
+✔ R2A-F1 v06 1: UNKNOWN neighbour at every shared port fails closed in the real step (269.927281ms)
+✔ R2A-F1 v06 -1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm (793.998608ms)
+✔ R2A-F1 v06 -1: UNKNOWN neighbour at every shared port fails closed in the real step (245.834744ms)
+✔ R2A-F1 legacy 1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm (271.567715ms)
+✔ R2A-F1 legacy 1: UNKNOWN neighbour at every shared port fails closed in the real step (66.086359ms)
+✔ R2A-F1 legacy -1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm (277.432494ms)
+✔ R2A-F1 legacy -1: UNKNOWN neighbour at every shared port fails closed in the real step (78.73069ms)
+✔ R2A-F1 actual accelerated approach with 1 short vehicles stops clear and corrects from either surface (81.326695ms)
+✔ R2A-F1 actual accelerated approach with 3 short vehicles stops clear and corrects from either surface (80.122602ms)
+✔ R2A-F1 legacy: empty railway admits panel/device requests on all units (3.916509ms)
+✔ R2A-F1 v06: empty railway admits panel/device requests on all units (12.931657ms)
+✔ R2A-F1 distant moving train does not cause a phantom C13 approach lock (17.13478ms)
+✔ R2A-F1 UNKNOWN session keeps both surfaces and motion closed until a complete known initialization (13.141268ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3897.140571

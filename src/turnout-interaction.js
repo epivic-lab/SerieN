@@ -3,14 +3,14 @@ import {isTurnoutId} from './turnout-routes.js';
 
 /** Identification is read-only. Priority is keyboard, panel, brief touch,
  * then device. Rendering observes this identity; it never owns route state. */
-export function createTurnoutFocus(onChange=()=>{}) {
+export function createTurnoutFocus(onChange=()=>{},registry=null) {
   const sources={keyboard:null,panel:null,touch:null,device:null};let id=null,source=null;
   const refresh=()=>{
     const next=Object.keys(sources).find(key=>sources[key]!==null)??null,nextId=next?sources[next]:null;
     if(nextId!==id||next!==source){id=nextId;source=next;onChange(id,source);}
   };
   return {set(key,value){
-    if(!Object.hasOwn(sources,key)||value!==null&&!isTurnoutId(value))return false;
+    if(!Object.hasOwn(sources,key)||value!==null&&!isTurnoutId(value,registry))return false;
     sources[key]=value;refresh();return true;
   },clear(){for(const key of Object.keys(sources))sources[key]=null;refresh();},
   get active(){return id;},get source(){return source;}};
@@ -39,7 +39,7 @@ export function createPointerIntent() {
 
 /** Own and dispose all new listeners/RAF work. Raycasting is event-driven and
  * coalesced; no new work is inserted into the railway/render frame loop. */
-export function mountTurnoutInteraction({canvas,camera,scene,controls,picker,panel,controlIds,requestToggle,selectTrain,onIdentify=()=>{},touchIdentifyMs=0}) {
+export function mountTurnoutInteraction({canvas,camera,scene,controls,picker,panel,controlIds,requestToggle,selectTrain,onIdentify=()=>{},touchIdentifyMs=0,registry=null}) {
   if(!Number.isFinite(touchIdentifyMs)||touchIdentifyMs<0||touchIdentifyMs>5000)throw new RangeError('Invalid touch identification duration');
   const doc=canvas.ownerDocument,win=doc.defaultView,disposers=[],intent=createPointerIntent(),captured=new Set();
   const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2(),last={x:0,y:0};
@@ -51,7 +51,7 @@ export function mountTurnoutInteraction({canvas,camera,scene,controls,picker,pan
     if(id===null)delete canvas.dataset.turnoutId;else canvas.dataset.turnoutId=id;
     picker.root.userData.activeControl=id;
     onIdentify(id,source);
-  });
+  },registry);
   function clearTouch(){if(touchTimer!==null){win.clearTimeout(touchTimer);touchTimer=null;}focus.set('touch',null);}
   function identifyTouch(id){
     clearTouch();if(!touchIdentifyMs)return;

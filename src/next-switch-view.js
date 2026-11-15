@@ -74,7 +74,7 @@ function mountNextSwitchHUD({host,network,getState,now=()=>performance.now()}) {
     find("nextSwitchName").title=next?.site.controls.length>1?"Two controls share this point on the simulated track":"";
     set("nextSwitchCompact",next?distanceLabel(next.distance):uncertain?"?":"—");
     set("nextSwitchDistance",next?`${distanceLabel(next.distance)} · along track` : preview.stop==="terminal"?`End of track in ${distanceLabel(preview.distance)}`:"");
-    set("nextSwitchPosition",next?next.site.controls.map((id)=>`${id}: ${controls.find((s)=>s.id===id)?.on?"diverging":"straight"}`).join(" · "):"");
+    set("nextSwitchPosition",next?next.site.controls.map((id)=>`${id}: ${network.metadata.layoutId==='V06-R1A'?(controls.find(s=>s.id===id)?.states?.[String(controls.find(s=>s.id===id)?.on)]??"unknown"):controls.find((s)=>s.id===id)?.on?"diverging":"straight"}`).join(" · "):"");
     set("nextSwitchDestination",next?.destination?`Expected exit: ${next.destination}`:"Destination unknown");
     const warnings=[];
     if(safety?.blocked)warnings.push(safety.message);

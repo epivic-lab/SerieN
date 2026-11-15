@@ -1,0 +1,476 @@
+{
+  "status": "PASS_GEOMETRIC_AND_OFFLINE_TOPOLOGICAL_CHECKS; PHYSICAL_WX_FIDELITY_OPEN",
+  "pieces": 79,
+  "unchanged_pieces": 69,
+  "nodes": 74,
+  "connected_components_union": 1,
+  "cycle_rank_union": 6,
+  "intentional_terminals": [
+    "20.S",
+    "43.S",
+    "51.S"
+  ],
+  "gaps": [
+    {
+      "id": "G1",
+      "residual_mm": 0,
+      "sampled_tangent_mismatch_deg": 0.0007147903460196766,
+      "endpoint_displacements_mm": [
+        0.37457742857786186,
+        0.3745774285778442
+      ]
+    },
+    {
+      "id": "G2",
+      "residual_mm": 0,
+      "sampled_tangent_mismatch_deg": 2.1197926193959314e-05,
+      "endpoint_displacements_mm": [
+        0.4276251278865836,
+        0.42762512788659685
+      ]
+    },
+    {
+      "id": "G3",
+      "residual_mm": 0,
+      "sampled_tangent_mismatch_deg": 0.00027245366543531067,
+      "endpoint_displacements_mm": [
+        1.0709960317386606,
+        1.070996031738638
+      ]
+    }
+  ],
+  "wx": [
+    {
+      "unit": "WX-A",
+      "crossing_mm": [
+        564.7219999999999,
+        84.525
+      ],
+      "central_nodes": 0,
+      "ports": 4,
+      "ordered_cases": 32,
+      "physical_fidelity": "OPEN"
+    },
+    {
+      "unit": "WX-B",
+      "crossing_mm": [
+        936.8730000000004,
+        51.51150000000001
+      ],
+      "central_nodes": 0,
+      "ports": 4,
+      "ordered_cases": 32,
+      "physical_fidelity": "OPEN"
+    }
+  ],
+  "walks": {
+    "A": {
+      "length_mm": 3468.164116346414,
+      "states": {
+        "WX-B": "N"
+      },
+      "joins_exact": true
+    },
+    "B": {
+      "length_mm": 3260.7816351200745,
+      "states": {
+        "WX-B": "N",
+        "WX-A": "N"
+      },
+      "joins_exact": true
+    },
+    "C": {
+      "length_mm": 2933.790700411985,
+      "states": {
+        "V06-C07": "S0",
+        "V06-C12": "S0",
+        "V06-C13": "S0",
+        "WX-A": "N"
+      },
+      "joins_exact": true
+    },
+    "S1_FROM_N07_COMMON": {
+      "length_mm": 250.10101080635917,
+      "states": {},
+      "joins_exact": true
+    },
+    "S2_FROM_C13_COMMON": {
+      "length_mm": 746.2672300418101,
+      "states": {
+        "V06-C13": "S1"
+      },
+      "joins_exact": true
+    },
+    "TSEG_FROM_N14_COMMON": {
+      "length_mm": 569.7148810906164,
+      "states": {
+        "V06-N14": "S1"
+      },
+      "joins_exact": true
+    },
+    "TRIANGLE_MANOEUVRE": {
+      "approach": [
+        [
+          34,
+          1
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          48,
+          1
+        ],
+        [
+          46,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          52,
+          -1
+        ],
+        [
+          50,
+          -1
+        ],
+        [
+          32,
+          -1
+        ],
+        [
+          53,
+          -1
+        ],
+        [
+          44,
+          1
+        ],
+        [
+          43,
+          -1
+        ]
+      ],
+      "departure": [
+        [
+          43,
+          1
+        ],
+        [
+          44,
+          -1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          31,
+          -1
+        ],
+        [
+          39,
+          -1
+        ],
+        [
+          40,
+          -1
+        ],
+        [
+          38,
+          1
+        ],
+        [
+          41,
+          -1
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          37,
+          1
+        ]
+      ],
+      "required_event": "stop before terminal with whole consist clear of N07; S1\u2192S0; reverse",
+      "capacity_upper_bound_mm": 250.10101080635917,
+      "safe_stopping_point": "OPEN; terminal witness is NOT a stopping instruction"
+    }
+  },
+  "terminal_reachability_witnesses": {
+    "20.S": [
+      [
+        64,
+        1
+      ],
+      [
+        70,
+        -1
+      ],
+      [
+        71,
+        -1
+      ],
+      [
+        73,
+        -1
+      ],
+      [
+        72,
+        -1
+      ],
+      [
+        36,
+        -1
+      ],
+      [
+        35,
+        1
+      ],
+      [
+        37,
+        -1
+      ],
+      [
+        26,
+        -1
+      ],
+      [
+        28,
+        -1
+      ],
+      [
+        29,
+        -1
+      ],
+      [
+        68,
+        1
+      ],
+      [
+        33,
+        -1
+      ],
+      [
+        45,
+        -1
+      ],
+      [
+        21,
+        1
+      ],
+      [
+        54,
+        1
+      ],
+      [
+        20,
+        -1
+      ]
+    ],
+    "43.S": [
+      [
+        64,
+        1
+      ],
+      [
+        70,
+        -1
+      ],
+      [
+        71,
+        -1
+      ],
+      [
+        73,
+        -1
+      ],
+      [
+        72,
+        -1
+      ],
+      [
+        36,
+        -1
+      ],
+      [
+        35,
+        1
+      ],
+      [
+        37,
+        -1
+      ],
+      [
+        26,
+        -1
+      ],
+      [
+        28,
+        -1
+      ],
+      [
+        29,
+        -1
+      ],
+      [
+        30,
+        -1
+      ],
+      [
+        41,
+        1
+      ],
+      [
+        38,
+        -1
+      ],
+      [
+        40,
+        1
+      ],
+      [
+        39,
+        1
+      ],
+      [
+        31,
+        1
+      ],
+      [
+        53,
+        -1
+      ],
+      [
+        44,
+        1
+      ],
+      [
+        43,
+        -1
+      ]
+    ],
+    "51.S": {
+      "approach_via_N07_C": [
+        [
+          34,
+          1
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          48,
+          1
+        ],
+        [
+          46,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          52,
+          -1
+        ],
+        [
+          50,
+          -1
+        ],
+        [
+          32,
+          -1
+        ],
+        [
+          53,
+          -1
+        ],
+        [
+          44,
+          1
+        ],
+        [
+          43,
+          -1
+        ]
+      ],
+      "stop_throw_reverse": true,
+      "departure_via_N07_B_N14_C": [
+        [
+          43,
+          1
+        ],
+        [
+          44,
+          -1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          31,
+          -1
+        ],
+        [
+          39,
+          -1
+        ],
+        [
+          40,
+          -1
+        ],
+        [
+          38,
+          1
+        ],
+        [
+          42,
+          1
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          51,
+          -1
+        ]
+      ],
+      "safe_capacity_and_stop": "OPEN"
+    }
+  },
+  "max_legal_join_secant_mismatch_deg": 3.391156228290001,
+  "state_configurations_checked": 128,
+  "oriented_arrivals_checked": 17920,
+  "global_smoothness": "NOT CERTIFIED: original polygonal corners retained; see measured join matrix",
+  "runtime_compatibility": "NOT VERIFIED; standalone checker has no safety/core authority",
+  "negative_mutations_rejected": [
+    "reopen-G2",
+    "fake-diamond-node",
+    "wrong-WX-state",
+    "drop-hidden-piece",
+    "move-legacy-source-piece",
+    "wrong-node-reference"
+  ]
+}

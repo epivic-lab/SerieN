@@ -1,0 +1,40 @@
+{
+  "schema": "serien-v06-r02-visual-plan-1",
+  "status": "DESIGN_ONLY_NOT_IMPLEMENTED_NOT_AN_ASSET",
+  "authority": "track.json: exactly the same PLAN_MM axes and analytic WX primitives as operations",
+  "coordinates": {"plan_to_gltf_m": "[X/1000,8.4/1000,Y/1000] at rail top", "rail_center_offset_mm": 4.725, "nominal_inner_gauge_mm": 9, "assumed_head_width_mm": 0.45, "section_confirmed": false},
+  "units": [
+    {"id": "WX-A", "pieces": [59,60,12,13], "axis_bbox_mm": [409.659,68.018,719.785,101.032]},
+    {"id": "WX-B", "pieces": [61,62,16,17], "axis_bbox_mm": [781.81,35.005,1091.936,68.018]}
+  ],
+  "preferred_later_asset_strategy": "new versioned railway variant: original files immutable; locally remove all source WX geometry then replace with procedural unit geometry",
+  "aggregate_nodes_requiring_source_partition_or_triangle_remap": ["RAIL_rails","RAIL_sleepers","RAIL_base_plates","RAIL_throw_bars","RAIL_ballast_open"],
+  "partition_requirements": [
+    "Match the complete four-route device, including old cores, stock rails, blades, frogs, wing/check rails, plates, timbers and throw bars",
+    "Use source piece/unit IDs where available; otherwise binary triangle/component mapping, transformed bounds and manual QC; no whole global node visibility toggle",
+    "Do not delete triangles solely because their centroid lies in an axis bounding box; connected triangles and geometry crossing the cut must be split, assigned and capped with seam QC",
+    "Set seam planes at the four immutable V06 ports; include full transverse physical device envelope after binary measurement, not just axis bbox",
+    "Every original rail/detail triangle must have exactly one owner: retained variant or replaced device; no original-plus-procedural duplicate",
+    "Keep tunnel rail/ballast and nearby devices; original RAIL_ballast_tunnel bbox does not intersect the WX windows but verify transformed binary geometry",
+    "Preserve original non-WX geometry and permit rollback by exclusive layout/asset version selection"
+  ],
+  "procedural_requirements": [
+    "Generate the union of shared stock rails once; do not extrude four complete route pairs over common leads",
+    "Construct physical frogs and running-rail gaps/check rails at diamond; intersecting mathematical offsets are not finished crossing surfaces",
+    "Keep normal and diverging route axes as sampling/picking references; never connect them at diamond",
+    "Static ballast and timbers share the local device owner; avoid a second ballast layer below the replacement",
+    "If binary partition cannot be verified, withhold this hybrid; a separately authorized complete procedural railway must exclusively exclude railway_visual"
+  ],
+  "moving_parts": {
+    "groups": ["UL","UR","LL","LR"],
+    "normal_destinations": {"UL":"UR","UR":"UL","LL":"LR","LR":"LL"},
+    "cross_destinations": {"UL":"LR","LR":"UL","LL":"UR","UR":"LL"},
+    "mapping": "one proposed coupled unit state drives all four groups and throw bars; exact blade/actuator mapping requires later verification",
+    "not_inferred_from": "arc start is not a certified blade tip; route primitive is not blade geometry",
+    "future_transition": "intermediate visual state cannot imply clearance; confirm unit free before throw, invalidate stale route previews; engine guard remains authoritative",
+    "open": ["tip coordinates", "blade shapes and travel", "pivot/deformation model", "frog section", "actuation polarity and physical coupling", "binary source mapping"]
+  },
+  "future_acceptance": ["exclusive triangle ownership", "four seam positions and tangents", "rail gauge/rail top and stock wheel contact", "both states four entries both directions", "all four blade groups and throw bars coherent", "no diamond node", "no z-fighting or duplicate ballast", "legacy profile rollback", "unit occupancy and crossing conflict protection"],
+  "runtime_verified": false,
+  "original_GLB_modified": false
+}

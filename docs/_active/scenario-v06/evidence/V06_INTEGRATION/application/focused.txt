@@ -1,0 +1,16 @@
+✔ static instance BVH returns exactly the normal triangle intersections under transformed roots (21.136273ms)
+✔ density prefixes, hidden parent and pick-through retain normal visibility semantics (1.766071ms)
+✔ moving trains use current transforms; device distance bounds occlusion; raycaster far is restored (1.488758ms)
+✔ browser selection defaults to Legacy; unknown profiles fail closed; new sessions never share networks (25.354157ms)
+✔ pinned browser admission rejects HTTP failure, truncated bytes and a tampered R1A artifact (13.0703ms)
+✔ all seven V06 devices own picking, focus, glow and selected route arrows; Legacy-only IDs are rejected (271.191941ms)
+✔ full native initial fleet and fourth locomotive admit only complete visible nonoverlapping consists; failure preserves Journey (81.346955ms)
+✔ V06 running surfaces have 9mm inner gauge and 8.4mm rail top; source axes stay immutable; N16 has no invented buffer (1020.900381ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1790.986963

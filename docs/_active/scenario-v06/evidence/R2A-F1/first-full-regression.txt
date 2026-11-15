@@ -1,0 +1,872 @@
+
+> serien@0.12.0 test
+> node --test tests/*.test.js
+
+✔ unauthenticated never calls authorization RPC (1.068232ms)
+✔ server-authorized, verified session unlocks (0.268988ms)
+✔ server-denied identity cannot unlock (0.213426ms)
+✔ RPC errors are fail-closed (0.245945ms)
+✔ identity errors are fail-closed (0.245954ms)
+✔ a missing session is fail-closed (0.196021ms)
+✔ bound auxiliary wheels match 5C signed rotations through loading, release and same-size child replacement (4.638663ms)
+✔ Kenney assets include the CC0 license and all referenced local textures (1.755781ms)
+✔ prepared broad phase agrees with the frozen 5C SAT for rotations, corners, contact, crossing and separated envelopes (110.356726ms)
+✔ prepared per-step geometry preserves 5C fleet trajectories, atomic rollback and commands (1151.325825ms)
+✔ broad bounds retain the 5C corner contact within its SAT tolerance (0.253785ms)
+✔ native pitch stays unchanged; imported pairs compact to their individual couplers (2.061862ms)
+✔ partial loading and switching back use active metadata without a fixed imported pitch (0.440572ms)
+✔ compact consists stay on the route across crossovers and reverse to the same positions (6.829349ms)
+✔ detach and immediate recouple preserve the compact wagon position (0.859332ms)
+✔ compact maximum-sized Kenney bodies remain separate on the R249 curve (0.145886ms)
+✔ catalog definitions, planned vehicles, physical groups and duplicate off-scene records never share identities or state (2.416428ms)
+✔ reservations are exclusive for an exact confirmed project slot, with same-model instances independent (0.663833ms)
+✔ invalid models, identities, wrong model and non-confirmed targets reject without partial mutations (0.552878ms)
+✔ cancelled M2 edits keep reservations; confirmed reorder, name and orientation retain the original slot identity (0.858611ms)
+✔ confirmed removal releases only obsolete references and never rebinds to an identical model (0.561661ms)
+✔ a missing project or changed model releases a reservation without changing project data (0.258884ms)
+✔ copied real projects keep physical source references while the depot holds only a virtual planning relation (0.417428ms)
+✔ railway projection preserves UUID through detach/recouple and reset refreshes generations, without absorbing real stock (0.703782ms)
+✔ duplicate/generated wrong-namespace IDs are rejected atomically and dispose releases inventory state (0.354695ms)
+✔ fleet commands match historical state transitions/messages for legacy and catalogued consists (4.078327ms)
+✔ detach/recouple transfers exactly the same physical group at the same route position (0.280956ms)
+✔ blocked coupling preserves identities and counts when distant, reversed, full or without room (0.410688ms)
+✔ simple commands preserve missing-ID behavior and stop every fleet member (0.231072ms)
+✔ Home framing contains all eight physical base corners, including the previously clipped lower right corner (2.788878ms)
+✔ polished rail heads and weathered webs have distinct PBR properties without moving rail geometry (3.191424ms)
+✔ ballast and terrain textures are reproducible and distinguish sRGB albedo from linear height/roughness (105.837985ms)
+✔ tightened shadow camera contains the complete table and tallest scenery with a low contact bias (0.842086ms)
+✔ STOP observation is read only and distinguishes braking, parked/manual, unknown position and physical guards (7.57324ms)
+✔ STOP transition durations, continuity, reduced motion and bounded micro overshoot (0.632396ms)
+✔ one global bell, gesture gate, mute, immediate silence, interrupted resume and idempotent cleanup (0.535292ms)
+✔ forest generation is deterministic with railway and building clearance (441.979153ms)
+✔ terrain stays flat on tracks and underneath buildings (397.894574ms)
+✔ landscape heights remain finite and below scenic ceiling (235.154927ms)
+✔ seeded random does not depend on frame rate or browser random state (0.366463ms)
+✔ station and yard presets converge without touching the railway (16.837765ms)
+✔ camera transitions use elapsed real time, independent of frame frequency (1.441804ms)
+✔ follow changes target for the selected train; a manual orbit cancels it (2.963547ms)
+✔ eye stays above terrain and rotated building footprints, while target pan is bounded (0.357739ms)
+✔ invalid poses cannot produce NaNs, and dispose removes gesture handling (0.368415ms)
+✔ perspective camera supports all presets and follow with finite projections (15.009279ms)
+✔ minimap focus centres once on the clicked locomotive and preserves manual control (0.979309ms)
+✔ canonical source preserves all XML identifiers, contracts only two zero connectors and documents small joins (5.6072ms)
+✔ all three nominal Kato loops close in both senses for three complete laps without jumps (42.648814ms)
+✔ all eight switches route every entrance in both states; single turnout B-C traversal is impossible (0.714928ms)
+✔ both crossover diagonals are traversable in either sense and do not join at the diamond (0.881965ms)
+✔ every terminal is accessible from the inner mainline with a documented static switch setting and can reverse (13.433827ms)
+✔ runaround main and alternate paths connect the same two toe leads with legal reversing maneuvers (1.684203ms)
+✔ no parallel-track proximity or drawn crossing creates a graph junction (108.903202ms)
+✔ buffer stopping protects the complete consist and safe switch change trims only unoccupied cached ribbon (0.286124ms)
+✔ fixed-step simulation gives the same distance at different rendering rates (1.105096ms)
+✔ eight controls represent six distinct single turnouts and two complete crossover units (1.07423ms)
+✔ each loop previews the first real switch by graph distance in either direction (42.581895ms)
+✔ every WX entrance uses the real selection in both states, with exact five millimetre approach (3.326795ms)
+✔ four terminals are real end nodes; reverse preview and wagon offsets follow actual ribbon (0.626968ms)
+✔ yard topology identifies both accesses and runaround branch switch states rather than old five-way junctions (0.297019ms)
+✔ cached route conflicts stop prediction; safe reconciliation makes the current selection authoritative (6.26202ms)
+✔ missing mapping and unavailable routing never invent destinations (0.268878ms)
+✔ occupied switch bodies, incident tracks and braking envelopes block unsafe commands (0.325321ms)
+✔ schematic and temporary red ribbon derive exactly from canonical paths without mutating rails (26.170141ms)
+✔ forest crown envelopes clear railway, landmarks, buildings and working surfaces (589.373005ms)
+✔ hard surfaces are level across their footprint and stay outside the railway envelope (5.900194ms)
+✔ rear countryside and loading aisle integrate without moving railway or station (39.127591ms)
+✔ leaving Cinema releases the actual Bloom high-pass material from the renderer shader cache (1.92535ms)
+✔ two sustained slow windows reduce high quality, a short spike does not (1.380613ms)
+✔ quality only recovers after sustained fast windows and does not oscillate with mixed load (5.072549ms)
+✔ manual profiles including cinema always override automatic adaptation (0.444568ms)
+✔ tab invisibility and first return frame cannot trigger a quality change (0.194228ms)
+✔ invalid timing samples are ignored and mode names are validated (0.361605ms)
+✔ S5 Y-IN: every port/state and both Journey axes respect actual routing (44.955126ms)
+✔ S5 Y-R1: every port/state and both Journey axes respect actual routing (53.927972ms)
+✔ S5 Y-R2: every port/state and both Journey axes respect actual routing (31.320593ms)
+✔ S5 Y-3: every port/state and both Journey axes respect actual routing (54.953887ms)
+✔ S5 Y-4: every port/state and both Journey axes respect actual routing (15.137336ms)
+✔ S5 Y-2: every port/state and both Journey axes respect actual routing (25.159154ms)
+✔ S5 WX-A: every port/state and both Journey axes respect actual routing (102.760354ms)
+✔ S5 WX-B: every port/state and both Journey axes respect actual routing (86.612721ms)
+✔ S5 high speed, tiny residual gap: bumper never crosses the first forbidden port, even with cached history (1.600692ms)
+✔ S5 cached unused route is revalidated and refreshed after a legal state change; no invented central WX junction (1.171756ms)
+✔ S5 UNKNOWN fails closed for raw unknown states, ambiguous/missing routes and malformed reservations (0.977669ms)
+✔ S5 foreign reservations stop before their interval, own reservations admit transit, release requires explicit rearm (3.161654ms)
+✔ S5 recovery: aligned turnout and reverse away clear guard, manual stop and STOP ALL never auto-restart (1.881968ms)
+✔ S5 large dt, background resume and frame rates cannot bypass admission; invalid dt rejected atomically (68.07259ms)
+✔ S5 terminal braking covers short and long consists in both directions; reversal leaves the buffer (11.659675ms)
+✔ S5 predictive margin uses graph distance, not geometric proximity; full legal loops keep exact motion (132.485944ms)
+✔ S5 reproduces and prevents the stale-history crossing admitted by the old engine (0.834086ms)
+✔ S5 occupation conflicts retain authoritative 5C rollback, including conflict introduced during approach (1.27547ms)
+✔ S5 predictive stop preserves existing operation locks and leaves a blocked switch correctable through the real dispatcher (6.429966ms)
+✔ S5 UNKNOWN takes precedence at the same boundary, including inactive ports and directly touching turnouts (1.128682ms)
+✔ S5 assessment and admission are deterministic read-only core APIs, independent of graphics (7.724654ms)
+✔ S5 occupation warning persists at rest and releases on departure without a phantom reservation (32.852713ms)
+✔ R01: adjacent-segment overlapping bodies conflict; parallel tracks remain independent (1.162232ms)
+✔ R02: detached coach keeps independent route history and occupation across turnout joint (0.818093ms)
+✔ R03: invalid inputs reject before mutation and valid clock updates still work (6.946391ms)
+✔ derived layouts, positions, switch routes and safety match v0.12 across 180 fleet states (186.155752ms)
+✔ read-only assistance can inspect frozen Journey ribbons and keeps actual velocity direction when braking (1.399163ms)
+✔ A1: native front-on reproduction stops before any adjacent-edge envelope overlap, preserving rejected history and identity (38.165193ms)
+✔ frontals and following conflicts include short/long consists, stationary trains and both approach directions (486.838341ms)
+✔ candidate rollback cascades to followers and is independent of fleet iteration order (56.902964ms)
+✔ swept envelopes detect a crossing between separated endpoints; parallel movement stays clear (0.354836ms)
+✔ three canonical loops allow simultaneous mixed directions and complete laps with no false parallel stop (449.59269ms)
+✔ detached wagons stop approach without penetration, permit departure and recouple without lost identities in curves (17.915833ms)
+✔ full fleet, occupation, direction and HUD routes agree at 20/60/120 Hz and irregular frames (137.150153ms)
+✔ all four terminal envelopes stop and reverse short and five-wagon consists with legal route history (27.652087ms)
+✔ only the detached coach body across a joint protects TO4 after the locomotive clears (0.423517ms)
+✔ two trains requesting each WX diamond are stopped before overlap, while its straight parallel routes remain independent (17.020897ms)
+✔ adjacent-edge parked coach can overlap the insertion point despite passing the historical centre-only guard (0.277491ms)
+✔ elapsed-time cap and invalid step inputs have explicit, atomic semantics (0.882667ms)
+✔ growth of a frozen detached body cannot claim an old branch after a legal turnout change (0.325402ms)
+✔ recoupling across a joint extends the candidate centre before matching, even after old train history was pruned (0.191063ms)
+✔ a misaligned joint cannot be invented to recouple; rejected candidate leaves the real Journey unchanged (0.250661ms)
+✔ stock catalog creates finite original geometry and full coupling envelopes without fixed pitch (56.375012ms)
+✔ wheel phases and rods follow signed travelled distance, freeze when stopped, and reverse exactly (22.408298ms)
+✔ coach bogies pivot along actual R249 track chords without changing canonical coordinates (10.604722ms)
+✔ coupling rejects distant, parallel-track and opposite-facing vehicles (0.16903ms)
+✔ all native adjacent body envelopes have a separating axis on the tight R249 curve (291.08232ms)
+✖ lean route projections preserve every 5C range, encounter, graph distance and highlight; full API remains identical (60.917281ms)
+✔ phase 0 protects the exact railway and simulation baseline (8.00486ms)
+✔ five stable zones inventory the current scene and explicitly exclude tunnels (1.48762ms)
+✔ candidate prop centres respect tracks, buildings, switch landmarks and existing trees (1214.216608ms)
+✔ the audit reports existing conflicts, including a segment crossing a footprint (0.643251ms)
+✔ station occupies the existing site with a credible central body and two lower wings (108.551363ms)
+✔ ground floor windows and entry are real openings through structural walls (89.066594ms)
+✔ full building and roofing envelope remain outside the railway loading gauge (235.177585ms)
+✔ terracotta roof uses shared instanced tiles and no unbounded per-tile objects (39.841144ms)
+✔ station surface data is deterministic, opaque and valid for all material types (55.917076ms)
+✔ roof curvature data drives both relief and physical roughness (40.900593ms)
+✔ texture footprint remains bounded and uses millimetres independently of geometry size (0.779294ms)
+✔ shared station maps respect the texture budget and cleanup is idempotent (371.207243ms)
+✔ crafted paving covers the existing platform with physical joints inside its footprint (2.508776ms)
+✔ canopy columns and furniture do not invade the train side of the platform (9.675953ms)
+✔ real platform mesh respects rail clearance above the platform edge (53.320024ms)
+✔ night lights have bounded intensity and do not require external assets (33.702792ms)
+✔ right curves have no tunnel walls, roof or camera obstruction (11.168453ms)
+✔ bridge spans an open space below deck, not a hidden solid foundation (2.548034ms)
+✔ rail profile rests on sleepers and preserves original railhead height (2.637737ms)
+✔ level bridge spans an actual lowering of the terrain without changing track data (6.796257ms)
+✔ explicit expected port table requires every legal entrance of all eight switches in both states and traverses it bidirectionally (2.273328ms)
+✔ uniform fitting preserves source proportions within the N-scale envelope (0.949927ms)
+✔ twenty vehicle replacements share template resources and release registry records (8.62138ms)
+✔ releasing one clone does not invalidate another and visibility restores native children (0.979721ms)
+✔ release during asynchronous loading never reattaches an obsolete model (0.895717ms)
+✔ global disposal also frees templates arriving after cancellation exactly once (7.134898ms)
+✔ failed loading leaves the original playable and permits a later retry (0.682741ms)
+✔ a newer attach supersedes an older pending request without duplicating the model (1.14092ms)
+✔ management catalog reuses loaded templates and returns independent measured metadata (1.249932ms)
+✔ three recent consoles retain slots, replace the least recent, and handle smaller fleets (1.515515ms)
+✔ console selection and eviction do not modify any actual train Journey or controls (33.034091ms)
+✔ minimap geometry uses every original railway point with one unmodified coordinate system (114.608471ms)
+✔ independent markers follow locomotive centres through curves, crossovers and reversal (7.012568ms)
+✔ sidings and runaround markers use actual locomotive position rather than the tail (0.704874ms)
+✔ thumbnail identity follows the actual visible model, including fallback after failed GLB loading (0.200617ms)
+✔ six distinct transparent thumbnails are tied to their real model sources (2.24169ms)
+✔ management projects identities and railway length without mutating or reordering a reversed consist (1.480112ms)
+✔ management follows actual imported dimensions and detached identity (0.171384ms)
+✔ project preview matches M1.1 real geometry for the same models without touching source data (2.014604ms)
+✔ all model orientations preserve coupler continuity, scale, total length and asymmetric locomotive origin (2.474405ms)
+✔ empty project preview stays finite and invalid catalog or orientation fails explicitly (0.410208ms)
+✔ normalized catalog has the fourteen existing M1 identities, six locomotives and eight trailers (1.041663ms)
+✔ project lifecycle is isolated, confirmation has no railway effect and cancellation restores saved version (1.283831ms)
+✔ same-model instances retain separate identities through reorder, orientation and removal (0.50019ms)
+✔ sixth trailer, second locomotive, invalid model, malformed orientation and invalid moves fail atomically (0.715259ms)
+✔ copy preserves physical references as value snapshots and catches external changes and reset even with same locomotive (0.570385ms)
+✔ conservative capabilities never grant a whole-project or spatial coupling permission (0.281567ms)
+✔ draft lifecycle rejects implicit replacement and copy rejects unknown physical models without partial draft (0.23632ms)
+✔ linking an independent design compares model, order and orientation without assigning a physical identity (0.282509ms)
+✔ side images share a physical scale and preserve original asymmetrical origins (1.982848ms)
+✔ native, imported and mixed compositions meet at real couplers with common image scaling (13.571913ms)
+✔ travel reversal and world yaw never reorder or flip the straightened side view (0.304181ms)
+✔ detach, recouple and long consists derive fresh positions from the same identities (0.353334ms)
+✔ unavailable side assets stay explicit without guessing a different model or orientation (0.194227ms)
+✔ Y-IN/false: arrows match physical port oracle and both travel directions (8.499059ms)
+✔ Y-IN/true: arrows match physical port oracle and both travel directions (15.275566ms)
+✔ Y-R1/false: arrows match physical port oracle and both travel directions (5.597001ms)
+✔ Y-R1/true: arrows match physical port oracle and both travel directions (5.798969ms)
+✔ Y-R2/false: arrows match physical port oracle and both travel directions (5.550071ms)
+✔ Y-R2/true: arrows match physical port oracle and both travel directions (6.294874ms)
+✔ Y-3/false: arrows match physical port oracle and both travel directions (5.395542ms)
+✔ Y-3/true: arrows match physical port oracle and both travel directions (5.556381ms)
+✔ Y-4/false: arrows match physical port oracle and both travel directions (5.822184ms)
+✔ Y-4/true: arrows match physical port oracle and both travel directions (5.819981ms)
+✔ Y-2/false: arrows match physical port oracle and both travel directions (5.647916ms)
+✔ Y-2/true: arrows match physical port oracle and both travel directions (6.095969ms)
+✔ WX-A/false: arrows match physical port oracle and both travel directions (6.019386ms)
+✔ WX-A/true: arrows match physical port oracle and both travel directions (6.764009ms)
+✔ WX-B/false: arrows match physical port oracle and both travel directions (5.773351ms)
+✔ WX-B/true: arrows match physical port oracle and both travel directions (7.346342ms)
+✔ unknown selection/network entry suppresses routes; blocked branch retains only actual selected paths; conflicting arrivals use bidirectional heads (0.635992ms)
+✔ read-only approach observes actual velocity and last wagon for reverse, independent of commanded direction (26.794668ms)
+✔ cached renderer animates state change, keeps refused/no-change idle, reduced motion settles, and releases every resource once (4.159571ms)
+✔ both arrowhead bisectors follow the canonical tangent on all twenty physical paths (3.32826ms)
+✔ panel and device apply the historical state/reconciliation transition for all eight controls and both positions (123.265053ms)
+✔ every safety rejection is identical on both surfaces and leaves state and Journey intact (76.482508ms)
+✔ invalid IDs, origins and non-boolean state are rejected before asking safety or reconciling (0.787356ms)
+✔ fresh engine guards block occupied, detached and approaching vehicles on either command surface (4.568657ms)
+✔ successive requests recheck the guard rather than reusing an unlocked snapshot (0.544877ms)
+✔ Y-IN: overlay references every canonical device path without mutating graph or materials (31.839462ms)
+✔ Y-R1: overlay references every canonical device path without mutating graph or materials (12.033835ms)
+✔ Y-R2: overlay references every canonical device path without mutating graph or materials (10.969018ms)
+✔ Y-3: overlay references every canonical device path without mutating graph or materials (9.957209ms)
+✔ Y-4: overlay references every canonical device path without mutating graph or materials (14.044794ms)
+✔ Y-2: overlay references every canonical device path without mutating graph or materials (10.838465ms)
+✔ WX-A: overlay references every canonical device path without mutating graph or materials (57.566449ms)
+✔ WX-B: overlay references every canonical device path without mutating graph or materials (39.085144ms)
+✔ smooth 160 ms entry/exit and 1400 ms periodic pulse stay bounded; a different device never cross-fades (48.090854ms)
+✔ re-entry into the same fading device preserves opacity; reduced-motion stays static after fade (32.659126ms)
+✔ A/B share all geometry and one material; no lights, shadows, depth bypass, or picking interception (32.109362ms)
+✔ numeric inputs, IDs, variant and preferences reject invalid values; invalid construction leaves the scene untouched (35.860487ms)
+✔ every CPU geometry and the single GPU material are disposed exactly once; update after disposal is inert (35.268241ms)
+✔ all eight identities synchronize with deterministic focus/hover priority and never own route state (0.969426ms)
+✔ mouse, pen and touch intentional single taps are accepted; a release without press is inert (0.330309ms)
+✔ out-and-back drag, swipe, multitouch, cancellation, blur and nonfinite/unmatched inputs cannot actuate (0.395116ms)
+✔ one hundred mount/dispose cycles leave no listener, RAF, cursor, identity or event-response residue (16.154393ms)
+✔ a released pending capture cannot click; only confirmed captures can actuate, and capture loss aborts them (1.495164ms)
+✔ optional brief touch identity expires and its timer is cancelled on teardown; invalid duration adds no listeners (1.010226ms)
+✔ Y-IN: conformal hit geometry covers every real branch, independently of selected state (17.790461ms)
+✔ Y-R1: conformal hit geometry covers every real branch, independently of selected state (8.321827ms)
+✔ Y-R2: conformal hit geometry covers every real branch, independently of selected state (15.842447ms)
+✔ Y-3: conformal hit geometry covers every real branch, independently of selected state (7.371619ms)
+✔ Y-4: conformal hit geometry covers every real branch, independently of selected state (6.986078ms)
+✔ Y-2: conformal hit geometry covers every real branch, independently of selected state (6.411557ms)
+✔ WX-A: conformal hit geometry covers every real branch, independently of selected state (11.620342ms)
+✔ WX-B: conformal hit geometry covers every real branch, independently of selected state (6.890317ms)
+✔ adjacent-device overlap resolves deterministically regardless of mesh order; plain track is not a turnout (2.310191ms)
+✔ visible scenery and cars occlude the device, locomotives retain selection, invisible helpers do not occlude (2.364692ms)
+✔ picking disposal releases exactly eight geometries and one shared material once, and makes queries inert (0.9785ms)
+✔ Y-IN: both states, every entrance, exact canonical path and reverse Journey (5.134545ms)
+✔ Y-R1: both states, every entrance, exact canonical path and reverse Journey (1.117986ms)
+✔ Y-R2: both states, every entrance, exact canonical path and reverse Journey (1.273537ms)
+✔ Y-3: both states, every entrance, exact canonical path and reverse Journey (0.734498ms)
+✔ Y-4: both states, every entrance, exact canonical path and reverse Journey (0.436456ms)
+✔ Y-2: both states, every entrance, exact canonical path and reverse Journey (0.433752ms)
+✔ WX-A: both states, every entrance, exact canonical path and reverse Journey (1.983187ms)
+✔ WX-B: both states, every entrance, exact canonical path and reverse Journey (1.498099ms)
+✔ actual-network approaches match router over all 256 eight-controller configurations, including closed neighbours (19.326387ms)
+✔ unknown/nonfinite IDs, state, ports and unresolved network entries never invent an active path (0.739265ms)
+✔ immutable views cannot mutate canonical paths, state, Journey or subsequent reads; static paths are reused (16.477728ms)
+✔ route selection, operation lock and engine hazard observations have independent semantics (0.248278ms)
+✔ R1A independent admission, exact geometry, provenance, nodes and 154 truth rows (23.085605ms)
+✔ R1A artifact checksum is enforced separately from semantic validation (23.877128ms)
+✔ R1A builder reproduces bytes in a separate output and cannot overwrite legacy by default (56.078375ms)
+✔ R1A factory: explicit legacy fallback, default legacy, independent graph instances and no mixed IDs (9.72152ms)
+✔ R1A actual router against frozen WX 64 ordered cases (1.133739ms)
+✔ R1A actual router against frozen simple 90 ordered cases (0.557776ms)
+✔ R1A all 128 configurations: 20224 arrivals, 17920 active, actual router agrees with external topology oracle (37.186717ms)
+✔ R1A rings A/B/C, terminal branches and triangle legs in both directions; forbidden direct N07 remains blocked (1.47884ms)
+✔ R1A diamonds have no node and all seven units retain complete protected internal paths (0.528683ms)
+✔ R1A existing guard rejects unknown controller state on every unit without changing routing or guard (1.555634ms)
+✔ R1A negative: missing hidden piece (2.438942ms)
+✔ R1A negative: duplicate edge (1.965341ms)
+✔ R1A negative: unknown legacy edge (2.030077ms)
+✔ R1A negative: mixed legacy node (3.046252ms)
+✔ R1A negative: fake diamond (1.989768ms)
+✔ R1A negative: broken G1 (6.627116ms)
+✔ R1A negative: broken G2 (5.915031ms)
+✔ R1A negative: broken G3 (6.264159ms)
+✔ R1A negative: interior vertex moved (4.342081ms)
+✔ R1A negative: nonfinite coordinate (2.679299ms)
+✔ R1A negative: zero length segment (2.107391ms)
+✔ R1A negative: length corruption (1.922067ms)
+✔ R1A negative: hidden out of range (3.771406ms)
+✔ R1A negative: source hidden lost (3.63881ms)
+✔ R1A negative: wrong WX state (2.364343ms)
+✔ R1A negative: nonboolean state (2.223844ms)
+✔ R1A negative: wrong simple state (3.079501ms)
+✔ R1A negative: split unit identity (2.759868ms)
+✔ R1A negative: missing control path (27.878955ms)
+✔ R1A negative: wrong port (3.755343ms)
+✔ R1A negative: invented default (4.36834ms)
+✔ R1A negative: wrong terminal (5.721866ms)
+✔ R1A negative: invented stopping anchor (4.183446ms)
+✔ R1A negative: open ring (4.945956ms)
+✔ R1A negative: wrong ring direction (4.667333ms)
+✔ R1A negative: triangle direct admission (5.878337ms)
+✔ R1A negative: triangle maneuver enabled (4.553075ms)
+✔ R1A negative: wrong itinerary state (4.795664ms)
+✔ R1A negative: wrong source hash (2.016888ms)
+✔ R1A negative: wrong baseline (1.780728ms)
+✔ R1A negative: false certification (2.136985ms)
+✔ R1A negative: false circulation claim (1.967525ms)
+✔ R1A negative: unknown schema (1.897551ms)
+✔ R1A negative: implicit legacy reference (2.211606ms)
+✔ R1B legacy: registry identity, source order, ports, boolean states and immutable unit paths (3.737536ms)
+✔ R1B legacy: real network entrances for every global configuration and both directions (28.127893ms)
+✔ R1B legacy/Y-IN: command parity, both states and surfaces, reconciliation after permission only (8.759144ms)
+✔ R1B legacy/Y-R1: command parity, both states and surfaces, reconciliation after permission only (9.503647ms)
+✔ R1B legacy/Y-R2: command parity, both states and surfaces, reconciliation after permission only (14.696679ms)
+✔ R1B legacy/Y-3: command parity, both states and surfaces, reconciliation after permission only (12.911404ms)
+✔ R1B legacy/Y-4: command parity, both states and surfaces, reconciliation after permission only (46.580106ms)
+✔ R1B legacy/Y-2: command parity, both states and surfaces, reconciliation after permission only (5.544123ms)
+✔ R1B legacy/WX-A: command parity, both states and surfaces, reconciliation after permission only (10.886065ms)
+✔ R1B legacy/WX-B: command parity, both states and surfaces, reconciliation after permission only (6.770749ms)
+✔ R1B legacy: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation (3.825256ms)
+✔ R1B legacy: every internal arc, including inactive WX diagonals, locks the entire unit (36.822453ms)
+✔ R1B legacy: every port and actual neighbour blocks approach on both surfaces using the existing guard (45.015999ms)
+✔ R1B legacy: consecutive cross-surface commands read fresh engine occupancy and approach (3.640883ms)
+✔ R1B legacy: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN (1.78209ms)
+✔ R1B legacy: actual uncertain approach snapshot and safety callback failure never authorize a command (1.034853ms)
+✔ R1B V06-R1A: registry identity, source order, ports, boolean states and immutable unit paths (1.23562ms)
+✔ R1B V06-R1A: real network entrances for every global configuration and both directions (18.483779ms)
+✔ R1B V06-R1A/V06-C07: command parity, both states and surfaces, reconciliation after permission only (4.929872ms)
+✔ R1B V06-R1A/V06-C12: command parity, both states and surfaces, reconciliation after permission only (4.128004ms)
+✔ R1B V06-R1A/V06-C13: command parity, both states and surfaces, reconciliation after permission only (6.558565ms)
+✔ R1B V06-R1A/V06-N07: command parity, both states and surfaces, reconciliation after permission only (6.464526ms)
+✔ R1B V06-R1A/V06-N14: command parity, both states and surfaces, reconciliation after permission only (6.769728ms)
+✔ R1B V06-R1A/WX-A: command parity, both states and surfaces, reconciliation after permission only (34.438992ms)
+✔ R1B V06-R1A/WX-B: command parity, both states and surfaces, reconciliation after permission only (5.98173ms)
+✔ R1B V06-R1A: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation (24.496815ms)
+✔ R1B V06-R1A: every internal arc, including inactive WX diagonals, locks the entire unit (20.911735ms)
+✔ R1B V06-R1A: every port and actual neighbour blocks approach on both surfaces using the existing guard (14.596071ms)
+✔ R1B V06-R1A: consecutive cross-surface commands read fresh engine occupancy and approach (44.12558ms)
+✔ R1B V06-R1A: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN (1.631417ms)
+✔ R1B V06-R1A: actual uncertain approach snapshot and safety callback failure never authorize a command (0.653418ms)
+✔ R1B V06 model versus independent frozen WX 64 truth table (2.108533ms)
+✔ R1B V06 model versus independent frozen simple 90 truth table (1.351682ms)
+✔ R1B C12/C13 adjacent ports: both incoming alternatives, closed neighbour and unknown neighbour remain distinct (1.178004ms)
+✔ R1B V06 actual Journey traverses every permitted unit path and reverse, including both adjacent incoming alternatives (1.690103ms)
+✔ R1B registries reject incomplete, duplicate, mixed, nonboolean and broken-unit configuration (27.246579ms)
+✔ R1B commands reject profile/instance mixing even for shared WX IDs, and revalidate mutable specs on each request (3.872326ms)
+✔ R1B reset/profile isolation: independent caches, callbacks, state and geometry across alternating new instances (3.396831ms)
+✔ R1C explicit selection, invalid artifact and mixed inputs never silently fall back (29.370645ms)
+✔ R1C legacy: coherent identity, factory, immutable topology and exact controllers (30.500738ms)
+✔ R1C legacy: configuration is complete, strict boolean and atomic; no runtime admission (5.829064ms)
+✔ R1C legacy: scoped router and preview match existing algorithms for known states (7.984597ms)
+✔ R1C legacy: protected command re-reads occupancy and reservations across surfaces (7.722749ms)
+✔ R1C legacy: parked vehicle occupancy locks the complete WX and is destroyed at reset (12.276905ms)
+✔ R1C legacy: guard delegates to existing braking and never moves Journey (4.110208ms)
+✔ R1C legacy: each loop has a measurable static candidate, geometry and full consist fit (17.700868ms)
+✔ R1C legacy: missing dimensions, long consists, unspecified and operational spawns fail closed (3.954849ms)
+✔ R1C legacy: repeated spawn and reserved candidate are refused without mutating fleet (4.355772ms)
+✔ R1C legacy: controller model caches, callback and diagnostic data have session ownership (8.62762ms)
+✔ R1C v06: coherent identity, factory, immutable topology and exact controllers (86.646163ms)
+✔ R1C v06: configuration is complete, strict boolean and atomic; no runtime admission (19.977752ms)
+✔ R1C v06: scoped router and preview match existing algorithms for known states (21.560676ms)
+✔ R1C v06: protected command re-reads occupancy and reservations across surfaces (20.069487ms)
+✔ R1C v06: parked vehicle occupancy locks the complete WX and is destroyed at reset (49.34433ms)
+✔ R1C v06: guard delegates to existing braking and never moves Journey (16.063774ms)
+✔ R1C v06: each loop has a measurable static candidate, geometry and full consist fit (14.142729ms)
+✔ R1C v06: missing dimensions, long consists, unspecified and operational spawns fail closed (14.464606ms)
+✔ R1C v06: repeated spawn and reserved candidate are refused without mutating fleet (14.806642ms)
+✔ R1C v06: controller model caches, callback and diagnostic data have session ownership (49.323549ms)
+✔ R1C V06 starts with seven UNKNOWN states: no route, throw, spawn or safe guard (20.693692ms)
+✔ R1C shared WX names never permit registry, specs, Journey or reservation cross-instance reuse (63.850487ms)
+✔ R1C identity violation fails safety, command, guard and reset closed without reconciliation (38.580972ms)
+✔ R1C Legacy → V06 → Legacy rebuilds everything and revokes stale entry points (62.960349ms)
+✔ R1C invalid replacement artifact retains the complete old session (5.460809ms)
+✔ R1C movement, throttle, pending speed and UNKNOWN motion forbid swap/disposal (24.133488ms)
+✔ R1C cleanup failure cannot retain timers, callbacks, cache, reservations or ownership (60.948507ms)
+✔ R1C triangle preserves two legs, stop/clear/throw/reverse and refuses branch-to-branch transit (22.187826ms)
+✔ R1C default legacy factory and its data remain byte-equivalent after lab sessions (33.529144ms)
+✔ R1C unknown/invalid motion refuses safety and commands without changing state (58.060206ms)
+✔ R1C geometric envelopes refuse a wide vehicle across distinct loop edge IDs (17.68744ms)
+✔ R1C fourth train cannot gain an invented slot by requesting a configured loop (17.548153ms)
+✔ R1C live session timers, cancellation and listeners remain isolated (44.53061ms)
+✔ R1C reservation bounds and owner identity are checked before guard or spawn (22.040166ms)
+✔ R2A-F1 negative: panel cannot throw C13 on actual tick 836 before occupation (116.800413ms)
+✔ R2A-F1 negative: device cannot throw C13 on actual tick 836 before occupation (87.837167ms)
+✔ R2A-F1 negative: guarded stop leaves the full C13 operational margin clear for protected correction (135.460379ms)
+✔ R2A-F1 v06 1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm (1022.099645ms)
+✔ R2A-F1 v06 1: UNKNOWN neighbour at every shared port fails closed in the real step (367.250523ms)
+✔ R2A-F1 v06 -1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm (877.145352ms)
+✔ R2A-F1 v06 -1: UNKNOWN neighbour at every shared port fails closed in the real step (314.990613ms)
+✔ R2A-F1 legacy 1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm (274.55889ms)
+✔ R2A-F1 legacy 1: UNKNOWN neighbour at every shared port fails closed in the real step (102.177392ms)
+✔ R2A-F1 legacy -1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm (266.561286ms)
+✔ R2A-F1 legacy -1: UNKNOWN neighbour at every shared port fails closed in the real step (70.890373ms)
+✔ R2A-F1 actual accelerated approach with 1 short vehicles stops clear and corrects from either surface (93.131233ms)
+✔ R2A-F1 actual accelerated approach with 3 short vehicles stops clear and corrects from either surface (84.454182ms)
+✔ R2A-F1 legacy: empty railway admits panel/device requests on all units (5.769125ms)
+✔ R2A-F1 v06: empty railway admits panel/device requests on all units (10.914225ms)
+✔ R2A-F1 distant moving train does not cause a phantom C13 approach lock (11.951501ms)
+✔ R2A-F1 UNKNOWN session keeps both surfaces and motion closed until a complete known initialization (11.062435ms)
+✔ R2A A direction 1: full dynamic lap and controlled stop (624.4541ms)
+✔ R2A A direction -1: full dynamic lap and controlled stop (457.935983ms)
+✔ R2A B direction 1: full dynamic lap and controlled stop (375.251975ms)
+✔ R2A B direction -1: full dynamic lap and controlled stop (343.21896ms)
+✔ R2A C direction 1: full dynamic lap and controlled stop (417.818948ms)
+✔ R2A C direction -1: full dynamic lap and controlled stop (344.483403ms)
+✔ R2A short locomotive + two cars direction 1: complete C lap, joints, couplers, envelope (543.328592ms)
+✔ R2A short locomotive + two cars direction -1: complete C lap, joints, couplers, envelope (359.559162ms)
+✔ R2A acceleration, cruise, deceleration, immediate STOP, reverse and restart with a short car (26.038184ms)
+✔ R2A protected misalignment braking direction 1, no boundary crossing, protected correction (69.450737ms)
+✔ R2A protected misalignment braking direction -1, no boundary crossing, protected correction (34.988801ms)
+✔ R2A fresh operation safety rejects panel/device during actual approach and occupation on all five loop devices (1087.609891ms)
+✔ R2A UNKNOWN forbids any movement tick, clock accumulation and spawn (15.414284ms)
+✔ R2A incomplete/nonboolean configuration is rejected atomically before ticks (15.082963ms)
+✔ R2A explicit profile, foreign IDs and foreign Journey fail without movement (34.610139ms)
+✔ R2A speed limits use real clamping; invalid motion never enters stepRailway (16.651556ms)
+✔ R2A unavailable endpoint/triangle/yard and overlong consists cannot acquire a movement tick (12.362583ms)
+✔ R2A reset and reverse refuse movement or pending throttle; full stop permits a fresh legacy session (22.796629ms)
+✔ R2A cached future history is reconciled by protected command, observations remain read-only (151.617526ms)
+✔ R2A frozen witnesses are sensitive to wrong direction, distance and loop identity (5.687015ms)
+✔ R2A independent monitor detects injected coordinate drift and foreign history (56.350014ms)
+✔ R2A unreachable N16 in the static ring asset is observed as a cycle, never an invented route (43.172022ms)
+✔ R2A legacy movement and Legacy → V06 → Legacy lifecycle preserve defaults and revoke callbacks (82.118465ms)
+✔ R2A UNKNOWN guard decision itself remains zero-displacement fail-closed (0.267526ms)
+✔ progressive perspective zoom preserves target and viewing direction, with distance limits (2.817493ms)
+✔ zoom cancels follow while home and follow use the existing navigation presets (5.252621ms)
+✔ pan and orbit modes support mouse and single touch while retaining pinch and right-button pan (0.50667ms)
+✔ zero distance remains finite and orthographic zoom has equivalent limits (0.8235ms)
+✔ toolbar buttons mount accessibly, reflect follow state and remove listeners on dispose (0.572819ms)
+✔ zone planning is deterministic and does not modify track geometry (25.770225ms)
+✔ farmhouse and goods office footprints have full railway clearance (122.859206ms)
+✔ yard props respect running tracks, moving switches and building footprints (2.408428ms)
+✔ vineyard follows existing hills without invading railway or roads (10.102205ms)
+✔ all four buffers coincide with real canonical terminals without invented extensions (0.208249ms)
+✔ passengers remain N-scale and on the reserved passenger platform (0.444168ms)
+ℹ tests 412
+ℹ suites 0
+ℹ pass 411
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27125.029686
+
+✖ failing tests:
+
+test at tests/route-performance.test.js:5:1
+✖ lean route projections preserve every 5C range, encounter, graph distance and highlight; full API remains identical (60.917281ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    {
+      distance: 2693.474760817044,
+      encounters: [
+        {
+          destination: 'Inner loop',
+  ...
+        },
+  +     {
+  +       destination: null,
+  +       distance: 2693.474760817044,
+  +       incoming: 'TO0:AB',
+  +       node: 'TO0:A',
+  +       outgoing: null,
+  +       site: {
+  +         controls: [
+  +           'Y-3'
+  +         ],
+  +         id: 'Y-3',
+  +         internal: [
+  +           'TO3:AB',
+  +           'TO3:AC'
+  +         ],
+  +         name: 'East yard entrance',
+  +         nodes: [
+  +           'TO3:A',
+  +           'TO0:A',
+  +           'TO3:C'
+  +         ],
+  +         paths: [
+  +           {
+  +             edge: 'TO3:AB',
+  +             from: 0,
+  +             points: [
+  +               {
+  +                 x: 1122,
+  +                 z: 101
+  +               },
+  +               {
+  +                 x: 996.0000000000001,
+  +                 z: 101.00000000000009
+  +               }
+  +             ],
+  +             to: 125.99999999999989
+  +           },
+  +           {
+  +             edge: 'TO3:AC',
+  +             from: 0,
+  +             points: [
+  +               {
+  +                 x: 1122,
+  +                 z: 101
+  +               },
+  +               {
+  +                 x: 1120.023235531605,
+  +                 z: 101.01129342876794
+  +               },
+  +               {
+  +                 x: 1118.046534170383,
+  +                 z: 101.03071078146263
+  +               },
+  +               {
+  +                 x: 1116.0699293031448,
+  +                 z: 101.05825173012175
+  +               },
+  +               {
+  +                 x: 1114.0934543150715,
+  +                 z: 101.09391580957424
+  +               },
+  +               {
+  +                 x: 1112.1171425891505,
+  +                 z: 101.13770241744783
+  +               },
+  +               {
+  +                 x: 1110.1410275056112,
+  +                 z: 101.18961081417956
+  +               },
+  +               {
+  +                 x: 1108.1651424413624,
+  +                 z: 101.24964012302809
+  +               },
+  +               {
+  +                 x: 1106.1895207694274,
+  +                 z: 101.31778933008849
+  +               },
+  +               {
+  +                 x: 1104.2141958583807,
+  +                 z: 101.39405728430944
+  +               },
+  +               {
+  +                 x: 1102.239201071785,
+  +                 z: 101.47844269751272
+  +               },
+  +               {
+  +                 x: 1100.2645697676262,
+  +                 z: 101.57094414441485
+  +               },
+  +               {
+  +                 x: 1098.2903352977519,
+  +                 z: 101.67156006265117
+  +               },
+  +               {
+  +                 x: 1096.3165310073064,
+  +                 z: 101.78028875280222
+  +               },
+  +               {
+  +                 x: 1094.343190234169,
+  +                 z: 101.89712837842268
+  +               },
+  +               {
+  +                 x: 1092.370346308389,
+  +                 z: 102.02207696607195
+  +               },
+  +               {
+  +                 x: 1090.3980325516247,
+  +                 z: 102.15513240534796
+  +               },
+  +               {
+  +                 x: 1088.4262822765795,
+  +                 z: 102.29629244892243
+  +               },
+  +               {
+  +                 x: 1086.4551287864397,
+  +                 z: 102.44555471257905
+  +               },
+  +               {
+  +                 x: 1084.4846053743115,
+  +                 z: 102.6029166752536
+  +               },
+  +               {
+  +                 x: 1082.514745322659,
+  +                 z: 102.76837567907677
+  +               },
+  +               {
+  +                 x: 1080.5455819027422,
+  +                 z: 102.94192892941868
+  +               },
+  +               {
+  +                 x: 1078.577148374055,
+  +                 z: 103.12357349493658
+  +               },
+  +               {
+  +                 x: 1076.6094779837629,
+  +                 z: 103.31330630762369
+  +               },
+  +               {
+  +                 x: 1074.6426039661421,
+  +                 z: 103.51112416286185
+  +               },
+  +               {
+  +                 x: 1072.6765595420181,
+  +                 z: 103.71702371947487
+  +               },
+  +               {
+  +                 x: 1070.7113779182043,
+  +                 z: 103.9310014997854
+  +               },
+  +               {
+  +                 x: 1068.747092286941,
+  +                 z: 104.15305388967363
+  +               },
+  +               {
+  +                 x: 1066.7837358253353,
+  +                 z: 104.38317713863819
+  +               },
+  +               {
+  +                 x: 1064.8213416948008,
+  +                 z: 104.6213673598595
+  +               },
+  +               {
+  +                 x: 1062.8599430404963,
+  +                 z: 104.8676205302657
+  +               },
+  +               {
+  +                 x: 1060.8995729907676,
+  +                 z: 105.12193249060027
+  +               },
+  +               {
+  +                 x: 1058.940264656587,
+  +                 z: 105.38429894549233
+  +               },
+  +               {
+  +                 x: 1056.982051130994,
+  +                 z: 105.65471546352944
+  +               },
+  +               {
+  +                 x: 1055.024965488537,
+  +                 z: 105.93317747733215
+  +               },
+  +               {
+  +                 x: 1053.069040784714,
+  +                 z: 106.21968028363125
+  +               },
+  +               {
+  +                 x: 1051.1143100554145,
+  +                 z: 106.5142190433474
+  +               },
+  +               {
+  +                 x: 1049.160806316362,
+  +                 z: 106.81678878167236
+  +               },
+  +               {
+  +                 x: 1047.2085625625555,
+  +                 z: 107.12738438815364
+  +               },
+  +               {
+  +                 x: 1045.2576117677124,
+  +                 z: 107.4460006167804
+  +               },
+  +               {
+  +                 x: 1043.3079868837128,
+  +                 z: 107.77263208607224
+  +               },
+  +               {
+  +                 x: 1041.359720840041,
+  +                 z: 108.10727327916987
+  +               },
+  +               {
+  +                 x: 1039.4128465432307,
+  +                 z: 108.44991854392862
+  +               },
+  +               {
+  +                 x: 1037.4673968763084,
+  +                 z: 108.8005620930137
+  +               },
+  +               {
+  +                 x: 1035.5234046982391,
+  +                 z: 109.1591980039978
+  +               },
+  +               {
+  +                 x: 1033.5809028433698,
+  +                 z: 109.52582021946165
+  +               },
+  +               {
+  +                 x: 1031.639924120876,
+  +                 z: 109.90042254709567
+  +               },
+  +               {
+  +                 x: 1029.7005013142073,
+  +                 z: 110.282998659805
+  +               },
+  +               {
+  +                 x: 1027.7626671805335,
+  +                 z: 110.67354209581634
+  +               },
+  +               {
+  +                 x: 1025.8264544501917,
+  +                 z: 111.07204625878677
+  +               },
+  +               {
+  +                 x: 1023.8918958261331,
+  +                 z: 111.47850441791553
+  +               },
+  +               {
+  +                 x: 1021.9590239833703,
+  +                 z: 111.89290970805752
+  +               },
+  +               {
+  +                 x: 1020.0278715684269,
+  +                 z: 112.31525512983933
+  +               },
+  +               {
+  +                 x: 1018.098471198784,
+  +                 z: 112.74553354977735
+  +               },
+  +               {
+  +                 x: 1016.170855462331,
+  +                 z: 113.18373770039847
+  +               },
+  +               {
+  +                 x: 1014.2450569168145,
+  +                 z: 113.62986018036241
+  +               },
+  +               {
+  +                 x: 1012.3211080892885,
+  +                 z: 114.08389345458733
+  +               },
+  +               {
+  +                 x: 1010.3990414755646,
+  +                 z: 114.5458298543765
+  +               },
+  +               {
+  +                 x: 1008.4788895396638,
+  +                 z: 115.01566157754837
+  +               },
+  +               {
+  +                 x: 1006.5606847132676,
+  +                 z: 115.49338068856787
+  +               },
+  +               {
+  +                 x: 1004.644459395171,
+  +                 z: 115.97897911868068
+  +               },
+  +               {
+  +                 x: 1002.7302459507343,
+  +                 z: 116.47244866604956
+  +               },
+  +               {
+  +                 x: 1000.8180767113373,
+  +                 z: 116.97378099589281
+  +               },
+  +               {
+  +                 x: 998.9079839738324,
+  +                 z: 117.48296764062496
+  +               },
+  +               {
+  +                 x: 997,
+  +                 z: 117.99999999999997
+  +               }
+  +             ],
+  +             to: 126.51499061160226
+  +           }
+  +         ],
+  +         protectedRanges: [
+  +           {
+  +             edge: 'TO3:AB',
+  +             max: 125.99999999999989,
+  +             min: 0
+  +           },
+  +           {
+  +             edge: 'TO3:AC',
+  +             max: 126.51499061160226,
+  +             min: 0
+  +           },
+  +           {
+  +             edge: 'T27',
+  +             max: 30,
+  +             min: 0
+  +           },
+  +           {
+  +             edge: 'TO0:AB',
+  +             max: 30,
+  +             min: 0
+  +           },
+  +           {
+  +             edge: 'TO0:AC',
+  +             max: 30,
+  +             min: 0
+  +           },
+  +           {
+  +             edge: 'T45',
+  +             max: 62.09669878504012,
+  +             min: 32.09669878504012
+  +           }
+  +         ]
+  +       }
+  +     }
+      ],
+      next: {
+        destination: 'Inner loop',
+        distance: 2075.474760817044,
+        incoming: 'T18',
+
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/route-performance.test.js:11:11)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: {
+      next: { site: [Object], node: 'A25', distance: 2075.474760817044, incoming: 'T18', outgoing: [Object], destination: 'Inner loop' },
+      encounters: [ [Object], [Object], [Object] ],
+      ranges: [
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object]
+      ],
+      points: [
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object],
+        ... 831 more items
+      ],
+      distance: 2693.474760817044,
+      stop: 'misaligned',
+      uncertain: false
+    },
+    expected: {
+      next: { site: [Object], node: 'A25', distance: 2075.474760817044, incoming: 'T18', outgoing: [Object], destination: 'Inner loop' },
+      encounters: [ [Object], [Object] ],
+      ranges: [
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object],
+        [Object], [Object]
+      ],
+      points: [
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object],
+        ... 831 more items
+      ],
+      distance: 2693.474760817044,
+      stop: 'misaligned',
+      uncertain: false
+    },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

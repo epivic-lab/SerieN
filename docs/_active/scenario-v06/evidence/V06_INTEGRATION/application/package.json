@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "recipe": ".github/workflows/pages.yml Prepare site - exact, unchanged",
+  "files": 113,
+  "bytes": 369517260,
+  "limitBytes": 1073741824,
+  "moduleChecks": [
+    {
+      "path": "_site/assets/scenario-v06/modules/gardens_allotments.glb",
+      "status": 200,
+      "bytes": 5601128
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/mountain.glb",
+      "status": 200,
+      "bytes": 16779656
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/mountain_rocks.glb",
+      "status": 200,
+      "bytes": 6179932
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/railway_service_buildings.glb",
+      "status": 200,
+      "bytes": 36688380
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/railway_visual.glb",
+      "status": 200,
+      "bytes": 40139988
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/sawmill.glb",
+      "status": 200,
+      "bytes": 59400628
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/scenery_details.glb",
+      "status": 200,
+      "bytes": 5005664
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/station_platform.glb",
+      "status": 200,
+      "bytes": 16690996
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/technical_reference.glb",
+      "status": 200,
+      "bytes": 99864
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/terrain.glb",
+      "status": 200,
+      "bytes": 41022828
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/tunnels_portals.glb",
+      "status": 200,
+      "bytes": 17432076
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/vegetation.glb",
+      "status": 200,
+      "bytes": 27913720
+    },
+    {
+      "path": "_site/assets/scenario-v06/modules/village_buildings.glb",
+      "status": 200,
+      "bytes": 91596468
+    }
+  ],
+  "bundleIdentical": true,
+  "datasetAndLockIdentical": true,
+  "httpTest": "HEAD on local _site prefix; not live Pages or OAuth",
+  "deploy": false
+}

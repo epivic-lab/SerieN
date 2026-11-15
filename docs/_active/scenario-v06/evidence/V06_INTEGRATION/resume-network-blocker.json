@@ -1,0 +1,45 @@
+{
+  "status": "BLOCKED",
+  "checkpoint": "7d235e147b7d50536dd8189fd10ad74ffeaf5b5c",
+  "observedSpecRevision": "1",
+  "observationsCurrent": true,
+  "networkPolicyState": "enforced",
+  "configuredCustomHosts": [
+    "epivic-lab.github.io",
+    "sdmntprdenmarkeast.oaiusercontent.com"
+  ],
+  "requiredAdditionalHost": "sdmntprpolandcentral.oaiusercontent.com",
+  "terrain": {
+    "bytes": 41022828,
+    "freshAuthenticatedReference": true,
+    "actualDownloadHost": "sdmntprpolandcentral.oaiusercontent.com",
+    "httpAttempt": "URLError: Tunnel connection failed: 403 Forbidden",
+    "payloadDownloaded": false,
+    "sha256Verified": false
+  },
+  "otherFreshReferences": {
+    "railway_visual.glb": {
+      "host": "sdmntprdenmarkeast.oaiusercontent.com",
+      "httpStatus": 200,
+      "manifestMatch": true
+    },
+    "village_buildings.glb": {
+      "host": "sdmntprdenmarkeast.oaiusercontent.com",
+      "httpStatus": 200,
+      "manifestMatch": true
+    },
+    "sawmill.glb": {
+      "host": "sdmntprpolandcentral.oaiusercontent.com",
+      "httpAttempt": "not attempted: same missing hostname grant"
+    },
+    "railway_service_buildings.glb": {
+      "host": "sdmntprpolandcentral.oaiusercontent.com",
+      "httpAttempt": "not attempted: same missing hostname grant"
+    }
+  },
+  "requestChangesToolAvailable": false,
+  "runtimeAdmission": false,
+  "browserV06": "NOT VERIFIED",
+  "applicationIntegration": "NOT IMPLEMENTED",
+  "signedURLsStoredInRepository": false
+}

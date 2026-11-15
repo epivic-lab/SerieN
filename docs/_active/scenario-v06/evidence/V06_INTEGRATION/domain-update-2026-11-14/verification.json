@@ -1,0 +1,39 @@
+{
+  "checkpoint": "ea20cc2d9a36636afa29e49922cc65df8373171d",
+  "observedRevision": "1",
+  "observationsCurrent": true,
+  "policyState": "enforced",
+  "configuredHosts": [
+    "epivic-lab.github.io",
+    "sdmntprdenmarkeast.oaiusercontent.com"
+  ],
+  "downloads": {
+    "railway_visual.glb": {
+      "host": "sdmntprdenmarkeast.oaiusercontent.com",
+      "httpStatus": 200,
+      "bytes": 40139988
+    },
+    "village_buildings.glb": {
+      "host": "sdmntprdenmarkeast.oaiusercontent.com",
+      "httpStatus": 200,
+      "bytes": 91596468
+    },
+    "railway_service_buildings.glb": {
+      "host": "sdmntprukwest.oaiusercontent.com",
+      "error": "URLError: Tunnel connection failed: 403 Forbidden",
+      "payloadDownloaded": false
+    }
+  },
+  "technicalReference": "connector transfer, 99864 bytes, hash verified",
+  "missingRequired": 1,
+  "completeAssetsGateExitCode": 2,
+  "applicationAndWorkflowDiff": false,
+  "bundleSHA256": "89d732feafef5914078d5ef83885e5b9b68ff3abe967e8c4863a08e20a3063c7",
+  "nodeTests": "559/559 reused from immediate preceding recovery; unchanged source/test/runtime assets/dependencies",
+  "jmriTests": "9/9 reused from immediate preceding recovery; unchanged canonical source and tests",
+  "build": "PASS - rerun",
+  "runtimeAdmission": false,
+  "browserV06": "NOT VERIFIED",
+  "automaticApprovalRejection": false,
+  "signedURLsStored": false
+}

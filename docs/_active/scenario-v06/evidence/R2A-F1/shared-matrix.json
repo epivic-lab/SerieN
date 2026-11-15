@@ -1,0 +1,5478 @@
+{
+  "runtimeAdmission": false,
+  "known": [
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C12",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C12",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C12",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C12",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C12",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C12",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C12",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C12",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000020000000020559128,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C12",
+      "neighbour": "V06-N14",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C12",
+      "neighbour": "V06-N14",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-N14",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C12",
+      "neighbour": "V06-N14",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C12",
+      "neighbour": "V06-N14",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-N14",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C12",
+      "neighbour": "V06-N14",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C12",
+      "neighbour": "V06-N14",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000020000000020559128,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-N14",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C12",
+      "neighbour": "V06-N14",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C12",
+      "neighbour": "V06-N14",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-N14",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-N14",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-N14",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-N14",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-N14",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-N14",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-N14",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000020000000020559128,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-N14",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-N14",
+      "neighbour": "V06-C12",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C12",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-N14",
+      "neighbour": "V06-C12",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C12",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C13",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C13",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000020000000020559128,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C13",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C13",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C13",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C13",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000020000000020559128,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C13",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "WX-A",
+      "neighbour": "V06-C13",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "V06-C13",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "V06-C13",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "WX-A",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "WX-A",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "WX-A",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "WX-A",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "WX-A",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "WX-A",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "V06-C13",
+      "neighbour": "WX-A",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "V06-C13",
+      "neighbour": "WX-A",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "WX-A",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-3",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-3",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000020000000020559128,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-3",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-3",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-3",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-3",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000020000000020559128,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-3",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-3",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-3",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-3",
+        "origin": "device",
+        "on": false
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-3",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-3",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-3",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-3",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-3",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-3",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-3",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-3",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-2",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-2",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-2",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-2",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-2",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-2",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-IN",
+      "neighbour": "Y-2",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-IN",
+      "neighbour": "Y-2",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-2",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-IN",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-IN",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000020000000020559128,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-IN",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-IN",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-IN",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-IN",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000020000000020559128,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-IN",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": true,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": true,
+      "ticks": 12,
+      "minClearance": 0.0000019999999949504854,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": {
+        "changed": true,
+        "controlId": "Y-IN",
+        "origin": "device",
+        "on": true
+      },
+      "status": "PASS"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": true,
+      "current": "Y-2",
+      "neighbour": "Y-IN",
+      "blocked": false,
+      "ticks": 31,
+      "minClearance": -30,
+      "requests": [
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "panel",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        },
+        {
+          "changed": false,
+          "controlId": "Y-IN",
+          "origin": "device",
+          "reason": "approaching",
+          "message": "Train approaching · operation blocked"
+        }
+      ],
+      "correction": null,
+      "status": "PASS"
+    }
+  ],
+  "unknown": [
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P033",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P068",
+        "end": 1
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000020000000020559128,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J053",
+      "port": {
+        "edge": "V06-P069",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-C13"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-N14",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-N14",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-N14",
+      "minClearance": 0.0000020000000020559128,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P030",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-N14",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000020000000020559128,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J054",
+      "port": {
+        "edge": "V06-P041",
+        "end": 0
+      },
+      "controls": [
+        "V06-C12",
+        "V06-N14"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C12",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000020000000020559128,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P012",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000020000000020559128,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P060",
+        "end": 0
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "V06-C13",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "WX-A",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "WX-A",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "WX-A",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "v06",
+      "node": "V06-R01J038",
+      "port": {
+        "edge": "V06-P069",
+        "end": 1
+      },
+      "controls": [
+        "V06-C13",
+        "WX-A"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "WX-A",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-3",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-3",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-3",
+      "minClearance": 0.0000020000000020559128,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-3",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-3",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-3",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-3",
+      "minClearance": 0.0000020000000020559128,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-3",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:A",
+      "port": {
+        "edge": "TO3:AB",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-3"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-2",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-2",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-2",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO0:AC",
+        "end": 1
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-2",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000020000000020559128,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AB",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": 1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 1,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000020000000020559128,
+      "status": "PASS_UNKNOWN_CORE"
+    },
+    {
+      "profile": "legacy",
+      "node": "TO0:C",
+      "port": {
+        "edge": "TO5:AC",
+        "end": 0
+      },
+      "controls": [
+        "Y-IN",
+        "Y-2"
+      ],
+      "direction": -1,
+      "count": 2,
+      "neighbourState": false,
+      "unknown": "Y-IN",
+      "minClearance": 0.0000019999999949504854,
+      "status": "PASS_UNKNOWN_CORE"
+    }
+  ],
+  "summary": {
+    "known": 112,
+    "unknown": 56,
+    "blocked": 40,
+    "aligned": 72,
+    "minStoppedClearance": 0.0000019999999949504854
+  }
+}

@@ -1,0 +1,29 @@
+✔ R2B2 third admission validates entire consist, position, route, reservation and all other trains atomically (113.777913ms)
+✔ R2B2 missing third and foreign IDs/Journeys refuse transaction without partial movement (257.456021ms)
+✔ R2B2 UNKNOWN readiness refuses all three admissions, surfaces and clock (39.0186ms)
+✔ R2B2 reset/rollback only after explicit STOP; invalid replacement preserves context (51.210083ms)
+✔ R2B2 reservation ownership and invalid ranges cannot mutate context (186.587598ms)
+✖ R2B2 oracle detects corruption of the third consist and returns prior/current/inputs (291.666507ms)
+✔ R2B2 near-touch traces are deterministic (195.089424ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1307.828358
+
+✖ failing tests:
+
+test at tests/v06-r2b2.test.js:14:1
+✖ R2B2 oracle detects corruption of the third consist and returns prior/current/inputs (291.666507ms)
+  TypeError: Cannot delete property '2' of [object Array]
+      at Array.pop (<anonymous>)
+      at TestContext.<anonymous> (file:///workspace/SerieN/tests/v06-r2b2.test.js:14:510)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

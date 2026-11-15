@@ -1,0 +1,697 @@
+{
+  "status": "PASS",
+  "baseline": "6a976749d5630c0abf858e64795210183a947f5e",
+  "node": "v24.19.0",
+  "sourceHashes": {
+    "src/turnout-registry.js": "c7d462f957c2f59d061c2d93bf1232d91dad52a5c61b14bbef706aba5acb8cb8",
+    "src/turnout-routes.js": "f13523620482693e079cb27ce9b10adcc8e0fbc782e28e9cb0418cc3e4be4a5a",
+    "src/turnout-commands.js": "22c448c6d411ef4bb7d4716c0ca5e67721f6c40443b8ae19e399019605e47851",
+    "tests/v06-r1b.test.js": "1f7b73601bce3592e8aa87b9512e4d8c19e21b7f5a4e10eebfd2dcd95bfe1145"
+  },
+  "dataset": {
+    "sha256": "4fd022e1173ef5517a7c826f4163dd10ab1ff776e1ecfaf144f53d40473ccef7",
+    "admission": "PASS_DATASET_ONLY",
+    "physical_profile_certified": false,
+    "runtime_circulation_verified": false
+  },
+  "legacyNetwork": {
+    "bytes": 533232,
+    "sha256": "ec5c0309f3b7aee5e8af9a996b0bd3b5b3bd03d31ee732cc75286bc2b0904413",
+    "identicalToR1A": true
+  },
+  "bundle": {
+    "bytes": 1095990,
+    "sha256": "9eaa6b7273bc8597040a24febae71334c0f08cefd4f384151ff458f4543e2a66",
+    "inputs": 85,
+    "v06Inputs": []
+  },
+  "profiles": [
+    {
+      "profileId": "legacy",
+      "network": {
+        "edges": 75,
+        "deadEnds": 4
+      },
+      "ids": [
+        "Y-IN",
+        "Y-R1",
+        "Y-R2",
+        "Y-3",
+        "Y-4",
+        "Y-2",
+        "WX-A",
+        "WX-B"
+      ],
+      "controllers": [
+        {
+          "id": "Y-IN",
+          "profileId": "legacy",
+          "order": 0,
+          "kind": "single",
+          "ports": {
+            "A": "TO0:A",
+            "B": "TO0:B",
+            "C": "TO0:C"
+          },
+          "internal": [
+            "TO0:AB",
+            "TO0:AC"
+          ],
+          "paths": [
+            {
+              "edge": "TO0:AB",
+              "fromPort": "A",
+              "toPort": "B",
+              "requiredState": false
+            },
+            {
+              "edge": "TO0:AC",
+              "fromPort": "A",
+              "toPort": "C",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": false
+        },
+        {
+          "id": "Y-R1",
+          "profileId": "legacy",
+          "order": 1,
+          "kind": "single",
+          "ports": {
+            "A": "TO1:A",
+            "B": "TO1:B",
+            "C": "TO1:C"
+          },
+          "internal": [
+            "TO1:AB",
+            "TO1:AC"
+          ],
+          "paths": [
+            {
+              "edge": "TO1:AB",
+              "fromPort": "A",
+              "toPort": "B",
+              "requiredState": false
+            },
+            {
+              "edge": "TO1:AC",
+              "fromPort": "A",
+              "toPort": "C",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": false
+        },
+        {
+          "id": "Y-R2",
+          "profileId": "legacy",
+          "order": 2,
+          "kind": "single",
+          "ports": {
+            "A": "TO2:A",
+            "B": "TO2:B",
+            "C": "TO2:C"
+          },
+          "internal": [
+            "TO2:AB",
+            "TO2:AC"
+          ],
+          "paths": [
+            {
+              "edge": "TO2:AB",
+              "fromPort": "A",
+              "toPort": "B",
+              "requiredState": false
+            },
+            {
+              "edge": "TO2:AC",
+              "fromPort": "A",
+              "toPort": "C",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": false
+        },
+        {
+          "id": "Y-3",
+          "profileId": "legacy",
+          "order": 3,
+          "kind": "single",
+          "ports": {
+            "A": "TO3:A",
+            "B": "TO0:A",
+            "C": "TO3:C"
+          },
+          "internal": [
+            "TO3:AB",
+            "TO3:AC"
+          ],
+          "paths": [
+            {
+              "edge": "TO3:AB",
+              "fromPort": "A",
+              "toPort": "B",
+              "requiredState": false
+            },
+            {
+              "edge": "TO3:AC",
+              "fromPort": "A",
+              "toPort": "C",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": false
+        },
+        {
+          "id": "Y-4",
+          "profileId": "legacy",
+          "order": 4,
+          "kind": "single",
+          "ports": {
+            "A": "TO4:A",
+            "B": "TO4:B",
+            "C": "TO4:C"
+          },
+          "internal": [
+            "TO4:AB",
+            "TO4:AC"
+          ],
+          "paths": [
+            {
+              "edge": "TO4:AB",
+              "fromPort": "A",
+              "toPort": "B",
+              "requiredState": false
+            },
+            {
+              "edge": "TO4:AC",
+              "fromPort": "A",
+              "toPort": "C",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": false
+        },
+        {
+          "id": "Y-2",
+          "profileId": "legacy",
+          "order": 5,
+          "kind": "single",
+          "ports": {
+            "A": "TO0:C",
+            "B": "TO5:B",
+            "C": "TO5:C"
+          },
+          "internal": [
+            "TO5:AB",
+            "TO5:AC"
+          ],
+          "paths": [
+            {
+              "edge": "TO5:AB",
+              "fromPort": "A",
+              "toPort": "B",
+              "requiredState": false
+            },
+            {
+              "edge": "TO5:AC",
+              "fromPort": "A",
+              "toPort": "C",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": false
+        },
+        {
+          "id": "WX-A",
+          "profileId": "legacy",
+          "order": 6,
+          "kind": "cross",
+          "ports": {
+            "UL": "A7",
+            "UR": "A43",
+            "LL": "A25",
+            "LR": "A8"
+          },
+          "internal": [
+            "WX-A:upper",
+            "WX-A:lower",
+            "WX-A:down",
+            "WX-A:up"
+          ],
+          "paths": [
+            {
+              "edge": "WX-A:upper",
+              "fromPort": "UL",
+              "toPort": "UR",
+              "requiredState": false
+            },
+            {
+              "edge": "WX-A:lower",
+              "fromPort": "LL",
+              "toPort": "LR",
+              "requiredState": false
+            },
+            {
+              "edge": "WX-A:down",
+              "fromPort": "UL",
+              "toPort": "LR",
+              "requiredState": true
+            },
+            {
+              "edge": "WX-A:up",
+              "fromPort": "LL",
+              "toPort": "UR",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "N",
+            "true": "X"
+          },
+          "initialState": false
+        },
+        {
+          "id": "WX-B",
+          "profileId": "legacy",
+          "order": 7,
+          "kind": "cross",
+          "ports": {
+            "UL": "A40",
+            "UR": "A30",
+            "LL": "A42",
+            "LR": "A32"
+          },
+          "internal": [
+            "WX-B:upper",
+            "WX-B:lower",
+            "WX-B:down",
+            "WX-B:up"
+          ],
+          "paths": [
+            {
+              "edge": "WX-B:upper",
+              "fromPort": "UL",
+              "toPort": "UR",
+              "requiredState": false
+            },
+            {
+              "edge": "WX-B:lower",
+              "fromPort": "LL",
+              "toPort": "LR",
+              "requiredState": false
+            },
+            {
+              "edge": "WX-B:down",
+              "fromPort": "UL",
+              "toPort": "LR",
+              "requiredState": true
+            },
+            {
+              "edge": "WX-B:up",
+              "fromPort": "LL",
+              "toPort": "UR",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "N",
+            "true": "X"
+          },
+          "initialState": false
+        }
+      ]
+    },
+    {
+      "profileId": "V06-R1A",
+      "network": {
+        "edges": 79,
+        "deadEnds": 3
+      },
+      "ids": [
+        "V06-C07",
+        "V06-C12",
+        "V06-C13",
+        "V06-N07",
+        "V06-N14",
+        "WX-A",
+        "WX-B"
+      ],
+      "controllers": [
+        {
+          "id": "V06-C07",
+          "profileId": "V06-R1A",
+          "order": 0,
+          "kind": "single",
+          "ports": {
+            "A": "V06-R01J062",
+            "B": "V06-R01J057",
+            "C": "V06-R01J056"
+          },
+          "internal": [
+            "V06-P034",
+            "V06-P035"
+          ],
+          "paths": [
+            {
+              "edge": "V06-P034",
+              "fromPort": "A",
+              "toPort": "C",
+              "requiredState": true
+            },
+            {
+              "edge": "V06-P035",
+              "fromPort": "B",
+              "toPort": "A",
+              "requiredState": false
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": null
+        },
+        {
+          "id": "V06-C12",
+          "profileId": "V06-R1A",
+          "order": 1,
+          "kind": "single",
+          "ports": {
+            "A": "V06-R01J061",
+            "B": "V06-R01J053",
+            "C": "V06-R01J054"
+          },
+          "internal": [
+            "V06-P030",
+            "V06-P068"
+          ],
+          "paths": [
+            {
+              "edge": "V06-P030",
+              "fromPort": "C",
+              "toPort": "A",
+              "requiredState": true
+            },
+            {
+              "edge": "V06-P068",
+              "fromPort": "A",
+              "toPort": "B",
+              "requiredState": false
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": null
+        },
+        {
+          "id": "V06-C13",
+          "profileId": "V06-R1A",
+          "order": 2,
+          "kind": "single",
+          "ports": {
+            "A": "V06-R01J053",
+            "B": "V06-R01J038",
+            "C": "V06-R01J039"
+          },
+          "internal": [
+            "V06-P033",
+            "V06-P069"
+          ],
+          "paths": [
+            {
+              "edge": "V06-P033",
+              "fromPort": "C",
+              "toPort": "A",
+              "requiredState": true
+            },
+            {
+              "edge": "V06-P069",
+              "fromPort": "A",
+              "toPort": "B",
+              "requiredState": false
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": null
+        },
+        {
+          "id": "V06-N07",
+          "profileId": "V06-R1A",
+          "order": 3,
+          "kind": "single",
+          "ports": {
+            "A": "V06-R01J024",
+            "B": "V06-R01J028",
+            "C": "V06-R01J031"
+          },
+          "internal": [
+            "V06-P031",
+            "V06-P032"
+          ],
+          "paths": [
+            {
+              "edge": "V06-P031",
+              "fromPort": "B",
+              "toPort": "A",
+              "requiredState": false
+            },
+            {
+              "edge": "V06-P032",
+              "fromPort": "A",
+              "toPort": "C",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": null
+        },
+        {
+          "id": "V06-N14",
+          "profileId": "V06-R1A",
+          "order": 4,
+          "kind": "single",
+          "ports": {
+            "A": "V06-R01J040",
+            "B": "V06-R01J054",
+            "C": "V06-R01J055"
+          },
+          "internal": [
+            "V06-P041",
+            "V06-P042"
+          ],
+          "paths": [
+            {
+              "edge": "V06-P041",
+              "fromPort": "B",
+              "toPort": "A",
+              "requiredState": false
+            },
+            {
+              "edge": "V06-P042",
+              "fromPort": "A",
+              "toPort": "C",
+              "requiredState": true
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "S0",
+            "true": "S1"
+          },
+          "initialState": null
+        },
+        {
+          "id": "WX-A",
+          "profileId": "V06-R1A",
+          "order": 5,
+          "kind": "cross",
+          "ports": {
+            "UL": "V06-R01J022",
+            "UR": "V06-R01J037",
+            "LL": "V06-R01J023",
+            "LR": "V06-R01J038"
+          },
+          "internal": [
+            "V06-P012",
+            "V06-P013",
+            "V06-P059",
+            "V06-P060"
+          ],
+          "paths": [
+            {
+              "edge": "V06-P012",
+              "fromPort": "LR",
+              "toPort": "UL",
+              "requiredState": true
+            },
+            {
+              "edge": "V06-P013",
+              "fromPort": "UR",
+              "toPort": "LL",
+              "requiredState": true
+            },
+            {
+              "edge": "V06-P059",
+              "fromPort": "UR",
+              "toPort": "UL",
+              "requiredState": false
+            },
+            {
+              "edge": "V06-P060",
+              "fromPort": "LR",
+              "toPort": "LL",
+              "requiredState": false
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "N",
+            "true": "X"
+          },
+          "initialState": null
+        },
+        {
+          "id": "WX-B",
+          "profileId": "V06-R1A",
+          "order": 6,
+          "kind": "cross",
+          "ports": {
+            "UL": "V06-R01J043",
+            "UR": "V06-R01J059",
+            "LL": "V06-R01J044",
+            "LR": "V06-R01J060"
+          },
+          "internal": [
+            "V06-P016",
+            "V06-P017",
+            "V06-P061",
+            "V06-P062"
+          ],
+          "paths": [
+            {
+              "edge": "V06-P016",
+              "fromPort": "LR",
+              "toPort": "UL",
+              "requiredState": true
+            },
+            {
+              "edge": "V06-P017",
+              "fromPort": "UR",
+              "toPort": "LL",
+              "requiredState": true
+            },
+            {
+              "edge": "V06-P061",
+              "fromPort": "UR",
+              "toPort": "UL",
+              "requiredState": false
+            },
+            {
+              "edge": "V06-P062",
+              "fromPort": "LR",
+              "toPort": "LL",
+              "requiredState": false
+            }
+          ],
+          "allowedStates": [
+            false,
+            true
+          ],
+          "states": {
+            "false": "N",
+            "true": "X"
+          },
+          "initialState": null
+        }
+      ]
+    }
+  ]
+}

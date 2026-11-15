@@ -1,0 +1,63 @@
+✔ R1C explicit selection, invalid artifact and mixed inputs never silently fall back (42.365029ms)
+✔ R1C legacy: coherent identity, factory, immutable topology and exact controllers (27.884502ms)
+✔ R1C legacy: configuration is complete, strict boolean and atomic; no runtime admission (6.511034ms)
+✔ R1C legacy: scoped router and preview match existing algorithms for known states (20.500805ms)
+✔ R1C legacy: protected command re-reads occupancy and reservations across surfaces (7.881774ms)
+✔ R1C legacy: parked vehicle occupancy locks the complete WX and is destroyed at reset (19.428947ms)
+✔ R1C legacy: guard delegates to existing braking and never moves Journey (4.946867ms)
+✔ R1C legacy: each loop has a measurable static candidate, geometry and full consist fit (11.202643ms)
+✔ R1C legacy: missing dimensions, long consists, unspecified and operational spawns fail closed (15.080697ms)
+✔ R1C legacy: repeated spawn and reserved candidate are refused without mutating fleet (4.672811ms)
+✔ R1C legacy: controller model caches, callback and diagnostic data have session ownership (14.869184ms)
+✔ R1C v06: coherent identity, factory, immutable topology and exact controllers (86.179476ms)
+✔ R1C v06: configuration is complete, strict boolean and atomic; no runtime admission (21.408049ms)
+✔ R1C v06: scoped router and preview match existing algorithms for known states (23.174836ms)
+✔ R1C v06: protected command re-reads occupancy and reservations across surfaces (67.524335ms)
+✔ R1C v06: parked vehicle occupancy locks the complete WX and is destroyed at reset (72.343253ms)
+✔ R1C v06: guard delegates to existing braking and never moves Journey (13.089708ms)
+✔ R1C v06: each loop has a measurable static candidate, geometry and full consist fit (17.571236ms)
+✔ R1C v06: missing dimensions, long consists, unspecified and operational spawns fail closed (15.757259ms)
+✔ R1C v06: repeated spawn and reserved candidate are refused without mutating fleet (14.988841ms)
+✔ R1C v06: controller model caches, callback and diagnostic data have session ownership (33.890397ms)
+✔ R1C V06 starts with seven UNKNOWN states: no route, throw, spawn or safe guard (13.504633ms)
+✔ R1C shared WX names never permit registry, specs, Journey or reservation cross-instance reuse (44.612598ms)
+✖ R1C identity violation fails safety, command, guard and reset closed without reconciliation (86.097314ms)
+✔ R1C Legacy → V06 → Legacy rebuilds everything and revokes stale entry points (86.908496ms)
+✔ R1C invalid replacement artifact retains the complete old session (4.603258ms)
+✔ R1C movement, throttle, pending speed and UNKNOWN motion forbid swap/disposal (16.437087ms)
+✔ R1C cleanup failure cannot retain timers, callbacks, cache, reservations or ownership (44.058403ms)
+✖ R1C triangle preserves two legs, stop/clear/throw/reverse and refuses branch-to-branch transit (18.659458ms)
+✔ R1C default legacy factory and its data remain byte-equivalent after lab sessions (32.145722ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 28
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1027.495673
+
+✖ failing tests:
+
+test at tests/v06-r1c.test.js:193:1
+✖ R1C identity violation fails safety, command, guard and reset closed without reconciliation (86.097314ms)
+  Error: Foreign Journey
+      at Object.assessGuard (file:///workspace/work/SerieN-r1c/tools/scenario-v06/railway-session.js:158:42)
+      at TestContext.<anonymous> (file:///workspace/work/SerieN-r1c/tests/v06-r1c.test.js:198:18)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/v06-r1c.test.js:247:1
+✖ R1C triangle preserves two legs, stop/clear/throw/reverse and refuses branch-to-branch transit (18.659458ms)
+  TypeError: Cannot read properties of undefined (reading 'edge')
+      at TestContext.<anonymous> (file:///workspace/work/SerieN-r1c/tests/v06-r1c.test.js:250:86)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

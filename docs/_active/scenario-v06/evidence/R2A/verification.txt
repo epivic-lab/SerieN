@@ -1,0 +1,8 @@
+R2A final additional checks
+PASS: repeated summary.json and trajectories.json are byte-identical.
+PASS: source credential-pattern scan (7 new JavaScript/Python tool/test files), no candidates.
+PASS: 4186 protected baseline blobs identical; only PROGRESS and STATUS changed.
+PASS: 395 Node; 9 JMRI; build; canonical regeneration with four artifacts unchanged.
+PASS: browser bundle SHA256 9eaa6b7273bc8597040a24febae71334c0f08cefd4f384151ff458f4543e2a66; 85 inputs; zero V06/laboratory.
+OPEN: R2A-ADJ-01 adjacent WX-A/C13 operation protection / Next Switch limitation.
+NOT EXECUTED: browser V06, merge, deploy, R2B.

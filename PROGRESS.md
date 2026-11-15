@@ -1,4 +1,348 @@
+# V06-INTEGRATION — candidata browser, 14 novembre 2026
+
+**Integrazione funzionale implementata; Quality Gate visivo/prestazionale PENDING.**
+Blocco asset chiuso:13originali/364.551.328byte verificati e conservati in
+`assets/scenario-v06/`. Menu→Scenario→V06, selezione opt-in con conferma della
+perdita dati e reload; default e rollback Legacy preservati.79archi/7controller,
+scenografia originale,pose/quote/picking/HUD,spawn completo/quarto treno/reset,
+TM/progetti/Depot e toggle tecnico nello stesso profilo. Variante ferroviaria
+procedurale esclusivaR02;GLB ferroviario originale non sovrapposto.
+
+**567/567Node,9/9JMRI,build/canonico e19gruppi browser PASS**,con fixtureAuth locale,
+comandi mouse/touch trusted,3composizioni oltre7m,quarto in moto,WXoccupato e
+rollback reale. Core/F1/dati/rotabili/TM/Auth/backend/CSS/workflow/deps preservati.
+Nessun merge/deploy. Branch esistente `codex/scenario-v06-integration`,Draft#21.
+
+**Limiti aperti:** niente attestazione di aghi/attuatori/frogs fisici o PASS
+estetico; originali molto densi,fluidità insoddisfacente suSwiftShader (callback
+nativi separati da14–18s),GPUfisica/OAuthlive/altri browser non verificati.
+Non dichiarare pronta alla produzione o budget prestazionale superato.
+
+[Rapporto](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md),
+[prove](docs/_active/scenario-v06/evidence/V06_INTEGRATION/application/README.md).
+Checkpoint atomico e SHA remoto nella consegna. **Unica prossima azione:
+Quality Gate indipendente Regia sulla candidata; nessuna pubblicazione automatica.**
+
+---
+
+## Archivio delle riprese precedenti
+
+# V06-INTEGRATION — verifica dopo aggiornamento dominio, 14 novembre 2026
+
+**ASSET QUASI COMPLETI; BLOCKED sull'ultimo modulo obbligatorio.** Ripresa da
+`ea20cc2d9a36636afa29e49922cc65df8373171d` sul medesimo branch
+`codex/scenario-v06-integration`, PR Draft #21. L'utente segnala il dominio
+aggiornato; lo stato osservato della macchina corrente risulta però ancora
+revisione1, `observations_current:true`, policy enforced e soli domini
+personalizzati Denmark/epivic-lab.github.io. Verificato nuovamente a fine recupero.
+
+Nuovi link Drive: **railway_visual** (40.139.988 byte) e **village_buildings**
+(91.596.468 byte) scaricati HTTP200 da Denmark. Anche technical_reference
+opzionale recuperato dal connettore. Libreria ora **12 originali/327.862.948 byte**,
+header GLB v2, dimensioni e SHA tutti conformi al lock. Salvati nel repository,
+senza import nell'app o inclusione nella ricetta Pages.
+
+**Unico obbligatorio mancante: railway_service_buildings.glb,36.688.380 byte.**
+Il nuovo link usa `sdmntprukwest.oaiusercontent.com`: richiesta concreta con
+nuova connessione respinta dal proxy 403. Il dominio richiesto in precedenza,
+Northeu, non compare nella configurazione osservata e non è l'host corrente
+dell'ultimo file. Chiesto di applicare alla macchina della chat la regola
+`*.oaiusercontent.com`, oppure almeno UKwest se il campo non accetta wildcard,
+per evitare di inseguire i datacenter dei riferimenti autenticati. Nessuna
+riscrittura degli host, retry identico, modifica locale della policy o rifiuto
+della revisione automatica delle approvazioni.
+
+**Verifiche correnti:** controllo dei12file PASS; completezza INCOMPLETE/uscita2
+attesa; build rieseguita PASS e bundle identico; sorgenti applicativi, test,
+UI, canonico, asset runtime, dipendenze e workflow invariati.559Node/9JMRI
+riusati dalla ripresa immediatamente precedente per identità degli input,
+NON rieseguiti. BrowserV06 NON VERIFICATO; nessuna attivazione/merge/deploy.
+Prove: `docs/_active/scenario-v06/evidence/V06_INTEGRATION/domain-update-2026-11-14/`.
+
+Unica prossima azione: applicare il grant alla macchina corrente, scaricare
+l'ultimo modulo e proseguire la medesima integrazione già autorizzata.
+
+---
+
+## Registrazioni precedenti — storiche
+
+# V06-INTEGRATION — ripresa 14 novembre 2026
+
+**RECUPERO PARZIALE; integrazione ancora BLOCKED dalla rete.** Ripresa dal
+checkpoint verificato `301dceb64a3c034a1832d43bc6885d17604cc5a4`, PR Draft #21,
+branch `codex/scenario-v06-integration`. Il mandato di integrazione già vigente
+rimane valido; non è richiesta una nuova approvazione di microfase.
+
+Terreno e segheria ora acquisiti con HTTP 200 dal dominio Denmark autorizzato.
+Sette moduli piccoli recuperati dal connettore. **Nove originali, 196.026.628
+byte**, header GLB v2/dimensioni/SHA verificati contro il manifest Drive
+appena recuperato. Salvati questa volta nel repository in
+`asset-library/scenario-v06/modules/`, con lock separato e ricetta
+`python3 tools/scenario-v06/check-local-assets.py`, per non dipendere soltanto
+dalla cache temporanea di un task. La libreria non è importata dall'app né
+copiata dalla ricetta Pages. Nessun originale modificato.
+
+La cache precedente era assente: questi nove file NON sono i nove della ripresa
+precedente. Mancano ancora **village_buildings, railway_service_buildings e
+railway_visual**; technical_reference è opzionale e assente. I riferimenti dei
+tre grandi usano ora `sdmntprnortheu.oaiusercontent.com`. Tentato il trasferimento
+degli edifici ferroviari: proxy 403. Nessun retry identico per gli altri file
+sullo stesso host; occorre aggiungere questo dominio nelle impostazioni di rete
+e applicare la modifica. La configurazione osservata resta revisione1, enforced,
+con solo Denmark ed epivic-lab.github.io fra i domini personalizzati. Nessun
+rifiuto della revisione automatica delle approvazioni. Host dei link mai riscritti.
+
+**559/559 Node, 9/9 JMRI, build PASS** in questa ripresa. Bundle invariato:
+`89d732feafef5914078d5ef83885e5b9b68ff3abe967e8c4863a08e20a3063c7`.
+Controllo completezza asset `--require-complete`: uscita2 attesa, INCOMPLETE.
+App/Core/F1/dataset/canonico/UI/Legacy/asset runtime/test storici/dipendenze/
+workflow byte-identici al checkpoint iniziale. Browser V06 NON VERIFICATO;
+smoke Legacy precedente non rieseguito e non presentato come nuova prova.
+Nessun codice di attivazione o sostituto scenografico, runtimeAdmission:false.
+Nessun URL firmato/token salvato; nessuna modifica Auth/Supabase, merge o deploy.
+
+Prove correnti: `docs/_active/scenario-v06/evidence/V06_INTEGRATION/recovery-2026-11-14/`.
+Checkpoint atomico e push normale sul branch esistente; SHA e uguaglianza remota
+nella ricevuta finale. **Unica prossima azione: sbloccare il dominio indicato,
+riacquisire i tre originali e continuare la medesima integrazione già autorizzata.**
+Non è una consegna V06 giocabile o un PASS di integrazione.
+
+---
+
+## Registrazioni precedenti — storiche
+
+# V06-INTEGRATION — seconda ripresa dalla PR #21
+
+**BLOCKED: nuovo dominio del download del terreno non autorizzato.** Verificato
+il checkpoint remoto esatto `7d235e147b7d50536dd8189fd10ad74ffeaf5b5c` sul branch
+esistente `codex/scenario-v06-integration`; checkout iniziale pulito e preservato.
+Cache precedente assente. Recuperati nuovamente sette GLB e scaricati adesso
+railway_visual e village_buildings via dominio Denmark autorizzato: **9 GLB,
+227.339.628 byte**, dimensioni/header/SHA conformi al manifest originale corrente.
+Il nuovo riferimento terrain usa `sdmntprpolandcentral.oaiusercontent.com`:
+proxy 403; stesso host per sawmill e railway_service_buildings. Non ripetuti
+tentativi identici. Serve aggiungere quel dominio alla rete dell'ambiente.
+Nessuna integrazione applicativa; runtimeAdmission:false, Legacy/Core/UI intatti.
+Prove e risultati correnti nel [rapporto](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md)
+e nelle evidenze `resume-*`. Nessun merge/deploy/Supabase o nuova PR.
+Prossima azione: applicare il dominio mancante e riprendere la medesima
+integrazione end-to-end già autorizzata; Quality Gate Regia sul recupero/blocco,
+senza dichiarare PASS browser V06.
+
+Verifiche correnti: **559/559 Node, 9/9 JMRI, build e smoke Legacy
+desktop/mobile PASS**; screenshot `resume-legacy-1440.png` e
+`resume-legacy-390.png`. Browser V06 NON VERIFICATO.
+
+---
+
+# Storico — prima ripresa V06-INTEGRATION, 13 novembre 2026
+
+**BLOCKED, non completata.** Recuperato checkpoint R2B2 esatto `f592a12131b9b7236cbe79506cd23a03dacadd9f`
+su nuovo branch `codex/scenario-v06-integration`, collegato alla Draft #20.
+559 Node, 9 JMRI, build e smoke Legacy desktop/mobile PASS. Sette GLB originali
+(95.603.172 byte) recuperati e verificati contro il manifest; cache locale
+`/workspace/work/v06/assets/`. Terreno indispensabile 41 MB non materializzabile:
+limite executor 32 MiB, download autenticato alternativo negato dal proxy 403.
+Stop asset previsto dalla direttiva dell'utente, nessuna pausa per microfase.
+Nessun codice di integrazione, merge, deploy o modifica Supabase.
+[Rapporto di ripresa](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md).
+Prossima azione: sbloccare l'acquisizione degli asset e riprendere la medesima
+integrazione già autorizzata. Non dichiarare V06 giocabile o PASS BROWSER V06.
+
+# Serie N — Stato corrente R2B2 (13 novembre 2026)
+
+**PASS tecnico di safety numerica / QUALITY GATE INDIPENDENTE REGIA PENDING.**
+Autorizzata soltanto R2B2 dal [Gate della PR #19 /6860875610](https://github.com/epivic-lab/SerieN/pull/19#issuecomment-6860875610),
+base esatta `ab9c9bacdba652209b2ffc14b7c70856645601ba`, branch
+`codex/scenario-v06-r2b2-three-train-safety`, Draft con base R2B1.
+
+Tre convogli nella stessa sessione/rete V06, un clock e una stepRailway per tick.
+Oracolo R2B1 esteso a tutte le coppie e ogni veicolo; ammissione integrale atomica.
+75 scenari,57.649 tick,887 giunti: otto versi A/B/C e composizioni corte,
+inseguimenti/ID permutati/riarmo,WX con terzo realmente in moto e due conflitti
+WX reali a3,F1/C13 con traffico aggiuntivo,prenotazioni/UNKNOWN/near-touch.
+Separazione PASS;20 scenari WX in deadlock (12 configurazioni+8 perturbazioni),
+8 arresti near-touch controllati. Nessuna priorità o risoluzione automatica;
+equità generale NON CERTIFICATA. Nessuna penetrazione osservata.
+
+Baseline477Node; finale559/559Node (82nuovi),9/9JMRI,build/canonico PASS.
+Due esecuzioni finali/76JSON byte-identici;55scenari R2B1 con risultati e digest
+originali identici salvo contatori aggiunti.4328blob protetti preservati,
+soli2harnessNode estesi ePROGRESS/STATUS modificati;nessun test storico cambiato.
+Core/Step/Journey/routing/guard/collisioni,F1,dataset/topologia/Legacy/UI/HUD/
+renderer/asset,backend/Supabase/dipendenze/workflow invariati. Bundle identico,
+85input,zeroV06/laboratorio;runtimeAdmission:false e flag fisici/runtime false.
+
+[Rapporto](docs/_active/scenario-v06/R2B2_THREE_TRAIN_SAFETY_REPORT.md),
+[matrice](docs/_active/scenario-v06/evidence/R2B2/SCENARIO_MATRIX.md),
+[evidenze](docs/_active/scenario-v06/evidence/R2B2/README.md).
+Commit atomico,push normale e verifica SHA remoto nella ricevuta finale.
+**STOP R2B2: unica prossima azione Quality Gate indipendente Regia.
+Nessun R2B3/R2C,browser V06,merge o deploy.** Sagome fisiche,equità generale,
+N07/N16/scalo,coupling dinamico/quarto treno e48coppie WX vietate non verificati.
+
+---
+
+## Registro storico precedente — lo stato corrente è R2B2 sopra
+
+# Stato corrente — Scenario V06 R2A-F1
+
+**PASS tecnico R2A-F1; QUALITY GATE INDIPENDENTE REGIA PENDING.** Baseline e parent
+unico `7bf4f1e04aef3ad0bc64ed8fb8fd82e3cbc43003`, nuovo branch
+`codex/scenario-v06-r2a-f1-shared-junction-interlocking`, Draft con base R2A e
+collegamento alla #17. SHA/URL e checkpoint local=remote nella ricevuta finale.
+
+Rischio ADJ-01 confermato con vero step/comandi: al tick836,88,333 mm/s e gancio
+10,031 mm fuori dalla fascia, panel/device commutavano C13. Tre negativi rossi
+prima del fix, riproducibili sul parent. Correzione minima in next-switch/guard:
+incontri di tutte le unità sul nodo condiviso, maggiore inset esistente30 mm.
+Ora approach rifiutato; stop tick869 con gancio31,753 mm dal giunto,1,753 mm fuori
+dalla fascia, correzione protetta consentita a riposo e riarmo esplicito.
+
+**412/412 Node =395 precedenti+17 nuovi,9/9 JMRI,build/canonico PASS.**112 casi
+noti+56 UNKNOWN su tutti i giunti condivisi V06/Legacy;58.624 preview primari
+identici al parent. Sei giri+due composizioni R2A e dinamica numericamente
+identici.4209 blob protetti identici; bundle+91byte,stessi85input,zero V06/lab.
+Step/collisioni/cinematica/dataset/UI/HUD/renderer/bootstrap/asset/backend/deps
+preservati. runtimeAdmission:false. Nessuna prova browser nuova.
+
+[Rapporto F1](docs/_active/scenario-v06/R2A_F1_SHARED_JUNCTION_REPORT.md),
+[evidenze/riproduzione](docs/_active/scenario-v06/evidence/R2A-F1/README.md).
+**STOP: unica prossima azione Quality Gate Regia. R2B non iniziata/autorizzata;
+nessun merge, deploy o browser V06.**
+
+---
+
+## Stato storico precedente — R2A prima del Gate Regia e di F1
+
+# Stato corrente — Scenario V06 R2A
+
+**PASS numerico R2A con limite operativo R2A-ADJ-01; QUALITY GATE REGIA PENDING.**
+R1C accettata a `b49320c6be4d9f149bb2c5473858c616925a5f6c` dal
+[Quality Gate della PR #16](https://github.com/epivic-lab/SerieN/pull/16#issuecomment-6857567423).
+Branch dedicato `codex/scenario-v06-r2a-dynamic-circulation`, worktree separato,
+nuova Draft con base R1C. SHA/URL e verifica local=remote nella ricevuta finale.
+
+Harness solo Node basato sulla sessione R1C immutata, vero stepRailway/Journey/
+routing/FixedClock/guard/preview/state/fleet commands. Sei giri A/B/C nei due
+versi:100 giunti; due giri C con loco e due carri corti:38 giunti. Posa e ganci
+contro testimone indipendente a ogni tick, tutti9 segmenti nascosti, frenatura,
+STOP/ripartenza/inversione, history e comandi protetti. UNKNOWN vieta ogni tick.
+24 nuovi test; **395/395 Node, 9/9 JMRI,build/canonico PASS**.
+
+**R2A-ADJ-01 APERTO:** presso WX-A/C13 la guard arresta prima del giunto
+misaligned ma lascia la composizione nella fascia operativa C13; throw rifiutato
+come occupied. TraceJourney non enumera C13 alla bocca condivisa e protectionInset
+resta 0. Nessun superamento del giunto o aggiramento del lock; correzione soltanto
+dopo STOP/inversione/arretramento protetto e liberazione. Nessun fix del core.
+Recovery automatica e Next Switch completo in tale caso NON CERTIFICATI.
+
+[Rapporto R2A](docs/_active/scenario-v06/R2A_DYNAMIC_LOOP_REPORT.md),[prove](docs/_active/scenario-v06/evidence/R2A/README.md),
+[sintesi numerica](docs/_active/scenario-v06/evidence/R2A/summary.json).4186 blob R1C protetti identici;
+src/app/UI/renderer/asset/backend/deps/workflow intatti. Bundle identico R1C,
+85 input e zero V06/laboratorio. runtimeAdmission sempre false.
+
+**STOP R2A: unica prossima azione Quality Gate Regia, inclusa classificazione
+ADJ-01 prima di un eventuale R2B.** Nessun merge/deploy/browser V06 o nuova fase.
+N07/N16/scalo/quarto treno/traffico simultaneo/agganci dinamici non certificati.
+
+---
+
+## Stato storico precedente
+
+# Stato corrente — Scenario V06 R1C
+
+**PASS tecnico del laboratorio R1C / QUALITY GATE REGIA PENDING.**
+R1B approvata a `b8f4f3cb98a3c5f49aa8713a96d2c10b445fb67b` dalla
+[Regia nella PR #15](https://github.com/epivic-lab/SerieN/pull/15#issuecomment-6856806189).
+Branch dedicato `codex/scenario-v06-r1c-session-readiness`, worktree isolato.
+Factory solo Node con ammissione hash/schema prima della rete, identità per
+istanza, registry/controller/stati/router/topologia coerenti, flotta statica,
+occupazioni/prenotazioni, cache/callback/timer e teardown. V06 iniziale null,
+UNKNOWN fail-closed; nessuna API di avanzamento o attivazione nel bootstrap.
+
+**371 Node = 336 precedenti +35 R1C, 9 JMRI, build/canonico PASS.**
+Legacy→V06→Legacy da zero, ownership e WX omonimi, no hot swap in movimento,
+spawn statici dei tre anelli, negativi lunghezza/ingombro/prenotazioni, slot
+quarto e terminali/manovre sconosciuti rifiutati. Matrice consumer completa.
+4.168 blob protetti identici; tutti i sorgenti applicativi/test precedenti,
+UI V2.1/renderer/asset/core/dataset/backend/deps/workflow invariati.
+Bundle identico R1B, zero input V06/laboratorio; runtimeAdmission sempre false.
+
+[Rapporto R1C](docs/_active/scenario-v06/R1C_SESSION_READINESS_REPORT.md),
+[stato](docs/_active/scenario-v06/STATUS.md),
+[prove e riproduzione](docs/_active/scenario-v06/evidence/R1C/README.md).
+Circolazione completa, browser V06, arresti/capacità/fouling e lifecycle
+applicativo NOT VERIFIED. SHA/URL effettivi della Draft PR contro R1B nella
+ricevuta finale dopo verifica local=remote.
+
+**Unica prossima azione: Quality Gate indipendente Regia su R1C. STOP.**
+R2 dinamica solo proposta, serve nuovo mandato; nessun merge/deploy,
+attivazione V06 o autorizzazione alla circolazione.
+
+---
+
+## Registro precedente — storico; stato corrente sopra
+
+# Stato corrente — Scenario V06 R1B
+
+**PASS tecnico R1B / QUALITY GATE REGIA PENDING.** R1A approvata nella
+[PR #14](https://github.com/epivic-lab/SerieN/pull/14#issuecomment-6852401319),
+baseline esatta `6a976749d5630c0abf858e64795210183a947f5e`, branch dedicato
+`codex/scenario-v06-r1b-turnout-domain`. Registro immutabile per istanza di rete,
+8 controller legacy / 7 V06; modello e comandi parametrizzati, default legacy.
+ID/profili/Journey estranei rifiutati, safety sincrona a ogni comando,
+UNKNOWN fail-closed, WX protetti come unità complete. Nessuna attivazione V06.
+
+**336 Node (298 preesistenti +38 R1B), 9 JMRI, build e canonico PASS.**
+7.168 ingressi legacy /3.200 V06, matrici indipendenti64WX/90semplici,
+38 attraversamenti Journey e ritorni, occupazione/approcci/comandi consecutivi,
+cache e callback isolate.4.148blob protetti identici; unici sorgenti precedenti
+modificati:turnout-routes e turnout-commands. Bootstrap/UI/renderer/algoritmi
+ferroviari/dataset/backend/deps/workflow invariati; zero input V06 nella build.
+
+[Rapporto R1B](docs/_active/scenario-v06/R1B_TURNOUT_DOMAIN_REPORT.md),
+[stato](docs/_active/scenario-v06/STATUS.md),
+[prove e riproduzione](docs/_active/scenario-v06/evidence/R1B/README.md).
+`physical_profile_certified:false`, `runtime_circulation_verified:false`;
+nuove prove browser e circolazione V06 completa NOT VERIFIED.
+SHA e URL della nuova Draft PR nella consegna dopo verifica del checkpoint remoto.
+
+**Unica prossima azione: Quality Gate indipendente Regia su R1B. STOP.**
+R1C audit/contratto consumer è soltanto una proposta; nessun merge/deploy,
+attivazione o fase successiva eseguita.
+
+---
+
+## Registro precedente — storico; stato corrente sopra
+
+# Stato corrente — Scenario V06 R0.1
+
+**Gap G1/G2/G3 chiusi nel candidato; continuità geometrica/offline verificata. Fedeltà fisica WX aperta: NO-GO R1.** Branch `codex/scenario-v06-r01-continuity` da R0 `c527134ebcd51c18b5714177946535d325499dc2`; checkpoint remoto effettivo nella consegna. [Rapporto](docs/_active/scenario-v06/R01_CONTINUITY_RESOLUTION_REPORT.md), [stato](docs/_active/scenario-v06/STATUS.md), [prove](docs/_active/scenario-v06/evidence/R01/README.md).
+
+79 pezzi coperti, 69 assi immutati, A/B/C chiusi, tre terminali, triangolo con manovra sul comune N07. WX porta→porta continui, 64 casi R0 preservati, nessun nodo al diamond; fit da catalogo secondario con scarto massimo 3,335 mm dal nucleo V06, da confermare tecnicamente. 254 Node/9 JMRI/build PASS, builder riproducibile e validatore indipendente con sei mutanti rifiutati. Core, UI, rete attiva, sicurezza, fonti artistiche e backend intatti. Nessun merge/deploy/R1.
+
+**Unica prossima azione:** revisione Regia e chiusura del riscontro tecnico WX. Nessuna fase successiva avviata o implicitamente autorizzata.
+
+---
+
+## Registro precedente — storico; stato corrente sopra
+
 # SerieN — Stato e ripresa
+
+**Stato corrente — Scenario V06 R1A: PASS tecnico, review indipendente Regia pending.**
+Mandato limitato della [PR #13](https://github.com/epivic-lab/SerieN/pull/13#issuecomment-6851925629),
+baseline `7118c99a9367da61f0042dfe40240fe78dc0d7c6`, branch
+`codex/scenario-v06-r1a-operational-dataset`. Dataset isolato 79 archi/74 nodi/
+sette controller/tre terminali, geometrie R02 e G1–3 preservati; factory opt-in
+con default legacy, nessuna attivazione. PASS298Node=254legacy+44V06,9JMRI,build;
+64WX/90semplici/128configurazioni,34mutanti semantici e digest negativo, UNKNOWN
+bloccato dalla guardia esistente. 4.127 blob preesistenti protetti identici.
+[Rapporto](docs/_active/scenario-v06/R1A_OPERATIONAL_DATASET_REPORT.md),
+[prove](docs/_active/scenario-v06/evidence/R1A/README.md),
+[stato](docs/_active/scenario-v06/STATUS.md). Checkpoint remoto e Draft PR nella
+ricevuta finale. **STOP R1A; unica prossima azione: Quality Gate Regia. Nessuna
+R1B, attivazione, merge o deploy.** Le sezioni seguenti conservano lo storico.
 
 **Stato corrente — UI V2.1 VISUAL PARITY HOTFIX: READY FOR REGIA VISUAL REVIEW.** [PR Draft #8](https://github.com/epivic-lab/SerieN/pull/8); checkpoint applicativo `637a140950d3047c5c7926193f6b312dadc464f1` verificato su remoto. Il mandato completo autorizza la ricostruzione sul solo branch `codex/ui-v21-visual-parity`, derivato dalla produzione `d77b8aa2710fa474fdb069b204705364b4a9e7e6`, e la consegna in PR Draft. La UI pubblicata resta in attesa di accettazione visiva; i precedenti verdetti tecnici non valgono come approvazione estetica.
 
@@ -456,3 +800,90 @@ Nuovi254Node,9Python/JMRI,build e11gruppi browser PASS sul bundle definitivo: se
 Bundle1.092.265byte, SHA256 `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378`. [Rapporto aggiornato](docs/_active/ui-v21/VISUAL_PARITY_REPORT.md), [prove prima/dopo e regressione](docs/_active/ui-v21/evidence/HUD_CAMERA_HOTFIX/README.md). Checkpoint atomico/push normale sul solo branch autorizzato; SHA effettivo e coincidenza remota nella consegna. PR #8 Draft; main `d77b8aa2710fa474fdb069b204705364b4a9e7e6` e PR #7 `310f39f94448a30f986c5a1801400fa732b65a64` preservate. Nessun merge/deploy/Auth/Supabase/workflow o nuovo sviluppo. OAuth, dispositivi fisici, screen reader, altri browser e5E non attestati.
 
 **Unica prossima azione: revisione della Regia sul checkpoint correttivo. STOP; nessuna ripresa automatica del precedente mandato di rilascio.**
+
+
+## Scenario V06 — M0.1 / M0.1-R: consegna documentale (2026-11-13)
+
+Audit e addendum completati; la Regia ha successivamente richiesto di finire le pubblicazioni. Checkpoint documentale sul solo branch `codex/scenario-v06-audit-m01r`, in worktree separato dalla UI, con PR Draft verso main. [Indice](docs/_active/scenario-v06/README.md), [rapporto integrale](docs/_active/scenario-v06/M01_AUDIT_REPORT.md), [stato](docs/_active/scenario-v06/STATUS.md), [ricevute](docs/_active/scenario-v06/evidence/M01R/README.md). SHA effettivo e verifica del checkpoint remoto nella consegna finale; nessuna pubblicazione è attestata completa se il push fallisce.
+
+V06 deve sostituire anche assi e grafo operativo, riutilizzando le logiche consolidate: addendum §15 prevalente sulle strategie iniziali. **NO-GO all'implementazione con i soli dati verificati**: prima contratto AS-BUILT di porte/giunzioni, percorsi WX completi, registro scambi/stati, terminali/circuiti/anchor e revisione delle fonti. Roadmap R0–R7 proposta, non eseguita.
+
+254 Node,9 JMRI,build PASS di M0.1-R, riusati per identità della baseline; nessuna nuova pretesa browser V06/FPS/hardware. Bundle `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378`. Pubblicazione di soli documenti ed evidenze: codice/ferrovia/UI V2.1/asset/Auth/Supabase/dipendenze/workflow invariati. **STOP: review indipendente Regia; M0.2 non iniziata, nessun merge/main/deploy.**
+
+
+## Scenario V06 — R0 contratto ferroviario (2026-11-13)
+
+M0.1-R accettato; autorizzata esclusivamente R0 dalla base `ffba29fd40dcda874124ca4d8f6b8b169d7b2298`, branch `codex/scenario-v06-r0-contract`. Recuperati i byte di 13 fonti, distinta manuale di 68 componenti confrontata, matrice 79/79 pezzi e classificazione 17/17 estremità. Registro proposto di cinque semplici/Y e due WX con 64 casi di transizione; dati verificati, dedotti e mancanti separati. Nessun collegamento per vicinanza o correzione geometrica.
+
+A/B chiusi metricamente sui dati; C conserva G3, triangolo G1/G2 e passaggio ramo→ramo N07 vietato: necessaria manovra nel comune con capacità utile da certificare. Sorgenti track_centrelines/porte/giunti non recuperati, `.layout` acquisito ma non decodificato, raccordi e aghi WX mancanti; N16 aperto nel manuale vs paraurti dedotto export. Due mismatch manifest/rapporto confermati, una sola revisione Drive accessibile ciascuno: causa non accertata, originali immutati. F01–F08/D01–D08 nel [rapporto R0](docs/_active/scenario-v06/R0_TRACK_CONTRACT_REPORT.md).
+
+254 test Node, 9 JMRI e build di nuova esecuzione PASS; audit riproducibile e invarianti PASS. Bundle `1ac2022b781311ca3fcc03e6373a55fc56c45eabd714c56694e7107d12352378` identico. [Evidenze](docs/_active/scenario-v06/evidence/R0/README.md). Browser/circolazione V06 NOT VERIFIED. Solo documenti/evidenze e questa appendice; M01 byte-identico, codice/geometria/renderer/UI V2.1/asset/backend/dipendenze/workflow intatti. Checkpoint atomico e push normale sul solo branch dedicato, SHA remoto verificato nella consegna.
+
+**R0 ANALISI CONSEGNATA CON DIPENDENZE APERTE; CONTRATTO NON CERTIFICATO, NO-GO R1. STOP per Quality Gate Regia e assegnazione integrazioni. Nessun merge/main/deploy/M0.2/R1.**
+
+
+## Scenario V06 — R0.2: validazione WX310 (2026-11-13)
+
+Autorizzata solo R0.2 dall'esatto checkpoint R01 `65ec1675510700fef503c16af2cfbe725817568a`, branch `codex/scenario-v06-r02-wx-validation`. [Rapporto](docs/_active/scenario-v06/R02_WX_GEOMETRY_VALIDATION_REPORT.md), [dataset separato](docs/_active/scenario-v06/candidate/R02/README.md), [prove](docs/_active/scenario-v06/evidence/R02/README.md). Confrontati record XTrackCAD pin e documentazione TRAX/Kato, distinguendo dati ufficiali, ricostruzione CAD e parametri non acquisiti. Scelto R01 continuo R583,184/centro17,924429: tutti79record pezzo/74nodi/porte/stati/gap identici, solo metadati di versione/validazione. Eccezione locale al master autorizzata; misura analitica più fitta3,334762mm senza modifiche della forma.
+
+PASS offline: A/B/C,64casiWX,90semplici,128configurazioni/17.920arrivi,terminali/manovra triangolo,intersezioni e primitiveG0/G1,9mutanti rifiutati. Baseline/finale254Node,9JMRI,build e bundle legacy identico. MetadatiGLB verificati, binario oltre32MiB non trasferibile/proxy403; piano di variante locale con rimozione esclusiva dagli aggregati, parti mobili e profilo ferroviario. Sagome/ruote solo preliminari; circolazioneV06 non verificata.
+
+**R0.2 PASS GEOMETRICO/OFFLINE — CONDITIONAL GO R1, REGIA QUALITY GATE PENDING.** Checkpoint atomico e push normale sul solo branch dedicato; PR Draft collegata alla#12, URL/SHA effettivi e verifica remota nella consegna. Core/UI/HUD/backend/legacy/asset originali/test/dipendenze/workflow invariati. Prossima e unica azione: Quality Gate Regia sul candidato e lock; R1 non iniziata, nessun merge/deploy.
+
+
+## Scenario V06 — R2B1: two-train dynamic safety (2026-11-13)
+
+R2A-F1 approvata nel Gate Regia della [#18, commento6859221401](https://github.com/epivic-lab/SerieN/pull/18#issuecomment-6859221401).
+Unica microfase R2B1 dalla baseline esatta `9aa9656b1f40dec15215d4df366aae2e2e540904`,
+branch `codex/scenario-v06-r2b1-two-train-safety`, Draft con base R2A-F1.
+
+**PASS tecnico di safety numerica / QUALITY GATE REGIA PENDING.** Unica sessione,
+rete e clock, due Journey/owner distinti, unica stepRailway per tick e comandi
+originali.55scenari/60.917tick:15 indipendenti A/B,A/C,B/C (tutti i versi e giri
+completi per entrambi),12 inseguimenti con STOP/frenata/ripartenza,2 frontali/
+divergenti,19WX/F1,7 prenotazioni/condizione fresca/UNKNOWN. Oracolo esterno R02/R1A
+su pose/ganci/history/giunti, poligoni e inviluppi continui conservativi,
+occupazioni effettive/prenotazioni/sette controller. Nessuna collisione,
+penetrazione,teleport o autorizzazione stale osservata.11deadlock sicuri distinti
+dal progresso; nessuna policy di priorità. Margini numerici, non fisici certificati.
+
+Baseline412Node; finale477/477Node (65nuovi),9/9JMRI,build/canonico PASS.
+Due esecuzioni complete byte-identiche;4246blob protetti immutati, entrambi i
+moduli F1 e laboratorio R2A byte-identici, bundle identico F1 con85input e zero
+V06/laboratorio. Core/app/UI/asset/backend/Supabase/deps/workflow invariati,
+runtimeAdmission:false. [Rapporto](docs/_active/scenario-v06/R2B1_TWO_TRAIN_SAFETY_REPORT.md),
+[matrice](docs/_active/scenario-v06/evidence/R2B1/SCENARIO_MATRIX.md),
+[evidenze](docs/_active/scenario-v06/evidence/R2B1/README.md).
+
+Commit atomico, checkpoint remoto verificato e Draft collegata alla#18 nella
+ricevuta finale. **STOP R2B1: unica prossima azione, Quality Gate indipendente
+Regia. Nessun merge/deploy/browser V06 o avvio R2B2.** Equità generale,sagome
+fisiche,N07/N16/scalo,coupling dinamico e terzo/quarto treno non verificati.
+
+
+## Scenario V06 — V06-FINALIZE (15 novembre 2026)
+
+Mandato unico Regia [6885640859](https://github.com/epivic-lab/SerieN/pull/21#issuecomment-6885640859),
+stessa Draft #21 e branch `codex/scenario-v06-integration`, da `0d54ce096…`.
+**PASS tecnico / candidata READY TO RELEASE; Gate Regia finale PENDING.**
+Undici derivati separati riproducibili, 13 originali intatti, bordi/allineamenti
+protetti. Low 10.272.270 → 3.259.097 triangoli (−68,27%), 401 → 369 draw;
+High 18.062.253 → 11.909.778. Auto Low iniziale V06; bande rosse immediate di
+selezione per tutti i sette controller e due percorsi per WX. Core/F1/R02,
+UI V2.1, Auth/Supabase e workflow preservati.
+
+569/569 Node, 9/9 JMRI, build/canonico, 21 gruppi browser desktop/mobile e
+close-up PASS; zero errori/richieste fallite finali. Treni/composizioni/TM,
+quarto treno, device/panel/touch, WX occupato, HUD/minimappe/camere, menu,
+rollback Legacy e fail-closed sui derivati verificati. GPU fisica/OAuth live
+NOT VERIFIED; limite SwiftShader e tentativo concorrente OOM documentati.
+Nessun nuovo ciclo numerico R2 o meccanismo ferroviario autonomo.
+
+Main `f33377c…`, inclusivo dell'hotfix UI `217629c`, è antenato della candidata.
+Piano: Gate + autorizzazione finale a merge/pubblicazione → retarget stessa
+#21 a main → unico merge commit → workflow Pages e verifica pubblica.
+Nessun merge/deploy eseguito. Checkpoint remoto e SHA effettivo nella ricevuta
+PR; [rapporto](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md),
+[galleria](docs/_active/scenario-v06/evidence/V06_FINALIZE/README.md),
+[piano](docs/_active/scenario-v06/evidence/V06_FINALIZE/RELEASE_PLAN.md).
+**Unico prossimo passo: Quality Gate conclusivo Regia. STOP.**
