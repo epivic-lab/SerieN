@@ -8,12 +8,25 @@ export function layoutFor(train, extra = []) {
   return consistLayout([train.group, ...train.carObjs, ...extra].map(o => o.userData));
 }
 
+// The BR 01 frame spans several polyline segments. Its center stays on the
+// Journey, while the chord through its driving wheelbase defines its yaw.
+export function vehiclePose(journey, at, vehicle) {
+  const center = journey.locate(at);
+  if (vehicle.userData.stock?.kind !== "br01-engine") return center;
+  const rear = journey.locate(at - 16);
+  const front = journey.locate(at + 16);
+  const dx = front.x - rear.x, dz = front.z - rear.z;
+  if (Math.hypot(dx, dz) > 1e-6) center.angle = -Math.atan2(dz, dx);
+  return center;
+}
+
+
 /** Positions retain actual vehicle/train identity; no Journey state is changed.
  * @param {import('./railway-types.js').Train} train */
 export function vehiclePositions(train) {
   const vehicles = [train.group, ...train.carObjs];
   return layoutFor(train).offsets.map((offset, i) => ({
-    train, vehicle: vehicles[i], ...train.journey.locate(train.journey.position - offset)
+    train, vehicle: vehicles[i], ...vehiclePose(train.journey, train.journey.position - offset, vehicles[i])
   }));
 }
 

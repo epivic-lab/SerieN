@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { EventDispatcher, OrthographicCamera, PerspectiveCamera, Vector3 } from "three";
-import { navigation, followPose, safeView, followingView, CAMERA_PRESETS } from "../src/navigation.js";
+import { navigation, safeView, followingView, CAMERA_PRESETS } from "../src/navigation.js";
+import { vehiclePose } from "../src/railway-state.js";
 import { Journey } from "../src/simulation.js";
 import { createNetwork } from "../src/network.js";
 import v06 from "../src/datasets/v06-r1a.json" with { type: "json" };
@@ -128,15 +129,18 @@ test("held follow arrows integrate by time, keep the train centered and reset on
   assert.ok(run(20).distanceTo(run(120)) < 1e-8);
 });
 
-test("V06 curve camera heading stays continuous through vertices in either direction", () => {
+test("V06 locomotive heading used by Follow stays continuous through vertices in either direction", () => {
   const journey = new Journey(createNetwork(v06), "V06-P006", 20);
+  const engine = {userData: {stock: {kind: "br01-engine"}}};
+  const tender = {userData: {stock: {kind: "br01-tender"}}};
   const end = Math.floor(journey.segments[0].end) - 20;
   for (const direction of [1, -1]) {
     let previous;
     for (let i = 20; i <= end; i++) {
       journey.position = direction === 1 ? i : end - i + 20;
-      const pose = followPose(journey);
+      const pose = vehiclePose(journey, journey.position, engine);
       const center = journey.locate();
+      assert.deepEqual(vehiclePose(journey, journey.position, tender), center);
       assert.equal(pose.x, center.x);
       assert.equal(pose.z, center.z);
       if (previous !== undefined) {
@@ -147,7 +151,6 @@ test("V06 curve camera heading stays continuous through vertices in either direc
       previous = pose.angle;
     }
   }
-  assert.equal(followPose(null), null);
 });
 
 test("Follow adjusts distance, holds it on release, and can descend below the layout", () => {

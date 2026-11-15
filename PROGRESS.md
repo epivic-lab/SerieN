@@ -1,3 +1,11 @@
+# BR 01 — rotazione della locomotiva in curva
+
+Corretto lo scatto della cassa in Follow dalla base pubblicata `ed43c9b9`. Verificati in Chrome gli angoli della motrice nei due sensi sulla V06-P006 e 1.376 pose del gancio. [Misure e video](docs/_active/follow-train/STATUS.md).
+
+Prossima azione: verifica Regia sul branch `codex/br01-heading` prima del rilascio.
+
+---
+
 # Follow Train — comandi A/Z e quota libera
 
 Rilascio autorizzato del controllo continuo della distanza e della discesa sotto il plastico, insieme alla correzione delle curve. Guida e test aggiornati. [Rapporto Follow Train](docs/_active/follow-train/STATUS.md).

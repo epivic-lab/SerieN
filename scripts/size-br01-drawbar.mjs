@@ -6,6 +6,7 @@ import {createScenarioProfile} from '../src/scenario-profile.js';
 import {Journey,routing} from '../src/simulation.js';
 import {BR01_GEAR,poseDrawbar} from '../src/br01-drawbar.js';
 import {drawbarMeasure} from './br01-drawbar-probe.js';
+import {vehiclePose} from '../src/railway-state.js';
 import {buildBR01} from '../src/br01.js';
 import {bodyContact,meshDistance} from './br01-intersection.js';
 const read=p=>JSON.parse(fs.readFileSync(p));
@@ -50,7 +51,7 @@ for(const edge of Object.values(network.edges)){
 }
 function pose(c,extra){
  groups.forEach((g,i)=>{
-  const at=c.s-i*(149.625/2+extra),p=c.j.locate(at);
+  const at=c.s-i*(149.625/2+extra),p=vehiclePose(c.j,at,g);
   g.position.set(p.x,8.4,p.z);g.rotation.y=p.angle;g.br01Pose(c.s,c.j,at,p);
  });
 }
@@ -69,7 +70,7 @@ for(const c of cases){
 function pinRange(extra){
  let min=Infinity,max=-Infinity;
  for(const c of cases){
-   const e=c.j.locate(c.s),t=c.j.locate(c.s-149.625/2-extra);
+   const e=vehiclePose(c.j,c.s,groups[0]),t=c.j.locate(c.s-149.625/2-extra);
    const x=e.x+Math.cos(e.angle)*BR01_GEAR.enginePin-t.x-Math.cos(t.angle)*BR01_GEAR.tenderPin;
    const z=e.z-Math.sin(e.angle)*BR01_GEAR.enginePin-t.z+Math.sin(t.angle)*BR01_GEAR.tenderPin;
    const d=Math.hypot(x,z);min=Math.min(min,d);max=Math.max(max,d);

@@ -20,7 +20,7 @@ const spawn=trains[0].journey;
 const pieceTypes=${JSON.stringify(types)};
 function poseInspection(j,at,d){
   inspection.forEach((g,i)=>{
-    const s=at-offsets[i],p=j.locate(s);
+    const s=at-offsets[i],p=vehiclePose(j,s,g);
     g.position.set(p.x,profile.railTop,p.z);g.rotation.y=p.angle;g.br01Pose(d,j,s,p);
   });
   ${drawbar?"poseDrawbar(...inspection);":""}
