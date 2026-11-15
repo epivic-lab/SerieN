@@ -1,3 +1,11 @@
+# Follow Train — controllo camera con le frecce
+
+Verificati i quattro comandi su V06 e Legacy dalla base BR 01 `0de0b2df`. Node 574/574, JMRI 9/9, build e verifiche browser PASS. [Prove e video](docs/_active/follow-train/STATUS.md).
+
+Prossima azione: verifica Regia sul branch `codex/follow-train-arrows` prima di merge e deploy.
+
+---
+
 # BR01-D — Chiusura funzionale per il Quality Gate Regia
 
 Train Management crea, seleziona e rimuove composizioni fisiche BR 01 + tender. La rimozione richiede convoglio fermo e conferma. Verificati in Chrome su V06 e Legacy la guida, la flotta vuota e il ripristino esatto delle occupazioni superstiti. In Legacy verificati anche arresto anticollisione e blocco della commutazione su WX-A occupato. Catalogo, viste e compatibilità dei progetti verificati in sessione. 573/573 Node, 9/9 JMRI e build PASS. [Rapporto BR01-D con video e risultati](docs/_active/br01/STATUS.md).

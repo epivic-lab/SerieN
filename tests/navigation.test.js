@@ -92,3 +92,34 @@ test("minimap focus centres once on the clicked locomotive and preserves manual 
   assert.ok(camera.position.toArray().every(Number.isFinite));
   nav.dispose();
 });
+
+test("held follow arrows integrate by time, keep the train centered and reset on re-entry", () => {
+  const pose = { x: 750, z: 350, angle: 0.4 };
+  const run = hz => {
+    const {camera, controls, nav} = setup();
+    assert.equal(nav.pressArrow("ArrowLeft"), false);
+    nav.select("follow");
+    for (const key of ["ArrowRight", "ArrowUp"]) assert.ok(nav.pressArrow(key));
+    for (let i = 0; i < hz; i++) nav.update(1 / hz, pose);
+    const eye = camera.position.clone();
+    nav.releaseArrow("ArrowRight");
+    nav.releaseArrow("ArrowUp");
+    nav.update(1, pose);
+    assert.ok(eye.equals(camera.position));
+    const standard = new Vector3().copy(followingView(pose).position);
+    assert.ok(eye.y > standard.y && !eye.equals(standard));
+    assert.ok(Math.abs(eye.distanceTo(controls.target) - standard.distanceTo(controls.target)) < 1e-8);
+    nav.pressArrow("ArrowLeft");
+    nav.pressArrow("ArrowDown");
+    nav.update(1, {...pose, angle: 2, x: 500});
+    assert.equal(controls.target.x, 500);
+    assert.ok(camera.position.y < eye.y);
+    nav.update(1, null);
+    nav.select("station");
+    nav.select("follow");
+    nav.update(1, pose);
+    assert.ok(camera.position.distanceTo(standard) < 1e-10);
+    return eye;
+  };
+  assert.ok(run(20).distanceTo(run(120)) < 1e-8);
+});

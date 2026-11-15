@@ -652,7 +652,7 @@ trainManagement=mountTrainManagement({button:$("trainManagement"),getTrains:()=>
 });
 dockUI=mountDock({host:$("trainDeck"),tabs:$("tabs"),button:$("reset"),getTrains:()=>trains,getSelected:()=>selected,onSelect:select,
   getGeneration:()=>trainManagement.sessionSummary.generation,onReset:reset});
-keyboardUI=mountKeyboard({onStop:()=>$("stop")?.click()});
+keyboardUI=mountKeyboard({navigation:nav,hasTrain:()=>Boolean(trainById(selected)),onStop:()=>$("stop")?.click()});
 uiShell=mountShell({management:trainManagement,isPaused:()=>paused});
 scenarioControls=mountScenarioControls({profile,scenic,management:trainManagement,stopAll:stopAllTrains});
 nextSwitchHUD = mountNextSwitchHUD({host,network,getState:switchHUDState});
