@@ -1,19 +1,10 @@
-# BR 01 animata — accesso asset BLOCKED (15 novembre 2026)
+# BR 01 — baseline risolta (15 novembre 2026)
 
-Mandato unico autorizzato: derivato articolato, integrazione e verifiche della
-BR 01, senza merge/deploy. Branch `codex/br01-animated` dalla main remota
-`a266068d72bf42974b1829723996fe9566d341d4`; V06 già integrato e workflow
-Pages preesistente concluso con successo. Nessuna modifica applicativa.
-
-GLB originale individuato su Drive (123.724.664 byte), ma due download
-connettore falliscono con `Transport closed`; HTTP diretto negato dal proxy
-(403). Modello e rapporto Mac assenti dal workspace. Preparazione,
-animazione e integrazione NOT VERIFIED / non implementate.
-
-[Stato e riscontri](docs/_active/br01/STATUS.md). Questo è un checkpoint
-solo documentale del blocco, non la consegna funzionale richiesta.
-**Unica prossima azione: rendere disponibile il GLB originale nel workspace,
-poi proseguire il mandato già autorizzato sul branch dedicato.**
+Il GLB originale è disponibile nel checkout SerieN-persistence. Il controllo
+del grafo storico passa sul Mac con il digest originale. Suite Node 569/569,
+audit JMRI 9/9 e build PASS. [Diagnosi e limiti](docs/_active/br01/STATUS.md).
+Prossima azione: dimostrare ruote, bielle e pistoni della BR 01 sincronizzati
+con la distanza percorsa, prima dell’integrazione nel simulatore.
 
 ---
 

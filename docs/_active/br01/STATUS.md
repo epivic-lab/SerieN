@@ -1,4 +1,43 @@
-# BR 01 animata — BLOCKED (15 novembre 2026)
+# BR 01 — baseline PASS, locomotiva ancora da integrare
+
+Al 15 novembre 2026 il GLB locale di 123.724.664 byte ha SHA-256
+`39551a52be63db4e85973f5586b5f6d4b23c229e9c158d7376904766b73df086`.
+Il controllo sul Mac (arm64, Node v24.22.1) inizialmente falliva sulla
+serializzazione JSON di createNetwork() nella copia storica di Fase 0.
+
+Confrontando in ordine tutti i punti con docs/phase-0/layout.json, la prima
+differenza è L0-return.points[35].z: 236.95636556485283 contro
+236.95636556485286. Le altre quattro sono le ordinate 35 e 65 di L1-return
+e L2-return. La formula è 350 + r * Math.sin(a); gli scarti osservati sono
+di un valore binary64 adiacente (massimo 5,685e-14 mm). Ne derivano cinque
+distanze cumulative diverse su L0-return e 22 su L1-return. Nodi e incidenze
+coincidono anche nell’ordine. Ricalcolando le distanze sui punti archiviati
+si riproduce esattamente il digest storico 87b2d7a0…a45971a.
+
+Il test verifica prima le distanze e lunghezze grezze, poi riconduce solo
+le cinque esatte varianti osservate ai corrispondenti valori archiviati.
+Nessuna tolleranza generale. L’hash finale copre ancora l’intero grafo,
+inclusi ordine, connessioni, metadati e geometria. Invariati hash dei
+sorgenti protetti, digest atteso e conteggi di 33 archi e quattro terminali.
+
+Test mirato PASS; suite completa 569/569, nessun salto; audit JMRI 9/9;
+build PASS (script di package.json eseguito con pnpm). Solo test e documenti
+modificati. Nessuna modifica a runtime, ferrovia, UI o sicurezza.
+
+Ripetizione Linux NOT VERIFIED. Il log storico BR 01 registra comando e
+risultati ma non la versione Node, V8, flag o immagine. I workflow indicano
+Node 22 e altri log V06 riportano v24.19.0; nessuno identifica il processo
+BR 01. Il lockfile fissa three 0.163.0 ed esbuild 0.25.12; createNetwork e
+JSON.stringify non usano tali dipendenze. Nessun runner Linux corrispondente
+disponibile nella sessione. La differenza numerica è dimostrata, la sua
+attribuzione a una specifica combinazione di V8 e sistema operativo no.
+
+Prossimo risultato: prova articolata di ruote, bielle e pistoni in funzione
+della distanza; integrazione e verifica in simulazione ancora da eseguire.
+
+---
+
+## Checkpoint storico — BLOCKED (15 novembre 2026)
 
 Mandato: preparazione del modello originale, integrazione e verifica in un unico
 intervento; nessun merge o deploy. Branch dedicato `codex/br01-animated`, base
