@@ -1,5 +1,13 @@
 # Follow Train con le frecce
 
+## BR 01 — rotazione della cassa in curva
+
+Base pubblicata `ed43c9b9`. Il modello usava la tangente locale del binario mentre la camera seguiva una corda di 32 mm. La posa della motrice ora usa quella corda anche per orientare la cassa, i carrelli e gli ingombri ai passi intermedi. La camera riceve la posa effettivamente disegnata. Il centro della locomotiva e il calcolo della posa del tender restano quelli del percorso originale.
+
+Chrome, curva V06-P006 da 80 a 165 mm, passo di 1 mm e ripetizione nel verso opposto. Picco angolare 2,354° con la tangente originale e 0,252° sulla cassa corretta. A frecce ferme, la variazione dell’angolo relativo cassa-camera è inferiore a 0,000001° per passo. La sonda BR01-C ha verificato gancio, ingombri e interferenze su 1.376 pose V06, con zero pose respinte. [Filmato della locomotiva in Follow](br01-locomotiva-curva.webm), riproduzione verificata in Chrome.
+
+Suite completa: 576/576 Node, 9/9 JMRI e build PASS. Controlli operativi in Chrome V06 e Legacy PASS in esecuzione isolata. Una prima prova concorrente con le suite Node non ha rilevato la rotazione entro la finestra di pressione del tasto.
+
 ## Follow con distanza regolabile e quota libera
 
 In Follow, A avvicina la camera e Z la allontana. La distanza varia da 30 a 3600 mm dal bersaglio e si ripristina rientrando in Follow. La freccia giù permette di scendere fino alla verticale sotto il treno. Il terreno e gli edifici possono attraversare l’inquadratura. Guida aggiornata in `index.html`.

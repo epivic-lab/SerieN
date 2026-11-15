@@ -8,7 +8,7 @@ import {animateAuxiliaryWheels} from './src/rolling-stock-animation.js';
 import {stepRailway} from './src/railway-step.js';
 import {vehiclesConflict,envelopeGap} from './src/railway-conflicts.js';
 import {createFleetCommands} from './src/fleet-commands.js';
-import {layoutFor,vehiclePositions,deriveSwitchAssistance,collectRailwayState} from './src/railway-state.js';
+import {layoutFor,vehiclePose,vehiclePositions,deriveSwitchAssistance,collectRailwayState} from './src/railway-state.js';
 import {poseDrawbar} from './src/br01-drawbar.js';
 import {buildBR01,loadBR01} from './src/br01.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
@@ -28,7 +28,7 @@ import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
 import { couplingDistance } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
-import { navigation, followPose, CAMERA_PRESETS } from "./src/navigation.js";
+import { navigation, CAMERA_PRESETS } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
 
 import { locomotiveDetails, steam } from "./src/rolling-stock-art.js";
@@ -417,16 +417,15 @@ for(const t of trains) {
   }
   initializeJourney(t);
 }
-function vehicleLocation(t, behind = 0) {
-  return t.journey.locate(t.journey.position - behind);
-}
 function renderVehicles() {
+  let selectedPoint = null;
   for (const t of trains) {
     const layout = layoutFor(t);
     t.journey.ensure(t.journey.position - layout.tail, route);
     const vehicles=[t.group,...t.carObjs];
     for(let i=0;i<vehicles.length;i++) {
-      const group=vehicles[i],coordinate=t.journey.position-layout.offsets[i],pose=vehicleLocation(t,layout.offsets[i]);
+      const group=vehicles[i],coordinate=t.journey.position-layout.offsets[i],pose=vehiclePose(t.journey,coordinate,group);
+      if(i===0 && t.id===selected)selectedPoint=pose;
       if(i){group.visible=true;group.br01Gear.member.rotation.y=0;}
       group.position.set(pose.x,profile.railTop,pose.z);
       group.rotation.y=pose.angle;
@@ -434,7 +433,6 @@ function renderVehicles() {
     }
     poseDrawbar(t.group,t.carObjs[0]);
   }
-  const selectedPoint=trainById(selected)?.journey.locate();
   selectRing.visible=Boolean(selectedPoint);
   if(selectedPoint)selectRing.position.set(selectedPoint.x,isV06?profile.railTop+.5:5.2,selectedPoint.z);
   for (const d of detached) {
@@ -443,6 +441,7 @@ function renderVehicles() {
     d.group.position.set(d.point.x,profile.railTop,d.point.z);
     d.group.rotation.y = d.point.angle;
   }
+  return selectedPoint;
 }
 function advanceFleet(dt) {
   for (const result of stepRailway({trains,detached,route},dt)) {
@@ -737,7 +736,7 @@ function tick(now) {
   }
   frame++;
   trainManagement?.update(now);
-  renderVehicles();
+  const selectedPose = renderVehicles();
   trainDeck?.update();uiShell?.update();
   const night = clamp((day - 35) / 65, 0, 1);
   sun.intensity = lerp(2.65, 0.16, night);
@@ -756,7 +755,7 @@ function tick(now) {
   windowNight.color.setRGB(lerp(0.15, 0.8, night), lerp(0.22, 0.56, night), lerp(0.24, 0.23, night));
   glow.emissiveIntensity = lerp(0.4, 2.8, night);
   if (nav.preset !== "follow") controls.update();
-  nav.update(realDt, nav.preset === "follow" ? followPose(trainById(selected)?.journey) : null);
+  nav.update(realDt, selectedPose);
   views.update();
   nextSwitchHUD?.refresh();
   sidebarUI?.update();

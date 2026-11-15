@@ -1,5 +1,5 @@
 import {assessRailwayGuard, guardDecision, MOTION} from './railway-guard.js';
-import {layoutFor, vehiclePositions} from './railway-state.js';
+import {layoutFor, vehiclePose, vehiclePositions} from './railway-state.js';
 import {envelopeGap, prepareSweptEnvelope, preparedSweepsConflict, vehiclesConflict} from './railway-conflicts.js';
 
 function copyJourney(journey) {
@@ -41,7 +41,7 @@ export function stepRailway({trains, detached, route, reservations=[]}, dt) {
       kind: fits ? null : journey.lastBlock?.reason === 'terminal' ? 'terminal' : 'route'};
     proposal.after = fits ? vehiclePositions({...train, journey}) : before;
     proposal.middle = fits && delta ? layoutFor(train).offsets.map((offset, i) => ({
-      ...before[i], ...journey.locate(journey.position - delta / 2 - offset)
+      ...before[i], ...vehiclePose(journey, journey.position - delta / 2 - offset, before[i].vehicle)
     })) : before;
     return proposal;
   });
@@ -95,7 +95,7 @@ export function stepRailway({trains, detached, route, reservations=[]}, dt) {
     retainedProbes??=new Map();if(retainedProbes.has(q))return retainedProbes.get(q);
     const journey=copyJourney(q.journey);
     const result=journey.move(delta,layoutFor(q.train).tail,route,q.train.group.userData.couplers?.front?.x??48)?{
-      before:q.before,after:vehiclePositions({...q.train,journey}),middle:layoutFor(q.train).offsets.map((offset,i)=>({...q.before[i],...journey.locate(journey.position-delta/2-offset)}))}:q;
+      before:q.before,after:vehiclePositions({...q.train,journey}),middle:layoutFor(q.train).offsets.map((offset,i)=>({...q.before[i],...vehiclePose(journey,journey.position-delta/2-offset,q.before[i].vehicle)}))}:q;
     retainedProbes.set(q,result);return result;
   };
   // Keep a known occupation hazard while stopped. Recheck the last rejected
@@ -114,7 +114,7 @@ export function stepRailway({trains, detached, route, reservations=[]}, dt) {
       p.guard={...p.guard,risk:'UNKNOWN',state:'GUARDED_STOP',reason:journey.lastBlock?.reason??'undetermined',distance:0,intervened:true};continue;
     }
     const probe={before:p.before,after:vehiclePositions({...p.train,journey}),
-      middle:layoutFor(p.train).offsets.map((offset,i)=>({...p.before[i],...journey.locate(journey.position-p.probeDelta/2-offset)}))};
+      middle:layoutFor(p.train).offsets.map((offset,i)=>({...p.before[i],...vehiclePose(journey,journey.position-p.probeDelta/2-offset,p.before[i].vehicle)}))};
     if(proposals.some(q=>q!==p&&conflicts(probe,retainedProbe(q))))p.kind='train';
     else if(detached.some(d=>parkedConflict(probe,d)))p.kind='wagon';
     else p.probeDelta=p.probeKind=undefined;
