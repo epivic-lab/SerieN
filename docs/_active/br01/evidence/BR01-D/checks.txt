@@ -1,0 +1,38 @@
+Baseline BR01-C: edffa54e6fd7fff113ffdc85c0302582c6d0c194
+node --test tests/*.test.js
+ℹ tests 573
+ℹ suites 0
+ℹ pass 573
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 33647.397625
+
+Candidato BR01-D
+pnpm test
+ℹ tests 573
+ℹ suites 0
+ℹ pass 573
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 42709.019416
+
+python3 -m unittest discover -s tests -p jmri_audit_test.py
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.033s
+
+OK
+
+pnpm run build
+$ esbuild app.js --bundle --minify --format=esm --outfile=dist/game.js
+
+  dist/game.js  1.1mb ⚠️
+
+⚡ Done in 48ms
+
+Chrome + Playwright: verify-br01-management.cjs, exit 0
+WebM riprodotto fino alla fine: 1120 x 704, 26.668181 s, 43 campioni distinti nel controllo di decodifica.

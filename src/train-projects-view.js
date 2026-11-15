@@ -63,7 +63,10 @@ export function createTrainProjectsView({getTrains,getSelected,getGeneration,onC
       if(draft){const label=el('label','Project name'),input=el('input');input.type='text';input.maxLength=80;input.value=draft.name;input.dataset.projectAction='name';input.dataset.ctrl='CTRL-032';input.setAttribute('aria-label','Project name');
         input.oninput=()=>run(()=>store.rename(input.value));label.append(input);detail.append(label);
         const dirty=el('p',store.dirty?'Unconfirmed changes':'No unconfirmed changes','managementMuted');dirty.dataset.projectDirty=String(store.dirty);detail.append(dirty);
-      }else detail.append(el('strong',project.name));
+      }else {
+        detail.append(el('strong',project.name));
+        for(const error of validateProject(project))detail.append(el('p',error,'projectNotice'));
+      }
       if(project.vehicles.length){side.updateProject(project);side.root.dataset.ctrl='CTRL-040';detail.append(side.root);}else detail.append(el('p','Choose a locomotive to start the preview.'));
       const ordered=el('ol',undefined,'projectVehicles');ordered.tabIndex=0;ordered.setAttribute('aria-label','Planned vehicle rail');
       if(!project.vehicles.some(v=>v.id===selectedVehicleId))selectedVehicleId=project.vehicles[0]?.id??null;
@@ -88,7 +91,7 @@ export function createTrainProjectsView({getTrains,getSelected,getGeneration,onC
         const errors=validateProject(draft),controls=el('div',undefined,'projectToolbar');
         controls.append(action('Confirm project','confirm',()=>{const saved=store.confirm();savedId=saved.id;},errors.length>0),action('Cancel changes','cancel',()=>{const id=draft.id;intent(()=>{savedId=id;selectedVehicleId=null;});}));detail.append(controls);
         if(errors.length)detail.append(el('p',errors.join(' '),'managementMuted'));
-        detail.append(action('Compare with selected real train','link',()=>store.link(getTrains().find(t=>t.id===getSelected()),getGeneration())));
+        detail.append(action('Compare with selected real train','link',()=>store.link(getTrains().find(t=>t.id===getSelected()),getGeneration()),!getTrains().length));
       }else detail.append(action('Edit project','edit',()=>start(()=>store.open(project.id),()=>store.projects.some(p=>p.id===project.id))));
       detail.append(comparison(project));
     }else detail.append(el('p','Create a new project, or copy a train from “On the layout”.'));

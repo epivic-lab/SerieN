@@ -5,27 +5,29 @@ import {layoutFor} from './railway-state.js';
  * @param {{trains:import('./railway-types.js').Train[],
  * detached:import('./railway-types.js').DetachedVehicle[],route:Function}} context */
 export function createFleetCommands({trains,detached,route}) {
+  const findTrain=id=>trains.find((t,index)=>(t.id??index)===id);
   function setSpeed(id,value) {
-    const train=trains[id];if(!train)return;
+    const train=findTrain(id);if(!train)return;
     if(!Number.isFinite(value))throw new RangeError("Speed must be finite");
     train.requestedSpeed=train.speed=Math.max(0,Math.min(100,value));return train;
   }
   function reverse(id) {
-    const train=trains[id];if(!train)return;
+    const train=findTrain(id);if(!train)return;
     train.dir*=-1;return train;
   }
   function stop(id) {
-    const train=trains[id];if(!train)return;
+    const train=findTrain(id);if(!train)return;
     train.requestedSpeed=train.speed=train.velocity=0;return train;
   }
   function stopAll() {for(const train of trains)train.requestedSpeed=train.speed=train.velocity=0;}
   function toggleLights(id) {
-    const train=trains[id];if(!train)return;
+    const train=findTrain(id);if(!train)return;
     train.lights=!train.lights;return train;
   }
   /** @returns {import('./railway-types.js').ConsistCommandResult} */
   function uncouple(id) {
-    const train=trains[id];
+    const train=findTrain(id);
+    if(!train)return {changed:false};
     if(Math.abs(train.velocity)>.1||train.speed)return {changed:false,message:'Stop the train before uncoupling.'};
     if(!train.cars)return {changed:false};
     const coordinate=train.journey.position-layoutFor(train).offsets.at(-1);
@@ -37,7 +39,8 @@ export function createFleetCommands({trains,detached,route}) {
   }
   /** @returns {import('./railway-types.js').ConsistCommandResult} */
   function couple(id) {
-    const train=trains[id];
+    const train=findTrain(id);
+    if(!train)return {changed:false};
     if(train.speed||Math.abs(train.velocity)>.1)return {changed:false,message:'Stop the train before coupling.'};
     if(train.cars>=5)return {changed:false,message:'Maximum train length: five wagons.'};
     let candidateJourney;

@@ -320,13 +320,15 @@ function brTrain(id,loop){
 }
 const trains=[brTrain(0,2),brTrain(1,1),brTrain(2,0)];
 for(const t of trains)scene.add(t.group,...t.carObjs);
+let nextTrainId = trains.length;
+const trainById = id => trains.find(train => train.id === id);
 const detached = [];
 const selectRing = new THREE.Mesh(new THREE.TorusGeometry(25, 1.5, 5, 34), new THREE.MeshBasicMaterial({ color: "#efdc9d" }));
 selectRing.rotation.x = PI / 2;
 scene.add(selectRing);
 let selected = 0, paused = false, day = 48, changes = 0, transferred = false, visitedRunaround = false, didDetach = false, didAttach = false, mission = 0;
 const statuses = [
-  { title: "First lap", body: "Complete one lap of the steam locomotive’s loop.", done: () => trains[0].laps >= 1, detail: () => "Completed laps: " + trains[0].laps + " / 1" },
+  { title: "First lap", body: "Complete one lap of the steam locomotive’s loop.", done: () => (trains[0]?.laps ?? 0) >= 1, detail: () => "Completed laps: " + (trains[0]?.laps ?? 0) + " / 1" },
   { title: "Change tracks", body: "Set WX-A or WX-B and drive a locomotive from one loop to another.", done: () => transferred, detail: () => transferred ? "Transfer completed" : "No transfer yet" },
   { title: "The long runaround", body: "Set the yard switches and drive the shunter along either runaround route.", done: () => visitedRunaround, detail: () => visitedRunaround ? "Runaround completed" : "Waiting for the shunter" },
   { title: "Build a freight train", body: "Uncouple a wagon while stopped, then couple it again on the same track.", done: () => didDetach && didAttach, detail: () => "Uncouple " + (didDetach ? "\u2713" : "\u25CB") + " \xB7 Couple " + (didAttach ? "\u2713" : "\u25CB") }
@@ -357,7 +359,7 @@ function missionUI() {
   $("missionStatus").textContent = statuses[mission].done() ? "\u2713 Mission completed" : statuses[mission].detail();
 }
 function select(id) {
-  if(!trains[id])return;
+  if(!trainById(id))return;
   selected = id;
   trainDeck?.select(id);
   ui();
@@ -433,8 +435,9 @@ function renderVehicles() {
     }
     poseDrawbar(t.group,t.carObjs[0]);
   }
-  const selectedPoint=vehicleLocation(trains[selected]);
-  selectRing.position.set(selectedPoint.x,isV06?profile.railTop+.5:5.2,selectedPoint.z);
+  const selectedPoint=trainById(selected)?.journey.locate();
+  selectRing.visible=Boolean(selectedPoint);
+  if(selectedPoint)selectRing.position.set(selectedPoint.x,isV06?profile.railTop+.5:5.2,selectedPoint.z);
   for (const d of detached) {
     d.group.visible = true;
     d.group.br01Gear.member.rotation.y=0;
@@ -527,18 +530,42 @@ function stopAllTrains() {
   guardedStops.bell.setActive(false);
   fleetCommands.stopAll();ui();log("STOP ALL · every train stopped");
 }
+function removeTrain(train) {
+  const index=trains.indexOf(train);
+  if(index<0 || !canRemoveTrain(train))return false;
+  trains.splice(index,1);
+  for(const vehicle of [train.group,...train.carObjs])scene.remove(vehicle);
+  train.group.userData.headMaterial.dispose();
+  train.group.userData.beam.dispose();
+  guardedStops.remove(train.id);
+  if(selected===train.id)selected=trains[index]?.id??trains.at(-1)?.id??null;
+  $('addTrain').disabled=false;
+  renderVehicles();ui();guardedStops.update(performance.now());updateRouteHighlight(true);
+  return true;
+}
+function canRemoveTrain(train) {
+  return train.velocity===0 && train.speed===0 && train.requestedSpeed===0;
+}
 function addTrain() {
   if(trains.length>=4){log("A session supports up to four trains.");return null;}
-  const t=brTrain(trains.length,0);
+  const t=brTrain(nextTrainId,0);
   const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t});
-  if(!spawn){t.group.userData.headMaterial.dispose();log('No free track section for the complete BR 01 and tender.');return null;}
+  if(!spawn){t.group.userData.headMaterial.dispose();t.group.userData.beam.dispose();log('No free track section for the complete BR 01 and tender.');return null;}
   t.initial={...spawn,cars:1};t.loop=spawn.loop;initializeJourney(t);
+  nextTrainId++;
+  t.group.userData.dynamic=true;
+  for(const car of t.carObjs)car.userData.dynamic=true;
   trains.push(t);scene.add(t.group,...t.carObjs);
   $('addTrain').disabled=trains.length>=4;
   renderVehicles();ui();return t.id;
 }
 $("stopAll").onclick=stopAllTrains;
-$("addTrain").onclick=()=>{const id=addTrain();if(id!==null)select(id);};
+function addAndSelectTrain() {
+  const id=addTrain();
+  if(id!==null)select(id);
+  return id;
+}
+$("addTrain").onclick=addAndSelectTrain;
 $("routePreview").onclick=()=>{
   highlightUntil=performance.now()<highlightUntil?0:performance.now()+15000;
   highlightUpdated=0;updateRouteHighlight(true);
@@ -607,10 +634,11 @@ const views = mountViewControls({ camera, controls, navigation: nav, host: $("vi
 } });
 trainDeck = mountTrainDeck({host:$("trainDeck"),tabs:$("tabs"),network,getTrains:()=>trains,getSelected:()=>selected,isPaused:()=>paused,
   onSelect:select,onSpeed:setTrainSpeed,onReverse:reverseTrain,onStop:stopTrain,onLights:toggleTrainLights,onUncouple:uncouple,onCouple:couple,
-  onFocus:(id)=>{nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
+  onFocus:(id)=>{nav.focus(trainById(id).journey.locate());$("cameraView").value="manual";}
 });
 trainManagement=mountTrainManagement({button:$("trainManagement"),getTrains:()=>trains,getDetached:()=>detached,getSelected:()=>selected,getImportedCatalog:()=>[],
-  onSelect:select,onFocus:(id)=>{select(id);nav.focus(trains[id].journey.locate());$("cameraView").value="manual";}
+  onAdd:addAndSelectTrain,onRemove:removeTrain,canRemove:canRemoveTrain,
+  onSelect:select,onFocus:(id)=>{select(id);nav.focus(trainById(id).journey.locate());$("cameraView").value="manual";}
 });
 dockUI=mountDock({host:$("trainDeck"),tabs:$("tabs"),button:$("reset"),getTrains:()=>trains,getSelected:()=>selected,onSelect:select,
   getGeneration:()=>trainManagement.sessionSummary.generation,onReset:reset});
@@ -718,7 +746,7 @@ function tick(now) {
   windowNight.color.setRGB(lerp(0.15, 0.8, night), lerp(0.22, 0.56, night), lerp(0.24, 0.23, night));
   glow.emissiveIntensity = lerp(0.4, 2.8, night);
   controls.update();
-  nav.update(realDt, trains[selected].journey.locate());
+  nav.update(realDt, trainById(selected)?.journey.locate());
   views.update();
   nextSwitchHUD?.refresh();
   sidebarUI?.update();
@@ -729,7 +757,7 @@ function tick(now) {
   scenic.zones.update(night, dt);
   scenic.station.update(night, dt);
   scenic.update(paused ? 0 : dt, camera);
-  smoke.update(paused ? 0 : dt, trains[0].group, camera, Math.abs(trains[0].velocity) > 2, quality.profile === "low");
+  smoke.update(paused ? 0 : dt, trains[0]?.group, camera, Math.abs(trains[0]?.velocity ?? 0) > 2, quality.profile === "low");
   turnoutGlow.update(now);
   turnoutArrows.update(now);
   guardedStops.update(now);
@@ -753,7 +781,7 @@ guardedStops=createGuardedStops({scene,network,getTrains:()=>trains,getDetached:
 viewportOverlays=mountViewportOverlays({host,guardedStops,getCameraPreset:()=>nav.preset});
 sidebarUI=mountSidebar({host:document.querySelector('.sidebar'),network,controlOrder,
   getSwitches:()=>switchSpecs.map(({id,on})=>({id,on})),getTrains:()=>trains,getSelected:()=>selected,
-  onFocus:(id)=>{select(id);nav.focus(trains[id].journey.locate());$('cameraView').value='manual';}
+  onFocus:(id)=>{select(id);nav.focus(trainById(id).journey.locate());$('cameraView').value='manual';}
 });
 const onMotionPreference=()=>{guardedStops.setReducedMotion(motionPreference.matches);turnoutGlow.setReducedMotion(motionPreference.matches);turnoutArrows.setReducedMotion(motionPreference.matches);};
 motionPreference.addEventListener('change',onMotionPreference);
@@ -780,12 +808,12 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
       operationLock:getSwitchAssistance().safetyByControl.get(controlId)});
   },
   captureThumbnail(id) {
-    const t=trains[id];if(!t)throw new RangeError("Unknown locomotive");
+    const t=trainById(id);if(!t)throw new RangeError("Unknown locomotive");
     return captureLocomotiveThumbnail(renderer,t.group,scene.environment);
   },
   addTrain,
   placeTrain(id, edge, s, direction=1) {
-    const t=trains[id], track=network.edges[edge];
+    const t=trainById(id), track=network.edges[edge];
     if(!t || !track || !Number.isFinite(s) || s<0 || s>track.length || ![1,-1].includes(direction)) throw new RangeError("Invalid diagnostic train placement");
     const candidate=new Journey(network,edge,s);
     if(!candidate.ensure(candidate.position-layoutFor(t).tail,route)||!candidate.ensure(candidate.position+(t.group.userData.couplers?.front?.x??48),route)) throw new RangeError("Diagnostic consist does not fit");

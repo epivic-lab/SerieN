@@ -1,3 +1,31 @@
+# BR01-D — Chiusura funzionale per il Quality Gate Regia
+
+Branch `codex/br01-animated`, base BR01-C `edffa54e6fd7fff113ffdc85c0302582c6d0c194`.
+
+In Train Management → On the layout, **Add BR 01 + tender** inserisce i due veicoli sul primo tratto ammesso dal controllo di spazio del simulatore e seleziona la composizione. Il limite di sessione è quattro. **Remove from layout** richiede conferma e ricontrolla al momento della conferma identità, composizione, velocità effettiva, velocità impostata e richiesta di trazione. Rimuove la locomotiva e tutti i veicoli agganciati. Un carro già sganciato mantiene la propria occupazione indipendente.
+
+Gli ID assegnati crescono durante la sessione. Dopo la rimozione la selezione passa al vicino nell’elenco. Con flotta vuota spariscono anello, consolle e marker, l’HUD segnala l’assenza di treni e il comando di aggiunta resta disponibile. La rimozione stacca i gruppi 3D, rilascia materiale dei fari e luce per istanza e ritira il segnale d’arresto associato. Geometrie e materiali condivisi servono alle altre istanze. Un progetto copiato conserva i dati e segnala il riferimento fisico scaduto. Il Depot resta virtuale.
+
+### Verifiche sul candidato
+
+| Prova | Esito | Riscontro |
+| --- | --- | --- |
+| Gestione fisica V06 e Legacy | PASS | Comandi UI di creazione, selezione, focus, marcia, STOP, inversione, retromarcia e rimozione. Rimozione disabilitata in marcia. Annullamento senza mutazioni. |
+| Due composizioni e flotta vuota | PASS | In entrambi gli scenari, dopo la rimozione tornano esattamente gli stessi cinque intervalli occupati e i quattro UUID dei due convogli superstiti. Dopo l’ultima rimozione, zero intervalli e zero veicoli. Nuovo inserimento riuscito. |
+| Train Management, HUD, plancia e minimappe | PASS | Nome del treno nell’HUD, selezione sulla mappa, controllo di trazione e focus dalla minimappa della consolle. Scompaiono marker e consolle del treno rimosso. Lunghezza complessiva mostrata 151,825 mm. |
+| Catalogo e progetti di sessione | PASS | Due definizioni con miniature caricate, viste laterali motrice/tender e solo i due modelli nei rispettivi selettori. Fixture RAM isolata con progetto confermato contenente `native-steam`. Vista reale con avviso, record originale identico prima e dopo. |
+| Protezioni e instradamento | PASS | Commutazione da pannello su entrambi gli scenari. In Legacy, arresto con causa `train`, velocità zero e posizione stabile. Percorsa la diagonale `T5 → WX-A:down`, comando sul dispositivo respinto con causa `occupied`. Collocazioni iniziali di queste due prove predisposte tramite diagnostica. |
+| Test e build | PASS | 573/573 Node, 9/9 Python JMRI e bundle esbuild. Stessi script di package tramite pnpm, perché npm non è presente sul PATH. |
+| Invarianti e sicurezza | PASS sul diff | Nessuna modifica a GLB, cinematica, topologia, mesh ferroviarie, scenografia V06, fisica di movimento, dipendenze, autenticazione o backend. Comandi locali alla sessione. |
+
+[Video del ciclo completo](evidence/BR01-D/cycle.webm) · [Train Management](evidence/BR01-D/management.png) · [Catalogo](evidence/BR01-D/catalog.png) · [Vista 3D](evidence/BR01-D/driving.png) · [Due composizioni](evidence/BR01-D/two-compositions.png) · [Flotta vuota](evidence/BR01-D/empty.png) · [Arresto protetto](evidence/BR01-D/protected-stop.png) · [Occupazioni, identità e risultati browser](evidence/BR01-D/browser.json) · [Log dei controlli](evidence/BR01-D/checks.txt).
+
+Per riprodurre la prova usare la build locale, servirla su loopback e avviare `node scripts/verify-br01-management.cjs` con Playwright disponibile, `CHROME_BIN` per Chrome e `SERIEN_URL` per la porta (default 8197). Lo script sostituisce il gate di login nella pagina di prova e osserva il simulatore tramite diagnostica. Il test del progetto storico usa una fixture in memoria nel bundle di prova. Il video registra anche la UI HTML dalla superficie Chrome.
+
+**NOT VERIFIED** — Le 46 pose supplementari restano nel rapporto BR01-C. BR01-D non ha ripetuto l’audit geometrico. Nessuna misura quantitativa della memoria GPU fisica. Prossima azione: Quality Gate Regia su BR01-D.
+
+---
+
 # BR01-C — PASS tecnico, in attesa del Quality Gate Regia
 
 Branch `codex/br01-animated`, base BR01-B `9bbe397847e936c7d6d302caa98199445353fd97`. Giunto allungato di **2,200 mm** lungo la Journey. In rettilineo la distanza minima tridimensionale fra i triangoli della cabina e quelli del corpo del tender passa da **0,527 a 1,943 mm**. La misura riguarda le superfici originali `engine_haus` e `tender_kohletender`. La lunghezza fra i respingenti esterni è **151,825 mm**, rispetto ai 149,625 mm nominali del prototipo in scala 1:160 (+1,47%). Scala, cabina, tender, assi e mesh originali sono invariati.
