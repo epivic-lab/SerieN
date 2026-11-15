@@ -4,6 +4,7 @@ import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {sample} from './network.js';
 import {createStaticRaycast} from './static-raycast.js';
 import {verifiedBytes} from './scenario-profile.js';
+import {createRailwayMaterials} from './railway-materials.js';
 
 export const V06_OPTIMIZED_LOCK_SHA256='c6054e760c79833cb06e20b4f353d82123fb78177f25fbb2ad985cb3ab24b8fd';
 const HEAD=8.4,OFFSET=4.725;
@@ -11,19 +12,21 @@ const HEAD=8.4,OFFSET=4.725;
 // manufacturing section or a reconstruction of undocumented blade actuators.
 const SECTION=[[-.75,6],[.75,6],[.75,6.3],[.18,6.3],[.18,7.8],[.225,8.1],[.225,HEAD],[-.225,HEAD],[-.225,8.1],[-.18,7.8],[-.18,6.3],[-.75,6.3]];
 export function v06RailGeometry(edge,side) {
-  const vertices=[],indices=[],n=Math.ceil(edge.length/2),width=SECTION.length;
+  const vertices=[],indices=[],colors=[],n=Math.ceil(edge.length/2),width=SECTION.length;
+  const polished=new THREE.Color('#a5aaa6'),oxidized=new THREE.Color('#665044'),foot=new THREE.Color('#51483e');
   for(let i=0;i<=n;i++) {
     const s=edge.length*i/n,p=sample(edge,s),a=sample(edge,s-.1),b=sample(edge,s+.1),length=Math.hypot(b.x-a.x,b.z-a.z);
-    for(const [offset,y] of SECTION)vertices.push(p.x-(b.z-a.z)/length*(side*OFFSET+offset),y,p.z+(b.x-a.x)/length*(side*OFFSET+offset));
+    for(const [offset,y] of SECTION){vertices.push(p.x-(b.z-a.z)/length*(side*OFFSET+offset),y,p.z+(b.x-a.x)/length*(side*OFFSET+offset));(y===HEAD?polished:y>6.3?oxidized:foot).toArray(colors,colors.length);}
     if(i)for(let j=0;j<width;j++){const k=i*width+j,next=i*width+(j+1)%width;indices.push(k-width,next-width,k,next-width,next,k);}
   }
   const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geometry.setIndex(indices);geometry.computeVertexNormals();
+  geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));
   return geometry;
 }
 export function createV06Railway(network) {
   const root=new THREE.Group();root.name='V06 R02 railway · exclusive procedural variant';
   root.userData.layoutId=network.metadata.layoutId;
-  const metal=new THREE.MeshStandardMaterial({color:'#879096',roughness:.43,metalness:.58});
+  const materials=createRailwayMaterials(),metal=materials.rails;
   const geometries=Object.values(network.edges).flatMap(e=>[-1,1].map(side=>v06RailGeometry(e,side)));
   const railGeometry=mergeGeometries(geometries);geometries.forEach(g=>g.dispose());
   const rails=new THREE.Mesh(railGeometry,metal);rails.name='R02 running rails';rails.castShadow=true;rails.receiveShadow=true;root.add(rails);
@@ -59,10 +62,22 @@ export function createV06Railway(network) {
   rectangles.push(...active.values());
   const positions=[];for(const {x0:x,x1,z0:z,z1} of rectangles)positions.push(x,3.75,z,x,3.75,z1,x1,3.75,z,x1,3.75,z,x,3.75,z1,x1,3.75,z1);
   const bedGeometry=new THREE.BufferGeometry();bedGeometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));bedGeometry.computeVertexNormals();
-  const bed=new THREE.Mesh(bedGeometry,new THREE.MeshStandardMaterial({color:'#8b877b',roughness:1}));bed.name='R02 single-owner ballast';bed.receiveShadow=true;root.add(bed);
-  const sleepers=new THREE.InstancedMesh(new THREE.BoxGeometry(16,1.1,1.5),new THREE.MeshStandardMaterial({color:'#514d43',roughness:.95}),ties.length),dummy=new THREE.Object3D();
-  ties.forEach(({p,angle},i)=>{dummy.position.set(p.x,5.45,p.z);dummy.rotation.y=angle;dummy.updateMatrix();sleepers.setMatrixAt(i,dummy.matrix);});
+  const uv=[];for(let i=0;i<positions.length;i+=3)uv.push(positions[i]/18,positions[i+2]/18);
+  bedGeometry.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));
+  const bed=new THREE.Mesh(bedGeometry,materials.ballast);bed.name='R02 single-owner ballast';bed.receiveShadow=true;root.add(bed);
+  const sleepers=new THREE.InstancedMesh(new THREE.BoxGeometry(16,1.1,1.5),materials.sleepers,ties.length),dummy=new THREE.Object3D();
+  const fasteners=new THREE.InstancedMesh(new THREE.BoxGeometry(2.4,.22,2.2),materials.fasteners,ties.length*2),tint=new THREE.Color();
+  ties.forEach(({p,angle},i)=>{
+    // Sleeper centres and spacing are unchanged; their long axis crosses the rails.
+    dummy.position.set(p.x,5.45,p.z);dummy.rotation.y=angle+Math.PI/2;dummy.updateMatrix();sleepers.setMatrixAt(i,dummy.matrix);
+    tint.setScalar(.8+.3*((i*73)%101)/100);sleepers.setColorAt(i,tint);
+    for(const [j,side] of [-1,1].entries()){
+      dummy.position.set(p.x+Math.cos(angle+Math.PI/2)*side*OFFSET,5.97,p.z-Math.sin(angle+Math.PI/2)*side*OFFSET);
+      dummy.updateMatrix();fasteners.setMatrixAt(i*2+j,dummy.matrix);
+    }
+  });
   sleepers.name='R02 sleepers';sleepers.receiveShadow=true;root.add(sleepers);
+  fasteners.name='R02 sleeper rail seats';fasteners.receiveShadow=true;root.add(fasteners);
   for(const terminal of network.metadata.terminals.filter(t=>t.type.startsWith('buffer-'))) {
     const edge=network.edges[terminal.edge],p=sample(edge,terminal.end?edge.length:0),a=sample(edge,terminal.end?edge.length-.5:.5);
     const buffer=new THREE.Group();buffer.name=terminal.type;buffer.position.set(p.x,0,p.z);buffer.rotation.y=-Math.atan2(a.z-p.z,a.x-p.x);

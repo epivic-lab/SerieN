@@ -7,7 +7,7 @@ import {vehiclesConflict} from './railway-conflicts.js';
 
 export const V06_DATASET_SHA256='4fd022e1173ef5517a7c826f4163dd10ab1ff776e1ecfaf144f53d40473ccef7';
 export const selectScenario=search=>{
-  const id=new URLSearchParams(search).get('scenario')??'legacy';
+  const id=new URLSearchParams(search).get('scenario')??'v06';
   if(!['legacy','v06'].includes(id))throw new RangeError('Unknown scenario');
   return id;
 };

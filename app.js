@@ -977,5 +977,5 @@ start().catch(error=>{
   console.error('Scenario initialization failed:',error.message);
   const message=document.getElementById('loadMsg');message.hidden=false;message.textContent='This scenario could not be loaded. Retry, or return to Legacy.';
   const retry=document.createElement('button');retry.type='button';retry.textContent='Retry';retry.onclick=()=>location.reload();
-  const legacy=document.createElement('a');legacy.textContent='Return to Legacy';const url=new URL(location.href);url.searchParams.delete('scenario');legacy.href=url.href;message.append(document.createElement('br'),retry,document.createTextNode(' '),legacy);
+  const legacy=document.createElement('a');legacy.textContent='Return to Legacy';const url=new URL(location.href);url.searchParams.set('scenario','legacy');legacy.href=url.href;message.append(document.createElement('br'),retry,document.createTextNode(' '),legacy);
 });

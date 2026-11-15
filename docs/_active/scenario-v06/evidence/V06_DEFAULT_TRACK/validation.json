@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "node": {
+    "passed": 569,
+    "failed": 0
+  },
+  "jmri": {
+    "passed": 9,
+    "failed": 0
+  },
+  "browser": "7 groups PASS; local Auth fixture; desktop/mobile emulation; Low/High",
+  "baselineMain": "298e7fc52a07b6206dda2cf5bce89ecdd7b89d00",
+  "default": "v06",
+  "legacy": "explicit scenario=legacy, menu and integrity-error fallback verified",
+  "railway": "rail and ballast vertices/indices and sleeper centres unchanged; sleeper rotation corrected",
+  "renderCost": {
+    "extraDrawCalls": 1,
+    "extraTriangles": 73032,
+    "textureBytesBeforeMipmaps": 2359296,
+    "extraNetworkAssets": 0
+  },
+  "bundleSha256": "24d4a8801cac0e52ac4a610b8a227b641be157c0c7d7791d3de2b42dde812ff5",
+  "security": "Auth logic, backend, workflows, datasets, routing, guard, UI CSS unchanged; Auth file changes only bundle cache key",
+  "physicalGPU": "NOT VERIFIED",
+  "liveOAuth": "NOT VERIFIED",
+  "publication": "authorized by user; Pages receipt follows this checkpoint"
+}

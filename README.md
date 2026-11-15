@@ -16,14 +16,16 @@ La macrofase S0–S7, compresa S6.1, è approvata dalla Regia. Gli otto disposit
 
 [Rapporto permanente e limiti](docs/turnouts/FINAL_REPORT.md) · [Integrazione e verifica release R1](docs/releases/R1/REPORT.md). R1 identifica questo rilascio approvato: la versione del pacchetto resta0.12.0; nessun nuovo tag o numero di versione introdotto. Le specifiche in docs/_active/turnouts sono archivio non attivo.
 
-## Candidata V06 — branch di sviluppo
+## Valle Boscata V06
 
-Nel branch `codex/scenario-v06-integration`, **Menu → Scenario → V06** avvia il
-nuovo profilo con scenografia originale e rete R02. Il cambio profilo conferma
-la perdita dei dati di sessione; Legacy resta il default e il rollback.
+**V06 è lo scenario predefinito**, con scenografia originale e rete R02.
+**Menu → Scenario → Legacy** mantiene disponibile il simulatore precedente.
+Il cambio profilo conferma la perdita dei dati di sessione. In caso di errore
+di caricamento, **Return to Legacy** apre esplicitamente lo scenario Legacy.
+Massicciata con graniglia, traversine trasversali in legno e sedi delle rotaie;
+teste metalliche e fianchi ossidati, senza cambiare assi, scartamento o safety.
 [Rapporto e prove](docs/_active/scenario-v06/V06_INTEGRATION_REPORT.md).
-La candidata non è pubblicata: review visiva/prestazionale ancora aperta e
-fluidità insufficiente nell'ambiente software SwiftShader usato nei test.
+Le prove locali usano SwiftShader: prestazioni GPU fisica e OAuth live non certificate.
 
 ## Avvio
 

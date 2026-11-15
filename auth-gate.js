@@ -32,7 +32,7 @@ async function refreshAccess() {
     logout.hidden = false;
     if (!loaded) {
       loaded = true;
-      try { await import("./dist/game.js?v=0.12.0"); }
+      try { await import("./dist/game.js?v=v06-track-20261115"); }
       catch {
         loaded = false;
         locked("Il simulatore non può essere caricato. Ricarica la pagina.");

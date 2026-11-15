@@ -1,3 +1,33 @@
+# V06 DEFAULT / TRACK — 15 novembre 2026
+
+Implementata la richiesta utente di V06 predefinito e finitura ferroviaria più
+realistica. Pubblicazione esplicitamente autorizzata nello stesso turno.
+Legacy resta selezionabile e il recupero da errore usa `?scenario=legacy`.
+
+Traversine orientate trasversalmente (prima correvano lungo i binari), legno
+invecchiato e variazione tonale; graniglia e bump sulla massicciata, piastre
+d'appoggio instanziate, teste metalliche e fianchi ossidati. Nessuna variazione
+agli assi R02, ai vertici delle rotaie/massicciata, allo scartamento, alle quote,
+ai centri delle traversine, alla safety o alla UI V2.1. Una draw call aggiunta,
+73.032 triangoli aggiunti, 2,25 MiB di texture locali prima dei mipmap; nessun
+nuovo asset di rete. Chiavi cache aggiornate per caricare la nuova build;
+nessuna modifica alla logica Auth.
+
+**569/569 Node, 9/9 JMRI, build, invarianti e 7 gruppi browser PASS.**
+V06 default, sette controller/WX, tre treni manuali/STOP, Low/High, mobile,
+ritorno Legacy senza fetch V06 e fallback su errore d'integrità verificati
+localmente. Auth fixture locale; GPU fisica/OAuth live NOT VERIFIED.
+
+[Prove e dettaglio visivo](evidence/V06_DEFAULT_TRACK/validation.json).
+Base main `298e7fc52a07b6206dda2cf5bce89ecdd7b89d00`; branch
+`codex/v06-default-track-realism`. Prossima azione già autorizzata: pubblicare
+questo checkpoint con push fast-forward normale e verificare il workflow Pages
+esistente e gli hash pubblici. Esito della pubblicazione nella ricevuta finale.
+
+---
+
+## Archivio delle consegne precedenti
+
 # V06-INTEGRATION — candidata browser, 14 novembre 2026
 
 **Integrazione funzionale implementata; Quality Gate visivo/prestazionale PENDING.**

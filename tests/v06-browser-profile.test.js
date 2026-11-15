@@ -47,8 +47,8 @@ test('V06 legible route bands show both real WX paths and each simple selected r
   arrows.dispose();assert.equal(scene.children.length,0);
 });
 
-test('browser selection defaults to Legacy; unknown profiles fail closed; new sessions never share networks',()=>{
-  assert.equal(selectScenario(''),'legacy');assert.equal(selectScenario('?scenario=v06'),'v06');
+test('browser selection defaults to V06; explicit Legacy remains available; unknown profiles fail closed; sessions never share networks',()=>{
+  assert.equal(selectScenario(''),'v06');assert.equal(selectScenario('?diagnostics=1'),'v06');assert.equal(selectScenario('?scenario=v06'),'v06');assert.equal(selectScenario('?scenario=legacy'),'legacy');
   for(const value of ['?scenario=bogus','?scenario=__proto__','?scenario='])assert.throws(()=>selectScenario(value));
   const a=fresh(),b=fresh(),legacy=createScenarioProfile('legacy');
   assert.equal(a.registry.ids.length,7);assert.equal(legacy.registry.ids.length,8);assert.notEqual(a.network,b.network);assert.notEqual(a.sessionId,b.sessionId);
@@ -98,4 +98,10 @@ test('V06 running surfaces have 9mm inner gauge and 8.4mm rail top; source axes 
   const a=inner(one),b=inner(two);assert.ok(Math.abs(Math.min(...a.flatMap(x=>b.map(y=>Math.abs(x-y))))-9)<1e-4);
   rails.forEach(g=>g.dispose());const railway=createV06Railway(p.network);
   assert.equal(railway.root.children.filter(o=>o.name.startsWith('buffer-')).length,2);assert.equal(railway.stats.originalRailwayAttached,false);assert.equal(JSON.stringify(p.network),before);
+  const sleepers=railway.root.getObjectByName('R02 sleepers'),matrix=new THREE.Matrix4(),axis=new THREE.Vector3();
+  sleepers.getMatrixAt(0,matrix);axis.setFromMatrixColumn(matrix,0).normalize();
+  const firstEdge=Object.values(p.network.edges)[0],start=firstEdge.points[0],end=firstEdge.points[1];
+  assert.ok(Math.abs(axis.x*(end.x-start.x)+axis.z*(end.z-start.z))/Math.hypot(end.x-start.x,end.z-start.z)<.03,'sleepers cross the track');
+  const textures=new Set();railway.root.traverse(o=>{for(const m of Array.isArray(o.material)?o.material:[o.material])if(m){for(const value of Object.values(m))if(value?.isTexture)textures.add(value);m.dispose();}o.geometry?.dispose();});
+  textures.forEach(t=>t.dispose());
 });

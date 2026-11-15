@@ -1,0 +1,31 @@
+{
+  "checks": [
+    "V06 default / 7 controllers / Low / three trains",
+    "All seven controller buttons including both WX respond in both states",
+    "Three manually controlled trains move and STOP ALL works",
+    "High renders the new surfaces",
+    "Mobile emulation / HUD / minimaps / no overflow",
+    "Menu returns to explicit Legacy; 8 controllers and zero V06 requests",
+    "Invalid default V06 dataset fails closed with a working explicit Legacy fallback"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "auth": "local fixture only",
+  "physicalGPU": "NOT VERIFIED",
+  "low": {
+    "calls": 370,
+    "triangles": 3332129,
+    "geometries": 312,
+    "textures": 41
+  },
+  "high": {
+    "calls": 192,
+    "triangles": 9849210,
+    "geometries": 320,
+    "textures": 78
+  },
+  "expectedIntegrityError": [
+    "Scenario initialization failed: Scenario file integrity mismatch"
+  ],
+  "status": "PASS"
+}
