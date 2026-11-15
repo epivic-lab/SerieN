@@ -1,5 +1,11 @@
 # Follow Train con le frecce
 
+## Follow con distanza regolabile e quota libera
+
+In Follow, A avvicina la camera e Z la allontana. La distanza varia da 30 a 3600 mm dal bersaglio e si ripristina rientrando in Follow. La freccia giù permette di scendere fino alla verticale sotto il treno. Il terreno e gli edifici possono attraversare l’inquadratura. Guida aggiornata in `index.html`.
+
+La pubblicazione comprende anche la correzione dello scatto in curva descritta sotto. Test Node 576/576, JMRI 9/9 e build PASS. Chrome locale PASS su V06 e Legacy per A/Z, rilascio, discesa sotto quota zero, rientro in Follow, marcia, retromarcia, cambio treno e controlli UI.
+
 ## Correzione dello scatto in curva
 
 Base pubblicata `4279b8bc`, branch `codex/follow-curve`. La camera ricava la direzione dai punti 16 mm prima e dopo il centro della locomotiva lungo il percorso già impegnato. Il centro e gli offset manuali sono aggiornati nello stesso fotogramma. La lettura avviene solo in Follow.

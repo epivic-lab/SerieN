@@ -101,20 +101,20 @@ test("held follow arrows integrate by time, keep the train centered and reset on
   const pose = { x: 750, z: 350, angle: 0.4 };
   const run = hz => {
     const {camera, controls, nav} = setup();
-    assert.equal(nav.pressArrow("ArrowLeft"), false);
+    assert.equal(nav.pressFollowKey("ArrowLeft"), false);
     nav.select("follow");
-    for (const key of ["ArrowRight", "ArrowUp"]) assert.ok(nav.pressArrow(key));
+    for (const key of ["ArrowRight", "ArrowUp"]) assert.ok(nav.pressFollowKey(key));
     for (let i = 0; i < hz; i++) nav.update(1 / hz, pose);
     const eye = camera.position.clone();
-    nav.releaseArrow("ArrowRight");
-    nav.releaseArrow("ArrowUp");
+    nav.releaseFollowKey("ArrowRight");
+    nav.releaseFollowKey("ArrowUp");
     nav.update(1, pose);
     assert.ok(eye.equals(camera.position));
     const standard = new Vector3().copy(followingView(pose).position);
     assert.ok(eye.y > standard.y && !eye.equals(standard));
     assert.ok(Math.abs(eye.distanceTo(controls.target) - standard.distanceTo(controls.target)) < 1e-8);
-    nav.pressArrow("ArrowLeft");
-    nav.pressArrow("ArrowDown");
+    nav.pressFollowKey("ArrowLeft");
+    nav.pressFollowKey("ArrowDown");
     nav.update(1, {...pose, angle: 2, x: 500});
     assert.equal(controls.target.x, 500);
     assert.ok(camera.position.y < eye.y);
@@ -148,4 +148,35 @@ test("V06 curve camera heading stays continuous through vertices in either direc
     }
   }
   assert.equal(followPose(null), null);
+});
+
+test("Follow adjusts distance, holds it on release, and can descend below the layout", () => {
+  const { camera, controls, nav } = setup();
+  const pose = { x: 550, z: 250, angle: 1 };
+  const distance = () => camera.position.distanceTo(controls.target);
+  assert.equal(nav.pressFollowKey("a"), false);
+  nav.select("follow");
+  nav.update(0, pose);
+  const standard = distance();
+  nav.pressFollowKey("a");
+  nav.update(0.5, pose);
+  const near = distance();
+  assert.ok(near < standard);
+  nav.releaseFollowKey("a");
+  nav.update(1, pose);
+  assert.equal(distance(), near);
+  nav.pressFollowKey("z");
+  nav.update(0.5, pose);
+  assert.ok(Math.abs(distance() - standard) < 1e-9);
+  nav.releaseFollowKey("z");
+  nav.pressFollowKey("ArrowDown");
+  nav.update(2, pose);
+  assert.ok(camera.position.y < 0);
+  nav.pressFollowKey("a");
+  nav.update(1, pose);
+  nav.select("station");
+  nav.select("follow");
+  nav.update(0, pose);
+  assert.ok(Math.abs(distance() - standard) < 1e-9);
+  assert.ok(camera.position.y > 0);
 });

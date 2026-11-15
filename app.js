@@ -755,7 +755,7 @@ function tick(now) {
   windowNight.emissiveIntensity = lerp(0.02, 2.4, night);
   windowNight.color.setRGB(lerp(0.15, 0.8, night), lerp(0.22, 0.56, night), lerp(0.24, 0.23, night));
   glow.emissiveIntensity = lerp(0.4, 2.8, night);
-  controls.update();
+  if (nav.preset !== "follow") controls.update();
   nav.update(realDt, nav.preset === "follow" ? followPose(trainById(selected)?.journey) : null);
   views.update();
   nextSwitchHUD?.refresh();

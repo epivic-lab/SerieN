@@ -40,6 +40,17 @@ async function verify(browser, scenario) {
     await p.waitForTimeout(250);
     assert.deepEqual((await cam()).position,after.position);
   }
+  const distance = camera => Math.hypot(...offset(camera));
+  const initialDistance = distance(await cam());
+  await hold('a', 500);
+  const near = distance(await cam());
+  assert.ok(near < initialDistance * 0.95);
+  await p.waitForTimeout(200);
+  assert.equal(distance(await cam()), near);
+  await hold('z', 500);
+  assert.ok(distance(await cam()) > near * 1.05);
+  await hold('ArrowDown', 2000);
+  assert.ok((await cam()).position[1] < 0);
   const select = p.locator('#cameraView');
   await select.focus();
   const selectorOwnsArrow = await select.evaluate(el => el.dispatchEvent(
