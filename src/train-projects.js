@@ -15,7 +15,7 @@ export const PROJECT_CATALOG=Object.freeze(['engine','tender'].map(kind=>{
   const id='native-br01-'+kind,asset=manifest[id];
   return Object.freeze({id,kind:'br01-'+kind,role:kind==='engine'?'locomotive':'trailer',
     source:'Tom Zimmermann · CC BY 4.0',name:kind==='engine'?'BR 01':'BR 01 · Tender',
-    length:asset.couplers.front.x-asset.couplers.back.x,width:kind==='engine'?21.74:19.66,
+    length:asset.couplers.front.x-asset.couplers.back.x,width:asset.stock.width,
     image:'./assets/br01/'+kind+'.png',asset});
 }));
 const models=new Map([...retiredModels.map(m=>({...m,retired:true})),...PROJECT_CATALOG].map(m=>[m.id,m]));

@@ -9,6 +9,7 @@ import {stepRailway} from './src/railway-step.js';
 import {vehiclesConflict,envelopeGap} from './src/railway-conflicts.js';
 import {createFleetCommands} from './src/fleet-commands.js';
 import {layoutFor,vehiclePositions,deriveSwitchAssistance,collectRailwayState} from './src/railway-state.js';
+import {poseDrawbar} from './src/br01-drawbar.js';
 import {buildBR01,loadBR01} from './src/br01.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
 import {createTurnoutPicking} from "./src/turnout-picking.js";
@@ -425,16 +426,18 @@ function renderVehicles() {
     const vehicles=[t.group,...t.carObjs];
     for(let i=0;i<vehicles.length;i++) {
       const group=vehicles[i],coordinate=t.journey.position-layout.offsets[i],pose=vehicleLocation(t,layout.offsets[i]);
-      if(i)group.visible=true;
+      if(i){group.visible=true;group.br01Gear.member.rotation.y=0;}
       group.position.set(pose.x,profile.railTop,pose.z);
       group.rotation.y=pose.angle;
       group.br01Pose(t.odometer,t.journey,coordinate,pose);
     }
+    poseDrawbar(t.group,t.carObjs[0]);
   }
   const selectedPoint=vehicleLocation(trains[selected]);
   selectRing.position.set(selectedPoint.x,isV06?profile.railTop+.5:5.2,selectedPoint.z);
   for (const d of detached) {
     d.group.visible = true;
+    d.group.br01Gear.member.rotation.y=0;
     d.group.position.set(d.point.x,profile.railTop,d.point.z);
     d.group.rotation.y = d.point.angle;
   }

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {BR01_GEAR,buildDrawgear} from './br01-drawbar.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 
 // 23.94 m over buffers at 1:160. Separate Journey vehicles keep the tender
@@ -72,9 +73,13 @@ function linkage(parent, side){
 export function buildBR01(source,kind,id){
   const root=new THREE.Group(),body=new THREE.Group();
   const origin=origins[kind],tender=kind==='tender';
-  const length=(tender?joint+19.735239:20.066135-joint)*scale;
-  root.userData.stock={id:'br01-'+kind,kind:'br01-'+kind,name:tender?'Tender 2′2′':'BR 01',length,width:(tender?5.23:5.784)*scale};
-  root.userData.couplers={front:{x:length/2,y:8,z:0},back:{x:-length/2,y:8,z:0}};
+  // Longitudinal support of the unchanged body or its rotating gear,
+  // whichever projects farther. The tender width includes bogie swing.
+  const front=tender?Math.max((-5.278371334075928-origin)*scale,BR01_GEAR.tenderPin+Math.hypot(BR01_GEAR.tongue,.25)):(20.06613540649414-origin)*scale;
+  const back=tender?(-19.735239028930664-origin)*scale:Math.min((-6.508633136749268-origin)*scale,BR01_GEAR.enginePin-Math.hypot(BR01_GEAR.sleeve,.39));
+  root.userData.stock={id:'br01-'+kind,kind:'br01-'+kind,name:tender?'Tender 2′2′':'BR 01',length:front-back,width:tender?20.4:5.784*scale};
+  root.userData.couplers={front:{x:front,y:8,z:0},back:{x:back,y:8,z:0}};
+  if(!tender)root.userData.stock.tenderPitch=BR01_GEAR.pitch;
   root.userData.trainId=id;
   root.add(body);body.scale.setScalar(scale);body.position.set(-origin*scale,2.407*scale,0);
   const trucks=new Map(),wheels=[];
@@ -123,5 +128,6 @@ export function buildBR01(source,kind,id){
       node.rotation.y=-Math.atan2(front.z-back.z,front.x-back.x)-pose.angle;
     }
   };
+  buildDrawgear(root,tender);
   return root;
 }

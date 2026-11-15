@@ -1,3 +1,39 @@
+# BR01-C — PASS tecnico, in attesa del Quality Gate Regia
+
+Branch `codex/br01-animated`, base BR01-B `9bbe397847e936c7d6d302caa98199445353fd97`. Giunto allungato di **2,200 mm** lungo la Journey. In rettilineo la distanza minima tridimensionale fra i triangoli della cabina e quelli del corpo del tender passa da **0,527 a 1,943 mm**. La misura riguarda le superfici originali `engine_haus` e `tender_kohletender`. La lunghezza fra i respingenti esterni è **151,825 mm**, rispetto ai 149,625 mm nominali del prototipo in scala 1:160 (+1,47%). Scala, cabina, tender, assi e mesh originali sono invariati.
+
+### Dimensionamento e realizzazione
+
+La ricerca usa i vertici del GLB, i costruttori e le pose del runtime. Alle frazioni di arco di BR01-B aggiunge due griglie (passo massimo rispettivamente 4 e 2 mm), entrambi gli orientamenti e le diverse storie ammesse dal router. Su V06 è stata trovata ancora un’intersezione dei corpi a +1,973 mm; la prima quota campionata libera verificata è +1,977 mm. Sono limiti sperimentali sulle pose del rapporto.
+
+Il primo montaggio a barra rigida e perno in guida longitudinale interferiva con l’asse portante e il carrello anteriore del tender. La soluzione installata ha perni verticali fissi ai due telai. Una camicia cava e una linguetta ruotano ciascuna sul proprio perno. I due elementi rigidi misurano ciascuno **4,790 mm** dall’asse del perno alla punta. La linguetta scorre dentro la camicia; un pattino maggiorato, due risalti all’imbocco e un fermo di fondo limitano fisicamente la corsa. Gli occhi hanno fori da 0,54 mm per perni da 0,40 mm. Le trasformazioni aggiornano esclusivamente gli angoli dei due elementi. I componenti restano sui rispettivi veicoli allo sgancio.
+
+Per la quota minima del gancio sono stati inclusi la sede dell’occhio, il pattino, lo spessore dei risalti e 0,05 mm di luce tecnica. Nel campione V06 la soglia risulta compresa fra **2,130815 e 2,130939 mm**. Il valore installato arrotonda verso l’alto al decimo di millimetro. Interasse dei perni in rettilineo 5,350 mm, campo meccanico 5,290–9,230 mm, osservato **5,348–9,111 mm**. L’inserimento reciproco osservato è **0,469–4,232 mm**. Il confronto dei triangoli include linguetta contro camicia/fermi, occhi contro perni, parti mobili contro montaggi e telai, ferramenta contro il treno di rotolamento e il corpo opposto. Nessuna intersezione rilevata; esclusi i normali accoppiamenti solidali fra parti fisse dello stesso assemblaggio.
+
+### Quote ferroviarie
+
+| Misura sul plastico | BR01-B | BR01-C |
+|---|---:|---:|
+| Passo fra origini lungo la Journey | 74,813 mm | 77,013 mm |
+| Rettangolo locomotiva, lunghezza × larghezza | 96,299 × 21,744 mm | 99,902 × 21,744 mm |
+| Rettangolo tender, lunghezza × larghezza | 53,326 × 19,661 mm | 56,973 × 20,400 mm |
+| Lunghezza complessiva fra estremi esterni | 149,625 mm | 151,825 mm |
+
+Il passo dedicato si applica esclusivamente a motrice BR 01 seguita dal suo tipo di tender. La sagoma della motrice raggiunge il retro della cabina. Quella del tender include la portata della punta della linguetta e lo spostamento laterale dei carrelli. Le due zone protette si sovrappongono al giunto per circa 5,05 mm lungo la Journey. La lunghezza complessiva usa l’estremo di testa e quello di coda. Il test confronta range occupati, passo del motore e lunghezza esposta nella composizione progettata. Le regole generali di instradamento, frenatura, occupazione e anticollisione e i loro margini restano invariati.
+
+### Gate e riproduzione
+
+- Chrome locale: **522/522 pose B** ripetute in entrambi i sensi campionati, **1.376** configurazioni geometriche valide complessive, incluse curve R216/R249/R282/R315, raccordi e scambi. Per 46 richieste supplementari su tre rami il router non fornisce l’intero tratto necessario a testa e coda nella configurazione di prova; nessuna appartiene alle 522 obbligatorie. Sono registrate in `unavailable`. Zero vertici oltre 0,05 mm, scarto massimo sul rettangolo proprietario **3,77 × 10⁻¹³ mm**. Al punto originale V06-P006 +89,25 mm riprodotta la stessa posa B e scomparsa la precedente sporgenza di 1,678 mm.
+- Calcolo indipendente sulle geometrie runtime: **19.933** pose valide V06 e **20.768** Legacy, due orientamenti e itinerari legali. Zero interferenze rilevate. Errore massimo di coincidenza fra centro dell’occhio e perno 0 mm nei campioni; disallineamento secondo la misura assiale inferiore a 3 × 10⁻¹³ mm. I risultati riguardano la matrice campionata. [V06](evidence/BR01-C/sizing.json) · [Legacy](evidence/BR01-C/sizing-legacy.json).
+- Video del canvas Chrome con clock, odometro e comandi di plancia reali. Avanzamento, STOP, sosta e retromarcia. Durante STOP e il comando di inversione da fermo sono identiche le trasformazioni registrate del biellismo e del gancio. Scarto massimo rispetto alla cinematica delle bielle e dei pistoni dedotta dall’odometro inferiore a 10⁻¹³ mm. [Video](evidence/BR01-C/joint.webm) · [Telemetria](evidence/BR01-C/live.json).
+- Prova anticollisione nello stesso browser: una seconda BR 01 ferma viene posizionata come fixture 225 mm più avanti sullo stesso itinerario; la prima avanza con comando di plancia fino a `GUARDED_STOP / train` dopo 65,663 mm accettati. Velocità zero, margine fra rettangoli **5,340 mm**, nessuna sovrapposizione e odometro stabile al controllo successivo. [Stati, occupazione e margini](evidence/BR01-C/traffic.json).
+- PASS per 45/45 test ferroviari mirati, 573/573 suite Node, 9/9 audit JMRI, build tramite lo script di package.json e controllo whitespace. [Test ferroviari](evidence/BR01-C/railway.txt) · [Node](evidence/BR01-C/node.txt) · [JMRI](evidence/BR01-C/jmri.txt) · [Build](evidence/BR01-C/build.txt).
+- [Confronto prima/dopo](evidence/BR01-C/comparison.json) · [Tutte le pose browser](evidence/BR01-C/samples.json) · [Screenshot R216](evidence/BR01-C/joint.png) · [Dettaglio del gancio](evidence/BR01-C/drawbar-detail.png). Il dettaglio isola la ferramenta per mostrarne l’innesto. Le misure e il video usano i modelli completi.
+
+Riproduzione con `node scripts/size-br01-drawbar.mjs` (e `--legacy`), server loopback con build locale, `node scripts/verify-br01-joint.cjs --drawbar` con Playwright, `CHROME_BIN` e `SERIEN_URL`, quindi `python3 scripts/summarize-br01-drawbar.py`. Gli strumenti e le acquisizioni sono locali; nessuna modifica a V06, layout, backend, configurazione di produzione, main o deploy. Evidenze A e B conservate. **STOP per Quality Gate della Regia.**
+
+---
+
 # BR01-B — BLOCKED, gate geometrico FAIL
 
 Checkpoint iniziale verificato: `a15aed0d511f53d1d84a13dbed10123a5a18073f` su `codex/br01-animated`. Il mandato prevede lo stop prima di modifiche sostanziali alle quote di sicurezza. La B consegna il controllo separato per veicolo, la prova di intersezione e la proposta per la Regia. Nessuna correzione dimensionale o di posa è stata applicata al runtime.

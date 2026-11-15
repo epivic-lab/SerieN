@@ -1,3 +1,11 @@
+# BR01-C — PASS tecnico, STOP per Quality Gate Regia
+
+BR 01 + tender con gancio telescopico a perni fissi e passo allungato di 2,200 mm. Lunghezza finale sul plastico 151,825 mm. Chrome: 522/522 pose BR01-B ripetute su 1.376 pose valide complessive; zero intersezioni rilevate e zero vertici oltre 0,05 mm. Verificati marcia, STOP, retromarcia e arresto anticollisione con 5,340 mm di margine. 573/573 Node, 9/9 JMRI e build PASS. [Rapporto, quote, JSON, video e screenshot](docs/_active/br01/STATUS.md).
+
+Prossima azione: Quality Gate indipendente della Regia sul checkpoint BR01-C.
+
+---
+
 # BR01-B — BLOCKED, STOP per Quality Gate Regia
 
 Il controllo per veicolo misura 4,625 mm di deficit longitudinale complessivo tra corpi rigidi e inviluppi. Riconfermati 1,678 mm oltre l’unione su V06-P006 a +89,25 mm e rilevati 3,604 mm su R216. Intersezioni cabina–tender verificate sui triangoli. 522 pose diagnostiche e registrazione reale di marcia, STOP e inversione. Nessuna modifica a modello, quote o protezioni. [Misure, prove e proposta](docs/_active/br01/STATUS.md).
