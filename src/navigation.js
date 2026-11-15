@@ -36,6 +36,18 @@ const standardElevation = Math.atan2(272, Math.hypot(260, 210));
 const followRadius = Math.hypot(260, 210, 272);
 const followKeys = new Set(["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]);
 
+// A chord spanning several track samples gives the camera a continuous heading
+// through a bend. Both ends use the selected train's existing route history.
+function followPose(journey) {
+  if (!journey) return null;
+  const center = journey.locate();
+  const rear = journey.locate(journey.position - 16);
+  const front = journey.locate(journey.position + 16);
+  const dx = front.x - rear.x, dz = front.z - rear.z;
+  if (Math.hypot(dx, dz) > 1e-6) center.angle = -Math.atan2(dz, dx);
+  return center;
+}
+
 function followingView(pose, azimuthOffset = 0, elevationOffset = 0) {
   if (!pose || !Number.isFinite(pose.x) || !Number.isFinite(pose.z)) return null;
   const bearing = finite(pose.angle, 0) + Math.atan2(-260, 210) + azimuthOffset;
@@ -150,6 +162,7 @@ function navigation(camera, controls, options = {}) {
 }
 export {
   CAMERA_PRESETS,
+  followPose,
   followingView,
   navigation,
   safeView

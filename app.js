@@ -28,7 +28,7 @@ import { LEGACY_BUILDINGS } from "./src/scenic-plan.js";
 import { mountViewControls } from "./src/view-controls.js";
 import { couplingDistance } from "./src/consist.js";
 import { railGeometry } from "./src/rail-profile.js";
-import { navigation, CAMERA_PRESETS } from "./src/navigation.js";
+import { navigation, followPose, CAMERA_PRESETS } from "./src/navigation.js";
 import { QualityController } from "./src/quality.js";
 
 import { locomotiveDetails, steam } from "./src/rolling-stock-art.js";
@@ -756,7 +756,7 @@ function tick(now) {
   windowNight.color.setRGB(lerp(0.15, 0.8, night), lerp(0.22, 0.56, night), lerp(0.24, 0.23, night));
   glow.emissiveIntensity = lerp(0.4, 2.8, night);
   controls.update();
-  nav.update(realDt, trainById(selected)?.journey.locate());
+  nav.update(realDt, nav.preset === "follow" ? followPose(trainById(selected)?.journey) : null);
   views.update();
   nextSwitchHUD?.refresh();
   sidebarUI?.update();

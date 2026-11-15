@@ -1,7 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { EventDispatcher, OrthographicCamera, PerspectiveCamera, Vector3 } from "three";
-import { navigation, safeView, followingView, CAMERA_PRESETS } from "../src/navigation.js";
+import { navigation, followPose, safeView, followingView, CAMERA_PRESETS } from "../src/navigation.js";
+import { Journey } from "../src/simulation.js";
+import { createNetwork } from "../src/network.js";
+import v06 from "../src/datasets/v06-r1a.json" with { type: "json" };
+
 class Controls extends EventDispatcher {
   constructor() {
     super();
@@ -122,4 +126,26 @@ test("held follow arrows integrate by time, keep the train centered and reset on
     return eye;
   };
   assert.ok(run(20).distanceTo(run(120)) < 1e-8);
+});
+
+test("V06 curve camera heading stays continuous through vertices in either direction", () => {
+  const journey = new Journey(createNetwork(v06), "V06-P006", 20);
+  const end = Math.floor(journey.segments[0].end) - 20;
+  for (const direction of [1, -1]) {
+    let previous;
+    for (let i = 20; i <= end; i++) {
+      journey.position = direction === 1 ? i : end - i + 20;
+      const pose = followPose(journey);
+      const center = journey.locate();
+      assert.equal(pose.x, center.x);
+      assert.equal(pose.z, center.z);
+      if (previous !== undefined) {
+        const delta = pose.angle - previous;
+        const degrees = Math.abs(Math.atan2(Math.sin(delta), Math.cos(delta))) * 180 / Math.PI;
+        assert.ok(degrees < 0.3, `camera turned ${degrees} degrees in 1 mm`);
+      }
+      previous = pose.angle;
+    }
+  }
+  assert.equal(followPose(null), null);
 });
