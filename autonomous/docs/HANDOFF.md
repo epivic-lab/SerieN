@@ -2,9 +2,9 @@
 **Ultimo checkpoint:** 2026-11-16 — V0.4, fase esclusivamente documentale.
 
 ## Prossima sessione
-1. Leggere \`autonomous/README.md\`, \`docs/ARCHITECTURE_V0.4.md\`, \`docs/REQUIREMENTS.md\`, \`docs/DECISIONS.md\`, \`docs/BACKLOG.md\` sul branch \`spec/serie-n-autonomous\`.
+1. Leggere `autonomous/README.md`, `docs/ARCHITECTURE_V0.4.md`, `docs/REQUIREMENTS.md`, `docs/DECISIONS.md`, `docs/BACKLOG.md` sul branch `spec/serie-n-autonomous`.
 2. Non considerare verificata la topologia o le API del simulatore: effettuare P1 audit read-only prima di progettare integrazioni concrete.
-3. Non modificare \`main\` di SerieN, app Swift e Z21; non avviare implementazione autonomamente.
+3. Non modificare `main` di SerieN, app Swift e Z21; non avviare implementazione autonomamente.
 4. Trasferire contenuti a repository GitHub indipendente quando la creazione sarà disponibile, mantenendo documenti e issue collegati.
 5. Aggiornare Google Drive dopo ogni decisione rilevante; indicare sempre versione e commit.
 
@@ -24,5 +24,5 @@
 - Geometria e confini esatti delle sezioni nascoste / scambi su mappa V3.
 - Conferma fisica di sgombero coda e posizione scambio; alternative sensori.
 - Frequenze controllo / latenza / frenatura / clock / distanze minime dopo audit.
-- Limiti del browser e grado minimo di autonomia supervisonata.
+- Limiti del browser e grado minimo di autonomia supervisionata.
 - Nomi e versionamento dello schema eventi.
