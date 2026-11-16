@@ -5,11 +5,11 @@
 Sviluppare un sistema di guida autonoma per SerieN tramite chat in linguaggio naturale, con successive integrazioni al plastico reale. Primo target: simulatore web; nessuna modifica al simulatore, alla app Swift o alla Z21 in questa fase.
 
 ### Casi d'uso essenziali
-- \`MAINTAIN_SPACING(loop=A, trains=3)\`: convergenza morbida a tre locomotive equidistanti lungo la lunghezza di percorso, con margini frenatura/ingombro.
-- \`GENERATE_DEMO(duration=15m)\`: movimento coordinato, precedenze, soste, manovre riproducibili e spiegabili.
-- \`YIELD_PRIORITY(train=merci, to=passeggeri)\`: applicare una precedenza solo se c'è un itinerario fisicamente sicuro.
-- \`STOP_ALL\`, \`PAUSE\`, \`RESUME\`, \`WHY_STOPPED(train)\`.
-- \`CLOSE_RESOURCE\`, \`OPEN_RESOURCE\` per indisponibilità simulate.
+- `MAINTAIN_SPACING(loop=A, trains=3)`: convergenza morbida a tre locomotive equidistanti lungo la lunghezza di percorso, con margini frenatura/ingombro.
+- `GENERATE_DEMO(duration=15m)`: movimento coordinato, precedenze, soste, manovre riproducibili e spiegabili.
+- `YIELD_PRIORITY(train=merci, to=passeggeri)`: applicare una precedenza solo se c'è un itinerario fisicamente sicuro.
+- `STOP_ALL`, `PAUSE`, `RESUME`, `WHY_STOPPED(train)`.
+- `CLOSE_RESOURCE`, `OPEN_RESOURCE` per indisponibilità simulate.
 
 ## 2. Vista d'insieme
 **Livello 1 — Chat/Intent Parser:** modello Ollama locale opzionale e sostituibile, o parser deterministico per comandi critici. Produce una grammatica limitata di intenti JSON validati; NON produce comandi arbitrari per Z21/scambi. Interpreta richieste e fornisce spiegazioni in linguaggio naturale; no ciclo di inferenza continuo.
@@ -22,7 +22,7 @@ Sviluppare un sistema di guida autonoma per SerieN tramite chat in linguaggio na
 
 ## 3. Topologia e prenotazioni
 Rappresentare la rete come grafo diretto e risorse geometriche occupabili:
-- segmenti di binario, sezioni oscurate \`tunnel_A\`, \`tunnel_B\`, \`tunnel_C\`;
+- segmenti di binario, sezioni oscurate `tunnel_A`, `tunnel_B`, `tunnel_C`;
 - scambi, cuori, zone di conflitto, zone d'ingombro e sovrapposizione tra itinerari;
 - zone di approccio/overlap frenatura, bordi di liberazione coda;
 - lunghezze reali di loco + vagoni, direzione e profilo frenatura.
@@ -32,11 +32,11 @@ Le tre sezioni di galleria sono **indipendenti**: un convoglio in A non blocca B
 L'occupazione di una risorsa nasce da conferma osservativa o da prudente stima di possibile ingombro. La riserva preventiva e l'occupazione effettiva sono due stati distinti. Ogni itinerario richiede risorse libere/riservabili con validazione atomica e revoca sicura.
 
 ## 4. Percezione e stima in galleria
-Il simulatore conosce la posizione vera, ma il controller non deve riceverla per i tratti non visibili. Uno strato \`Observation Adapter\` maschera i tratti nascosti prima che l'osservazione arrivi al dispatcher.
+Il simulatore conosce la posizione vera, ma il controller non deve riceverla per i tratti non visibili. Uno strato `Observation Adapter` maschera i tratti nascosti prima che l'osservazione arrivi al dispatcher.
 
-Stati: \`OBSERVED\` (posizione visibile con timestamp e incertezza), \`ESTIMATED\` (propagazione velocità/accelerazione dopo ingresso), \`LOST\` (scaduta finestra o incertezza troppo alta).
+Stati: `OBSERVED` (posizione visibile con timestamp e incertezza), `ESTIMATED` (propagazione velocità/accelerazione dopo ingresso), `LOST` (scaduta finestra o incertezza troppo alta).
 
-All'ingresso: registrare ultimi campioni, \`v_est\`, tempo monotono, direzione, itinerario, testa/coda, identificativo convoglio e profilo di movimento. In galleria: propagare stima e intervallo d'incertezza crescente; usare comandi di velocità e modello di inerzia, non un accesso alla ground truth. Al riavvistamento: correggere immediatamente posizione e velocità, registrare errore modello.
+All'ingresso: registrare ultimi campioni, `v_est`, tempo monotono, direzione, itinerario, testa/coda, identificativo convoglio e profilo di movimento. In galleria: propagare stima e intervallo d'incertezza crescente; usare comandi di velocità e modello di inerzia, non un accesso alla ground truth. Al riavvistamento: correggere immediatamente posizione e velocità, registrare errore modello.
 
 **Regola dura:** la scadenza del tempo di percorrenza atteso NON libera la sezione. Lo sgombero completo deve essere confermato tramite osservazione della coda, osservazione della testa oltre distanza pari alla lunghezza del treno con margine appropriato, oppure sensore d'occupazione/ulteriore evidenza verificata. Se non confermabile, risorsa resta occupata, e il sistema degrada fino a stop se il conflitto lo impone. Scostamenti e perdite sensoriali producono diagnostica.
 
@@ -45,13 +45,13 @@ Durante test, la ground truth interna è disponibile solo al modulo di test e al
 ## 5. Interlocking scambi
 Per ogni scambio:
 1. prenotare risorsa di conflitto + approcci e itinerario;
-2. stimare \`latest_safe_throw_time\` da velocità, frenatura, attuazione, stabilizzazione, comunicazione e margini;
+2. stimare `latest_safe_throw_time` da velocità, frenatura, attuazione, stabilizzazione, comunicazione e margini;
 3. azionare solo se **nessun convoglio impegna né può entrare nella zona di protezione durante il movimento**;
 4. controllare stato comandato e, nel mondo reale, distinguere conferma reale di posizione da mera ricezione comando;
 5. bloccare scambio per tutta la percorrenza, fino all'effettivo sgombero della coda + margine;
 6. liberare e preparare nuova rotta incompatibile solo quando sicuro.
 
-Se conferma fisica di posizione o sgombero non è disponibile, usare un profilo conservativo e marcare la limitazione, non dichiarare arbitrariamente \`CONFIRMED\`.
+Se conferma fisica di posizione o sgombero non è disponibile, usare un profilo conservativo e marcare la limitazione, non dichiarare arbitrariamente `CONFIRMED`.
 
 Prevenire deadlock di risorse con pianificazione di itinerario, ordinamento canonico, timeout diagnostici e stop del movimento interessato quando non risolvibile.
 
@@ -73,12 +73,12 @@ Non esiste una singola priorità universale europea valido ovunque. Definire **p
 La prima versione NON pretende simulare segnalamento nazionale, ERTMS/ETCS o normativa di esercizio in modo certificato.
 
 ## 8. Safety supervisor e GLOBAL STOP
-Indipendente da Ollama; applica veto a ogni comando. Se pericolo reale o stato ambiguo non gestibile: \`GLOBAL_STOP(reason_code, affected_resources, evidence, timestamp)\`; invia arresto a tutti i treni tramite via deterministica, non chat; conserva riserve, blocca restart automatico, espone motivo in chat e log; serve verifica di nuovo stato e consenso esplicito al riavvio.
+Indipendente da Ollama; applica veto a ogni comando. Se pericolo reale o stato ambiguo non gestibile: `GLOBAL_STOP(reason_code, affected_resources, evidence, timestamp)`; invia arresto a tutti i treni tramite via deterministica, non chat; conserva riserve, blocca restart automatico, espone motivo in chat e log; serve verifica di nuovo stato e consenso esplicito al riavvio.
 
 STOP di sicurezza nel mondo reale non significa frenata istantanea: le distanze di sicurezza devono già includere ritardi, inerzia, perdita comunicazione. Per perdita controllo del browser nel simulatore, fail-safe esplicito.
 
 ## 9. Contratto eventi e comandi (bozza)
-\`\`\`json
+```json
 {
   "type": "train_observation",
   "time_monotonic_ms": 12345,
@@ -93,8 +93,8 @@ STOP di sicurezza nel mondo reale non significa frenata istantanea: le distanze 
   "position_sigma_mm": 6,
   "source": "sim_observer"
 }
-\`\`\`
-Eventi minimi: \`train_observation\`, \`resource_occupancy\`, \`turnout_feedback\`, \`command_ack\`, \`sensor_health\`, \`global_stop\`. Comandi minimi: \`set_speed_target\`, \`request_route\`, \`set_turnout\`, \`stop_all\`. Il controller non deve fidarsi ciecamente degli ack: un ACK di comando non dimostra che lo scambio fisico si sia mosso.
+```
+Eventi minimi: `train_observation`, `resource_occupancy`, `turnout_feedback`, `command_ack`, `sensor_health`, `global_stop`. Comandi minimi: `set_speed_target`, `request_route`, `set_turnout`, `stop_all`. Il controller non deve fidarsi ciecamente degli ack: un ACK di comando non dimostra che lo scambio fisico si sia mosso.
 
 Campi, unità, clock, identificatori e topologia saranno verificati con l'attuale codice SerieN prima di stabilire lo schema definitivo.
 
