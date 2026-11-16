@@ -55,3 +55,9 @@ Supabase: soltanto configurazioni, log e scenari; non ciclo di sicurezza.
 **Google Drive:** cartella “Serie N Autonomous — Architettura e Regia” sotto “Serie N - Laboratorio”; copia consultabile della specifica e registro decisioni/stato. Sincronizzazione **manuale**, non automatica.
 
 **Stato:** definizione preliminare, non verificata sul codice reale e non validata su hardware. Nessuna autonomia abilitata.
+
+## Punti di accesso verificati
+- [Issue di regia #26](https://github.com/epivic-lab/SerieN/issues/26) — riferimento di progetto provvisorio.
+- [Cartella Google Drive](https://drive.google.com/drive/folders/1w4xvqay5Hm-xgh0-uhEmbE1vAJXOQesR).
+- [Specifica consultabile su Drive](https://docs.google.com/document/d/1BRtObdOEaN00NYiDKsz883EgSr60CDmNd094F5ga5Nw/edit).
+- [Registro decisioni e handoff su Drive](https://docs.google.com/document/d/1PtOSmqBY4KWVIv6Uc6tvUD-w2v0WhxbGAUsWdwjlvM0/edit).
