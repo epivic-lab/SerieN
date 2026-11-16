@@ -11,7 +11,7 @@
 **Scelta:** ground truth del simulatore in galleria vietata al dispatcher; posizione stimata dalla velocità osservata all'ingresso; correzione a riemersione; test con accesso a ground truth in modulo separato.
 
 ## ADR-004 — Sezioni galleria indipendenti
-**Scelta:** \`tunnel_A\`, \`tunnel_B\`, \`tunnel_C\` sono tre risorse distinte. Si blocca solo la sezione occupata e le effettive zone di conflitto condivise.
+**Scelta:** `tunnel_A`, `tunnel_B`, `tunnel_C` sono tre risorse distinte. Si blocca solo la sezione occupata e le effettive zone di conflitto condivise.
 
 ## ADR-005 — Sgombro confermato, non presunto
 **Scelta:** non liberare risorsa nascosta per sola previsione di tempo; occorre prova osservativa della coda o sensore equivalente. Senza prova, stato conservativo.
@@ -32,4 +32,4 @@
 **Scelta:** SerieN web (Codex), app Swift Z21 (Claude), controller Autonomous distinti. All'inizio soltanto simulazione; nessuna modifica non autorizzata a hardware o motori.
 
 ## ADR-011 — Fonte di verità
-**Scelta:** Markdown GitHub versionati canonici; Google Drive copia editoriale/indice/stato con sincronizzazione manuale. Collocazione GitHub temporanea: branch separato \`spec/serie-n-autonomous\` del repo SerieN, non nuovo repo (non disponibile come azione nella connessione corrente). Non fare merge fino ad audit/approvazione.
+**Scelta:** Markdown GitHub versionati canonici; Google Drive copia editoriale/indice/stato con sincronizzazione manuale. Collocazione GitHub temporanea: branch separato `spec/serie-n-autonomous` del repo SerieN, non nuovo repo (non disponibile come azione nella connessione corrente). Non fare merge fino ad audit/approvazione.
