@@ -4,7 +4,7 @@ Nessuna di queste attività è stata avviata; è una roadmap, non una dichiarazi
 ## P0 — Fondazioni documentali (attuale)
 - [x] Definire charter, requisiti, galleria a tre anelli, sicurezza, scambi, fluidità.
 - [x] Creare spazio documentale persistente.
-- [ ] Creare **repository GitHub separato** \`SerieN-Autonomous\` (non supportato dal connector corrente); migrare poi i Markdown.
+- [ ] Creare **repository GitHub separato** `SerieN-Autonomous` (non supportato dal connector corrente); migrare poi i Markdown.
 - [ ] Confermare limiti operativi e metodologia di test.
 
 ## P1 — Audit in lettura, nessun codice
