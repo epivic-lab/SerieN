@@ -12,7 +12,7 @@ Esempi:
 - «Ferma tutti i treni e spiegami perché».
 
 ## Architettura minima
-\`\`\`text
+```text
 Chat -> interprete naturale (Ollama opzionale)
      -> intenti strutturati e validati
      -> dispatcher predittivo deterministico
@@ -25,7 +25,7 @@ Chat -> interprete naturale (Ollama opzionale)
            |-> simulatore web SerieN (inizio)
            |-> futuro controller locale Swift/Z21 + OpenCV (poi)
 Supabase: soltanto configurazioni, log e scenari; non ciclo di sicurezza.
-\`\`\`
+```
 
 ## Vincoli cardinali
 1. In galleria **A, B, C sono tratte distinte**. Si riserva soltanto la tratta dell'anello interessato e ogni effettiva risorsa topologica condivisa.
@@ -50,7 +50,7 @@ Supabase: soltanto configurazioni, log e scenari; non ciclo di sicurezza.
 - **Autonomous:** specifica autonoma; nessun cambiamento a motore, app o sistemi di controllo finché non approvati.
 
 ## Repositories e persistenza
-**Provvisorio:** documentazione isolata nel branch \`spec/serie-n-autonomous\` del repository \`epivic-lab/SerieN\`; un nuovo repository GitHub autonomo non è ancora stato creato (l'integrazione attuale non espone l'operazione). Al momento non fare merge in \`main\`.  
+**Provvisorio:** documentazione isolata nel branch `spec/serie-n-autonomous` del repository `epivic-lab/SerieN`; un nuovo repository GitHub autonomo non è ancora stato creato (l'integrazione attuale non espone l'operazione). Al momento non fare merge in `main`.  
 **Fonte di verità delle specifiche tecniche:** questi Markdown versionati.  
 **Google Drive:** cartella “Serie N Autonomous — Architettura e Regia” sotto “Serie N - Laboratorio”; copia consultabile della specifica e registro decisioni/stato. Sincronizzazione **manuale**, non automatica.
 
