@@ -1,0 +1,22 @@
+{
+  "cold": {
+    "resources": 26,
+    "bodyBytes": 218593730,
+    "transferSize": 182553627,
+    "cdpEncodedDataLength": 182652861,
+    "cacheHits": 0,
+    "all200": true,
+    "allHashesMatch": true
+  },
+  "warm": {
+    "resources": 26,
+    "bodyBytes": 218593730,
+    "transferSize": 167459113,
+    "cdpEncodedDataLength": 167551237,
+    "cacheHits": 18,
+    "all200": true,
+    "allHashesMatch": true
+  },
+  "reductionPercent": 8.268536894093048,
+  "runtimeDiff": []
+}

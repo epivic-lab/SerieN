@@ -1,3 +1,30 @@
+# Cache browser — implementata, rilascio autorizzato (17 novembre 2026)
+
+L’utente autorizza completamento e deploy di questa attività. Branch `codex/browser-cache`.
+Cache statica per SHA-256: 62 risorse, aggiornamenti selettivi senza interrompere simulazioni.
+581/581 Node, 9/9 JMRI, build e Chrome PASS: seconda lettura 0 byte / 0 richieste locali,
+rendering V06 e aggiornamento con due schede verificati. Runtime ferroviario, asset, UI e auth invariati.
+Rigenerazione canonico verificata nuovamente dalla CI Linux prima del merge; esiti CI e deploy non anticipati.
+[Rapporto e prove](docs/_active/browser-cache/STATUS.md).
+
+**Prossima azione: completare PR, gate Linux, merge e Pages già autorizzati; verificare il sito pubblico e fermarsi.**
+
+---
+
+# CACHE-1 — analisi cache, gate BLOCKED (17 novembre 2026)
+
+Base main `6a0b617db503c267573f94c8367db63218284179`, branch isolato `codex/browser-cache`.
+Misurati 26 file pubblici: 182,55 MB a cache vuota e 167,46 MB al secondo passaggio;
+18 risorse riutilizzate, 8 GLB riscaricati. Hash pubblici tutti corrispondenti.
+576/576 Node, 9/9 JMRI e build PASS. Rigenerazione canonico su macOS/Python 3.13 e 3.12 FAIL
+per differenze nei JSON; file originali ripristinati, runtime e geometrie invariati.
+Nessun service worker implementato, nessun merge/deploy. Checkpoint diagnostico, non PASS di fase.
+[Rapporto, prove e proposta](docs/_active/browser-cache/STATUS.md).
+
+**Prossima azione unica: approvazione CACHE-1R per chiudere il gate di riproducibilità nella piattaforma di riferimento. STOP; CACHE-2 non autorizzata.**
+
+---
+
 # BR 01 — rotazione della locomotiva in curva
 
 Corretto lo scatto della cassa in Follow dalla base pubblicata `ed43c9b9`. Verificati in Chrome gli angoli della motrice nei due sensi sulla V06-P006 e 1.376 pose del gancio. [Misure e video](docs/_active/follow-train/STATUS.md).

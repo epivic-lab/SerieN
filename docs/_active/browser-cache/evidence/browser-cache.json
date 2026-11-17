@@ -1,0 +1,1322 @@
+{
+  "date": "2026-11-17T17:39:29.219Z",
+  "browser": "157.0.8103.51",
+  "base": "https://epivic-lab.github.io/SerieN/",
+  "method": "Fresh unauthenticated context; clear HTTP cache; sequential default fetch of explicit public resources twice. No app execution, no request interception. Warm run same tab. Includes hash verification; durations include hashing.",
+  "phases": [
+    {
+      "phase": "cold",
+      "resources": [
+        {
+          "path": "index.html",
+          "status": 200,
+          "bytes": 9778,
+          "sha256": "9f17539bc1d1396aedfeaa2b021625dff8a933b4442f57142360df7e7e49ece9",
+          "matchesLocal": true,
+          "durationMs": 149.70000000298023,
+          "transferSize": 4416,
+          "encodedBodySize": 4116,
+          "decodedBodySize": 9778
+        },
+        {
+          "path": "style.css?v=0.12.0",
+          "status": 200,
+          "bytes": 20465,
+          "sha256": "e5c2acec8cdcaac9034399aca85273d293e1db43c94d5d61434a28cc6a681d19",
+          "matchesLocal": true,
+          "durationMs": 15.399999998509884,
+          "transferSize": 6051,
+          "encodedBodySize": 5751,
+          "decodedBodySize": 20465
+        },
+        {
+          "path": "auth-gate.js?v=2",
+          "status": 200,
+          "bytes": 2864,
+          "sha256": "ecfec052d63a976cde5d0a1760e314a0ee7f1fa6c110980b96a3ae8d16df22dc",
+          "matchesLocal": true,
+          "durationMs": 12.600000001490116,
+          "transferSize": 1553,
+          "encodedBodySize": 1253,
+          "decodedBodySize": 2864
+        },
+        {
+          "path": "auth-gate-core.js",
+          "status": 200,
+          "bytes": 680,
+          "sha256": "6a66c0a6cea18001c8998c34013654758d80bcba937d59a7809848c805de3106",
+          "matchesLocal": true,
+          "durationMs": 13.099999994039536,
+          "transferSize": 644,
+          "encodedBodySize": 344,
+          "decodedBodySize": 680
+        },
+        {
+          "path": "dist/game.js?v=v06-track-20261115",
+          "status": 200,
+          "bytes": 1115306,
+          "sha256": "cbaf2fbfb8a3b89f3c4cd490384af8b21c5998a9f301e74ff0fd6e70d9d3d818",
+          "matchesLocal": true,
+          "durationMs": 320.1000000014901,
+          "transferSize": 335565,
+          "encodedBodySize": 335265,
+          "decodedBodySize": 1115306
+        },
+        {
+          "path": "ui/css/tokens-u2.css",
+          "status": 200,
+          "bytes": 3978,
+          "sha256": "aebbee44140775f75502d27bcdd9e39ebba01321f910943cf60343927d0530db",
+          "matchesLocal": true,
+          "durationMs": 13.600000001490116,
+          "transferSize": 1772,
+          "encodedBodySize": 1472,
+          "decodedBodySize": 3978
+        },
+        {
+          "path": "ui/css/serien-ui-u2.css",
+          "status": 200,
+          "bytes": 57507,
+          "sha256": "3e232010eca1e5574c75a7ae89737726ceb30586f6f54cc87562ef1cde0a6990",
+          "matchesLocal": true,
+          "durationMs": 15.400000005960464,
+          "transferSize": 13895,
+          "encodedBodySize": 13595,
+          "decodedBodySize": 57507
+        },
+        {
+          "path": "ui/css/tokens-tm-u2.css",
+          "status": 200,
+          "bytes": 1821,
+          "sha256": "61500bb11dbc0fd583f5baaa1f3a45cfa9bb2e6760e0f1dcfb3b79fbdd3a1e4f",
+          "matchesLocal": true,
+          "durationMs": 12.400000005960464,
+          "transferSize": 1225,
+          "encodedBodySize": 925,
+          "decodedBodySize": 1821
+        },
+        {
+          "path": "ui/css/serien-ui-train-management-u2.css",
+          "status": 200,
+          "bytes": 35624,
+          "sha256": "f0ac063fc9d1a3d5e5a99120d191c8bed2836133e73d45a708e2c6ce3f7deaba",
+          "matchesLocal": true,
+          "durationMs": 14.799999997019768,
+          "transferSize": 9541,
+          "encodedBodySize": 9241,
+          "decodedBodySize": 35624
+        },
+        {
+          "path": "ui/css/serien-ui-integration.css",
+          "status": 200,
+          "bytes": 39562,
+          "sha256": "354a0edc42306295030b4bef2c8298ce528d13a07032746244ec4fc281100283",
+          "matchesLocal": true,
+          "durationMs": 17.200000002980232,
+          "transferSize": 9523,
+          "encodedBodySize": 9223,
+          "decodedBodySize": 39562
+        },
+        {
+          "path": "docs/jmri-layout/minimap-canonical.svg",
+          "status": 200,
+          "bytes": 107091,
+          "sha256": "544866a41bc6fb75e34151dae814e0e384016fdd029bf10be02d3d918bae7365",
+          "matchesLocal": true,
+          "durationMs": 19.5,
+          "transferSize": 38815,
+          "encodedBodySize": 38515,
+          "decodedBodySize": 107091
+        },
+        {
+          "path": "assets/scenario-v06/dataset.json",
+          "status": 200,
+          "bytes": 437822,
+          "sha256": "4fd022e1173ef5517a7c826f4163dd10ab1ff776e1ecfaf144f53d40473ccef7",
+          "matchesLocal": true,
+          "durationMs": 175,
+          "transferSize": 86790,
+          "encodedBodySize": 86490,
+          "decodedBodySize": 437822
+        },
+        {
+          "path": "assets/scenario-v06/asset-lock.json",
+          "status": 200,
+          "bytes": 3634,
+          "sha256": "9ede69547d5da2e35eef63d4051d610d13d0647feb9413750f5510172a127499",
+          "matchesLocal": true,
+          "durationMs": 197.79999999701977,
+          "transferSize": 1978,
+          "encodedBodySize": 1678,
+          "decodedBodySize": 3634
+        },
+        {
+          "path": "assets/scenario-v06/optimized-lock.json",
+          "status": 200,
+          "bytes": 12746,
+          "sha256": "c6054e760c79833cb06e20b4f353d82123fb78177f25fbb2ad985cb3ab24b8fd",
+          "matchesLocal": true,
+          "durationMs": 139.39999999850988,
+          "transferSize": 2893,
+          "encodedBodySize": 2593,
+          "decodedBodySize": 12746
+        },
+        {
+          "path": "assets/scenario-v06/optimized/gardens_allotments.glb",
+          "status": 200,
+          "bytes": 5390084,
+          "sha256": "24871e96d5d2efcc023a634e83900674075167eacbc28875e1bff3d183446046",
+          "matchesLocal": true,
+          "durationMs": 1191.6999999955297,
+          "transferSize": 5136297,
+          "encodedBodySize": 5135997,
+          "decodedBodySize": 5390084
+        },
+        {
+          "path": "assets/scenario-v06/optimized/mountain.glb",
+          "status": 200,
+          "bytes": 7749372,
+          "sha256": "4b6836f85647b7c79a206f1688cbb9f2279788268b1fe301e693b2688cdbaf51",
+          "matchesLocal": true,
+          "durationMs": 2234.39999999851,
+          "transferSize": 7485211,
+          "encodedBodySize": 7484911,
+          "decodedBodySize": 7749372
+        },
+        {
+          "path": "assets/scenario-v06/optimized/mountain_rocks.glb",
+          "status": 200,
+          "bytes": 6047352,
+          "sha256": "735cbdd6505ce38fce1518c638879ac2781d39d84794a043bebc2f3f8359699b",
+          "matchesLocal": true,
+          "durationMs": 1071,
+          "transferSize": 5995389,
+          "encodedBodySize": 5995089,
+          "decodedBodySize": 6047352
+        },
+        {
+          "path": "assets/scenario-v06/optimized/railway_service_buildings.glb",
+          "status": 200,
+          "bytes": 24184300,
+          "sha256": "d97f4a889f55c9294047c03a9c65ae538122225ccc09bb52795b2d5af4dfdab7",
+          "matchesLocal": true,
+          "durationMs": 3840.2999999970198,
+          "transferSize": 22189957,
+          "encodedBodySize": 22189657,
+          "decodedBodySize": 24184300
+        },
+        {
+          "path": "assets/scenario-v06/optimized/sawmill.glb",
+          "status": 200,
+          "bytes": 17757716,
+          "sha256": "6c99b18bb3755440fcae13526bf6e4d984036caca61b75223d9de174382ab57d",
+          "matchesLocal": true,
+          "durationMs": 2377,
+          "transferSize": 15200365,
+          "encodedBodySize": 15200065,
+          "decodedBodySize": 17757716
+        },
+        {
+          "path": "assets/scenario-v06/optimized/scenery_details.glb",
+          "status": 200,
+          "bytes": 4973036,
+          "sha256": "4018b77c5bcce5fc97fcfb3d5d2935379906ca390619a072f72148dbb7c77862",
+          "matchesLocal": true,
+          "durationMs": 593,
+          "transferSize": 3412210,
+          "encodedBodySize": 3411910,
+          "decodedBodySize": 4973036
+        },
+        {
+          "path": "assets/scenario-v06/optimized/station_platform.glb",
+          "status": 200,
+          "bytes": 16690856,
+          "sha256": "08be6472a3859da042008d981d887822c6cc6bcad77467832d10875900c25e17",
+          "matchesLocal": true,
+          "durationMs": 3601.3000000044703,
+          "transferSize": 14686912,
+          "encodedBodySize": 14686612,
+          "decodedBodySize": 16690856
+        },
+        {
+          "path": "assets/scenario-v06/modules/technical_reference.glb",
+          "status": 200,
+          "bytes": 99864,
+          "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899",
+          "matchesLocal": true,
+          "durationMs": 140.60000000149012,
+          "transferSize": 35957,
+          "encodedBodySize": 35657,
+          "decodedBodySize": 99864
+        },
+        {
+          "path": "assets/scenario-v06/optimized/terrain.glb",
+          "status": 200,
+          "bytes": 26642148,
+          "sha256": "30d1d90462e1eb7cac0ff3115691cb4c6fa6943a655c472eaf0698fe0b202c46",
+          "matchesLocal": true,
+          "durationMs": 4968.20000000298,
+          "transferSize": 25854183,
+          "encodedBodySize": 25853883,
+          "decodedBodySize": 26642148
+        },
+        {
+          "path": "assets/scenario-v06/optimized/tunnels_portals.glb",
+          "status": 200,
+          "bytes": 14950712,
+          "sha256": "8e04efdd06d363fe99b7c3f661cef87b881e1a46058a15660846f4636786d772",
+          "matchesLocal": true,
+          "durationMs": 2677.5,
+          "transferSize": 14469411,
+          "encodedBodySize": 14469111,
+          "decodedBodySize": 14950712
+        },
+        {
+          "path": "assets/scenario-v06/optimized/vegetation.glb",
+          "status": 200,
+          "bytes": 26966720,
+          "sha256": "25083e797e94c91aac68ae2467b643165068c9f39a8a33e24555c72367c88730",
+          "matchesLocal": true,
+          "durationMs": 2504.89999999851,
+          "transferSize": 13246915,
+          "encodedBodySize": 13246615,
+          "decodedBodySize": 26966720
+        },
+        {
+          "path": "assets/scenario-v06/optimized/village_buildings.glb",
+          "status": 200,
+          "bytes": 65292692,
+          "sha256": "2d110bdf0ef612aae4611561a07d01fd0d48adbdc2ec11a2ec1126cab5aca3ad",
+          "matchesLocal": true,
+          "durationMs": 11305.40000000596,
+          "transferSize": 54326159,
+          "encodedBodySize": 54325859,
+          "decodedBodySize": 65292692
+        }
+      ],
+      "network": [
+        {
+          "url": "https://epivic-lab.github.io/SerieN/index.html",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-2632\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "4116"
+          },
+          "networkBytes": 4350
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/style.css?v=0.12.0",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-4ff1\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "5751"
+          },
+          "networkBytes": 5923
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/auth-gate.js?v=2",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-b30\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "1253"
+          },
+          "networkBytes": 1580
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/auth-gate-core.js",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-2a8\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "344"
+          },
+          "networkBytes": 531
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/dist/game.js?v=v06-track-20261115",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-1104aa\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "335265"
+          },
+          "networkBytes": 335656
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/tokens-u2.css",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-f8a\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "1472"
+          },
+          "networkBytes": 1688
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/serien-ui-u2.css",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-e0a3\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "13595"
+          },
+          "networkBytes": 13896
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/tokens-tm-u2.css",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-71d\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "925"
+          },
+          "networkBytes": 1129
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/serien-ui-train-management-u2.css",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-8b28\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "9241"
+          },
+          "networkBytes": 9468
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/serien-ui-integration.css",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-9a8a\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "9223"
+          },
+          "networkBytes": 9392
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/docs/jmri-layout/minimap-canonical.svg",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-1a253\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "38515"
+          },
+          "networkBytes": 38821
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/dataset.json",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-6ae3e\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "86490"
+          },
+          "networkBytes": 86767
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/asset-lock.json",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-e32\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "1678"
+          },
+          "networkBytes": 1897
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized-lock.json",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-31ca\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "2593"
+          },
+          "networkBytes": 2890
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/gardens_allotments.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-523f04\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "5135997"
+          },
+          "networkBytes": 5139036
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/mountain.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-763efc\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "7484911"
+          },
+          "networkBytes": 7489259
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/mountain_rocks.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-5c4678\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "5995089"
+          },
+          "networkBytes": 5998741
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/railway_service_buildings.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-17105ec\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "22189657"
+          },
+          "networkBytes": 22202224
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/sawmill.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-10ef614\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "15200065"
+          },
+          "networkBytes": 15208640
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/scenery_details.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-4be1ec\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "3411910"
+          },
+          "networkBytes": 3414148
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/station_platform.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-feaea8\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "14686612"
+          },
+          "networkBytes": 14694935
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/modules/technical_reference.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-18618\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "35657"
+          },
+          "networkBytes": 35872
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/terrain.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-19686e4\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "25853883"
+          },
+          "networkBytes": 25868405
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/tunnels_portals.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-e42138\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "14469111"
+          },
+          "networkBytes": 14477318
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/vegetation.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-19b7ac0\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "13246615"
+          },
+          "networkBytes": 13254198
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/village_buildings.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-3e44994\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "54325859"
+          },
+          "networkBytes": 54356097
+        }
+      ]
+    },
+    {
+      "phase": "warm",
+      "resources": [
+        {
+          "path": "index.html",
+          "status": 200,
+          "bytes": 9778,
+          "sha256": "9f17539bc1d1396aedfeaa2b021625dff8a933b4442f57142360df7e7e49ece9",
+          "matchesLocal": true,
+          "durationMs": 1.3000000044703484,
+          "transferSize": 0,
+          "encodedBodySize": 4116,
+          "decodedBodySize": 9778
+        },
+        {
+          "path": "style.css?v=0.12.0",
+          "status": 200,
+          "bytes": 20465,
+          "sha256": "e5c2acec8cdcaac9034399aca85273d293e1db43c94d5d61434a28cc6a681d19",
+          "matchesLocal": true,
+          "durationMs": 0.5,
+          "transferSize": 0,
+          "encodedBodySize": 5751,
+          "decodedBodySize": 20465
+        },
+        {
+          "path": "auth-gate.js?v=2",
+          "status": 200,
+          "bytes": 2864,
+          "sha256": "ecfec052d63a976cde5d0a1760e314a0ee7f1fa6c110980b96a3ae8d16df22dc",
+          "matchesLocal": true,
+          "durationMs": 0.3999999985098839,
+          "transferSize": 0,
+          "encodedBodySize": 1253,
+          "decodedBodySize": 2864
+        },
+        {
+          "path": "auth-gate-core.js",
+          "status": 200,
+          "bytes": 680,
+          "sha256": "6a66c0a6cea18001c8998c34013654758d80bcba937d59a7809848c805de3106",
+          "matchesLocal": true,
+          "durationMs": 0.30000000447034836,
+          "transferSize": 0,
+          "encodedBodySize": 344,
+          "decodedBodySize": 680
+        },
+        {
+          "path": "dist/game.js?v=v06-track-20261115",
+          "status": 200,
+          "bytes": 1115306,
+          "sha256": "cbaf2fbfb8a3b89f3c4cd490384af8b21c5998a9f301e74ff0fd6e70d9d3d818",
+          "matchesLocal": true,
+          "durationMs": 4.100000001490116,
+          "transferSize": 0,
+          "encodedBodySize": 335265,
+          "decodedBodySize": 1115306
+        },
+        {
+          "path": "ui/css/tokens-u2.css",
+          "status": 200,
+          "bytes": 3978,
+          "sha256": "aebbee44140775f75502d27bcdd9e39ebba01321f910943cf60343927d0530db",
+          "matchesLocal": true,
+          "durationMs": 0.3999999985098839,
+          "transferSize": 0,
+          "encodedBodySize": 1472,
+          "decodedBodySize": 3978
+        },
+        {
+          "path": "ui/css/serien-ui-u2.css",
+          "status": 200,
+          "bytes": 57507,
+          "sha256": "3e232010eca1e5574c75a7ae89737726ceb30586f6f54cc87562ef1cde0a6990",
+          "matchesLocal": true,
+          "durationMs": 0.3999999985098839,
+          "transferSize": 0,
+          "encodedBodySize": 13595,
+          "decodedBodySize": 57507
+        },
+        {
+          "path": "ui/css/tokens-tm-u2.css",
+          "status": 200,
+          "bytes": 1821,
+          "sha256": "61500bb11dbc0fd583f5baaa1f3a45cfa9bb2e6760e0f1dcfb3b79fbdd3a1e4f",
+          "matchesLocal": true,
+          "durationMs": 0.30000000447034836,
+          "transferSize": 0,
+          "encodedBodySize": 925,
+          "decodedBodySize": 1821
+        },
+        {
+          "path": "ui/css/serien-ui-train-management-u2.css",
+          "status": 200,
+          "bytes": 35624,
+          "sha256": "f0ac063fc9d1a3d5e5a99120d191c8bed2836133e73d45a708e2c6ce3f7deaba",
+          "matchesLocal": true,
+          "durationMs": 0.3999999985098839,
+          "transferSize": 0,
+          "encodedBodySize": 9241,
+          "decodedBodySize": 35624
+        },
+        {
+          "path": "ui/css/serien-ui-integration.css",
+          "status": 200,
+          "bytes": 39562,
+          "sha256": "354a0edc42306295030b4bef2c8298ce528d13a07032746244ec4fc281100283",
+          "matchesLocal": true,
+          "durationMs": 0.29999999701976776,
+          "transferSize": 0,
+          "encodedBodySize": 9223,
+          "decodedBodySize": 39562
+        },
+        {
+          "path": "docs/jmri-layout/minimap-canonical.svg",
+          "status": 200,
+          "bytes": 107091,
+          "sha256": "544866a41bc6fb75e34151dae814e0e384016fdd029bf10be02d3d918bae7365",
+          "matchesLocal": true,
+          "durationMs": 0.3999999985098839,
+          "transferSize": 0,
+          "encodedBodySize": 38515,
+          "decodedBodySize": 107091
+        },
+        {
+          "path": "assets/scenario-v06/dataset.json",
+          "status": 200,
+          "bytes": 437822,
+          "sha256": "4fd022e1173ef5517a7c826f4163dd10ab1ff776e1ecfaf144f53d40473ccef7",
+          "matchesLocal": true,
+          "durationMs": 1.1999999955296516,
+          "transferSize": 0,
+          "encodedBodySize": 86490,
+          "decodedBodySize": 437822
+        },
+        {
+          "path": "assets/scenario-v06/asset-lock.json",
+          "status": 200,
+          "bytes": 3634,
+          "sha256": "9ede69547d5da2e35eef63d4051d610d13d0647feb9413750f5510172a127499",
+          "matchesLocal": true,
+          "durationMs": 0.3999999985098839,
+          "transferSize": 0,
+          "encodedBodySize": 1678,
+          "decodedBodySize": 3634
+        },
+        {
+          "path": "assets/scenario-v06/optimized-lock.json",
+          "status": 200,
+          "bytes": 12746,
+          "sha256": "c6054e760c79833cb06e20b4f353d82123fb78177f25fbb2ad985cb3ab24b8fd",
+          "matchesLocal": true,
+          "durationMs": 0.4000000059604645,
+          "transferSize": 0,
+          "encodedBodySize": 2593,
+          "decodedBodySize": 12746
+        },
+        {
+          "path": "assets/scenario-v06/optimized/gardens_allotments.glb",
+          "status": 200,
+          "bytes": 5390084,
+          "sha256": "24871e96d5d2efcc023a634e83900674075167eacbc28875e1bff3d183446046",
+          "matchesLocal": true,
+          "durationMs": 13.100000001490116,
+          "transferSize": 0,
+          "encodedBodySize": 5135997,
+          "decodedBodySize": 5390084
+        },
+        {
+          "path": "assets/scenario-v06/optimized/mountain.glb",
+          "status": 200,
+          "bytes": 7749372,
+          "sha256": "4b6836f85647b7c79a206f1688cbb9f2279788268b1fe301e693b2688cdbaf51",
+          "matchesLocal": true,
+          "durationMs": 2003,
+          "transferSize": 7485211,
+          "encodedBodySize": 7484911,
+          "decodedBodySize": 7749372
+        },
+        {
+          "path": "assets/scenario-v06/optimized/mountain_rocks.glb",
+          "status": 200,
+          "bytes": 6047352,
+          "sha256": "735cbdd6505ce38fce1518c638879ac2781d39d84794a043bebc2f3f8359699b",
+          "matchesLocal": true,
+          "durationMs": 17.400000005960464,
+          "transferSize": 0,
+          "encodedBodySize": 5995089,
+          "decodedBodySize": 6047352
+        },
+        {
+          "path": "assets/scenario-v06/optimized/railway_service_buildings.glb",
+          "status": 200,
+          "bytes": 24184300,
+          "sha256": "d97f4a889f55c9294047c03a9c65ae538122225ccc09bb52795b2d5af4dfdab7",
+          "matchesLocal": true,
+          "durationMs": 4876.5,
+          "transferSize": 22189957,
+          "encodedBodySize": 22189657,
+          "decodedBodySize": 24184300
+        },
+        {
+          "path": "assets/scenario-v06/optimized/sawmill.glb",
+          "status": 200,
+          "bytes": 17757716,
+          "sha256": "6c99b18bb3755440fcae13526bf6e4d984036caca61b75223d9de174382ab57d",
+          "matchesLocal": true,
+          "durationMs": 3354.7000000029802,
+          "transferSize": 15200365,
+          "encodedBodySize": 15200065,
+          "decodedBodySize": 17757716
+        },
+        {
+          "path": "assets/scenario-v06/optimized/scenery_details.glb",
+          "status": 200,
+          "bytes": 4973036,
+          "sha256": "4018b77c5bcce5fc97fcfb3d5d2935379906ca390619a072f72148dbb7c77862",
+          "matchesLocal": true,
+          "durationMs": 22.200000002980232,
+          "transferSize": 0,
+          "encodedBodySize": 3411910,
+          "decodedBodySize": 4973036
+        },
+        {
+          "path": "assets/scenario-v06/optimized/station_platform.glb",
+          "status": 200,
+          "bytes": 16690856,
+          "sha256": "08be6472a3859da042008d981d887822c6cc6bcad77467832d10875900c25e17",
+          "matchesLocal": true,
+          "durationMs": 3033.7999999970198,
+          "transferSize": 14686912,
+          "encodedBodySize": 14686612,
+          "decodedBodySize": 16690856
+        },
+        {
+          "path": "assets/scenario-v06/modules/technical_reference.glb",
+          "status": 200,
+          "bytes": 99864,
+          "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899",
+          "matchesLocal": true,
+          "durationMs": 1.2000000029802322,
+          "transferSize": 0,
+          "encodedBodySize": 35657,
+          "decodedBodySize": 99864
+        },
+        {
+          "path": "assets/scenario-v06/optimized/terrain.glb",
+          "status": 200,
+          "bytes": 26642148,
+          "sha256": "30d1d90462e1eb7cac0ff3115691cb4c6fa6943a655c472eaf0698fe0b202c46",
+          "matchesLocal": true,
+          "durationMs": 5661.20000000298,
+          "transferSize": 25854183,
+          "encodedBodySize": 25853883,
+          "decodedBodySize": 26642148
+        },
+        {
+          "path": "assets/scenario-v06/optimized/tunnels_portals.glb",
+          "status": 200,
+          "bytes": 14950712,
+          "sha256": "8e04efdd06d363fe99b7c3f661cef87b881e1a46058a15660846f4636786d772",
+          "matchesLocal": true,
+          "durationMs": 3811.5,
+          "transferSize": 14469411,
+          "encodedBodySize": 14469111,
+          "decodedBodySize": 14950712
+        },
+        {
+          "path": "assets/scenario-v06/optimized/vegetation.glb",
+          "status": 200,
+          "bytes": 26966720,
+          "sha256": "25083e797e94c91aac68ae2467b643165068c9f39a8a33e24555c72367c88730",
+          "matchesLocal": true,
+          "durationMs": 2656.2000000029802,
+          "transferSize": 13246915,
+          "encodedBodySize": 13246615,
+          "decodedBodySize": 26966720
+        },
+        {
+          "path": "assets/scenario-v06/optimized/village_buildings.glb",
+          "status": 200,
+          "bytes": 65292692,
+          "sha256": "2d110bdf0ef612aae4611561a07d01fd0d48adbdc2ec11a2ec1126cab5aca3ad",
+          "matchesLocal": true,
+          "durationMs": 11630.5,
+          "transferSize": 54326159,
+          "encodedBodySize": 54325859,
+          "decodedBodySize": 65292692
+        }
+      ],
+      "network": [
+        {
+          "url": "https://epivic-lab.github.io/SerieN/index.html",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-2632\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "4116"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/style.css?v=0.12.0",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-4ff1\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "5751"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/auth-gate.js?v=2",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-b30\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "1253"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/auth-gate-core.js",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-2a8\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "344"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/dist/game.js?v=v06-track-20261115",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-1104aa\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "335265"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/tokens-u2.css",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-f8a\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "1472"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/serien-ui-u2.css",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-e0a3\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "13595"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/tokens-tm-u2.css",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-71d\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "925"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/serien-ui-train-management-u2.css",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-8b28\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "9241"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/ui/css/serien-ui-integration.css",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-9a8a\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "9223"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/docs/jmri-layout/minimap-canonical.svg",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-1a253\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "38515"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/dataset.json",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-6ae3e\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "86490"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/asset-lock.json",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-e32\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "1678"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized-lock.json",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-31ca\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "2593"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/gardens_allotments.glb",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-523f04\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "5135997"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/mountain.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-763efc\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "7484911"
+          },
+          "networkBytes": 7489282
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/mountain_rocks.glb",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-5c4678\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "5995089"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/railway_service_buildings.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-17105ec\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "22189657"
+          },
+          "networkBytes": 22202182
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/sawmill.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-10ef614\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "15200065"
+          },
+          "networkBytes": 15208826
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/scenery_details.glb",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-4be1ec\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "3411910"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/station_platform.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-feaea8\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "14686612"
+          },
+          "networkBytes": 14694974
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/modules/technical_reference.glb",
+          "status": 200,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-18618\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "35657"
+          },
+          "networkBytes": 0
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/terrain.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-19686e4\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "25853883"
+          },
+          "networkBytes": 25868332
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/tunnels_portals.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-e42138\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "14469111"
+          },
+          "networkBytes": 14477467
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/vegetation.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425b-19b7ac0\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:03 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "13246615"
+          },
+          "networkBytes": 13254199
+        },
+        {
+          "url": "https://epivic-lab.github.io/SerieN/assets/scenario-v06/optimized/village_buildings.glb",
+          "status": 200,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "W/\"6afa425a-3e44994\"",
+            "last-modified": "Sun, 15 Nov 2026 23:38:02 GMT",
+            "cache-control": "max-age=600",
+            "content-length": "54325859"
+          },
+          "networkBytes": 54355975
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "base": "https://epivic-lab.github.io/SerieN/",
+  "modulesBytes": 216744852,
+  "resources": [
+    {
+      "path": "index.html",
+      "bytes": 9778,
+      "sha256": "9f17539bc1d1396aedfeaa2b021625dff8a933b4442f57142360df7e7e49ece9"
+    },
+    {
+      "path": "style.css?v=0.12.0",
+      "bytes": 20465,
+      "sha256": "e5c2acec8cdcaac9034399aca85273d293e1db43c94d5d61434a28cc6a681d19"
+    },
+    {
+      "path": "auth-gate.js?v=2",
+      "bytes": 2864,
+      "sha256": "ecfec052d63a976cde5d0a1760e314a0ee7f1fa6c110980b96a3ae8d16df22dc"
+    },
+    {
+      "path": "auth-gate-core.js",
+      "bytes": 680,
+      "sha256": "6a66c0a6cea18001c8998c34013654758d80bcba937d59a7809848c805de3106"
+    },
+    {
+      "path": "dist/game.js?v=v06-track-20261115",
+      "bytes": 1115306,
+      "sha256": "cbaf2fbfb8a3b89f3c4cd490384af8b21c5998a9f301e74ff0fd6e70d9d3d818"
+    },
+    {
+      "path": "ui/css/tokens-u2.css",
+      "bytes": 3978,
+      "sha256": "aebbee44140775f75502d27bcdd9e39ebba01321f910943cf60343927d0530db"
+    },
+    {
+      "path": "ui/css/serien-ui-u2.css",
+      "bytes": 57507,
+      "sha256": "3e232010eca1e5574c75a7ae89737726ceb30586f6f54cc87562ef1cde0a6990"
+    },
+    {
+      "path": "ui/css/tokens-tm-u2.css",
+      "bytes": 1821,
+      "sha256": "61500bb11dbc0fd583f5baaa1f3a45cfa9bb2e6760e0f1dcfb3b79fbdd3a1e4f"
+    },
+    {
+      "path": "ui/css/serien-ui-train-management-u2.css",
+      "bytes": 35624,
+      "sha256": "f0ac063fc9d1a3d5e5a99120d191c8bed2836133e73d45a708e2c6ce3f7deaba"
+    },
+    {
+      "path": "ui/css/serien-ui-integration.css",
+      "bytes": 39562,
+      "sha256": "354a0edc42306295030b4bef2c8298ce528d13a07032746244ec4fc281100283"
+    },
+    {
+      "path": "docs/jmri-layout/minimap-canonical.svg",
+      "bytes": 107091,
+      "sha256": "544866a41bc6fb75e34151dae814e0e384016fdd029bf10be02d3d918bae7365"
+    },
+    {
+      "path": "assets/scenario-v06/dataset.json",
+      "bytes": 437822,
+      "sha256": "4fd022e1173ef5517a7c826f4163dd10ab1ff776e1ecfaf144f53d40473ccef7"
+    },
+    {
+      "path": "assets/scenario-v06/asset-lock.json",
+      "bytes": 3634,
+      "sha256": "9ede69547d5da2e35eef63d4051d610d13d0647feb9413750f5510172a127499"
+    },
+    {
+      "path": "assets/scenario-v06/optimized-lock.json",
+      "bytes": 12746,
+      "sha256": "c6054e760c79833cb06e20b4f353d82123fb78177f25fbb2ad985cb3ab24b8fd"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/gardens_allotments.glb",
+      "bytes": 5390084,
+      "sha256": "24871e96d5d2efcc023a634e83900674075167eacbc28875e1bff3d183446046"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/mountain.glb",
+      "bytes": 7749372,
+      "sha256": "4b6836f85647b7c79a206f1688cbb9f2279788268b1fe301e693b2688cdbaf51"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/mountain_rocks.glb",
+      "bytes": 6047352,
+      "sha256": "735cbdd6505ce38fce1518c638879ac2781d39d84794a043bebc2f3f8359699b"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/railway_service_buildings.glb",
+      "bytes": 24184300,
+      "sha256": "d97f4a889f55c9294047c03a9c65ae538122225ccc09bb52795b2d5af4dfdab7"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/sawmill.glb",
+      "bytes": 17757716,
+      "sha256": "6c99b18bb3755440fcae13526bf6e4d984036caca61b75223d9de174382ab57d"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/scenery_details.glb",
+      "bytes": 4973036,
+      "sha256": "4018b77c5bcce5fc97fcfb3d5d2935379906ca390619a072f72148dbb7c77862"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/station_platform.glb",
+      "bytes": 16690856,
+      "sha256": "08be6472a3859da042008d981d887822c6cc6bcad77467832d10875900c25e17"
+    },
+    {
+      "path": "assets/scenario-v06/modules/technical_reference.glb",
+      "bytes": 99864,
+      "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/terrain.glb",
+      "bytes": 26642148,
+      "sha256": "30d1d90462e1eb7cac0ff3115691cb4c6fa6943a655c472eaf0698fe0b202c46"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/tunnels_portals.glb",
+      "bytes": 14950712,
+      "sha256": "8e04efdd06d363fe99b7c3f661cef87b881e1a46058a15660846f4636786d772"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/vegetation.glb",
+      "bytes": 26966720,
+      "sha256": "25083e797e94c91aac68ae2467b643165068c9f39a8a33e24555c72367c88730"
+    },
+    {
+      "path": "assets/scenario-v06/optimized/village_buildings.glb",
+      "bytes": 65292692,
+      "sha256": "2d110bdf0ef612aae4611561a07d01fd0d48adbdc2ec11a2ec1126cab5aca3ad"
+    }
+  ]
+}

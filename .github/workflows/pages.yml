@@ -41,8 +41,9 @@ jobs:
           test "$(realpath -m _site)" = "$(pwd -P)/_site"
           rm -rf -- _site
           mkdir -p _site
-          cp index.html style.css auth-gate.js auth-gate-core.js legacy-v0.1.html .nojekyll _site/
+          cp index.html style.css cache-client.js auth-gate.js auth-gate-core.js legacy-v0.1.html .nojekyll _site/
           cp -R dist assets ui _site/
+          cp dist/service-worker.js _site/service-worker.js
           # Public dependency closure: docs/_active/ui-v21/REL002_REPORT.md
           # Keep linked reports/evidence; exclude unreferenced development archives.
           for doc in \

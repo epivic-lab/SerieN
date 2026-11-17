@@ -1,0 +1,26 @@
+name: Validate browser cache
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Verify canonical layout on reference platform
+        run: |
+          python3 scripts/build-canonical-layout.py
+          git diff --exit-code -- src/canonical-layout.json docs/jmri-layout/canonical-graph.json docs/jmri-layout/layout-canonical.svg docs/jmri-layout/minimap-canonical.svg
+          python3 -m unittest discover -s tests -p 'jmri_audit_test.py'
+      - run: npm test
+      - run: npm run build
