@@ -1,3 +1,60 @@
+# CACHE — implementazione e rilascio autorizzati
+
+Il 17 novembre 2026 l’utente ha chiesto esplicitamente «finisci tutto e fai il deploy».
+Questa autorizzazione copre il completamento, PR/merge normale e Pages per questa sola attività,
+superando gli stop intermedi precedenti. Nessuna altra macrofase avviata.
+
+## Risultato prima del merge
+
+Implementazione completata sul branch `codex/browser-cache`, dalla base `6a0b617` e checkpoint CACHE-1 `2018256`.
+Service worker generato in build: 62 risorse consentite, 11 file essenziali precaricati;
+asset su richiesta conservati per SHA-256. Aggiornamenti senza skipWaiting, con riuso dei
+file invariati e pulizia delle sole voci obsolete di SerieN dopo la chiusura delle vecchie schede.
+Nessuna API server necessaria. Nessun download preventivo degli originali V06 duplicati.
+
+- **PASS** 581/581 Node, incluse 5 nuove prove cache; **PASS** build; **PASS** 9/9 JMRI.
+- **PASS** Chrome reale: 62/62 file con hash corretti, secondo passaggio **0 byte trasferiti** e **0 richieste HTTP locali**.
+- **PASS** reload con controllo SW; accesso resta bloccato senza login. Il test locale avvia separatamente
+  il bundle per verificare il rendering V06: solo harness locale, nessuna modifica/bypass nel gate distribuito.
+- **PASS** aggiornamento reale con due schede: entrambe restano sulla release 1; dopo la loro chiusura
+  la release 2 si attiva e riusa il modello invariato senza rete.
+- **PASS** test errore HTTP/hash, quota/storage indisponibile, installazione fallita con vecchia shell preservata,
+  richieste simultanee, esclusione API/origini esterne/query sconosciute/Range/POST.
+- **PASS** invarianti per identità dei file: nessuna modifica a src, app.js, geometrie/asset, UI/CSS,
+  auth-gate, auth-gate-core, lockfile. Bundle app identico: `cbaf2fbfb8a3b89f3c4cd490384af8b21c5998a9f301e74ff0fd6e70d9d3d818`.
+- Cache locale del browser non garantita: può essere eliminata per spazio o impostazioni; fallback alla rete.
+  Nessun cambiamento a sessioni, progetti, database, RLS o controllo d’accesso. Richieste salvate senza credenziali,
+  solo risposte statiche con hash/dimensione attesi. Nessuna cache di token o risposte Auth/API.
+
+Evidenze: [release/](evidence/release/), [Chrome](evidence/release/local-browser.json),
+[scena V06](evidence/release/local-scene.png), [invarianti](evidence/release/invariants.json).
+Riproduzione: `npm test`, `npm run build`, `PLAYWRIGHT_MODULE=<modulo disponibile> node scripts/cache/browser-check.mjs`.
+Il comando browser accetta anche l’URL pubblico come argomento per verifica post-deploy senza avvio autenticato.
+
+## Chiusura del gate e pubblicazione
+
+La rigenerazione macOS fallita in CACHE-1 rimane documentata sotto. Nessun file canonico è stato modificato.
+La stessa base ha già completato con successo il workflow Linux/Python 3.12
+[43775508471](https://github.com/epivic-lab/SerieN/actions/runs/43775508471).
+Il nuovo workflow PR `Validate browser cache` ripete il confronto byte-identico, JMRI, Node e build sulla
+piattaforma di riferimento **prima del merge**. Al momento di questo commit il suo nuovo esito è PENDING,
+così come merge, deploy e verifica pubblica; non sono anticipati come PASS.
+SHA, esiti CI, PR e verifica effettiva pubblica saranno indicati nella consegna finale.
+
+File di implementazione: `cache-client.js`, bootstrap in `index.html`, `scripts/build-cache.mjs`,
+`scripts/cache/worker.js`, `package.json`; distribuzione SW root in `.github/workflows/pages.yml`,
+workflow PR, test Node e harness browser. Nessuna dipendenza aggiunta.
+
+Aggiornamenti: la verifica SW usa `updateViaCache: none`. La prima visita scarica e conserva;
+le successive usano CacheStorage. Una release nuova aspetta che siano chiuse tutte le schede SerieN
+esistenti; alla riapertura usa la release nuova e rimuove solo risorse obsolete. Nessun reload a simulazione attiva.
+NOT VERIFIED: Safari/mobile fisici, sopravvivenza a eviction del sistema operativo e avvio autenticato pubblico.
+Quota/errore storage coperti da test controllati, non da saturazione del disco reale.
+
+---
+
+# Registro storico CACHE-1 (superato dall’autorizzazione di completamento)
+
 # CACHE-1 — misurazione e perimetro
 
 Data: 17 novembre 2026 (Europe/Zurich). Stato complessivo: **BLOCKED** al gate di riproducibilità locale del canonico; analisi cache completata, implementazione non iniziata.

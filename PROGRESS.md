@@ -1,3 +1,16 @@
+# Cache browser — implementata, rilascio autorizzato (17 novembre 2026)
+
+L’utente autorizza completamento e deploy di questa attività. Branch `codex/browser-cache`.
+Cache statica per SHA-256: 62 risorse, aggiornamenti selettivi senza interrompere simulazioni.
+581/581 Node, 9/9 JMRI, build e Chrome PASS: seconda lettura 0 byte / 0 richieste locali,
+rendering V06 e aggiornamento con due schede verificati. Runtime ferroviario, asset, UI e auth invariati.
+Rigenerazione canonico verificata nuovamente dalla CI Linux prima del merge; esiti CI e deploy non anticipati.
+[Rapporto e prove](docs/_active/browser-cache/STATUS.md).
+
+**Prossima azione: completare PR, gate Linux, merge e Pages già autorizzati; verificare il sito pubblico e fermarsi.**
+
+---
+
 # CACHE-1 — analisi cache, gate BLOCKED (17 novembre 2026)
 
 Base main `6a0b617db503c267573f94c8367db63218284179`, branch isolato `codex/browser-cache`.

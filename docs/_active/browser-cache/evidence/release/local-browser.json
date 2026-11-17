@@ -1,0 +1,1217 @@
+{
+  "base": "http://127.0.0.1:57087/SerieN/",
+  "browser": "157.0.8103.51",
+  "manifestVersion": "eb2a532cc910f9a99c5d5fd0caceede93f61e8ce47ccc3cf317d6ef65a6dbaf9",
+  "phases": [
+    {
+      "phase": "cold",
+      "values": [
+        {
+          "path": "assets/br01/engine.png",
+          "status": 200,
+          "bytes": 37634,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 152.40000000596046
+        },
+        {
+          "path": "assets/br01/locomotive.glb",
+          "status": 200,
+          "bytes": 4458300,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 154.90000000596046
+        },
+        {
+          "path": "assets/br01/tender.png",
+          "status": 200,
+          "bytes": 32297,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 185.30000000447035
+        },
+        {
+          "path": "assets/kenney/Textures/colormap.png",
+          "status": 200,
+          "bytes": 12684,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 188.30000000447035
+        },
+        {
+          "path": "assets/kenney/train-carriage-box.glb",
+          "status": 200,
+          "bytes": 98768,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 190.5
+        },
+        {
+          "path": "assets/kenney/train-carriage-lumber.glb",
+          "status": 200,
+          "bytes": 110308,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 192.80000000447035
+        },
+        {
+          "path": "assets/kenney/train-carriage-tank.glb",
+          "status": 200,
+          "bytes": 106752,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 195.20000000298023
+        },
+        {
+          "path": "assets/kenney/train-diesel-a.glb",
+          "status": 200,
+          "bytes": 156432,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 198.10000000149012
+        },
+        {
+          "path": "assets/kenney/train-diesel-box-a.glb",
+          "status": 200,
+          "bytes": 156056,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 202
+        },
+        {
+          "path": "assets/kenney/train-locomotive-a.glb",
+          "status": 200,
+          "bytes": 154620,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 204.90000000596046
+        },
+        {
+          "path": "assets/locomotive-thumbnails/kenney-diesel.png",
+          "status": 200,
+          "bytes": 17016,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 207.5
+        },
+        {
+          "path": "assets/locomotive-thumbnails/kenney-shunter.png",
+          "status": 200,
+          "bytes": 20410,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 209.10000000149012
+        },
+        {
+          "path": "assets/locomotive-thumbnails/kenney-steam.png",
+          "status": 200,
+          "bytes": 21387,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 210.70000000298023
+        },
+        {
+          "path": "assets/locomotive-thumbnails/native-diesel.png",
+          "status": 200,
+          "bytes": 8741,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 212.40000000596046
+        },
+        {
+          "path": "assets/locomotive-thumbnails/native-shunter.png",
+          "status": 200,
+          "bytes": 5446,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 213.80000000447035
+        },
+        {
+          "path": "assets/locomotive-thumbnails/native-steam.png",
+          "status": 200,
+          "bytes": 12270,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 215
+        },
+        {
+          "path": "assets/locomotive-thumbnails/unavailable.svg",
+          "status": 200,
+          "bytes": 472,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 217.20000000298023
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/kenney-box.png",
+          "status": 200,
+          "bytes": 20350,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 219.70000000298023
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/kenney-lumber.png",
+          "status": 200,
+          "bytes": 25937,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 221.80000000447035
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/kenney-tank.png",
+          "status": 200,
+          "bytes": 17772,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 223.30000000447035
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-closed.png",
+          "status": 200,
+          "bytes": 4702,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 226.70000000298023
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-coach.png",
+          "status": 200,
+          "bytes": 5040,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 228.60000000149012
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-flat.png",
+          "status": 200,
+          "bytes": 4999,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 230.20000000298023
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-open.png",
+          "status": 200,
+          "bytes": 5478,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 231.5
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-tank.png",
+          "status": 200,
+          "bytes": 12503,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 232.90000000596046
+        },
+        {
+          "path": "assets/scenario-v06/asset-lock.json",
+          "status": 200,
+          "bytes": 3634,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 234.60000000149012
+        },
+        {
+          "path": "assets/scenario-v06/dataset.json",
+          "status": 200,
+          "bytes": 437822,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 236
+        },
+        {
+          "path": "assets/scenario-v06/modules/technical_reference.glb",
+          "status": 200,
+          "bytes": 99864,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 240.10000000149012
+        },
+        {
+          "path": "assets/scenario-v06/optimized-lock.json",
+          "status": 200,
+          "bytes": 12746,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 242.5
+        },
+        {
+          "path": "assets/scenario-v06/optimized/gardens_allotments.glb",
+          "status": 200,
+          "bytes": 5390084,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 244
+        },
+        {
+          "path": "assets/scenario-v06/optimized/mountain.glb",
+          "status": 200,
+          "bytes": 7749372,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 279.1000000014901
+        },
+        {
+          "path": "assets/scenario-v06/optimized/mountain_rocks.glb",
+          "status": 200,
+          "bytes": 6047352,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 333.90000000596046
+        },
+        {
+          "path": "assets/scenario-v06/optimized/railway_service_buildings.glb",
+          "status": 200,
+          "bytes": 24184300,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 379.90000000596046
+        },
+        {
+          "path": "assets/scenario-v06/optimized/sawmill.glb",
+          "status": 200,
+          "bytes": 17757716,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 506.20000000298023
+        },
+        {
+          "path": "assets/scenario-v06/optimized/scenery_details.glb",
+          "status": 200,
+          "bytes": 4973036,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 604.4000000059605
+        },
+        {
+          "path": "assets/scenario-v06/optimized/station_platform.glb",
+          "status": 200,
+          "bytes": 16690856,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 632.2000000029802
+        },
+        {
+          "path": "assets/scenario-v06/optimized/terrain.glb",
+          "status": 200,
+          "bytes": 26642148,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 731.3000000044703
+        },
+        {
+          "path": "assets/scenario-v06/optimized/tunnels_portals.glb",
+          "status": 200,
+          "bytes": 14950712,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 870.5
+        },
+        {
+          "path": "assets/scenario-v06/optimized/vegetation.glb",
+          "status": 200,
+          "bytes": 26966720,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 955.1000000014901
+        },
+        {
+          "path": "assets/scenario-v06/optimized/village_buildings.glb",
+          "status": 200,
+          "bytes": 65292692,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1067.8000000044703
+        },
+        {
+          "path": "auth-gate-core.js",
+          "status": 200,
+          "bytes": 680,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1367.8000000044703
+        },
+        {
+          "path": "auth-gate.js",
+          "status": 200,
+          "bytes": 2864,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1368.5
+        },
+        {
+          "path": "cache-client.js",
+          "status": 200,
+          "bytes": 954,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1368.9000000059605
+        },
+        {
+          "path": "dist/game.js",
+          "status": 200,
+          "bytes": 1115306,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1369.3000000044703
+        },
+        {
+          "path": "docs/jmri-layout/minimap-canonical.svg",
+          "status": 200,
+          "bytes": 107091,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1371.1000000014901
+        },
+        {
+          "path": "index.html",
+          "status": 200,
+          "bytes": 9868,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1373.8000000044703
+        },
+        {
+          "path": "style.css",
+          "status": 200,
+          "bytes": 20465,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1374.3000000044703
+        },
+        {
+          "path": "ui/assets/svg/serien-sprite.svg",
+          "status": 200,
+          "bytes": 8360,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1374.7000000029802
+        },
+        {
+          "path": "ui/assets/textures/brass-brushed.jpg",
+          "status": 200,
+          "bytes": 18733,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1379.8000000044703
+        },
+        {
+          "path": "ui/assets/textures/brass-spun.jpg",
+          "status": 200,
+          "bytes": 22837,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1381.7000000029802
+        },
+        {
+          "path": "ui/assets/textures/enamel-green.jpg",
+          "status": 200,
+          "bytes": 16123,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1383
+        },
+        {
+          "path": "ui/assets/textures/mahogany.jpg",
+          "status": 200,
+          "bytes": 20131,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1384.2000000029802
+        },
+        {
+          "path": "ui/assets/textures/parchment.jpg",
+          "status": 200,
+          "bytes": 47511,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1385.3000000044703
+        },
+        {
+          "path": "ui/assets/textures/steel-brushed.jpg",
+          "status": 200,
+          "bytes": 12285,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1387.4000000059605
+        },
+        {
+          "path": "ui/css/serien-ui-integration.css",
+          "status": 200,
+          "bytes": 39562,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1393
+        },
+        {
+          "path": "ui/css/serien-ui-train-management-u2.css",
+          "status": 200,
+          "bytes": 35624,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1393.4000000059605
+        },
+        {
+          "path": "ui/css/serien-ui-u2.css",
+          "status": 200,
+          "bytes": 57507,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1393.7000000029802
+        },
+        {
+          "path": "ui/css/tokens-tm-u2.css",
+          "status": 200,
+          "bytes": 1821,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1394.2000000029802
+        },
+        {
+          "path": "ui/css/tokens-u2.css",
+          "status": 200,
+          "bytes": 3978,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1394.4000000059605
+        },
+        {
+          "path": "ui/fonts/CinzelDecorative-700.woff2",
+          "status": 200,
+          "bytes": 22460,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1394.7000000029802
+        },
+        {
+          "path": "ui/fonts/CutiveMono-400.woff2",
+          "status": 200,
+          "bytes": 30780,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1396
+        },
+        {
+          "path": "ui/fonts/Federo-400.woff2",
+          "status": 200,
+          "bytes": 38704,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1397.4000000059605
+        }
+      ],
+      "networkRequests": [
+        "/SerieN/assets/br01/engine.png",
+        "/SerieN/assets/br01/locomotive.glb",
+        "/SerieN/assets/br01/tender.png",
+        "/SerieN/assets/kenney/Textures/colormap.png",
+        "/SerieN/assets/kenney/train-carriage-box.glb",
+        "/SerieN/assets/kenney/train-carriage-lumber.glb",
+        "/SerieN/assets/kenney/train-carriage-tank.glb",
+        "/SerieN/assets/kenney/train-diesel-a.glb",
+        "/SerieN/assets/kenney/train-diesel-box-a.glb",
+        "/SerieN/assets/kenney/train-locomotive-a.glb",
+        "/SerieN/assets/locomotive-thumbnails/kenney-diesel.png",
+        "/SerieN/assets/locomotive-thumbnails/kenney-shunter.png",
+        "/SerieN/assets/locomotive-thumbnails/kenney-steam.png",
+        "/SerieN/assets/locomotive-thumbnails/native-diesel.png",
+        "/SerieN/assets/locomotive-thumbnails/native-shunter.png",
+        "/SerieN/assets/locomotive-thumbnails/native-steam.png",
+        "/SerieN/assets/locomotive-thumbnails/unavailable.svg",
+        "/SerieN/assets/rolling-stock-thumbnails/kenney-box.png",
+        "/SerieN/assets/rolling-stock-thumbnails/kenney-lumber.png",
+        "/SerieN/assets/rolling-stock-thumbnails/kenney-tank.png",
+        "/SerieN/assets/rolling-stock-thumbnails/native-closed.png",
+        "/SerieN/assets/rolling-stock-thumbnails/native-coach.png",
+        "/SerieN/assets/rolling-stock-thumbnails/native-flat.png",
+        "/SerieN/assets/rolling-stock-thumbnails/native-open.png",
+        "/SerieN/assets/rolling-stock-thumbnails/native-tank.png",
+        "/SerieN/assets/scenario-v06/asset-lock.json",
+        "/SerieN/assets/scenario-v06/dataset.json",
+        "/SerieN/assets/scenario-v06/modules/technical_reference.glb",
+        "/SerieN/assets/scenario-v06/optimized-lock.json",
+        "/SerieN/assets/scenario-v06/optimized/gardens_allotments.glb",
+        "/SerieN/assets/scenario-v06/optimized/mountain.glb",
+        "/SerieN/assets/scenario-v06/optimized/mountain_rocks.glb",
+        "/SerieN/assets/scenario-v06/optimized/railway_service_buildings.glb",
+        "/SerieN/assets/scenario-v06/optimized/sawmill.glb",
+        "/SerieN/assets/scenario-v06/optimized/scenery_details.glb",
+        "/SerieN/assets/scenario-v06/optimized/station_platform.glb",
+        "/SerieN/assets/scenario-v06/optimized/terrain.glb",
+        "/SerieN/assets/scenario-v06/optimized/tunnels_portals.glb",
+        "/SerieN/assets/scenario-v06/optimized/vegetation.glb",
+        "/SerieN/assets/scenario-v06/optimized/village_buildings.glb",
+        "/SerieN/docs/jmri-layout/minimap-canonical.svg",
+        "/SerieN/ui/assets/svg/serien-sprite.svg",
+        "/SerieN/ui/assets/textures/brass-brushed.jpg",
+        "/SerieN/ui/assets/textures/brass-spun.jpg",
+        "/SerieN/ui/assets/textures/enamel-green.jpg",
+        "/SerieN/ui/assets/textures/mahogany.jpg",
+        "/SerieN/ui/assets/textures/parchment.jpg",
+        "/SerieN/ui/assets/textures/steel-brushed.jpg",
+        "/SerieN/ui/fonts/CinzelDecorative-700.woff2",
+        "/SerieN/ui/fonts/CutiveMono-400.woff2",
+        "/SerieN/ui/fonts/Federo-400.woff2"
+      ]
+    },
+    {
+      "phase": "warm",
+      "values": [
+        {
+          "path": "assets/br01/engine.png",
+          "status": 200,
+          "bytes": 37634,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1403.8000000044703
+        },
+        {
+          "path": "assets/br01/locomotive.glb",
+          "status": 200,
+          "bytes": 4458300,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1404.4000000059605
+        },
+        {
+          "path": "assets/br01/tender.png",
+          "status": 200,
+          "bytes": 32297,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1410.7000000029802
+        },
+        {
+          "path": "assets/kenney/Textures/colormap.png",
+          "status": 200,
+          "bytes": 12684,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1411.2000000029802
+        },
+        {
+          "path": "assets/kenney/train-carriage-box.glb",
+          "status": 200,
+          "bytes": 98768,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1411.4000000059605
+        },
+        {
+          "path": "assets/kenney/train-carriage-lumber.glb",
+          "status": 200,
+          "bytes": 110308,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1411.9000000059605
+        },
+        {
+          "path": "assets/kenney/train-carriage-tank.glb",
+          "status": 200,
+          "bytes": 106752,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1412.3000000044703
+        },
+        {
+          "path": "assets/kenney/train-diesel-a.glb",
+          "status": 200,
+          "bytes": 156432,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1412.8000000044703
+        },
+        {
+          "path": "assets/kenney/train-diesel-box-a.glb",
+          "status": 200,
+          "bytes": 156056,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1413.3000000044703
+        },
+        {
+          "path": "assets/kenney/train-locomotive-a.glb",
+          "status": 200,
+          "bytes": 154620,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1413.8000000044703
+        },
+        {
+          "path": "assets/locomotive-thumbnails/kenney-diesel.png",
+          "status": 200,
+          "bytes": 17016,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1414.3000000044703
+        },
+        {
+          "path": "assets/locomotive-thumbnails/kenney-shunter.png",
+          "status": 200,
+          "bytes": 20410,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1414.6000000014901
+        },
+        {
+          "path": "assets/locomotive-thumbnails/kenney-steam.png",
+          "status": 200,
+          "bytes": 21387,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1414.9000000059605
+        },
+        {
+          "path": "assets/locomotive-thumbnails/native-diesel.png",
+          "status": 200,
+          "bytes": 8741,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1415.2000000029802
+        },
+        {
+          "path": "assets/locomotive-thumbnails/native-shunter.png",
+          "status": 200,
+          "bytes": 5446,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1415.6000000014901
+        },
+        {
+          "path": "assets/locomotive-thumbnails/native-steam.png",
+          "status": 200,
+          "bytes": 12270,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1415.8000000044703
+        },
+        {
+          "path": "assets/locomotive-thumbnails/unavailable.svg",
+          "status": 200,
+          "bytes": 472,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1416.2000000029802
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/kenney-box.png",
+          "status": 200,
+          "bytes": 20350,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1416.5
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/kenney-lumber.png",
+          "status": 200,
+          "bytes": 25937,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1416.8000000044703
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/kenney-tank.png",
+          "status": 200,
+          "bytes": 17772,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1417.2000000029802
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-closed.png",
+          "status": 200,
+          "bytes": 4702,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1417.5
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-coach.png",
+          "status": 200,
+          "bytes": 5040,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1417.7000000029802
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-flat.png",
+          "status": 200,
+          "bytes": 4999,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1418
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-open.png",
+          "status": 200,
+          "bytes": 5478,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1418.3000000044703
+        },
+        {
+          "path": "assets/rolling-stock-thumbnails/native-tank.png",
+          "status": 200,
+          "bytes": 12503,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1418.6000000014901
+        },
+        {
+          "path": "assets/scenario-v06/asset-lock.json",
+          "status": 200,
+          "bytes": 3634,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1418.9000000059605
+        },
+        {
+          "path": "assets/scenario-v06/dataset.json",
+          "status": 200,
+          "bytes": 437822,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1419.1000000014901
+        },
+        {
+          "path": "assets/scenario-v06/modules/technical_reference.glb",
+          "status": 200,
+          "bytes": 99864,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1420.1000000014901
+        },
+        {
+          "path": "assets/scenario-v06/optimized-lock.json",
+          "status": 200,
+          "bytes": 12746,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1420.5
+        },
+        {
+          "path": "assets/scenario-v06/optimized/gardens_allotments.glb",
+          "status": 200,
+          "bytes": 5390084,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1420.8000000044703
+        },
+        {
+          "path": "assets/scenario-v06/optimized/mountain.glb",
+          "status": 200,
+          "bytes": 7749372,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1428.2000000029802
+        },
+        {
+          "path": "assets/scenario-v06/optimized/mountain_rocks.glb",
+          "status": 200,
+          "bytes": 6047352,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1438.8000000044703
+        },
+        {
+          "path": "assets/scenario-v06/optimized/railway_service_buildings.glb",
+          "status": 200,
+          "bytes": 24184300,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1446.7000000029802
+        },
+        {
+          "path": "assets/scenario-v06/optimized/sawmill.glb",
+          "status": 200,
+          "bytes": 17757716,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1467.9000000059605
+        },
+        {
+          "path": "assets/scenario-v06/optimized/scenery_details.glb",
+          "status": 200,
+          "bytes": 4973036,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1490.8000000044703
+        },
+        {
+          "path": "assets/scenario-v06/optimized/station_platform.glb",
+          "status": 200,
+          "bytes": 16690856,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1496.8000000044703
+        },
+        {
+          "path": "assets/scenario-v06/optimized/terrain.glb",
+          "status": 200,
+          "bytes": 26642148,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1519.6000000014901
+        },
+        {
+          "path": "assets/scenario-v06/optimized/tunnels_portals.glb",
+          "status": 200,
+          "bytes": 14950712,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1542.8000000044703
+        },
+        {
+          "path": "assets/scenario-v06/optimized/vegetation.glb",
+          "status": 200,
+          "bytes": 26966720,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1565.3000000044703
+        },
+        {
+          "path": "assets/scenario-v06/optimized/village_buildings.glb",
+          "status": 200,
+          "bytes": 65292692,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1594.4000000059605
+        },
+        {
+          "path": "auth-gate-core.js",
+          "status": 200,
+          "bytes": 680,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1658.1000000014901
+        },
+        {
+          "path": "auth-gate.js",
+          "status": 200,
+          "bytes": 2864,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1659.8000000044703
+        },
+        {
+          "path": "cache-client.js",
+          "status": 200,
+          "bytes": 954,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1660.8000000044703
+        },
+        {
+          "path": "dist/game.js",
+          "status": 200,
+          "bytes": 1115306,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1661.3000000044703
+        },
+        {
+          "path": "docs/jmri-layout/minimap-canonical.svg",
+          "status": 200,
+          "bytes": 107091,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1662.9000000059605
+        },
+        {
+          "path": "index.html",
+          "status": 200,
+          "bytes": 9868,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1663.5
+        },
+        {
+          "path": "style.css",
+          "status": 200,
+          "bytes": 20465,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1663.8000000044703
+        },
+        {
+          "path": "ui/assets/svg/serien-sprite.svg",
+          "status": 200,
+          "bytes": 8360,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1664.2000000029802
+        },
+        {
+          "path": "ui/assets/textures/brass-brushed.jpg",
+          "status": 200,
+          "bytes": 18733,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1664.5
+        },
+        {
+          "path": "ui/assets/textures/brass-spun.jpg",
+          "status": 200,
+          "bytes": 22837,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1664.9000000059605
+        },
+        {
+          "path": "ui/assets/textures/enamel-green.jpg",
+          "status": 200,
+          "bytes": 16123,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1665.2000000029802
+        },
+        {
+          "path": "ui/assets/textures/mahogany.jpg",
+          "status": 200,
+          "bytes": 20131,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1665.5
+        },
+        {
+          "path": "ui/assets/textures/parchment.jpg",
+          "status": 200,
+          "bytes": 47511,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1665.9000000059605
+        },
+        {
+          "path": "ui/assets/textures/steel-brushed.jpg",
+          "status": 200,
+          "bytes": 12285,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1666.2000000029802
+        },
+        {
+          "path": "ui/css/serien-ui-integration.css",
+          "status": 200,
+          "bytes": 39562,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1666.5
+        },
+        {
+          "path": "ui/css/serien-ui-train-management-u2.css",
+          "status": 200,
+          "bytes": 35624,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1666.8000000044703
+        },
+        {
+          "path": "ui/css/serien-ui-u2.css",
+          "status": 200,
+          "bytes": 57507,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1667.2000000029802
+        },
+        {
+          "path": "ui/css/tokens-tm-u2.css",
+          "status": 200,
+          "bytes": 1821,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1667.6000000014901
+        },
+        {
+          "path": "ui/css/tokens-u2.css",
+          "status": 200,
+          "bytes": 3978,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1667.9000000059605
+        },
+        {
+          "path": "ui/fonts/CinzelDecorative-700.woff2",
+          "status": 200,
+          "bytes": 22460,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1668.2000000029802
+        },
+        {
+          "path": "ui/fonts/CutiveMono-400.woff2",
+          "status": 200,
+          "bytes": 30780,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1668.6000000014901
+        },
+        {
+          "path": "ui/fonts/Federo-400.woff2",
+          "status": 200,
+          "bytes": 38704,
+          "hashMatch": true,
+          "transferSize": 0,
+          "workerStart": 1668.9000000059605
+        }
+      ],
+      "networkRequests": []
+    }
+  ],
+  "authRemainsLocked": true,
+  "scene": {
+    "id": "v06",
+    "sessionId": "d055e6ab-4c22-42de-a050-ca495e4036b8",
+    "layoutId": "V06-R1A",
+    "railTop": 8.4,
+    "controllers": [
+      "V06-C07",
+      "V06-C12",
+      "V06-C13",
+      "V06-N07",
+      "V06-N14",
+      "WX-A",
+      "WX-B"
+    ],
+    "edges": 79,
+    "scenery": {
+      "modules": [
+        {
+          "path": "modules/gardens_allotments.glb",
+          "loadedPath": "optimized/gardens_allotments.glb",
+          "bytes": 5390084,
+          "sha256": "24871e96d5d2efcc023a634e83900674075167eacbc28875e1bff3d183446046",
+          "originalBytes": 5601128,
+          "fetchVerifyMs": 9.100000001490116,
+          "parseMs": 34.5
+        },
+        {
+          "path": "modules/mountain.glb",
+          "loadedPath": "optimized/mountain.glb",
+          "bytes": 7749372,
+          "sha256": "4b6836f85647b7c79a206f1688cbb9f2279788268b1fe301e693b2688cdbaf51",
+          "originalBytes": 16779656,
+          "fetchVerifyMs": 18.30000000447035,
+          "parseMs": 56
+        },
+        {
+          "path": "modules/mountain_rocks.glb",
+          "loadedPath": "optimized/mountain_rocks.glb",
+          "bytes": 6047352,
+          "sha256": "735cbdd6505ce38fce1518c638879ac2781d39d84794a043bebc2f3f8359699b",
+          "originalBytes": 6179932,
+          "fetchVerifyMs": 10.5,
+          "parseMs": 25.19999999552965
+        },
+        {
+          "path": "modules/railway_service_buildings.glb",
+          "loadedPath": "optimized/railway_service_buildings.glb",
+          "bytes": 24184300,
+          "sha256": "d97f4a889f55c9294047c03a9c65ae538122225ccc09bb52795b2d5af4dfdab7",
+          "originalBytes": 36688380,
+          "fetchVerifyMs": 21.899999998509884,
+          "parseMs": 172.39999999850988
+        },
+        {
+          "path": "modules/sawmill.glb",
+          "loadedPath": "optimized/sawmill.glb",
+          "bytes": 17757716,
+          "sha256": "6c99b18bb3755440fcae13526bf6e4d984036caca61b75223d9de174382ab57d",
+          "originalBytes": 59400628,
+          "fetchVerifyMs": 25.399999998509884,
+          "parseMs": 45.100000001490116
+        },
+        {
+          "path": "modules/scenery_details.glb",
+          "loadedPath": "optimized/scenery_details.glb",
+          "bytes": 4973036,
+          "sha256": "4018b77c5bcce5fc97fcfb3d5d2935379906ca390619a072f72148dbb7c77862",
+          "originalBytes": 5005664,
+          "fetchVerifyMs": 6.799999997019768,
+          "parseMs": 30.400000005960464
+        },
+        {
+          "path": "modules/station_platform.glb",
+          "loadedPath": "optimized/station_platform.glb",
+          "bytes": 16690856,
+          "sha256": "08be6472a3859da042008d981d887822c6cc6bcad77467832d10875900c25e17",
+          "originalBytes": 16690996,
+          "fetchVerifyMs": 30,
+          "parseMs": 202.20000000298023
+        },
+        {
+          "path": "modules/technical_reference.glb",
+          "loadedPath": "modules/technical_reference.glb",
+          "bytes": 99864,
+          "sha256": "176c8a6dcf49fae2c1547e70fcb4caa1187527b9e408f4386c59ef517d00c899",
+          "originalBytes": 99864,
+          "fetchVerifyMs": 1.1000000014901161,
+          "parseMs": 0.3999999985098839
+        },
+        {
+          "path": "modules/terrain.glb",
+          "loadedPath": "optimized/terrain.glb",
+          "bytes": 26642148,
+          "sha256": "30d1d90462e1eb7cac0ff3115691cb4c6fa6943a655c472eaf0698fe0b202c46",
+          "originalBytes": 41022828,
+          "fetchVerifyMs": 23.399999998509884,
+          "parseMs": 106.39999999850988
+        },
+        {
+          "path": "modules/tunnels_portals.glb",
+          "loadedPath": "optimized/tunnels_portals.glb",
+          "bytes": 14950712,
+          "sha256": "8e04efdd06d363fe99b7c3f661cef87b881e1a46058a15660846f4636786d772",
+          "originalBytes": 17432076,
+          "fetchVerifyMs": 26.399999998509884,
+          "parseMs": 81.60000000149012
+        },
+        {
+          "path": "modules/vegetation.glb",
+          "loadedPath": "optimized/vegetation.glb",
+          "bytes": 26966720,
+          "sha256": "25083e797e94c91aac68ae2467b643165068c9f39a8a33e24555c72367c88730",
+          "originalBytes": 27913720,
+          "fetchVerifyMs": 24.80000000447035,
+          "parseMs": 37.399999998509884
+        },
+        {
+          "path": "modules/village_buildings.glb",
+          "loadedPath": "optimized/village_buildings.glb",
+          "bytes": 65292692,
+          "sha256": "2d110bdf0ef612aae4611561a07d01fd0d48adbdc2ec11a2ec1126cab5aca3ad",
+          "originalBytes": 91596468,
+          "fetchVerifyMs": 57.29999999701977,
+          "parseMs": 314.8999999985099
+        }
+      ],
+      "loadMs": 1767.1000000014901,
+      "railwayBuildMs": 331.1000000014901,
+      "assetVariant": "optimized",
+      "edges": 79,
+      "railTop": 8.4,
+      "gauge": 9,
+      "railCentreOffset": 4.725,
+      "bedCells": 301786,
+      "bedRectangles": 3714,
+      "bedResolutionMm": 1,
+      "originalRailwayAttached": false,
+      "variant": "complete-procedural-R02",
+      "bladeActuatorsCertified": false,
+      "technical": false,
+      "quality": "low",
+      "decorativeInstanceDensity": 0.3,
+      "raycastBuildMs": 175.89999999850988,
+      "raycastObjects": 254,
+      "materialModel": "Lambert",
+      "grassVisible": false
+    }
+  },
+  "update": {
+    "twoTabsPinned": true,
+    "activationAfterClosing": true,
+    "unchangedModelReused": true
+  }
+}

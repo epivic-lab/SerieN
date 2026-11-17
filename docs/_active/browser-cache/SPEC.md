@@ -1,3 +1,8 @@
+> Aggiornamento 17 novembre 2026: l’utente ha autorizzato completamento e deploy.
+> Proposta implementata e collaudata; vedere STATUS.md. Il reset manuale opzionale del punto 9
+> non è stato aggiunto: invalidazione selettiva automatica alla release, senza cambiare la UI.
+> Gli stop di fase sotto descrivono la proposta iniziale, superata per questa consegna.
+
 # Cache browser — proposta derivata da CACHE-1
 
 ## Obiettivo
