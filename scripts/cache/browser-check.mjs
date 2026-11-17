@@ -36,17 +36,20 @@ try {
  const context=await browser.newContext({viewport:{width:1280,height:900}}),page=await context.newPage();
  await page.goto(base+'?diagnostics=1',{waitUntil:'domcontentloaded',timeout:90000});
  await page.waitForFunction(()=>navigator.serviceWorker.controller,{timeout:60000});
- const phases=[];
+ const phases=[], workerRequests=[];
+ context.on('request', request => {if(request.serviceWorker() && request.url().startsWith(base)) workerRequests.push(request.url());});
  for(const phase of ['cold','warm']){
-  const count=requests.length;
+  const count=requests.length, workerCount=workerRequests.length;
   const values=await page.evaluate(async files=>{
    const results=[];for(const f of files){const url=new URL(f.path,document.baseURI).href;const r=await fetch(url);const b=await r.arrayBuffer();const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',b)),n=>n.toString(16).padStart(2,'0')).join('');const e=performance.getEntriesByName(url).at(-1);results.push({path:f.path,status:r.status,bytes:b.byteLength,hashMatch:hash===f.sha256,transferSize:e?.transferSize,workerStart:e?.workerStart});}return results;
   },manifest.files);
   assert.ok(values.every(v=>v.status===200&&v.hashMatch));
   const networkRequests=requests.slice(count).filter(p=>p.startsWith('/SerieN/'));
-  phases.push({phase,values,networkRequests});
-  if(phase==='warm') {assert.ok(values.every(v=>v.transferSize===0));if(!remote)assert.equal(networkRequests.length,0);}
+  const workerNetworkRequests=workerRequests.slice(workerCount);
+  phases.push({phase,values,networkRequests,workerNetworkRequests});
+  if(phase==='warm') {assert.ok(values.every(v=>v.transferSize===0));assert.equal(workerNetworkRequests.length,0);if(!remote)assert.equal(networkRequests.length,0);}
  }
+ assert.ok(phases[0].workerNetworkRequests.length>0, 'Observe worker network traffic on cold run before asserting warm reuse');
  await page.reload({waitUntil:'domcontentloaded'});
  assert.ok(await page.evaluate(()=>!!navigator.serviceWorker.controller));
  await page.waitForFunction(()=>document.getElementById('authStatus')?.textContent.includes('Accedi'),{timeout:30000});
@@ -78,5 +81,5 @@ try {
   data.update={twoTabsPinned:true,activationAfterClosing:true,unchangedModelReused:true};
  }
  fs.writeFileSync(out+label+'-browser.json',JSON.stringify(data,null,2)+'\n');
- console.log(JSON.stringify({label,files:manifest.files.length,warmTransfer:phases[1].values.reduce((s,v)=>s+v.transferSize,0),scene:data.scene?.id,update:data.update,authRemainsLocked:true}));
+ console.log(JSON.stringify({label,files:manifest.files.length,warmTransfer:phases[1].values.reduce((s,v)=>s+v.transferSize,0),warmWorkerRequests:phases[1].workerNetworkRequests.length,coldWorkerRequests:phases[0].workerNetworkRequests.length,scene:data.scene?.id,update:data.update,authRemainsLocked:true}));
 }finally{await browser.close();await new Promise(resolve=>server.close(resolve));}

@@ -1,3 +1,15 @@
+# Rilascio completato — PASS
+
+Merge main `ba26f791e32c7d322da4169bb0b6fe5c4b692a32`, PR #27, Pages 44144106582 SUCCESS.
+Canonico Linux/CI, Node, JMRI e build PASS. Chrome pubblico: 62 hash corretti,
+51 richieste worker iniziali, zero richieste worker al secondo passaggio. Auth resta bloccata senza login.
+[Rapporto permanente e limiti](../../browser-cache/REPORT.md).
+
+Questa directory conserva spec iniziale ed evidenze come storico. Le attese riportate sotto
+sono fotografie precedenti, superate dalla verifica finale. Nessuna altra fase autorizzata o avviata.
+
+---
+
 # CACHE — implementazione e rilascio autorizzati
 
 Il 17 novembre 2026 l’utente ha chiesto esplicitamente «finisci tutto e fai il deploy».

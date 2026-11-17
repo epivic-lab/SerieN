@@ -1,3 +1,15 @@
+# Cache browser — pubblicata e verificata (17 novembre 2026)
+
+**PASS.** PR #27 integrata su main `ba26f791e32c7d322da4169bb0b6fe5c4b692a32`;
+Pages 44144106582 SUCCESS. 581 Node, 9 JMRI, build e canonico Linux PASS.
+Verifica pubblica: 62 file con hash corretti; 51 richieste worker iniziali, **zero al secondo passaggio**.
+Cache per contenuto e aggiornamento selettivo; nessuna modifica a geometrie, runtime ferroviario, UI o auth.
+[Rapporto permanente, prove e limiti](docs/browser-cache/REPORT.md).
+
+**Prossima azione unica: eventuale audit post-rilascio della Regia. STOP; lavoro richiesto completato.**
+
+---
+
 # Cache browser — implementata, rilascio autorizzato (17 novembre 2026)
 
 L’utente autorizza completamento e deploy di questa attività. Branch `codex/browser-cache`.
