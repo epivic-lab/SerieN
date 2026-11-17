@@ -1,0 +1,116 @@
+{
+  "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "result": "FAIL: regenerated files differ; restored tracked baseline",
+  "files": [
+    {
+      "path": "src/canonical-layout.json",
+      "changed": true,
+      "baselineSha256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "generatedSha256": "70cf55a1853757edab47e898fee0c799b72bd6abe6f67e5bf8393198036795ff",
+      "changeCount": 1059,
+      "firstChanges": [
+        {
+          "path": "/terminals/0/axisLengthToPortMm",
+          "before": 373.9024173009587,
+          "after": 373.90241730095863
+        },
+        {
+          "path": "/terminals/0/simulationBudgetMm",
+          "before": 333.9024173009587,
+          "after": 333.90241730095863
+        },
+        {
+          "path": "/edges/0/points/37/z",
+          "before": 422.98697071891087,
+          "after": 422.9869707189108
+        },
+        {
+          "path": "/edges/0/points/38/z",
+          "before": 424.9124740532671,
+          "after": 424.91247405326715
+        },
+        {
+          "path": "/edges/0/points/40/z",
+          "before": 428.7521330885781,
+          "after": 428.75213308857803
+        },
+        {
+          "path": "/edges/0/points/43/x",
+          "before": 1391.047994587226,
+          "after": 1391.0479945872262
+        },
+        {
+          "path": "/edges/0/points/52/z",
+          "before": 451.43222175975905,
+          "after": 451.4322217597591
+        },
+        {
+          "path": "/edges/0/points/53/z",
+          "before": 453.2914598771122,
+          "after": 453.2914598771121
+        }
+      ]
+    },
+    {
+      "path": "docs/jmri-layout/canonical-graph.json",
+      "changed": true,
+      "baselineSha256": "e233b168afdb05482ed448a09133ff8f085c3039d5225b52286898e73aaad0cc",
+      "generatedSha256": "70cf55a1853757edab47e898fee0c799b72bd6abe6f67e5bf8393198036795ff",
+      "changeCount": 1059,
+      "firstChanges": [
+        {
+          "path": "/terminals/0/axisLengthToPortMm",
+          "before": 373.9024173009587,
+          "after": 373.90241730095863
+        },
+        {
+          "path": "/terminals/0/simulationBudgetMm",
+          "before": 333.9024173009587,
+          "after": 333.90241730095863
+        },
+        {
+          "path": "/edges/0/points/37/z",
+          "before": 422.98697071891087,
+          "after": 422.9869707189108
+        },
+        {
+          "path": "/edges/0/points/38/z",
+          "before": 424.9124740532671,
+          "after": 424.91247405326715
+        },
+        {
+          "path": "/edges/0/points/40/z",
+          "before": 428.7521330885781,
+          "after": 428.75213308857803
+        },
+        {
+          "path": "/edges/0/points/43/x",
+          "before": 1391.047994587226,
+          "after": 1391.0479945872262
+        },
+        {
+          "path": "/edges/0/points/52/z",
+          "before": 451.43222175975905,
+          "after": 451.4322217597591
+        },
+        {
+          "path": "/edges/0/points/53/z",
+          "before": 453.2914598771122,
+          "after": 453.2914598771121
+        }
+      ]
+    },
+    {
+      "path": "docs/jmri-layout/layout-canonical.svg",
+      "changed": false,
+      "baselineSha256": "b28f1fa033841f173bba19cb9991718814ed01fcdccd1ccf1574fda3da725a61",
+      "generatedSha256": "b28f1fa033841f173bba19cb9991718814ed01fcdccd1ccf1574fda3da725a61"
+    },
+    {
+      "path": "docs/jmri-layout/minimap-canonical.svg",
+      "changed": false,
+      "baselineSha256": "544866a41bc6fb75e34151dae814e0e384016fdd029bf10be02d3d918bae7365",
+      "generatedSha256": "544866a41bc6fb75e34151dae814e0e384016fdd029bf10be02d3d918bae7365"
+    }
+  ]
+}
