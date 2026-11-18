@@ -64,6 +64,10 @@ export function mountTrainManagement({button,getTrains,getDetached,getSelected,g
     heading(list,`${trains.length} compositions on the layout`);
     const add=element('button','Add BR 01 + tender');add.type='button';add.disabled=trains.length>=4;
     add.onclick=()=>{const id=onAdd();notice.textContent=id===null?'No free track section for a complete composition.':'Composition added to the layout.';};list.append(add);
+    const addHenschel=element('button','Add Henschel DHG 500 C');addHenschel.type='button';addHenschel.disabled=trains.length>=4;
+    addHenschel.dataset.modelId='native-henschel-dhg-500-c';
+    addHenschel.onclick=()=>{const id=onAdd('henschel-dhg-500-c');notice.textContent=id===null?'Henschel unavailable or no free track section.':'Henschel added to the layout.';};
+    list.append(addHenschel);
     for(const train of trains){const c=compositionView(train),b=element('button',undefined,'managementTrain');b.type='button';b.dataset.composition=String(c.id);b.dataset.ctrl='CTRL-028';b.setAttribute('aria-pressed',String(c.id===selected));b.classList.toggle('active',c.id===selected);b.append(image(thumbnailURL(train),c.name),element('strong',c.name),element('small',`${c.vehicles.length} vehicles · ${mm(c.length)}`),element('span',train.guard?.intervened?'Guarded stop':Math.abs(train.velocity??0)>.1?'Moving':train.speed>0?'Starting':'Stopped','u6-state'));b.onclick=()=>onSelect(c.id);list.append(b);}
     const train=trains.find(t=>t.id===selected);
     if(train){const c=compositionView(train);heading(detail,c.name);detail.append(element('p',c.description),element('p',`${c.reverse?'Reverse':'Forward'} · ${mm(c.length)} overall`,'managementSummary'),element('small','Order from locomotive to tail. Reversing preserves this order.'));

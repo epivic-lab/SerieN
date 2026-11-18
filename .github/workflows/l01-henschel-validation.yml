@@ -1,0 +1,20 @@
+name: L01 Henschel validation
+on:
+  push:
+    branches: [codex/rolling-stock-l01-henschel]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: python3 -m unittest discover -s tests -p 'jmri_audit_test.py'

@@ -11,6 +11,7 @@ import {createFleetCommands} from './src/fleet-commands.js';
 import {layoutFor,vehiclePose,vehiclePositions,deriveSwitchAssistance,collectRailwayState} from './src/railway-state.js';
 import {poseDrawbar} from './src/br01-drawbar.js';
 import {buildBR01,loadBR01} from './src/br01.js';
+import {buildHenschel,loadHenschel} from './src/henschel.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
 import {createTurnoutPicking} from "./src/turnout-picking.js";
 import {createTurnoutArrows} from './src/turnout-arrows.js';
@@ -312,11 +313,21 @@ function wheelSet(group, len) {
   }
 }
 const br01Source = await loadBR01();
+let henschelSource=null;
+try { henschelSource=await loadHenschel(); }
+catch(error){console.warn('Henschel model unavailable; BR 01 remains operational.',error);}
 function brTrain(id,loop){
   const group=buildBR01(br01Source,'engine',id),tender=buildBR01(br01Source,'tender',id);
   return {id,name:`BR 01 · ${id+1}`,desc:'BR 01 + tender · Tom Zimmermann',modelKey:'br01-engine',
     group,carObjs:[tender],loop,cars:1,initial:{loop,cars:1,fraction:.22},
     speed:0,requestedSpeed:0,velocity:0,dir:1,lights:id===0,laps:0,mode:'loop'};
+}
+function henschelTrain(id,loop){
+  if(!henschelSource)throw new Error('Henschel model is unavailable');
+  const group=buildHenschel(henschelSource,id);
+  return {id,name:'Henschel DHG 500 C · '+(id+1),desc:'Henschel industrial shunter · accessviolation · CC BY-NC-SA 4.0',
+    modelKey:'henschel-dhg-500-c',group,carObjs:[],loop,cars:0,initial:{loop,cars:0,fraction:.22},
+    speed:0,requestedSpeed:0,velocity:0,dir:1,lights:false,laps:0,mode:'loop'};
 }
 const trains=[brTrain(0,isV06?network.metadata.mainLoops.find(loop=>loop.circuit==='C').lane:2)];
 for(const t of trains)scene.add(t.group,...t.carObjs);
@@ -426,18 +437,18 @@ function renderVehicles() {
     for(let i=0;i<vehicles.length;i++) {
       const group=vehicles[i],coordinate=t.journey.position-layout.offsets[i],pose=vehiclePose(t.journey,coordinate,group);
       if(i===0 && t.id===selected)selectedPoint=pose;
-      if(i){group.visible=true;group.br01Gear.member.rotation.y=0;}
+      if(i){group.visible=true;if(group.br01Gear)group.br01Gear.member.rotation.y=0;}
       group.position.set(pose.x,profile.railTop,pose.z);
       group.rotation.y=pose.angle;
-      group.br01Pose(t.odometer,t.journey,coordinate,pose);
+      group.br01Pose?.(t.odometer,t.journey,coordinate,pose);
     }
-    poseDrawbar(t.group,t.carObjs[0]);
+    if(t.modelKey==='br01-engine'&&t.carObjs[0])poseDrawbar(t.group,t.carObjs[0]);
   }
   selectRing.visible=Boolean(selectedPoint);
   if(selectedPoint)selectRing.position.set(selectedPoint.x,isV06?profile.railTop+.5:5.2,selectedPoint.z);
   for (const d of detached) {
     d.group.visible = true;
-    d.group.br01Gear.member.rotation.y=0;
+    if(d.group.br01Gear)d.group.br01Gear.member.rotation.y=0;
     d.group.position.set(d.point.x,profile.railTop,d.point.z);
     d.group.rotation.y = d.point.angle;
   }
@@ -489,7 +500,7 @@ function reset() {
   });
   if(isV06)trains.forEach(t=>{delete t.journey;});
   trains.forEach(t => {
-    if(!t.carObjs.length){
+    if(t.modelKey==='br01-engine'&&!t.carObjs.length){
       const tender=buildBR01(br01Source,'tender',t.id);
       scene.add(tender);t.carObjs.push(tender);
     }
@@ -531,8 +542,8 @@ function removeTrain(train) {
   if(index<0 || !canRemoveTrain(train))return false;
   trains.splice(index,1);
   for(const vehicle of [train.group,...train.carObjs])scene.remove(vehicle);
-  train.group.userData.headMaterial.dispose();
-  train.group.userData.beam.dispose();
+  train.group.userData.headMaterial?.dispose();
+  train.group.userData.beam?.dispose();
   guardedStops.remove(train.id);
   if(selected===train.id)selected=trains[index]?.id??trains.at(-1)?.id??null;
   $('addTrain').disabled=false;
@@ -542,11 +553,13 @@ function removeTrain(train) {
 function canRemoveTrain(train) {
   return train.velocity===0 && train.speed===0 && train.requestedSpeed===0;
 }
-function addTrain() {
+function addTrain(modelKey='br01-engine') {
   if(trains.length>=4){log("A session supports up to four trains.");return null;}
-  const t=brTrain(nextTrainId,0);
+  if(!['br01-engine','henschel-dhg-500-c'].includes(modelKey))throw new RangeError('Unknown playable locomotive');
+  if(modelKey==='henschel-dhg-500-c'&&!henschelSource){log('Henschel model unavailable.');return null;}
+  const t=modelKey==='br01-engine'?brTrain(nextTrainId,0):henschelTrain(nextTrainId,0);
   const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t});
-  if(!spawn){t.group.userData.headMaterial.dispose();t.group.userData.beam.dispose();log('No free track section for the complete BR 01 and tender.');return null;}
+  if(!spawn){t.group.userData.headMaterial.dispose();t.group.userData.beam.dispose();log('No free track section for this locomotive.');return null;}
   t.initial={...spawn,cars:1};t.loop=spawn.loop;initializeJourney(t);
   nextTrainId++;
   t.group.userData.dynamic=true;
@@ -556,12 +569,12 @@ function addTrain() {
   renderVehicles();ui();return t.id;
 }
 $("stopAll").onclick=stopAllTrains;
-function addAndSelectTrain() {
-  const id=addTrain();
+function addAndSelectTrain(modelKey='br01-engine') {
+  const id=addTrain(modelKey);
   if(id!==null)select(id);
   return id;
 }
-$("addTrain").onclick=addAndSelectTrain;
+$("addTrain").onclick=()=>addAndSelectTrain();
 $("routePreview").onclick=()=>{
   highlightUntil=performance.now()<highlightUntil?0:performance.now()+15000;
   highlightUpdated=0;updateRouteHighlight(true);
