@@ -18,3 +18,28 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: python3 -m unittest discover -s tests -p 'jmri_audit_test.py'
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Browser smoke V06 and Legacy
+        run: |
+          python -m http.server 8000 > /tmp/serien-l01-http.log 2>&1 &
+          sleep 2
+          SERIEN_URL=http://127.0.0.1:8000/ python tests/browser-henschel-l01.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: henschel-l01-browser
+          path: work/henschel-l01/

@@ -57,13 +57,17 @@ function segmentWheelGeometry(model,radius){
   original.geometry=makeGeometry(bodyFaces);
   for(const {faces,bounds} of wheelParts){
     const pivot=bounds.getCenter(new THREE.Vector3());
-    const node=new THREE.Group(),wheel=new THREE.Mesh(makeGeometry(faces),original.material);
+    const wheelGeometry=makeGeometry(faces);
+    // Position attributes are shared; wheel-specific bounds avoid oversized culling and hulls.
+    wheelGeometry.boundingBox=bounds.clone();
+    wheelGeometry.boundingSphere=bounds.getBoundingSphere(new THREE.Sphere());
+    const node=new THREE.Group(),wheel=new THREE.Mesh(wheelGeometry,original.material);
     wheel.position.copy(pivot).multiplyScalar(-1);
     wheel.castShadow=wheel.receiveShadow=true;
     node.position.copy(pivot);
     node.add(wheel);
     original.parent.add(node);
-    wheels.push({node,radius});
+    wheels.push({node,radius,axis:'x'});
   }
   return wheels;
 }
