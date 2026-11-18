@@ -92,14 +92,20 @@ export function buildHenschel(source,id){
   // Couplers extend 1 mm beyond the buffers; the body is centred at X=0.
   root.userData.couplers={front:{x:HENSCHEL.length/2+1,y:8,z:0},back:{x:-HENSCHEL.length/2-1,y:8,z:0}};
   const headMaterial=new THREE.MeshStandardMaterial({color:0xfff6dc,emissive:0xffd48b,emissiveIntensity:0});
-  const lamp=new THREE.Mesh(new THREE.SphereGeometry(.9,10,8),headMaterial);
-  lamp.position.set(HENSCHEL.length/2-.55,17,0);
+  const lamp=new THREE.Mesh(new THREE.CircleGeometry(.65,16),headMaterial);
+  // Locate the real hood surface, not the over-buffer envelope. A lamp placed
+  // at length/2 floats beyond the body because the buffers define that extent.
+  root.updateMatrixWorld(true);
+  const hit=new THREE.Raycaster(new THREE.Vector3(HENSCHEL.length,17,0),new THREE.Vector3(-1,0,0))
+    .intersectObject(normalization,true)[0];
+  lamp.rotation.y=Math.PI/2;
+  lamp.position.set((hit?.point.x??HENSCHEL.length/2-7)+.03,17,0);
   lamp.userData.imported=false;
   lamp.geometry.userData.henschelOwned=true;
   root.add(lamp);
   const beam=new THREE.SpotLight(0xffe7b7,1.6,240,.4,.55);
-  beam.position.set(HENSCHEL.length/2,18,0);
-  beam.target.position.set(HENSCHEL.length/2+120,13,0);
+  beam.position.copy(lamp.position).add(new THREE.Vector3(.1,0,0));
+  beam.target.position.copy(lamp.position).add(new THREE.Vector3(120,-4,0));
   beam.visible=false;
   root.add(beam,beam.target);
   root.userData.headMaterial=headMaterial;
@@ -115,6 +121,7 @@ export function buildHenschel(source,id){
   // This Sketchfab source has a single baked mesh; it has no independent wheel nodes.
   // Position and orientation are animated by the existing Journey renderer.
   root.stockRig={body:root,wheels,bogies:[],rods:[],pistons:[]};
-  root.br01Pose=(distance)=>{for(const {node,radius} of wheels)node.rotation.x=distance/radius;};
+  // Source local +X maps to locomotive +Z: forward travel needs negative spin.
+  root.br01Pose=(distance)=>{for(const {node,radius} of wheels)node.rotation.x=-distance/radius;};
   return root;
 }

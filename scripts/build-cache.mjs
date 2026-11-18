@@ -19,7 +19,7 @@ const scene=lock.files.filter(f=>f.path!=='modules/railway_visual.glb').map(f=>
  'assets/scenario-v06/'+(f.path.includes('technical_reference')?f:optimized.files.find(o=>o.original===f.path&&o.originalSha256===f.sha256)).path);
 const paths=new Set([...core,...scene,...['dataset.json','asset-lock.json','optimized-lock.json'].map(f=>'assets/scenario-v06/'+f),
  'docs/jmri-layout/minimap-canonical.svg',...await walk('ui/assets'),...await walk('ui/fonts'),
- ...await walk('assets/br01'),...await walk('assets/kenney'),...await walk('assets/locomotive-thumbnails'),...await walk('assets/rolling-stock-thumbnails')]);
+ ...await walk('assets/br01'),...await walk('assets/kenney'),...await walk('assets/rolling-stock'),...await walk('assets/locomotive-thumbnails'),...await walk('assets/rolling-stock-thumbnails')]);
 const files=[];
 for(const path of [...paths].sort()) {const bytes=await readFile(path);files.push({path,bytes:bytes.length,sha256:hash(bytes),core:core.has(path)});}
 const manifest={version:hash(JSON.stringify(files)),files};

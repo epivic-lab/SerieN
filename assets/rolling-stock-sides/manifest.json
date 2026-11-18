@@ -410,13 +410,13 @@
   },
   "native-henschel-dhg-500-c": {
     "bounds": {
-      "minX": -30.9375,
-      "maxX": 30.9375,
-      "minY": 0,
-      "maxY": 26.6875
+      "minX": -32,
+      "maxX": 32,
+      "minY": -1.125,
+      "maxY": 27.75
     },
-    "width": 495,
-    "height": 213.5,
+    "width": 512,
+    "height": 231,
     "pixelsPerMm": 8,
     "couplers": {
       "front": {
@@ -431,7 +431,8 @@
       }
     },
     "mountY": 0,
-    "url": "./assets/rolling-stock/henschel-dhg-500-c/side.svg",
+    "imageSha256": "f50bf8ff4064dd86900286448131f962a30c88b4b78a09d6f3b779d7e9b1122e",
+    "url": "./assets/rolling-stock/henschel-dhg-500-c/side.png",
     "stock": {
       "id": "henschel-dhg-500-c",
       "width": 19

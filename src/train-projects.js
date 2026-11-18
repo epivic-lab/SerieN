@@ -22,7 +22,7 @@ export const PROJECT_CATALOG=Object.freeze([...BR01_CATALOG,Object.freeze({
   id:'native-henschel-dhg-500-c',kind:'henschel-dhg-500-c',role:'locomotive',
   source:'accessviolation · CC BY-NC-SA 4.0',name:'Henschel DHG 500 C',
   length:61.875,width:19,
-  image:'./assets/rolling-stock/henschel-dhg-500-c/side.svg',
+  image:'./assets/rolling-stock/henschel-dhg-500-c/thumbnail.png',
   asset:manifest['native-henschel-dhg-500-c']
 })]);
 const models=new Map([...retiredModels.map(m=>({...m,retired:true})),...PROJECT_CATALOG].map(m=>[m.id,m]));

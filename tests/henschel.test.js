@@ -58,4 +58,21 @@ test('actual GLB geometry separates six physical wheels and animates their rotat
   assert.ok(loco.stockRig.wheels.every(w=>Number.isFinite(w.node.rotation.x)));
   assert.notEqual(loco.stockRig.wheels[0].node.rotation.x,before);
   assert.equal(loco.stockRig.wheels[0].radius>3,true);
+  // A tread point at the bottom must move backwards relative to the body
+  // when the locomotive advances (+X), including the source's axis transforms.
+  loco.br01Pose(0);loco.updateMatrixWorld(true);
+  const wheel=loco.stockRig.wheels[0].node;
+  const bottom=wheel.localToWorld(new THREE.Vector3(0,-50,0));
+  loco.br01Pose(.1);loco.updateMatrixWorld(true);
+  const rolled=wheel.localToWorld(new THREE.Vector3(0,-50,0));
+  assert.ok(rolled.x<bottom.x,'wheel tread must oppose forward body travel');
+  assert.ok(Math.abs(rolled.x-bottom.x+.1)<.003,'rolling contact must not slide with the body');
+  loco.br01Pose(-.1);loco.updateMatrixWorld(true);
+  assert.ok(wheel.localToWorld(new THREE.Vector3(0,-50,0)).x>bottom.x,'reverse travel reverses wheel motion');
+  const lamp=loco.children.find(n=>n.isMesh&&n.geometry.type==='CircleGeometry');
+  assert.ok(lamp,'headlamp lens is present');
+  const surface=new THREE.Raycaster(new THREE.Vector3(HENSCHEL.length,17,0),new THREE.Vector3(-1,0,0))
+    .intersectObject(loco.children[0],true)[0];
+  assert.ok(surface,'front hood surface exists');
+  assert.ok(Math.abs(lamp.position.x-surface.point.x-.03)<1e-7,'lamp stays attached to the hood, not suspended over the buffers');
 });
