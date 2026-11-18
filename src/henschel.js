@@ -15,6 +15,58 @@ export function loadHenschel(){
     .then(gltf=>gltf.scene).catch(error=>{sourcePromise=null;throw error;});
   return sourcePromise;
 }
+const faceRange=(start,end)=>Array.from({length:end-start+1},(_,i)=>start+i);
+// Face groups verified against the original 272,032-byte Sketchfab GLB.
+// Each group is one wheel with independent geometry, despite the source containing one baked mesh.
+export const HENSCHEL_WHEEL_FACES=Object.freeze(Array.from({length:6},(_,i)=>{
+  const low=884+14*i,high=2782+30*i;
+  return Object.freeze([...faceRange(low,low+9),...faceRange(low+11,low+12),
+    ...faceRange(high,high+9),...faceRange(high+19,high+20)]);
+}));
+function segmentWheelGeometry(model,radius){
+  let original=null;
+  model.traverse(node=>{
+    if(node.isMesh&&node.geometry.index?.count===11130&&node.geometry.attributes.position?.count===5152)original=node;
+  });
+  if(!original)return [];
+  const geometry=original.geometry,index=geometry.index,positions=geometry.attributes.position;
+  const wheels=[],faceSet=new Set(HENSCHEL_WHEEL_FACES.flat());
+  const makeGeometry=(faces)=>{
+    const result=new THREE.BufferGeometry();
+    for(const [name,attribute] of Object.entries(geometry.attributes))result.setAttribute(name,attribute);
+    const indices=[];
+    for(const face of faces)for(let i=0;i<3;i++)indices.push(index.getX(face*3+i));
+    result.setIndex(indices);
+    return result;
+  };
+  const wheelParts=HENSCHEL_WHEEL_FACES.map(faces=>{
+    const bounds=new THREE.Box3(),point=new THREE.Vector3();
+    for(const face of faces)for(let i=0;i<3;i++){
+      const vertex=index.getX(face*3+i);
+      bounds.expandByPoint(point.fromBufferAttribute(positions,vertex));
+    }
+    return {faces,bounds};
+  });
+  // Fail safe if the original GLB is ever replaced with a different topology.
+  if(wheelParts.some(part=>{
+    const d=part.bounds.getSize(new THREE.Vector3());
+    return Math.abs(d.y-100)>.5||Math.abs(d.z-100)>.5||d.x<12||d.x>20;
+  }))return [];
+  const bodyFaces=[];
+  for(let face=0;face<index.count/3;face++)if(!faceSet.has(face))bodyFaces.push(face);
+  original.geometry=makeGeometry(bodyFaces);
+  for(const {faces,bounds} of wheelParts){
+    const pivot=bounds.getCenter(new THREE.Vector3());
+    const node=new THREE.Group(),wheel=new THREE.Mesh(makeGeometry(faces),original.material);
+    wheel.position.copy(pivot).multiplyScalar(-1);
+    wheel.castShadow=wheel.receiveShadow=true;
+    node.position.copy(pivot);
+    node.add(wheel);
+    original.parent.add(node);
+    wheels.push({node,radius});
+  }
+  return wheels;
+}
 export function buildHenschel(source,id){
   if(!source?.isObject3D)throw new TypeError('Henschel source is not a Three.js model');
   const root=new THREE.Group(),model=source.clone(true),bounds=new THREE.Box3().setFromObject(model);
@@ -26,6 +78,7 @@ export function buildHenschel(source,id){
   model.position.y+=size.y/2;
   normalization.scale.set(HENSCHEL.length/size.x,HENSCHEL.height/size.y,HENSCHEL.width/size.z);
   normalization.add(model);
+  const wheels=segmentWheelGeometry(model,50*HENSCHEL.height/size.y);
   model.traverse(object=>{if(object.isMesh){object.castShadow=true;object.receiveShadow=true;}});
   root.add(normalization);
   root.userData.dynamic=true;
@@ -47,6 +100,7 @@ export function buildHenschel(source,id){
   root.userData.beam=beam;
   // This Sketchfab source has a single baked mesh; it has no independent wheel nodes.
   // Position and orientation are animated by the existing Journey renderer.
-  root.br01Pose=()=>{};
+  root.stockRig={body:root,wheels,bogies:[],rods:[],pistons:[]};
+  root.br01Pose=(distance)=>{for(const {node,radius} of wheels)node.rotation.x=distance/radius;};
   return root;
 }

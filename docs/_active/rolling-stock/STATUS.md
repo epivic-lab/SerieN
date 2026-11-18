@@ -1,25 +1,23 @@
 # Serie N — Rolling Stock L01 (Henschel DHG 500 C)
 
-## Branch checkpoint
-Branch: `codex/rolling-stock-l01-henschel` (not main). Baseline `ba26f791e32c7d322da4169bb0b6fe5c4b692a32`.
+Branch: `codex/rolling-stock-l01-henschel`. Baseline `ba26f791e32c7d322da4169bb0b6fe5c4b692a32`.
 
-## Scope
-- New Henschel DHG 500 C GLB in `assets/rolling-stock/henschel-dhg-500-c/`, 272,032 bytes, 3,710 triangles, one baked mesh.
-- Runtime scale normalization to N 1:160 (61.875 × 19 × 26.6875 mm), nominal couplers and headlight.
-- New train type via protected existing spawn path, controls, camera Follow and existing railway safety.
-- Catalog, Train Management creation button, project model, Depot identity and side/thumbnail placeholder.
-- Generic-only renderer/reset guards, preserving BR 01 behavior.
-- Automated unit test and branch-scoped GitHub Actions npm test/build workflow.
+## Implemented
+- Original 272,032-byte GLB, 3,710 triangles, source/license retained under `assets/rolling-stock/henschel-dhg-500-c/`.
+- Runtime scale to N 1:160: length 61.875 mm, width 19 mm, height 26.6875 mm.
+- Independent wheel segmentation: six original wheel mesh components identified and detached from baked GLB geometry, rotating in sync with Journey odometer. No change to original texture/material.
+- Henschel type added to locomotive rendering, Train Management spawn action, Depot catalog, project/side view and thumbnail (schematic SVG).
+- Headlamp support, nominal couplers, train creation via existing protected placement, scene rendering, removal, controls and Follow.
+- Existing BR 01 remains the default. No canonical track geometry changes.
 
-## Licencing
-Original by accessviolation, licensed CC BY-NC-SA 4.0. Non-commercial distribution only with attribution and share-alike for the model and its adaptations. See asset attribution.
+## Source licence
+accessviolation, Sketchfab; **CC BY-NC-SA 4.0**, noncommercial use only with attribution and share-alike of adaptations. Check `ATTRIBUTION.md` before commercialization.
 
-## Deliberate limits
-- Source has a **single baked mesh** with no independent wheel geometry or wheel animation.
-- SVG thumbnails are **schematic placeholders**, not rendered shots of the GLB.
-- Coupler coordinates are nominal and not yet physically calibrated in browser.
-- The locomotive must **not** be declared fully verified or released until Node, build and browser railway/visual gates pass.
-- No changes to the underlying canonical layout or BR 01 geometry.
+## Verification
+Automated CI branch workflow includes `npm ci`, `npm test`, `npm run build`, JMRI Python audit. The initial CI attempt on first commit failed three legacy assertions expecting a fixed two-model catalog / 16-image manifest; corrected in subsequent commit to reflect Henschel inclusion, preserving BR 01 checks. Check latest workflow run for results.
 
-## Gate
-Implementation checkpoint; initial CI and browser evidence pending. Record PASS/FAIL/NOT VERIFIED after observing actual results.
+## Remaining independent visual gate
+- Real-browser V06/Legacy spawning, traction, reversing, curves, turnout safety and occupancy, Follow, Train Management and mobile layout.
+- Actual 3D thumbnail capture should replace the **schematic** SVG placeholder.
+- Visual wheel motion/direction and coupler clearance on minimum track radii need browser verification.
+- No merge/deploy on `main` without explicit Regia approval.

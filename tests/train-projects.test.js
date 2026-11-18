@@ -4,8 +4,8 @@ import {PROJECT_CATALOG,createTrainProjects,validateProject,realComposition,comp
 const store=()=>{let id=0;return createTrainProjects({newId:()=>`project-id-${++id}`});};
 const real=()=>({id:0,name:'BR 01',modelKey:'br01-engine',group:{uuid:'loco',userData:{}},carObjs:[{uuid:'wagon-1',userData:{stock:{kind:'br01-tender'}}},{uuid:'wagon-2',userData:{stock:{kind:'br01-tender'}}}],speed:0,velocity:0});
 test('normalized catalog has the BR 01 and its tender',()=>{
-  assert.equal(PROJECT_CATALOG.length,2);assert.equal(new Set(PROJECT_CATALOG.map(m=>m.id)).size,2);
-  assert.equal(PROJECT_CATALOG.filter(m=>m.role==='locomotive').length,1);
+  assert.equal(PROJECT_CATALOG.length,3);assert.equal(new Set(PROJECT_CATALOG.map(m=>m.id)).size,3);
+  assert.equal(PROJECT_CATALOG.filter(m=>m.role==='locomotive').length,2);
   for(const m of PROJECT_CATALOG){assert.ok(m.length>0);assert.ok(m.asset.couplers.front.x>0);assert.ok(m.asset.couplers.back.x<0);}
 });
 test('project lifecycle is isolated, confirmation has no railway effect and cancellation restores saved version',()=>{
