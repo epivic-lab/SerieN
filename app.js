@@ -537,13 +537,17 @@ function stopAllTrains() {
   guardedStops.bell.setActive(false);
   fleetCommands.stopAll();ui();log("STOP ALL · every train stopped");
 }
+function releaseTrainResources(group){
+  if(group.userData.disposeRollingStock)return group.userData.disposeRollingStock();
+  group.userData.headMaterial?.dispose();
+  group.userData.beam?.dispose();
+}
 function removeTrain(train) {
   const index=trains.indexOf(train);
   if(index<0 || !canRemoveTrain(train))return false;
   trains.splice(index,1);
   for(const vehicle of [train.group,...train.carObjs])scene.remove(vehicle);
-  train.group.userData.headMaterial?.dispose();
-  train.group.userData.beam?.dispose();
+  releaseTrainResources(train.group);
   guardedStops.remove(train.id);
   if(selected===train.id)selected=trains[index]?.id??trains.at(-1)?.id??null;
   $('addTrain').disabled=false;
@@ -559,7 +563,7 @@ function addTrain(modelKey='br01-engine') {
   if(modelKey==='henschel-dhg-500-c'&&!henschelSource){log('Henschel model unavailable.');return null;}
   const t=modelKey==='br01-engine'?brTrain(nextTrainId,0):henschelTrain(nextTrainId,0);
   const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t});
-  if(!spawn){t.group.userData.headMaterial.dispose();t.group.userData.beam.dispose();log('No free track section for this locomotive.');return null;}
+  if(!spawn){releaseTrainResources(t.group);log('No free track section for this locomotive.');return null;}
   t.initial={...spawn,cars:1};t.loop=spawn.loop;initializeJourney(t);
   nextTrainId++;
   t.group.userData.dynamic=true;

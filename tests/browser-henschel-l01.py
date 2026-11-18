@@ -30,9 +30,12 @@ def run_case(browser,scenario):
     before=page.evaluate("()=>__serienDiagnostics.snapshot().stock.map(x=>x.modelKey)")
     assert before==['br01-engine'],before
     page.evaluate("()=>{document.getElementById('quality').value='low';document.getElementById('quality').dispatchEvent(new Event('change'));}")
-    page.locator('#trainManagement').click()
+    page.locator('.top').get_by_role('button',name='Menu',exact=True).click()
+    page.locator('#dlg #trainManagement').click()
+    page.locator('dialog.trainManagement [data-view="catalog"]').click()
+    assert page.locator('dialog.trainManagement .managementModel[data-model-id="native-henschel-dhg-500-c"]').count()==1
+    page.locator('dialog.trainManagement [data-view="layout"]').click()
     page.wait_for_selector('dialog.trainManagement button[data-model-id="native-henschel-dhg-500-c"]',timeout=30000)
-    assert page.locator('dialog.trainManagement .managementModel[data-model-id="native-henschel-dhg-500-c"]').count()==0 or True
     page.locator('dialog.trainManagement button[data-model-id="native-henschel-dhg-500-c"]').click()
     state=page.evaluate("""()=>({stock:__serienDiagnostics.snapshot().stock.map(t=>({
       id:t.id,modelKey:t.modelKey,wheels:t.animation?.wheels??[],speed:t.speed,
@@ -45,6 +48,7 @@ def run_case(browser,scenario):
     assert abs(loco['front']-31.9375)<.001 and abs(loco['back']+31.9375)<.001,loco
     assert state['railway']>0,state
     page.locator('dialog.trainManagement [data-close]').click()
+    page.locator('#dlg').get_by_role('button',name='Close',exact=True).click()
     selected=page.evaluate('__serienDiagnostics.snapshot().consoles.active')
     assert selected==loco['id'],(selected,loco['id'])
     page.evaluate("""()=>{const s=document.querySelector('.trainConsole.is-active input.thr');
@@ -67,9 +71,11 @@ def run_case(browser,scenario):
     assert stopped==0,stopped
     page.evaluate('()=>window.__l01Frame?.(performance.now())')
     page.screenshot(path=str(OUT/(scenario+'-layout.png')),full_page=False)
-    page.locator('#trainManagement').click()
+    page.locator('.top').get_by_role('button',name='Menu',exact=True).click()
+    page.locator('#dlg #trainManagement').click()
     page.screenshot(path=str(OUT/(scenario+'-train-management.png')),full_page=False)
     page.locator('dialog.trainManagement [data-close]').click()
+    page.locator('#dlg').get_by_role('button',name='Close',exact=True).click()
     page.set_viewport_size({'width':390,'height':844})
     page.evaluate('()=>window.__l01Frame?.(performance.now())')
     page.screenshot(path=str(OUT/(scenario+'-mobile.png')),full_page=False)

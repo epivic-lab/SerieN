@@ -33,6 +33,7 @@ function segmentWheelGeometry(model,radius){
   const wheels=[],faceSet=new Set(HENSCHEL_WHEEL_FACES.flat());
   const makeGeometry=(faces)=>{
     const result=new THREE.BufferGeometry();
+    result.userData.henschelOwned=true;
     for(const [name,attribute] of Object.entries(geometry.attributes))result.setAttribute(name,attribute);
     const indices=[];
     for(const face of faces)for(let i=0;i<3;i++)indices.push(index.getX(face*3+i));
@@ -94,6 +95,7 @@ export function buildHenschel(source,id){
   const lamp=new THREE.Mesh(new THREE.SphereGeometry(.9,10,8),headMaterial);
   lamp.position.set(HENSCHEL.length/2-.55,17,0);
   lamp.userData.imported=false;
+  lamp.geometry.userData.henschelOwned=true;
   root.add(lamp);
   const beam=new THREE.SpotLight(0xffe7b7,1.6,240,.4,.55);
   beam.position.set(HENSCHEL.length/2,18,0);
@@ -102,6 +104,14 @@ export function buildHenschel(source,id){
   root.add(beam,beam.target);
   root.userData.headMaterial=headMaterial;
   root.userData.beam=beam;
+  root.userData.disposeRollingStock=()=>{
+    if(root.userData.disposed)return;
+    root.userData.disposed=true;
+    root.traverse(node=>{
+      if(node.isMesh&&node.geometry?.userData?.henschelOwned)node.geometry.dispose();
+    });
+    headMaterial.dispose();beam.dispose();
+  };
   // This Sketchfab source has a single baked mesh; it has no independent wheel nodes.
   // Position and orientation are animated by the existing Journey renderer.
   root.stockRig={body:root,wheels,bogies:[],rods:[],pistons:[]};
