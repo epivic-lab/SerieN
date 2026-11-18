@@ -28,6 +28,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Mirror Pages service worker for local browser test
+        run: cp dist/service-worker.js service-worker.js
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
