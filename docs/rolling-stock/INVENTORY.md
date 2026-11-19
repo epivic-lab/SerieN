@@ -4,13 +4,13 @@ Rilevazione Drive del **19 novembre 2026**. Nelle cinque sottocartelle sono pres
 
 Le intestazioni riprendono i nomi esatti delle cartelle nella libreria Drive fornita dall’utente. Le dimensioni sono espresse in MB decimali. Le licenze esplicitate sono state lette dai sorgenti o dalle attribuzioni versionate. Per le altre voci restano da verificare licenza, provenienza e possibilità di ridistribuzione prima dell’integrazione.
 
-**Ripresa L02.** Aprire il [rapporto Big Boy](../_active/rolling-stock/STATUS.md#l02-a--union-pacific-big-boy), recuperare il sorgente da `01_Locomotive` e confrontarne lo SHA-256 con il [rilievo geometrico](../_active/rolling-stock/evidence/L02-A/geometry.json). La sequenza di lavoro delle altre voci è da definire.
+**Ripresa L02.** Aprire il [rapporto Big Boy](../_active/rolling-stock/STATUS.md#l02-b--union-pacific-big-boy), recuperare il sorgente da `01_Locomotive` e confrontarne lo SHA-256 con il [rilievo geometrico](../_active/rolling-stock/evidence/L02-A/geometry.json). Il [prototipo articolato](../_active/rolling-stock/evidence/L02-B/prototype/prototype.glb) e il [rilievo in curva](../_active/rolling-stock/evidence/L02-B/sweep.json) sono disponibili per la correzione dei punti di contatto. La sequenza di lavoro delle altre voci è da definire.
 
 ## `01_Locomotive` · 9 file
 
 | File sorgente | MB | Stato | Verifica per la ripresa |
 | --- | ---: | --- | --- |
-| `steam_locomotive_union_pacific_bigboy.glb` | 125,11 | In lavorazione · L02-A | Preparare la variante ottimizzata e mappare l’articolazione. [Rapporto L02](../_active/rolling-stock/STATUS.md#l02-a--union-pacific-big-boy) |
+| `steam_locomotive_union_pacific_bigboy.glb` | 125,11 | In lavorazione · L02-B | Prototipo ottimizzato e misurato. Correggere la guida del carrello e le interferenze alle giunzioni. [Rapporto L02](../_active/rolling-stock/STATUS.md#l02-b--union-pacific-big-boy) |
 | `reading_i10sa_steam_locomotive.glb` | 34,94 | Da lavorare | Verificare scala, rapporto motrice–tender e parti del biellismo. |
 | `br52_steam_locomotive_animation.glb` | 29,93 | Da lavorare | Ispezionare le clip e verificare la sincronizzazione alla distanza percorsa. |
 | `steam_locomotive_drb_baureihe_50.glb` | 2,21 | Da lavorare | Verificare suddivisione motrice/tender, ruote e bielle. |

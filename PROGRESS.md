@@ -1,3 +1,16 @@
+# L02-B — Union Pacific Big Boy · prototipo articolato (19 novembre 2026)
+
+GLB sperimentale di 27,1 MB con sette gruppi rigidi e 19 assi. Misurate 6.083
+pose Legacy/V06 nelle due orientazioni. Rilevati fino a 3,46 mm di scostamento
+di un asse e sovrapposizioni alle interfacce. Preparazione e rilievo PASS.
+Abilitazione in marcia BLOCKED. Node 584/584, JMRI 9/9 e build PASS.
+[Rapporto, prototipo e prove](docs/_active/rolling-stock/STATUS.md#l02-b--union-pacific-big-boy) · [Inventario](docs/rolling-stock/INVENTORY.md).
+
+**Prossima azione.** Approvazione di L02-C per correggere guida del carrello
+anteriore, interferenze e timone, quindi ripetere il rilievo.
+
+---
+
 # L02-A — Union Pacific Big Boy · rilievo iniziale (19 novembre 2026)
 
 Inventariati 27 file Drive in cinque cartelle. BR 01 e Henschel DHG 500 C

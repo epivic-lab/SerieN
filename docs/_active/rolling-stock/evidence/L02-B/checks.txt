@@ -1,0 +1,20 @@
+L02-B — 2026-11-19
+Base: 2147f77c55020513406f2c4ab14d5022d900ad9d
+
+PASS  npm test — 584 superati, 0 falliti, 0 saltati.
+PASS  python3 -m unittest discover -s tests -p 'jmri_audit_test.py' — 9 superati.
+PASS  npm run build — 65 risorse, 11 shell, manifest df7e2f0981f1.
+PASS  Riproduzione Blender 4.3.2 — GLB e rig.json identici byte per byte.
+      SHA-256 GLB 38c99a1b92615a6c7c4d5a2920b77eee5abc458f70800c263be38bd1e4e3e912.
+PASS  Integrità — 7 gruppi, 19 assi, 176.115 triangoli, 24 PNG interni a 1.024 px max.
+PASS  Three.js / Chromium con WebGL software su loopback — GLB disegnato,
+      37 chiamate di disegno, 176.115 triangoli, nessun errore pagina.
+PASS  Rilievo offline — rettilineo, 10 pose su archi ideali, 6.083 pose
+      su Legacy/V06, entrambe le orientazioni. Profili Blender ispezionati.
+PASS  Invarianti — diff limitato a strumenti e documentazione offline.
+      Tracciato canonico, layout, protezioni, UI, Auth e cache applicativa
+      combaciano con la base.
+BLOCKED  Abilitazione in marcia — fino a 3,46 mm di scostamento asse e
+         sovrapposizioni BVH alle interfacce.
+NOT VERIFIED  Contatto ruote e rotaia a tutte le fasi del rodiggio,
+              sagoma con altri convogli, marcia e prestazioni nel simulatore.
