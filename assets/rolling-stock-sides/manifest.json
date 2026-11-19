@@ -407,5 +407,35 @@
       "id": "br01-tender",
       "width": 20.4
     }
+  },
+  "native-henschel-dhg-500-c": {
+    "bounds": {
+      "minX": -32,
+      "maxX": 32,
+      "minY": -1.125,
+      "maxY": 27.75
+    },
+    "width": 512,
+    "height": 231,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 31.9375,
+        "y": 8,
+        "z": 0
+      },
+      "back": {
+        "x": -31.9375,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "mountY": 0,
+    "imageSha256": "f50bf8ff4064dd86900286448131f962a30c88b4b78a09d6f3b779d7e9b1122e",
+    "url": "./assets/rolling-stock/henschel-dhg-500-c/side.png",
+    "stock": {
+      "id": "henschel-dhg-500-c",
+      "width": 19
+    }
   }
 }

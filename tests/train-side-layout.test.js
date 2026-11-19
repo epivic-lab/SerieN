@@ -9,11 +9,11 @@ function vehicle(key,id=key){const asset=manifest[key],imported=key.startsWith('
 function train(keys){return {id:3,name:'Side test',modelKey:keys[0].split('-')[1],dir:1,group:vehicle(keys[0]),carObjs:keys.slice(1).map((k,i)=>vehicle(k,k+i))};}
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,`${a} != ${b}`);
 test('side images share a physical scale and preserve original asymmetrical origins',()=>{
-  assert.equal(Object.keys(manifest).length,16);
-  for(const [key,asset] of Object.entries(manifest)){
+  assert.equal(Object.keys(manifest).length,17);
+  for(const asset of Object.values(manifest)){
     near(asset.width/(asset.bounds.maxX-asset.bounds.minX),8);
     near(asset.height/(asset.bounds.maxY-asset.bounds.minY),8);
-    const png=readFileSync(new URL('../assets/rolling-stock-sides/'+key+'.png',import.meta.url));
+    const png=readFileSync(new URL('../'+asset.url.replace(/^\.\//,''),import.meta.url));
     assert.equal(png.readUInt32BE(16),asset.width);assert.equal(png.readUInt32BE(20),asset.height);
     assert.equal(png[25],6,'RGBA PNG with transparency');
   }

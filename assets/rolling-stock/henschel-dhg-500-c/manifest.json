@@ -1,0 +1,29 @@
+{
+  "id": "native-henschel-dhg-500-c",
+  "name": "Henschel DHG 500 C",
+  "role": "locomotive",
+  "engineType": "diesel-hydraulic",
+  "modelPath": "model.glb",
+  "sourceUrl": "https://sketchfab.com/3d-models/henschel-dhg-500-c-91def762c310449787c07ed9106966d2",
+  "author": "accessviolation",
+  "license": "CC-BY-NC-SA-4.0",
+  "commercialUseAllowed": false,
+  "scale": "N 1:160",
+  "axes": {
+    "forward": "+X",
+    "up": "+Y"
+  },
+  "prototypeMm": {
+    "lengthOverBuffers": 9900,
+    "width": 3040,
+    "height": 4270
+  },
+  "modelMm": {
+    "length": 61.875,
+    "width": 19,
+    "height": 26.6875
+  },
+  "axles": 3,
+  "sourceTopology": "single baked mesh, no individual wheel animations",
+  "notes": "Nominal couplers protrude 1mm; wheelbase and body collision geometry require browser evaluation."
+}

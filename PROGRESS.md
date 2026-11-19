@@ -1,3 +1,15 @@
+# Henschel L01-FINAL — collaudo completato (18 novembre 2026)
+
+Ripresa da `236ec10c91056cfe9c10d632d34aad4f9d91e14e`, sul branch
+`codex/rolling-stock-l01-henschel`. Risolto timeout del test browser causato dal
+service worker; corretti verso ruote e faro sospeso; prodotte miniature reali e
+inclusi asset Henschel nella cache. 584/584 Node, 9/9 JMRI e build PASS.
+Chrome V06/Legacy: marcia/retromarcia/STOP, 4.387,5 mm per scenario, protezione
+scambi in avvicinamento, Follow, mobile, aggancio/traino/sgancio verificati.
+[Rapporto e prove](docs/_active/rolling-stock/STATUS.md), inclusa registrazione reale.
+**PASS tecnico; revisione Regia pendente.** Prossima azione: revisione L01-FINAL.
+Checkpoint sul solo branch di sviluppo; nessun merge o deploy.
+
 # Cache browser — implementata, rilascio autorizzato (17 novembre 2026)
 
 L’utente autorizza completamento e deploy di questa attività. Branch `codex/browser-cache`.

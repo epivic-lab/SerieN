@@ -11,13 +11,20 @@ const retiredModels=Object.freeze(Object.entries(manifest).filter(([id])=>!id.st
     length:spec?.length??asset.bounds.maxX-asset.bounds.minX,width:spec?.width,
     image:`./assets/${locomotives.has(kind)?'locomotive':'rolling-stock'}-thumbnails/${id}.png`,asset});
 }));
-export const PROJECT_CATALOG=Object.freeze(['engine','tender'].map(kind=>{
+const BR01_CATALOG=Object.freeze(['engine','tender'].map(kind=>{
   const id='native-br01-'+kind,asset=manifest[id];
   return Object.freeze({id,kind:'br01-'+kind,role:kind==='engine'?'locomotive':'trailer',
     source:'Tom Zimmermann · CC BY 4.0',name:kind==='engine'?'BR 01':'BR 01 · Tender',
     length:asset.couplers.front.x-asset.couplers.back.x,width:asset.stock.width,
     image:'./assets/br01/'+kind+'.png',asset});
 }));
+export const PROJECT_CATALOG=Object.freeze([...BR01_CATALOG,Object.freeze({
+  id:'native-henschel-dhg-500-c',kind:'henschel-dhg-500-c',role:'locomotive',
+  source:'accessviolation · CC BY-NC-SA 4.0',name:'Henschel DHG 500 C',
+  length:61.875,width:19,
+  image:'./assets/rolling-stock/henschel-dhg-500-c/thumbnail.png',
+  asset:manifest['native-henschel-dhg-500-c']
+})]);
 const models=new Map([...retiredModels.map(m=>({...m,retired:true})),...PROJECT_CATALOG].map(m=>[m.id,m]));
 export function projectModel(id){const m=models.get(id);if(!m)throw new RangeError('Unknown catalog model');return m;}
 export function realComposition(train,generation=0){
