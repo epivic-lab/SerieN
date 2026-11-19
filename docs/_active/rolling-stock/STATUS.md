@@ -1,4 +1,37 @@
-# Serie N — Rolling Stock L01 (Henschel DHG 500 C)
+# Serie N — Stato integrazione rotabili
+
+## L02-A — Union Pacific Big Boy
+
+**19 novembre 2026 · Rilievo del sorgente e preparazione dell’asset.** Base `148b3d246b36759a8c06072a148a7ab19f24f908`, branch `codex/rolling-stock-l02-big-boy`. [Inventario persistente](../../rolling-stock/INVENTORY.md).
+
+### Sorgente e misure
+
+Il GLB di Footloose (CC BY 4.0) si trova in `01_Locomotive/steam_locomotive_union_pacific_bigboy.glb`. Provenienza, titolo e licenza sono incorporati nel GLB. Il file originale da **125.112.728 byte** si recupera dalla libreria Drive. Lo SHA-256 nel rilievo permette di verificare che sia lo stesso sorgente. [Modello originale](https://sketchfab.com/3d-models/steam-locomotive-union-pacific-bigboy-dff7f4b67c734d4db430d8c47810a6cd) · [Licenza](https://creativecommons.org/licenses/by/4.0/) · [Rilievo](evidence/L02-A/geometry.json).
+
+- Blender 4.3.2 ha importato il GLB. Motrice e tender occupano **39,94842 × 3,47700 × 4,95825** unità sorgente sugli assi longitudinale, trasversale e verticale. Il rilievo riporta i limiti dei vertici in coordinate globali per 17 gruppi.
+- Il gruppo `Track_low` contiene l’intero binario dimostrativo, **59.760 triangoli**. Escludendolo, il GLB contiene **43 mesh e 800.596 triangoli** di rotabile. Le 27 immagini incorporate occupano **85.440.589 byte** nel sorgente. Il GLB non contiene clip o skin.
+- Il profilo ortografico mostra il tender a sinistra, il rodiggio **4-8-8-4** a destra e identifica le due batterie di assi motori. Il rendering usa un materiale neutro e nasconde `Track_low`. La separabilità delle ruote e delle bielle, i pivot e gli ingombri in moto sono ancora da misurare. [Profilo laterale](evidence/L02-A/profile.png).
+- La lunghezza nominale di motrice e tender della 4014 è **253,03 mm** in scala 1:160, utile come riferimento per normalizzare la mesh. Kato dichiara **R282** come raggio minimo del proprio modello in scala N. L’idoneità della mesh su R282, R315, R249, raccordi e scambi di SerieN richiede misure sul modello articolato, anche in retromarcia. [Specifiche Union Pacific](https://www.up.com/about-us/history/steam/big-boy-4014) · [Modello Kato](https://katousa.com/product/union-pacific-big-boy-4014/).
+
+### Riproduzione
+
+```sh
+blender -b -t 4 --python-exit-code 1 --python scripts/audit-big-boy.py -- \
+  /percorso/steam_locomotive_union_pacific_bigboy.glb \
+  docs/_active/rolling-stock/evidence/L02-A
+```
+
+### Stato della verifica
+
+Rilievo del GLB, controllo dello SHA-256, conteggi delle mesh e profilo ortografico **PASS**. Test Node 584/584, audit JMRI 9/9 e build di produzione **PASS**. Il confronto con la base verifica che i file ferroviari canonici, V06 e Legacy, il runtime, il catalogo e l’App UI, Auth e cache siano identici. L’audit Blender legge un sorgente locale e non aggiunge dipendenze o richieste di rete al simulatore. [Esiti](evidence/L02-A/checks.txt).
+
+**NOT VERIFIED** per il candidato in browser, compresi prestazioni e ingombri dinamici. Il lavoro di questa sottofase è l’audit offline.
+
+**Prossima sottofase · L02-B.** Preparare un GLB ottimizzato senza binario dimostrativo, ricavare pivot e separare telaio anteriore, telaio posteriore, tender e rodiggio. Misurare l’inviluppo con il prototipo articolato su R282/R315 e caratterizzare R249 e le curve più strette senza presumere la compatibilità. La revisione precede l’attivazione in Train Management.
+
+---
+
+## L01 — Henschel DHG 500 C
 
 Branch: `codex/rolling-stock-l01-henschel`. Baseline `ba26f791e32c7d322da4169bb0b6fe5c4b692a32`.
 

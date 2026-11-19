@@ -1,3 +1,16 @@
+# L02-A — Union Pacific Big Boy · rilievo iniziale (19 novembre 2026)
+
+Inventariati 27 file Drive in cinque cartelle. BR 01 e Henschel DHG 500 C
+segnate come integrate. Per la Big Boy sono stati verificati il sorgente CC BY
+4.0, lo SHA-256, la geometria di motrice e tender e il profilo Blender senza
+binario dimostrativo. Node 584/584, JMRI 9/9 e build PASS.
+[Inventario](docs/rolling-stock/INVENTORY.md) · [Rapporto e prove L02](docs/_active/rolling-stock/STATUS.md#l02-a--union-pacific-big-boy).
+
+**Prossima azione.** Approvazione di L02-B per preparare il modello ottimizzato
+e il prototipo articolato, poi misurarne gli ingombri in curva.
+
+---
+
 # Henschel L01-FINAL — collaudo completato (18 novembre 2026)
 
 Ripresa da `236ec10c91056cfe9c10d632d34aad4f9d91e14e`, sul branch

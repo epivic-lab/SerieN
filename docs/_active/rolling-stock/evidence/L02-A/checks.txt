@@ -1,0 +1,14 @@
+L02-A — 2026-11-19
+Base: 148b3d246b36759a8c06072a148a7ab19f24f908
+
+PASS  npm test — 584 superati, 0 falliti, 0 saltati.
+PASS  python3 -m unittest discover -s tests -p 'jmri_audit_test.py' — 9 superati.
+PASS  npm run build — bundle e manifest generati, 65 risorse, 11 risorse shell.
+PASS  Inventario — 27 righe uniche confrontate con la scansione Drive,
+      2 modelli integrati, 1 in lavorazione, link locali verificati.
+PASS  Audit Blender 4.3.2 — integrità del GLB e SHA-256, 17 gruppi del rotabile,
+      800.596 triangoli del rotabile e 59.760 del binario, profilo PNG ispezionato.
+PASS  Il diff rispetto alla base contiene solo documentazione, prova offline
+      e script di audit. Tracciati, scambi, runtime, UI, Auth, cache e asset
+      del simulatore non sono toccati.
+NOT VERIFIED  Collaudo in browser, prestazioni e ingombri dinamici di L02.
