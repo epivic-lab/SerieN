@@ -5,10 +5,11 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createScenarioProfile } from '../../src/scenario-profile.js';
 import { Journey, routing } from '../../src/simulation.js';
+import { axlePlay, drawbarPose, guideTruck, shift } from './kinematics.mjs';
 
 const [directory, reportPath] = process.argv.slice(2);
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
-const {frames, axles, drawbarPinsMm, trianglesByNode} = read(resolve(directory, 'rig.json'));
+const {frames, axles, drawbarPinsMm, trianglesByNode, kinematics} = read(resolve(directory, 'rig.json'));
 const binary = readFileSync(resolve(directory, 'prototype.glb'));
 const jsonBytes = binary.readUInt32LE(12);
 const gltf = JSON.parse(binary.subarray(20, 20 + jsonBytes));
@@ -46,6 +47,7 @@ function hull(points) {
 }
 
 const outlines = {};
+const axleOutlines = {};
 const sizes = {minS: Infinity, maxS: -Infinity, minY: Infinity, maxY: -Infinity, halfWidth: 0};
 let triangles = 0;
 let primitives = 0;
@@ -61,6 +63,7 @@ for (const [name, frame] of Object.entries(frames)) {
         (parent && !nodes.get(parent).children.includes(node.index)) || node.matrix || node.rotation || node.scale) {
       throw new Error(`Model/rig transform mismatch at ${part}`);
     }
+    const partFootprint = [];
     let count = 0;
     for (const primitive of gltf.meshes[node.mesh].primitives) {
       primitives++;
@@ -72,10 +75,12 @@ for (const [name, frame] of Object.entries(frames)) {
         sizes.minY = Math.min(sizes.minY, height + absolute[1]);
         sizes.maxY = Math.max(sizes.maxY, height + absolute[1]);
         sizes.halfWidth = Math.max(sizes.halfWidth, Math.abs(cross));
-        footprint.push([absS - pivot(name), cross]);
+        partFootprint.push([absS - pivot(name), cross]);
       }
     }
     if (count !== trianglesByNode[part].optimized) throw new Error(`Triangle count mismatch at ${part}`);
+    if (kinematics && axles[part]) axleOutlines[part] = hull(partFootprint);
+    else footprint.push(...partFootprint);
     triangles += count;
   }
   outlines[name] = hull(footprint);
@@ -83,13 +88,6 @@ for (const [name, frame] of Object.entries(frames)) {
 if (nodes.size !== names.length + Object.keys(axles).length + 1 ||
     gltf.animations?.length || gltf.images.some(image => image.uri)) {
   throw new Error('Unexpected geometry, animation, or external resource');
-}
-
-function shift(pose, s, lateral = 0) {
-  return {
-    x: pose.x + pose.cos * s - pose.sin * lateral,
-    z: pose.z + pose.sin * s + pose.cos * lateral,
-  };
 }
 
 function heading(x, z, origin) {
@@ -109,11 +107,13 @@ const frameAxles = name => frames[name].axleNodes.map(axle => axles[axle].sMm);
 const rearAxles = frameAxles('engine_rear');
 const tenderRear = pivot('tender_rear_bogie');
 const tenderFront = pivot('tender_front_bogie');
+const setback = kinematics?.tenderSetbackMm ?? 0;
+const frameSetback = name => name.startsWith('tender_') ? setback : 0;
 
 function poses(track, s) {
   const posesByName = {
     engine_rear: chord(track, s, rearAxles[0], rearAxles.at(-1), pivot('engine_rear')),
-    tender_body: chord(track, s, tenderRear, tenderFront, pivot('tender_body')),
+    tender_body: chord(track, s - setback, tenderRear, tenderFront, pivot('tender_body')),
   };
   for (const name of ['engine_front', 'trailing_truck', 'leading_truck', 'tender_rear_bogie', 'tender_front_bogie']) {
     const parent = frames[name].parent;
@@ -123,12 +123,15 @@ function poses(track, s) {
     // Constrained least squares: rotate around the physical hinge and fit the
     // fixed axle stations to the route. No translation is allowed at the hinge.
     for (const axleStation of frameAxles(name)) {
-      const target = track.locate(s + axleStation);
+      const target = track.locate(s + axleStation - frameSetback(name));
       const weight = axleStation - pivot(name);
       x += weight * (target.x - origin.x);
       z += weight * (target.z - origin.z);
     }
-    posesByName[name] = heading(x, z, origin);
+    const pose = heading(x, z, origin);
+    posesByName[name] = kinematics && name === 'leading_truck' ? guideTruck(
+      track, s, posesByName[parent], pivot(name), frameAxles(name), kinematics.leadingGuide, pose,
+    ) : pose;
   }
   return posesByName;
 }
@@ -141,27 +144,38 @@ function measure(track, s) {
   let extremePart = null;
   let extremeAxle = null;
   const byFrame = {};
+  const axleSlides = {};
+  const frameOffsets = {};
   for (const [name, frame] of Object.entries(frames)) {
     const pose = framePoses[name];
+    const routePivot = s + pivot(name) - frameSetback(name);
+    const distance = (along, across) => Math.abs(track.offset(shift(pose, along, across), routePivot + along));
     let reach = 0;
-    for (const [along, across] of outlines[name]) {
-      reach = Math.max(reach, track.distance(shift(pose, along, across), s + pivot(name) + along));
+    for (const [along, across] of outlines[name]) reach = Math.max(reach, distance(along, across));
+    for (const axle of frame.axleNodes) {
+      const station = axles[axle].sMm;
+      const along = station - pivot(name);
+      const {slide, error} = kinematics
+        ? axlePlay(track, routePivot + along, pose, along, kinematics.axlePlayMm[name] ?? 0)
+        : {slide: 0, error: distance(along, 0)};
+      axleSlides[axle] = slide;
+      frameOffsets[name] = Math.max(frameOffsets[name] ?? 0, Math.abs(error));
+      if (axleOutlines[axle]) {
+        for (const [u, v] of axleOutlines[axle]) reach = Math.max(reach, distance(u, v + slide));
+      }
+      const deviation = Math.abs(error);
+      if (deviation > axleOffset) {
+        axleOffset = deviation;
+        extremeAxle = axle;
+      }
     }
     byFrame[name] = reach;
     if (reach > halfEnvelope) {
       halfEnvelope = reach;
       extremePart = name;
     }
-    for (const axle of frame.axleNodes) {
-      const station = axles[axle].sMm;
-      const deviation = track.distance(shift(pose, station - pivot(name)), s + station);
-      if (deviation > axleOffset) {
-        axleOffset = deviation;
-        extremeAxle = axle;
-      }
-    }
     if (frame.parent) {
-      const predicted = shift(framePoses[frame.parent], pivot(name) - pivot(frame.parent));
+      const predicted = shift(framePoses[frame.parent], pivot(name) - pivot(frame.parent), pose.guideTravelMm ?? 0);
       hingeResidual = Math.max(hingeResidual, Math.hypot(pose.x - predicted.x, pose.z - predicted.z));
     }
   }
@@ -169,8 +183,11 @@ function measure(track, s) {
   const front = framePoses.engine_front;
   const enginePin = shift(rear, drawbarPinsMm.engine - pivot('engine_rear'));
   const tenderPin = shift(framePoses.tender_body, drawbarPinsMm.tender - pivot('tender_body'));
+  const drawbar = kinematics?.drawbar ? drawbarPose(enginePin, tenderPin, kinematics.drawbar) : null;
   return {
     halfEnvelope, extremePart, axleOffset, extremeAxle, hingeResidual, byFrame,
+    ...(kinematics ? {axleSlides, frameOffsets, drawbar, leadingOffset: frameOffsets.leading_truck,
+      guideTravel: Math.abs(framePoses.leading_truck.guideTravelMm)} : {}),
     hingeDegrees: Math.abs(Math.atan2(rear.cos * front.sin - rear.sin * front.cos,
       rear.cos * front.cos + rear.sin * front.sin) * 180 / Math.PI),
     drawbarSpan: Math.hypot(enginePin.x - tenderPin.x, enginePin.z - tenderPin.z),
@@ -179,20 +196,20 @@ function measure(track, s) {
 }
 
 function line() {
-  return {locate: s => ({x: s, z: 0}), distance: p => Math.abs(p.z)};
+  return {locate: s => ({x: s, z: 0}), offset: p => p.z};
 }
 
 function circle(radius, direction) {
   return {
     locate: s => ({x: radius * Math.sin(s / radius), z: direction * radius * (1 - Math.cos(s / radius))}),
-    distance: p => Math.abs(Math.hypot(p.x, p.z - direction * radius) - radius),
+    offset: p => direction * (radius - Math.hypot(p.x, p.z - direction * radius)),
   };
 }
 
 const straight = measure(line(), 0);
 if (straight.axleOffset > .00001 || straight.hingeDegrees > .00001 ||
     Math.abs(straight.halfEnvelope - sizes.halfWidth) > .00001 ||
-    Math.abs(straight.drawbarSpan - (drawbarPinsMm.engine - drawbarPinsMm.tender)) > .00001) {
+    Math.abs(straight.drawbarSpan - (drawbarPinsMm.engine - drawbarPinsMm.tender + setback)) > .00001) {
   throw new Error('Straight reference pose does not reconstruct the source');
 }
 const arcs = [315, 282, 249, 216, 150].map(radius => ({
@@ -211,23 +228,28 @@ function routePolyline(journey) {
       return {
         minS: start + (sign > 0 ? edge.distance[i] : edge.length - edge.distance[i + 1]),
         maxS: start + (sign > 0 ? edge.distance[i + 1] : edge.length - edge.distance[i]),
-        x: startPoint.x, z: startPoint.z, dx, dz, length2: dx * dx + dz * dz,
+        sign, x: startPoint.x, z: startPoint.z, dx, dz, length2: dx * dx + dz * dz,
       };
     });
   });
   return {
     locate: s => journey.locate(s),
-    distance(p, s) {
+    offset(p, s) {
       let minDistance2 = Infinity;
-      for (const {minS, maxS, x, z, dx, dz, length2} of segments) {
+      let side = 1;
+      for (const {minS, maxS, x, z, dx, dz, length2, sign} of segments) {
         if (!length2 || minS > s + projectionWindowMm || maxS < s - projectionWindowMm) continue;
         const px = p.x - x;
         const pz = p.z - z;
         const t = Math.max(0, Math.min(1, (px * dx + pz * dz) / length2));
-        minDistance2 = Math.min(minDistance2, (px - dx * t) ** 2 + (pz - dz * t) ** 2);
+        const distance2 = (px - dx * t) ** 2 + (pz - dz * t) ** 2;
+        if (distance2 < minDistance2) {
+          minDistance2 = distance2;
+          side = (dx * pz - dz * px) * sign < 0 ? -1 : 1;
+        }
       }
       if (!Number.isFinite(minDistance2)) throw new Error('No local route projection');
-      return Math.sqrt(minDistance2);
+      return side * Math.sqrt(minDistance2);
     },
   };
 }
@@ -241,6 +263,7 @@ for (const id of ['legacy', 'v06']) {
   const seenPoses = new Set();
   const sampledEdges = new Set();
   const sampledSwitchEdges = new Set();
+  const extraMetrics = kinematics ? ['leadingOffset', 'guideTravel'] : [];
   const worst = {halfEnvelope: null, axleOffset: null, hingeDegrees: null, drawbarMin: null, drawbarMax: null};
   const loopCases = network.mainLoops.map(({lane, segments}) => ({
     lane, edges: new Set(segments.map(({id}) => id)), poses: 0, halfEnvelope: 0, axleOffset: 0,
@@ -257,7 +280,7 @@ for (const id of ['legacy', 'v06']) {
         if (edge.switchId && choose.controlState(edge.switchId) !== edge.requiredState) continue;
         const journey = new Journey(network, edge.id, 0);
         journey.segments[0].sign = sign;
-        journey.ensure(sizes.minS - projectionWindowMm, choose);
+        journey.ensure(sizes.minS - setback - projectionWindowMm, choose);
         journey.ensure(edge.length + sizes.maxS + projectionWindowMm, choose);
         const key = journey.segments.map(({id, sign}) => [id, sign].join('/')).join(',');
         if (histories.has(key)) continue;
@@ -266,9 +289,9 @@ for (const id of ['legacy', 'v06']) {
         const min = journey.segments[0].start;
         const max = journey.segments.at(-1).end;
         for (const [index, s] of samples.entries()) {
-          if (s + sizes.minS < min || s + sizes.maxS > max) continue;
+          if (s + sizes.minS - setback < min || s + sizes.maxS > max) continue;
           const occupied = journey.segments.filter(seg => seg.start < s + sizes.maxS + projectionWindowMm &&
-            seg.end > s + sizes.minS - projectionWindowMm).map(({id, sign}) => `${id}/${sign}`);
+            seg.end > s + sizes.minS - setback - projectionWindowMm).map(({id, sign}) => `${id}/${sign}`);
           const poseKey = `${edge.id}:${sign}:${index}:${occupied.join(',')}`;
           if (seenPoses.has(poseKey)) continue;
           seenPoses.add(poseKey);
@@ -278,9 +301,10 @@ for (const id of ['legacy', 'v06']) {
           const result = measure(track, s);
           const witness = {edge: edge.id, edgeRole: edge.role, s, sign, mask, route: occupied, ...result};
           hingeResidual = Math.max(hingeResidual, result.hingeResidual);
-          for (const metric of ['halfEnvelope', 'axleOffset', 'hingeDegrees']) {
+          for (const metric of ['halfEnvelope', 'axleOffset', 'hingeDegrees', ...extraMetrics]) {
             if (!worst[metric] || result[metric] > worst[metric][metric]) worst[metric] = witness;
           }
+          if (result.drawbar && (!worst.drawbarMargin || result.drawbar.margin < worst.drawbarMargin.drawbar.margin)) worst.drawbarMargin = witness;
           if (!worst.drawbarMin || result.drawbarSpan < worst.drawbarMin.drawbarSpan) worst.drawbarMin = witness;
           if (!worst.drawbarMax || result.drawbarSpan > worst.drawbarMax.drawbarSpan) worst.drawbarMax = witness;
           for (const loop of loopCases) {
@@ -306,6 +330,6 @@ const report = {
     primitives, textureImages: gltf.images.length, frames: names.length, axles: Object.keys(axles).length,
     boundsMm: sizes},
   method: 'Vertex projection hulls of each rigid group at zero wheel phase. Approximate sampled outline, not a swept mesh or a route clearance certification.',
-  stepMm, projectionWindowMm, straight, arcs, byScenario,
+  stepMm, projectionWindowMm, ...(kinematics ? {kinematics} : {}), straight, arcs, byScenario,
 };
 writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');

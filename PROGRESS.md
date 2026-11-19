@@ -1,3 +1,17 @@
+# L02-C — Union Pacific Big Boy · guida e timone (19 novembre 2026)
+
+Scansione di 6.090 pose Legacy/V06. Scostamento del carrello anteriore
+inferiore a 0,010 mm. Timone telescopico da 3,082 mm di corsa richiesta.
+Zero riscontri cabina–tender e timone in 27 verifiche BVH. Marcia BLOCKED
+per interferenze residue fra i telai e correzioni al carrello posteriore.
+Node 584/584, prove cinematiche 3/3, JMRI 9/9 e build PASS.
+[Rapporto, prototipo e prove](docs/_active/rolling-stock/STATUS.md#l02-c--union-pacific-big-boy) · [Inventario](docs/rolling-stock/INVENTORY.md).
+
+**Prossima azione.** Approvazione di L02-D per chiudere contatto con le rotaie,
+interferenze residue e fissaggio del timone prima del collaudo in marcia.
+
+---
+
 # L02-B — Union Pacific Big Boy · prototipo articolato (19 novembre 2026)
 
 GLB sperimentale di 27,1 MB con sette gruppi rigidi e 19 assi. Misurate 6.083

@@ -11,23 +11,31 @@ import bpy
 from mathutils import Matrix, Vector
 from mathutils.bvhtree import BVHTree
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from drawgear import build_drawgear, pose_drawgear
 
-def apply_poses(frames, rig, poses):
+
+def apply_poses(frames, rig, poses, axle_slides=None):
     for name in frames:
         pose = poses[name]
         angle = -math.atan2(pose["sin"], pose["cos"])
         location = (pose["z"], pose["x"], rig["frames"][name]["pivotMm"][1])
         frames[name].matrix_world = Matrix.Translation(location) @ Matrix.Rotation(angle, 4, "Z")
         bpy.context.view_layer.update()
+    for name, slide in (axle_slides or {}).items():
+        bpy.context.scene.objects[name].location.x = slide
+    bpy.context.view_layer.update()
 
 
-def overlap(a, b):
-    def tree(mesh):
-        mesh.data.calc_loop_triangles()
-        vertices = [mesh.matrix_world @ v.co for v in mesh.data.vertices]
-        faces = [t.vertices[:] for t in mesh.data.loop_triangles]
-        return BVHTree.FromPolygons(vertices, faces, all_triangles=True)
-    return len(tree(a).overlap(tree(b)))
+def triangle_tree(obj):
+    obj.data.calc_loop_triangles()
+    vertices = [obj.matrix_world @ v.co for v in obj.data.vertices]
+    faces = [t.vertices[:] for t in obj.data.loop_triangles]
+    return BVHTree.FromPolygons(vertices, faces, all_triangles=True)
+
+
+def overlaps(a, b):
+    return len(a.overlap(b))
 
 
 def guide_rails(radius):
@@ -59,7 +67,10 @@ def render(scene, camera, path, center, offset, width, height, scale):
 
 
 def main():
-    (evidence,) = map(Path, sys.argv[sys.argv.index("--") + 1:])
+    args = sys.argv[sys.argv.index("--") + 1:]
+    if len(args) not in (1, 2) or (len(args) == 2 and args[1] != "--checks-only"):
+        raise ValueError("Expected EVIDENCE_DIR [--checks-only]")
+    evidence = Path(args[0])
     rig = json.loads((evidence / "prototype/rig.json").read_text())
     sweep = json.loads((evidence / "sweep.json").read_text())
     bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -71,17 +82,37 @@ def main():
         for side in ["left", "right"]:
             cases[f'R{arc["radius"]}-{side}'] = arc[side]
     for name, data in sweep["byScenario"].items():
-        for metric in ["halfEnvelope", "axleOffset", "drawbarMin", "drawbarMax"]:
+        metrics = ["halfEnvelope", "axleOffset", "drawbarMin", "drawbarMax"]
+        if "kinematics" in rig:
+            metrics.extend(("hingeDegrees", "leadingOffset", "guideTravel", "drawbarMargin"))
+        for metric in metrics:
             cases[f"{name}-{metric}"] = data["worst"][metric]
 
+    revised = "kinematics" in rig
+    members = build_drawgear(rig["kinematics"]["drawbar"]) if revised else None
     contacts = {}
     for name, case in cases.items():
-        apply_poses(by_name, rig, case["framePoses"])
+        apply_poses(by_name, rig, case["framePoses"], case.get("axleSlides"))
+        trees = {name: triangle_tree(by_name[name]) for name in ("engine_rear", "engine_front", "tender_body")}
         contacts[name] = {
-            "rearFrameToTenderBody": overlap(by_name["engine_rear"], by_name["tender_body"]),
-            "rearFrameToFrontFrame": overlap(by_name["engine_rear"], by_name["engine_front"]),
+            "rearFrameToTenderBody": overlaps(trees["engine_rear"], trees["tender_body"]),
+            "rearFrameToFrontFrame": overlaps(trees["engine_rear"], trees["engine_front"]),
         }
+        if members:
+            pose_drawgear(members, case["drawbar"], rig["drawbarPinsMm"]["height"])
+            for part in ("tender_front_bogie", "trailing_truck"):
+                trees[part] = triangle_tree(by_name[part])
+                for axle in rig["frames"][part]["axleNodes"]:
+                    trees[axle] = triangle_tree(scene.objects[axle])
+            sleeve, tongue = map(triangle_tree, members)
+            gear_contacts = {
+                member: {part: count for part, shape in trees.items() if (count := overlaps(gear, shape))}
+                for member, gear in (("sleeve", sleeve), ("tongue", tongue))
+            }
+            contacts[name]["drawgear"] = {"members": overlaps(sleeve, tongue), **gear_contacts}
     (evidence / "interface-overlap.json").write_text(json.dumps(contacts, indent=2) + "\n")
+    if len(args) == 2:
+        return
 
     bpy.ops.object.camera_add()
     camera = bpy.context.object
@@ -100,7 +131,9 @@ def main():
     scene.world = bpy.data.worlds.new("Inspection background")
     scene.world.color = (.15, .15, .15)
 
-    apply_poses(by_name, rig, cases["straight"]["framePoses"])
+    apply_poses(by_name, rig, cases["straight"]["framePoses"], cases["straight"].get("axleSlides"))
+    if members:
+        pose_drawgear(members, cases["straight"]["drawbar"], rig["drawbarPinsMm"]["height"])
     shading.color_type = "TEXTURE"
     for material in bpy.data.materials:
         if not material.use_nodes:
@@ -110,7 +143,9 @@ def main():
             material.node_tree.nodes.active = principled.inputs["Base Color"].links[0].from_node
     render(scene, camera, evidence / "prototype-profile.png", Vector((0, 0, 14)), (330, 0, 25), 1600, 360, 270)
 
-    apply_poses(by_name, rig, cases["R282-left"]["framePoses"])
+    apply_poses(by_name, rig, cases["R282-left"]["framePoses"], cases["R282-left"].get("axleSlides"))
+    if members:
+        pose_drawgear(members, cases["R282-left"]["drawbar"], rig["drawbarPinsMm"]["height"])
     guide_rails(282)
     colors = {
         "engine_rear": (.36, .53, .68, 1),
@@ -125,6 +160,17 @@ def main():
             scene.objects[axle].color = (color[0] * .6, color[1] * .6, color[2] * .6, 1)
     shading.color_type = "OBJECT"
     render(scene, camera, evidence / "r282-articulated.png", Vector((27, 0, 0)), (260, -55, 230), 1600, 560, 340)
+    if members:
+        drawbar = cases["v06-drawbarMax"]["drawbar"]
+        apply_poses(by_name, rig, cases["v06-drawbarMax"]["framePoses"], cases["v06-drawbarMax"]["axleSlides"])
+        pose_drawgear(members, drawbar, rig["drawbarPinsMm"]["height"])
+        for rails in scene.objects:
+            if rails.type == "CURVE":
+                rails.hide_render = True
+        center = (members[0].matrix_world.translation + members[1].matrix_world.translation) / 2
+        direction = members[0].matrix_world.to_3x3() @ Vector((0, -1, 0))
+        render(scene, camera, evidence / "drawbar-extended.png", center,
+               direction * 60 + Vector((0, 0, -25)), 1100, 570, 29)
 
 
 if __name__ == "__main__":

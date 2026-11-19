@@ -1,5 +1,46 @@
 # Serie N — Stato integrazione rotabili
 
+## L02-C — Union Pacific Big Boy
+
+**19 novembre 2026 · Guida del carrello, interferenze e timone.** Base `da704f5bcce96e212fb620294ae977467f315a57` su `codex/rolling-stock-l02-big-boy`. Il prototipo resta fra le prove di sviluppo. [Inventario](../../rolling-stock/INVENTORY.md) · [GLB](evidence/L02-C/prototype/prototype.glb) · [Quote e attribuzione](evidence/L02-C/prototype/ATTRIBUTION.md).
+
+### Guida e gioco trasversale
+
+- Il nuovo punto di articolazione cade a metà fra i due assi motori più vicini. Il perno del carrello anteriore è al centro dei suoi due assi e scorre trasversalmente al telaio. La rotazione del carrello e la traslazione della guida sono risolte insieme rispetto al centro del binario, con limiti di prova di ±4,5 mm e ±0,35 rad.
+- Su `V06-P035` a 83,33 mm, il punto critico di L02-B, la guida usa **3,737 mm** di corsa. Lo scostamento massimo dei due assi del carrello anteriore scende da **3,460 mm a meno di 0,010 mm**. Il massimo per quel carrello resta sotto 0,010 mm sia su V06 sia su Legacy.
+- La scansione usa un gioco sperimentale di **±0,45 mm** per ciascun asse motore e per gli assi del carrello posteriore della motrice e del carrello a cinque assi del tender. Il rilievo applica lo spostamento al contorno proiettato delle ruote. La prova riguarda la posizione dei centri degli assi alla fase di riposo. Il gioco con le bielle in movimento e l’appoggio dei battistrada sulla rotaia restano da verificare. [Vista R282](evidence/L02-C/r282-articulated.png) · [Rilievo](evidence/L02-C/sweep.json).
+
+| Scenario | Pose | Tratti | Ingombro laterale massimo | Scostamento residuo massimo |
+| --- | ---: | ---: | ---: | ---: |
+| Legacy | 3.100 | 71/75 | 24,004 mm su `T20` | 0,552 mm sul carrello posteriore, `T17` |
+| V06 | 2.990 | 77/79 | 26,054 mm su `V06-P027` | 0,782 mm sul carrello posteriore, `V06-P027` |
+
+Confronto effettuato a passo massimo 12 mm sui grafi e nelle due orientazioni di L02-B. L’arretramento del tender cambia le occupazioni vicino ai limiti di alcune sezioni. Il rilievo registra anche R315, R282, R249, R216 e R150 ideali nei due versi. Gli scostamenti massimi di tutti gli assi su R315/R282/R249 ideali sono rispettivamente **0,309 / 0,399 / 0,512 mm**. I raggi sintetici non qualificano l’accesso alle tratte del simulatore.
+
+### Interfacce e timone
+
+- Rimontati i dettagli inferiori del pancone sul telaio che li porta e ricavati scarichi nella traversa interna e nel profilo del longherone sotto la caldaia. I riscontri BVH fra telai motori sono scesi da **1.790 a 126** sul rettilineo e da **2.480 a 444** nel caso R282 destro. Restano coppie di triangoli da esaminare nella zona di articolazione e sotto la caldaia. Il conteggio BVH localizza le intersezioni candidate, senza misurarne la profondità.
+- L’arretramento del tender di **4,8 mm** elimina i riscontri fra cabina e tender in tutte le verifiche selezionate. La quota di 253,03 mm resta il riferimento dell’asset sorgente. La composizione di prova misura circa **257,83 mm** fra gli estremi in rettilineo con il timone in posizione nominale.
+- Il timone usa una guaina e una linguetta prigioniera di **7,75 mm** ciascuna, articolate sui rispettivi perni a **1,65 mm sopra il piano del ferro**. Sui tracciati reali la distanza fra perni è **10,183–13,265 mm** e la corsa richiesta **3,082 mm**. L’innesto resta fra **2,235 e 5,317 mm** a fronte di limiti di **0,95–6,00 mm**. Il margine geometrico minimo calcolato è **0,683 mm** nelle pose reali. La prova BVH di **27 configurazioni (24 pose distinte)** non rileva sovrapposizioni tra i membri, né fra i membri e le casse, i carrelli e gli assi esaminati.
+- Il modello del timone è costruito dallo script di prova a partire dalle quote di `rig.json`. I perni sono riferimenti cinematici. Il fissaggio delle staffe alle due casse e la verifica continua degli ingombri restano da completare. [Timone alla massima estensione V06](evidence/L02-C/drawbar-extended.png) · [Riscontri BVH](evidence/L02-C/interface-overlap.json).
+
+### Esiti e riproduzione
+
+**PASS** per guida anteriore, riproduzione del GLB, caricamento Chromium isolato e corsa del timone sulle pose misurate. **BLOCKED per la marcia nel simulatore** per i riscontri residui fra i telai e il gioco da verificare sul carrello posteriore e sul rodiggio. Suite Node 584/584, prove cinematiche 3/3, audit JMRI 9/9 e build PASS. Il diff verifica gli invarianti di tracciato, protezioni, UI, Auth e cache. **NOT VERIFIED** rotazione completa delle ruote con bielle, staffe, sagoma dinamica, interazione con altri rotabili e prestazioni in marcia. [Esiti](evidence/L02-C/checks.txt) · [Lettura WebGL](evidence/L02-C/browser.json).
+
+```sh
+evidence=docs/_active/rolling-stock/evidence/L02-C
+blender -b -t 4 --python-exit-code 1 --python scripts/big-boy/prepare.py -- \
+  /percorso/steam_locomotive_union_pacific_bigboy.glb "$evidence/prototype" L02-C
+node scripts/big-boy/sweep.mjs "$evidence/prototype" "$evidence/sweep.json"
+blender -b -t 4 --python-exit-code 1 --python scripts/big-boy/inspect-pose.py -- "$evidence"
+node --test scripts/big-boy/kinematics.test.mjs
+```
+
+**Prossima sottofase · L02-D.** Verificare il contatto ruota–rotaia e il gioco del carrello posteriore, risolvere le intersezioni residue fra telai, validare le staffe del timone e ripetere la prova geometrica prima dell’attivazione in Train Management.
+
+---
+
 ## L02-B — Union Pacific Big Boy
 
 **19 novembre 2026 · Prototipo articolato e rilievo in curva.** Ripresa dal checkpoint `2147f77c55020513406f2c4ab14d5022d900ad9d` su `codex/rolling-stock-l02-big-boy`. [Inventario](../../rolling-stock/INVENTORY.md).

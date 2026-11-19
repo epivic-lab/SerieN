@@ -5,7 +5,6 @@ blender -b -t 4 --python-exit-code 1 --python scripts/big-boy/prepare.py -- SOUR
 from collections import defaultdict
 import hashlib
 import json
-import math
 from pathlib import Path
 import sys
 
@@ -54,7 +53,7 @@ def axis_name(frame, index):
     return f"{frame}_axle_{index + 1:02}"
 
 
-def assign(group, material, low, high):
+def assign(group, material, low, high, revised=False):
     """Assign a connected island as a whole, including UV-seam duplicates."""
     center = (low + high) / 2
     y = center[1]
@@ -75,6 +74,19 @@ def assign(group, material, low, high):
     # The pilot handrails and front-step details share an atlas with boiler fittings.
     if group == "8" and material == "Mat_Five" and low[1] > 16.9 and high[2] <= 3.22:
         return "engine_front"
+    if revised:
+        # Mount the pilot deck and its low fittings on the frame that carries
+        # its stairs. The span below the boiler stays with the rear frame.
+        if group == "7" and material == "Mat_Six" and low[1] > 9.4 and high[2] < 2.40:
+            return "engine_front"
+        if group == "7" and material == "Mat_One" and low[1] > 13.7 and high[2] < 2.5:
+            return "engine_front"
+        if group == "7" and material == "Mat_Seven" and low[1] > 14.5 and high[2] < 2.3:
+            return "engine_front"
+        if group == "8" and low[1] > 16.7 and high[2] < 2.43:
+            return "engine_front"
+        if group == "15" and material == "Mat_Six" and low[1] < 3 and high[1] > 13:
+            return "engine_rear"
     if group in {"4", "7", "8"}:
         return "engine_rear"
     if group in {"6a", "6b"}:
@@ -88,7 +100,7 @@ def assign(group, material, low, high):
     raise ValueError(f"Unmapped source group {group}")
 
 
-def split_mesh(obj, group):
+def split_mesh(obj, group, revised=False):
     mesh = obj.data
     mesh.calc_loop_triangles()
     xyz = np.empty((len(mesh.vertices), 3), dtype=np.float32)
@@ -126,10 +138,28 @@ def split_mesh(obj, group):
     normals /= np.maximum(np.linalg.norm(normals, axis=1, keepdims=True), 1e-20)
     normals = normals[loops]
     partitions = defaultdict(list)
+    relief_vertices = []
+    brace_vertices = []
     for indices in islands.values():
         points = xyz[corners[indices].ravel()]
-        part = assign(group, material.name, points.min(axis=0), points.max(axis=0))
+        low, high = points.min(axis=0), points.max(axis=0)
+        part = assign(group, material.name, low, high, revised)
+        if revised and group == "7" and material.name == "Mat_Seven" and low[1] < -5 and high[1] > 16.9:
+            relief_vertices.extend(corners[indices].ravel())
+        if revised and group == "15" and material.name == "Mat_Six" and low[1] < 3 and high[1] > 13:
+            brace_vertices.extend(corners[indices].ravel())
         partitions[part].extend(indices)
+
+    if relief_vertices:
+        # The narrow central web in the source continues through both engine
+        # groups. Give its underside room above the swinging front assembly.
+        index = np.unique(relief_vertices)
+        blend = np.clip((xyz[index, 1] - 6.1) / 1.2, 0, 1)
+        xyz[index, 2] += blend * np.maximum(0, 2.40 - xyz[index, 2])
+
+    if brace_vertices:
+        # Recess the internal cross-frame strip above the articulated gear.
+        xyz[np.unique(brace_vertices), 2] += .85
 
     for part, indices in partitions.items():
         remap, faces = np.unique(corners[indices], return_inverse=True)
@@ -175,7 +205,11 @@ def simplify_images():
 
 
 def main():
-    source, output = map(Path, sys.argv[sys.argv.index("--") + 1:])
+    args = sys.argv[sys.argv.index("--") + 1:]
+    if len(args) not in (2, 3) or (len(args) == 3 and args[2] != "L02-C"):
+        raise ValueError("Expected SOURCE OUTPUT_DIR [L02-C]")
+    source, output = map(Path, args[:2])
+    revised = len(args) == 3
     with source.open("rb") as stream:
         if hashlib.file_digest(stream, "sha256").hexdigest() != SOURCE_SHA256:
             raise ValueError("Incorrect source GLB for this measured articulation")
@@ -191,10 +225,15 @@ def main():
         group_id = group.name.split("_")[1]
         for obj in group.children_recursive:
             if obj.type == "MESH":
-                for name, *geometry in split_mesh(obj, group_id):
+                for name, *geometry in split_mesh(obj, group_id, revised):
                     parts[name].append(geometry)
 
     pivots = FRAME_PIVOTS.copy()
+    if revised:
+        # Center the hinge between the closest driving axles of the banks.
+        pivots["engine_front"] = ((AXLES["engine_rear"][0][-1] + AXLES["engine_front"][0][0]) / 2, 1.45)
+        # Put the leading guide between its two axle centers, under the pilot.
+        pivots["leading_truck"] = (sum(AXLES["leading_truck"][0]) / 2, 1.10)
     parents = FRAME_PARENTS.copy()
     for frame, (axles, height) in AXLES.items():
         for index, s in enumerate(axles):
@@ -236,7 +275,7 @@ def main():
                 "parent": parents.get(name),
                 "pivotMm": [value * SCALE for value in (s, h - RAIL_TOP)],
                 "axleNodes": [axis_name(name, i) for i in range(len(AXLES[name][0]))] if name in AXLES else [],
-            } for name, (s, h) in FRAME_PIVOTS.items()
+            } for name, (s, h) in pivots.items() if name in FRAME_PIVOTS
         },
         "axles": {
             axis_name(frame, index): {"parent": frame, "sMm": s * SCALE, "heightMm": (h - RAIL_TOP) * SCALE}
@@ -245,6 +284,15 @@ def main():
         "drawbarPinsMm": {"engine": -5.9 * SCALE, "tender": -6.75 * SCALE, "height": (.88 - RAIL_TOP) * SCALE},
         "trianglesByNode": counts,
     }
+    if revised:
+        rig["drawbarPinsMm"]["height"] = 1.65
+        rig["kinematics"] = {
+            "tenderSetbackMm": 4.8,
+            "leadingGuide": {"travelMm": 4.5, "swingRad": .35},
+            "axlePlayMm": {"engine_rear": .45, "engine_front": .45, "trailing_truck": .45, "tender_rear_bogie": .45},
+            "drawbar": {"sleeveMm": 7.75, "tongueMm": 7.75, "minEngagementMm": .95,
+                        "maxEngagementMm": 6.0, "pinClearanceMm": .65},
+        }
     (output / "rig.json").write_text(json.dumps(rig, indent=2) + "\n", encoding="utf-8")
 
 
