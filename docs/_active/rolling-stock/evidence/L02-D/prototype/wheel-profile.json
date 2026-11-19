@@ -1,0 +1,621 @@
+{
+  "modelSha256": "14622eac1e9dc20e58411ceea59cf7ea053724936c637dbd2413596a5ba331e1",
+  "phaseCount": 72,
+  "phaseStepDegrees": 5.0,
+  "lateralStepMm": 0.025,
+  "treadToleranceMm": 0.1,
+  "lateralSamplingMm": [
+    3.3,
+    5.85
+  ],
+  "axles": {
+    "tender_rear_bogie_axle_01": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "tender_rear_bogie_axle_02": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "tender_rear_bogie_axle_03": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "tender_rear_bogie_axle_04": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "tender_rear_bogie_axle_05": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "tender_front_bogie_axle_01": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "tender_front_bogie_axle_02": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "trailing_truck_axle_01": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "trailing_truck_axle_02": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "engine_rear_axle_01": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "engine_rear_axle_02": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "engine_rear_axle_03": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "engine_rear_axle_04": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "engine_front_axle_01": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "engine_front_axle_02": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "engine_front_axle_03": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "engine_front_axle_04": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "leading_truck_axle_01": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    },
+    "leading_truck_axle_02": {
+      "-1": {
+        "tread": [
+          [
+            -5.425,
+            -3.5
+          ]
+        ],
+        "belowHead": [
+          [
+            -3.475,
+            -3.3
+          ]
+        ],
+        "minGapMm": -0.22
+      },
+      "1": {
+        "tread": [
+          [
+            3.5,
+            5.425
+          ]
+        ],
+        "belowHead": [
+          [
+            3.3,
+            3.475
+          ]
+        ],
+        "minGapMm": -0.22
+      }
+    }
+  }
+}

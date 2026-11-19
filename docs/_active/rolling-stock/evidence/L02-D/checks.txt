@@ -1,0 +1,25 @@
+L02-D — 2026-11-19
+Base: 9492ea5a4f03878a6609b5faa13659208a68357b
+
+PASS  npm test — 584 superati.
+PASS  node --test scripts/big-boy/kinematics.test.mjs — 5 superati.
+PASS  python3 -m unittest discover -s tests -p 'jmri_audit_test.py' — 9 superati.
+PASS  npm run build — 65 risorse, 11 shell, manifest df7e2f0981f1.
+PASS  Riproduzione Blender 4.3.2 — GLB e rig.json identici byte per byte.
+      SHA-256 GLB 14622eac1e9dc20e58411ceea59cf7ea053724936c637dbd2413596a5ba331e1.
+PASS  Audit L02-C riprodotto identico byte per byte.
+PASS  GLB disegnato con Three.js in Chromium/WebGL software isolato
+      (241.776 triangoli, 56 chiamate, 24 texture, 19 assi).
+PASS  Sezioni teste rotaia Legacy e V06 derivate dalle mesh applicative.
+PASS  Profilo ruote — 72 fasi, passi trasversali di 0,025 mm. Su 6.090
+      pose, 0 assenze di appoggio proiettato e 0 riscontri bordini.
+PASS  Guida posteriore — corsa max 1,547 mm su ±2,5 mm.
+PASS  Interfacce nelle pose reali e scansione angolare dei telai —
+      0 riscontri da −14,50° a +14,50° su 117 campioni.
+PASS  Timone e staffe — 35 verifiche BVH, contatto con la cassa di propria
+      competenza, zero interferenze estranee. Disallineamento <0,001 mm.
+PASS  Invarianti di tracciato, rete, protezioni, UI, Auth e cache per diff
+      e confronto del manifest con la base.
+FAIL  R150 sintetico (due pose, angolo fra telai oltre 20°).
+NOT VERIFIED  Contatto tridimensionale continuo su scambi/cuori,
+              biellismo in movimento, marcia e prestazioni nel simulatore.

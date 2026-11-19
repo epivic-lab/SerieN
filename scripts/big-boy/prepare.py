@@ -4,11 +4,13 @@ blender -b -t 4 --python-exit-code 1 --python scripts/big-boy/prepare.py -- SOUR
 """
 from collections import defaultdict
 import hashlib
+import math
 import json
 from pathlib import Path
 import sys
 
 import bpy
+import bmesh
 from mathutils import Vector
 import numpy as np
 
@@ -53,7 +55,7 @@ def axis_name(frame, index):
     return f"{frame}_axle_{index + 1:02}"
 
 
-def assign(group, material, low, high, revised=False):
+def assign(group, material, low, high, revised=False, wheel_revision=False):
     """Assign a connected island as a whole, including UV-seam duplicates."""
     center = (low + high) / 2
     y = center[1]
@@ -74,6 +76,10 @@ def assign(group, material, low, high, revised=False):
     # The pilot handrails and front-step details share an atlas with boiler fittings.
     if group == "8" and material == "Mat_Five" and low[1] > 16.9 and high[2] <= 3.22:
         return "engine_front"
+    if wheel_revision and group == "7":
+        # Boiler lines and their clamps share an attachment to the boiler.
+        if material == "Mat_One" or (material == "Mat_Seven" and low[1] > 14.5 and high[2] < 2.3):
+            return "engine_rear"
     if revised:
         # Mount the pilot deck and its low fittings on the frame that carries
         # its stairs. The span below the boiler stays with the rear frame.
@@ -100,7 +106,30 @@ def assign(group, material, low, high, revised=False):
     raise ValueError(f"Unmapped source group {group}")
 
 
-def split_mesh(obj, group, revised=False):
+def adjust_clearance(xyz, index, group, material, low, high):
+    """Relieve specific source interfaces identified by the L02-C triangle probe."""
+    if group == "10a" and material == "Mat_Six" and 7.7 < low[1] < 7.9 and high[1] > 12:
+        # Rear horns of the swinging bracket pass under the fixed saddle.
+        y = xyz[index, 1]
+        xyz[index, 2] = np.minimum(1.76, xyz[index, 2])
+        xyz[index, 1] = np.where(y < 8.6, 8.38 + .24 * (y - 7.79), y)
+    if group == "8" and material == "Mat_Seven" and low[1] < 3 and high[1] > 17.7:
+        # Stop the boiler-mounted running board before the moving pilot steps.
+        y = xyz[index, 1]
+        xyz[index, 1] -= np.maximum(0, y - 12) * .31
+        xyz[index, 2] += .24 * np.clip((y - 11.5) / 1.8, 0, 1)
+    if group == "7" and material == "Mat_One" and low[1] > 13.7 and high[2] < 2.5:
+        # Route the front end of the boiler pipe above the cylinder and pilot
+        # instead of through their swept path.
+        y = xyz[index, 1]
+        xyz[index, 2] += .78 * np.clip((y - 15.75) / .95, 0, 1)
+        xyz[index, 1] -= .61 * np.maximum(0, y - 16)
+    if group == "7" and material == "Mat_Seven" and low[1] > 14.5 and high[2] < 2.3:
+        # Preserve the fixed link above the front cylinder sweep near ±6°.
+        xyz[index, 2] = np.maximum(2.10, xyz[index, 2] + .26)
+
+
+def split_mesh(obj, group, revised=False, wheel_revision=False):
     mesh = obj.data
     mesh.calc_loop_triangles()
     xyz = np.empty((len(mesh.vertices), 3), dtype=np.float32)
@@ -143,7 +172,9 @@ def split_mesh(obj, group, revised=False):
     for indices in islands.values():
         points = xyz[corners[indices].ravel()]
         low, high = points.min(axis=0), points.max(axis=0)
-        part = assign(group, material.name, low, high, revised)
+        part = assign(group, material.name, low, high, revised, wheel_revision)
+        if wheel_revision:
+            adjust_clearance(xyz, np.unique(corners[indices]), group, material.name, low, high)
         if revised and group == "7" and material.name == "Mat_Seven" and low[1] < -5 and high[1] > 16.9:
             relief_vertices.extend(corners[indices].ravel())
         if revised and group == "15" and material.name == "Mat_Six" and low[1] < 3 and high[1] > 13:
@@ -166,14 +197,21 @@ def split_mesh(obj, group, revised=False):
         yield part, material, xyz[remap], faces.reshape(-1, 3), uv[indices], normals[indices]
 
 
-def build_mesh(name, pieces, pivot):
+def build_mesh(name, pieces, pivot, tire_material=None):
     vertices, faces, uvs, normals, materials, material_indices = [], [], [], [], [], []
     for material, xyz, triangles, uv, corner_normals in pieces:
         if material not in materials:
             materials.append(material)
         material_indices.extend([materials.index(material)] * len(triangles))
         faces.extend((triangles + len(vertices)).tolist())
-        vertices.extend(((xyz - (0, 0, RAIL_TOP)) * SCALE - pivot).tolist())
+        local = (xyz - (0, 0, RAIL_TOP)) * SCALE - pivot
+        if tire_material:
+            # Keep spokes, hubs and pins from the original. Recess the old
+            # irregular perimeter below the standardized running ring.
+            radius = np.linalg.norm(local[:, 1:], axis=1)
+            factor = np.minimum(1, (pivot[2] - .21) / np.maximum(radius, 1e-20))
+            local[:, 1:] *= factor[:, None]
+        vertices.extend(local.tolist())
         uvs.extend(uv.reshape(-1, 2).tolist())
         normals.extend(corner_normals.reshape(-1, 3).tolist())
     mesh = bpy.data.meshes.new(name)
@@ -191,7 +229,38 @@ def build_mesh(name, pieces, pivot):
     decimate = obj.modifiers.new("Reduce glTF triangle count", "DECIMATE")
     decimate.ratio = DECIMATION
     bpy.ops.object.modifier_apply(modifier=decimate.name)
+    if tire_material:
+        add_tires(obj.data, pivot[2], tire_material)
     return obj, len(faces)
+
+
+def add_tires(mesh, radius, material):
+    # x is lateral. Radii are relative to the axle height; the flange sits
+    # inside both virtual rail heads while the running ring spans both.
+    section = [(3.23, -.26), (3.23, .08), (3.34, .22), (3.43, .22), (3.50, .05),
+               (3.62, 0), (5.35, 0), (5.49, -.14), (5.49, -.26)]
+    steps = 96
+    bm = bmesh.new()
+    bm.from_mesh(mesh)
+    material_index = len(mesh.materials)
+    mesh.materials.append(material)
+    for sign in (-1, 1):
+        rings = []
+        for x, relative_radius in section:
+            r = radius + relative_radius
+            rings.append([bm.verts.new((sign * x, r * math.sin(i * math.tau / steps),
+                                       r * math.cos(i * math.tau / steps))) for i in range(steps)])
+        for row, a in enumerate(rings):
+            following = rings[(row + 1) % len(rings)]
+            for i in range(steps):
+                j = (i + 1) % steps
+                corners = [a[i], a[j], following[j], following[i]]
+                face = bm.faces.new(corners[::-1] if sign > 0 else corners)
+                face.material_index = material_index
+                face.smooth = True
+    bm.normal_update()
+    bm.to_mesh(mesh)
+    bm.free()
 
 
 def simplify_images():
@@ -206,10 +275,11 @@ def simplify_images():
 
 def main():
     args = sys.argv[sys.argv.index("--") + 1:]
-    if len(args) not in (2, 3) or (len(args) == 3 and args[2] != "L02-C"):
-        raise ValueError("Expected SOURCE OUTPUT_DIR [L02-C]")
+    if len(args) not in (2, 3) or (len(args) == 3 and args[2] not in ("L02-C", "L02-D")):
+        raise ValueError("Expected SOURCE OUTPUT_DIR [L02-C|L02-D]")
     source, output = map(Path, args[:2])
     revised = len(args) == 3
+    wheel_revision = revised and args[2] == "L02-D"
     with source.open("rb") as stream:
         if hashlib.file_digest(stream, "sha256").hexdigest() != SOURCE_SHA256:
             raise ValueError("Incorrect source GLB for this measured articulation")
@@ -225,7 +295,7 @@ def main():
         group_id = group.name.split("_")[1]
         for obj in group.children_recursive:
             if obj.type == "MESH":
-                for name, *geometry in split_mesh(obj, group_id, revised):
+                for name, *geometry in split_mesh(obj, group_id, revised, wheel_revision):
                     parts[name].append(geometry)
 
     pivots = FRAME_PIVOTS.copy()
@@ -249,9 +319,16 @@ def main():
     root["license"] = "https://creativecommons.org/licenses/by/4.0/"
     root["source"] = "https://sketchfab.com/3d-models/steam-locomotive-union-pacific-bigboy-dff7f4b67c734d4db430d8c47810a6cd"
     root["units"] = "millimetres on the N scale layout"
+    tire_material = None
+    if wheel_revision:
+        tire_material = bpy.data.materials.new("Turned wheel rim")
+        tire_material.diffuse_color = (.18, .19, .20, 1)
+        tire_material.metallic = .62
+        tire_material.roughness = .43
     objects, counts = {}, {}
     for name, pivot in pivots.items():
-        obj, original_count = build_mesh(name, parts[name], np.array(position(*pivot)))
+        obj, original_count = build_mesh(name, parts[name], np.array(position(*pivot)),
+                                         tire_material if "_axle_" in name else None)
         parent = parents.get(name)
         obj.parent = objects.get(parent, root)
         obj.location = position(*pivot) - position(*pivots[parent]) if parent else position(*pivot)
@@ -292,6 +369,13 @@ def main():
             "axlePlayMm": {"engine_rear": .45, "engine_front": .45, "trailing_truck": .45, "tender_rear_bogie": .45},
             "drawbar": {"sleeveMm": 7.75, "tongueMm": 7.75, "minEngagementMm": .95,
                         "maxEngagementMm": 6.0, "pinClearanceMm": .65},
+        }
+    if wheel_revision:
+        rig["kinematics"]["trailingGuide"] = {"travelMm": 2.5, "swingRad": .35}
+        del rig["kinematics"]["axlePlayMm"]["trailing_truck"]
+        rig["drawbarMountsMm"] = {
+            "engine": {"frame": "engine_rear", "seatHeight": 5.50},
+            "tender": {"frame": "tender_body", "seatHeight": 2.767},
         }
     (output / "rig.json").write_text(json.dumps(rig, indent=2) + "\n", encoding="utf-8")
 

@@ -1,0 +1,4754 @@
+{
+  "model": {
+    "bytes": 28210816,
+    "sha256": "14622eac1e9dc20e58411ceea59cf7ea053724936c637dbd2413596a5ba331e1",
+    "triangles": 241776,
+    "primitives": 56,
+    "textureImages": 24,
+    "frames": 7,
+    "axles": 19,
+    "boundsMm": {
+      "minS": -126.75839936188153,
+      "maxS": 126.26723141107814,
+      "minY": -0.2199999833425199,
+      "maxY": 31.119659474482052,
+      "halfWidth": 11.028587341308594
+    }
+  },
+  "method": "Vertex projection hulls of each rigid group at zero wheel phase. Approximate sampled outline, not a swept mesh or a route clearance certification.",
+  "railHeads": {
+    "legacy": [
+      4,
+      5
+    ],
+    "v06": [
+      4.5,
+      4.95
+    ]
+  },
+  "stepMm": 12,
+  "projectionWindowMm": 24,
+  "kinematics": {
+    "tenderSetbackMm": 4.8,
+    "leadingGuide": {
+      "travelMm": 4.5,
+      "swingRad": 0.35
+    },
+    "axlePlayMm": {
+      "engine_rear": 0.45,
+      "engine_front": 0.45,
+      "tender_rear_bogie": 0.45
+    },
+    "drawbar": {
+      "sleeveMm": 7.75,
+      "tongueMm": 7.75,
+      "minEngagementMm": 0.95,
+      "maxEngagementMm": 6,
+      "pinClearanceMm": 0.65
+    },
+    "trailingGuide": {
+      "travelMm": 2.5,
+      "swingRad": 0.35
+    }
+  },
+  "straight": {
+    "halfEnvelope": 11.028587341308594,
+    "extremePart": "engine_rear",
+    "axleOffset": 0,
+    "extremeAxle": null,
+    "hingeResidual": 0,
+    "byFrame": {
+      "engine_rear": 11.028587341308594,
+      "engine_front": 10.89248275756836,
+      "tender_body": 9.760053634643555,
+      "trailing_truck": 8.051408767700195,
+      "leading_truck": 6.121805667877197,
+      "tender_rear_bogie": 7.78485631942749,
+      "tender_front_bogie": 7.019175052642822
+    },
+    "worstTread": {
+      "axle": "engine_rear_axle_01",
+      "treadOverlap": 0.4500000000000002,
+      "flangeOverlap": 0
+    },
+    "worstFlange": {
+      "axle": "engine_rear_axle_01",
+      "treadOverlap": 0.4500000000000002,
+      "flangeOverlap": 0
+    },
+    "trailingOffset": 0,
+    "trailingTravel": 0,
+    "axleSlides": {
+      "engine_rear_axle_01": 0,
+      "engine_rear_axle_02": 0,
+      "engine_rear_axle_03": 0,
+      "engine_rear_axle_04": 0,
+      "engine_front_axle_01": 0,
+      "engine_front_axle_02": 0,
+      "engine_front_axle_03": 0,
+      "engine_front_axle_04": 0,
+      "trailing_truck_axle_01": 0,
+      "trailing_truck_axle_02": 0,
+      "leading_truck_axle_01": 0,
+      "leading_truck_axle_02": 0,
+      "tender_rear_bogie_axle_01": 0,
+      "tender_rear_bogie_axle_02": 0,
+      "tender_rear_bogie_axle_03": 0,
+      "tender_rear_bogie_axle_04": 0,
+      "tender_rear_bogie_axle_05": 0,
+      "tender_front_bogie_axle_01": 0,
+      "tender_front_bogie_axle_02": 0
+    },
+    "frameOffsets": {
+      "engine_rear": 0,
+      "engine_front": 0,
+      "trailing_truck": 0,
+      "leading_truck": 0,
+      "tender_rear_bogie": 0,
+      "tender_front_bogie": 0
+    },
+    "drawbar": {
+      "enginePin": {
+        "x": -37.36976761221095,
+        "z": 0
+      },
+      "tenderPin": {
+        "x": -47.553547691936245,
+        "z": 0
+      },
+      "span": 10.183780079725295,
+      "overlap": 5.316219920274705,
+      "yaw": 3.141592653589793,
+      "margin": 0.6837800797252953
+    },
+    "leadingOffset": 0,
+    "guideTravel": 0,
+    "hingeDegrees": 0,
+    "drawbarSpan": 10.183780079725295,
+    "framePoses": {
+      "engine_rear": {
+        "x": 18.051497914373083,
+        "z": 0,
+        "cos": 1,
+        "sin": 0
+      },
+      "tender_body": {
+        "x": -80.81454102447918,
+        "z": 0,
+        "cos": 1,
+        "sin": 0
+      },
+      "engine_front": {
+        "x": 45.71462673578517,
+        "z": 0,
+        "cos": 1,
+        "sin": 0
+      },
+      "trailing_truck": {
+        "x": -12.731056423821016,
+        "z": 0,
+        "cos": 1,
+        "sin": 0,
+        "guideTravelMm": 0,
+        "guideSwingRad": 0
+      },
+      "leading_truck": {
+        "x": 107.27197643499964,
+        "z": 0,
+        "cos": 1,
+        "sin": 0,
+        "guideTravelMm": 0,
+        "guideSwingRad": 0
+      },
+      "tender_rear_bogie": {
+        "x": -99.82435179304338,
+        "z": 0,
+        "cos": 1,
+        "sin": 0
+      },
+      "tender_front_bogie": {
+        "x": -61.804730255915,
+        "z": 0,
+        "cos": 1,
+        "sin": 0
+      }
+    }
+  },
+  "arcs": [
+    {
+      "radius": 315,
+      "left": {
+        "halfEnvelope": 21.424897386416376,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.12479736486483262,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 21.424897386416376,
+          "engine_front": 12.949563948609523,
+          "tender_body": 12.863393720791464,
+          "trailing_truck": 8.092943619231221,
+          "leading_truck": 6.209373865841144,
+          "tender_rear_bogie": 8.360172851667471,
+          "tender_front_bogie": 7.122386571076959
+        },
+        "worstTread": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 2.7391706680646166e-9,
+        "trailingTravel": 0.9465042938668525,
+        "axleSlides": {
+          "engine_rear_axle_01": 0.0005668834884228727,
+          "engine_rear_axle_02": -0.45,
+          "engine_rear_axle_03": -0.45,
+          "engine_rear_axle_04": 0.000566883488447533,
+          "engine_front_axle_01": 0.06473668328823028,
+          "engine_front_axle_02": -0.31503405256199973,
+          "engine_front_axle_03": -0.2347677308179625,
+          "engine_front_axle_04": 0.3058875544841114,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": 0.45,
+          "tender_rear_bogie_axle_02": 0.1443538140704637,
+          "tender_rear_bogie_axle_03": 0.0006960122712281241,
+          "tender_rear_bogie_axle_04": 0.1436588424635702,
+          "tender_rear_bogie_axle_05": 0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.009613833412970507,
+          "engine_front": 6.046897738087864e-7,
+          "trailing_truck": 2.7391706680646166e-9,
+          "leading_truck": 2.6773250283440575e-11,
+          "tender_rear_bogie": 0.12479736486483262,
+          "tender_front_bogie": 0.06653904653188647
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.318285327670395,
+            "z": -2.140918561185993
+          },
+          "tenderPin": {
+            "x": -47.61304547209638,
+            "z": 2.424637629422323
+          },
+          "span": 11.26172232657437,
+          "overlap": 4.23827767342563,
+          "yaw": 2.7241710539395636,
+          "margin": 1.76172232657437
+        },
+        "leadingOffset": 2.6773250283440575e-11,
+        "guideTravel": 1.7997454547644534,
+        "hingeDegrees": 9.671446238685851,
+        "drawbarSpan": 11.26172232657437,
+        "framePoses": {
+          "engine_rear": {
+            "x": 18.012002914262393,
+            "z": 1.0333334188505117,
+            "cos": 0.9983584408658513,
+            "sin": 0.05727498190227908
+          },
+          "tender_body": {
+            "x": -79.78541025391661,
+            "z": 10.864579679754154,
+            "cos": 0.9672701130769422,
+            "sin": -0.25374894748179677
+          },
+          "engine_front": {
+            "x": 45.62972107387856,
+            "z": 2.6177386214573035,
+            "cos": 0.97454699675405,
+            "sin": 0.22418329803458087
+          },
+          "trailing_truck": {
+            "x": -12.77423105698707,
+            "z": 0.21521372732226673,
+            "cos": 0.9979497856999986,
+            "sin": -0.06400175951742973,
+            "guideTravelMm": 0.9465042938668525,
+            "guideSwingRad": -0.12135187711163431
+          },
+          "leading_truck": {
+            "x": 105.21677847971502,
+            "z": 18.171804823157668,
+            "cos": 0.9425371310253483,
+            "sin": 0.334101416696346,
+            "guideTravelMm": 1.7997454547644534,
+            "guideSwingRad": 0.11454677945585155
+          },
+          "tender_rear_bogie": {
+            "x": -98.17303206559697,
+            "z": 15.688299154105444,
+            "cos": 0.9502051691227473,
+            "sin": -0.3116249934976512
+          },
+          "tender_front_bogie": {
+            "x": -61.397788442236255,
+            "z": 6.040860205402866,
+            "cos": 0.9808132250738877,
+            "sin": -0.19494978204696622
+          }
+        }
+      },
+      "right": {
+        "halfEnvelope": 21.42489830848905,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.12479736486483262,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 21.42489830848905,
+          "engine_front": 12.95126643975874,
+          "tender_body": 12.863393720791464,
+          "trailing_truck": 8.092943619952734,
+          "leading_truck": 6.209373896511693,
+          "tender_rear_bogie": 8.360172851667471,
+          "tender_front_bogie": 7.1223870477614355
+        },
+        "worstTread": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 2.4141399990185164e-10,
+        "trailingTravel": 0.9465042949153861,
+        "axleSlides": {
+          "engine_rear_axle_01": -0.0005668834824516947,
+          "engine_rear_axle_02": 0.45,
+          "engine_rear_axle_03": 0.45,
+          "engine_rear_axle_04": -0.000566883482573185,
+          "engine_front_axle_01": -0.06473668276133542,
+          "engine_front_axle_02": 0.31503405243663674,
+          "engine_front_axle_03": 0.23476773031068376,
+          "engine_front_axle_04": -0.30588755049417193,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": -0.45,
+          "tender_rear_bogie_axle_02": -0.14435381365999847,
+          "tender_rear_bogie_axle_03": -0.0006960122712281241,
+          "tender_rear_bogie_axle_04": -0.1436588420469122,
+          "tender_rear_bogie_axle_05": -0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.009613833412970507,
+          "engine_front": 6.086715984565672e-7,
+          "trailing_truck": 2.4141399990185164e-10,
+          "leading_truck": 2.8535396268125623e-11,
+          "tender_rear_bogie": 0.12479736486483262,
+          "tender_front_bogie": 0.06653904653188647
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.318285327670395,
+            "z": 2.140918561185993
+          },
+          "tenderPin": {
+            "x": -47.61304547209638,
+            "z": -2.424637629422323
+          },
+          "span": 11.26172232657437,
+          "overlap": 4.23827767342563,
+          "yaw": -2.7241710539395636,
+          "margin": 1.76172232657437
+        },
+        "leadingOffset": 2.8535396268125623e-11,
+        "guideTravel": 1.7997454548200646,
+        "hingeDegrees": 9.671446238685851,
+        "drawbarSpan": 11.26172232657437,
+        "framePoses": {
+          "engine_rear": {
+            "x": 18.012002914262393,
+            "z": -1.0333334188505117,
+            "cos": 0.9983584408658513,
+            "sin": -0.05727498190227908
+          },
+          "tender_body": {
+            "x": -79.78541025391661,
+            "z": -10.864579679754154,
+            "cos": 0.9672701130769422,
+            "sin": 0.25374894748179677
+          },
+          "engine_front": {
+            "x": 45.62972107387856,
+            "z": -2.6177386214573035,
+            "cos": 0.97454699675405,
+            "sin": -0.22418329803458087
+          },
+          "trailing_truck": {
+            "x": -12.774231057047125,
+            "z": -0.21521372836907904,
+            "cos": 0.9979497857179579,
+            "sin": 0.06400175923739772,
+            "guideTravelMm": -0.9465042949153861,
+            "guideSwingRad": 0.12135187683102698
+          },
+          "leading_truck": {
+            "x": 105.21677847970254,
+            "z": -18.171804823211865,
+            "cos": 0.9425371310253476,
+            "sin": -0.33410141669634796,
+            "guideTravelMm": -1.7997454548200646,
+            "guideSwingRad": -0.11454677945585362
+          },
+          "tender_rear_bogie": {
+            "x": -98.17303206559697,
+            "z": -15.688299154105444,
+            "cos": 0.9502051691227473,
+            "sin": 0.3116249934976512
+          },
+          "tender_front_bogie": {
+            "x": -61.397788442236255,
+            "z": -6.040860205402866,
+            "cos": 0.9808132250738877,
+            "sin": 0.19494978204696622
+          }
+        }
+      }
+    },
+    {
+      "radius": 282,
+      "left": {
+        "halfEnvelope": 22.5769075842515,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.1924066626761487,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 22.5769075842515,
+          "engine_front": 13.177596793144687,
+          "tender_body": 13.237091251667664,
+          "trailing_truck": 8.097799740018502,
+          "leading_truck": 6.219654441850992,
+          "tender_rear_bogie": 8.425901242230907,
+          "tender_front_bogie": 7.134509638891473
+        },
+        "worstTread": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 5.153253823664272e-9,
+        "trailingTravel": 1.0582510038663444,
+        "axleSlides": {
+          "engine_rear_axle_01": 0.0007903293955756895,
+          "engine_rear_axle_02": -0.45,
+          "engine_rear_axle_03": -0.45,
+          "engine_rear_axle_04": 0.000790329395542615,
+          "engine_front_axle_01": 0.07235245603603899,
+          "engine_front_axle_02": -0.3521037599205066,
+          "engine_front_axle_03": -0.2626123646835541,
+          "engine_front_axle_04": 0.3413163471814504,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": 0.45,
+          "tender_rear_bogie_axle_02": 0.16154375033299234,
+          "tender_rear_bogie_axle_03": 0.00096994860528937,
+          "tender_rear_bogie_axle_04": 0.16057550712532098,
+          "tender_rear_bogie_axle_05": 0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.0633453500009864,
+          "engine_front": 0.0000010487816552995355,
+          "trailing_truck": 5.153253823664272e-9,
+          "leading_truck": 5.064748620497994e-11,
+          "tender_rear_bogie": 0.1924066626761487,
+          "tender_front_bogie": 0.07458089049464434
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.305530963241324,
+            "z": -2.3912837753480356
+          },
+          "tenderPin": {
+            "x": -47.627345968562125,
+            "z": 2.713223120113998
+          },
+          "span": 11.515027383809606,
+          "overlap": 3.984972616190394,
+          "yaw": 2.6823259632225698,
+          "margin": 2.015027383809606
+        },
+        "leadingOffset": 5.064748620497994e-11,
+        "guideTravel": 2.011601100541842,
+        "hingeDegrees": 10.801311684803665,
+        "drawbarSpan": 11.515027383809606,
+        "framePoses": {
+          "engine_rear": {
+            "x": 18.0022265779688,
+            "z": 1.153942357192379,
+            "cos": 0.997951905567377,
+            "sin": 0.06396869683244365
+          },
+          "tender_body": {
+            "x": -79.53186444618252,
+            "z": 12.115104749800938,
+            "cos": 0.9592172476221463,
+            "sin": -0.2826698991123645
+          },
+          "engine_front": {
+            "x": 45.60869869925281,
+            "z": 2.9235166582061227,
+            "cos": 0.9682831754352076,
+            "sin": 0.24985534248662983
+          },
+          "trailing_truck": {
+            "x": -12.784977119702289,
+            "z": 0.24090607688122567,
+            "cos": 0.9974392760460036,
+            "sin": -0.0715184633561445,
+            "guideTravelMm": 1.0582510038663444,
+            "guideSwingRad": -0.13559197625308417
+          },
+          "leading_truck": {
+            "x": 104.71103545546137,
+            "z": 20.25174885121421,
+            "cos": 0.9284623364394842,
+            "sin": 0.371426560457561,
+            "guideTravelMm": 2.011601100541842,
+            "guideSwingRad": 0.1280141693876951
+          },
+          "tender_rear_bogie": {
+            "x": -97.76640280942252,
+            "z": 17.48860604189612,
+            "cos": 0.9379980948356874,
+            "sin": -0.34664041034567905
+          },
+          "tender_front_bogie": {
+            "x": -61.29732608294255,
+            "z": 6.741603457705759,
+            "cos": 0.9760789925096436,
+            "sin": -0.2174161916264727
+          }
+        }
+      },
+      "right": {
+        "halfEnvelope": 22.57690849922335,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.1924066626761487,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 22.57690849922335,
+          "engine_front": 13.179302662919667,
+          "tender_body": 13.237091251667664,
+          "trailing_truck": 8.097799740497408,
+          "leading_truck": 6.219654475986715,
+          "tender_rear_bogie": 8.425901242230907,
+          "tender_front_bogie": 7.134510115539001
+        },
+        "worstTread": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 1.2741452337650117e-9,
+        "trailingTravel": 1.05825100549247,
+        "axleSlides": {
+          "engine_rear_axle_01": -0.0007903293840062306,
+          "engine_rear_axle_02": 0.45,
+          "engine_rear_axle_03": 0.45,
+          "engine_rear_axle_04": -0.0007903293841082081,
+          "engine_front_axle_01": -0.07235245522452585,
+          "engine_front_axle_02": 0.35210375966028923,
+          "engine_front_axle_03": 0.26261236393685516,
+          "engine_front_axle_04": -0.34131634103487835,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": -0.45,
+          "tender_rear_bogie_axle_02": -0.16154374968064966,
+          "tender_rear_bogie_axle_03": -0.0009699486054547756,
+          "tender_rear_bogie_axle_04": -0.16057550650428895,
+          "tender_rear_bogie_axle_05": -0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.0633453500009864,
+          "engine_front": 0.000001054912502240768,
+          "trailing_truck": 1.2741452337650117e-9,
+          "leading_truck": 5.67297320230864e-11,
+          "tender_rear_bogie": 0.1924066626761487,
+          "tender_front_bogie": 0.07458089049464434
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.305530963241324,
+            "z": 2.3912837753480356
+          },
+          "tenderPin": {
+            "x": -47.627345968562125,
+            "z": -2.713223120113998
+          },
+          "span": 11.515027383809606,
+          "overlap": 3.984972616190394,
+          "yaw": -2.6823259632225698,
+          "margin": 2.015027383809606
+        },
+        "leadingOffset": 5.67297320230864e-11,
+        "guideTravel": 2.0116011006499255,
+        "hingeDegrees": 10.801311684803665,
+        "drawbarSpan": 11.515027383809606,
+        "framePoses": {
+          "engine_rear": {
+            "x": 18.0022265779688,
+            "z": -1.153942357192379,
+            "cos": 0.997951905567377,
+            "sin": -0.06396869683244365
+          },
+          "tender_body": {
+            "x": -79.53186444618252,
+            "z": -12.115104749800938,
+            "cos": 0.9592172476221463,
+            "sin": 0.2826698991123645
+          },
+          "engine_front": {
+            "x": 45.60869869925281,
+            "z": -2.9235166582061227,
+            "cos": 0.9682831754352076,
+            "sin": -0.24985534248662983
+          },
+          "trailing_truck": {
+            "x": -12.784977119806308,
+            "z": -0.2409060785040209,
+            "cos": 0.9974392760771367,
+            "sin": 0.07151846292194454,
+            "guideTravelMm": -1.05825100549247,
+            "guideSwingRad": 0.1355919758177695
+          },
+          "leading_truck": {
+            "x": 104.71103545543436,
+            "z": -20.251748851318865,
+            "cos": 0.9284623364394773,
+            "sin": -0.371426560457578,
+            "guideTravelMm": -2.0116011006499255,
+            "guideSwingRad": -0.12801416938771346
+          },
+          "tender_rear_bogie": {
+            "x": -97.76640280942252,
+            "z": -17.48860604189612,
+            "cos": 0.9379980948356874,
+            "sin": 0.34664041034567905
+          },
+          "tender_front_bogie": {
+            "x": -61.29732608294255,
+            "z": -6.741603457705759,
+            "cos": 0.9760789925096436,
+            "sin": 0.2174161916264727
+          }
+        }
+      }
+    },
+    {
+      "radius": 249,
+      "left": {
+        "halfEnvelope": 24.002134455181874,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.2780821275998733,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 24.002134455181874,
+          "engine_front": 13.558072022227805,
+          "tender_body": 13.703604202841575,
+          "trailing_truck": 8.10394180633196,
+          "leading_truck": 6.232536995782823,
+          "tender_rear_bogie": 8.50846379697441,
+          "tender_front_bogie": 7.149888095090546
+        },
+        "worstTread": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 1.07930304693582e-8,
+        "trailingTravel": 1.2000942668835846,
+        "axleSlides": {
+          "engine_rear_axle_01": 0.0011485307359169424,
+          "engine_rear_axle_02": -0.45,
+          "engine_rear_axle_03": -0.45,
+          "engine_rear_axle_04": 0.0011485307359169424,
+          "engine_front_axle_01": 0.08200638465626499,
+          "engine_front_axle_02": -0.39909689338630927,
+          "engine_front_axle_03": -0.2980154854899073,
+          "engine_front_axle_04": 0.3859603850525119,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": 0.45,
+          "tender_rear_bogie_axle_02": 0.18343247304582652,
+          "tender_rear_bogie_axle_03": 0.0014087150699708668,
+          "tender_rear_bogie_axle_04": 0.1820267623091272,
+          "tender_rear_bogie_axle_05": 0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.13129157237972322,
+          "engine_front": 0.0000019462928548819036,
+          "trailing_truck": 1.07930304693582e-8,
+          "leading_truck": 1.0177814147027675e-10,
+          "tender_rear_bogie": 0.2780821275998733,
+          "tender_front_bogie": 0.08487650139579728
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.28737552846458,
+            "z": -2.7079303208857994
+          },
+          "tenderPin": {
+            "x": -47.6474021000502,
+            "z": 3.0806079480221573
+          },
+          "span": 11.867490293005176,
+          "overlap": 3.6325097069948242,
+          "yaw": 2.6320657332329676,
+          "margin": 2.3674902930051758
+        },
+        "leadingOffset": 1.0177814147027675e-10,
+        "guideTravel": 2.2802203730831048,
+        "hingeDegrees": 12.229752059221507,
+        "drawbarSpan": 11.867490293005176,
+        "framePoses": {
+          "engine_rear": {
+            "x": 17.988315928731808,
+            "z": 1.306369929090359,
+            "cos": 0.9973733174801318,
+            "sin": 0.07243248980033865
+          },
+          "tender_body": {
+            "x": -79.17191486717152,
+            "z": 13.687151789588576,
+            "cos": 0.9477922818461763,
+            "sin": -0.31888836678815763
+          },
+          "engine_front": {
+            "x": 45.57878249322383,
+            "z": 3.3100792252927436,
+            "cos": 0.959395413151619,
+            "sin": 0.2820646046983458
+          },
+          "trailing_truck": {
+            "x": -12.800308227810755,
+            "z": 0.27365487621131246,
+            "cos": 0.9967107971003532,
+            "sin": -0.08104064994543547,
+            "guideTravelMm": 1.2000942668835846,
+            "guideSwingRad": -0.15362559561941033
+          },
+          "leading_truck": {
+            "x": 103.99345198226159,
+            "z": 22.860861701390316,
+            "cos": 0.9085370485341909,
+            "sin": 0.417804298016166,
+            "guideTravelMm": 2.2802203730831048,
+            "guideSwingRad": 0.1450818129894901
+          },
+          "tender_rear_bogie": {
+            "x": -97.189266792973,
+            "z": 19.749159298527942,
+            "cos": 0.9207097498874156,
+            "sin": -0.3902480704145152
+          },
+          "tender_front_bogie": {
+            "x": -61.15456294137006,
+            "z": 7.625144280649211,
+            "cos": 0.9693530522730933,
+            "sin": -0.24567185440916442
+          }
+        }
+      },
+      "right": {
+        "halfEnvelope": 24.002135360431453,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.2780821275998733,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 24.002135360431453,
+          "engine_front": 13.55807341597739,
+          "tender_body": 13.703604202841575,
+          "trailing_truck": 8.10394180628191,
+          "leading_truck": 6.232537034227306,
+          "tender_rear_bogie": 8.50846379697441,
+          "tender_front_bogie": 7.149888571685835
+        },
+        "worstTread": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 4.434184575075051e-9,
+        "trailingTravel": 1.2000942695457748,
+        "axleSlides": {
+          "engine_rear_axle_01": -0.0011485307116317824,
+          "engine_rear_axle_02": 0.45,
+          "engine_rear_axle_03": 0.45,
+          "engine_rear_axle_04": -0.001148530711599053,
+          "engine_front_axle_01": -0.0820063832969682,
+          "engine_front_axle_02": 0.3990968929779098,
+          "engine_front_axle_03": 0.29801548421024054,
+          "engine_front_axle_04": -0.3859603749053397,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": -0.45,
+          "tender_rear_bogie_axle_02": -0.18343247197106832,
+          "tender_rear_bogie_axle_03": -0.001408715070010905,
+          "tender_rear_bogie_axle_04": -0.1820267612426113,
+          "tender_rear_bogie_axle_05": -0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.13129157237972322,
+          "engine_front": 0.0000019564067486044223,
+          "trailing_truck": 4.434184575075051e-9,
+          "leading_truck": 1.2451550901459996e-10,
+          "tender_rear_bogie": 0.2780821275998733,
+          "tender_front_bogie": 0.08487650139579728
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.28737552846458,
+            "z": 2.7079303208857994
+          },
+          "tenderPin": {
+            "x": -47.6474021000502,
+            "z": -3.0806079480221573
+          },
+          "span": 11.867490293005176,
+          "overlap": 3.6325097069948242,
+          "yaw": -2.6320657332329676,
+          "margin": 2.3674902930051758
+        },
+        "leadingOffset": 1.2451550901459996e-10,
+        "guideTravel": 2.2802203733103616,
+        "hingeDegrees": 12.229752059221507,
+        "drawbarSpan": 11.867490293005176,
+        "framePoses": {
+          "engine_rear": {
+            "x": 17.988315928731808,
+            "z": -1.306369929090359,
+            "cos": 0.9973733174801318,
+            "sin": -0.07243248980033865
+          },
+          "tender_body": {
+            "x": -79.17191486717152,
+            "z": -13.687151789588576,
+            "cos": 0.9477922818461763,
+            "sin": 0.31888836678815763
+          },
+          "engine_front": {
+            "x": 45.57878249322383,
+            "z": -3.3100792252927436,
+            "cos": 0.959395413151619,
+            "sin": -0.2820646046983458
+          },
+          "trailing_truck": {
+            "x": -12.800308228003583,
+            "z": -0.27365487886650985,
+            "cos": 0.9967107971581074,
+            "sin": 0.081040649235122,
+            "guideTravelMm": -1.2000942695457748,
+            "guideSwingRad": 0.1536255949067528
+          },
+          "leading_truck": {
+            "x": 103.99345198219748,
+            "z": -22.860861701608346,
+            "cos": 0.9085370485341783,
+            "sin": -0.4178042980161935,
+            "guideTravelMm": -2.2802203733103616,
+            "guideSwingRad": -0.14508181298952036
+          },
+          "tender_rear_bogie": {
+            "x": -97.189266792973,
+            "z": -19.749159298527942,
+            "cos": 0.9207097498874156,
+            "sin": 0.3902480704145152
+          },
+          "tender_front_bogie": {
+            "x": -61.15456294137006,
+            "z": -7.625144280649211,
+            "cos": 0.9693530522730933,
+            "sin": 0.24567185440916442
+          }
+        }
+      }
+    },
+    {
+      "radius": 216,
+      "left": {
+        "halfEnvelope": 25.807353685473828,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.3902057526653948,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 25.807353685473828,
+          "engine_front": 14.125594989919051,
+          "tender_body": 14.302000712665375,
+          "trailing_truck": 8.111958615949618,
+          "leading_truck": 6.249150590709036,
+          "tender_rear_bogie": 8.61526645056719,
+          "tender_front_bogie": 7.170065867204698
+        },
+        "worstTread": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 2.5921963242581114e-8,
+        "trailingTravel": 1.3861941198841046,
+        "axleSlides": {
+          "engine_rear_axle_01": 0.0017605818090773169,
+          "engine_rear_axle_02": -0.45,
+          "engine_rear_axle_03": -0.45,
+          "engine_rear_axle_04": 0.001760581808976888,
+          "engine_front_axle_01": 0.09464766372203098,
+          "engine_front_axle_02": -0.45,
+          "engine_front_axle_03": -0.34457559417739664,
+          "engine_front_axle_04": 0.44391092946217814,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": 0.45,
+          "tender_rear_bogie_axle_02": 0.21228100330305297,
+          "tender_rear_bogie_axle_03": 0.002157486130606598,
+          "tender_rear_bogie_axle_04": 0.2101293240428719,
+          "tender_rear_bogie_axle_05": 0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.21994612494722787,
+          "engine_front": 0.010633510450702488,
+          "trailing_truck": 2.5921963242581114e-8,
+          "leading_truck": 2.1796608962176833e-10,
+          "tender_rear_bogie": 0.3902057526653948,
+          "tender_front_bogie": 0.0985509383609724
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.26027589546154,
+            "z": -3.1211761779334135
+          },
+          "tenderPin": {
+            "x": -47.6766842899532,
+            "z": 3.5646296263632458
+          },
+          "span": 12.377461900309095,
+          "overlap": 3.122538099690905,
+          "yaw": 2.5709658187359077,
+          "margin": 2.1725380996909047
+        },
+        "leadingOffset": 2.1796608962176833e-10,
+        "guideTravel": 2.632093787907446,
+        "hingeDegrees": 14.092932064207577,
+        "drawbarSpan": 12.377461900309095,
+        "framePoses": {
+          "engine_rear": {
+            "x": 17.967564611800142,
+            "z": 1.5050864035244786,
+            "cos": 0.9965099133431088,
+            "sin": 0.0834745027473038
+          },
+          "tender_body": {
+            "x": -78.63674073663768,
+            "z": 15.72063975656539,
+            "cos": 0.9308217628122609,
+            "sin": -0.3654734544054812
+          },
+          "engine_front": {
+            "x": 45.53414671642476,
+            "z": 3.8142523263264603,
+            "cos": 0.9461913629681159,
+            "sin": 0.3236076399662703
+          },
+          "trailing_truck": {
+            "x": -12.823267809101758,
+            "z": 0.31688416913430295,
+            "cos": 0.9956195130665503,
+            "sin": -0.09349751441148227,
+            "guideTravelMm": 1.3861941198841046,
+            "guideSwingRad": -0.17720602522409362
+          },
+          "leading_truck": {
+            "x": 102.92741367015482,
+            "z": 26.225145393707713,
+            "cos": 0.8790344200951314,
+            "sin": 0.47675831223798915,
+            "guideTravelMm": 2.632093787907446,
+            "guideSwingRad": 0.1674234106992036
+          },
+          "tender_rear_bogie": {
+            "x": -96.3314863069601,
+            "z": 22.66822096574706,
+            "cos": 0.89509603834057,
+            "sin": -0.445873392508475
+          },
+          "tender_front_bogie": {
+            "x": -60.94199516631526,
+            "z": 8.773058547383723,
+            "cos": 0.9593421697281573,
+            "sin": -0.28224564014572723
+          }
+        }
+      },
+      "right": {
+        "halfEnvelope": 25.807354576963064,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.3902057526653948,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 25.807354576963064,
+          "engine_front": 14.125596579811287,
+          "tender_body": 14.302000712665375,
+          "trailing_truck": 8.111958614728394,
+          "leading_truck": 6.249150634594173,
+          "tender_rear_bogie": 8.61526645056719,
+          "tender_front_bogie": 7.1700663437227945
+        },
+        "worstTread": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 1.4748479770787526e-8,
+        "trailingTravel": 1.3861941245535863,
+        "axleSlides": {
+          "engine_rear_axle_01": -0.0017605817519835408,
+          "engine_rear_axle_02": 0.45,
+          "engine_rear_axle_03": 0.45,
+          "engine_rear_axle_04": -0.0017605817519835408,
+          "engine_front_axle_01": -0.09464766132671851,
+          "engine_front_axle_02": 0.45,
+          "engine_front_axle_03": 0.34457559194291876,
+          "engine_front_axle_04": -0.44391091163316665,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": -0.45,
+          "tender_rear_bogie_axle_02": -0.2122810013946492,
+          "tender_rear_bogie_axle_03": -0.0021574861307905565,
+          "tender_rear_bogie_axle_04": -0.21012932217774238,
+          "tender_rear_bogie_axle_05": -0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.21994612494722787,
+          "engine_front": 0.010633510450702488,
+          "trailing_truck": 1.4748479770787526e-8,
+          "leading_truck": 3.1653257792640943e-10,
+          "tender_rear_bogie": 0.3902057526653948,
+          "tender_front_bogie": 0.0985509383609724
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.26027589546154,
+            "z": 3.1211761779334135
+          },
+          "tenderPin": {
+            "x": -47.6766842899532,
+            "z": -3.5646296263632458
+          },
+          "span": 12.377461900309095,
+          "overlap": 3.122538099690905,
+          "yaw": -2.5709658187359077,
+          "margin": 2.1725380996909047
+        },
+        "leadingOffset": 3.1653257792640943e-10,
+        "guideTravel": 2.632093788439614,
+        "hingeDegrees": 14.092932064207577,
+        "drawbarSpan": 12.377461900309095,
+        "framePoses": {
+          "engine_rear": {
+            "x": 17.967564611800142,
+            "z": -1.5050864035244786,
+            "cos": 0.9965099133431088,
+            "sin": -0.0834745027473038
+          },
+          "tender_body": {
+            "x": -78.63674073663768,
+            "z": -15.72063975656539,
+            "cos": 0.9308217628122609,
+            "sin": 0.3654734544054812
+          },
+          "engine_front": {
+            "x": 45.53414671642476,
+            "z": -3.8142523263264603,
+            "cos": 0.9461913629681159,
+            "sin": -0.3236076399662703
+          },
+          "trailing_truck": {
+            "x": -12.82326780949154,
+            "z": -0.3168841737874877,
+            "cos": 0.9956195131834057,
+            "sin": 0.09349751316713303,
+            "guideTravelMm": -1.3861941245535863,
+            "guideSwingRad": 0.17720602397426954
+          },
+          "leading_truck": {
+            "x": 102.92741366998261,
+            "z": -26.225145394211246,
+            "cos": 0.8790344200950557,
+            "sin": -0.4767583122381288,
+            "guideTravelMm": -2.632093788439614,
+            "guideSwingRad": -0.16742341069936248
+          },
+          "tender_rear_bogie": {
+            "x": -96.3314863069601,
+            "z": -22.66822096574706,
+            "cos": 0.89509603834057,
+            "sin": 0.445873392508475
+          },
+          "tender_front_bogie": {
+            "x": -60.94199516631526,
+            "z": -8.773058547383723,
+            "cos": 0.9593421697281573,
+            "sin": 0.28224564014572723
+          }
+        }
+      }
+    },
+    {
+      "radius": 150,
+      "left": {
+        "halfEnvelope": 31.338520018723727,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.7650621152106964,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 31.338520018723727,
+          "engine_front": 15.920704880465479,
+          "tender_body": 16.201620286903392,
+          "trailing_truck": 8.138558979865621,
+          "leading_truck": 6.302665898511805,
+          "tender_rear_bogie": 8.961874139579322,
+          "tender_front_bogie": 7.2383795268208075
+        },
+        "worstTread": {
+          "axle": "tender_rear_bogie_axle_01",
+          "treadOverlap": 0.11483104482462636,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 5.501306077349e-9,
+        "trailingTravel": 2.013532176957271,
+        "axleSlides": {
+          "engine_rear_axle_01": 0.005271684908156464,
+          "engine_rear_axle_02": -0.45,
+          "engine_rear_axle_03": -0.45,
+          "engine_rear_axle_04": 0.005271684908307391,
+          "engine_front_axle_01": 0.13700760820167165,
+          "engine_front_axle_02": -0.45,
+          "engine_front_axle_03": -0.45,
+          "engine_front_axle_04": 0.45,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": 0.45,
+          "tender_rear_bogie_axle_02": 0.310820439921474,
+          "tender_rear_bogie_axle_03": 0.006434975526249367,
+          "tender_rear_bogie_axle_04": 0.3044183790761022,
+          "tender_rear_bogie_axle_05": 0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.5137268555557739,
+          "engine_front": 0.21676344474596476,
+          "trailing_truck": 5.501306077349e-9,
+          "leading_truck": 1.205222588396282e-9,
+          "tender_rear_bogie": 0.7650621152106964,
+          "tender_front_bogie": 0.14631723957833742
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.14271533896958,
+            "z": -4.491581753176248
+          },
+          "tenderPin": {
+            "x": -47.79469456958964,
+            "z": 5.215613835717296
+          },
+          "span": 14.411603232485808,
+          "overlap": 1.0883967675141921,
+          "yaw": 2.402567014060318,
+          "margin": 0.13839676751419216
+        },
+        "leadingOffset": 1.205222588396282e-9,
+        "guideTravel": 3.8126925933969615,
+        "hingeDegrees": 20.26117415506134,
+        "drawbarSpan": 14.411603232485808,
+        "framePoses": {
+          "engine_rear": {
+            "x": 17.87771465532266,
+            "z": 2.1619102481204466,
+            "cos": 0.9927674778177065,
+            "sin": 0.12005305072121096
+          },
+          "tender_body": {
+            "x": -76.34405864748427,
+            "z": 22.281002440003018,
+            "cos": 0.8583436998546164,
+            "sin": -0.5130751337961019
+          },
+          "engine_front": {
+            "x": 45.34076928390223,
+            "z": 5.482953255624825,
+            "cos": 0.889764440907855,
+            "sin": 0.45642002552027905
+          },
+          "trailing_truck": {
+            "x": -12.923934856361836,
+            "z": 0.465339951651464,
+            "cos": 0.9908301171622073,
+            "sin": -0.13511357786812772,
+            "guideTravelMm": 2.013532176957271,
+            "guideSwingRad": -0.25587141000272784
+          },
+          "leading_truck": {
+            "x": 98.3721208720139,
+            "z": 36.97135867001841,
+            "cos": 0.7543201188436375,
+            "sin": 0.6565067846623679,
+            "guideTravelMm": 3.8126925933969615,
+            "guideSwingRad": 0.24221090974692855
+          },
+          "tender_rear_bogie": {
+            "x": -92.6610099561098,
+            "z": 32.03446364352267,
+            "cos": 0.7866108254497454,
+            "sin": -0.6174491147335708
+          },
+          "tender_front_bogie": {
+            "x": -60.02710733885876,
+            "z": 12.52754123648337,
+            "cos": 0.9163084979889343,
+            "sin": -0.4004731408137913
+          }
+        }
+      },
+      "right": {
+        "halfEnvelope": 31.33852085864706,
+        "extremePart": "engine_rear",
+        "axleOffset": 0.7650621152106964,
+        "extremeAxle": "tender_rear_bogie_axle_01",
+        "hingeResidual": 0,
+        "byFrame": {
+          "engine_rear": 31.33852085864706,
+          "engine_front": 15.920707083885134,
+          "tender_body": 16.201621195083305,
+          "trailing_truck": 8.138558981373535,
+          "leading_truck": 6.302665957141443,
+          "tender_rear_bogie": 8.961874139579322,
+          "tender_front_bogie": 7.238380003010917
+        },
+        "worstTread": {
+          "axle": "tender_rear_bogie_axle_01",
+          "treadOverlap": 0.11483104482462636,
+          "flangeOverlap": 0
+        },
+        "worstFlange": {
+          "axle": "engine_rear_axle_01",
+          "treadOverlap": 0.4500000000000002,
+          "flangeOverlap": 0
+        },
+        "trailingOffset": 4.495745997701306e-10,
+        "trailingTravel": 2.013532179261347,
+        "axleSlides": {
+          "engine_rear_axle_01": -0.005271684395909885,
+          "engine_rear_axle_02": 0.45,
+          "engine_rear_axle_03": 0.45,
+          "engine_rear_axle_04": -0.005271684395909885,
+          "engine_front_axle_01": -0.13700759776862106,
+          "engine_front_axle_02": 0.45,
+          "engine_front_axle_03": 0.45,
+          "engine_front_axle_04": -0.45,
+          "trailing_truck_axle_01": 0,
+          "trailing_truck_axle_02": 0,
+          "leading_truck_axle_01": 0,
+          "leading_truck_axle_02": 0,
+          "tender_rear_bogie_axle_01": -0.45,
+          "tender_rear_bogie_axle_02": -0.31082043155639333,
+          "tender_rear_bogie_axle_03": -0.0064349755264322605,
+          "tender_rear_bogie_axle_04": -0.30441837103971353,
+          "tender_rear_bogie_axle_05": -0.45,
+          "tender_front_bogie_axle_01": 0,
+          "tender_front_bogie_axle_02": 0
+        },
+        "frameOffsets": {
+          "engine_rear": 0.5137268555557739,
+          "engine_front": 0.21676344474596476,
+          "trailing_truck": 4.495745997701306e-10,
+          "leading_truck": 4.548013521343819e-9,
+          "tender_rear_bogie": 0.7650621152106964,
+          "tender_front_bogie": 0.14631723957833742
+        },
+        "drawbar": {
+          "enginePin": {
+            "x": -37.14271533896958,
+            "z": 4.491581753176248
+          },
+          "tenderPin": {
+            "x": -47.79469456958964,
+            "z": -5.215613835717296
+          },
+          "span": 14.411603232485808,
+          "overlap": 1.0883967675141921,
+          "yaw": -2.402567014060318,
+          "margin": 0.13839676751419216
+        },
+        "leadingOffset": 4.548013521343819e-9,
+        "guideTravel": 3.8126925980934256,
+        "hingeDegrees": 20.26117415506134,
+        "drawbarSpan": 14.411603232485808,
+        "framePoses": {
+          "engine_rear": {
+            "x": 17.87771465532266,
+            "z": -2.1619102481204466,
+            "cos": 0.9927674778177065,
+            "sin": -0.12005305072121096
+          },
+          "tender_body": {
+            "x": -76.34405864748427,
+            "z": -22.281002440003018,
+            "cos": 0.8583436998546164,
+            "sin": 0.5130751337961019
+          },
+          "engine_front": {
+            "x": 45.34076928390223,
+            "z": -5.482953255624825,
+            "cos": 0.889764440907855,
+            "sin": -0.45642002552027905
+          },
+          "trailing_truck": {
+            "x": -12.923934856638446,
+            "z": -0.46533995393887584,
+            "cos": 0.9908301172453114,
+            "sin": 0.13511357725869885,
+            "guideTravelMm": -2.013532179261347,
+            "guideSwingRad": 0.25587140938765884
+          },
+          "leading_truck": {
+            "x": 98.37212086987034,
+            "z": -36.971358674197155,
+            "cos": 0.7543201188411087,
+            "sin": -0.6565067846652733,
+            "guideTravelMm": -3.8126925980934256,
+            "guideSwingRad": -0.24221090975078025
+          },
+          "tender_rear_bogie": {
+            "x": -92.6610099561098,
+            "z": -32.03446364352267,
+            "cos": 0.7866108254497454,
+            "sin": 0.6174491147335708
+          },
+          "tender_front_bogie": {
+            "x": -60.02710733885876,
+            "z": -12.52754123648337,
+            "cos": 0.9163084979889343,
+            "sin": 0.4004731408137913
+          }
+        }
+      }
+    }
+  ],
+  "byScenario": {
+    "legacy": {
+      "poses": 3100,
+      "unsupportedPoses": 0,
+      "flangeFlagPoses": 0,
+      "byHeading": {
+        "1": 1548,
+        "-1": 1552
+      },
+      "controlIds": [
+        "Y-IN",
+        "Y-R1",
+        "Y-R2",
+        "Y-3",
+        "Y-4",
+        "Y-2",
+        "WX-A",
+        "WX-B"
+      ],
+      "totalEdges": 75,
+      "sampledEdges": 71,
+      "sampledSwitchEdges": [
+        "TO0:AB",
+        "TO0:AC",
+        "TO1:AB",
+        "TO1:AC",
+        "TO2:AB",
+        "TO2:AC",
+        "TO3:AB",
+        "TO3:AC",
+        "TO4:AB",
+        "TO4:AC",
+        "TO5:AB",
+        "TO5:AC",
+        "WX-A:down",
+        "WX-A:lower",
+        "WX-A:up",
+        "WX-A:upper",
+        "WX-B:down",
+        "WX-B:lower",
+        "WX-B:up",
+        "WX-B:upper"
+      ],
+      "unsampledEdges": [
+        "T30",
+        "T37",
+        "T38",
+        "T39"
+      ],
+      "loopCases": [
+        {
+          "lane": 0,
+          "poses": 570,
+          "halfEnvelope": 24.003860790198516,
+          "axleOffset": 0.2799477942987293
+        },
+        {
+          "lane": 1,
+          "poses": 588,
+          "halfEnvelope": 22.579414080342403,
+          "axleOffset": 0.19399475100620303
+        },
+        {
+          "lane": 2,
+          "poses": 620,
+          "halfEnvelope": 21.427129301247696,
+          "axleOffset": 0.12626127448226002
+        }
+      ],
+      "hingeResidual": 0,
+      "worst": {
+        "halfEnvelope": {
+          "edge": "T20",
+          "edgeRole": "mainline",
+          "s": 103.53368081661529,
+          "sign": -1,
+          "mask": 0,
+          "route": [
+            "T19/-1",
+            "T20/-1",
+            "T21/-1"
+          ],
+          "halfEnvelope": 24.003860790198516,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.27915662507514205,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 24.003860790198516,
+            "engine_front": 13.556476199272012,
+            "tender_body": 13.703575693452569,
+            "trailing_truck": 8.103935584770257,
+            "leading_truck": 6.233410661713377,
+            "tender_rear_bogie": 8.508603500295393,
+            "tender_front_bogie": 7.150510727154321
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 4.182426019498999e-9,
+          "trailingTravel": 1.2010874743747422,
+          "axleSlides": {
+            "engine_rear_axle_01": -0.0011956836917132844,
+            "engine_rear_axle_02": 0.45,
+            "engine_rear_axle_03": 0.45,
+            "engine_rear_axle_04": -0.001087232024358005,
+            "engine_front_axle_01": -0.08346313051263105,
+            "engine_front_axle_02": 0.3982958500085995,
+            "engine_front_axle_03": 0.29787539932580875,
+            "engine_front_axle_04": -0.38540199508255213,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": -0.45,
+            "tender_rear_bogie_axle_02": -0.18324012624682004,
+            "tender_rear_bogie_axle_03": -0.001461699507378437,
+            "tender_rear_bogie_axle_04": -0.18282044008592335,
+            "tender_rear_bogie_axle_05": -0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.1312910008100945,
+            "engine_front": 1.314621477058668e-11,
+            "trailing_truck": 4.182426019498999e-9,
+            "leading_truck": 3.4417629626535183e-9,
+            "tender_rear_bogie": 0.27915662507514205,
+            "tender_front_bogie": 0.08559562981748318
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 132.67930661076204,
+              "z": 417.55923161702526
+            },
+            "tenderPin": {
+              "x": 133.78914200110032,
+              "z": 405.74421010677406
+            },
+            "span": 11.867032817067031,
+            "overlap": 3.632967182932969,
+            "yaw": -1.4771368867553931,
+            "margin": 2.367032817067031
+          },
+          "leadingOffset": 3.4417629626535183e-9,
+          "guideTravel": 2.278157283583176,
+          "hingeDegrees": 12.233646439468117,
+          "drawbarSpan": 11.867032817067031,
+          "framePoses": {
+            "engine_rear": {
+              "x": 158.67773576226898,
+              "z": 466.5040817467601,
+              "cos": 0.4691056565468759,
+              "sin": 0.8831420514253211
+            },
+            "tender_body": {
+              "x": 130.7588385128741,
+              "z": 372.6215450836104,
+              "cos": 0.09110682467986769,
+              "sin": 0.9958411251282767
+            },
+            "engine_front": {
+              "x": 171.6546659701783,
+              "z": 490.9345540829449,
+              "cos": 0.6455897172841382,
+              "sin": 0.763684435442406
+            },
+            "trailing_truck": {
+              "x": 145.2981962553211,
+              "z": 438.7552766321792,
+              "cos": 0.3285321905460908,
+              "sin": 0.9444927738077127,
+              "guideTravelMm": -1.2010874743747422,
+              "guideSwingRad": 0.15352873914791265
+            },
+            "leading_truck": {
+              "x": 213.13525121821726,
+              "z": 536.474189018683,
+              "cos": 0.749157795099114,
+              "sin": 0.6623915745555903,
+              "guideTravelMm": -2.278157283583176,
+              "guideSwingRad": -0.14499447072576396
+            },
+            "tender_rear_bogie": {
+              "x": 129.02691501598505,
+              "z": 353.6907937393678,
+              "cos": 0.014910880445485998,
+              "sin": 0.9998888266424124
+            },
+            "tender_front_bogie": {
+              "x": 132.49076200976313,
+              "z": 391.552296427853,
+              "cos": 0.1667415589939086,
+              "sin": 0.9860006351439541
+            }
+          }
+        },
+        "axleOffset": {
+          "edge": "WX-A:up",
+          "edgeRole": "crossover",
+          "s": 266.29961054313196,
+          "sign": -1,
+          "mask": 64,
+          "route": [
+            "WX-A:up/-1",
+            "T18/-1"
+          ],
+          "halfEnvelope": 15.798797645770533,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.34158704371011483,
+          "extremeAxle": "engine_front_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 15.798797645770533,
+            "engine_front": 14.728452927678477,
+            "tender_body": 10.60333315209699,
+            "trailing_truck": 8.07380319068335,
+            "leading_truck": 6.233196918717835,
+            "tender_rear_bogie": 7.976434607013565,
+            "tender_front_bogie": 7.074936048885911
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 1.1023441921510966e-10,
+          "trailingTravel": 0.4963039269635871,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.0000692508637337075,
+            "engine_rear_axle_02": -0.23494250257163904,
+            "engine_rear_axle_03": -0.2216202811052887,
+            "engine_rear_axle_04": 0.0000494488441870908,
+            "engine_front_axle_01": 0.45,
+            "engine_front_axle_02": 0.45,
+            "engine_front_axle_03": 0.3087720592377691,
+            "engine_front_axle_04": -0.45,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.15818692503757897,
+            "tender_rear_bogie_axle_02": 0.07812984220532111,
+            "tender_rear_bogie_axle_03": 0.0001112877748722425,
+            "tender_rear_bogie_axle_04": 0.01707291178197846,
+            "tender_rear_bogie_axle_05": 0.18860621465833152,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 9.295906510453126e-13,
+            "engine_front": 0.34158704371011483,
+            "trailing_truck": 1.1023441921510966e-10,
+            "leading_truck": 2.7147792378213453e-10,
+            "tender_rear_bogie": 2.311953889387446e-12,
+            "tender_front_bogie": 0.03574930866051414
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 461.6649459636082,
+              "z": 99.49670828598587
+            },
+            "tenderPin": {
+              "x": 471.7460379082163,
+              "z": 96.56748482445049
+            },
+            "span": 10.498036239375983,
+            "overlap": 5.001963760624017,
+            "yaw": -0.2827795172407622,
+            "margin": 0.998036239375983
+          },
+          "leadingOffset": 2.7147792378213453e-10,
+          "guideTravel": 3.1688271512160124,
+          "hingeDegrees": 2.7653349054308953,
+          "drawbarSpan": 10.498036239375983,
+          "framePoses": {
+            "engine_rear": {
+              "x": 406.255283008382,
+              "z": 100.63069406912624,
+              "cos": -0.9997906476647982,
+              "sin": 0.02046120333712723
+            },
+            "tender_body": {
+              "x": 504.4153306102299,
+              "z": 90.32160683832032,
+              "cos": -0.9822103740374346,
+              "sin": 0.18778386813899292
+            },
+            "engine_front": {
+              "x": 378.5979455275876,
+              "z": 101.19671497288229,
+              "cos": -0.997639240844616,
+              "sin": 0.06867273932921449
+            },
+            "trailing_truck": {
+              "x": 437.0212379713753,
+              "z": 99.50464594099877,
+              "cos": -0.996402477365209,
+              "sin": 0.08474728963497351,
+              "guideTravelMm": 0.4963039269635871,
+              "guideSwingRad": -0.0643864315432674
+            },
+            "leading_truck": {
+              "x": 317.40352994619155,
+              "z": 108.5853731160807,
+              "cos": -0.9699209806875478,
+              "sin": 0.24341998936427847,
+              "guideTravelMm": -3.1688271512160124,
+              "guideSwingRad": -0.17716351868975855
+            },
+            "tender_rear_bogie": {
+              "x": 523.0869639556022,
+              "z": 86.75187103960906,
+              "cos": -0.9769475203101173,
+              "sin": 0.21347960689469272
+            },
+            "tender_front_bogie": {
+              "x": 485.7436972648576,
+              "z": 93.89134263703158,
+              "cos": -0.9878044802034504,
+              "sin": 0.15569941839965665
+            }
+          }
+        },
+        "hingeDegrees": {
+          "edge": "T21",
+          "edgeRole": "mainline",
+          "s": 103.53368081661534,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "WIDEN-L:offset/-1",
+            "T21/1",
+            "T20/1"
+          ],
+          "halfEnvelope": 24.003859884087497,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.13129100081009049,
+          "extremeAxle": "engine_rear_axle_03",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 24.003859884087497,
+            "engine_front": 13.55647480501183,
+            "tender_body": 12.325047440611911,
+            "trailing_truck": 8.103935583577945,
+            "leading_truck": 6.233410627768925,
+            "tender_rear_bogie": 8.309475874232156,
+            "tender_front_bogie": 7.150510250515408
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 9.857510375689318e-9,
+          "trailingTravel": 1.2010874717558968,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.001195683691747278,
+            "engine_rear_axle_02": -0.45,
+            "engine_rear_axle_03": -0.45,
+            "engine_rear_axle_04": 0.0010872320243645154,
+            "engine_front_axle_01": 0.08346313051076526,
+            "engine_front_axle_02": -0.3982958499998421,
+            "engine_front_axle_03": -0.2978753993082031,
+            "engine_front_axle_04": 0.38540199505929695,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.2158510971728528,
+            "tender_rear_bogie_axle_03": 0.0014618271270835422,
+            "tender_rear_bogie_axle_04": 0.08172293567454993,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.13129100081009049,
+            "engine_front": 1.0780209957769755e-11,
+            "trailing_truck": 9.857510375689318e-9,
+            "leading_truck": 5.326871138141636e-10,
+            "tender_rear_bogie": 0.07397462520157168,
+            "tender_front_bogie": 0.08559562981760337
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 310.44076838297474,
+              "z": 595.3206933892379
+            },
+            "tenderPin": {
+              "x": 322.25578989322605,
+              "z": 594.2108579988998
+            },
+            "span": 11.867032817067132,
+            "overlap": 3.632967182932868,
+            "yaw": -0.09365944003949311,
+            "margin": 2.367032817067132
+          },
+          "leadingOffset": 5.326871138141636e-10,
+          "guideTravel": 2.2781572809128754,
+          "hingeDegrees": 12.233646439468318,
+          "drawbarSpan": 11.867032817067132,
+          "framePoses": {
+            "engine_rear": {
+              "x": 261.4959182532399,
+              "z": 569.322264237731,
+              "cos": -0.8831420514253214,
+              "sin": -0.46910565654687536
+            },
+            "tender_body": {
+              "x": 355.3784549163897,
+              "z": 597.241161487126,
+              "cos": -0.9958411251282767,
+              "sin": -0.09110682467986607
+            },
+            "engine_front": {
+              "x": 237.0654459170551,
+              "z": 556.3453340298217,
+              "cos": -0.7636844354424043,
+              "sin": -0.6455897172841405
+            },
+            "trailing_truck": {
+              "x": 289.2447233665923,
+              "z": 582.7018037469917,
+              "cos": -0.9444927740229239,
+              "sin": -0.328532189927383,
+              "guideTravelMm": 1.2010874717558968,
+              "guideSwingRad": -0.15352873980298082
+            },
+            "leading_truck": {
+              "x": 191.5258109795932,
+              "z": 514.8647487838219,
+              "cos": -0.6623915745860601,
+              "sin": -0.749157795072173,
+              "guideTravelMm": 2.2781572809128754,
+              "guideSwingRad": 0.14499447068508883
+            },
+            "tender_rear_bogie": {
+              "x": 374.3092062606323,
+              "z": 598.9730849840149,
+              "cos": -0.9996736785219428,
+              "sin": -0.025544793410940785
+            },
+            "tender_front_bogie": {
+              "x": 336.44770357214713,
+              "z": 595.509237990237,
+              "cos": -0.9860006351439561,
+              "sin": -0.16674155899389712
+            }
+          }
+        },
+        "drawbarMin": {
+          "edge": "WX-A:lower",
+          "edgeRole": "mainline",
+          "s": 83.46153846153847,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "T18/1",
+            "WX-A:lower/1"
+          ],
+          "halfEnvelope": 12.971197746536031,
+          "extremePart": "tender_body",
+          "axleOffset": 0.27022728131635915,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 11.028587341308603,
+            "engine_front": 10.892482757568363,
+            "tender_body": 12.971197746536031,
+            "trailing_truck": 8.051408767700199,
+            "leading_truck": 6.121805667877199,
+            "tender_rear_bogie": 8.50149081933813,
+            "tender_front_bogie": 7.019231735409158
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 9.570584310122732e-15,
+          "trailingTravel": 0,
+          "axleSlides": {
+            "engine_rear_axle_01": 0,
+            "engine_rear_axle_02": 0,
+            "engine_rear_axle_03": 0,
+            "engine_rear_axle_04": 0,
+            "engine_front_axle_01": 0,
+            "engine_front_axle_02": 0,
+            "engine_front_axle_03": 0,
+            "engine_front_axle_04": 0,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.17773295951155385,
+            "tender_rear_bogie_axle_03": 0.00021565559032017375,
+            "tender_rear_bogie_axle_04": 0.18501622112901214,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 1.437342577855375e-14,
+            "engine_front": 9.75170747312199e-15,
+            "trailing_truck": 9.570584310122732e-15,
+            "leading_truck": 6.277080775407294e-15,
+            "tender_rear_bogie": 0.27022728131635915,
+            "tender_front_bogie": 0.000056682414105234746
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 424.09177084932753,
+              "z": 101.00000000000003
+            },
+            "tenderPin": {
+              "x": 413.9105584371731,
+              "z": 100.79796900518953
+            },
+            "span": 10.183216716945163,
+            "overlap": 5.316783283054837,
+            "yaw": -3.121751747092188,
+            "margin": 0.6832167169451626
+          },
+          "leadingOffset": 6.277080775407294e-15,
+          "guideTravel": 0,
+          "hingeDegrees": 2.380260069935254e-14,
+          "drawbarSpan": 10.183216716945163,
+          "framePoses": {
+            "engine_rear": {
+              "x": 479.51303637591155,
+              "z": 101.00000000000003,
+              "cos": 1,
+              "sin": 0
+            },
+            "tender_body": {
+              "x": 380.6529056509994,
+              "z": 101.26935910030846,
+              "cos": 0.999899565646287,
+              "sin": -0.014172459926436553
+            },
+            "engine_front": {
+              "x": 507.17616519732366,
+              "z": 101.00000000000003,
+              "cos": 1,
+              "sin": 4.1543375274120674e-16
+            },
+            "trailing_truck": {
+              "x": 448.7304820377175,
+              "z": 101.00000000000003,
+              "cos": 1,
+              "sin": 1.2847307807937745e-15,
+              "guideTravelMm": 0,
+              "guideSwingRad": 1.2847307807937745e-15
+            },
+            "leading_truck": {
+              "x": 568.7335148965382,
+              "z": 101.00000000000006,
+              "cos": 1,
+              "sin": 0,
+              "guideTravelMm": 0,
+              "guideSwingRad": -4.1543375274120674e-16
+            },
+            "tender_rear_bogie": {
+              "x": 361.645004120494,
+              "z": 101.53877488163508,
+              "cos": 0.9978211834834889,
+              "sin": -0.06597640329397643
+            },
+            "tender_front_bogie": {
+              "x": 399.6608071815048,
+              "z": 100.99994331898185,
+              "cos": 1,
+              "sin": -2.171254767255604e-10
+            }
+          }
+        },
+        "drawbarMax": {
+          "edge": "T18",
+          "edgeRole": "mainline",
+          "s": 46.01496925182903,
+          "sign": -1,
+          "mask": 64,
+          "route": [
+            "WX-A:up/-1",
+            "T18/-1",
+            "T19/-1"
+          ],
+          "halfEnvelope": 24.000315020418338,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.1312895277464217,
+          "extremeAxle": "engine_rear_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 24.000315020418338,
+            "engine_front": 13.558996981887802,
+            "tender_body": 11.363321755351437,
+            "trailing_truck": 8.10387401174649,
+            "leading_truck": 6.231607095721063,
+            "tender_rear_bogie": 8.097447462882577,
+            "tender_front_bogie": 7.045220282526366
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 4.1492865158790495e-9,
+          "trailingTravel": 1.2019046597743575,
+          "axleSlides": {
+            "engine_rear_axle_01": -0.001092477876526813,
+            "engine_rear_axle_02": 0.45,
+            "engine_rear_axle_03": 0.45,
+            "engine_rear_axle_04": -0.0011926824635198298,
+            "engine_front_axle_01": -0.08242991694796319,
+            "engine_front_axle_02": 0.3987699673089733,
+            "engine_front_axle_03": 0.29777995497339893,
+            "engine_front_axle_04": -0.3860414547653122,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.30946378616287123,
+            "tender_rear_bogie_axle_02": 0.07747992304931006,
+            "tender_rear_bogie_axle_03": 0.0001073373185604358,
+            "tender_rear_bogie_axle_04": 0.07728253604786972,
+            "tender_rear_bogie_axle_05": 0.30928213088665796,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.1312895277464217,
+            "engine_front": 3.770309905542013e-12,
+            "trailing_truck": 4.1492865158790495e-9,
+            "leading_truck": 6.834776159795371e-9,
+            "tender_rear_bogie": 1.929246241993758e-14,
+            "tender_front_bogie": 0.012304782101551837
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 368.40120938697925,
+              "z": 95.72618505114461
+            },
+            "tenderPin": {
+              "x": 379.54191329086734,
+              "z": 101.43653942102996
+            },
+            "span": 12.518922897109647,
+            "overlap": 2.981077102890353,
+            "yaw": 0.473650391082,
+            "margin": 2.031077102890353
+          },
+          "leadingOffset": 6.834776159795371e-9,
+          "guideTravel": 2.2811083256192175,
+          "hingeDegrees": 12.228638098534136,
+          "drawbarSpan": 12.518922897109647,
+          "framePoses": {
+            "engine_rear": {
+              "x": 314.8045462580427,
+              "z": 109.82988577157343,
+              "cos": -0.9670775760836376,
+              "sin": 0.2544817514797395
+            },
+            "tender_body": {
+              "x": 412.7873057831973,
+              "z": 100.41793473893114,
+              "cos": -0.9995309568762134,
+              "sin": 0.030624601974896696
+            },
+            "engine_front": {
+              "x": 288.05215469054207,
+              "z": 116.86964724545604,
+              "cos": -0.8912321046318686,
+              "sin": 0.45354750101114016
+            },
+            "trailing_truck": {
+              "x": 344.87952709601734,
+              "z": 103.15862247362776,
+              "cos": -0.9946289778987052,
+              "sin": 0.10350457151342186,
+              "guideTravelMm": -1.2019046597743575,
+              "guideSwingRad": 0.15362149503086212
+            },
+            "leading_truck": {
+              "x": 234.22485934317152,
+              "z": 146.82182634433852,
+              "cos": -0.8163049855354744,
+              "sin": 0.5776211306643213,
+              "guideTravelMm": -2.2811083256192175,
+              "guideSwingRad": -0.14506971191326126
+            },
+            "tender_rear_bogie": {
+              "x": 431.788200130736,
+              "z": 99.83576685052576,
+              "cos": -0.9980041436961619,
+              "sin": 0.06314846922365201
+            },
+            "tender_front_bogie": {
+              "x": 393.78641143565864,
+              "z": 101.00010262733652,
+              "cos": -0.9999981989249443,
+              "sin": 0.0018979322609740336
+            }
+          }
+        },
+        "leadingOffset": {
+          "edge": "WX-A:up",
+          "edgeRole": "crossover",
+          "s": 254.72136660647408,
+          "sign": -1,
+          "mask": 64,
+          "route": [
+            "WX-A:up/-1",
+            "T18/-1"
+          ],
+          "halfEnvelope": 14.58224064052712,
+          "extremePart": "engine_front",
+          "axleOffset": 0.29107651316776967,
+          "extremeAxle": "engine_front_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 12.974428553563426,
+            "engine_front": 14.58224064052712,
+            "tender_body": 10.302418472934535,
+            "trailing_truck": 8.07377021572576,
+            "leading_truck": 6.2313524080675196,
+            "tender_rear_bogie": 7.8252387161608015,
+            "tender_front_bogie": 7.074986054280206
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 1.2650890695445679e-10,
+          "trailingTravel": 0.5098988928015122,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.00008757761161183402,
+            "engine_rear_axle_02": -0.2482553352550588,
+            "engine_rear_axle_03": -0.2482552829035502,
+            "engine_rear_axle_04": 0.00008910107434695309,
+            "engine_front_axle_01": 0.45,
+            "engine_front_axle_02": 0.45,
+            "engine_front_axle_03": 0.30689660321296575,
+            "engine_front_axle_04": -0.45,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": -0.04124878024046347,
+            "tender_rear_bogie_axle_02": 0.03257896797989331,
+            "tender_rear_bogie_axle_03": 0.000040468060063399424,
+            "tender_rear_bogie_axle_04": -0.03580146581528412,
+            "tender_rear_bogie_axle_05": -0.007039677405799889,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 1.091385183567256e-12,
+            "engine_front": 0.29107651316776967,
+            "trailing_truck": 1.2650890695445679e-10,
+            "leading_truck": 1.0913975931943405e-7,
+            "tender_rear_bogie": 5.919999859736423e-13,
+            "tender_front_bogie": 0.03616095789020442
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 473.2015419716331,
+              "z": 98.0987460575179
+            },
+            "tenderPin": {
+              "x": 483.21432278670443,
+              "z": 94.89539475515227
+            },
+            "span": 10.512717974768844,
+            "overlap": 4.987282025231156,
+            "yaw": -0.3096360331204091,
+            "margin": 1.0127179747688437
+          },
+          "leadingOffset": 1.0913975931943405e-7,
+          "guideTravel": 3.0570748986741005,
+          "hingeDegrees": 0.7471481112391941,
+          "drawbarSpan": 10.512717974768844,
+          "framePoses": {
+            "engine_rear": {
+              "x": 417.8228883191601,
+              "z": 100.27162253987171,
+              "cos": -0.9992311277321778,
+              "sin": 0.03920654755369217
+            },
+            "tender_body": {
+              "x": 515.7698770626478,
+              "z": 88.08147053679073,
+              "cos": -0.9787908000958769,
+              "sin": 0.20486231875987626
+            },
+            "engine_front": {
+              "x": 390.18102891034,
+              "z": 101.35619831549232,
+              "cos": -0.9996574174891284,
+              "sin": 0.026173415118522066
+            },
+            "trailing_truck": {
+              "x": 448.56178342980263,
+              "z": 98.55523801370374,
+              "cos": -0.9945209958923902,
+              "sin": 0.10453702085485483,
+              "guideTravelMm": 0.5098988928015122,
+              "guideSwingRad": -0.06551176092757792
+            },
+            "leading_truck": {
+              "x": 328.7247817729195,
+              "z": 106.02339198104528,
+              "cos": -0.9802110669806581,
+              "sin": 0.1979552074804798,
+              "guideTravelMm": -3.0570748986741005,
+              "guideSwingRad": -0.17309500160224753
+            },
+            "tender_rear_bogie": {
+              "x": 534.3765049544819,
+              "z": 84.18707662355621,
+              "cos": -0.9759434840842349,
+              "sin": 0.21802365897655412
+            },
+            "tender_front_bogie": {
+              "x": 497.16324917081363,
+              "z": 91.97586445002526,
+              "cos": -0.9845250440030218,
+              "sin": 0.1752439377862984
+            }
+          }
+        },
+        "guideTravel": {
+          "edge": "WX-A:up",
+          "edgeRole": "crossover",
+          "s": 266.29961054313196,
+          "sign": -1,
+          "mask": 64,
+          "route": [
+            "WX-A:up/-1",
+            "T18/-1"
+          ],
+          "halfEnvelope": 15.798797645770533,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.34158704371011483,
+          "extremeAxle": "engine_front_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 15.798797645770533,
+            "engine_front": 14.728452927678477,
+            "tender_body": 10.60333315209699,
+            "trailing_truck": 8.07380319068335,
+            "leading_truck": 6.233196918717835,
+            "tender_rear_bogie": 7.976434607013565,
+            "tender_front_bogie": 7.074936048885911
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 1.1023441921510966e-10,
+          "trailingTravel": 0.4963039269635871,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.0000692508637337075,
+            "engine_rear_axle_02": -0.23494250257163904,
+            "engine_rear_axle_03": -0.2216202811052887,
+            "engine_rear_axle_04": 0.0000494488441870908,
+            "engine_front_axle_01": 0.45,
+            "engine_front_axle_02": 0.45,
+            "engine_front_axle_03": 0.3087720592377691,
+            "engine_front_axle_04": -0.45,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.15818692503757897,
+            "tender_rear_bogie_axle_02": 0.07812984220532111,
+            "tender_rear_bogie_axle_03": 0.0001112877748722425,
+            "tender_rear_bogie_axle_04": 0.01707291178197846,
+            "tender_rear_bogie_axle_05": 0.18860621465833152,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 9.295906510453126e-13,
+            "engine_front": 0.34158704371011483,
+            "trailing_truck": 1.1023441921510966e-10,
+            "leading_truck": 2.7147792378213453e-10,
+            "tender_rear_bogie": 2.311953889387446e-12,
+            "tender_front_bogie": 0.03574930866051414
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 461.6649459636082,
+              "z": 99.49670828598587
+            },
+            "tenderPin": {
+              "x": 471.7460379082163,
+              "z": 96.56748482445049
+            },
+            "span": 10.498036239375983,
+            "overlap": 5.001963760624017,
+            "yaw": -0.2827795172407622,
+            "margin": 0.998036239375983
+          },
+          "leadingOffset": 2.7147792378213453e-10,
+          "guideTravel": 3.1688271512160124,
+          "hingeDegrees": 2.7653349054308953,
+          "drawbarSpan": 10.498036239375983,
+          "framePoses": {
+            "engine_rear": {
+              "x": 406.255283008382,
+              "z": 100.63069406912624,
+              "cos": -0.9997906476647982,
+              "sin": 0.02046120333712723
+            },
+            "tender_body": {
+              "x": 504.4153306102299,
+              "z": 90.32160683832032,
+              "cos": -0.9822103740374346,
+              "sin": 0.18778386813899292
+            },
+            "engine_front": {
+              "x": 378.5979455275876,
+              "z": 101.19671497288229,
+              "cos": -0.997639240844616,
+              "sin": 0.06867273932921449
+            },
+            "trailing_truck": {
+              "x": 437.0212379713753,
+              "z": 99.50464594099877,
+              "cos": -0.996402477365209,
+              "sin": 0.08474728963497351,
+              "guideTravelMm": 0.4963039269635871,
+              "guideSwingRad": -0.0643864315432674
+            },
+            "leading_truck": {
+              "x": 317.40352994619155,
+              "z": 108.5853731160807,
+              "cos": -0.9699209806875478,
+              "sin": 0.24341998936427847,
+              "guideTravelMm": -3.1688271512160124,
+              "guideSwingRad": -0.17716351868975855
+            },
+            "tender_rear_bogie": {
+              "x": 523.0869639556022,
+              "z": 86.75187103960906,
+              "cos": -0.9769475203101173,
+              "sin": 0.21347960689469272
+            },
+            "tender_front_bogie": {
+              "x": 485.7436972648576,
+              "z": 93.89134263703158,
+              "cos": -0.9878044802034504,
+              "sin": 0.15569941839965665
+            }
+          }
+        },
+        "trailingOffset": {
+          "edge": "T43",
+          "edgeRole": "runaround-alternate",
+          "s": 126.3829883756171,
+          "sign": -1,
+          "mask": 18,
+          "route": [
+            "TO1:AC/1",
+            "T43/-1",
+            "TO4:AC/1"
+          ],
+          "halfEnvelope": 15.61133105692237,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.04295742374295944,
+          "extremeAxle": "tender_front_bogie_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 15.61133105692237,
+            "engine_front": 11.818198574306772,
+            "tender_body": 11.720521246215108,
+            "trailing_truck": 8.078596789626776,
+            "leading_truck": 6.160504113475825,
+            "tender_rear_bogie": 8.163363564598766,
+            "tender_front_bogie": 7.087107828258975
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 0.000008505393985118455,
+          "trailingTravel": 0.10311608171664076,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.00003254757795022996,
+            "engine_rear_axle_02": -0.20166384005826626,
+            "engine_rear_axle_03": -0.20166370438291614,
+            "engine_rear_axle_04": 0.000049257647030747814,
+            "engine_front_axle_01": 0.028058406995335156,
+            "engine_front_axle_02": -0.1382946603316288,
+            "engine_front_axle_03": -0.10256659030271205,
+            "engine_front_axle_04": 0.13491926606500257,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": -0.3752970167883735,
+            "tender_rear_bogie_axle_02": -0.0939930667623769,
+            "tender_rear_bogie_axle_03": -0.00019536359847983784,
+            "tender_rear_bogie_axle_04": -0.0937892882924586,
+            "tender_rear_bogie_axle_05": -0.3748908213649769,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 3.278113169718569e-12,
+            "engine_front": 2.5776413085169822e-12,
+            "trailing_truck": 0.000008505393985118455,
+            "leading_truck": 1.4884386745121396e-10,
+            "tender_rear_bogie": 3.3035565757259077e-12,
+            "tender_front_bogie": 0.04295742374295944
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 487.6952141109648,
+              "z": 287.8659015068232
+            },
+            "tenderPin": {
+              "x": 477.59903520625824,
+              "z": 289.64173381649096
+            },
+            "span": 10.251166219894285,
+            "overlap": 5.2488337801057146,
+            "yaw": 2.967482084405966,
+            "margin": 0.7511662198942854
+          },
+          "leadingOffset": 1.4884386745121396e-10,
+          "guideTravel": 0.7887116639111078,
+          "hingeDegrees": 4.244091036809317,
+          "drawbarSpan": 10.251166219894285,
+          "framePoses": {
+            "engine_rear": {
+              "x": 541.5343173860415,
+              "z": 274.7179879421636,
+              "cos": 0.9714520728374844,
+              "sin": -0.2372358956392458
+            },
+            "tender_body": {
+              "x": 444.4746541491875,
+              "z": 292.6532213315634,
+              "cos": 0.9958927181125853,
+              "sin": -0.09054111778814358
+            },
+            "engine_front": {
+              "x": 568.4077212207726,
+              "z": 268.155300800032,
+              "cos": 0.9863449738726406,
+              "sin": -0.164692417907382
+            },
+            "trailing_truck": {
+              "x": 511.65500400297117,
+              "z": 282.12088712197533,
+              "cos": 0.9765759100904063,
+              "sin": -0.21517316707966777,
+              "guideTravelMm": 0.10311608171664076,
+              "guideSwingRad": 0.02265037821873493
+            },
+            "leading_truck": {
+              "x": 629.2543985324745,
+              "z": 258.7952138236316,
+              "cos": 0.99336508924888,
+              "sin": -0.11500347586731707,
+              "guideTravelMm": 0.7887116639111078,
+              "guideSwingRad": 0.050187664155397
+            },
+            "tender_rear_bogie": {
+              "x": 425.5429220320762,
+              "z": 294.37439084749025,
+              "cos": 0.998692649326434,
+              "sin": -0.05111743519923652
+            },
+            "tender_front_bogie": {
+              "x": 463.40638626629874,
+              "z": 290.9320518156365,
+              "cos": 0.9915456652702725,
+              "sin": -0.12975821239417817
+            }
+          }
+        },
+        "trailingTravel": {
+          "edge": "T17",
+          "edgeRole": "mainline",
+          "s": 11.503742312957254,
+          "sign": -1,
+          "mask": 0,
+          "route": [
+            "WIDEN-R:offset/1",
+            "T17/-1"
+          ],
+          "halfEnvelope": 24.003451796208047,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.13128591310488308,
+          "extremeAxle": "engine_rear_axle_03",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 24.003451796208047,
+            "engine_front": 13.556801768416426,
+            "tender_body": 11.751769050061743,
+            "trailing_truck": 8.051408767846375,
+            "leading_truck": 6.23459792989094,
+            "tender_rear_bogie": 8.163373612652984,
+            "tender_front_bogie": 7.087033759765757
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 2.8599843138998446e-10,
+          "trailingTravel": 1.2509710889509589,
+          "axleSlides": {
+            "engine_rear_axle_01": -0.0011845053653937627,
+            "engine_rear_axle_02": 0.45,
+            "engine_rear_axle_03": 0.45,
+            "engine_rear_axle_04": -0.0011055995105698877,
+            "engine_front_axle_01": -0.08281135907930351,
+            "engine_front_axle_02": 0.3986609544352678,
+            "engine_front_axle_03": 0.2979629789277803,
+            "engine_front_axle_04": -0.38561137351321084,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": -0.3753077983917087,
+            "tender_rear_bogie_axle_02": -0.09399669339628726,
+            "tender_rear_bogie_axle_03": -0.00019699684714686767,
+            "tender_rear_bogie_axle_04": -0.09379279160419235,
+            "tender_rear_bogie_axle_05": -0.37489869293576067,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.13128591310488308,
+            "engine_front": 1.50544267358975e-11,
+            "trailing_truck": 2.8599843138998446e-10,
+            "leading_truck": 9.089270788282324e-11,
+            "tender_rear_bogie": 1.3000977421144152e-11,
+            "tender_front_bogie": 0.043182983602312035
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 1096.3769951820966,
+              "z": 603.1595184596177
+            },
+            "tenderPin": {
+              "x": 1085.932599150466,
+              "z": 599.7368627275955
+            },
+            "span": 10.990904454387897,
+            "overlap": 4.509095545612103,
+            "yaw": -2.8249182907265857,
+            "margin": 1.4909044543878966
+          },
+          "leadingOffset": 9.089270788282324e-11,
+          "guideTravel": 2.2777100818323164,
+          "hingeDegrees": 12.232370625422869,
+          "drawbarSpan": 10.990904454387897,
+          "framePoses": {
+            "engine_rear": {
+              "x": 1151.4083932121514,
+              "z": 596.5973615409052,
+              "cos": 0.9929653808366725,
+              "sin": -0.11840503561877039
+            },
+            "tender_body": {
+              "x": 1052.7252234434336,
+              "z": 597.8490396110265,
+              "cos": 0.9983879728132483,
+              "sin": 0.05675786942664882
+            },
+            "engine_front": {
+              "x": 1178.8769224574387,
+              "z": 593.3219077874793,
+              "cos": 0.945334136646419,
+              "sin": -0.3261033119901877
+            },
+            "trailing_truck": {
+              "x": 1120.6942611442555,
+              "z": 599,
+              "cos": 1,
+              "sin": 2.2691917789252614e-11,
+              "guideTravelMm": -1.2509710889509589,
+              "guideSwingRad": 0.11868346403183326
+            },
+            "leading_truck": {
+              "x": 1236.3264176881482,
+              "z": 571.0946550794874,
+              "cos": 0.8882943814319165,
+              "sin": -0.45927452783328704,
+              "guideTravelMm": -2.2777100818323164,
+              "guideSwingRad": -0.14499971676291173
+            },
+            "tender_rear_bogie": {
+              "x": 1033.7460570066432,
+              "z": 596.770083253599,
+              "cos": 0.9953672444291657,
+              "sin": 0.09614597608579034
+            },
+            "tender_front_bogie": {
+              "x": 1071.704389880224,
+              "z": 598.927995968454,
+              "cos": 0.9998499939227418,
+              "sin": 0.017320209372092138
+            }
+          }
+        },
+        "worstTread": {
+          "edge": "T0",
+          "edgeRole": "mainline",
+          "s": 0,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "T26/1",
+            "T0/1"
+          ],
+          "halfEnvelope": 22.57704124610162,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.19399475100620303,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 22.57704124610162,
+            "engine_front": 13.177582781524539,
+            "tender_body": 13.237697193808687,
+            "trailing_truck": 8.097760358273334,
+            "leading_truck": 6.219293606229419,
+            "tender_rear_bogie": 8.427310415680612,
+            "tender_front_bogie": 7.134244385125443
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 4.875063781845477e-9,
+          "trailingTravel": 1.0603147105360928,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.0008328533677643584,
+            "engine_rear_axle_02": -0.45,
+            "engine_rear_axle_03": -0.45,
+            "engine_rear_axle_04": 0.0008242437774223654,
+            "engine_front_axle_01": 0.07299298207042346,
+            "engine_front_axle_02": -0.35170842447501005,
+            "engine_front_axle_03": -0.26246387771892726,
+            "engine_front_axle_04": 0.341175364385001,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.16250399473363744,
+            "tender_rear_bogie_axle_03": 0.0010155625333595037,
+            "tender_rear_bogie_axle_04": 0.16175519726213472,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.06333883471995755,
+            "engine_front": 9.973487080118143e-12,
+            "trailing_truck": 4.875063781845477e-9,
+            "leading_truck": 8.208213520438695e-10,
+            "tender_rear_bogie": 0.19399475100620303,
+            "tender_front_bogie": 0.07564291273969803
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 1406.391906309264,
+              "z": 312.6945268118952
+            },
+            "tenderPin": {
+              "x": 1401.2865879525286,
+              "z": 302.37253522892297
+            },
+            "span": 11.515545395792927,
+            "overlap": 3.984454604207073,
+            "yaw": -2.030119384497647,
+            "margin": 2.015545395792927
+          },
+          "leadingOffset": 8.208213520438695e-10,
+          "guideTravel": 2.011552722705986,
+          "hingeDegrees": 10.801047868674603,
+          "drawbarSpan": 11.515545395792927,
+          "framePoses": {
+            "engine_rear": {
+              "x": 1402.8457555403902,
+              "z": 368.00222507617434,
+              "cos": -0.06398538061482544,
+              "sin": 0.997950835997233
+            },
+            "tender_body": {
+              "x": 1391.884667031104,
+              "z": 270.468028330136,
+              "cos": 0.28267108042818595,
+              "sin": 0.959216899501652
+            },
+            "engine_front": {
+              "x": 1401.0757197137552,
+              "z": 395.60866760980167,
+              "cos": -0.24986707183563725,
+              "sin": 0.9682801487236452
+            },
+            "trailing_truck": {
+              "x": 1403.7572470442165,
+              "z": 337.2149045999181,
+              "cos": 0.07148498855180309,
+              "sin": 0.9974416756942476,
+              "guideTravelMm": 1.0603147105360928,
+              "guideSwingRad": -0.135575133580744
+            },
+            "leading_truck": {
+              "x": 1383.746818424943,
+              "z": 454.71080654292496,
+              "cos": -0.3714080181214607,
+              "sin": 0.9284697539904511,
+              "guideTravelMm": 2.011552722705986,
+              "guideSwingRad": 0.12798208488019538
+            },
+            "tender_rear_bogie": {
+              "x": 1386.5111432824187,
+              "z": 252.23349658460074,
+              "cos": 0.3466386220031388,
+              "sin": 0.937998755721864
+            },
+            "tender_front_bogie": {
+              "x": 1397.2581907797894,
+              "z": 288.7025600756713,
+              "cos": 0.21740160543119016,
+              "sin": 0.9760822413894954
+            }
+          }
+        },
+        "worstFlange": {
+          "edge": "T0",
+          "edgeRole": "mainline",
+          "s": 0,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "T26/1",
+            "T0/1"
+          ],
+          "halfEnvelope": 22.57704124610162,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.19399475100620303,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 22.57704124610162,
+            "engine_front": 13.177582781524539,
+            "tender_body": 13.237697193808687,
+            "trailing_truck": 8.097760358273334,
+            "leading_truck": 6.219293606229419,
+            "tender_rear_bogie": 8.427310415680612,
+            "tender_front_bogie": 7.134244385125443
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 4.875063781845477e-9,
+          "trailingTravel": 1.0603147105360928,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.0008328533677643584,
+            "engine_rear_axle_02": -0.45,
+            "engine_rear_axle_03": -0.45,
+            "engine_rear_axle_04": 0.0008242437774223654,
+            "engine_front_axle_01": 0.07299298207042346,
+            "engine_front_axle_02": -0.35170842447501005,
+            "engine_front_axle_03": -0.26246387771892726,
+            "engine_front_axle_04": 0.341175364385001,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.16250399473363744,
+            "tender_rear_bogie_axle_03": 0.0010155625333595037,
+            "tender_rear_bogie_axle_04": 0.16175519726213472,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.06333883471995755,
+            "engine_front": 9.973487080118143e-12,
+            "trailing_truck": 4.875063781845477e-9,
+            "leading_truck": 8.208213520438695e-10,
+            "tender_rear_bogie": 0.19399475100620303,
+            "tender_front_bogie": 0.07564291273969803
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 1406.391906309264,
+              "z": 312.6945268118952
+            },
+            "tenderPin": {
+              "x": 1401.2865879525286,
+              "z": 302.37253522892297
+            },
+            "span": 11.515545395792927,
+            "overlap": 3.984454604207073,
+            "yaw": -2.030119384497647,
+            "margin": 2.015545395792927
+          },
+          "leadingOffset": 8.208213520438695e-10,
+          "guideTravel": 2.011552722705986,
+          "hingeDegrees": 10.801047868674603,
+          "drawbarSpan": 11.515545395792927,
+          "framePoses": {
+            "engine_rear": {
+              "x": 1402.8457555403902,
+              "z": 368.00222507617434,
+              "cos": -0.06398538061482544,
+              "sin": 0.997950835997233
+            },
+            "tender_body": {
+              "x": 1391.884667031104,
+              "z": 270.468028330136,
+              "cos": 0.28267108042818595,
+              "sin": 0.959216899501652
+            },
+            "engine_front": {
+              "x": 1401.0757197137552,
+              "z": 395.60866760980167,
+              "cos": -0.24986707183563725,
+              "sin": 0.9682801487236452
+            },
+            "trailing_truck": {
+              "x": 1403.7572470442165,
+              "z": 337.2149045999181,
+              "cos": 0.07148498855180309,
+              "sin": 0.9974416756942476,
+              "guideTravelMm": 1.0603147105360928,
+              "guideSwingRad": -0.135575133580744
+            },
+            "leading_truck": {
+              "x": 1383.746818424943,
+              "z": 454.71080654292496,
+              "cos": -0.3714080181214607,
+              "sin": 0.9284697539904511,
+              "guideTravelMm": 2.011552722705986,
+              "guideSwingRad": 0.12798208488019538
+            },
+            "tender_rear_bogie": {
+              "x": 1386.5111432824187,
+              "z": 252.23349658460074,
+              "cos": 0.3466386220031388,
+              "sin": 0.937998755721864
+            },
+            "tender_front_bogie": {
+              "x": 1397.2581907797894,
+              "z": 288.7025600756713,
+              "cos": 0.21740160543119016,
+              "sin": 0.9760822413894954
+            }
+          }
+        },
+        "drawbarMargin": {
+          "edge": "WX-A:lower",
+          "edgeRole": "mainline",
+          "s": 83.46153846153847,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "T18/1",
+            "WX-A:lower/1"
+          ],
+          "halfEnvelope": 12.971197746536031,
+          "extremePart": "tender_body",
+          "axleOffset": 0.27022728131635915,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 11.028587341308603,
+            "engine_front": 10.892482757568363,
+            "tender_body": 12.971197746536031,
+            "trailing_truck": 8.051408767700199,
+            "leading_truck": 6.121805667877199,
+            "tender_rear_bogie": 8.50149081933813,
+            "tender_front_bogie": 7.019231735409158
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 1,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 9.570584310122732e-15,
+          "trailingTravel": 0,
+          "axleSlides": {
+            "engine_rear_axle_01": 0,
+            "engine_rear_axle_02": 0,
+            "engine_rear_axle_03": 0,
+            "engine_rear_axle_04": 0,
+            "engine_front_axle_01": 0,
+            "engine_front_axle_02": 0,
+            "engine_front_axle_03": 0,
+            "engine_front_axle_04": 0,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.17773295951155385,
+            "tender_rear_bogie_axle_03": 0.00021565559032017375,
+            "tender_rear_bogie_axle_04": 0.18501622112901214,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 1.437342577855375e-14,
+            "engine_front": 9.75170747312199e-15,
+            "trailing_truck": 9.570584310122732e-15,
+            "leading_truck": 6.277080775407294e-15,
+            "tender_rear_bogie": 0.27022728131635915,
+            "tender_front_bogie": 0.000056682414105234746
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 424.09177084932753,
+              "z": 101.00000000000003
+            },
+            "tenderPin": {
+              "x": 413.9105584371731,
+              "z": 100.79796900518953
+            },
+            "span": 10.183216716945163,
+            "overlap": 5.316783283054837,
+            "yaw": -3.121751747092188,
+            "margin": 0.6832167169451626
+          },
+          "leadingOffset": 6.277080775407294e-15,
+          "guideTravel": 0,
+          "hingeDegrees": 2.380260069935254e-14,
+          "drawbarSpan": 10.183216716945163,
+          "framePoses": {
+            "engine_rear": {
+              "x": 479.51303637591155,
+              "z": 101.00000000000003,
+              "cos": 1,
+              "sin": 0
+            },
+            "tender_body": {
+              "x": 380.6529056509994,
+              "z": 101.26935910030846,
+              "cos": 0.999899565646287,
+              "sin": -0.014172459926436553
+            },
+            "engine_front": {
+              "x": 507.17616519732366,
+              "z": 101.00000000000003,
+              "cos": 1,
+              "sin": 4.1543375274120674e-16
+            },
+            "trailing_truck": {
+              "x": 448.7304820377175,
+              "z": 101.00000000000003,
+              "cos": 1,
+              "sin": 1.2847307807937745e-15,
+              "guideTravelMm": 0,
+              "guideSwingRad": 1.2847307807937745e-15
+            },
+            "leading_truck": {
+              "x": 568.7335148965382,
+              "z": 101.00000000000006,
+              "cos": 1,
+              "sin": 0,
+              "guideTravelMm": 0,
+              "guideSwingRad": -4.1543375274120674e-16
+            },
+            "tender_rear_bogie": {
+              "x": 361.645004120494,
+              "z": 101.53877488163508,
+              "cos": 0.9978211834834889,
+              "sin": -0.06597640329397643
+            },
+            "tender_front_bogie": {
+              "x": 399.6608071815048,
+              "z": 100.99994331898185,
+              "cos": 1,
+              "sin": -2.171254767255604e-10
+            }
+          }
+        }
+      }
+    },
+    "v06": {
+      "poses": 2990,
+      "unsupportedPoses": 0,
+      "flangeFlagPoses": 0,
+      "byHeading": {
+        "1": 1495,
+        "-1": 1495
+      },
+      "controlIds": [
+        "V06-C07",
+        "V06-C12",
+        "V06-C13",
+        "V06-N07",
+        "V06-N14",
+        "WX-A",
+        "WX-B"
+      ],
+      "totalEdges": 79,
+      "sampledEdges": 77,
+      "sampledSwitchEdges": [
+        "V06-P012",
+        "V06-P013",
+        "V06-P016",
+        "V06-P017",
+        "V06-P030",
+        "V06-P031",
+        "V06-P032",
+        "V06-P033",
+        "V06-P034",
+        "V06-P035",
+        "V06-P041",
+        "V06-P042",
+        "V06-P059",
+        "V06-P060",
+        "V06-P061",
+        "V06-P062",
+        "V06-P068",
+        "V06-P069"
+      ],
+      "unsampledEdges": [
+        "V06-P020",
+        "V06-P043"
+      ],
+      "loopCases": [
+        {
+          "lane": 0,
+          "poses": 564,
+          "halfEnvelope": 25.93794334676245,
+          "axleOffset": 0.48863004597465753
+        },
+        {
+          "lane": 1,
+          "poses": 588,
+          "halfEnvelope": 22.860511977021876,
+          "axleOffset": 0.28777334837011215
+        },
+        {
+          "lane": 2,
+          "poses": 624,
+          "halfEnvelope": 21.691505435111466,
+          "axleOffset": 0.21518887542059723
+        }
+      ],
+      "hingeResidual": 0,
+      "worst": {
+        "halfEnvelope": {
+          "edge": "V06-P027",
+          "edgeRole": "branch",
+          "s": 0,
+          "sign": -1,
+          "mask": 0,
+          "route": [
+            "V06-P052/1",
+            "V06-P047/-1",
+            "V06-P046/-1",
+            "V06-P048/-1",
+            "V06-P027/-1"
+          ],
+          "halfEnvelope": 26.05406818604109,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.31252665515874883,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 26.05406818604109,
+            "engine_front": 14.041249130044108,
+            "tender_body": 13.11403863603618,
+            "trailing_truck": 8.075970904120096,
+            "leading_truck": 6.2331472361545845,
+            "tender_rear_bogie": 8.521847448905886,
+            "tender_front_bogie": 7.019222293446969
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 6.502583261146036e-9,
+          "trailingTravel": 1.069078831568206,
+          "axleSlides": {
+            "engine_rear_axle_01": -0.0017313827647943497,
+            "engine_rear_axle_02": 0.45,
+            "engine_rear_axle_03": 0.45,
+            "engine_rear_axle_04": -0.0024011014417253795,
+            "engine_front_axle_01": -0.13262308447067941,
+            "engine_front_axle_02": 0.43291196663629666,
+            "engine_front_axle_03": 0.3460054149499287,
+            "engine_front_axle_04": -0.42433410352218204,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.1775458113411938,
+            "tender_rear_bogie_axle_03": 0.00024231759609106115,
+            "tender_rear_bogie_axle_04": 0.2299712838234576,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.2733245460086474,
+            "engine_front": 1.8780784959979386e-11,
+            "trailing_truck": 6.502583261146036e-9,
+            "leading_truck": 9.498834243914754e-9,
+            "tender_rear_bogie": 0.31252665515874883,
+            "tender_front_bogie": 0.00004724051060153521
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 810.3896960717201,
+              "z": 384.8146936072525
+            },
+            "tenderPin": {
+              "x": 808.2131235447496,
+              "z": 374.20991199008324
+            },
+            "span": 10.825842281920306,
+            "overlap": 4.6741577180796945,
+            "yaw": -1.7732294997643427,
+            "margin": 1.3258422819203055
+          },
+          "leadingOffset": 9.498834243914754e-9,
+          "guideTravel": 2.604204996927872,
+          "hingeDegrees": 14.437162591666379,
+          "drawbarSpan": 10.825842281920306,
+          "framePoses": {
+            "engine_rear": {
+              "x": 841.8535753381107,
+              "z": 430.4386015292853,
+              "cos": 0.5677221363936238,
+              "sin": 0.823220247472485
+            },
+            "tender_body": {
+              "x": 791.2324137258888,
+              "z": 345.6101012998862,
+              "cos": 0.5105292451457446,
+              "sin": 0.8598603897441236
+            },
+            "engine_front": {
+              "x": 857.5585459319348,
+              "z": 453.21144928351134,
+              "cos": 0.7550380916906766,
+              "sin": 0.6556809285743344
+            },
+            "trailing_truck": {
+              "x": 825.2577251658695,
+              "z": 404.4908398109308,
+              "cos": 0.48616072821629575,
+              "sin": 0.8738694103469928,
+              "guideTravelMm": -1.069078831568206,
+              "guideSwingRad": 0.09604525009529023
+            },
+            "leading_truck": {
+              "x": 905.7442173289488,
+              "z": 491.6071555236156,
+              "cos": 0.8526171540774149,
+              "sin": 0.5225361122189831,
+              "guideTravelMm": -2.604204996927872,
+              "guideSwingRad": -0.16526136265179012
+            },
+            "tender_rear_bogie": {
+              "x": 781.5273493838503,
+              "z": 329.26431800346654,
+              "cos": 0.5536289756133345,
+              "sin": 0.832763446220672
+            },
+            "tender_front_bogie": {
+              "x": 800.9374780679274,
+              "z": 361.95588459630585,
+              "cos": 0.5000019257439636,
+              "sin": 0.8660242919527882
+            }
+          }
+        },
+        "axleOffset": {
+          "edge": "V06-P035",
+          "edgeRole": "mainline",
+          "s": 83.32975000095702,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "V06-P036/-1",
+            "V06-P035/1",
+            "V06-P037/-1"
+          ],
+          "halfEnvelope": 15.57742484377525,
+          "extremePart": "engine_front",
+          "axleOffset": 0.48863004597465753,
+          "extremeAxle": "engine_front_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 14.203037456555293,
+            "engine_front": 15.57742484377525,
+            "tender_body": 10.948616391624471,
+            "trailing_truck": 8.10764828902498,
+            "leading_truck": 6.241393759277849,
+            "tender_rear_bogie": 8.1508854650398,
+            "tender_front_bogie": 7.086532327253596
+          },
+          "worstTread": {
+            "axle": "engine_front_axle_04",
+            "treadOverlap": 0.4008546442783274,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 2.4576540516301954e-10,
+          "trailingTravel": 0.6174404904926607,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.00010680440765733331,
+            "engine_rear_axle_02": -0.28401801116756564,
+            "engine_rear_axle_03": -0.2677549359697792,
+            "engine_rear_axle_04": 0.0001888928107524688,
+            "engine_front_axle_01": 0.45,
+            "engine_front_axle_02": 0.45,
+            "engine_front_axle_03": 0.3751619039786102,
+            "engine_front_axle_04": -0.45,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": -0.37448563003667384,
+            "tender_rear_bogie_axle_02": -0.12168128125174571,
+            "tender_rear_bogie_axle_03": -0.000036641129875838854,
+            "tender_rear_bogie_axle_04": -0.16424866360470988,
+            "tender_rear_bogie_axle_05": -0.35293407461094745,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 5.481219572093977e-12,
+            "engine_front": 0.48863004597465753,
+            "trailing_truck": 2.4576540516301954e-10,
+            "leading_truck": 1.513157606263056e-8,
+            "tender_rear_bogie": 1.6368916813268845e-11,
+            "tender_front_bogie": 0.02079978461597596
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 1007.0795592177861,
+              "z": 537.6681886077274
+            },
+            "tenderPin": {
+              "x": 997.2355313385552,
+              "z": 541.7952919511713
+            },
+            "span": 10.674168206213587,
+            "overlap": 4.8258317937864135,
+            "yaw": 2.7446028327821006,
+            "margin": 1.1741682062135865
+          },
+          "leadingOffset": 1.513157606263056e-8,
+          "guideTravel": 3.736745543917217,
+          "hingeDegrees": 0.726215685307857,
+          "drawbarSpan": 10.674168206213587,
+          "framePoses": {
+            "engine_rear": {
+              "x": 1062.407097380897,
+              "z": 534.4463578583496,
+              "cos": 0.9983088195012769,
+              "sin": -0.05813347491735512
+            },
+            "tender_body": {
+              "x": 964.9302052974233,
+              "z": 549.7110728250732,
+              "cos": 0.9712676262594955,
+              "sin": -0.23798991192957095
+            },
+            "engine_front": {
+              "x": 1090.0234428583128,
+              "z": 532.8382040528745,
+              "cos": 0.9974918168244745,
+              "sin": -0.0707818858763212
+            },
+            "trailing_truck": {
+              "x": 1031.7124958595675,
+              "z": 536.8522509960372,
+              "cos": 0.9904718742338592,
+              "sin": -0.13771516384068297,
+              "guideTravelMm": 0.6174404904926607,
+              "guideSwingRad": -0.07998795830785022
+            },
+            "leading_truck": {
+              "x": 1151.1619015520434,
+              "z": 524.7536856500031,
+              "cos": 0.9607983465374548,
+              "sin": -0.2772481511045528,
+              "guideTravelMm": -3.736745543917217,
+              "guideSwingRad": -0.21008767002716267
+            },
+            "tender_rear_bogie": {
+              "x": 946.4665915165978,
+              "z": 554.2352160156815,
+              "cos": 0.9746809987082099,
+              "sin": -0.22359997933176673
+            },
+            "tender_front_bogie": {
+              "x": 983.3938190782488,
+              "z": 545.1869296344648,
+              "cos": 0.9767708503473665,
+              "sin": -0.21428650426866055
+            }
+          }
+        },
+        "hingeDegrees": {
+          "edge": "V06-P027",
+          "edgeRole": "branch",
+          "s": 0,
+          "sign": -1,
+          "mask": 0,
+          "route": [
+            "V06-P052/1",
+            "V06-P047/-1",
+            "V06-P046/-1",
+            "V06-P048/-1",
+            "V06-P027/-1"
+          ],
+          "halfEnvelope": 26.05406818604109,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.31252665515874883,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 26.05406818604109,
+            "engine_front": 14.041249130044108,
+            "tender_body": 13.11403863603618,
+            "trailing_truck": 8.075970904120096,
+            "leading_truck": 6.2331472361545845,
+            "tender_rear_bogie": 8.521847448905886,
+            "tender_front_bogie": 7.019222293446969
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 6.502583261146036e-9,
+          "trailingTravel": 1.069078831568206,
+          "axleSlides": {
+            "engine_rear_axle_01": -0.0017313827647943497,
+            "engine_rear_axle_02": 0.45,
+            "engine_rear_axle_03": 0.45,
+            "engine_rear_axle_04": -0.0024011014417253795,
+            "engine_front_axle_01": -0.13262308447067941,
+            "engine_front_axle_02": 0.43291196663629666,
+            "engine_front_axle_03": 0.3460054149499287,
+            "engine_front_axle_04": -0.42433410352218204,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.1775458113411938,
+            "tender_rear_bogie_axle_03": 0.00024231759609106115,
+            "tender_rear_bogie_axle_04": 0.2299712838234576,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.2733245460086474,
+            "engine_front": 1.8780784959979386e-11,
+            "trailing_truck": 6.502583261146036e-9,
+            "leading_truck": 9.498834243914754e-9,
+            "tender_rear_bogie": 0.31252665515874883,
+            "tender_front_bogie": 0.00004724051060153521
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 810.3896960717201,
+              "z": 384.8146936072525
+            },
+            "tenderPin": {
+              "x": 808.2131235447496,
+              "z": 374.20991199008324
+            },
+            "span": 10.825842281920306,
+            "overlap": 4.6741577180796945,
+            "yaw": -1.7732294997643427,
+            "margin": 1.3258422819203055
+          },
+          "leadingOffset": 9.498834243914754e-9,
+          "guideTravel": 2.604204996927872,
+          "hingeDegrees": 14.437162591666379,
+          "drawbarSpan": 10.825842281920306,
+          "framePoses": {
+            "engine_rear": {
+              "x": 841.8535753381107,
+              "z": 430.4386015292853,
+              "cos": 0.5677221363936238,
+              "sin": 0.823220247472485
+            },
+            "tender_body": {
+              "x": 791.2324137258888,
+              "z": 345.6101012998862,
+              "cos": 0.5105292451457446,
+              "sin": 0.8598603897441236
+            },
+            "engine_front": {
+              "x": 857.5585459319348,
+              "z": 453.21144928351134,
+              "cos": 0.7550380916906766,
+              "sin": 0.6556809285743344
+            },
+            "trailing_truck": {
+              "x": 825.2577251658695,
+              "z": 404.4908398109308,
+              "cos": 0.48616072821629575,
+              "sin": 0.8738694103469928,
+              "guideTravelMm": -1.069078831568206,
+              "guideSwingRad": 0.09604525009529023
+            },
+            "leading_truck": {
+              "x": 905.7442173289488,
+              "z": 491.6071555236156,
+              "cos": 0.8526171540774149,
+              "sin": 0.5225361122189831,
+              "guideTravelMm": -2.604204996927872,
+              "guideSwingRad": -0.16526136265179012
+            },
+            "tender_rear_bogie": {
+              "x": 781.5273493838503,
+              "z": 329.26431800346654,
+              "cos": 0.5536289756133345,
+              "sin": 0.832763446220672
+            },
+            "tender_front_bogie": {
+              "x": 800.9374780679274,
+              "z": 361.95588459630585,
+              "cos": 0.5000019257439636,
+              "sin": 0.8660242919527882
+            }
+          }
+        },
+        "drawbarMin": {
+          "edge": "V06-P060",
+          "edgeRole": "mainline",
+          "s": 23.85584615384615,
+          "sign": -1,
+          "mask": 0,
+          "route": [
+            "V06-P014/1",
+            "V06-P078/-1",
+            "V06-P060/-1"
+          ],
+          "halfEnvelope": 12.81144827449146,
+          "extremePart": "tender_body",
+          "axleOffset": 0.262341237506049,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 11.028587341308594,
+            "engine_front": 10.89248275756836,
+            "tender_body": 12.81144827449146,
+            "trailing_truck": 8.051408767700195,
+            "leading_truck": 6.121805667877197,
+            "tender_rear_bogie": 8.480157301357046,
+            "tender_front_bogie": 7.019212864412992
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 0,
+          "trailingTravel": 0,
+          "axleSlides": {
+            "engine_rear_axle_01": 0,
+            "engine_rear_axle_02": 0,
+            "engine_rear_axle_03": 0,
+            "engine_rear_axle_04": 0,
+            "engine_front_axle_01": 0,
+            "engine_front_axle_02": 0,
+            "engine_front_axle_03": 0,
+            "engine_front_axle_04": 0,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.14969237309165323,
+            "tender_rear_bogie_axle_03": 0.00020085289741350967,
+            "tender_rear_bogie_axle_04": 0.22803467040942116,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 2.842170943040401e-14,
+            "engine_front": 2.842170943040401e-14,
+            "trailing_truck": 0,
+            "leading_truck": 0,
+            "tender_rear_bogie": 0.262341237506049,
+            "tender_front_bogie": 0.0000378115352077657
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 396.1450785416352,
+              "z": 101.032
+            },
+            "tenderPin": {
+              "x": 385.9634883021052,
+              "z": 100.8630832182016
+            },
+            "span": 10.18299134266871,
+            "overlap": 5.317008657331289,
+            "yaw": -3.125003762981208,
+            "margin": 0.6829913426687106
+          },
+          "leadingOffset": 0,
+          "guideTravel": 0,
+          "hingeDegrees": 0,
+          "drawbarSpan": 10.18299134266871,
+          "framePoses": {
+            "engine_rear": {
+              "x": 451.5663440682192,
+              "z": 101.032,
+              "cos": 1,
+              "sin": 0
+            },
+            "tender_body": {
+              "x": 352.7048304154487,
+              "z": 101.25723172550524,
+              "cos": 0.9999297842411643,
+              "sin": -0.011850172463670974
+            },
+            "engine_front": {
+              "x": 479.2294728896313,
+              "z": 101.032,
+              "cos": 1,
+              "sin": 0
+            },
+            "trailing_truck": {
+              "x": 420.78378973002515,
+              "z": 101.032,
+              "cos": 1,
+              "sin": 0,
+              "guideTravelMm": 0,
+              "guideSwingRad": 0
+            },
+            "leading_truck": {
+              "x": 540.7868225888458,
+              "z": 101.032,
+              "cos": 1,
+              "sin": 0,
+              "guideTravelMm": 0,
+              "guideSwingRad": 0
+            },
+            "tender_rear_bogie": {
+              "x": 333.69635443517296,
+              "z": 101.48250126161447,
+              "cos": 0.998254103713161,
+              "sin": -0.05906559421383372
+            },
+            "tender_front_bogie": {
+              "x": 371.7133063957245,
+              "z": 101.031962189396,
+              "cos": 1,
+              "sin": -1.4484015103043348e-10
+            }
+          }
+        },
+        "drawbarMax": {
+          "edge": "V06-P037",
+          "edgeRole": "mainline",
+          "s": 45.247229779004606,
+          "sign": -1,
+          "mask": 0,
+          "route": [
+            "V06-P035/1",
+            "V06-P037/-1",
+            "V06-P026/-1"
+          ],
+          "halfEnvelope": 25.883165215532625,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.20248302691729958,
+          "extremeAxle": "engine_rear_axle_03",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 25.883165215532625,
+            "engine_front": 14.081379361166073,
+            "tender_body": 11.592566309417606,
+            "trailing_truck": 8.07888847010551,
+            "leading_truck": 6.304622044000137,
+            "tender_rear_bogie": 8.142714363043792,
+            "tender_front_bogie": 7.148430766051839
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 4.614250257714134e-9,
+          "trailingTravel": 1.3601705061849305,
+          "axleSlides": {
+            "engine_rear_axle_01": -0.0016319027066534345,
+            "engine_rear_axle_02": 0.45,
+            "engine_rear_axle_03": 0.45,
+            "engine_rear_axle_04": -0.0016933775864033445,
+            "engine_front_axle_01": -0.12198158730281432,
+            "engine_front_axle_02": 0.433477169285428,
+            "engine_front_axle_03": 0.33526350527982895,
+            "engine_front_axle_04": -0.4217595042834349,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.36373103766323595,
+            "tender_rear_bogie_axle_02": 0.048696319036036544,
+            "tender_rear_bogie_axle_03": 0.0002088481962619222,
+            "tender_rear_bogie_axle_04": 0.08341354827049073,
+            "tender_rear_bogie_axle_05": 0.34590381810120324,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.20248302691729958,
+            "engine_front": 2.0539818511814216e-11,
+            "trailing_truck": 4.614250257714134e-9,
+            "leading_truck": 6.182191531054235e-8,
+            "tender_rear_bogie": 7.446279730834697e-12,
+            "tender_front_bogie": 0.10213052064385379
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 1101.037483268041,
+              "z": 539.1709930108065
+            },
+            "tenderPin": {
+              "x": 1089.5995807629054,
+              "z": 532.4526297878487
+            },
+            "span": 13.265067587938537,
+            "overlap": 2.234932412061463,
+            "yaw": -2.6105063248548186,
+            "margin": 1.284932412061463
+          },
+          "leadingOffset": 6.182191531054235e-8,
+          "guideTravel": 2.5869087345835102,
+          "hingeDegrees": 14.174471057539213,
+          "drawbarSpan": 13.265067587938537,
+          "framePoses": {
+            "engine_rear": {
+              "x": 1154.1086152489559,
+              "z": 523.2031621364379,
+              "cos": 0.9575950941693709,
+              "sin": -0.28811739902816286
+            },
+            "tender_body": {
+              "x": 1056.4261310305878,
+              "z": 534.8642496428154,
+              "cos": 0.9973679799833343,
+              "sin": -0.0725059480592001
+            },
+            "engine_front": {
+              "x": 1180.5986916977154,
+              "z": 515.2329334114316,
+              "cos": 0.8578878176262491,
+              "sin": -0.5138370289970076
+            },
+            "trailing_truck": {
+              "x": 1124.2395034402223,
+              "z": 530.7696590238448,
+              "cos": 0.9931785277313044,
+              "sin": -0.11660365368837537,
+              "guideTravelMm": -1.3601705061849305,
+              "guideSwingRad": 0.17539077159060276
+            },
+            "leading_truck": {
+              "x": 1232.0787425915655,
+              "z": 481.3832102403473,
+              "cos": 0.7634063604948281,
+              "sin": -0.6459185155699134,
+              "guideTravelMm": -2.5869087345835102,
+              "guideSwingRad": -0.1625743753860116
+            },
+            "tender_rear_bogie": {
+              "x": 1037.4663544644795,
+              "z": 536.2425739950161,
+              "cos": 0.99402258958511,
+              "sin": -0.10917459134117097
+            },
+            "tender_front_bogie": {
+              "x": 1075.3859075966961,
+              "z": 533.4859252906147,
+              "cos": 0.9994476431266601,
+              "sin": -0.033232644320971776
+            }
+          }
+        },
+        "leadingOffset": {
+          "edge": "V06-P018",
+          "edgeRole": "mainline",
+          "s": 186.54527956109987,
+          "sign": -1,
+          "mask": 64,
+          "route": [
+            "V06-P018/-1",
+            "V06-P016/1"
+          ],
+          "halfEnvelope": 15.302113797900418,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.20246185289272883,
+          "extremeAxle": "engine_front_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 15.302113797900418,
+            "engine_front": 12.865578764426557,
+            "tender_body": 13.161915450188753,
+            "trailing_truck": 8.149089515894335,
+            "leading_truck": 6.16937499805665,
+            "tender_rear_bogie": 8.427489441729431,
+            "tender_front_bogie": 7.212000324356725
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 4.709887164069267e-11,
+          "trailingTravel": 1.0115426439614146,
+          "axleSlides": {
+            "engine_rear_axle_01": -0.0007682817009745537,
+            "engine_rear_axle_02": 0.45,
+            "engine_rear_axle_03": 0.45,
+            "engine_rear_axle_04": -0.0008209812188853796,
+            "engine_front_axle_01": -0.45,
+            "engine_front_axle_02": -0.45,
+            "engine_front_axle_03": -0.14055323386809668,
+            "engine_front_axle_04": 0.45,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": -0.45,
+            "tender_rear_bogie_axle_02": -0.17904077516905134,
+            "tender_rear_bogie_axle_03": -0.0008548042721167821,
+            "tender_rear_bogie_axle_04": -0.10771783983614763,
+            "tender_rear_bogie_axle_05": -0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.03708213887196119,
+            "engine_front": 0.20246185289272883,
+            "trailing_truck": 4.709887164069267e-11,
+            "leading_truck": 0.0000075899622793724915,
+            "tender_rear_bogie": 0.19066673352303593,
+            "tender_front_bogie": 0.15405304524703683
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 1164.120994885509,
+              "z": 72.69674593910922
+            },
+            "tenderPin": {
+              "x": 1173.773084707236,
+              "z": 78.77230978972457
+            },
+            "span": 11.405056511459756,
+            "overlap": 4.094943488540244,
+            "yaw": 0.5617970661819318,
+            "margin": 1.9050565114597564
+          },
+          "leadingOffset": 0.0000075899622793724915,
+          "guideTravel": 1.7390252695356254,
+          "hingeDegrees": 3.3591231831992103,
+          "drawbarSpan": 11.405056511459756,
+          "framePoses": {
+            "engine_rear": {
+              "x": 1108.81225352833,
+              "z": 69.16690145913242,
+              "cos": -0.9979696571643393,
+              "sin": -0.06369115620940913
+            },
+            "tender_body": {
+              "x": 1204.2441216629109,
+              "z": 92.10683581479816,
+              "cos": -0.9161192707333132,
+              "sin": -0.4009058265865719
+            },
+            "engine_front": {
+              "x": 1081.2052903423325,
+              "z": 67.40500480012685,
+              "cos": -0.9999869616698958,
+              "sin": -0.005106514487450489
+            },
+            "trailing_truck": {
+              "x": 1139.4678824073112,
+              "z": 72.13696680161225,
+              "cos": -0.9809878346543227,
+              "sin": -0.1940692357387516,
+              "guideTravelMm": -1.0115426439614146,
+              "guideSwingRad": 0.13157426168846972
+            },
+            "leading_truck": {
+              "x": 1019.6576236058967,
+              "z": 65.35165870652865,
+              "cos": -0.9954970670122243,
+              "sin": -0.09479234974436997,
+              "guideTravelMm": 1.7390252695356254,
+              "guideSwingRad": 0.08982835103151826
+            },
+            "tender_rear_bogie": {
+              "x": 1221.6593756409861,
+              "z": 99.72797971422371,
+              "cos": -0.887561829373464,
+              "sin": -0.46068861396742833
+            },
+            "tender_front_bogie": {
+              "x": 1186.8288676848356,
+              "z": 84.48569191537261,
+              "cos": -0.9422265166973143,
+              "sin": -0.33497640399354356
+            }
+          }
+        },
+        "guideTravel": {
+          "edge": "V06-P035",
+          "edgeRole": "mainline",
+          "s": 83.32975000095702,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "V06-P036/-1",
+            "V06-P035/1",
+            "V06-P037/-1"
+          ],
+          "halfEnvelope": 15.57742484377525,
+          "extremePart": "engine_front",
+          "axleOffset": 0.48863004597465753,
+          "extremeAxle": "engine_front_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 14.203037456555293,
+            "engine_front": 15.57742484377525,
+            "tender_body": 10.948616391624471,
+            "trailing_truck": 8.10764828902498,
+            "leading_truck": 6.241393759277849,
+            "tender_rear_bogie": 8.1508854650398,
+            "tender_front_bogie": 7.086532327253596
+          },
+          "worstTread": {
+            "axle": "engine_front_axle_04",
+            "treadOverlap": 0.4008546442783274,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 2.4576540516301954e-10,
+          "trailingTravel": 0.6174404904926607,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.00010680440765733331,
+            "engine_rear_axle_02": -0.28401801116756564,
+            "engine_rear_axle_03": -0.2677549359697792,
+            "engine_rear_axle_04": 0.0001888928107524688,
+            "engine_front_axle_01": 0.45,
+            "engine_front_axle_02": 0.45,
+            "engine_front_axle_03": 0.3751619039786102,
+            "engine_front_axle_04": -0.45,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": -0.37448563003667384,
+            "tender_rear_bogie_axle_02": -0.12168128125174571,
+            "tender_rear_bogie_axle_03": -0.000036641129875838854,
+            "tender_rear_bogie_axle_04": -0.16424866360470988,
+            "tender_rear_bogie_axle_05": -0.35293407461094745,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 5.481219572093977e-12,
+            "engine_front": 0.48863004597465753,
+            "trailing_truck": 2.4576540516301954e-10,
+            "leading_truck": 1.513157606263056e-8,
+            "tender_rear_bogie": 1.6368916813268845e-11,
+            "tender_front_bogie": 0.02079978461597596
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 1007.0795592177861,
+              "z": 537.6681886077274
+            },
+            "tenderPin": {
+              "x": 997.2355313385552,
+              "z": 541.7952919511713
+            },
+            "span": 10.674168206213587,
+            "overlap": 4.8258317937864135,
+            "yaw": 2.7446028327821006,
+            "margin": 1.1741682062135865
+          },
+          "leadingOffset": 1.513157606263056e-8,
+          "guideTravel": 3.736745543917217,
+          "hingeDegrees": 0.726215685307857,
+          "drawbarSpan": 10.674168206213587,
+          "framePoses": {
+            "engine_rear": {
+              "x": 1062.407097380897,
+              "z": 534.4463578583496,
+              "cos": 0.9983088195012769,
+              "sin": -0.05813347491735512
+            },
+            "tender_body": {
+              "x": 964.9302052974233,
+              "z": 549.7110728250732,
+              "cos": 0.9712676262594955,
+              "sin": -0.23798991192957095
+            },
+            "engine_front": {
+              "x": 1090.0234428583128,
+              "z": 532.8382040528745,
+              "cos": 0.9974918168244745,
+              "sin": -0.0707818858763212
+            },
+            "trailing_truck": {
+              "x": 1031.7124958595675,
+              "z": 536.8522509960372,
+              "cos": 0.9904718742338592,
+              "sin": -0.13771516384068297,
+              "guideTravelMm": 0.6174404904926607,
+              "guideSwingRad": -0.07998795830785022
+            },
+            "leading_truck": {
+              "x": 1151.1619015520434,
+              "z": 524.7536856500031,
+              "cos": 0.9607983465374548,
+              "sin": -0.2772481511045528,
+              "guideTravelMm": -3.736745543917217,
+              "guideSwingRad": -0.21008767002716267
+            },
+            "tender_rear_bogie": {
+              "x": 946.4665915165978,
+              "z": 554.2352160156815,
+              "cos": 0.9746809987082099,
+              "sin": -0.22359997933176673
+            },
+            "tender_front_bogie": {
+              "x": 983.3938190782488,
+              "z": 545.1869296344648,
+              "cos": 0.9767708503473665,
+              "sin": -0.21428650426866055
+            }
+          }
+        },
+        "trailingOffset": {
+          "edge": "V06-P044",
+          "edgeRole": "branch",
+          "s": 22.554680086073574,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "V06-P031/1",
+            "V06-P053/-1",
+            "V06-P044/1",
+            "V06-P043/-1"
+          ],
+          "halfEnvelope": 11.028587341308624,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.000009452409585432565,
+          "extremeAxle": "trailing_truck_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 11.028587341308624,
+            "engine_front": 10.892521852912406,
+            "tender_body": 9.760089812072822,
+            "trailing_truck": 8.05143654607502,
+            "leading_truck": 6.121806784662107,
+            "tender_rear_bogie": 7.784907445697444,
+            "tender_front_bogie": 7.019175052642873
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 0.000009452409585432565,
+          "trailingTravel": 0,
+          "axleSlides": {
+            "engine_rear_axle_01": 0,
+            "engine_rear_axle_02": 0,
+            "engine_rear_axle_03": 0,
+            "engine_rear_axle_04": 0,
+            "engine_front_axle_01": 0,
+            "engine_front_axle_02": 0,
+            "engine_front_axle_03": 0,
+            "engine_front_axle_04": 0,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": -0.00003440096082087061,
+            "tender_rear_bogie_axle_02": -0.000017200480406639218,
+            "tender_rear_bogie_axle_03": 0,
+            "tender_rear_bogie_axle_04": 0.000017200480386668542,
+            "tender_rear_bogie_axle_05": -0.000051601441178609056,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 2.2469334198890888e-14,
+            "engine_front": 2.5618982671915014e-14,
+            "trailing_truck": 0.000009452409585432565,
+            "leading_truck": 2.2748467065386707e-14,
+            "tender_rear_bogie": 2.929642751054232e-14,
+            "tender_front_bogie": 3.7974171942835164e-14
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 367.87829787454166,
+              "z": 269.50965609927863
+            },
+            "tenderPin": {
+              "x": 377.7149399074798,
+              "z": 266.873399203236
+            },
+            "span": 10.18378008924474,
+            "overlap": 5.31621991075526,
+            "yaw": -0.26185028467983323,
+            "margin": 0.6837800892447401
+          },
+          "leadingOffset": 2.2748467065386707e-14,
+          "guideTravel": 0.000026422932225485038,
+          "hingeDegrees": 7.63333123551244e-14,
+          "drawbarSpan": 10.18378008924474,
+          "framePoses": {
+            "engine_rear": {
+              "x": 314.34538307601105,
+              "z": 283.85342498131916,
+              "cos": -0.965927325727565,
+              "sin": 0.2588134490570276
+            },
+            "tender_body": {
+              "x": 409.84251376705436,
+              "z": 258.2645273047206,
+              "cos": -0.9659234629093464,
+              "sin": 0.2588278651946435
+            },
+            "engine_front": {
+              "x": 287.62481103228737,
+              "z": 291.0130147632977,
+              "cos": -0.9659273257275652,
+              "sin": 0.25881344905702625
+            },
+            "trailing_truck": {
+              "x": 344.07909346696636,
+              "z": 275.88648592226576,
+              "cos": -0.9659262102144115,
+              "sin": 0.2588176122693827,
+              "guideTravelMm": 0,
+              "guideSwingRad": -0.000004310070383262143
+            },
+            "leading_truck": {
+              "x": 228.16489169705883,
+              "z": 306.94491027639316,
+              "cos": -0.9659263329696502,
+              "sin": 0.2588171541374419,
+              "guideTravelMm": -0.000026422932225485038,
+              "guideSwingRad": -0.000003835777517391392
+            },
+            "tender_rear_bogie": {
+              "x": 428.20453601387726,
+              "z": 253.344258565739,
+              "cos": -0.9659255136337088,
+              "sin": 0.25882021194538835
+            },
+            "tender_front_bogie": {
+              "x": 391.48049152023145,
+              "z": 263.18479604370225,
+              "cos": -0.9659221161920272,
+              "sin": 0.2588328909762359
+            }
+          }
+        },
+        "trailingTravel": {
+          "edge": "V06-P027",
+          "edgeRole": "branch",
+          "s": 22.585151033101845,
+          "sign": -1,
+          "mask": 0,
+          "route": [
+            "V06-P052/1",
+            "V06-P047/-1",
+            "V06-P046/-1",
+            "V06-P048/-1",
+            "V06-P027/-1"
+          ],
+          "halfEnvelope": 25.741643615631602,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.23028750104453213,
+          "extremeAxle": "engine_rear_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 25.741643615631602,
+            "engine_front": 14.141247657606149,
+            "tender_body": 10.634121407158089,
+            "trailing_truck": 8.054957818814643,
+            "leading_truck": 6.286276891303008,
+            "tender_rear_bogie": 7.9332576092920295,
+            "tender_front_bogie": 7.019175052642896
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 1.521520006178355e-8,
+          "trailingTravel": 1.5469315297221222,
+          "axleSlides": {
+            "engine_rear_axle_01": -0.0016925324424994154,
+            "engine_rear_axle_02": 0.45,
+            "engine_rear_axle_03": 0.45,
+            "engine_rear_axle_04": -0.0018831340742315578,
+            "engine_front_axle_01": -0.06665447683955163,
+            "engine_front_axle_02": 0.45,
+            "engine_front_axle_03": 0.3379656773719048,
+            "engine_front_axle_04": -0.45,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.150175482286536,
+            "tender_rear_bogie_axle_02": -0.05004335951408392,
+            "tender_rear_bogie_axle_03": 0,
+            "tender_rear_bogie_axle_04": 0.0500433595141671,
+            "tender_rear_bogie_axle_05": 0.10008671902843201,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.23028750104453213,
+            "engine_front": 0.026793506246778027,
+            "trailing_truck": 1.521520006178355e-8,
+            "leading_truck": 1.5663676095320585e-8,
+            "tender_rear_bogie": 7.028597827765975e-12,
+            "tender_front_bogie": 3.5418724631580315e-14
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 819.2980636590272,
+              "z": 406.3539109737844
+            },
+            "tenderPin": {
+              "x": 819.3537388072706,
+              "z": 393.8537145686387
+            },
+            "span": 12.50032039146799,
+            "overlap": 2.999679608532009,
+            "yaw": -1.5663424143690805,
+            "margin": 2.049679608532009
+          },
+          "leadingOffset": 1.5663676095320585e-8,
+          "guideTravel": 2.650442056256412,
+          "hingeDegrees": 13.996684942371077,
+          "drawbarSpan": 12.50032039146799,
+          "framePoses": {
+            "engine_rear": {
+              "x": 855.588938300838,
+              "z": 448.24053282731313,
+              "cos": 0.6548185844728329,
+              "sin": 0.7557860950222594
+            },
+            "tender_body": {
+              "x": 802.7231780940544,
+              "z": 365.04888636516733,
+              "cos": 0.5000019255872489,
+              "sin": 0.8660242920432677
+            },
+            "engine_front": {
+              "x": 873.7032691577647,
+              "z": 469.1479409353459,
+              "cos": 0.8181756132377737,
+              "sin": 0.5749684042649588
+            },
+            "trailing_truck": {
+              "x": 836.6010989827591,
+              "z": 423.9625467746699,
+              "cos": 0.5113691789542307,
+              "sin": 0.8593611364354778,
+              "guideTravelMm": -1.5469315297221222,
+              "guideSwingRad": 0.17716527144087782
+            },
+            "leading_truck": {
+              "x": 925.591911936894,
+              "z": 502.3729450079545,
+              "cos": 0.901502994554749,
+              "sin": 0.43277286283779415,
+              "guideTravelMm": -2.650442056256412,
+              "guideSwingRad": -0.16499919383476952
+            },
+            "tender_rear_bogie": {
+              "x": 793.2182361047231,
+              "z": 348.58592845244505,
+              "cos": 0.5045565230642315,
+              "sin": 0.8633786626002138
+            },
+            "tender_front_bogie": {
+              "x": 812.2281200833858,
+              "z": 381.5118442778896,
+              "cos": 0.5000019255872471,
+              "sin": 0.8660242920432688
+            }
+          }
+        },
+        "worstTread": {
+          "edge": "V06-P035",
+          "edgeRole": "mainline",
+          "s": 83.32975000095702,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "V06-P036/-1",
+            "V06-P035/1",
+            "V06-P037/-1"
+          ],
+          "halfEnvelope": 15.57742484377525,
+          "extremePart": "engine_front",
+          "axleOffset": 0.48863004597465753,
+          "extremeAxle": "engine_front_axle_02",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 14.203037456555293,
+            "engine_front": 15.57742484377525,
+            "tender_body": 10.948616391624471,
+            "trailing_truck": 8.10764828902498,
+            "leading_truck": 6.241393759277849,
+            "tender_rear_bogie": 8.1508854650398,
+            "tender_front_bogie": 7.086532327253596
+          },
+          "worstTread": {
+            "axle": "engine_front_axle_04",
+            "treadOverlap": 0.4008546442783274,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 2.4576540516301954e-10,
+          "trailingTravel": 0.6174404904926607,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.00010680440765733331,
+            "engine_rear_axle_02": -0.28401801116756564,
+            "engine_rear_axle_03": -0.2677549359697792,
+            "engine_rear_axle_04": 0.0001888928107524688,
+            "engine_front_axle_01": 0.45,
+            "engine_front_axle_02": 0.45,
+            "engine_front_axle_03": 0.3751619039786102,
+            "engine_front_axle_04": -0.45,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": -0.37448563003667384,
+            "tender_rear_bogie_axle_02": -0.12168128125174571,
+            "tender_rear_bogie_axle_03": -0.000036641129875838854,
+            "tender_rear_bogie_axle_04": -0.16424866360470988,
+            "tender_rear_bogie_axle_05": -0.35293407461094745,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 5.481219572093977e-12,
+            "engine_front": 0.48863004597465753,
+            "trailing_truck": 2.4576540516301954e-10,
+            "leading_truck": 1.513157606263056e-8,
+            "tender_rear_bogie": 1.6368916813268845e-11,
+            "tender_front_bogie": 0.02079978461597596
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 1007.0795592177861,
+              "z": 537.6681886077274
+            },
+            "tenderPin": {
+              "x": 997.2355313385552,
+              "z": 541.7952919511713
+            },
+            "span": 10.674168206213587,
+            "overlap": 4.8258317937864135,
+            "yaw": 2.7446028327821006,
+            "margin": 1.1741682062135865
+          },
+          "leadingOffset": 1.513157606263056e-8,
+          "guideTravel": 3.736745543917217,
+          "hingeDegrees": 0.726215685307857,
+          "drawbarSpan": 10.674168206213587,
+          "framePoses": {
+            "engine_rear": {
+              "x": 1062.407097380897,
+              "z": 534.4463578583496,
+              "cos": 0.9983088195012769,
+              "sin": -0.05813347491735512
+            },
+            "tender_body": {
+              "x": 964.9302052974233,
+              "z": 549.7110728250732,
+              "cos": 0.9712676262594955,
+              "sin": -0.23798991192957095
+            },
+            "engine_front": {
+              "x": 1090.0234428583128,
+              "z": 532.8382040528745,
+              "cos": 0.9974918168244745,
+              "sin": -0.0707818858763212
+            },
+            "trailing_truck": {
+              "x": 1031.7124958595675,
+              "z": 536.8522509960372,
+              "cos": 0.9904718742338592,
+              "sin": -0.13771516384068297,
+              "guideTravelMm": 0.6174404904926607,
+              "guideSwingRad": -0.07998795830785022
+            },
+            "leading_truck": {
+              "x": 1151.1619015520434,
+              "z": 524.7536856500031,
+              "cos": 0.9607983465374548,
+              "sin": -0.2772481511045528,
+              "guideTravelMm": -3.736745543917217,
+              "guideSwingRad": -0.21008767002716267
+            },
+            "tender_rear_bogie": {
+              "x": 946.4665915165978,
+              "z": 554.2352160156815,
+              "cos": 0.9746809987082099,
+              "sin": -0.22359997933176673
+            },
+            "tender_front_bogie": {
+              "x": 983.3938190782488,
+              "z": 545.1869296344648,
+              "cos": 0.9767708503473665,
+              "sin": -0.21428650426866055
+            }
+          }
+        },
+        "worstFlange": {
+          "edge": "V06-P000",
+          "edgeRole": "mainline",
+          "s": 0,
+          "sign": 1,
+          "mask": 0,
+          "route": [
+            "V06-P019/1",
+            "V06-P000/1"
+          ],
+          "halfEnvelope": 22.285018870338792,
+          "extremePart": "engine_rear",
+          "axleOffset": 0.22745199353282286,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 22.285018870338792,
+            "engine_front": 13.175081335914838,
+            "tender_body": 13.314822118472977,
+            "trailing_truck": 8.051408767835682,
+            "leading_truck": 6.249851170561581,
+            "tender_rear_bogie": 8.444442182545616,
+            "tender_front_bogie": 7.095728987131471
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 2.6471691486717785e-10,
+          "trailingTravel": 1.1493047688652311,
+          "axleSlides": {
+            "engine_rear_axle_01": 0.0011877720676071702,
+            "engine_rear_axle_02": -0.45,
+            "engine_rear_axle_03": -0.45,
+            "engine_rear_axle_04": 0.0007047476724002982,
+            "engine_front_axle_01": -0.018495413536990666,
+            "engine_front_axle_02": -0.3849868696410421,
+            "engine_front_axle_03": -0.25468457858393917,
+            "engine_front_axle_04": 0.37262342372163404,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.12614851768071808,
+            "tender_rear_bogie_axle_03": 0.0013852001284084612,
+            "tender_rear_bogie_axle_04": 0.19551410728546473,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 0.045793827033686875,
+            "engine_front": 2.6758957488480507e-11,
+            "trailing_truck": 2.6471691486717785e-10,
+            "leading_truck": 5.02650453405013e-9,
+            "tender_rear_bogie": 0.22745199353282286,
+            "tender_front_bogie": 0.0020269264433399143
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 1376.5744225287206,
+              "z": 312.83588964271974
+            },
+            "tenderPin": {
+              "x": 1371.1828322345998,
+              "z": 302.52993852779286
+            },
+            "span": 11.63107365134103,
+            "overlap": 3.8689263486589702,
+            "yaw": -2.0527943902350536,
+            "margin": 2.1310736513410298
+          },
+          "leadingOffset": 5.02650453405013e-9,
+          "guideTravel": 2.034310271752323,
+          "hingeDegrees": 10.496698541522283,
+          "drawbarSpan": 11.63107365134103,
+          "framePoses": {
+            "engine_rear": {
+              "x": 1372.833320929009,
+              "z": 368.13074321327156,
+              "cos": -0.06750299842787039,
+              "sin": 0.9977190712837191
+            },
+            "tender_body": {
+              "x": 1361.833034248526,
+              "z": 270.61011780324816,
+              "cos": 0.28110399147117177,
+              "sin": 0.9596773134647789
+            },
+            "engine_front": {
+              "x": 1370.9659767876672,
+              "z": 395.7307744097727,
+              "cos": -0.2481366949249863,
+              "sin": 0.9687250283912893
+            },
+            "trailing_truck": {
+              "x": 1373.7645523594917,
+              "z": 337.34082016922207,
+              "cos": 0.07475762671580771,
+              "sin": 0.9972017334761407,
+              "guideTravelMm": 1.1493047688652311,
+              "guideSwingRad": -0.14238180392285793
+            },
+            "leading_truck": {
+              "x": 1353.7206522092026,
+              "z": 454.8581327175522,
+              "cos": -0.3705311103780239,
+              "sin": 0.9288200558999729,
+              "guideTravelMm": 2.034310271752323,
+              "guideSwingRad": 0.12882444882788244
+            },
+            "tender_rear_bogie": {
+              "x": 1356.489300564371,
+              "z": 252.36683367539865,
+              "cos": 0.3458996062177736,
+              "sin": 0.9382715291526164
+            },
+            "tender_front_bogie": {
+              "x": 1367.176767932681,
+              "z": 288.85340193109766,
+              "cos": 0.21897898080738198,
+              "sin": 0.9757295762477226
+            }
+          }
+        },
+        "drawbarMargin": {
+          "edge": "V06-P060",
+          "edgeRole": "mainline",
+          "s": 23.85584615384615,
+          "sign": -1,
+          "mask": 0,
+          "route": [
+            "V06-P014/1",
+            "V06-P078/-1",
+            "V06-P060/-1"
+          ],
+          "halfEnvelope": 12.81144827449146,
+          "extremePart": "tender_body",
+          "axleOffset": 0.262341237506049,
+          "extremeAxle": "tender_rear_bogie_axle_01",
+          "hingeResidual": 0,
+          "byFrame": {
+            "engine_rear": 11.028587341308594,
+            "engine_front": 10.89248275756836,
+            "tender_body": 12.81144827449146,
+            "trailing_truck": 8.051408767700195,
+            "leading_truck": 6.121805667877197,
+            "tender_rear_bogie": 8.480157301357046,
+            "tender_front_bogie": 7.019212864412992
+          },
+          "worstTread": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "worstFlange": {
+            "axle": "engine_rear_axle_01",
+            "treadOverlap": 0.4500000000000002,
+            "flangeOverlap": 0
+          },
+          "trailingOffset": 0,
+          "trailingTravel": 0,
+          "axleSlides": {
+            "engine_rear_axle_01": 0,
+            "engine_rear_axle_02": 0,
+            "engine_rear_axle_03": 0,
+            "engine_rear_axle_04": 0,
+            "engine_front_axle_01": 0,
+            "engine_front_axle_02": 0,
+            "engine_front_axle_03": 0,
+            "engine_front_axle_04": 0,
+            "trailing_truck_axle_01": 0,
+            "trailing_truck_axle_02": 0,
+            "leading_truck_axle_01": 0,
+            "leading_truck_axle_02": 0,
+            "tender_rear_bogie_axle_01": 0.45,
+            "tender_rear_bogie_axle_02": 0.14969237309165323,
+            "tender_rear_bogie_axle_03": 0.00020085289741350967,
+            "tender_rear_bogie_axle_04": 0.22803467040942116,
+            "tender_rear_bogie_axle_05": 0.45,
+            "tender_front_bogie_axle_01": 0,
+            "tender_front_bogie_axle_02": 0
+          },
+          "frameOffsets": {
+            "engine_rear": 2.842170943040401e-14,
+            "engine_front": 2.842170943040401e-14,
+            "trailing_truck": 0,
+            "leading_truck": 0,
+            "tender_rear_bogie": 0.262341237506049,
+            "tender_front_bogie": 0.0000378115352077657
+          },
+          "drawbar": {
+            "enginePin": {
+              "x": 396.1450785416352,
+              "z": 101.032
+            },
+            "tenderPin": {
+              "x": 385.9634883021052,
+              "z": 100.8630832182016
+            },
+            "span": 10.18299134266871,
+            "overlap": 5.317008657331289,
+            "yaw": -3.125003762981208,
+            "margin": 0.6829913426687106
+          },
+          "leadingOffset": 0,
+          "guideTravel": 0,
+          "hingeDegrees": 0,
+          "drawbarSpan": 10.18299134266871,
+          "framePoses": {
+            "engine_rear": {
+              "x": 451.5663440682192,
+              "z": 101.032,
+              "cos": 1,
+              "sin": 0
+            },
+            "tender_body": {
+              "x": 352.7048304154487,
+              "z": 101.25723172550524,
+              "cos": 0.9999297842411643,
+              "sin": -0.011850172463670974
+            },
+            "engine_front": {
+              "x": 479.2294728896313,
+              "z": 101.032,
+              "cos": 1,
+              "sin": 0
+            },
+            "trailing_truck": {
+              "x": 420.78378973002515,
+              "z": 101.032,
+              "cos": 1,
+              "sin": 0,
+              "guideTravelMm": 0,
+              "guideSwingRad": 0
+            },
+            "leading_truck": {
+              "x": 540.7868225888458,
+              "z": 101.032,
+              "cos": 1,
+              "sin": 0,
+              "guideTravelMm": 0,
+              "guideSwingRad": 0
+            },
+            "tender_rear_bogie": {
+              "x": 333.69635443517296,
+              "z": 101.48250126161447,
+              "cos": 0.998254103713161,
+              "sin": -0.05906559421383372
+            },
+            "tender_front_bogie": {
+              "x": 371.7133063957245,
+              "z": 101.031962189396,
+              "cos": 1,
+              "sin": -1.4484015103043348e-10
+            }
+          }
+        }
+      }
+    }
+  }
+}

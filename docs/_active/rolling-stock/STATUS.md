@@ -1,5 +1,46 @@
 # Serie N — Stato integrazione rotabili
 
+## L02-D — Union Pacific Big Boy
+
+**19 novembre 2026 · Battistrada, ingombri e staffe.** Base `9492ea5a4f03878a6609b5faa13659208a68357b` su `codex/rolling-stock-l02-big-boy`. Prototipo isolato nelle prove di sviluppo. [GLB](evidence/L02-D/prototype/prototype.glb) · [Inventario](../../rolling-stock/INVENTORY.md) · [Attribuzione](evidence/L02-D/prototype/ATTRIBUTION.md).
+
+### Ruote e appoggio proiettato
+
+Le teste delle rotaie renderizzate occupano **4,00–5,00 mm** per lato dal centro del binario in Legacy e **4,50–4,95 mm** in V06. I test rigenerano entrambe le sezioni dell’applicazione e verificano questi limiti. Il rilievo del GLB campiona ogni ruota a **72 angoli** a passi di 5° e ogni sezione trasversale a **0,025 mm**. Il battistrada comune alle fasi è la zona con superficie entro ±0,10 mm dal piano del ferro. La prova proietta questa zona e il bordino sulle teste delle rotaie lungo lo stesso itinerario. [Profili delle ruote](evidence/L02-D/prototype/wheel-profile.json).
+
+Il GLB L02-C, provato con lo stesso movimento, perdeva l’appoggio proiettato di almeno una ruota in tutte le pose. La zona critica di certe ruote anteriori è discontinua fra le fasi. Il nuovo cerchione tornito conserva mozzi e razze e porta il bordino verso il centro. [Confronto prima della riprofilatura](evidence/L02-D/pre-reprofile.json).
+
+| Scenario | Pose | Appoggio laterale minimo su ciascuna testa | Pose senza appoggio su una testa | Pose con bordino proiettato sulla testa |
+| --- | ---: | ---: | ---: | ---: |
+| Legacy | 3.100 | 1,000 mm | 0 | 0 |
+| V06 | 2.990 | 0,401 mm su `V06-P035` | 0 | 0 |
+
+La guida trasversale del carrello posteriore usa al massimo **1,547 mm** dei **±2,5 mm** disponibili, su `V06-P027`. Lo scostamento dei suoi assi scende da **0,782 mm a meno di 0,010 mm**. Il massimo residuo fra tutti gli assi è **0,489 mm** su un asse motore anteriore di `V06-P035`, incluso nella prova di appoggio. Il campionamento a passo massimo di 12 mm copre 71/75 tratti Legacy e 77/79 tratti V06 in entrambe le orientazioni. I sei tratti restanti non hanno pose campionate con spazio per l’intera composizione. [Scansione del percorso](evidence/L02-D/sweep.json).
+
+### Articolazione e fissaggio del timone
+
+Gli interventi geometrici riguardano la forcella sotto la caldaia, il predellino longitudinale e i raccordi sulla zona del cilindro anteriore. La verifica non rileva sovrapposizioni in **117 angoli da −14,50° a +14,50°**, a passi di 0,25°. Il massimo rilevato sulle tratte reali è 14,437°. Nelle 35 verifiche delle interfacce i soli riscontri fra telai sono sui due archi sintetici R150, dove l’angolo relativo supera 20°. [Scansione angolare](evidence/L02-D/hinge-sweep.json) · [Vista articolata R282](evidence/L02-D/r282-articulated.png).
+
+Il timone di L02-C lavora fra **10,183 e 13,265 mm** di distanza fra i perni. Due staffe rigide seguono le rispettive casse e portano l’asse del perno a **1,65 mm** sopra il piano del ferro. Le sedi sulle traverse sono a **5,500 mm** per la motrice e **2,767 mm** per il tender. Le 35 verifiche BVH hanno trovato entrambe le staffe a contatto con la cassa di competenza, senza riscontri con le parti estranee o con guaina e linguetta. Lo scarto massimo perno–occhiello è inferiore a **0,001 mm**. [Vano del timone alla massima estensione](evidence/L02-D/drawbar-extended.png) · [Riscontri](evidence/L02-D/interface-overlap.json).
+
+### Esiti e riproduzione
+
+**PASS** per appoggio laterale proiettato, misure della guida posteriore, fissaggio del timone e caricamento isolato del GLB in Chromium. **PASS** per la qualifica geometrica campionata nell’intervallo dei tracciati reali. **FAIL** per l’arco sintetico R150. **NOT VERIFIED** contatto continuo tridimensionale con scambi e cuori, biellismo in rotazione, marcia con altri rotabili e prestazioni interattive del simulatore. Suite Node 584/584, prove di geometria e cinematica 5/5, JMRI 9/9 e build PASS. Il diff verifica gli invarianti di tracciato, protezioni, UI, Auth e cache. [Esiti](evidence/L02-D/checks.txt) · [Lettura WebGL](evidence/L02-D/browser.json).
+
+```sh
+evidence=docs/_active/rolling-stock/evidence/L02-D
+blender -b -t 4 --python-exit-code 1 --python scripts/big-boy/prepare.py -- \
+  /percorso/steam_locomotive_union_pacific_bigboy.glb "$evidence/prototype" L02-D
+blender -b -t 4 --python-exit-code 1 --python scripts/big-boy/wheel-profile.py -- "$evidence/prototype"
+node scripts/big-boy/sweep.mjs "$evidence/prototype" "$evidence/sweep.json"
+blender -b -t 4 --python-exit-code 1 --python scripts/big-boy/inspect-pose.py -- "$evidence"
+node --test scripts/big-boy/kinematics.test.mjs
+```
+
+**Prossima sottofase · L02-E.** Integrare in una prova browser isolata l’asset, le staffe e il timone, iniziare l’animazione di ruote e bielle e verificare avanzamento, arresto, inversione e occupazioni sulle tratte esaminate.
+
+---
+
 ## L02-C — Union Pacific Big Boy
 
 **19 novembre 2026 · Guida del carrello, interferenze e timone.** Base `da704f5bcce96e212fb620294ae977467f315a57` su `codex/rolling-stock-l02-big-boy`. Il prototipo resta fra le prove di sviluppo. [Inventario](../../rolling-stock/INVENTORY.md) · [GLB](evidence/L02-C/prototype/prototype.glb) · [Quote e attribuzione](evidence/L02-C/prototype/ATTRIBUTION.md).

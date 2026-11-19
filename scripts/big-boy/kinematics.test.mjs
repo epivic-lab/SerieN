@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { axlePlay, drawbarPose, guideTruck, shift } from './kinematics.mjs';
+import { railHeads, wheelContact } from './wheel-contact.mjs';
 
 const straight = {offset: point => point.z};
 const heading = {cos: 1, sin: 0};
@@ -37,5 +38,37 @@ test('telescoping members retain length and distinguish compression and extensio
     approx(pose.span, span);
     approx(pose.margin, margin);
     approx(pose.overlap + pose.span, dimensions.sleeveMm + dimensions.tongueMm);
+  }
+});
+
+test('wheel profile distinguishes dual tread support from projection of a flange into a rail head', () => {
+  const wheel = {
+    '-1': {tread: [[-5.4, -3.65]], belowHead: [[-3.45, -3.32]]},
+    '1': {tread: [[3.65, 5.4]], belowHead: [[3.32, 3.45]]},
+  };
+  const centered = {x: 0, z: 0, ...heading};
+  assert.deepEqual(wheelContact(straight, 0, centered, wheel, railHeads.legacy),
+    {treadOverlap: 1, flangeOverlap: 0});
+  const smallShift = wheelContact(straight, 0, {...centered, z: .65}, wheel, railHeads.legacy);
+  assert.ok(smallShift.treadOverlap > 0);
+  approx(smallShift.flangeOverlap, .10);
+  const largeShift = wheelContact(straight, 0, {...centered, z: 1.25}, wheel, railHeads.v06);
+  assert.ok(largeShift.treadOverlap < 0);
+});
+
+test('the contact audit reads the same head intervals as both rendered sections', async () => {
+  const { railGeometry } = await import('../../src/rail-profile.js');
+  const { v06RailGeometry } = await import('../../src/scenario-v06-scene.js');
+  const edge = {length: 20, distance: [0, 20], points: [{x: 0, z: 0}, {x: 20, z: 0}]};
+  for (const [scenario, build] of [['legacy', railGeometry], ['v06', v06RailGeometry]]) {
+    const g = build(edge, 1);
+    const positions = g.getAttribute('position');
+    let head = -Infinity;
+    for (let i = 0; i < positions.count; i++) head = Math.max(head, positions.getY(i));
+    const lateral = [];
+    for (let i = 0; i < positions.count; i++) if (positions.getY(i) === head) lateral.push(positions.getZ(i));
+    approx(Math.min(...lateral), railHeads[scenario][0]);
+    approx(Math.max(...lateral), railHeads[scenario][1]);
+    g.dispose();
   }
 });

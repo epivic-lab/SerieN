@@ -12,7 +12,7 @@ from mathutils import Matrix, Vector
 from mathutils.bvhtree import BVHTree
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from drawgear import build_drawgear, pose_drawgear
+from drawgear import build_drawgear, build_mounts, pose_drawgear
 
 
 def apply_poses(frames, rig, poses, axle_slides=None):
@@ -36,6 +36,33 @@ def triangle_tree(obj):
 
 def overlaps(a, b):
     return len(a.overlap(b))
+
+
+def sweep_hinge(frames, rig, sweep):
+    """Sweep the rigid relative hinge independently of route points."""
+    sample_degrees = .25
+    maximum_on_route = max(d["worst"]["hingeDegrees"]["hingeDegrees"] for d in sweep["byScenario"].values())
+    ticks = math.ceil(maximum_on_route / sample_degrees)
+    apply_poses(frames, rig, sweep["straight"]["framePoses"])
+    fixed = triangle_tree(frames["engine_rear"])
+    swing = frames["engine_front"]
+    original = swing.matrix_basis.copy()
+    fixed_pivot = swing.matrix_world.translation.copy()
+    forward = Vector((0, 1, 0))
+    initial_heading = swing.matrix_world.to_3x3() @ forward
+    results = []
+    for tick in range(-ticks, ticks + 1):
+        angle = tick * sample_degrees
+        swing.matrix_basis = original @ Matrix.Rotation(math.radians(angle), 4, "Z")
+        bpy.context.view_layer.update()
+        heading = swing.matrix_world.to_3x3() @ forward
+        actual = math.degrees(math.atan2(initial_heading.cross(heading).z, initial_heading.dot(heading)))
+        if abs(actual - angle) > 1e-4 or (swing.matrix_world.translation - fixed_pivot).length > 1e-4:
+            raise ValueError(f"Failed to apply relative hinge angle {angle}: {actual}")
+        results.append({"angleDegrees": angle, "pairs": overlaps(fixed, triangle_tree(swing))})
+    swing.matrix_basis = original
+    bpy.context.view_layer.update()
+    return {"stepDegrees": sample_degrees, "maximumOnRouteDegrees": maximum_on_route, "samples": results}
 
 
 def guide_rails(radius):
@@ -85,11 +112,14 @@ def main():
         metrics = ["halfEnvelope", "axleOffset", "drawbarMin", "drawbarMax"]
         if "kinematics" in rig:
             metrics.extend(("hingeDegrees", "leadingOffset", "guideTravel", "drawbarMargin"))
+        if "trailingGuide" in rig.get("kinematics", {}):
+            metrics.extend(("trailingOffset", "trailingTravel", "worstTread", "worstFlange"))
         for metric in metrics:
             cases[f"{name}-{metric}"] = data["worst"][metric]
 
     revised = "kinematics" in rig
     members = build_drawgear(rig["kinematics"]["drawbar"]) if revised else None
+    mounts = build_mounts(rig, by_name) if "drawbarMountsMm" in rig else {}
     contacts = {}
     for name, case in cases.items():
         apply_poses(by_name, rig, case["framePoses"], case.get("axleSlides"))
@@ -110,7 +140,26 @@ def main():
                 for member, gear in (("sleeve", sleeve), ("tongue", tongue))
             }
             contacts[name]["drawgear"] = {"members": overlaps(sleeve, tongue), **gear_contacts}
+            if mounts:
+                results = {}
+                for key, mount in mounts.items():
+                    owner = rig["drawbarMountsMm"][key]["frame"]
+                    tree = triangle_tree(mount)
+                    pin = case["drawbar"][f"{key}Pin"]
+                    expected = Vector((pin["z"], pin["x"], rig["drawbarPinsMm"]["height"]))
+                    origin_error = (mount.matrix_world.translation - expected).length
+                    foreign = {part: count for part, shape in trees.items()
+                               if part != owner and (count := overlaps(tree, shape))}
+                    results[key] = {
+                        "pinErrorMm": origin_error, "attachmentPairs": overlaps(tree, trees[owner]),
+                        "foreign": foreign, "movingSleevePairs": overlaps(tree, sleeve),
+                        "movingTonguePairs": overlaps(tree, tongue),
+                    }
+                contacts[name]["mounts"] = results
     (evidence / "interface-overlap.json").write_text(json.dumps(contacts, indent=2) + "\n")
+    if mounts:
+        hinge = sweep_hinge(by_name, rig, sweep)
+        (evidence / "hinge-sweep.json").write_text(json.dumps(hinge, indent=2) + "\n")
     if len(args) == 2:
         return
 

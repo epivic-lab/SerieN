@@ -1,16 +1,23 @@
 // Offline articulation and swept-outline probe. Uses the live route graph,
 // without adding a locomotive type or modifying any production railway state.
 import { createHash } from 'node:crypto';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createScenarioProfile } from '../../src/scenario-profile.js';
 import { Journey, routing } from '../../src/simulation.js';
 import { axlePlay, drawbarPose, guideTruck, shift } from './kinematics.mjs';
+import { railHeads, wheelContact } from './wheel-contact.mjs';
 
 const [directory, reportPath] = process.argv.slice(2);
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const {frames, axles, drawbarPinsMm, trianglesByNode, kinematics} = read(resolve(directory, 'rig.json'));
+const wheelPath = resolve(directory, 'wheel-profile.json');
+const wheelProfiles = existsSync(wheelPath) ? read(wheelPath) : null;
 const binary = readFileSync(resolve(directory, 'prototype.glb'));
+const modelSha256 = createHash('sha256').update(binary).digest('hex');
+if (wheelProfiles && wheelProfiles.modelSha256 !== modelSha256) {
+  throw new Error('Wheel profiles were not measured from this GLB');
+}
 const jsonBytes = binary.readUInt32LE(12);
 const gltf = JSON.parse(binary.subarray(20, 20 + jsonBytes));
 const binOffset = 28 + jsonBytes;
@@ -129,14 +136,16 @@ function poses(track, s) {
       z += weight * (target.z - origin.z);
     }
     const pose = heading(x, z, origin);
-    posesByName[name] = kinematics && name === 'leading_truck' ? guideTruck(
-      track, s, posesByName[parent], pivot(name), frameAxles(name), kinematics.leadingGuide, pose,
+    const guide = name === 'leading_truck' ? kinematics?.leadingGuide :
+      name === 'trailing_truck' ? kinematics?.trailingGuide : null;
+    posesByName[name] = guide ? guideTruck(
+      track, s, posesByName[parent], pivot(name), frameAxles(name), guide, pose,
     ) : pose;
   }
   return posesByName;
 }
 
-function measure(track, s) {
+function measure(track, s, head = railHeads.v06) {
   const framePoses = poses(track, s);
   let halfEnvelope = 0;
   let axleOffset = 0;
@@ -146,6 +155,8 @@ function measure(track, s) {
   const byFrame = {};
   const axleSlides = {};
   const frameOffsets = {};
+  let worstTread = null;
+  let worstFlange = null;
   for (const [name, frame] of Object.entries(frames)) {
     const pose = framePoses[name];
     const routePivot = s + pivot(name) - frameSetback(name);
@@ -159,6 +170,12 @@ function measure(track, s) {
         ? axlePlay(track, routePivot + along, pose, along, kinematics.axlePlayMm[name] ?? 0)
         : {slide: 0, error: distance(along, 0)};
       axleSlides[axle] = slide;
+      if (wheelProfiles) {
+        const contact = wheelContact(track, routePivot + along, {...pose, ...shift(pose, along, slide)},
+          wheelProfiles.axles[axle], head);
+        if (!worstTread || contact.treadOverlap < worstTread.treadOverlap) worstTread = {axle, ...contact};
+        if (!worstFlange || contact.flangeOverlap > worstFlange.flangeOverlap) worstFlange = {axle, ...contact};
+      }
       frameOffsets[name] = Math.max(frameOffsets[name] ?? 0, Math.abs(error));
       if (axleOutlines[axle]) {
         for (const [u, v] of axleOutlines[axle]) reach = Math.max(reach, distance(u, v + slide));
@@ -186,6 +203,9 @@ function measure(track, s) {
   const drawbar = kinematics?.drawbar ? drawbarPose(enginePin, tenderPin, kinematics.drawbar) : null;
   return {
     halfEnvelope, extremePart, axleOffset, extremeAxle, hingeResidual, byFrame,
+    ...(wheelProfiles ? {worstTread, worstFlange} : {}),
+    ...(kinematics?.trailingGuide ? {trailingOffset: frameOffsets.trailing_truck,
+      trailingTravel: Math.abs(framePoses.trailing_truck.guideTravelMm)} : {}),
     ...(kinematics ? {axleSlides, frameOffsets, drawbar, leadingOffset: frameOffsets.leading_truck,
       guideTravel: Math.abs(framePoses.leading_truck.guideTravelMm)} : {}),
     hingeDegrees: Math.abs(Math.atan2(rear.cos * front.sin - rear.sin * front.cos,
@@ -264,6 +284,9 @@ for (const id of ['legacy', 'v06']) {
   const sampledEdges = new Set();
   const sampledSwitchEdges = new Set();
   const extraMetrics = kinematics ? ['leadingOffset', 'guideTravel'] : [];
+  if (kinematics?.trailingGuide) extraMetrics.push('trailingOffset', 'trailingTravel');
+  let unsupportedPoses = 0;
+  let flangeFlagPoses = 0;
   const worst = {halfEnvelope: null, axleOffset: null, hingeDegrees: null, drawbarMin: null, drawbarMax: null};
   const loopCases = network.mainLoops.map(({lane, segments}) => ({
     lane, edges: new Set(segments.map(({id}) => id)), poses: 0, halfEnvelope: 0, axleOffset: 0,
@@ -298,11 +321,17 @@ for (const id of ['legacy', 'v06']) {
           sampledEdges.add(edge.id);
           if (edge.switchId) sampledSwitchEdges.add(edge.id);
           byHeading[sign]++;
-          const result = measure(track, s);
+          const result = measure(track, s, railHeads[id]);
           const witness = {edge: edge.id, edgeRole: edge.role, s, sign, mask, route: occupied, ...result};
           hingeResidual = Math.max(hingeResidual, result.hingeResidual);
           for (const metric of ['halfEnvelope', 'axleOffset', 'hingeDegrees', ...extraMetrics]) {
             if (!worst[metric] || result[metric] > worst[metric][metric]) worst[metric] = witness;
+          }
+          if (wheelProfiles) {
+            if (result.worstTread.treadOverlap <= 0) unsupportedPoses++;
+            if (result.worstFlange.flangeOverlap > 0) flangeFlagPoses++;
+            if (!worst.worstTread || result.worstTread.treadOverlap < worst.worstTread.worstTread.treadOverlap) worst.worstTread = witness;
+            if (!worst.worstFlange || result.worstFlange.flangeOverlap > worst.worstFlange.worstFlange.flangeOverlap) worst.worstFlange = witness;
           }
           if (result.drawbar && (!worst.drawbarMargin || result.drawbar.margin < worst.drawbarMargin.drawbar.margin)) worst.drawbarMargin = witness;
           if (!worst.drawbarMin || result.drawbarSpan < worst.drawbarMin.drawbarSpan) worst.drawbarMin = witness;
@@ -318,7 +347,7 @@ for (const id of ['legacy', 'v06']) {
     }
   }
   byScenario[id] = {
-    poses: seenPoses.size, byHeading, controlIds: registry.ids, totalEdges: Object.keys(network.edges).length,
+    poses: seenPoses.size, ...(wheelProfiles ? {unsupportedPoses, flangeFlagPoses} : {}), byHeading, controlIds: registry.ids, totalEdges: Object.keys(network.edges).length,
     sampledEdges: sampledEdges.size, sampledSwitchEdges: [...sampledSwitchEdges].sort(),
     unsampledEdges: Object.keys(network.edges).filter(edge => !sampledEdges.has(edge)),
     loopCases: loopCases.map(({edges, ...loop}) => loop), hingeResidual, worst,
@@ -326,10 +355,10 @@ for (const id of ['legacy', 'v06']) {
 }
 
 const report = {
-  model: {bytes: binary.length, sha256: createHash('sha256').update(binary).digest('hex'), triangles,
+  model: {bytes: binary.length, sha256: modelSha256, triangles,
     primitives, textureImages: gltf.images.length, frames: names.length, axles: Object.keys(axles).length,
     boundsMm: sizes},
   method: 'Vertex projection hulls of each rigid group at zero wheel phase. Approximate sampled outline, not a swept mesh or a route clearance certification.',
-  stepMm, projectionWindowMm, ...(kinematics ? {kinematics} : {}), straight, arcs, byScenario,
+  ...(wheelProfiles ? {railHeads} : {}), stepMm, projectionWindowMm, ...(kinematics ? {kinematics} : {}), straight, arcs, byScenario,
 };
 writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');

@@ -21,6 +21,14 @@ class Member:
         self.add(positions, [(0, 2, 3, 1), (4, 5, 7, 6), (0, 1, 5, 4), (2, 6, 7, 3),
                              (0, 4, 6, 2), (1, 3, 7, 5)])
 
+    def pin_cylinder(self, radius, low, high):
+        steps = 24
+        vertices = [(radius * math.cos(i * math.tau / steps), radius * math.sin(i * math.tau / steps), height)
+                    for height in (low, high) for i in range(steps)]
+        faces = [(i, (i + 1) % steps, (i + 1) % steps + steps, i + steps) for i in range(steps)]
+        faces.extend((tuple(reversed(range(steps))), tuple(range(steps, 2 * steps))))
+        self.add(vertices, faces)
+
     def eye(self):
         steps = 24
         vertices = [(r * math.cos(i * 2 * math.pi / steps), r * math.sin(i * 2 * math.pi / steps), z)
@@ -69,3 +77,22 @@ def pose_drawgear(members, drawbar, height):
             Matrix.Translation((pin["z"], pin["x"], height)) @ Matrix.Rotation(angle, 4, "Z")
         )
     bpy.context.view_layer.update()
+
+
+def build_mounts(rig, frames):
+    """Fixed brackets and captive pins at the existing beam surfaces."""
+    height = rig["drawbarPinsMm"]["height"]
+    mounts = {}
+    for key, spec in rig["drawbarMountsMm"].items():
+        frame = spec["frame"]
+        station, pivot_height = rig["frames"][frame]["pivotMm"]
+        standard = Member()
+        standard.pin_cylinder(.22, -.30, .32)
+        standard.pin_cylinder(.41, -.30, -.21)
+        top = spec["seatHeight"] + .17 - height
+        standard.block(-.28, .28, .58, top - .23, elevation=(top + .23) / 2)
+        obj = standard.object(f"{key} drawbar mount and captive pin", (.65, .68, .71, 1))
+        obj.parent = frames[frame]
+        obj.location = (0, rig["drawbarPinsMm"][key] - station, height - pivot_height)
+        mounts[key] = obj
+    return mounts

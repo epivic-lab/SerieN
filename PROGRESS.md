@@ -1,3 +1,17 @@
+# L02-D — Union Pacific Big Boy · verifica geometrica (19 novembre 2026)
+
+Appoggio proiettato presente su entrambe le teste in 6.090 pose Legacy/V06,
+con zero riscontri sui bordini. Carrello posteriore sotto 0,010 mm di
+scostamento. Nessuna sovrapposizione nei 117 angoli fra −14,50° e +14,50°.
+Staffe e timone verificati su 35 configurazioni. R150 sintetico FAIL.
+Node 584/584, geometria e cinematica 5/5, JMRI 9/9 e build PASS.
+[Rapporto, prototipo e prove](docs/_active/rolling-stock/STATUS.md#l02-d--union-pacific-big-boy) · [Inventario](docs/rolling-stock/INVENTORY.md).
+
+**Prossima azione.** Approvazione di L02-E per una prova browser isolata
+del rotabile con ruote e bielle animate, staffe, timone e prove di marcia.
+
+---
+
 # L02-C — Union Pacific Big Boy · guida e timone (19 novembre 2026)
 
 Scansione di 6.090 pose Legacy/V06. Scostamento del carrello anteriore
