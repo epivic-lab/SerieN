@@ -42,6 +42,7 @@ export function createFleetCommands({trains,detached,route}) {
     const train=findTrain(id);
     if(!train)return {changed:false};
     if(train.speed||Math.abs(train.velocity)>.1)return {changed:false,message:'Stop the train before coupling.'};
+    if(train.group.userData.fixedComposition)return {changed:false,message:'Big Boy and tender form a fixed unit; external coupling is unavailable.'};
     if(train.cars>=5)return {changed:false,message:'Maximum train length: five wagons.'};
     let candidateJourney;
     const index=detached.findIndex(vehicle=>{

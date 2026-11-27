@@ -12,6 +12,7 @@ export function layoutFor(train, extra = []) {
 // Journey, while the chord through its driving wheelbase defines its yaw.
 export function vehiclePose(journey, at, vehicle) {
   const center = journey.locate(at);
+  if(vehicle.railwayEnvelope)center.envelope=vehicle.railwayEnvelope(journey,at);
   if (vehicle.userData.stock?.kind !== "br01-engine") return center;
   const rear = journey.locate(at - 16);
   const front = journey.locate(at + 16);

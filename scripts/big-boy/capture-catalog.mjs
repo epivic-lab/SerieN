@@ -1,0 +1,11 @@
+import * as THREE from 'three';
+import {loadBigBoy,buildBigBoy} from '../../src/big-boy.js';
+import {captureStockSide} from '../capture-stock-sides.js';
+import {captureLocomotiveThumbnail} from '../../src/locomotive-thumbnails.js';
+import {Journey} from '../../src/simulation.js';
+const network={edges:{line:{id:'line',length:1000,points:[{x:-500,z:0},{x:500,z:0}],distance:[0,1000]}}};
+const journey=new Journey(network,'line',500),group=buildBigBoy(await loadBigBoy(),0);
+group.br01Pose(0,journey,500,journey.locate());
+const renderer=new THREE.WebGLRenderer({antialias:true});
+window.catalogCapture={side:captureStockSide(renderer,group),thumbnail:captureLocomotiveThumbnail(renderer,group)};
+group.userData.disposeRollingStock();renderer.dispose();

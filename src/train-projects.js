@@ -18,7 +18,7 @@ const BR01_CATALOG=Object.freeze(['engine','tender'].map(kind=>{
     length:asset.couplers.front.x-asset.couplers.back.x,width:asset.stock.width,
     image:'./assets/br01/'+kind+'.png',asset});
 }));
-export const PROJECT_CATALOG=Object.freeze([...BR01_CATALOG,Object.freeze({
+export const PROJECT_CATALOG=Object.freeze([...BR01_CATALOG,Object.freeze({id:'native-big-boy',kind:'big-boy',role:'locomotive',source:'Footloose · CC BY 4.0',name:'Union Pacific Big Boy + tender',length:260,width:26,image:'./assets/rolling-stock/big-boy/thumbnail.png',asset:manifest['native-big-boy']}),Object.freeze({
   id:'native-henschel-dhg-500-c',kind:'henschel-dhg-500-c',role:'locomotive',
   source:'accessviolation · CC BY-NC-SA 4.0',name:'Henschel DHG 500 C',
   length:61.875,width:19,
@@ -68,7 +68,7 @@ export function railwayProjectCapabilities(train){
   if(!train)return {uncouple:'No current train.',couple:'No current train.',apply:'Whole-project application, arbitrary reorder and individual reversal are unsupported.'};
   const stopped=Number.isFinite(train.velocity)&&Math.abs(train.velocity)<=.1&&train.speed===0;
   return {uncouple:!stopped?'Stop the train before uncoupling.':train.carObjs.length?'Tail uncoupling supported by R1; the vehicle stays on the track.':'No trailer to uncouple.',
-    couple:!stopped?'Stop the train before coupling.':train.carObjs.length>=5?'Maximum five trailers.':'R1 must verify a nearby rear vehicle, alignment, route history and space at execution.',
+    couple:train.group.userData.fixedComposition?'Fixed locomotive and tender unit; external coupling unavailable.':!stopped?'Stop the train before coupling.':train.carObjs.length>=5?'Maximum five trailers.':'R1 must verify a nearby rear vehicle, alignment, route history and space at execution.',
     apply:'Whole-project application, arbitrary reorder and individual reversal are unsupported.'};
 }
 

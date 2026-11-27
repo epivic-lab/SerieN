@@ -1,6 +1,7 @@
 import {couplingDistance} from './consist.js';
 // Ground-plane envelopes: +X forward, yaw follows the canonical Journey.
 export function vehiclesConflict(a,b) {
+ if(a.envelope||b.envelope)return envelopeGap(a,b)<=0;
  const data=p=>p.vehicle.userData;
  const x=data(a),y=data(b);
  if(a.edge===b.edge&&Math.abs(a.s-b.s)<(x.assetDimensions||x.stock||y.assetDimensions||y.stock?Math.max(couplingDistance(x,y),couplingDistance(y,x)):58))return true;
@@ -14,6 +15,7 @@ export function vehiclesConflict(a,b) {
 }
 
 function corners(p) {
+ if(p.envelope)return hull(p.envelope);
  const d=p.vehicle.userData,front=d.couplers?.front?.x??38,rear=-(d.couplers?.back?.x??-38);
  const width=(d.assetDimensions?.width??d.stock?.width??21)/2,c=Math.cos(p.angle),s=-Math.sin(p.angle);
  return [[-rear,-width],[front,-width],[front,width],[-rear,width]].map(([x,z])=>[p.x+x*c-z*s,p.z+x*s+z*c]);

@@ -4,13 +4,16 @@ Rilevazione Drive del **19 novembre 2026**. Nelle cinque sottocartelle sono pres
 
 Le intestazioni riprendono i nomi esatti delle cartelle nella libreria Drive fornita dall’utente. Le dimensioni sono espresse in MB decimali. Le licenze esplicitate sono state lette dai sorgenti o dalle attribuzioni versionate. Per le altre voci restano da verificare licenza, provenienza e possibilità di ridistribuzione prima dell’integrazione.
 
-**Ripresa L02.** Aprire il [rapporto Big Boy](../_active/rolling-stock/STATUS.md#l02-d--union-pacific-big-boy), recuperare il sorgente da `01_Locomotive` e confrontarne lo SHA-256 con il [rilievo geometrico](../_active/rolling-stock/evidence/L02-A/geometry.json). Il [prototipo articolato](../_active/rolling-stock/evidence/L02-D/prototype/prototype.glb) e il [rilievo in curva](../_active/rolling-stock/evidence/L02-D/sweep.json) sono disponibili per il collaudo browser isolato. La sequenza di lavoro delle altre voci è da definire.
+**Stato L02-G (27 novembre 2026).** Big Boy integrata nel catalogo e runtime del
+branch `codex/rolling-stock-l02-big-boy`, come unità fissa con tender. Prove Legacy/V06
+eseguite; [rapporto e limiti](../_active/rolling-stock/evidence/L02-G/README.md).
+Non ancora integrata in main né pubblicata. La sequenza delle altre voci è da definire.
 
 ## `01_Locomotive` · 9 file
 
 | File sorgente | MB | Stato | Verifica per la ripresa |
 | --- | ---: | --- | --- |
-| `steam_locomotive_union_pacific_bigboy.glb` | 125,11 | In lavorazione · L02-D | Qualifica geometrica campionata superata sulle tratte reali. Prossimo lavoro su animazione e prova browser isolata. [Rapporto L02](../_active/rolling-stock/STATUS.md#l02-d--union-pacific-big-boy) |
+| `steam_locomotive_union_pacific_bigboy.glb` | 125,11 | Integrata sul branch · L02-G | Catalogo/runtime e prove Legacy/V06; tender fisso, rilascio in attesa di audit. [Rapporto L02-G](../_active/rolling-stock/evidence/L02-G/README.md) |
 | `reading_i10sa_steam_locomotive.glb` | 34,94 | Da lavorare | Verificare scala, rapporto motrice–tender e parti del biellismo. |
 | `br52_steam_locomotive_animation.glb` | 29,93 | Da lavorare | Ispezionare le clip e verificare la sincronizzazione alla distanza percorsa. |
 | `steam_locomotive_drb_baureihe_50.glb` | 2,21 | Da lavorare | Verificare suddivisione motrice/tender, ruote e bielle. |

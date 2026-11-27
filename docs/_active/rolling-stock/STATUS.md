@@ -1,5 +1,20 @@
 # Serie N — Stato integrazione rotabili
 
+## L02-G — Big Boy · catalogo e runtime
+
+27 novembre 2026. Aggiunta tramite Train Management, selezione, marcia, inversione,
+STOP, luci e rimozione. Unità fissa motrice+tender, 260 mm; 19 assi animati.
+Caricamento su richiesta e sagoma articolata nelle protezioni. Legacy/V06 e prova
+frontale con altro treno superate; evidenze e conteggi nel [rapporto L02-G](evidence/L02-G/README.md).
+PASS: 588 test generali, 5 dedicati, 11 cinematici, 9 JMRI, build e due cicli aggiunta/rimozione senza crescita GPU.
+Tracciato, UI strutturale, Auth e integratore invariati. Distribuzione nominale;
+agganci esterni non disponibili; nessun merge o deploy.
+
+**Prossima sottofase: L02-H — audit e rilascio controllato**, previa approvazione Regia.
+
+---
+
+
 ## L02-F — Union Pacific Big Boy · PASS tecnico campionato
 
 27 novembre 2026. Quartatura corretta e biellismo nominale animato sui quattro lati.
@@ -17,7 +32,7 @@ STOP per audit e approvazione Regia; nessuna autorizzazione implicita a merge/de
 
 ---
 
-# L02-E — Union Pacific Big Boy · banco browser
+## L02-E — Union Pacific Big Boy · banco browser
 
 **27 novembre 2026 · PASS tecnico del banco isolato e della prima animazione.**
 Base `239fbfc11dc4e601b977297e460979ed64610e35`, stesso branch dedicato.

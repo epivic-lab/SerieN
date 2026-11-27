@@ -1,3 +1,17 @@
+# L02-G — Big Boy · integrazione operativa sul branch di sviluppo
+
+Modello disponibile nel catalogo e aggiungibile al plastico come unità con tender
+fisso. Caricamento su richiesta, 19 assi e biellismi animati, sagoma articolata
+nelle protezioni. Prove operative Legacy/V06 e arresto frontale superati.
+[Rapporto, prove e limiti](docs/_active/rolling-stock/evidence/L02-G/README.md).
+Base `6358f4ab35ef62bf05d575ffbadf73d0427b3809`, branch
+`codex/rolling-stock-l02-big-boy`. PASS: 588 test generali, 5 dedicati, 11 cinematici, 9 JMRI, build e ciclo risorse GPU.
+Nessun merge/deploy; agganci esterni disabilitati.
+
+**Prossima azione:** audit Regia e autorizzazione L02-H, rilascio controllato.
+
+---
+
 # L02-F — Big Boy · qualifica campionata PASS (27 novembre 2026)
 
 Quartatura corretta su otto assi e quattro biellismi nominali animati nel banco
@@ -14,7 +28,7 @@ e verifiche operative Big Boy. Checkpoint sul solo branch dedicato.
 
 ---
 
- L02-E — Big Boy · banco browser e prima animazione (27 novembre 2026)
+# L02-E — Big Boy · banco browser e prima animazione (27 novembre 2026)
 
 Ripresa da `239fbfc11dc4e601b977297e460979ed64610e35` sul branch
 `codex/rolling-stock-l02-big-boy`. Banco isolato con 19 assi, bielle di accoppiamento,
