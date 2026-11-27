@@ -1,0 +1,50 @@
+TAP version 13
+# Subtest: the leading truck independently fits its two axles around a translating pin
+ok 1 - the leading truck independently fits its two axles around a translating pin
+  ---
+  duration_ms: 1.041083
+  ...
+# Subtest: guide and axle reach remain bounded when track demands more travel
+ok 2 - guide and axle reach remain bounded when track demands more travel
+  ---
+  duration_ms: 0.1525
+  ...
+# Subtest: telescoping members retain length and distinguish compression and extension stops
+ok 3 - telescoping members retain length and distinguish compression and extension stops
+  ---
+  duration_ms: 0.101291
+  ...
+# Subtest: wheel profile distinguishes dual tread support from projection of a flange into a rail head
+ok 4 - wheel profile distinguishes dual tread support from projection of a flange into a rail head
+  ---
+  duration_ms: 0.494542
+  ...
+# Subtest: the contact audit reads the same head intervals as both rendered sections
+ok 5 - the contact audit reads the same head intervals as both rendered sections
+  ---
+  duration_ms: 25.313833
+  ...
+# Subtest: legacy: signed motion, stop, reversal, route coverage and rejected commands
+ok 6 - legacy: signed motion, stop, reversal, route coverage and rejected commands
+  ---
+  duration_ms: 23.3215
+  ...
+# Subtest: v06: signed motion, stop, reversal, route coverage and rejected commands
+ok 7 - v06: signed motion, stop, reversal, route coverage and rejected commands
+  ---
+  duration_ms: 22.566541
+  ...
+# Subtest: coupling rods follow a full crank circle, reverse exactly and reject non-finite values
+ok 8 - coupling rods follow a full crank circle, reverse exactly and reject non-finite values
+  ---
+  duration_ms: 0.284375
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 299.482916

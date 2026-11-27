@@ -1,0 +1,16 @@
+{
+  "reference": "L02-D/sweep.json",
+  "numericDifferences": [
+    {
+      "path": "/arcs/1/left/framePoses/tender_rear_bogie/sin",
+      "absoluteDifference": 1.6653345369377348e-16
+    },
+    {
+      "path": "/arcs/1/right/framePoses/tender_rear_bogie/sin",
+      "absoluteDifference": 1.6653345369377348e-16
+    }
+  ],
+  "maxAbsoluteDifference": 1.6653345369377348e-16,
+  "tolerance": 1e-12,
+  "pass": true
+}

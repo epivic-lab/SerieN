@@ -1,3 +1,19 @@
+# L02-E — Big Boy · banco browser e prima animazione (27 novembre 2026)
+
+Ripresa da `239fbfc11dc4e601b977297e460979ed64610e35` sul branch
+`codex/rolling-stock-l02-big-boy`. Banco isolato con 19 assi, bielle di accoppiamento,
+staffe e timone L02-D. Chrome Legacy/V06: 420 mm avanti e ritorno, STOP stabile,
+copertura longitudinale e pose verificate. 584/584 Node, 8/8 cinematici, 9/9 JMRI,
+build PASS. Nessuna modifica al runtime operativo o al catalogo.
+Biella motrice/distribuzione ancora statiche; giochi e interferenze del biellismo
+in movimento NOT VERIFIED. Integrazione completa Big Boy non conclusa.
+[Rapporto e prove L02-E](docs/_active/rolling-stock/evidence/L02-E/README.md).
+
+**Prossima azione:** approvazione Regia L02-F per completare e qualificare il biellismo.
+Checkpoint sul solo branch autorizzato, nessun merge o deploy.
+
+---
+
 # L02-D — Union Pacific Big Boy · verifica geometrica (19 novembre 2026)
 
 Appoggio proiettato presente su entrambe le teste in 6.090 pose Legacy/V06,

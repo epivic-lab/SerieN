@@ -1,5 +1,27 @@
 # Serie N — Stato integrazione rotabili
 
+## L02-E — Union Pacific Big Boy · banco browser
+
+**27 novembre 2026 · PASS tecnico del banco isolato e della prima animazione.**
+Base `239fbfc11dc4e601b977297e460979ed64610e35`, stesso branch dedicato.
+19 assi animati dall'odometro firmato, bielle di accoppiamento estratte dal sorgente,
+staffe e timone L02-D. Chrome Legacy/V06: 420 mm avanti, STOP, ritorno in retromarcia,
+occupazione longitudinale completa, nessun errore JavaScript. Test 584/584 Node,
+8/8 cinematici, 9/9 JMRI e build PASS. Pose storiche conservate entro 1e-12.
+
+**Big Boy non ancora integrata nel catalogo operativo.** Biella motrice e
+ distribuzione statiche; quartatura, giochi laterali e interferenze in rotazione
+NOT VERIFIED. Collisioni multi-treno, agganci e Train Management restano da provare.
+Il fallimento sintetico R150 di L02-D resta valido. Nessuna modifica ferroviaria,
+UI operativa, cloud o deploy.
+
+[Rapporto, riproduzione, limiti e screenshot](evidence/L02-E/README.md).
+
+**Prossima sottofase proposta: L02-F**, completamento e qualifica del biellismo
+prima dell'integrazione nel catalogo. STOP per approvazione Regia.
+
+---
+
 ## L02-D — Union Pacific Big Boy
 
 **19 novembre 2026 · Battistrada, ingombri e staffe.** Base `9492ea5a4f03878a6609b5faa13659208a68357b` su `codex/rolling-stock-l02-big-boy`. Prototipo isolato nelle prove di sviluppo. [GLB](evidence/L02-D/prototype/prototype.glb) · [Inventario](../../rolling-stock/INVENTORY.md) · [Attribuzione](evidence/L02-D/prototype/ATTRIBUTION.md).

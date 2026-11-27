@@ -1,0 +1,55 @@
+{
+  "browser": "158.0.8127.89",
+  "checks": [
+    {
+      "minimumDrawbarMarginMm": 0.6837656100991847,
+      "edges": [
+        "WX-A:lower",
+        "T6",
+        "T41",
+        "TO0:AB",
+        "TO3:AB",
+        "T27"
+      ],
+      "p50StepAndRenderMs": 0.10000000149011612,
+      "p95StepAndRenderMs": 0.20000000298023224,
+      "scenario": "legacy",
+      "signedDistanceForwardMm": 420,
+      "reverseReturn": true,
+      "stopStable": true,
+      "all19AxlesRotate": true,
+      "info": {
+        "calls": 95,
+        "triangles": 242660,
+        "axles": 19,
+        "rodParts": 2,
+        "sha": "14622eac1e9dc20e58411ceea59cf7ea053724936c637dbd2413596a5ba331e1"
+      }
+    },
+    {
+      "minimumDrawbarMarginMm": 0.6829371390766212,
+      "edges": [
+        "V06-P015",
+        "V06-P014",
+        "V06-P078",
+        "V06-P060",
+        "V06-P069"
+      ],
+      "p50StepAndRenderMs": 0.09999999776482582,
+      "p95StepAndRenderMs": 0.19999999925494194,
+      "scenario": "v06",
+      "signedDistanceForwardMm": 420,
+      "reverseReturn": true,
+      "stopStable": true,
+      "all19AxlesRotate": true,
+      "info": {
+        "calls": 80,
+        "triangles": 242660,
+        "axles": 19,
+        "rodParts": 2,
+        "sha": "14622eac1e9dc20e58411ceea59cf7ea053724936c637dbd2413596a5ba331e1"
+      }
+    }
+  ],
+  "pageErrors": []
+}
