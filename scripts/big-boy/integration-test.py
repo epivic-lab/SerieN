@@ -5,7 +5,7 @@ import base64, json, math, os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-OUT=Path('docs/_active/rolling-stock/evidence/L02-G')
+OUT=Path(os.environ.get('SERIEN_EVIDENCE','docs/_active/rolling-stock/evidence/L02-G'))
 OUT.mkdir(parents=True,exist_ok=True)
 BASE=os.environ.get('SERIEN_URL','http://127.0.0.1:8027/')
 
@@ -133,6 +133,6 @@ def run_case(browser,scenario):
     result={'scenario':scenario,'stock':current,'lapSamples':samples,'protectedTurnout':protected,'errors':errors,'httpErrors':responses,'audioWarnings':audioWarnings}
     (OUT/(scenario+'-browser.json')).write_text(json.dumps(result,indent=2)+'\n');print(scenario+' PASS',flush=True);page.close();return result
 with sync_playwright() as p:
- browser=p.chromium.launch(executable_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless=True)
+ browser=p.chromium.launch(executable_path=os.environ.get('CHROMIUM_PATH','/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'),headless=True)
  results=[run_case(browser,s) for s in ['legacy','v06']]
  (OUT/'browser.json').write_text(json.dumps(results,indent=2)+'\n');browser.close()

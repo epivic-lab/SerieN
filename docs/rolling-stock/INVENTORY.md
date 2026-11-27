@@ -4,16 +4,18 @@ Rilevazione Drive del **19 novembre 2026**. Nelle cinque sottocartelle sono pres
 
 Le intestazioni riprendono i nomi esatti delle cartelle nella libreria Drive fornita dall’utente. Le dimensioni sono espresse in MB decimali. Le licenze esplicitate sono state lette dai sorgenti o dalle attribuzioni versionate. Per le altre voci restano da verificare licenza, provenienza e possibilità di ridistribuzione prima dell’integrazione.
 
-**Stato L02-G (27 novembre 2026).** Big Boy integrata nel catalogo e runtime del
+**Stato L02-H (27 novembre 2026).** Big Boy integrata nel catalogo e runtime del
 branch `codex/rolling-stock-l02-big-boy`, come unità fissa con tender. Prove Legacy/V06
 eseguite; [rapporto e limiti](../_active/rolling-stock/evidence/L02-G/README.md).
-Non ancora integrata in main né pubblicata. La sequenza delle altre voci è da definire.
+Audit di rilascio completato; [PR #29](https://github.com/epivic-lab/SerieN/pull/29)
+registra merge e pubblicazione. [Handoff permanente](BIG_BOY_FINAL_REPORT.md).
+La sequenza delle altre voci è da definire.
 
 ## `01_Locomotive` · 9 file
 
 | File sorgente | MB | Stato | Verifica per la ripresa |
 | --- | ---: | --- | --- |
-| `steam_locomotive_union_pacific_bigboy.glb` | 125,11 | Integrata sul branch · L02-G | Catalogo/runtime e prove Legacy/V06; tender fisso, rilascio in attesa di audit. [Rapporto L02-G](../_active/rolling-stock/evidence/L02-G/README.md) |
+| `steam_locomotive_union_pacific_bigboy.glb` | 125,11 | Qualificata per rilascio · L02-H | Catalogo/runtime, tender fisso; [handoff](BIG_BOY_FINAL_REPORT.md) e [PR di rilascio](https://github.com/epivic-lab/SerieN/pull/29). |
 | `reading_i10sa_steam_locomotive.glb` | 34,94 | Da lavorare | Verificare scala, rapporto motrice–tender e parti del biellismo. |
 | `br52_steam_locomotive_animation.glb` | 29,93 | Da lavorare | Ispezionare le clip e verificare la sincronizzazione alla distanza percorsa. |
 | `steam_locomotive_drb_baureihe_50.glb` | 2,21 | Da lavorare | Verificare suddivisione motrice/tender, ruote e bielle. |

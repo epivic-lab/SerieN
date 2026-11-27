@@ -10,7 +10,7 @@ texture. I cerchioni sono stati riprofilati per le sezioni di rotaia di
 SerieN. Mozzi e razze derivano dal sorgente. Alcuni elementi sotto la
 caldaia e al pancone sono stati regolati per l’articolazione. Le quote
 delle staffe e dei perni del timone sono nel rig. Le parti del timone
-sono generate nella prova Blender. [Rapporto L02-D](../../../docs/_active/rolling-stock/STATUS.md#l02-d--union-pacific-big-boy).
+sono generate nella prova Blender. [Rapporto Big Boy](https://github.com/epivic-lab/SerieN/blob/main/docs/rolling-stock/BIG_BOY_FINAL_REPORT.md).
 
 Adattamento runtime L02-F/G: quartatura corretta, biellismo nominale sostitutivo,
 rilievo laterale di due supporti, staffe e timone animati. GLB L02-D immutato;

@@ -1,5 +1,21 @@
 # Serie N — Stato integrazione rotabili
 
+## L02-H — Big Boy · handoff di rilascio
+
+27 novembre 2026. PASS tecnico: 589/589 test generali, 11/11 cinematici, 9/9 JMRI,
+build e pacchetto completo. Prove browser Legacy/V06, STOP, inversione, scambio
+occupato e ciclo risorse superati. Nessun cambiamento al runtime in H.
+
+[Rapporto permanente](../../rolling-stock/BIG_BOY_FINAL_REPORT.md) ·
+[Audit ed evidenze H](evidence/L02-H/README.md) ·
+[PR #29: fonte dello stato finale di merge/deploy](https://github.com/epivic-lab/SerieN/pull/29).
+Le sezioni L02-A–G seguenti sono storico delle qualifiche, non gate ancora attivi.
+
+**Prossimo passaggio:** L02-I, verifica e accettazione post-rilascio Regia.
+
+---
+
+
 ## L02-G — Big Boy · catalogo e runtime
 
 27 novembre 2026. Aggiunta tramite Train Management, selezione, marcia, inversione,

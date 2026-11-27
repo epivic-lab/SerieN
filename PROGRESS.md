@@ -1,3 +1,18 @@
+# L02-H — Big Boy · qualifica del rilascio
+
+Audit tecnico PASS: 589 test generali, 11 cinematici, 9 JMRI e build. Pacchetto
+Pages completo; Legacy/V06 e due cicli di aggiunta/rimozione superati senza crescita
+GPU. Nessun cambiamento al runtime rispetto al checkpoint L02-G.
+[Rapporto permanente](docs/rolling-stock/BIG_BOY_FINAL_REPORT.md) ·
+[PR #29 e stato finale di merge/pubblicazione](https://github.com/epivic-lab/SerieN/pull/29).
+Branch `codex/rolling-stock-l02-big-boy`; merge ordinario e Pages autorizzati dalla
+Regia dopo i gate. La PR registra i risultati osservati dopo il deploy.
+
+**Prossima azione:** L02-I, verifica e accettazione post-rilascio Regia.
+Nessuna ulteriore implementazione automatica.
+
+---
+
 # L02-G — Big Boy · integrazione operativa sul branch di sviluppo
 
 Modello disponibile nel catalogo e aggiungibile al plastico come unità con tender
