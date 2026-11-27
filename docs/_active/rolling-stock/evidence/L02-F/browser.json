@@ -1,0 +1,295 @@
+{
+  "browser": "158.0.8127.89",
+  "checks": [
+    {
+      "minimumDrawbarMarginMm": 0.6837656100991847,
+      "edges": [
+        "WX-A:lower",
+        "T6",
+        "T41",
+        "TO0:AB",
+        "TO3:AB",
+        "T27"
+      ],
+      "p50StepAndRenderMs": 0.19999999552965164,
+      "p95StepAndRenderMs": 0.7000000029802322,
+      "scenario": "legacy",
+      "renderedQuartering": [
+        {
+          "axle": "engine_rear_axle_01",
+          "measuredRenderedPhaseDegrees": 89.99671998470869,
+          "caps": {
+            "1": {
+              "alongMm": -1.775004267692566,
+              "heightMm": 1.7805157899856576
+            },
+            "-1": {
+              "alongMm": 1.780311942100525,
+              "heightMm": 1.775004267692566
+            }
+          }
+        },
+        {
+          "axle": "engine_rear_axle_02",
+          "measuredRenderedPhaseDegrees": 89.99852474072674,
+          "caps": {
+            "1": {
+              "alongMm": -1.780609905719757,
+              "heightMm": 1.780217409133912
+            },
+            "-1": {
+              "alongMm": 1.780124843120575,
+              "heightMm": 1.7806090116500854
+            }
+          }
+        },
+        {
+          "axle": "engine_rear_axle_03",
+          "measuredRenderedPhaseDegrees": 89.99409402858883,
+          "caps": {
+            "1": {
+              "alongMm": -1.7800222635269165,
+              "heightMm": 1.7802278399467477
+            },
+            "-1": {
+              "alongMm": 1.7800447344779968,
+              "heightMm": 1.7802061438560486
+            }
+          }
+        },
+        {
+          "axle": "engine_rear_axle_04",
+          "measuredRenderedPhaseDegrees": 90.002861155275,
+          "caps": {
+            "1": {
+              "alongMm": -1.7799659967422485,
+              "heightMm": 1.7800464630126962
+            },
+            "-1": {
+              "alongMm": 1.78031325340271,
+              "heightMm": 1.7800549864768982
+            }
+          }
+        },
+        {
+          "axle": "engine_front_axle_01",
+          "measuredRenderedPhaseDegrees": 90.0076180621262,
+          "caps": {
+            "1": {
+              "alongMm": 1.7799421548843384,
+              "heightMm": -1.7767845392227175
+            },
+            "-1": {
+              "alongMm": -1.7767845392227173,
+              "heightMm": -1.7794688940048218
+            }
+          }
+        },
+        {
+          "axle": "engine_front_axle_02",
+          "measuredRenderedPhaseDegrees": 89.92106636398535,
+          "caps": {
+            "1": {
+              "alongMm": 1.7796698212623596,
+              "heightMm": -1.7848328948020937
+            },
+            "-1": {
+              "alongMm": -1.7802694439888,
+              "heightMm": -1.7800173163414001
+            }
+          }
+        },
+        {
+          "axle": "engine_front_axle_03",
+          "measuredRenderedPhaseDegrees": 90.01343629323637,
+          "caps": {
+            "1": {
+              "alongMm": 1.7801111340522766,
+              "heightMm": -1.7808418869972231
+            },
+            "-1": {
+              "alongMm": -1.780841886997223,
+              "heightMm": -1.779276430606842
+            }
+          }
+        },
+        {
+          "axle": "engine_front_axle_04",
+          "measuredRenderedPhaseDegrees": 89.99380944475465,
+          "caps": {
+            "1": {
+              "alongMm": 1.7802793979644775,
+              "heightMm": -1.7806817293167116
+            },
+            "-1": {
+              "alongMm": -1.7802969813346863,
+              "heightMm": -1.7802793979644775
+            }
+          }
+        }
+      ],
+      "signedDistanceForwardMm": 420,
+      "reverseReturn": true,
+      "stopStable": true,
+      "all19AxlesRotate": true,
+      "info": {
+        "calls": 112,
+        "triangles": 232707,
+        "axles": 19,
+        "rodParts": 4,
+        "gearInstances": {
+          "bar": 48,
+          "eye": 88,
+          "pin": 72
+        },
+        "removedSourceTriangles": 43297,
+        "sha": "14622eac1e9dc20e58411ceea59cf7ea053724936c637dbd2413596a5ba331e1"
+      }
+    },
+    {
+      "minimumDrawbarMarginMm": 0.6829371390766212,
+      "edges": [
+        "V06-P015",
+        "V06-P014",
+        "V06-P078",
+        "V06-P060",
+        "V06-P069"
+      ],
+      "p50StepAndRenderMs": 0.10000000149011612,
+      "p95StepAndRenderMs": 0.20000000298023224,
+      "scenario": "v06",
+      "renderedQuartering": [
+        {
+          "axle": "engine_rear_axle_01",
+          "measuredRenderedPhaseDegrees": 89.99671998470892,
+          "caps": {
+            "1": {
+              "alongMm": -1.775004267692566,
+              "heightMm": 1.7805157899856576
+            },
+            "-1": {
+              "alongMm": 1.7803119421005391,
+              "heightMm": 1.775004267692566
+            }
+          }
+        },
+        {
+          "axle": "engine_rear_axle_02",
+          "measuredRenderedPhaseDegrees": 89.99852474072674,
+          "caps": {
+            "1": {
+              "alongMm": -1.7806099057197855,
+              "heightMm": 1.780217409133912
+            },
+            "-1": {
+              "alongMm": 1.7801248431205465,
+              "heightMm": 1.7806090116500854
+            }
+          }
+        },
+        {
+          "axle": "engine_rear_axle_03",
+          "measuredRenderedPhaseDegrees": 89.9940940285886,
+          "caps": {
+            "1": {
+              "alongMm": -1.7800222635269307,
+              "heightMm": 1.7802278399467477
+            },
+            "-1": {
+              "alongMm": 1.7800447344779684,
+              "heightMm": 1.7802061438560486
+            }
+          }
+        },
+        {
+          "axle": "engine_rear_axle_04",
+          "measuredRenderedPhaseDegrees": 90.00286115527567,
+          "caps": {
+            "1": {
+              "alongMm": -1.7799659967422627,
+              "heightMm": 1.7800464630126962
+            },
+            "-1": {
+              "alongMm": 1.7803132534027384,
+              "heightMm": 1.7800549864768982
+            }
+          }
+        },
+        {
+          "axle": "engine_front_axle_01",
+          "measuredRenderedPhaseDegrees": 90.00761806212617,
+          "caps": {
+            "1": {
+              "alongMm": 1.7799421548842815,
+              "heightMm": -1.7767845392227184
+            },
+            "-1": {
+              "alongMm": -1.7767845392227741,
+              "heightMm": -1.7794688940048227
+            }
+          }
+        },
+        {
+          "axle": "engine_front_axle_02",
+          "measuredRenderedPhaseDegrees": 89.92106636398532,
+          "caps": {
+            "1": {
+              "alongMm": 1.779669821262388,
+              "heightMm": -1.7848328948020946
+            },
+            "-1": {
+              "alongMm": -1.7802694439887716,
+              "heightMm": -1.780017316341401
+            }
+          }
+        },
+        {
+          "axle": "engine_front_axle_03",
+          "measuredRenderedPhaseDegrees": 90.01343629323588,
+          "caps": {
+            "1": {
+              "alongMm": 1.7801111340522482,
+              "heightMm": -1.780841886997224
+            },
+            "-1": {
+              "alongMm": -1.780841886997223,
+              "heightMm": -1.779276430606843
+            }
+          }
+        },
+        {
+          "axle": "engine_front_axle_04",
+          "measuredRenderedPhaseDegrees": 89.99380944475462,
+          "caps": {
+            "1": {
+              "alongMm": 1.780279397964506,
+              "heightMm": -1.7806817293167125
+            },
+            "-1": {
+              "alongMm": -1.7802969813346579,
+              "heightMm": -1.7802793979644784
+            }
+          }
+        }
+      ],
+      "signedDistanceForwardMm": 420,
+      "reverseReturn": true,
+      "stopStable": true,
+      "all19AxlesRotate": true,
+      "info": {
+        "calls": 97,
+        "triangles": 232707,
+        "axles": 19,
+        "rodParts": 4,
+        "gearInstances": {
+          "bar": 48,
+          "eye": 88,
+          "pin": 72
+        },
+        "removedSourceTriangles": 43297,
+        "sha": "14622eac1e9dc20e58411ceea59cf7ea053724936c637dbd2413596a5ba331e1"
+      }
+    }
+  ],
+  "pageErrors": []
+}

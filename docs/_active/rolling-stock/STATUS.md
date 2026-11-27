@@ -1,6 +1,23 @@
 # Serie N — Stato integrazione rotabili
 
-## L02-E — Union Pacific Big Boy · banco browser
+## L02-F — Union Pacific Big Boy · PASS tecnico campionato
+
+27 novembre 2026. Quartatura corretta e biellismo nominale animato sui quattro lati.
+Il difetto originale resta documentato come fixture negativa; il candidato supera
+la misura indipendente e quella dei vertici renderizzati. Quote visive nominali,
+non ricostruzione certificata ALCO né simulazione del ciclo vapore.
+
+PASS: 648 configurazioni BVH, 584 test applicativi, 11 cinematici/geometrici,
+8 metrologici, 9 JMRI, build e Chrome Legacy/V06 (420 mm, STOP e inversione).
+Le esclusioni dei giunti, le modifiche locali al modello e i limiti della scansione
+sono espliciti nel [rapporto](evidence/L02-F/README.md). Produzione e binari invariati.
+
+**Prossima sottofase: L02-G**, integrazione nel catalogo e verifiche operative Big Boy.
+STOP per audit e approvazione Regia; nessuna autorizzazione implicita a merge/deploy.
+
+---
+
+# L02-E — Union Pacific Big Boy · banco browser
 
 **27 novembre 2026 · PASS tecnico del banco isolato e della prima animazione.**
 Base `239fbfc11dc4e601b977297e460979ed64610e35`, stesso branch dedicato.

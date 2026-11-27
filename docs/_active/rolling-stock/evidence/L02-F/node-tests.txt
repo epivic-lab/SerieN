@@ -1,0 +1,2934 @@
+
+> serien@0.12.0 test
+> node --test tests/*.test.js
+
+TAP version 13
+# Subtest: unauthenticated never calls authorization RPC
+ok 1 - unauthenticated never calls authorization RPC
+  ---
+  duration_ms: 2.37025
+  ...
+# Subtest: server-authorized, verified session unlocks
+ok 2 - server-authorized, verified session unlocks
+  ---
+  duration_ms: 3.769
+  ...
+# Subtest: server-denied identity cannot unlock
+ok 3 - server-denied identity cannot unlock
+  ---
+  duration_ms: 0.349834
+  ...
+# Subtest: RPC errors are fail-closed
+ok 4 - RPC errors are fail-closed
+  ---
+  duration_ms: 0.27675
+  ...
+# Subtest: identity errors are fail-closed
+ok 5 - identity errors are fail-closed
+  ---
+  duration_ms: 2.024791
+  ...
+# Subtest: a missing session is fail-closed
+ok 6 - a missing session is fail-closed
+  ---
+  duration_ms: 0.15025
+  ...
+# Subtest: bound auxiliary wheels match 5C signed rotations through loading, release and same-size child replacement
+ok 7 - bound auxiliary wheels match 5C signed rotations through loading, release and same-size child replacement
+  ---
+  duration_ms: 11.082291
+  ...
+# Subtest: Kenney assets include the CC0 license and all referenced local textures
+ok 8 - Kenney assets include the CC0 license and all referenced local textures
+  ---
+  duration_ms: 23.303791
+  ...
+# Subtest: BR 01 uses the mounted pitch while both protected rectangles cover the gap
+ok 9 - BR 01 uses the mounted pitch while both protected rectangles cover the gap
+  ---
+  duration_ms: 13.982417
+  ...
+# Subtest: fixed members stay on their respective pins and stow on release
+ok 10 - fixed members stay on their respective pins and stow on release
+  ---
+  duration_ms: 8.993
+  ...
+# Subtest: BR 01 opposing trains stop before physical envelopes touch and rejected steps retain distance
+ok 11 - BR 01 opposing trains stop before physical envelopes touch and rejected steps retain distance
+  ---
+  duration_ms: 83.390916
+  ...
+# Subtest: verified lazy cache avoids repeat transfer and coalesces parallel requests
+ok 12 - verified lazy cache avoids repeat transfer and coalesces parallel requests
+  ---
+  duration_ms: 143.259334
+  ...
+# Subtest: install caches shell only; activation preserves another application and unchanged resources
+ok 13 - install caches shell only; activation preserves another application and unchanged resources
+  ---
+  duration_ms: 22.527291
+  ...
+# Subtest: new release downloads only changed content; failed update keeps prior shell
+ok 14 - new release downloads only changed content; failed update keeps prior shell
+  ---
+  duration_ms: 46.545292
+  ...
+# Subtest: bad hashes, missing resources never enter cache; storage failures fall back to verified network
+ok 15 - bad hashes, missing resources never enter cache; storage failures fall back to verified network
+  ---
+  duration_ms: 27.658125
+  ...
+# Subtest: Auth, API, cross-origin, range and unknown query requests bypass cache
+ok 16 - Auth, API, cross-origin, range and unknown query requests bypass cache
+  ---
+  duration_ms: 5.193542
+  ...
+# Subtest: prepared broad phase agrees with the frozen 5C SAT for rotations, corners, contact, crossing and separated envelopes
+ok 17 - prepared broad phase agrees with the frozen 5C SAT for rotations, corners, contact, crossing and separated envelopes
+  ---
+  duration_ms: 1678.277708
+  ...
+# Subtest: prepared per-step geometry preserves 5C fleet trajectories, atomic rollback and commands
+ok 18 - prepared per-step geometry preserves 5C fleet trajectories, atomic rollback and commands
+  ---
+  duration_ms: 6125.075542
+  ...
+# Subtest: broad bounds retain the 5C corner contact within its SAT tolerance
+ok 19 - broad bounds retain the 5C corner contact within its SAT tolerance
+  ---
+  duration_ms: 0.291417
+  ...
+# Subtest: native pitch stays unchanged; imported pairs compact to their individual couplers
+ok 20 - native pitch stays unchanged; imported pairs compact to their individual couplers
+  ---
+  duration_ms: 3.248125
+  ...
+# Subtest: partial loading and switching back use active metadata without a fixed imported pitch
+ok 21 - partial loading and switching back use active metadata without a fixed imported pitch
+  ---
+  duration_ms: 1.169167
+  ...
+# Subtest: compact consists stay on the route across crossovers and reverse to the same positions
+ok 22 - compact consists stay on the route across crossovers and reverse to the same positions
+  ---
+  duration_ms: 53.656375
+  ...
+# Subtest: detach and immediate recouple preserve the compact wagon position
+ok 23 - detach and immediate recouple preserve the compact wagon position
+  ---
+  duration_ms: 3.956375
+  ...
+# Subtest: compact maximum-sized Kenney bodies remain separate on the R249 curve
+ok 24 - compact maximum-sized Kenney bodies remain separate on the R249 curve
+  ---
+  duration_ms: 3.374958
+  ...
+# Subtest: catalog definitions, planned vehicles, physical groups and duplicate off-scene records never share identities or state
+ok 25 - catalog definitions, planned vehicles, physical groups and duplicate off-scene records never share identities or state
+  ---
+  duration_ms: 23.148125
+  ...
+# Subtest: reservations are exclusive for an exact confirmed project slot, with same-model instances independent
+ok 26 - reservations are exclusive for an exact confirmed project slot, with same-model instances independent
+  ---
+  duration_ms: 3.223208
+  ...
+# Subtest: invalid models, identities, wrong model and non-confirmed targets reject without partial mutations
+ok 27 - invalid models, identities, wrong model and non-confirmed targets reject without partial mutations
+  ---
+  duration_ms: 13.384917
+  ...
+# Subtest: cancelled M2 edits keep reservations; confirmed reorder, name and orientation retain the original slot identity
+ok 28 - cancelled M2 edits keep reservations; confirmed reorder, name and orientation retain the original slot identity
+  ---
+  duration_ms: 2.563125
+  ...
+# Subtest: confirmed removal releases only obsolete references and never rebinds to an identical model
+ok 29 - confirmed removal releases only obsolete references and never rebinds to an identical model
+  ---
+  duration_ms: 1.093083
+  ...
+# Subtest: a missing project or changed model releases a reservation without changing project data
+ok 30 - a missing project or changed model releases a reservation without changing project data
+  ---
+  duration_ms: 0.340958
+  ...
+# Subtest: copied real projects keep physical source references while the depot holds only a virtual planning relation
+ok 31 - copied real projects keep physical source references while the depot holds only a virtual planning relation
+  ---
+  duration_ms: 3.378875
+  ...
+# Subtest: railway projection preserves UUID through detach/recouple and reset refreshes generations, without absorbing real stock
+ok 32 - railway projection preserves UUID through detach/recouple and reset refreshes generations, without absorbing real stock
+  ---
+  duration_ms: 16.3135
+  ...
+# Subtest: duplicate/generated wrong-namespace IDs are rejected atomically and dispose releases inventory state
+ok 33 - duplicate/generated wrong-namespace IDs are rejected atomically and dispose releases inventory state
+  ---
+  duration_ms: 1.846958
+  ...
+# Subtest: fleet commands match historical state transitions/messages for legacy and catalogued consists
+ok 34 - fleet commands match historical state transitions/messages for legacy and catalogued consists
+  ---
+  duration_ms: 13.474458
+  ...
+# Subtest: detach/recouple transfers exactly the same physical group at the same route position
+ok 35 - detach/recouple transfers exactly the same physical group at the same route position
+  ---
+  duration_ms: 1.777333
+  ...
+# Subtest: blocked coupling preserves identities and counts when distant, reversed, full or without room
+ok 36 - blocked coupling preserves identities and counts when distant, reversed, full or without room
+  ---
+  duration_ms: 8.283666
+  ...
+# Subtest: simple commands preserve missing-ID behavior and stop every fleet member
+ok 37 - simple commands preserve missing-ID behavior and stop every fleet member
+  ---
+  duration_ms: 0.409625
+  ...
+# Subtest: Home framing contains all eight physical base corners, including the previously clipped lower right corner
+ok 38 - Home framing contains all eight physical base corners, including the previously clipped lower right corner
+  ---
+  duration_ms: 13.024917
+  ...
+# Subtest: polished rail heads and weathered webs have distinct PBR properties without moving rail geometry
+ok 39 - polished rail heads and weathered webs have distinct PBR properties without moving rail geometry
+  ---
+  duration_ms: 26.933458
+  ...
+# Subtest: ballast and terrain textures are reproducible and distinguish sRGB albedo from linear height/roughness
+ok 40 - ballast and terrain textures are reproducible and distinguish sRGB albedo from linear height/roughness
+  ---
+  duration_ms: 666.104167
+  ...
+# Subtest: tightened shadow camera contains the complete table and tallest scenery with a low contact bias
+ok 41 - tightened shadow camera contains the complete table and tallest scenery with a low contact bias
+  ---
+  duration_ms: 1.692959
+  ...
+# Subtest: STOP observation is read only and distinguishes braking, parked/manual, unknown position and physical guards
+ok 42 - STOP observation is read only and distinguishes braking, parked/manual, unknown position and physical guards
+  ---
+  duration_ms: 86.437416
+  ...
+# Subtest: STOP transition durations, continuity, reduced motion and bounded micro overshoot
+ok 43 - STOP transition durations, continuity, reduced motion and bounded micro overshoot
+  ---
+  duration_ms: 1.177375
+  ...
+# Subtest: one global bell, gesture gate, mute, immediate silence, interrupted resume and idempotent cleanup
+ok 44 - one global bell, gesture gate, mute, immediate silence, interrupted resume and idempotent cleanup
+  ---
+  duration_ms: 1.553333
+  ...
+# Subtest: Henschel model normalizes a source to N scale and preserves traction metadata
+ok 45 - Henschel model normalizes a source to N scale and preserves traction metadata
+  ---
+  duration_ms: 30.563916
+  ...
+# Subtest: Henschel refuses empty and invalid sources
+ok 46 - Henschel refuses empty and invalid sources
+  ---
+  duration_ms: 0.78
+  ...
+# Subtest: actual GLB geometry separates six physical wheels and animates their rotation
+ok 47 - actual GLB geometry separates six physical wheels and animates their rotation
+  ---
+  duration_ms: 141.338584
+  ...
+# Subtest: forest generation is deterministic with railway and building clearance
+ok 48 - forest generation is deterministic with railway and building clearance
+  ---
+  duration_ms: 4377.400667
+  ...
+# Subtest: terrain stays flat on tracks and underneath buildings
+ok 49 - terrain stays flat on tracks and underneath buildings
+  ---
+  duration_ms: 4688.279958
+  ...
+# Subtest: landscape heights remain finite and below scenic ceiling
+ok 50 - landscape heights remain finite and below scenic ceiling
+  ---
+  duration_ms: 2622.519667
+  ...
+# Subtest: seeded random does not depend on frame rate or browser random state
+ok 51 - seeded random does not depend on frame rate or browser random state
+  ---
+  duration_ms: 1.134459
+  ...
+# Subtest: station and yard presets converge without touching the railway
+ok 52 - station and yard presets converge without touching the railway
+  ---
+  duration_ms: 40.518084
+  ...
+# Subtest: camera transitions use elapsed real time, independent of frame frequency
+ok 53 - camera transitions use elapsed real time, independent of frame frequency
+  ---
+  duration_ms: 2.81625
+  ...
+# Subtest: follow changes target for the selected train; a manual orbit cancels it
+ok 54 - follow changes target for the selected train; a manual orbit cancels it
+  ---
+  duration_ms: 9.055292
+  ...
+# Subtest: eye stays above terrain and rotated building footprints, while target pan is bounded
+ok 55 - eye stays above terrain and rotated building footprints, while target pan is bounded
+  ---
+  duration_ms: 0.433375
+  ...
+# Subtest: invalid poses cannot produce NaNs, and dispose removes gesture handling
+ok 56 - invalid poses cannot produce NaNs, and dispose removes gesture handling
+  ---
+  duration_ms: 1.004167
+  ...
+# Subtest: perspective camera supports all presets and follow with finite projections
+ok 57 - perspective camera supports all presets and follow with finite projections
+  ---
+  duration_ms: 7.179208
+  ...
+# Subtest: minimap focus centres once on the clicked locomotive and preserves manual control
+ok 58 - minimap focus centres once on the clicked locomotive and preserves manual control
+  ---
+  duration_ms: 7.252834
+  ...
+# Subtest: held follow arrows integrate by time, keep the train centered and reset on re-entry
+ok 59 - held follow arrows integrate by time, keep the train centered and reset on re-entry
+  ---
+  duration_ms: 1.941167
+  ...
+# Subtest: V06 locomotive heading used by Follow stays continuous through vertices in either direction
+ok 60 - V06 locomotive heading used by Follow stays continuous through vertices in either direction
+  ---
+  duration_ms: 18.723667
+  ...
+# Subtest: Follow adjusts distance, holds it on release, and can descend below the layout
+ok 61 - Follow adjusts distance, holds it on release, and can descend below the layout
+  ---
+  duration_ms: 2.743792
+  ...
+# Subtest: canonical source preserves all XML identifiers, contracts only two zero connectors and documents small joins
+ok 62 - canonical source preserves all XML identifiers, contracts only two zero connectors and documents small joins
+  ---
+  duration_ms: 45.977916
+  ...
+# Subtest: all three nominal Kato loops close in both senses for three complete laps without jumps
+ok 63 - all three nominal Kato loops close in both senses for three complete laps without jumps
+  ---
+  duration_ms: 225.853833
+  ...
+# Subtest: all eight switches route every entrance in both states; single turnout B-C traversal is impossible
+ok 64 - all eight switches route every entrance in both states; single turnout B-C traversal is impossible
+  ---
+  duration_ms: 1.701584
+  ...
+# Subtest: both crossover diagonals are traversable in either sense and do not join at the diamond
+ok 65 - both crossover diagonals are traversable in either sense and do not join at the diamond
+  ---
+  duration_ms: 10.6125
+  ...
+# Subtest: every terminal is accessible from the inner mainline with a documented static switch setting and can reverse
+ok 66 - every terminal is accessible from the inner mainline with a documented static switch setting and can reverse
+  ---
+  duration_ms: 57.389833
+  ...
+# Subtest: runaround main and alternate paths connect the same two toe leads with legal reversing maneuvers
+ok 67 - runaround main and alternate paths connect the same two toe leads with legal reversing maneuvers
+  ---
+  duration_ms: 6.987083
+  ...
+# Subtest: no parallel-track proximity or drawn crossing creates a graph junction
+ok 68 - no parallel-track proximity or drawn crossing creates a graph junction
+  ---
+  duration_ms: 70.164584
+  ...
+# Subtest: buffer stopping protects the complete consist and safe switch change trims only unoccupied cached ribbon
+ok 69 - buffer stopping protects the complete consist and safe switch change trims only unoccupied cached ribbon
+  ---
+  duration_ms: 1.099458
+  ...
+# Subtest: fixed-step simulation gives the same distance at different rendering rates
+ok 70 - fixed-step simulation gives the same distance at different rendering rates
+  ---
+  duration_ms: 2.435125
+  ...
+# Subtest: eight controls represent six distinct single turnouts and two complete crossover units
+ok 71 - eight controls represent six distinct single turnouts and two complete crossover units
+  ---
+  duration_ms: 2.543916
+  ...
+# Subtest: each loop previews the first real switch by graph distance in either direction
+ok 72 - each loop previews the first real switch by graph distance in either direction
+  ---
+  duration_ms: 257.412959
+  ...
+# Subtest: every WX entrance uses the real selection in both states, with exact five millimetre approach
+ok 73 - every WX entrance uses the real selection in both states, with exact five millimetre approach
+  ---
+  duration_ms: 41.085125
+  ...
+# Subtest: four terminals are real end nodes; reverse preview and wagon offsets follow actual ribbon
+ok 74 - four terminals are real end nodes; reverse preview and wagon offsets follow actual ribbon
+  ---
+  duration_ms: 0.798
+  ...
+# Subtest: yard topology identifies both accesses and runaround branch switch states rather than old five-way junctions
+ok 75 - yard topology identifies both accesses and runaround branch switch states rather than old five-way junctions
+  ---
+  duration_ms: 1.255584
+  ...
+# Subtest: cached route conflicts stop prediction; safe reconciliation makes the current selection authoritative
+ok 76 - cached route conflicts stop prediction; safe reconciliation makes the current selection authoritative
+  ---
+  duration_ms: 81.326875
+  ...
+# Subtest: missing mapping and unavailable routing never invent destinations
+ok 77 - missing mapping and unavailable routing never invent destinations
+  ---
+  duration_ms: 0.369917
+  ...
+# Subtest: occupied switch bodies, incident tracks and braking envelopes block unsafe commands
+ok 78 - occupied switch bodies, incident tracks and braking envelopes block unsafe commands
+  ---
+  duration_ms: 0.606625
+  ...
+# Subtest: schematic and temporary red ribbon derive exactly from canonical paths without mutating rails
+ok 79 - schematic and temporary red ribbon derive exactly from canonical paths without mutating rails
+  ---
+  duration_ms: 188.323667
+  ...
+# Subtest: forest crown envelopes clear railway, landmarks, buildings and working surfaces
+ok 80 - forest crown envelopes clear railway, landmarks, buildings and working surfaces
+  ---
+  duration_ms: 3609.558209
+  ...
+# Subtest: hard surfaces are level across their footprint and stay outside the railway envelope
+ok 81 - hard surfaces are level across their footprint and stay outside the railway envelope
+  ---
+  duration_ms: 34.802833
+  ...
+# Subtest: rear countryside and loading aisle integrate without moving railway or station
+ok 82 - rear countryside and loading aisle integrate without moving railway or station
+  ---
+  duration_ms: 105.198916
+  ...
+# Subtest: leaving Cinema releases the actual Bloom high-pass material from the renderer shader cache
+ok 83 - leaving Cinema releases the actual Bloom high-pass material from the renderer shader cache
+  ---
+  duration_ms: 51.964625
+  ...
+# Subtest: two sustained slow windows reduce high quality, a short spike does not
+ok 84 - two sustained slow windows reduce high quality, a short spike does not
+  ---
+  duration_ms: 38.361958
+  ...
+# Subtest: quality only recovers after sustained fast windows and does not oscillate with mixed load
+ok 85 - quality only recovers after sustained fast windows and does not oscillate with mixed load
+  ---
+  duration_ms: 29.859
+  ...
+# Subtest: manual profiles including cinema always override automatic adaptation
+ok 86 - manual profiles including cinema always override automatic adaptation
+  ---
+  duration_ms: 6.526833
+  ...
+# Subtest: tab invisibility and first return frame cannot trigger a quality change
+ok 87 - tab invisibility and first return frame cannot trigger a quality change
+  ---
+  duration_ms: 6.586333
+  ...
+# Subtest: invalid timing samples are ignored and mode names are validated
+ok 88 - invalid timing samples are ignored and mode names are validated
+  ---
+  duration_ms: 17.927708
+  ...
+# Subtest: S5 Y-IN: every port/state and both Journey axes respect actual routing
+ok 89 - S5 Y-IN: every port/state and both Journey axes respect actual routing
+  ---
+  duration_ms: 198.859
+  ...
+# Subtest: S5 Y-R1: every port/state and both Journey axes respect actual routing
+ok 90 - S5 Y-R1: every port/state and both Journey axes respect actual routing
+  ---
+  duration_ms: 224.266834
+  ...
+# Subtest: S5 Y-R2: every port/state and both Journey axes respect actual routing
+ok 91 - S5 Y-R2: every port/state and both Journey axes respect actual routing
+  ---
+  duration_ms: 119.619042
+  ...
+# Subtest: S5 Y-3: every port/state and both Journey axes respect actual routing
+ok 92 - S5 Y-3: every port/state and both Journey axes respect actual routing
+  ---
+  duration_ms: 67.88375
+  ...
+# Subtest: S5 Y-4: every port/state and both Journey axes respect actual routing
+ok 93 - S5 Y-4: every port/state and both Journey axes respect actual routing
+  ---
+  duration_ms: 40.251084
+  ...
+# Subtest: S5 Y-2: every port/state and both Journey axes respect actual routing
+ok 94 - S5 Y-2: every port/state and both Journey axes respect actual routing
+  ---
+  duration_ms: 202.542166
+  ...
+# Subtest: S5 WX-A: every port/state and both Journey axes respect actual routing
+ok 95 - S5 WX-A: every port/state and both Journey axes respect actual routing
+  ---
+  duration_ms: 260.61775
+  ...
+# Subtest: S5 WX-B: every port/state and both Journey axes respect actual routing
+ok 96 - S5 WX-B: every port/state and both Journey axes respect actual routing
+  ---
+  duration_ms: 154.533667
+  ...
+# Subtest: S5 high speed, tiny residual gap: bumper never crosses the first forbidden port, even with cached history
+ok 97 - S5 high speed, tiny residual gap: bumper never crosses the first forbidden port, even with cached history
+  ---
+  duration_ms: 2.5275
+  ...
+# Subtest: S5 cached unused route is revalidated and refreshed after a legal state change; no invented central WX junction
+ok 98 - S5 cached unused route is revalidated and refreshed after a legal state change; no invented central WX junction
+  ---
+  duration_ms: 2.428208
+  ...
+# Subtest: S5 UNKNOWN fails closed for raw unknown states, ambiguous/missing routes and malformed reservations
+ok 99 - S5 UNKNOWN fails closed for raw unknown states, ambiguous/missing routes and malformed reservations
+  ---
+  duration_ms: 2.38525
+  ...
+# Subtest: S5 foreign reservations stop before their interval, own reservations admit transit, release requires explicit rearm
+ok 100 - S5 foreign reservations stop before their interval, own reservations admit transit, release requires explicit rearm
+  ---
+  duration_ms: 10.438084
+  ...
+# Subtest: S5 recovery: aligned turnout and reverse away clear guard, manual stop and STOP ALL never auto-restart
+ok 101 - S5 recovery: aligned turnout and reverse away clear guard, manual stop and STOP ALL never auto-restart
+  ---
+  duration_ms: 63.249083
+  ...
+# Subtest: S5 large dt, background resume and frame rates cannot bypass admission; invalid dt rejected atomically
+ok 102 - S5 large dt, background resume and frame rates cannot bypass admission; invalid dt rejected atomically
+  ---
+  duration_ms: 186.300625
+  ...
+# Subtest: S5 terminal braking covers short and long consists in both directions; reversal leaves the buffer
+ok 103 - S5 terminal braking covers short and long consists in both directions; reversal leaves the buffer
+  ---
+  duration_ms: 48.098583
+  ...
+# Subtest: S5 predictive margin uses graph distance, not geometric proximity; full legal loops keep exact motion
+ok 104 - S5 predictive margin uses graph distance, not geometric proximity; full legal loops keep exact motion
+  ---
+  duration_ms: 945.420083
+  ...
+# Subtest: S5 reproduces and prevents the stale-history crossing admitted by the old engine
+ok 105 - S5 reproduces and prevents the stale-history crossing admitted by the old engine
+  ---
+  duration_ms: 23.349875
+  ...
+# Subtest: S5 occupation conflicts retain authoritative 5C rollback, including conflict introduced during approach
+ok 106 - S5 occupation conflicts retain authoritative 5C rollback, including conflict introduced during approach
+  ---
+  duration_ms: 18.517667
+  ...
+# Subtest: S5 predictive stop preserves existing operation locks and leaves a blocked switch correctable through the real dispatcher
+ok 107 - S5 predictive stop preserves existing operation locks and leaves a blocked switch correctable through the real dispatcher
+  ---
+  duration_ms: 47.530167
+  ...
+# Subtest: S5 UNKNOWN takes precedence at the same boundary, including inactive ports and directly touching turnouts
+ok 108 - S5 UNKNOWN takes precedence at the same boundary, including inactive ports and directly touching turnouts
+  ---
+  duration_ms: 2.339709
+  ...
+# Subtest: S5 assessment and admission are deterministic read-only core APIs, independent of graphics
+ok 109 - S5 assessment and admission are deterministic read-only core APIs, independent of graphics
+  ---
+  duration_ms: 47.975042
+  ...
+# Subtest: S5 occupation warning persists at rest and releases on departure without a phantom reservation
+ok 110 - S5 occupation warning persists at rest and releases on departure without a phantom reservation
+  ---
+  duration_ms: 43.687375
+  ...
+# Subtest: R01: adjacent-segment overlapping bodies conflict; parallel tracks remain independent
+ok 111 - R01: adjacent-segment overlapping bodies conflict; parallel tracks remain independent
+  ---
+  duration_ms: 1.575667
+  ...
+# Subtest: R02: detached coach keeps independent route history and occupation across turnout joint
+ok 112 - R02: detached coach keeps independent route history and occupation across turnout joint
+  ---
+  duration_ms: 17.816792
+  ...
+# Subtest: R03: invalid inputs reject before mutation and valid clock updates still work
+ok 113 - R03: invalid inputs reject before mutation and valid clock updates still work
+  ---
+  duration_ms: 35.165125
+  ...
+# Subtest: derived layouts, positions, switch routes and safety match v0.12 across 180 fleet states
+ok 114 - derived layouts, positions, switch routes and safety match v0.12 across 180 fleet states
+  ---
+  duration_ms: 1978.607084
+  ...
+# Subtest: read-only assistance can inspect frozen Journey ribbons and keeps actual velocity direction when braking
+ok 115 - read-only assistance can inspect frozen Journey ribbons and keeps actual velocity direction when braking
+  ---
+  duration_ms: 4.208375
+  ...
+# Subtest: A1: native front-on reproduction stops before any adjacent-edge envelope overlap, preserving rejected history and identity
+ok 116 - A1: native front-on reproduction stops before any adjacent-edge envelope overlap, preserving rejected history and identity
+  ---
+  duration_ms: 148.080875
+  ...
+# Subtest: frontals and following conflicts include short/long consists, stationary trains and both approach directions
+ok 117 - frontals and following conflicts include short/long consists, stationary trains and both approach directions
+  ---
+  duration_ms: 3262.885917
+  ...
+# Subtest: candidate rollback cascades to followers and is independent of fleet iteration order
+ok 118 - candidate rollback cascades to followers and is independent of fleet iteration order
+  ---
+  duration_ms: 424.901208
+  ...
+# Subtest: swept envelopes detect a crossing between separated endpoints; parallel movement stays clear
+ok 119 - swept envelopes detect a crossing between separated endpoints; parallel movement stays clear
+  ---
+  duration_ms: 1.758334
+  ...
+# Subtest: three canonical loops allow simultaneous mixed directions and complete laps with no false parallel stop
+ok 120 - three canonical loops allow simultaneous mixed directions and complete laps with no false parallel stop
+  ---
+  duration_ms: 3527.978625
+  ...
+# Subtest: detached wagons stop approach without penetration, permit departure and recouple without lost identities in curves
+ok 121 - detached wagons stop approach without penetration, permit departure and recouple without lost identities in curves
+  ---
+  duration_ms: 249.299958
+  ...
+# Subtest: full fleet, occupation, direction and HUD routes agree at 20/60/120 Hz and irregular frames
+ok 122 - full fleet, occupation, direction and HUD routes agree at 20/60/120 Hz and irregular frames
+  ---
+  duration_ms: 732.37675
+  ...
+# Subtest: all four terminal envelopes stop and reverse short and five-wagon consists with legal route history
+ok 123 - all four terminal envelopes stop and reverse short and five-wagon consists with legal route history
+  ---
+  duration_ms: 62.080667
+  ...
+# Subtest: only the detached coach body across a joint protects TO4 after the locomotive clears
+ok 124 - only the detached coach body across a joint protects TO4 after the locomotive clears
+  ---
+  duration_ms: 2.5375
+  ...
+# Subtest: two trains requesting each WX diamond are stopped before overlap, while its straight parallel routes remain independent
+ok 125 - two trains requesting each WX diamond are stopped before overlap, while its straight parallel routes remain independent
+  ---
+  duration_ms: 157.659
+  ...
+# Subtest: adjacent-edge parked coach can overlap the insertion point despite passing the historical centre-only guard
+ok 126 - adjacent-edge parked coach can overlap the insertion point despite passing the historical centre-only guard
+  ---
+  duration_ms: 0.66
+  ...
+# Subtest: elapsed-time cap and invalid step inputs have explicit, atomic semantics
+ok 127 - elapsed-time cap and invalid step inputs have explicit, atomic semantics
+  ---
+  duration_ms: 2.126208
+  ...
+# Subtest: growth of a frozen detached body cannot claim an old branch after a legal turnout change
+ok 128 - growth of a frozen detached body cannot claim an old branch after a legal turnout change
+  ---
+  duration_ms: 0.4775
+  ...
+# Subtest: recoupling across a joint extends the candidate centre before matching, even after old train history was pruned
+ok 129 - recoupling across a joint extends the candidate centre before matching, even after old train history was pruned
+  ---
+  duration_ms: 0.395541
+  ...
+# Subtest: a misaligned joint cannot be invented to recouple; rejected candidate leaves the real Journey unchanged
+ok 130 - a misaligned joint cannot be invented to recouple; rejected candidate leaves the real Journey unchanged
+  ---
+  duration_ms: 0.301458
+  ...
+# Subtest: stock catalog creates finite original geometry and full coupling envelopes without fixed pitch
+ok 131 - stock catalog creates finite original geometry and full coupling envelopes without fixed pitch
+  ---
+  duration_ms: 545.284209
+  ...
+# Subtest: wheel phases and rods follow signed travelled distance, freeze when stopped, and reverse exactly
+ok 132 - wheel phases and rods follow signed travelled distance, freeze when stopped, and reverse exactly
+  ---
+  duration_ms: 143.318625
+  ...
+# Subtest: coach bogies pivot along actual R249 track chords without changing canonical coordinates
+ok 133 - coach bogies pivot along actual R249 track chords without changing canonical coordinates
+  ---
+  duration_ms: 194.616167
+  ...
+# Subtest: coupling rejects distant, parallel-track and opposite-facing vehicles
+ok 134 - coupling rejects distant, parallel-track and opposite-facing vehicles
+  ---
+  duration_ms: 1.075458
+  ...
+# Subtest: all native adjacent body envelopes have a separating axis on the tight R249 curve
+ok 135 - all native adjacent body envelopes have a separating axis on the tight R249 curve
+  ---
+  duration_ms: 1375.951625
+  ...
+# Subtest: lean route projections preserve 5C routing, distance and highlight; shared units receive complete encounters
+ok 136 - lean route projections preserve 5C routing, distance and highlight; shared units receive complete encounters
+  ---
+  duration_ms: 428.1415
+  ...
+# Subtest: phase 0 protects the exact railway and simulation baseline
+ok 137 - phase 0 protects the exact railway and simulation baseline
+  ---
+  duration_ms: 623.911333
+  ...
+# Subtest: five stable zones inventory the current scene and explicitly exclude tunnels
+ok 138 - five stable zones inventory the current scene and explicitly exclude tunnels
+  ---
+  duration_ms: 0.969417
+  ...
+# Subtest: candidate prop centres respect tracks, buildings, switch landmarks and existing trees
+ok 139 - candidate prop centres respect tracks, buildings, switch landmarks and existing trees
+  ---
+  duration_ms: 15532.28725
+  ...
+# Subtest: the audit reports existing conflicts, including a segment crossing a footprint
+ok 140 - the audit reports existing conflicts, including a segment crossing a footprint
+  ---
+  duration_ms: 0.388708
+  ...
+# Subtest: static instance BVH returns exactly the normal triangle intersections under transformed roots
+ok 141 - static instance BVH returns exactly the normal triangle intersections under transformed roots
+  ---
+  duration_ms: 35.736916
+  ...
+# Subtest: density prefixes, hidden parent and pick-through retain normal visibility semantics
+ok 142 - density prefixes, hidden parent and pick-through retain normal visibility semantics
+  ---
+  duration_ms: 3.254417
+  ...
+# Subtest: moving trains use current transforms; device distance bounds occlusion; raycaster far is restored
+ok 143 - moving trains use current transforms; device distance bounds occlusion; raycaster far is restored
+  ---
+  duration_ms: 4.032791
+  ...
+# Subtest: station occupies the existing site with a credible central body and two lower wings
+ok 144 - station occupies the existing site with a credible central body and two lower wings
+  ---
+  duration_ms: 453.009375
+  ...
+# Subtest: ground floor windows and entry are real openings through structural walls
+ok 145 - ground floor windows and entry are real openings through structural walls
+  ---
+  duration_ms: 311.001042
+  ...
+# Subtest: full building and roofing envelope remain outside the railway loading gauge
+ok 146 - full building and roofing envelope remain outside the railway loading gauge
+  ---
+  duration_ms: 2136.473208
+  ...
+# Subtest: terracotta roof uses shared instanced tiles and no unbounded per-tile objects
+ok 147 - terracotta roof uses shared instanced tiles and no unbounded per-tile objects
+  ---
+  duration_ms: 227.384125
+  ...
+# Subtest: station surface data is deterministic, opaque and valid for all material types
+ok 148 - station surface data is deterministic, opaque and valid for all material types
+  ---
+  duration_ms: 478.266708
+  ...
+# Subtest: roof curvature data drives both relief and physical roughness
+ok 149 - roof curvature data drives both relief and physical roughness
+  ---
+  duration_ms: 74.135625
+  ...
+# Subtest: texture footprint remains bounded and uses millimetres independently of geometry size
+ok 150 - texture footprint remains bounded and uses millimetres independently of geometry size
+  ---
+  duration_ms: 1.772834
+  ...
+# Subtest: shared station maps respect the texture budget and cleanup is idempotent
+ok 151 - shared station maps respect the texture budget and cleanup is idempotent
+  ---
+  duration_ms: 1693.925291
+  ...
+# Subtest: crafted paving covers the existing platform with physical joints inside its footprint
+ok 152 - crafted paving covers the existing platform with physical joints inside its footprint
+  ---
+  duration_ms: 32.51675
+  ...
+# Subtest: canopy columns and furniture do not invade the train side of the platform
+ok 153 - canopy columns and furniture do not invade the train side of the platform
+  ---
+  duration_ms: 80.291667
+  ...
+# Subtest: real platform mesh respects rail clearance above the platform edge
+ok 154 - real platform mesh respects rail clearance above the platform edge
+  ---
+  duration_ms: 371.679833
+  ...
+# Subtest: night lights have bounded intensity and do not require external assets
+ok 155 - night lights have bounded intensity and do not require external assets
+  ---
+  duration_ms: 48.704209
+  ...
+# Subtest: right curves have no tunnel walls, roof or camera obstruction
+ok 156 - right curves have no tunnel walls, roof or camera obstruction
+  ---
+  duration_ms: 142.465375
+  ...
+# Subtest: bridge spans an open space below deck, not a hidden solid foundation
+ok 157 - bridge spans an open space below deck, not a hidden solid foundation
+  ---
+  duration_ms: 13.530375
+  ...
+# Subtest: rail profile rests on sleepers and preserves original railhead height
+ok 158 - rail profile rests on sleepers and preserves original railhead height
+  ---
+  duration_ms: 7.568708
+  ...
+# Subtest: level bridge spans an actual lowering of the terrain without changing track data
+ok 159 - level bridge spans an actual lowering of the terrain without changing track data
+  ---
+  duration_ms: 16.712375
+  ...
+# Subtest: explicit expected port table requires every legal entrance of all eight switches in both states and traverses it bidirectionally
+ok 160 - explicit expected port table requires every legal entrance of all eight switches in both states and traverses it bidirectionally
+  ---
+  duration_ms: 5.398292
+  ...
+# Subtest: uniform fitting preserves source proportions within the N-scale envelope
+ok 161 - uniform fitting preserves source proportions within the N-scale envelope
+  ---
+  duration_ms: 6.276125
+  ...
+# Subtest: twenty vehicle replacements share template resources and release registry records
+ok 162 - twenty vehicle replacements share template resources and release registry records
+  ---
+  duration_ms: 43.157167
+  ...
+# Subtest: releasing one clone does not invalidate another and visibility restores native children
+ok 163 - releasing one clone does not invalidate another and visibility restores native children
+  ---
+  duration_ms: 2.503042
+  ...
+# Subtest: release during asynchronous loading never reattaches an obsolete model
+ok 164 - release during asynchronous loading never reattaches an obsolete model
+  ---
+  duration_ms: 1.551083
+  ...
+# Subtest: global disposal also frees templates arriving after cancellation exactly once
+ok 165 - global disposal also frees templates arriving after cancellation exactly once
+  ---
+  duration_ms: 1.479375
+  ...
+# Subtest: failed loading leaves the original playable and permits a later retry
+ok 166 - failed loading leaves the original playable and permits a later retry
+  ---
+  duration_ms: 1.494
+  ...
+# Subtest: a newer attach supersedes an older pending request without duplicating the model
+ok 167 - a newer attach supersedes an older pending request without duplicating the model
+  ---
+  duration_ms: 3.578208
+  ...
+# Subtest: management catalog reuses loaded templates and returns independent measured metadata
+ok 168 - management catalog reuses loaded templates and returns independent measured metadata
+  ---
+  duration_ms: 1.863583
+  ...
+# Subtest: three recent consoles retain slots, replace the least recent, and handle smaller fleets
+ok 169 - three recent consoles retain slots, replace the least recent, and handle smaller fleets
+  ---
+  duration_ms: 2.258292
+  ...
+# Subtest: console selection and eviction do not modify any actual train Journey or controls
+ok 170 - console selection and eviction do not modify any actual train Journey or controls
+  ---
+  duration_ms: 169.812333
+  ...
+# Subtest: minimap geometry uses every original railway point with one unmodified coordinate system
+ok 171 - minimap geometry uses every original railway point with one unmodified coordinate system
+  ---
+  duration_ms: 493.807209
+  ...
+# Subtest: independent markers follow locomotive centres through curves, crossovers and reversal
+ok 172 - independent markers follow locomotive centres through curves, crossovers and reversal
+  ---
+  duration_ms: 16.829792
+  ...
+# Subtest: sidings and runaround markers use actual locomotive position rather than the tail
+ok 173 - sidings and runaround markers use actual locomotive position rather than the tail
+  ---
+  duration_ms: 3.26675
+  ...
+# Subtest: thumbnail identity follows the actual visible model, including fallback after failed GLB loading
+ok 174 - thumbnail identity follows the actual visible model, including fallback after failed GLB loading
+  ---
+  duration_ms: 0.365917
+  ...
+# Subtest: six distinct transparent thumbnails are tied to their real model sources
+ok 175 - six distinct transparent thumbnails are tied to their real model sources
+  ---
+  duration_ms: 978.912167
+  ...
+# Subtest: management projects identities and railway length without mutating or reordering a reversed consist
+ok 176 - management projects identities and railway length without mutating or reordering a reversed consist
+  ---
+  duration_ms: 3.463583
+  ...
+# Subtest: management follows actual imported dimensions and detached identity
+ok 177 - management follows actual imported dimensions and detached identity
+  ---
+  duration_ms: 0.261292
+  ...
+# Subtest: project preview matches M1.1 real geometry for the same models without touching source data
+ok 178 - project preview matches M1.1 real geometry for the same models without touching source data
+  ---
+  duration_ms: 16.297042
+  ...
+# Subtest: all model orientations preserve coupler continuity, scale, total length and asymmetric locomotive origin
+ok 179 - all model orientations preserve coupler continuity, scale, total length and asymmetric locomotive origin
+  ---
+  duration_ms: 6.927041
+  ...
+# Subtest: empty project preview stays finite and invalid catalog or orientation fails explicitly
+ok 180 - empty project preview stays finite and invalid catalog or orientation fails explicitly
+  ---
+  duration_ms: 0.983083
+  ...
+# Subtest: normalized catalog has the BR 01 and its tender
+ok 181 - normalized catalog has the BR 01 and its tender
+  ---
+  duration_ms: 1.838625
+  ...
+# Subtest: project lifecycle is isolated, confirmation has no railway effect and cancellation restores saved version
+ok 182 - project lifecycle is isolated, confirmation has no railway effect and cancellation restores saved version
+  ---
+  duration_ms: 3.647625
+  ...
+# Subtest: same-model instances retain separate identities through reorder, orientation and removal
+ok 183 - same-model instances retain separate identities through reorder, orientation and removal
+  ---
+  duration_ms: 0.576375
+  ...
+# Subtest: sixth trailer, second locomotive, invalid model, malformed orientation and invalid moves fail atomically
+ok 184 - sixth trailer, second locomotive, invalid model, malformed orientation and invalid moves fail atomically
+  ---
+  duration_ms: 1.469625
+  ...
+# Subtest: copy preserves physical references as value snapshots and catches external changes and reset even with same locomotive
+ok 185 - copy preserves physical references as value snapshots and catches external changes and reset even with same locomotive
+  ---
+  duration_ms: 1.469667
+  ...
+# Subtest: conservative capabilities never grant a whole-project or spatial coupling permission
+ok 186 - conservative capabilities never grant a whole-project or spatial coupling permission
+  ---
+  duration_ms: 0.464
+  ...
+# Subtest: draft lifecycle rejects implicit replacement and copy rejects unknown physical models without partial draft
+ok 187 - draft lifecycle rejects implicit replacement and copy rejects unknown physical models without partial draft
+  ---
+  duration_ms: 0.520375
+  ...
+# Subtest: linking an independent design compares model, order and orientation without assigning a physical identity
+ok 188 - linking an independent design compares model, order and orientation without assigning a physical identity
+  ---
+  duration_ms: 0.521042
+  ...
+# Subtest: retired identities stay visible and incompatible without changing the saved composition
+ok 189 - retired identities stay visible and incompatible without changing the saved composition
+  ---
+  duration_ms: 1.215583
+  ...
+# Subtest: side images share a physical scale and preserve original asymmetrical origins
+ok 190 - side images share a physical scale and preserve original asymmetrical origins
+  ---
+  duration_ms: 3949.563375
+  ...
+# Subtest: native, imported and mixed compositions meet at real couplers with common image scaling
+ok 191 - native, imported and mixed compositions meet at real couplers with common image scaling
+  ---
+  duration_ms: 6.394666
+  ...
+# Subtest: travel reversal and world yaw never reorder or flip the straightened side view
+ok 192 - travel reversal and world yaw never reorder or flip the straightened side view
+  ---
+  duration_ms: 0.871334
+  ...
+# Subtest: detach, recouple and long consists derive fresh positions from the same identities
+ok 193 - detach, recouple and long consists derive fresh positions from the same identities
+  ---
+  duration_ms: 6.622292
+  ...
+# Subtest: unavailable side assets stay explicit without guessing a different model or orientation
+ok 194 - unavailable side assets stay explicit without guessing a different model or orientation
+  ---
+  duration_ms: 0.528125
+  ...
+# Subtest: Y-IN/false: arrows match physical port oracle and both travel directions
+ok 195 - Y-IN/false: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 35.270959
+  ...
+# Subtest: Y-IN/true: arrows match physical port oracle and both travel directions
+ok 196 - Y-IN/true: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 27.604833
+  ...
+# Subtest: Y-R1/false: arrows match physical port oracle and both travel directions
+ok 197 - Y-R1/false: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 14.640375
+  ...
+# Subtest: Y-R1/true: arrows match physical port oracle and both travel directions
+ok 198 - Y-R1/true: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 25.349125
+  ...
+# Subtest: Y-R2/false: arrows match physical port oracle and both travel directions
+ok 199 - Y-R2/false: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 31.418625
+  ...
+# Subtest: Y-R2/true: arrows match physical port oracle and both travel directions
+ok 200 - Y-R2/true: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 35.723375
+  ...
+# Subtest: Y-3/false: arrows match physical port oracle and both travel directions
+ok 201 - Y-3/false: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 34.136084
+  ...
+# Subtest: Y-3/true: arrows match physical port oracle and both travel directions
+ok 202 - Y-3/true: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 32.042958
+  ...
+# Subtest: Y-4/false: arrows match physical port oracle and both travel directions
+ok 203 - Y-4/false: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 20.675958
+  ...
+# Subtest: Y-4/true: arrows match physical port oracle and both travel directions
+ok 204 - Y-4/true: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 22.1155
+  ...
+# Subtest: Y-2/false: arrows match physical port oracle and both travel directions
+ok 205 - Y-2/false: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 23.322083
+  ...
+# Subtest: Y-2/true: arrows match physical port oracle and both travel directions
+ok 206 - Y-2/true: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 20.591917
+  ...
+# Subtest: WX-A/false: arrows match physical port oracle and both travel directions
+ok 207 - WX-A/false: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 32.070916
+  ...
+# Subtest: WX-A/true: arrows match physical port oracle and both travel directions
+ok 208 - WX-A/true: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 21.45075
+  ...
+# Subtest: WX-B/false: arrows match physical port oracle and both travel directions
+ok 209 - WX-B/false: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 24.628333
+  ...
+# Subtest: WX-B/true: arrows match physical port oracle and both travel directions
+ok 210 - WX-B/true: arrows match physical port oracle and both travel directions
+  ---
+  duration_ms: 28.195209
+  ...
+# Subtest: unknown selection/network entry suppresses routes; blocked branch retains only actual selected paths; conflicting arrivals use bidirectional heads
+ok 211 - unknown selection/network entry suppresses routes; blocked branch retains only actual selected paths; conflicting arrivals use bidirectional heads
+  ---
+  duration_ms: 1.633417
+  ...
+# Subtest: read-only approach observes actual velocity and last wagon for reverse, independent of commanded direction
+ok 212 - read-only approach observes actual velocity and last wagon for reverse, independent of commanded direction
+  ---
+  duration_ms: 89.958125
+  ...
+# Subtest: cached renderer animates state change, keeps refused/no-change idle, reduced motion settles, and releases every resource once
+ok 213 - cached renderer animates state change, keeps refused/no-change idle, reduced motion settles, and releases every resource once
+  ---
+  duration_ms: 25.605167
+  ...
+# Subtest: both arrowhead bisectors follow the canonical tangent on all twenty physical paths
+ok 214 - both arrowhead bisectors follow the canonical tangent on all twenty physical paths
+  ---
+  duration_ms: 5.030917
+  ...
+# Subtest: panel and device apply the historical state/reconciliation transition for all eight controls and both positions
+ok 215 - panel and device apply the historical state/reconciliation transition for all eight controls and both positions
+  ---
+  duration_ms: 269.01875
+  ...
+# Subtest: every safety rejection is identical on both surfaces and leaves state and Journey intact
+ok 216 - every safety rejection is identical on both surfaces and leaves state and Journey intact
+  ---
+  duration_ms: 317.633292
+  ...
+# Subtest: invalid IDs, origins and non-boolean state are rejected before asking safety or reconciling
+ok 217 - invalid IDs, origins and non-boolean state are rejected before asking safety or reconciling
+  ---
+  duration_ms: 2.4405
+  ...
+# Subtest: fresh engine guards block occupied, detached and approaching vehicles on either command surface
+ok 218 - fresh engine guards block occupied, detached and approaching vehicles on either command surface
+  ---
+  duration_ms: 20.981833
+  ...
+# Subtest: successive requests recheck the guard rather than reusing an unlocked snapshot
+ok 219 - successive requests recheck the guard rather than reusing an unlocked snapshot
+  ---
+  duration_ms: 46.44625
+  ...
+# Subtest: Y-IN: overlay references every canonical device path without mutating graph or materials
+ok 220 - Y-IN: overlay references every canonical device path without mutating graph or materials
+  ---
+  duration_ms: 120.839583
+  ...
+# Subtest: Y-R1: overlay references every canonical device path without mutating graph or materials
+ok 221 - Y-R1: overlay references every canonical device path without mutating graph or materials
+  ---
+  duration_ms: 61.4905
+  ...
+# Subtest: Y-R2: overlay references every canonical device path without mutating graph or materials
+ok 222 - Y-R2: overlay references every canonical device path without mutating graph or materials
+  ---
+  duration_ms: 53.056958
+  ...
+# Subtest: Y-3: overlay references every canonical device path without mutating graph or materials
+ok 223 - Y-3: overlay references every canonical device path without mutating graph or materials
+  ---
+  duration_ms: 48.102583
+  ...
+# Subtest: Y-4: overlay references every canonical device path without mutating graph or materials
+ok 224 - Y-4: overlay references every canonical device path without mutating graph or materials
+  ---
+  duration_ms: 81.880709
+  ...
+# Subtest: Y-2: overlay references every canonical device path without mutating graph or materials
+ok 225 - Y-2: overlay references every canonical device path without mutating graph or materials
+  ---
+  duration_ms: 84.23125
+  ...
+# Subtest: WX-A: overlay references every canonical device path without mutating graph or materials
+ok 226 - WX-A: overlay references every canonical device path without mutating graph or materials
+  ---
+  duration_ms: 185.751916
+  ...
+# Subtest: WX-B: overlay references every canonical device path without mutating graph or materials
+ok 227 - WX-B: overlay references every canonical device path without mutating graph or materials
+  ---
+  duration_ms: 167.66425
+  ...
+# Subtest: smooth 160 ms entry/exit and 1400 ms periodic pulse stay bounded; a different device never cross-fades
+ok 228 - smooth 160 ms entry/exit and 1400 ms periodic pulse stay bounded; a different device never cross-fades
+  ---
+  duration_ms: 224.46975
+  ...
+# Subtest: re-entry into the same fading device preserves opacity; reduced-motion stays static after fade
+ok 229 - re-entry into the same fading device preserves opacity; reduced-motion stays static after fade
+  ---
+  duration_ms: 143.500834
+  ...
+# Subtest: A/B share all geometry and one material; no lights, shadows, depth bypass, or picking interception
+ok 230 - A/B share all geometry and one material; no lights, shadows, depth bypass, or picking interception
+  ---
+  duration_ms: 156.299208
+  ...
+# Subtest: numeric inputs, IDs, variant and preferences reject invalid values; invalid construction leaves the scene untouched
+ok 231 - numeric inputs, IDs, variant and preferences reject invalid values; invalid construction leaves the scene untouched
+  ---
+  duration_ms: 147.864333
+  ...
+# Subtest: every CPU geometry and the single GPU material are disposed exactly once; update after disposal is inert
+ok 232 - every CPU geometry and the single GPU material are disposed exactly once; update after disposal is inert
+  ---
+  duration_ms: 181.489417
+  ...
+# Subtest: all eight identities synchronize with deterministic focus/hover priority and never own route state
+ok 233 - all eight identities synchronize with deterministic focus/hover priority and never own route state
+  ---
+  duration_ms: 1.597417
+  ...
+# Subtest: mouse, pen and touch intentional single taps are accepted; a release without press is inert
+ok 234 - mouse, pen and touch intentional single taps are accepted; a release without press is inert
+  ---
+  duration_ms: 1.809625
+  ...
+# Subtest: out-and-back drag, swipe, multitouch, cancellation, blur and nonfinite/unmatched inputs cannot actuate
+ok 235 - out-and-back drag, swipe, multitouch, cancellation, blur and nonfinite/unmatched inputs cannot actuate
+  ---
+  duration_ms: 0.886084
+  ...
+# Subtest: one hundred mount/dispose cycles leave no listener, RAF, cursor, identity or event-response residue
+ok 236 - one hundred mount/dispose cycles leave no listener, RAF, cursor, identity or event-response residue
+  ---
+  duration_ms: 63.201292
+  ...
+# Subtest: a released pending capture cannot click; only confirmed captures can actuate, and capture loss aborts them
+ok 237 - a released pending capture cannot click; only confirmed captures can actuate, and capture loss aborts them
+  ---
+  duration_ms: 7.147167
+  ...
+# Subtest: optional brief touch identity expires and its timer is cancelled on teardown; invalid duration adds no listeners
+ok 238 - optional brief touch identity expires and its timer is cancelled on teardown; invalid duration adds no listeners
+  ---
+  duration_ms: 2.15
+  ...
+# Subtest: Y-IN: conformal hit geometry covers every real branch, independently of selected state
+ok 239 - Y-IN: conformal hit geometry covers every real branch, independently of selected state
+  ---
+  duration_ms: 107.001208
+  ...
+# Subtest: Y-R1: conformal hit geometry covers every real branch, independently of selected state
+ok 240 - Y-R1: conformal hit geometry covers every real branch, independently of selected state
+  ---
+  duration_ms: 34.713666
+  ...
+# Subtest: Y-R2: conformal hit geometry covers every real branch, independently of selected state
+ok 241 - Y-R2: conformal hit geometry covers every real branch, independently of selected state
+  ---
+  duration_ms: 27.5995
+  ...
+# Subtest: Y-3: conformal hit geometry covers every real branch, independently of selected state
+ok 242 - Y-3: conformal hit geometry covers every real branch, independently of selected state
+  ---
+  duration_ms: 42.798458
+  ...
+# Subtest: Y-4: conformal hit geometry covers every real branch, independently of selected state
+ok 243 - Y-4: conformal hit geometry covers every real branch, independently of selected state
+  ---
+  duration_ms: 31.558625
+  ...
+# Subtest: Y-2: conformal hit geometry covers every real branch, independently of selected state
+ok 244 - Y-2: conformal hit geometry covers every real branch, independently of selected state
+  ---
+  duration_ms: 26.899833
+  ...
+# Subtest: WX-A: conformal hit geometry covers every real branch, independently of selected state
+ok 245 - WX-A: conformal hit geometry covers every real branch, independently of selected state
+  ---
+  duration_ms: 35.285417
+  ...
+# Subtest: WX-B: conformal hit geometry covers every real branch, independently of selected state
+ok 246 - WX-B: conformal hit geometry covers every real branch, independently of selected state
+  ---
+  duration_ms: 29.146709
+  ...
+# Subtest: adjacent-device overlap resolves deterministically regardless of mesh order; plain track is not a turnout
+ok 247 - adjacent-device overlap resolves deterministically regardless of mesh order; plain track is not a turnout
+  ---
+  duration_ms: 7.2615
+  ...
+# Subtest: visible scenery and cars occlude the device, locomotives retain selection, invisible helpers do not occlude
+ok 248 - visible scenery and cars occlude the device, locomotives retain selection, invisible helpers do not occlude
+  ---
+  duration_ms: 14.373166
+  ...
+# Subtest: picking disposal releases exactly eight geometries and one shared material once, and makes queries inert
+ok 249 - picking disposal releases exactly eight geometries and one shared material once, and makes queries inert
+  ---
+  duration_ms: 2.554583
+  ...
+# Subtest: Y-IN: both states, every entrance, exact canonical path and reverse Journey
+ok 250 - Y-IN: both states, every entrance, exact canonical path and reverse Journey
+  ---
+  duration_ms: 31.837458
+  ...
+# Subtest: Y-R1: both states, every entrance, exact canonical path and reverse Journey
+ok 251 - Y-R1: both states, every entrance, exact canonical path and reverse Journey
+  ---
+  duration_ms: 2.055875
+  ...
+# Subtest: Y-R2: both states, every entrance, exact canonical path and reverse Journey
+ok 252 - Y-R2: both states, every entrance, exact canonical path and reverse Journey
+  ---
+  duration_ms: 19.104917
+  ...
+# Subtest: Y-3: both states, every entrance, exact canonical path and reverse Journey
+ok 253 - Y-3: both states, every entrance, exact canonical path and reverse Journey
+  ---
+  duration_ms: 2.603084
+  ...
+# Subtest: Y-4: both states, every entrance, exact canonical path and reverse Journey
+ok 254 - Y-4: both states, every entrance, exact canonical path and reverse Journey
+  ---
+  duration_ms: 1.37125
+  ...
+# Subtest: Y-2: both states, every entrance, exact canonical path and reverse Journey
+ok 255 - Y-2: both states, every entrance, exact canonical path and reverse Journey
+  ---
+  duration_ms: 5.054791
+  ...
+# Subtest: WX-A: both states, every entrance, exact canonical path and reverse Journey
+ok 256 - WX-A: both states, every entrance, exact canonical path and reverse Journey
+  ---
+  duration_ms: 28.63525
+  ...
+# Subtest: WX-B: both states, every entrance, exact canonical path and reverse Journey
+ok 257 - WX-B: both states, every entrance, exact canonical path and reverse Journey
+  ---
+  duration_ms: 14.120917
+  ...
+# Subtest: actual-network approaches match router over all 256 eight-controller configurations, including closed neighbours
+ok 258 - actual-network approaches match router over all 256 eight-controller configurations, including closed neighbours
+  ---
+  duration_ms: 67.662167
+  ...
+# Subtest: unknown/nonfinite IDs, state, ports and unresolved network entries never invent an active path
+ok 259 - unknown/nonfinite IDs, state, ports and unresolved network entries never invent an active path
+  ---
+  duration_ms: 1.996833
+  ...
+# Subtest: immutable views cannot mutate canonical paths, state, Journey or subsequent reads; static paths are reused
+ok 260 - immutable views cannot mutate canonical paths, state, Journey or subsequent reads; static paths are reused
+  ---
+  duration_ms: 96.282083
+  ...
+# Subtest: route selection, operation lock and engine hazard observations have independent semantics
+ok 261 - route selection, operation lock and engine hazard observations have independent semantics
+  ---
+  duration_ms: 0.505375
+  ...
+# Subtest: optimized V06 inventory is pinned; all derivatives and their untouched originals match their hashes
+ok 262 - optimized V06 inventory is pinned; all derivatives and their untouched originals match their hashes
+  ---
+  duration_ms: 4975.904
+  ...
+# Subtest: V06 legible route bands show both real WX paths and each simple selected route; UNKNOWN hides selection
+ok 263 - V06 legible route bands show both real WX paths and each simple selected route; UNKNOWN hides selection
+  ---
+  duration_ms: 160.1135
+  ...
+# Subtest: browser selection defaults to V06; explicit Legacy remains available; unknown profiles fail closed; sessions never share networks
+ok 264 - browser selection defaults to V06; explicit Legacy remains available; unknown profiles fail closed; sessions never share networks
+  ---
+  duration_ms: 147.633583
+  ...
+# Subtest: pinned browser admission rejects HTTP failure, truncated bytes and a tampered R1A artifact
+ok 265 - pinned browser admission rejects HTTP failure, truncated bytes and a tampered R1A artifact
+  ---
+  duration_ms: 51.546125
+  ...
+# Subtest: all seven V06 devices own picking, focus, glow and selected route arrows; Legacy-only IDs are rejected
+ok 266 - all seven V06 devices own picking, focus, glow and selected route arrows; Legacy-only IDs are rejected
+  ---
+  duration_ms: 1567.295625
+  ...
+# Subtest: full native initial fleet and fourth locomotive admit only complete visible nonoverlapping consists; failure preserves Journey
+ok 267 - full native initial fleet and fourth locomotive admit only complete visible nonoverlapping consists; failure preserves Journey
+  ---
+  duration_ms: 561.943916
+  ...
+# Subtest: V06 running surfaces have 9mm inner gauge and 8.4mm rail top; source axes stay immutable; N16 has no invented buffer
+ok 268 - V06 running surfaces have 9mm inner gauge and 8.4mm rail top; source axes stay immutable; N16 has no invented buffer
+  ---
+  duration_ms: 6971.82325
+  ...
+# Subtest: R1A independent admission, exact geometry, provenance, nodes and 154 truth rows
+ok 269 - R1A independent admission, exact geometry, provenance, nodes and 154 truth rows
+  ---
+  duration_ms: 150.971458
+  ...
+# Subtest: R1A artifact checksum is enforced separately from semantic validation
+ok 270 - R1A artifact checksum is enforced separately from semantic validation
+  ---
+  duration_ms: 133.301875
+  ...
+# Subtest: R1A builder reproduces bytes in a separate output and cannot overwrite legacy by default
+ok 271 - R1A builder reproduces bytes in a separate output and cannot overwrite legacy by default
+  ---
+  duration_ms: 5246.00625
+  ...
+# Subtest: R1A factory: explicit legacy fallback, default legacy, independent graph instances and no mixed IDs
+ok 272 - R1A factory: explicit legacy fallback, default legacy, independent graph instances and no mixed IDs
+  ---
+  duration_ms: 62.835625
+  ...
+# Subtest: R1A actual router against frozen WX 64 ordered cases
+ok 273 - R1A actual router against frozen WX 64 ordered cases
+  ---
+  duration_ms: 1.641125
+  ...
+# Subtest: R1A actual router against frozen simple 90 ordered cases
+ok 274 - R1A actual router against frozen simple 90 ordered cases
+  ---
+  duration_ms: 2.5725
+  ...
+# Subtest: R1A all 128 configurations: 20224 arrivals, 17920 active, actual router agrees with external topology oracle
+ok 275 - R1A all 128 configurations: 20224 arrivals, 17920 active, actual router agrees with external topology oracle
+  ---
+  duration_ms: 116.814334
+  ...
+# Subtest: R1A rings A/B/C, terminal branches and triangle legs in both directions; forbidden direct N07 remains blocked
+ok 276 - R1A rings A/B/C, terminal branches and triangle legs in both directions; forbidden direct N07 remains blocked
+  ---
+  duration_ms: 4.866792
+  ...
+# Subtest: R1A diamonds have no node and all seven units retain complete protected internal paths
+ok 277 - R1A diamonds have no node and all seven units retain complete protected internal paths
+  ---
+  duration_ms: 2.513833
+  ...
+# Subtest: R1A existing guard rejects unknown controller state on every unit without changing routing or guard
+ok 278 - R1A existing guard rejects unknown controller state on every unit without changing routing or guard
+  ---
+  duration_ms: 5.7035
+  ...
+# Subtest: R1A negative: missing hidden piece
+ok 279 - R1A negative: missing hidden piece
+  ---
+  duration_ms: 56.370375
+  ...
+# Subtest: R1A negative: duplicate edge
+ok 280 - R1A negative: duplicate edge
+  ---
+  duration_ms: 8.295792
+  ...
+# Subtest: R1A negative: unknown legacy edge
+ok 281 - R1A negative: unknown legacy edge
+  ---
+  duration_ms: 28.164291
+  ...
+# Subtest: R1A negative: mixed legacy node
+ok 282 - R1A negative: mixed legacy node
+  ---
+  duration_ms: 5.275208
+  ...
+# Subtest: R1A negative: fake diamond
+ok 283 - R1A negative: fake diamond
+  ---
+  duration_ms: 13.914666
+  ...
+# Subtest: R1A negative: broken G1
+ok 284 - R1A negative: broken G1
+  ---
+  duration_ms: 65.590416
+  ...
+# Subtest: R1A negative: broken G2
+ok 285 - R1A negative: broken G2
+  ---
+  duration_ms: 55.895583
+  ...
+# Subtest: R1A negative: broken G3
+ok 286 - R1A negative: broken G3
+  ---
+  duration_ms: 93.424416
+  ...
+# Subtest: R1A negative: interior vertex moved
+ok 287 - R1A negative: interior vertex moved
+  ---
+  duration_ms: 32.544458
+  ...
+# Subtest: R1A negative: nonfinite coordinate
+ok 288 - R1A negative: nonfinite coordinate
+  ---
+  duration_ms: 6.320875
+  ...
+# Subtest: R1A negative: zero length segment
+ok 289 - R1A negative: zero length segment
+  ---
+  duration_ms: 6.716625
+  ...
+# Subtest: R1A negative: length corruption
+ok 290 - R1A negative: length corruption
+  ---
+  duration_ms: 4.255917
+  ...
+# Subtest: R1A negative: hidden out of range
+ok 291 - R1A negative: hidden out of range
+  ---
+  duration_ms: 65.63475
+  ...
+# Subtest: R1A negative: source hidden lost
+ok 292 - R1A negative: source hidden lost
+  ---
+  duration_ms: 36.818583
+  ...
+# Subtest: R1A negative: wrong WX state
+ok 293 - R1A negative: wrong WX state
+  ---
+  duration_ms: 29.132084
+  ...
+# Subtest: R1A negative: nonboolean state
+ok 294 - R1A negative: nonboolean state
+  ---
+  duration_ms: 25.940084
+  ...
+# Subtest: R1A negative: wrong simple state
+ok 295 - R1A negative: wrong simple state
+  ---
+  duration_ms: 19.66025
+  ...
+# Subtest: R1A negative: split unit identity
+ok 296 - R1A negative: split unit identity
+  ---
+  duration_ms: 15.119375
+  ...
+# Subtest: R1A negative: missing control path
+ok 297 - R1A negative: missing control path
+  ---
+  duration_ms: 53.145709
+  ...
+# Subtest: R1A negative: wrong port
+ok 298 - R1A negative: wrong port
+  ---
+  duration_ms: 41.181375
+  ...
+# Subtest: R1A negative: invented default
+ok 299 - R1A negative: invented default
+  ---
+  duration_ms: 73.007292
+  ...
+# Subtest: R1A negative: wrong terminal
+ok 300 - R1A negative: wrong terminal
+  ---
+  duration_ms: 29.528833
+  ...
+# Subtest: R1A negative: invented stopping anchor
+ok 301 - R1A negative: invented stopping anchor
+  ---
+  duration_ms: 18.9975
+  ...
+# Subtest: R1A negative: open ring
+ok 302 - R1A negative: open ring
+  ---
+  duration_ms: 19.832875
+  ...
+# Subtest: R1A negative: wrong ring direction
+ok 303 - R1A negative: wrong ring direction
+  ---
+  duration_ms: 114.428708
+  ...
+# Subtest: R1A negative: triangle direct admission
+ok 304 - R1A negative: triangle direct admission
+  ---
+  duration_ms: 46.280459
+  ...
+# Subtest: R1A negative: triangle maneuver enabled
+ok 305 - R1A negative: triangle maneuver enabled
+  ---
+  duration_ms: 45.509459
+  ...
+# Subtest: R1A negative: wrong itinerary state
+ok 306 - R1A negative: wrong itinerary state
+  ---
+  duration_ms: 24.629917
+  ...
+# Subtest: R1A negative: wrong source hash
+ok 307 - R1A negative: wrong source hash
+  ---
+  duration_ms: 4.720084
+  ...
+# Subtest: R1A negative: wrong baseline
+ok 308 - R1A negative: wrong baseline
+  ---
+  duration_ms: 5.084708
+  ...
+# Subtest: R1A negative: false certification
+ok 309 - R1A negative: false certification
+  ---
+  duration_ms: 5.369917
+  ...
+# Subtest: R1A negative: false circulation claim
+ok 310 - R1A negative: false circulation claim
+  ---
+  duration_ms: 4.769959
+  ...
+# Subtest: R1A negative: unknown schema
+ok 311 - R1A negative: unknown schema
+  ---
+  duration_ms: 4.165375
+  ...
+# Subtest: R1A negative: implicit legacy reference
+ok 312 - R1A negative: implicit legacy reference
+  ---
+  duration_ms: 32.643875
+  ...
+# Subtest: R1B legacy: registry identity, source order, ports, boolean states and immutable unit paths
+ok 313 - R1B legacy: registry identity, source order, ports, boolean states and immutable unit paths
+  ---
+  duration_ms: 67.956083
+  ...
+# Subtest: R1B legacy: real network entrances for every global configuration and both directions
+ok 314 - R1B legacy: real network entrances for every global configuration and both directions
+  ---
+  duration_ms: 234.980709
+  ...
+# Subtest: R1B legacy/Y-IN: command parity, both states and surfaces, reconciliation after permission only
+ok 315 - R1B legacy/Y-IN: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 33.327792
+  ...
+# Subtest: R1B legacy/Y-R1: command parity, both states and surfaces, reconciliation after permission only
+ok 316 - R1B legacy/Y-R1: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 41.678291
+  ...
+# Subtest: R1B legacy/Y-R2: command parity, both states and surfaces, reconciliation after permission only
+ok 317 - R1B legacy/Y-R2: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 38.693042
+  ...
+# Subtest: R1B legacy/Y-3: command parity, both states and surfaces, reconciliation after permission only
+ok 318 - R1B legacy/Y-3: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 27.776875
+  ...
+# Subtest: R1B legacy/Y-4: command parity, both states and surfaces, reconciliation after permission only
+ok 319 - R1B legacy/Y-4: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 34.738542
+  ...
+# Subtest: R1B legacy/Y-2: command parity, both states and surfaces, reconciliation after permission only
+ok 320 - R1B legacy/Y-2: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 58.985
+  ...
+# Subtest: R1B legacy/WX-A: command parity, both states and surfaces, reconciliation after permission only
+ok 321 - R1B legacy/WX-A: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 28.436458
+  ...
+# Subtest: R1B legacy/WX-B: command parity, both states and surfaces, reconciliation after permission only
+ok 322 - R1B legacy/WX-B: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 45.502208
+  ...
+# Subtest: R1B legacy: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation
+ok 323 - R1B legacy: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation
+  ---
+  duration_ms: 20.424541
+  ...
+# Subtest: R1B legacy: every internal arc, including inactive WX diagonals, locks the entire unit
+ok 324 - R1B legacy: every internal arc, including inactive WX diagonals, locks the entire unit
+  ---
+  duration_ms: 260.940292
+  ...
+# Subtest: R1B legacy: every port and actual neighbour blocks approach on both surfaces using the existing guard
+ok 325 - R1B legacy: every port and actual neighbour blocks approach on both surfaces using the existing guard
+  ---
+  duration_ms: 131.060333
+  ...
+# Subtest: R1B legacy: consecutive cross-surface commands read fresh engine occupancy and approach
+ok 326 - R1B legacy: consecutive cross-surface commands read fresh engine occupancy and approach
+  ---
+  duration_ms: 22.08725
+  ...
+# Subtest: R1B legacy: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN
+ok 327 - R1B legacy: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN
+  ---
+  duration_ms: 5.134083
+  ...
+# Subtest: R1B legacy: actual uncertain approach snapshot and safety callback failure never authorize a command
+ok 328 - R1B legacy: actual uncertain approach snapshot and safety callback failure never authorize a command
+  ---
+  duration_ms: 2.986459
+  ...
+# Subtest: R1B V06-R1A: registry identity, source order, ports, boolean states and immutable unit paths
+ok 329 - R1B V06-R1A: registry identity, source order, ports, boolean states and immutable unit paths
+  ---
+  duration_ms: 3.317917
+  ...
+# Subtest: R1B V06-R1A: real network entrances for every global configuration and both directions
+ok 330 - R1B V06-R1A: real network entrances for every global configuration and both directions
+  ---
+  duration_ms: 60.675125
+  ...
+# Subtest: R1B V06-R1A/V06-C07: command parity, both states and surfaces, reconciliation after permission only
+ok 331 - R1B V06-R1A/V06-C07: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 37.11275
+  ...
+# Subtest: R1B V06-R1A/V06-C12: command parity, both states and surfaces, reconciliation after permission only
+ok 332 - R1B V06-R1A/V06-C12: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 61.61425
+  ...
+# Subtest: R1B V06-R1A/V06-C13: command parity, both states and surfaces, reconciliation after permission only
+ok 333 - R1B V06-R1A/V06-C13: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 146.91175
+  ...
+# Subtest: R1B V06-R1A/V06-N07: command parity, both states and surfaces, reconciliation after permission only
+ok 334 - R1B V06-R1A/V06-N07: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 32.04725
+  ...
+# Subtest: R1B V06-R1A/V06-N14: command parity, both states and surfaces, reconciliation after permission only
+ok 335 - R1B V06-R1A/V06-N14: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 9.718959
+  ...
+# Subtest: R1B V06-R1A/WX-A: command parity, both states and surfaces, reconciliation after permission only
+ok 336 - R1B V06-R1A/WX-A: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 107.26175
+  ...
+# Subtest: R1B V06-R1A/WX-B: command parity, both states and surfaces, reconciliation after permission only
+ok 337 - R1B V06-R1A/WX-B: command parity, both states and surfaces, reconciliation after permission only
+  ---
+  duration_ms: 10.582125
+  ...
+# Subtest: R1B V06-R1A: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation
+ok 338 - R1B V06-R1A: invalid IDs/origins, nonboolean state and malformed safety fail closed without reconciliation
+  ---
+  duration_ms: 61.582667
+  ...
+# Subtest: R1B V06-R1A: every internal arc, including inactive WX diagonals, locks the entire unit
+ok 339 - R1B V06-R1A: every internal arc, including inactive WX diagonals, locks the entire unit
+  ---
+  duration_ms: 223.801208
+  ...
+# Subtest: R1B V06-R1A: every port and actual neighbour blocks approach on both surfaces using the existing guard
+ok 340 - R1B V06-R1A: every port and actual neighbour blocks approach on both surfaces using the existing guard
+  ---
+  duration_ms: 108.319708
+  ...
+# Subtest: R1B V06-R1A: consecutive cross-surface commands read fresh engine occupancy and approach
+ok 341 - R1B V06-R1A: consecutive cross-surface commands read fresh engine occupancy and approach
+  ---
+  duration_ms: 42.014709
+  ...
+# Subtest: R1B V06-R1A: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN
+ok 342 - R1B V06-R1A: UNKNOWN raw incoming/target states, ambiguous results and invalid entry contracts stay UNKNOWN
+  ---
+  duration_ms: 21.978417
+  ...
+# Subtest: R1B V06-R1A: actual uncertain approach snapshot and safety callback failure never authorize a command
+ok 343 - R1B V06-R1A: actual uncertain approach snapshot and safety callback failure never authorize a command
+  ---
+  duration_ms: 4.583084
+  ...
+# Subtest: R1B V06 model versus independent frozen WX 64 truth table
+ok 344 - R1B V06 model versus independent frozen WX 64 truth table
+  ---
+  duration_ms: 10.099417
+  ...
+# Subtest: R1B V06 model versus independent frozen simple 90 truth table
+ok 345 - R1B V06 model versus independent frozen simple 90 truth table
+  ---
+  duration_ms: 5.406541
+  ...
+# Subtest: R1B C12/C13 adjacent ports: both incoming alternatives, closed neighbour and unknown neighbour remain distinct
+ok 346 - R1B C12/C13 adjacent ports: both incoming alternatives, closed neighbour and unknown neighbour remain distinct
+  ---
+  duration_ms: 2.527917
+  ...
+# Subtest: R1B V06 actual Journey traverses every permitted unit path and reverse, including both adjacent incoming alternatives
+ok 347 - R1B V06 actual Journey traverses every permitted unit path and reverse, including both adjacent incoming alternatives
+  ---
+  duration_ms: 4.159417
+  ...
+# Subtest: R1B registries reject incomplete, duplicate, mixed, nonboolean and broken-unit configuration
+ok 348 - R1B registries reject incomplete, duplicate, mixed, nonboolean and broken-unit configuration
+  ---
+  duration_ms: 281.761667
+  ...
+# Subtest: R1B commands reject profile/instance mixing even for shared WX IDs, and revalidate mutable specs on each request
+ok 349 - R1B commands reject profile/instance mixing even for shared WX IDs, and revalidate mutable specs on each request
+  ---
+  duration_ms: 16.592709
+  ...
+# Subtest: R1B reset/profile isolation: independent caches, callbacks, state and geometry across alternating new instances
+ok 350 - R1B reset/profile isolation: independent caches, callbacks, state and geometry across alternating new instances
+  ---
+  duration_ms: 33.02625
+  ...
+# Subtest: R1C explicit selection, invalid artifact and mixed inputs never silently fall back
+ok 351 - R1C explicit selection, invalid artifact and mixed inputs never silently fall back
+  ---
+  duration_ms: 74.728
+  ...
+# Subtest: R1C legacy: coherent identity, factory, immutable topology and exact controllers
+ok 352 - R1C legacy: coherent identity, factory, immutable topology and exact controllers
+  ---
+  duration_ms: 130.777042
+  ...
+# Subtest: R1C legacy: configuration is complete, strict boolean and atomic; no runtime admission
+ok 353 - R1C legacy: configuration is complete, strict boolean and atomic; no runtime admission
+  ---
+  duration_ms: 31.868125
+  ...
+# Subtest: R1C legacy: scoped router and preview match existing algorithms for known states
+ok 354 - R1C legacy: scoped router and preview match existing algorithms for known states
+  ---
+  duration_ms: 89.031041
+  ...
+# Subtest: R1C legacy: protected command re-reads occupancy and reservations across surfaces
+ok 355 - R1C legacy: protected command re-reads occupancy and reservations across surfaces
+  ---
+  duration_ms: 58.894292
+  ...
+# Subtest: R1C legacy: parked vehicle occupancy locks the complete WX and is destroyed at reset
+ok 356 - R1C legacy: parked vehicle occupancy locks the complete WX and is destroyed at reset
+  ---
+  duration_ms: 43.003
+  ...
+# Subtest: R1C legacy: guard delegates to existing braking and never moves Journey
+ok 357 - R1C legacy: guard delegates to existing braking and never moves Journey
+  ---
+  duration_ms: 17.392
+  ...
+# Subtest: R1C legacy: each loop has a measurable static candidate, geometry and full consist fit
+ok 358 - R1C legacy: each loop has a measurable static candidate, geometry and full consist fit
+  ---
+  duration_ms: 11.845583
+  ...
+# Subtest: R1C legacy: missing dimensions, long consists, unspecified and operational spawns fail closed
+ok 359 - R1C legacy: missing dimensions, long consists, unspecified and operational spawns fail closed
+  ---
+  duration_ms: 51.605584
+  ...
+# Subtest: R1C legacy: repeated spawn and reserved candidate are refused without mutating fleet
+ok 360 - R1C legacy: repeated spawn and reserved candidate are refused without mutating fleet
+  ---
+  duration_ms: 130.012875
+  ...
+# Subtest: R1C legacy: controller model caches, callback and diagnostic data have session ownership
+ok 361 - R1C legacy: controller model caches, callback and diagnostic data have session ownership
+  ---
+  duration_ms: 51.489416
+  ...
+# Subtest: R1C v06: coherent identity, factory, immutable topology and exact controllers
+ok 362 - R1C v06: coherent identity, factory, immutable topology and exact controllers
+  ---
+  duration_ms: 465.321625
+  ...
+# Subtest: R1C v06: configuration is complete, strict boolean and atomic; no runtime admission
+ok 363 - R1C v06: configuration is complete, strict boolean and atomic; no runtime admission
+  ---
+  duration_ms: 299.567375
+  ...
+# Subtest: R1C v06: scoped router and preview match existing algorithms for known states
+ok 364 - R1C v06: scoped router and preview match existing algorithms for known states
+  ---
+  duration_ms: 186.482208
+  ...
+# Subtest: R1C v06: protected command re-reads occupancy and reservations across surfaces
+ok 365 - R1C v06: protected command re-reads occupancy and reservations across surfaces
+  ---
+  duration_ms: 50.787042
+  ...
+# Subtest: R1C v06: parked vehicle occupancy locks the complete WX and is destroyed at reset
+ok 366 - R1C v06: parked vehicle occupancy locks the complete WX and is destroyed at reset
+  ---
+  duration_ms: 364.27725
+  ...
+# Subtest: R1C v06: guard delegates to existing braking and never moves Journey
+ok 367 - R1C v06: guard delegates to existing braking and never moves Journey
+  ---
+  duration_ms: 150.444875
+  ...
+# Subtest: R1C v06: each loop has a measurable static candidate, geometry and full consist fit
+ok 368 - R1C v06: each loop has a measurable static candidate, geometry and full consist fit
+  ---
+  duration_ms: 149.99025
+  ...
+# Subtest: R1C v06: missing dimensions, long consists, unspecified and operational spawns fail closed
+ok 369 - R1C v06: missing dimensions, long consists, unspecified and operational spawns fail closed
+  ---
+  duration_ms: 69.952166
+  ...
+# Subtest: R1C v06: repeated spawn and reserved candidate are refused without mutating fleet
+ok 370 - R1C v06: repeated spawn and reserved candidate are refused without mutating fleet
+  ---
+  duration_ms: 272.647125
+  ...
+# Subtest: R1C v06: controller model caches, callback and diagnostic data have session ownership
+ok 371 - R1C v06: controller model caches, callback and diagnostic data have session ownership
+  ---
+  duration_ms: 187.976125
+  ...
+# Subtest: R1C V06 starts with seven UNKNOWN states: no route, throw, spawn or safe guard
+ok 372 - R1C V06 starts with seven UNKNOWN states: no route, throw, spawn or safe guard
+  ---
+  duration_ms: 117.492708
+  ...
+# Subtest: R1C shared WX names never permit registry, specs, Journey or reservation cross-instance reuse
+ok 373 - R1C shared WX names never permit registry, specs, Journey or reservation cross-instance reuse
+  ---
+  duration_ms: 341.8865
+  ...
+# Subtest: R1C identity violation fails safety, command, guard and reset closed without reconciliation
+ok 374 - R1C identity violation fails safety, command, guard and reset closed without reconciliation
+  ---
+  duration_ms: 400.610542
+  ...
+# Subtest: R1C Legacy → V06 → Legacy rebuilds everything and revokes stale entry points
+ok 375 - R1C Legacy → V06 → Legacy rebuilds everything and revokes stale entry points
+  ---
+  duration_ms: 304.725958
+  ...
+# Subtest: R1C invalid replacement artifact retains the complete old session
+ok 376 - R1C invalid replacement artifact retains the complete old session
+  ---
+  duration_ms: 161.258417
+  ...
+# Subtest: R1C movement, throttle, pending speed and UNKNOWN motion forbid swap/disposal
+ok 377 - R1C movement, throttle, pending speed and UNKNOWN motion forbid swap/disposal
+  ---
+  duration_ms: 237.435209
+  ...
+# Subtest: R1C cleanup failure cannot retain timers, callbacks, cache, reservations or ownership
+ok 378 - R1C cleanup failure cannot retain timers, callbacks, cache, reservations or ownership
+  ---
+  duration_ms: 303.534
+  ...
+# Subtest: R1C triangle preserves two legs, stop/clear/throw/reverse and refuses branch-to-branch transit
+ok 379 - R1C triangle preserves two legs, stop/clear/throw/reverse and refuses branch-to-branch transit
+  ---
+  duration_ms: 117.071958
+  ...
+# Subtest: R1C default legacy factory and its data remain byte-equivalent after lab sessions
+ok 380 - R1C default legacy factory and its data remain byte-equivalent after lab sessions
+  ---
+  duration_ms: 366.203708
+  ...
+# Subtest: R1C unknown/invalid motion refuses safety and commands without changing state
+ok 381 - R1C unknown/invalid motion refuses safety and commands without changing state
+  ---
+  duration_ms: 188.67975
+  ...
+# Subtest: R1C geometric envelopes refuse a wide vehicle across distinct loop edge IDs
+ok 382 - R1C geometric envelopes refuse a wide vehicle across distinct loop edge IDs
+  ---
+  duration_ms: 145.83025
+  ...
+# Subtest: R1C fourth train cannot gain an invented slot by requesting a configured loop
+ok 383 - R1C fourth train cannot gain an invented slot by requesting a configured loop
+  ---
+  duration_ms: 112.789333
+  ...
+# Subtest: R1C live session timers, cancellation and listeners remain isolated
+ok 384 - R1C live session timers, cancellation and listeners remain isolated
+  ---
+  duration_ms: 193.380166
+  ...
+# Subtest: R1C reservation bounds and owner identity are checked before guard or spawn
+ok 385 - R1C reservation bounds and owner identity are checked before guard or spawn
+  ---
+  duration_ms: 203.267708
+  ...
+# Subtest: R2A-F1 negative: panel cannot throw C13 on actual tick 836 before occupation
+ok 386 - R2A-F1 negative: panel cannot throw C13 on actual tick 836 before occupation
+  ---
+  duration_ms: 634.106166
+  ...
+# Subtest: R2A-F1 negative: device cannot throw C13 on actual tick 836 before occupation
+ok 387 - R2A-F1 negative: device cannot throw C13 on actual tick 836 before occupation
+  ---
+  duration_ms: 598.027875
+  ...
+# Subtest: R2A-F1 negative: guarded stop leaves the full C13 operational margin clear for protected correction
+ok 388 - R2A-F1 negative: guarded stop leaves the full C13 operational margin clear for protected correction
+  ---
+  duration_ms: 626.43025
+  ...
+# Subtest: R2A-F1 v06 1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm
+ok 389 - R2A-F1 v06 1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm
+  ---
+  duration_ms: 7614.135
+  ...
+# Subtest: R2A-F1 v06 1: UNKNOWN neighbour at every shared port fails closed in the real step
+ok 390 - R2A-F1 v06 1: UNKNOWN neighbour at every shared port fails closed in the real step
+  ---
+  duration_ms: 3752.901
+  ...
+# Subtest: R2A-F1 v06 -1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm
+ok 391 - R2A-F1 v06 -1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm
+  ---
+  duration_ms: 4066.100417
+  ...
+# Subtest: R2A-F1 v06 -1: UNKNOWN neighbour at every shared port fails closed in the real step
+ok 392 - R2A-F1 v06 -1: UNKNOWN neighbour at every shared port fails closed in the real step
+  ---
+  duration_ms: 1687.866583
+  ...
+# Subtest: R2A-F1 legacy 1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm
+ok 393 - R2A-F1 legacy 1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm
+  ---
+  duration_ms: 3000.679542
+  ...
+# Subtest: R2A-F1 legacy 1: UNKNOWN neighbour at every shared port fails closed in the real step
+ok 394 - R2A-F1 legacy 1: UNKNOWN neighbour at every shared port fails closed in the real step
+  ---
+  duration_ms: 472.126625
+  ...
+# Subtest: R2A-F1 legacy -1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm
+ok 395 - R2A-F1 legacy -1: all shared ports, both neighbour states, loco/car, approach/occupied/release/rearm
+  ---
+  duration_ms: 1381.953583
+  ...
+# Subtest: R2A-F1 legacy -1: UNKNOWN neighbour at every shared port fails closed in the real step
+ok 396 - R2A-F1 legacy -1: UNKNOWN neighbour at every shared port fails closed in the real step
+  ---
+  duration_ms: 227.056375
+  ...
+# Subtest: R2A-F1 actual accelerated approach with 1 short vehicles stops clear and corrects from either surface
+ok 397 - R2A-F1 actual accelerated approach with 1 short vehicles stops clear and corrects from either surface
+  ---
+  duration_ms: 538.640917
+  ...
+# Subtest: R2A-F1 actual accelerated approach with 3 short vehicles stops clear and corrects from either surface
+ok 398 - R2A-F1 actual accelerated approach with 3 short vehicles stops clear and corrects from either surface
+  ---
+  duration_ms: 438.241708
+  ...
+# Subtest: R2A-F1 legacy: empty railway admits panel/device requests on all units
+ok 399 - R2A-F1 legacy: empty railway admits panel/device requests on all units
+  ---
+  duration_ms: 32.65
+  ...
+# Subtest: R2A-F1 v06: empty railway admits panel/device requests on all units
+ok 400 - R2A-F1 v06: empty railway admits panel/device requests on all units
+  ---
+  duration_ms: 61.524667
+  ...
+# Subtest: R2A-F1 distant moving train does not cause a phantom C13 approach lock
+ok 401 - R2A-F1 distant moving train does not cause a phantom C13 approach lock
+  ---
+  duration_ms: 79.834042
+  ...
+# Subtest: R2A-F1 UNKNOWN session keeps both surfaces and motion closed until a complete known initialization
+ok 402 - R2A-F1 UNKNOWN session keeps both surfaces and motion closed until a complete known initialization
+  ---
+  duration_ms: 91.151958
+  ...
+# Subtest: R2A A direction 1: full dynamic lap and controlled stop
+ok 403 - R2A A direction 1: full dynamic lap and controlled stop
+  ---
+  duration_ms: 3418.786667
+  ...
+# Subtest: R2A A direction -1: full dynamic lap and controlled stop
+ok 404 - R2A A direction -1: full dynamic lap and controlled stop
+  ---
+  duration_ms: 3623.818333
+  ...
+# Subtest: R2A B direction 1: full dynamic lap and controlled stop
+ok 405 - R2A B direction 1: full dynamic lap and controlled stop
+  ---
+  duration_ms: 3908.210209
+  ...
+# Subtest: R2A B direction -1: full dynamic lap and controlled stop
+ok 406 - R2A B direction -1: full dynamic lap and controlled stop
+  ---
+  duration_ms: 3503.703125
+  ...
+# Subtest: R2A C direction 1: full dynamic lap and controlled stop
+ok 407 - R2A C direction 1: full dynamic lap and controlled stop
+  ---
+  duration_ms: 1672.372
+  ...
+# Subtest: R2A C direction -1: full dynamic lap and controlled stop
+ok 408 - R2A C direction -1: full dynamic lap and controlled stop
+  ---
+  duration_ms: 1325.934959
+  ...
+# Subtest: R2A short locomotive + two cars direction 1: complete C lap, joints, couplers, envelope
+ok 409 - R2A short locomotive + two cars direction 1: complete C lap, joints, couplers, envelope
+  ---
+  duration_ms: 2896.499666
+  ...
+# Subtest: R2A short locomotive + two cars direction -1: complete C lap, joints, couplers, envelope
+ok 410 - R2A short locomotive + two cars direction -1: complete C lap, joints, couplers, envelope
+  ---
+  duration_ms: 2177.323084
+  ...
+# Subtest: R2A acceleration, cruise, deceleration, immediate STOP, reverse and restart with a short car
+ok 411 - R2A acceleration, cruise, deceleration, immediate STOP, reverse and restart with a short car
+  ---
+  duration_ms: 150.568292
+  ...
+# Subtest: R2A protected misalignment braking direction 1, no boundary crossing, protected correction
+ok 412 - R2A protected misalignment braking direction 1, no boundary crossing, protected correction
+  ---
+  duration_ms: 341.236417
+  ...
+# Subtest: R2A protected misalignment braking direction -1, no boundary crossing, protected correction
+ok 413 - R2A protected misalignment braking direction -1, no boundary crossing, protected correction
+  ---
+  duration_ms: 326.278416
+  ...
+# Subtest: R2A fresh operation safety rejects panel/device during actual approach and occupation on all five loop devices
+ok 414 - R2A fresh operation safety rejects panel/device during actual approach and occupation on all five loop devices
+  ---
+  duration_ms: 4382.159208
+  ...
+# Subtest: R2A UNKNOWN forbids any movement tick, clock accumulation and spawn
+ok 415 - R2A UNKNOWN forbids any movement tick, clock accumulation and spawn
+  ---
+  duration_ms: 59.820709
+  ...
+# Subtest: R2A incomplete/nonboolean configuration is rejected atomically before ticks
+ok 416 - R2A incomplete/nonboolean configuration is rejected atomically before ticks
+  ---
+  duration_ms: 68.618167
+  ...
+# Subtest: R2A explicit profile, foreign IDs and foreign Journey fail without movement
+ok 417 - R2A explicit profile, foreign IDs and foreign Journey fail without movement
+  ---
+  duration_ms: 171.516666
+  ...
+# Subtest: R2A speed limits use real clamping; invalid motion never enters stepRailway
+ok 418 - R2A speed limits use real clamping; invalid motion never enters stepRailway
+  ---
+  duration_ms: 54.156458
+  ...
+# Subtest: R2A unavailable endpoint/triangle/yard and overlong consists cannot acquire a movement tick
+ok 419 - R2A unavailable endpoint/triangle/yard and overlong consists cannot acquire a movement tick
+  ---
+  duration_ms: 67.5765
+  ...
+# Subtest: R2A reset and reverse refuse movement or pending throttle; full stop permits a fresh legacy session
+ok 420 - R2A reset and reverse refuse movement or pending throttle; full stop permits a fresh legacy session
+  ---
+  duration_ms: 137.008875
+  ...
+# Subtest: R2A cached future history is reconciled by protected command, observations remain read-only
+ok 421 - R2A cached future history is reconciled by protected command, observations remain read-only
+  ---
+  duration_ms: 333.124208
+  ...
+# Subtest: R2A frozen witnesses are sensitive to wrong direction, distance and loop identity
+ok 422 - R2A frozen witnesses are sensitive to wrong direction, distance and loop identity
+  ---
+  duration_ms: 29.524542
+  ...
+# Subtest: R2A independent monitor detects injected coordinate drift and foreign history
+ok 423 - R2A independent monitor detects injected coordinate drift and foreign history
+  ---
+  duration_ms: 74.323125
+  ...
+# Subtest: R2A unreachable N16 in the static ring asset is observed as a cycle, never an invented route
+ok 424 - R2A unreachable N16 in the static ring asset is observed as a cycle, never an invented route
+  ---
+  duration_ms: 72.564833
+  ...
+# Subtest: R2A legacy movement and Legacy → V06 → Legacy lifecycle preserve defaults and revoke callbacks
+ok 425 - R2A legacy movement and Legacy → V06 → Legacy lifecycle preserve defaults and revoke callbacks
+  ---
+  duration_ms: 171.818416
+  ...
+# Subtest: R2A UNKNOWN guard decision itself remains zero-displacement fail-closed
+ok 426 - R2A UNKNOWN guard decision itself remains zero-displacement fail-closed
+  ---
+  duration_ms: 0.31225
+  ...
+# Subtest: R2B1 simultaneous full laps A/B 1/1
+ok 427 - R2B1 simultaneous full laps A/B 1/1
+  ---
+  duration_ms: 13593.8465
+  ...
+# Subtest: R2B1 simultaneous full laps A/B 1/-1
+ok 428 - R2B1 simultaneous full laps A/B 1/-1
+  ---
+  duration_ms: 7908.199667
+  ...
+# Subtest: R2B1 simultaneous full laps A/B -1/1
+ok 429 - R2B1 simultaneous full laps A/B -1/1
+  ---
+  duration_ms: 4859.240625
+  ...
+# Subtest: R2B1 simultaneous full laps A/B -1/-1
+ok 430 - R2B1 simultaneous full laps A/B -1/-1
+  ---
+  duration_ms: 4874.638333
+  ...
+# Subtest: R2B1 simultaneous full laps A/C 1/1
+ok 431 - R2B1 simultaneous full laps A/C 1/1
+  ---
+  duration_ms: 5841.697583
+  ...
+# Subtest: R2B1 simultaneous full laps A/C 1/-1
+ok 432 - R2B1 simultaneous full laps A/C 1/-1
+  ---
+  duration_ms: 7689.186291
+  ...
+# Subtest: R2B1 simultaneous full laps A/C -1/1
+ok 433 - R2B1 simultaneous full laps A/C -1/1
+  ---
+  duration_ms: 6356.4595
+  ...
+# Subtest: R2B1 simultaneous full laps A/C -1/-1
+ok 434 - R2B1 simultaneous full laps A/C -1/-1
+  ---
+  duration_ms: 11332.416959
+  ...
+# Subtest: R2B1 simultaneous full laps B/C 1/1
+ok 435 - R2B1 simultaneous full laps B/C 1/1
+  ---
+  duration_ms: 6096.915333
+  ...
+# Subtest: R2B1 simultaneous full laps B/C 1/-1
+ok 436 - R2B1 simultaneous full laps B/C 1/-1
+  ---
+  duration_ms: 3994.730791
+  ...
+# Subtest: R2B1 simultaneous full laps B/C -1/1
+ok 437 - R2B1 simultaneous full laps B/C -1/1
+  ---
+  duration_ms: 3837.683833
+  ...
+# Subtest: R2B1 simultaneous full laps B/C -1/-1
+ok 438 - R2B1 simultaneous full laps B/C -1/-1
+  ---
+  duration_ms: 4991.077458
+  ...
+# Subtest: R2B1 two consists on A/B
+ok 439 - R2B1 two consists on A/B
+  ---
+  duration_ms: 4963.515083
+  ...
+# Subtest: R2B1 two consists on A/C
+ok 440 - R2B1 two consists on A/C
+  ---
+  duration_ms: 7606.232791
+  ...
+# Subtest: R2B1 two consists on B/C
+ok 441 - R2B1 two consists on B/C
+  ---
+  duration_ms: 7482.244917
+  ...
+# Subtest: R2B1 following 1 cars=false brake
+ok 442 - R2B1 following 1 cars=false brake
+  ---
+  duration_ms: 2867.398792
+  ...
+# Subtest: R2B1 following 1 cars=false STOP
+ok 443 - R2B1 following 1 cars=false STOP
+  ---
+  duration_ms: 1683.282917
+  ...
+# Subtest: R2B1 following 1 cars=false stationary
+ok 444 - R2B1 following 1 cars=false stationary
+  ---
+  duration_ms: 1017.455292
+  ...
+# Subtest: R2B1 following 1 cars=true brake
+ok 445 - R2B1 following 1 cars=true brake
+  ---
+  duration_ms: 1140.975541
+  ...
+# Subtest: R2B1 following 1 cars=true STOP
+ok 446 - R2B1 following 1 cars=true STOP
+  ---
+  duration_ms: 1111.7735
+  ...
+# Subtest: R2B1 following 1 cars=true stationary
+ok 447 - R2B1 following 1 cars=true stationary
+  ---
+  duration_ms: 845.971458
+  ...
+# Subtest: R2B1 following -1 cars=false brake
+ok 448 - R2B1 following -1 cars=false brake
+  ---
+  duration_ms: 755.738416
+  ...
+# Subtest: R2B1 following -1 cars=false STOP
+ok 449 - R2B1 following -1 cars=false STOP
+  ---
+  duration_ms: 815.763333
+  ...
+# Subtest: R2B1 following -1 cars=false stationary
+ok 450 - R2B1 following -1 cars=false stationary
+  ---
+  duration_ms: 792.821
+  ...
+# Subtest: R2B1 following -1 cars=true brake
+ok 451 - R2B1 following -1 cars=true brake
+  ---
+  duration_ms: 1065.904917
+  ...
+# Subtest: R2B1 following -1 cars=true STOP
+ok 452 - R2B1 following -1 cars=true STOP
+  ---
+  duration_ms: 963.045042
+  ...
+# Subtest: R2B1 following -1 cars=true stationary
+ok 453 - R2B1 following -1 cars=true stationary
+  ---
+  duration_ms: 972.978625
+  ...
+# Subtest: R2B1 reachable opposed trains stop safely and remain deadlocked
+ok 454 - R2B1 reachable opposed trains stop safely and remain deadlocked
+  ---
+  duration_ms: 484.363333
+  ...
+# Subtest: R2B1 opposite departure control progresses
+ok 455 - R2B1 opposite departure control progresses
+  ---
+  duration_ms: 559.05025
+  ...
+# Subtest: R2B1 WX-A state=false direction=1,1
+ok 456 - R2B1 WX-A state=false direction=1,1
+  ---
+  duration_ms: 803.143166
+  ...
+# Subtest: R2B1 WX-A state=false direction=-1,-1
+ok 457 - R2B1 WX-A state=false direction=-1,-1
+  ---
+  duration_ms: 510.905583
+  ...
+# Subtest: R2B1 WX-A state=false direction=1,-1
+ok 458 - R2B1 WX-A state=false direction=1,-1
+  ---
+  duration_ms: 795.325583
+  ...
+# Subtest: R2B1 WX-A state=false direction=-1,1
+ok 459 - R2B1 WX-A state=false direction=-1,1
+  ---
+  duration_ms: 786.183125
+  ...
+# Subtest: R2B1 WX-A state=true direction=1,1
+ok 460 - R2B1 WX-A state=true direction=1,1
+  ---
+  duration_ms: 1043.435584
+  ...
+# Subtest: R2B1 WX-A state=true direction=-1,-1
+ok 461 - R2B1 WX-A state=true direction=-1,-1
+  ---
+  duration_ms: 562.140834
+  ...
+# Subtest: R2B1 WX-A state=true direction=1,-1
+ok 462 - R2B1 WX-A state=true direction=1,-1
+  ---
+  duration_ms: 1000.888375
+  ...
+# Subtest: R2B1 WX-A state=true direction=-1,1
+ok 463 - R2B1 WX-A state=true direction=-1,1
+  ---
+  duration_ms: 1006.382583
+  ...
+# Subtest: R2B1 WX-B state=false direction=1,1
+ok 464 - R2B1 WX-B state=false direction=1,1
+  ---
+  duration_ms: 442.335125
+  ...
+# Subtest: R2B1 WX-B state=false direction=-1,-1
+ok 465 - R2B1 WX-B state=false direction=-1,-1
+  ---
+  duration_ms: 629.157375
+  ...
+# Subtest: R2B1 WX-B state=false direction=1,-1
+ok 466 - R2B1 WX-B state=false direction=1,-1
+  ---
+  duration_ms: 621.20775
+  ...
+# Subtest: R2B1 WX-B state=false direction=-1,1
+ok 467 - R2B1 WX-B state=false direction=-1,1
+  ---
+  duration_ms: 428.753625
+  ...
+# Subtest: R2B1 WX-B state=true direction=1,1
+ok 468 - R2B1 WX-B state=true direction=1,1
+  ---
+  duration_ms: 436.635791
+  ...
+# Subtest: R2B1 WX-B state=true direction=-1,-1
+ok 469 - R2B1 WX-B state=true direction=-1,-1
+  ---
+  duration_ms: 858.488083
+  ...
+# Subtest: R2B1 WX-B state=true direction=1,-1
+ok 470 - R2B1 WX-B state=true direction=1,-1
+  ---
+  duration_ms: 1090.442625
+  ...
+# Subtest: R2B1 WX-B state=true direction=-1,1
+ok 471 - R2B1 WX-B state=true direction=-1,1
+  ---
+  duration_ms: 582.315167
+  ...
+# Subtest: R2B1 WX-A diamond with two short consists
+ok 472 - R2B1 WX-A diamond with two short consists
+  ---
+  duration_ms: 706.927625
+  ...
+# Subtest: R2B1 WX-B diamond with two short consists
+ok 473 - R2B1 WX-B diamond with two short consists
+  ---
+  duration_ms: 1119.501292
+  ...
+# Subtest: R2B1 F1 adjacent-unit stop and protected correction with second moving train
+ok 474 - R2B1 F1 adjacent-unit stop and protected correction with second moving train
+  ---
+  duration_ms: 864.682291
+  ...
+# Subtest: R2B1 owner reservation, fresh release and explicit restart 1
+ok 475 - R2B1 owner reservation, fresh release and explicit restart 1
+  ---
+  duration_ms: 511.677208
+  ...
+# Subtest: R2B1 owner reservation, fresh release and explicit restart -1
+ok 476 - R2B1 owner reservation, fresh release and explicit restart -1
+  ---
+  duration_ms: 487.335166
+  ...
+# Subtest: R2B1 rejected moving proposals rechecked after departure swapped=false immediate=false
+ok 477 - R2B1 rejected moving proposals rechecked after departure swapped=false immediate=false
+  ---
+  duration_ms: 344.662208
+  ...
+# Subtest: R2B1 rejected moving proposals rechecked after departure swapped=false immediate=true
+ok 478 - R2B1 rejected moving proposals rechecked after departure swapped=false immediate=true
+  ---
+  duration_ms: 381.494416
+  ...
+# Subtest: R2B1 rejected moving proposals rechecked after departure swapped=true immediate=false
+ok 479 - R2B1 rejected moving proposals rechecked after departure swapped=true immediate=false
+  ---
+  duration_ms: 354.196166
+  ...
+# Subtest: R2B1 rejected moving proposals rechecked after departure swapped=true immediate=true
+ok 480 - R2B1 rejected moving proposals rechecked after departure swapped=true immediate=true
+  ---
+  duration_ms: 308.336
+  ...
+# Subtest: R2B1 UNKNOWN blocks admission, both switch surfaces and clock before any transaction
+ok 481 - R2B1 UNKNOWN blocks admission, both switch surfaces and clock before any transaction
+  ---
+  duration_ms: 23.966916
+  ...
+# Subtest: R2B1 incomplete or nonboolean initialization is rejected atomically
+ok 482 - R2B1 incomplete or nonboolean initialization is rejected atomically
+  ---
+  duration_ms: 60.170084
+  ...
+# Subtest: R2B1 exact pair, unique IDs and Journey ownership are mandatory
+ok 483 - R2B1 exact pair, unique IDs and Journey ownership are mandatory
+  ---
+  duration_ms: 26.521791
+  ...
+# Subtest: R2B1 another session Journey never enters clock
+ok 484 - R2B1 another session Journey never enters clock
+  ---
+  duration_ms: 78.147917
+  ...
+# Subtest: R2B1 overlapping, cross-track wide and inactive-path admission are rejected
+ok 485 - R2B1 overlapping, cross-track wide and inactive-path admission are rejected
+  ---
+  duration_ms: 39.633875
+  ...
+# Subtest: R2B1 reservation admission and foreign/invalid owners fail closed
+ok 486 - R2B1 reservation admission and foreign/invalid owners fail closed
+  ---
+  duration_ms: 42.245709
+  ...
+# Subtest: R2B1 invalid speed and reversal in motion cannot mutate tick or direction
+ok 487 - R2B1 invalid speed and reversal in motion cannot mutate tick or direction
+  ---
+  duration_ms: 40.095541
+  ...
+# Subtest: R2B1 independent oracle detects teleport, stale occupations, forbidden history and overlap
+ok 488 - R2B1 independent oracle detects teleport, stale occupations, forbidden history and overlap
+  ---
+  duration_ms: 188.544042
+  ...
+# Subtest: R2B1 independent polygon witness recognizes actual crossing and separated rectangles
+ok 489 - R2B1 independent polygon witness recognizes actual crossing and separated rectangles
+  ---
+  duration_ms: 0.575125
+  ...
+# Subtest: R2B1 deterministic numeric traces exclude private session UUID
+ok 490 - R2B1 deterministic numeric traces exclude private session UUID
+  ---
+  duration_ms: 681.759625
+  ...
+# Subtest: R2B1 UNKNOWN two-train core boundary remains fail-closed beyond lab readiness
+ok 491 - R2B1 UNKNOWN two-train core boundary remains fail-closed beyond lab readiness
+  ---
+  duration_ms: 74.925042
+  ...
+# Subtest: R2B2 S1-1_1_1
+ok 492 - R2B2 S1-1_1_1
+  ---
+  duration_ms: 16578.885917
+  ...
+# Subtest: R2B2 S1-1_1_-1
+ok 493 - R2B2 S1-1_1_-1
+  ---
+  duration_ms: 8435.413458
+  ...
+# Subtest: R2B2 S1-1_-1_1
+ok 494 - R2B2 S1-1_-1_1
+  ---
+  duration_ms: 8396.7575
+  ...
+# Subtest: R2B2 S1-1_-1_-1
+ok 495 - R2B2 S1-1_-1_-1
+  ---
+  duration_ms: 9532.405667
+  ...
+# Subtest: R2B2 S1--1_1_1
+ok 496 - R2B2 S1--1_1_1
+  ---
+  duration_ms: 16325.033167
+  ...
+# Subtest: R2B2 S1--1_1_-1
+ok 497 - R2B2 S1--1_1_-1
+  ---
+  duration_ms: 7245.469125
+  ...
+# Subtest: R2B2 S1--1_-1_1
+ok 498 - R2B2 S1--1_-1_1
+  ---
+  duration_ms: 5949.879125
+  ...
+# Subtest: R2B2 S1--1_-1_-1
+ok 499 - R2B2 S1--1_-1_-1
+  ---
+  duration_ms: 7113.821083
+  ...
+# Subtest: R2B2 S1-cars-1
+ok 500 - R2B2 S1-cars-1
+  ---
+  duration_ms: 11115.117459
+  ...
+# Subtest: R2B2 S1-cars-2
+ok 501 - R2B2 S1-cars-2
+  ---
+  duration_ms: 12662.800583
+  ...
+# Subtest: R2B2 S2-012-moving-0
+ok 502 - R2B2 S2-012-moving-0
+  ---
+  duration_ms: 1148.719125
+  ...
+# Subtest: R2B2 S2-012-moving-30
+ok 503 - R2B2 S2-012-moving-30
+  ---
+  duration_ms: 932.003917
+  ...
+# Subtest: R2B2 S2-012-brake-0
+ok 504 - R2B2 S2-012-brake-0
+  ---
+  duration_ms: 878.347292
+  ...
+# Subtest: R2B2 S2-012-brake-30
+ok 505 - R2B2 S2-012-brake-30
+  ---
+  duration_ms: 902.20775
+  ...
+# Subtest: R2B2 S2-012-STOP-0
+ok 506 - R2B2 S2-012-STOP-0
+  ---
+  duration_ms: 1075.933959
+  ...
+# Subtest: R2B2 S2-012-STOP-30
+ok 507 - R2B2 S2-012-STOP-30
+  ---
+  duration_ms: 914.001083
+  ...
+# Subtest: R2B2 S2-012-stationary-0
+ok 508 - R2B2 S2-012-stationary-0
+  ---
+  duration_ms: 969.993792
+  ...
+# Subtest: R2B2 S2-012-stationary-30
+ok 509 - R2B2 S2-012-stationary-30
+  ---
+  duration_ms: 958.15375
+  ...
+# Subtest: R2B2 S2-201-moving-0
+ok 510 - R2B2 S2-201-moving-0
+  ---
+  duration_ms: 913.236709
+  ...
+# Subtest: R2B2 S2-201-moving-30
+ok 511 - R2B2 S2-201-moving-30
+  ---
+  duration_ms: 907.701917
+  ...
+# Subtest: R2B2 S2-201-brake-0
+ok 512 - R2B2 S2-201-brake-0
+  ---
+  duration_ms: 810.565542
+  ...
+# Subtest: R2B2 S2-201-brake-30
+ok 513 - R2B2 S2-201-brake-30
+  ---
+  duration_ms: 861.983208
+  ...
+# Subtest: R2B2 S2-201-STOP-0
+ok 514 - R2B2 S2-201-STOP-0
+  ---
+  duration_ms: 789.954042
+  ...
+# Subtest: R2B2 S2-201-STOP-30
+ok 515 - R2B2 S2-201-STOP-30
+  ---
+  duration_ms: 828.848625
+  ...
+# Subtest: R2B2 S2-201-stationary-0
+ok 516 - R2B2 S2-201-stationary-0
+  ---
+  duration_ms: 785.973375
+  ...
+# Subtest: R2B2 S2-201-stationary-30
+ok 517 - R2B2 S2-201-stationary-30
+  ---
+  duration_ms: 814.455083
+  ...
+# Subtest: R2B2 S2-120-moving-0
+ok 518 - R2B2 S2-120-moving-0
+  ---
+  duration_ms: 796.753292
+  ...
+# Subtest: R2B2 S2-120-moving-30
+ok 519 - R2B2 S2-120-moving-30
+  ---
+  duration_ms: 821.821333
+  ...
+# Subtest: R2B2 S2-120-brake-0
+ok 520 - R2B2 S2-120-brake-0
+  ---
+  duration_ms: 745.953958
+  ...
+# Subtest: R2B2 S2-120-brake-30
+ok 521 - R2B2 S2-120-brake-30
+  ---
+  duration_ms: 757.946791
+  ...
+# Subtest: R2B2 S2-120-STOP-0
+ok 522 - R2B2 S2-120-STOP-0
+  ---
+  duration_ms: 866.281458
+  ...
+# Subtest: R2B2 S2-120-STOP-30
+ok 523 - R2B2 S2-120-STOP-30
+  ---
+  duration_ms: 1016.962875
+  ...
+# Subtest: R2B2 S2-120-stationary-0
+ok 524 - R2B2 S2-120-stationary-0
+  ---
+  duration_ms: 894.71325
+  ...
+# Subtest: R2B2 S2-120-stationary-30
+ok 525 - R2B2 S2-120-stationary-30
+  ---
+  duration_ms: 887.500917
+  ...
+# Subtest: R2B2 S2-cars-1
+ok 526 - R2B2 S2-cars-1
+  ---
+  duration_ms: 892.296167
+  ...
+# Subtest: R2B2 S2-cars--1
+ok 527 - R2B2 S2-cars--1
+  ---
+  duration_ms: 926.097
+  ...
+# Subtest: R2B2 S3-WX-A-false-1_1
+ok 528 - R2B2 S3-WX-A-false-1_1
+  ---
+  duration_ms: 1356.522792
+  ...
+# Subtest: R2B2 S3-WX-A-false--1_-1
+ok 529 - R2B2 S3-WX-A-false--1_-1
+  ---
+  duration_ms: 806.490208
+  ...
+# Subtest: R2B2 S3-WX-A-false-1_-1
+ok 530 - R2B2 S3-WX-A-false-1_-1
+  ---
+  duration_ms: 1187.699708
+  ...
+# Subtest: R2B2 S3-WX-A-false--1_1
+ok 531 - R2B2 S3-WX-A-false--1_1
+  ---
+  duration_ms: 916.016292
+  ...
+# Subtest: R2B2 S3-WX-A-true-1_1
+ok 532 - R2B2 S3-WX-A-true-1_1
+  ---
+  duration_ms: 1087.254
+  ...
+# Subtest: R2B2 S3-WX-A-true--1_-1
+ok 533 - R2B2 S3-WX-A-true--1_-1
+  ---
+  duration_ms: 587.790125
+  ...
+# Subtest: R2B2 S3-WX-A-true-1_-1
+ok 534 - R2B2 S3-WX-A-true-1_-1
+  ---
+  duration_ms: 1104.103208
+  ...
+# Subtest: R2B2 S3-WX-A-true--1_1
+ok 535 - R2B2 S3-WX-A-true--1_1
+  ---
+  duration_ms: 1480.800416
+  ...
+# Subtest: R2B2 S3-WX-B-false-1_1
+ok 536 - R2B2 S3-WX-B-false-1_1
+  ---
+  duration_ms: 533.946708
+  ...
+# Subtest: R2B2 S3-WX-B-false--1_-1
+ok 537 - R2B2 S3-WX-B-false--1_-1
+  ---
+  duration_ms: 779.996209
+  ...
+# Subtest: R2B2 S3-WX-B-false-1_-1
+ok 538 - R2B2 S3-WX-B-false-1_-1
+  ---
+  duration_ms: 846.171917
+  ...
+# Subtest: R2B2 S3-WX-B-false--1_1
+ok 539 - R2B2 S3-WX-B-false--1_1
+  ---
+  duration_ms: 545.987375
+  ...
+# Subtest: R2B2 S3-WX-B-true-1_1
+ok 540 - R2B2 S3-WX-B-true-1_1
+  ---
+  duration_ms: 450.935917
+  ...
+# Subtest: R2B2 S3-WX-B-true--1_-1
+ok 541 - R2B2 S3-WX-B-true--1_-1
+  ---
+  duration_ms: 595.206042
+  ...
+# Subtest: R2B2 S3-WX-B-true-1_-1
+ok 542 - R2B2 S3-WX-B-true-1_-1
+  ---
+  duration_ms: 672.999416
+  ...
+# Subtest: R2B2 S3-WX-B-true--1_1
+ok 543 - R2B2 S3-WX-B-true--1_1
+  ---
+  duration_ms: 276.870541
+  ...
+# Subtest: R2B2 S3-WX-A-cars
+ok 544 - R2B2 S3-WX-A-cars
+  ---
+  duration_ms: 395.705959
+  ...
+# Subtest: R2B2 S3-WX-A-perturb--0.01
+ok 545 - R2B2 S3-WX-A-perturb--0.01
+  ---
+  duration_ms: 665.768875
+  ...
+# Subtest: R2B2 S3-WX-A-perturb--0.001
+ok 546 - R2B2 S3-WX-A-perturb--0.001
+  ---
+  duration_ms: 667.735625
+  ...
+# Subtest: R2B2 S3-WX-A-perturb-0.001
+ok 547 - R2B2 S3-WX-A-perturb-0.001
+  ---
+  duration_ms: 707.269875
+  ...
+# Subtest: R2B2 S3-WX-A-perturb-0.01
+ok 548 - R2B2 S3-WX-A-perturb-0.01
+  ---
+  duration_ms: 702.139041
+  ...
+# Subtest: R2B2 S3-WX-B-cars
+ok 549 - R2B2 S3-WX-B-cars
+  ---
+  duration_ms: 673.707291
+  ...
+# Subtest: R2B2 S3-WX-B-perturb--0.01
+ok 550 - R2B2 S3-WX-B-perturb--0.01
+  ---
+  duration_ms: 333.475708
+  ...
+# Subtest: R2B2 S3-WX-B-perturb--0.001
+ok 551 - R2B2 S3-WX-B-perturb--0.001
+  ---
+  duration_ms: 392.008084
+  ...
+# Subtest: R2B2 S3-WX-B-perturb-0.001
+ok 552 - R2B2 S3-WX-B-perturb-0.001
+  ---
+  duration_ms: 413.093084
+  ...
+# Subtest: R2B2 S3-WX-B-perturb-0.01
+ok 553 - R2B2 S3-WX-B-perturb-0.01
+  ---
+  duration_ms: 424.574042
+  ...
+# Subtest: R2B2 S3-WX-A-queued-three
+ok 554 - R2B2 S3-WX-A-queued-three
+  ---
+  duration_ms: 936.293041
+  ...
+# Subtest: R2B2 S3-WX-B-queued-three
+ok 555 - R2B2 S3-WX-B-queued-three
+  ---
+  duration_ms: 436.200959
+  ...
+# Subtest: R2B2 S4-F1
+ok 556 - R2B2 S4-F1
+  ---
+  duration_ms: 717.5415
+  ...
+# Subtest: R2B2 S5-reservations
+ok 557 - R2B2 S5-reservations
+  ---
+  duration_ms: 295.01
+  ...
+# Subtest: R2B2 S5-UNKNOWN
+ok 558 - R2B2 S5-UNKNOWN
+  ---
+  duration_ms: 62.739334
+  ...
+# Subtest: R2B2 S5-near-0.0001-012
+ok 559 - R2B2 S5-near-0.0001-012
+  ---
+  duration_ms: 93.62475
+  ...
+# Subtest: R2B2 S5-near-0.0001-210
+ok 560 - R2B2 S5-near-0.0001-210
+  ---
+  duration_ms: 56.10175
+  ...
+# Subtest: R2B2 S5-near-0.001-012
+ok 561 - R2B2 S5-near-0.001-012
+  ---
+  duration_ms: 60.737417
+  ...
+# Subtest: R2B2 S5-near-0.001-210
+ok 562 - R2B2 S5-near-0.001-210
+  ---
+  duration_ms: 71.105042
+  ...
+# Subtest: R2B2 S5-near-0.01-012
+ok 563 - R2B2 S5-near-0.01-012
+  ---
+  duration_ms: 70.442375
+  ...
+# Subtest: R2B2 S5-near-0.01-210
+ok 564 - R2B2 S5-near-0.01-210
+  ---
+  duration_ms: 62.174333
+  ...
+# Subtest: R2B2 S5-near-0.1-012
+ok 565 - R2B2 S5-near-0.1-012
+  ---
+  duration_ms: 76.749708
+  ...
+# Subtest: R2B2 S5-near-0.1-210
+ok 566 - R2B2 S5-near-0.1-210
+  ---
+  duration_ms: 71.312875
+  ...
+# Subtest: R2B2 third admission validates entire consist, position, route, reservation and all other trains atomically
+ok 567 - R2B2 third admission validates entire consist, position, route, reservation and all other trains atomically
+  ---
+  duration_ms: 43.870792
+  ...
+# Subtest: R2B2 missing third and foreign IDs/Journeys refuse transaction without partial movement
+ok 568 - R2B2 missing third and foreign IDs/Journeys refuse transaction without partial movement
+  ---
+  duration_ms: 160.308458
+  ...
+# Subtest: R2B2 UNKNOWN readiness refuses all three admissions, surfaces and clock
+ok 569 - R2B2 UNKNOWN readiness refuses all three admissions, surfaces and clock
+  ---
+  duration_ms: 27.955708
+  ...
+# Subtest: R2B2 reset/rollback only after explicit STOP; invalid replacement preserves context
+ok 570 - R2B2 reset/rollback only after explicit STOP; invalid replacement preserves context
+  ---
+  duration_ms: 33.919125
+  ...
+# Subtest: R2B2 reservation ownership and invalid ranges cannot mutate context
+ok 571 - R2B2 reservation ownership and invalid ranges cannot mutate context
+  ---
+  duration_ms: 33.000041
+  ...
+# Subtest: R2B2 oracle detects corruption of the third consist and returns prior/current/inputs
+ok 572 - R2B2 oracle detects corruption of the third consist and returns prior/current/inputs
+  ---
+  duration_ms: 153.692
+  ...
+# Subtest: R2B2 near-touch traces are deterministic
+ok 573 - R2B2 near-touch traces are deterministic
+  ---
+  duration_ms: 151.6715
+  ...
+# Subtest: progressive perspective zoom preserves target and viewing direction, with distance limits
+ok 574 - progressive perspective zoom preserves target and viewing direction, with distance limits
+  ---
+  duration_ms: 5.541792
+  ...
+# Subtest: zoom cancels follow while home and follow use the existing navigation presets
+ok 575 - zoom cancels follow while home and follow use the existing navigation presets
+  ---
+  duration_ms: 116.523041
+  ...
+# Subtest: pan and orbit modes support mouse and single touch while retaining pinch and right-button pan
+ok 576 - pan and orbit modes support mouse and single touch while retaining pinch and right-button pan
+  ---
+  duration_ms: 8.055709
+  ...
+# Subtest: zero distance remains finite and orthographic zoom has equivalent limits
+ok 577 - zero distance remains finite and orthographic zoom has equivalent limits
+  ---
+  duration_ms: 4.128708
+  ...
+# Subtest: toolbar buttons mount accessibly, reflect follow state and remove listeners on dispose
+ok 578 - toolbar buttons mount accessibly, reflect follow state and remove listeners on dispose
+  ---
+  duration_ms: 3.0545
+  ...
+# Subtest: zone planning is deterministic and does not modify track geometry
+ok 579 - zone planning is deterministic and does not modify track geometry
+  ---
+  duration_ms: 104.754666
+  ...
+# Subtest: farmhouse and goods office footprints have full railway clearance
+ok 580 - farmhouse and goods office footprints have full railway clearance
+  ---
+  duration_ms: 3264.03375
+  ...
+# Subtest: yard props respect running tracks, moving switches and building footprints
+ok 581 - yard props respect running tracks, moving switches and building footprints
+  ---
+  duration_ms: 70.841209
+  ...
+# Subtest: vineyard follows existing hills without invading railway or roads
+ok 582 - vineyard follows existing hills without invading railway or roads
+  ---
+  duration_ms: 278.089208
+  ...
+# Subtest: all four buffers coincide with real canonical terminals without invented extensions
+ok 583 - all four buffers coincide with real canonical terminals without invented extensions
+  ---
+  duration_ms: 2.666834
+  ...
+# Subtest: passengers remain N-scale and on the reserved passenger platform
+ok 584 - passengers remain N-scale and on the reserved passenger platform
+  ---
+  duration_ms: 2.633292
+  ...
+1..584
+# tests 584
+# suites 0
+# pass 584
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 182341.701625

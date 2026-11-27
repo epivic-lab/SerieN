@@ -1,4 +1,20 @@
-# L02-E — Big Boy · banco browser e prima animazione (27 novembre 2026)
+# L02-F — Big Boy · qualifica campionata PASS (27 novembre 2026)
+
+Quartatura corretta su otto assi e quattro biellismi nominali animati nel banco
+isolato. 648 configurazioni senza interferenze non consentite, 584 test applicativi,
+11 cinematici/geometrici, 8 metrologici, 9 JMRI e build PASS. Chrome Legacy/V06:
+420 mm avanti e ritorno, STOP stabile, 19 assi in moto, zero errori.
+Base `6a9f319e3418da1235b753086fd71b9edbe01d22`, branch
+`codex/rolling-stock-l02-big-boy`. [Rapporto e limiti](docs/_active/rolling-stock/evidence/L02-F/README.md).
+Quote della distribuzione nominali, non certificate ALCO. Nessuna integrazione
+nel catalogo, modifica al tracciato/UI operativa, merge o deploy.
+
+**Prossima azione:** audit Regia e approvazione L02-G per integrazione nel catalogo
+e verifiche operative Big Boy. Checkpoint sul solo branch dedicato.
+
+---
+
+ L02-E — Big Boy · banco browser e prima animazione (27 novembre 2026)
 
 Ripresa da `239fbfc11dc4e601b977297e460979ed64610e35` sul branch
 `codex/rolling-stock-l02-big-boy`. Banco isolato con 19 assi, bielle di accoppiamento,
