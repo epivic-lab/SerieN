@@ -12,6 +12,7 @@ import {layoutFor,vehiclePose,vehiclePositions,deriveSwitchAssistance,collectRai
 import {poseDrawbar} from './src/br01-drawbar.js';
 import {buildBR01,loadBR01} from './src/br01.js';
 import {buildHenschel,loadHenschel} from './src/henschel.js';
+import {buildBigBoy,loadBigBoy} from './src/big-boy.js';
 import {createRailMaterial,fitSunShadow} from "./src/graphic-foundations.js";
 import {createTurnoutPicking} from "./src/turnout-picking.js";
 import {createTurnoutArrows} from './src/turnout-arrows.js';
@@ -316,6 +317,8 @@ const br01Source = await loadBR01();
 let henschelSource=null;
 try { henschelSource=await loadHenschel(); }
 catch(error){console.warn('Henschel model unavailable; BR 01 remains operational.',error);}
+let bigBoySource=null;
+function bigBoyTrain(id,loop){return {id,name:'Big Boy · '+(id+1),desc:'Footloose · CC BY 4.0 · articulated locomotive and fixed tender',modelKey:'big-boy',group:buildBigBoy(bigBoySource,id),carObjs:[],loop,cars:0,initial:{loop,cars:0,fraction:.22},speed:0,requestedSpeed:0,velocity:0,dir:1,lights:false,laps:0,mode:'loop'};}
 function brTrain(id,loop){
   const group=buildBR01(br01Source,'engine',id),tender=buildBR01(br01Source,'tender',id);
   return {id,name:`BR 01 · ${id+1}`,desc:'BR 01 + tender · Tom Zimmermann',modelKey:'br01-engine',
@@ -419,6 +422,7 @@ function initializeJourney(t) {
   t.odometer = 0;
   t.previousLane = t.loop;
   t.journey.ensure(t.journey.position - layoutFor(t).tail, route);
+  if(t.modelKey==='big-boy')t.journey.ensure(t.journey.position+t.group.userData.couplers.front.x,route);
 }
 for(const t of trains) {
   if(isV06) {
@@ -559,12 +563,13 @@ function canRemoveTrain(train) {
 }
 function addTrain(modelKey='br01-engine') {
   if(trains.length>=4){log("A session supports up to four trains.");return null;}
-  if(!['br01-engine','henschel-dhg-500-c'].includes(modelKey))throw new RangeError('Unknown playable locomotive');
+  if(!['br01-engine','henschel-dhg-500-c','big-boy'].includes(modelKey))throw new RangeError('Unknown playable locomotive');
   if(modelKey==='henschel-dhg-500-c'&&!henschelSource){log('Henschel model unavailable.');return null;}
-  const t=modelKey==='br01-engine'?brTrain(nextTrainId,0):henschelTrain(nextTrainId,0);
+  if(modelKey==='big-boy'&&!bigBoySource){log('Big Boy model unavailable.');return null;}
+  const t=modelKey==='br01-engine'?brTrain(nextTrainId,0):modelKey==='big-boy'?bigBoyTrain(nextTrainId,0):henschelTrain(nextTrainId,0);
   const spawn=findScenarioSpawn({network,switchTopology,trains,detached,route,train:t});
   if(!spawn){releaseTrainResources(t.group);log('No free track section for this locomotive.');return null;}
-  t.initial={...spawn,cars:1};t.loop=spawn.loop;initializeJourney(t);
+  t.initial={...spawn,cars:t.cars};t.loop=spawn.loop;initializeJourney(t);
   nextTrainId++;
   t.group.userData.dynamic=true;
   for(const car of t.carObjs)car.userData.dynamic=true;
@@ -574,6 +579,7 @@ function addTrain(modelKey='br01-engine') {
 }
 $("stopAll").onclick=stopAllTrains;
 function addAndSelectTrain(modelKey='br01-engine') {
+  if(modelKey==='big-boy'&&!bigBoySource)return loadBigBoy().then(source=>{bigBoySource=source;return addAndSelectTrain(modelKey);}).catch(error=>{console.warn('Big Boy model unavailable.',error);log('Big Boy could not be loaded.');return null;});
   const id=addTrain(modelKey);
   if(id!==null)select(id);
   return id;
@@ -896,7 +902,7 @@ if (new URLSearchParams(location.search).has("diagnostics")) window.__serienDiag
   };
   const assistance = getSwitchAssistance();
   const next = assistance.preview.next;
-  return { scenario:{id:profile.id,sessionId:profile.sessionId,layoutId:profile.layoutId,railTop:profile.railTop,controllers:controlOrder,edges:Object.keys(network.edges).length,scenery:scenic.diagnostics??null}, consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray(),fov:camera.fov,aspect:camera.aspect,projectedBase:[-10,1510].flatMap(x=>[-34,0].flatMap(y=>[-10,710].map(z=>new THREE.Vector3(x,y,z).project(camera).toArray()))) },switchIndicators:switchIndicatorState(), render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, requestedSpeed:t.requestedSpeed,guard:t.guard, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, journey:{position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments.map(p=>({...p}))}, odometer:t.odometer,animation:t.group.stockRig?{wheels:t.group.stockRig.wheels.map(w=>({angle:w.node.rotation[w.axis??'z'],radius:w.radius})),rods:t.group.stockRig.rods.map(r=>r.node.position.toArray()),bogies:t.group.stockRig.bogies.map(b=>b.node.rotation.y)}:null,hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, stock:p.vehicle.userData.stock??null, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
+  return { scenario:{id:profile.id,sessionId:profile.sessionId,layoutId:profile.layoutId,railTop:profile.railTop,controllers:controlOrder,edges:Object.keys(network.edges).length,scenery:scenic.diagnostics??null}, consoles: {visible:trainDeck?.visibleIds, recent:trainDeck?.recentIds, active:selected}, nextSwitch: { site:next?.site.id ?? null, controls:next?.site.controls ?? [], name:next?.site.name ?? null, distance:next?.distance ?? null, outgoing:next?.outgoing ?? null, destination:next?.destination ?? null, stop:assistance.preview.stop, uncertain:assistance.preview.uncertain, safety:assistance.safety, highlighted:routeHighlight.root.visible, minimized:nextSwitchHUD?.panel.classList.contains("is-minimized") }, quality: { mode: quality.mode, profile: quality.profile }, camera: { preset: nav.preset, position: camera.position.toArray(), target: controls.target.toArray(),fov:camera.fov,aspect:camera.aspect,projectedBase:[-10,1510].flatMap(x=>[-34,0].flatMap(y=>[-10,710].map(z=>new THREE.Vector3(x,y,z).project(camera).toArray()))) },switchIndicators:switchIndicatorState(), render: { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, ...renderer.info.memory }, stock: trains.map((t) => ({ id: t.id, name:t.name, speed:t.speed, requestedSpeed:t.requestedSpeed,guard:t.guard, velocity:t.velocity, dir:t.dir, lights:t.lights, modelKey:t.modelKey, journey:{position:t.journey.position,travel:t.journey.travel,segments:t.journey.segments.map(p=>({...p}))}, odometer:t.odometer,bigBoy:t.group.bigBoyState??null,animation:t.group.stockRig?{wheels:t.group.stockRig.wheels.map(w=>({angle:w.node.rotation[w.axis??'z'],radius:w.radius})),rods:t.group.stockRig.rods.map(r=>r.node.position.toArray()),bogies:t.group.stockRig.bogies.map(b=>b.node.rotation.y)}:null,hull: hull(t.group), cars: t.carObjs.map(hull), layout: layoutFor(t), vehicles: vehiclePositions(t).map((p) => ({ x:p.x, z:p.z, rendered:{x:p.vehicle.position.x,z:p.vehicle.position.z}, edge:p.edge, s:p.s, couplers:p.vehicle.userData.couplers, stock:p.vehicle.userData.stock??null, dimensions:p.vehicle.userData.assetDimensions ?? null })) })), detached: detached.map((d) => ({...d.point})), scenery: { tunnel:false, trees:scenic.trees, buildings:scenic.buildings }, pendingStops: scenic.zones.pendingStops.map((p) => p.edge) };
 } };
 
 }

@@ -1,0 +1,332 @@
+{
+  "sourceSha256": "a8a1fd651ef9d5f0a90d3c18d362cf9a23d0a7c03e04380a3a1fa0b78c36fbe5",
+  "scaleMmPerSourceUnit": 6.333858917323889,
+  "sourceLengthMm": 253.02765624999998,
+  "axes": "-Z forward, +Y up in GLB, +X lateral",
+  "imageLimitPx": 1024,
+  "decimationRatio": 0.22,
+  "frames": {
+    "engine_rear": {
+      "parent": null,
+      "pivotMm": [
+        18.051497914373083,
+        -0.3800315350394333
+      ],
+      "axleNodes": [
+        "engine_rear_axle_01",
+        "engine_rear_axle_02",
+        "engine_rear_axle_03",
+        "engine_rear_axle_04"
+      ]
+    },
+    "engine_front": {
+      "parent": "engine_rear",
+      "pivotMm": [
+        45.71462673578517,
+        8.804063895080205
+      ],
+      "axleNodes": [
+        "engine_front_axle_01",
+        "engine_front_axle_02",
+        "engine_front_axle_03",
+        "engine_front_axle_04"
+      ]
+    },
+    "tender_body": {
+      "parent": null,
+      "pivotMm": [
+        -76.01454102447919,
+        -0.3800315350394333
+      ],
+      "axleNodes": []
+    },
+    "trailing_truck": {
+      "parent": "engine_rear",
+      "pivotMm": [
+        -12.731056423821016,
+        7.853985057481623
+      ],
+      "axleNodes": [
+        "trailing_truck_axle_01",
+        "trailing_truck_axle_02"
+      ]
+    },
+    "leading_truck": {
+      "parent": "engine_front",
+      "pivotMm": [
+        107.27197643499964,
+        6.587213274016845
+      ],
+      "axleNodes": [
+        "leading_truck_axle_01",
+        "leading_truck_axle_02"
+      ]
+    },
+    "tender_rear_bogie": {
+      "parent": "tender_body",
+      "pivotMm": [
+        -95.02435179304338,
+        7.537292111615428
+      ],
+      "axleNodes": [
+        "tender_rear_bogie_axle_01",
+        "tender_rear_bogie_axle_02",
+        "tender_rear_bogie_axle_03",
+        "tender_rear_bogie_axle_04",
+        "tender_rear_bogie_axle_05"
+      ]
+    },
+    "tender_front_bogie": {
+      "parent": "tender_body",
+      "pivotMm": [
+        -57.004730255915,
+        7.537292111615428
+      ],
+      "axleNodes": [
+        "tender_front_bogie_axle_01",
+        "tender_front_bogie_axle_02"
+      ]
+    }
+  },
+  "axles": {
+    "tender_rear_bogie_axle_01": {
+      "parent": "tender_rear_bogie",
+      "sMm": -114.02592854501505,
+      "heightMm": 3.49597342941692
+    },
+    "tender_rear_bogie_axle_02": {
+      "parent": "tender_rear_bogie",
+      "sMm": -104.52514016902921,
+      "heightMm": 3.49597342941692
+    },
+    "tender_rear_bogie_axle_03": {
+      "parent": "tender_rear_bogie",
+      "sMm": -95.02435179304338,
+      "heightMm": 3.49597342941692
+    },
+    "tender_rear_bogie_axle_04": {
+      "parent": "tender_rear_bogie",
+      "sMm": -85.52356341705755,
+      "heightMm": 3.49597342941692
+    },
+    "tender_rear_bogie_axle_05": {
+      "parent": "tender_rear_bogie",
+      "sMm": -76.02277504107171,
+      "heightMm": 3.49597342941692
+    },
+    "tender_front_bogie_axle_01": {
+      "parent": "tender_front_bogie",
+      "sMm": -63.43423044289048,
+      "heightMm": 3.49597342941692
+    },
+    "tender_front_bogie_axle_02": {
+      "parent": "tender_front_bogie",
+      "sMm": -50.57554676188539,
+      "heightMm": 3.49597342941692
+    },
+    "trailing_truck_axle_01": {
+      "parent": "trailing_truck",
+      "sMm": -25.335435669295556,
+      "heightMm": 3.49597342941692
+    },
+    "trailing_truck_axle_02": {
+      "parent": "trailing_truck",
+      "sMm": -14.924155073944414,
+      "heightMm": 3.49597342941692
+    },
+    "engine_rear_axle_01": {
+      "parent": "engine_rear",
+      "sMm": 0.0,
+      "heightMm": 5.480054735268628
+    },
+    "engine_rear_axle_02": {
+      "parent": "engine_rear",
+      "sMm": 12.034331942915388,
+      "heightMm": 5.480054735268628
+    },
+    "engine_rear_axle_03": {
+      "parent": "engine_rear",
+      "sMm": 24.068663885830777,
+      "heightMm": 5.480054735268628
+    },
+    "engine_rear_axle_04": {
+      "parent": "engine_rear",
+      "sMm": 36.10299582874617,
+      "heightMm": 5.480054735268628
+    },
+    "engine_front_axle_01": {
+      "parent": "engine_front",
+      "sMm": 55.32625764282417,
+      "heightMm": 5.479738042322763
+    },
+    "engine_front_axle_02": {
+      "parent": "engine_front",
+      "sMm": 67.36058958573956,
+      "heightMm": 5.479738042322763
+    },
+    "engine_front_axle_03": {
+      "parent": "engine_front",
+      "sMm": 79.39492152865495,
+      "heightMm": 5.479738042322763
+    },
+    "engine_front_axle_04": {
+      "parent": "engine_front",
+      "sMm": 91.42925347157035,
+      "heightMm": 5.479738042322763
+    },
+    "leading_truck_axle_01": {
+      "parent": "leading_truck",
+      "sMm": 100.38342982299112,
+      "heightMm": 3.1064411060015016
+    },
+    "leading_truck_axle_02": {
+      "parent": "leading_truck",
+      "sMm": 114.16052304700817,
+      "heightMm": 3.1064411060015016
+    }
+  },
+  "drawbarPinsMm": {
+    "engine": -37.36976761221095,
+    "tender": -42.75354769193625,
+    "height": 1.65
+  },
+  "trianglesByNode": {
+    "engine_rear": {
+      "original": 310170,
+      "optimized": 68237
+    },
+    "engine_front": {
+      "original": 230388,
+      "optimized": 50685
+    },
+    "tender_body": {
+      "original": 49330,
+      "optimized": 10852
+    },
+    "trailing_truck": {
+      "original": 22528,
+      "optimized": 4955
+    },
+    "leading_truck": {
+      "original": 6008,
+      "optimized": 1321
+    },
+    "tender_rear_bogie": {
+      "original": 32640,
+      "optimized": 7180
+    },
+    "tender_front_bogie": {
+      "original": 12236,
+      "optimized": 2691
+    },
+    "tender_rear_bogie_axle_01": {
+      "original": 2896,
+      "optimized": 4092
+    },
+    "tender_rear_bogie_axle_02": {
+      "original": 2896,
+      "optimized": 4093
+    },
+    "tender_rear_bogie_axle_03": {
+      "original": 2896,
+      "optimized": 4093
+    },
+    "tender_rear_bogie_axle_04": {
+      "original": 2896,
+      "optimized": 4093
+    },
+    "tender_rear_bogie_axle_05": {
+      "original": 2896,
+      "optimized": 4092
+    },
+    "tender_front_bogie_axle_01": {
+      "original": 3328,
+      "optimized": 4188
+    },
+    "tender_front_bogie_axle_02": {
+      "original": 3328,
+      "optimized": 4187
+    },
+    "trailing_truck_axle_01": {
+      "original": 3264,
+      "optimized": 4174
+    },
+    "trailing_truck_axle_02": {
+      "original": 3264,
+      "optimized": 4173
+    },
+    "engine_rear_axle_01": {
+      "original": 13076,
+      "optimized": 6332
+    },
+    "engine_rear_axle_02": {
+      "original": 13076,
+      "optimized": 6332
+    },
+    "engine_rear_axle_03": {
+      "original": 13076,
+      "optimized": 6331
+    },
+    "engine_rear_axle_04": {
+      "original": 13076,
+      "optimized": 6331
+    },
+    "engine_front_axle_01": {
+      "original": 13076,
+      "optimized": 6332
+    },
+    "engine_front_axle_02": {
+      "original": 13076,
+      "optimized": 6332
+    },
+    "engine_front_axle_03": {
+      "original": 13076,
+      "optimized": 6332
+    },
+    "engine_front_axle_04": {
+      "original": 13070,
+      "optimized": 6331
+    },
+    "leading_truck_axle_01": {
+      "original": 2518,
+      "optimized": 4009
+    },
+    "leading_truck_axle_02": {
+      "original": 2512,
+      "optimized": 4008
+    }
+  },
+  "kinematics": {
+    "tenderSetbackMm": 4.8,
+    "leadingGuide": {
+      "travelMm": 4.5,
+      "swingRad": 0.35
+    },
+    "axlePlayMm": {
+      "engine_rear": 0.45,
+      "engine_front": 0.45,
+      "tender_rear_bogie": 0.45
+    },
+    "drawbar": {
+      "sleeveMm": 7.75,
+      "tongueMm": 7.75,
+      "minEngagementMm": 0.95,
+      "maxEngagementMm": 6.0,
+      "pinClearanceMm": 0.65
+    },
+    "trailingGuide": {
+      "travelMm": 2.5,
+      "swingRad": 0.35
+    }
+  },
+  "drawbarMountsMm": {
+    "engine": {
+      "frame": "engine_rear",
+      "seatHeight": 5.5
+    },
+    "tender": {
+      "frame": "tender_body",
+      "seatHeight": 2.767
+    }
+  }
+}

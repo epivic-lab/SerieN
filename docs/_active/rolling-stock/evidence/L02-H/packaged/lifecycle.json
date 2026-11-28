@@ -1,0 +1,29 @@
+{
+  "lazyLoad": true,
+  "cycles": 2,
+  "afterRemovalMemory": [
+    {
+      "calls": 287,
+      "triangles": 530528,
+      "geometries": 239,
+      "textures": 78
+    },
+    {
+      "calls": 287,
+      "triangles": 530528,
+      "geometries": 239,
+      "textures": 78
+    }
+  ],
+  "idleStepCpuMs": [
+    {
+      "p50": 0.40000000037252903,
+      "p95": 0.599999999627471
+    },
+    {
+      "p50": 0.40000000037252903,
+      "p95": 0.5
+    }
+  ],
+  "errors": []
+}

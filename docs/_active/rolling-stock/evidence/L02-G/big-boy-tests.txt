@@ -1,0 +1,35 @@
+TAP version 13
+# Subtest: actual Big Boy has 19 animated axles, closes linkage and releases instance geometry
+ok 1 - actual Big Boy has 19 animated axles, closes linkage and releases instance geometry
+  ---
+  duration_ms: 423.286875
+  ...
+# Subtest: articulated envelope participates in conflicts at the tender and locomotive
+ok 2 - articulated envelope participates in conflicts at the tender and locomotive
+  ---
+  duration_ms: 375.506375
+  ...
+# Subtest: fixed tender cannot be detached and external coupling does not mutate fleet
+ok 3 - fixed tender cannot be detached and external coupling does not mutate fleet
+  ---
+  duration_ms: 286.563625
+  ...
+# Subtest: articulated envelope contains rendered mesh vertices on R249 both ways
+ok 4 - articulated envelope contains rendered mesh vertices on R249 both ways
+  ---
+  duration_ms: 5312.816084
+  ...
+# Subtest: real Big Boy envelope stops a head-on train before penetration
+ok 5 - real Big Boy envelope stops a head-on train before penetration
+  ---
+  duration_ms: 1613.784458
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9692.692333

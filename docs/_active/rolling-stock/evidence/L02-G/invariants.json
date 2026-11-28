@@ -1,0 +1,15 @@
+{
+  "base": "6358f4ab35ef62bf05d575ffbadf73d0427b3809",
+  "assetSha256": "14622eac1e9dc20e58411ceea59cf7ea053724936c637dbd2413596a5ba331e1",
+  "qualifiedModulesByteIdentical": {
+    "pose.mjs": "19d1d866daa41056dfafc44044e47109e296db590b6a42b8c0565b8791db962a",
+    "kinematics.mjs": "8f24f605fa77baf7033de7c12d64b976c69af6f4e9dc00d82995906640606b83",
+    "valve-gear.mjs": "4a975575687403b2eadf07b56db53b484d58e257ee08fa59851ba71a027bae19",
+    "valve-gear-view.mjs": "4e1929fd6777f95415ea419fbe1062d87eb07f261f60f5b1fbcf1c2720eaa462"
+  },
+  "canonicalLayoutTopologyRailsSceneryUnchanged": true,
+  "physicsIntegratorAndGuardUnchanged": true,
+  "authAndDependenciesUnchanged": true,
+  "collisionChange": "Only vehicles supplying an articulated envelope use polygon-based conflict and sweep bounds; existing vehicle behavior retained",
+  "security": "Local versioned assets; no new service calls, credentials, eval or dynamic HTML. Big Boy loaded on explicit user action."
+}

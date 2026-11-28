@@ -1,0 +1,9 @@
+
+> serien@0.12.0 build
+> esbuild app.js --bundle --minify --format=esm --outfile=dist/game.js && node scripts/build-cache.mjs
+
+
+  dist/game.js  1.1mb ⚠️
+
+⚡ Done in 79ms
+Cache manifest: 65 files; 11 shell resources; version df7e2f0981f1

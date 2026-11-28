@@ -1,0 +1,43 @@
+{
+  "description": "L02-C GLB on the L02-D truck kinematics, before tire reprofiling.",
+  "glbSha256": "a48eda9d081a6ffbf6cf0d523bef8433df33fb260639c1edd6f615404de34c2d",
+  "rigChanges": {
+    "trailingGuide": {
+      "travelMm": 2.5,
+      "swingRad": 0.35
+    },
+    "removeAxlePlay": "trailing_truck"
+  },
+  "byScenario": {
+    "legacy": {
+      "poses": 3100,
+      "unsupportedPoses": 3100,
+      "flangeFlagPoses": 3100,
+      "worstTread": {
+        "axle": "leading_truck_axle_01",
+        "treadOverlap": -0.10000000086008587,
+        "flangeOverlap": 0.35000000000002274
+      },
+      "worstFlange": {
+        "axle": "tender_rear_bogie_axle_04",
+        "treadOverlap": 0.4999999999999707,
+        "flangeOverlap": 0.47500000000004494
+      }
+    },
+    "v06": {
+      "poses": 2990,
+      "unsupportedPoses": 2990,
+      "flangeFlagPoses": 2990,
+      "worstTread": {
+        "axle": "leading_truck_axle_01",
+        "treadOverlap": -0.15000000137534375,
+        "flangeOverlap": 0
+      },
+      "worstFlange": {
+        "axle": "tender_rear_bogie_axle_05",
+        "treadOverlap": -0.021420887177733938,
+        "flangeOverlap": 0.4465149917341744
+      }
+    }
+  }
+}

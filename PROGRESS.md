@@ -1,3 +1,118 @@
+# L02-H — Big Boy · qualifica del rilascio
+
+Audit tecnico PASS: 589 test generali, 11 cinematici, 9 JMRI e build. Pacchetto
+Pages completo; Legacy/V06 e due cicli di aggiunta/rimozione superati senza crescita
+GPU. Nessun cambiamento al runtime rispetto al checkpoint L02-G.
+[Rapporto permanente](docs/rolling-stock/BIG_BOY_FINAL_REPORT.md) ·
+[PR #29 e stato finale di merge/pubblicazione](https://github.com/epivic-lab/SerieN/pull/29).
+Branch `codex/rolling-stock-l02-big-boy`; merge ordinario e Pages autorizzati dalla
+Regia dopo i gate. La PR registra i risultati osservati dopo il deploy.
+
+**Prossima azione:** L02-I, verifica e accettazione post-rilascio Regia.
+Nessuna ulteriore implementazione automatica.
+
+---
+
+# L02-G — Big Boy · integrazione operativa sul branch di sviluppo
+
+Modello disponibile nel catalogo e aggiungibile al plastico come unità con tender
+fisso. Caricamento su richiesta, 19 assi e biellismi animati, sagoma articolata
+nelle protezioni. Prove operative Legacy/V06 e arresto frontale superati.
+[Rapporto, prove e limiti](docs/_active/rolling-stock/evidence/L02-G/README.md).
+Base `6358f4ab35ef62bf05d575ffbadf73d0427b3809`, branch
+`codex/rolling-stock-l02-big-boy`. PASS: 588 test generali, 5 dedicati, 11 cinematici, 9 JMRI, build e ciclo risorse GPU.
+Nessun merge/deploy; agganci esterni disabilitati.
+
+**Prossima azione:** audit Regia e autorizzazione L02-H, rilascio controllato.
+
+---
+
+# L02-F — Big Boy · qualifica campionata PASS (27 novembre 2026)
+
+Quartatura corretta su otto assi e quattro biellismi nominali animati nel banco
+isolato. 648 configurazioni senza interferenze non consentite, 584 test applicativi,
+11 cinematici/geometrici, 8 metrologici, 9 JMRI e build PASS. Chrome Legacy/V06:
+420 mm avanti e ritorno, STOP stabile, 19 assi in moto, zero errori.
+Base `6a9f319e3418da1235b753086fd71b9edbe01d22`, branch
+`codex/rolling-stock-l02-big-boy`. [Rapporto e limiti](docs/_active/rolling-stock/evidence/L02-F/README.md).
+Quote della distribuzione nominali, non certificate ALCO. Nessuna integrazione
+nel catalogo, modifica al tracciato/UI operativa, merge o deploy.
+
+**Prossima azione:** audit Regia e approvazione L02-G per integrazione nel catalogo
+e verifiche operative Big Boy. Checkpoint sul solo branch dedicato.
+
+---
+
+# L02-E — Big Boy · banco browser e prima animazione (27 novembre 2026)
+
+Ripresa da `239fbfc11dc4e601b977297e460979ed64610e35` sul branch
+`codex/rolling-stock-l02-big-boy`. Banco isolato con 19 assi, bielle di accoppiamento,
+staffe e timone L02-D. Chrome Legacy/V06: 420 mm avanti e ritorno, STOP stabile,
+copertura longitudinale e pose verificate. 584/584 Node, 8/8 cinematici, 9/9 JMRI,
+build PASS. Nessuna modifica al runtime operativo o al catalogo.
+Biella motrice/distribuzione ancora statiche; giochi e interferenze del biellismo
+in movimento NOT VERIFIED. Integrazione completa Big Boy non conclusa.
+[Rapporto e prove L02-E](docs/_active/rolling-stock/evidence/L02-E/README.md).
+
+**Prossima azione:** approvazione Regia L02-F per completare e qualificare il biellismo.
+Checkpoint sul solo branch autorizzato, nessun merge o deploy.
+
+---
+
+# L02-D — Union Pacific Big Boy · verifica geometrica (19 novembre 2026)
+
+Appoggio proiettato presente su entrambe le teste in 6.090 pose Legacy/V06,
+con zero riscontri sui bordini. Carrello posteriore sotto 0,010 mm di
+scostamento. Nessuna sovrapposizione nei 117 angoli fra −14,50° e +14,50°.
+Staffe e timone verificati su 35 configurazioni. R150 sintetico FAIL.
+Node 584/584, geometria e cinematica 5/5, JMRI 9/9 e build PASS.
+[Rapporto, prototipo e prove](docs/_active/rolling-stock/STATUS.md#l02-d--union-pacific-big-boy) · [Inventario](docs/rolling-stock/INVENTORY.md).
+
+**Prossima azione.** Approvazione di L02-E per una prova browser isolata
+del rotabile con ruote e bielle animate, staffe, timone e prove di marcia.
+
+---
+
+# L02-C — Union Pacific Big Boy · guida e timone (19 novembre 2026)
+
+Scansione di 6.090 pose Legacy/V06. Scostamento del carrello anteriore
+inferiore a 0,010 mm. Timone telescopico da 3,082 mm di corsa richiesta.
+Zero riscontri cabina–tender e timone in 27 verifiche BVH. Marcia BLOCKED
+per interferenze residue fra i telai e correzioni al carrello posteriore.
+Node 584/584, prove cinematiche 3/3, JMRI 9/9 e build PASS.
+[Rapporto, prototipo e prove](docs/_active/rolling-stock/STATUS.md#l02-c--union-pacific-big-boy) · [Inventario](docs/rolling-stock/INVENTORY.md).
+
+**Prossima azione.** Approvazione di L02-D per chiudere contatto con le rotaie,
+interferenze residue e fissaggio del timone prima del collaudo in marcia.
+
+---
+
+# L02-B — Union Pacific Big Boy · prototipo articolato (19 novembre 2026)
+
+GLB sperimentale di 27,1 MB con sette gruppi rigidi e 19 assi. Misurate 6.083
+pose Legacy/V06 nelle due orientazioni. Rilevati fino a 3,46 mm di scostamento
+di un asse e sovrapposizioni alle interfacce. Preparazione e rilievo PASS.
+Abilitazione in marcia BLOCKED. Node 584/584, JMRI 9/9 e build PASS.
+[Rapporto, prototipo e prove](docs/_active/rolling-stock/STATUS.md#l02-b--union-pacific-big-boy) · [Inventario](docs/rolling-stock/INVENTORY.md).
+
+**Prossima azione.** Approvazione di L02-C per correggere guida del carrello
+anteriore, interferenze e timone, quindi ripetere il rilievo.
+
+---
+
+# L02-A — Union Pacific Big Boy · rilievo iniziale (19 novembre 2026)
+
+Inventariati 27 file Drive in cinque cartelle. BR 01 e Henschel DHG 500 C
+segnate come integrate. Per la Big Boy sono stati verificati il sorgente CC BY
+4.0, lo SHA-256, la geometria di motrice e tender e il profilo Blender senza
+binario dimostrativo. Node 584/584, JMRI 9/9 e build PASS.
+[Inventario](docs/rolling-stock/INVENTORY.md) · [Rapporto e prove L02](docs/_active/rolling-stock/STATUS.md#l02-a--union-pacific-big-boy).
+
+**Prossima azione.** Approvazione di L02-B per preparare il modello ottimizzato
+e il prototipo articolato, poi misurarne gli ingombri in curva.
+
+---
+
 # Henschel L01-FINAL — collaudo completato (18 novembre 2026)
 
 Ripresa da `236ec10c91056cfe9c10d632d34aad4f9d91e14e`, sul branch

@@ -437,5 +437,35 @@
       "id": "henschel-dhg-500-c",
       "width": 19
     }
+  },
+  "native-big-boy": {
+    "bounds": {
+      "minX": -132.625,
+      "maxX": 127.375,
+      "minY": -1.25,
+      "maxY": 32.125
+    },
+    "width": 2080,
+    "height": 267,
+    "pixelsPerMm": 8,
+    "couplers": {
+      "front": {
+        "x": 128,
+        "y": 8,
+        "z": 0
+      },
+      "back": {
+        "x": -132,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "mountY": 0,
+    "imageSha256": "5d418f365ecc728ca7c0f77c52ae83b86c757f8f0b363fc6d1005d143d0749ea",
+    "url": "./assets/rolling-stock/big-boy/side.png",
+    "stock": {
+      "id": "big-boy",
+      "width": 26
+    }
   }
 }

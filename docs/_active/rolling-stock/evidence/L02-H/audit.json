@@ -1,0 +1,29 @@
+{
+  "baseMain": "148b3d246b36759a8c06072a148a7ab19f24f908",
+  "auditedCandidate": "abb26166a9b9e2708afc04bf112f0e15df859ba8",
+  "runtimeAssetSha256": "14622eac1e9dc20e58411ceea59cf7ea053724936c637dbd2413596a5ba331e1",
+  "noExternalGLTFResources": true,
+  "unchangedPaths": [
+    "src/canonical-layout.json",
+    "assets/scenario-v06",
+    "src/network.js",
+    "src/simulation.js",
+    "src/railway-step.js",
+    "src/railway-guard.js",
+    "auth-gate.js",
+    "auth-gate-core.js",
+    "package.json",
+    "package-lock.json",
+    "style.css",
+    "ui",
+    ".github/workflows/pages.yml"
+  ],
+  "method": "git diff against current remote main; embedded GLB resources inspected; L02-G source/tests and geometry manifest reviewed",
+  "limitations": [
+    "Nominal visual valve gear, not ALCO drawings",
+    "Fixed tender; no external coupling",
+    "R150 unsupported",
+    "Audible audio and complete authentication journey not verified"
+  ],
+  "releasePR": "https://github.com/epivic-lab/SerieN/pull/29"
+}

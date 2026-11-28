@@ -9,7 +9,7 @@ test('catalog definitions, planned vehicles, physical groups and duplicate off-s
  const {projects,depot}=fixture(),p=consist(projects),t=physical(),before=structuredClone(t);
  const a=depot.add('native-br01-tender'),b=depot.add('native-br01-tender');assert.notEqual(a.id,b.id);assert.notEqual(a.code,b.code);assert.equal(depot.size,2);
  assert.ok(depot.items.every(v=>v.category==='off-scene-virtual'&&v.state==='available'&&!('point' in v)&&!('group' in v)));
- assert.ok(!p.vehicles.some(v=>[a.id,b.id].includes(v.id)));assert.deepEqual(t,before);assert.equal(PROJECT_CATALOG.length,3);
+ assert.ok(!p.vehicles.some(v=>[a.id,b.id].includes(v.id)));assert.deepEqual(t,before);assert.equal(PROJECT_CATALOG.length,4);
  const exposed=depot.items;exposed[0].assignment={projectId:p.id,vehicleId:p.vehicles[1].id};assert.equal(depot.items[0].assignment,null);
  depot.remove(a.id);const c=depot.add('native-br01-tender');assert.equal(c.code,'D003');assert.notEqual(c.id,a.id);
 });

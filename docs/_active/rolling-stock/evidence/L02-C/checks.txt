@@ -1,0 +1,23 @@
+L02-C — 2026-11-19
+Base: da704f5bcce96e212fb620294ae977467f315a57
+
+PASS  npm test — 584 superati.
+PASS  node --test scripts/big-boy/kinematics.test.mjs — 3 superati.
+PASS  python3 -m unittest discover -s tests -p 'jmri_audit_test.py' — 9 superati.
+PASS  npm run build — 65 risorse, 11 shell, manifest df7e2f0981f1.
+PASS  Riproduzione Blender 4.3.2 — GLB e rig.json identici byte per byte.
+      SHA-256 GLB a48eda9d081a6ffbf6cf0d523bef8433df33fb260639c1edd6f615404de34c2d.
+PASS  Regressione audit — sweep L02-B riprodotto identico byte per byte.
+PASS  GLB disegnato con Three.js in Chromium/WebGL software isolato
+      (176.114 triangoli, 37 chiamate, 24 texture, 19 assi).
+PASS  Scansione — 6.090 pose V06/Legacy nelle due orientazioni.
+      Carrello anteriore <0,010 mm di scostamento; corsa guida max 3,737 mm.
+      Corsa timone 3,082 mm, margine fra arresti e perni >=0,683 mm arrotondati.
+PASS  BVH — zero riscontri cabina–tender o al timone in 27 verifiche
+      selezionate (24 pose distinte). Anteprime Blender ispezionate.
+PASS  Invarianti di tracciato, geometrie, rete, protezioni, UI, Auth e cache
+      verificati per confronto del diff e del manifest con la base.
+BLOCKED  Marcia — sovrapposizioni residue fra telai motori e scostamento
+         fino a 0,782 mm al secondo asse del carrello posteriore.
+NOT VERIFIED  Contatto dinamico ruota–rotaia, bielle, fissaggio timone,
+              sicurezza con altri rotabili e prestazioni in marcia.
