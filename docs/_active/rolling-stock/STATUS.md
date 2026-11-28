@@ -1,5 +1,20 @@
 # Serie N — Stato integrazione rotabili
 
+## L02-I — Big Boy · attività conclusa
+
+28 novembre 2026. Verifica tecnica post-rilascio PASS: 16 test mirati, 9 JMRI,
+build e riscontro pubblico dei byte. Main pubblicato `4809567631f273bde0f96231671f8dbd55f6e381`.
+Nessuna modifica al simulatore, nessun nuovo merge/deploy in I.
+
+[Handoff permanente](../../rolling-stock/BIG_BOY_FINAL_REPORT.md) ·
+[Verbale ed evidenze finali](../../rolling-stock/evidence/L02-I/README.md).
+Nessuna sottofase successiva prevista. **Tutte le sezioni L02 precedenti sono
+archivio storico e non costituiscono gate o richieste di approvazione attivi.**
+L'autorizzazione a I non viene descritta come collaudo manuale indipendente mai osservato.
+
+---
+
+
 ## L02-H — Big Boy · handoff di rilascio
 
 27 novembre 2026. PASS tecnico: 589/589 test generali, 11/11 cinematici, 9/9 JMRI,

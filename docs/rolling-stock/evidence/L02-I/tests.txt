@@ -1,0 +1,90 @@
+TAP version 13
+# Subtest: the leading truck independently fits its two axles around a translating pin
+ok 1 - the leading truck independently fits its two axles around a translating pin
+  ---
+  duration_ms: 0.673291
+  ...
+# Subtest: guide and axle reach remain bounded when track demands more travel
+ok 2 - guide and axle reach remain bounded when track demands more travel
+  ---
+  duration_ms: 0.155834
+  ...
+# Subtest: telescoping members retain length and distinguish compression and extension stops
+ok 3 - telescoping members retain length and distinguish compression and extension stops
+  ---
+  duration_ms: 0.092084
+  ...
+# Subtest: wheel profile distinguishes dual tread support from projection of a flange into a rail head
+ok 4 - wheel profile distinguishes dual tread support from projection of a flange into a rail head
+  ---
+  duration_ms: 0.513583
+  ...
+# Subtest: the contact audit reads the same head intervals as both rendered sections
+ok 5 - the contact audit reads the same head intervals as both rendered sections
+  ---
+  duration_ms: 30.158416
+  ...
+# Subtest: rendered coupling eyes retain axial engagement at both lateral travel limits
+ok 6 - rendered coupling eyes retain axial engagement at both lateral travel limits
+  ---
+  duration_ms: 36.772292
+  ...
+# Subtest: legacy: signed motion, stop, reversal, route coverage and rejected commands
+ok 7 - legacy: signed motion, stop, reversal, route coverage and rejected commands
+  ---
+  duration_ms: 25.083667
+  ...
+# Subtest: v06: signed motion, stop, reversal, route coverage and rejected commands
+ok 8 - v06: signed motion, stop, reversal, route coverage and rejected commands
+  ---
+  duration_ms: 24.087583
+  ...
+# Subtest: coupling rods follow a full crank circle, reverse exactly and reject non-finite values
+ok 9 - coupling rods follow a full crank circle, reverse exactly and reject non-finite values
+  ---
+  duration_ms: 0.301375
+  ...
+# Subtest: all fixed lengths close through 1440 phases and both directions independently
+ok 10 - all fixed lengths close through 1440 phases and both directions independently
+  ---
+  duration_ms: 17.193125
+  ...
+# Subtest: invalid or unreachable geometry fails instead of emitting a broken pose
+ok 11 - invalid or unreachable geometry fails instead of emitting a broken pose
+  ---
+  duration_ms: 0.2785
+  ...
+# Subtest: actual Big Boy has 19 animated axles, closes linkage and releases instance geometry
+ok 12 - actual Big Boy has 19 animated axles, closes linkage and releases instance geometry
+  ---
+  duration_ms: 58.348041
+  ...
+# Subtest: articulated envelope participates in conflicts at the tender and locomotive
+ok 13 - articulated envelope participates in conflicts at the tender and locomotive
+  ---
+  duration_ms: 48.894541
+  ...
+# Subtest: fixed tender cannot be detached and external coupling does not mutate fleet
+ok 14 - fixed tender cannot be detached and external coupling does not mutate fleet
+  ---
+  duration_ms: 44.933041
+  ...
+# Subtest: articulated envelope contains rendered mesh vertices on R249 both ways
+ok 15 - articulated envelope contains rendered mesh vertices on R249 both ways
+  ---
+  duration_ms: 236.519666
+  ...
+# Subtest: real Big Boy envelope stops a head-on train before penetration
+ok 16 - real Big Boy envelope stops a head-on train before penetration
+  ---
+  duration_ms: 50.103833
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 934.191667

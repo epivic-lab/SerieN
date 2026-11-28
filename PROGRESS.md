@@ -1,3 +1,17 @@
+# L02-I — Big Boy · chiusura post-rilascio (28 novembre 2026)
+
+PASS: versione pubblica invariata e corrispondente alla build, 16 test mirati,
+9 JMRI e build. Rilascio su main `4809567631f273bde0f96231671f8dbd55f6e381`,
+[PR #29](https://github.com/epivic-lab/SerieN/pull/29), Pages pubblicato e verificato.
+L02-I modifica soltanto documentazione/evidenze sul branch dedicato; nessun nuovo deploy.
+[Rapporto permanente](docs/rolling-stock/BIG_BOY_FINAL_REPORT.md) ·
+[Verbale finale](docs/rolling-stock/evidence/L02-I/README.md).
+
+**Prossima azione:** nessuna attività Big Boy pendente; attendere una nuova richiesta.
+Le sezioni successive sono archivio storico, non autorizzazioni o gate attivi.
+
+---
+
 # L02-H — Big Boy · qualifica del rilascio
 
 Audit tecnico PASS: 589 test generali, 11 cinematici, 9 JMRI e build. Pacchetto

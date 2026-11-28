@@ -3,12 +3,17 @@
 27 novembre 2026. Repository `epivic-lab/SerieN`. Sottofasi L02-A–G raccolte nella
 consegna L02-H, autorizzata dalla Regia per audit, PR e rilascio controllato.
 
-**Tracciabilità del rilascio:** [PR #29](https://github.com/epivic-lab/SerieN/pull/29).
-La descrizione finale della PR registra SHA di merge, esito Pages e verifica
-pubblica effettuata dopo il deploy. Questo rapporto versiona la qualifica tecnica
-prima del merge; non anticipa l'esito di un workflow ancora in corso.
-[Workflow di pubblicazione](https://github.com/epivic-lab/SerieN/actions/workflows/pages.yml) ·
-[Applicazione](https://epivic-lab.github.io/SerieN/).
+**Rilascio completato e chiusura L02-I verificata il 28 novembre 2026.**
+[PR #29](https://github.com/epivic-lab/SerieN/pull/29) unita a main con SHA
+`4809567631f273bde0f96231671f8dbd55f6e381`.
+[CI PASS](https://github.com/epivic-lab/SerieN/actions/runs/46140609421) ·
+[Pages PASS](https://github.com/epivic-lab/SerieN/actions/runs/46140901041) ·
+[Applicazione pubblicata](https://epivic-lab.github.io/SerieN/).
+
+La verifica pubblica ripetuta in I conferma hash, asset, worker e Auth invariati.
+16 test mirati, 9 JMRI e build PASS; la suite completa di rilascio resta 589/589.
+[Verbale e prove permanenti L02-I](evidence/L02-I/README.md).
+Questa chiusura documentale non modifica il runtime e non avvia un nuovo deploy.
 
 ## Funzione consegnata
 
@@ -87,6 +92,7 @@ del vapore. Cutoff fisso e cinematica nominale. Agganci esterni non disponibili.
 Audio udibile e intero percorso di autenticazione personale NOT VERIFIED.
 Le prove funzionali pre-rilascio usano una fixture Auth solo nella pagina di test.
 
-La qualifica tecnica non sostituisce l'accettazione indipendente della Regia.
-Dopo il rilascio: **L02-I — verifica e accettazione finale Regia**, senza ulteriori
-modifiche automatiche, nuovi rotabili o nuove macrofasi.
+La Regia ha autorizzato L02-I rispondendo «si» alla proposta di verifica finale.
+La verifica tecnica post-rilascio è conclusa; non si attribuisce all'utente un
+collaudo manuale indipendente non osservato. **Nessuna sottofase successiva prevista.**
+Nuovi rotabili, estensioni e modifiche richiedono una nuova richiesta.

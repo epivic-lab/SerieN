@@ -1,0 +1,21 @@
+{
+  "phase": "L02-I",
+  "date": "2026-11-28",
+  "authorization": "User replied si to the proposed final verification/acceptance phase",
+  "result": "PASS technical post-release closure",
+  "developmentBaseline": "5f68b7d3ee32eeebaede3cb153c81baf659024f2",
+  "publishedMain": "4809567631f273bde0f96231671f8dbd55f6e381",
+  "runtimeChanged": false,
+  "newDeployment": false,
+  "targetedTests": 16,
+  "jmriTests": 9,
+  "buildCacheVersion": "19cc2d255d352d2282f19c5782463f056ec60064575530efbd456c0c83e2be6a",
+  "newPhasePlanned": false,
+  "limitations": [
+    "Nominal valve gear, not ALCO-certified dimensions",
+    "Tender fixed; external coupling unavailable",
+    "R150 unsupported",
+    "Audible audio and full personal authentication journey not verified",
+    "No claim of an independent manual driving test by the user"
+  ]
+}
